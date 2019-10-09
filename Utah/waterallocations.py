@@ -116,131 +116,66 @@ for ix in range(len(df100.index)):
 
 #outdf100.WaterSourceUUID = df100['WaterSourceUUID']
 
-#ToDO:  Allocation Owner Status:  In Progress
+#ToDO:  Allocation Owner Status:  DONE
 print("Allocation Owner...")
 df100 = df100.assign(AllocationOwner=np.nan).astype(str)
-df100['Company'] = df100['Company'].fillna('Unknown')
+df100['Company'] = df100['Company'].fillna('-')
 for i, row in df100.iterrows():
     x = row['Company']
     y = row['FirstName']
     z = row['LastName']
-    if x != '-':
+    zz = y +'_'+ z
+    if x == 'nan':
+        df100.at[i, 'AllocationOwner'] = zz
+    else:
         df100.at[i, 'AllocationOwner'] = x
-    elif x ==np.nan:
-        df100.at[i, 'AllocationOwner'] = y+z
     print('done')
 
+# Can just copy columns from Total Flow and Total Capacity, check with logic for dual blanks,
+# if both NaN, drop row.
 
-print("Native allocation...")
-#ToDO check logic
-#Concentrate the three values of these fields with a - between them (Admin No, Order No, Decreed Units)
-#df100['NativeAllocationID'] = np.nan
-df100 = df100.assign(NativeAllocationID=np.nan)
-# no-loop approach?
-for ix in range(len(df100.index)):
-    print(ix)
-    df100.loc[ix, 'NativeAllocationID'] = "-".join(map(str, [df100["Admin No"].iloc[ix], df100["Order No"].iloc[ix], df100["Decreed Units"].iloc[ix]]))         #map(lambda x: x, benUseListStr))
-outdf100.NativeAllocationID = df100.NativeAllocationID
-#outdf100.drop(columns='NativeAllocationIDVar', inplace=True)
+print("Allocation Amount...")
+df100['AllocationAmount'] = df100['Total Flow(CFS)/ Appropriation(GPM)']
 
-print("Net absolute net conditional...")
-#ToDO: check logic
-# If Net Absolute and Net Conditional are both zeros, then value = "Conditional Absolute"
-# If the "Net Absolute" is zero and the "Net Conditional" is not zero. Then value="Conditional"
-# If the "Net Absolute" is not zero and the "Net Conditional" = zero. Then value="Absolute"
-#ToDO: for loop for now
-#df100['AllocationLegalStatusCV'] = np.nan
-df100 = df100.assign(AllocationLegalStatusCV=np.nan)
-for ix in range(len(df100.index)):
-    print(ix)
-    if((df100["Net Absolute"].iloc[ix] == 0) and (df100["Net Conditional"].iloc[ix] == 0)):
-        df100.loc[ix, 'AllocationLegalStatusCV'] = "Conditional Absolute"
-    elif ((df100["Net Absolute"].iloc[ix] == 0) and (df100["Net Conditional"].iloc[ix] != 0)):
-        df100.loc[ix, 'AllocationLegalStatusCV'] = "Conditional"
-    elif ((df100["Net Absolute"].iloc[ix] != 0) and (df100["Net Conditional"].iloc[ix] == 0)):
-        df100.loc[ix, 'AllocationLegalStatusCV'] = "Absolute"
-#outdf100.AllocationLegalStatusCV = df100.AllocationLegalStatusCV
+print("Allocation maximum...")
+df100['AllocationMaximum'] = df100['Total Capacity (AF/Yr)']
 
-print("Decreed units...")
-#ToDO: check the logic
-#If the Decreed Units value="C", then either of Net Absolute,
-# or Net Conditional that has value not equal to zero goes into here*
-#df100['AllocationAmount'] = np.nan
-df100 = df100.assign(AllocationAmount=np.nan)
-#stripping any leading/trailing space characters for 'C'/'A'
-ACstr=pd.Series([])
-ACstr=df100["Decreed Units"].str.strip()
-df100["Decreed Units"]=ACstr
-for ix in range(len(df100.index)):
-    print(ix)
-    if((df100["Net Absolute"].iloc[ix] != 0) and (df100["Net Conditional"].iloc[ix] != 0)):
-        """
-        For a single row, there should be only one value that is not zero in Net Absolute, or Net Conditional.
-        If both of them have values that are not zero, then skip loading this row 
-        (The data we have for now does not have this case, but just in case)
-        """
-        #ToDO save these rows for inspection?
-        pass
-    else:
-        if((df100["Decreed Units"].iloc[ix] == "C") and (df100["Net Absolute"].iloc[ix] != 0)):
-            df100.loc[ix, 'AllocationAmount'] = df100["Net Absolute"].iloc[ix]
-        elif ((df100["Decreed Units"].iloc[ix] == "C") and (df100["Net Conditional"].iloc[ix] != 0)):
-            df100.loc[ix, 'AllocationAmount'] = df100["Net Conditional"].iloc[ix]
-        else:
-            ## TODO: check this is the case of units == 'A'
-            pass
-#outdf100.AllocationAmount = df100.AllocationAmount
-#ToDO: check the logic
-# If the Decreed Units value="A", then either of Net Absolute,
-# or Net Conditional that has value not equal to zero goes into here*
-#df100['AllocationMaximum'] = np.nan
-df100 = df100.assign(AllocationMaximum=np.nan)
-#stripping any leading/trailing space characters for 'C'/'A' --done above
-for ix in range(len(df100.index)):
-    print(ix)
-    if((df100["Net Absolute"].iloc[ix] != 0) and (df100["Net Conditional"].iloc[ix] != 0)):
-        """
-        For a single row, there should be only one value that is not zero in Net Absolute, or Net Conditional.
-        If both of them have values that are not zero, then skip loading this row 
-        (The data we have for now does not have this case, but just in case)
-        """
-        # ToDO save these rows for inspection?
-        pass
-    else:
-        if((df100["Decreed Units"].iloc[ix] == "A") and (df100["Net Absolute"].iloc[ix] != 0)):
-            df100.loc[ix, 'AllocationMaximum'] = df100["Net Absolute"].iloc[ix]
-        elif ((df100["Decreed Units"].iloc[ix] == "C") and (df100["Net Conditional"].iloc[ix] != 0)):
-            df100.loc[ix, 'AllocationMaximum'] = df100["Net Conditional"].iloc[ix]
-        else:
-            ## TODO: Check this is the case of units='C'
-            pass
-#outdf100.AllocationMaximum = df100.AllocationMaximum
+print("Allocation Legal Status...")
+df100['AllocationLegalStatusCV'] = df100['SummaryWRStatus']
+
+print("Allocation Priority Date...")
+df100['AllocationPriorityDate'] = df100['PriorityDate']
+
+
+
 #direct copy
-"""
-outdf100.SiteUUID = df100['SiteUUIDVar']
+
+outdf100.NativeAllocationID = df100['WR Number']
+outdf100.SiteUUID = df100['SiteUUID']
 outdf100.WaterSourceUUID = df100['WaterSourceUUID']
 outdf100.BeneficialUseID = df100['BeneficialUseID']
-outdf100.NativeAllocationID = df100.NativeAllocationID
-outdf100.AllocationOwner =	df100['Structure Name']
-outdf100.AllocationApplicationDate = df100['Appropriation Date']
-outdf100.AllocationPriorityDate = df100['Appropriation Date']
+#outdf100.NativeAllocationID = df100.NativeAllocationID
+outdf100.AllocationOwner =	df100['AllocationOwner']
+#outdf100.AllocationApplicationDate = df100['Appropriation Date']
+outdf100.AllocationPriorityDate = df100['AllocationPriorityDate']
 outdf100.AllocationLegalStatusCV = df100.AllocationLegalStatusCV
 outdf100.AllocationAmount = df100.AllocationAmount
 outdf100.AllocationMaximum = df100.AllocationMaximum
-"""
+
+
 print("Copying all columns...")
-destCols=["SiteUUID","WaterSourceUUID","BeneficialUseID","NativeAllocationID","AllocationOwner","AllocationApplicationDate",
-             "AllocationPriorityDate","AllocationLegalStatusCV","AllocationAmount","AllocationMaximum"]
-sourCols=["SiteUUIDVar","WaterSourceUUID","BeneficialUseID","NativeAllocationID","Structure Name","Appropriation Date",
-             "Appropriation Date","AllocationLegalStatusCV","AllocationAmount","AllocationMaximum"]
-outdf100[destCols] = df100[sourCols]
+#destCols=["SiteUUID","WaterSourceUUID","BeneficialUseID","NativeAllocationID","AllocationOwner","AllocationApplicationDate",
+#             "AllocationPriorityDate","AllocationLegalStatusCV","AllocationAmount","AllocationMaximum"]
+#sourCols=["SiteUUIDVar","WaterSourceUUID","BeneficialUseID","NativeAllocationID","Structure Name","Appropriation Date",
+#             "Appropriation Date","AllocationLegalStatusCV","AllocationAmount","AllocationMaximum"]
+#outdf100[destCols] = df100[sourCols]
 
 #hard coded
 print("Hard coded...")
-outdf100.OrganizationUUID = "CODWR"
-outdf100.VariableSpecificUUID = "CODWR Allocation All"
-outdf100.MethodUUID = "CODWR-DiversionTracking"
-outdf100.AllocationBasisCV = "Unknown"
+outdf100.OrganizationUUID = "WWDO"
+#outdf100.VariableSpecificUUID = "CODWR Allocation All"
+#outdf100.MethodUUID = "CODWR-DiversionTracking"
+#outdf100.AllocationBasisCV = "Unknown"
 outdf100.TimeframeStart = "01/01"
 outdf100.TimeframeEnd = "12/31"
 """ 
@@ -251,7 +186,7 @@ Comment from Adel
 ==> save row to a Allocations_missing.csv
 """
 print("Droping null allocations...")
-#outdf100 = outdf100.replace('', np.nan) #replace blank strings by NaN
+outdf100 = outdf100.replace('nan', np.nan) #replace blank strings by NaN
 outdf100purge = outdf100.loc[(outdf100["AllocationAmount"].isnull()) & (outdf100["AllocationMaximum"].isnull())]
 if len(outdf100purge.index) > 0:
     outdf100purge.to_csv('waterallocations_missing.csv')    #index=False,
