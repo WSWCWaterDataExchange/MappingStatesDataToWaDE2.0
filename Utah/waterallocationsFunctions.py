@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import pandas as pd
 import numpy as np
-from mpi4py import MPI
 import os
 import beneficialUseDictionary
 
