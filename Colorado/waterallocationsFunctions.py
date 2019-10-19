@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 import pandas as pd
 import numpy as np
-from mpi4py import MPI
-import os
 import beneficialUseDictionary
 
 def assignBenUseCategory(colrowValue):
@@ -10,23 +8,39 @@ def assignBenUseCategory(colrowValue):
     # may need to modify capitalization in beneficialUseDictionary
     benUseDict = beneficialUseDictionary.beneficialUseDictionary  ##modified key for Utah values
     if colrowValue == '' or pd.isnull(colrowValue):
-        outList = np.nan
+        outList = ''
     else:
         benUseListStr = colrowValue.strip()  # remove whitespace chars
         outList = ",".join(benUseDict[inx] for inx in list(str(benUseListStr)))
 
     return outList
 
+def assignWaterSourceID(colrowValue, df400):
+    if colrowValue == '' or pd.isnull(colrowValue):
+        outList = ''
+    else:
+        ml = df400.loc[df400['WaterSourceName'] == colrowValue, 'WaterSourceUUID']
+        #ml = df400.loc[df400['WaterSourceName'] == df100.loc[ix,"WREX_SOURCE"], 'WaterSourceUUID']
+        #print(ml)
+        #print(ml.empty)
+        if not(ml.empty):            # check if the series is empty
+            outList = ml.iloc[0]   # watersourceSer.append(ml.iloc[0])
+        else:
+            outList = ''
+    return outList
 # find no-loop approach
 def assignallocTypeCV(colrowValue):
     # look up allocation dictionary
     # may need to modify capitalization in beneficialUseDictionary
     AllocationTypeCVDict = beneficialUseDictionary.AllocationTypeCVDictionary  ##modified key for Utah values
     if colrowValue == '' or pd.isnull(colrowValue):
-        outList = np.nan
+        outList = ''
     else:
         benUseListStr = colrowValue.strip()  # remove whitespace chars
-        outList = AllocationTypeCVDict[benUseListStr]
+        try:
+            outList = AllocationTypeCVDict[benUseListStr]
+        except:
+            outList = ''
 
     return outList
 
@@ -40,15 +54,25 @@ def assignownerName(colrowValue1, colrowValue2):
     else:
         outList2 = colrowValue2.strip()  # remove whitespace chars
 
-    outList = ",".join(map(str, [colrowValue1, colrowValue2]))
+    if outList1 == '' and outList2 == '':
+        outList = ''
+    elif outList1 == '':
+        outList = outList2
+    elif outList2 == '':
+        outList = outList1
+    else:
+        outList = ",".join(map(str, [colrowValue1, colrowValue2]))
     return outList
 
 def assignallocLegalStatausCV(colrowValue):
     AllocationUseDict = beneficialUseDictionary.AllocationLegalStatusDictionary
     if colrowValue == '' or pd.isnull(colrowValue):
-        outList = np.nan
+        outList = ''
     else:
         benUseListStr = colrowValue.strip()  # remove whitespace chars
-        outList = AllocationUseDict[benUseListStr]
+        try:
+            outList = AllocationUseDict[benUseListStr]
+        except:
+            outList = ''
 
     return outList
