@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from sodapy import Socrata
 import os
-import Dictionaries
+import Dictionaries_WY
 
 workingDir = "/Users/augustus/Desktop/WSWC/WaDE/Data/WY"
 os.chdir(workingDir)
@@ -80,7 +80,7 @@ for ix in range(len(df100.index)):
 #ToDO: Beneficial Use Status: DONE
 print("Beneficial uses...")
 # may need to modify capitalization in beneficialUseDictionary
-benUseDict = Dictionaries.beneficialUseDictionary
+benUseDict = Dictionaries_WY.beneficialUseDictionary
 #df100['BeneficialUseCategoryID'] = df100['Decreed Uses']
 #df100['BeneficialUseID'] = np.nan
 df100 = df100.assign(BeneficialUseID=np.nan)

@@ -3,7 +3,10 @@ import pandas as pd
 import numpy as np
 from sodapy import Socrata
 import os
-import Dictionaries
+import Dictionaries_WY
+import sys
+
+
 
 """
 Comments from Adel
@@ -83,7 +86,7 @@ outdf100 = outdf100.reset_index(drop=True)
 
 
 print('Site type...')
-perSufDict = Dictionaries.permitSuffixDictionary
+perSufDict = Dictionaries_WY.permitSuffixDictionary
 outdf100 = outdf100.assign(sitetype = np.nan)
 
 for ix in range(len(outdf100.index)):
