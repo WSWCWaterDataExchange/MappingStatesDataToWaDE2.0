@@ -32,7 +32,11 @@ Modules required: Dictionaries_WY.py
         - drop data if missing lat/lon
         - copy results into sites.csv and export 
         
-      
+   Sample data (all columns not included):
+   
+   WaDESiteUUID | SiteNativeID | SiteName | SiteTypeCV | Long | Lat
+   ------------ | ------------ | -------- | ---------- | ---- | ----
+   WWDO_100001 | 1000001 | PIONEER CANAL | Ditch | -105 | -40 |
      
 ###  2. watersources_WY.py - generate list of water sources from which water is allocated from 
         - generate empty watersources.csv file with controlled vocabulary headers
@@ -40,6 +44,12 @@ Modules required: Dictionaries_WY.py
         - generate WaterSourceUUID from generate WaterSourceNativeID
         - drop data if missing WaterSourceUUID, WaterSourceType, AND WaterQualityIndicator
         - copy results into watersources.csv and export
+        
+   Sample data (all columns not included):
+   
+   WaterSourceUUID | WaterSourceID | WaterSource | WaterSourceTypeCV | WaterQualityIndicatorCV
+   ------------ | ------------ | -------- | ---------- | ---- 
+   WWDO_1 | 1 | LARAMIE RIVER  | Unknown | Unspecified 
         
 ###  3. waterallocations_WY.py - generate master sheet of water allocations to import into WaDE
         - generate empty waterallocations.csv file with controlled vocabulary headers
@@ -50,3 +60,12 @@ Modules required: Dictionaries_WY.py
         - copy data to waterallocation.csv
         - drop data if AllocationAmount AND AllocationMaximum are null
         - export to csv
+        
+  Sample data (all columns not included):
+   
+   OrganizationUUID | SiteUUID | WaterSourceUUID | BeneficialUseID | NativeAllocationID | AllocationOwner | AllocationLegalStatus | AllocationAmount | 
+   ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- 
+   WWDO | WWDO_100001 | WWDO_1 | IRRIGATION | CR CC48/006 | JOHN DOE IRRIGATION | FullyAdjudicated | 71.43
+
+
+Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file to be passed back to the data supplier. 
