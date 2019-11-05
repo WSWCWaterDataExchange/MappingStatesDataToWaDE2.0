@@ -2,38 +2,32 @@
 
 This readme details an overview, the specific steps taken, and the final product of the process applied to water rights data made available by the [Utah Division of Water Rights (UTDWR)](https://www.waterrights.utah.gov/contact.asp) for inclusion into the Water Data Exchange (WaDE). 
 
-## Overview 
+### Overview 
 The Utah Division of Water Rights hosts its water right data at the [PUBDUMP Database table dump Utility](https://www.waterrights.utah.gov/cgi-bin/pubdump.exe?DBNAME=WRDB&SECURITYKEY=wrt2012access).
 The dataset is updated annually. For more information on WaDE, please visit http://wade.westernstateswater.org/
 
 
-## Summary
-This document summarizes the process to:
-I. Prepare and share UTDWR’s Water Rights data from the PUBDUMP database for inclusion in the Western States Water Council’s Water Data Exchange (WaDE 2.0).
-
-In order to extract Utah water rights data from the PUBDUMP database and publish it online through ESRI layers to be ready for WaDE 2.0, you must execute 8 Python Scripts to generate CSV data compatible with WaDE 2.0.
+### Summary
+This document summarizes the process to prepare and share UTDWR’s Water Rights data from the PUBDUMP database for inclusion in the Western States Water Council’s Water Data Exchange (WaDE 2.0). In order to extract Utah water rights data from the PUBDUMP database and publish it online through ESRI layers to be ready for WaDE 2.0, you must execute 8 Python Scripts to generate CSV data compatible with WaDE 2.0.
  
+ ## Data Prep
+ ### Step 1: Execute 8 Python Scripts to generate CSV data compatible with WaDE 2.0
 
-
-## Data Prep
-The overall objective of the data migration scripts are to prepare datasets retrieved from state repositories for upload into WaDE 2.0.  This process applied to Utah Water Rights data, and considering the data included in this dataset involves passing the raw data through eight Python scripts.  These scripts are outlined below.
-
-### Step 1: Execute 8 Python Scripts to generate CSV data compatible with WaDE 2.0
-There are 8 Python Scripts that use queries to extract UTDWR’s water rights data into views compatible with WaDE 2.0. Two of the scripts, beneficialuseDictionary.py and waterallocationsFunctions.py, are required as input scripts for watersources_Ut.py and waterallocations_noloopnoaban_UT.py, respectively.  All scripts can be found at the following link in WaDE’s Github repository “MappingStatesDataToWaDE2.0” in the Utah folder:
+There are 8 Python Scripts that use queries to extract UTDWR’s water rights data into views compatible with WaDE 2.0. Two of the scripts, beneficialuseDictionary.py and waterallocationsFunctions.py, are required as input scripts for watersources_Ut.py and waterallocations_UT.py, respectively.  All scripts can be found at the following link in WaDE’s Github repository “MappingStatesDataToWaDE2.0” in the Utah folder:
 https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Utah
 
+
+The overall objective of the data migration scripts are to prepare datasets retrieved from state repositories for upload into WaDE 2.0.  This process applied to Utah Water Rights data, and considering the data included in this dataset involves passing the raw data through eight Python scripts. These scripts are outlined below.
+
 The 8 Scripts are entitled:
-■    sites_UT.py
-■     watersources_UT.py
-beneficialuseDictionary.py
-■       waterallocations_noloopnoaban_UT.py
-    waterallocationsFunctions.py
-■       methods_UT.py
-■      organizations_UT.py
-■      variables_UT.py
-
-
-
+■  sites_UT.py
+■  watersources_UT.py
+      • beneficialuseDictionary.py
+■  waterallocations_UT.py
+      • waterallocationsFunctions.py
+■  methods_UT.py
+■  organizations_UT.py
+■  variables_UT.py
 
 
 
