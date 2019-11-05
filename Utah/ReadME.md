@@ -22,9 +22,9 @@ The overall objective of the data migration scripts are to prepare datasets retr
 The 8 Scripts are entitled:
 ■  sites_UT.py
 ■  watersources_UT.py
-      • beneficialuseDictionary.py
+      - beneficialuseDictionary.py
 ■  waterallocations_UT.py
-      • waterallocationsFunctions.py
+      - waterallocationsFunctions.py
 ■  methods_UT.py
 ■  organizations_UT.py
 ■  variables_UT.py
@@ -33,15 +33,15 @@ The 8 Scripts are entitled:
 
 
 ###  1.  sites_UT.py - generate a list of sites where water is allocated
-        - generate empty sites.csv file with controlled vocabulary headers
-        - call Dictionaries_WY.py and determine diversion infrastructure (work) type
-        - generate SiteNativeID (Wyoming POD data does not include native ID)
-        - generate WaDESiteUUID from generated SiteNativeID
-        - drop data if missing lat/lon
-        - copy results into sites.csv and export 
-        
-   Sample data (all columns not included):
-   
+
+- generate empty sites.csv file with controlled vocabulary headers
+- assign SiteNativeID from RECORD_ID
+- generate WaDESiteUUID (Concatenate UT with SiteNativeID)
+- drop data if missing latitude/longitude
+- copy results into sites.csv and export
+
+Sample data (all columns not included):
+
    WaDESiteUUID | SiteNativeID | SiteTypeCV | Long | Lat
    ------------ | ------------ | ---------- | ---- | ----
    UTDWRE_177983 | 177983 |U | 431092.606 |4616232.618
