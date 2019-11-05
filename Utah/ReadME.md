@@ -1,4 +1,4 @@
-# WaDE Preperation
+# WaDE Preparation
 
 This readme details an overview, the specific steps taken, and the final product of the process applied to water rights data made available by the [Utah Division of Water Rights (UTDWR)](https://www.waterrights.utah.gov/contact.asp) for inclusion into the Water Data Exchange (WaDE). 
 
@@ -31,8 +31,8 @@ The 8 Scripts are entitled:
 
 
 
-Modules required: Dictionaries_WY.py
-###  1. sites_WY.py - generate list of sites where water is allocated
+
+###  1.  sites_UT.py - generate a list of sites where water is allocated
         - generate empty sites.csv file with controlled vocabulary headers
         - call Dictionaries_WY.py and determine diversion infrastructure (work) type
         - generate SiteNativeID (Wyoming POD data does not include native ID)
@@ -42,9 +42,9 @@ Modules required: Dictionaries_WY.py
         
    Sample data (all columns not included):
    
-   WaDESiteUUID | SiteNativeID | SiteName | SiteTypeCV | Long | Lat
-   ------------ | ------------ | -------- | ---------- | ---- | ----
-   WWDO_100001 | 1000001 | PIONEER CANAL | Ditch | -105 | -40 |
+   WaDESiteUUID | SiteNativeID | SiteTypeCV | Long | Lat
+   ------------ | ------------ | ---------- | ---- | ----
+   UTDWRE_177983 | 177983 |U | 431092.606 |4616232.618
      
 ###  2. watersources_WY.py - generate list of water sources from which water is allocated from 
         - generate empty watersources.csv file with controlled vocabulary headers
