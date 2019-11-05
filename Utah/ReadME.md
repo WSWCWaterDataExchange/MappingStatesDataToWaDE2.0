@@ -20,14 +20,14 @@ https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/
 The overall objective of the data migration scripts are to prepare datasets retrieved from state repositories for upload into WaDE 2.0.  This process applied to Utah Water Rights data, and considering the data included in this dataset involves passing the raw data through eight Python scripts. These scripts are outlined below.
 
 The 8 Scripts are entitled:
-■  sites_UT.py
-■  watersources_UT.py
-      - beneficialuseDictionary.py
-■  waterallocations_UT.py
-      - waterallocationsFunctions.py
-■  methods_UT.py
-■  organizations_UT.py
-■  variables_UT.py
+- sites_UT.py
+- watersources_UT.py
+   - beneficialuseDictionary.py
+- waterallocations_UT.py
+   - waterallocationsFunctions.py
+-  methods_UT.py
+-  organizations_UT.py
+-  variables_UT.py
 
 
 
