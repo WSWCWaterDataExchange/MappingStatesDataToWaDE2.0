@@ -37,6 +37,13 @@ Modules required: Dictionaries_WY.py
    WaDESiteUUID | SiteNativeID | SiteName | SiteTypeCV | Long | Lat
    ------------ | ------------ | -------- | ---------- | ---- | ----
    WWDO_100001 | 1000001 | PIONEER CANAL | Ditch | -105 | -40 |
+   
+   Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
+   Mandatory fields include:
+    - SiteUUID
+    - SiteName
+    - CoordinateMethodCV
+    - EPSGCodeCV
      
 ###  2. watersources_WY.py - generate list of water sources from which water is allocated from 
         - generate empty watersources.csv file with controlled vocabulary headers
@@ -50,6 +57,12 @@ Modules required: Dictionaries_WY.py
    WaterSourceUUID | WaterSourceID | WaterSource | WaterSourceTypeCV | WaterQualityIndicatorCV
    ------------ | ------------ | -------- | ---------- | ---- 
    WWDO_1 | 1 | LARAMIE RIVER  | Unknown | Unspecified 
+   
+   Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**watersources_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
+   Mandatory fields include:
+    - WaterSourceUUID
+    - WaterSourceTypeCV
+    - WaterQualityIndicatorCV
         
 ###  3. waterallocations_WY.py - generate master sheet of water allocations to import into WaDE
         - generate empty waterallocations.csv file with controlled vocabulary headers
@@ -68,4 +81,52 @@ Modules required: Dictionaries_WY.py
    WWDO | WWDO_100001 | WWDO_1 | IRRIGATION | CR CC48/006 | JOHN DOE IRRIGATION | FullyAdjudicated | 71.43
 
 
-Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file to be passed back to the data supplier. 
+Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**waterallocations_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
+ Mandatory fields include:
+    - OrganizationUUID
+    - VariableSpecificUUID
+    - WaterSourceUUID
+    - MethodUUID
+    - Allocation Priority Date
+
+###  4. variable_WY.py - generate legend of granular variables specific to each state
+        - all values are hard-coded according to state
+        
+  Sample data 
+  
+  VariableSpecificUUID | VariableSpecificCV | VariableCV | AggregationStatisticCV | AggregationInterval | AggregationIntervalUnitCV | ReportYearStartMonth | ReportYearTypeCV | AmountUnitCV
+  -------------------- | ------------------ | ---------- | ---------------------- | ------------------- | ------------------------ | ----------------- | ---------------- | ---------
+ 
+Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file         (**variables_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
+ Mandatory fields include:
+    - VariableSpecificUUID
+    - VariableSpecificCV
+    - AggregationStatisticCV
+    - AggregationInterval
+    - AggregationIntervalUnitCV
+    - ReportYearStartMonth
+    - ReportYearTypeCV
+    - AmountUnitCV
+  
+###  5. methods_WY.py - generatte legend of granular variables specific to each state detailing water right/allocation/etc data collection. 
+        - all values are hard-coded according to state
+        
+  Sample data 
+
+  MethodUUID | MethodName | MethodDescription | MethodNEMILink | ApplicableResourceTypeCV | MethodTypeCV | DataCoverageValue | DataQualityValueCV | DataConfidenceValue
+  ---------- | ---------- | ----------------- | -------------- | ------------------------ | ------------ | ----------------- | ------------------ | -------------------
+  
+  
+Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**methods_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data. 
+ Mandatory fields include:
+    - MethodUUID
+    - MethodName
+    - MethodDescription
+    - ApplicableResourceTypeCV
+    - MethodTypeCV
+        
+        
+        
+        
+        
+        
