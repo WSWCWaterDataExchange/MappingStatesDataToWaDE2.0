@@ -14,7 +14,7 @@ FileInput2="UtahOwners.csv"
 FileInput3= "Irrigation_Master.csv"
 
 #output: water allocation
-allocCSV="UTWaterAllocations.csv" #output
+allocCSV="UTWaterAllocations.csv"    #output
 
 ######## WaDE columns 
 
@@ -247,7 +247,7 @@ if(len(outdf100_nullMand.index) > 0):
     outdf100_nullMand.to_csv('waterallocations_mandatoryFieldMissing.csv')  # index=False,
 
 #ToDO: purge these cells if there is any missing? #For now left to be inspected
-outdf100_nullMand
+#outdf100_nullMand
 
 print("Writing outputs...")
 #write out
