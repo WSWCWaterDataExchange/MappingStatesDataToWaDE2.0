@@ -4,8 +4,8 @@ import numpy as np
 from sodapy import Socrata
 import os
 
-workingDir="C:/Tseganeh/0WaDE/Data/TestOutputs"
-os.chdir(workingDir)
+#workingDir="C:/Tseganeh/0WaDE/Data/TestOutputs"
+#s.chdir(workingDir)
 
 fileInput="DWR_Water_Right_-_Net_Amounts.csv"
 allocCSV="waterallocations.csv"
@@ -24,7 +24,7 @@ varCSV="variables.csv"
 # df = pd.DataFrame.from_records(top100)
 
 ##OR read csv
-df100 = pd.read_csv(fileInput)
+#df100 = pd.read_csv(fileInput)
 #df100 = df.head(100)
 
 print("Columns...")

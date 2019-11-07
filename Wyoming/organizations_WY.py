@@ -28,8 +28,8 @@ df100 = pd.read_csv(fileInput)
 #df100 = df.head(100)
 
 #WaDE columns
-columns=['MethodUUID', 'MethodName', 'MethodDescription', 'MethodNEMILink', 'ApplicableResourceTypeCV',
-         'MethodTypeCV', 'DataCoverageValue', 'DataQualityValueCV',	'DataConfidenceValue']
+columns=['OrganizationUUID', 'OrganizationName', 'State', 'OrganizationPurview', 'OrganizationWebsite',
+         'OrganizationPhoneNumber', 'OrganizationContactName', 'OrganizationContactEmail',	'DataMappingURL']
 dtypesx = ['BigInt	NVarChar(250)	NVarChar(50)	Text	NVarChar(100)	NVarChar(100)	NVarChar(50)',
            'NVarChar(100)	NVarChar(50)	NVarChar(50)']
 #assumes dtypes inferred from CO file
@@ -41,9 +41,8 @@ for ix in range(len(outdf100.index)):
     outdf100.loc[ix, 'MethodUUID'] = "_".join(["CODWR",str(outdf100.loc[ix, 'MethodName'])])
 """
 print("Columns...")
-#ToDO: Get hard-coded values from Adel
-inpVals = ['CODWR_DiversionTracking','DiversionTracking', 'Methodology used for tracking diversions in the state of Colorado',
-           np.nan, 'Allocation', 'Water withdrawals', np.nan, np.nan, np.nan]
+inpVals = ['WWDO','Wyoming Water Development Office', 'Wyoming',
+           np.nan, 'http://wwdc.state.wy.us', '307-777-7626', 'Mabel Jones', 'mabel.jones1@wyo.gov', 'https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Wyoming/ReadMe.md']
 outdf100 = pd.DataFrame([inpVals], columns=columns)
 """
 outdf100=pd.DataFrame(columns=columns)
@@ -65,12 +64,14 @@ requiredCols=['MethodUUID', 'MethodName', 'MethodDescription','ApplicableResourc
 outdf100 = outdf100.replace('', np.nan)
 #any cell of these columns is null
 #outdf100_nullMand = outdf100.loc[outdf100.isnull().any(axis=1)] --for all cols
-outdf100_nullMand = outdf100.loc[(outdf100["MethodUUID"].isnull()) | (outdf100["MethodName"].isnull()) |
-                                (outdf100["MethodDescription"].isnull()) | (outdf100["ApplicableResourceTypeCV"].isnull()) |
+
+#ToDO: Get mandatory fields from Adel
+outdf100_nullMand = outdf100.loc[(outdf100["OrganizationUUID"].isnull()) | (outdf100["OrganizationName"].isnull()) |
+                                (outdf100["State"].isnull()) | (outdf100["ApplicableResourceTypeCV"].isnull()) |
                                 (outdf100["MethodTypeCV"].isnull())]
 #outdf100_nullMand = outdf100.loc[[False | (outdf100[varName].isnull()) for varName in requiredCols]]
 if(len(outdf100_nullMand.index) > 0):
-    outdf100_nullMand.to_csv('methods_mandatoryFieldMissing.csv')  # index=False,
+    outdf100_nullMand.to_csv('organizations_mandatoryFieldMissing.csv')  # index=False,
 
 
 print("Write out...")

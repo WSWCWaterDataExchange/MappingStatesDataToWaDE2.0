@@ -40,6 +40,8 @@ dtypesx = ['']
 for ix in range(len(outdf100.index)):
     outdf100.loc[ix, 'VariableSpecificUUID'] = " ".join(["CODWR",str(outdf100.loc[ix, 'VariableSpecificCV'])])
 """
+
+#ToDO: Get hard-coded values from Adel
 inpVals = ['CODWR Allocation All','Allocation All', 'Allocation', 'Average', '1', 'Day', '11', 'Irrigation', 'CFS', 'AFY']
 outdf100 = pd.DataFrame([inpVals], columns=columns)
 """
@@ -72,7 +74,7 @@ outdf100_nullMand = outdf100.loc[(outdf100["VariableSpecificUUID"].isnull()) | (
 #outdf100_nullMand = outdf100.loc[[False | (outdf100[varName].isnull()) for varName in requiredCols]]
 if(len(outdf100_nullMand.index) > 0):
     outdf100_nullMand.to_csv('variables_mandatoryFieldMissing.csv')  # index=False,
-#ToDO: purge these cells if there is any missing? #For now left to be inspected
+
 
 print("Write out...")
 # save to output
