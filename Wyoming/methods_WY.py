@@ -41,8 +41,8 @@ for ix in range(len(outdf100.index)):
     outdf100.loc[ix, 'MethodUUID'] = "_".join(["CODWR",str(outdf100.loc[ix, 'MethodName'])])
 """
 print("Columns...")
-#ToDO: Get hard-coded values from Adel
-inpVals = ['CODWR_DiversionTracking','DiversionTracking', 'Methodology used for tracking diversions in the state of Colorado',
+#ToDO: Get hard-coded values from Adel | append from CO scripts for time being
+inpVals = ['WWDO_DiversionTracking','DiversionTracking', 'Methodology used for tracking diversions in the state of Wyoming',
            np.nan, 'Allocation', 'Water withdrawals', np.nan, np.nan, np.nan]
 outdf100 = pd.DataFrame([inpVals], columns=columns)
 """

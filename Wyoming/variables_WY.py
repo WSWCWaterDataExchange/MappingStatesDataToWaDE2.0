@@ -41,8 +41,8 @@ for ix in range(len(outdf100.index)):
     outdf100.loc[ix, 'VariableSpecificUUID'] = " ".join(["CODWR",str(outdf100.loc[ix, 'VariableSpecificCV'])])
 """
 
-#ToDO: Get hard-coded values from Adel
-inpVals = ['CODWR Allocation All','Allocation All', 'Allocation', 'Average', '1', 'Day', '11', 'Irrigation', 'CFS', 'AFY']
+#ToDO: Get hard-coded values from Adel | append from CO scripts for time being
+inpVals = ['WWDO Allocation All','Allocation All', 'Allocation', 'Average', '1', 'Day', '11', 'Irrigation', 'CFS', 'AFY']
 outdf100 = pd.DataFrame([inpVals], columns=columns)
 """
 outdf100=pd.DataFrame(columns=columns)
