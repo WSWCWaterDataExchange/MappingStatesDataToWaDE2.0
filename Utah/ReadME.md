@@ -113,7 +113,6 @@ Supplemental Script required:
    ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- |------|
   UTDWRE | UTDWRE_72714 | UTDWRE_2 | Irrigation, Stockwatering | 61-2981 |Underground Water Claim| Morgan Ranches, LLC | Certificated | 0.4223| 
 
-
 Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
 Mandatory fields include: 
  - SiteUUID 
@@ -122,9 +121,11 @@ Mandatory fields include:
  - EPSGCodeCV
  
  
+ 
+ 
+ 
 ### 4. variables_UT.py - generate legend of granular variables specific to each state
         - all values are hard-coded according to state
-
 
 
 #### Sample data (all columns not included):
@@ -132,3 +133,15 @@ Mandatory fields include:
    VariableSpecificCV | VariableCV | AggregationStatisticCV| AggregationInterval | AggregationIntervalUnitCV | ReportYearStartMonth| ReportYearTypeCV | AmountUnitCV | 
    ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- |
   Allocation All | Allocation | Average| 1 | Year |10| WaterYear| CFS|
+  
+  
+  
+  
+### 5. methods_ut.py - generate legend of granular variables specific to each state detailing water right/allocation/etc data collection.
+       - all values are hard-coded according to state
+       
+#### Sample data (all columns not included):
+   
+   MethodUUID | MethodName | MethodDescription| MethodNEMLink | ApplicableResourceTypeCV | MethodTypeCV| DataCoverageValue | DataQualityValueCV | DataConfidenceValue|
+   ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- | --------|
+  UT_STREAMFLOW_SUPPLY| Average Streamflow Method | Average Streamflow Method|  | Surface Water | Modeled|      |         |
