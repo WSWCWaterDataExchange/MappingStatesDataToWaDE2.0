@@ -130,9 +130,9 @@ Mandatory fields include:
 
 #### Sample data (all columns not included):
    
-   VariableSpecificCV | VariableCV | AggregationStatisticCV| AggregationInterval | AggregationIntervalUnitCV | ReportYearStartMonth| ReportYearTypeCV | AmountUnitCV | 
-   ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- |
-  Allocation All | Allocation | Average| 1 | Year |10| WaterYear| CFS|
+   VariableSpecificCV | VariableCV | AggregationStatisticCV| AggregationInterval | AggregationIntervalUnitCV | ReportYearStartMonth| ReportYearTypeCV | AmountUnitCV | MaximumAmountUnitCV
+   ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- |----|
+  Allocation All | Allocation | Average| 1 | Year |10| WaterYear| CFS|----|
   
   
   
