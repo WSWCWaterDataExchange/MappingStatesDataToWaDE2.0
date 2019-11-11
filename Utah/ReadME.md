@@ -50,10 +50,10 @@ Sample data (all columns not included):
 
 Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
 Mandatory fields include: 
-- SiteUUID 
-- SiteName
-- CoordinateMethodCV 
-- EPSGCodeCV
+ - SiteUUID 
+ - SiteName
+ - CoordinateMethodCV 
+ - EPSGCodeCV
 
 
 
@@ -81,10 +81,10 @@ Supplemental Script required:
 
 Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data. 
 Mandatory fields include: 
-- SiteUUID 
-- SiteName 
-- CoordinateMethodCV 
-- EPSGCodeCV
+ - SiteUUID 
+ - SiteName 
+ - CoordinateMethodCV 
+ - EPSGCodeCV
 
 
 
@@ -115,7 +115,7 @@ Supplemental Script required:
 
 Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (sites_mandatoryFieldMissing.csv) to be passed back to the organization supplying the data.
 Mandatory fields include: 
-- SiteUUID 
-- SiteName 
-- CoordinateMethodCV
-- EPSGCodeCV
+ - SiteUUID 
+ - SiteName 
+ - CoordinateMethodCV
+ - EPSGCodeCV
