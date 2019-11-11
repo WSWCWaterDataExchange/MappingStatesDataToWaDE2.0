@@ -165,8 +165,8 @@ Mandatory fields include:
         
  #### Sample data (all columns not included):
    
-   OrganizationUUID | OrganizationName | OrganizationPurview| OrganizationWebsite | OrganizationPhoneNumber | OrganizationContactName| OrganizationContactEmail | DataMappingURL | MaximumAmountUnitCV
-   ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- |----|
+   OrganizationUUID | OrganizationName | OrganizationPurview| OrganizationWebsite | OrganizationPhoneNumber | OrganizationContactName| OrganizationContactEmail | DataMappingURL | 
+   ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- |
   UTDWRE | Utah Division of Water Resources | Water Planning| Water Planning| 8015387280 |Craig Miller| craigmiller@utah.gov| https://github.com/WSWCWaterDataExchange/WaDE2.0|
        
 Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
