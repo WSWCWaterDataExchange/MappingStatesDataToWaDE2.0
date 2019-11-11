@@ -41,12 +41,16 @@ The 8 Scripts are entitled:
 - drop data if missing latitude/longitude
 - copy results into sites.csv and export
 
+
+
 Sample data (all columns not included):
 
    WaDESiteUUID | SiteNativeID | SiteTypeCV | Long | Lat
    ------------ | ------------ | ---------- | ---- | ----
    UTDWRE_177983 | 177983 |U | 431092.606 |4616232.618
-     
+
+Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (sites_mandatoryFieldMissing.csv) to be passed back to the organization supplying the data. Mandatory fields include: - SiteUUID - SiteName - CoordinateMethodCV - EPSGCodeCV
+
 ##  2. watersources_UT.py - generate list of water sources from which water is allocated from
 Tables required:
 Water_Master.csv (Master Table containing Utah Water Right and Exchange Information from PUBDUMP) and PointofDiversionTable.csv (Water Rights, Change, and Exchange Point of Diversion Table from PUBDUMP)    
@@ -54,8 +58,6 @@ Water_Master.csv (Master Table containing Utah Water Right and Exchange Informat
 Supplemental Script required:
 beneficialuseDictionary.py
  -Includes the following code dictionaries for Utah: Beneficial Use, Allocation Legal Status, Allocation Type CV, Water Source Type CV, and Site Type. 
- 
-*This csv is input to waterallocations_UT.py. 
 
  - generate empty UTWaterSources.csv file with controlled vocabulary headers  
  - call beneficialUseDictionary.py and assign defined Water Source Types to their respective codes
@@ -63,23 +65,26 @@ beneficialuseDictionary.py
  - generate WaterSourceUUID (Concatenate UT with WaterSourceNativeID)
  - drop data if missing WaterSourceUUID, WaterSourceTypeCV, and WaterQualityIndicatorCV
  - copy results into UTWaterSources.csv and export 
+*UTWaterSources.csv is input to waterallocations_UT.py. *
 
    Sample data (all columns not included):
    
    WaterSourceUUID | WaterSourceNativeID | WaterSourceName | WaterSourceTypeCV | WaterQualityIndicatorCV
    ------------ | ------------ | -------- | ---------- | ---- 
    UT_1 | 1 | Underground Water Well  | groundwaterall | Fresh
-        
+
+Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (sites_mandatoryFieldMissing.csv) to be passed back to the organization supplying the data. Mandatory fields include: - SiteUUID - SiteName - CoordinateMethodCV - EPSGCodeCV
+
 ##  3. waterallocations_UT.py - generate master sheet of water allocations to import into WaDE 2.0
 
  -generate empty UTWaterAllocations.csv file with controlled vocabulary headers
  - call waterallocationFunctions.py and assign defined beneficial uses to water right 
- - call watersources.csv and assign WaDE prepared water sources to water right
+ - call UTWaterSources.csv and assign WaDE prepared water sources to water right
  - assign AllocationOwner based on Company OR FirstName/LastName
- - copy data to waterallocation.csv
  - drop data if AllocationAmount and Allocation Maximum are null
  - copy results into UTWaterAllocations.csv and export
         
+
 
   Sample data (all columns not included):
    
@@ -88,4 +93,4 @@ beneficialuseDictionary.py
   UTDWRE | UTDWRE_72714 | UTDWRE_2 | Irrigation, Stockwatering | 61-2981 |Underground Water Claim| Morgan Ranches, LLC | Certificated | 0.4223| 
 
 
-Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file to be passed back to the data supplier. 
+Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (sites_mandatoryFieldMissing.csv) to be passed back to the organization supplying the data. Mandatory fields include: - SiteUUID - SiteName - CoordinateMethodCV - EPSGCodeCV
