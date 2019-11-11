@@ -32,7 +32,8 @@ The 8 Scripts are entitled:
 
 
 
-###  1.  sites_UT.py - generate a list of sites where water is allocated
+##  1.  sites_UT.py - generate a list of sites where water is allocated
+### Table Required: Water_Master.csv (Master Table containing Utah Water Right and Exchange Information) 
 
 - generate empty sites.csv file with controlled vocabulary headers
 - assign SiteNativeID from RECORD_ID
@@ -46,12 +47,14 @@ Sample data (all columns not included):
    ------------ | ------------ | ---------- | ---- | ----
    UTDWRE_177983 | 177983 |U | 431092.606 |4616232.618
      
-###  2. watersources_WY.py - generate list of water sources from which water is allocated from 
-        - generate empty watersources.csv file with controlled vocabulary headers
-        - generate WaterSourceNativeID (Wyoming POD data does not include native ID)
-        - generate WaterSourceUUID from generate WaterSourceNativeID
-        - drop data if missing WaterSourceUUID, WaterSourceType, AND WaterQualityIndicator
-        - copy results into watersources.csv and export
+##  2. watersources_UT.py - generate list of water sources from which water is allocated from
+### Table Required: Water_Master.csv (Master Table containing Utah Water Right and Exchange Information)     
+
+- generate empty watersources.csv file with controlled vocabulary headers
+- generate WaterSourceNativeID (Wyoming POD data does not include native ID)
+- generate WaterSourceUUID from generate WaterSourceNativeID
+- drop data if missing WaterSourceUUID, WaterSourceType, AND WaterQualityIndicator
+- copy results into watersources.csv and export
         
    Sample data (all columns not included):
    
