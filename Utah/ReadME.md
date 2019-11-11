@@ -13,21 +13,21 @@ This document summarizes the process to prepare and share UTDWR’s Water Rights
  ## Data Prep
  ### Step 1: Execute 8 Python Scripts to generate CSV data compatible with WaDE 2.0
 
-There are 8 Python Scripts that use queries to extract UTDWR’s water rights data into views compatible with WaDE 2.0. Two of the scripts, beneficialuseDictionary.py and waterallocationsFunctions.py, are required as input scripts for watersources_Ut.py and waterallocations_UT.py, respectively.  All scripts can be found at the following link in WaDE’s Github repository “MappingStatesDataToWaDE2.0” in the Utah folder:
+There are 8 Python Scripts that use queries to extract UTDWR’s water rights data into views compatible with WaDE 2.0. Two of the scripts, **beneficialuseDictionary.py** and **waterallocationsFunctions.py**, are required as input scripts for **watersources_Ut.py** and **waterallocations_UT.py**, respectively.  All scripts can be found at the following link in WaDE’s Github repository “MappingStatesDataToWaDE2.0” in the Utah folder:
 https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Utah
 
 
 The overall objective of the data migration scripts are to prepare datasets retrieved from state repositories for upload into WaDE 2.0.  This process applied to Utah Water Rights data, and considering the data included in this dataset involves passing the raw data through eight Python scripts. These scripts are outlined below.
 
 The 8 Scripts are entitled:
-- sites_UT.py
-- watersources_UT.py
-   - beneficialuseDictionary.py
-- waterallocations_UT.py
-   - waterallocationsFunctions.py
--  methods_UT.py
--  organizations_UT.py
--  variables_UT.py
+- **sites_UT.py**
+- **watersources_UT.py**
+   - **beneficialuseDictionary.py**
+- **waterallocations_UT.py**
+   - **waterallocationsFunctions.py**
+-  **methods_UT.py**
+-  **organizations_UT.py**
+-  **variables_UT.py**
 
 
 
@@ -38,7 +38,7 @@ The 8 Scripts are entitled:
 - assign SiteNativeID from RECORD_ID
 - generate WaDESiteUUID (Concatenate UT with SiteNativeID)
 - drop data if missing latitude/longitude
-- copy results into sites.csv and export
+- copy results into **sites.csv** and export
 
 
 
@@ -49,7 +49,7 @@ Sample data (all columns not included):
    UTDWRE_177983 | 177983 |U | 431092.606 |4616232.618
 
 Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
-Mandatory fields include: 
+  Mandatory fields include: 
  - SiteUUID 
  - SiteName
  - CoordinateMethodCV 
@@ -71,7 +71,8 @@ Supplemental Script required:
  - generate WaterSourceUUID (Concatenate UT with WaterSourceNativeID)
  - drop data if missing WaterSourceUUID, WaterSourceTypeCV, and WaterQualityIndicatorCV
  - copy results into **UTWaterSources.csv** and export 
-**UTWaterSources.csv is input to waterallocations_UT.py.**
+ 
+       **UTWaterSources.csv is input to waterallocations_UT.py.**
 
    Sample data (all columns not included):
    
@@ -80,7 +81,7 @@ Supplemental Script required:
    UT_1 | 1 | Underground Water Well  | groundwaterall | Fresh
 
 Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data. 
-Mandatory fields include: 
+  Mandatory fields include: 
  - SiteUUID 
  - SiteName 
  - CoordinateMethodCV 
