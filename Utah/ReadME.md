@@ -32,7 +32,7 @@ The 8 Scripts are entitled:
 
 
 ##  1.  sites_UT.py - generate a list of sites where water is allocated
- Table Required: Water_Master.csv (Master Table containing Utah Water Right and Exchange Information on PUBDUMP) 
+ Table Required: **Water_Master.csv** (Master Table containing Utah Water Right and Exchange Information on PUBDUMP) 
 
 - generate empty sites.csv file with controlled vocabulary headers
 - assign SiteNativeID from RECORD_ID
@@ -56,12 +56,13 @@ Mandatory fields include:
 - EPSGCodeCV
 
 
+
 ##  2. watersources_UT.py - generate list of water sources from which water is allocated from
 Tables required:
-Water_Master.csv (Master Table containing Utah Water Right and Exchange Information from PUBDUMP) and PointofDiversionTable.csv (Water Rights, Change, and Exchange Point of Diversion Table from PUBDUMP)    
+**Water_Master.csv** (Master Table containing Utah Water Right and Exchange Information from PUBDUMP) and **PointofDiversionTable.csv** (Water Rights, Change, and Exchange Point of Diversion Table from PUBDUMP)    
 
 Supplemental Script required:
-beneficialuseDictionary.py
+**beneficialuseDictionary.py**
  -Includes the following code dictionaries for Utah: Beneficial Use, Allocation Legal Status, Allocation Type CV, Water Source Type CV, and Site Type. 
 
  - generate empty UTWaterSources.csv file with controlled vocabulary headers  
@@ -69,7 +70,7 @@ beneficialuseDictionary.py
  - generate WaterSourceNativeID 
  - generate WaterSourceUUID (Concatenate UT with WaterSourceNativeID)
  - drop data if missing WaterSourceUUID, WaterSourceTypeCV, and WaterQualityIndicatorCV
- - copy results into UTWaterSources.csv and export 
+ - copy results into **UTWaterSources.csv** and export 
 **UTWaterSources.csv is input to waterallocations_UT.py.**
 
    Sample data (all columns not included):
@@ -85,14 +86,23 @@ Mandatory fields include:
 - CoordinateMethodCV 
 - EPSGCodeCV
 
-##  3. waterallocations_UT.py - generate master sheet of water allocations to import into WaDE 2.0
 
- -generate empty UTWaterAllocations.csv file with controlled vocabulary headers
+
+
+
+
+##  3. waterallocations_UT.py - generate master sheet of water allocations to import into WaDE 2.0
+Table Required: **Water_Master.csv** (Master Table containing Utah Water Right and Exchange Information on PUBDUMP) 
+
+Supplemental Script required:
+**waterallocationFunctions.py**
+
+ - generate empty UTWaterAllocations.csv file with controlled vocabulary headers
  - call waterallocationFunctions.py and assign defined beneficial uses to water right 
  - call UTWaterSources.csv and assign WaDE prepared water sources to water right
  - assign AllocationOwner based on Company OR FirstName/LastName
  - drop data if AllocationAmount and Allocation Maximum are null
- - copy results into UTWaterAllocations.csv and export
+ - copy results into **UTWaterAllocations.csv** and export
         
 
 
