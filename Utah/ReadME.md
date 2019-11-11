@@ -120,3 +120,15 @@ Mandatory fields include:
  - SiteName 
  - CoordinateMethodCV
  - EPSGCodeCV
+ 
+ 
+### 4. variables_UT.py - generate legend of granular variables specific to each state
+        - all values are hard-coded according to state
+
+
+
+Sample data (all columns not included):
+   
+   VariableSpecificCV | VariableCV | AggregationStatisticCV| AggregationInterval | AggregationIntervalUnitCV | ReportYearStartMonth| ReportYearTypeCV | AmountUnitCV | 
+   ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- |
+  Allocation All | Allocation | Average| 1 | Year |10| WaterYear| CFS|
