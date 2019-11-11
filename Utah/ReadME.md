@@ -132,7 +132,7 @@ Mandatory fields include:
    
    VariableSpecificCV | VariableCV | AggregationStatisticCV| AggregationInterval | AggregationIntervalUnitCV | ReportYearStartMonth| ReportYearTypeCV | AmountUnitCV | MaximumAmountUnitCV
    ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- |----|
-  Allocation All | Allocation | Average| 1 | Year |10| WaterYear| CFS|----|
+  Allocation All | Allocation | Average| 1 | Year |10| WaterYear| CFS|AF|
   
   
   
@@ -145,3 +145,15 @@ Mandatory fields include:
    MethodUUID | MethodName | MethodDescription| MethodNEMLink | ApplicableResourceTypeCV | MethodTypeCV| DataCoverageValue | DataQualityValueCV | DataConfidenceValue|
    ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- | --------|
   UT_STREAMFLOW_SUPPLY| Average Streamflow Method | Average Streamflow Method|  | Surface Water | Modeled|      |         |
+  
+  
+  ###6. Organizations_UT.py - generate organization directory, including names, email addresses, and website hyper links for organization suppyling data source
+  
+        -All variables are hardcoded according to organization.
+        
+ #### Sample data (all columns not included):
+   
+   OrganizationUUID | OrganizationName | OrganizationPurview| OrganizationWebsite | OrganizationPhoneNumber | OrganizationContactName| OrganizationContactEmail | DataMappingURL | MaximumAmountUnitCV
+   ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- |----|
+  UTDWRE | Utah Division of Water Resources | Water Planning| Water Planning| 8015387280 |Craig Miller| craigmiller@utah.gov| https://github.com/WSWCWaterDataExchange/WaDE2.0|
+        
