@@ -32,7 +32,7 @@ The 8 Scripts are entitled:
 
 
 ##  1.  sites_UT.py - generate a list of sites where water is allocated
- Table Required: **Water_Master.csv** (Master Table containing Utah Water Right and Exchange Information on PUBDUMP) 
+ Table Required: **Water_Master.csv** (Master Table containing Utah Water Right and Exchange Information on [PUBDUMP](https://www.waterrights.utah.gov/cgi-bin/pubdump.exe?DBNAME=WRDB&SECURITYKEY=wrt2012access))
 
 - generate empty sites.csv file with controlled vocabulary headers
 - assign SiteNativeID from RECORD_ID
@@ -59,7 +59,7 @@ Any data missing required values and dropped from the WaDE-ready dataset are sav
 
 ##  2. watersources_UT.py - generate list of water sources from which water is allocated from
 Tables required:
-**Water_Master.csv** (Master Table containing Utah Water Right and Exchange Information from PUBDUMP) and **PointofDiversionTable.csv** (Water Rights, Change, and Exchange Point of Diversion Table from PUBDUMP)    
+**Water_Master.csv** (Master Table containing Utah Water Right and Exchange Information from [PUBDUMP](https://www.waterrights.utah.gov/cgi-bin/pubdump.exe?DBNAME=WRDB&SECURITYKEY=wrt2012access)) and **PointofDiversionTable.csv** (Water Rights, Change, and Exchange Point of Diversion Table from [PUBDUMP](https://www.waterrights.utah.gov/cgi-bin/pubdump.exe?DBNAME=WRDB&SECURITYKEY=wrt2012access))    
 
 Supplemental Script required:
 **beneficialuseDictionary.py**
@@ -72,7 +72,7 @@ Supplemental Script required:
  - drop data if missing WaterSourceUUID, WaterSourceTypeCV, and WaterQualityIndicatorCV
  - copy results into **UTWaterSources.csv** and export 
  
-       **UTWaterSources.csv is input to waterallocations_UT.py.**
+       UTWaterSources.csv is input to waterallocations_UT.py.
 
    Sample data (all columns not included):
    
@@ -93,7 +93,7 @@ Any data missing required values and dropped from the WaDE-ready dataset are sav
 
 
 ##  3. waterallocations_UT.py - generate master sheet of water allocations to import into WaDE 2.0
-Table Required: **Water_Master.csv** (Master Table containing Utah Water Right and Exchange Information on PUBDUMP) 
+Table Required: **Water_Master.csv** (Master Table containing Utah Water Right and Exchange Information on [PUBDUMP](https://www.waterrights.utah.gov/cgi-bin/pubdump.exe?DBNAME=WRDB&SECURITYKEY=wrt2012access)) 
 
 Supplemental Script required:
 **waterallocationFunctions.py**
@@ -114,7 +114,7 @@ Supplemental Script required:
   UTDWRE | UTDWRE_72714 | UTDWRE_2 | Irrigation, Stockwatering | 61-2981 |Underground Water Claim| Morgan Ranches, LLC | Certificated | 0.4223| 
 
 
-Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (sites_mandatoryFieldMissing.csv) to be passed back to the organization supplying the data.
+Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
 Mandatory fields include: 
  - SiteUUID 
  - SiteName 
