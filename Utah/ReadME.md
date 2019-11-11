@@ -33,7 +33,7 @@ The 8 Scripts are entitled:
 
 
 ##  1.  sites_UT.py - generate a list of sites where water is allocated
-### Table Required: Water_Master.csv (Master Table containing Utah Water Right and Exchange Information on PUBDUMP) 
+ Table Required: Water_Master.csv (Master Table containing Utah Water Right and Exchange Information on PUBDUMP) 
 
 - generate empty sites.csv file with controlled vocabulary headers
 - assign SiteNativeID from RECORD_ID
@@ -48,30 +48,36 @@ Sample data (all columns not included):
    UTDWRE_177983 | 177983 |U | 431092.606 |4616232.618
      
 ##  2. watersources_UT.py - generate list of water sources from which water is allocated from
-### Tables required: Water_Master.csv (Master Table containing Utah Water Right and Exchange Information from PUBDUMP) and PointofDiversionTable.csv (Water Rights, Change, and Exchange Point of Diversion Table from PUBDUMP)    
+Tables required: Water_Master.csv (Master Table containing Utah Water Right and Exchange Information from PUBDUMP) and PointofDiversionTable.csv (Water Rights, Change, and Exchange Point of Diversion Table from PUBDUMP)    
 
-- generate empty watersources.csv file with controlled vocabulary headers
-- generate WaterSourceNativeID (Wyoming POD data does not include native ID)
-- generate WaterSourceUUID from generate WaterSourceNativeID
-- drop data if missing WaterSourceUUID, WaterSourceType, AND WaterQualityIndicator
-- copy results into watersources.csv and export
+Supplemental Script required: beneficialuseDictionary.py
+ -Includes the following code dictionaries for Utah: Beneficial Use, Allocation Legal Status, Allocation Type CV, Water Source Type CV, and Site Type. 
         
+ - generate empty UTWaterSources.csv file with controlled vocabulary headers  
+ - call beneficialUseDictionary.py and assign defined Water Source Types to their respective codes
+ - generate WaterSourceNativeID 
+ - generate WaterSourceUUID (Concatenate UT with WaterSourceNativeID)
+ - drop data if missing WaterSourceUUID, WaterSourceTypeCV, and WaterQualityIndicatorCV
+ - copy results into UTWaterSources.csv and export. This csv is input to waterallocations_UT.py.
+
    Sample data (all columns not included):
    
    WaterSourceUUID | WaterSourceNativeID | WaterSourceName | WaterSourceTypeCV | WaterQualityIndicatorCV
    ------------ | ------------ | -------- | ---------- | ---- 
    UT_1 | 1 | Underground Water Well  | groundwaterall | Fresh
         
-###  3. waterallocations_WY.py - generate master sheet of water allocations to import into WaDE
-        - generate empty waterallocations.csv file with controlled vocabulary headers
-        - call sites.csv and assign WaDE prepared sites to water right 
-        - call Dictionaries_WY.py and assign defined benefical uses to water right 
-        - call watersources.csv and assign WaDE prepared water sources to water right
-        - assign AllocationOwner based on Company OR FirstName/LastName
-        - copy data to waterallocation.csv
-        - drop data if AllocationAmount AND AllocationMaximum are null
+##  3. waterallocations_UT.py - generate master sheet of water allocations to import into WaDE 2.0
+
+        -generate empty UTWaterAllocations.csv file with controlled vocabulary headers
+	       - call waterallocationFunctions.py and assign defined beneficial uses to water right
+	       - call watersources.csv and assign WaDE prepared water sources to water right
+	       - assign AllocationOwner based on Company OR FirstName/LastName
+	       - copy data to waterallocation.csv
+        - drop data if AllocationAmount and Allocation Maximum are null
         - export to csv
         
+ 
+ 
   Sample data (all columns not included):
    
    OrganizationUUID | SiteUUID | WaterSourceUUID | BeneficialUseID | NativeAllocationID | AllocationOwner | AllocationLegalStatus | AllocationAmount | 
