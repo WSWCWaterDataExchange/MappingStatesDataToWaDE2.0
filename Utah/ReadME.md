@@ -48,17 +48,21 @@ Sample data (all columns not included):
    UTDWRE_177983 | 177983 |U | 431092.606 |4616232.618
      
 ##  2. watersources_UT.py - generate list of water sources from which water is allocated from
-Tables required: Water_Master.csv (Master Table containing Utah Water Right and Exchange Information from PUBDUMP) and PointofDiversionTable.csv (Water Rights, Change, and Exchange Point of Diversion Table from PUBDUMP)    
+Tables required:
+Water_Master.csv (Master Table containing Utah Water Right and Exchange Information from PUBDUMP) and PointofDiversionTable.csv (Water Rights, Change, and Exchange Point of Diversion Table from PUBDUMP)    
 
-Supplemental Script required: beneficialuseDictionary.py
+Supplemental Script required:
+beneficialuseDictionary.py
  -Includes the following code dictionaries for Utah: Beneficial Use, Allocation Legal Status, Allocation Type CV, Water Source Type CV, and Site Type. 
-        
+ 
+*This csv is input to waterallocations_UT.py. 
+
  - generate empty UTWaterSources.csv file with controlled vocabulary headers  
  - call beneficialUseDictionary.py and assign defined Water Source Types to their respective codes
  - generate WaterSourceNativeID 
  - generate WaterSourceUUID (Concatenate UT with WaterSourceNativeID)
  - drop data if missing WaterSourceUUID, WaterSourceTypeCV, and WaterQualityIndicatorCV
- - copy results into UTWaterSources.csv and export. This csv is input to waterallocations_UT.py.
+ - copy results into UTWaterSources.csv and export 
 
    Sample data (all columns not included):
    
@@ -68,21 +72,20 @@ Supplemental Script required: beneficialuseDictionary.py
         
 ##  3. waterallocations_UT.py - generate master sheet of water allocations to import into WaDE 2.0
 
-        -generate empty UTWaterAllocations.csv file with controlled vocabulary headers
-	       - call waterallocationFunctions.py and assign defined beneficial uses to water right
-	       - call watersources.csv and assign WaDE prepared water sources to water right
-	       - assign AllocationOwner based on Company OR FirstName/LastName
-	       - copy data to waterallocation.csv
-        - drop data if AllocationAmount and Allocation Maximum are null
-        - export to csv
+ -generate empty UTWaterAllocations.csv file with controlled vocabulary headers
+ - call waterallocationFunctions.py and assign defined beneficial uses to water right 
+ - call watersources.csv and assign WaDE prepared water sources to water right
+ - assign AllocationOwner based on Company OR FirstName/LastName
+ - copy data to waterallocation.csv
+ - drop data if AllocationAmount and Allocation Maximum are null
+ - copy results into UTWaterAllocations.csv and export
         
- 
- 
+
   Sample data (all columns not included):
    
-   OrganizationUUID | SiteUUID | WaterSourceUUID | BeneficialUseID | NativeAllocationID | AllocationOwner | AllocationLegalStatus | AllocationAmount | 
-   ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- 
-   WWDO | WWDO_100001 | WWDO_1 | IRRIGATION | CR CC48/006 | JOHN DOE IRRIGATION | FullyAdjudicated | 71.43
+   OrganizationUUID | SiteUUID | WaterSourceUUID | BeneficialUseCategory | AllocationNativeID | AllocationTypeCV | AllocationOwner | AllocationLegalStatusCV | AllocationAmount | 
+   ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- |------|
+  UTDWRE | UTDWRE_72714 | UTDWRE_2 | Irrigation, Stockwatering | 61-2981 |Underground Water Claim| Morgan Ranches, LLC | Certificated | 0.4223| 
 
 
 Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file to be passed back to the data supplier. 
