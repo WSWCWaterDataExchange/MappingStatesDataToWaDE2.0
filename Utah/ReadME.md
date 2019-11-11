@@ -134,8 +134,13 @@ Mandatory fields include:
    ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- |----|
   Allocation All | Allocation | Average| 1 | Year |10| WaterYear| CFS|AF|
   
-  
-  
+  Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
+Mandatory fields include: 
+ - SiteUUID 
+ - SiteName 
+ - CoordinateMethodCV
+ - EPSGCodeCV
+   
   
 ### 5. methods_ut.py - generate legend of granular variables specific to each state detailing water right/allocation/etc data collection.
        - all values are hard-coded according to state
@@ -145,9 +150,16 @@ Mandatory fields include:
    MethodUUID | MethodName | MethodDescription| MethodNEMLink | ApplicableResourceTypeCV | MethodTypeCV| DataCoverageValue | DataQualityValueCV | DataConfidenceValue|
    ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- | --------|
   UT_STREAMFLOW_SUPPLY| Average Streamflow Method | Average Streamflow Method|  | Surface Water | Modeled|      |         |
+
+Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
+Mandatory fields include: 
+ - SiteUUID 
+ - SiteName 
+ - CoordinateMethodCV
+ - EPSGCodeCV
+ 
   
-  
-  ###6. Organizations_UT.py - generate organization directory, including names, email addresses, and website hyper links for organization suppyling data source
+  ### 6. Organizations_UT.py - generate organization directory, including names, email addresses, and website hyper links for organization suppyling data source
   
         -All variables are hardcoded according to organization.
         
@@ -156,4 +168,11 @@ Mandatory fields include:
    OrganizationUUID | OrganizationName | OrganizationPurview| OrganizationWebsite | OrganizationPhoneNumber | OrganizationContactName| OrganizationContactEmail | DataMappingURL | MaximumAmountUnitCV
    ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- |----|
   UTDWRE | Utah Division of Water Resources | Water Planning| Water Planning| 8015387280 |Craig Miller| craigmiller@utah.gov| https://github.com/WSWCWaterDataExchange/WaDE2.0|
-        
+       
+Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
+Mandatory fields include: 
+ - SiteUUID 
+ - SiteName 
+ - CoordinateMethodCV
+ - EPSGCodeCV
+ 
