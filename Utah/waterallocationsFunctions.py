@@ -4,6 +4,8 @@ import numpy as np
 import beneficialUseDictionary
 from pyproj import CRS, Transformer
 from decimal import Decimal
+from datetime import datetime
+from dateutil.parser import parse
 
 def assignBenUseCategory(colrowValue):
     # look up beneficial use
@@ -30,6 +32,20 @@ def assignWaterSourceID(colrowValue, df400):
         else:
             outList = ''
     return outList
+
+def assignSiteID(colrowValue, df500):
+    if colrowValue == '' or pd.isnull(colrowValue):
+        outList = ''
+    else:
+        sitl = df500.loc[df500['SiteNativeID'] == colrowValue, 'SiteUUID']
+        #print(sitl)
+        #print(sitl.empty)
+        if not(sitl.empty):            # check if the series is empty
+            outList = ','.join(str(inx) for inx in sitl) #sil.iloc[0]
+        else:
+            outList = ''
+    return outList
+
 # find no-loop approach
 def assignallocTypeCV(colrowValue):
     # look up allocation dictionary
@@ -94,6 +110,61 @@ def assignSiteTypeCV(colrowValue):
             outList = ''
 
     return outList
+
+def strLiteralToDateString(inString):
+    #print(inString)
+    try:
+        if inString == '' or pd.isnull(inString):
+            valndf = ''
+        else:
+            inStringStr = str(int(inString))
+            #print(inStringStr)
+            xvs = inStringStr.strip()  # remove whitespace chars`
+            #print(xvs)
+            if len(xvs) == 8:
+                xvstr = xvs
+                yrstr = xvstr[0:4]
+                mstr = xvstr[4:6]
+                dstr = xvstr[6:8]
+                valn = mstr + '/' + dstr + '/' + yrstr
+                valD = datetime.strptime(valn, '%m/%d/%Y')
+                # print(valD)
+                valnDd = valD.date()
+                # print(valnDd)
+                valndf = valnDd.strftime('%m/%d/%Y')
+                #print('date:', valndf)
+            elif len(xvs) == 4:
+                xvstr = xvs + '0101'
+                yrstr = xvstr[0:4]
+                mstr = xvstr[4:6]
+                dstr = xvstr[6:8]
+                valn = mstr + '/' + dstr + '/' + yrstr
+                valD = datetime.strptime(valn, '%m/%d/%Y')
+                # print(valD)
+                valnDd = valD.date()
+                # print(valnDd)
+                valndf = valnDd.strftime('%m/%d/%Y')
+                # print('date:', valndf)
+            else:
+                valndf = ''
+            #print(valn)
+    except:
+        valndf = ''
+
+    return valndf
+
+"""
+    try:
+        valD = datetime.strptime(valn, '%m/%d/%Y')
+        #print(valD)
+        valnDd = valD.date()
+        #print(valnDd)
+        valndf = valnDd.strftime('%m/%d/%Y')
+        print('date:', valndf)
+        return valndf
+    except:
+        return valn
+"""
 
 # Project the x and y (UTM NAD 83) coordinates to WGS84 lat lon
 def assignLatLon(x1, y1):
