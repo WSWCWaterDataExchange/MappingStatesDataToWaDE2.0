@@ -29,7 +29,7 @@ The 7 Scripts are entitled:
 -  **variables.py**
 
 ##  1.  sites.py - generate a list of sites where water is allocated
- Table Required: **DWR_Water_Right_-_Net_Amounts.csv** (Master Table containing Colorado Water Right Net Amount information) [Colorado Information Marketplace](https://data.colorado.gov/Water/DWR-Water-Right-Net-Amounts/acsg-f33s))
+ Table Required: **DWR_Water_Right_-_Net_Amounts.csv** (Master Table containing Colorado Water Right Net Amount information) from[Colorado Information Marketplace](https://data.colorado.gov/Water/DWR-Water-Right-Net-Amounts/acsg-f33s))
 
         - generate empty sites.csv file with controlled vocabulary headers
         - assign SiteNativeID from WDID
@@ -58,4 +58,23 @@ Any data missing required values and dropped from the WaDE-ready dataset are sav
 
 
 ##  2. watersources.py - generate list of water sources from which water is allocated from
- Table Required: **DWR_Water_Right_-_Net_Amounts.csv** (Master Table containing Colorado Water Right Net Amount information) [Colorado Information Marketplace](https://data.colorado.gov/Water/DWR-Water-Right-Net-Amounts/acsg-f33s))
+ Table Required: **DWR_Water_Right_-_Net_Amounts.csv** (Master Table containing Colorado Water Right Net Amount information) from [Colorado Information Marketplace](https://data.colorado.gov/Water/DWR-Water-Right-Net-Amounts/acsg-f33s))
+
+     - generate empty watersources.csv file with controlled vocabulary headers  
+       - generate WaterSourceNativeID 
+       - generate WaterSourceUUID (Prepend "CODWR" with WaterSourceNativeID)
+       - drop data if missing WaterSourceUUID, WaterSourceTypeCV, and WaterQualityIndicatorCV
+       - copy results into **watersources.csv** and export 
+ 
+    #### Sample data (all columns not included):
+   
+   WaterSourceUUID | WaterSourceNativeID | WaterSourceName | WaterSourceTypeCV | WaterQualityIndicatorCV
+   ------------ | ------------ | -------- | ---------- | ---- 
+   CODWR_1| 1 | SOUTH PLATTE RIVER | Unknown| Unspecified
+
+Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data. 
+  Mandatory fields include: 
+ - SiteUUID 
+ - SiteName 
+ - CoordinateMethodCV 
+ - EPSGCodeCV
