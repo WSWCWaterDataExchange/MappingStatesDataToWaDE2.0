@@ -104,7 +104,7 @@ Supplemental Script required:
    
    OrganizationUUID | SiteUUID | WaterSourceUUID | BeneficialUseCategory | AllocationNativeID | AllocationTypeCV | AllocationOwner | AllocationLegalStatusCV | AllocationAmount | 
    ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- |------|
- CODWTR | CODWR_100501 |CODWTR_1| IRRIGATION,RECREATION,FISHERY |20543.0-0-C| |EMPIRE DITCH|Absolute | 612.48| 
+ CODWR | CODWR_100501 |CODWR_1| IRRIGATION,RECREATION,FISHERY |20543.0-0-C| |EMPIRE DITCH|Absolute | 612.48| 
 
 
 Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
