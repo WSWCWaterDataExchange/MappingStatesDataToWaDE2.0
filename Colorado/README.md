@@ -114,3 +114,24 @@ Mandatory fields include:
  - CoordinateMethodCV
  - EPSGCodeCV
  
+ 
+ 
+
+
+### 4. variables.py - generate legend of granular variables specific to each state
+        - all values are hard-coded according to state
+
+
+#### Sample data (all columns not included):
+   
+   VariableSpecificUUID | VariableSpecificCV| VariableCV| | AggregationStatisticCV| AggregationInterval | AggregationIntervalUnitCV | ReportYearStartMonth| ReportYearTypeCV | AmountUnitCV | MaximumAmountUnitCV
+   ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- |----|
+  CODWR Allocation All | Allocation All | Allocation| Average | 1|Day|11|Irrigation|CFS|AFY|
+  
+  Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
+Mandatory fields include: 
+ - SiteUUID 
+ - SiteName 
+ - CoordinateMethodCV
+ - EPSGCodeCV
+   
