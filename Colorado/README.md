@@ -48,14 +48,14 @@ The 7 Scripts are entitled:
    ------------ | ------------ | ---------- | ---- | ----
    CODWR_100501 | 100501 |Ditch | -104.484 |40.37853
 
+Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
+  Mandatory fields include: 
+ - SiteUUID 
+ - SiteName
+ - CoordinateMethodCV 
+ - EPSGCodeCV
 
 
 
-
-
-
-p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px Helvetica}
-
-
-
-
+##  2. watersources.py - generate list of water sources from which water is allocated from
+ Table Required: **DWR_Water_Right_-_Net_Amounts.csv** (Master Table containing Colorado Water Right Net Amount information) [Colorado Information Marketplace](https://data.colorado.gov/Water/DWR-Water-Right-Net-Amounts/acsg-f33s))
