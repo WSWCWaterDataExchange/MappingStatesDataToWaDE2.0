@@ -8,7 +8,7 @@ The dataset is updated annually. For more information on WaDE, please visit http
 
 
 ### Summary
-This document summarizes the process to prepare and share CODWR’s Water Rights data from the Colorado Information Marketplace database for inclusion in the Western States Water Council’s Water Data Exchange (WaDE 2.0). In order to extract Colorado's water rights data and publish it online through ESRI layers to be ready for WaDE 2.0, you must execute 8 Python Scripts to generate CSV data compatible with WaDE 2.0.
+This document summarizes the process to prepare and share CODWR’s Water Rights data from the Colorado Information Marketplace database for inclusion in the Western States Water Council’s Water Data Exchange (WaDE 2.0). In order to extract Colorado's water rights data and publish it online through ESRI layers to be ready for WaDE 2.0, you must execute 7 Python Scripts to generate CSV data compatible with WaDE 2.0.
 
  ## Data Prep
  ### Step 1: Execute 7 Python Scripts to generate CSV data compatible with WaDE 2.0
@@ -36,3 +36,26 @@ The 7 Scripts are entitled:
         - generate WaDESiteUUID (Prepend CODWR with SiteNativeID)
         - drop data if missing latitude/longitude
         - copy results into **sites.csv** and export
+        
+        
+
+
+
+
+#### Sample data (all columns not included):
+
+   WaDESiteUUID | SiteNativeID | SiteTypeCV | Long | Lat
+   ------------ | ------------ | ---------- | ---- | ----
+   CODWR_100501 | 100501 |Ditch | -104.484 |40.37853
+
+
+
+
+
+
+
+p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px Helvetica}
+
+
+
+
