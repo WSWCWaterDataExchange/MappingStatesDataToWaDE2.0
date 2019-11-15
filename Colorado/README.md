@@ -79,3 +79,38 @@ Any data missing required values and dropped from the WaDE-ready dataset are sav
  - SiteName 
  - CoordinateMethodCV 
  - EPSGCodeCV
+ 
+ 
+
+
+
+##  3. waterallocations.py - generate master sheet of water allocations to import into WaDE 2.0
+ Table Required: **DWR_Water_Right_-_Net_Amounts.csv** (Master Table containing Colorado Water Right Net Amount information) from [Colorado Information Marketplace](https://data.colorado.gov/Water/DWR-Water-Right-Net-Amounts/acsg-f33s))
+
+Supplemental Script required:
+**beneficialuseDictionary.py**
+-Includes the following code dictionaries for Colorado: Beneficial Use, Allocation Legal Status, Allocation Type CV, and Water Source Type CV.
+
+       - generate empty waterallocations.csv file with controlled vocabulary headers
+       - generate SiteUUID (Prepend CODWR to NativeSiteID)       
+       - call beneficialuseDictionary.py and assign defined beneficial uses to water right 
+       - call watersources.csv and look up the WaterSourceUUID based on the "WaterSource" value
+       - assign NativeAllocationID by concatenating the three values of these fields with a “-” between them (Admin No, Order          No, Decreed Units)       
+       - drop data if OrganizationUUID, VariableSpecificUUID, WaterSourceUUID, MethodUUID, and AllocationPriorityDate are null
+       - copy results into **waterallocations.csv** and export
+
+
+####  Sample data (all columns not included):
+   
+   OrganizationUUID | SiteUUID | WaterSourceUUID | BeneficialUseCategory | AllocationNativeID | AllocationTypeCV | AllocationOwner | AllocationLegalStatusCV | AllocationAmount | 
+   ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- |------|
+ CODWTR | CODWR_100501 |CODWTR_1| IRRIGATION,RECREATION,FISHERY |20543.0-0-C| |EMPIRE DITCH|Absolute | 612.48| 
+
+
+Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
+Mandatory fields include: 
+ - SiteUUID 
+ - SiteName 
+ - CoordinateMethodCV
+ - EPSGCodeCV
+ 
