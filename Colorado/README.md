@@ -44,9 +44,9 @@ The 7 Scripts are entitled:
 
 #### Sample data (all columns not included):
 
-   WaDESiteUUID | SiteNativeID | SiteTypeCV | Long | Lat
-   ------------ | ------------ | ---------- | ---- | ----
-   CODWR_100501 | 100501 |Ditch | -104.484 |40.37853
+   WaDESiteUUID | SiteNativeID | SiteTypeCV | Long | Lat|
+   ------------ | ------------ | ---------- | ---- | ----|
+   CODWR_100501 | 100501 |Ditch | -104.484 |40.37853|
 
 Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
   Mandatory fields include: 
@@ -69,9 +69,9 @@ Any data missing required values and dropped from the WaDE-ready dataset are sav
  
    #### Sample data (all columns not included):
    
-   WaterSourceUUID | WaterSourceNativeID | WaterSourceName | WaterSourceTypeCV | WaterQualityIndicatorCV
-   ------------ | ------------ | -------- | ---------- | ---- 
-   CODWR_1| 1 | SOUTH PLATTE RIVER | Unknown| Unspecified
+   WaterSourceUUID | WaterSourceNativeID | WaterSourceName | WaterSourceTypeCV | WaterQualityIndicatorCV|
+   ------------ | ------------ | -------- | ---------- | ---- |
+   CODWR_1| 1 | SOUTH PLATTE RIVER | Unknown| Unspecified|
 
 Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data. 
   Mandatory fields include: 
@@ -151,4 +151,7 @@ Mandatory fields include:
  - SiteName 
  - CoordinateMethodCV
  - EPSGCodeCV
+ 
+ 
+   
  
