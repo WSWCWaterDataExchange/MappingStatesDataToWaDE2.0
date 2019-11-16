@@ -32,13 +32,14 @@ The 7 Scripts are entitled:
  Table Required: **DWR_Water_Right_-_Net_Amounts.csv** (Master Table containing Colorado Water Right Net Amount information) from [Colorado Information Marketplace](https://data.colorado.gov/Water/DWR-Water-Right-Net-Amounts/acsg-f33s))
 
         - generate empty sites.csv file with controlled vocabulary headers
-        - assign SiteNativeID from WDID
-        - generate WaDESiteUUID (Prepend CODWR with SiteNativeID)
+        - drop duplicates of SiteNativeID, SiteName, SiteTypeCV       
         - drop data if missing latitude/longitude
+        - hard code "Unknown" for SiteTypeCV value if it is missing      
+        - generate WaDESiteUUID (Prepend CODWR with SiteNativeID)
+        - drop data if missing WaDESiteUUID, SiteName, CoordinateMethodCV, GNISCodeCV, EPSGCodeCV       
         - copy results into **sites.csv** and export
         
         
-
 
 
 
@@ -60,10 +61,11 @@ Any data missing required values and dropped from the WaDE-ready dataset are sav
 ##  2. watersources.py - generate list of water sources from which water is allocated from
  Table Required: **DWR_Water_Right_-_Net_Amounts.csv** (Master Table containing Colorado Water Right Net Amount information) from [Colorado Information Marketplace](https://data.colorado.gov/Water/DWR-Water-Right-Net-Amounts/acsg-f33s))
 
-     - generate empty watersources.csv file with controlled vocabulary headers  
-       - generate WaterSourceNativeID 
-       - generate WaterSourceUUID (Prepend "CODWR" with WaterSourceNativeID)
-       - drop data if missing WaterSourceUUID, WaterSourceTypeCV, and WaterQualityIndicatorCV
+       - generate empty watersources.csv file with controlled vocabulary headers  
+       - drop duplicates of SiteNativeID, SiteName, SiteTypeCV   
+       - drop data if missing latitude/longitude       
+       - generate WaterSourceUUID (Prepend "CODWR" with WaterSourceNativeID
+       - drop data if missing WaDESiteUUID, SiteName, CoordinateMethodCV, GNISCodeCV, EPSGCodeCV
        - copy results into **watersources.csv** and export 
  
  
