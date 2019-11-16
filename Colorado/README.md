@@ -13,7 +13,7 @@ This document summarizes the process to prepare and share CODWR’s Water Rights
  ## Data Prep
  ### Step 1: Execute 7 Python Scripts to generate CSV data compatible with WaDE 2.0
 
-There are 7 Python Scripts that use queries to extract CODWR’s water rights data into views compatible with WaDE 2.0. Two of the scripts, **beneficialuseDictionary.py** and **waterallocationsFunctions.py**, are required as input scripts for **waterallocations.py**.  All scripts can be found at the following link in WaDE’s Github repository “MappingStatesDataToWaDE2.0” in the Colorado folder:
+There are 7 Python Scripts that use queries to extract CODWR’s water rights data into views compatible with WaDE 2.0. One of the scripts, **beneficialuseDictionary.py** , is required as an input script for **waterallocations.py**.  All scripts can be found at the following link in WaDE’s Github repository “MappingStatesDataToWaDE2.0” in the Colorado folder:
 https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Colorado
 
 
@@ -97,7 +97,8 @@ Supplemental Script required:
        - generate SiteUUID (Prepend CODWR to NativeSiteID)       
        - call beneficialuseDictionary.py and assign defined beneficial uses to water right 
        - call watersources.csv and look up the WaterSourceUUID based on the "WaterSource" value
-       - assign NativeAllocationID by concatenating the three values of these fields with a “-” between them (Admin No, Order          No, Decreed Units)       
+       - assign NativeAllocationID by concatenating the three values of these fields with a “-” between them (Admin No, Order          No, Decreed Units)      
+       - assign AllocationLegalStatusCV through a logic for loop     
        - drop data if OrganizationUUID, VariableSpecificUUID, WaterSourceUUID, MethodUUID, and AllocationPriorityDate are null
        - copy results into **waterallocations.csv** and export
 
