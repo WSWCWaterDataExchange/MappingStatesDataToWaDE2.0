@@ -166,6 +166,23 @@ def strLiteralToDateString(inString):
         return valn
 """
 
+def formatDateString(inString):
+    #print(inString)
+    try:
+        if inString == '' or pd.isnull(inString):
+            valndf = ''
+        else:
+            valD = datetime.strptime(inString, '%Y-%m-%dT00:00:00.000Z')
+            #print(valD)
+            valnDd = valD.date()
+            #print(valnDd)
+            valndf = valnDd.strftime('%m/%d/%Y')
+            #print('date:', valndf)
+    except:
+        valndf = ''
+
+    return valndf
+
 # Project the x and y (UTM NAD 83) coordinates to WGS84 lat lon
 def assignLatLon(x1, y1):
 
