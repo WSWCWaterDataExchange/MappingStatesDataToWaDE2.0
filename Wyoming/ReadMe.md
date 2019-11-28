@@ -124,7 +124,16 @@ Any data missing required values and dropped from the WaDE-ready dataset are sav
     - MethodDescription
     - ApplicableResourceTypeCV
     - MethodTypeCV
+    
+###  6. Organizations_WY.py - generate organization directory, including names, email addresses, and website hyper links for organization suppyling data source
+
+        - all values are hard-coded according to organization
         
+ Sample data
+ 
+  OrganizationUUID | OrganizationName | State | OrganizationPurview | OrganizationWebsite | OrganizationPhoneNumber | OrganizationContactName | OrganizationContactEmail | DataMappingURL
+  ---------- | ---------- | ----------------- | -------------- | ------------------------ | ------------ | ----------------- | ------------------ | -------------------
+ WOS | Wyoming Office of Something | Wyoming | nan | www.wos.wy.gov | 123-456-7890 | John Doe | john.doe@email.com | www.github.com/WaDE/WY/Data
         
         
         

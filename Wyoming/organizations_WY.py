@@ -65,10 +65,9 @@ outdf100 = outdf100.replace('', np.nan)
 #any cell of these columns is null
 #outdf100_nullMand = outdf100.loc[outdf100.isnull().any(axis=1)] --for all cols
 
-#ToDO: Get mandatory fields from Adel
+#ToDO: Get mandatory fields from Adel | Use best judgement for time being
 outdf100_nullMand = outdf100.loc[(outdf100["OrganizationUUID"].isnull()) | (outdf100["OrganizationName"].isnull()) |
-                                (outdf100["State"].isnull()) | (outdf100["ApplicableResourceTypeCV"].isnull()) |
-                                (outdf100["MethodTypeCV"].isnull())]
+                                (outdf100["State"].isnull()) | (outdf100["OrganizationWebsite"].isnull())]
 #outdf100_nullMand = outdf100.loc[[False | (outdf100[varName].isnull()) for varName in requiredCols]]
 if(len(outdf100_nullMand.index) > 0):
     outdf100_nullMand.to_csv('organizations_mandatoryFieldMissing.csv')  # index=False,
