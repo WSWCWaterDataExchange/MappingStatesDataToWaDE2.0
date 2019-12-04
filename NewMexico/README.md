@@ -118,9 +118,9 @@ Supplemental Script required 2:
 
 ####  Sample data (all columns not included):
    
-   OrganizationUUID | SiteUUID | WaterSourceUUID | BeneficialUseCategory | AllocationNativeID | AllocationOwner | AllocationLegalStatusCV |  
-   ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- |------|
-  NMOSE| 	NM_32| 	NM_1   | 72-12-1 livestock watering | 43 |MHEALY, EDMUND | Permit |
+   OrganizationUUID | SiteUUID | WaterSourceUUID | BeneficialUseCategory | AllocationNativeID | AllocationOwner | AllocationLegalStatusCV   
+   ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- 
+  NMOSE| NM_32| NM_1   | 72-12-1 livestock watering | 43 |MHEALY, EDMUND | Permit |
 
 Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**allocations_mandatoryFieldMissing.csv**) for future inspection.
 Mandatory fields include: 
