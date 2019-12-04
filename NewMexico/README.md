@@ -1,106 +1,104 @@
 # WaDE Preparation
 
-This readme details an overview, the specific steps taken, and the final product of the process applied to water rights data made available by the [Utah Division of Water Rights (UTDWR)](https://www.waterrights.utah.gov/contact.asp) for inclusion into the Water Data Exchange (WaDE). 
+This readme details an overview, the specific steps taken, and the final product of the process applied to water rights and use data made available by the [New Mexico Office of the State Engineer NMOSE](http://geospatialdata-ose.opendata.arcgis.com/datasets/ose-points-of-diversion) for inclusion into the Water Data Exchange (WaDE). For more information on WaDE, please visit http://wade.westernstateswater.org/
 
 ### Overview 
-The Utah Division of Water Rights hosts its water right data at the [PUBDUMP Database table dump Utility](https://www.waterrights.utah.gov/cgi-bin/pubdump.exe?DBNAME=WRDB&SECURITYKEY=wrt2012access).
-The dataset is updated annually. For more information on WaDE, please visit http://wade.westernstateswater.org/
-
+The New Mexico Office of the State Engineer hosts its water right data using ArcGIS onlie at: http://geospatialdata-ose.opendata.arcgis.com/datasets/ose-points-of-diversion. The metadata are available from: http://www.ose.state.nm.us/GIS/PODS/nmose_WATERS_PODs_data_dictionary_v8.xlsx 
 
 ### Summary
-This document summarizes the process to prepare and share UTDWR’s Water Rights data from the PUBDUMP database for inclusion in the Western States Water Council’s Water Data Exchange (WaDE 2.0). In order to extract Utah water rights data from the PUBDUMP database and publish it online through ESRI layers to be ready for WaDE 2.0, you must execute 8 Python Scripts to generate CSV data compatible with WaDE 2.0.
+This document summarizes the process to prepare and share NMOSE’s Water Rights data for inclusion in the Western States Water Council’s Water Data Exchange (WaDE 2.0). In order to extract the New Mexico water rights data from the input files and publish it online through ESRI layers to be ready for WaDE 2.0, you must execute 8 Python Scripts to generate CSV data compatible with WaDE 2.0.
  
  ## Data Prep
- ### Step 1: Execute 8 Python Scripts to generate CSV data compatible with WaDE 2.0
+ ### Step 1: Execute 8 Python Notebooks to generate CSV data compatible with WaDE 2.0
 
-There are 8 Python Scripts that use queries to extract UTDWR’s water rights data into views compatible with WaDE 2.0. Two of the scripts, **beneficialuseDictionary.py** and **waterallocationsFunctions.py**, are required as input scripts for **watersources_Ut.py** and **waterallocations_UT.py**, respectively.  All scripts can be found at the following link in WaDE’s Github repository “MappingStatesDataToWaDE2.0” in the Utah folder:
-https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Utah
+There are 8 Python scripts that use queries to extract NMOSE’s water rights data into views compatible with WaDE 2.0. The **beneficialuseDictionary.py** holds dictionaries that are required for mapping different codes to their respective names, for example codes for the legal status of allocations. The **utilityFunctions.py**, holds functions that are required to be called from other scripts **watersources_NM.ipynb**, **sites_NM.ipynb**, and **waterallocations_NM.ipynb**.  All scripts can be found at the following link in WaDE’s Github repository “MappingStatesDataToWaDE2.0” in the New Mexico folder:
+https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/NewMexico
 
-
-The overall objective of the data migration scripts are to prepare datasets retrieved from state repositories for upload into WaDE 2.0.  This process applied to Utah Water Rights data, and considering the data included in this dataset involves passing the raw data through eight Python scripts. These scripts are outlined below.
-
-The 8 Scripts are entitled:
+The 8 Scripts are are thus divided into two:
+**1. Scripts to prepare the csv files**
 - **sites_UT.py**
 - **watersources_UT.py**
-   - **beneficialuseDictionary.py**
 - **waterallocations_UT.py**
-   - **waterallocationsFunctions.py**
 -  **methods_UT.py**
 -  **organizations_UT.py**
 -  **variables_UT.py**
 
+**2. Dependency scripts**
+- **beneficialuseDictionary.py**
+- **watersources_NM.ipynb**
 
 
-##  1.  sites_UT.py - generate a list of sites where water is allocated
- Table Required: **Water_Master.csv** (Master Table containing Utah Water Right and Exchange Information on [PUBDUMP](https://www.waterrights.utah.gov/cgi-bin/pubdump.exe?DBNAME=WRDB&SECURITYKEY=wrt2012access))
+
+##  1.  sites_UT.ipynb - generate a list of sites where water is allocated
+ Input Table: 
+ **OSE_Points_of_Diversion.csv** (Points of diversions table containing New Mexico Water Rights data together with site information for for water sources).
 
         - generate empty sites.csv file with controlled vocabulary headers
-        - assign SiteNativeID from RECORD_ID
-        - generate WaDESiteUUID (Concatenate UT with SiteNativeID)
+        - assign SiteNativeID from OBJECTID
+        - generate WaDESiteUUID
+        - Project UTM coordimates to latitude and longitude 
         - drop data if missing latitude/longitude
         - copy results into **sites.csv** and export
-
 
 
 #### Sample data (all columns not included):
 
    WaDESiteUUID | SiteNativeID | SiteTypeCV | Long | Lat
    ------------ | ------------ | ---------- | ---- | ----
-   UTDWRE_177983 | 177983 |U | 431092.606 |4616232.618
+   NM_1 | 928 |Groundwater | -107.8822397 |35.16272037
 
-Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
+Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) for possible future inspection.
   Mandatory fields include: 
  - SiteUUID 
  - SiteName
  - CoordinateMethodCV 
  - EPSGCodeCV
 
+sites.csv is input to waterallocations_NM.ipnb.
 
 
-##  2. watersources_UT.py - generate list of water sources from which water is allocated from
-Tables required:
-**Water_Master.csv** (Master Table containing Utah Water Right and Exchange Information from [PUBDUMP](https://www.waterrights.utah.gov/cgi-bin/pubdump.exe?DBNAME=WRDB&SECURITYKEY=wrt2012access)) and **PointofDiversionTable.csv** (Water Rights, Change, and Exchange Point of Diversion Table from [PUBDUMP](https://www.waterrights.utah.gov/cgi-bin/pubdump.exe?DBNAME=WRDB&SECURITYKEY=wrt2012access))    
+##  2. watersources_UT.ipynb - generate list of water sources from which water is allocated from
+Table required:
+**OSE_Points_of_Diversion.csv** (Points of diversions table containing New Mexico Water Rights data together with site information for for water sources).    
 
 Supplemental Script required:
 **beneficialuseDictionary.py**
- -Includes the following code dictionaries for Utah: Beneficial Use, Allocation Legal Status, Allocation Type CV, Water Source Type CV, and Site Type. 
+ -Includes the following code dictionaries for New Mexico: Beneficial Use, Allocation Legal Status, Groundwater source type, Coordinate method type, and Coordinate method accuracy. 
 
-       - generate empty UTWaterSources.csv file with controlled vocabulary headers  
-       - call beneficialUseDictionary.py and assign defined Water Source Types to their respective codes
+       - generate empty waterSources.csv file with controlled vocabulary headers  
+       - assign defined Water Source Types 
        - generate WaterSourceNativeID 
-       - generate WaterSourceUUID (Concatenate UT with WaterSourceNativeID)
+       - generate WaterSourceUUID 
        - drop data if missing WaterSourceUUID, WaterSourceTypeCV, and WaterQualityIndicatorCV
        - copy results into **UTWaterSources.csv** and export 
  
-  UTWaterSources.csv is input to waterallocations_UT.py.
+  waterSources.csv is input to waterallocations_NM.ipnb.
+
 
    #### Sample data (all columns not included):
    
    WaterSourceUUID | WaterSourceNativeID | WaterSourceName | WaterSourceTypeCV | WaterQualityIndicatorCV
    ------------ | ------------ | -------- | ---------- | ---- 
-   UT_1 | 1 | Underground Water Well  | groundwaterall | Fresh
+   NM_1 | 1 | Unspecificed | Unknown | Fresh
 
-Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data. 
+Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**watersources_mandatoryFieldMissing.csv**) for future inspection. 
   Mandatory fields include: 
- - SiteUUID 
- - SiteName 
- - CoordinateMethodCV 
- - EPSGCodeCV
+ - WaterSourceUUID
+ - WaterSourceTypeCV
+ - WaterQualityIndicatorCV
 
 
-
-
-
-
-##  3. waterallocations_UT.py - generate master sheet of water allocations to import into WaDE 2.0
-Table Required: **Water_Master.csv** (Master Table containing Utah Water Right and Exchange Information on [PUBDUMP](https://www.waterrights.utah.gov/cgi-bin/pubdump.exe?DBNAME=WRDB&SECURITYKEY=wrt2012access)) 
+##  3. waterallocations_NM.ipynb - generate master sheet of water allocations to import into WaDE 2.0
+**OSE_Points_of_Diversion.csv** (Points of diversions table containing New Mexico Water Rights data together with site information for for water sources).    
 
 Supplemental Script required:
-**waterallocationFunctions.py**
+**utilityFunctions.py**
 
-       - generate empty UTWaterAllocations.csv file with controlled vocabulary headers
-       - call waterallocationFunctions.py and assign defined beneficial uses to water right 
-       - call UTWaterSources.csv and assign WaDE prepared water sources to water right
+       - generate empty waterAllocations.csv file with controlled vocabulary headers
+       - call functions from utilityFunctions.py referencing the repective dictionaries to assign defined Beneficial Use, Allocation   
+         Legal Status, Groundwater source type, Coordinate method type, and Coordinate method accuracy to water right 
+       - reference waterSources.csv and assign WaDE prepared water sources to water right
+       - reference sites.csv to map the respective sites (points of diversion) to water right
        - assign AllocationOwner based on Company OR FirstName/LastName
        - drop data if AllocationAmount and Allocation Maximum are null
        - copy results into **UTWaterAllocations.csv** and export
@@ -109,22 +107,22 @@ Supplemental Script required:
 
 ####  Sample data (all columns not included):
    
-   OrganizationUUID | SiteUUID | WaterSourceUUID | BeneficialUseCategory | AllocationNativeID | AllocationTypeCV | AllocationOwner | AllocationLegalStatusCV | AllocationAmount | 
+   OrganizationUUID | SiteUUID | WaterSourceUUID | BeneficialUseCategory | AllocationNativeID | AllocationOwner | AllocationLegalStatusCV |  
    ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- |------|
-  UTDWRE | UTDWRE_72714 | UTDWRE_2 | Irrigation, Stockwatering | 61-2981 |Underground Water Claim| Morgan Ranches, LLC | Certificated | 0.4223| 
+  NMOSE| 	NM_32| 	NM_1   | 72-12-1 livestock watering | 43 |MHEALY, EDMUND | Permit |
 
-Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
+Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**allocations_mandatoryFieldMissing.csv**) for future inspection.
 Mandatory fields include: 
- - SiteUUID 
- - SiteName 
- - CoordinateMethodCV
- - EPSGCodeCV
+ - OrganizationUUID
+ - VariableSpecificUUID
+ - WaterSourceUUID
+ - MethodUUID
+ - AllocationPriorityDate
  
  
+
  
- 
- 
-### 4. variables_UT.py - generate legend of granular variables specific to each state
+### 4. variables_NM.ipynb - generate legend of granular variables specific to each state
         - all values are hard-coded according to state
 
 
@@ -134,46 +132,26 @@ Mandatory fields include:
    ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- |----|
   Allocation All | Allocation | Average| 1 | Year |10| WaterYear| CFS|AF|
   
-  Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
-Mandatory fields include: 
- - SiteUUID 
- - SiteName 
- - CoordinateMethodCV
- - EPSGCodeCV
-   
+   MethodUUID	MethodName	MethodDescription	MethodNEMILink	ApplicableResourceTypeCV	MethodTypeCV
+	Water Allocation				Adjudicated
+
   
-### 5. methods_ut.py - generate legend of granular variables specific to each state detailing water right/allocation/etc data collection.
+### 5. methods_NM.ipynb - generate legend of granular variables specific to each state detailing water right/allocation/etc data collection.
        - all values are hard-coded according to state
        
 #### Sample data (all columns not included):
    
-   MethodUUID | MethodName | MethodDescription| MethodNEMLink | ApplicableResourceTypeCV | MethodTypeCV| DataCoverageValue | DataQualityValueCV | DataConfidenceValue|
-   ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- | --------|
-  UT_STREAMFLOW_SUPPLY| Average Streamflow Method | Average Streamflow Method|  | Surface Water | Modeled|      |         |
-
-Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
-Mandatory fields include: 
- - SiteUUID 
- - SiteName 
- - CoordinateMethodCV
- - EPSGCodeCV
+   MethodUUID | MethodName | MethodDescription| MethodNEMLink | 
+   ---------------- | ------------ | -------- | ---------- | 
+  NM_WaterAllocation| Water Allocation | Water Rights| http://geospatialdata-ose.opendata.arcgis.com/search?groupIds=fabf18d6e0634ae38c86475c9ada6498 | 
  
   
-  ### 6. Organizations_UT.py - generate organization directory, including names, email addresses, and website hyper links for organization suppyling data source
+  ### 6. Organizations_NM.ipynb - generate organization directory, including names, email addresses, and website hyper links for organization suppyling data source
   
         -All variables are hardcoded according to organization.
         
  #### Sample data (all columns not included):
    
-   OrganizationUUID | OrganizationName | OrganizationPurview| OrganizationWebsite | OrganizationPhoneNumber | OrganizationContactName| OrganizationContactEmail | DataMappingURL | 
-   ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- |
-  UTDWRE | Utah Division of Water Resources | Water Planning| Water Planning| 8015387280 |Craig Miller| craigmiller@utah.gov| https://github.com/WSWCWaterDataExchange/WaDE2.0|
-       
-Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
-Mandatory fields include: 
- - SiteUUID 
- - SiteName 
- - CoordinateMethodCV
- - EPSGCodeCV
- 
-
+   OrganizationUUID | OrganizationName | OrganizationPurview| OrganizationWebsite |
+   ---------------- | ------------ | -------- | ---------- | 
+  NMOSE | 	New Mexico Office of the State Engineer | The New Mexico Office of the State Engineer (OSE) provides this geographic data and any associated metadata “as is” without warranty of any kind | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/NewMexico |
