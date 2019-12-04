@@ -15,23 +15,27 @@ There are 8 Python scripts that use queries to extract NMOSE’s water rights da
 https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/NewMexico
 
 The 8 Scripts are are thus divided into two:
+
 **1. Scripts to prepare the csv files**
-- **sites_UT.py**
-- **watersources_UT.py**
-- **waterallocations_UT.py**
--  **methods_UT.py**
--  **organizations_UT.py**
--  **variables_UT.py**
+- **sites_NM.ipynb**
+- **watersources_NM.ipynb**
+- **waterallocations_NM.ipynb**
+- **methods_NM.ipynb**
+- **organizations_NM.ipynb**
+- **variables_NM.ipynb**
 
 **2. Dependency scripts**
 - **beneficialuseDictionary.py**
-- **watersources_NM.ipynb**
+- **utilityFunctions.py**
 
 
 
-##  1.  sites_UT.ipynb - generate a list of sites where water is allocated
+##  1.  sites_NM.ipynb - generate a list of sites where water is allocated
  Input Table: 
  **OSE_Points_of_Diversion.csv** (Points of diversions table containing New Mexico Water Rights data together with site information for for water sources).
+
+Supplemental Script required:
+**utilityFunctions.py**
 
         - generate empty sites.csv file with controlled vocabulary headers
         - assign SiteNativeID from OBJECTID
@@ -57,13 +61,16 @@ Any data missing required values and dropped from the WaDE-ready dataset are sav
 sites.csv is input to waterallocations_NM.ipnb.
 
 
-##  2. watersources_UT.ipynb - generate list of water sources from which water is allocated from
+##  2. watersources_NM.ipynb - generate list of water sources from which water is allocated from
 Table required:
 **OSE_Points_of_Diversion.csv** (Points of diversions table containing New Mexico Water Rights data together with site information for for water sources).    
 
 Supplemental Script required:
 **beneficialuseDictionary.py**
  -Includes the following code dictionaries for New Mexico: Beneficial Use, Allocation Legal Status, Groundwater source type, Coordinate method type, and Coordinate method accuracy. 
+ 
+Supplemental Script required 2:
+**utilityFunctions.py**
 
        - generate empty waterSources.csv file with controlled vocabulary headers  
        - assign defined Water Source Types 
@@ -92,6 +99,10 @@ Any data missing required values and dropped from the WaDE-ready dataset are sav
 **OSE_Points_of_Diversion.csv** (Points of diversions table containing New Mexico Water Rights data together with site information for for water sources).    
 
 Supplemental Script required:
+**beneficialuseDictionary.py**
+ -Includes the following code dictionaries for New Mexico: Beneficial Use, Allocation Legal Status, Groundwater source type, Coordinate method type, and Coordinate method accuracy. 
+ 
+Supplemental Script required 2:
 **utilityFunctions.py**
 
        - generate empty waterAllocations.csv file with controlled vocabulary headers
