@@ -109,7 +109,7 @@ Fresh_SW_GW	| Fresh_SW_GW	      | 		| Unspecified	    | Fresh         	      | 	
 #### Sample data (all columns not included):
 
    VariableSpecificCV | VariableCV | AggregationStatisticCV| AggregationInterval | AggregationIntervalUnitCV | ReportYearStartMonth| ReportYearTypeCV | AmountUnitCV 
-   ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- |----|
+   ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- 
   Consumptive Use | Consumptive Use | Cumulative| 1 | Year |1-Oct| WaterYear| Acre feet
   
   
