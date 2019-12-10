@@ -1,0 +1,5 @@
+LU_SEQ_NO,CONTEXT,VALUE,DESCRIPTION,STATE,LAST_CHANGE_DATE,RETIRED_FLAG
+1,TWDB,TWUP,Temporary Water Use Permit,37,,
+2,TWDB,TWUA,Temporary Water Use Authorization,37,,
+3,TWDB,LAS,Land Administration System,37,,
+4,TWDB,ADL,LAS equivalent pre 1982,37,,
