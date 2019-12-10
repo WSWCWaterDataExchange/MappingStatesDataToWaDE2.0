@@ -1,4 +1,4 @@
-# WaDE Preparation
+# Water Rights (Allocations) Data Preparation for WaDE
 
 This readme details an overview, the specific steps taken, and the final product of the process applied to water rights data made available by the [New Mexico Office of the State Engineer NMOSE](http://geospatialdata-ose.opendata.arcgis.com/datasets/ose-points-of-diversion) for inclusion into the Water Data Exchange (WaDE). For more information on WaDE, please visit http://wade.westernstateswater.org/
 
