@@ -112,24 +112,24 @@ Fresh_SW_GW	| Fresh_SW_GW	      | 		| Unspecified	    | Fresh         	      | 	
    ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- 
   Consumptive Use | Consumptive Use | Cumulative| 1 | Year |1-Oct| WaterYear| Acre feet
   
-  
-### 5. methods_NM.ipynb - generate legend of granular variables specific to each state detailing water right/allocation/etc data collection.
+
+### 5. methods.csv
        - all values are hard-coded according to state
        
 #### Sample data (all columns not included):
    
-   MethodUUID | MethodName | MethodDescription| MethodNEMLink | 
-   ---------------- | ------------ | -------- | ---------- | 
-  NM_WaterAllocation| Water Allocation | Water Rights| http://geospatialdata-ose.opendata.arcgis.com/search?groupIds=fabf18d6e0634ae38c86475c9ada6498 | 
+   MethodUUID | MethodName | MethodDescription| MethodNEMLink 
+   ---------------- | ------------ | -------- | ----------  
+  NMOSE_Water_uses| New Mexico Water Uses | Withdrawal Volume Estimate| http://geospatialdata-ose.opendata.arcgis.com/search?groupIds=fabf18d6e0634ae38c86475c9ada6498 
  
   
-  ### 6. Organizations_NM.ipynb - generate organization directory, including names, email addresses, and website hyper links for organization suppyling data source
+  ### 6. Organizations.csv 
   
         -All variables are hardcoded according to organization.
         
  #### Sample data (all columns not included):
    
    OrganizationUUID | OrganizationName | OrganizationPurview| OrganizationWebsite |
-   ---------------- | ------------ | -------- | ---------- | 
-  NMOSE | 	New Mexico Office of the State Engineer | The New Mexico Office of the State Engineer (OSE) provides this geographic data and any associated metadata “as is” without warranty of any kind | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/NewMexico |
+   ---------------- | ------------ | -------- | ---------- 
+  NMOSE | 	New Mexico Office of the State Engineer | The New Mexico Office of the State Engineer (OSE) provides this geographic data and any associated metadata “as is” without warranty of any kind | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/NewMexico 
 
