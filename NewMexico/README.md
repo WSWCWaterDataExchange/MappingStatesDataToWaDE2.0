@@ -6,8 +6,11 @@ This repository stores code and data for New Mexico water rights and uses data m
 The WaDE 2 organizes data into four specific groups: 
 
 **1. AggregatedAmounts**
+
 **2. Regulatory**
+
 **3. SiteSpecificAmounts**
+
 **4. WaterAllocation**
 
 The data and code for preparation of each group of inputs to WaDE are put into these four directories. 
