@@ -1,0 +1,2 @@
+MethodUUID,MethodName,MethodDescription,MethodNEMILink,ApplicableResourceTypeCV,MethodTypeCV,DataCoverageValue,DataQualityValueCV,DataConfidenceValue
+TWDB_Water_uses,Texas Water Uses,Historical Water Use Estimates,http://www.twdb.texas.gov/waterplanning/waterusesurvey/estimates/index.asp,Unspecified,Water Use,,,
