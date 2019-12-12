@@ -7,9 +7,6 @@ from decimal import Decimal
 from datetime import datetime
 from dateutil.parser import parse
 
-BenUseDictMT
-
-
 def assignBenUseCategoryMT(colrowValue):
     # look up beneficial use
     # may need to modify capitalization in beneficialUseDictionary
