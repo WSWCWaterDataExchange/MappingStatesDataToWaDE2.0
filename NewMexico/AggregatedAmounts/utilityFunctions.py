@@ -7,6 +7,35 @@ from decimal import Decimal
 from datetime import datetime
 from dateutil.parser import parse
 
+BenUseDictMT
+
+
+def assignBenUseCategoryMT(colrowValue):
+    # look up beneficial use
+    # may need to modify capitalization in beneficialUseDictionary
+    benUseDict = beneficialUseDictionary.BenUseDictMT  ##modified key for MT
+    if colrowValue == '' or pd.isnull(colrowValue):
+        outList = ''
+    else:
+        benUseListStr = colrowValue.strip()  # remove whitespace chars
+        outList = ",".join(benUseDict[inx] for inx in list(str(benUseListStr)))
+
+    return outList
+
+
+def assignBenUseCategoryNM(colrowValue):
+    # look up beneficial use
+    # may need to modify capitalization in beneficialUseDictionary
+    benUseDict = beneficialUseDictionary.beneficialUseDictionaryNM  ##modified key for NM
+    if colrowValue == '' or pd.isnull(colrowValue):
+        outList = ''
+    else:
+        benUseListStr = colrowValue.strip()  # remove whitespace chars
+        outList = ",".join(benUseDict[inx] for inx in list(str(benUseListStr)))
+
+    return outList
+
+
 def assignBenUseCategory(colrowValue):
     # look up beneficial use
     # may need to modify capitalization in beneficialUseDictionary
@@ -17,6 +46,25 @@ def assignBenUseCategory(colrowValue):
         benUseListStr = colrowValue.strip()  # remove whitespace chars
         outList = ",".join(benUseDict[inx] for inx in list(str(benUseListStr)))
 
+    return outList
+
+
+def assignWaterSourceID2(colrowValue11, colrowValue22, df400):
+    colrowValue1 = str(colrowValue11).strip()
+    colrowValue2 = str(colrowValue22).strip()
+    if ((colrowValue1 == '') | (pd.isnull(colrowValue1))) & ((colrowValue2 == '') | (pd.isnull(colrowValue2))):
+        outList = 'Unspecificed'
+    else:
+        ml = df400.loc[(df400['WaterSourceName'] == colrowValue1) 
+                       & (df400['WaterSourceTypeCV'] == colrowValue2),
+                       'WaterSourceUUID']
+        #ml = df400.loc[df400['WaterSourceName'] == df100.loc[ix,"WREX_SOURCE"], 'WaterSourceUUID']
+        #print(ml)
+        #print(ml.empty)
+        if not(ml.empty):            # check if the series is empty
+            outList = ml.iloc[0]   # watersourceSer.append(ml.iloc[0])
+        else:
+            outList = 'Unspecificed'
     return outList
 
 def assignWaterSourceID(colrowValue, df400):
@@ -50,7 +98,7 @@ def assignSiteID(colrowValue, df500):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = ''
     else:
-        sitl = df500.loc[df500['SiteNativeID'] == colrowValue, 'SiteUUID']
+        sitl = df500.loc[df500['SiteNativeID'] == colrowValue, 'WaDESiteUUID']
         #print(sitl)
         #print(sitl.empty)
         if not(sitl.empty):            # check if the series is empty
@@ -93,6 +141,33 @@ def assignownerName(colrowValue1, colrowValue2):
         outList = outList1
     else:
         outList = ",".join(map(str, [colrowValue1, colrowValue2]))
+    return outList
+
+def assignallocLegalStatausCVMT(colrowValue):
+    AllocationUseDict = beneficialUseDictionary.legalStatusCVMT
+    if colrowValue == '' or pd.isnull(colrowValue):
+        outList = ''
+    else:
+        benUseListStr = colrowValue.strip()  # remove whitespace chars
+        try:
+            outList = AllocationUseDict[benUseListStr]
+        except:
+            outList = ''
+
+    return outList
+
+
+def assignallocLegalStatausCVNM(colrowValue):
+    AllocationUseDict = beneficialUseDictionary.AllocationLegalStatusDictionaryNM
+    if colrowValue == '' or pd.isnull(colrowValue):
+        outList = ''
+    else:
+        benUseListStr = colrowValue.strip()  # remove whitespace chars
+        try:
+            outList = AllocationUseDict[benUseListStr]
+        except:
+            outList = ''
+
     return outList
 
 def assignallocLegalStatausCV(colrowValue):
@@ -186,6 +261,26 @@ def formatDateString(inString):
             valndf = ''
         else:
             valD = datetime.strptime(inString, '%Y-%m-%dT00:00:00.000Z')
+            #print(valD)
+            valnDd = valD.date()
+            #print(valnDd)
+            valndf = valnDd.strftime('%m/%d/%Y')
+            #print('date:', valndf)
+    except:
+        valndf = ''
+
+    return valndf
+
+def formatDateStringMT(inString1):
+    #print(inString)
+    inString2 = str(inString1).strip()
+    inString3 = inString2.split(",")
+    inString = inString3[0]
+    try:
+        if inString == '' or pd.isnull(inString):
+            valndf = ''
+        else:
+            valD = datetime.strptime(inString, '%m/%d/%Y')
             #print(valD)
             valnDd = valD.date()
             #print(valnDd)

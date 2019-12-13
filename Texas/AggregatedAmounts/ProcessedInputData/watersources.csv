@@ -1,0 +1,4 @@
+WaterSourceUUID,WaterSourceNativeID,WaterSourceName,WaterSourceTypeCV,WaterQualityIndicatorCV,GNISFeatureNameCV,Geometry
+TWDB_1,1,,Ground,Fresh,,
+TWDB_2,2,,Surface,Fresh,,
+TWDB_3,3,,Reuse,Fresh,,
