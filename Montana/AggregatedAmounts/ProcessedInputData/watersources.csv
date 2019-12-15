@@ -1,0 +1,4 @@
+WaterSourceUUID,WaterSourceNativeID,WaterSourceName,WaterSourceTypeCV,WaterQualityIndicatorCV,GNISFeatureNameCV,Geometry
+Fresh_Surface,Fresh_Surface,,Unspecified,Fresh,,
+Fresh_Ground,Fresh_Ground,,Unspecified,Fresh,,
+Fresh_SW_GW,Fresh_SW_GW,,Unspecified,Fresh,,
