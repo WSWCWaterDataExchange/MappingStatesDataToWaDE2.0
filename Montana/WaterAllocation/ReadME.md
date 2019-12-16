@@ -54,45 +54,46 @@ Any data row missing required values and dropped from the WaDE-ready dataset are
  - CoordinateMethodCV 
  - EPSGCodeCV
 
-sites.csv is input to waterallocations_NM.ipnb.
+sites.csv is input to waterallocations_MT.ipnb.
 
 
 ##  2. watersources_MT.ipynb - generate list of water sources from which water is allocated from
 Table required (**Sample**):
-**WaterRights_Simple.csv** (A sample water rights table downloaded from the public data sources search engine at: http://wrqs.dnrc.mt.gov/default.aspx).    
+**WaterRights_Simple.csv** (A sample water rights table downloaded from the public water data search engine at: http://wrqs.dnrc.mt.gov/default.aspx).    
 
 Supplemental Script required:
 **beneficialuseDictionary.py**
- -Includes the following code dictionaries for Montana: Beneficial Use, Allocation Legal Status, Groundwater source type, Coordinate method type, and Coordinate method accuracy. 
+ -Includes Beneficial Use and Allocation Legal Status dictionaries for Montana. 
  
 Supplemental Script required 2:
 **utilityFunctions.py**
 
        - generate empty waterSources.csv file with controlled vocabulary headers  
-       - assign defined Water Source Types 
+       - map water source name from input table
+       - map Water Source Types from input table
        - generate WaterSourceNativeID 
        - generate WaterSourceUUID 
        - drop data if missing WaterSourceUUID, WaterSourceTypeCV, and WaterQualityIndicatorCV
-       - copy results into **UTWaterSources.csv** and export 
+       - copy results into **watersources.csv** and export 
  
-  waterSources.csv is input to waterallocations_NM.ipnb.
-
+  waterSources.csv is input to waterallocations_MT.ipnb.
 
    #### Sample data (all columns not included):
    
    WaterSourceUUID | WaterSourceNativeID | WaterSourceName | WaterSourceTypeCV | WaterQualityIndicatorCV
-   ------------ | ------------ | -------- | ---------- | ---- 
-   NM_1 | 1 | Unspecificed | Unknown | Fresh
+   --------------- | ------------------- | --------------- | ----------------- | ----------------------- 
+   MT_14            | 14            | CHAMBERLAIN CREEK    | Ground           | Fresh
 
 Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**watersources_mandatoryFieldMissing.csv**) for future inspection. 
-  Mandatory fields include: 
+Mandatory fields include: 
  - WaterSourceUUID
  - WaterSourceTypeCV
  - WaterQualityIndicatorCV
 
 
-##  3. waterallocations_NM.ipynb - generate master sheet of water allocations to import into WaDE 2.0
-**OSE_Points_of_Diversion.csv** (Points of diversions table containing New Mexico Water Rights data together with site information for for water sources).    
+##  3. waterallocations_MT.ipynb - generate master sheet of water allocations to import into WaDE 2.0
+Table required (**Sample**):
+**WaterRights_Simple.csv** (A sample water rights table downloaded from the public water data search engine at: http://wrqs.dnrc.mt.gov/default.aspx).      
 
 Supplemental Script required:
 **beneficialuseDictionary.py**
