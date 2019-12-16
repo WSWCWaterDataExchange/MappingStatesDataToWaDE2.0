@@ -9,7 +9,7 @@ The Montana Department of Natural Resources and Conservation MTDNRC hosts its wa
 This document summarizes the process to prepare and share MTDNRC’s Water Rights data for inclusion in the Western States Water Council’s Water Data Exchange (WaDE 2.0). In order to extract the data from the input files and publish it online through ESRI layers to be ready for WaDE 2.0, you must generate CSV data compatible with WaDE 2.0. Some of these are small files with only few rows and can be prepared by manualy modifying existing csv files for other states. The water sources, sites, and water allocations tables are prepared by executing the (Python) Jupyter notebook codes described below.
  
  ## Data Prep
- ### Step 1: Execute 8 Python Notebooks to generate CSV data compatible with WaDE 2.0
+ ### Step 1: Execute Python Notebooks to generate CSV data compatible with WaDE 2.0
 
 There are 3 Jupyter notebook scripts and one Python script that use queries to extract MTDNRC’s water use data into views compatible with WaDE 2.0. The **beneficialuseDictionary.py** holds dictionaries that are required for mapping different codes to their respective names, for example codes for the purpose of water use. The **utilityFunctions.py** holds functions that are required to be called from other scripts **watersources_MT.ipynb**, **sites_MT.ipynb**, and **waterallocations_MT.ipynb**.  All scripts can be found at the following link in WaDE’s Github repository “MappingStatesDataToWaDE2.0” in the Montana folder:
 https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Montana
