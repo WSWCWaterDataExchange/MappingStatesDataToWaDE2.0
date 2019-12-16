@@ -27,6 +27,7 @@ The Python notebooks and Scripts are thus divided into two:
 
 
 ##  1.  sites_MT.ipynb - generate a list of sites where water is allocated
+ 
  Input Table (**sample**): 
  **WaterRights_Diversion.csv** (Points of diversions table containing Montana Water Rights data together with site information for for water sources).
 
@@ -58,6 +59,7 @@ sites.csv is input to waterallocations_MT.ipnb.
 
 
 ##  2. watersources_MT.ipynb - generate list of water sources from which water is allocated from
+
 Table required (**Sample**):
 **WaterRights_Simple.csv** (A sample water rights table downloaded from the public water data search engine at: http://wrqs.dnrc.mt.gov/default.aspx).    
 
@@ -92,32 +94,35 @@ Mandatory fields include:
 
 
 ##  3. waterallocations_MT.ipynb - generate master sheet of water allocations to import into WaDE 2.0
+
 Table required (**Sample**):
 **WaterRights_Simple.csv** (A sample water rights table downloaded from the public water data search engine at: http://wrqs.dnrc.mt.gov/default.aspx).      
 
 Supplemental Script required:
 **beneficialuseDictionary.py**
- -Includes the following code dictionaries for New Mexico: Beneficial Use, Allocation Legal Status, Groundwater source type, Coordinate method type, and Coordinate method accuracy. 
+ -Includes Beneficial Use and Allocation Legal Status dictionaries for Montana. 
  
 Supplemental Script required 2:
 **utilityFunctions.py**
 
        - generate empty waterAllocations.csv file with controlled vocabulary headers
-       - call functions from utilityFunctions.py referencing the repective dictionaries to assign defined Beneficial Use, Allocation   
-         Legal Status, Groundwater source type, Coordinate method type, and Coordinate method accuracy to water right 
-       - reference waterSources.csv and assign WaDE prepared water sources to water right
-       - reference sites.csv to map the respective sites (points of diversion) to water right
-       - assign AllocationOwner based on Company OR FirstName/LastName
-       - drop data if AllocationAmount and Allocation Maximum are null
-       - copy results into **UTWaterAllocations.csv** and export
+       - reference sites.csv to map the respective SiteUUID for sites (points of diversion) to water right table based on PODID
+       - Map WaterSourceUUID from watersources.csv based on Source type and Source name 
+       - Map Beneficial uses and Allocation legal status from the respective dictionaries
+       - Assign AllocationOwner based on Company OR FirstName/LastName
+       - Parse Allocation start and end time frame strings to fit WaDE2 specification
+       - Assign allocation native ID from WRNUMBER
+       - Map Allocation amount and Allocation acreage
+       - drop data if both AllocationAmount and AllocationMaximum are null
+       - copy results into **waterallocations.csv** and export
         
 
 
 ####  Sample data (all columns not included):
    
-   OrganizationUUID | SiteUUID | WaterSourceUUID | BeneficialUseCategory | AllocationNativeID | AllocationOwner | AllocationLegalStatusCV   
-   ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- 
-  NMOSE| NM_32| NM_1   | 72-12-1 livestock watering | 43 |MHEALY, EDMUND | Permit |
+   OrganizationUUID | AllocationNativeID | BeneficialUseCategory | AllocationLegalStatusCV | AllocationOwner    
+   ---------------- | ------------------ | --------------------- | ----------------------- | --------------- 
+   MTDNRC           | 38H 102244 00      | STOCK                 | ACTIVE                  | USA (DEPT OF INTERIOR BUREAU OF LAND MGMT)
 
 Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**allocations_mandatoryFieldMissing.csv**) for future inspection.
 Mandatory fields include: 
@@ -128,38 +133,32 @@ Mandatory fields include:
  - AllocationPriorityDate
  
  
-
- 
-### 4. variables_NM.ipynb - generate legend of granular variables specific to each state
+### 4. variables.csv - generate legend of granular variables specific to each state
         - all values are hard-coded according to state
 
-
 #### Sample data (all columns not included):
    
-   VariableSpecificCV | VariableCV | AggregationStatisticCV| AggregationInterval | AggregationIntervalUnitCV | ReportYearStartMonth| ReportYearTypeCV | AmountUnitCV | MaximumAmountUnitCV
-   ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- |----|
-  Allocation All | Allocation | Average| 1 | Year |10| WaterYear| CFS|AF|
+VariableSpecificUUID | VariableCV | AggregationStatisticCV| AggregationInterval | AggregationIntervalUnitCV | ReportYearStartMonth| ReportYearTypeCV | AmountUnitCV | MaximumAmountUnitCV
+-------------------- | ---------- | -------- | ---------- | ----------- | ---------- | ----------- | --------- |----
+ MTDNRC Allocation all | Allocation | Average| 1 | Year |10| WaterYear| CFS|AF|
   
-   MethodUUID	MethodName	MethodDescription	MethodNEMILink	ApplicableResourceTypeCV	MethodTypeCV
-	Water Allocation				Adjudicated
 
-  
-### 5. methods_NM.ipynb - generate legend of granular variables specific to each state detailing water right/allocation/etc data collection.
+### 5. methods.csv - generate legend of granular variables specific to each state detailing water right/allocation/etc data collection.
        - all values are hard-coded according to state
-       
+
 #### Sample data (all columns not included):
    
-   MethodUUID | MethodName | MethodDescription| MethodNEMLink | 
-   ---------------- | ------------ | -------- | ---------- | 
-  NM_WaterAllocation| Water Allocation | Water Rights| http://geospatialdata-ose.opendata.arcgis.com/search?groupIds=fabf18d6e0634ae38c86475c9ada6498 | 
+   MethodUUID | MethodName | MethodDescription| MethodNEMLink | MethodTypeCV
+   ---------- | ---------  | ---------------- | ------------- | ------------
+  MTDNRC-Water Rights Water Allocation | Montana Water Rights| Water Rights | http://wrqs.dnrc.mt.gov/default.aspx | Adjudicated
  
-  
-  ### 6. Organizations_NM.ipynb - generate organization directory, including names, email addresses, and website hyper links for organization suppyling data source
+   
+  ### 6. Organizations.csv - generate organization directory, including names, email addresses, and website hyper links for organization suppyling data source
   
         -All variables are hardcoded according to organization.
         
  #### Sample data (all columns not included):
    
-   OrganizationUUID | OrganizationName | OrganizationPurview| OrganizationWebsite |
-   ---------------- | ------------ | -------- | ---------- | 
-  NMOSE | 	New Mexico Office of the State Engineer | The New Mexico Office of the State Engineer (OSE) provides this geographic data and any associated metadata “as is” without warranty of any kind | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/NewMexico |
+ OrganizationUUID | OrganizationName | OrganizationPurview| OrganizationWebsite 
+ ---------------- | ---------------- | ------------------ | -------------------  
+ MTDNRC           | Montana Department of Natural Resources and Conservation    | A water right allows you to legally use water in a prescribed manner, but not to own the water itself. Without diversion and beneficial use, there is no water right.| http://nris.mt.gov/dnrc/waterrights/ 
