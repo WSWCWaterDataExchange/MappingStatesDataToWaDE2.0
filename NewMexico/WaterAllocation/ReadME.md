@@ -9,7 +9,7 @@ The New Mexico Office of the State Engineer hosts its water right data using Arc
 This document summarizes the process to prepare and share NMOSE’s Water Rights data for inclusion in the Western States Water Council’s Water Data Exchange (WaDE 2.0). In order to extract the New Mexico water rights data from the input files and publish it online through ESRI layers to be ready for WaDE 2.0, you must execute 8 Python Scripts to generate CSV data compatible with WaDE 2.0.
  
  ## Data Prep
- ### Step 1: Execute 8 Python Notebooks to generate CSV data compatible with WaDE 2.0
+ ### Step 1: Execute Python Notebooks to generate CSV data compatible with WaDE 2.0
 
 There are 8 Python scripts that use queries to extract NMOSE’s water rights data into views compatible with WaDE 2.0. The **beneficialuseDictionary.py** holds dictionaries that are required for mapping different codes to their respective names, for example codes for the legal status of allocations. The **utilityFunctions.py**, holds functions that are required to be called from other scripts **watersources_NM.ipynb**, **sites_NM.ipynb**, and **waterallocations_NM.ipynb**.  All scripts can be found at the following link in WaDE’s Github repository “MappingStatesDataToWaDE2.0” in the New Mexico folder:
 https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/NewMexico
@@ -114,7 +114,7 @@ Supplemental Script required 2:
        - reference sites.csv to map the respective sites (points of diversion) to water right
        - assign AllocationOwner based on Company OR FirstName/LastName
        - drop data if AllocationAmount and Allocation Maximum are null
-       - copy results into **UTWaterAllocations.csv** and export
+       - copy results into **waterallocations.csv** and export
         
 
 
@@ -145,10 +145,7 @@ Mandatory fields include:
    ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- |----|
   Allocation All | Allocation | Average| 1 | Year |10| WaterYear| CFS|AF|
   
-   MethodUUID	MethodName	MethodDescription	MethodNEMILink	ApplicableResourceTypeCV	MethodTypeCV
-	Water Allocation				Adjudicated
 
-  
 ### 5. methods_NM.ipynb - generate legend of granular variables specific to each state detailing water right/allocation/etc data collection.
        - all values are hard-coded according to state
        
