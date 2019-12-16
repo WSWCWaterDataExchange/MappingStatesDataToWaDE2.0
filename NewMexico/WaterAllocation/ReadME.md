@@ -96,6 +96,8 @@ Any data missing required values and dropped from the WaDE-ready dataset are sav
 
 
 ##  3. waterallocations_NM.ipynb - generate master sheet of water allocations to import into WaDE 2.0
+
+Input table:
 **OSE_Points_of_Diversion.csv** (Points of diversions table containing New Mexico Water Rights data together with site information for for water sources).    
 
 Supplemental Script required:
