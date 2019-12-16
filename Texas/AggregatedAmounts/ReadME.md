@@ -166,5 +166,5 @@ TWDB_3	| 3	    | 		| Reuse	    | Fresh         	      | 		  |
    
    OrganizationUUID | OrganizationName | OrganizationPurview| OrganizationWebsite |
    ---------------- | ------------ | -------- | ---------- 
-  TWDB | 	Texas Water Development Board | Each year the Texas Water Development Board conducts an annual survey of ground and surface water use by municipal and industrial entities within the state of Texas | http://www.twdb.texas.gov/waterplanning/waterusesurvey/estimates/index.asp
+  TWDB |Texas Water Development Board | Each year the Texas Water Development Board conducts an annual survey of ground and surface water use by municipal and industrial entities within the state of Texas | http://www.twdb.texas.gov/waterplanning/waterusesurvey/estimates/index.asp
  
