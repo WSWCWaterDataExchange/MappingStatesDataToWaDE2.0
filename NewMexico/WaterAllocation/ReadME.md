@@ -77,7 +77,7 @@ Supplemental Script required 2:
        - generate WaterSourceNativeID 
        - generate WaterSourceUUID 
        - drop data if missing WaterSourceUUID, WaterSourceTypeCV, and WaterQualityIndicatorCV
-       - copy results into **UTWaterSources.csv** and export 
+       - copy results into **watersources.csv** and export 
  
   waterSources.csv is input to waterallocations_NM.ipnb.
 
