@@ -62,7 +62,7 @@ LU_BENEFICIAL_USE.csv
 These serve as inputs to the following scripts
 
 
-##  2.  reportingunits_NM.ipynb - generate a list of units where water use aggregated
+##  2.  reportingunits_TX.ipynb - generate a list of units where water use aggregated
  Input Table: 
  **REPORTING_UNIT.csv**
 
@@ -86,7 +86,7 @@ TX_12 | 12	| BRAZOS	| Basin	| 12/5/2019	|	EPSG:4326
 
 
 
-##  3. aggregatedallocations_NM.ipynb - generate master sheet of water uses to import into WaDE 2.0
+##  3. aggregatedallocations_TX.ipynb - generate master sheet of water uses to import into WaDE 2.0
  Input Tables: 
  **"S_USE_AMOUNT.csv**
  **SUMMARY_USE.csv"**   
@@ -123,7 +123,7 @@ Mandatory fields include:
  - Amount
 
 
-### Step 2: Modify existing files to generate NM CSV data compatible with WaDE 2.0
+### Step 2: Modify existing files to generate TX CSV data compatible with WaDE 2.0
 
 ##  4. watersources.csv   
 
