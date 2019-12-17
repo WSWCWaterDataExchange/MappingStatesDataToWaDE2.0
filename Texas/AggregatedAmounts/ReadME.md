@@ -11,7 +11,7 @@ This document summarizes the process to prepare and share TWDB’s Water use dat
  ## Data Prep
  ### Step 1: Execute Python Notebooks to generate CSV data compatible with WaDE 2.0
 
-There are 3 Jupyter notebook scripts and one Python script that use queries to extract TWDB’s water use data into views compatible with WaDE 2.0. The **beneficialuseDictionary.py** holds dictionaries that are required for mapping different codes to their respective names, for example codes for the legal status of water use. The **utilityFunctions.py**, holds functions that are required to be called from other scripts **aggregatedamounts_NM.ipynb** and **reportingunits_NM.ipynb**. The script **Prepare_TWDB_data_For_WaDE.ipynb** is a pre-processing code that extracts from the input files (in multiple folders) obtained from TWDB, csv files that serve as intermediate input files. All scripts can be found at the following link in WaDE’s Github repository “MappingStatesDataToWaDE2.0” in the Texas folder:
+There are 3 Jupyter notebook scripts and one Python script that use queries to extract TWDB’s water use data into views compatible with WaDE 2.0. The **beneficialuseDictionary.py** holds dictionaries that are required for mapping different codes to their respective names, for example codes for the legal status of water use. The **utilityFunctions.py**, holds functions that are required to be called from other scripts **aggregatedamounts_TX.ipynb** and **reportingunits_TX.ipynb**. The script **Prepare_TWDB_data_For_WaDE.ipynb** is a pre-processing code that extracts from the input files (in multiple folders) obtained from TWDB, csv files that serve as intermediate input files. All scripts can be found at the following link in WaDE’s Github repository “MappingStatesDataToWaDE2.0” in the Texas folder:
 https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Texas
 
 The Python notebooks and Scripts are thus divided into three:
@@ -20,8 +20,8 @@ The Python notebooks and Scripts are thus divided into three:
 - **Prepare_TWDB_data_For_WaDE.ipynb**
 
 **2. Scripts to prepare the csv files for WaDE 2**
-- **reportingunits_NM.ipynb**
-- **aggregatedamounts_NM.ipynb**
+- **reportingunits_TX.ipynb**
+- **aggregatedamounts_TX.ipynb**
 
 **3. Dependency scripts**
 - **beneficialuseDictionary.py**
