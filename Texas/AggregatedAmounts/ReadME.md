@@ -33,7 +33,7 @@ All scripts can be found at the WaDE’s Github repository [MappingStatesDataToW
 ## 1-1. Prepare_TWDB_data_For_WaDE.ipynb
 Purpose: generate a number of intermediate CSV files that provide inputs to the aggregated use codes below
 
-Dependency: the output of the **Prepare_TWDB_data_For_WaDE.ipynb** serves as inputs for the **reportingunits_TX.ipynb** and the **aggregatedallocations_NM.ipynb** files.
+Dependency: the output of the **Prepare_TWDB_data_For_WaDE.ipynb** serves as inputs for the **reportingunits_TX.ipynb** and the **aggregatedallocations_TX.ipynb** files.
 
 Supplemental Scripts Required:  None.
  
