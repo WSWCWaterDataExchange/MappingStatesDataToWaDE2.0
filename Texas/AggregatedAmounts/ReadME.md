@@ -125,7 +125,7 @@ Mandatory fields include:
 
 ### Step 2: Modify existing files to generate NM CSV data compatible with WaDE 2.0
 
-##  3. watersources.csv   
+##  4. watersources.csv   
 
  - The following table is prepared
 
@@ -138,7 +138,7 @@ TWDB_3	| 3	    | 		| Reuse	    | Fresh         	      | 		  |
 
    		
 
-### 4. variables.csv 
+### 5. variables.csv 
         - all values are hard-coded according to state
 
 #### Sample data (all columns not included):
@@ -148,7 +148,7 @@ TWDB_3	| 3	    | 		| Reuse	    | Fresh         	      | 		  |
   Consumptive Use | Consumptive Use | Cumulative| 1 | Year |1-Jan| CalendarYear| Acre feet
   
 
-### 5. methods.csv
+### 6. methods.csv
        - all values are hard-coded according to state
        
 #### Sample data (all columns not included):
@@ -158,7 +158,7 @@ TWDB_3	| 3	    | 		| Reuse	    | Fresh         	      | 		  |
   TWDB_Water_uses| Texas Water Uses | Historical Water Use Estimates| http://www.twdb.texas.gov/waterplanning/waterusesurvey/estimates/index.asp 	
 
   
-### 6. Organizations.csv 
+### 7. Organizations.csv 
   
         -All variables are hardcoded according to organization.
         
