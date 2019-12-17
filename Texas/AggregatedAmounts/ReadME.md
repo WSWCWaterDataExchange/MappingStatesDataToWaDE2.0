@@ -41,7 +41,7 @@ The Python notebooks and Scripts are thus divided into three:
 Supplemental Script required:
 NA
 
-        - read from the input file in each directory, spreadsheets for multiple years and pivot and concatenate the data
+        - read from the input file in each directory, pivot and concatenate the data in multiple spreadsheets
         - generate the following files that form intermediate inputs
 				
 
