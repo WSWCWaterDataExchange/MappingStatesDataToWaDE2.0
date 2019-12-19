@@ -1,0 +1,2 @@
+OrganizationUUID,OrganizationName,State,OrganizationPurview,OrganizationWebsite,OrganizationPhoneNumber,OrganizationContactName,OrganizationContactEmail,DataMappingURL
+WWDO,Wyoming Water Development Office,Wyoming,,http://wwdc.state.wy.us,307-777-7626,Mabel Jones,mabel.jones1@wyo.gov,https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Wyoming/ReadMe.md
