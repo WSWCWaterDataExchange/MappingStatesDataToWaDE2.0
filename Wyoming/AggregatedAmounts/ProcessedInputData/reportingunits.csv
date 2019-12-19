@@ -1,0 +1,8 @@
+ReportingUnitUUID,ReportingUnitNativeID,ReportingUnitName,ReportingUnitTypeCV,ReportingUnitUpdateDate,ReportingUnitProductVersion,StateCV,EPSGCodeCV,Geometry
+WY_1,1,Bear River Planning Basin,Basin,,,WY,,
+WY_2,2,Green River Planning  Basin,Basin,,,WY,,
+WY_3,3,Northeast River Planning Basin,Basin,,,WY,,
+WY_4,4,Platte River Planning  Basin,Basin,,,WY,,
+WY_5,5,Powder-Tongue River Planning Basin,Basin,,,WY,,
+WY_6,6,Salt-Snake River Planning Basin,Basin,,,WY,,
+WY_7,7,Wind-Bighorn River Planning Basin,Basin,,,WY,,
