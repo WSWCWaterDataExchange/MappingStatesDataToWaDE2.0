@@ -1,2 +1,2 @@
 MethodUUID,MethodName,MethodDescription,MethodNEMILink,ApplicableResourceTypeCV,MethodTypeCV,DataCoverageValue,DataQualityValueCV,DataConfidenceValue
-MTDNRC-Water Rights,Montana Water Rights,Water Rights,http://wrqs.dnrc.mt.gov/default.aspx,Surface Ground,Adjudicated,,,
+WSDE-Water Rights,Washington Water Rights,Water Rights,https://ecology.wa.gov/Water-Shorelines/Water-supply/Water-rights,Surface Ground,Adjudicated,,,

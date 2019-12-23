@@ -1,2 +1,2 @@
 VariableSpecificUUID,VariableSpecificCV,VariableCV,AggregationStatisticCV,AggregationInterval,AggregationIntervalUnitCV,ReportYearStartMonth,ReportYearTypeCV,AmountUnitCV,MaximumAmountUnitCV
-MTDNRC Allocation all,Allocation All,Allocation,Average,1,Year,10,WaterYear,CFS,AFY
+WSDE Allocation all,Allocation All,Allocation,Average,1,Year,10,WaterYear,CFS,AFY
