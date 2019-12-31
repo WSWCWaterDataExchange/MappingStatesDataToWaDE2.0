@@ -1,2 +1,2 @@
 MethodUUID,MethodName,MethodDescription,MethodNEMILink,ApplicableResourceTypeCV,MethodTypeCV,DataCoverageValue,DataQualityValueCV,DataConfidenceValue
-WSDE-Water Rights,Washington Water Rights,Water Rights,https://ecology.wa.gov/Water-Shorelines/Water-supply/Water-rights,Surface/Ground/Storage,Adjudicated/Allocated,,,
+OWRD-Water Rights,Oregon Water Rights,Water Rights,https://www.oregon.gov/OWRD/access_Data/Pages/Data.aspx,Surface/Ground/Storage,Adjudicated,,,
