@@ -31,7 +31,7 @@ columns=["OrganizationUUID", "SiteUUID", "WaterSourceUUID", "MethodUUID", "Varia
         "AllocationCommunityWaterSupplySystem", "AllocationCropDutyAmount", "AllocationExpirationDate", "AllocationLegalStatusCV",
         "AllocationMaximum", "AllocationOwner", "AllocationPriorityDate", "AllocationSDWISIdentifierCV", "AllocationTypeCV",
         "BeneficialUseCategoryCV", "CustomerTypeCV", "DataPublicationDOI", "Geometry", "IrrigatedAcreage", "LegacyAllocationIDs",
-        "PopulationServed", "PowerGeneratedGWh", "PrimaryUseCategoryCV", "TimeframeEndDate", "TimeframeStartDate"]
+        "PopulationServed", "PowerGeneratedGWh", "PrimaryUseCategoryCV", "AllocationTimeframeEnd", "AllocationTimeframeStart"]
 
 dtypesx = ['']  #ry_comment: @dtypesx, list is not being used by anything.
 
@@ -135,11 +135,11 @@ outdf['PowerGeneratedGWh'] = ''
 print("PrimaryUseCategoryCV")  #ry_comment: leave blank for now.
 outdf['PrimaryUseCategoryCV'] = ''
 
-print("TimeframeEndDate")  #ry_comment: @TimeframeEndDate, what are we doing for this?
-outdf['TimeframeEndDate'] = ''
+print("AllocationTimeframeEnd")  #ry_comment: @TimeframeEndDate, what are we doing for this?
+outdf['AllocationTimeframeEnd'] = ''
 
-print("TimeframeStartDate")  #ry_comment: @TimeframeStartDate, what are we doing for this?
-outdf['TimeframeStartDate'] = ''
+print("AllocationTimeframeStart")  #ry_comment: @TimeframeStartDate, what are we doing for this?
+outdf['AllocationTimeframeStart'] = ''
 
 
 print("Dropping null allocations...")
