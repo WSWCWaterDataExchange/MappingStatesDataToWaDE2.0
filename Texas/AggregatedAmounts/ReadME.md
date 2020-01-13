@@ -70,7 +70,7 @@ ReportingUnitUUID	| ReportingUnitNativeID | ReportingUnitName | ReportingUnitTyp
 TX_12 | 12	| BRAZOS	| Basin	| 12/5/2019	|	EPSG:4326
 
 
-## 1-3. aggregatedallocations_NM.ipynb
+## 1-3. aggregatedallocations_TX.ipynb
 Purpose: generate master sheet of water uses to import into WaDE 2.0.
 
 Dependency:  None
