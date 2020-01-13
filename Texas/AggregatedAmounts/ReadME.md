@@ -99,7 +99,7 @@ OrganizationUUID | ReportingUnitUUID | BeneficialUseCategory | WaterSourceUUID |
 ---------------- | ----------------- | ------------------ | --------------------- | --------------- | ----------- | --------- 
 TWDB | TX_12| Municipal_ground | TWDB_1 | TWDB_Water_uses| 2000 | 2127781
 
-Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. **aggregatedamounts_mandatoryFieldMissing.csv**) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the **aggregatedallocations_NM.ipynb** include the following:
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. **aggregatedamounts_mandatoryFieldMissing.csv**) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the **aggregatedallocations_TX.ipynb** include the following:
 - OrganizationUUID
 - ReportingUnitUUID
 - WaterSourceUUID
