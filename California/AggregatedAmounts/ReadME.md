@@ -132,10 +132,7 @@ Supplemental Scripts Required:  None
 - See the below prepared table.       
 
 MethodUUID | MethodName | MethodDescription| MethodNEMLink | ApplicableResourceTypeCV | MethodTypeCV | DataCoverageValue | DataQualityValueCV	| DataConfidenceValue
-
----------- | ---------- | ---------------- | ------------- | ------------------------ | ------------ | -------------------| 
------------------- | -----------------
-
+---------- | ---------- | ------------ | ------------- | ------------- | ------------ | -------------| ------------ | ---------- 
 CDWR_Water_uses | California Water Uses | OWIA Standard Operating Procedure: Water Balance | ftp://mae2.sdsc.edu/published/ | Unspecified | Water Use	|         |         |                 
 
   
