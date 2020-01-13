@@ -145,8 +145,6 @@ Supplemental Scripts Required:  None
 - See the below prepared table.               
 
 OrganizationUUID | OrganizationName | OrganizationPurview| OrganizationWebsite | OrganizationPhoneNumber |	OrganizationContactName	| OrganizationContactEmail |	OrganizationDataMappingURL |	State 
-
 ---------------- | ------------ | -------- | ---------- | ---------- | ------------ | -------------- | ------------ | ---------
-
 CDWR |California Department of Water Resources | Department of Water Resources California Water Plan program computes applied, net, and depletion water balances for California. | https://data.ca.gov/dataset/water-plan-water-balance-data | xxx-xxx-xxxx |	Jennifer Stricklin | Jennifer.Stricklin@water.ca.gov | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/California	| CA
 
