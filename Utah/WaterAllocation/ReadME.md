@@ -1,4 +1,4 @@
-# WaDE Preparation
+# WaDE Water Rights Data Preparation
 
 This readme details an overview, the specific steps taken, and the final product of the process applied to water rights data made available by the [Utah Division of Water Rights (UTDWR)](https://www.waterrights.utah.gov/contact.asp) for inclusion into the Water Data Exchange (WaDE). 
 
