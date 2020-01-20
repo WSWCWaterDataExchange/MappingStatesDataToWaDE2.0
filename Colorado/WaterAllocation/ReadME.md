@@ -1,4 +1,4 @@
-# WaDE Preparation
+# WaDE Water Rights Data Preparation
 
 This readme details an overview, the specific steps taken, and the final product of the process applied to water rights data made available by the [Colorado Department of Water Rights (CODWR)](https://cdnr.us/#/division/DWR) for inclusion into the Water Data Exchange (WaDE). 
 
