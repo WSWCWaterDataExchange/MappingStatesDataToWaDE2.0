@@ -1,6 +1,6 @@
 # WaDE Preparation
 
-This repository stores code and data for New Mexico water rights and uses data made available by the [New Mexico Office of the State Engineer NMOSE](http://geospatialdata-ose.opendata.arcgis.com/datasets/ose-points-of-diversion) for inclusion into the Water Data Exchange version 2 (WaDE 2). For more information on WaDE, please visit http://wade.westernstateswater.org/
+This repository stores code and data for California water allocations data made available by the [California State Water Resources Control Board (CSWRCB) eWRIMS – Electronic Water Rights Information Management System](https://www.waterboards.ca.gov/waterrights/water_issues/programs/ewrims/) and water use data made available by the [California Department of Water Resources (CDWR)](https://data.ca.gov/dataset/water-plan-water-balance-data) for inclusion into the Water Data Exchange version 2 (WaDE 2). For more information on WaDE, please visit http://wade.westernstateswater.org/
 
 ### Overview 
 The WaDE 2 organizes data into four specific groups: 
