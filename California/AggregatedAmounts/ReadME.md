@@ -23,9 +23,13 @@ All scripts can be found at the WaDE’s Github repository [MappingStatesDataToW
 #### Inputs: The following spreadsheets are inputs to both scripts:
 
   CA-DWR-WaterBalance-Level2-DP-1000-2015-DAUCO.csv
+  
   CA-DWR-WaterBalance-Level2-DP-1000-2014-DAUCO.csv
+  
   CA-DWR-WaterBalance-Level2-DP-1000-2013-DAUCO.csv
+  
   CA-DWR-WaterBalance-Level2-DP-1000-2012-DAUCO.csv
+  
   CA-DWR-WaterBalance-Level2-DP-1000-2011-DAUCO.csv
 
 Note: If data for others years become available, the scripts can run just for the new data and update the WaDE database.
