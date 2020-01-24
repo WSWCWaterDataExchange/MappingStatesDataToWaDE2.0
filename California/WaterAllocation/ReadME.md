@@ -140,24 +140,10 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - AllocationPriorityDate
 
 # Step 2: Manually Modify Existing Files to Generate CA CSV Data Compatible with WaDE 2.0.
-The following is a quick description of four CSV files manually created by hand to be used as inputs into WaDE 2.0.  These tables usually have single rows, so are prepared by manual inspection.
+The following is a quick description of three CSV files manually created to be used as inputs into WaDE 2.0.  These tables usually have single rows, so are prepared by manual inspection.
 
 
-## 2-1. watersources.csv
-Purpose: generate list of water sources from which water is allocated from.
-Dependency:  None
-Supplemental Scripts Required:  None
-
-#### Inputs:
- - See the below prepared table.
-
-WaterSourceUUID | WaterSourceNativeID | WaterSourceName | WaterSourceTypeCV | WaterQualityIndicatorCV | GNISFeatureNameCV | Geometry
---------------- | ------------------- | --------------- | ----------------- | ------------------------|-------------------|--------- 
-CA_1	| 1     | Unspecificed	| Groundwater, Surface Water  | Fresh         	      | 		  |		
-
-   		
-
-## 2-2. variables.csv 
+## 2-1. variables.csv 
 Purpose: generate legend of granular variables specific to each state.
 Dependency:  None
 Supplemental Scripts Required:  None
@@ -165,12 +151,11 @@ Supplemental Scripts Required:  None
 #### Inputs:
 - See the below prepared table.
 
-VariableSpecificUUID | VariableSpecificCV | VariableCV | AggregationStatisticCV| AggregationInterval | AggregationIntervalUnitCV | ReportYearStartMonth| ReportYearTypeCV | AmountUnitCV 
----------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- | -------------
-Consumptive Use  | Consumptive Use | Consumptive Use | Cumulative| 1 | Year |1-Jan| CalendarYear| Acre feet
-  
+VariableSpecificUUID | VariableSpecificCV | VariableCV | AggregationStatisticCV| AggregationInterval | AggregationIntervalUnitCV | ReportYearStartMonth| ReportYearTypeCV | AmountUnitCV | MaximumAmountUnitCV
+---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- | --------- | -------
+CSWRCB Allocation all  | Allocation All | Allocation | Average | 1 | Year |10 | WaterYear| CFS | AFY
 
-## 2-3. methods.csv
+## 2-2. methods.csv
 Purpose: generate legend of granular variables specific to each state detailing water right / allocation / etc data collection.
 Dependency:  None
 Supplemental Scripts Required:  None
@@ -180,10 +165,10 @@ Supplemental Scripts Required:  None
 
 MethodUUID | MethodName | MethodDescription| MethodNEMLink | ApplicableResourceTypeCV | MethodTypeCV | DataCoverageValue | DataQualityValueCV	| DataConfidenceValue
 ---------- | ---------- | ------------ | ------------- | ------------- | ------------ | -------------| ------------ | ---------- 
-CDWR_Water_uses | California Water Uses | OWIA Standard Operating Procedure: Water Balance | ftp://mae2.sdsc.edu/published/ | Unspecified | Water Use	|         |         |                 
+CSWRCB-Water Rights | California Water Rights | Water Rights | https://www.waterboards.ca.gov/waterrights/water_issues/programs/ewrims/ | Surface water or subsurface water | Adjudicated	|         |         |                 
 
   
-## 2-4. Organizations.csv
+## 2-3. Organizations.csv
 Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
 Dependency:  None
 Supplemental Scripts Required:  None
@@ -193,6 +178,6 @@ Supplemental Scripts Required:  None
 
 OrganizationUUID | OrganizationName | OrganizationPurview| OrganizationWebsite | OrganizationPhoneNumber |	OrganizationContactName	| OrganizationContactEmail |	OrganizationDataMappingURL |	State 
 ---------------- | ------------ | -------- | ---------- | ---------- | ------------ | -------------- | ------------ | ---------
-CDWR |California Department of Water Resources | Department of Water Resources California Water Plan program computes applied, net, and depletion water balances for California. | https://data.ca.gov/dataset/water-plan-water-balance-data | xxx-xxx-xxxx |	Jennifer Stricklin | Jennifer.Stricklin@water.ca.gov | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/California	| CA
+CSWRCB |California State Water Resources Control Board | The Electronic Water Rights Information Management System (eWRIMS) is a computer database developed by the State Water Resources Control Board to track information on water rights in California. | https://www.waterboards.ca.gov/waterrights/water_issues/programs/ewrims/ | 916-341-5892 |	Greg Gearheart | Greg.Gearheart@waterboards.ca.gov | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/California	| CA
 
 
