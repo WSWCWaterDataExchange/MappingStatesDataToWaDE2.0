@@ -51,50 +51,93 @@ Supplemental Scripts Required:  None
 - Assign soure type if it exists.
 - Enter default values for fields with constant values or those that do not have values currently.
 - Drop duplicate rows if they exist.
+- Generate WaterSourceNativeID
 - Assign water source UUID to each (unique) row.
 - Copy results into **watersources.csv** and export.			
 
 #### Sample Data (Note: not all fields shown):
-ReportingUnitUUID	| ReportingUnitNativeID | ReportingUnitName | ReportingUnitTypeCV | ReportingUnitUpdateDate | EPSGCodeCV | Geometry
-------------------| --------------------- | ----------------- | --------------------| ------------------------| ---------- | ---------
-CA_DAU01949 | DAU01949	| Gualala	| Detailed Analysis Unit by County (DAUCO)	| 1/2/2020	|	EPSG:4326 | POINT (-123.28035020000002 38.66392589)
+WaterSourceUUID | WaterSourceNativeID | WaterSourceName | WaterSourceTypeCV | WaterQualityIndicatorCV
+------------ | ------------ | -------- | ---------- | ---- 
+CA_2  | 2 | LAKE DOMINGO | Surface | Fresh
 
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. **watersources_mandatoryFieldMissing.csv**) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the **watersources_CA.ipynb** include the following: 
+- WaterSourceUUID
+- WaterSourceTypeCV
+- WaterQualityIndicatorCV
 
-## 1-2. aggregatedallocations_CA.ipynb
-Purpose: generate master sheet of water uses to import into WaDE 2.0.
+## 1-2. sites_CA.ipynb
+Purpose: generate a list of sites where water is diverted for use (also Points OF Diversion, PODs).
 
 Dependency:  None
 
 Supplemental Scripts Required: None
 
 #### Inputs: 
-- **spreadsheets listed above**
-- **reportingunits.csv**
-- **watersources.csv**
+- **spreadsheet listed above**
 
 #### Operation:   
-- Read the input files and join contents into one dataframe for all years.
-- Generate empty **aggregatedalloctions.csv** file with controlled vocabulary headers.
-- Assign water source IDs from water sources input file.
-- Assign for each water use the corresponding reporting unit ID from reporting units input file.
-- Assign beneficial uses from the column **CategoryA** in the input files.
-- Calculate water use amount for each row as aggregate (Sum) of those for unique DAUCO and Beneficial use (CategoryA) groups. Convert units to AF
-- Assign default values for fields with constant values or those with no detailed information currently.
-- Copy results into **aggregatedamounts.csv** and export.
-        
+- Generate empty sites.csv file with controlled vocabulary headers
+- Assign SiteNativeID from POD_ID
+- Specify site name from DIVERSION_SITE_NAME in input file
+- Specify site type from TYPE_OF_DIVERSION_FACILITY in the input file
+- Copy latitude and longitude values
+- Specify coordinate mathod based on LOCATION_METHOD in the input file
+- Drop duplicates if any
+- Generate SiteUUID based on SiteNativeID 
+- Drop data if missing latitude/longitude
+- copy results into **sites.csv** and export.  
 
 #### Sample Data (Note: not all fields shown):
-OrganizationUUID | ReportingUnitUUID | BeneficialUseCategory | WaterSourceUUID | MethodUUID | ReportYearCV | Amount   
----------------- | ----------------- | ------------------ | --------------------- | --------------- | ----------- | --------- 
-CDWR | CA_DAU04827| Instream Flow Requirements | CA_1 | CDWR_Water_uses | 2011 | 723700
+SiteUUID | SiteNativeID | SiteName  | SiteTypeCV | Longitude | Latitude
+------------ | ------------ | ---------- | ---- | ---- | ----
+CA_65767 | 65767 | REINHAKEL DITCH  | Gravity  | -118.4468 | 37.3685
 
-Any rows that are missing required fields are dropped from the WaDE-ready dataset and instead are saved in a separate csv file (e.g. **aggregatedamounts_mandatoryFieldMissing.csv**) for review.  This allows for ease of future inspection on missing items.  Mandatory fields for the **aggregatedallocations_CA.ipynb** include the following:
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. **sites_mandatoryFieldMissing.csv**) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the **sites_CA.ipynb** include the following: 
+- SiteUUID 
+- SiteName
+- CoordinateMethodCV 
+- EPSGCodeCV
+
+## 1-3. waterallocations_CA.ipynb
+Purpose: generate master sheet of water allocations to import into WaDE 2.0.
+
+Dependency: watersources.csv and sites.csv generated above.
+
+Supplemental Scripts Required: None
+
+#### Inputs: 
+- **spreadsheet listed above**
+
+#### Operation:
+ - Generate empty waterAllocations.csv file with controlled vocabulary headers
+ - Assign Native Allocation ID from APPLICATION_NUMBER 
+ - Map Site IDs from sites.csv based on POD_ID corresanding to NativeAllocationID
+ - Map Watersource IDs from watersources.csv based on SOURCE_NAME corresponding to NativeAllocationID 
+ - Assign Beneficial Use from USE_CODE
+ - Assign Allocation type from WATER_RIGHT_TYPE
+ - Assign Legal status from WATER_RIGHT_STATUS
+ - Assign Allocation owner from PRIMARY_OWNER_NAME
+ - Get Allocation priority date from PRIORITY_DATE or APPLICATION_ACCEPTANCE_DATE
+ - Map Allocation time frame start and time frame end from DIRECT_DIV_SEASON_START and DIRECT_DIV_SEASON_END
+ - Format the datetime data above in the WaDE2 DB compatible form
+ - Get Allocation amount from MAX_RATE_OF_DIVERSION and convert units from Gallons per minute to CFS
+ - Get Allocation maximum from USE_DIRECT_DIV_ANNUAL_AMOUNT
+ - Assign Irrigated acreage from USE_NET_ACREAGE
+ - Drop rows if both Allocation amount and Allocation maximum are null
+ - Drop duplicates if any
+ - Copy results into **waterallocations.csv** and export  
+
+#### Sample Data (Note: not all fields shown):
+OrganizationUUID | SiteUUID | WaterSourceUUID | BeneficialUseCategory | AllocationNativeID | AllocationOwner | AllocationTypeCV | AllocationLegalStatusCV   
+---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ---------- | ----------- 
+CSWRCB| CA_60498| CA_2  | Dust Control | T032025 |569 EAST COUNTY BOULEVARD, LLC | Temporary Permit | Cancelled 
+
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. **allocations_mandatoryFieldMissing.csv**) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the **waterallocations_CA.ipynb** include the following: 
 - OrganizationUUID
-- ReportingUnitUUID
+- VariableSpecificUUID
 - WaterSourceUUID
 - MethodUUID
-- Amount
-
+- AllocationPriorityDate
 
 # Step 2: Manually Modify Existing Files to Generate CA CSV Data Compatible with WaDE 2.0.
 The following is a quick description of four CSV files manually created by hand to be used as inputs into WaDE 2.0.  These tables usually have single rows, so are prepared by manual inspection.
