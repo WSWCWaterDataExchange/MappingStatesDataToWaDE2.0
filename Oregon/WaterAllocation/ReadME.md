@@ -182,5 +182,4 @@ Supplemental Scripts Required:  None
 
 OrganizationUUID | OrganizationName | OrganizationPurview| OrganizationWebsite | OrganizationPhoneNumber |	OrganizationContactName	| OrganizationContactEmail |	OrganizationDataMappingURL |	State 
 ---------------- | ------------ | -------- | ---------- | ---------- | ------------ | -------------- | ------------ | ---------
-OWRD |Oregon Water Resources Department | Water right surface Points of Diversion (POD) and groundwater Points of Appropriation (POA)
-locations in the state of Oregon are collectively referred to as PODs. | https://www.oregon.gov/OWRD/access_Data/Pages/Data.aspx | 503-986-0900 |	Tom Byler | wrd_dl_Director@oregon.gov | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Oregon	| OR
+OWRD |Oregon Water Resources Department | Water right surface Points of Diversion (POD) and groundwater Points of Appropriation (POA) locations in the state of Oregon are collectively referred to as PODs. | https://www.oregon.gov/OWRD/access_Data/Pages/Data.aspx   | 503-986-0900 |	Tom Byler | wrd_dl_Director@oregon.gov |https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Oregon	| OR
