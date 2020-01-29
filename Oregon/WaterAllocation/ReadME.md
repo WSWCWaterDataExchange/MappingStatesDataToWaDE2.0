@@ -49,7 +49,8 @@ Dependency:  None
 Supplemental Scripts Required:  None
 
 #### Operation:
-- Read the input file into one dataframe for all years.
+- Read the input file.
+- Form the output dataframe.
 - Generate empty **watersources.csv** file with controlled vocabulary headers.
 - Assign water soure type based on the dictionary mapping the code 'wr_type' to storage, surface water, and ground water.
 - Assign water source name from 'source' if it exists, or else put source name as 'Unspecified'
