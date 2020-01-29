@@ -45,7 +45,7 @@ Dependency:  None
 Supplemental Scripts Required:  None
 
 #### Operation:
-- Read the input file into one dataframe for all years.
+- Read the input file and form output dataframe.
 - Generate empty **watersources.csv** file with controlled vocabulary headers.
 - Get all unique water source names from the input file and assign them to the output dataframe
 - Assign soure type if it exists.
