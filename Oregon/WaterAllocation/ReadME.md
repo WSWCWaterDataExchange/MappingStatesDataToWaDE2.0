@@ -6,8 +6,8 @@ The water rights data were downloaded from the website https://www.oregon.gov/OW
 
 There are multiple rows for different data types. The data used here were downloaded from the row named **"Statewide Water Right Spatial Data with Metadata"**. Spatial data for Points of Diversions (PODs) and Points of Use (POUs) and a file linking water rights to PODs are available in Geodatabase and shapefile formats which we exported to CSV files (in QGIS) to be used as inputs to the Python codes developed here to prepare WaDE2 input files:
 
-**- wr_pod_nhdevent.csv**
-**- wr_v_pod_public.csv   (POD info with related Water right)**      
+ - **wr_pod_nhdevent.csv**
+ - **wr_v_pod_public.csv   (POD info with related Water right)**      
  
 PODs refer to Water right surface Points of Diversion (POD) and groundwater Points of Appropriation (POA) locations in the state of Oregon.
 
@@ -16,7 +16,7 @@ The Python scripts described here are [Jupyter Notebooks](https://jupyter.org/) 
 ## Documentations
 The following documentation downloaded from the website above provides the metadata information:
 
-**- wr_pod_metadata.pdf**
+ - **wr_pod_metadata.pdf**
 
 And the water rights related code keys are available at: **https://www.oregon.gov/owrd/WRDFormsPDF/wris_code_key.pdf**
 
