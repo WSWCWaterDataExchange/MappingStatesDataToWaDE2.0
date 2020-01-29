@@ -1,6 +1,6 @@
 # WaDE Preparation
 
-This repository stores code and data for Oregon water allocations and water use data made available by the [Washington State Department of Ecology (WSDE)](https://ecology.wa.gov/Water-Shorelines/Water-supply/Water-rights) for inclusion into the Water Data Exchange version 2 (WaDE 2). For more information on WaDE, please visit http://wade.westernstateswater.org/
+This repository stores code and data for Oregon water allocations and water use data made available by the [Oregon Water Resources Department (OWRD)](https://www.oregon.gov/OWRD/access_Data/Pages/Data.aspx) for inclusion into the Water Data Exchange version 2 (WaDE 2). For more information on WaDE, please visit http://wade.westernstateswater.org/
 
 ### Overview 
 
