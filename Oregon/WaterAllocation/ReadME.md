@@ -157,7 +157,7 @@ Supplemental Scripts Required:  None
 
 VariableSpecificUUID | VariableSpecificCV | VariableCV | AggregationStatisticCV| AggregationInterval | AggregationIntervalUnitCV | ReportYearStartMonth| ReportYearTypeCV | AmountUnitCV | MaximumAmountUnitCV
 ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- | --------- | -------
-CSWRCB Allocation all  | Allocation All | Allocation | Average | 1 | Year |10 | WaterYear| CFS | AFY
+OWRD Allocation all  | Allocation All | Allocation | Average | 1 | Year |10 | WaterYear| CFS | AFY
 
 ## 2-2. methods.csv
 Purpose: generate legend of granular variables specific to each state detailing water right / allocation / etc data collection.
@@ -169,7 +169,7 @@ Supplemental Scripts Required:  None
 
 MethodUUID | MethodName | MethodDescription| MethodNEMLink | ApplicableResourceTypeCV | MethodTypeCV | DataCoverageValue | DataQualityValueCV	| DataConfidenceValue
 ---------- | ---------- | ------------ | ------------- | ------------- | ------------ | -------------| ------------ | ---------- 
-CSWRCB-Water Rights | California Water Rights | Water Rights | https://www.waterboards.ca.gov/waterrights/water_issues/programs/ewrims/ | Surface water or subsurface water | Adjudicated	|         |         |                 
+OWRD-Water Rights | Oregon Water Rights | Water Rights | https://www.oregon.gov/OWRD/access_Data/Pages/Data.aspx| Surface/Ground/Storage | Adjudicated	|         |         |                 
 
   
 ## 2-3. Organizations.csv
@@ -182,4 +182,5 @@ Supplemental Scripts Required:  None
 
 OrganizationUUID | OrganizationName | OrganizationPurview| OrganizationWebsite | OrganizationPhoneNumber |	OrganizationContactName	| OrganizationContactEmail |	OrganizationDataMappingURL |	State 
 ---------------- | ------------ | -------- | ---------- | ---------- | ------------ | -------------- | ------------ | ---------
-CSWRCB |California State Water Resources Control Board | The Electronic Water Rights Information Management System (eWRIMS) is a computer database developed by the State Water Resources Control Board to track information on water rights in California. | https://www.waterboards.ca.gov/waterrights/water_issues/programs/ewrims/ | 916-341-5892 |	Greg Gearheart | Greg.Gearheart@waterboards.ca.gov | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/California	| CA
+OWRD |Oregon Water Resources Department | Water right surface Points of Diversion (POD) and groundwater Points of Appropriation (POA)
+locations in the state of Oregon are collectively referred to as PODs. | https://www.oregon.gov/OWRD/access_Data/Pages/Data.aspx | 503-986-0900 |	Tom Byler | wrd_dl_Director@oregon.gov | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Oregon	| OR
