@@ -17,10 +17,10 @@ According to background data at the ADWR website (http://gisdata-azwater.opendat
 The Python scripts described here are [Jupyter Notebooks](https://jupyter.org/) to prepare the water allocations data in csv format that can be ingested into the WaDE2 DB.
 
 ## Summary
-This document summarizes the process to prepare and share ADWR’s water rights data for inclusion into the WSWC’s Water Data Exchange (WaDE 2.0) project. In order to extract the WSDE’s water allocations data from the input files and publish it online through ESRI layers so that it can be ready for WaDE 2.0, two Python scripts are used to generate CSV files for sites and water allocations input tables (Step 1), and four other CSV files are manually created (Step 2), in data tables compatible with WaDE 2.0.
+This document summarizes the process to prepare and share ADWR’s water rights data for inclusion into the WSWC’s Water Data Exchange (WaDE 2.0) project. In order to extract the ADWR’s water allocations data from the input files and publish it online through ESRI layers so that it can be ready for WaDE 2.0, two Python scripts are used to generate CSV files for sites and water allocations input tables (Step 1), and four other CSV files are manually created (Step 2), in data tables compatible with WaDE 2.0.
 
 # Step 1: Execute Python Scripts to Generate CSV Data for sites and water allocations.
-The following scripts use queries to extract WSDE’s water rights data into views compatible with WaDE 2.0 (see list below for name of each script).  
+The following scripts use queries to extract ADWR’s water rights data into views compatible with WaDE 2.0 (see list below for name of each script).  
 
 - #1. sites_AZ.ipynb
 - #2. waterallocations_AZ.ipynb
