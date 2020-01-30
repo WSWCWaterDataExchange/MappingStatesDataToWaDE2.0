@@ -53,10 +53,10 @@ Supplemental Scripts Required:  None
 - Form the output dataframe.
 - Generate empty **watersources.csv** file with controlled vocabulary headers.
 - Assign water soure type based on the dictionary mapping the code 'wr_type' to storage, surface water, and ground water.
-- Assign water source name from 'source' if it exists, or else put source name as 'Unspecified'
+- Assign water source name from 'source' if it exists, or else put source name as 'Unspecified'.
 - Enter default values for fields with constant values or those that do not have values currently.
 - Drop duplicate rows if they exist.
-- Generate WaterSourceNativeID
+- Generate WaterSourceNativeID.
 - Assign water source UUID to each (unique) row.
 - Copy results into **watersources.csv** and export.			
 
@@ -81,16 +81,16 @@ Supplemental Scripts Required: None
 - **spreadsheet listed above**
 
 #### Operation:   
-- Generate empty sites.csv file with controlled vocabulary headers
-- Assign SiteNativeID from 'pod_location_id'
-- Specify site type based on dictionary that maps the 'source_type' code to its respective values
-- Leave site name as 'Unspecified'
-- Project X and Y coordindates in EPSG:2992 to longitude adn latitude in EPSG:4236)
-- Enter coordinate mathod as 'Unspecified'
-- Specify State controlled vocabulary as 'OR'
-- Drop duplicates if any
-- Generate SiteUUID based on SiteNativeID 
-- Drop data if missing latitude/longitude
+- Generate empty sites.csv file with controlled vocabulary headers.
+- Assign SiteNativeID from 'pod_location_id'.
+- Specify site type based on dictionary that maps the 'source_type' code to its respective values.
+- Leave site name as 'Unspecified'.
+- Project X and Y coordindates in EPSG:2992 to longitude and latitude in EPSG:4236.
+- Enter coordinate mathod as 'Unspecified'.
+- Specify State controlled vocabulary as 'OR'.
+- Drop duplicates if any.
+- Generate SiteUUID based on SiteNativeID. 
+- Drop data if missing latitude/longitude.
 - copy results into **sites.csv** and export.  
 
 #### Sample Data (Note: not all fields shown):
@@ -115,22 +115,22 @@ Supplemental Scripts Required: None
 - **spreadsheet listed above**
 
 #### Operation:
- - Generate empty waterAllocations.csv file with controlled vocabulary headers
- - Assign Native Allocation ID from 'snp_id'
- - Map Site IDs from sites.csv based on the 'pod_location_id's that correspond to the NativeAllocationID ('snp_id'). Note there might be multiple sites mapped into on water right
- - Map Watersource IDs from watersources.csv based on source name and source type 
- - Assign Beneficial Use from 'use_code_description'
- - Map Allocation type from dictionary for 'claim_char' code 
- - Specify Allocation owner as company name from 'name_company' or the 'name_last' and 'name_first' of individual owners
- - Get Allocation priority date from 'priority_date' and format it in WaDE2 compatible form
- - Get Allocation time frame start by concatenating 'begin_month' and 'begin_day' and formating them to 'mm/dd' form
- - Get Allocation time frame end by concatenating 'end_month' and 'end_day' and formating them to 'mm/dd' form
- - Get Allocation amount from 'rate_cfs' for each POD corresponding to a given water right, and aggregate/sum them to obtain value for a the water right
- - Get Allocation maximum from 'max_rate_acre_feet' for each POD corresponding to a given water right, and aggregate/sum them to obtain value for a the water right
- - Assign WaterAllcation Native URL from 'wris_link'
- - Drop rows if both Allocation amount and Allocation maximum are null
- - Drop duplicates if any
- - Copy results into **waterallocations.csv** and export  
+ - Generate empty waterAllocations.csv file with controlled vocabulary headers.
+ - Assign Native Allocation ID from 'snp_id'.
+ - Map Site IDs from sites.csv based on the 'pod_location_id's that correspond to the NativeAllocationID ('snp_id'). Note there might be multiple sites mapped into one water right.
+ - Map Watersource IDs from watersources.csv based on source name and source type.
+ - Assign Beneficial Use from 'use_code_description'.
+ - Map Allocation type from dictionary for 'claim_char' code. 
+ - Specify Allocation owner as company name from 'name_company' or the 'name_last' and 'name_first' of individual owners.
+ - Get Allocation priority date from 'priority_date' and format it in WaDE2 compatible form.
+ - Get Allocation time frame start by concatenating 'begin_month' and 'begin_day' and formating them to 'mm/dd' form.
+ - Get Allocation time frame end by concatenating 'end_month' and 'end_day' and formating them to 'mm/dd' form.
+ - Get Allocation amount from 'rate_cfs' for each POD corresponding to a given water right, and aggregate/sum them to obtain value for a the water right.
+ - Get Allocation maximum from 'max_rate_acre_feet' for each POD corresponding to a given water right, and aggregate/sum them to obtain value for a the water right.
+ - Assign WaterAllcation Native URL from 'wris_link'.
+ - Drop rows if both Allocation amount and Allocation maximum are null.
+ - Drop duplicates if any.
+ - Copy results into **waterallocations.csv** and export.  
 
 #### Sample Data (Note: not all fields shown):
 OrganizationUUID | SiteUUID | WaterSourceUUID | BeneficialUseCategory | AllocationNativeID | AllocationOwner | AllocationTypeCV | AllocationLegalStatusCV   
