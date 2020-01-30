@@ -5,6 +5,7 @@ This readme details the process that was applied by the staff of the [Western St
 The water rights data were obtained from the Geographic Water Information System (GWIS) Data for the state of Washington at: https://fortress.wa.gov/ecy/gispublic/DataDownload/wr/GWIS_Data/
 
 Data dictionary are available from: https://fortress.wa.gov/ecy/gispublic/DataDownload/wr/GWIS_Data/GWIS_Data_Dictionary/
+
 Public website on water rights: https://ecology.wa.gov/Water-Shorelines/Water-supply/Water-rights 
 
 A GWIS ArcSDE Geodatabase (GWIS_SDEexport.zip) was download from the Water Resources' GWIS database.
