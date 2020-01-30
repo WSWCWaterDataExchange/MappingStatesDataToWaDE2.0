@@ -54,7 +54,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - WaterSourceTypeCV
 - WaterQualityIndicatorCV
 
-## 1-2. sites_WA.ipynb
+## 1-2. sites_ND.ipynb
 Purpose: generate a list of sites where water is diverted for use (also known as Points Of Diversion, PODs).
 
 Dependency:  None
