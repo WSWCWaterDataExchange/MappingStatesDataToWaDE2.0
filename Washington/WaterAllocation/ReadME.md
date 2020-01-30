@@ -51,7 +51,7 @@ Supplemental Scripts Required:  None
 - Assign 'Unspecified' for water source names as it doesn't currently exit. 
 - Enter default values for fields with constant values or those that do not have values currently.
 - Drop duplicate rows if they exist.
-- Generate WaterSourceNativeID
+- Generate WaterSourceNativeID.
 - Assign water source UUID to each (unique) row.
 - Copy results into **watersources.csv** and export.			
 
@@ -76,16 +76,16 @@ Supplemental Scripts Required: None
 - **D_Point.csv**
 
 #### Operation:   
-- Generate empty sites.csv file with controlled vocabulary headers
-- Assign SiteNativeID from 'D_Point_ID'
-- Specify site type based on dictionary that maps the 'D_Point_Type_CD' code to its respective values
-- Leave site name as 'Unspecified'
-- Project X and Y coordindates in EPSG:2927 to longitude and latitude in EPSG:4236
-- Map the codes in 'Position_With_CD' to Coordinate mathod CV based on the corresponding dictionary
-- Map the Coordinate accuracy CV from 'Location_CD' based on the corresponding dictionary
-- Drop duplicates if any
-- Generate SiteUUID based on SiteNativeID 
-- Drop data if missing latitude/longitude
+- Generate empty sites.csv file with controlled vocabulary headers.
+- Assign SiteNativeID from 'D_Point_ID'.
+- Specify site type based on dictionary that maps the 'D_Point_Type_CD' code to its respective values.
+- Leave site name as 'Unspecified'.
+- Project X and Y coordindates in EPSG:2927 to longitude and latitude in EPSG:4236.
+- Map the codes in 'Position_With_CD' to Coordinate mathod CV based on the corresponding dictionary.
+- Map the Coordinate accuracy CV from 'Location_CD' based on the corresponding dictionary.
+- Drop duplicates if any.
+- Generate SiteUUID based on SiteNativeID. 
+- Drop data if missing latitude/longitude.
 - copy results into **sites.csv** and export.  
 
 #### Sample Data (Note: not all fields shown):
@@ -111,21 +111,21 @@ Supplemental Scripts Required: None
 - **D_Point_WR_Doc.csv**
 
 #### Operation:
- - Generate empty waterAllocations.csv file with controlled vocabulary headers
- - Assign Native Allocation ID from 'WR_Doc_ID'
- - Get Site IDs from sites.csv based on the mapping between 'D_Point_ID' and 'WR_Doc_ID' through 'D_Point_WR_Doc'. Note there might be multiple sites mapped into one water right
- - Map Watersource IDs from watersources.csv based on source type code 'WaRecRCWClassTypeCode' 
- - Assign Beneficial use category from 'PurposeOfUseTypeCodes' based on mapping table
- - Get Allocation type from 'WaRecPhaseTypeCode' 
- - Get Allocation legal status from 'WaRecProcessStatusTypeCode'
- - Specify Allocation owner by concatenating Last name or Organization name ('PersonLastOrOrganizationNM') and first name ('PersonFirstNM')
- - Get Allocation priority date from 'PriorityDate' and format it in WaDE2 compatible form
- - Assign Allocation time frame start and end the default values of 01/01 and 12/31, respectively
- - Get Allocation amount from 'InstantaneousQuantity', its unit from 'InstantaneousUnitCode', and convert all values to have units of CFS
- - Get Allocation maximum from 'AnnualVolumeQuantity' 
- - Drop rows if both Allocation amount and Allocation maximum are null
- - Drop duplicates if any
- - Copy results into **waterallocations.csv** and export  
+ - Generate empty waterAllocations.csv file with controlled vocabulary headers.
+ - Assign Native Allocation ID from 'WR_Doc_ID'.
+ - Get Site IDs from sites.csv based on the mapping between 'D_Point_ID' and 'WR_Doc_ID' through 'D_Point_WR_Doc'. Note there might be multiple sites mapped into one water right.
+ - Map Watersource IDs from watersources.csv based on source type code 'WaRecRCWClassTypeCode'.
+ - Assign Beneficial use category from 'PurposeOfUseTypeCodes' based on mapping table.
+ - Get Allocation type from 'WaRecPhaseTypeCode'. 
+ - Get Allocation legal status from 'WaRecProcessStatusTypeCode'.
+ - Specify Allocation owner by concatenating Last name or Organization name ('PersonLastOrOrganizationNM') and first name ('PersonFirstNM').
+ - Get Allocation priority date from 'PriorityDate' and format it in WaDE2 compatible form.
+ - Assign Allocation time frame start and end the default values of 01/01 and 12/31, respectively.
+ - Get Allocation amount from 'InstantaneousQuantity', its unit from 'InstantaneousUnitCode', and convert all values to have units of CFS.
+ - Get Allocation maximum from 'AnnualVolumeQuantity'. 
+ - Drop rows if both Allocation amount and Allocation maximum are null.
+ - Drop duplicates if any.
+ - Copy results into **waterallocations.csv** and export.  
 
 #### Sample Data (Note: not all fields shown):
 OrganizationUUID | SiteUUID | WaterSourceUUID | BeneficialUseCategory | AllocationNativeID | AllocationOwner | AllocationTypeCV | AllocationLegalStatusCV   
