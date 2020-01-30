@@ -111,7 +111,7 @@ Supplemental Scripts Required: None
  - Generate empty waterAllocations.csv file with controlled vocabulary headers.
  - Assign Native Allocation ID from 'PERMIT_NUMBER'.
  - Get Site IDs from sites.csv based on the mapping between 'OBJECTID' and 'PERMIT_NUMBER'.
- - Assign the Watersource IDs 'OK_1', 'OK_2' based on the water soure type being ground water or surface water, respectively.
+ - Assign the Watersource IDs 'OK_1', 'OK_2' based on the water soure type being surface water or ground water, respectively.
  - Assign Beneficial use category from 'PRIMARY_PURPOSE'.
  - Get Allocation type from 'PERMIT_TYPE'. 
  - Get Allocation legal status from 'STATUS'.
