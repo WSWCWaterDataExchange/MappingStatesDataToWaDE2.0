@@ -144,13 +144,15 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - MethodUUID
 - AllocationPriorityDate
 
-# Step 2: Manually Modify Existing Files to Generate CA CSV Data Compatible with WaDE 2.0.
+# Step 2: Manually Modify Existing Files to Generate OR CSV Data Compatible with WaDE 2.0.
 The following is a quick description of three CSV files manually created to be used as inputs into WaDE 2.0.  These tables usually have single rows, so are prepared by manual inspection.
 
 
 ## 2-1. variables.csv 
 Purpose: generate legend of granular variables specific to each state.
+
 Dependency:  None
+
 Supplemental Scripts Required:  None
 
 #### Inputs:
@@ -162,7 +164,9 @@ OWRD Allocation all  | Allocation All | Allocation | Average | 1 | Year |10 | Wa
 
 ## 2-2. methods.csv
 Purpose: generate legend of granular variables specific to each state detailing water right / allocation / etc data collection.
+
 Dependency:  None
+
 Supplemental Scripts Required:  None
 
 #### Inputs:
@@ -175,7 +179,9 @@ OWRD-Water Rights | Oregon Water Rights | Water Rights | https://www.oregon.gov/
   
 ## 2-3. Organizations.csv
 Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
+
 Dependency:  None
+
 Supplemental Scripts Required:  None
 
 #### Inputs:
