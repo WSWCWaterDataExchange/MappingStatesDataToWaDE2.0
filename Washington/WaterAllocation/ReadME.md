@@ -34,7 +34,7 @@ Note: The outputs from 'watersources_WA.ipynb' and 'sites_WA.ipynb' (water sourc
 
 All scripts can be found at the WaDE’s Github repository [MappingStatesDataToWaDE2.0 in the Washington folder](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/edit/master/Washington/).
 
-## 1-1. watersources_OR.ipynb
+## 1-1. watersources_WA.ipynb
 Purpose: generate a list of water source names, source types, and quality indicators.
 
 #### Inputs: 
