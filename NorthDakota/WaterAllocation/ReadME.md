@@ -27,7 +27,7 @@ All scripts can be found at the WaDE’s Github repository [MappingStatesDataToW
 Purpose: generate a list of water source names, source types, and quality indicators.
 
 #### Inputs: 
-- **Person_Plus_EXTRACT_FromWRTSnotGWIS.csv**
+- **Permits.csv**
 
 Dependency:  None
 
@@ -36,8 +36,8 @@ Supplemental Scripts Required:  None
 #### Operation:
 - Read the input file and form an output dataframe.
 - Generate empty **watersources.csv** file with controlled vocabulary headers.
-- Assign water soure type based on the dictionary mapping of the code 'WaRecRCWClassTypeCode'.
-- Assign 'Unspecified' for water source names as it doesn't currently exit. 
+- Get water soure type from 'Source'. Put 'Unknown' for empty 'Source'.
+- Get water source name from 'source_nam' and put 'Unspecified' if 'Source_nam' doesn't exist. 
 - Enter default values for fields with constant values or those that do not have values currently.
 - Drop duplicate rows if they exist.
 - Generate WaterSourceNativeID.
@@ -47,9 +47,9 @@ Supplemental Scripts Required:  None
 #### Sample Data (Note: not all fields shown):
 WaterSourceUUID | WaterSourceNativeID | WaterSourceName | WaterSourceTypeCV | WaterQualityIndicatorCV
 ------------ | ------------ | -------- | ---------- | ---- 
-WA_1  | 1 | Unspecified | surfaceWater | Fresh
+ND_3	| 3	| Charbonneau Creek	| Surface Water | Fresh
 
-Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. **watersources_mandatoryFieldMissing.csv**) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the **watersources_WA.ipynb** include the following: 
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. **watersources_mandatoryFieldMissing.csv**) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the **watersources_ND.ipynb** include the following: 
 - WaterSourceUUID
 - WaterSourceTypeCV
 - WaterQualityIndicatorCV
@@ -62,16 +62,16 @@ Dependency:  None
 Supplemental Scripts Required: None
 
 #### Inputs: 
-- **D_Point.csv**
+- **Permits.csv**
 
 #### Operation:   
 - Generate empty sites.csv file with controlled vocabulary headers.
-- Assign SiteNativeID from 'D_Point_ID'.
-- Specify site type based on dictionary that maps the 'D_Point_Type_CD' code to its respective values.
-- Leave site name as 'Unspecified'.
-- Project X and Y coordindates in EPSG:2927 to longitude and latitude in EPSG:4236.
+- Assign SiteNativeID from 'pod'.
+- Get site type from 'source'.
+- Get site name from 'aquifer', and enter 'Unspecified' if it doesn't exist.
+- Get Longitude and Latitude from 'longitude' and 'latitude', respectively.
 - Map the codes in 'Position_With_CD' to Coordinate mathod CV based on the corresponding dictionary.
-- Map the Coordinate accuracy CV from 'Location_CD' based on the corresponding dictionary.
+- Leave Coordinate method CV as 'Unspecified'.
 - Drop duplicates if any.
 - Generate SiteUUID based on SiteNativeID. 
 - Drop data if missing latitude/longitude.
@@ -80,15 +80,15 @@ Supplemental Scripts Required: None
 #### Sample Data (Note: not all fields shown):
 SiteUUID | SiteNativeID | SiteName  | SiteTypeCV | Longitude | Latitude 
 ------------ | ------------ | ---------- | ---- | ---- | ---- 
-WA_104 | 203659 | Unspecified  | well (or ground water device unknown) | -120.0138 | 46.3210 
+ND_1 | 13007302B | Unspecified  | Ground Water | -99.78988 | 46.1113 
 
-Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. **sites_mandatoryFieldMissing.csv**) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the **sites_WA.ipynb** include the following: 
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. **sites_mandatoryFieldMissing.csv**) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the **sites_ND.ipynb** include the following: 
 - SiteUUID 
 - SiteName
 - CoordinateMethodCV 
 - EPSGCodeCV
 
-## 1-3. waterallocations_WA.ipynb
+## 1-3. waterallocations_ND.ipynb
 Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 
 Dependency: watersources.csv and sites.csv generated above.
@@ -96,22 +96,21 @@ Dependency: watersources.csv and sites.csv generated above.
 Supplemental Scripts Required: None
 
 #### Inputs: 
-- **Person_Plus_EXTRACT_FromWRTSnotGWIS.csv**
-- **D_Point_WR_Doc.csv**
+- **Permits.csv**
 
 #### Operation:
  - Generate empty waterAllocations.csv file with controlled vocabulary headers.
- - Assign Native Allocation ID from 'WR_Doc_ID'.
- - Get Site IDs from sites.csv based on the mapping between 'D_Point_ID' and 'WR_Doc_ID' through 'D_Point_WR_Doc'. Note there might be multiple sites mapped into one water right.
- - Map Watersource IDs from watersources.csv based on source type code 'WaRecRCWClassTypeCode'.
- - Assign Beneficial use category from 'PurposeOfUseTypeCodes' based on mapping table.
- - Get Allocation type from 'WaRecPhaseTypeCode'. 
- - Get Allocation legal status from 'WaRecProcessStatusTypeCode'.
- - Specify Allocation owner by concatenating Last name or Organization name ('PersonLastOrOrganizationNM') and first name ('PersonFirstNM').
- - Get Allocation priority date from 'PriorityDate' and format it in WaDE2 compatible form.
- - Assign Allocation time frame start and end the default values of 01/01 and 12/31, respectively.
- - Get Allocation amount from 'InstantaneousQuantity', its unit from 'InstantaneousUnitCode', and convert all values to have units of CFS.
- - Get Allocation maximum from 'AnnualVolumeQuantity'. 
+ - Assign Native Allocation ID from 'permit_num'.
+ - Get Site IDs from sites.csv based on the mapping between 'pod' and 'permit_num'. Note there might be multiple sites mapped into one water right.
+ - Map Watersource IDs from watersources.csv based on source type and source name.
+ - Assign Beneficial use category from 'use_type'.
+ - Get Allocation legal status from 'status'.
+ - Specify Allocation owner from 'permit_hol'.
+ - Get Allocation priority date from 'priority_d'.
+ - Assign Allocation time frame start from 'period_sta' 
+ - Assign allocatino time frame end from 'period_end'
+ - Get Allocation amount from 'req_rate'.
+ - Get Allocation maximum from 'req_acft'. 
  - Drop rows if both Allocation amount and Allocation maximum are null.
  - Drop duplicates if any.
  - Copy results into **waterallocations.csv** and export.  
@@ -119,16 +118,16 @@ Supplemental Scripts Required: None
 #### Sample Data (Note: not all fields shown):
 OrganizationUUID | SiteUUID | WaterSourceUUID | BeneficialUseCategory | AllocationNativeID | AllocationOwner | AllocationTypeCV | AllocationLegalStatusCV   
 ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ---------- | ----------- 
-WSDE| WA_2195 | WA_2 | Irrigation, Domestic general | 2066186 |LARSON, ARNOLD V. | Claim | Active  
+NDSWC | ND_9, ND_9355, ND_9937 | ND_4 | Irrigation | 8A |WEYRAUCH, DANIEL |  | Perfected  
 
-Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. **allocations_mandatoryFieldMissing.csv**) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the **waterallocations_WA.ipynb** include the following: 
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. **allocations_mandatoryFieldMissing.csv**) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the **waterallocations_ND.ipynb** include the following: 
 - OrganizationUUID
 - VariableSpecificUUID
 - WaterSourceUUID
 - MethodUUID
 - AllocationPriorityDate
 
-# Step 2: Manually Modify Existing Files to Generate WA CSV Data Compatible with WaDE 2.0.
+# Step 2: Manually Modify Existing Files to Generate ND CSV Data Compatible with WaDE 2.0.
 The following is a quick description of three CSV files manually created to be used as inputs into WaDE 2.0.  These tables usually have single rows, so are prepared by manual inspection.
 
 
@@ -144,7 +143,7 @@ Supplemental Scripts Required:  None
 
 VariableSpecificUUID | VariableSpecificCV | VariableCV | AggregationStatisticCV| AggregationInterval | AggregationIntervalUnitCV | ReportYearStartMonth| ReportYearTypeCV | AmountUnitCV | MaximumAmountUnitCV
 ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- | --------- | -------
-WSDE Allocation all  | Allocation All | Allocation | Average | 1 | Year |10 | WaterYear| CFS | AFY
+NDSWC Allocation all  | Allocation All | Allocation | Average | 1 | Year |10 | WaterYear| CFS | AFY
 
 ## 2-2. methods.csv
 Purpose: generate legend of granular variables specific to each state detailing water right / allocation / etc data collection.
@@ -158,7 +157,7 @@ Supplemental Scripts Required:  None
 
 MethodUUID | MethodName | MethodDescription| MethodNEMLink | ApplicableResourceTypeCV | MethodTypeCV | DataCoverageValue | DataQualityValueCV	| DataConfidenceValue
 ---------- | ---------- | ------------ | ------------- | ------------- | ------------ | -------------| ------------ | ---------- 
-WSDE-Water Rights | Washington Water Rights | Water Rights | https://ecology.wa.gov/Water-Shorelines/Water-supply/Water-rights| Surface Ground | Adjudicated	|         |         |                 
+NDSWC-Water Rights | North Dakota Water Rights | Water Rights | https://mapservice.swc.nd.gov/| Surface Ground | Adjudicated	|         |         |                 
 
   
 ## 2-3. Organizations.csv
@@ -173,6 +172,5 @@ Supplemental Scripts Required:  None
 
 OrganizationUUID | OrganizationName | OrganizationPurview| OrganizationWebsite | OrganizationPhoneNumber |	OrganizationContactName	| OrganizationContactEmail |	OrganizationDataMappingURL |	State 
 ---------------- | ------------ | -------- | ---------- | ---------- | ------------ | -------------- | ------------ | ---------
-WSDE |Washington State Department of Ecology  | The Water Resources' GWIS (Geographic Water Information System) database includes water right place-of-use polygons and associated device points. |  https://ecology.wa.gov/Water-Shorelines/Water-supply/Water-rights | 360-407-6000 |	Riddle, H. Nicholas | HRID461@ECY.WA.GOV |https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Washington	| WA
-
+NDSWC |North Dakota State Water Commission | The Water Appropriation Division is responsible for the appropriation and management of the state’s water resources in accordance with Article XI of the North Dakota Constitution and Chapter 61 of North Dakota Century Code. |	https://swc.nd.gov/theswc/water_appropriations.html	| (701) 328-2754.	| Jon Patch	| abc@co.com |	https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/NorthDakota	| ND
 
