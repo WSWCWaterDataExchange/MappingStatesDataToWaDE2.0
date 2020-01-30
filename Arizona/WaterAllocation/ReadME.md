@@ -8,11 +8,11 @@ http://gisdata-azwater.opendata.arcgis.com/
 Overview of Arizona Groundwater management Code can be found at:
 http://infoshare.azwater.gov/docushare/dsweb/Get/Document-11348/Groundwater_Code_Overview.pdf
 
-The following two spreadsheets for wells datad were downloaded 
+The following two spreadsheets for wells data were downloaded 
   - **Well_Registry_Wells55.csv**
   - **GWSI_Sites.csv**
   
-According to background data at the ADWR website (http://gisdata-azwater.opendata.arcgis.com/datasets/4ab4a7d7761b49d79fec040880afb1d3_0), the '**Wells 55 Registry**' contains all wells registered in the state. The '**Groundwater Well Site Inventory (GWSI)**' contains well locations, construction, and water level measurements for wells located and sampled in the field. Out of 44239 well records in GWSI database, 23150 have a 'Wells 55 Registry ID'. Here, these data were used as inputs to the WaDE import codes and their records are joined by the **Wells 55 Registry ID**.
+According to background data at the ADWR website (http://gisdata-azwater.opendata.arcgis.com/datasets/4ab4a7d7761b49d79fec040880afb1d3_0), the '**Wells 55 Registry**' contains all wells registered in the state. The '**Groundwater Well Site Inventory (GWSI)**' contains well locations, construction, and water level measurements for wells located and sampled in the field. Out of 44239 well records in GWSI database, 23150 have a '**Wells 55 Registry ID**'. Here, the records of these two tables were joined based on the **Wells 55 Registry ID** field and form the input table to the WaDE import codes. 
 
 The Python scripts described here are [Jupyter Notebooks](https://jupyter.org/) to prepare the water allocations data in csv format that can be ingested into the WaDE2 DB.
 
@@ -43,7 +43,7 @@ Supplemental Scripts Required: None
 #### Operation:   
 - Generate empty sites.csv file with controlled vocabulary headers.
 - Assign SiteNativeID from 'SITE_ID'.
-- Specify site from 'WELL_TYPE'.
+- Specify site type from 'WELL_TYPE'.
 - Leave site name as 'Unspecified'.
 - Project 'UTM_X_METERS' and 'UTM_Y_METERS' coordindates in NAD 83 UTM Zone 12 to longitude and latitude in EPSG:4236.
 - Leave the CoordinateMethodCV as 'Unspecified'.
@@ -85,7 +85,7 @@ Supplemental Scripts Required: None
  - Get Allocation priority date from 'APPLICATION_DATE' and format it in WaDE2 compatible form.
  - Assign Allocation time frame start and end the default values of 01/01 and 12/31, respectively.
  - Get Allocation amount from 'PUMPRATE'.
- - Get Allocation maximum from 'TESTEDRATE', assuming the test rate here means max allowed pumping rate.
+ - Get Allocation maximum from 'TESTEDRATE', assuming the test rate here means maximum allowed pumping rate.
  - Drop rows if both Allocation amount and Allocation maximum are null.
  - Drop duplicates if any.
  - Copy results into **waterallocations.csv** and export.  
@@ -102,13 +102,15 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - MethodUUID
 - AllocationPriorityDate
 
-# Step 2: Manually Modify Existing Files to Generate CA CSV Data Compatible with WaDE 2.0.
+# Step 2: Manually Modify Existing Files to Generate AZ CSV Data Compatible with WaDE 2.0.
 The following is a quick description of three CSV files manually created to be used as inputs into WaDE 2.0.  These tables usually have single rows, so are prepared by manual inspection.
 
 
 ## 2-1. watersources.csv
 Purpose: generate a list of water source names, source types, and quality indicators.
+
 Dependency:  None
+
 Supplemental Scripts Required:  None
 	
 #### Sample Data (Note: not all fields shown):
@@ -118,7 +120,9 @@ AZ_1  | 1 | Unknown | Groundwater well | Fresh
 
 ## 2-2. variables.csv 
 Purpose: generate legend of granular variables specific to each state.
+
 Dependency:  None
+
 Supplemental Scripts Required:  None
 
 #### Inputs:
@@ -130,7 +134,9 @@ ADWR Allocation all  | Allocation All | Allocation | Average | 1 | Year |10 | Wa
 
 ## 2-3. methods.csv
 Purpose: generate legend of granular variables specific to each state detailing water right / allocation / etc data collection.
+
 Dependency:  None
+
 Supplemental Scripts Required:  None
 
 #### Inputs:
@@ -143,7 +149,9 @@ ADWR-Water Rights | Arizona Water Rights | Water Rights | http://gisdata-azwater
   
 ## 2-4. Organizations.csv
 Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
+
 Dependency:  None
+
 Supplemental Scripts Required:  None
 
 #### Inputs:
