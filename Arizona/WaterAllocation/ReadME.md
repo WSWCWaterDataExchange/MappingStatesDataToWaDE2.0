@@ -161,4 +161,3 @@ OrganizationUUID | OrganizationName | OrganizationPurview| OrganizationWebsite |
 ---------------- | ------------ | -------- | ---------- | ---------- | ------------ | -------------- | ------------ | ---------
 ADWR |Arizona Department of Water Resources  | The Arizona Department of Water Resources is the steward of Arizona’s water future and ensures long-term, reliable water supplies to support the continued economic prosperity of the State. |  http://gisdata-azwater.opendata.arcgis.com/ | 602-771-8500 |	Rebecca Mitchell | abc@co.com |https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Arizona | AZ
 
-
