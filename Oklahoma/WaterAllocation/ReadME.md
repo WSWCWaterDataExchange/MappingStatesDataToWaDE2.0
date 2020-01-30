@@ -96,7 +96,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - CoordinateMethodCV 
 - EPSGCodeCV
 
-## 1-3. waterallocations_WA.ipynb
+## 1-3. waterallocations_OK.ipynb
 Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 
 Dependency: watersources.csv and sites.csv generated above.
@@ -136,7 +136,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - MethodUUID
 - AllocationPriorityDate
 
-# Step 2: Manually Modify Existing Files to Generate WA CSV Data Compatible with WaDE 2.0.
+# Step 2: Manually Modify Existing Files to Generate OK CSV Data Compatible with WaDE 2.0.
 The following is a quick description of three CSV files manually created to be used as inputs into WaDE 2.0.  These tables usually have single rows, so are prepared by manual inspection.
 
 
@@ -152,7 +152,7 @@ Supplemental Scripts Required:  None
 
 VariableSpecificUUID | VariableSpecificCV | VariableCV | AggregationStatisticCV| AggregationInterval | AggregationIntervalUnitCV | ReportYearStartMonth| ReportYearTypeCV | AmountUnitCV | MaximumAmountUnitCV
 ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- | --------- | -------
-WSDE Allocation all  | Allocation All | Allocation | Average | 1 | Year |10 | WaterYear| CFS | AFY
+OWRB Allocation all  | Allocation All | Allocation | Average | 1 | Year |10 | WaterYear| CFS | AFY
 
 ## 2-2. methods.csv
 Purpose: generate legend of granular variables specific to each state detailing water right / allocation / etc data collection.
@@ -166,7 +166,7 @@ Supplemental Scripts Required:  None
 
 MethodUUID | MethodName | MethodDescription| MethodNEMLink | ApplicableResourceTypeCV | MethodTypeCV | DataCoverageValue | DataQualityValueCV	| DataConfidenceValue
 ---------- | ---------- | ------------ | ------------- | ------------- | ------------ | -------------| ------------ | ---------- 
-WSDE-Water Rights | Washington Water Rights | Water Rights | https://ecology.wa.gov/Water-Shorelines/Water-supply/Water-rights| Surface Ground | Adjudicated	|         |         |                 
+OWRB_Water_rights | Oklahoma water rights | The OWRB appropriates stream and groundwater supplies to various water users in the state. Permits are issued for the use of both surface and groundwaters in Oklahoma (domestic uses are exempt) and all waters must be used beneficially without waste. | https://owrb.maps.arcgis.com/apps/webappviewer/index.html?id=db6e61cfdbc74a4d8b919b2eceef8d43| Allocation | Water Allocation	|         |         |                 
 
   
 ## 2-3. Organizations.csv
@@ -181,6 +181,5 @@ Supplemental Scripts Required:  None
 
 OrganizationUUID | OrganizationName | OrganizationPurview| OrganizationWebsite | OrganizationPhoneNumber |	OrganizationContactName	| OrganizationContactEmail |	OrganizationDataMappingURL |	State 
 ---------------- | ------------ | -------- | ---------- | ---------- | ------------ | -------------- | ------------ | ---------
-WSDE |Washington State Department of Ecology  | The Water Resources' GWIS (Geographic Water Information System) database includes water right place-of-use polygons and associated device points. |  https://ecology.wa.gov/Water-Shorelines/Water-supply/Water-rights | 360-407-6000 |	Riddle, H. Nicholas | HRID461@ECY.WA.GOV |https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Washington	| WA
-
+OWRB |Oklahoma Water Resources Board | OWRB produces and maintains datasets related to water in Oklahoma. | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Oklahoma | 303-866-3581 |	Rebecca Mitchell | abc@co.com |https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Oklahoma	| OK
 
