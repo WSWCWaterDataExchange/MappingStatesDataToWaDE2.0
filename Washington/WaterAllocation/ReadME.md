@@ -16,7 +16,7 @@ From the Geodatabase, the following files were exported into a csv file which fo
  - **D_Point.csv**
  - **WR_Doc_POU1.csv**
 
-A table for mapping of 'purpose of use type' codes to beneficial use categories was obtained from WSDE through email. 
+A table for mapping 'purpose of use type' codes to beneficial use categories was obtained from WSDE through email. 
 
 The Python scripts described here are [Jupyter Notebooks](https://jupyter.org/) to prepare the water allocations data in csv format that can be ingested into the WaDE2 DB.
 
