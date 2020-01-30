@@ -27,7 +27,7 @@ The Python scripts described here are [Jupyter Notebooks](https://jupyter.org/) 
 This document summarizes the process to prepare and share OWRB’s water rights data for inclusion into the WSWC’s Water Data Exchange (WaDE 2.0) project. In order to extract the OWRB’s water allocations data from the input files and publish it online through ESRI layers so that it can be ready for WaDE 2.0, three Python scripts are used to generate CSV files for water sources, sites, and water allocations input tables (Step 1), and three other CSV files are manually created (Step 2), in data tables compatible with WaDE 2.0.
 
 # Step 1: Execute Python Scripts to Generate CSV Data for water sources, sites, and water allocations.
-The following scripts use queries to extract WSDE’s water rights data into views compatible with WaDE 2.0 (see list below for name of each script).  
+The following scripts use queries to extract OWRB’s water rights data into views compatible with WaDE 2.0 (see list below for name of each script).  
 
 - #1. watersources_OK.ipynb
 - #2. sites_OK.ipynb
