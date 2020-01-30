@@ -127,7 +127,7 @@ Supplemental Scripts Required: None
 #### Sample Data (Note: not all fields shown):
 OrganizationUUID | SiteUUID | WaterSourceUUID | BeneficialUseCategory | AllocationNativeID | AllocationOwner | AllocationTypeCV | AllocationLegalStatusCV   
 ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ---------- | ----------- 
-WSDE| WA_2195 | WA_2 | Irrigation, Domestic general | 2066186 |LARSON, ARNOLD V. | Claim | Active  
+OWRB | OK_561 | OK_1 | Agriculture | 19980623 | Prestage Farms of Oklahoma, LLC | Regular | Active  
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. **allocations_mandatoryFieldMissing.csv**) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the **waterallocations_OK.ipynb** include the following: 
 - OrganizationUUID
