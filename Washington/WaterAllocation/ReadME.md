@@ -48,7 +48,7 @@ Supplemental Scripts Required:  None
 - Read the input file and form an output dataframe.
 - Generate empty **watersources.csv** file with controlled vocabulary headers.
 - Assign water soure type based on the dictionary mapping of the code 'WaRecRCWClassTypeCode'.
-- Assign 'Unspecified' for water source names as it doesn't currently exit. 
+- Assign 'Unspecified' for water source names as it doesn't currently exist. 
 - Enter default values for fields with constant values or those that do not have values currently.
 - Drop duplicate rows if they exist.
 - Generate WaterSourceNativeID.
