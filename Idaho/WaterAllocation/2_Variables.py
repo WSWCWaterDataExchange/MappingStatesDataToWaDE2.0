@@ -1,0 +1,73 @@
+#Date Created: 02/05/2020
+#Purpose: To extract ID variable use information and population dataframe for WaDE_QA 2.0.
+#Notes: 1) Single row of entries, inpVals, for Variable Table.
+
+
+# Needed Libraries
+############################################################################
+import pandas as pd
+import numpy as np
+import os
+
+
+# Inputs
+############################################################################
+print("Reading inputs...")
+workingDir="C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Idaho/WaterAllocation"
+os.chdir(workingDir)
+
+#WaDE columns
+columns = [
+    "VariableSpecificUUID",
+    "AggregationInterval",
+    "AggregationIntervalUnitCV",
+    "AggregationStatisticCV",
+    "AmountUnitCV",
+    "MaximumAmountUnitCV",
+    "ReportYearStartMonth",
+    "ReportYearTypeCV",
+    "VariableCV",
+    "VariableSpecificCV"]
+
+
+# Creating output dataframe (outdf)
+############################################################################
+print("Populating dataframe...")
+inpVals = [
+    "IDWR_Allocation All",
+    "1",
+    "Year",
+    "Average",
+    "CFS",
+    "AFY",
+    "10",
+    "WaterYear",
+    "Allocation",
+    "Allocation All"]
+
+outdf = pd.DataFrame([inpVals], columns=columns)
+
+
+# Check required fields are not null
+############################################################################
+print("Check required is not null...")
+# #Check all 'required' (not NA) columns have value (not empty). Replace blank strings by NaN, if there are any
+outdf = outdf.replace('', np.nan) #replace blank strings by NaN, if there are any
+outdf_nullMand = outdf.loc[(outdf["VariableSpecificUUID"].isnull())      | (outdf["AggregationInterval"].isnull()) |
+                           (outdf["AggregationIntervalUnitCV"].isnull()) | (outdf["AggregationStatisticCV"].isnull()) |
+                           (outdf["AmountUnitCV"].isnull())              | (outdf["MaximumAmountUnitCV"].isnull()) |
+                           (outdf["ReportYearStartMonth"].isnull())      | (outdf["ReportYearTypeCV"].isnull()) |
+                           (outdf["VariableCV"].isnull())                | (outdf["VariableSpecificCV"].isnull())]
+
+
+# Export to new csv
+############################################################################
+print("Exporting dataframe to csv...")
+outdf.to_csv('ProcessedInputData/variables.csv', index=False)
+
+#Report missing values if need be to seperate csv
+if(len(outdf_nullMand.index) > 0):
+    outdf_nullMand.to_csv('ProcessedInputData/variables_mandatoryFieldMissing.csv')  # index=False,
+
+
+print("Done.")
