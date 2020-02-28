@@ -3,10 +3,64 @@ import pandas as pd
 import numpy as np
 import beneficialUseDictionary
 
-def assignBenUseCategory(colrowValue):
+def assignAllocAmountMax(in_decreedUnits, in_netAbsolute, in_netConditional):
+
+    retVal = np.nan
+    if ((in_netAbsolute != 0) and (in_netConditional != 0)):
+        """
+        For a single row, there should be only one value that is not zero in Net Absolute, or Net Conditional.
+        If both of them have values that are not zero, then skip loading this row 
+        (The data we have for now does not have this case, but just in case)
+        """
+        # ToDO save these rows for inspection?
+        retVal = np.nan
+    else:
+        if ((in_decreedUnits == "A") and (in_netAbsolute != 0)):
+            retVal = in_netAbsolute
+        elif ((in_decreedUnits == "A") and (in_netConditional != 0)):
+            retVal = in_netConditional
+        else:
+            ## TODO: check this is the case of units == 'A'
+            retVal = np.nan
+    return retVal
+
+
+def assignAllocAmount(in_decreedUnits, in_netAbsolute, in_netConditional):
+
+    retVal = np.nan
+    if ((in_netAbsolute != 0) and (in_netConditional != 0)):
+        """
+        For a single row, there should be only one value that is not zero in Net Absolute, or Net Conditional.
+        If both of them have values that are not zero, then skip loading this row 
+        (The data we have for now does not have this case, but just in case)
+        """
+        # ToDO save these rows for inspection?
+        retVal = np.nan
+    else:
+        if ((in_decreedUnits == "C") and (in_netAbsolute != 0)):
+            retVal = in_netAbsolute
+        elif ((in_decreedUnits == "C") and (in_netConditional != 0)):
+            retVal = in_netConditional
+        else:
+            ## TODO: check this is the case of units == 'A'
+            retVal = np.nan
+    return retVal
+
+
+def assignAllocatoinLegalStatusCV(in_netAbsolute, in_netConditional):
+
+    if ((in_netAbsolute == 0) and (in_netConditional == 0)):
+        return "Conditional Absolute"
+    elif ((in_netAbsolute == 0) and (in_netConditional != 0)):
+        return "Conditional"
+    elif ((in_netAbsolute != 0) and (in_netConditional == 0)):
+        return "Absolute"
+
+
+def assignBenUseCategory_CO(colrowValue):
     # look up beneficial use
     # may need to modify capitalization in beneficialUseDictionary
-    benUseDict = beneficialUseDictionary.beneficialUseDictionary  ##modified key for Utah values
+    benUseDict = beneficialUseDictionary.beneficialUseDictionary_CO  ##modified key for Utah values
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = ''
     else:
