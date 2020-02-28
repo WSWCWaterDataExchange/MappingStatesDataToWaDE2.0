@@ -215,10 +215,10 @@ print("Checking required is not null...")  # Check all 'required' (not NA) colum
 outdf = outdf.replace('', np.nan) #replace blank strings by NaN, if there are any
 # Dataframe to show mandatory fields that had a blank input form df.
 outdf_nullMand = outdf.loc[
-    (outdf["SiteUUID"].isnull()) |
-    (outdf["SiteName"].isnull()) |
-    (outdf["CoordinateMethodCV"].isnull()) |
-    (outdf["EPSGCodeCV"].isnull()) ]
+    (outdf["SiteUUID"].isnull()) | (outdf["SiteUUID"] == '') |
+    (outdf["SiteName"].isnull()) | (outdf["SiteName"] == '') |
+    (outdf["CoordinateMethodCV"].isnull()) | (outdf["CoordinateMethodCV"] == '') |
+    (outdf["EPSGCodeCV"].isnull()) | (outdf["EPSGCodeCV"] == '')]
 
 
 
@@ -244,4 +244,3 @@ if(len(outdf_nullMand.index) > 0):
     outdf_nullMand.to_csv('ProcessedInputData/sites_mandatoryFieldMissing.csv')  # index=False,
 
 print("Done")
-

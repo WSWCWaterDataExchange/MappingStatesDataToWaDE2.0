@@ -50,11 +50,14 @@ outdf = pd.DataFrame([inpVals], columns=columns)
 ############################################################################
 print("Checking required is not null...")  # Check all 'required' (not NA) columns have value (not empty).
 outdf = outdf.replace('', np.nan)  # Replace blank strings by NaN, if there are any.
-outdf_nullMand = outdf.loc[(outdf["OrganizationUUID"].isnull())        | (outdf["OrganizationContactEmail"].isnull()) |
-                           (outdf["OrganizationContactName"].isnull()) | (outdf["OrganizationDataMappingURL"].isnull()) |
-                           (outdf["OrganizationName"].isnull())        | (outdf["OrganizationPhoneNumber"].isnull()) |
-                           (outdf["OrganizationPurview"].isnull())     | (outdf["OrganizationWebsite"].isnull()) |
-                           (outdf["State"].isnull())]
+outdf_nullMand = outdf.loc[(outdf["OrganizationUUID"].isnull()) | (outdf["OrganizationUUID"] == '') |
+                           (outdf["OrganizationContactEmail"].isnull()) | (outdf["OrganizationContactEmail"] == '') |
+                           (outdf["OrganizationContactName"].isnull()) | (outdf["OrganizationContactName"] == '') |
+                           (outdf["OrganizationDataMappingURL"].isnull()) | (outdf["OrganizationDataMappingURL"] == '') |
+                           (outdf["OrganizationName"].isnull()) | (outdf["OrganizationName"] == '') |
+                           (outdf["OrganizationPhoneNumber"].isnull()) | (outdf["OrganizationPhoneNumber"] == '') |
+                           (outdf["OrganizationWebsite"].isnull()) | (outdf["OrganizationWebsite"] == '') |
+                           (outdf["State"].isnull()) | (outdf["State"] == '')]
 
 if(len(outdf_nullMand.index) > 0):
     outdf_nullMand.to_csv('organizations_mandatoryFieldMissing.csv')  # index=False,
@@ -65,5 +68,6 @@ if(len(outdf_nullMand.index) > 0):
 print("Exporting dataframe to csv...")
 # save to output
 outdf.to_csv('ProcessedInputData/organizations.csv', index=False)
+
 
 print("Done.")

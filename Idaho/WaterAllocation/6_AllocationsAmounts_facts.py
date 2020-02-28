@@ -1,6 +1,7 @@
-#Date Created: 02/06/2020
+#Date Created: 02/28/2020
 #Purpose: To extract ID allocation use information and population dataframe WaDEQA 2.0.
-#       2) Simple creation of working dataframe (df), with output dataframe (outdf).
+#         1) Simple creation of working dataframe (df), with output dataframe (outdf).
+#         2) Drop all nulls before combining duplicate rows on NativeID.
 
 
 # Needed Libraries
@@ -29,18 +30,12 @@ df_sites = pd.read_csv(sites_fileInput)  # Sites dataframe
 
 #WaDE dataframe columns
 columns = [
-    # "MethodID",  # Think the WaDE 2.0 database creates these.  Should only need to link UUID.
-    # "OrganizationID",
-    # "SiteID",
-    # "VariableSpecificID",
-    # "WaterSourceID",
     "MethodUUID",
     "OrganizationUUID",
     "SiteUUID",
     "VariableSpecificUUID",
     "WaterSourceUUID",
     "AllocationAmount",
-    #"AllocationApplicationDateID",
     "AllocationApplicationDate",
     "AllocationAssociatedConsumptiveUseSiteIDs",
     "AllocationAssociatedWithdrawalSiteIDs",
@@ -48,23 +43,19 @@ columns = [
     "AllocationChangeApplicationIndicator",
     "AllocationCommunityWaterSupplySystem",
     "AllocationCropDutyAmount",
-    #"AllocationExpirationDateID",
     "AllocationExpirationDate",
     "AllocationLegalStatusCV",
     "AllocationMaximum",
     "AllocationNativeID",
     "AllocationOwner",
-    #"AllocationPriorityDateID",
     "AllocationPriorityDate",
     "AllocationTimeframeEnd",
     "AllocationTimeframeStart",
     "AllocationTypeCV",
-    #"BeneficialUseCategoryCV",
     "BeneficialUseCategory",
     "CommunityWaterSupplySystem",
     "CropTypeCV",
     "CustomerTypeCV",
-    #"DataPublicationDateID",
     "DataPublicationDate",
     "DataPublicationDOI",
     "GeneratedPowerCapacityMW",
@@ -73,34 +64,13 @@ columns = [
     "LegacyAllocationIDs",
     "PopulationServed",
     "PowerType",
-    #"PrimaryUseCategoryCV",
     "PrimaryUseCategory",
-    #"SDWISIdentifierCV",
     "AllocationSDWISIdentifierCV",
     "WaterAllocationNativeURL"]
 
 
 # Custom Site Functions
 ############################################################################
-
-# # For creating WaterSourceName
-# UnknownWSNameDict = {
-#     "Ground Water":"Unknown",
-#     "Spring":"Unknown",
-#     "Unnamed Stream":"Unknown",
-#     "Unnamed Streams":"Unknown"}
-# def assignWaterSourceName(colrowValue):
-#     if colrowValue == '' or pd.isnull(colrowValue):
-#         outList = "Unknown"
-#     else:
-#         String1 = colrowValue.strip()  # remove whitespace chars
-#         try:
-#             outList = UnknownWSNameDict[String1]
-#         except:
-#             outList = colrowValue
-#
-#     return outList
-
 # For creating WaterSourceName
 def assignWaterSourceName(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
@@ -142,18 +112,6 @@ def retrieveWaterSourceUUID(colrowValueA, colrowValueB, df_watersources):
             outList = ''
     return outList
 
-# For creating SiteUUID
-# def retrieveSiteUUID(colrowValue, df_sites):
-    # if colrowValue == '' or pd.isnull(colrowValue):
-    #     outList = ''
-    # else:
-    #     ml = df_sites.loc[df_sites['SiteNativeID'] == colrowValue, 'SiteUUID']  #think we use WaDESiteUUID instead of SiteUUID, for now.
-    #     if not(ml.empty):  # check if the series is empty
-    #         outList = ml.iloc[0]
-    #     else:
-    #         outList = ''
-    # return outList
-
 def retrieveSiteUUID(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = 0
@@ -189,6 +147,14 @@ def assignBeneficialUseCategory(colrowValue):
         outList = colrowValue.replace("[", "").replace("]", "").replace("'", "")
     return outList
 
+# For creating AllocationAmount
+def assignAllocationBasis(colrowValue):
+    if colrowValue == '' or pd.isnull(colrowValue):
+        outList = 'Unknown'
+    else:
+        outList = colrowValue
+    return outList
+
 
 # Creating output dataframe (outdf)
 ############################################################################
@@ -207,7 +173,7 @@ SitUUIDdict = pd.Series(df_sites.SiteNativeID.values, index = df_sites.SiteUUID)
 outdf['SiteUUID'] = df_IDM.apply(lambda row: retrieveSiteUUID(row['WaterRightNumber']), axis=1)
 
 print("VariableSpecificUUID")  # Hardcoded
-outdf.VariableSpecificUUID = "IDWR Allocation All"
+outdf.VariableSpecificUUID = "IDWR_Allocation All"
 
 ##############################################################
 # Need to recreate WSName and WStype for this to work... than match waterousrce.csv 'WaterSourceUUID' to the newly recreated WSName and WStype just to correctly  match the correct ID value.
@@ -237,7 +203,7 @@ print("AllocationAssociatedWithdrawalSiteIDs")  # Hardcoded
 outdf.AllocationAssociatedWithdrawalSiteIDs = ""
 
 print("AllocationBasisCV")
-outdf['AllocationBasisCV'] =df_IDM['Basis']
+outdf['AllocationBasisCV'] = df_IDM.apply(lambda row: assignAllocationBasis(row['Basis']), axis=1)
 
 print("AllocationChangeApplicationIndicator")  # Hardcoded
 outdf.AllocationChangeApplicationIndicator = ""
@@ -324,12 +290,131 @@ print("WaterAllocationNativeURL")  # Hardcoded
 outdf["WaterAllocationNativeURL"] = df_IDM['WRReport']
 
 
-# Combining Duplicates
+# Check required fields are not null
 ############################################################################
-outdf100 = pd.DataFrame(index=df_IDM.index, columns=columns)  # The output dataframe for CSV.
+outdfpurge = pd.DataFrame(columns=columns)  # purge DataFrame holder
+
+print("Checking required is not null...")
+outdf_nullMand = outdf.loc[(outdf["MethodUUID"].isnull()) | (outdf["MethodUUID"] == '') |
+                              (outdf["OrganizationUUID"].isnull()) | (outdf["OrganizationUUID"] == '') |
+                              (outdf["SiteUUID"].isnull()) | (outdf["SiteUUID"] == '') |
+                              (outdf["VariableSpecificUUID"].isnull()) | (outdf["VariableSpecificUUID"] == '') |
+                              (outdf["WaterSourceUUID"].isnull()) | (outdf["WaterSourceUUID"] == '') |
+                              (outdf["AllocationPriorityDate"].isnull()) | (outdf["AllocationPriorityDate"] == '') |
+                              (outdf["BeneficialUseCategory"].isnull()) | (outdf["BeneficialUseCategory"] == '') |
+                              (outdf["DataPublicationDate"].isnull()) | (outdf["DataPublicationDate"] == '')]
+
+print("Dropping null AllocationsAmount...")
+outdfpurgeAA = outdf.loc[(outdf["AllocationAmount"].isnull()) | (outdf["AllocationAmount"] == '') & ((outdf["AllocationMaximum"].isnull()) | (outdf["AllocationMaximum"] == ''))]
+outdfpurge = outdfpurge.append(outdfpurgeAA)
+if len(outdfpurgeAA.index) > 0:
+    dropIndex = outdf.loc[(outdf["AllocationAmount"].isnull()) | (outdf["AllocationAmount"] == '') & ((outdf["AllocationMaximum"].isnull()) | (outdf["AllocationMaximum"] == ''))].index
+    outdf = outdf.drop(dropIndex)
+    outdf = outdf.reset_index(drop=True)
+
+print("Dropping null SiteUUIDs...")
+outdfpurgeSUUID = outdf.loc[(outdf["SiteUUID"].isnull()) | (outdf["SiteUUID"]== '')]
+outdfpurge = outdfpurge.append(outdfpurgeSUUID)
+if len(outdfpurgeSUUID.index) > 0:
+    dropIndex = outdf.loc[(outdf["SiteUUID"].isnull()) | (outdf["SiteUUID"]== '')].index
+    outdf = outdf.drop(dropIndex)
+    outdf = outdf.reset_index(drop=True)
+
+print("Dropping null PriorityDate...")
+outdfpurgePD = outdf.loc[(outdf["AllocationPriorityDate"].isnull()) | (outdf["AllocationPriorityDate"] == '')]
+outdfpurge = outdfpurge.append(outdfpurgePD)
+if len(outdfpurgePD.index) > 0:
+    dropIndex = outdf.loc[(outdf["AllocationPriorityDate"].isnull()) | (outdf["AllocationPriorityDate"] == '')].index
+    outdf = outdf.drop(dropIndex)
+    outdf = outdf.reset_index(drop=True)
+
+print("Dropping null WaterSourceUUID...")
+outdfpurgeWSUUID = outdf.loc[(outdf["WaterSourceUUID"].isnull()) | (outdf["WaterSourceUUID"] == '')]
+outdfpurge = outdfpurge.append(outdfpurgeWSUUID)
+if len(outdfpurgeWSUUID.index) > 0:
+    dropIndex = outdf.loc[(outdf["WaterSourceUUID"].isnull()) | (outdf["WaterSourceUUID"] == '')].index
+    outdf = outdf.drop(dropIndex)
+    outdf = outdf.reset_index(drop=True)
+
+
+# Solving WaDE 2.0 Upload Issues
+############################################################################
+# Date Noted: 02/28/2020
+# Note: Insure single 'AllocationNativeID' entry.
 print("Joining outdf duplicates based on AllocationNativeID...")
-outdf100 = pd.DataFrame(index=df_IDM.index, columns=columns)  # The output dataframe for CSV.
+outdf100 = pd.DataFrame(columns=columns)  # The output dataframe for CSV.
 outdf100 = outdf.groupby('AllocationNativeID', sort=False).agg(lambda x: ','.join([str(elem) for elem in (list(set(x)))])).reset_index()
+
+# Date Noted: 02/27/2020
+# Note: Insure 'WaterSourceUUID' only has 1 entry. Error due to above merge / we don't allow multiple WSUUIDs.
+print("temp fix WaterSourceUUID")
+def tempfixWSUUID(colrowValueA):
+    #pass in text, split on 'sep', return first
+    sep = ','
+    result = colrowValueA.split(sep, 1)[0]
+    return result
+outdf100['WaterSourceUUID']  = outdf100.apply(lambda row: tempfixWSUUID(row['WaterSourceUUID']), axis=1)
+
+
+# Replace any blank cells within the output df with NaN.
+############################################################################
+# outdf100 = outdf100.replace('', np.nan)  # may not need to do this.... doesn't really work due to merge
+
+
+# Checking Dataframe data types
+############################################################################
+print(outdf100.dtypes)
+
+
+# Export to new csv
+############################################################################
+print("Exporting dataframe outdf to csv...")
+# The working output DataFrame for WaDE 2.0 input.
+outdf100.to_csv('ProcessedInputData/waterallocations.csv', index=False)
+
+# Report purged values.
+if(len(outdfpurge.index) > 0):
+    outdfpurge.to_csv('ProcessedInputData/waterallocations_missing.csv')  # index=False,
+
+# Report missing values.
+if(len(outdf_nullMand.index) > 0):
+    outdf_nullMand.to_csv('ProcessedInputData/waterallocations_mandatoryFieldMissing.csv')  # index=False,
+
+
+
+print("Done.")
+
+
+# Code not using
+############################################################################
+
+# # For creating WaterSourceName
+# UnknownWSNameDict = {
+#     "Ground Water":"Unknown",
+#     "Spring":"Unknown",
+#     "Unnamed Stream":"Unknown",
+#     "Unnamed Streams":"Unknown"}
+# def assignWaterSourceName(colrowValue):
+#     if colrowValue == '' or pd.isnull(colrowValue):
+#         outList = "Unknown"
+#     else:
+#         String1 = colrowValue.strip()  # remove whitespace chars
+#         try:
+#             outList = UnknownWSNameDict[String1]
+#         except:
+#             outList = colrowValue
+#
+#     return outList
+
+
+# ###################################################################################
+# # Date Noted: 02/28/2020
+# # Note: Priority date errors. date
+# print("fix AllocationPriorityDate datatype")
+# #changing data type of 'AllocationPriorityDate' to datatype, then changing format of 'Date' to yyyy-mm-dd
+# outdf['AllocationPriorityDate'] = pd.to_datetime(outdf['AllocationPriorityDate'], errors = 'coerce')
+# outdf['AllocationPriorityDate'] = pd.to_datetime(outdf['AllocationPriorityDate'].dt.strftime('%m/%d/%Ym'))
+# ###################################################################################
 
 
 # # Separate outdf to fix a few things
@@ -350,61 +435,3 @@ outdf100 = outdf.groupby('AllocationNativeID', sort=False).agg(lambda x: ','.joi
 #     outdf200['IrrigatedAcreage'][x] = sum(newlist)
 #
 # outdf100['IrrigatedAcreage'] = outdf200['IrrigatedAcreage']
-
-
-# Check required fields are not null
-############################################################################
-# print("Dropping null AllocationsAmount...")
-# outdfpurge = outdf100.loc[(outdf100["AllocationAmount"] == '') & (outdf100["AllocationMaximum"] == '')]
-# if len(outdfpurge.index) > 0:
-#     outdfpurge.to_csv('waterallocations_missing.csv')    #index=False,
-#     dropIndex = outdf100.loc[(outdf["AllocationAmount"] == '') & (outdf100["AllocationMaximum"] == '')].index
-#     outdf100 = outdf100.drop(dropIndex)
-#     outdf100 = outdf100.reset_index(drop=True)
-
-# print("Dropping null SiteUUIDs...")
-# outdfnullID = outdf100.loc[outdf100["SiteUUID"] == '']
-# if len(outdfnullID.index) > 0:
-#     dropIndex = outdf100.loc[outdf100["SiteUUID"] == ''].index
-#     outdf100 = outdf100.drop(dropIndex)
-#     outdf100 = outdf100.reset_index(drop=True)
-#
-# print("Dropping null Priority date...")
-# outdfnullPR = outdf100.loc[outdf100["AllocationPriorityDate"] == '']
-# if len(outdfnullPR.index) > 0:
-#     dropIndex = outdf100.loc[outdf100["AllocationPriorityDate"] == ''].index
-#     outdf100 = outdf100.drop(dropIndex)
-#     outdf100 = outdf100.reset_index(drop=True)
-#
-# print("Dropping null WaterSourceUUID...")
-# outdfnullPR = outdf100.loc[outdf100["WaterSourceUUID"] == '']
-# if len(outdfnullPR.index) > 0:
-#     dropIndex = outdf100.loc[outdf100["WaterSourceUUID"] == ''].index
-#     outdf100 = outdf100.drop(dropIndex)
-#     outdf100 = outdf100.reset_index(drop=True)
-
-
-print("Checking required is not null...")
-outdf100 = outdf100.replace('', np.nan)  # Replace any blank cells with NaN.
-outdf_nullMand = outdf100.loc[(outdf100["MethodUUID"].isnull())      | (outdf100["OrganizationUUID"].isnull()) |
-                              (outdf100["SiteUUID"].isnull())        | (outdf100["VariableSpecificUUID"].isnull()) |
-                              (outdf100["WaterSourceUUID"].isnull()) | (outdf100["AllocationPriorityDate"].isnull()) |
-                              (outdf100["BeneficialUseCategory"].isnull()) | (outdf100["DataPublicationDate"].isnull())]
-
-
-# Checking Dataframe data types
-############################################################################
-print(outdf.dtypes)
-
-
-# Export to new csv
-############################################################################
-print("Exporting dataframe outdf to csv...")
-outdf100.to_csv('ProcessedInputData/waterallocations.csv', index=False)
-
-#Report missing values if need be to separate csv
-if(len(outdf_nullMand.index) > 0):
-    outdf_nullMand.to_csv('ProcessedInputData/waterallocations_mandatoryFieldMissing.csv')  # index=False,
-
-
-print("Done.")

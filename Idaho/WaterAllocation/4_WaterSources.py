@@ -107,9 +107,9 @@ outdf['WaterSourceUUID'] = df.apply(lambda row: assignWaterSourceUUID(row['Count
 #Check all 'required' (not NA) columns have value (not empty). Replace blank strings by NaN, if there are any
 print("Checking required is not null...")
 outdf = outdf.replace('', np.nan)  # Replace blank strings by NaN, if there are any
-outdf100_nullMand = outdf.loc[(outdf["WaterSourceUUID"].isnull()) |
-                              (outdf["WaterSourceTypeCV"].isnull()) |
-                              (outdf["WaterQualityIndicatorCV"].isnull())]
+outdf100_nullMand = outdf.loc[(outdf["WaterSourceUUID"].isnull()) | (outdf["WaterSourceUUID"] == '') |
+                              (outdf["WaterSourceTypeCV"].isnull()) | (outdf["WaterSourceTypeCV"] == '') |
+                              (outdf["WaterQualityIndicatorCV"].isnull()) | (outdf["WaterQualityIndicatorCV"] == '')]
 
 
 # Checking Dataframe data types
@@ -127,4 +127,3 @@ if(len(outdf100_nullMand.index) > 0):
     outdf100_nullMand.to_csv('watersources_mandatoryFieldMissing.csv')  # index=False,
 
 print("Done.")
-

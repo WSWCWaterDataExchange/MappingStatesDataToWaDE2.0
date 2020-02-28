@@ -53,11 +53,16 @@ outdf = pd.DataFrame([inpVals], columns=columns)
 print("Check required is not null...")
 # #Check all 'required' (not NA) columns have value (not empty). Replace blank strings by NaN, if there are any
 outdf = outdf.replace('', np.nan) #replace blank strings by NaN, if there are any
-outdf_nullMand = outdf.loc[(outdf["VariableSpecificUUID"].isnull())      | (outdf["AggregationInterval"].isnull()) |
-                           (outdf["AggregationIntervalUnitCV"].isnull()) | (outdf["AggregationStatisticCV"].isnull()) |
-                           (outdf["AmountUnitCV"].isnull())              | (outdf["MaximumAmountUnitCV"].isnull()) |
-                           (outdf["ReportYearStartMonth"].isnull())      | (outdf["ReportYearTypeCV"].isnull()) |
-                           (outdf["VariableCV"].isnull())                | (outdf["VariableSpecificCV"].isnull())]
+outdf_nullMand = outdf.loc[(outdf["VariableSpecificUUID"].isnull()) | (outdf["VariableSpecificUUID"] == '') |
+                           (outdf["AggregationInterval"].isnull()) | (outdf["AggregationInterval"] == '') |
+                           (outdf["AggregationIntervalUnitCV"].isnull()) | (outdf["AggregationIntervalUnitCV"] == '') |
+                           (outdf["AggregationStatisticCV"].isnull()) | (outdf["AggregationStatisticCV"] == '') |
+                           (outdf["AmountUnitCV"].isnull()) | (outdf["AmountUnitCV"] == '') |
+                           (outdf["MaximumAmountUnitCV"].isnull()) | (outdf["MaximumAmountUnitCV"] == '') |
+                           (outdf["ReportYearStartMonth"].isnull()) | (outdf["ReportYearStartMonth"] == '') |
+                           (outdf["ReportYearTypeCV"].isnull()) | (outdf["ReportYearTypeCV"] == '') |
+                           (outdf["VariableCV"].isnull()) | (outdf["VariableCV"] == '') |
+                           (outdf["VariableSpecificCV"].isnull()) | (outdf["VariableSpecificCV"] == '')]
 
 
 # Export to new csv

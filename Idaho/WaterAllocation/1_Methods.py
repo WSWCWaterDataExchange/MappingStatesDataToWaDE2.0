@@ -51,9 +51,11 @@ outdf = pd.DataFrame([inpVals], columns=columns)
 print("Check required is not null...")
 #Check all 'required' (not NA) columns have value (not empty). Replace blank strings by NaN, if there are any
 outdf = outdf.replace('', np.nan)
-outdf_nullMand = outdf.loc[(outdf["MethodUUID"].isnull()) | (outdf["MethodName"].isnull()) |
-                                (outdf["MethodDescription"].isnull()) | (outdf["ApplicableResourceTypeCV"].isnull()) |
-                                (outdf["MethodTypeCV"].isnull())]
+outdf_nullMand = outdf.loc[(outdf["MethodUUID"].isnull()) | (outdf["MethodUUID"] == '') |
+                           (outdf["MethodName"].isnull()) | (outdf["MethodName"] == '') |
+                           (outdf["MethodDescription"].isnull()) | (outdf["MethodDescription"] == '') |
+                           (outdf["ApplicableResourceTypeCV"].isnull()) | (outdf["ApplicableResourceTypeCV"] == '') |
+                           (outdf["MethodTypeCV"].isnull()) | (outdf["MethodTypeCV"] == '')]
 
 
 # Export to new csv
@@ -62,7 +64,7 @@ print("Exporting dataframe to csv...")
 
 outdf.to_csv('ProcessedInputData/methods.csv', index=False)
 
-#Report missing values if need be to seperate csv
+#Report missing values if need be to separate csv
 if(len(outdf_nullMand.index) > 0):
     outdf_nullMand.to_csv('ProcessedInputData/methods_mandatoryFieldMissing.csv')  # index=False,
 
