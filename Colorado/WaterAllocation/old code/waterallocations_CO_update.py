@@ -96,9 +96,7 @@ df100 = df100.assign(AllocationNativeID=np.nan)
 for ix in range(len(df100.index)):
     print(ix)
     df100.loc[ix, 'AllocationNativeID'] = "-".join(map(str, [df100["Admin No"].iloc[ix], df100["Order No"].iloc[ix],
-                                                             df100["Decreed Units"].iloc[ix], df100["WDID"].iloc[ix]]
-                                                       )
-                                                   )
+                                                             df100["Decreed Units"].iloc[ix], df100["WDID"].iloc[ix]]))
 outdf100.AllocationNativeID = df100.AllocationNativeID
 # outdf100.drop(columns='AllocationNativeIDVar', inplace=True)
 

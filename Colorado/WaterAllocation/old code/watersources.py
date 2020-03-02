@@ -64,7 +64,7 @@ outdf100.WaterQualityIndicatorCV = 'Unspecified'
 #native source identifer and the organization univeral id
 print("Adding UUID...")
 for ix in range(len(outdf100.index)):
-    outdf100.loc[ix, 'WaterSourceUUID'] = "_".join(["CODWR",str(outdf100.loc[ix, 'WaterSourceNativeID'])])
+    outdf100.loc[ix, 'WaterSourceUUID'] = "_".join(["CODWR_WS",str(outdf100.loc[ix, 'WaterSourceNativeID'])])
 
 print("Checking required is not null...")
 #9.9.19: Adel: check all 'required' (not NA) columns have value (not empty)
