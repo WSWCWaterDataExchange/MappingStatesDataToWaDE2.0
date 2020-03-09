@@ -102,3 +102,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+Washington/WaterAllocation/ProcessedInputData/WAalloc/watersources.csv
+Washington/WaterAllocation/ProcessedInputData/WAalloc/waterallocations.csv
+Washington/WaterAllocation/ProcessedInputData/WAalloc/variables.csv
+Washington/WaterAllocation/ProcessedInputData/WAalloc/sites.csv
+Washington/WaterAllocation/ProcessedInputData/WAalloc/organizations.csv
+Washington/WaterAllocation/ProcessedInputData/WAalloc/methods.csv
