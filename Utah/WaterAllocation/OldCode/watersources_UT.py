@@ -40,7 +40,7 @@ print (len(df100_l.index))
 
 # Points of diversion
 df200 = pd.read_csv(FileInput2,encoding = "ISO-8859-1")
-df100=pd.merge(df100_l, df200, left_on='WRNUM', right_on='WRCHEX', how='left') #joined Points of diversiont table into Master_Table
+df100 = pd.merge(df100_l, df200, left_on='WRNUM', right_on='WRCHEX', how='left') #joined Points of diversiont table into Master_Table
 #df100
 print (len(df100.index))
 

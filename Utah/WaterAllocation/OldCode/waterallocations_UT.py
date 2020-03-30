@@ -88,7 +88,7 @@ df100_3=pd.merge(df100_ll, df300, left_on='WRNUM', right_on='WRNUM', how='left')
 # municipal 
 df350=pd.read_csv(FileInput4,encoding = "ISO-8859-1", usecols = ['WRNUM', 'MUNICIPALITY'])
 #print(len(df300))
-df350.drop_duplicates(inplace=True)
+df350.drop_duplicates(inplace=True)/1000000
 #print(len(df300))
 df100_4=pd.merge(df100_3, df350, left_on='WRNUM', right_on='WRNUM', how='left') 
 #df100
