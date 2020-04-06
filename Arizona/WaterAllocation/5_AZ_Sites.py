@@ -10,9 +10,7 @@ import numpy as np
 import os
 from pyproj import Transformer, transform
 
-# AZ data seemed to already be converted. #todo: double check these results
-# transformer = Transformer.from_proj(2992, 4326)  # A trick to drastically optimize the Transformer of pyproj.
-# # Oregon projection = EPSG:2992. WGS84 projection used by WaDE 2.0 = epsg:4326.
+# AZ lat and long data already converted.
 
 # Inputs
 ############################################################################

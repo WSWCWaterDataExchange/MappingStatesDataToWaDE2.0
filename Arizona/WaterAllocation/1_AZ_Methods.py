@@ -54,9 +54,6 @@ outdf.MethodNEMILink = "http://gisdata-azwater.opendata.arcgis.com/"
 outdf.MethodTypeCV = "Adjudicated"
 
 
-
-
-
 # Check required fields are not null
 ############################################################################
 print("Check required is not null...")
