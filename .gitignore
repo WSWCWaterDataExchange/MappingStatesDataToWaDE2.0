@@ -151,3 +151,26 @@ Washington/WaterAllocation/ProcessedInputData/variables.csv
 Washington/WaterAllocation/ProcessedInputData/waterallocations.csv
 Washington/WaterAllocation/ProcessedInputData/waterallocations_missing.csv
 Washington/WaterAllocation/ProcessedInputData/watersources.csv
+Arizona/WaterAllocation/ProcessedInputData/methods.csv
+Oklahoma/WaterAllocation/Old Code/waterallocations_OK.ipynb
+Oklahoma/WaterAllocation/ProcessedInputData/methods.csv
+Oklahoma/WaterAllocation/ProcessedInputData/sites.csv
+Oklahoma/WaterAllocation/ProcessedInputData/variables.csv
+Oklahoma/WaterAllocation/ProcessedInputData/watersources.csv
+Oklahoma/WaterAllocation/RawInputData/Areas_of_Use.csv
+Oklahoma/WaterAllocation/RawInputData/Permitted_Groundwater_Wells.csv
+Oklahoma/WaterAllocation/RawInputData/PTs__Wells_and_Diversion_Points.csv
+Oregon/WaterAllocation/ProcessedInputData/methods.csv
+Oregon/WaterAllocation/ProcessedInputData/organizations.csv
+Oregon/WaterAllocation/ProcessedInputData/sites.csv
+Oregon/WaterAllocation/ProcessedInputData/variables.csv
+Oregon/WaterAllocation/ProcessedInputData/waterallocations.csv
+Oregon/WaterAllocation/ProcessedInputData/waterallocations_longsiteid.csv
+Oregon/WaterAllocation/ProcessedInputData/watersources.csv
+*.csv
+NorthDakota/WaterAllocation/ProcessedInputData/watersources.csv
+NorthDakota/WaterAllocation/ProcessedInputData/waterallocations.csv
+NorthDakota/WaterAllocation/ProcessedInputData/variables.csv
+NorthDakota/WaterAllocation/ProcessedInputData/sites.csv
+NorthDakota/WaterAllocation/ProcessedInputData/organizations.csv
+NorthDakota/WaterAllocation/ProcessedInputData/methods.csv
