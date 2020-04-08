@@ -1,5 +1,5 @@
-#Date Created: 04/03/2020
-#Purpose: To extract OR methods use information and population dataframe for WaDE_QA 2.0.
+#Date Created: 04/07/2020
+#Purpose: To create OK methods use information and population dataframe for WaDE_QA 2.0.
 #Notes:
 
 
@@ -13,7 +13,7 @@ import os
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Oregon/WaterAllocation"
+workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Oklahoma/WaterAllocation"
 os.chdir(workingDir)
 
 #WaDE columns
@@ -32,13 +32,12 @@ columnslist = [
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-
 outdf = pd.DataFrame(columns=columnslist)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.MethodUUID = "OWRD_Water Rights"
+outdf.MethodUUID = "OWRB_Water Rights"
 
-outdf.ApplicableResourceTypeCV = "Surface/Ground/Storage"
+outdf.ApplicableResourceTypeCV = "Allocation"
 
 outdf.DataConfidenceValue = ""
 
@@ -46,13 +45,14 @@ outdf.DataQualityValueCV = ""
 
 outdf.DataCoverageValue = ""
 
-outdf.MethodDescription = "Water Rights"
+outdf.MethodDescription = "The OWRB appropriates stream and groundwater supplies to various water users in the state. Permits are issued for the use of both surface and groundwaters in Oklahoma (domestic uses are exempt) and all waters must be used beneficially without waste."
 
-outdf.MethodName = "Oregon Water Rights"
+outdf.MethodName = "Oklahoma Water Rights"
 
-outdf.MethodNEMILink = "https://www.oregon.gov/OWRD/access_Data/Pages/Data.aspx"
+outdf.MethodNEMILink = "https://owrb.maps.arcgis.com/apps/webappviewer/index.html?id=db6e61cfdbc74a4d8b919b2eceef8d43"
 
-outdf.MethodTypeCV = "Adjudicated"
+outdf.MethodTypeCV = "Water Allocation"
+
 
 # Check required fields are not null
 ############################################################################

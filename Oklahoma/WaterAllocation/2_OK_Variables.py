@@ -1,5 +1,5 @@
-#Date Created: 04/03/2020
-#Purpose: To extract OR variable use information and population dataframe for WaDE_QA 2.0.
+#Date Created: 04/07/2020
+#Purpose: To create OK variable use information and population dataframe for WaDE_QA 2.0.
 #Notes: 1) Single row of entries, inpVals, for Variable Table.
 
 
@@ -13,7 +13,7 @@ import os
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Oregon/WaterAllocation"
+workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Oklahoma/WaterAllocation"
 os.chdir(workingDir)
 
 #WaDE columns
@@ -37,7 +37,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = "OWRD_Allocation All"
+outdf.VariableSpecificUUID = "OWRB_Allocation All"
 
 outdf.AggregationInterval = "1"
 
