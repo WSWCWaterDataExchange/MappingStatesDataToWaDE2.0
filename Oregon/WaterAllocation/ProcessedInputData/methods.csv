@@ -1,2 +1,1 @@
-MethodUUID,MethodName,MethodDescription,MethodNEMILink,ApplicableResourceTypeCV,MethodTypeCV,DataCoverageValue,DataQualityValueCV,DataConfidenceValue
-OWRD-Water Rights,Oregon Water Rights,Water Rights,https://www.oregon.gov/OWRD/access_Data/Pages/Data.aspx,Surface/Ground/Storage,Adjudicated,,,
+MethodUUID,ApplicableResourceTypeCV,DataConfidenceValue,DataCoverageValue,DataQualityValueCV,MethodDescription,MethodName,MethodNEMILink,MethodTypeCV
