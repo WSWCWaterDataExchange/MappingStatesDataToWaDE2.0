@@ -139,11 +139,20 @@ def assignLong(colrowValueLat, colrowValueLong):
 print("Populating dataframe...")
 outdf=pd.DataFrame(columns=columns)
 
+        # Lat and Long have to process first as you cannot assign a constant value to a df without an index.
+
+print("Latitude")
+outdf['Latitude'] = df.apply(lambda row: assignLat(row['LAT_DD'], row['LONG_DD']), axis=1)
+
+print("Longitude")
+outdf['Longitude'] = df.apply(lambda row: assignLong(row['LAT_DD'], row['LONG_DD']), axis=1)
+
 print("CoordinateAccuracy")  # Hardcoded
 outdf["CoordinateAccuracy"] = 'Unknown'
 
 #print("CoordinateMethodCV")
 #outdf['CoordinateMethodCV'] = df.apply(lambda row: assignCoordinateMethodCV(row['DataSource']), axis=1)
+outdf['CoordinateMethodCV'] = 'Unknown'
 
 print("County")  # Hardcoded
 outdf.County = ""
@@ -163,11 +172,6 @@ outdf.HUC12 = ""
 print("HUC8")  # Hardcoded
 outdf.HUC8 = ""
 
-print("Latitude")
-outdf['Latitude'] = df.apply(lambda row: assignLat(row['LAT_DD'], row['LONG_DD']), axis=1)
-
-print("Longitude")
-outdf['Longitude'] = df.apply(lambda row: assignLong(row['LAT_DD'], row['LONG_DD']), axis=1)
 
 print("NHDNetworkStatusCV")  # Hardcoded
 outdf.NHDNetworkStatusCV = ""
