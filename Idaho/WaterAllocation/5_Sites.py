@@ -122,7 +122,7 @@ def assignCoordinateMethodCV(colrowValue):
 # For creating SiteUUID
 def assignSiteUUID(colrowValue):
     string1 = str(colrowValue)
-    outstring = "IDWR_" + string1
+    outstring = "ID_" + string1
     return outstring
 
 # For converting IDWR projection latitude.

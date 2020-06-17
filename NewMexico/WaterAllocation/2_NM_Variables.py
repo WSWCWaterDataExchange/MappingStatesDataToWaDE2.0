@@ -1,6 +1,6 @@
-#Date Created: 04/01/2020
-#Purpose: To extract WA variable use information and population dataframe for WaDE_QA 2.0.
-#Notes: 1) Single row of entries, inpVals, for Variable Table.
+#Date Created: 05/15/2020
+#Purpose: To create NM variable use information and population dataframe for WaDE_QA 2.0.
+#Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
 
 
 # Needed Libraries
@@ -13,7 +13,7 @@ import os
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Washington/WaterAllocation"
+workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/NewMexico/WaterAllocation"
 os.chdir(workingDir)
 
 #WaDE columns
@@ -37,7 +37,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = "WSDE_Allocation All"
+outdf.VariableSpecificUUID = "NMOSE_Allocation All"
 
 outdf.AggregationInterval = "1"
 

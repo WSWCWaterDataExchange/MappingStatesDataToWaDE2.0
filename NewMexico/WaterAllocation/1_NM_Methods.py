@@ -1,6 +1,6 @@
-#Date Created: 04/01/2020
-#Purpose: To extract WA methods use information and population dataframe for WaDE_QA 2.0.
-#Notes:
+#Date Created: 05/15/2020
+#Purpose: To create NM methods use information and population dataframe for WaDE_QA 2.0.
+#Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
 
 
 # Needed Libraries
@@ -13,7 +13,7 @@ import os
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Washington/WaterAllocation"
+workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/NewMexico/WaterAllocation"
 os.chdir(workingDir)
 
 #WaDE columns
@@ -32,11 +32,10 @@ columnslist = [
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-
 outdf = pd.DataFrame(columns=columnslist)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.MethodUUID = "WSDE_Water Rights"
+outdf.MethodUUID = "NMOSE_WaterAllocation"
 
 outdf.ApplicableResourceTypeCV = "Surface Ground"
 
@@ -48,11 +47,12 @@ outdf.DataCoverageValue = ""
 
 outdf.MethodDescription = "Water Rights"
 
-outdf.MethodName = "Washington Water Rights"
+outdf.MethodName = "Water Allocation"
 
-outdf.MethodNEMILink = "https://ecology.wa.gov/Water-Shorelines/Water-supply/Water-rights"
+outdf.MethodNEMILink = "http://geospatialdata-ose.opendata.arcgis.com/search?groupIds=fabf18d6e0634ae38c86475c9ad a6498"
 
-outdf.MethodTypeCV = "Adjudicated/Allocated"
+outdf.MethodTypeCV = "Adjudicated"
+
 
 # Check required fields are not null
 ############################################################################
