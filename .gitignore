@@ -201,3 +201,5 @@ Washington/WaterAllocation/ProcessedInputData/variables.csv
 Washington/WaterAllocation/ProcessedInputData/waterallocations.csv
 Washington/WaterAllocation/ProcessedInputData/waterallocations_missing.csv
 Washington/WaterAllocation/ProcessedInputData/watersources.csv
+Idaho/WaterAllocation/ProcessedInputData/sites.csv
+Idaho/WaterAllocation/ProcessedInputData/watersources.csv
