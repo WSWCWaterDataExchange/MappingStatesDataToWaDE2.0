@@ -1,2 +1,2 @@
-WaterSourceUUID,WaterSourceNativeID,WaterSourceName,WaterSourceTypeCV,WaterQualityIndicatorCV,GNISFeatureNameCV,Geometry
-AZ_1,1,Unknown,Groundwater well,Fresh,,
+WaterSourceUUID,Geometry,GNISFeatureNameCV,WaterQualityIndicatorCV,WaterSourceName,WaterSourceNativeID,WaterSourceTypeCV
+AZ_1,,,Fresh,Unspecified,Unspecified,Groundwater Well

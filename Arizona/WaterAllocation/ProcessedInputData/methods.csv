@@ -1,2 +1,2 @@
-MethodUUID,MethodName,MethodDescription,MethodNEMILink,ApplicableResourceTypeCV,MethodTypeCV,DataCoverageValue,DataQualityValueCV,DataConfidenceValue
-ADWR-Water Rights,Arizona Water Rights,Water Rights,http://gisdata-azwater.opendata.arcgis.com/,Groundwater,Adjudicated,,,
+MethodUUID,ApplicableResourceTypeCV,DataConfidenceValue,DataCoverageValue,DataQualityValueCV,MethodDescription,MethodName,MethodNEMILink,MethodTypeCV
+ADWR_Water Rights,Groundwater,,,,Water Rights,Arizona Water Rights,http://gisdata-azwater.opendata.arcgis.com/,Adjudicated
