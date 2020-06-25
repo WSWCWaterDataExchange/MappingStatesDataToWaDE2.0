@@ -1,2 +1,2 @@
-VariableSpecificUUID,VariableSpecificCV,VariableCV,AggregationStatisticCV,AggregationInterval,AggregationIntervalUnitCV,ReportYearStartMonth,ReportYearTypeCV,AmountUnitCV,MaximumAmountUnitCV
-Consumptive Use,Consumptive Use,Consumptive use,Cumulative,1,Year,1-Oct,WaterYear,Acre feet,
+VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
+NMOSE_Consumptive Use,1,Year,Cumulative,AF,AF,10,WaterYear,Consumptive Use,Consumptive Use

@@ -2,12 +2,12 @@
 import pandas as pd
 import numpy as np
 import beneficialUseDictionary
-from pyproj import CRS, Transformer
+# from pyproj import CRS, Transformer
 from decimal import Decimal
 from datetime import datetime
 from dateutil.parser import parse
 
-BenUseDictMT
+# BenUseDictMT
 
 
 def assignBenUseCategoryMT(colrowValue):
