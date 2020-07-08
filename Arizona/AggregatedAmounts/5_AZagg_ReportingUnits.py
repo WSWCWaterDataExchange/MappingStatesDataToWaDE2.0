@@ -62,7 +62,7 @@ print("ReportingUnitProductVersion")  # Hardcoded
 outdf.ReportingUnitProductVersion = ''
 
 print("ReportingUnitTypeCV")  # Hardcoded
-outdf.ReportingUnitTypeCV = 'Custom'
+outdf.ReportingUnitTypeCV = 'Active Management Area'
 
 print("ReportingUnitUpdateDate")  # Hardcoded
 outdf.ReportingUnitUpdateDate = ''
@@ -135,11 +135,12 @@ if len(mask.index) > 0:
     outdf = outdf.drop(dropIndex)
     outdf = outdf.reset_index(drop=True)
 
+# this might allow 50 (not 20) double check on that
 # ReportingUnitTypeCV_nvarchar(20)_
-mask = outdf.loc[ (outdf["ReportingUnitTypeCV"].isnull()) | (outdf["ReportingUnitTypeCV"] == '') | (outdf['ReportingUnitTypeCV'].str.len() > 20) ].assign(ReasonRemoved='Bad ReportingUnitTypeCV').reset_index()
+mask = outdf.loc[ (outdf["ReportingUnitTypeCV"].isnull()) | (outdf["ReportingUnitTypeCV"] == '') | (outdf['ReportingUnitTypeCV'].str.len() > 50) ].assign(ReasonRemoved='Bad ReportingUnitTypeCV').reset_index()
 if len(mask.index) > 0:
     dfpurge = dfpurge.append(mask)  # Append to purge DataFrame
-    dropIndex = outdf.loc[ (outdf["ReportingUnitTypeCV"].isnull()) | (outdf["ReportingUnitTypeCV"] == '') | (outdf['ReportingUnitTypeCV'].str.len() > 20) ].index
+    dropIndex = outdf.loc[ (outdf["ReportingUnitTypeCV"].isnull()) | (outdf["ReportingUnitTypeCV"] == '') | (outdf['ReportingUnitTypeCV'].str.len() > 50) ].index
     outdf = outdf.drop(dropIndex)
     outdf = outdf.reset_index(drop=True)
 
