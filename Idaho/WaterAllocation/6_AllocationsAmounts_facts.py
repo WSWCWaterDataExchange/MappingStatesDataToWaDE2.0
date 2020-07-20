@@ -169,8 +169,7 @@ print("OrganizationUUID")  # Hardcoded
 outdf.OrganizationUUID = "IDWR"
 
 print("SiteUUID")
-# outdf['SiteUUID'] = df_IDM.apply(lambda row: retrieveSiteUUID(row['WaterRightNumber'], df_sites), axis=1)
-SitUUIDdict = pd.Series(df_sites.SiteNativeID.values, index = df_sites.SiteUUID).to_dict()
+SitUUIDdict = pd.Series(df_sites.SiteUUID.values, index = df_sites.SiteNativeID).to_dict()
 outdf['SiteUUID'] = df_IDM.apply(lambda row: retrieveSiteUUID(row['WaterRightNumber']), axis=1)
 
 print("VariableSpecificUUID")  # Hardcoded
@@ -203,7 +202,8 @@ print("AllocationAssociatedWithdrawalSiteIDs")  # Hardcoded
 outdf.AllocationAssociatedWithdrawalSiteIDs = ""
 
 print("AllocationBasisCV")
-outdf['AllocationBasisCV'] = df_IDM.apply(lambda row: assignAllocationBasis(row['Basis']), axis=1)
+#outdf['AllocationBasisCV'] = df_IDM.apply(lambda row: assignAllocationBasis(row['Basis']), axis=1)
+outdf.AllocationBasisCV = ""  # Temp fix. See long term notes.
 
 print("AllocationChangeApplicationIndicator")  # Hardcoded
 outdf.AllocationChangeApplicationIndicator = ""

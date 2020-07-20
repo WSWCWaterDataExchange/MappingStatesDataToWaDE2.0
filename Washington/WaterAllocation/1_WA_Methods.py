@@ -1,6 +1,6 @@
 #Date Created: 04/01/2020
 #Purpose: To extract WA methods use information and population dataframe for WaDE_QA 2.0.
-#Notes:   1) WA possesses multiple methods
+#Notes:
 
 
 # Needed Libraries
@@ -34,6 +34,7 @@ columnslist = [
 print("Populating dataframe...")
 
 outdf = pd.DataFrame(columns=columnslist)
+outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
 outdf.MethodUUID = "WSDE_Water Rights"
 
