@@ -13,7 +13,7 @@ import os
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir="/Users/augustus/Desktop/WSWC/WaDE/MappingStatesDataToWaDE2.0/Nevada/WaterAllocation/"
+workingDir="C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Nevada/WaterAllocation"
 os.chdir(workingDir)
 
 #WaDE columns
@@ -33,7 +33,7 @@ columns = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "NVDWR_DiversionTracking",
+    "NVDWR_Diversion Tracking",
     "Surface Ground",
     np.nan,
     np.nan,

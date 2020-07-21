@@ -15,7 +15,7 @@ import os
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir="/Users/augustus/Desktop/WSWC/WaDE/MappingStatesDataToWaDE2.0/Nevada/WaterAllocation/"
+workingDir="C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Nevada/WaterAllocation"
 os.chdir(workingDir)
 NVM_fileInput = "RawInputData/POD Sites_0.csv"  #Change this to fit state
 method_fileInput = "ProcessedInputData/methods.csv"
@@ -194,7 +194,7 @@ print("Populating dataframe oudf...")
 outdf = pd.DataFrame(index=df_NVM.index, columns=columns)  # The output dataframe
 
 print("MethodUUID")  # Hardcoded
-outdf.MethodUUID = "NVDWR_DiversionTracking"
+outdf.MethodUUID = "NVDWR_Diversion Tracking"
 
 print("OrganizationUUID")  # Hardcoded
 outdf.OrganizationUUID = "NVDWR"
@@ -206,7 +206,7 @@ outdf['SiteUUID'] = df_sites.apply(lambda row: retrieveSiteUUID(row['SiteUUID'])
 outdf['SiteUUID'] = df_sites['SiteUUID']
 
 print("VariableSpecificUUID")  # Hardcoded
-outdf.VariableSpecificUUID = "NVWDR_AllocationAll"
+outdf.VariableSpecificUUID = "NVDWR_Allocation All"
 
 print("WaterSourceUUID")
 outdf['WaterSourceUUID'] = df_watersources.loc[0,'WaterSourceUUID'] # Use dummy row
@@ -284,7 +284,6 @@ outdf['AllocationTypeCV'] = ''
 
 print("BeneficialUseCategory")
 outdf['BeneficialUseCategory'] = df_NVM.apply(lambda row: assignBeneficialUse(row['mou']), axis=1)
-
 
 print("CommunityWaterSupplySystem")  # Hardcoded
 outdf.CommunityWaterSupplySystem = ""

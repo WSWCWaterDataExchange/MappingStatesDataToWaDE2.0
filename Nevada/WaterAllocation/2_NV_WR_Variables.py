@@ -13,7 +13,7 @@ import os
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir="/Users/augustus/Desktop/WSWC/WaDE/MappingStatesDataToWaDE2.0/Nevada/WaterAllocation/"
+workingDir="C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Nevada/WaterAllocation"
 os.chdir(workingDir)
 
 #WaDE columns

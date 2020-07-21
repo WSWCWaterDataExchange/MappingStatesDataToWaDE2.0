@@ -21,7 +21,7 @@ transformer = Transformer.from_proj(26911, 4326)  # A trick to drastically optim
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir="/Users/augustus/Desktop/WSWC/WaDE/MappingStatesDataToWaDE2.0/Nevada/WaterAllocation/"
+workingDir="C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Nevada/WaterAllocation"
 os.chdir(workingDir)
 fileInput="RawInputData/POD Sites_0.csv"
 df = pd.read_csv(fileInput)
@@ -68,15 +68,15 @@ def assignSiteName(colrowValue1):
 UnknownSTCVDict = {
     "EFF":"Effluent",
     "GEO":"Geothermal",
-    "LAK":"Lake",
+    "LAK":"lake",
     "OGW":"Other Ground Water",
     "OSW":"Other Surface Water",
     "RES":"Reservoir",
     "SPR":"Spring",
     "STO":"Storage",
-    "STR":"Stream",
+    "STR":"stream",
     "UG":"Underground",
-    "UKN": "Unknown"}
+    "UKN":"unknown"}
 
 def assignSiteTypeCV(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
@@ -86,34 +86,7 @@ def assignSiteTypeCV(colrowValue):
         try:
             outList = UnknownSTCVDict[String1]
         except:
-            outList = "Surface Water"
-
-    return outList
-
-
-# For creating CoordinateMethodCV
-UnknownCMCVDict = {
-    "GPS" : "GPS",
-    "Digitized" : "Digitized",
-    "Survey" : "Surveyed",
-    "Parcel" : "ID parcel by map",
-    "Geocoded" : "ID Geocoded",
-    "Q" : "ID Q",
-    "QQ" : "ID QQ",
-    "QQQ" : "ID QQQ",
-    "WMIS QQ Crossover" : "ID QQ",
-    "WMIS QQQ Crossover" : "ID QQQ",
-    "Online Claim" : "ID Online Claim"}
-
-def assignCoordinateMethodCV(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outList = "Unspecified"
-    else:
-        String1 = colrowValue.strip()  # remove whitespace chars
-        try:
-            outList = UnknownCMCVDict[String1]
-        except:
-            outList = "Unspecified"
+            outList = "unknown"
 
     return outList
 
@@ -156,7 +129,7 @@ def assignCounty(colrowValue):
 # For creating SiteUUID
 def assignSiteUUID(colrowValue):
     string1 = str(colrowValue)
-    outstring = "NVDWR" + string1
+    outstring = "NVDWR_" + string1
     return outstring
 
 # For converting IDWR projection latitude.
@@ -187,8 +160,7 @@ print("CoordinateAccuracy")  # Hardcoded
 outdf["CoordinateAccuracy"] = 'Unknown'
 
 #print("CoordinateMethodCV")
-#outdf['CoordinateMethodCV'] = df.apply(lambda row: assignCoordinateMethodCV(row['DataSource']), axis=1)
-outdf['CoordinateMethodCV'] = 'Unknown'
+outdf['CoordinateMethodCV'] = 'Digitized'
 
 print("County")  # Hardcoded
 outdf.County = df.apply(lambda row: assignCounty(row['county']), axis=1)
@@ -207,7 +179,6 @@ outdf.HUC12 = ""
 
 print("HUC8")  # Hardcoded
 outdf.HUC8 = ""
-
 
 print("NHDNetworkStatusCV")  # Hardcoded
 outdf.NHDNetworkStatusCV = ""

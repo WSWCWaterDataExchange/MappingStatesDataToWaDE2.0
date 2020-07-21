@@ -1,6 +1,6 @@
 #Date Created: 06/12/2020
-#Purpose: To extract TX water source use information and population dataframe for WaDE_QA 2.0.
-#Notes: 1) For 'WaterSourceTypeCV', easier to label everything that is not a surface water first.
+#Purpose: To extract NV water source use information and population dataframe for WaDE_QA 2.0.
+#Notes: 1) Little water source info available at this time.  Easier to have simple in out code.
 
 # Note:  Currently using dummy row until more data made available from TX
 
@@ -14,7 +14,7 @@ import os
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir="/Users/augustus/Desktop/WSWC/WaDE/MappingStatesDataToWaDE2.0/Nevada/WaterAllocation/"
+workingDir="C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Nevada/WaterAllocation"
 os.chdir(workingDir)
 #fileInput = "RawinputData/P_IdahoMaster.csv"
 #df = pd.read_csv(fileInput)
@@ -79,7 +79,8 @@ outdf = outdf.append({"WaterSourceUUID":'NV_1',
     "WaterQualityIndicatorCV":'Unspecified',
     "WaterSourceName":'',
     "WaterSourceNativeID":'',
-    "WaterSourceTypeCV":''}, ignore_index=True)
+    "WaterSourceTypeCV":'Unspecified'}, ignore_index=True)
+
 """
 outdf = pd.DataFrame(index=df.index, columns=columnslist)  # The output dataframe for CSV.
 
@@ -139,6 +140,8 @@ print(outdf.dtypes)
 if(len(outdf100_nullMand.index) > 0):
     outdf100_nullMand.to_csv('watersources_mandatoryFieldMissing.csv')  # index=False,
 """
+
+
 print("Exporting dataframe to csv...")
 outdf.to_csv('ProcessedInputData/watersources.csv', index=False)
 
