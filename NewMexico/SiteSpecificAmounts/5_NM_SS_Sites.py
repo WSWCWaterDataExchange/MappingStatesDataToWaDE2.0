@@ -1,6 +1,6 @@
-#Date Created: 05/15/2020
-#Purpose: To extract NM site use information and population dataframe for WaDEQA 2.0.
-#Notes: 1) Some data solved with pre-processes code.
+#Date Created: 07/30/2020
+#Purpose: To extract UT site specific site use information and population dataframe for WaDEQA 2.0.
+#Notes:
 
 
 # Needed Libraries
@@ -10,13 +10,18 @@ import numpy as np
 import os
 from pyproj import Transformer, transform
 
+
+transformer = Transformer.from_crs(4269, 4326)
+# NAD83 projection = epsg:4269.
+# WGS84 projection used by WaDE 2.0 = epsg:4326.
+
+
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/NewMexico/WaterAllocation"
+workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Utah/SiteSpecificAmounts"
 os.chdir(workingDir)
-fileInput = "RawinputData/P_NewMexicoMaster.csv"
-
+fileInput = "RawinputData/P_MasterUTSiteSpecific.csv"
 df = pd.read_csv(fileInput)
 
 columnslist = [
@@ -43,22 +48,21 @@ columnslist = [
 # Custom Functions
 ############################################################################
 
-# For creating SiteNativeID
-def assignSiteNativeID(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outList = ''
-    else:
-        intvalue = int(colrowValue)
-        strvalue = str(intvalue)
-        outList = strvalue.strip()
-    return outList
-
 # For creating SiteUUID
 def assignSiteUUID(colrowValue):
     string1 = str(colrowValue)
-    outstring = "NM_" + string1
+    outstring = "UTSS_S" + string1
     return outstring
 
+# For converting projection latitude.
+def assignLat(colrowValueLat, colrowValueLong):
+    lat, long = transformer.transform(colrowValueLat, colrowValueLong)
+    return lat
+
+# For converting projection longitude.
+def assignLong(colrowValueLat, colrowValueLong):
+    lat, long = transformer.transform(colrowValueLat, colrowValueLong)
+    return long
 
 # Creating output dataframe (outdf)
 ############################################################################
@@ -72,7 +76,7 @@ print("againCoordinateMethodCV")  # Hardcoded
 outdf.CoordinateMethodCV = 'Unspecified'
 
 print("County")
-outdf['County'] = df['county']
+outdf['County'] = df['County']
 
 print("EPSGCodeCV")  # Hardcoded
 outdf.EPSGCodeCV = 'EPSG:4326'
@@ -89,11 +93,11 @@ outdf.HUC12 = ""
 print("HUC8")  # Hardcoded
 outdf.HUC8 = ""
 
-print("Latitude") # Pre-processed code
-outdf['Latitude'] = df['Latitude']
+print("Latitude")
+outdf['Latitude'] = df.apply(lambda row: assignLat(row['Lat NAD83'], row['Lon NAD83']), axis=1)
 
-print("Longitude") # Pre-processed code
-outdf['Longitude'] = df['Longitude']
+print("Longitude")
+outdf['Longitude'] = df.apply(lambda row: assignLong(row['Lat NAD83'], row['Lon NAD83']), axis=1)
 
 print("NHDNetworkStatusCV")  # Hardcoded
 outdf.NHDNetworkStatusCV = ""
@@ -101,32 +105,32 @@ outdf.NHDNetworkStatusCV = ""
 print("NHDProductCV")  # Hardcoded
 outdf.NHDProductCV = ""
 
-print("SiteName")  # Pre-processed code
-outdf['SiteName'] = df['SiteName']
+print("SiteName")
+outdf['SiteName'] = df['System Name_x']
 
 print("SiteNativeID")
-outdf['SiteNativeID'] = df.apply(lambda row: assignSiteNativeID(row['pod_nbr']), axis=1)
+outdf['SiteNativeID'] = df['System ID_x'].astype(str) # Native dbtype is float. Need to return this value as a string
 
 print("SitePoint")  # Hardcoded
 outdf.SitePoint = ""
 
-print("SiteTypeCV") # Pre-processed code
-outdf['SiteTypeCV'] = df['SiteTypeCV']
+print("SiteTypeCV")
+outdf['SiteTypeCV'] = df['Source Type']
 
 print("StateCV")  # Hardcoded
-outdf.StateCV = "NM"
+outdf.StateCV = "UT"
 
 print("USGSSiteID")  # Hardcoded
 outdf.USGSSiteID = ""
 
-print("Resetting Index")
+print("Resetting Index")  # Hardcoded
 outdf.reset_index()
-outdf = outdf.replace(np.nan, '')
 
 #####################################
 # Dropping duplicate
-# filter the whole table based on a unique combination of SiteNativeID, SiteName, SiteTypeCV, Longitude, Latitude, and HUC8
-outdf = outdf.drop_duplicates(subset=['SiteNativeID', 'SiteName', 'SiteTypeCV', 'Longitude', 'Latitude']).reset_index()
+# filter the whole table based on a unique combination of SiteNativeID, SiteName, SiteTypeCV, Longitude & Latitude
+outdf = outdf.drop_duplicates(subset=['SiteNativeID', 'SiteName', 'SiteTypeCV', 'Longitude', 'Latitude'])
+outdf = outdf.reset_index(drop=True)
 ######################################
 
 print("SiteUUID") # has to be one of the last.
@@ -209,10 +213,20 @@ if len(mask.index) > 0:
     outdf = outdf.reset_index(drop=True)
 
 # Latitude_float_Yes
-# ???? Don't we consider null lat values bad?
+mask = outdf.loc[ (outdf["Latitude"].isnull() == True) | (outdf["Latitude"] == '') | (outdf["Latitude"] == 0) ].assign(ReasonRemoved='Bad Latitude').reset_index()
+if len(mask.index) > 0:
+    dfpurge = dfpurge.append(mask)
+    dropIndex = outdf.loc[ (outdf["Latitude"].isnull() == True) | (outdf["Latitude"] == '') | (outdf["Latitude"] == 0)].index
+    outdf = outdf.drop(dropIndex)
+    outdf = outdf.reset_index(drop=True)
 
 # Longitude_float_Yes
-# ???? Don't we consider null long values bad?
+mask = outdf.loc[ (outdf["Longitude"].isnull() == True) | (outdf["Longitude"] == '') | (outdf["Longitude"] == 0) ].assign(ReasonRemoved='Bad Longitude').reset_index()
+if len(mask.index) > 0:
+    dfpurge = dfpurge.append(mask)
+    dropIndex = outdf.loc[ (outdf["Longitude"].isnull() == True) | (outdf["Longitude"] == '') | (outdf["Longitude"] == 0) ].index
+    outdf = outdf.drop(dropIndex)
+    outdf = outdf.reset_index(drop=True)
 
 # NHDNetworkStatusCV_nvarchar(50)_Yes
 mask = outdf.loc[ outdf["NHDNetworkStatusCV"].str.len() > 50 ].assign(ReasonRemoved='Bad NHDNetworkStatusCV').reset_index()

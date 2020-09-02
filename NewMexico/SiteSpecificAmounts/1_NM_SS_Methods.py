@@ -1,6 +1,6 @@
-#Date Created: 05/15/2020
-#Purpose: To create NM methods use information and population dataframe for WaDE_QA 2.0.
-#Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
+#Date Created: 07/30/2020
+#Purpose: To create UT site specific methods use information and population dataframe for WaDE_QA 2.0.
+#Notes: 1) Used a list approach.  Needed to have two rows, one with surface water, the other with groundwater.
 
 
 # Needed Libraries
@@ -13,7 +13,7 @@ import os
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/NewMexico/WaterAllocation"
+workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Utah/SiteSpecificAmounts"
 os.chdir(workingDir)
 
 #WaDE columns
@@ -33,11 +33,10 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
-outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.MethodUUID = "NMOSE_Water Allocation"
+outdf.MethodUUID = ["UDWR_Water Use Data", "UDWR_Water Use Data"]
 
-outdf.ApplicableResourceTypeCV = "Surface Ground"
+outdf.ApplicableResourceTypeCV = ["Surface Water", "Groundwater"]
 
 outdf.DataConfidenceValue = ""
 
@@ -45,13 +44,13 @@ outdf.DataQualityValueCV = ""
 
 outdf.DataCoverageValue = ""
 
-outdf.MethodDescription = "Water Rights"
+outdf.MethodDescription = ["Water use gauge station data.", "Water use gauge station data."]
 
-outdf.MethodName = "Water Allocation"
+outdf.MethodName = ["Water Use Data", "Water Use Data"]
 
-outdf.MethodNEMILink = "http://geospatialdata-ose.opendata.arcgis.com/search?groupIds=fabf18d6e0634ae38c86475c9ad a6498"
+outdf.MethodNEMILink = ""
 
-outdf.MethodTypeCV = "Adjudicated"
+outdf.MethodTypeCV = ["Measured", "Measured"]
 
 
 # Check required fields are not null

@@ -1,5 +1,5 @@
-#Date Created: 05/15/2020
-#Purpose: To create NM methods use information and population dataframe for WaDE_QA 2.0.
+#Date Created: 06/25/2020
+#Purpose: To create NM agg methods use information and population dataframe for WaDE_QA 2.0.
 #Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
 
 
@@ -13,7 +13,8 @@ import os
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/NewMexico/WaterAllocation"
+workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/NewMexico/AggregatedAmounts"
+
 os.chdir(workingDir)
 
 #WaDE columns
@@ -35,7 +36,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.MethodUUID = "NMOSE_Water Allocation"
+outdf.MethodUUID = "NMOSE_Water Uses"
 
 outdf.ApplicableResourceTypeCV = "Surface Ground"
 
@@ -45,13 +46,13 @@ outdf.DataQualityValueCV = ""
 
 outdf.DataCoverageValue = ""
 
-outdf.MethodDescription = "Water Rights"
+outdf.MethodDescription = "Withdrawal Volume Estimate."
 
-outdf.MethodName = "Water Allocation"
+outdf.MethodName = "New Mexico Water Uses"
 
-outdf.MethodNEMILink = "http://geospatialdata-ose.opendata.arcgis.com/search?groupIds=fabf18d6e0634ae38c86475c9ad a6498"
+outdf.MethodNEMILink = "http://geospatialdata-ose.opendata.arcgis.com/search?groupIds=fabf18d6e0634ae38c86475c9ada6498"
 
-outdf.MethodTypeCV = "Adjudicated"
+outdf.MethodTypeCV = "Water Use"
 
 
 # Check required fields are not null
