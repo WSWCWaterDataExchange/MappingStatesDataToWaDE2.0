@@ -1,2 +1,2 @@
-VariableSpecificUUID,VariableSpecificCV,VariableCV,AggregationStatisticCV,AggregationInterval,AggregationIntervalUnitCV,ReportYearStartMonth,ReportYearTypeCV,AmountUnitCV,MaximumAmountUnitCV
-UTDWRE Allocation All,Allocation All,Allocation,Average,1,Year,10,WaterYear,CFS,AFY
+VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
+UT_Allocation All,1,Year,Average,CFS,AFY,10,WaterYear,Allocation,Allocation All

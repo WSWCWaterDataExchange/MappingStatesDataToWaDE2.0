@@ -104,12 +104,37 @@ def assignAllocationAmount(colrowValue):
     return outList
 
 # For creating AllocationLegalStatusCV
+AllocationLegalStatusDictionary={
+"ADEC":"Adjudication Decree",
+"APP":"Approved",
+"CERT":"Certificated",
+"DIS":"Disallowed",
+"EXP":"Expired",
+"FORF":"Forfeited",
+"LAP":"Lapsed",
+"LAPD":"Lapsed(Destroyed), Currently NOT Used",
+"NPR":"No Proof Required",
+"NUSE":"Nonuse",
+"PERF":"Perfected",
+"REJ":"Rejected",
+"REJD":"Rejected(Destroyed), Currently Not Used",
+"RNUM":"Renumbered",
+"TERM":"Terminated",
+"UNAP":"Unapproved",
+"WD":"Withdrawn",
+"WDD":"Withdrawn(Destroyed), Currently Not Used",
+"WUC":"Water User`s Claim"}
 def assignAllocationLegalStatusCV(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
-        outList = "Unknown"
+        outList = 'Unknown'
     else:
-        outList = "Active"
+        colrowValueStr = colrowValue.strip()  # remove whitespace chars
+        try:
+            outList = AllocationLegalStatusDictionary[colrowValueStr]
+        except:
+            outList = 'Unknown'
     return outList
+
 
 # For creating BeneficialUseCategory
 benUseDict = {
@@ -134,7 +159,7 @@ def assignAllocationBasis(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = 'Unknown'
     else:
-        outList = colrowValue
+        outList = colrowValue.strip()
     return outList
 
 # For creating AllocationTypeCV
@@ -160,7 +185,6 @@ def assignallocTypeCV(colrowValue):
             outList = AllocationTypeCVDictionary[benUseListStr]
         except:
             outList = ''
-
     return outList
 
 # For creating Owner
@@ -257,7 +281,7 @@ print("Populating dataframe outdf...")
 outdf = pd.DataFrame(index=df_IDM.index, columns=columnslist)  # The output dataframe
 
 print("MethodUUID")  # Hardcoded
-outdf.MethodUUID = "UT_WaterAllocation"
+outdf.MethodUUID = "UT_Water Allocation"
 
 print("OrganizationUUID")  # Hardcoded
 outdf.OrganizationUUID = "UTDWRE"
@@ -302,7 +326,7 @@ print("AllocationExpirationDate")  # Hardcoded
 outdf['AllocationExpirationDate'] = df_IDM['DATE_TERMINATED']
 
 print("AllocationLegalStatusCV")
-outdf['AllocationLegalStatusCV'] = df_IDM.apply(lambda row: assignallocLegalStatausCV(row['WREX_STATUS']), axis=1)
+outdf['AllocationLegalStatusCV'] = df_IDM.apply(lambda row: assignAllocationLegalStatusCV(row['WREX_STATUS']), axis=1)
 
 print("AllocationMaximum")  # Hardcoded
 outdf['AllocationMaximum'] = df_IDM['WREX_ACFT']
@@ -384,17 +408,13 @@ outdf100 = outdf.groupby('AllocationNativeID').agg(lambda x: ','.join([str(elem)
 # ############################################################################
 print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to upload data to QA here.
 
-# Date Noted: 03/30/2020
-#Note: GeneratedPowerCapacityMW is causing a 'Cross Group Not Valid' error when importing.  Not known why.
-# Temp fix, leave blank
-# Should be outdf['GeneratedPowerCapacityMW'] = df_IDM.apply(lambda row: row['POWER_CAPACITY']/1000000, axis=1)
-
 
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")  # Hardcoded
-dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
+dfpurge = pd.DataFrame(index=outdf100.index, columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
+# dfpurge = dfpurge.insert(0, 'ReasonRemoved')
 
 # MethodUUID_nvarchar(200)_-
 mask = outdf100.loc[ (outdf100["MethodUUID"].isnull()) | (outdf100["MethodUUID"] == '') | (outdf100['MethodUUID'].str.len() > 200) ].assign(ReasonRemoved='Bad MethodUUID').reset_index()
@@ -436,13 +456,11 @@ if len(mask.index) > 0:
     outdf100 = outdf100.drop(dropIndex)
     outdf100 = outdf100.reset_index(drop=True)
 
-# AllocationAmount_float_Yes  &  AllocationMaximum_float_Yes
-mask = outdf100.loc[ ((outdf100["AllocationAmount"].isnull()) | (outdf100["AllocationAmount"] == '') | (outdf100['AllocationAmount'].str.contains(',') == True)) &
-                           ((outdf100["AllocationMaximum"].isnull()) | (outdf100["AllocationMaximum"] == '') | (outdf100['AllocationMaximum'].str.contains(',') == True)) ].assign(ReasonRemoved='Bad AllocationAmount or AllocationMaximum').reset_index()
+# AllocationAmount_float_Yes
+mask = outdf100.loc[ (outdf100["AllocationAmount"].isnull()) | (outdf100["AllocationAmount"] == '') ].assign(ReasonRemoved='Bad AllocationAmount').reset_index()
 if len(mask.index) > 0:
     dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ ((outdf100["AllocationAmount"].isnull()) | (outdf100["AllocationAmount"] == '') | (outdf100['AllocationAmount'].str.contains(',') == True)) &
-                           ((outdf100["AllocationMaximum"].isnull()) | (outdf100["AllocationMaximum"] == '') | (outdf100['AllocationMaximum'].str.contains(',') == True)) ].index
+    dropIndex = outdf100.loc[ (outdf100["AllocationAmount"].isnull()) | (outdf100["AllocationAmount"] == '') ].index
     outdf100 = outdf100.drop(dropIndex)
     outdf100 = outdf100.reset_index(drop=True)
 
@@ -519,6 +537,14 @@ if len(mask.index) > 0:
     outdf100 = outdf100.drop(dropIndex)
     outdf100 = outdf100.reset_index(drop=True)
 
+# AllocationMaximum_float_Yes
+mask = outdf100.loc[ (outdf100["AllocationMaximum"].isnull()) | (outdf100["AllocationMaximum"] == '') | (outdf100['AllocationMaximum'].str.contains(',') == True) ].assign(ReasonRemoved='Bad AllocationMaximum').reset_index()
+if len(mask.index) > 0:
+    dfpurge = dfpurge.append(mask)
+    dropIndex = outdf100.loc[ (outdf100["AllocationMaximum"].isnull()) | (outdf100["AllocationMaximum"] == '') | (outdf100['AllocationMaximum'].str.contains(',') == True) ].index
+    outdf100 = outdf100.drop(dropIndex)
+    outdf100 = outdf100.reset_index(drop=True)
+
 # AllocationNativeID_nvarchar(250)_Yes
 mask = outdf100.loc[ outdf100["AllocationNativeID"].str.len() > 250 ].assign(ReasonRemoved='Bad AllocationNativeID').reset_index()
 if len(mask.index) > 0:
@@ -536,10 +562,10 @@ if len(mask.index) > 0:
     outdf100 = outdf100.reset_index(drop=True)
 
 # AllocationPriorityDate_string_-
-mask = outdf100.loc[ (outdf100["AllocationPriorityDate"].isnull()) | (outdf100["AllocationPriorityDate"] == '') | (outdf100["AllocationPriorityDate"].str.contains(',') == True) ].assign(ReasonRemoved='Bad AllocationPriorityDate').reset_index()
+mask = outdf100.loc[ (outdf100["AllocationPriorityDate"].isnull() == True) | (outdf100["AllocationPriorityDate"] == '') | (outdf100["AllocationPriorityDate"].str.contains(',') == True) ].assign(ReasonRemoved='Bad AllocationPriorityDate').reset_index()
 if len(mask.index) > 0:
     dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ (outdf100["AllocationPriorityDate"].isnull()) | (outdf100["AllocationPriorityDate"] == '') | (outdf100["AllocationPriorityDate"].str.contains(',') == True) ].index
+    dropIndex = outdf100.loc[ (outdf100["AllocationPriorityDate"].isnull() == True) | (outdf100["AllocationPriorityDate"] == '') | (outdf100["AllocationPriorityDate"].str.contains(',') == True) ].index
     outdf100 = outdf100.drop(dropIndex)
     outdf100 = outdf100.reset_index(drop=True)
 

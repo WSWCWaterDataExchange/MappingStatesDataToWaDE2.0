@@ -36,7 +36,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 
 outdf.MethodUUID = ["UT_STREAMFLOW_SUPPLY", "UT_Use", "UT_LEGAVLBLE", "UT_RETURNFLOW", "UT_Consumptive Use Estimate",
-                    "UT_Withdrawal Volume Estimate", "UT_INSTREAM_FLOW", "UT_STORAGE_SUPPLY", "UT_WaterAllocation"]
+                    "UT_Withdrawal Volume Estimate", "UT_INSTREAM_FLOW", "UT_STORAGE_SUPPLY", "UT_Water Allocation"]
 
 outdf.ApplicableResourceTypeCV = ["Surface Water", "Surface Ground", "Surface Ground", "Surface Water", "Surface Ground",
                                   "Surface Ground", "Surface Water", "Surface Water", "Surface Ground"]

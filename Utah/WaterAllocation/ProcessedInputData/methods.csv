@@ -1,10 +1,10 @@
-MethodUUID,MethodName,MethodDescription,MethodNEMILink,ApplicableResourceTypeCV,MethodTypeCV,DataCoverageValue,DataQualityValueCV,DataConfidenceValue
-UT_STREAMFLOW_SUPPLY,Average Streamflow Method,Average Streamflow Method,,Surface Water,Modeled,,,
-UT_Use,Agricultural Landuse Survey,Agricultural Landuse Survey,,Surface Ground,Modeled,,,
-UT_LEGAVLBLE,Legally Available Water,Legally Available Water,,Surface Ground,Modeled,,,
-UT_RETURNFLOW,Return Flow Estimates,Return Flow Estimates,,Surface Water,Modeled,,,
-UT_Consumptive Use Estimate,Consumptive Use Estimate Method,Consumptive Use Estimate Method,,Surface Ground,Modeled,,,
-UT_Withdrawal Volume Estimate,Diversion Volume Estimate,Diversion Volume Estimate,,Surface Ground,Modeled,,,
-UT_INSTREAM_FLOW,Instream Flow Estimate,Instream Flow Estimate,,Surface Water,Modeled,,,
-UT_STORAGE_SUPPLY,Estimate of Reservoir Storage,Estimate of Reservoir Storage,,Surface Water,Modeled,,,
-UT_WaterAllocation,Water Allocation,Water Rights,,Surface Ground,Adjudicated,,,
+MethodUUID,ApplicableResourceTypeCV,DataConfidenceValue,DataCoverageValue,DataQualityValueCV,MethodDescription,MethodName,MethodNEMILink,MethodTypeCV
+UT_STREAMFLOW_SUPPLY,Surface Water,,,,Average Streamflow Method,Average Streamflow Method,,Modeled
+UT_Use,Surface Ground,,,,Agricultural Landuse Survey,Agricultural Landuse Survey,,Modeled
+UT_LEGAVLBLE,Surface Ground,,,,Legally Available Water,Legally Available Water,,Modeled
+UT_RETURNFLOW,Surface Water,,,,Return Flow Estimates,Return Flow Estimates,,Modeled
+UT_Consumptive Use Estimate,Surface Ground,,,,Consumptive Use Estimate Method,Consumptive Use Estimate Method,,Modeled
+UT_Withdrawal Volume Estimate,Surface Ground,,,,Diversion Volume Estimate,Diversion Volume Estimate,,Modeled
+UT_INSTREAM_FLOW,Surface Water,,,,Instream Flow Estimate,Instream Flow Estimate,,Modeled
+UT_STORAGE_SUPPLY,Surface Water,,,,Estimate of Reservoir Storage,Estimate of Reservoir Storage,,Modeled
+UT_Water Allocation,Surface Ground,,,,Water Rights,Water Allocation,,Adjudicated
