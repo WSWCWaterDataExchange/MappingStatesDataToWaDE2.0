@@ -1,627 +1,611 @@
-WaterSourceUUID,WaterSourceNativeID,WaterSourceName,WaterSourceTypeCV,WaterQualityIndicatorCV,GNISFeatureNameCV,Geometry
-ND_1,1,Unspecified,Ground Water,Fresh,,
-ND_2,2,Unspecified,Surface Water,Fresh,,
-ND_3,3,Charbonneau Creek,Surface Water,Fresh,,
-ND_4,4,Beaver Creek,Surface Water,Fresh,,
-ND_5,5,Nelson Creek,Surface Water,Fresh,,
-ND_6,6,Little Creek,Surface Water,Fresh,,
-ND_7,7,Little Muddy River,Surface Water,Fresh,,
-ND_8,8,Un-named coulee & Dry Fork Coulee,Surface Water,Fresh,,
-ND_9,9,"Intermittent draws, trib. to Little Miss",Surface Water,Fresh,,
-ND_10,10,Heart River,Surface Water,Fresh,,
-ND_11,11,Little Missouri River,Surface Water,Fresh,,
-ND_12,12,Buford Coulee,Surface Water,Fresh,,
-ND_13,13,Burnt Creek,Surface Water,Fresh,,
-ND_14,14,Missouri River,Surface Water,Fresh,,
-ND_15,15,Tobacco Garden Creek,Surface Water,Fresh,,
-ND_16,16,Sheyenne River,Surface Water,Fresh,,
-ND_17,17,Cannonball River,Surface Water,Fresh,,
-ND_18,18,Knife River,Surface Water,Fresh,,
-ND_19,19,Duck Creek,Surface Water,Fresh,,
-ND_20,20,Lake Sakakawea,Surface Water,Fresh,,
-ND_21,21,Mouse River,Surface Water,Fresh,,
-ND_22,22,Painted Woods Creek,Surface Water,Fresh,,
-ND_23,23,Red River,Surface Water,Fresh,,
-ND_24,24,Gibb Springs,Surface Water,Fresh,,
-ND_25,25,Sweetwater Lake,Surface Water,Fresh,,
-ND_26,26,Mulberry Creek,Surface Water,Fresh,,
-ND_27,27,"Big Mary's Coulee, trib to Mouse River",Surface Water,Fresh,,
-ND_28,28,Rush River,Surface Water,Fresh,,
-ND_29,29,Tributary to West Hay Draw Creek,Surface Water,Fresh,,
-ND_30,30,West Hay Draw Creek,Surface Water,Fresh,,
-ND_31,31,Sheep Creek,Surface Water,Fresh,,
-ND_32,32,Green River,Surface Water,Fresh,,
-ND_33,33,"Box Elder Creek, trib. to Little Missour",Surface Water,Fresh,,
-ND_34,34,"Spring Creek, a trib of the Knife River",Surface Water,Fresh,,
-ND_35,35,James River,Surface Water,Fresh,,
-ND_36,36,Spring Creek,Surface Water,Fresh,,
-ND_37,37,Chanta Peta Creek,Surface Water,Fresh,,
-ND_38,38,"Beaver Creek, trib. to Little Misouri Ri",Surface Water,Fresh,,
-ND_39,39,Antelope Creek,Surface Water,Fresh,,
-ND_40,40,Unnamed Creek,Surface Water,Fresh,,
-ND_41,41,Square Butte Creek,Surface Water,Fresh,,
-ND_42,42,Old Oxbow of Apple Creek,Surface Water,Fresh,,
-ND_43,43,Silver Lake,Surface Water,Fresh,,
-ND_44,44,Danners Coulee,Surface Water,Fresh,,
-ND_45,45,Park River,Surface Water,Fresh,,
-ND_46,46,South Branch of the Goose River,Surface Water,Fresh,,
-ND_47,47,Goose River,Surface Water,Fresh,,
-ND_48,48,Antler Creek,Surface Water,Fresh,,
-ND_49,49,Unnaned trib to Missouri river,Surface Water,Fresh,,
-ND_50,50,"Pats Coulee, Trib to Little Muddy",Surface Water,Fresh,,
-ND_51,51,,Surface Water,Fresh,,
-ND_52,52,Unnamed Tributary,Surface Water,Fresh,,
-ND_53,53,Scorio Creek,Surface Water,Fresh,,
-ND_54,54,Pembina River,Surface Water,Fresh,,
-ND_55,55,"Horse Creek, trib. to Little Missouri Ri",Surface Water,Fresh,,
-ND_56,56,Souris River,Surface Water,Fresh,,
-ND_57,57,Lake Oahe,Surface Water,Fresh,,
-ND_58,58,North Branch of Garner Creek,Surface Water,Fresh,,
-ND_59,59,Square Butte Creel,Surface Water,Fresh,,
-ND_60,60,White Earth River,Surface Water,Fresh,,
-ND_61,61,Sweet Briar Lake,Surface Water,Fresh,,
-ND_62,62,Un-named trib to Spring Creek,Surface Water,Fresh,,
-ND_63,63,Crooked Creek,Surface Water,Fresh,,
-ND_64,64,Trib to Sqaure Butte Creek,Surface Water,Fresh,,
-ND_65,65,North Branch Forest River,Surface Water,Fresh,,
-ND_66,66,"Un-named creek, tributary to Spring Cree",Surface Water,Fresh,,
-ND_67,67,trib to Shirk Creek,Surface Water,Fresh,,
-ND_68,68,"Unnamed Stream, trib of Little Muddy",Surface Water,Fresh,,
-ND_69,69,Spring Creek & Un-named trib,Surface Water,Fresh,,
-ND_70,70,Sweetbriar Creek,Surface Water,Fresh,,
-ND_71,71,Middle Branch Forest River,Surface Water,Fresh,,
-ND_72,72,Intermittent draws,Surface Water,Fresh,,
-ND_73,73,Tepee Creek,Surface Water,Fresh,,
-ND_74,74,Trib to Otter Creek,Surface Water,Fresh,,
-ND_75,75,Yellowstone River,Surface Water,Fresh,,
-ND_76,76,South Branch of Elm River,Surface Water,Fresh,,
-ND_77,77,Clear Creek,Surface Water,Fresh,,
-ND_78,78,Big Muddy Creek,Surface Water,Fresh,,
-ND_79,79,"lay Creek, Trib of Tobacco Garden Creek",Surface Water,Fresh,,
-ND_80,80,North Fork Grand River,Surface Water,Fresh,,
-ND_81,81,Trib to Turtle Creek,Surface Water,Fresh,,
-ND_82,82,trib to Burnt Creek,Surface Water,Fresh,,
-ND_83,83,Unnamed Channel,Surface Water,Fresh,,
-ND_84,84,Unnamed intermittent draw,Surface Water,Fresh,,
-ND_85,85,Wild Rice River,Surface Water,Fresh,,
-ND_86,86,Unnamed Creek & Wild Rice River,Surface Water,Fresh,,
-ND_87,87,Unamed creek and Wild Rice River,Surface Water,Fresh,,
-ND_88,88,Unnamed Coulee,Surface Water,Fresh,,
-ND_89,89,Nelson Lake-Square Butte Creek,Surface Water,Fresh,,
-ND_90,90,Cart Creek,Surface Water,Fresh,,
-ND_91,91,Un-named trib to Sweet Briar Creek,Surface Water,Fresh,,
-ND_92,92,Apple Creek,Surface Water,Fresh,,
-ND_93,93,Branch Knife River,Surface Water,Fresh,,
-ND_94,94,trib to Square Butte Creek,Surface Water,Fresh,,
-ND_95,95,South Branch Goose River,Surface Water,Fresh,,
-ND_96,96,Willow Creek,Surface Water,Fresh,,
-ND_97,97,Wakopa Creek,Surface Water,Fresh,,
-ND_98,98,Charbonneau Creek & Trib.,Surface Water,Fresh,,
-ND_99,99,Unnamed Creek Trib to Willow Creek,Surface Water,Fresh,,
-ND_100,100,Intermittent creek,Surface Water,Fresh,,
-ND_101,101,unnamed coulee,Surface Water,Fresh,,
-ND_102,102,Unnamed tributary,Surface Water,Fresh,,
-ND_103,103,Elm River,Surface Water,Fresh,,
-ND_104,104,Trib to Wild Rice River,Surface Water,Fresh,,
-ND_105,105,"English Coulee, Trib to Red River",Surface Water,Fresh,,
-ND_106,106,Unnamed Intermittent Trib.,Surface Water,Fresh,,
-ND_107,107,Big Coulee,Surface Water,Fresh,,
-ND_108,108,Dry Draw,Surface Water,Fresh,,
-ND_109,109,Tongue River,Surface Water,Fresh,,
-ND_110,110,"Int. draw, trib to Little Missouri River",Surface Water,Fresh,,
-ND_111,111,un-named inter trib to Spring Creek,Surface Water,Fresh,,
-ND_112,112,Horse Creek,Surface Water,Fresh,,
-ND_113,113,Unnamed Coulee to Burnt Creek,Surface Water,Fresh,,
-ND_114,114,Buffalo Coulee,Surface Water,Fresh,,
-ND_115,115,Tobacco Garden Cr & Missouri R Backwater,Surface Water,Fresh,,
-ND_116,116,Andrews Creek,Surface Water,Fresh,,
-ND_117,117,South unit,Ground Water,Fresh,,
-ND_118,118,Unnamed Intermittent Stream,Surface Water,Fresh,,
-ND_119,119,Salt Water Coulee,Surface Water,Fresh,,
-ND_120,120,Beaver Creek and Missouri River,Surface Water,Fresh,,
-ND_121,121,knife River,Surface Water,Fresh,,
-ND_122,122,Knifer River,Surface Water,Fresh,,
-ND_123,123,Mt. Carmel Dam,Surface Water,Fresh,,
-ND_124,124,un-named intermittent stream,Surface Water,Fresh,,
-ND_125,125,un named trib to Andrews Creek,Surface Water,Fresh,,
-ND_126,126,"Un-named stream, trib. to Little Missour",Surface Water,Fresh,,
-ND_127,127,Deep Creek,Surface Water,Fresh,,
-ND_128,128,"Un-named coulee, tributary to Garrison R",Surface Water,Fresh,,
-ND_129,129,Timber Creek,Surface Water,Fresh,,
-ND_130,130,Unnamed intermittent draws,Surface Water,Fresh,,
-ND_131,131,Bullion Creek,Surface Water,Fresh,,
-ND_132,132,Unnamed stream,Surface Water,Fresh,,
-ND_133,133,Mc Gillis Creek,Surface Water,Fresh,,
-ND_134,134,unnamed draw,Surface Water,Fresh,,
-ND_135,135,Big Muddy Creek and Intermittent Stream,Surface Water,Fresh,,
-ND_136,136,Cottonwood Creek,Surface Water,Fresh,,
-ND_137,137,"Unnamed creek, tributary to Beaver Creek",Surface Water,Fresh,,
-ND_138,138,Sand Creek,Surface Water,Fresh,,
-ND_139,139,Unnamed Intermittent Streams,Surface Water,Fresh,,
-ND_140,140,South Branch of Turtle River,Surface Water,Fresh,,
-ND_141,141,Apple Creek tributary,Surface Water,Fresh,,
-ND_142,142,Fourmile Creek,Surface Water,Fresh,,
-ND_143,143,"Unnamed coulee, trib to Sheyeene River",Surface Water,Fresh,,
-ND_144,144,Oxbow - Knife River,Surface Water,Fresh,,
-ND_145,145,unnamed intermittant draw,Surface Water,Fresh,,
-ND_146,146,"Spring Creek, a trib of Knife River",Surface Water,Fresh,,
-ND_147,147,"Spring Creek, a trib of the Knife Rriver",Surface Water,Fresh,,
-ND_148,148,Nelson Lake,Surface Water,Fresh,,
-ND_149,149,"Beaver Creek, trib. to Little Missouri R",Surface Water,Fresh,,
-ND_150,150,Annie Creek,Surface Water,Fresh,,
-ND_151,151,Unnamed Trib. to Deep Creek,Surface Water,Fresh,,
-ND_152,152,Unnamed trib to Souris River,Surface Water,Fresh,,
-ND_153,153,Long Lake Creek,Surface Water,Fresh,,
-ND_154,154,"unnamed draw, trib to Northfork Cr.",Surface Water,Fresh,,
-ND_155,155,runoff & un-named trib to Knife River,Surface Water,Fresh,,
-ND_156,156,Unnamed Intermittent Draw,Surface Water,Fresh,,
-ND_157,157,Unnamed Intermittent Draws,Surface Water,Fresh,,
-ND_158,158,Stony Creek,Surface Water,Fresh,,
-ND_159,159,Sweet Briar Creek,Surface Water,Fresh,,
-ND_160,160,Little Knife River,Surface Water,Fresh,,
-ND_161,161,Willow Lake,Surface Water,Fresh,,
-ND_162,162,Sout Branch Turtle river,Surface Water,Fresh,,
-ND_163,163,Goose Lake,Surface Water,Fresh,,
-ND_164,164,Pipestem Creek,Surface Water,Fresh,,
-ND_165,165,Lonesome Creek,Surface Water,Fresh,,
-ND_166,166,Iron Springs,Surface Water,Fresh,,
-ND_167,167,"Un-named draw, tributary to Missouri Riv",Surface Water,Fresh,,
-ND_168,168,Knife River tributary,Surface Water,Fresh,,
-ND_169,169,Long Lake Creek & Slough,Surface Water,Fresh,,
-ND_170,170,Gibbs Springs,Ground Water,Fresh,,
-ND_171,171,Unnamed Trib. to North Fork of the Grand,Surface Water,Fresh,,
-ND_172,172,Unnamed Trib.,Surface Water,Fresh,,
-ND_173,173,Cottonwood Lake,Surface Water,Fresh,,
-ND_174,174,Un named creek - trib to Missouri River,Surface Water,Fresh,,
-ND_175,175,Little Beaver Creek,Surface Water,Fresh,,
-ND_176,176,Little Knife River tributary,Surface Water,Fresh,,
-ND_177,177,Maple River,Surface Water,Fresh,,
-ND_178,178,Unspecified,Unknown,Fresh,,
-ND_179,179,Un-named trib to Cannonball River,Surface Water,Fresh,,
-ND_180,180,"Unnamed Stream, trib. of Crooked Creek",Surface Water,Fresh,,
-ND_181,181,Starkweather ï¿½oulee,Surface Water,Fresh,,
-ND_182,182,Unnamed Stream,Surface Water,Fresh,,
-ND_183,183,Bennie Pierre Creek,Surface Water,Fresh,,
-ND_184,184,"101 Creek, Bennie Pierre Creek",Surface Water,Fresh,,
-ND_185,185,Badlands Creek,Surface Water,Fresh,,
-ND_186,186,Lake Sakakwea,Surface Water,Fresh,,
-ND_187,187,Dickinson City Sewage Lagoons # 3 & 4,Surface Water,Fresh,,
-ND_188,188,Dickinson City Sewage Lagoons #3 & 4,Surface Water,Fresh,,
-ND_189,189,Unnamed Trib. of Square Butte Creek,Surface Water,Fresh,,
-ND_190,190,Unnamed Trib. to Charbonneau Creek,Surface Water,Fresh,,
-ND_191,191,Unnamed stream trib. of Missouri River,Surface Water,Fresh,,
-ND_192,192,Third cell of laggon system,Surface Water,Fresh,,
-ND_193,193,Unnamed Stream Trib. to Little Missouri,Surface Water,Fresh,,
-ND_194,194,North Creek,Surface Water,Fresh,,
-ND_195,195,Blacktail Creek,Surface Water,Fresh,,
-ND_196,196,Black Tail Creek,Surface Water,Fresh,,
-ND_197,197,Unnamed Trib to Little Goose River,Surface Water,Fresh,,
-ND_198,198,"unnamed stream, trib. to Missouri River",Surface Water,Fresh,,
-ND_199,199,Unnamed Trib. to Short Creek,Surface Water,Fresh,,
-ND_200,200,Un-named trib of Charbonneau Creek,Surface Water,Fresh,,
-ND_201,201,Buffalo Creek,Surface Water,Fresh,,
-ND_202,202,Dogtooth Creek,Surface Water,Fresh,,
-ND_203,203,Smishek Lake,Surface Water,Fresh,,
-ND_204,204,Rice Creek,Surface Water,Fresh,,
-ND_205,205,Park Rver,Surface Water,Fresh,,
-ND_206,206,Unnamed Trib. to Upper Lostwood Lake,Surface Water,Fresh,,
-ND_207,207,"un-named creek, tributary to Spring Cree",Surface Water,Fresh,,
-ND_208,208,Tributary to South Branch Turtle River,Surface Water,Fresh,,
-ND_209,209,"McClusky Canal, Sta. 433+44.8",Surface Water,Fresh,,
-ND_210,210,Turtle Creek,Surface Water,Fresh,,
-ND_211,211,Little Heart River,Surface Water,Fresh,,
-ND_212,212,Fresh Water Coulee,Surface Water,Fresh,,
-ND_213,213,Unnamed Trib. of Lake Sakakawea,Surface Water,Fresh,,
-ND_214,214,Northfork Creek,Surface Water,Fresh,,
-ND_215,215,un-named trib to Little Missouri,Surface Water,Fresh,,
-ND_216,216,Random Creek trib to Long Lake Creek,Surface Water,Fresh,,
-ND_217,217,Culvert Coulee,Surface Water,Fresh,,
-ND_218,218,ACSC Condenser Pond,Surface Water,Fresh,,
-ND_219,219,"Trib to Kelly's Slough, Trib to Turtle R",Surface Water,Fresh,,
-ND_220,220,Skunk Coulee & Flood Detention Dam #1,Surface Water,Fresh,,
-ND_221,221,Trib to Turtle River,Surface Water,Fresh,,
-ND_222,222,Unnamed Draw trib. to LaPorte Coulee,Surface Water,Fresh,,
-ND_223,223,Unnamed Draw trib to Russell Drain,Surface Water,Fresh,,
-ND_224,224,Mud Creek,Surface Water,Fresh,,
-ND_225,225,Unnamed Drainage,Surface Water,Fresh,,
-ND_226,226,Unnamed Trib. to Long Lake,Surface Water,Fresh,,
-ND_227,227,Unnamed drainage trib to Harriet Lake,Surface Water,Fresh,,
-ND_228,228,Lake Audubon,Surface Water,Fresh,,
-ND_229,229,waste ground water from malting process,Surface Water,Fresh,,
-ND_230,230,Unnamed drainage,Surface Water,Fresh,,
-ND_231,231,Unnamed Trib to West Stump Lake,Surface Water,Fresh,,
-ND_232,232,Otter Creek,Surface Water,Fresh,,
-ND_233,233,Starkweather Coulee,Surface Water,Fresh,,
-ND_234,234,Unnamed trib. to Willow Lake,Surface Water,Fresh,,
-ND_235,235,Grand Forks County WRD Flood Detention D,Surface Water,Fresh,,
-ND_236,236,PLUM CREEK,Surface Water,Fresh,,
-ND_237,237,Unnamed Trib,Surface Water,Fresh,,
-ND_238,238,Lightning Creek,Surface Water,Fresh,,
-ND_239,239,Unnamed Tributary of Spring Creek,Surface Water,Fresh,,
-ND_240,240,Unnamed Trib. West Branch of Short Creek,Surface Water,Fresh,,
-ND_241,241,Unnamed Trib. of Thirty Mile Creek,Surface Water,Fresh,,
-ND_242,242,Coal Creek,Surface Water,Fresh,,
-ND_243,243,Unnamed Trib. of Plum Creek.,Surface Water,Fresh,,
-ND_244,244,LaPorte Coulee,Surface Water,Fresh,,
-ND_245,245,Kelly Slough,Surface Water,Fresh,,
-ND_246,246,Unnamed wetland a trib. of Lake Audubon.,Surface Water,Fresh,,
-ND_247,247,Flat Creek,Surface Water,Fresh,,
-ND_248,248,Lake Alice,Surface Water,Fresh,,
-ND_249,249,Unnamed Trib. to Bennie Pierre Creek,Surface Water,Fresh,,
-ND_250,250,Unnamed Trib. to Bennnie Pierre Creek,Surface Water,Fresh,,
-ND_251,251,Unnamed Trib to Bennie Pierre Creek,Surface Water,Fresh,,
-ND_252,252,Kane/Tacoma/Overgaard Drain,Surface Water,Fresh,,
-ND_253,253,Alkali Creek,Surface Water,Fresh,,
-ND_254,254,"Unnamed Trib to Slow Cr, Spring Cr Trib.",Surface Water,Fresh,,
-ND_255,255,Dry Lake,Surface Water,Fresh,,
-ND_256,256,Unnamed Trib. to Cedar Creek,Surface Water,Fresh,,
-ND_257,257,Unnamed Trib. of Spring Creek Trib.,Surface Water,Fresh,,
-ND_258,258,Unnamed Trib. to Indian Creek,Surface Water,Fresh,,
-ND_259,259,Unnamed Stream Trib. to Buffalo Creek,Surface Water,Fresh,,
-ND_260,260,Unnamed Trib. to Hans Cr-Spring Cr Trib.,Surface Water,Fresh,,
-ND_261,261,Lagoons for residual ground  water,Surface Water,Fresh,,
-ND_262,262,Unnamed Trib. to Spring Creek,Surface Water,Fresh,,
-ND_263,263,Unnamed Trib. of Spring Creek,Surface Water,Fresh,,
-ND_264,264,Unnamed Trib. of Edmore Coulee,Surface Water,Fresh,,
-ND_265,265,Unnamed Trib. to Edmore Coulee,Surface Water,Fresh,,
-ND_266,266,Unnamed Stream Trib. to Little Knife R.,Surface Water,Fresh,,
-ND_267,267,Cherry Creek,Surface Water,Fresh,,
-ND_268,268,Mauvais Coulee,Surface Water,Fresh,,
-ND_269,269,Lake Irvine,Surface Water,Fresh,,
-ND_270,270,Unnamed Trib. of the Red River,Surface Water,Fresh,,
-ND_271,271,Unnamed Trib. of Red River,Surface Water,Fresh,,
-ND_272,272,Renwick Dam,Surface Water,Fresh,,
-ND_273,273,Ranch Lake,Surface Water,Fresh,,
-ND_274,274,Unnamed Tributary to Lake George,Surface Water,Fresh,,
-ND_275,275,Grand Harbor Drainage trib Six Mile Bay,Surface Water,Fresh,,
-ND_276,276,Unnamed Trib-Haymarsh Cr trib Big Muddy,Surface Water,Fresh,,
-ND_277,277,Unnamed Trib. of White Earth River,Surface Water,Fresh,,
-ND_278,278,Unnamed Tributary to the Red River,Surface Water,Fresh,,
-ND_279,279,Valley City Sewage Lagoons,Surface Water,Fresh,,
-ND_280,280,Valley City Municipal Lagoons,Surface Water,Fresh,,
-ND_281,281,Dickinson City Sewage Lagoon Cells 3 & 4,Surface Water,Fresh,,
-ND_282,282,Dickinson City Sewage Lagoon Cell #2,Surface Water,Fresh,,
-ND_283,283,"Dickinson Sewage Lagoons #2, 3, & 4",Surface Water,Fresh,,
-ND_284,284,Big Coulee Waterway trib Mauvais Coulee,Surface Water,Fresh,,
-ND_285,285,Big Coulee Waterwau trib Mauvais Coulee,Surface Water,Fresh,,
-ND_286,286,Unnamed Trib. of South Branch Park River,Surface Water,Fresh,,
-ND_287,287,Unnamed Trib. of Beaver Holes Creek,Surface Water,Fresh,,
-ND_288,288,Muskrat Cr trib Sims Cr trib Hailstone C,Surface Water,Fresh,,
-ND_289,289,Unnamed Trib. to Battle Creek,Surface Water,Fresh,,
-ND_290,290,Unnamed Drain,Surface Water,Fresh,,
-ND_291,291,Unnamed Trib. to Coyote Creek,Surface Water,Fresh,,
-ND_292,292,Little South Pembina River,Surface Water,Fresh,,
-ND_293,293,Unnamed waterway trib. to Roger Creek,Surface Water,Fresh,,
-ND_294,294,Unnamed Waterway trib. to Deep Creek,Surface Water,Fresh,,
-ND_295,295,Unnamed waterway trib. to Deep Creek,Surface Water,Fresh,,
-ND_296,296,Unnamed Waterway trib to Heart Butte Ck,Surface Water,Fresh,,
-ND_297,297,Goose Creek,Surface Water,Fresh,,
-ND_298,298,Unnamed stream trib. to Goose Creek,Surface Water,Fresh,,
-ND_299,299,Unnamed trib. to Little Heart River,Surface Water,Fresh,,
-ND_300,300,Pembina County Drain #20,Surface Water,Fresh,,
-ND_301,301,Murphy Creek Trib. to Spring Creek,Surface Water,Fresh,,
-ND_302,302,groundwater,Ground Water,Fresh,,
-ND_303,303,Unnamed trib to Charbonneau Creek,Surface Water,Fresh,,
-ND_304,304,Unnamed Tributary to Starkweather Coulee,Surface Water,Fresh,,
-ND_305,305,Unnamed Drain trib Starkweather Coulee,Surface Water,Fresh,,
-ND_306,306,Forest River,Surface Water,Fresh,,
-ND_307,307,Unnamed,Surface Water,Fresh,,
-ND_308,308,"Unnamed, Crooked Creek",Surface Water,Fresh,,
-ND_309,309,Unnamed trib to Heart River,Surface Water,Fresh,,
-ND_310,310,Unnamed trib to Square Butte Creek,Surface Water,Fresh,,
-ND_311,311,Mount Carmel Dam,Surface Water,Fresh,,
-ND_312,312,Ground water,Ground Water,Fresh,,
-ND_313,313,Groundwater,Ground Water,Fresh,,
-ND_314,314,Unnamed trib. to Maple River,Surface Water,Fresh,,
-ND_315,315,Middle Branch Park River,Surface Water,Fresh,,
-ND_316,316,Unnamed Trib. to Dead Buffalo Lake,Surface Water,Fresh,,
-ND_317,317,West Cut Bank Creek,Surface Water,Fresh,,
-ND_318,318,Unnamed creek trib to Porcupine Creek,Surface Water,Fresh,,
-ND_319,319,Indian Creek,Surface Water,Fresh,,
-ND_320,320,Unnamed Lake,Surface Water,Fresh,,
-ND_321,321,Spring Creek trib to Lower Coyote Creek,Surface Water,Fresh,,
-ND_322,322,Unnamed Trib to East Antelope Creek,Surface Water,Fresh,,
-ND_323,323,Scab Creek,Surface Water,Fresh,,
-ND_324,324,Twin Lake,Surface Water,Fresh,,
-ND_325,325,Stack Slough,Surface Water,Fresh,,
-ND_326,326,Chain Lake,Surface Water,Fresh,,
-ND_327,327,Unnamed/ Tributary of Beaver Creek,Surface Water,Fresh,,
-ND_328,328,Oak Creek,Surface Water,Fresh,,
-ND_329,329,Random Creek,Surface Water,Fresh,,
-ND_330,330,Stoney Creek,Surface Water,Fresh,,
-ND_331,331,Morrison Lake,Surface Water,Fresh,,
-ND_332,332,Long Creek,Surface Water,Fresh,,
-ND_333,333,Kenner Marsh,Surface Water,Fresh,,
-ND_334,334,Shell Creek,Surface Water,Fresh,,
-ND_335,335,unnamed tributary,Surface Water,Fresh,,
-ND_336,336,Island Lake,Surface Water,Fresh,,
-ND_337,337,UNNAMED,Surface Water,Fresh,,
-ND_338,338,Unnamed trib of Coyote Creek,Surface Water,Fresh,,
-ND_339,339,Drake sewage lagoon,Surface Water,Fresh,,
-ND_340,340,Dayton Creek,Surface Water,Fresh,,
-ND_341,341,unnamed creek,Surface Water,Fresh,,
-ND_342,342,unnamed stream,Surface Water,Fresh,,
-ND_343,343,Unknown Tributary,Surface Water,Fresh,,
-ND_344,344,Esmond aquifer,Ground Water,Fresh,,
-ND_345,345,Trappers Coulee aquifer,Ground Water,Fresh,,
-ND_346,346,Middle Branch of Park River,Surface Water,Fresh,,
-ND_347,347,Middle Brannch Park,Ground Water,Fresh,,
-ND_348,348,East Antelope Creek,Surface Water,Fresh,,
-ND_349,349,Edmore Coulee,Surface Water,Fresh,,
-ND_350,350,MISSOURI RIVER,Surface Water,Fresh,,
-ND_351,351,unnamed,Surface Water,Fresh,,
-ND_352,352,Des Lacs River,Surface Water,Fresh,,
-ND_353,353,Skunk Coulee,Surface Water,Fresh,,
-ND_354,354,unnamed tributary of Wannagan Creek,Surface Water,Fresh,,
-ND_355,355,unnamed creek/trib. of Cedar Creek,Surface Water,Fresh,,
-ND_356,356,"unnamed stream, trib of Ash Creek",Surface Water,Fresh,,
-ND_357,357,"unnamed creek, trib of Antelope Creek",Surface Water,Fresh,,
-ND_358,358,Wolf Lake,Surface Water,Fresh,,
-ND_359,359,unnamed drainage,Surface Water,Fresh,,
-ND_360,360,Coal Bank Creek/Trib of Cannonball River,Surface Water,Fresh,,
-ND_361,361,unnamed tributary to Little Knife River,Surface Water,Fresh,,
-ND_362,362,unnamed creek/ trib of Morris Creek,Surface Water,Fresh,,
-ND_363,363,unnamed creek/ trib of Cold Turkey Creek,Surface Water,Fresh,,
-ND_364,364,unnamed creek/ trib. of the Cannonball R,Surface Water,Fresh,,
-ND_365,365,unnamed creek - tribe. of Turkey Creek,Surface Water,Fresh,,
-ND_366,366,Middle Branch park River,Surface Water,Fresh,,
-ND_367,367,"Skunk Coulee, Tributary to Turtle River",Surface Water,Fresh,,
-ND_368,368,Horne Pond,Surface Water,Fresh,,
-ND_369,369,"unnamed, tributary of Squaw Creek",Surface Water,Fresh,,
-ND_370,370,Red River of the North,Surface Water,Fresh,,
-ND_371,371,Hiddenwood Lake,Surface Water,Fresh,,
-ND_372,372,unnamed creek a trib. of Whitmore Creek,Surface Water,Fresh,,
-ND_373,373,unnamed creek trib. of Whitmore Creek,Surface Water,Fresh,,
-ND_374,374,unnamed creek a trib. of Crooked Creek,Surface Water,Fresh,,
-ND_375,375,Sweet Briar Creek a trib. of the Heart,Surface Water,Fresh,,
-ND_376,376,"natural runoff, trib of McLaughlin Lake",Surface Water,Fresh,,
-ND_377,377,Drain No. 29,Surface Water,Fresh,,
-ND_378,378,McLaughlin Lake a trib of Pembina River,Surface Water,Fresh,,
-ND_379,379,Unnamed source a trib of James River,Surface Water,Fresh,,
-ND_380,380,unnamed tributary of Antelope Creek,Surface Water,Fresh,,
-ND_381,381,unnamed tributary of the Cannonbal River,Surface Water,Fresh,,
-ND_382,382,unnamed creek trib. of Lightning Creek.,Surface Water,Fresh,,
-ND_383,383,unnamed creek trib. of Lightning Creek,Surface Water,Fresh,,
-ND_384,384,Little Muddy Creek,Surface Water,Fresh,,
-ND_385,385,unnamed source trib. of Pipestem River,Surface Water,Fresh,,
-ND_386,386,Unnamed tributary of Rock Lake,Surface Water,Fresh,,
-ND_387,387,Unnamed tributary to Rock lake,Surface Water,Fresh,,
-ND_388,388,Unnamed tributary to Rock Lake,Surface Water,Fresh,,
-ND_389,389,unnamed trib. of Burnt Creek,Surface Water,Fresh,,
-ND_390,390,Little Missouri  River,Surface Water,Fresh,,
-ND_391,391,Knife River & Elm Creek,Surface Water,Fresh,,
-ND_392,392,Calio Coulee,Surface Water,Fresh,,
-ND_393,393,Antelpoe Creek,Surface Water,Fresh,,
-ND_394,394,unnamed intermittent streams,Surface Water,Fresh,,
-ND_395,395,Unnamed intermittent streams.,Surface Water,Fresh,,
-ND_396,396,Unnamed intermittent streams,Surface Water,Fresh,,
-ND_397,397,Unnamed creek a Trib. of the Cannonball,Surface Water,Fresh,,
-ND_398,398,Drainage Ditch,Surface Water,Fresh,,
-ND_399,399,Cole Creek trib of the Red River,Surface Water,Fresh,,
-ND_400,400,Unnamed creek a tributary of Cedar Creek,Surface Water,Fresh,,
-ND_401,401,Des Lacs River a trib. of Souris River,Surface Water,Fresh,,
-ND_402,402,Unnamed stream a trib of Cedar Creek,Surface Water,Fresh,,
-ND_403,403,Unnamed Creek trib. of Timber Creek,Surface Water,Fresh,,
-ND_404,404,Souris River/ Dam 83,Surface Water,Fresh,,
-ND_405,405,Souris River/ Pond C,Surface Water,Fresh,,
-ND_406,406,Souris River/ Dam 87,Surface Water,Fresh,,
-ND_407,407,Souris River/Dam 96,Surface Water,Fresh,,
-ND_408,408,Souris River/Dam 41,Surface Water,Fresh,,
-ND_409,409,Souris River/Dam 320,Surface Water,Fresh,,
-ND_410,410,Souris River/Dam 326,Surface Water,Fresh,,
-ND_411,411,Souris River/ Dam 320,Surface Water,Fresh,,
-ND_412,412,Souris River/Dam 332,Surface Water,Fresh,,
-ND_413,413,Souris River/ Dam 326,Surface Water,Fresh,,
-ND_414,414,Souris River/Dam 341,Surface Water,Fresh,,
-ND_415,415,Souris River/Dam 357,Surface Water,Fresh,,
-ND_416,416,Wild Rice River trib. of Red River,Surface Water,Fresh,,
-ND_417,417,Wild Rice trib. of Red River,Surface Water,Fresh,,
-ND_418,418,Lake Ordway,Surface Water,Fresh,,
-ND_419,419,Tongue River a trib. of the Red River,Surface Water,Fresh,,
-ND_420,420,Wieler Dam,Surface Water,Fresh,,
-ND_421,421,Oak ï¿½reek a trib. of Willow Creek,Surface Water,Fresh,,
-ND_422,422,unnamed stream on the Forest River.,Surface Water,Fresh,,
-ND_423,423,Goschke Dam on Tongue River,Surface Water,Fresh,,
-ND_424,424,Weiler Dam a trib. of Tongue River,Surface Water,Fresh,,
-ND_425,425,Elm River a trib. of the Red River,Surface Water,Fresh,,
-ND_426,426,Valley City Lagoon,Surface Water,Fresh,,
-ND_427,427,unnamed creek trib. of Painted Woods Ck.,Surface Water,Fresh,,
-ND_428,428,North Branch of the Goose River,Surface Water,Fresh,,
-ND_429,429,unnamed stream trib. of Forest River,Surface Water,Fresh,,
-ND_430,430,unnamed creek trib. of the Green River,Surface Water,Fresh,,
-ND_431,431,Lake Hoskins,Surface Water,Fresh,,
-ND_432,432,Jensen Dam,Surface Water,Fresh,,
-ND_433,433,unnamed creek trib of Frank Creek,Surface Water,Fresh,,
-ND_434,434,Starkwater Coulee trib. of Devils Lake,Surface Water,Fresh,,
-ND_435,435,unnamed creek trib. of Dutton Slough,Surface Water,Fresh,,
-ND_436,436,unnamed creek trib. of Turtle Creek,Surface Water,Fresh,,
-ND_437,437,Morris Creek,Surface Water,Fresh,,
-ND_438,438,unnamed creek trib. of Knife River,Surface Water,Fresh,,
-ND_439,439,unnamed creek trib. of Porcupine Creek,Surface Water,Fresh,,
-ND_440,440,unnamed creek trib. of the Heart river,Surface Water,Fresh,,
-ND_441,441,unnamed creek trib. of Baher Creek,Surface Water,Fresh,,
-ND_442,442,unnamed creek trib. of Bahr Creek,Surface Water,Fresh,,
-ND_443,443,Un-named creek,Surface Water,Fresh,,
-ND_444,444,unnamed creek trib. of S. Fork Green Riv,Surface Water,Fresh,,
-ND_445,445,unnamed creek trib. of Big Meadow Marsh,Surface Water,Fresh,,
-ND_446,446,Russian Slough Creek trib of Cedar Creek,Surface Water,Fresh,,
-ND_447,447,unnamed creek trib. of Leaf on the Hill,Surface Water,Fresh,,
-ND_448,448,Missouri river,Surface Water,Fresh,,
-ND_449,449,Unnamed creek trib. of Missouri River,Surface Water,Fresh,,
-ND_450,450,Lake Ashtabula trib. of the Red river,Surface Water,Fresh,,
-ND_451,451,Cherry Creek trib. of Little Misouri,Surface Water,Fresh,,
-ND_452,452,Square Butte Creek trib. of the Missouri,Surface Water,Fresh,,
-ND_453,453,Skunk Coulee & flood detention dam #1,Surface Water,Fresh,,
-ND_454,454,Skunk Coulee & flood detention #1,Surface Water,Fresh,,
-ND_455,455,Unnamed creek a trib. of Sheyenne River,Surface Water,Fresh,,
-ND_456,456,"Jim Creek, trib. of Little Missouri",Surface Water,Fresh,,
-ND_457,457,Heart River trib. of Missouri River,Surface Water,Fresh,,
-ND_458,458,unnamed creek trib. of Kinneman Creek,Surface Water,Fresh,,
-ND_459,459,Cottonwood Creek trib. of James River,Surface Water,Fresh,,
-ND_460,460,unnamed creek trib. of Beaver Creek,Surface Water,Fresh,,
-ND_461,461,unnamed creek trib. of Lone Tree Creek,Surface Water,Fresh,,
-ND_462,462,Unnamed creek trib. of Lightning Creek,Surface Water,Fresh,,
-ND_463,463,Five Mile Creek,Surface Water,Fresh,,
-ND_464,464,Unnamed trib. of the Missouri River,Surface Water,Fresh,,
-ND_465,465,Apple Creek East trib. of Missouri River,Surface Water,Fresh,,
-ND_466,466,Cow Creek a trib. of the Heart River,Surface Water,Fresh,,
-ND_467,467,Unnamed Creek trib. of Thirty Mile Creek,Surface Water,Fresh,,
-ND_468,468,Lake Ibsen,Surface Water,Fresh,,
-ND_469,469,unnamed creek trib. of Spring Creek,Surface Water,Fresh,,
-ND_470,470,Unnamed Creek trib. of Whitetail Creek,Surface Water,Fresh,,
-ND_471,471,ADM Ethanol Plant Ponds,Surface Water,Fresh,,
-ND_472,472,Horse Tied Creek trib. of Missouri River,Surface Water,Fresh,,
-ND_473,473,Unnamed creek trib. of S.Fork Smith Crk.,Surface Water,Fresh,,
-ND_474,474,"Little Knife River, trib. of Knife River",Surface Water,Fresh,,
-ND_475,475,"unnamed creek, trib of Bahr Creek",Surface Water,Fresh,,
-ND_476,476,Unnamed creek trib. of Whitmore Creek,Surface Water,Fresh,,
-ND_477,477,Whitmore Creek trib. of Cedar Creek,Surface Water,Fresh,,
-ND_478,478,Unnamed creek trib. of East Fork Shell,Surface Water,Fresh,,
-ND_479,479,Unnamed creek trib of Shell Creek,Surface Water,Fresh,,
-ND_480,480,Unnamed stream trib. of S. Fork Maple R.,Surface Water,Fresh,,
-ND_481,481,Unnamed creek trib. of Nelson Creek,Surface Water,Fresh,,
-ND_482,482,Unnamed creek trib. of Willow Coulee,Surface Water,Fresh,,
-ND_483,483,"Burnt Creek, trib. of Missouri River",Surface Water,Fresh,,
-ND_484,484,Frying Pan Lake,Surface Water,Fresh,,
-ND_485,485,Goose River a trib. of the Red River,Surface Water,Fresh,,
-ND_486,486,Willow Coulee (Creek) trib. of Red River,Surface Water,Fresh,,
-ND_487,487,Maple River trib. of the Sheyenne River,Surface Water,Fresh,,
-ND_488,488,Battle Creek trib. of the Missouri River,Surface Water,Fresh,,
-ND_489,489,Cannon Ball River trib. of Missouri,Surface Water,Fresh,,
-ND_490,490,Cannon Ball River trib. of Misssouri,Surface Water,Fresh,,
-ND_491,491,"Unnamed stream, trib. of Plum Creek",Surface Water,Fresh,,
-ND_492,492,Unnamed stream trib. of Lightning Creek,Surface Water,Fresh,,
-ND_493,493,"Nelson Creek,trib. of the Missouri River",Surface Water,Fresh,,
-ND_494,494,unnamed creek trib. of Cherry Creek,Surface Water,Fresh,,
-ND_495,495,unnamed creek trib. of Powers Lake,Surface Water,Fresh,,
-ND_496,496,Unnamed stream trib. of Ash Creek,Surface Water,Fresh,,
-ND_497,497,"Unnamed creek, trib toBranch Knife River",Surface Water,Fresh,,
-ND_498,498,Unnamed stream trib. of Apple Creek,Surface Water,Fresh,,
-ND_499,499,Unnamed stream trib. of Thirty Mile Ck.,Surface Water,Fresh,,
-ND_500,500,Un-named wetland,Surface Water,Fresh,,
-ND_501,501,"Cottonwood Creek, Trib. of James River",Surface Water,Fresh,,
-ND_502,502,Unnamed stream-trib. of the James River,Surface Water,Fresh,,
-ND_503,503,Unnamed stream trib of Little Muddy Riv.,Surface Water,Fresh,,
-ND_504,504,Spiritwood aquifer,Ground Water,Fresh,,
-ND_505,505,Unnamed stream trib. of Little Muddy,Surface Water,Fresh,,
-ND_506,506,Goshke Dam on Busse Coulee,Surface Water,Fresh,,
-ND_507,507,Goschke Dam on Busse Coulee,Surface Water,Fresh,,
-ND_508,508,Unamed Coulee trib. of Lower Des Lacs,Surface Water,Fresh,,
-ND_509,509,Flat Creek trib. of N. Fork Grand River,Surface Water,Fresh,,
-ND_510,510,Chimney Butte Creek,Surface Water,Fresh,,
-ND_511,511,Unnamed coulee trib. of the Heart River,Surface Water,Fresh,,
-ND_512,512,Unnamed coulee a trib. of t Heart River,Surface Water,Fresh,,
-ND_513,513,"Unnamed creek, trib of Wolf Creek",Surface Water,Fresh,,
-ND_514,514,"Gibb's Spring, Trib. of Little Knife",Surface Water,Fresh,,
-ND_515,515,White Earth Creek,Surface Water,Fresh,,
-ND_516,516,"Spring Creek, Trib. of Knife River",Surface Water,Fresh,,
-ND_517,517,Little Bull Creek,Surface Water,Fresh,,
-ND_518,518,Unnamed tributary of North Branch Park,Surface Water,Fresh,,
-ND_519,519,"Unnamed creek, trib.of Stony Slough",Surface Water,Fresh,,
-ND_520,520,Sheyene River,Surface Water,Fresh,,
-ND_521,521,"unnamed waterway, trib of Des Lacs River",Surface Water,Fresh,,
-ND_522,522,Goschke Dam,Surface Water,Fresh,,
-ND_523,523,"Unnamed creek, trib. of the Tongue River",Surface Water,Fresh,,
-ND_524,524,"Bussee Coulee, trib. of the Tongue River",Surface Water,Fresh,,
-ND_525,525,Warwick Dam on Sheynne River,Surface Water,Fresh,,
-ND_526,526,Unnamed stream trib. of Heart River,Surface Water,Fresh,,
-ND_527,527,Tongue River (Renwick Dam M-4),Surface Water,Fresh,,
-ND_528,528,Unnamed creek,Surface Water,Fresh,,
-ND_529,529,Sheyenne Delta Aquifer,Ground Water,Fresh,,
-ND_530,530,treated city wastewater,Surface Water,Fresh,,
-ND_531,531,"James River, Fesenden Dam",Surface Water,Fresh,,
-ND_532,532,un-named trib to Square Butte Creek,Surface Water,Fresh,,
-ND_533,533,Sheyenne River the Harvey Dam,Surface Water,Fresh,,
-ND_534,534,"Coal Mine Creek, trib. of Heart River",Surface Water,Fresh,,
-ND_535,535,Unnamed tributary to Knife River,Surface Water,Fresh,,
-ND_536,536,"Scab Creek, trib to Big Muddy Creek",Surface Water,Fresh,,
-ND_537,537,unnamed creek trib. of the Heart River,Surface Water,Fresh,,
-ND_538,538,Unnamed creek.,Surface Water,Fresh,,
-ND_539,539,"Unnamed creek, trib. of the Heart River",Surface Water,Fresh,,
-ND_540,540,Crooked Creek tributary,Surface Water,Fresh,,
-ND_541,541,Trenton Lake,Surface Water,Fresh,,
-ND_542,542,Cedar Creek tributary,Surface Water,Fresh,,
-ND_543,543,Trib. of Painted Woods Creek,Surface Water,Fresh,,
-ND_544,544,unnamed creek.,Surface Water,Fresh,,
-ND_545,545,Lake Margaret,Surface Water,Fresh,,
-ND_546,546,Rats Coulee,Surface Water,Fresh,,
-ND_547,547,"unnamed creek, trib. of Edmore Coulee",Surface Water,Fresh,,
-ND_548,548,DesMoines Lake,Surface Water,Fresh,,
-ND_549,549,"Unnamed creek, trib. of Square Butte Ck.",Surface Water,Fresh,,
-ND_550,550,Unnamed creek trib. of Big Muddy Creek,Surface Water,Fresh,,
-ND_551,551,Eightmile Creek,Surface Water,Fresh,,
-ND_552,552,Unnamed slough,Surface Water,Fresh,,
-ND_553,553,Unnamed stream trib. of Cannonball River,Surface Water,Fresh,,
-ND_554,554,Unnamed slough.,Surface Water,Fresh,,
-ND_555,555,Pitt Creek tributary,Surface Water,Fresh,,
-ND_556,556,Burnt Creek Diversion,Surface Water,Fresh,,
-ND_557,557,Trib. of Crosby Creek,Surface Water,Fresh,,
-ND_558,558,Hazen Brook,Surface Water,Fresh,,
-ND_559,559,Southwest Pipeline Project,Surface Water,Fresh,,
-ND_560,560,Spring - trib. of White Earth River,Surface Water,Fresh,,
-ND_561,561,The Pembina River,Surface Water,Fresh,,
-ND_562,562,Sheynne River,Surface Water,Fresh,,
-ND_563,563,First Larson Coulee,Surface Water,Fresh,,
-ND_564,564,Waste water Logoons,Surface Water,Fresh,,
-ND_565,565,Waste water lagoons,Surface Water,Fresh,,
-ND_566,566,4 cell lagoon system,Surface Water,Fresh,,
-ND_567,567,Shallow saturated alluvium,Ground Water,Fresh,,
-ND_568,568,Des Lac Lake,Surface Water,Fresh,,
-ND_569,569,Trib. to the Wild Rice River,Surface Water,Fresh,,
-ND_570,570,tobacco Garden Creek,Surface Water,Fresh,,
-ND_571,571,Hartel Dam,Surface Water,Fresh,,
-ND_572,572,Puppy Dog Coulee,Surface Water,Fresh,,
-ND_573,573,Oakes Pilot Drain,Surface Water,Fresh,,
-ND_574,574,Unnamed creek trib of Frank Creek,Surface Water,Fresh,,
-ND_575,575,Fort Union,Ground Water,Fresh,,
-ND_576,576,Sletten Lake,Surface Water,Fresh,,
-ND_577,577,Green River tributary,Surface Water,Fresh,,
-ND_578,578,Dakota Group,Ground Water,Fresh,,
-ND_579,579,Tongue River at Goschke Dam,Surface Water,Fresh,,
-ND_580,580,North Branch Turtle River,Surface Water,Fresh,,
-ND_581,581,Strommen stock pond,Surface Water,Fresh,,
-ND_582,582,Stone Creek,Surface Water,Fresh,,
-ND_583,583,Trib. of East Fork Shell Creek,Surface Water,Fresh,,
-ND_584,584,Little Antelope Creek,Surface Water,Fresh,,
-ND_585,585,Canonball River,Surface Water,Fresh,,
-ND_586,586,Dimmick Lake,Surface Water,Fresh,,
-ND_587,587,Ephemeral Drainages,Surface Water,Fresh,,
-ND_588,588,South Egg Creek,Surface Water,Fresh,,
-ND_589,589,Camp Creek,Surface Water,Fresh,,
-ND_590,590,Spring Creek tributary,Surface Water,Fresh,,
-ND_591,591,Bennett Creek,Surface Water,Fresh,,
-ND_592,592,un-named stock pond,Surface Water,Fresh,,
-ND_593,593,Unnamed pond,Surface Water,Fresh,,
-ND_594,594,Hagel Creek tributary,Surface Water,Fresh,,
-ND_595,595,Little Missouri river,Surface Water,Fresh,,
-ND_596,596,Strommen Pond - Spring Creek trib.,Surface Water,Fresh,,
-ND_597,597,"Pat's Coulee, trib. to Little Muddy",Surface Water,Fresh,,
-ND_598,598,"Strawberry, Crooked & Brekken Lakes",Surface Water,Fresh,,
-ND_599,599,"Strawberr, Crooked & Brekken Lakes",Surface Water,Fresh,,
-ND_600,600,"Strawberry, Crooked & Brekken",Surface Water,Fresh,,
-ND_601,601,Cheyenne River,Surface Water,Fresh,,
-ND_602,602,Horseshoe Lake,Surface Water,Fresh,,
-ND_603,603,Holding Pond,Surface Water,Fresh,,
-ND_604,604,Halfbreed Creek,Surface Water,Fresh,,
-ND_605,605,Lake Upsilon,Surface Water,Fresh,,
-ND_606,606,Lake Trenton,Surface Water,Fresh,,
-ND_607,607,Little Stoney,Ground Water,Fresh,,
-ND_608,608,Unnamed trib to Knife River,Surface Water,Fresh,,
-ND_609,609,Tributary of Crooked Creek,Surface Water,Fresh,,
-ND_610,610,Cedar River,Surface Water,Fresh,,
-ND_611,611,Muskrat Lake,Surface Water,Fresh,,
-ND_612,612,Otte Creek,Surface Water,Fresh,,
-ND_613,613,Drain 11,Surface Water,Fresh,,
-ND_614,614,East Buehner Pond,Surface Water,Fresh,,
-ND_615,615,Jim Creek,Surface Water,Fresh,,
-ND_616,616,Derudder Dam,Surface Water,Fresh,,
-ND_617,617,Abbey Lake,Surface Water,Fresh,,
-ND_618,618,Oxbow of Stoney Creek,Surface Water,Fresh,,
-ND_619,619,Lake Sakakawea-backwater,Surface Water,Fresh,,
-ND_620,620,Matejcek Reservoir,Surface Water,Fresh,,
-ND_621,621,Lake Zahl,Surface Water,Fresh,,
-ND_622,622,Frank Creek,Surface Water,Fresh,,
-ND_623,623,Murphy Slough,Surface Water,Fresh,,
-ND_624,624,McVille,Ground Water,Fresh,,
-ND_625,625,Little Muddy river,Surface Water,Fresh,,
-ND_626,626,Dry Creek,Surface Water,Fresh,,
+WaterSourceUUID,Geometry,GNISFeatureNameCV,WaterQualityIndicatorCV,WaterSourceName,WaterSourceNativeID,WaterSourceTypeCV
+ND_1,,,Fresh,Unknown,Unspecified,Ground Water
+ND_2,,,Fresh,Unknown,Unspecified,Surface Water
+ND_3,,,Fresh,Charbonneau Creek,Unspecified,Surface Water
+ND_4,,,Fresh,Beaver Creek,Unspecified,Surface Water
+ND_5,,,Fresh,Nelson Creek,Unspecified,Surface Water
+ND_6,,,Fresh,Little Creek,Unspecified,Surface Water
+ND_7,,,Fresh,Green River,Unspecified,Surface Water
+ND_8,,,Fresh,Little Muddy River,Unspecified,Surface Water
+ND_9,,,Fresh,Un-Named Coulee & Dry Fork Coulee,Unspecified,Surface Water
+ND_10,,,Fresh,"Intermittent Draws, Trib. To Little Miss",Unspecified,Surface Water
+ND_11,,,Fresh,Heart River,Unspecified,Surface Water
+ND_12,,,Fresh,Apple Creek,Unspecified,Surface Water
+ND_13,,,Fresh,Little Missouri River,Unspecified,Surface Water
+ND_14,,,Fresh,Buford Coulee,Unspecified,Surface Water
+ND_15,,,Fresh,Burnt Creek,Unspecified,Surface Water
+ND_16,,,Fresh,Missouri River,Unspecified,Surface Water
+ND_17,,,Fresh,Tobacco Garden Creek,Unspecified,Surface Water
+ND_18,,,Fresh,Sheyenne River,Unspecified,Surface Water
+ND_19,,,Fresh,Cannonball River,Unspecified,Surface Water
+ND_20,,,Fresh,Knife River,Unspecified,Surface Water
+ND_21,,,Fresh,Wolf Creek,Unspecified,Surface Water
+ND_22,,,Fresh,Duck Creek,Unspecified,Surface Water
+ND_23,,,Fresh,Lake Sakakawea,Unspecified,Surface Water
+ND_24,,,Fresh,Tributary To The Knife River,Unspecified,Surface Water
+ND_25,,,Fresh,Mouse River,Unspecified,Surface Water
+ND_26,,,Fresh,Pembina River,Unspecified,Surface Water
+ND_27,,,Fresh,Painted Woods Creek,Unspecified,Surface Water
+ND_28,,,Fresh,Red River,Unspecified,Surface Water
+ND_29,,,Fresh,Gibb Springs,Unspecified,Surface Water
+ND_30,,,Fresh,Sweetwater Lake,Unspecified,Surface Water
+ND_31,,,Fresh,Mulberry Creek,Unspecified,Surface Water
+ND_32,,,Fresh,"Big Mary'S Coulee, Trib To Mouse River",Unspecified,Surface Water
+ND_33,,,Fresh,Rush River,Unspecified,Surface Water
+ND_34,,,Fresh,Tributary To West Hay Draw Creek,Unspecified,Surface Water
+ND_35,,,Fresh,West Hay Draw Creek,Unspecified,Surface Water
+ND_36,,,Fresh,Sheep Creek,Unspecified,Surface Water
+ND_37,,,Fresh,"Box Elder Creek, Trib. To Little Missour",Unspecified,Surface Water
+ND_38,,,Fresh,Spring Creek,Unspecified,Surface Water
+ND_39,,,Fresh,James River,Unspecified,Surface Water
+ND_40,,,Fresh,Chanta Peta Creek,Unspecified,Surface Water
+ND_41,,,Fresh,"Beaver Creek, Trib. To Little Misouri Ri",Unspecified,Surface Water
+ND_42,,,Fresh,Antelope Creek,Unspecified,Surface Water
+ND_43,,,Fresh,Unnamed Creek,Unspecified,Surface Water
+ND_44,,,Fresh,Square Butte Creek,Unspecified,Surface Water
+ND_45,,,Fresh,"Oxbow, Trib. To Apple Creek",Unspecified,Surface Water
+ND_46,,,Fresh,Silver Lake,Unspecified,Surface Water
+ND_47,,,Fresh,Souris River,Unspecified,Surface Water
+ND_48,,,Fresh,Danners Coulee,Unspecified,Surface Water
+ND_49,,,Fresh,Park River,Unspecified,Surface Water
+ND_50,,,Fresh,Lake Ashtabula,Unspecified,Surface Water
+ND_51,,,Fresh,South Branch Of The Goose River,Unspecified,Surface Water
+ND_52,,,Fresh,Goose River,Unspecified,Surface Water
+ND_53,,,Fresh,Antler Creek,Unspecified,Surface Water
+ND_54,,,Fresh,Unnaned Trib To Missouri River,Unspecified,Surface Water
+ND_55,,,Fresh,"Pats Coulee, Trib To Little Muddy",Unspecified,Surface Water
+ND_56,,,Fresh,Unnamed Tributary,Unspecified,Surface Water
+ND_57,,,Fresh,Scorio Creek,Unspecified,Surface Water
+ND_58,,,Fresh,"Horse Creek, Trib. To Little Missouri Ri",Unspecified,Surface Water
+ND_59,,,Fresh,Lake Oahe,Unspecified,Surface Water
+ND_60,,,Fresh,North Branch Of Garner Creek,Unspecified,Surface Water
+ND_61,,,Fresh,Crooked Creek Tributaries,Unspecified,Surface Water
+ND_62,,,Fresh,Elm River,Unspecified,Surface Water
+ND_63,,,Fresh,Unnamed Waterway (Round Lake),Unspecified,Surface Water
+ND_64,,,Fresh,Square Butte Creel,Unspecified,Surface Water
+ND_65,,,Fresh,Crooked Creek,Unspecified,Surface Water
+ND_66,,,Fresh,White Earth River,Unspecified,Surface Water
+ND_67,,,Fresh,Sweet Briar Lake,Unspecified,Surface Water
+ND_68,,,Fresh,Pipestem Creek (Lake Hiawatha),Unspecified,Surface Water
+ND_69,,,Fresh,Un-Named Trib To Spring Creek,Unspecified,Surface Water
+ND_70,,,Fresh,Crooked Creek Tributary,Unspecified,Surface Water
+ND_71,,,Fresh,Trib To Sqaure Butte Creek,Unspecified,Surface Water
+ND_72,,,Fresh,North Branch Forest River,Unspecified,Surface Water
+ND_73,,,Fresh,Unnamed Tributary To Spring Creek,Unspecified,Surface Water
+ND_74,,,Fresh,Trib To Shirk Creek,Unspecified,Surface Water
+ND_75,,,Fresh,"Unnamed Stream, Trib Of Little Muddy",Unspecified,Surface Water
+ND_76,,,Fresh,Spring Creek & Un-Named Trib,Unspecified,Surface Water
+ND_77,,,Fresh,Sweetbriar Creek,Unspecified,Surface Water
+ND_78,,,Fresh,Unnamed Tributary To Slough,Unspecified,Surface Water
+ND_79,,,Fresh,Middle Branch Forest River,Unspecified,Surface Water
+ND_80,,,Fresh,Intermittent Draws,Unspecified,Surface Water
+ND_81,,,Fresh,Tepee Creek,Unspecified,Surface Water
+ND_82,,,Fresh,Trib To Otter Creek,Unspecified,Surface Water
+ND_83,,,Fresh,Yellowstone River,Unspecified,Surface Water
+ND_84,,,Fresh,Bear Creek,Unspecified,Surface Water
+ND_85,,,Fresh,South Branch Of Elm River,Unspecified,Surface Water
+ND_86,,,Fresh,Clear Creek,Unspecified,Surface Water
+ND_87,,,Fresh,Big Muddy Creek,Unspecified,Surface Water
+ND_88,,,Fresh,"Lay Creek, Trib Of Tobacco Garden Creek",Unspecified,Surface Water
+ND_89,,,Fresh,North Fork Grand River,Unspecified,Surface Water
+ND_90,,,Fresh,Trib To Turtle Creek,Unspecified,Surface Water
+ND_91,,,Fresh,Trib To Burnt Creek,Unspecified,Surface Water
+ND_92,,,Fresh,Unnamed Channel,Unspecified,Surface Water
+ND_93,,,Fresh,Unnamed Intermittent Draw,Unspecified,Surface Water
+ND_94,,,Fresh,Wild Rice River,Unspecified,Surface Water
+ND_95,,,Fresh,Unnamed Creek & Wild Rice River,Unspecified,Surface Water
+ND_96,,,Fresh,Unamed Creek And Wild Rice River,Unspecified,Surface Water
+ND_97,,,Fresh,Deep Creek,Unspecified,Surface Water
+ND_98,,,Fresh,Pipestem Creek,Unspecified,Surface Water
+ND_99,,,Fresh,Unnamed Coulee,Unspecified,Surface Water
+ND_100,,,Fresh,Nelson Lake-Square Butte Creek,Unspecified,Surface Water
+ND_101,,,Fresh,Cart Creek,Unspecified,Surface Water
+ND_102,,,Fresh,Un-Named Trib To Sweet Briar Creek,Unspecified,Surface Water
+ND_103,,,Fresh,Unnamed Stream (Kulm-Edgeley Reservoir),Unspecified,Surface Water
+ND_104,,,Fresh,"Apple Creek, Missouri River Backwater",Unspecified,Surface Water
+ND_105,,,Fresh,Tributary To Pipestem Creek,Unspecified,Surface Water
+ND_106,,,Fresh,Branch Knife River,Unspecified,Surface Water
+ND_107,,,Fresh,Trib To Square Butte Creek,Unspecified,Surface Water
+ND_108,,,Fresh,South Branch Goose River,Unspecified,Surface Water
+ND_109,,,Fresh,Willow Creek,Unspecified,Surface Water
+ND_110,,,Fresh,Wakopa Creek,Unspecified,Surface Water
+ND_111,,,Fresh,Charbonneau Creek & Trib.,Unspecified,Surface Water
+ND_112,,,Fresh,Unnamed Creek Trib To Willow Creek,Unspecified,Surface Water
+ND_113,,,Fresh,Intermittent Creek,Unspecified,Surface Water
+ND_114,,,Fresh,Trib To Wild Rice River,Unspecified,Surface Water
+ND_115,,,Fresh,"English Coulee, Trib To Red River",Unspecified,Surface Water
+ND_116,,,Fresh,Unnamed Intermittent Trib.,Unspecified,Surface Water
+ND_117,,,Fresh,Big Coulee,Unspecified,Surface Water
+ND_118,,,Fresh,Dry Draw,Unspecified,Surface Water
+ND_119,,,Fresh,Tongue River,Unspecified,Surface Water
+ND_120,,,Fresh,"Int. Draw, Trib To Little Missouri River",Unspecified,Surface Water
+ND_121,,,Fresh,Un-Named Inter Trib To Spring Creek,Unspecified,Surface Water
+ND_122,,,Fresh,Horse Creek,Unspecified,Surface Water
+ND_123,,,Fresh,Unnamed Coulee To Burnt Creek,Unspecified,Surface Water
+ND_124,,,Fresh,Unnamed Stream,Unspecified,Surface Water
+ND_125,,,Fresh,Spring Creek And Beaver Creek,Unspecified,Surface Water
+ND_126,,,Fresh,Buffalo Coulee,Unspecified,Surface Water
+ND_127,,,Fresh,Tobacco Garden Cr & Missouri R Backwater,Unspecified,Surface Water
+ND_128,,,Fresh,Andrews Creek,Unspecified,Surface Water
+ND_129,,,Fresh,South Unit,Unspecified,Ground Water
+ND_130,,,Fresh,Unnamed Intermittent Stream,Unspecified,Surface Water
+ND_131,,,Fresh,Salt Water Coulee,Unspecified,Surface Water
+ND_132,,,Fresh,Beaver Creek And Missouri River,Unspecified,Surface Water
+ND_133,,,Fresh,Mt. Carmel Dam,Unspecified,Surface Water
+ND_134,,,Fresh,Un-Named Intermittent Stream,Unspecified,Surface Water
+ND_135,,,Fresh,Un Named Trib To Andrews Creek,Unspecified,Surface Water
+ND_136,,,Fresh,"Un-Named Stream, Trib. To Little Missour",Unspecified,Surface Water
+ND_137,,,Fresh,"Un-Named Coulee, Tributary To Garrison R",Unspecified,Surface Water
+ND_138,,,Fresh,Timber Creek,Unspecified,Surface Water
+ND_139,,,Fresh,Unnamed Intermittent Draws,Unspecified,Surface Water
+ND_140,,,Fresh,Bullion Creek,Unspecified,Surface Water
+ND_141,,,Fresh,Unnamed Intermittent Creek,Unspecified,Surface Water
+ND_142,,,Fresh,Mc Gillis Creek,Unspecified,Surface Water
+ND_143,,,Fresh,Unnamed Draw,Unspecified,Surface Water
+ND_144,,,Fresh,Big Muddy Creek And Intermittent Stream,Unspecified,Surface Water
+ND_145,,,Fresh,Cottonwood Creek,Unspecified,Surface Water
+ND_146,,,Fresh,"Unnamed Creek, Tributary To Beaver Creek",Unspecified,Surface Water
+ND_147,,,Fresh,Sand Creek,Unspecified,Surface Water
+ND_148,,,Fresh,Unnamed Intermittent Streams,Unspecified,Surface Water
+ND_149,,,Fresh,South Branch Of Turtle River,Unspecified,Surface Water
+ND_150,,,Fresh,Apple Creek Tributary,Unspecified,Surface Water
+ND_151,,,Fresh,Fourmile Creek,Unspecified,Surface Water
+ND_152,,,Fresh,"Unnamed Coulee, Trib To Sheyeene River",Unspecified,Surface Water
+ND_153,,,Fresh,Oxbow Of The Knife River,Unspecified,Surface Water
+ND_154,,,Fresh,Unnamed Intermittant Draw,Unspecified,Surface Water
+ND_155,,,Fresh,Nelson Lake,Unspecified,Surface Water
+ND_156,,,Fresh,"Beaver Creek, Trib. To Little Missouri R",Unspecified,Surface Water
+ND_157,,,Fresh,Annie Creek,Unspecified,Surface Water
+ND_158,,,Fresh,Unnamed Trib. To Deep Creek,Unspecified,Surface Water
+ND_159,,,Fresh,Unnamed Trib To Souris River,Unspecified,Surface Water
+ND_160,,,Fresh,Unnamed Dry Channel,Unspecified,Surface Water
+ND_161,,,Fresh,Long Lake Creek,Unspecified,Surface Water
+ND_162,,,Fresh,"Unnamed Draw, Trib To Northfork Cr.",Unspecified,Surface Water
+ND_163,,,Fresh,Unnamed Tributary Of Knife River,Unspecified,Surface Water
+ND_164,,,Fresh,Runoff & Un-Named Trib To Knife River,Unspecified,Surface Water
+ND_165,,,Fresh,Hintz Bros. Coulee,Unspecified,Surface Water
+ND_166,,,Fresh,Stony Creek,Unspecified,Surface Water
+ND_167,,,Fresh,Sweet Briar Creek,Unspecified,Surface Water
+ND_168,,,Fresh,Little Knife River,Unspecified,Surface Water
+ND_169,,,Fresh,Willow Lake,Unspecified,Surface Water
+ND_170,,,Fresh,Sout Branch Turtle River,Unspecified,Surface Water
+ND_171,,,Fresh,Goose Lake,Unspecified,Surface Water
+ND_172,,,Fresh,Sheyenne Rive,Unspecified,Surface Water
+ND_173,,,Fresh,Lonesome Creek,Unspecified,Surface Water
+ND_174,,,Fresh,Iron Springs,Unspecified,Surface Water
+ND_175,,,Fresh,"Un-Named Draw, Tributary To Missouri Riv",Unspecified,Surface Water
+ND_176,,,Fresh,Knife River Tributary,Unspecified,Surface Water
+ND_177,,,Fresh,Oahe Reservoir,Unspecified,Surface Water
+ND_178,,,Fresh,Long Lake Creek & Slough,Unspecified,Surface Water
+ND_179,,,Fresh,Gibbs Springs,Unspecified,Ground Water
+ND_180,,,Fresh,Unnamed Trib. To North Fork Of The Grand,Unspecified,Surface Water
+ND_181,,,Fresh,Unnamed Trib.,Unspecified,Surface Water
+ND_182,,,Fresh,Cottonwood Lake,Unspecified,Surface Water
+ND_183,,,Fresh,Un Named Creek - Trib To Missouri River,Unspecified,Surface Water
+ND_184,,,Fresh,Little Beaver Creek,Unspecified,Surface Water
+ND_185,,,Fresh,Little Knife River Tributary,Unspecified,Surface Water
+ND_186,,,Fresh,Pond,Unspecified,Surface Water
+ND_187,,,Fresh,Maple River,Unspecified,Surface Water
+ND_188,,,Fresh,Unknown,Unspecified,Unknown
+ND_189,,,Fresh,Un-Named Trib To Cannonball River,Unspecified,Surface Water
+ND_190,,,Fresh,"Unnamed Stream, Trib. Of Crooked Creek",Unspecified,Surface Water
+ND_191,,,Fresh,Starkweather ÃOulee,Unspecified,Surface Water
+ND_192,,,Fresh,Unnamed Trib. And Crooked Creek,Unspecified,Surface Water
+ND_193,,,Fresh,Unnamed Water Course,Unspecified,Surface Water
+ND_194,,,Fresh,Bennie Pierre Creek,Unspecified,Surface Water
+ND_195,,,Fresh,"101 Creek, Bennie Pierre Creek",Unspecified,Surface Water
+ND_196,,,Fresh,Badlands Creek,Unspecified,Surface Water
+ND_197,,,Fresh,Lake Sakakwea,Unspecified,Surface Water
+ND_198,,,Fresh,Dickinson City Sewage Lagoons # 3 & 4,Unspecified,Surface Water
+ND_199,,,Fresh,Dickinson City Sewage Lagoons #3 & 4,Unspecified,Surface Water
+ND_200,,,Fresh,Unnamed Trib. Of Square Butte Creek,Unspecified,Surface Water
+ND_201,,,Fresh,Unnamed Trib. To Charbonneau Creek,Unspecified,Surface Water
+ND_202,,,Fresh,Unnamed Stream Trib. Of Missouri River,Unspecified,Surface Water
+ND_203,,,Fresh,Third Cell Of Laggon System,Unspecified,Surface Water
+ND_204,,,Fresh,Unnamed Stream Trib. To Little Missouri,Unspecified,Surface Water
+ND_205,,,Fresh,North Creek,Unspecified,Surface Water
+ND_206,,,Fresh,Blacktail Creek,Unspecified,Surface Water
+ND_207,,,Fresh,Black Tail Creek,Unspecified,Surface Water
+ND_208,,,Fresh,Unnamed Trib To Little Goose River,Unspecified,Surface Water
+ND_209,,,Fresh,"Unnamed Stream, Trib. To Missouri River",Unspecified,Surface Water
+ND_210,,,Fresh,Unnamed Trib. To Short Creek,Unspecified,Surface Water
+ND_211,,,Fresh,Un-Named Trib Of Charbonneau Creek,Unspecified,Surface Water
+ND_212,,,Fresh,Unnamed Drainage,Unspecified,Surface Water
+ND_213,,,Fresh,Buffalo Creek,Unspecified,Surface Water
+ND_214,,,Fresh,Dogtooth Creek,Unspecified,Surface Water
+ND_215,,,Fresh,Smishek Lake,Unspecified,Surface Water
+ND_216,,,Fresh,Rice Creek,Unspecified,Surface Water
+ND_217,,,Fresh,Park Rver,Unspecified,Surface Water
+ND_218,,,Fresh,Unnamed Trib. To Upper Lostwood Lake,Unspecified,Surface Water
+ND_219,,,Fresh,"Unnamed Stream, Trib. To Spring Creek",Unspecified,Surface Water
+ND_220,,,Fresh,Tributary To South Branch Turtle River,Unspecified,Surface Water
+ND_221,,,Fresh,"Mcclusky Canal, Sta. 433+44.8",Unspecified,Surface Water
+ND_222,,,Fresh,Turtle Creek,Unspecified,Surface Water
+ND_223,,,Fresh,Little Heart River,Unspecified,Surface Water
+ND_224,,,Fresh,Fresh Water Coulee,Unspecified,Surface Water
+ND_225,,,Fresh,Unnamed Trib. Of Lake Sakakawea,Unspecified,Surface Water
+ND_226,,,Fresh,Northfork Creek,Unspecified,Surface Water
+ND_227,,,Fresh,Un-Named Trib To Little Missouri,Unspecified,Surface Water
+ND_228,,,Fresh,Random Creek Trib To Long Lake Creek,Unspecified,Surface Water
+ND_229,,,Fresh,Culvert Coulee,Unspecified,Surface Water
+ND_230,,,Fresh,Acsc Condenser Pond,Unspecified,Surface Water
+ND_231,,,Fresh,"Trib To Kelly'S Slough, Trib To Turtle R",Unspecified,Surface Water
+ND_232,,,Fresh,Skunk Coulee & Flood Detention Dam #1,Unspecified,Surface Water
+ND_233,,,Fresh,Trib To Turtle River,Unspecified,Surface Water
+ND_234,,,Fresh,Unnamed Draw Trib. To Laporte Coulee,Unspecified,Surface Water
+ND_235,,,Fresh,Unnamed Draw Trib To Russell Drain,Unspecified,Surface Water
+ND_236,,,Fresh,Mud Creek,Unspecified,Surface Water
+ND_237,,,Fresh,Unnamed Trib. To Long Lake,Unspecified,Surface Water
+ND_238,,,Fresh,Unnamed Drainage Trib To Harriet Lake,Unspecified,Surface Water
+ND_239,,,Fresh,Lake Audubon,Unspecified,Surface Water
+ND_240,,,Fresh,Waste Ground Water From Malting Process,Unspecified,Surface Water
+ND_241,,,Fresh,Unnamed Trib To West Stump Lake,Unspecified,Surface Water
+ND_242,,,Fresh,Otter Creek,Unspecified,Surface Water
+ND_243,,,Fresh,Starkweather Coulee,Unspecified,Surface Water
+ND_244,,,Fresh,Unnamed Trib. To Willow Lake,Unspecified,Surface Water
+ND_245,,,Fresh,Slough,Unspecified,Surface Water
+ND_246,,,Fresh,Bone Hill Creek,Unspecified,Surface Water
+ND_247,,,Fresh,Grand Forks County Wrd Flood Detention D,Unspecified,Surface Water
+ND_248,,,Fresh,Plum Creek,Unspecified,Surface Water
+ND_249,,,Fresh,Heart River Tributary,Unspecified,Surface Water
+ND_250,,,Fresh,Unnamed Trib,Unspecified,Surface Water
+ND_251,,,Fresh,Lightning Creek,Unspecified,Surface Water
+ND_252,,,Fresh,Unnamed Tributary Of Spring Creek,Unspecified,Surface Water
+ND_253,,,Fresh,Unnamed Trib. West Branch Of Short Creek,Unspecified,Surface Water
+ND_254,,,Fresh,Unnamed Trib. Of Thirty Mile Creek,Unspecified,Surface Water
+ND_255,,,Fresh,Coal Creek,Unspecified,Surface Water
+ND_256,,,Fresh,Unnamed Trib. Of Plum Creek.,Unspecified,Surface Water
+ND_257,,,Fresh,Laporte Coulee,Unspecified,Surface Water
+ND_258,,,Fresh,Kelly Slough,Unspecified,Surface Water
+ND_259,,,Fresh,Unnamed Wetland A Trib. Of Lake Audubon.,Unspecified,Surface Water
+ND_260,,,Fresh,Flat Creek,Unspecified,Surface Water
+ND_261,,,Fresh,Lake Alice,Unspecified,Surface Water
+ND_262,,,Fresh,Unnamed Trib. To Bennie Pierre Creek,Unspecified,Surface Water
+ND_263,,,Fresh,Unnamed Trib. To Bennnie Pierre Creek,Unspecified,Surface Water
+ND_264,,,Fresh,Unnamed Trib To Bennie Pierre Creek,Unspecified,Surface Water
+ND_265,,,Fresh,Kane/Tacoma/Overgaard Drain,Unspecified,Surface Water
+ND_266,,,Fresh,Alkali Creek,Unspecified,Surface Water
+ND_267,,,Fresh,"Unnamed Trib To Slow Cr, Spring Cr Trib.",Unspecified,Surface Water
+ND_268,,,Fresh,Dry Lake,Unspecified,Surface Water
+ND_269,,,Fresh,Unnamed Trib. To Cedar Creek,Unspecified,Surface Water
+ND_270,,,Fresh,Unnamed Trib. Of Spring Creek Trib.,Unspecified,Surface Water
+ND_271,,,Fresh,Unnamed Trib. To Indian Creek,Unspecified,Surface Water
+ND_272,,,Fresh,Unnamed Stream Trib. To Buffalo Creek,Unspecified,Surface Water
+ND_273,,,Fresh,Unnamed Trib. To Hans Cr-Spring Cr Trib.,Unspecified,Surface Water
+ND_274,,,Fresh,Lagoons For Residual Ground  Water,Unspecified,Surface Water
+ND_275,,,Fresh,Unnamed Trib. To Spring Creek,Unspecified,Surface Water
+ND_276,,,Fresh,Unnamed Trib. Of Spring Creek,Unspecified,Surface Water
+ND_277,,,Fresh,Unnamed Trib. Of Edmore Coulee,Unspecified,Surface Water
+ND_278,,,Fresh,Unnamed Trib. To Edmore Coulee,Unspecified,Surface Water
+ND_279,,,Fresh,Unnamed Stream Trib. To Little Knife R.,Unspecified,Surface Water
+ND_280,,,Fresh,Cherry Creek,Unspecified,Surface Water
+ND_281,,,Fresh,Mauvais Coulee,Unspecified,Surface Water
+ND_282,,,Fresh,Lake Irvine,Unspecified,Surface Water
+ND_283,,,Fresh,Unnamed Trib. Of The Red River,Unspecified,Surface Water
+ND_284,,,Fresh,Unnamed Trib. Of Red River,Unspecified,Surface Water
+ND_285,,,Fresh,Renwick Dam,Unspecified,Surface Water
+ND_286,,,Fresh,Ranch Lake,Unspecified,Surface Water
+ND_287,,,Fresh,Unnamed Tributary To Lake George,Unspecified,Surface Water
+ND_288,,,Fresh,Grand Harbor Drainage Trib Six Mile Bay,Unspecified,Surface Water
+ND_289,,,Fresh,Unnamed Trib-Haymarsh Cr Trib Big Muddy,Unspecified,Surface Water
+ND_290,,,Fresh,Unnamed Trib. Of White Earth River,Unspecified,Surface Water
+ND_291,,,Fresh,Unnamed Tributary To The Red River,Unspecified,Surface Water
+ND_292,,,Fresh,Valley City Sewage Lagoons,Unspecified,Surface Water
+ND_293,,,Fresh,Valley City Municipal Lagoons,Unspecified,Surface Water
+ND_294,,,Fresh,Dickinson City Sewage Lagoon Cells 3 & 4,Unspecified,Surface Water
+ND_295,,,Fresh,Dickinson City Sewage Lagoon Cell #2,Unspecified,Surface Water
+ND_296,,,Fresh,"Dickinson Sewage Lagoons #2, 3, & 4",Unspecified,Surface Water
+ND_297,,,Fresh,Big Coulee Waterway Trib Mauvais Coulee,Unspecified,Surface Water
+ND_298,,,Fresh,Big Coulee Waterwau Trib Mauvais Coulee,Unspecified,Surface Water
+ND_299,,,Fresh,Unnamed Trib. Of South Branch Park River,Unspecified,Surface Water
+ND_300,,,Fresh,Unnamed Trib. Of Beaver Holes Creek,Unspecified,Surface Water
+ND_301,,,Fresh,Muskrat Cr Trib Sims Cr Trib Hailstone C,Unspecified,Surface Water
+ND_302,,,Fresh,Unnamed Trib. To Battle Creek,Unspecified,Surface Water
+ND_303,,,Fresh,Unnamed Drain,Unspecified,Surface Water
+ND_304,,,Fresh,Unnamed Trib. To Coyote Creek,Unspecified,Surface Water
+ND_305,,,Fresh,Little South Pembina River,Unspecified,Surface Water
+ND_306,,,Fresh,Unnamed Waterway Trib. To Roger Creek,Unspecified,Surface Water
+ND_307,,,Fresh,Unnamed Waterway Trib. To Deep Creek,Unspecified,Surface Water
+ND_308,,,Fresh,Unnamed Waterway Trib To Heart Butte Ck,Unspecified,Surface Water
+ND_309,,,Fresh,Goose Creek,Unspecified,Surface Water
+ND_310,,,Fresh,Unnamed Stream Trib. To Goose Creek,Unspecified,Surface Water
+ND_311,,,Fresh,Unnamed Trib. To Little Heart River,Unspecified,Surface Water
+ND_312,,,Fresh,Pembina County Drain #20,Unspecified,Surface Water
+ND_313,,,Fresh,Murphy Creek Trib. To Spring Creek,Unspecified,Surface Water
+ND_314,,,Fresh,Groundwater,Unspecified,Ground Water
+ND_315,,,Fresh,Unnamed Trib To Charbonneau Creek,Unspecified,Surface Water
+ND_316,,,Fresh,Unnamed Tributary To Starkweather Coulee,Unspecified,Surface Water
+ND_317,,,Fresh,Unnamed Drain Trib Starkweather Coulee,Unspecified,Surface Water
+ND_318,,,Fresh,Forest River,Unspecified,Surface Water
+ND_319,,,Fresh,Unnamed,Unspecified,Surface Water
+ND_320,,,Fresh,"Unnamed, Crooked Creek",Unspecified,Surface Water
+ND_321,,,Fresh,Unnamed Trib To Heart River,Unspecified,Surface Water
+ND_322,,,Fresh,Unnamed Trib To Square Butte Creek,Unspecified,Surface Water
+ND_323,,,Fresh,Mount Carmel Dam,Unspecified,Surface Water
+ND_324,,,Fresh,Ground Water,Unspecified,Ground Water
+ND_325,,,Fresh,Unnamed Trib. To Maple River,Unspecified,Surface Water
+ND_326,,,Fresh,Middle Branch Park River,Unspecified,Surface Water
+ND_327,,,Fresh,Unnamed Trib. To Dead Buffalo Lake,Unspecified,Surface Water
+ND_328,,,Fresh,West Cut Bank Creek,Unspecified,Surface Water
+ND_329,,,Fresh,Unnamed Creek Trib To Porcupine Creek,Unspecified,Surface Water
+ND_330,,,Fresh,Indian Creek,Unspecified,Surface Water
+ND_331,,,Fresh,Unnamed Lake,Unspecified,Surface Water
+ND_332,,,Fresh,Spring Creek Trib To Lower Coyote Creek,Unspecified,Surface Water
+ND_333,,,Fresh,Unnamed Trib To East Antelope Creek,Unspecified,Surface Water
+ND_334,,,Fresh,Scab Creek,Unspecified,Surface Water
+ND_335,,,Fresh,Twin Lake,Unspecified,Surface Water
+ND_336,,,Fresh,Stack Slough,Unspecified,Surface Water
+ND_337,,,Fresh,Chain Lake,Unspecified,Surface Water
+ND_338,,,Fresh,Unnamed/ Tributary Of Beaver Creek,Unspecified,Surface Water
+ND_339,,,Fresh,Oak Creek,Unspecified,Surface Water
+ND_340,,,Fresh,Random Creek,Unspecified,Surface Water
+ND_341,,,Fresh,Stoney Creek,Unspecified,Surface Water
+ND_342,,,Fresh,Morrison Lake,Unspecified,Surface Water
+ND_343,,,Fresh,Long Creek,Unspecified,Surface Water
+ND_344,,,Fresh,Kenner Marsh,Unspecified,Surface Water
+ND_345,,,Fresh,Shell Creek,Unspecified,Surface Water
+ND_346,,,Fresh,Island Lake,Unspecified,Surface Water
+ND_347,,,Fresh,Unnamed Trib Of Coyote Creek,Unspecified,Surface Water
+ND_348,,,Fresh,Drake Sewage Lagoon,Unspecified,Surface Water
+ND_349,,,Fresh,Dayton Creek,Unspecified,Surface Water
+ND_350,,,Fresh,Unknown Tributary,Unspecified,Surface Water
+ND_351,,,Fresh,Esmond Aquifer,Unspecified,Ground Water
+ND_352,,,Fresh,Trappers Coulee Aquifer,Unspecified,Ground Water
+ND_353,,,Fresh,Middle Branch Of Park River,Unspecified,Surface Water
+ND_354,,,Fresh,Middle Brannch Park,Unspecified,Ground Water
+ND_355,,,Fresh,East Antelope Creek,Unspecified,Surface Water
+ND_356,,,Fresh,Edmore Coulee,Unspecified,Surface Water
+ND_357,,,Fresh,Des Lacs River,Unspecified,Surface Water
+ND_358,,,Fresh,Skunk Coulee,Unspecified,Surface Water
+ND_359,,,Fresh,Unnamed Tributary Of Wannagan Creek,Unspecified,Surface Water
+ND_360,,,Fresh,Unnamed Creek/Trib. Of Cedar Creek,Unspecified,Surface Water
+ND_361,,,Fresh,"Unnamed Stream, Trib Of Ash Creek",Unspecified,Surface Water
+ND_362,,,Fresh,"Unnamed Creek, Trib Of Antelope Creek",Unspecified,Surface Water
+ND_363,,,Fresh,Wolf Lake,Unspecified,Surface Water
+ND_364,,,Fresh,Coal Bank Creek/Trib Of Cannonball River,Unspecified,Surface Water
+ND_365,,,Fresh,Unnamed Tributary To Little Knife River,Unspecified,Surface Water
+ND_366,,,Fresh,Unnamed Creek/ Trib Of Morris Creek,Unspecified,Surface Water
+ND_367,,,Fresh,Unnamed Creek/ Trib Of Cold Turkey Creek,Unspecified,Surface Water
+ND_368,,,Fresh,Unnamed Creek/ Trib. Of The Cannonball R,Unspecified,Surface Water
+ND_369,,,Fresh,Unnamed Creek - Tribe. Of Turkey Creek,Unspecified,Surface Water
+ND_370,,,Fresh,"Skunk Coulee, Tributary To Turtle River",Unspecified,Surface Water
+ND_371,,,Fresh,Horne Pond,Unspecified,Surface Water
+ND_372,,,Fresh,"Unnamed, Tributary Of Squaw Creek",Unspecified,Surface Water
+ND_373,,,Fresh,Red River Of The North,Unspecified,Surface Water
+ND_374,,,Fresh,Hiddenwood Lake,Unspecified,Surface Water
+ND_375,,,Fresh,Unnamed Creek A Trib. Of Whitmore Creek,Unspecified,Surface Water
+ND_376,,,Fresh,Unnamed Creek Trib. Of Whitmore Creek,Unspecified,Surface Water
+ND_377,,,Fresh,Unnamed Creek A Trib. Of Crooked Creek,Unspecified,Surface Water
+ND_378,,,Fresh,Sweet Briar Creek A Trib. Of The Heart,Unspecified,Surface Water
+ND_379,,,Fresh,"Natural Runoff, Trib Of Mclaughlin Lake",Unspecified,Surface Water
+ND_380,,,Fresh,Drain No. 29,Unspecified,Surface Water
+ND_381,,,Fresh,Mclaughlin Lake A Trib Of Pembina River,Unspecified,Surface Water
+ND_382,,,Fresh,Unnamed Source A Trib Of James River,Unspecified,Surface Water
+ND_383,,,Fresh,Unnamed Tributary Of Antelope Creek,Unspecified,Surface Water
+ND_384,,,Fresh,Unnamed Tributary Of The Cannonbal River,Unspecified,Surface Water
+ND_385,,,Fresh,Unnamed Creek Trib. Of Lightning Creek.,Unspecified,Surface Water
+ND_386,,,Fresh,Unnamed Creek Trib. Of Lightning Creek,Unspecified,Surface Water
+ND_387,,,Fresh,Little Muddy Creek,Unspecified,Surface Water
+ND_388,,,Fresh,Unnamed Source Trib. Of Pipestem River,Unspecified,Surface Water
+ND_389,,,Fresh,Unnamed Tributary Of Rock Lake,Unspecified,Surface Water
+ND_390,,,Fresh,Unnamed Tributary To Rock Lake,Unspecified,Surface Water
+ND_391,,,Fresh,Unnamed Trib. Of Burnt Creek,Unspecified,Surface Water
+ND_392,,,Fresh,Little Missouri  River,Unspecified,Surface Water
+ND_393,,,Fresh,Knife River & Elm Creek,Unspecified,Surface Water
+ND_394,,,Fresh,Calio Coulee,Unspecified,Surface Water
+ND_395,,,Fresh,Antelpoe Creek,Unspecified,Surface Water
+ND_396,,,Fresh,Unnamed Intermittent Streams.,Unspecified,Surface Water
+ND_397,,,Fresh,Unnamed Creek A Trib. Of The Cannonball,Unspecified,Surface Water
+ND_398,,,Fresh,Drainage Ditch,Unspecified,Surface Water
+ND_399,,,Fresh,Cole Creek Trib Of The Red River,Unspecified,Surface Water
+ND_400,,,Fresh,Unnamed Creek A Tributary Of Cedar Creek,Unspecified,Surface Water
+ND_401,,,Fresh,Des Lacs River A Trib. Of Souris River,Unspecified,Surface Water
+ND_402,,,Fresh,Unnamed Stream A Trib Of Cedar Creek,Unspecified,Surface Water
+ND_403,,,Fresh,Unnamed Creek Trib. Of Timber Creek,Unspecified,Surface Water
+ND_404,,,Fresh,Souris River/ Dam 83,Unspecified,Surface Water
+ND_405,,,Fresh,Souris River/ Pond C,Unspecified,Surface Water
+ND_406,,,Fresh,Souris River/ Dam 87,Unspecified,Surface Water
+ND_407,,,Fresh,Souris River/Dam 96,Unspecified,Surface Water
+ND_408,,,Fresh,Souris River/Dam 41,Unspecified,Surface Water
+ND_409,,,Fresh,Souris River/Dam 320,Unspecified,Surface Water
+ND_410,,,Fresh,Souris River/Dam 326,Unspecified,Surface Water
+ND_411,,,Fresh,Souris River/ Dam 320,Unspecified,Surface Water
+ND_412,,,Fresh,Souris River/Dam 332,Unspecified,Surface Water
+ND_413,,,Fresh,Souris River/ Dam 326,Unspecified,Surface Water
+ND_414,,,Fresh,Souris River/Dam 341,Unspecified,Surface Water
+ND_415,,,Fresh,Souris River/Dam 357,Unspecified,Surface Water
+ND_416,,,Fresh,Wild Rice River Trib. Of Red River,Unspecified,Surface Water
+ND_417,,,Fresh,Wild Rice Trib. Of Red River,Unspecified,Surface Water
+ND_418,,,Fresh,Lake Ordway,Unspecified,Surface Water
+ND_419,,,Fresh,Tongue River A Trib. Of The Red River,Unspecified,Surface Water
+ND_420,,,Fresh,Wieler Dam,Unspecified,Surface Water
+ND_421,,,Fresh,Oak ÃReek A Trib. Of Willow Creek,Unspecified,Surface Water
+ND_422,,,Fresh,Unnamed Stream On The Forest River.,Unspecified,Surface Water
+ND_423,,,Fresh,Goschke Dam On Tongue River,Unspecified,Surface Water
+ND_424,,,Fresh,Weiler Dam A Trib. Of Tongue River,Unspecified,Surface Water
+ND_425,,,Fresh,Elm River A Trib. Of The Red River,Unspecified,Surface Water
+ND_426,,,Fresh,Valley City Lagoon,Unspecified,Surface Water
+ND_427,,,Fresh,Unnamed Creek Trib. Of Painted Woods Ck.,Unspecified,Surface Water
+ND_428,,,Fresh,North Branch Of The Goose River,Unspecified,Surface Water
+ND_429,,,Fresh,Unnamed Stream Trib. Of Forest River,Unspecified,Surface Water
+ND_430,,,Fresh,Unnamed Creek Trib. Of The Green River,Unspecified,Surface Water
+ND_431,,,Fresh,Lake Hoskins,Unspecified,Surface Water
+ND_432,,,Fresh,Jensen Dam,Unspecified,Surface Water
+ND_433,,,Fresh,Unnamed Creek Trib Of Frank Creek,Unspecified,Surface Water
+ND_434,,,Fresh,Starkwater Coulee Trib. Of Devils Lake,Unspecified,Surface Water
+ND_435,,,Fresh,Unnamed Creek Trib. Of Dutton Slough,Unspecified,Surface Water
+ND_436,,,Fresh,Unnamed Creek Trib. Of Turtle Creek,Unspecified,Surface Water
+ND_437,,,Fresh,Morris Creek,Unspecified,Surface Water
+ND_438,,,Fresh,Unnamed Creek Trib. Of Knife River,Unspecified,Surface Water
+ND_439,,,Fresh,Unnamed Creek Trib. Of Porcupine Creek,Unspecified,Surface Water
+ND_440,,,Fresh,Unnamed Creek Trib. Of The Heart River,Unspecified,Surface Water
+ND_441,,,Fresh,Unnamed Creek Trib. Of Baher Creek,Unspecified,Surface Water
+ND_442,,,Fresh,Unnamed Creek Trib. Of Bahr Creek,Unspecified,Surface Water
+ND_443,,,Fresh,Un-Named Creek,Unspecified,Surface Water
+ND_444,,,Fresh,Unnamed Creek Trib. Of S. Fork Green Riv,Unspecified,Surface Water
+ND_445,,,Fresh,Unnamed Creek Trib. Of Big Meadow Marsh,Unspecified,Surface Water
+ND_446,,,Fresh,Russian Slough Creek Trib Of Cedar Creek,Unspecified,Surface Water
+ND_447,,,Fresh,Unnamed Creek Trib. Of Leaf On The Hill,Unspecified,Surface Water
+ND_448,,,Fresh,Unnamed Creek Trib. Of Missouri River,Unspecified,Surface Water
+ND_449,,,Fresh,Lake Ashtabula Trib. Of The Red River,Unspecified,Surface Water
+ND_450,,,Fresh,Cherry Creek Trib. Of Little Misouri,Unspecified,Surface Water
+ND_451,,,Fresh,Square Butte Creek Trib. Of The Missouri,Unspecified,Surface Water
+ND_452,,,Fresh,Skunk Coulee & Flood Detention #1,Unspecified,Surface Water
+ND_453,,,Fresh,Unnamed Creek A Trib. Of Sheyenne River,Unspecified,Surface Water
+ND_454,,,Fresh,"Jim Creek, Trib. Of Little Missouri",Unspecified,Surface Water
+ND_455,,,Fresh,Heart River Trib. Of Missouri River,Unspecified,Surface Water
+ND_456,,,Fresh,Unnamed Creek Trib. Of Kinneman Creek,Unspecified,Surface Water
+ND_457,,,Fresh,Unnamed Creek Trib. Of Beaver Creek,Unspecified,Surface Water
+ND_458,,,Fresh,Unnamed Creek Trib. Of Lone Tree Creek,Unspecified,Surface Water
+ND_459,,,Fresh,Five Mile Creek,Unspecified,Surface Water
+ND_460,,,Fresh,Unnamed Trib. Of The Missouri River,Unspecified,Surface Water
+ND_461,,,Fresh,Apple Creek East Trib. Of Missouri River,Unspecified,Surface Water
+ND_462,,,Fresh,Cow Creek A Trib. Of The Heart River,Unspecified,Surface Water
+ND_463,,,Fresh,Unnamed Creek Trib. Of Thirty Mile Creek,Unspecified,Surface Water
+ND_464,,,Fresh,Lake Ibsen,Unspecified,Surface Water
+ND_465,,,Fresh,Unnamed Creek Trib. Of Spring Creek,Unspecified,Surface Water
+ND_466,,,Fresh,Unnamed Creek Trib. Of Whitetail Creek,Unspecified,Surface Water
+ND_467,,,Fresh,Adm Ethanol Plant Ponds,Unspecified,Surface Water
+ND_468,,,Fresh,Horse Tied Creek Trib. Of Missouri River,Unspecified,Surface Water
+ND_469,,,Fresh,Unnamed Creek Trib. Of S.Fork Smith Crk.,Unspecified,Surface Water
+ND_470,,,Fresh,"Little Knife River, Trib. Of Knife River",Unspecified,Surface Water
+ND_471,,,Fresh,"Unnamed Creek, Trib Of Bahr Creek",Unspecified,Surface Water
+ND_472,,,Fresh,Whitmore Creek Trib. Of Cedar Creek,Unspecified,Surface Water
+ND_473,,,Fresh,Unnamed Creek Trib. Of East Fork Shell,Unspecified,Surface Water
+ND_474,,,Fresh,Unnamed Creek Trib Of Shell Creek,Unspecified,Surface Water
+ND_475,,,Fresh,Unnamed Stream Trib. Of S. Fork Maple R.,Unspecified,Surface Water
+ND_476,,,Fresh,Unnamed Creek Trib. Of Nelson Creek,Unspecified,Surface Water
+ND_477,,,Fresh,Unnamed Creek Trib. Of Willow Coulee,Unspecified,Surface Water
+ND_478,,,Fresh,"Burnt Creek, Trib. Of Missouri River",Unspecified,Surface Water
+ND_479,,,Fresh,Frying Pan Lake,Unspecified,Surface Water
+ND_480,,,Fresh,Goose River A Trib. Of The Red River,Unspecified,Surface Water
+ND_481,,,Fresh,Willow Coulee (Creek) Trib. Of Red River,Unspecified,Surface Water
+ND_482,,,Fresh,Maple River Trib. Of The Sheyenne River,Unspecified,Surface Water
+ND_483,,,Fresh,Battle Creek Trib. Of The Missouri River,Unspecified,Surface Water
+ND_484,,,Fresh,Cannon Ball River Trib. Of Missouri,Unspecified,Surface Water
+ND_485,,,Fresh,Cannon Ball River Trib. Of Misssouri,Unspecified,Surface Water
+ND_486,,,Fresh,"Unnamed Stream, Trib. Of Plum Creek",Unspecified,Surface Water
+ND_487,,,Fresh,Unnamed Stream Trib. Of Lightning Creek,Unspecified,Surface Water
+ND_488,,,Fresh,"Nelson Creek,Trib. Of The Missouri River",Unspecified,Surface Water
+ND_489,,,Fresh,Unnamed Creek Trib. Of Cherry Creek,Unspecified,Surface Water
+ND_490,,,Fresh,Unnamed Creek Trib. Of Powers Lake,Unspecified,Surface Water
+ND_491,,,Fresh,Unnamed Stream Trib. Of Ash Creek,Unspecified,Surface Water
+ND_492,,,Fresh,"Unnamed Creek, Trib Tobranch Knife River",Unspecified,Surface Water
+ND_493,,,Fresh,Unnamed Stream Trib. Of Apple Creek,Unspecified,Surface Water
+ND_494,,,Fresh,Unnamed Stream Trib. Of Thirty Mile Ck.,Unspecified,Surface Water
+ND_495,,,Fresh,Un-Named Wetland,Unspecified,Surface Water
+ND_496,,,Fresh,"Cottonwood Creek, Trib. Of James River",Unspecified,Surface Water
+ND_497,,,Fresh,Unnamed Stream-Trib. Of The James River,Unspecified,Surface Water
+ND_498,,,Fresh,Unnamed Stream Trib Of Little Muddy Riv.,Unspecified,Surface Water
+ND_499,,,Fresh,Spiritwood Aquifer,Unspecified,Ground Water
+ND_500,,,Fresh,Unnamed Stream Trib. Of Little Muddy,Unspecified,Surface Water
+ND_501,,,Fresh,Goshke Dam On Busse Coulee,Unspecified,Surface Water
+ND_502,,,Fresh,Goschke Dam On Busse Coulee,Unspecified,Surface Water
+ND_503,,,Fresh,Unamed Coulee Trib. Of Lower Des Lacs,Unspecified,Surface Water
+ND_504,,,Fresh,Flat Creek Trib. Of N. Fork Grand River,Unspecified,Surface Water
+ND_505,,,Fresh,Chimney Butte Creek,Unspecified,Surface Water
+ND_506,,,Fresh,Unnamed Coulee Trib. Of The Heart River,Unspecified,Surface Water
+ND_507,,,Fresh,Unnamed Coulee A Trib. Of T Heart River,Unspecified,Surface Water
+ND_508,,,Fresh,"Unnamed Creek, Trib Of Wolf Creek",Unspecified,Surface Water
+ND_509,,,Fresh,"Gibb'S Spring, Trib. Of Little Knife",Unspecified,Surface Water
+ND_510,,,Fresh,Little Bull Creek,Unspecified,Surface Water
+ND_511,,,Fresh,Unnamed Tributary Of North Branch Park,Unspecified,Surface Water
+ND_512,,,Fresh,"Unnamed Creek, Trib.Of Stony Slough",Unspecified,Surface Water
+ND_513,,,Fresh,"Unnamed Waterway, Trib Of Des Lacs River",Unspecified,Surface Water
+ND_514,,,Fresh,Goschke Dam,Unspecified,Surface Water
+ND_515,,,Fresh,"Unnamed Creek, Trib. Of The Tongue River",Unspecified,Surface Water
+ND_516,,,Fresh,"Bussee Coulee, Trib. Of The Tongue River",Unspecified,Surface Water
+ND_517,,,Fresh,Unnamed Stream Trib. Of Heart River,Unspecified,Surface Water
+ND_518,,,Fresh,Tongue River (Renwick Dam M-4),Unspecified,Surface Water
+ND_519,,,Fresh,Sheyenne Delta Aquifer,Unspecified,Ground Water
+ND_520,,,Fresh,Treated City Wastewater,Unspecified,Surface Water
+ND_521,,,Fresh,"James River, Fesenden Dam",Unspecified,Surface Water
+ND_522,,,Fresh,Un-Named Trib To Square Butte Creek,Unspecified,Surface Water
+ND_523,,,Fresh,Sheyenne River The Harvey Dam,Unspecified,Surface Water
+ND_524,,,Fresh,"Coal Mine Creek, Trib. Of Heart River",Unspecified,Surface Water
+ND_525,,,Fresh,"Unnamed Creek, A Trib. To Knife River",Unspecified,Surface Water
+ND_526,,,Fresh,"Scab Creek, Trib To Big Muddy Creek",Unspecified,Surface Water
+ND_527,,,Fresh,Unnamed Creek.,Unspecified,Surface Water
+ND_528,,,Fresh,"Unnamed Creek, Trib. Of The Heart River",Unspecified,Surface Water
+ND_529,,,Fresh,Trenton Lake,Unspecified,Surface Water
+ND_530,,,Fresh,Cedar Creek Tributary,Unspecified,Surface Water
+ND_531,,,Fresh,Trib. Of Painted Woods Creek,Unspecified,Surface Water
+ND_532,,,Fresh,Lake Margaret,Unspecified,Surface Water
+ND_533,,,Fresh,Rats Coulee,Unspecified,Surface Water
+ND_534,,,Fresh,"Unnamed Creek, Trib. Of Edmore Coulee",Unspecified,Surface Water
+ND_535,,,Fresh,Desmoines Lake,Unspecified,Surface Water
+ND_536,,,Fresh,"Unnamed Creek, Trib. Of Square Butte Ck.",Unspecified,Surface Water
+ND_537,,,Fresh,Unnamed Creek Trib. Of Big Muddy Creek,Unspecified,Surface Water
+ND_538,,,Fresh,Eightmile Creek,Unspecified,Surface Water
+ND_539,,,Fresh,Unnamed Slough,Unspecified,Surface Water
+ND_540,,,Fresh,Unnamed Stream Trib. Of Cannonball River,Unspecified,Surface Water
+ND_541,,,Fresh,Unnamed Slough.,Unspecified,Surface Water
+ND_542,,,Fresh,Pitt Creek Tributary,Unspecified,Surface Water
+ND_543,,,Fresh,Burnt Creek Diversion,Unspecified,Surface Water
+ND_544,,,Fresh,Trib. Of Crosby Creek,Unspecified,Surface Water
+ND_545,,,Fresh,Hazen Brook,Unspecified,Surface Water
+ND_546,,,Fresh,Southwest Pipeline Project,Unspecified,Surface Water
+ND_547,,,Fresh,Spring - Trib. Of White Earth River,Unspecified,Surface Water
+ND_548,,,Fresh,The Pembina River,Unspecified,Surface Water
+ND_549,,,Fresh,First Larson Coulee,Unspecified,Surface Water
+ND_550,,,Fresh,Waste Water Logoons,Unspecified,Surface Water
+ND_551,,,Fresh,Waste Water Lagoons,Unspecified,Surface Water
+ND_552,,,Fresh,4 Cell Lagoon System,Unspecified,Surface Water
+ND_553,,,Fresh,Shallow Saturated Alluvium,Unspecified,Ground Water
+ND_554,,,Fresh,Des Lac Lake,Unspecified,Surface Water
+ND_555,,,Fresh,Trib. To The Wild Rice River,Unspecified,Surface Water
+ND_556,,,Fresh,Hartel Dam,Unspecified,Surface Water
+ND_557,,,Fresh,Puppy Dog Coulee,Unspecified,Surface Water
+ND_558,,,Fresh,Oakes Pilot Drain,Unspecified,Surface Water
+ND_559,,,Fresh,Fort Union,Unspecified,Ground Water
+ND_560,,,Fresh,Sletten Lake,Unspecified,Surface Water
+ND_561,,,Fresh,Green River Tributary,Unspecified,Surface Water
+ND_562,,,Fresh,Dakota Group,Unspecified,Ground Water
+ND_563,,,Fresh,Tongue River At Goschke Dam,Unspecified,Surface Water
+ND_564,,,Fresh,North Branch Turtle River,Unspecified,Surface Water
+ND_565,,,Fresh,Strommen Stock Pond,Unspecified,Surface Water
+ND_566,,,Fresh,Stone Creek,Unspecified,Surface Water
+ND_567,,,Fresh,Trib. Of East Fork Shell Creek,Unspecified,Surface Water
+ND_568,,,Fresh,Little Antelope Creek,Unspecified,Surface Water
+ND_569,,,Fresh,Canonball River,Unspecified,Surface Water
+ND_570,,,Fresh,Dimmick Lake,Unspecified,Surface Water
+ND_571,,,Fresh,Ephemeral Drainages,Unspecified,Surface Water
+ND_572,,,Fresh,South Egg Creek,Unspecified,Surface Water
+ND_573,,,Fresh,Camp Creek,Unspecified,Surface Water
+ND_574,,,Fresh,Spring Creek Tributary,Unspecified,Surface Water
+ND_575,,,Fresh,Bennett Creek,Unspecified,Surface Water
+ND_576,,,Fresh,Un-Named Stock Pond,Unspecified,Surface Water
+ND_577,,,Fresh,Unnamed Pond,Unspecified,Surface Water
+ND_578,,,Fresh,Hagel Creek Tributary,Unspecified,Surface Water
+ND_579,,,Fresh,Strommen Pond - Spring Creek Trib.,Unspecified,Surface Water
+ND_580,,,Fresh,"Pat'S Coulee, Trib. To Little Muddy",Unspecified,Surface Water
+ND_581,,,Fresh,"Strawberry, Crooked & Brekken Lakes",Unspecified,Surface Water
+ND_582,,,Fresh,"Strawberr, Crooked & Brekken Lakes",Unspecified,Surface Water
+ND_583,,,Fresh,"Strawberry, Crooked & Brekken",Unspecified,Surface Water
+ND_584,,,Fresh,Cheyenne River,Unspecified,Surface Water
+ND_585,,,Fresh,Horseshoe Lake,Unspecified,Surface Water
+ND_586,,,Fresh,Holding Pond,Unspecified,Surface Water
+ND_587,,,Fresh,Halfbreed Creek,Unspecified,Surface Water
+ND_588,,,Fresh,Lake Upsilon,Unspecified,Surface Water
+ND_589,,,Fresh,Lake Trenton,Unspecified,Surface Water
+ND_590,,,Fresh,Little Stoney,Unspecified,Ground Water
+ND_591,,,Fresh,Unnamed Trib To Knife River,Unspecified,Surface Water
+ND_592,,,Fresh,Tributary Of Crooked Creek,Unspecified,Surface Water
+ND_593,,,Fresh,Cedar River,Unspecified,Surface Water
+ND_594,,,Fresh,Muskrat Lake,Unspecified,Surface Water
+ND_595,,,Fresh,Otte Creek,Unspecified,Surface Water
+ND_596,,,Fresh,Drain 11,Unspecified,Surface Water
+ND_597,,,Fresh,East Buehner Pond,Unspecified,Surface Water
+ND_598,,,Fresh,Jim Creek,Unspecified,Surface Water
+ND_599,,,Fresh,Derudder Dam,Unspecified,Surface Water
+ND_600,,,Fresh,Abbey Lake,Unspecified,Surface Water
+ND_601,,,Fresh,Oxbow Of Stoney Creek,Unspecified,Surface Water
+ND_602,,,Fresh,Lake Sakakawea-Backwater,Unspecified,Surface Water
+ND_603,,,Fresh,Matejcek Reservoir,Unspecified,Surface Water
+ND_604,,,Fresh,Lake Zahl,Unspecified,Surface Water
+ND_605,,,Fresh,Frank Creek,Unspecified,Surface Water
+ND_606,,,Fresh,Murphy Slough,Unspecified,Surface Water
+ND_607,,,Fresh,Mcville,Unspecified,Ground Water
+ND_608,,,Fresh,Unnamed Wetland,Unspecified,Surface Water
+ND_609,,,Fresh,Dry Creek,Unspecified,Surface Water
+ND_610,,,Fresh,Truchan Pond,Unspecified,Surface Water
