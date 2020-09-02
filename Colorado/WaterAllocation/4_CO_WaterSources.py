@@ -41,31 +41,48 @@ def assignWaterSourceName(colrowValue):
         outList = colrowValue
     return outList
 
-# For creating WaterSourceTypeCV
-UnknownWSCVDict = {
-"Ground Water" : "Ground Water",
+# For creating  WaterSourceTypeCV
+WSTypeDict = {
+"Ditch" : "Surface Water",
+"Pipeline" : "Surface Water",
+"Well" : "groundwater/well",
+"Reservoir" : "reservoir",
 "Spring" : "groundwater/spring",
-"Waste Water" : "Reuse",
-"Wasteway" : "Reuse",
-"Wastewater" : "Reuse",
-"Drain" : "Drain",
-"Reservoir" : "reservoir"
+"Other" : "Unknown",
+"Pump" : "Groundwater",
+"Seep" : "Groundwater",
+"Recharge Area" : "Groundwater",
+"Well Field" : "groundwater/well",
+"Reach" : "reservoir",
+"Reservoir System" : "reservoir",
+"Well Group" : "groundwater/well",
+"Minimum Flow" : "Surface Water",
+"Mine" : "Groundwater",
+"Power Plant" : "Unknown",
+"Measuring Point" : "Surface Water",
+"Augmentation/Replacement Plan" : "Unknown",
+"Recharge Area Group" : "Unknown",
+"Stream Gage" : "Surface Water",
+"Ditch System" : "Surface Water",
+"Exchange Plan" : "Unknown",
+"Aquifer NNT/NT Reservation" : "Groundwater",
+"Reach (Aggregating)" : "Groundwater"
 }
 def assignWaterSourceTypeCV(colrowValue):
-    if colrowValue == "" or pd.isnull(colrowValue):
-        outList = ""
+    if colrowValue == '' or pd.isnull(colrowValue):
+        outList = "Unknown"
     else:
         String1 = colrowValue.strip()  # remove whitespace chars
         try:
-            outList = UnknownWSCVDict[String1]
+            outList = WSTypeDict[String1]
         except:
-            outList = "Surface Water"
+            outList = "Unknown"
     return outList
 
 # For creating WaDESiteUUID
 def assignWaterSourceUUID(colrowValue):
     string1 = str(colrowValue)
-    outstring = "CODWR_WS_" + string1
+    outstring = "CO_" + string1
     return outstring
 
 
@@ -90,7 +107,7 @@ print("WaterSourceNativeID")  # has to be one of the last, need length of create
 outdf['WaterSourceNativeID'] = df['GNIS ID']
 
 print("WaterSourceTypeCV")
-outdf.WaterSourceTypeCV = "Unknown"
+outdf['WaterSourceTypeCV'] = df.apply(lambda row: assignWaterSourceTypeCV(row['Structure Type']), axis=1)
 
 ##############################
 # Dropping duplicate

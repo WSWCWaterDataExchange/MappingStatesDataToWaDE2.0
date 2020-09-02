@@ -18,13 +18,13 @@ import beneficialUseDictionary #Custom .py file containing dictionaries.
 print("Reading input csv...")
 workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Colorado/WaterAllocation"  # Specific to my machine, will need to change.
 os.chdir(workingDir)
-IDM_fileInput = "RawinputData/DWR_Water_Right_-_Net_Amounts.csv"
+CODM_fileInput = "RawinputData/DWR_Water_Right_-_Net_Amounts.csv"
 method_fileInput = "ProcessedInputData/methods.csv"
 variables_fileInput = "ProcessedInputData/variables.csv"
 watersources_fileInput = "ProcessedInputData/watersources.csv"
 sites_fileInput = "ProcessedInputData/sites.csv"
 
-df_IDM = pd.read_csv(IDM_fileInput)  # The Idaho Master input dataframe.
+df_CODM = pd.read_csv(CODM_fileInput)  # The Idaho Master input dataframe.
 df_method = pd.read_csv(method_fileInput)  # Method dataframe
 df_variables = pd.read_csv(variables_fileInput)  # Variables dataframe
 df_watersources = pd.read_csv(watersources_fileInput)  # WaterSources dataframe
@@ -145,7 +145,7 @@ def assignBeneficialUseCategory(colrowValue):
         try:
             outList = benUseDict[String1]
         except:
-            outList = "Surface Water"
+            outList = "Unknown"
 
     return outList
 
@@ -158,28 +158,28 @@ def assignAllocationNativeID(colrowValueA, colrowValueB, colrowValueC, colrowVal
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe oudf...")
-outdf = pd.DataFrame(index=df_IDM.index, columns=columns)  # The output dataframe
+outdf = pd.DataFrame(index=df_CODM.index, columns=columns)  # The output dataframe
 
 print("MethodUUID")  # Hardcoded
-outdf.MethodUUID = "CODWR_DiversionTracking"
+outdf.MethodUUID = "CODWR_Diversion Tracking"
 
 print("OrganizationUUID")  # Hardcoded
 outdf.OrganizationUUID = "CODWR"
 
 print("SiteUUID")
-outdf['SiteUUID'] = df_IDM.apply(lambda row: retrieveSiteUUID(row['WDID']), axis=1)
+outdf['SiteUUID'] = df_CODM.apply(lambda row: retrieveSiteUUID(row['WDID']), axis=1)
 
 print("VariableSpecificUUID")  # Hardcoded
 outdf.VariableSpecificUUID = "CODWR_Allocation All"
 
 print("WaterSourceUUID")
-outdf['WaterSourceUUID'] = df_IDM.apply(lambda row: retrieveWaterSourceUUID(row['Water Source']), axis=1)
+outdf['WaterSourceUUID'] = df_CODM.apply(lambda row: retrieveWaterSourceUUID(row['Water Source']), axis=1)
 
 print("AllocationAmount")
-outdf['AllocationAmount'] = df_IDM.apply(lambda row: assignAllocationAmount(row["Decreed Units"], row["Net Absolute"], row["Net Conditional"]), axis=1)
+outdf['AllocationAmount'] = df_CODM.apply(lambda row: assignAllocationAmount(row["Decreed Units"], row["Net Absolute"], row["Net Conditional"]), axis=1)
 
 print("AllocationApplicationDate")  # Hardcoded
-outdf['AllocationApplicationDate'] = df_IDM['Appropriation Date']
+outdf['AllocationApplicationDate'] = df_CODM['Appropriation Date']
 
 print("AllocationAssociatedConsumptiveUseSiteIDs")  # Hardcoded
 outdf.AllocationAssociatedConsumptiveUseSiteIDs = ""
@@ -203,19 +203,19 @@ print("AllocationExpirationDate")  # Hardcoded
 outdf.AllocationExpirationDate = ""
 
 print("AllocationLegalStatusCV")
-outdf['AllocationLegalStatusCV'] = df_IDM.apply(lambda row: assignAllocationLegalStatusCV(row['Net Absolute'], row['Net Conditional']), axis=1)
+outdf['AllocationLegalStatusCV'] = df_CODM.apply(lambda row: assignAllocationLegalStatusCV(row['Net Absolute'], row['Net Conditional']), axis=1)
 
 print("AllocationMaximum")
-outdf['AllocationMaximum'] = df_IDM.apply(lambda row: assignAllocationMaximum(row["Decreed Units"], row["Net Absolute"], row["Net Conditional"]), axis=1)
+outdf['AllocationMaximum'] = df_CODM.apply(lambda row: assignAllocationMaximum(row["Decreed Units"], row["Net Absolute"], row["Net Conditional"]), axis=1)
 
 print("AllocationNativeID")  # Will use this with a .groupby() statement towards the ends.
-outdf['AllocationNativeID'] = df_IDM.apply(lambda row: assignAllocationNativeID(row['Admin No'], row['Order No'], row['Decreed Units'], row['WDID']), axis=1)
+outdf['AllocationNativeID'] = df_CODM.apply(lambda row: assignAllocationNativeID(row['Admin No'], row['Order No'], row['Decreed Units'], row['WDID']), axis=1)
 
 print("AllocationOwner")
-outdf['AllocationOwner'] = df_IDM['Structure Name']
+outdf['AllocationOwner'] = df_CODM['Structure Name']
 
 print("AllocationPriorityDate")
-outdf['AllocationPriorityDate'] = df_IDM['Appropriation Date']
+outdf['AllocationPriorityDate'] = df_CODM['Appropriation Date']
 
 print("AllocationTimeframeEnd")  # Hardcoded
 outdf.AllocationTimeframeEnd = "12/31"
@@ -227,7 +227,7 @@ print("AllocationTypeCV")  # Hardcoded
 outdf['AllocationTypeCV'] = ''
 
 print("BeneficialUseCategory")
-outdf['BeneficialUseCategory'] = df_IDM.apply(lambda row: assignBeneficialUseCategory(row['Decreed Uses']), axis=1)
+outdf['BeneficialUseCategory'] = df_CODM.apply(lambda row: assignBeneficialUseCategory(row['Decreed Uses']), axis=1)
 
 print("CommunityWaterSupplySystem")  # Hardcoded
 outdf.CommunityWaterSupplySystem = ""
