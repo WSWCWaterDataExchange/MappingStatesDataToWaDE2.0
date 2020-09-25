@@ -114,7 +114,7 @@ print("SiteUUID")  # Using SiteNativeID to correctly identify SiteUUIDID
 outdf['SiteUUID'] = df_DM.apply(lambda row: retrieveSiteUUID(row['OBJECTID']), axis=1)
 
 print("VariableSpecificUUID")  # Hardcoded
-outdf.VariableSpecificUUID = "ADWR_Allocation All"
+outdf.VariableSpecificUUID = "OWRB_Allocation All"
 
 ###########################################################################################
 print("WaterSourceUUID")
