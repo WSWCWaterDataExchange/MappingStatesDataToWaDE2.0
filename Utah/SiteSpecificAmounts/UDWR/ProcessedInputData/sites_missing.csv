@@ -1,0 +1,11 @@
+,CoordinateAccuracy,CoordinateMethodCV,County,EPSGCodeCV,GNISCodeCV,Geometry,HUC12,HUC8,Latitude,Longitude,NHDNetworkStatusCV,NHDProductCV,ReasonRemoved,SiteName,SiteNativeID,SitePoint,SiteTypeCV,SiteUUID,StateCV,USGSSiteID,index
+0,,Unspecified,Sevier,EPSG:4326,,,,,0.0,0.0,,,Bad Latitude,South Monroe Culinary Water,1002,,Unknown,UTSS_S8,UT,,7.0
+1,,Unspecified,Duchesne,EPSG:4326,,,,,0.0,0.0,,,Bad Latitude,Duchesne City Water Service District,1004,,Unknown,UTSS_S16,UT,,15.0
+2,,Unspecified,Weber,EPSG:4326,,,,,0.0,0.0,,,Bad Latitude,Ogden City Division of Water Utilities,1018,,Stream,UTSS_S104,UT,,103.0
+3,,Unspecified,Uintah,EPSG:4326,,,,,0.0,0.0,,,Bad Latitude,Vernal Municipal Water System,1040,,Spring,UTSS_S190,UT,,189.0
+4,,Unspecified,Carbon,EPSG:4326,,,,,0.0,0.0,,,Bad Latitude,Wellington City (Culinary),1132,,Unknown,UTSS_S550,UT,,549.0
+5,,Unspecified,Salt Lake,EPSG:4326,,,,,0.0,0.0,,,Bad Latitude,Salt Lake City Corp. Culinary Water,1139,,Lake,UTSS_S655,UT,,654.0
+6,,Unspecified,Salt Lake,EPSG:4326,,,,,0.0,0.0,,,Bad Latitude,Salt Lake City Corp. Culinary Water,1139,,Spring,UTSS_S707,UT,,706.0
+7,,Unspecified,Salt Lake,EPSG:4326,,,,,0.0,0.0,,,Bad Latitude,Salt Lake City Corp. Culinary Water,1139,,Tunnel,UTSS_S710,UT,,709.0
+8,,Unspecified,Utah,EPSG:4326,,,,,0.0,0.0,,,Bad Latitude,Payson City (Culinary),1166,,Stream,UTSS_S797,UT,,796.0
+9,,Unspecified,Box Elder,EPSG:4326,,,,,0.0,0.0,,,Bad Latitude,South Willard Culinary Water,1238,,Unknown,UTSS_S1116,UT,,1115.0
