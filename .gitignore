@@ -205,3 +205,8 @@ Washington/WaterAllocation/RawInputData/D_PointTable.csv
 Washington/WaterAllocation/RawInputData/D_Point_WR_Doc.csv
 Washington/WaterAllocation/RawInputData/D_Point.csv
 Arizona/AggregatedAmounts/RawInputData/P_AZagg.csv
+Utah/WaterAllocation/RawInputData/P_UtahErrorCheckExp.csv
+Utah/WaterAllocation/RawInputData/P_UtahMaster - Copy.csv
+Utah/WaterAllocation/RawInputData/P_UtahMaster.csv
+Utah/WaterAllocation/RawInputData/WATER_USES.csv
+Utah/WaterAllocation/RawInputData/WRCHEX_WATER_MASTER.csv
