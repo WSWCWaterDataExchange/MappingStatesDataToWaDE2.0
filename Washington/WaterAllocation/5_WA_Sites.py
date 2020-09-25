@@ -183,7 +183,6 @@ outdf.reset_index()
 # filter the whole table based on a unique combination of SiteNativeID, SiteName, SiteTypeCV, Longitude & Latitude
 outdf = outdf.drop_duplicates(subset=['SiteNativeID', 'SiteName', 'SiteTypeCV', 'Longitude', 'Latitude'])
 outdf = outdf.reset_index(drop=True)
-outdfpurge = outdf.loc[(outdf['Longitude'].isnull()) | (outdf['Latitude'].isnull())]
 ######################################
 
 print("SiteUUID") # has to be one of the last.
@@ -266,10 +265,22 @@ if len(mask.index) > 0:
     outdf = outdf.reset_index(drop=True)
 
 # Latitude_float_Yes
-# ???? Don't we consider null lat values bad?
+# For now, we will count NULL lat as bad.
+mask = outdf.loc[ (outdf["Latitude"].isnull()) | (outdf["Latitude"] == '') | (outdf["Latitude"] < 20) ].assign(ReasonRemoved='Bad Latitude').reset_index()
+if len(mask.index) > 0:
+    dfpurge = dfpurge.append(mask)
+    dropIndex = outdf.loc[ (outdf["Latitude"].isnull()) | (outdf["Latitude"] == '') | (outdf["Latitude"] < 20) ].index
+    outdf = outdf.drop(dropIndex)
+    outdf = outdf.reset_index(drop=True)
 
 # Longitude_float_Yes
-# ???? Don't we consider null long values bad?
+# For now, we will count NULL long as bad.
+mask = outdf.loc[ (outdf["Longitude"].isnull()) | (outdf["Longitude"] == '') | (outdf["Longitude"] > -80) ].assign(ReasonRemoved='Bad Longitude').reset_index()
+if len(mask.index) > 0:
+    dfpurge = dfpurge.append(mask)
+    dropIndex = outdf.loc[ (outdf["Longitude"].isnull()) | (outdf["Longitude"] == '') | (outdf["Longitude"] > -80) ].index
+    outdf = outdf.drop(dropIndex)
+    outdf = outdf.reset_index(drop=True)
 
 # NHDNetworkStatusCV_nvarchar(50)_Yes
 mask = outdf.loc[ outdf["NHDNetworkStatusCV"].str.len() > 50 ].assign(ReasonRemoved='Bad NHDNetworkStatusCV').reset_index()
