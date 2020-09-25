@@ -1,0 +1,12 @@
+,CoordinateAccuracy,CoordinateMethodCV,County,EPSGCodeCV,GNISCodeCV,Geometry,HUC12,HUC8,Latitude,Longitude,NHDNetworkStatusCV,NHDProductCV,ReasonRemoved,SiteName,SiteNativeID,SitePoint,SiteTypeCV,SiteUUID,StateCV,USGSSiteID,index,level_0
+0,,Unspecified,Grand Forks,EPSG:4326,,,,,0.0,0.0,,,Bad Latitude,Unspecified,15105014CC,,Surface Water,ND_444,ND,,460.0,443.0
+1,,Unspecified,Walsh,EPSG:4326,,,,,0.0,0.0,,,Bad Latitude,Unspecified,15705018DA,,Surface Water,ND_485,ND,,503.0,484.0
+2,,Unspecified,Traill,EPSG:4326,,,,,0.0,0.0,,,Bad Latitude,Unspecified,14604913C,,Surface Water,ND_5012,ND,,5294.0,5011.0
+3,,Unspecified,Sargent,EPSG:4326,,,,,0.0,0.0,,,Bad Latitude,Spiritwood,12905403D,,Ground Water,ND_5442,ND,,5764.0,5441.0
+4,,Unspecified,Sargent,EPSG:4326,,,,,0.0,0.0,,,Bad Latitude,Spiritwood,12905402C,,Ground Water,ND_5444,ND,,5766.0,5443.0
+5,,Unspecified,Sargent,EPSG:4326,,,,,0.0,0.0,,,Bad Latitude,Spiritwood,13005427D,,Ground Water,ND_5445,ND,,5767.0,5444.0
+6,,Unspecified,Grand Forks,EPSG:4326,,,,,0.0,0.0,,,Bad Latitude,Unspecified,14904904C,,Surface Water,ND_6189,ND,,6583.0,6188.0
+7,,Unspecified,Morton,EPSG:4326,,,,,0.0,0.0,,,Bad Latitude,Unspecified,13804806B,,Surface Water,ND_6323,ND,,6740.0,6322.0
+8,,Unspecified,Richland,EPSG:4326,,,,,0.0,0.0,,,Bad Latitude,Hankinson,130049,,Ground Water,ND_7201,ND,,7789.0,7200.0
+9,,Unspecified,Richland,EPSG:4326,,,,,0.0,0.0,,,Bad Latitude,Hankinson,130050,,Ground Water,ND_7202,ND,,7790.0,7201.0
+0,,Unspecified,McLean,EPSG:4326,,,,,47.29043,0.0,,,Bad Longitude,Unspecified,14408214C,,Surface Water,ND_4890,ND,,5148.0,4887.0
