@@ -233,7 +233,7 @@ print("PowerType")  # Hardcoded
 outdf.PowerType = ""
 
 print("PrimaryUseCategory")  # Hardcoded
-outdf.PrimaryUseCategory = ""
+outdf.PrimaryUseCategory = "Irrigation"
 
 print("AllocationSDWISIdentifierCV")  # Hardcoded
 outdf.AllocationSDWISIdentifierCV = ""
