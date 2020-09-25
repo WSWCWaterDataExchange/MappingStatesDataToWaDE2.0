@@ -136,15 +136,6 @@ def retrieveSiteUUID(colrowValue):
     return outList
 
 
-# For creating AllocationAmount
-def assignAllocationAmount(colrowValue):
-    if colrowValue <= 0 or pd.isnull(colrowValue):
-        outList = 0
-    else:
-        outList = colrowValue
-    return outList
-
-
 # For creating AllocationLegalStatusCV
 def assignAllocationLegalStatusCV(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
@@ -302,7 +293,7 @@ for i, row in outdf.iterrows():
         y = df_uses.loc[df_uses['Water Right ID'] == x]
         outdf.at[i, 'BeneficialUseCategory'] = y.loc[x, 'uses']
     except:
-        outdf.at[i, 'BeneficialUseCategory'] = 'Unspecified'
+        outdf.at[i, 'BeneficialUseCategory'] = 'Unknown'
 
 print("CommunityWaterSupplySystem")  # Hardcoded
 outdf.CommunityWaterSupplySystem = ""
