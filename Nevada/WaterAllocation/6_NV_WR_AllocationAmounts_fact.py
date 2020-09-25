@@ -347,10 +347,10 @@ outdf.DataPublicationDOI = ""
 print("GeneratedPowerCapacityMW")  # Hardcoded
 outdf.GeneratedPowerCapacityMW = ""
 
-print("IrrigatedAcreage")
+print("IrrigatedAcreage") # Hardcoded
 outdf.IrrigatedAcreage = ""
 
-print("IrrigationMethodCV")
+print("IrrigationMethodCV") # Hardcoded
 outdf.IrrigationMethodCV = ""
 
 print("LegacyAllocationIDs")  # Hardcoded
@@ -363,7 +363,7 @@ print("PowerType")  # Hardcoded
 outdf.PowerType = ""
 
 print("PrimaryUseCategory")  # Hardcoded
-outdf.PrimaryUseCategory = ""
+outdf.PrimaryUseCategory = "Irrigation"
 
 print("AllocationSDWISIdentifierCV")  # Hardcoded
 outdf.AllocationSDWISIdentifierCV = ""
