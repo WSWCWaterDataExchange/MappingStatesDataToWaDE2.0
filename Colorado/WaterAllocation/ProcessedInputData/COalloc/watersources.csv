@@ -1,0 +1,2934 @@
+WaterSourceUUID,Geometry,GNISFeatureNameCV,WaterQualityIndicatorCV,WaterSourceName,WaterSourceNativeID,WaterSourceTypeCV
+CO_1,,,Unspecified,SOUTH PLATTE RIVER,201759.0,Surface Water
+CO_2,,,Unspecified,LONGS GULCH,110009.0,Surface Water
+CO_3,,,Unspecified,GROUNDWATER: PASS CREEK,190930.0,groundwater/well
+CO_4,,,Unspecified,RIO GRANDE,1385432.0,Surface Water
+CO_5,,,Unspecified,BEAVER CREEK,182928.0,Surface Water
+CO_6,,,Unspecified,MIDDLEMIST CREEK,195017.0,Surface Water
+CO_7,,,Unspecified,SAND ARROYO CREEK,182956.0,Surface Water
+CO_8,,,Unspecified,BIJOU CREEK,180770.0,Surface Water
+CO_9,,,Unspecified,MUDDY CREEK,180913.0,Surface Water
+CO_10,,,Unspecified,EAST BIJOU CREEK,184780.0,Surface Water
+CO_11,,,Unspecified,AGATE CREEK,195074.0,Surface Water
+CO_12,,,Unspecified,WEST BIJOU CREEK,184779.0,Surface Water
+CO_13,,,Unspecified,EAST GULCH,185061.0,Surface Water
+CO_14,,,Unspecified,KIOWA CREEK,201758.0,Surface Water
+CO_15,,,Unspecified,KILLINS SPRING RUN,10003.0,Surface Water
+CO_16,,,Unspecified,MULE CREEK,180906.0,Surface Water
+CO_17,,,Unspecified,WEST KIOWA CREEK,193208.0,Surface Water
+CO_18,,,Unspecified,WILDCAT CREEK,182914.0,Surface Water
+CO_19,,,Unspecified,LOST CREEK,180902.0,Surface Water
+CO_20,,,Unspecified,RUNNING CREEK,185108.0,Surface Water
+CO_21,,,Unspecified,BOX ELDER CREEK,180747.0,reservoir
+CO_22,,,Unspecified,CROW CREEK,169581.0,Surface Water
+CO_23,,,Unspecified,SIMPSON CREEK,171162.0,Surface Water
+CO_24,,,Unspecified,LITTLE CROW CREEK,171161.0,Surface Water
+CO_25,,,Unspecified,YERBY DRAW,10002.0,Surface Water
+CO_26,,,Unspecified,LONE TREE CREEK,180648.0,Surface Water
+CO_27,,,Unspecified,OWL CREEK,180483.0,Surface Water
+CO_28,,,Unspecified,SPRING CREEK,180480.0,Surface Water
+CO_29,,,Unspecified,EASTMAN CREEK,171066.0,Surface Water
+CO_30,,,Unspecified,SAND CREEK,180817.0,Surface Water
+CO_31,,,Unspecified,GOLD CREEK,185113.0,Surface Water
+CO_32,,,Unspecified,PLUM BUSH CREEK,183050.0,Surface Water
+CO_33,,,Unspecified,WILLOW CREEK,180552.0,Surface Water
+CO_34,,,Unspecified,VEGA CREEK,183053.0,Surface Water
+CO_35,,,Unspecified,GROUNDWATER: SOUTH PLATTE RIVER,201759.0,groundwater/well
+CO_36,,,Unspecified,COMANCHE CREEK,180905.0,Surface Water
+CO_37,,,Unspecified,GROUNDWATER: PLUM BUSH CREEK,183050.0,groundwater/well
+CO_38,,,Unspecified,ANTELOPE DRAW,182866.0,Surface Water
+CO_39,,,Unspecified,GEARY CREEK,180491.0,Surface Water
+CO_40,,,Unspecified,HORSE CREEK,180891.0,Surface Water
+CO_41,,,Unspecified,TWENTYTWO SLOUGH,182876.0,Surface Water
+CO_42,,,Unspecified,GROUNDWATER: QUATERNARY ALLUVIUM,,groundwater/well
+CO_43,,,Unspecified,COAL CREEK,180489.0,reservoir
+CO_44,,,Unspecified,WOLF CREEK,195072.0,reservoir
+CO_45,,,Unspecified,BADGER CREEK,182916.0,reservoir
+CO_46,,,Unspecified,ANTELOPE CREEK,180822.0,reservoir
+CO_47,,,Unspecified,WILLOW GULCH,185118.0,reservoir
+CO_48,,,Unspecified,ROCK CREEK,180821.0,reservoir
+CO_49,,,Unspecified,DEAD HORSE DRAW,201760.0,reservoir
+CO_50,,,Unspecified,PROSPECT CREEK,10004.0,reservoir
+CO_51,,,Unspecified,DRY CREEK,185114.0,reservoir
+CO_52,,,Unspecified,CACHE LA POUDRE RIVER,205018.0,reservoir
+CO_53,,,Unspecified,LONG DRAW,10001.0,reservoir
+CO_54,,,Unspecified,EAST LOST CREEK,180816.0,reservoir
+CO_55,,,Unspecified,EATON DRAW,180550.0,reservoir
+CO_56,,,Unspecified,GROUNDWATER: LOST CREEK,,groundwater/well
+CO_57,,,Unspecified,GROUNDWATER: UPPER CROW CREEK,,groundwater/well
+CO_58,,,Unspecified,GROUNDWATER: UNCONFINED SAN LUIS VALLEY,,groundwater/well
+CO_59,,,Unspecified,GROUNDWATER: CONFINED SAN LUIS VALLEY,,groundwater/well
+CO_60,,,Unspecified,GROUNDWATER: LARAMIE FOX HILLS,,groundwater/well
+CO_61,,,Unspecified,GROUNDWATER: ARAPAHOE,,groundwater/well
+CO_62,,,Unspecified,GROUNDWATER: DENVER,,groundwater/well
+CO_63,,,Unspecified,GROUNDWATER: NORTHERN HIGH PLAINS,,groundwater/well
+CO_64,,,Unspecified,GROUNDWATER: LOWER ARAPAHOE,,groundwater/well
+CO_65,,,Unspecified,GROUNDWATER: SYDNEY DRAW,,groundwater/well
+CO_66,,,Unspecified,GROUNDWATER: LOWER DAWSON,,groundwater/well
+CO_67,,,Unspecified,GROUNDWATER: DAWSON,,groundwater/well
+CO_68,,,Unspecified,GROUNDWATER: RIO GRANDE,1385432.0,groundwater/well
+CO_69,,,Unspecified,GROUNDWATER: KIOWA-BIJOU,,groundwater/well
+CO_70,,,Unspecified,GROUNDWATER: CACHE LA POUDRE RIVER,205018.0,groundwater/well
+CO_71,,,Unspecified,GROUNDWATER: CAMP CREEK,,groundwater/well
+CO_72,,,Unspecified,BEEBE DRAW,20004.0,reservoir
+CO_73,,,Unspecified,BIG DRY CREEK,181264.0,Surface Water
+CO_74,,,Unspecified,WALNUT CREEK,181231.0,Surface Water
+CO_75,,,Unspecified,HOFFMAN GULCH,20002.0,Surface Water
+CO_76,,,Unspecified,MURPHY CREEK,184995.0,Surface Water
+CO_77,,,Unspecified,GRANGE HALL CREEK (AKA BREWERS GULCH),20001.0,Surface Water
+CO_78,,,Unspecified,FIRST CREEK,184605.0,Surface Water
+CO_79,,,Unspecified,SECOND CREEK,184606.0,Surface Water
+CO_80,,,Unspecified,THIRD CREEK,184607.0,Surface Water
+CO_81,,,Unspecified,WOMAN CREEK,181233.0,Surface Water
+CO_82,,,Unspecified,LITTLE DRY CREEK,180836.0,Surface Water
+CO_83,,,Unspecified,GRAFLIN SLOUGH,20003.0,Surface Water
+CO_84,,,Unspecified,ASHCROFT DRAW,180604.0,Surface Water
+CO_85,,,Unspecified,TOLL GATE CREEK,184744.0,Groundwater
+CO_86,,,Unspecified,WEST TOLL GATE CREEK,184959.0,reservoir
+CO_87,,,Unspecified,CLEAR CREEK,181805.0,reservoir
+CO_88,,,Unspecified,BRANTNER GULCH,184590.0,reservoir
+CO_89,,,Unspecified,TODD CREEK,184571.0,reservoir
+CO_90,,,Unspecified,GROUNDWATER: DENVER BASIN - MULTIPLE AQUIFERS,,groundwater/well
+CO_91,,,Unspecified,WESTERLY CREEK,184739.0,reservoir
+CO_92,,,Unspecified,EAST TOLL GATE CREEK,184960.0,reservoir
+CO_93,,,Unspecified,FALL CREEK,177303.0,Surface Water
+CO_94,,,Unspecified,TRAIL CREEK,170162.0,Surface Water
+CO_95,,,Unspecified,MANHATTAN CREEK,177136.0,Surface Water
+CO_96,,,Unspecified,RABBIT CREEK,170195.0,Surface Water
+CO_97,,,Unspecified,SHEEP DRAW,180602.0,Surface Water
+CO_98,,,Unspecified,FISH CREEK,170123.0,Surface Water
+CO_99,,,Unspecified,ELKHORN CREEK,170254.0,Surface Water
+CO_100,,,Unspecified,COALBANK CREEK,171175.0,Surface Water
+CO_101,,,Unspecified,NORTH FORK CACHE LA POUDRE RIVER,177209.0,Groundwater
+CO_102,,,Unspecified,DUCK SLOUGH,30004.0,Groundwater
+CO_103,,,Unspecified,FOSSIL CREEK,177415.0,Unknown
+CO_104,,,Unspecified,SEVENMILE CREEK,177112.0,Surface Water
+CO_105,,,Unspecified,PETERSON CREEK,177107.0,Surface Water
+CO_106,,,Unspecified,COTTONWOOD GULCH,30002.0,Surface Water
+CO_107,,,Unspecified,SOUTH FORK CACHE LA POUDRE RIVER,177139.0,Surface Water
+CO_108,,,Unspecified,LITTLE BEAVER CREEK,177113.0,Surface Water
+CO_109,,,Unspecified,NORTH FORK LITTLE BEAVER CREEK,177117.0,Surface Water
+CO_110,,,Unspecified,GORDON CREEK,170207.0,Surface Water
+CO_111,,,Unspecified,PANHANDLE CREEK,170095.0,Surface Water
+CO_112,,,Unspecified,SHEEP CREEK,170090.0,Surface Water
+CO_113,,,Unspecified,MILL CREEK,170160.0,Surface Water
+CO_114,,,Unspecified,DALE CREEK,201741.0,Surface Water
+CO_115,,,Unspecified,DEADMAN CREEK,170126.0,Surface Water
+CO_116,,,Unspecified,MEADOW CREEK,170141.0,Surface Water
+CO_117,,,Unspecified,STONEWALL CREEK,170143.0,Surface Water
+CO_118,,,Unspecified,TENMILE CREEK,170142.0,Surface Water
+CO_119,,,Unspecified,LONE PINE CREEK,170208.0,Surface Water
+CO_120,,,Unspecified,NORTH LONE PINE CREEK,170256.0,Surface Water
+CO_121,,,Unspecified,SOUTH LONE PINE CREEK,170255.0,Surface Water
+CO_122,,,Unspecified,CRANE DRAW,30003.0,Surface Water
+CO_123,,,Unspecified,LEWSTONE CREEK,177169.0,Surface Water
+CO_124,,,Unspecified,RIST CREEK,177168.0,Surface Water
+CO_125,,,Unspecified,LE BOW CREEK,177406.0,Surface Water
+CO_126,,,Unspecified,KILLPECKER CREEK,170250.0,Surface Water
+CO_127,,,Unspecified,HORSETOOTH CREEK,177413.0,Surface Water
+CO_128,,,Unspecified,COOPER SLOUGH,177419.0,Surface Water
+CO_129,,,Unspecified,BOXELDER CREEK,180469.0,Surface Water
+CO_130,,,Unspecified,RED CANYON CREEK,30005.0,Surface Water
+CO_131,,,Unspecified,INDIAN CREEK,171083.0,Surface Water
+CO_132,,,Unspecified,MAIL CREEK,177417.0,Surface Water
+CO_133,,,Unspecified,BLACK HOLLOW CREEK,180463.0,Surface Water
+CO_134,,,Unspecified,DIXON CREEK,177377.0,Surface Water
+CO_135,,,Unspecified,SWAMP CREEK,170241.0,Surface Water
+CO_136,,,Unspecified,BENNETT CREEK,177114.0,Surface Water
+CO_137,,,Unspecified,NEOTA CREEK,177268.0,Surface Water
+CO_138,,,Unspecified,CORRAL CREEK,177260.0,Surface Water
+CO_139,,,Unspecified,GEORGE CREEK,170093.0,Surface Water
+CO_140,,,Unspecified,NORTH FORK RABBIT CREEK,170211.0,Surface Water
+CO_141,,,Unspecified,CORNELIUS CREEK,170094.0,Surface Water
+CO_142,,,Unspecified,ACME CREEK,170101.0,Surface Water
+CO_143,,,Unspecified,SOUTH FORK PANHANDLE CREEK,170263.0,Surface Water
+CO_144,,,Unspecified,ROARING CREEK,170262.0,Surface Water
+CO_145,,,Unspecified,SAWMILL CREEK,177237.0,Surface Water
+CO_146,,,Unspecified,JOE WRIGHT CREEK,177096.0,Surface Water
+CO_147,,,Unspecified,EAST FORK SHEEP CREEK,177103.0,Surface Water
+CO_148,,,Unspecified,TRAP CREEK,177269.0,Surface Water
+CO_149,,,Unspecified,NORTH FORK JOE WRIGHT CREEK,177236.0,Surface Water
+CO_150,,,Unspecified,RAWHIDE CREEK,171106.0,reservoir
+CO_151,,,Unspecified,SOLDIER CANYON,30007.0,reservoir
+CO_152,,,Unspecified,LA POUDRE PASS CREEK,177263.0,reservoir
+CO_153,,,Unspecified,BARNES MEADOW CREEK,30001.0,reservoir
+CO_154,,,Unspecified,PARK CREEK,170192.0,reservoir
+CO_155,,,Unspecified,ROULLARD DRAW,30006.0,reservoir
+CO_156,,,Unspecified,GROUNDWATER: BIG THOMPSON RIVER,205019.0,groundwater/well
+CO_157,,,Unspecified,BIG THOMPSON RIVER,205019.0,Surface Water
+CO_158,,,Unspecified,BUCKHORN CREEK,177345.0,Surface Water
+CO_159,,,Unspecified,WIND RIVER,177957.0,Surface Water
+CO_160,,,Unspecified,BEAVER BROOK,177617.0,Surface Water
+CO_161,,,Unspecified,BLACK CANYON CREEK,177566.0,Surface Water
+CO_162,,,Unspecified,NORTH FORK BIG THOMPSON RIVER,177650.0,Surface Water
+CO_163,,,Unspecified,LITTLE THOMPSON RIVER,177961.0,Surface Water
+CO_164,,,Unspecified,BIGHORN CREEK,177565.0,Surface Water
+CO_165,,,Unspecified,CHIQUITA CREEK,177580.0,Surface Water
+CO_166,,,Unspecified,GLACIER CREEK,177896.0,Surface Water
+CO_167,,,Unspecified,HIDDEN VALLEY CREEK,177619.0,Surface Water
+CO_168,,,Unspecified,ROARING RIVER,177616.0,Surface Water
+CO_169,,,Unspecified,FALL RIVER,177536.0,Surface Water
+CO_170,,,Unspecified,THORNTON GULCH,40002.0,Surface Water
+CO_171,,,Unspecified,BIG HOLLOW,178053.0,Surface Water
+CO_172,,,Unspecified,ALPINE BROOK,177946.0,Surface Water
+CO_173,,,Unspecified,THE SLOUGH,178374.0,Groundwater
+CO_174,,,Unspecified,CEDAR CREEK,177659.0,Surface Water
+CO_175,,,Unspecified,REDSTONE CREEK,177373.0,Surface Water
+CO_176,,,Unspecified,LAURENCE CREEK,177371.0,Surface Water
+CO_177,,,Unspecified,ASPEN BROOK,177907.0,Surface Water
+CO_178,,,Unspecified,WEST FORK LITTLE THOMPSON RIVER,177962.0,groundwater/spring
+CO_179,,,Unspecified,MEADOW HOLLOW CREEK,178042.0,groundwater/spring
+CO_180,,,Unspecified,WEST CREEK,177572.0,Surface Water
+CO_181,,,Unspecified,COW CREEK,177569.0,Surface Water
+CO_182,,,Unspecified,MILLER FORK,177342.0,Surface Water
+CO_183,,,Unspecified,ELK CREEK,177325.0,Surface Water
+CO_184,,,Unspecified,CASCADE CREEK,177340.0,Surface Water
+CO_185,,,Unspecified,TWIN CABIN GULCH,177338.0,Surface Water
+CO_186,,,Unspecified,BOULDER BROOK,177945.0,Unknown
+CO_187,,,Unspecified,SUNDANCE CREEK,177622.0,Unknown
+CO_188,,,Unspecified,STOVE PRAIRIE CREEK,177356.0,Unknown
+CO_189,,,Unspecified,ROARING FORK,177922.0,reservoir
+CO_190,,,Unspecified,CARWYLE GULCH,40001.0,reservoir
+CO_191,,,Unspecified,SAINT VRAIN CREEK,205012.0,reservoir
+CO_192,,,Unspecified,RYAN GULCH,177744.0,reservoir
+CO_193,,,Unspecified,NORTH CLEAR CREEK,187055.0,reservoir
+CO_194,,,Unspecified,HOLMES DRAW,178054.0,reservoir
+CO_195,,,Unspecified,GROUNDWATER: SAINT VRAIN CREEK,205012.0,groundwater/well
+CO_196,,,Unspecified,GROUNDWATER: LITTLE THOMPSON RIVER,177961.0,groundwater/well
+CO_197,,,Unspecified,INN BROOK,204982.0,Surface Water
+CO_198,,,Unspecified,NORTH SAINT VRAIN CREEK,178190.0,Surface Water
+CO_199,,,Unspecified,SOUTH SAINT VRAIN CREEK,178246.0,Surface Water
+CO_200,,,Unspecified,LEFT HAND CREEK,178283.0,Surface Water
+CO_201,,,Unspecified,SPRING GULCH,178364.0,Surface Water
+CO_202,,,Unspecified,GODDING HOLLOW,50008.0,Surface Water
+CO_203,,,Unspecified,EVANS GULCH,50002.0,Surface Water
+CO_204,,,Unspecified,MAYFIELD HOLLOW,50007.0,Surface Water
+CO_205,,,Unspecified,FOX CREEK,178221.0,Surface Water
+CO_206,,,Unspecified,SOUTH FOX CREEK,50009.0,Surface Water
+CO_207,,,Unspecified,TAHOSA CREEK,177923.0,Surface Water
+CO_208,,,Unspecified,LYKINS GULCH,178284.0,Surface Water
+CO_209,,,Unspecified,HUNTERS CREEK,178186.0,Surface Water
+CO_210,,,Unspecified,GROUNDWATER: INN BROOK,204982.0,groundwater/well
+CO_211,,,Unspecified,FAWN CREEK,204645.0,Surface Water
+CO_212,,,Unspecified,HOWLETT GULCH,50003.0,Surface Water
+CO_213,,,Unspecified,GRIFFIN GULCH,50001.0,Surface Water
+CO_214,,,Unspecified,KITELEY GULCH,50010.0,Surface Water
+CO_215,,,Unspecified,GIFFORD GULCH,50005.0,Surface Water
+CO_216,,,Unspecified,CABIN CREEK,178239.0,Surface Water
+CO_217,,,Unspecified,MIDDLE SAINT VRAIN CREEK,178142.0,groundwater/spring
+CO_218,,,Unspecified,BUCK CREEK,178218.0,groundwater/spring
+CO_219,,,Unspecified,CONEY CREEK,178243.0,Surface Water
+CO_220,,,Unspecified,JAMES CREEK,178555.0,Surface Water
+CO_221,,,Unspecified,HOT CREEK,190769.0,Surface Water
+CO_222,,,Unspecified,MITCHELL CREEK,50006.0,Surface Water
+CO_223,,,Unspecified,ELLIOTT GULCH,50004.0,reservoir
+CO_224,,,Unspecified,BOWLES GULCH,50011.0,Surface Water
+CO_225,,,Unspecified,SANDBEACH CREEK,205008.0,reservoir
+CO_226,,,Unspecified,GROUNDWATER: DAKOTA,,groundwater/well
+CO_227,,,Unspecified,BOULDER CREEK,178354.0,Surface Water
+CO_228,,,Unspecified,IDAHO CREEK,178352.0,Surface Water
+CO_229,,,Unspecified,GROUNDWATER: BOULDER CREEK,178354.0,groundwater/well
+CO_230,,,Unspecified,MIDDLE BOULDER CREEK,178573.0,Unknown
+CO_231,,,Unspecified,NORTH BOULDER CREEK,178467.0,Surface Water
+CO_232,,,Unspecified,SOUTH BOULDER CREEK,180974.0,Surface Water
+CO_233,,,Unspecified,FOURMILE CANYON CREEK,178679.0,Groundwater
+CO_234,,,Unspecified,SPRING BROOK,181184.0,Surface Water
+CO_235,,,Unspecified,BULL GULCH,181172.0,Surface Water
+CO_236,,,Unspecified,MAMMOTH GULCH,181019.0,Surface Water
+CO_237,,,Unspecified,COMO CREEK,60001.0,Surface Water
+CO_238,,,Unspecified,FISHER CREEK,60004.0,Surface Water
+CO_239,,,Unspecified,TWO MILE CREEK,178624.0,Surface Water
+CO_240,,,Unspecified,HICKS GULCH,181089.0,Surface Water
+CO_241,,,Unspecified,COON TRACK CREEK,181114.0,Surface Water
+CO_242,,,Unspecified,JENNY CREEK,180971.0,Surface Water
+CO_243,,,Unspecified,NORTH BEAVER CREEK,181117.0,Surface Water
+CO_244,,,Unspecified,SOUTH BEAVER CREEK,181124.0,Surface Water
+CO_245,,,Unspecified,BLUEBELL CANYON,181223.0,Surface Water
+CO_246,,,Unspecified,GREGORY CREEK,178682.0,Surface Water
+CO_247,,,Unspecified,SUNSHINE CANYON CREEK,178646.0,Surface Water
+CO_248,,,Unspecified,GOOSE CREEK,178667.0,Surface Water
+CO_249,,,Unspecified,SKUNK CREEK,178681.0,Surface Water
+CO_250,,,Unspecified,HOUCK'S SLOUGH,60002.0,Surface Water
+CO_251,,,Unspecified,BEAR CANYON CREEK,181163.0,Surface Water
+CO_252,,,Unspecified,FOURMILE CREEK,178470.0,Surface Water
+CO_253,,,Unspecified,BUMMERS GULCH,178570.0,Surface Water
+CO_254,,,Unspecified,JASPER CREEK,180973.0,reservoir
+CO_255,,,Unspecified,NORTH FORK MIDDLE BOULDER CREEK,178425.0,Surface Water
+CO_256,,,Unspecified,SOUTH FORK MIDDLE BOULDER CREEK,180972.0,Surface Water
+CO_257,,,Unspecified,HORSESHOE CREEK,178472.0,Surface Water
+CO_258,,,Unspecified,CARIBOU CREEK,178471.0,Surface Water
+CO_259,,,Unspecified,DOUDY DRAW,181183.0,reservoir
+CO_260,,,Unspecified,DELONDE CREEK,181115.0,reservoir
+CO_261,,,Unspecified,RAINBOW CREEK,60003.0,reservoir
+CO_262,,,Unspecified,WOODLAND CREEK,60005.0,reservoir
+CO_263,,,Unspecified,SOUTH CLEAR CREEK,181865.0,Surface Water
+CO_264,,,Unspecified,NORTH BEAVER BROOK,182063.0,Surface Water
+CO_265,,,Unspecified,SODA CREEK,182035.0,Surface Water
+CO_266,,,Unspecified,RALSTON CREEK,181545.0,Surface Water
+CO_267,,,Unspecified,CHICAGO CREEK,181866.0,Surface Water
+CO_268,,,Unspecified,PECK GULCH,178546.0,Surface Water
+CO_269,,,Unspecified,LAKEWOOD GULCH,182130.0,Surface Water
+CO_270,,,Unspecified,BARD CREEK,181350.0,Surface Water
+CO_271,,,Unspecified,DEVILS CANYON,182012.0,Surface Water
+CO_272,,,Unspecified,CUMBERLAND CREEK,181348.0,Surface Water
+CO_273,,,Unspecified,LEYDEN CREEK,181610.0,Surface Water
+CO_274,,,Unspecified,SOUTH CHICAGO CREEK,181870.0,Surface Water
+CO_275,,,Unspecified,LEAVENWORTH CREEK,181822.0,Surface Water
+CO_276,,,Unspecified,MAD CREEK,181379.0,Surface Water
+CO_277,,,Unspecified,BLUE CREEK,181337.0,Surface Water
+CO_278,,,Unspecified,CHASE GULCH,181413.0,Surface Water
+CO_279,,,Unspecified,SILVER CREEK,181375.0,Surface Water
+CO_280,,,Unspecified,LENA GULCH,181613.0,Groundwater
+CO_281,,,Unspecified,MINERS GULCH,181524.0,Surface Water
+CO_282,,,Unspecified,WEST FORK CLEAR CREEK,181305.0,Surface Water
+CO_283,,,Unspecified,QUAYLE CREEK,181851.0,Surface Water
+CO_284,,,Unspecified,EUREKA GULCH,181508.0,Surface Water
+CO_285,,,Unspecified,NEW YORK GULCH,70003.0,Surface Water
+CO_286,,,Unspecified,LOCH LOMOND CREEK,70001.0,Surface Water
+CO_287,,,Unspecified,APEX GULCH,182179.0,Surface Water
+CO_288,,,Unspecified,VAN BIBBER CREEK,181596.0,Surface Water
+CO_289,,,Unspecified,BUTLER GULCH,181308.0,Surface Water
+CO_290,,,Unspecified,WOODS CREEK,181323.0,Surface Water
+CO_291,,,Unspecified,BROOMFIELD GULCH,181526.0,Surface Water
+CO_292,,,Unspecified,CRAWFORD GULCH CREEK,181600.0,Surface Water
+CO_293,,,Unspecified,GROUNDWATER: CLEAR CREEK,181805.0,groundwater/well
+CO_294,,,Unspecified,ROBINSON GULCH,181547.0,Surface Water
+CO_295,,,Unspecified,MISSOURI CREEK,181529.0,Surface Water
+CO_296,,,Unspecified,SOUTH FORK RALSTON CREEK,70004.0,Surface Water
+CO_297,,,Unspecified,GUY GULCH,181548.0,Unknown
+CO_298,,,Unspecified,WORTH CREEK,70002.0,Surface Water
+CO_299,,,Unspecified,YOUNG AMERICA CREEK,70006.0,Surface Water
+CO_300,,,Unspecified,HERMAN GULCH,181807.0,Surface Water
+CO_301,,,Unspecified,WEST CHICAGO CREEK,181867.0,Surface Water
+CO_302,,,Unspecified,LITTLE BEAR CREEK,181946.0,Surface Water
+CO_303,,,Unspecified,DEER CREEK,181125.0,Surface Water
+CO_304,,,Unspecified,NOTT CREEK,181162.0,Surface Water
+CO_305,,,Unspecified,PICKLE GULCH,181530.0,reservoir
+CO_306,,,Unspecified,JACKSON GULCH,182178.0,reservoir
+CO_307,,,Unspecified,BOWMAN GULCH,90008.0,reservoir
+CO_308,,,Unspecified,GARBER CREEK,183596.0,Surface Water
+CO_309,,,Unspecified,WEST PLUM CREEK,185068.0,Surface Water
+CO_310,,,Unspecified,WINDMILL CREEK,80005.0,Surface Water
+CO_311,,,Unspecified,COTTONWOOD CREEK,184958.0,Surface Water
+CO_312,,,Unspecified,TROUT CREEK,183711.0,Surface Water
+CO_313,,,Unspecified,GREENWOOD GULCH,80004.0,Groundwater
+CO_314,,,Unspecified,CHERRY CREEK,181657.0,Surface Water
+CO_315,,,Unspecified,RULE CREEK,183844.0,Surface Water
+CO_316,,,Unspecified,LOY CREEK,80002.0,Unknown
+CO_317,,,Unspecified,LITTLE WILLOW CREEK,183361.0,Surface Water
+CO_318,,,Unspecified,DAD CLARK GULCH,185014.0,Surface Water
+CO_319,,,Unspecified,MARCY GULCH,182618.0,Surface Water
+CO_320,,,Unspecified,PLUM CREEK,183363.0,Surface Water
+CO_321,,,Unspecified,JACKSON CREEK,183584.0,Surface Water
+CO_322,,,Unspecified,IRON GULCH,193203.0,Surface Water
+CO_323,,,Unspecified,CARPENTER CREEK,196378.0,Surface Water
+CO_324,,,Unspecified,MASSEY DRAW,182568.0,Surface Water
+CO_325,,,Unspecified,EAST PLUM CREEK,185069.0,Surface Water
+CO_326,,,Unspecified,COOK CREEK,193182.0,Surface Water
+CO_327,,,Unspecified,SELLERS GULCH,185136.0,Surface Water
+CO_328,,,Unspecified,GOVE CREEK,183749.0,Surface Water
+CO_329,,,Unspecified,BEAR CREEK,183744.0,Surface Water
+CO_330,,,Unspecified,DRY GULCH,183574.0,Surface Water
+CO_331,,,Unspecified,JARRE CREEK,183373.0,Surface Water
+CO_332,,,Unspecified,COON CREEK,90005.0,Surface Water
+CO_333,,,Unspecified,SANDERSON GULCH,182309.0,Surface Water
+CO_334,,,Unspecified,WEIR GULCH,182350.0,Surface Water
+CO_335,,,Unspecified,EAST CHERRY CREEK,185141.0,Surface Water
+CO_336,,,Unspecified,WEST CHERRY CREEK,185140.0,Surface Water
+CO_337,,,Unspecified,RUSSELL GULCH,185134.0,Surface Water
+CO_338,,,Unspecified,GROUNDWATER: CHERRY CREEK,181657.0,groundwater/well
+CO_339,,,Unspecified,TALLMAN GULCH,185053.0,Surface Water
+CO_340,,,Unspecified,MARKUS CREEK,80001.0,Surface Water
+CO_341,,,Unspecified,NORTH FORK DEER CREEK,182538.0,reservoir
+CO_342,,,Unspecified,SOUTH FORK DEER CREEK,183317.0,reservoir
+CO_343,,,Unspecified,LITTLE TURKEY CREEK,183694.0,Surface Water
+CO_344,,,Unspecified,NORTHRUP GULCH,183693.0,Surface Water
+CO_345,,,Unspecified,TURKEY CREEK,183698.0,reservoir
+CO_346,,,Unspecified,CROWFOOT CREEK,193202.0,reservoir
+CO_347,,,Unspecified,BLUE SPRINGS CREEK,191204.0,reservoir
+CO_348,,,Unspecified,DUTCH CREEK,182567.0,reservoir
+CO_349,,,Unspecified,MITCHELL GULCH,185099.0,reservoir
+CO_350,,,Unspecified,GROUNDWATER: UPPER DAWSON,,groundwater/well
+CO_351,,,Unspecified,GROUNDWATER: HAPPY CANYON CREEK,185007.0,groundwater/well
+CO_352,,,Unspecified,GROUNDWATER: WEST PLUM CREEK,185068.0,groundwater/well
+CO_353,,,Unspecified,GROUNDWATER: ARKANSAS RIVER,78956.0,groundwater/well
+CO_354,,,Unspecified,CUB CREEK,182077.0,Surface Water
+CO_355,,,Unspecified,GROUNDWATER: BEAR CREEK,182308.0,groundwater/well
+CO_356,,,Unspecified,WITTER GULCH,182054.0,Surface Water
+CO_357,,,Unspecified,NORTH TURKEY CREEK,182535.0,Surface Water
+CO_358,,,Unspecified,SAWMILL GULCH,182162.0,Surface Water
+CO_359,,,Unspecified,CHICKEN CREEK,182519.0,Surface Water
+CO_360,,,Unspecified,WEAVER CREEK,182132.0,Surface Water
+CO_361,,,Unspecified,TROUBLESOME CREEK,182036.0,Surface Water
+CO_362,,,Unspecified,YANKEE CREEK,182031.0,Surface Water
+CO_363,,,Unspecified,VANCE CREEK,181949.0,Surface Water
+CO_364,,,Unspecified,BUFFALO CREEK,182078.0,Surface Water
+CO_365,,,Unspecified,METZ CREEK,181947.0,Surface Water
+CO_366,,,Unspecified,SOUTH TURKEY CREEK,182537.0,Surface Water
+CO_367,,,Unspecified,HAYSTACK CANYON,182042.0,Surface Water
+CO_368,,,Unspecified,LANS GULCH,182556.0,Surface Water
+CO_369,,,Unspecified,HOFF BROOK,90001.0,Surface Water
+CO_370,,,Unspecified,SWEDE GULCH (AKA ANDERSON GULCH),182107.0,Surface Water
+CO_371,,,Unspecified,MEYERS GULCH,182092.0,Surface Water
+CO_372,,,Unspecified,PEDEE CREEK,181950.0,Surface Water
+CO_373,,,Unspecified,STEEL CREEK,182030.0,Surface Water
+CO_374,,,Unspecified,ROSE CREEK,181965.0,Surface Water
+CO_375,,,Unspecified,SCHIELING CREEK,90007.0,Unknown
+CO_376,,,Unspecified,GREEN CREEK,182520.0,Surface Water
+CO_377,,,Unspecified,PARMALEE GULCH,182128.0,Surface Water
+CO_378,,,Unspecified,LONG GULCH,90002.0,Surface Water
+CO_379,,,Unspecified,KERR GULCH,182114.0,Surface Water
+CO_380,,,Unspecified,STRAIN GULCH,182136.0,Surface Water
+CO_381,,,Unspecified,MOUNT VERNON CREEK,182094.0,Groundwater
+CO_382,,,Unspecified,LOBO CREEK,90009.0,reservoir
+CO_383,,,Unspecified,TRUESDELL CREEK,182508.0,Surface Water
+CO_384,,,Unspecified,COLD SPRINGS CREEK,182121.0,reservoir
+CO_385,,,Unspecified,MAXWELL CREEK,182530.0,reservoir
+CO_386,,,Unspecified,GROUNDWATER: FOUNTAIN CREEK,193719.0,groundwater/well
+CO_387,,,Unspecified,MONUMENT CREEK,193535.0,Surface Water
+CO_388,,,Unspecified,FOUNTAIN CREEK,193719.0,Surface Water
+CO_389,,,Unspecified,CAMP CREEK,193339.0,Surface Water
+CO_390,,,Unspecified,SMITH CREEK,193262.0,Surface Water
+CO_391,,,Unspecified,SOUTH CHEYENNE CREEK,193400.0,Surface Water
+CO_392,,,Unspecified,CHEYENNE CREEK,193534.0,Surface Water
+CO_393,,,Unspecified,SPRING RUN CREEK,100006.0,Surface Water
+CO_394,,,Unspecified,LITTLE FOUNTAIN CREEK,193603.0,Surface Water
+CO_395,,,Unspecified,CRYSTAL CREEK,191194.0,Surface Water
+CO_396,,,Unspecified,FRENCH CREEK,193314.0,Surface Water
+CO_397,,,Unspecified,NORTH CATAMOUNT CREEK,191193.0,Surface Water
+CO_398,,,Unspecified,SOUTH CATAMOUNT CREEK,191191.0,Surface Water
+CO_399,,,Unspecified,RUXTON CREEK,193430.0,Surface Water
+CO_400,,,Unspecified,NORTH CHEYENNE CREEK,193401.0,Surface Water
+CO_401,,,Unspecified,NORTH MONUMENT CREEK,183877.0,Surface Water
+CO_402,,,Unspecified,CRYSTAL FALLS BROOK,100008.0,Surface Water
+CO_403,,,Unspecified,BLACK SQUIRREL CREEK,193560.0,Surface Water
+CO_404,,,Unspecified,WEST SQUIRREL CREEK,100007.0,Surface Water
+CO_405,,,Unspecified,SOUTH RUXTON CREEK,193432.0,Surface Water
+CO_406,,,Unspecified,DOUGLAS CREEK,193340.0,Surface Water
+CO_407,,,Unspecified,WEST MONUMENT CREEK,193338.0,Surface Water
+CO_408,,,Unspecified,SPRING BRANCH,140002.0,Surface Water
+CO_409,,,Unspecified,EAST FORK SAND CREEK (AKA BIERSTADT CREEK),193371.0,Surface Water
+CO_410,,,Unspecified,KETTLE CREEK,193279.0,Surface Water
+CO_411,,,Unspecified,ICE CAVE CREEK,183876.0,Surface Water
+CO_412,,,Unspecified,JIMMY CAMP CREEK,193372.0,reservoir
+CO_413,,,Unspecified,HAY CREEK,193252.0,reservoir
+CO_414,,,Unspecified,DIRTY WOMAN CREEK,193269.0,reservoir
+CO_415,,,Unspecified,CATAMOUNT CREEK,100003.0,reservoir
+CO_416,,,Unspecified,AVOCA BROOK,100002.0,reservoir
+CO_417,,,Unspecified,GROUNDWATER: CHICO CREEK,193750.0,groundwater/well
+CO_418,,,Unspecified,LITTLE SPRING CREEK,130004.0,Surface Water
+CO_419,,,Unspecified,NORTH LAKE CREEK,191782.0,Surface Water
+CO_420,,,Unspecified,MIDDLE TAYLOR CREEK,192116.0,Surface Water
+CO_421,,,Unspecified,SWIFT CREEK,192110.0,Surface Water
+CO_422,,,Unspecified,DUCKETT CREEK,191810.0,Surface Water
+CO_423,,,Unspecified,BRUSH CREEK,191783.0,Surface Water
+CO_424,,,Unspecified,LAKE CREEK,191807.0,Surface Water
+CO_425,,,Unspecified,UNDEFINED,,Unknown
+CO_426,,,Unspecified,FRYINGPAN RIVER,174854.0,Unknown
+CO_427,,,Unspecified,SOUTH ARKANSAS RIVER,189315.0,Surface Water
+CO_428,,,Unspecified,GROUNDWATER: UPPER BLACK SQUIRREL CREEK,,groundwater/well
+CO_429,,,Unspecified,TENNESSEE CREEK,179881.0,Surface Water
+CO_430,,,Unspecified,DAYTON GULCH,180410.0,Surface Water
+CO_431,,,Unspecified,LAKE FORK,179850.0,Surface Water
+CO_432,,,Unspecified,ARKANSAS RIVER,78956.0,Surface Water
+CO_433,,,Unspecified,PONCHA CREEK,189425.0,Surface Water
+CO_434,,,Unspecified,NORTH FORK SOUTH ARKANSAS RIVER,189356.0,Surface Water
+CO_435,,,Unspecified,CACHE CREEK,180426.0,Surface Water
+CO_436,,,Unspecified,POWELL CREEK,189184.0,Surface Water
+CO_437,,,Unspecified,LITTLE COCHETOPA CREEK,189413.0,Surface Water
+CO_438,,,Unspecified,PASS CREEK,189420.0,Surface Water
+CO_439,,,Unspecified,SQUAW CREEK,189450.0,Surface Water
+CO_440,,,Unspecified,BROWNS CREEK,189350.0,Surface Water
+CO_441,,,Unspecified,WELDON GULCH,189445.0,Surface Water
+CO_442,,,Unspecified,NORTH COTTONWOOD CREEK,189186.0,Surface Water
+CO_443,,,Unspecified,CHALK CREEK,189333.0,Surface Water
+CO_444,,,Unspecified,MERRIAM CREEK,189461.0,Surface Water
+CO_445,,,Unspecified,PINE CREEK,180439.0,Surface Water
+CO_446,,,Unspecified,THREEMILE CREEK,189488.0,Surface Water
+CO_447,,,Unspecified,THREE ELK CREEK,189183.0,Surface Water
+CO_448,,,Unspecified,GAS CREEK,189473.0,Surface Water
+CO_449,,,Unspecified,FRENCHMAN CREEK,189190.0,Surface Water
+CO_450,,,Unspecified,EMPIRE GULCH,180179.0,Surface Water
+CO_451,,,Unspecified,CORSKE CREEK,180414.0,Surface Water
+CO_452,,,Unspecified,BARTLETT GULCH,180413.0,Surface Water
+CO_453,,,Unspecified,HALFMOON CREEK,180111.0,Surface Water
+CO_454,,,Unspecified,NORTH WILLOW CREEK,203938.0,Surface Water
+CO_455,,,Unspecified,EAST FORK ARKANSAS RIVER,179861.0,Surface Water
+CO_456,,,Unspecified,SOW BELLY CREEK,179828.0,Surface Water
+CO_457,,,Unspecified,TEMPLE GULCH,179827.0,Surface Water
+CO_458,,,Unspecified,PLACER CREEK,189448.0,Surface Water
+CO_459,,,Unspecified,COLORADO GULCH CREEK,180144.0,Surface Water
+CO_460,,,Unspecified,BOX CREEK,180130.0,Surface Water
+CO_461,,,Unspecified,CRYSTAL LAKE CREEK,180373.0,Surface Water
+CO_462,,,Unspecified,UTE CREEK,189436.0,Surface Water
+CO_463,,,Unspecified,MCFADDEN CREEK,189253.0,Surface Water
+CO_464,,,Unspecified,MORRIS CREEK,189254.0,Surface Water
+CO_465,,,Unspecified,BIG UNION CREEK,180178.0,Surface Water
+CO_466,,,Unspecified,WILLIS GULCH,180406.0,Surface Water
+CO_467,,,Unspecified,WEST TENNESSEE CREEK,179809.0,Surface Water
+CO_468,,,Unspecified,MORRISON CREEK,189187.0,Surface Water
+CO_469,,,Unspecified,HARRINGTON GULCH,189432.0,Surface Water
+CO_470,,,Unspecified,PINON CANON CREEK,110006.0,Surface Water
+CO_471,,,Unspecified,EAST TENNESSEE CREEK,179880.0,Surface Water
+CO_472,,,Unspecified,RASPBERRY GULCH,189469.0,Surface Water
+CO_473,,,Unspecified,IOWA GULCH,180180.0,Groundwater
+CO_474,,,Unspecified,GROUNDWATER: COTTONWOOD CREEK,189231.0,groundwater/well
+CO_475,,,Unspecified,LOW PASS GULCH,180429.0,Surface Water
+CO_476,,,Unspecified,GRAYS CREEK,189876.0,Surface Water
+CO_477,,,Unspecified,MERCURY CREEK,189202.0,Surface Water
+CO_478,,,Unspecified,EDDY CREEK,189468.0,Surface Water
+CO_479,,,Unspecified,DEADMAN GULCH,189201.0,Surface Water
+CO_480,,,Unspecified,SPRUCE GULCH,189213.0,Surface Water
+CO_481,,,Unspecified,BLACK CLOUD CREEK,180390.0,Surface Water
+CO_482,,,Unspecified,GABLE CREEK,196823.0,Surface Water
+CO_483,,,Unspecified,SMITH GULCH,180389.0,Surface Water
+CO_484,,,Unspecified,LOGGIE GULCH,189423.0,Surface Water
+CO_485,,,Unspecified,BALDWIN CREEK,189329.0,Surface Water
+CO_486,,,Unspecified,DEEP CREEK,189246.0,Surface Water
+CO_487,,,Unspecified,COLUMBIA CREEK,180432.0,Surface Water
+CO_488,,,Unspecified,FLUME CREEK,180436.0,Surface Water
+CO_489,,,Unspecified,BIG SPRING GULCH,110010.0,Surface Water
+CO_490,,,Unspecified,LANGHOFF CREEK,180444.0,Surface Water
+CO_491,,,Unspecified,TUMBLE CREEK,110011.0,Surface Water
+CO_492,,,Unspecified,FOUR ELK CREEK,189250.0,Surface Water
+CO_493,,,Unspecified,TAYLOR GULCH,189361.0,groundwater/spring
+CO_494,,,Unspecified,SILVER PRINCE CREEK,189232.0,Surface Water
+CO_495,,,Unspecified,SWAYZEE CREEK,110008.0,Surface Water
+CO_496,,,Unspecified,ECHO CREEK,180379.0,Surface Water
+CO_497,,,Unspecified,NORTH FORK LAKE CREEK,180106.0,Surface Water
+CO_498,,,Unspecified,DENNY CREEK,189118.0,Surface Water
+CO_499,,,Unspecified,POMEROY GULCH,189335.0,Surface Water
+CO_500,,,Unspecified,MIDDLE FORK SOUTH ARKANSAS RIVER,189357.0,Surface Water
+CO_501,,,Unspecified,GRIZZLEY CREEK,189332.0,Surface Water
+CO_502,,,Unspecified,EAST BRANCH SAYRES GULCH,110012.0,Surface Water
+CO_503,,,Unspecified,NORTH FOOSES CREEK,189369.0,Surface Water
+CO_504,,,Unspecified,SOUTH FOOSES CREEK,189370.0,Surface Water
+CO_505,,,Unspecified,STARVATION CREEK,189979.0,Surface Water
+CO_506,,,Unspecified,LITTLE BROWNS CREEK,189454.0,Surface Water
+CO_507,,,Unspecified,WOODCHOPPER CREEK,197518.0,Surface Water
+CO_508,,,Unspecified,BUSK CREEK,179837.0,Surface Water
+CO_509,,,Unspecified,OURAY CREEK,189880.0,Surface Water
+CO_510,,,Unspecified,MCCOY CREEK,189314.0,Surface Water
+CO_511,,,Unspecified,HUGHES CREEK,189200.0,Surface Water
+CO_512,,,Unspecified,NORTH FORK WEST TENNESSEE CREEK,179806.0,Surface Water
+CO_513,,,Unspecified,TWOBIT GULCH,180417.0,Surface Water
+CO_514,,,Unspecified,MIDDLE COTTONWOOD CREEK,189112.0,Surface Water
+CO_515,,,Unspecified,TENT CREEK,189879.0,Surface Water
+CO_516,,,Unspecified,SOUTH FORK LAKE CREEK,180366.0,Surface Water
+CO_517,,,Unspecified,SOUTH COTTONWOOD CREEK,189113.0,Surface Water
+CO_518,,,Unspecified,CYCLONE CREEK,189353.0,Surface Water
+CO_519,,,Unspecified,CREE CREEK,189358.0,Surface Water
+CO_520,,,Unspecified,NORTH HALFMOON CREEK,180121.0,Surface Water
+CO_521,,,Unspecified,REDMAN CREEK,189419.0,Surface Water
+CO_522,,,Unspecified,HUNKYDORY CREEK,189354.0,Surface Water
+CO_523,,,Unspecified,FOOSES CREEK,189363.0,Surface Water
+CO_524,,,Unspecified,BOSWELL GULCH,180415.0,Surface Water
+CO_525,,,Unspecified,LA PLATA GULCH,180371.0,Surface Water
+CO_526,,,Unspecified,TUNNEL GULCH,189336.0,Surface Water
+CO_527,,,Unspecified,WILDCAT GULCH,189334.0,Surface Water
+CO_528,,,Unspecified,HORN FORK CREEK,189194.0,reservoir
+CO_529,,,Unspecified,NORTH FORK BUSK CREEK,110013.0,reservoir
+CO_530,,,Unspecified,LAKE FORK STREAM,110005.0,reservoir
+CO_531,,,Unspecified,SPRUCE CREEK,189864.0,reservoir
+CO_532,,,Unspecified,GROUNDWATER: LAKE CREEK,180412.0,groundwater/well
+CO_533,,,Unspecified,BIG COTTONWOOD CREEK,191676.0,Surface Water
+CO_534,,,Unspecified,WEST BEAVER CREEK,191210.0,Surface Water
+CO_535,,,Unspecified,EAST BEAVER CREEK,191321.0,Surface Water
+CO_536,,,Unspecified,TALLAHASSEE CREEK,191571.0,Surface Water
+CO_537,,,Unspecified,CURRANT CREEK,191396.0,Surface Water
+CO_538,,,Unspecified,STOUT CREEK,191633.0,Surface Water
+CO_539,,,Unspecified,EIGHTMILE CREEK,191318.0,Surface Water
+CO_540,,,Unspecified,SIXMILE CREEK,191335.0,Surface Water
+CO_541,,,Unspecified,HARDSCRABBLE CREEK,192041.0,Surface Water
+CO_542,,,Unspecified,SOUTH HARDSCRABBLE CREEK,192232.0,Surface Water
+CO_543,,,Unspecified,LOW BLACK CREEK,192085.0,Surface Water
+CO_544,,,Unspecified,HOWARD CREEK,191728.0,Surface Water
+CO_545,,,Unspecified,NORTH HARDSCRABBLE CREEK,192216.0,Surface Water
+CO_546,,,Unspecified,OAK CREEK,191773.0,Surface Water
+CO_547,,,Unspecified,GRAPE CREEK,191866.0,Surface Water
+CO_548,,,Unspecified,WILLOW SPRING CREEK,193681.0,Surface Water
+CO_549,,,Unspecified,HAYDEN CREEK,191655.0,Surface Water
+CO_550,,,Unspecified,BARNARD CREEK,191421.0,Surface Water
+CO_551,,,Unspecified,LITTLE COTTONWOOD CREEK,191793.0,Surface Water
+CO_552,,,Unspecified,WEST FOURMILE CREEK,191397.0,Surface Water
+CO_553,,,Unspecified,WILSON CREEK,191577.0,Surface Water
+CO_554,,,Unspecified,GRIBBLES RUN,191468.0,Surface Water
+CO_555,,,Unspecified,BERNARD CREEK,191761.0,Surface Water
+CO_556,,,Unspecified,PLUM CREEK (AKA WILLOW CREEK),120003.0,Surface Water
+CO_557,,,Unspecified,HAMILTON CREEK,191658.0,Surface Water
+CO_558,,,Unspecified,LEWIS CREEK,192205.0,Surface Water
+CO_559,,,Unspecified,MILSAP CREEK,191327.0,Surface Water
+CO_560,,,Unspecified,CHANDLER CREEK,191916.0,Surface Water
+CO_561,,,Unspecified,SANDY CREEK,191777.0,Surface Water
+CO_562,,,Unspecified,ADOBE CREEK,192084.0,Surface Water
+CO_563,,,Unspecified,BRUSH HOLLOW CREEK,192032.0,Surface Water
+CO_564,,,Unspecified,SLATER CREEK,191416.0,Surface Water
+CO_565,,,Unspecified,GREEN GULCH,120002.0,Surface Water
+CO_566,,,Unspecified,COPPER GULCH,191906.0,Surface Water
+CO_567,,,Unspecified,GOULD CREEK,191311.0,Surface Water
+CO_568,,,Unspecified,CALS FORK GULCH,1947421.0,groundwater/spring
+CO_569,,,Unspecified,THIRTYONE MILE CREEK,191392.0,Surface Water
+CO_570,,,Unspecified,PORTER GULCH,191719.0,reservoir
+CO_571,,,Unspecified,NEWLIN CREEK,192045.0,reservoir
+CO_572,,,Unspecified,BANITA CREEK,120008.0,reservoir
+CO_573,,,Unspecified,EAST FORK WEST BEAVER CREEK,191244.0,reservoir
+CO_574,,,Unspecified,SOUTH COLONY CREEK,192426.0,Surface Water
+CO_575,,,Unspecified,NORTH BRANCH MIDDLE COLONY CREEK,130006.0,Surface Water
+CO_576,,,Unspecified,MIDDLE COLONY CREEK,192427.0,Surface Water
+CO_577,,,Unspecified,TEXAS CREEK,191787.0,Surface Water
+CO_578,,,Unspecified,NORTH COLONY CREEK,192422.0,Surface Water
+CO_579,,,Unspecified,HUDSON CREEK,192440.0,Surface Water
+CO_580,,,Unspecified,SOUTH BRANCH MIDDLE COLONY CREEK,130007.0,Surface Water
+CO_581,,,Unspecified,CRYSTAL FALLS CREEK,192441.0,Surface Water
+CO_582,,,Unspecified,MUSIC PASS CREEK,192461.0,Surface Water
+CO_583,,,Unspecified,PIROTH CREEK,130005.0,Surface Water
+CO_584,,,Unspecified,HORN CREEK,192281.0,Surface Water
+CO_585,,,Unspecified,MACEY CREEK,192419.0,Surface Water
+CO_586,,,Unspecified,HARDNACK CREEK,192283.0,Surface Water
+CO_587,,,Unspecified,STANTON CREEK,192282.0,Surface Water
+CO_588,,,Unspecified,ALVARADO CREEK,192150.0,Surface Water
+CO_589,,,Unspecified,HENNEQUIN CREEK,192277.0,Surface Water
+CO_590,,,Unspecified,NORTH ALVARADO CREEK,130001.0,Surface Water
+CO_591,,,Unspecified,VENABLE CREEK,192113.0,Surface Water
+CO_592,,,Unspecified,GOODWIN CREEK,192114.0,Surface Water
+CO_593,,,Unspecified,TAYLOR CREEK,192117.0,Surface Water
+CO_594,,,Unspecified,SOUTH TAYLOR CREEK,192266.0,Surface Water
+CO_595,,,Unspecified,LUTON CREEK,192124.0,Surface Water
+CO_596,,,Unspecified,NORTH TAYLOR CREEK,192115.0,Surface Water
+CO_597,,,Unspecified,SHORT CREEK,192109.0,Surface Water
+CO_598,,,Unspecified,FROZE CREEK,192482.0,Surface Water
+CO_599,,,Unspecified,NORTH BRUSH CREEK,191972.0,Surface Water
+CO_600,,,Unspecified,SOUTH BRUSH CREEK,191973.0,Surface Water
+CO_601,,,Unspecified,KOCH SPRING BRANCH BRUSH CREEK,191785.0,Surface Water
+CO_602,,,Unspecified,DISSMORE CREEK,130002.0,Surface Water
+CO_603,,,Unspecified,GREENLEAF CREEK,192130.0,Surface Water
+CO_604,,,Unspecified,LITTLE CREEK,130003.0,Surface Water
+CO_605,,,Unspecified,SOUTH LAKE CREEK,191808.0,Surface Water
+CO_606,,,Unspecified,BUTTERMILK CREEK,191958.0,Surface Water
+CO_607,,,Unspecified,MIDDLE BRUSH CREEK,191982.0,Surface Water
+CO_608,,,Unspecified,GROUNDWATER: TAYLOR CREEK,192117.0,groundwater/well
+CO_609,,,Unspecified,GROUNDWATER: GRAPE CREEK,191866.0,groundwater/well
+CO_610,,,Unspecified,HUERFANO RIVER,201778.0,Surface Water
+CO_611,,,Unspecified,CHICOSA CREEK,193993.0,Surface Water
+CO_612,,,Unspecified,DOYLE ARROYO,193985.0,Surface Water
+CO_613,,,Unspecified,BOONE CREEK,193757.0,Surface Water
+CO_614,,,Unspecified,SIMPSON ARROYO,193853.0,reservoir
+CO_615,,,Unspecified,DAKOTA,,reservoir
+CO_616,,,Unspecified,RED CREEK,193688.0,reservoir
+CO_617,,,Unspecified,SAINT CHARLES RIVER,193752.0,reservoir
+CO_618,,,Unspecified,NORTH CREEK,192356.0,Surface Water
+CO_619,,,Unspecified,MIDDLE CREEK,192357.0,Surface Water
+CO_620,,,Unspecified,LITTLE SAINT CHARLES CREEK,192529.0,Surface Water
+CO_621,,,Unspecified,GREENHORN CREEK,193782.0,Surface Water
+CO_622,,,Unspecified,NORTH MUDDY CREEK,192537.0,Surface Water
+CO_623,,,Unspecified,GRANEROS CREEK,192545.0,Surface Water
+CO_624,,,Unspecified,LITTLE GRANEROS CREEK,193923.0,Surface Water
+CO_625,,,Unspecified,MIDDLE MUDDY CREEK,192539.0,Surface Water
+CO_626,,,Unspecified,SOUTH MUDDY CREEK,192541.0,Surface Water
+CO_627,,,Unspecified,SQUIRREL CREEK,192374.0,Surface Water
+CO_628,,,Unspecified,SOUTH CREEK,192380.0,Surface Water
+CO_629,,,Unspecified,COLD SPRING CREEK,193915.0,Surface Water
+CO_630,,,Unspecified,HUCKLEBERRY CREEK,192540.0,Surface Water
+CO_631,,,Unspecified,WHITE CREEK,192361.0,Surface Water
+CO_632,,,Unspecified,WILLIS CREEK,196804.0,Surface Water
+CO_633,,,Unspecified,OPHIR CREEK,192354.0,Surface Water
+CO_634,,,Unspecified,GROUNDWATER: SAINT CHARLES RIVER,193752.0,groundwater/well
+CO_635,,,Unspecified,CUCHARAS RIVER,192808.0,Surface Water
+CO_636,,,Unspecified,SANTA CLARA CREEK,194272.0,Surface Water
+CO_637,,,Unspecified,RITTER ARROYO,194352.0,Surface Water
+CO_638,,,Unspecified,BAKER CREEK,192947.0,Surface Water
+CO_639,,,Unspecified,WAHATOYA CREEK,194356.0,Surface Water
+CO_640,,,Unspecified,STAPLIN CREEK,194401.0,Surface Water
+CO_641,,,Unspecified,DODGETON CREEK,192866.0,Surface Water
+CO_642,,,Unspecified,BEAR CANON CREEK,160001.0,Surface Water
+CO_643,,,Unspecified,SCHOOL CREEK,192906.0,Surface Water
+CO_644,,,Unspecified,SOUTH ABEYTA CREEK,192779.0,Surface Water
+CO_645,,,Unspecified,NORTH SANTA CLARA CREEK,194397.0,Surface Water
+CO_646,,,Unspecified,STORY CREEK,194415.0,Surface Water
+CO_647,,,Unspecified,NORTH ABEYTA CREEK,192781.0,Surface Water
+CO_648,,,Unspecified,PICTOU ARROYO,194237.0,Surface Water
+CO_649,,,Unspecified,BEND CREEK,192868.0,reservoir
+CO_650,,,Unspecified,SOUTH FORK CUCHARAS RIVER,192976.0,reservoir
+CO_651,,,Unspecified,GROUNDWATER: CUCHARAS RIVER,192808.0,groundwater/well
+CO_652,,,Unspecified,TIMPAS CREEK,194349.0,reservoir
+CO_653,,,Unspecified,GROUNDWATER: TRINIDAD SANDSTONE,,groundwater/well
+CO_654,,,Unspecified,ANDERSON ARROYO,195643.0,Surface Water
+CO_655,,,Unspecified,CROOKED ARROYO,195633.0,Surface Water
+CO_656,,,Unspecified,PURGATOIRE RIVER,201784.0,Surface Water
+CO_657,,,Unspecified,MUSTANG CREEK,195306.0,Surface Water
+CO_658,,,Unspecified,STEELS FORK,195222.0,Surface Water
+CO_659,,,Unspecified,POND CREEK,195224.0,Surface Water
+CO_660,,,Unspecified,NORTH FORK MUSTANG CREEK,195226.0,Surface Water
+CO_661,,,Unspecified,LITTLE HORSE CREEK,195199.0,Surface Water
+CO_662,,,Unspecified,BOB CREEK,195292.0,Surface Water
+CO_663,,,Unspecified,TEJANA CREEK,170002.0,reservoir
+CO_664,,,Unspecified,BLACK DRAW,195301.0,reservoir
+CO_665,,,Unspecified,KING ARROYO,195645.0,reservoir
+CO_666,,,Unspecified,THOMPSON ARROYO,195647.0,reservoir
+CO_667,,,Unspecified,GROUNDWATER: CONEJOS RIVER,192925.0,groundwater/well
+CO_668,,,Unspecified,APISHAPA RIVER,204805.0,groundwater/spring
+CO_669,,,Unspecified,TRUJILLO CREEK,194528.0,Surface Water
+CO_670,,,Unspecified,NORTH FORK APISHAPA RIVER,194499.0,Surface Water
+CO_671,,,Unspecified,SNAKE RIVER,176197.0,Surface Water
+CO_672,,,Unspecified,BLUE RIVER,173194.0,Surface Water
+CO_673,,,Unspecified,GROUNDWATER: APISHAPA RIVER,204805.0,groundwater/well
+CO_674,,,Unspecified,WHISKEY CREEK,193052.0,Surface Water
+CO_675,,,Unspecified,SOUTH FORK PURGATOIRE RIVER,193145.0,Surface Water
+CO_676,,,Unspecified,MIDDLE FORK PURGATOIRE RIVER,193079.0,Surface Water
+CO_677,,,Unspecified,NORTH FORK PURGATOIRE RIVER,192948.0,Surface Water
+CO_678,,,Unspecified,SALT CREEK,194777.0,Surface Water
+CO_679,,,Unspecified,BURRO CREEK,194524.0,Surface Water
+CO_680,,,Unspecified,LORENCITO CANYON,194801.0,Surface Water
+CO_681,,,Unspecified,ABBOT CREEK,193051.0,Surface Water
+CO_682,,,Unspecified,ATASCADERO ARROYA,190012.0,Surface Water
+CO_683,,,Unspecified,BARNEY CREEK,190007.0,Surface Water
+CO_684,,,Unspecified,BENT CANYON CREEK,195804.0,Surface Water
+CO_685,,,Unspecified,BERWIND ARROYO,194576.0,Surface Water
+CO_686,,,Unspecified,BILL CREEK,194750.0,Surface Water
+CO_687,,,Unspecified,BLACKWELL ARROYO,194591.0,Surface Water
+CO_688,,,Unspecified,RITO AZUL,898418.0,Surface Water
+CO_689,,,Unspecified,BROWN CREEK,193062.0,Surface Water
+CO_690,,,Unspecified,TREMENTINA CREEK (AKA ALKALAI ARROYO),196186.0,Surface Water
+CO_691,,,Unspecified,CADILLOSO ARROYO,194954.0,Surface Water
+CO_692,,,Unspecified,CANONCITA CREEK,190011.0,Surface Water
+CO_693,,,Unspecified,CAPULIN ARROYO,194758.0,Surface Water
+CO_694,,,Unspecified,TRINCHERA CREEK,194778.0,Surface Water
+CO_695,,,Unspecified,CHANEY ARROYO,194959.0,Surface Water
+CO_696,,,Unspecified,CHICOSA ARROYO,194555.0,Surface Water
+CO_697,,,Unspecified,CROOKED CREEK,193076.0,Surface Water
+CO_698,,,Unspecified,DOSS ARROYO,194958.0,Surface Water
+CO_699,,,Unspecified,DULING CREEK,193049.0,Surface Water
+CO_700,,,Unspecified,FRIJOLE CREEK,194757.0,Surface Water
+CO_701,,,Unspecified,FURNESS ARROYO,194586.0,Surface Water
+CO_702,,,Unspecified,GRAY CREEK,194754.0,Surface Water
+CO_703,,,Unspecified,GUAJATOYAH CREEK,192970.0,Surface Water
+CO_704,,,Unspecified,LUNING ARROYO,194590.0,Surface Water
+CO_705,,,Unspecified,MURRAY CREEK,196841.0,Surface Water
+CO_706,,,Unspecified,PATTON ARROYO,194748.0,Surface Water
+CO_707,,,Unspecified,RATON CREEK,194725.0,Surface Water
+CO_708,,,Unspecified,SAN ISIDRO CREEK,194766.0,Surface Water
+CO_709,,,Unspecified,RITO SECO,194946.0,Surface Water
+CO_710,,,Unspecified,SALAZAR ARROYO,194965.0,Surface Water
+CO_711,,,Unspecified,RINCON CREEK,193161.0,Surface Water
+CO_712,,,Unspecified,SAN FRANCISCO CREEK,194765.0,Surface Water
+CO_713,,,Unspecified,SNYDER CANYON,194883.0,Surface Water
+CO_714,,,Unspecified,WILKINS CREEK,193050.0,Surface Water
+CO_715,,,Unspecified,LEITENSDORFER ARROYO,194582.0,Surface Water
+CO_716,,,Unspecified,DURAN ARROYO,194747.0,Surface Water
+CO_717,,,Unspecified,VAN BREMER ARROYO,194481.0,Surface Water
+CO_718,,,Unspecified,BAKER ARROYO,190008.0,Surface Water
+CO_719,,,Unspecified,GROUNDWATER: MIDDLE FORK PURGATOIRE RIVER,193079.0,groundwater/well
+CO_720,,,Unspecified,GURULE ARROYO,194943.0,Surface Water
+CO_721,,,Unspecified,ASPEN CREEK,192973.0,Groundwater
+CO_722,,,Unspecified,OGDEN CREEK,192974.0,Groundwater
+CO_723,,,Unspecified,CHICORICA CREEK,194914.0,Surface Water
+CO_724,,,Unspecified,RICARDO CREEK,910156.0,groundwater/spring
+CO_725,,,Unspecified,LONG CREEK,196594.0,reservoir
+CO_726,,,Unspecified,COLOROW CANYON,194838.0,reservoir
+CO_727,,,Unspecified,GROUNDWATER: PURGATOIRE RIVER,201784.0,groundwater/well
+CO_728,,,Unspecified,AGUA RAMON CREEK,196583.0,Surface Water
+CO_729,,,Unspecified,ALDRICH SLOUGH,200009.0,Surface Water
+CO_730,,,Unspecified,PINOS CREEK,190302.0,Surface Water
+CO_731,,,Unspecified,CARMEL DRAIN DITCH,203467.0,Surface Water
+CO_732,,,Unspecified,EMBARGO CREEK,189507.0,Surface Water
+CO_733,,,Unspecified,BELLOWS CREEK,190423.0,Surface Water
+CO_734,,,Unspecified,SCHRADER CREEK,190299.0,Surface Water
+CO_735,,,Unspecified,HENDERSON SLOUGH,200011.0,Surface Water
+CO_736,,,Unspecified,BOWEN DRAIN,203442.0,Surface Water
+CO_737,,,Unspecified,CALDWELL CREEK,190424.0,Surface Water
+CO_738,,,Unspecified,MINERS CREEK,187052.0,Surface Water
+CO_739,,,Unspecified,SOUTH FORK RIO GRANDE,190279.0,Surface Water
+CO_740,,,Unspecified,LIME CREEK,187905.0,Surface Water
+CO_741,,,Unspecified,ELLIOT CREEK,190542.0,Surface Water
+CO_742,,,Unspecified,CAT CREEK,190658.0,Surface Water
+CO_743,,,Unspecified,FARMERS CREEK,190418.0,Surface Water
+CO_744,,,Unspecified,RIO GRANDE DRAIN,203426.0,Surface Water
+CO_745,,,Unspecified,FIR CREEK,187025.0,Surface Water
+CO_746,,,Unspecified,PARMA DRAIN,190413.0,Surface Water
+CO_747,,,Unspecified,SHALLOW CREEK,187036.0,Surface Water
+CO_748,,,Unspecified,GWINN CREEK,200006.0,Surface Water
+CO_749,,,Unspecified,MASON CREEK,187700.0,Surface Water
+CO_750,,,Unspecified,WOODFERN CREEK,187900.0,Surface Water
+CO_751,,,Unspecified,PIERCE CREEK,190541.0,Surface Water
+CO_752,,,Unspecified,RED MOUNTAIN CREEK,187907.0,Surface Water
+CO_753,,,Unspecified,MCCALL CREEK,200007.0,Surface Water
+CO_754,,,Unspecified,GROUNDWATER: EAGLE RIVER,174007.0,groundwater/well
+CO_755,,,Unspecified,ANDERSON AUROYA,200010.0,Surface Water
+CO_756,,,Unspecified,MCKINNEY CREEK,190422.0,Surface Water
+CO_757,,,Unspecified,RASPBERRY GULCH CREEK,190551.0,Surface Water
+CO_758,,,Unspecified,SHAW CREEK,190292.0,Surface Water
+CO_759,,,Unspecified,KITTY CREEK,190527.0,Surface Water
+CO_760,,,Unspecified,WAVERLY DRAINAGE DITCH,203620.0,Surface Water
+CO_761,,,Unspecified,RITO HONDO CREEK,187064.0,groundwater/spring
+CO_762,,,Unspecified,GROUSE CREEK,187701.0,Surface Water
+CO_763,,,Unspecified,OLD WOMAN CREEK,190241.0,Surface Water
+CO_764,,,Unspecified,SEEPAGE CREEK,187027.0,groundwater/spring
+CO_765,,,Unspecified,HOUSE CANYON CREEK,187022.0,Surface Water
+CO_766,,,Unspecified,ALDER CREEK,190272.0,Surface Water
+CO_767,,,Unspecified,UNCONFINED SAN LUIS VALLEY,,Surface Water
+CO_768,,,Unspecified,WEST ALDER CREEK,189579.0,Surface Water
+CO_769,,,Unspecified,TEWKSBERRY CREEK,190331.0,Surface Water
+CO_770,,,Unspecified,WEST FORK PASS CREEK,200004.0,Surface Water
+CO_771,,,Unspecified,LOST MINE CREEK,190575.0,Surface Water
+CO_772,,,Unspecified,DECKER CREEK,190522.0,Surface Water
+CO_773,,,Unspecified,EAST BELLOWS CREEK,190428.0,Surface Water
+CO_774,,,Unspecified,EAST FORK PINOS CREEK,190588.0,Surface Water
+CO_775,,,Unspecified,EAST WILLOW CREEK,190490.0,Surface Water
+CO_776,,,Unspecified,IVY CREEK,187915.0,Surface Water
+CO_777,,,Unspecified,LEOPARD CREEK,190549.0,Surface Water
+CO_778,,,Unspecified,LITTLE SQUAW CREEK,187889.0,Surface Water
+CO_779,,,Unspecified,LOST TRAIL CREEK,187690.0,Surface Water
+CO_780,,,Unspecified,MESA CREEK,187044.0,Surface Water
+CO_781,,,Unspecified,POLE CREEK,187689.0,Surface Water
+CO_782,,,Unspecified,QUARTZITE CREEK,187687.0,Surface Water
+CO_783,,,Unspecified,RAT CREEK,187032.0,Surface Water
+CO_784,,,Unspecified,WEMINUCHE CREEK,187875.0,Surface Water
+CO_785,,,Unspecified,WEST BELLOWS CREEK,190427.0,Surface Water
+CO_786,,,Unspecified,WEST FORK PINOS CREEK,190587.0,Surface Water
+CO_787,,,Unspecified,WEST WILLOW CREEK,190489.0,Surface Water
+CO_788,,,Unspecified,WEST FORK SAN FRANCISCO CREEK,190375.0,Surface Water
+CO_789,,,Unspecified,MIDDLE FORK SAN FRANCISCO CREEK,190379.0,Surface Water
+CO_790,,,Unspecified,CLIFF CREEK,187913.0,Surface Water
+CO_791,,,Unspecified,WORKMAN CREEK,187902.0,Surface Water
+CO_792,,,Unspecified,FERN CREEK,187883.0,Surface Water
+CO_793,,,Unspecified,ROAD CANYON CREEK,187030.0,Surface Water
+CO_794,,,Unspecified,JUMPER CREEK,187912.0,reservoir
+CO_795,,,Unspecified,LOST LAKE CREEK,200008.0,reservoir
+CO_796,,,Unspecified,WEST UTE CREEK,187862.0,Unknown
+CO_797,,,Unspecified,CONFINED SAN LUIS VALLEY,,reservoir
+CO_798,,,Unspecified,GROUNDWATER: ROCK CREEK,190392.0,groundwater/well
+CO_799,,,Unspecified,GROUNDWATER: NORTH CLEAR CREEK,187055.0,groundwater/well
+CO_800,,,Unspecified,GROUNDWATER: SOUTH CLEAR CREEK,187705.0,groundwater/well
+CO_801,,,Unspecified,GROUNDWATER: SQUAW CREEK,187874.0,groundwater/well
+CO_802,,,Unspecified,GROUNDWATER: SOUTH FORK RIO GRANDE,190279.0,groundwater/well
+CO_803,,,Unspecified,GROUNDWATER: BEAVER CREEK,190334.0,groundwater/well
+CO_804,,,Unspecified,GROUNDWATER: EMBARGO CREEK,189507.0,groundwater/well
+CO_805,,,Unspecified,GROUNDWATER: LOST TRAIL CREEK,187690.0,groundwater/well
+CO_806,,,Unspecified,GROUNDWATER: LITTLE SQUAW CREEK,187889.0,groundwater/well
+CO_807,,,Unspecified,VAUGHN CREEK,173594.0,groundwater/spring
+CO_808,,,Unspecified,EAST MILLER CREEK,173573.0,groundwater/spring
+CO_809,,,Unspecified,WEST MILLER CREEK,173574.0,groundwater/spring
+CO_810,,,Unspecified,GROUNDWATER: TOMICHI CREEK,189371.0,groundwater/well
+CO_811,,,Unspecified,GROUNDWATER: QUARTZ CREEK,189403.0,groundwater/well
+CO_812,,,Unspecified,GROUNDWATER: DEADMAN CREEK,187066.0,groundwater/well
+CO_813,,,Unspecified,WILLIAMS FORK,171457.0,groundwater/spring
+CO_814,,,Unspecified,MORAPOS CREEK,204650.0,groundwater/spring
+CO_815,,,Unspecified,LA JARA CREEK,190746.0,Surface Water
+CO_816,,,Unspecified,ALAMOSA RIVER,190624.0,Surface Water
+CO_817,,,Unspecified,GROUNDWATER: FRYINGPAN RIVER,174854.0,groundwater/well
+CO_818,,,Unspecified,GROUNDWATER: SOPRIS CREEK,175033.0,groundwater/well
+CO_819,,,Unspecified,SAGUACHE CREEK,192390.0,groundwater/spring
+CO_820,,,Unspecified,LA JARA TOWN DRAIN,210001.0,Surface Water
+CO_821,,,Unspecified,LA JARA ARROYO,190793.0,Surface Water
+CO_822,,,Unspecified,SAN LUIS DITCH,203636.0,Surface Water
+CO_823,,,Unspecified,TREASURE CREEK,190711.0,Surface Water
+CO_824,,,Unspecified,RANGER CREEK,190641.0,Surface Water
+CO_825,,,Unspecified,CASTLEMAN GULCH,190638.0,reservoir
+CO_826,,,Unspecified,GROUNDWATER: ALAMOSA RIVER,190624.0,groundwater/well
+CO_827,,,Unspecified,GROUNDWATER: LA JARA CREEK,190746.0,groundwater/well
+CO_828,,,Unspecified,CONEJOS RIVER,192925.0,Surface Water
+CO_829,,,Unspecified,RIO SAN ANTONIO,190925.0,Surface Water
+CO_830,,,Unspecified,RIO DE LOS PINOS,910224.0,Surface Water
+CO_831,,,Unspecified,MASSEY CREEK,190876.0,Surface Water
+CO_832,,,Unspecified,TRAIL GULCH CREEK,190877.0,Surface Water
+CO_833,,,Unspecified,EL RITO AZUL,190721.0,Surface Water
+CO_834,,,Unspecified,MIDDLE FORK CONEJOS RIVER,190714.0,Surface Water
+CO_835,,,Unspecified,NORTH FORK CONEJOS RIVER,190713.0,Surface Water
+CO_836,,,Unspecified,ADAMS FORK CONEJOS RIVER,190712.0,Surface Water
+CO_837,,,Unspecified,VALDEZ CREEK,190748.0,Surface Water
+CO_838,,,Unspecified,SOUTH FORK CONEJOS RIVER,190742.0,Surface Water
+CO_839,,,Unspecified,LA MANGA CREEK,190845.0,Surface Water
+CO_840,,,Unspecified,BEAVER LAKE CREEK,190757.0,Surface Water
+CO_841,,,Unspecified,SADDLE CREEK,190717.0,Surface Water
+CO_842,,,Unspecified,OSIER CREEK,190881.0,Surface Water
+CO_843,,,Unspecified,RIO CHAMA,923661.0,Surface Water
+CO_844,,,Unspecified,RIO CHAMITA,201775.0,reservoir
+CO_845,,,Unspecified,GROUNDWATER: ELK CREEK,191060.0,groundwater/well
+CO_846,,,Unspecified,GROUNDWATER: CONEJOS RIVER DIVERSION,203642.0,groundwater/well
+CO_847,,,Unspecified,GROUNDWATER: CULEBRA CREEK,204785.0,groundwater/well
+CO_848,,,Unspecified,SOUTH FORK SOUTH PLATTE RIVER,183790.0,Surface Water
+CO_849,,,Unspecified,TWELVEMILE CREEK,180233.0,Surface Water
+CO_850,,,Unspecified,HIGH CREEK,180254.0,groundwater/spring
+CO_851,,,Unspecified,TARRYALL CREEK,183410.0,Surface Water
+CO_852,,,Unspecified,MIDDLE FORK SOUTH PLATTE RIVER,183803.0,groundwater/spring
+CO_853,,,Unspecified,DOLLY VARDEN CREEK,179987.0,Surface Water
+CO_854,,,Unspecified,SIMS CREEK,191116.0,Surface Water
+CO_855,,,Unspecified,BUCKSKIN CREEK,179938.0,Surface Water
+CO_856,,,Unspecified,PENNSYLVANIA CREEK,179895.0,Surface Water
+CO_857,,,Unspecified,MOSQUITO CREEK,179921.0,Surface Water
+CO_858,,,Unspecified,SOUTH MOSQUITO CREEK,179920.0,Surface Water
+CO_859,,,Unspecified,SACRAMENTO CREEK,180229.0,Surface Water
+CO_860,,,Unspecified,SEVENMILE GULCH,183633.0,groundwater/spring
+CO_861,,,Unspecified,CROSS CREEK,191110.0,Unknown
+CO_862,,,Unspecified,NO NAME CREEK,183498.0,Surface Water
+CO_863,,,Unspecified,TWIN CREEK,191144.0,groundwater/spring
+CO_864,,,Unspecified,LINK CREEK,191140.0,Surface Water
+CO_865,,,Unspecified,PARK GULCH,183408.0,groundwater/spring
+CO_866,,,Unspecified,MICHIGAN CREEK,183140.0,Surface Water
+CO_867,,,Unspecified,JEFFERSON CREEK,183162.0,Surface Water
+CO_868,,,Unspecified,RUBY GULCH,183618.0,groundwater/spring
+CO_869,,,Unspecified,GUERNSEY CREEK,183187.0,Surface Water
+CO_870,,,Unspecified,SNYDER CREEK,183197.0,Surface Water
+CO_871,,,Unspecified,EARLY GULCH,183628.0,groundwater/spring
+CO_872,,,Unspecified,ALLEN CREEK,183652.0,Unknown
+CO_873,,,Unspecified,JEFFERSON LAKE FORK,197643.0,Surface Water
+CO_874,,,Unspecified,GROUNDWATER: MOSQUITO CREEK,179921.0,groundwater/well
+CO_875,,,Unspecified,PULVER GULCH,183806.0,Surface Water
+CO_876,,,Unspecified,GROUNDWATER: TWIN CREEK,191144.0,groundwater/well
+CO_877,,,Unspecified,UNION CREEK,191112.0,groundwater/spring
+CO_878,,,Unspecified,SAN LUIS CREEK,192389.0,Surface Water
+CO_879,,,Unspecified,RICH CREEK,180437.0,Surface Water
+CO_880,,,Unspecified,PRUDEN CREEK,191111.0,Surface Water
+CO_881,,,Unspecified,PONY CREEK,189283.0,Surface Water
+CO_882,,,Unspecified,LYNCH CREEK,180455.0,Surface Water
+CO_883,,,Unspecified,QUARTZVILLE CREEK,179966.0,Surface Water
+CO_884,,,Unspecified,NORTH TARRYALL CREEK,183161.0,Surface Water
+CO_885,,,Unspecified,ANTELOPE GULCH CREEK,183156.0,Surface Water
+CO_886,,,Unspecified,LONG GULCH CREEK,183453.0,Surface Water
+CO_887,,,Unspecified,ROUGH AND TUMBLING CREEK,180438.0,Surface Water
+CO_888,,,Unspecified,SWIDINSKI CREEK,189988.0,Surface Water
+CO_889,,,Unspecified,OHLER GULCH,183141.0,Surface Water
+CO_890,,,Unspecified,HOLTHUSEN GULCH,183385.0,Surface Water
+CO_891,,,Unspecified,VERMILLION CREEK,183842.0,reservoir
+CO_892,,,Unspecified,BALM OF GILEAD CREEK,191113.0,reservoir
+CO_893,,,Unspecified,RANKIN GULCH,191135.0,reservoir
+CO_894,,,Unspecified,WAGON TONGUE GULCH,191123.0,reservoir
+CO_895,,,Unspecified,OLD HOUSE CREEK,183476.0,reservoir
+CO_896,,,Unspecified,CLOVER CREEK,189981.0,Surface Water
+CO_897,,,Unspecified,GROUNDWATER: COSTILLA CREEK,193114.0,groundwater/well
+CO_898,,,Unspecified,CULEBRA CREEK,204785.0,Surface Water
+CO_899,,,Unspecified,COSTILLA CREEK,193114.0,Surface Water
+CO_900,,,Unspecified,EL POSO CREEK,192950.0,Surface Water
+CO_901,,,Unspecified,EL RITO DE ABAN,193037.0,Surface Water
+CO_902,,,Unspecified,CUATES CREEK,193124.0,Surface Water
+CO_903,,,Unspecified,VALLEJOS CREEK,193030.0,Surface Water
+CO_904,,,Unspecified,JAROSO CREEK,193125.0,Surface Water
+CO_905,,,Unspecified,VENTERO CREEK,193029.0,Surface Water
+CO_906,,,Unspecified,PUERTESITO CREEK,190035.0,Surface Water
+CO_907,,,Unspecified,TORCIDO CREEK,193120.0,Surface Water
+CO_908,,,Unspecified,GROUNDWATER: SAN FRANCISCO CREEK,193123.0,groundwater/well
+CO_909,,,Unspecified,GROUNDWATER: RITO SECO,192929.0,groundwater/well
+CO_910,,,Unspecified,RITO ALTO CREEK,192256.0,Surface Water
+CO_911,,,Unspecified,NORTH CRESTONE CREEK,192263.0,Surface Water
+CO_912,,,Unspecified,SOUTH CRESTONE CREEK,192405.0,Surface Water
+CO_913,,,Unspecified,SPANISH CREEK,192401.0,Surface Water
+CO_914,,,Unspecified,BROOK CREEK,191693.0,Surface Water
+CO_915,,,Unspecified,KERBER CREEK,191697.0,Surface Water
+CO_916,,,Unspecified,COTTON CREEK,192105.0,Surface Water
+CO_917,,,Unspecified,JACK GULCH,191692.0,Surface Water
+CO_918,,,Unspecified,SAN ISABEL CREEK,192392.0,Surface Water
+CO_919,,,Unspecified,GARNER CREEK,192103.0,Surface Water
+CO_920,,,Unspecified,HAYDEN PASS CREEK,191684.0,Surface Water
+CO_921,,,Unspecified,MAJOR CREEK,192104.0,Surface Water
+CO_922,,,Unspecified,HOT SPRINGS CREEK,192100.0,Surface Water
+CO_923,,,Unspecified,KELLY CREEK,192088.0,Surface Water
+CO_924,,,Unspecified,BUTTERFLY CREEK,191645.0,Surface Water
+CO_925,,,Unspecified,MILLER CREEK,191691.0,Surface Water
+CO_926,,,Unspecified,NIELAND CREEK,191702.0,Surface Water
+CO_927,,,Unspecified,WILD CHERRY CREEK,191927.0,Surface Water
+CO_928,,,Unspecified,RASPBERRY CREEK (AKA SPRING CREEK),191647.0,Surface Water
+CO_929,,,Unspecified,STEEL CANYON CREEK,191678.0,Surface Water
+CO_930,,,Unspecified,LITTLE KERBER CREEK,190101.0,Surface Water
+CO_931,,,Unspecified,LUDERS CREEK,190049.0,Surface Water
+CO_932,,,Unspecified,GORE CREEK,176187.0,Groundwater
+CO_933,,,Unspecified,BURNT GULCH,192406.0,Surface Water
+CO_934,,,Unspecified,MERKT CREEK,191635.0,Surface Water
+CO_935,,,Unspecified,GROUNDWATER: SAN LUIS CREEK,192389.0,groundwater/well
+CO_936,,,Unspecified,GROUNDWATER: NORTH CRESTONE CREEK,192263.0,groundwater/well
+CO_937,,,Unspecified,GROUNDWATER: KERBER CREEK,191697.0,groundwater/well
+CO_938,,,Unspecified,GROUNDWATER: SOUTH CRESTONE CREEK,192405.0,groundwater/well
+CO_939,,,Unspecified,NORTH FORK SAGUACHE CREEK,190162.0,Surface Water
+CO_940,,,Unspecified,WERNER ARROYO,189563.0,Surface Water
+CO_941,,,Unspecified,BAXTER CREEK,189885.0,Surface Water
+CO_942,,,Unspecified,FORD CREEK,190076.0,Surface Water
+CO_943,,,Unspecified,HODDING CREEK,190070.0,Surface Water
+CO_944,,,Unspecified,JACKS CREEK (AKA SKELTON CREEK),189819.0,Surface Water
+CO_945,,,Unspecified,TUTTLE CREEK,189888.0,Surface Water
+CO_946,,,Unspecified,JOHNS CREEK,189497.0,Surface Water
+CO_947,,,Unspecified,MIDDLE FORK SAGUACHE CREEK,190504.0,Surface Water
+CO_948,,,Unspecified,SOUTH FORK SAGUACHE CREEK,190503.0,Surface Water
+CO_949,,,Unspecified,WANNAMAKER CREEK,189502.0,Surface Water
+CO_950,,,Unspecified,RUSSELL CREEK,189564.0,Surface Water
+CO_951,,,Unspecified,HAT SPRINGS CREEK,190186.0,Unknown
+CO_952,,,Unspecified,TAYLOR CANYON CREEK,190052.0,Surface Water
+CO_953,,,Unspecified,EAST PASS CREEK,190060.0,Surface Water
+CO_954,,,Unspecified,TRACY CANYON,190208.0,Surface Water
+CO_955,,,Unspecified,SAWLOG CREEK,190092.0,Surface Water
+CO_956,,,Unspecified,GROUNDWATER: SAGUACHE CREEK,192390.0,groundwater/well
+CO_957,,,Unspecified,GROUNDWATER: MIDDLE FORK SAGUACHE CREEK,190504.0,groundwater/well
+CO_958,,,Unspecified,LA GARITA CREEK,189521.0,Surface Water
+CO_959,,,Unspecified,CARNERO CREEK,189546.0,Surface Water
+CO_960,,,Unspecified,SOUTH FORK CARNERO CREEK,189510.0,Surface Water
+CO_961,,,Unspecified,COOLBROTH CREEK,189544.0,groundwater/spring
+CO_962,,,Unspecified,BIEDELL CREEK,189552.0,Surface Water
+CO_963,,,Unspecified,GROUNDWATER: LA GARITA CREEK,189521.0,groundwater/well
+CO_964,,,Unspecified,GROUNDWATER: CARNERO CREEK,189546.0,groundwater/well
+CO_965,,,Unspecified,GROUNDWATER: BIEDELL CREEK,189552.0,groundwater/well
+CO_966,,,Unspecified,QUARTZ CREEK,189403.0,Surface Water
+CO_967,,,Unspecified,TOMICHI CREEK,189371.0,Surface Water
+CO_968,,,Unspecified,COCHETOPA CREEK,189603.0,Surface Water
+CO_969,,,Unspecified,BARRET CREEK,189665.0,Surface Water
+CO_970,,,Unspecified,RAZOR CREEK,189657.0,Surface Water
+CO_971,,,Unspecified,PROSSER CREEK,189777.0,Surface Water
+CO_972,,,Unspecified,HICKS CREEK,189715.0,Surface Water
+CO_973,,,Unspecified,BEAD CREEK,189620.0,Surface Water
+CO_974,,,Unspecified,LOS PINOS CREEK,189767.0,Surface Water
+CO_975,,,Unspecified,WEST PASS CREEK,203406.0,Surface Water
+CO_976,,,Unspecified,MARSHALL CREEK,189716.0,Surface Water
+CO_977,,,Unspecified,ARMSTRONG CREEK,188973.0,Surface Water
+CO_978,,,Unspecified,POWDERHOUSE GULCH,189402.0,Surface Water
+CO_979,,,Unspecified,PAULINE CREEK,190022.0,Surface Water
+CO_980,,,Unspecified,LOS CREEK,190031.0,Surface Water
+CO_981,,,Unspecified,WEST FORK SAN JUAN RIVER,190927.0,groundwater/spring
+CO_982,,,Unspecified,DUTCHMAN CREEK,189673.0,Surface Water
+CO_983,,,Unspecified,STUBBS GULCH,189604.0,Surface Water
+CO_984,,,Unspecified,GREATHOUSE GULCH,189042.0,Surface Water
+CO_985,,,Unspecified,ARCHULETA CREEK,190034.0,Surface Water
+CO_986,,,Unspecified,HORN GULCH,189679.0,Surface Water
+CO_987,,,Unspecified,LONG BRANCH,189712.0,Surface Water
+CO_988,,,Unspecified,COLE CREEK,189709.0,Surface Water
+CO_989,,,Unspecified,NELSON CREEK,189711.0,Surface Water
+CO_990,,,Unspecified,PORPHYRY CREEK,189693.0,Surface Water
+CO_991,,,Unspecified,MONSON GULCH,189684.0,Surface Water
+CO_992,,,Unspecified,NEEDLE CREEK,189669.0,Surface Water
+CO_993,,,Unspecified,DAWSON CREEK,189698.0,Surface Water
+CO_994,,,Unspecified,VAN TASSEL GULCH,190023.0,groundwater/spring
+CO_995,,,Unspecified,GRAFLIN GULCH,189011.0,groundwater/spring
+CO_996,,,Unspecified,TRAIL CANYON,184537.0,groundwater/spring
+CO_997,,,Unspecified,CHANCE GULCH,189012.0,groundwater/spring
+CO_998,,,Unspecified,MILK CREEK,189837.0,Surface Water
+CO_999,,,Unspecified,WILEY GULCH,189084.0,Surface Water
+CO_1000,,,Unspecified,GOLD BASIN CREEK,189006.0,groundwater/spring
+CO_1001,,,Unspecified,RED JACKET GULCH,189072.0,groundwater/spring
+CO_1002,,,Unspecified,GALENA CREEK,189386.0,groundwater/spring
+CO_1003,,,Unspecified,STRIDIRON GULCH,189399.0,Surface Water
+CO_1004,,,Unspecified,HALLS GULCH,188986.0,groundwater/spring
+CO_1005,,,Unspecified,TANK SEVEN CREEK,189843.0,Surface Water
+CO_1006,,,Unspecified,BIG BEND CREEK,189833.0,groundwater/spring
+CO_1007,,,Unspecified,BIG GULCH,189024.0,groundwater/spring
+CO_1008,,,Unspecified,HOUSTON GULCH,189655.0,groundwater/spring
+CO_1009,,,Unspecified,SEWELL GULCH,189013.0,Surface Water
+CO_1010,,,Unspecified,SAGE HEN GULCH,189634.0,reservoir
+CO_1011,,,Unspecified,GROUNDWATER: VAN TASSEL GULCH,190023.0,groundwater/well
+CO_1012,,,Unspecified,GROUNDWATER: ARCHULETA CREEK,190034.0,groundwater/well
+CO_1013,,,Unspecified,GROUNDWATER: COCHETOPA CREEK,189603.0,groundwater/well
+CO_1014,,,Unspecified,GROUNDWATER: LOS PINOS CREEK,189767.0,groundwater/well
+CO_1015,,,Unspecified,GROUNDWATER: MARSHALL CREEK,189716.0,groundwater/well
+CO_1016,,,Unspecified,GROUNDWATER: LOS CREEK,190031.0,groundwater/well
+CO_1017,,,Unspecified,GROUNDWATER: RAZOR CREEK,189657.0,groundwater/well
+CO_1018,,,Unspecified,GROUNDWATER: RED JACKET GULCH,189072.0,groundwater/well
+CO_1019,,,Unspecified,GROUNDWATER: GOLD BASIN CREEK,189006.0,groundwater/well
+CO_1020,,,Unspecified,GROUNDWATER: NEEDLE CREEK,189669.0,groundwater/well
+CO_1021,,,Unspecified,GROUNDWATER: GOLD CREEK,188975.0,groundwater/well
+CO_1022,,,Unspecified,GROUNDWATER: WEST PASS CREEK,203406.0,groundwater/well
+CO_1023,,,Unspecified,GROUNDWATER: ARMSTRONG CREEK,188973.0,groundwater/well
+CO_1024,,,Unspecified,GROUNDWATER: INDIAN CREEK,189734.0,groundwater/well
+CO_1025,,,Unspecified,MONTEZUMA CREEK,184524.0,Surface Water
+CO_1026,,,Unspecified,GROUNDWATER: HOT SPRINGS CREEK,189401.0,groundwater/well
+CO_1027,,,Unspecified,GROUNDWATER: CABIN CREEK,189015.0,groundwater/well
+CO_1028,,,Unspecified,LICK CREEK,189754.0,groundwater/spring
+CO_1029,,,Unspecified,SHEEP GULCH,189005.0,groundwater/spring
+CO_1030,,,Unspecified,SAN JUAN RIVER,1454998.0,Surface Water
+CO_1031,,,Unspecified,RIO BLANCO,184549.0,Groundwater
+CO_1032,,,Unspecified,RITO BLANCO,190934.0,Surface Water
+CO_1033,,,Unspecified,HORSE GULCH,196890.0,Surface Water
+CO_1034,,,Unspecified,MCCABE CREEK,184340.0,groundwater/spring
+CO_1035,,,Unspecified,EAST FORK SAN JUAN RIVER,190932.0,Surface Water
+CO_1036,,,Unspecified,ECHO CANYON,184520.0,Surface Water
+CO_1037,,,Unspecified,SNOWBALL CREEK,184332.0,Surface Water
+CO_1038,,,Unspecified,SQUARETOP CREEK,290001.0,Surface Water
+CO_1039,,,Unspecified,SHEEP CABIN CREEK,191002.0,Surface Water
+CO_1040,,,Unspecified,GROUNDWATER: WEST FORK SAN JUAN RIVER,190927.0,groundwater/well
+CO_1041,,,Unspecified,SANDOVAL CANYON,184516.0,groundwater/spring
+CO_1042,,,Unspecified,BIG BRANCH,191008.0,Surface Water
+CO_1043,,,Unspecified,SQUAW CANYON,184522.0,reservoir
+CO_1044,,,Unspecified,GROUNDWATER: EAST FORK SAN JUAN RIVER,190932.0,groundwater/well
+CO_1045,,,Unspecified,ARROYO ESCONDIDO,184558.0,reservoir
+CO_1046,,,Unspecified,GROUNDWATER: RIO BLANCO,184549.0,groundwater/well
+CO_1047,,,Unspecified,GROUNDWATER: SAN JUAN RIVER,1454998.0,groundwater/well
+CO_1048,,,Unspecified,GROUNDWATER: ECHO CANYON,184520.0,groundwater/well
+CO_1049,,,Unspecified,ANIMAS RIVER,900284.0,Surface Water
+CO_1050,,,Unspecified,GROUNDWATER: SQUAW CANYON,184522.0,groundwater/well
+CO_1051,,,Unspecified,GROUNDWATER: FOURMILE CREEK,184129.0,groundwater/well
+CO_1052,,,Unspecified,GROUNDWATER: SANDOVAL CANYON,184516.0,groundwater/well
+CO_1053,,,Unspecified,GROUNDWATER: CAT CREEK,184561.0,groundwater/well
+CO_1054,,,Unspecified,JUNCTION CREEK,183899.0,groundwater/spring
+CO_1055,,,Unspecified,ELBERT CREEK,183952.0,Surface Water
+CO_1056,,,Unspecified,HERMOSA CREEK,183891.0,groundwater/spring
+CO_1057,,,Unspecified,FALLS CREEK,183890.0,Surface Water
+CO_1058,,,Unspecified,EAST FORK HERMOSA CREEK,187734.0,Groundwater
+CO_1059,,,Unspecified,CUNNINGHAM CREEK,187645.0,Surface Water
+CO_1060,,,Unspecified,LITTLE CASCADE CREEK,187952.0,groundwater/spring
+CO_1061,,,Unspecified,PURGATORY CREEK,187752.0,Surface Water
+CO_1062,,,Unspecified,SOUTH FORK MINERAL CREEK,187534.0,Surface Water
+CO_1063,,,Unspecified,MINERAL CREEK,187302.0,Surface Water
+CO_1064,,,Unspecified,GROUNDWATER: ELBERT CREEK,183952.0,groundwater/well
+CO_1065,,,Unspecified,CEMENT CREEK,187337.0,Surface Water
+CO_1066,,,Unspecified,TRUMBLE DRAW,184386.0,Surface Water
+CO_1067,,,Unspecified,WILDCAT CANYON,179309.0,Surface Water
+CO_1068,,,Unspecified,MINNIE GULCH,187623.0,Surface Water
+CO_1069,,,Unspecified,FLORIDA RIVER,183961.0,Surface Water
+CO_1070,,,Unspecified,SANCHEZ DRAW,184359.0,groundwater/spring
+CO_1071,,,Unspecified,LIGHTNER CREEK,178933.0,Surface Water
+CO_1072,,,Unspecified,BASIN CREEK,179296.0,Surface Water
+CO_1073,,,Unspecified,PHILLIPS CANYON,184361.0,Surface Water
+CO_1074,,,Unspecified,GOEGLEIN GULCH,300001.0,Surface Water
+CO_1075,,,Unspecified,COAL GULCH,179154.0,Surface Water
+CO_1076,,,Unspecified,WILSON GULCH,184373.0,Surface Water
+CO_1077,,,Unspecified,PINE GULCH,184365.0,Surface Water
+CO_1078,,,Unspecified,LONE PINE GULCH,184379.0,Surface Water
+CO_1079,,,Unspecified,SHEARER CREEK,183966.0,Surface Water
+CO_1080,,,Unspecified,TRUE CREEK,183965.0,groundwater/spring
+CO_1081,,,Unspecified,GROUNDWATER: LIGHTNER CREEK,178933.0,groundwater/well
+CO_1082,,,Unspecified,LONG HOLLOW,184188.0,Groundwater
+CO_1083,,,Unspecified,COX CANYON,184447.0,groundwater/spring
+CO_1084,,,Unspecified,LINE CANYON,184465.0,groundwater/spring
+CO_1085,,,Unspecified,SAWMILL CANYON,179298.0,groundwater/spring
+CO_1086,,,Unspecified,GROUNDWATER: ANIMAS RIVER,900284.0,groundwater/well
+CO_1087,,,Unspecified,EAST LIME CREEK,187758.0,reservoir
+CO_1088,,,Unspecified,GROUNDWATER: BLUE RIVER,173194.0,groundwater/well
+CO_1089,,,Unspecified,GROUNDWATER: SNAKE RIVER,176197.0,groundwater/well
+CO_1090,,,Unspecified,MIDDLE FORK MINERAL CREEK,187517.0,Unknown
+CO_1091,,,Unspecified,MOLAS CREEK,187763.0,Unknown
+CO_1092,,,Unspecified,GROUNDWATER: HERMOSA CREEK,183891.0,groundwater/well
+CO_1093,,,Unspecified,GROUNDWATER: JUNCTION CREEK,183899.0,groundwater/well
+CO_1094,,,Unspecified,GROUNDWATER: CASCADE CREEK,187538.0,groundwater/well
+CO_1095,,,Unspecified,GROUNDWATER: PURGATORY CREEK,187752.0,groundwater/well
+CO_1096,,,Unspecified,GROUNDWATER: CEMENT CREEK,187337.0,groundwater/well
+CO_1097,,,Unspecified,GROUNDWATER: LITTLE CASCADE CREEK,187952.0,groundwater/well
+CO_1098,,,Unspecified,GROUNDWATER: FALLS CREEK,183890.0,groundwater/well
+CO_1099,,,Unspecified,GROUNDWATER: EAST FORK HERMOSA CREEK,187734.0,groundwater/well
+CO_1100,,,Unspecified,GROUNDWATER: COTTONWOOD GULCH,184364.0,groundwater/well
+CO_1101,,,Unspecified,GROUNDWATER: DRY CREEK,184363.0,groundwater/well
+CO_1102,,,Unspecified,GROUNDWATER: FLORIDA RIVER,183961.0,groundwater/well
+CO_1103,,,Unspecified,GROUNDWATER: SANCHEZ DRAW,184359.0,groundwater/well
+CO_1104,,,Unspecified,GROUNDWATER: PHILLIPS CANYON,184361.0,groundwater/well
+CO_1105,,,Unspecified,GROUNDWATER: MEADOW CREEK,300002.0,groundwater/well
+CO_1106,,,Unspecified,GROUNDWATER: LONG HOLLOW,184188.0,groundwater/well
+CO_1107,,,Unspecified,GROUNDWATER: TRUMBLE DRAW,184386.0,groundwater/well
+CO_1108,,,Unspecified,GROUNDWATER: GOEGLEIN GULCH,300001.0,groundwater/well
+CO_1109,,,Unspecified,GROUNDWATER: BASIN CREEK,179296.0,groundwater/well
+CO_1110,,,Unspecified,GROUNDWATER: WILSON GULCH,184373.0,groundwater/well
+CO_1111,,,Unspecified,GROUNDWATER: SPRING GULCH,184356.0,groundwater/well
+CO_1112,,,Unspecified,GROUNDWATER: SPRING CREEK,184174.0,groundwater/well
+CO_1113,,,Unspecified,GROUNDWATER: WILDCAT CANYON,179309.0,groundwater/well
+CO_1114,,,Unspecified,GROUNDWATER: PINE GULCH,184365.0,groundwater/well
+CO_1115,,,Unspecified,GROUNDWATER: SALT CREEK,184385.0,groundwater/well
+CO_1116,,,Unspecified,GROUNDWATER: COAL GULCH,179154.0,groundwater/well
+CO_1117,,,Unspecified,GROUNDWATER: RED CREEK,183970.0,groundwater/well
+CO_1118,,,Unspecified,GROUNDWATER: COX CANYON,184447.0,groundwater/well
+CO_1119,,,Unspecified,GROUNDWATER: LINE CANYON,184465.0,groundwater/well
+CO_1120,,,Unspecified,GROUNDWATER: LONE PINE GULCH,184379.0,groundwater/well
+CO_1121,,,Unspecified,LOS PINOS RIVER,938722.0,Surface Water
+CO_1122,,,Unspecified,EAST CREEK,184001.0,Surface Water
+CO_1123,,,Unspecified,GRIMES CREEK,184031.0,Surface Water
+CO_1124,,,Unspecified,VALLECITO CREEK,183998.0,Surface Water
+CO_1125,,,Unspecified,LION CREEK,184002.0,Surface Water
+CO_1126,,,Unspecified,IGNACIO CREEK,184390.0,Surface Water
+CO_1127,,,Unspecified,BRINKS DRAW,184392.0,Surface Water
+CO_1128,,,Unspecified,TIFFANY DRAW,184494.0,Surface Water
+CO_1129,,,Unspecified,WALLACE GULCH,184184.0,groundwater/spring
+CO_1130,,,Unspecified,JONES ARROYO,184497.0,Surface Water
+CO_1131,,,Unspecified,CARLSON ARROYO,310003.0,Surface Water
+CO_1132,,,Unspecified,ROOT CREEK,184016.0,Surface Water
+CO_1133,,,Unspecified,SCHALLES DRAW,310002.0,Surface Water
+CO_1134,,,Unspecified,WOMMER DRAW,184223.0,Surface Water
+CO_1135,,,Unspecified,D CREEK,183995.0,Surface Water
+CO_1136,,,Unspecified,JACK CREEK,184009.0,Surface Water
+CO_1137,,,Unspecified,BERRI CREEK,184030.0,groundwater/spring
+CO_1138,,,Unspecified,DARK CANYON,184027.0,groundwater/spring
+CO_1139,,,Unspecified,GROUNDWATER: GRIMES CREEK,184031.0,groundwater/well
+CO_1140,,,Unspecified,FREEMAN CREEK,184021.0,groundwater/spring
+CO_1141,,,Unspecified,ARMSTRONG CANYON,184400.0,groundwater/spring
+CO_1142,,,Unspecified,CROWBAR CREEK,184409.0,groundwater/spring
+CO_1143,,,Unspecified,LA PLATA RIVER,897392.0,groundwater/spring
+CO_1144,,,Unspecified,BEEF CANYON,184463.0,groundwater/spring
+CO_1145,,,Unspecified,PUMP CANYON,203941.0,groundwater/spring
+CO_1146,,,Unspecified,HARTMAN CANYON,184185.0,reservoir
+CO_1147,,,Unspecified,NORTH FORK TEXAS CREEK,184191.0,reservoir
+CO_1148,,,Unspecified,ALAMO CANYON,184473.0,reservoir
+CO_1149,,,Unspecified,EAST PUMP CANYON,184479.0,reservoir
+CO_1150,,,Unspecified,GROUNDWATER: ROOT CREEK,184016.0,groundwater/well
+CO_1151,,,Unspecified,GROUNDWATER: LOS PINOS RIVER,938722.0,groundwater/well
+CO_1152,,,Unspecified,GROUNDWATER: JACK CREEK,184009.0,groundwater/well
+CO_1153,,,Unspecified,GROUNDWATER: GRAHAM CREEK,184004.0,groundwater/well
+CO_1154,,,Unspecified,GROUNDWATER: HARTMAN CANYON,184185.0,groundwater/well
+CO_1155,,,Unspecified,GROUNDWATER: CROWBAR CREEK,184409.0,groundwater/well
+CO_1156,,,Unspecified,GROUNDWATER: WILSON CREEK,184005.0,groundwater/well
+CO_1157,,,Unspecified,GROUNDWATER: BRINKS DRAW,184392.0,groundwater/well
+CO_1158,,,Unspecified,GROUNDWATER: UTE CREEK,184401.0,groundwater/well
+CO_1159,,,Unspecified,GROUNDWATER: CARLSON ARROYO,310003.0,groundwater/well
+CO_1160,,,Unspecified,GROUNDWATER: BERRI CREEK,184030.0,groundwater/well
+CO_1161,,,Unspecified,GROUNDWATER: WOMMER DRAW,184223.0,groundwater/well
+CO_1162,,,Unspecified,GROUNDWATER: TIFFANY DRAW,184494.0,groundwater/well
+CO_1163,,,Unspecified,GROUNDWATER: IGNACIO CREEK,184390.0,groundwater/well
+CO_1164,,,Unspecified,GROUNDWATER: VALLECITO CREEK,183998.0,groundwater/well
+CO_1165,,,Unspecified,GROUNDWATER: D CREEK,183995.0,groundwater/well
+CO_1166,,,Unspecified,GROUNDWATER: TEXAS CREEK,184190.0,groundwater/well
+CO_1167,,,Unspecified,GROUNDWATER: WALLACE GULCH,184184.0,groundwater/well
+CO_1168,,,Unspecified,GROUNDWATER: ARMSTRONG CANYON,184400.0,groundwater/well
+CO_1169,,,Unspecified,SIMON DRAW,178797.0,Surface Water
+CO_1170,,,Unspecified,ALKALI CANYON,178778.0,Surface Water
+CO_1171,,,Unspecified,DAWSON DRAW,178774.0,Surface Water
+CO_1172,,,Unspecified,YELLOW JACKET CANYON,178994.0,Surface Water
+CO_1173,,,Unspecified,NARRAGUINNEP CANYON,178781.0,Surface Water
+CO_1174,,,Unspecified,HARTMAN DRAW,178794.0,Surface Water
+CO_1175,,,Unspecified,RAUH ARROYA,320002.0,Surface Water
+CO_1176,,,Unspecified,MCELMO CREEK,201753.0,Surface Water
+CO_1177,,,Unspecified,BRUMLEY DRAW,178775.0,Surface Water
+CO_1178,,,Unspecified,CROW CANYON,178793.0,Surface Water
+CO_1179,,,Unspecified,LYNCH DRAW,320001.0,Surface Water
+CO_1180,,,Unspecified,MUD CREEK,179030.0,Groundwater
+CO_1181,,,Unspecified,CROSS CANYON,178755.0,Groundwater
+CO_1182,,,Unspecified,RITTER DRAW,178796.0,Surface Water
+CO_1183,,,Unspecified,HOVENWEEP CANYON,178750.0,groundwater/spring
+CO_1184,,,Unspecified,PAPOOSE CANYON CREEK,176852.0,groundwater/spring
+CO_1185,,,Unspecified,TRANSBASIN WATER,,reservoir
+CO_1186,,,Unspecified,MARBLE WASH,179003.0,reservoir
+CO_1187,,,Unspecified,MARIANO WASH,179024.0,reservoir
+CO_1188,,,Unspecified,COWBOY WASH,201750.0,reservoir
+CO_1189,,,Unspecified,GROUNDWATER: MCELMO CREEK,201753.0,groundwater/well
+CO_1190,,,Unspecified,GROUNDWATER: ALKALI CANYON,178778.0,groundwater/well
+CO_1191,,,Unspecified,GROUNDWATER: BRUMLEY DRAW,178775.0,groundwater/well
+CO_1192,,,Unspecified,GROUNDWATER: MONUMENT CREEK,176433.0,groundwater/well
+CO_1193,,,Unspecified,GROUNDWATER: CROSS CANYON,178755.0,groundwater/well
+CO_1194,,,Unspecified,GROUNDWATER: MONTEZUMA CREEK,184524.0,groundwater/well
+CO_1195,,,Unspecified,GROUNDWATER: HARTMAN DRAW,178794.0,groundwater/well
+CO_1196,,,Unspecified,GROUNDWATER: COWBOY WASH,201750.0,groundwater/well
+CO_1197,,,Unspecified,GROUNDWATER: MARBLE WASH,179003.0,groundwater/well
+CO_1198,,,Unspecified,GROUNDWATER: MARIANO WASH,179024.0,groundwater/well
+CO_1199,,,Unspecified,HAY GULCH,179113.0,Surface Water
+CO_1200,,,Unspecified,MCDERMOTT ARROYO,179369.0,reservoir
+CO_1201,,,Unspecified,JOHNNY POND ARROYO,179262.0,reservoir
+CO_1202,,,Unspecified,CINDER GULCH,179357.0,reservoir
+CO_1203,,,Unspecified,GROUNDWATER: LA PLATA RIVER,897392.0,groundwater/well
+CO_1204,,,Unspecified,GROUNDWATER: MCDERMOTT ARROYO,179369.0,groundwater/well
+CO_1205,,,Unspecified,GROUNDWATER: HAY GULCH,179113.0,groundwater/well
+CO_1206,,,Unspecified,WEBER CANYON,179085.0,Surface Water
+CO_1207,,,Unspecified,DRY CANYON,340004.0,Surface Water
+CO_1208,,,Unspecified,MANCOS RIVER,902295.0,Surface Water
+CO_1209,,,Unspecified,PERKINS DRAW,340003.0,Surface Water
+CO_1210,,,Unspecified,MIDDLE MANCOS RIVER,178876.0,Surface Water
+CO_1211,,,Unspecified,EAST MANCOS RIVER,178914.0,Surface Water
+CO_1212,,,Unspecified,WEST MANCOS RIVER,201752.0,Surface Water
+CO_1213,,,Unspecified,SEABURY DRAW,340002.0,Surface Water
+CO_1214,,,Unspecified,COTTONWOOD WASH,179025.0,groundwater/spring
+CO_1215,,,Unspecified,AZTEC WASH,179162.0,groundwater/spring
+CO_1216,,,Unspecified,NAVAJO WASH,179035.0,groundwater/spring
+CO_1217,,,Unspecified,TANNER CANYON,179311.0,groundwater/spring
+CO_1218,,,Unspecified,EAST CANYON,179106.0,groundwater/spring
+CO_1219,,,Unspecified,CHIMNEY ROCK DRAW,179319.0,reservoir
+CO_1220,,,Unspecified,GROUNDWATER: MUD CREEK,340001.0,groundwater/well
+CO_1221,,,Unspecified,GROUNDWATER: WEBER CANYON,179085.0,groundwater/well
+CO_1222,,,Unspecified,GROUNDWATER: WEST MANCOS RIVER,201752.0,groundwater/well
+CO_1223,,,Unspecified,GROUNDWATER: MANCOS RIVER,902295.0,groundwater/well
+CO_1224,,,Unspecified,GROUNDWATER: NAVAJO WASH,179035.0,groundwater/well
+CO_1225,,,Unspecified,GROUNDWATER: AZTEC WASH,179162.0,groundwater/well
+CO_1226,,,Unspecified,GROUNDWATER: COTTONWOOD WASH,179025.0,groundwater/well
+CO_1227,,,Unspecified,GROUNDWATER: CHIMNEY ROCK DRAW,179319.0,groundwater/well
+CO_1228,,,Unspecified,GROUNDWATER: LEWIS CREEK,179258.0,groundwater/well
+CO_1229,,,Unspecified,GROUNDWATER: EAST CANYON,179106.0,groundwater/well
+CO_1230,,,Unspecified,BARBARA CREEK,192724.0,Surface Water
+CO_1231,,,Unspecified,SANGRE DE CRISTO CREEK,192760.0,Surface Water
+CO_1232,,,Unspecified,PIONEER CREEK,192700.0,Surface Water
+CO_1233,,,Unspecified,SOUTH URRACA CREEK,192706.0,Surface Water
+CO_1234,,,Unspecified,URRACA CREEK,192699.0,Surface Water
+CO_1235,,,Unspecified,GROUNDWATER: TRINCHERA CREEK,192823.0,groundwater/well
+CO_1236,,,Unspecified,BIG SPRING CREEK,192559.0,Surface Water
+CO_1237,,,Unspecified,NORTH ZAPATA CREEK,192635.0,Surface Water
+CO_1238,,,Unspecified,OJITO CREEK,192927.0,Surface Water
+CO_1239,,,Unspecified,MIDDLE ZAPATA CREEK,192638.0,Surface Water
+CO_1240,,,Unspecified,SOUTH ZAPATA CREEK,192636.0,Surface Water
+CO_1241,,,Unspecified,HOLBROOK CREEK (AKA BIG BEAR CREEK),192713.0,Surface Water
+CO_1242,,,Unspecified,IKES CREEK,192743.0,Surface Water
+CO_1243,,,Unspecified,COLD CREEK,192562.0,Surface Water
+CO_1244,,,Unspecified,MORRIS GULCH,192628.0,Surface Water
+CO_1245,,,Unspecified,MOSCA CREEK,192626.0,Surface Water
+CO_1246,,,Unspecified,GARDEN CREEK,192625.0,Surface Water
+CO_1247,,,Unspecified,SAWMILL CANYON CREEK,192567.0,Surface Water
+CO_1248,,,Unspecified,CASTLE CREEK,192566.0,Surface Water
+CO_1249,,,Unspecified,HORSE CANYON CREEK,192565.0,Surface Water
+CO_1250,,,Unspecified,LITTLE MEDANO CREEK,192563.0,Surface Water
+CO_1251,,,Unspecified,MEDANO CREEK,192564.0,Surface Water
+CO_1252,,,Unspecified,SOUTH ARRASTRE CREEK,192630.0,Surface Water
+CO_1253,,,Unspecified,TOBIN CREEK,192719.0,Surface Water
+CO_1254,,,Unspecified,HUNT CREEK,173057.0,Surface Water
+CO_1255,,,Unspecified,YAMPA RIVER,169566.0,groundwater/spring
+CO_1256,,,Unspecified,GROUNDWATER: WAGON CREEK,192767.0,groundwater/well
+CO_1257,,,Unspecified,SLATE CREEK,175941.0,Surface Water
+CO_1258,,,Unspecified,MARTIN CREEK,175616.0,Surface Water
+CO_1259,,,Unspecified,MIDDLE BARTON CREEK,176207.0,Surface Water
+CO_1260,,,Unspecified,BLACK CREEK,175665.0,Surface Water
+CO_1261,,,Unspecified,QUAKING ASP CREEK,175973.0,Surface Water
+CO_1262,,,Unspecified,ACORN CREEK,175965.0,Surface Water
+CO_1263,,,Unspecified,CATARACT CREEK,175614.0,Surface Water
+CO_1264,,,Unspecified,SHANE GULCH,175692.0,Surface Water
+CO_1265,,,Unspecified,MUMFORD GULCH,175639.0,Surface Water
+CO_1266,,,Unspecified,SALT LICK CREEK,176188.0,Surface Water
+CO_1267,,,Unspecified,ELLIOTT CREEK,175623.0,Surface Water
+CO_1268,,,Unspecified,MARYLAND CREEK,175944.0,Surface Water
+CO_1269,,,Unspecified,NORTH TENMILE CREEK,176189.0,Surface Water
+CO_1270,,,Unspecified,GILBERT CREEK,360003.0,Surface Water
+CO_1271,,,Unspecified,OTTER CREEK,175615.0,Surface Water
+CO_1272,,,Unspecified,KEYSTONE CREEK,182372.0,Surface Water
+CO_1273,,,Unspecified,HARSHA GULCH,175607.0,Surface Water
+CO_1274,,,Unspecified,MILLER GULCH,175702.0,Surface Water
+CO_1275,,,Unspecified,SOUTH FORK DEEP CREEK,196480.0,Surface Water
+CO_1276,,,Unspecified,STRAIGHT CREEK,175967.0,Surface Water
+CO_1277,,,Unspecified,BUSHEE CREEK,175975.0,Surface Water
+CO_1278,,,Unspecified,VENDETT GULCH CREEK,360006.0,Surface Water
+CO_1279,,,Unspecified,HARRIGAN CREEK,175723.0,Surface Water
+CO_1280,,,Unspecified,WEST TENMILE CREEK,176173.0,Surface Water
+CO_1281,,,Unspecified,ILLINOIS CREEK,179645.0,groundwater/spring
+CO_1282,,,Unspecified,FRENCH GULCH,179681.0,Surface Water
+CO_1283,,,Unspecified,SWAN RIVER,176199.0,groundwater/spring
+CO_1284,,,Unspecified,PERU CREEK,181824.0,Surface Water
+CO_1285,,,Unspecified,CUCUMBER CREEK,179629.0,Surface Water
+CO_1286,,,Unspecified,CARTER CREEK,179633.0,Surface Water
+CO_1287,,,Unspecified,PEBBLE CREEK,175964.0,Surface Water
+CO_1288,,,Unspecified,NORTH SPRUCE CREEK,175600.0,Surface Water
+CO_1289,,,Unspecified,GROUNDWATER: TENMILE CREEK,176191.0,groundwater/well
+CO_1290,,,Unspecified,INDIANA CREEK,179666.0,Groundwater
+CO_1291,,,Unspecified,GYPSUM CREEK,175845.0,Surface Water
+CO_1292,,,Unspecified,HOOSIER CREEK,360004.0,Surface Water
+CO_1293,,,Unspecified,MCCULLOUGH GULCH CREEK,179671.0,Surface Water
+CO_1294,,,Unspecified,GROUNDWATER: MINERS CREEK,176232.0,groundwater/well
+CO_1295,,,Unspecified,GROUNDWATER: BIG GULCH,175678.0,groundwater/well
+CO_1296,,,Unspecified,GROUNDWATER: WEST TENMILE CREEK,176173.0,groundwater/well
+CO_1297,,,Unspecified,GROUNDWATER: WILLOW CREEK,175976.0,groundwater/well
+CO_1298,,,Unspecified,GROUNDWATER: ILLINOIS CREEK,179645.0,groundwater/well
+CO_1299,,,Unspecified,GROUNDWATER: SODA CREEK,176198.0,groundwater/well
+CO_1300,,,Unspecified,GROUNDWATER: SLATE CREEK,175941.0,groundwater/well
+CO_1301,,,Unspecified,GROUNDWATER: SHANE GULCH,175692.0,groundwater/well
+CO_1302,,,Unspecified,GROUNDWATER: DEEP CREEK,175618.0,groundwater/well
+CO_1303,,,Unspecified,GROUNDWATER: STRAIGHT CREEK,175967.0,groundwater/well
+CO_1304,,,Unspecified,GROUNDWATER: PEBBLE CREEK,175964.0,groundwater/well
+CO_1305,,,Unspecified,GROUNDWATER: KEYSTONE CREEK,182372.0,groundwater/well
+CO_1306,,,Unspecified,GROUNDWATER: SWAN RIVER,176199.0,groundwater/well
+CO_1307,,,Unspecified,GROUNDWATER: INDIANA CREEK,179666.0,groundwater/well
+CO_1308,,,Unspecified,EAST LAKE CREEK,176082.0,Surface Water
+CO_1309,,,Unspecified,ALKALI CREEK,175794.0,Surface Water
+CO_1310,,,Unspecified,HOMESTAKE CREEK,176113.0,Surface Water
+CO_1311,,,Unspecified,BEARD CREEK,175901.0,Surface Water
+CO_1312,,,Unspecified,EBY CREEK,175771.0,Surface Water
+CO_1313,,,Unspecified,STONE CREEK,176081.0,Surface Water
+CO_1314,,,Unspecified,RUBE CREEK,175857.0,Surface Water
+CO_1315,,,Unspecified,EAGLE RIVER,174007.0,Surface Water
+CO_1316,,,Unspecified,MILE CREEK,175793.0,Surface Water
+CO_1317,,,Unspecified,BERRY CREEK,175905.0,Surface Water
+CO_1318,,,Unspecified,TALMADGE CREEK,370002.0,Surface Water
+CO_1319,,,Unspecified,NOLAN CREEK,176076.0,Surface Water
+CO_1320,,,Unspecified,WEST LAKE CREEK,176108.0,Surface Water
+CO_1321,,,Unspecified,HOLLAND CREEK,370001.0,Surface Water
+CO_1322,,,Unspecified,HERNAGE CREEK,175864.0,Surface Water
+CO_1323,,,Unspecified,ABRAMS CREEK,175865.0,Surface Water
+CO_1324,,,Unspecified,JUNE CREEK,175900.0,Surface Water
+CO_1325,,,Unspecified,ANTONES CABIN CREEK,179438.0,Surface Water
+CO_1326,,,Unspecified,NOTTINGHAM GULCH,203931.0,Surface Water
+CO_1327,,,Unspecified,WEST BRUSH CREEK,176018.0,Surface Water
+CO_1328,,,Unspecified,WARREN GULCH CREEK,175859.0,Surface Water
+CO_1329,,,Unspecified,TRAER CREEK,175908.0,Surface Water
+CO_1330,,,Unspecified,TRAVIS CREEK,175873.0,Surface Water
+CO_1331,,,Unspecified,SOURDOUGH CREEK,179682.0,Surface Water
+CO_1332,,,Unspecified,SOUTH FORK EAGLE RIVER,179567.0,Surface Water
+CO_1333,,,Unspecified,NORTH FORK GUNNISON RIVER,186323.0,groundwater/spring
+CO_1334,,,Unspecified,SURFACE CREEK,175359.0,Surface Water
+CO_1335,,,Unspecified,SMITH FORK,186702.0,Surface Water
+CO_1336,,,Unspecified,EAST FORK EAGLE RIVER,179570.0,Surface Water
+CO_1337,,,Unspecified,CASTEEL CREEK,176071.0,groundwater/spring
+CO_1338,,,Unspecified,GAME CREEK,176138.0,groundwater/spring
+CO_1339,,,Unspecified,GROUNDWATER: GORE CREEK,176187.0,groundwater/well
+CO_1340,,,Unspecified,BACHELOR GULCH,175884.0,Surface Water
+CO_1341,,,Unspecified,JONES GULCH,179562.0,Surface Water
+CO_1342,,,Unspecified,BENNETT GULCH,370003.0,Surface Water
+CO_1343,,,Unspecified,YODER CREEK,179541.0,Surface Water
+CO_1344,,,Unspecified,CARD CREEK,176107.0,Groundwater
+CO_1345,,,Unspecified,GROUNDWATER: ALKALI CREEK,175850.0,groundwater/well
+CO_1346,,,Unspecified,GROUNDWATER: BRUSH CREEK,175861.0,groundwater/well
+CO_1347,,,Unspecified,TWO ELK CREEK,176119.0,Surface Water
+CO_1348,,,Unspecified,HAT CREEK,176078.0,Surface Water
+CO_1349,,,Unspecified,BLACK GORE CREEK,176149.0,reservoir
+CO_1350,,,Unspecified,SOPRIS CREEK,179516.0,reservoir
+CO_1351,,,Unspecified,EAST CROSS CREEK,179518.0,reservoir
+CO_1352,,,Unspecified,DELUGE CREEK,175949.0,reservoir
+CO_1353,,,Unspecified,FANCY CREEK,179538.0,reservoir
+CO_1354,,,Unspecified,EAST FORK HOMESTAKE CREEK,179803.0,reservoir
+CO_1355,,,Unspecified,MIDDLE LAKE CREEK,176099.0,reservoir
+CO_1356,,,Unspecified,EAST BRUSH CREEK,176017.0,reservoir
+CO_1357,,,Unspecified,MIDDLE FORK HOMESTAKE CREEK,179819.0,reservoir
+CO_1358,,,Unspecified,PITKIN CREEK,175935.0,reservoir
+CO_1359,,,Unspecified,GROUNDWATER: EBY CREEK,175771.0,groundwater/well
+CO_1360,,,Unspecified,GROUNDWATER: CROSS CREEK,176117.0,groundwater/well
+CO_1361,,,Unspecified,GROUNDWATER: GYPSUM CREEK,175845.0,groundwater/well
+CO_1362,,,Unspecified,GROUNDWATER: TRAVIS CREEK,175873.0,groundwater/well
+CO_1363,,,Unspecified,GROUNDWATER: BERRY CREEK,175905.0,groundwater/well
+CO_1364,,,Unspecified,GROUNDWATER: HOMESTAKE CREEK,176113.0,groundwater/well
+CO_1365,,,Unspecified,BISHOP GULCH,176128.0,groundwater/spring
+CO_1366,,,Unspecified,GROUNDWATER: CASTLE CREEK,176256.0,groundwater/well
+CO_1367,,,Unspecified,GROUNDWATER: WARREN GULCH CREEK,175859.0,groundwater/well
+CO_1368,,,Unspecified,DRY WOODY CREEK,179696.0,Surface Water
+CO_1369,,,Unspecified,GROUNDWATER: TURKEY CREEK,176140.0,groundwater/well
+CO_1370,,,Unspecified,ROARING FORK RIVER,174812.0,Surface Water
+CO_1371,,,Unspecified,NORTH THOMPSON CREEK,174964.0,Surface Water
+CO_1372,,,Unspecified,OTTO CREEK,179400.0,Surface Water
+CO_1373,,,Unspecified,THOMAS CREEK,175014.0,Surface Water
+CO_1374,,,Unspecified,CRYSTAL RIVER,174835.0,Surface Water
+CO_1375,,,Unspecified,CATTLE CREEK,174826.0,Surface Water
+CO_1376,,,Unspecified,HUNTER CREEK,180061.0,groundwater/spring
+CO_1377,,,Unspecified,RUEDI CREEK,203937.0,Surface Water
+CO_1378,,,Unspecified,CAPITOL CREEK,175028.0,Surface Water
+CO_1379,,,Unspecified,SNOWMASS CREEK,175217.0,Surface Water
+CO_1380,,,Unspecified,WEST SOPRIS CREEK,175026.0,Surface Water
+CO_1381,,,Unspecified,AVALANCHE CREEK,175194.0,Surface Water
+CO_1382,,,Unspecified,WEST FORK BRUSH CREEK,180012.0,Groundwater
+CO_1383,,,Unspecified,MAROON CREEK,180007.0,Surface Water
+CO_1384,,,Unspecified,CENTER CREEK,174856.0,Surface Water
+CO_1385,,,Unspecified,COLLINS CREEK,179722.0,Surface Water
+CO_1386,,,Unspecified,JAKEMAN CREEK,179477.0,Surface Water
+CO_1387,,,Unspecified,LITTLE WOODY CREEK,179708.0,Surface Water
+CO_1388,,,Unspecified,NETTLE CREEK,175013.0,Surface Water
+CO_1389,,,Unspecified,COULTER CREEK,174834.0,Surface Water
+CO_1390,,,Unspecified,LANDIS CREEK,174103.0,Surface Water
+CO_1391,,,Unspecified,DOWNEY CREEK,179399.0,Surface Water
+CO_1392,,,Unspecified,EAST SOPRIS CREEK,175032.0,Surface Water
+CO_1393,,,Unspecified,EDGERTON CREEK,174825.0,Surface Water
+CO_1394,,,Unspecified,CRYSTAL SPRING CREEK,174847.0,Surface Water
+CO_1395,,,Unspecified,LUCHSINGER CREEK,380001.0,Surface Water
+CO_1396,,,Unspecified,HAWK CREEK,175191.0,Surface Water
+CO_1397,,,Unspecified,THOMPSON CREEK,174986.0,Surface Water
+CO_1398,,,Unspecified,WARREN CREEK,380005.0,Surface Water
+CO_1399,,,Unspecified,WOODY CREEK,179712.0,Surface Water
+CO_1400,,,Unspecified,SHIPPEES DRAW,174853.0,Surface Water
+CO_1401,,,Unspecified,RED CANYON,174085.0,Surface Water
+CO_1402,,,Unspecified,PRINCE CREEK,175016.0,Surface Water
+CO_1403,,,Unspecified,YANK CREEK,174823.0,Surface Water
+CO_1404,,,Unspecified,TONER CREEK,179402.0,Surface Water
+CO_1405,,,Unspecified,EAST COULTER CREEK,174833.0,Surface Water
+CO_1406,,,Unspecified,WEST COULTER CREEK,174832.0,Surface Water
+CO_1407,,,Unspecified,SAWYER CREEK,179763.0,Surface Water
+CO_1408,,,Unspecified,LITTLE ELK CREEK,175027.0,groundwater/spring
+CO_1409,,,Unspecified,WATERBURY CREEK,179474.0,Groundwater
+CO_1410,,,Unspecified,SOUTH BRANCH EDGERTON CREEK,174824.0,Surface Water
+CO_1411,,,Unspecified,YULE CREEK,175543.0,Surface Water
+CO_1412,,,Unspecified,GROUNDWATER: ROARING FORK RIVER,174812.0,groundwater/well
+CO_1413,,,Unspecified,CHAPMAN GULCH,169580.0,Unknown
+CO_1414,,,Unspecified,IVANHOE CREEK,179780.0,Unknown
+CO_1415,,,Unspecified,LINCOLN CREEK,180316.0,Surface Water
+CO_1416,,,Unspecified,RAPID CREEK,175498.0,Surface Water
+CO_1417,,,Unspecified,GROUNDWATER: CRYSTAL RIVER,174835.0,groundwater/well
+CO_1418,,,Unspecified,MUCKAWANAGO CREEK,179743.0,Surface Water
+CO_1419,,,Unspecified,KAISER CREEK,380007.0,reservoir
+CO_1420,,,Unspecified,SOUTH FORK CRYSTAL RIVER,175590.0,reservoir
+CO_1421,,,Unspecified,GROUNDWATER: BLUE CREEK,174868.0,groundwater/well
+CO_1422,,,Unspecified,GROUNDWATER: MAROON CREEK,180007.0,groundwater/well
+CO_1423,,,Unspecified,NORTH FORK CRYSTAL RIVER,175591.0,reservoir
+CO_1424,,,Unspecified,DIEMER CREEK,380008.0,reservoir
+CO_1425,,,Unspecified,SOUTH BRANCH MIDDLE THOMPSON CREEK,174958.0,reservoir
+CO_1426,,,Unspecified,COSSEBOON CREEK,380006.0,reservoir
+CO_1427,,,Unspecified,GROUNDWATER: CATTLE CREEK,174826.0,groundwater/well
+CO_1428,,,Unspecified,GROUNDWATER: SNOWMASS CREEK,175217.0,groundwater/well
+CO_1429,,,Unspecified,GROUNDWATER: MESA CREEK,174831.0,groundwater/well
+CO_1430,,,Unspecified,GROUNDWATER: CRYSTAL SPRING CREEK,174847.0,groundwater/well
+CO_1431,,,Unspecified,GROUNDWATER: THREEMILE CREEK,174816.0,groundwater/well
+CO_1432,,,Unspecified,GROUNDWATER: LANDIS CREEK,174103.0,groundwater/well
+CO_1433,,,Unspecified,GROUNDWATER: RED CANYON,174085.0,groundwater/well
+CO_1434,,,Unspecified,GROUNDWATER: WOODY CREEK,179712.0,groundwater/well
+CO_1435,,,Unspecified,GROUNDWATER: OWL CREEK,180020.0,groundwater/well
+CO_1436,,,Unspecified,GROUNDWATER: LITTLE WOODY CREEK,179708.0,groundwater/well
+CO_1437,,,Unspecified,GROUNDWATER: CAPITOL CREEK,175028.0,groundwater/well
+CO_1438,,,Unspecified,GROUNDWATER: REED CREEK,179505.0,groundwater/well
+CO_1439,,,Unspecified,GROUNDWATER: PRINCE CREEK,175016.0,groundwater/well
+CO_1440,,,Unspecified,GROUNDWATER: COULTER CREEK,174834.0,groundwater/well
+CO_1441,,,Unspecified,GROUNDWATER: COAL CREEK,175177.0,groundwater/well
+CO_1442,,,Unspecified,GROUNDWATER: WEST SOPRIS CREEK,175026.0,groundwater/well
+CO_1443,,,Unspecified,GROUNDWATER: HUNTER CREEK,180061.0,groundwater/well
+CO_1444,,,Unspecified,GROUNDWATER: EAST SOPRIS CREEK,175032.0,groundwater/well
+CO_1445,,,Unspecified,GROUNDWATER: LITTLE ELK CREEK,175027.0,groundwater/well
+CO_1446,,,Unspecified,GROUNDWATER: DRY WOODY CREEK,179696.0,groundwater/well
+CO_1447,,,Unspecified,GROUNDWATER: LINCOLN CREEK,180316.0,groundwater/well
+CO_1448,,,Unspecified,ANTHRACITE CREEK,186401.0,groundwater/spring
+CO_1449,,,Unspecified,GUNNISON RIVER,201748.0,Surface Water
+CO_1450,,,Unspecified,ESCALANTE CREEK,185377.0,groundwater/spring
+CO_1451,,,Unspecified,IRON CREEK,186730.0,Surface Water
+CO_1452,,,Unspecified,GROUNDWATER: BUFFALO CREEK,380002.0,groundwater/well
+CO_1453,,,Unspecified,GROUNDWATER: COSSEBOON CREEK,380006.0,groundwater/well
+CO_1454,,,Unspecified,GROUNDWATER: SMITH CREEK,179430.0,groundwater/well
+CO_1455,,,Unspecified,WEST ELK CREEK,173921.0,groundwater/spring
+CO_1456,,,Unspecified,EAST RIFLE CREEK,173763.0,Surface Water
+CO_1457,,,Unspecified,EAST ELK CREEK,173938.0,Surface Water
+CO_1458,,,Unspecified,CANYON CREEK,173943.0,Surface Water
+CO_1459,,,Unspecified,GOVERNMENT CREEK,173889.0,groundwater/spring
+CO_1460,,,Unspecified,PARACHUTE CREEK,174231.0,Surface Water
+CO_1461,,,Unspecified,MAIN ELK CREEK,173795.0,Surface Water
+CO_1462,,,Unspecified,RIFLE CREEK,173898.0,groundwater/spring
+CO_1463,,,Unspecified,COLORADO RIVER,45730.0,groundwater/spring
+CO_1464,,,Unspecified,MIDDLE RIFLE CREEK,173746.0,Surface Water
+CO_1465,,,Unspecified,MANSFIELD CREEK,173761.0,Surface Water
+CO_1466,,,Unspecified,EAST CANYON CREEK,173948.0,Surface Water
+CO_1467,,,Unspecified,HARVEY GAP,174051.0,Surface Water
+CO_1468,,,Unspecified,MIDDLE FORK PARACHUTE CREEK,172082.0,Surface Water
+CO_1469,,,Unspecified,WEST RIFLE CREEK,173888.0,Surface Water
+CO_1470,,,Unspecified,SHERARD CREEK,390001.0,Surface Water
+CO_1471,,,Unspecified,COZZA GULCH,390003.0,Surface Water
+CO_1472,,,Unspecified,PRETI GULCH,390004.0,Surface Water
+CO_1473,,,Unspecified,OASIS CREEK,174077.0,Surface Water
+CO_1474,,,Unspecified,BECK GULCH,390002.0,Surface Water
+CO_1475,,,Unspecified,GROUNDWATER: COLORADO RIVER,45730.0,groundwater/well
+CO_1476,,,Unspecified,GROUNDWATER: PARACHUTE CREEK,174231.0,groundwater/well
+CO_1477,,,Unspecified,EAST MIDDLE FORK PARACHUTE CREEK,172258.0,Surface Water
+CO_1478,,,Unspecified,SCHUTTE CREEK,172083.0,Surface Water
+CO_1479,,,Unspecified,WEST FORK PARACHUTE CREEK,172063.0,Surface Water
+CO_1480,,,Unspecified,WET FORK WEST FORK PARACHUTE CREEK,172059.0,Surface Water
+CO_1481,,,Unspecified,MCBRIDE DRAW,390008.0,Surface Water
+CO_1482,,,Unspecified,BUTLER CREEK,173745.0,Surface Water
+CO_1483,,,Unspecified,MCLEARN DRAW,390005.0,Surface Water
+CO_1484,,,Unspecified,DRY RIFLE CREEK,173922.0,Surface Water
+CO_1485,,,Unspecified,THREE FORKS CREEK,173749.0,Surface Water
+CO_1486,,,Unspecified,FIRST ANVIL CREEK,174019.0,Surface Water
+CO_1487,,,Unspecified,TRAPPER CREEK,172218.0,Surface Water
+CO_1488,,,Unspecified,NORTHWATER CREEK,172257.0,Surface Water
+CO_1489,,,Unspecified,SECOND ANVIL CREEK,174023.0,Surface Water
+CO_1490,,,Unspecified,J Q S GULCH,174013.0,Surface Water
+CO_1491,,,Unspecified,EAST FORK PARACHUTE CREEK,172253.0,Surface Water
+CO_1492,,,Unspecified,GROUNDWATER: RIFLE CREEK,173898.0,groundwater/well
+CO_1493,,,Unspecified,GROUNDWATER: EAST ELK CREEK,173938.0,groundwater/well
+CO_1494,,,Unspecified,GROUNDWATER: GOVERNMENT CREEK,173889.0,groundwater/well
+CO_1495,,,Unspecified,GROUNDWATER: WEST ELK CREEK,173921.0,groundwater/well
+CO_1496,,,Unspecified,GROUNDWATER: MAIN ELK CREEK,173795.0,groundwater/well
+CO_1497,,,Unspecified,GROUNDWATER: CANYON CREEK,173943.0,groundwater/well
+CO_1498,,,Unspecified,GROUNDWATER: MITCHELL CREEK,173970.0,groundwater/well
+CO_1499,,,Unspecified,GROUNDWATER: HARVEY GAP,174051.0,groundwater/well
+CO_1500,,,Unspecified,GROUNDWATER: MIDDLE RIFLE CREEK,173746.0,groundwater/well
+CO_1501,,,Unspecified,GROUNDWATER: EAST RIFLE CREEK,173763.0,groundwater/well
+CO_1502,,,Unspecified,GROUNDWATER: COZZA GULCH,390003.0,groundwater/well
+CO_1503,,,Unspecified,SKUTTER DRAW,390006.0,Surface Water
+CO_1504,,,Unspecified,ALLENWATER CREEK,174266.0,groundwater/spring
+CO_1505,,,Unspecified,ALUM GULCH,186517.0,Surface Water
+CO_1506,,,Unspecified,DOUG CREEK,186733.0,Surface Water
+CO_1507,,,Unspecified,KISER CREEK,175230.0,Surface Water
+CO_1508,,,Unspecified,YOUNGS CREEK,175233.0,Surface Water
+CO_1509,,,Unspecified,WARD CREEK,175232.0,Surface Water
+CO_1510,,,Unspecified,TONGUE CREEK,185396.0,Surface Water
+CO_1511,,,Unspecified,DIRTY GEORGE CREEK,185291.0,Surface Water
+CO_1512,,,Unspecified,HAPPY HOLLOW CREEK,186248.0,Surface Water
+CO_1513,,,Unspecified,ALFALFA RUN,186502.0,Surface Water
+CO_1514,,,Unspecified,HAMILTON DRAW,400001.0,Surface Water
+CO_1515,,,Unspecified,DOUGHSPOON CREEK,185285.0,Surface Water
+CO_1516,,,Unspecified,CUMMINGS GULCH,185521.0,Surface Water
+CO_1517,,,Unspecified,KELSO CREEK,185598.0,Surface Water
+CO_1518,,,Unspecified,LITTLE DOMINGUEZ CREEK,185344.0,Surface Water
+CO_1519,,,Unspecified,LEROUX CREEK,186289.0,Surface Water
+CO_1520,,,Unspecified,IX GULCH,400002.0,Surface Water
+CO_1521,,,Unspecified,BELL CREEK,186547.0,Surface Water
+CO_1522,,,Unspecified,GERMAN CREEK,186558.0,Surface Water
+CO_1523,,,Unspecified,MINNESOTA CREEK,186322.0,Surface Water
+CO_1524,,,Unspecified,JAY CREEK,186297.0,Surface Water
+CO_1525,,,Unspecified,ROATCAP CREEK,186300.0,Surface Water
+CO_1526,,,Unspecified,RUNZEL GULCH,400004.0,Surface Water
+CO_1527,,,Unspecified,REYNOLDS CREEK,186545.0,Surface Water
+CO_1528,,,Unspecified,MCDONALD CREEK,186525.0,Surface Water
+CO_1529,,,Unspecified,HUBBARD CREEK,175448.0,Surface Water
+CO_1530,,,Unspecified,TERROR CREEK,186331.0,Surface Water
+CO_1531,,,Unspecified,ROBERTS CREEK,175160.0,Surface Water
+CO_1532,,,Unspecified,ROUBIDEAU CREEK,185508.0,Surface Water
+CO_1533,,,Unspecified,LITTLE MONITOR CREEK,185638.0,Surface Water
+CO_1534,,,Unspecified,MONITOR CREEK,185639.0,Surface Water
+CO_1535,,,Unspecified,RUBY ANTHRACITE CREEK,186407.0,groundwater/spring
+CO_1536,,,Unspecified,GROUNDWATER: GUNNISON RIVER,201748.0,groundwater/well
+CO_1537,,,Unspecified,WEST FORK DOUGHSPOON CREEK,185283.0,reservoir
+CO_1538,,,Unspecified,MARCOTT CREEK,175356.0,reservoir
+CO_1539,,,Unspecified,DUGOUT CREEK,175509.0,reservoir
+CO_1540,,,Unspecified,WILLIAMS CREEK,175510.0,reservoir
+CO_1541,,,Unspecified,WEST ROATCAP CREEK,186301.0,reservoir
+CO_1542,,,Unspecified,GROUNDWATER: HAPPY HOLLOW CREEK,186248.0,groundwater/well
+CO_1543,,,Unspecified,GROUNDWATER: CURRANT CREEK,175354.0,groundwater/well
+CO_1544,,,Unspecified,GROUNDWATER: NORTH FORK GUNNISON RIVER,186323.0,groundwater/well
+CO_1545,,,Unspecified,GROUNDWATER: WARD CREEK,175232.0,groundwater/well
+CO_1546,,,Unspecified,GROUNDWATER: CUMMINGS GULCH,185521.0,groundwater/well
+CO_1547,,,Unspecified,GROUNDWATER: ROUBIDEAU CREEK,185508.0,groundwater/well
+CO_1548,,,Unspecified,GROUNDWATER: TONGUE CREEK,185396.0,groundwater/well
+CO_1549,,,Unspecified,GROUNDWATER: SURFACE CREEK,175359.0,groundwater/well
+CO_1550,,,Unspecified,GROUNDWATER: KISER CREEK,175230.0,groundwater/well
+CO_1551,,,Unspecified,GROUNDWATER: YOUNGS CREEK,175233.0,groundwater/well
+CO_1552,,,Unspecified,GROUNDWATER: MUDDY CREEK,186392.0,groundwater/well
+CO_1553,,,Unspecified,GROUNDWATER: HUBBARD CREEK,175448.0,groundwater/well
+CO_1554,,,Unspecified,GROUNDWATER: TERROR CREEK,186331.0,groundwater/well
+CO_1555,,,Unspecified,GROUNDWATER: BELL CREEK,186547.0,groundwater/well
+CO_1556,,,Unspecified,GROUNDWATER: LEROUX CREEK,186289.0,groundwater/well
+CO_1557,,,Unspecified,GROUNDWATER: ANTHRACITE CREEK,186401.0,groundwater/well
+CO_1558,,,Unspecified,GROUNDWATER: HAMILTON DRAW,400001.0,groundwater/well
+CO_1559,,,Unspecified,GROUNDWATER: SMITH FORK,186702.0,groundwater/well
+CO_1560,,,Unspecified,GROUNDWATER: CRYSTAL CREEK,186888.0,groundwater/well
+CO_1561,,,Unspecified,GROUNDWATER: ALFALFA RUN,186502.0,groundwater/well
+CO_1562,,,Unspecified,GROUNDWATER: ESCALANTE CREEK,185377.0,groundwater/well
+CO_1563,,,Unspecified,NORTH FORK KANNAH CREEK,174643.0,Surface Water
+CO_1564,,,Unspecified,LEE CREEK,175176.0,Surface Water
+CO_1565,,,Unspecified,HORSEFLY CREEK,188137.0,Surface Water
+CO_1566,,,Unspecified,UNCOMPAHGRE RIVER,185397.0,Surface Water
+CO_1567,,,Unspecified,MEXICAN GULCH,186821.0,Surface Water
+CO_1568,,,Unspecified,BEATON CREEK,188247.0,Surface Water
+CO_1569,,,Unspecified,DRY CEDAR CREEK,188145.0,Surface Water
+CO_1570,,,Unspecified,HAPPY CANYON CREEK,188116.0,Surface Water
+CO_1571,,,Unspecified,HAIRPIN CREEK,188147.0,Surface Water
+CO_1572,,,Unspecified,DOLORES CREEK,188122.0,Surface Water
+CO_1573,,,Unspecified,SCOTTIES DRAW CREEK,410001.0,Surface Water
+CO_1574,,,Unspecified,LOUTSENHIZER ARROYO,186688.0,Surface Water
+CO_1575,,,Unspecified,MONTROSE ARROYO,188118.0,Surface Water
+CO_1576,,,Unspecified,EAST FORK DRY CREEK,185816.0,Surface Water
+CO_1577,,,Unspecified,GROUNDWATER: MONTROSE ARROYO,188118.0,groundwater/well
+CO_1578,,,Unspecified,GROUNDWATER: MEXICAN GULCH,186821.0,groundwater/well
+CO_1579,,,Unspecified,GROUNDWATER: HORSEFLY CREEK,188137.0,groundwater/well
+CO_1580,,,Unspecified,GROUNDWATER: UNCOMPAHGRE RIVER,185397.0,groundwater/well
+CO_1581,,,Unspecified,GROUNDWATER: CEDAR CREEK,186823.0,groundwater/well
+CO_1582,,,Unspecified,GROUNDWATER: BUTTERMILK CREEK,185506.0,groundwater/well
+CO_1583,,,Unspecified,GROUNDWATER: DOLORES CREEK,188122.0,groundwater/well
+CO_1584,,,Unspecified,NORTH EAST CREEK,185185.0,groundwater/spring
+CO_1585,,,Unspecified,WHITEWATER CREEK,185235.0,Surface Water
+CO_1586,,,Unspecified,KANNAH CREEK,185229.0,Surface Water
+CO_1587,,,Unspecified,BIG DOMINGUEZ CREEK,185342.0,Surface Water
+CO_1588,,,Unspecified,LADDER CREEK,185199.0,groundwater/spring
+CO_1589,,,Unspecified,BANGS CANYON,185217.0,groundwater/spring
+CO_1590,,,Unspecified,ROUGH CANYON,174589.0,groundwater/spring
+CO_1591,,,Unspecified,BILLINGS CANYON,174590.0,groundwater/spring
+CO_1592,,,Unspecified,AICHERS DRAW,173428.0,Surface Water
+CO_1593,,,Unspecified,KING CREEK,185239.0,reservoir
+CO_1594,,,Unspecified,GROUNDWATER: NORTH FORK KANNAH CREEK,174643.0,groundwater/well
+CO_1595,,,Unspecified,GROUNDWATER: KANNAH CREEK,185229.0,groundwater/well
+CO_1596,,,Unspecified,GROUNDWATER: ROUGH CANYON,174589.0,groundwater/well
+CO_1597,,,Unspecified,GROUNDWATER: WHITEWATER CREEK,185235.0,groundwater/well
+CO_1598,,,Unspecified,GROUNDWATER: EAST CREEK,185222.0,groundwater/well
+CO_1599,,,Unspecified,SOUTH FORK WHITE RIVER,173597.0,Surface Water
+CO_1600,,,Unspecified,FORBES CREEK,173445.0,Surface Water
+CO_1601,,,Unspecified,CROOKS CREEK,173450.0,Surface Water
+CO_1602,,,Unspecified,WHITE RIVER,204653.0,Surface Water
+CO_1603,,,Unspecified,BIG BEAVER CREEK,173440.0,Surface Water
+CO_1604,,,Unspecified,FLAG CREEK,173411.0,Surface Water
+CO_1605,,,Unspecified,PICEANCE CREEK,204652.0,Surface Water
+CO_1606,,,Unspecified,BLACK SULPHUR CREEK,172036.0,Surface Water
+CO_1607,,,Unspecified,MARVINE CREEK,173464.0,Surface Water
+CO_1608,,,Unspecified,HAMMOND CREEK,173478.0,Surface Water
+CO_1609,,,Unspecified,MOOSE CREEK,173614.0,Surface Water
+CO_1610,,,Unspecified,NORTH FORK WHITE RIVER,173461.0,Surface Water
+CO_1611,,,Unspecified,BIG FISH CREEK,173480.0,Surface Water
+CO_1612,,,Unspecified,VEATCH GULCH,173570.0,groundwater/spring
+CO_1613,,,Unspecified,BLACKS GULCH,171717.0,Surface Water
+CO_1614,,,Unspecified,STEWART GULCH,201746.0,Surface Water
+CO_1615,,,Unspecified,TEDS GULCH,171626.0,Surface Water
+CO_1616,,,Unspecified,GOOSEBERRY CREEK,173443.0,Surface Water
+CO_1617,,,Unspecified,STRAWBERRY CREEK,171650.0,Surface Water
+CO_1618,,,Unspecified,WEST FORK FAWN CREEK,173457.0,Surface Water
+CO_1619,,,Unspecified,NORTH ELK CREEK,173592.0,Surface Water
+CO_1620,,,Unspecified,COW CANYON,171999.0,Surface Water
+CO_1621,,,Unspecified,DAUM DRAW,173588.0,Surface Water
+CO_1622,,,Unspecified,EAST DOUGLAS CREEK,171891.0,Surface Water
+CO_1623,,,Unspecified,FOURTEENMILE CREEK,171980.0,Surface Water
+CO_1624,,,Unspecified,WILDHACK CREEK,430002.0,Surface Water
+CO_1625,,,Unspecified,PELTIER CREEK,173618.0,Surface Water
+CO_1626,,,Unspecified,DUCK CREEK,171803.0,Surface Water
+CO_1627,,,Unspecified,DICKERVILLE CREEK,173431.0,Surface Water
+CO_1628,,,Unspecified,EAST STEWART CREEK,171942.0,Surface Water
+CO_1629,,,Unspecified,EAST FORK FLAG CREEK,173567.0,groundwater/spring
+CO_1630,,,Unspecified,SULPHUR CREEK,173402.0,Surface Water
+CO_1631,,,Unspecified,TRAIL CANON CREEK,172002.0,Surface Water
+CO_1632,,,Unspecified,WEST EVACUATION CREEK,171988.0,Surface Water
+CO_1633,,,Unspecified,MIDDLE STEWART CREEK,171941.0,Surface Water
+CO_1634,,,Unspecified,BIG FOUNDATION CREEK,172005.0,Surface Water
+CO_1635,,,Unspecified,FOWLER CREEK,173615.0,Surface Water
+CO_1636,,,Unspecified,SWEDE CREEK,173629.0,Surface Water
+CO_1637,,,Unspecified,CATHEDRAL CREEK,171884.0,Surface Water
+CO_1638,,,Unspecified,GOFF'S RUN,430008.0,groundwater/spring
+CO_1639,,,Unspecified,GREENSTREET CREEK,173595.0,Surface Water
+CO_1640,,,Unspecified,HALL GULCH,430017.0,Surface Water
+CO_1641,,,Unspecified,DRY FORK PICEANCE CREEK,171718.0,Surface Water
+CO_1642,,,Unspecified,HILL CREEK,173616.0,Surface Water
+CO_1643,,,Unspecified,INDIAN SPRINGS DRAW,170987.0,Surface Water
+CO_1644,,,Unspecified,WEST DOUGLAS CREEK,171872.0,Surface Water
+CO_1645,,,Unspecified,PAPOOSE CREEK,173452.0,Surface Water
+CO_1646,,,Unspecified,PRICE CREEK,170986.0,Surface Water
+CO_1647,,,Unspecified,DEEP CHANNEL CREEK,170993.0,Surface Water
+CO_1648,,,Unspecified,YELLOW CREEK,171612.0,Surface Water
+CO_1649,,,Unspecified,LUXEN DRAW,170945.0,Surface Water
+CO_1650,,,Unspecified,LYNX CREEK,173481.0,Surface Water
+CO_1651,,,Unspecified,CURTIS CREEK,173300.0,Surface Water
+CO_1652,,,Unspecified,MISSOO CREEK,173606.0,Surface Water
+CO_1653,,,Unspecified,MIRROR CREEK,173483.0,Surface Water
+CO_1654,,,Unspecified,EAST EVACUATION CREEK,171990.0,Surface Water
+CO_1655,,,Unspecified,LOST SOLAR CREEK,173635.0,Surface Water
+CO_1656,,,Unspecified,MIDDLE MILLER CREEK,173722.0,groundwater/spring
+CO_1657,,,Unspecified,OLD MANS CREEK,173626.0,Surface Water
+CO_1658,,,Unspecified,SCHNEIDER CREEK,173459.0,Surface Water
+CO_1659,,,Unspecified,SKINNY FISH CREEK,173533.0,Surface Water
+CO_1660,,,Unspecified,STAKE SPRINGS CREEK,171907.0,Surface Water
+CO_1661,,,Unspecified,SOLDIER CREEK,171911.0,Surface Water
+CO_1662,,,Unspecified,THIRTEENMILE CREEK,173721.0,Surface Water
+CO_1663,,,Unspecified,BUTTER CREEK,430016.0,Surface Water
+CO_1664,,,Unspecified,DAVIS GULCH,171979.0,Surface Water
+CO_1665,,,Unspecified,LITTLE DUCK CREEK,171789.0,Surface Water
+CO_1666,,,Unspecified,MCCARTHY GULCH,172080.0,groundwater/spring
+CO_1667,,,Unspecified,RED WASH,170826.0,Surface Water
+CO_1668,,,Unspecified,STORY GULCH,171970.0,groundwater/spring
+CO_1669,,,Unspecified,EAST FAWN CREEK,171918.0,Surface Water
+CO_1670,,,Unspecified,GREASEWOOD CREEK,171609.0,groundwater/spring
+CO_1671,,,Unspecified,STREHLKE DRAW,430019.0,Surface Water
+CO_1672,,,Unspecified,FLETCHER GULCH,171579.0,groundwater/spring
+CO_1673,,,Unspecified,WEST FORK STEWART GULCH,171937.0,Surface Water
+CO_1674,,,Unspecified,WEST HUNTER CREEK,172054.0,groundwater/spring
+CO_1675,,,Unspecified,CROOKED WASH,170954.0,groundwater/spring
+CO_1676,,,Unspecified,GILLAM DRAW,172028.0,groundwater/spring
+CO_1677,,,Unspecified,BOISE CREEK,171607.0,groundwater/spring
+CO_1678,,,Unspecified,JOE BUSH GULCH,171837.0,groundwater/spring
+CO_1679,,,Unspecified,SEGAR GULCH,171834.0,groundwater/spring
+CO_1680,,,Unspecified,TIMBER GULCH,171840.0,groundwater/spring
+CO_1681,,,Unspecified,NINE MILE DRAW,173301.0,groundwater/spring
+CO_1682,,,Unspecified,BEAR GULCH,173605.0,groundwater/spring
+CO_1683,,,Unspecified,LITTLE CORRAL GULCH,171828.0,groundwater/spring
+CO_1684,,,Unspecified,KENDALL GULCH,171739.0,groundwater/spring
+CO_1685,,,Unspecified,STINKING WATER CREEK,170825.0,groundwater/spring
+CO_1686,,,Unspecified,TWIN WASH,171548.0,groundwater/spring
+CO_1687,,,Unspecified,SCULLION GULCH,171563.0,groundwater/spring
+CO_1688,,,Unspecified,KELLOG GULCH,171723.0,groundwater/spring
+CO_1689,,,Unspecified,DRIPPING ROCK CREEK,170854.0,groundwater/spring
+CO_1690,,,Unspecified,TSCHUDDI GULCH,171637.0,Surface Water
+CO_1691,,,Unspecified,BEAR PARK CREEK,172035.0,groundwater/spring
+CO_1692,,,Unspecified,EVACUATION CREEK,1427857.0,groundwater/spring
+CO_1693,,,Unspecified,BOX ELDER GULCH,171805.0,groundwater/spring
+CO_1694,,,Unspecified,OWL GULCH,171842.0,groundwater/spring
+CO_1695,,,Unspecified,HATCH GULCH,171817.0,groundwater/spring
+CO_1696,,,Unspecified,EAST SAWMILL CREEK,430020.0,Surface Water
+CO_1697,,,Unspecified,DOUGAN DRAW,430004.0,Surface Water
+CO_1698,,,Unspecified,MOELLER CREEK,173460.0,Groundwater
+CO_1699,,,Unspecified,PATTERSON CREEK,173824.0,Surface Water
+CO_1700,,,Unspecified,SKULL CREEK,170929.0,groundwater/spring
+CO_1701,,,Unspecified,GROUNDWATER: SCULLION GULCH,171563.0,groundwater/well
+CO_1702,,,Unspecified,RIPPLE CREEK,173502.0,Surface Water
+CO_1703,,,Unspecified,SNELL CREEK,173358.0,Surface Water
+CO_1704,,,Unspecified,CORRAL GULCH,171797.0,groundwater/spring
+CO_1705,,,Unspecified,CAVE CREEK,173613.0,Surface Water
+CO_1706,,,Unspecified,WAGONWHEEL CREEK,173844.0,Surface Water
+CO_1707,,,Unspecified,WEST MARVINE CREEK,173463.0,groundwater/spring
+CO_1708,,,Unspecified,GRADE CREEK,173311.0,groundwater/spring
+CO_1709,,,Unspecified,TROUGH CREEK,190180.0,groundwater/spring
+CO_1710,,,Unspecified,EAST MARVINE CREEK,173479.0,groundwater/spring
+CO_1711,,,Unspecified,BRADY GULCH,430006.0,reservoir
+CO_1712,,,Unspecified,GROUNDWATER: STRAWBERRY CREEK,171650.0,groundwater/well
+CO_1713,,,Unspecified,WRAY GULCH,171630.0,reservoir
+CO_1714,,,Unspecified,GROUNDWATER: WHITE RIVER,204653.0,groundwater/well
+CO_1715,,,Unspecified,GROUNDWATER: DRY FORK PICEANCE CREEK,171718.0,groundwater/well
+CO_1716,,,Unspecified,GROUNDWATER: THIRTEENMILE CREEK,173721.0,groundwater/well
+CO_1717,,,Unspecified,GROUNDWATER: WOLF CREEK,170946.0,groundwater/well
+CO_1718,,,Unspecified,GROUNDWATER: CURTIS CREEK,173300.0,groundwater/well
+CO_1719,,,Unspecified,GROUNDWATER: DRIPPING ROCK CREEK,170854.0,groundwater/well
+CO_1720,,,Unspecified,GROUNDWATER: FOURTEENMILE CREEK,171980.0,groundwater/well
+CO_1721,,,Unspecified,GROUNDWATER: NORTH ELK CREEK,173592.0,groundwater/well
+CO_1722,,,Unspecified,GROUNDWATER: NORTH FORK WHITE RIVER,173461.0,groundwater/well
+CO_1723,,,Unspecified,GROUNDWATER: CORRAL GULCH,171797.0,groundwater/well
+CO_1724,,,Unspecified,GROUNDWATER: EVANS GULCH,430003.0,groundwater/well
+CO_1725,,,Unspecified,GROUNDWATER: YELLOW CREEK,171612.0,groundwater/well
+CO_1726,,,Unspecified,GROUNDWATER: BLACKS GULCH,171717.0,groundwater/well
+CO_1727,,,Unspecified,GROUNDWATER: MILLER CREEK,173575.0,groundwater/well
+CO_1728,,,Unspecified,GROUNDWATER: LITTLE BEAVER CREEK,173430.0,groundwater/well
+CO_1729,,,Unspecified,GROUNDWATER: RED WASH,170826.0,groundwater/well
+CO_1730,,,Unspecified,GROUNDWATER: PICEANCE CREEK,204652.0,groundwater/well
+CO_1731,,,Unspecified,GROUNDWATER: SHEEP CREEK,173416.0,groundwater/well
+CO_1732,,,Unspecified,GROUNDWATER: WEST WILLOW CREEK,172061.0,groundwater/well
+CO_1733,,,Unspecified,GROUNDWATER: RYAN GULCH,171802.0,groundwater/well
+CO_1734,,,Unspecified,GROUNDWATER: MISSOURI CREEK,171854.0,groundwater/well
+CO_1735,,,Unspecified,GROUNDWATER: SOUTH FORK WHITE RIVER,173597.0,groundwater/well
+CO_1736,,,Unspecified,GROUNDWATER: STEWART GULCH,201746.0,groundwater/well
+CO_1737,,,Unspecified,GROUNDWATER: FAWN CREEK,171919.0,groundwater/well
+CO_1738,,,Unspecified,GROUNDWATER: GREENSTREET CREEK,173595.0,groundwater/well
+CO_1739,,,Unspecified,GROUNDWATER: DUCK CREEK,171803.0,groundwater/well
+CO_1740,,,Unspecified,GROUNDWATER: FLAG CREEK,173411.0,groundwater/well
+CO_1741,,,Unspecified,GROUNDWATER: WHISKEY CREEK,171987.0,groundwater/well
+CO_1742,,,Unspecified,GROUNDWATER: DOUGAN DRAW,430004.0,groundwater/well
+CO_1743,,,Unspecified,GROUNDWATER: STAKE SPRINGS CREEK,171907.0,groundwater/well
+CO_1744,,,Unspecified,GROUNDWATER: EAST WILLOW CREEK,172062.0,groundwater/well
+CO_1745,,,Unspecified,GROUNDWATER: PUCKETT GULCH,171736.0,groundwater/well
+CO_1746,,,Unspecified,GROUNDWATER: MARVINE CREEK,173464.0,groundwater/well
+CO_1747,,,Unspecified,GROUNDWATER: SULPHUR CREEK,173402.0,groundwater/well
+CO_1748,,,Unspecified,GROUNDWATER: WEST HUNTER CREEK,172054.0,groundwater/well
+CO_1749,,,Unspecified,GROUNDWATER: STORY GULCH,171970.0,groundwater/well
+CO_1750,,,Unspecified,GROUNDWATER: SKULL CREEK,170929.0,groundwater/well
+CO_1751,,,Unspecified,MOODY CREEK,171418.0,Surface Water
+CO_1752,,,Unspecified,BUNKER CREEK,173373.0,Surface Water
+CO_1753,,,Unspecified,FORTIFICATION CREEK,171183.0,Surface Water
+CO_1754,,,Unspecified,EAST FORK WILLIAMS FORK,171446.0,Surface Water
+CO_1755,,,Unspecified,GOOD SPRING CREEK,171436.0,Surface Water
+CO_1756,,,Unspecified,SOUTH FORK WILLIAMS FORK,171448.0,Surface Water
+CO_1757,,,Unspecified,NORTH FORK ELKHEAD CREEK,169868.0,Surface Water
+CO_1758,,,Unspecified,BOGENSCHUTZ CREEK,171242.0,groundwater/spring
+CO_1759,,,Unspecified,PARASITE CREEK,440004.0,Surface Water
+CO_1760,,,Unspecified,DECEPTION CREEK,170701.0,reservoir
+CO_1761,,,Unspecified,WADDLE CREEK,171455.0,Surface Water
+CO_1762,,,Unspecified,CEDAR MOUNTAIN GULCH,171305.0,groundwater/spring
+CO_1763,,,Unspecified,MORGAN CREEK,171330.0,Surface Water
+CO_1764,,,Unspecified,ELKHEAD CREEK,171295.0,Surface Water
+CO_1765,,,Unspecified,HART GULCH,171450.0,Surface Water
+CO_1766,,,Unspecified,LAY CREEK,170980.0,Unknown
+CO_1767,,,Unspecified,SOUTH FORK FORTIFICATION CREEK,169859.0,Surface Water
+CO_1768,,,Unspecified,DRY FORK ELKHEAD CREEK,171205.0,Surface Water
+CO_1769,,,Unspecified,INDIAN RUN,171496.0,Surface Water
+CO_1770,,,Unspecified,BOXELDER GULCH,171336.0,Surface Water
+CO_1771,,,Unspecified,JEFFWAY GULCH,171373.0,Surface Water
+CO_1772,,,Unspecified,DEAL GULCH,171311.0,Surface Water
+CO_1773,,,Unspecified,MILLERS GULCH,171467.0,Surface Water
+CO_1774,,,Unspecified,PAGODA CREEK,173347.0,Surface Water
+CO_1775,,,Unspecified,DUBEAU CREEK,440010.0,Surface Water
+CO_1776,,,Unspecified,PYRAMID CREEK,440006.0,Surface Water
+CO_1777,,,Unspecified,RYE GRASS GULCH CREEK,440011.0,Surface Water
+CO_1778,,,Unspecified,POOSE CREEK,173360.0,Surface Water
+CO_1779,,,Unspecified,PECK HOMESTEAD GULCH,171487.0,Surface Water
+CO_1780,,,Unspecified,QUAKER CREEK,440014.0,Surface Water
+CO_1781,,,Unspecified,DRY FORK LITTLE BEAR CREEK,169866.0,Surface Water
+CO_1782,,,Unspecified,ROCK SPRING GULCH,171278.0,groundwater/spring
+CO_1783,,,Unspecified,BEN MORGAN CANYON,170998.0,Surface Water
+CO_1784,,,Unspecified,STINKING GULCH,171437.0,groundwater/spring
+CO_1785,,,Unspecified,BELL ROCK GULCH,171318.0,groundwater/spring
+CO_1786,,,Unspecified,PYEATT GULCH,171390.0,Surface Water
+CO_1787,,,Unspecified,SULPHUR GULCH,171320.0,groundwater/spring
+CO_1788,,,Unspecified,TWELVEMILE GULCH,170880.0,groundwater/spring
+CO_1789,,,Unspecified,PINE RIDGE GULCH,171244.0,groundwater/spring
+CO_1790,,,Unspecified,BRADBURN DRAW,440012.0,Surface Water
+CO_1791,,,Unspecified,BUCK GULCH,171281.0,Surface Water
+CO_1792,,,Unspecified,CEDAR SPRINGS DRAW,170666.0,groundwater/spring
+CO_1793,,,Unspecified,BENNER GULCH,440001.0,Surface Water
+CO_1794,,,Unspecified,BASIN GULCH,440008.0,Surface Water
+CO_1795,,,Unspecified,SAND GULCH,171307.0,groundwater/spring
+CO_1796,,,Unspecified,HAYDEN GULCH,171471.0,groundwater/spring
+CO_1797,,,Unspecified,DOWDEN GULCH,171470.0,groundwater/spring
+CO_1798,,,Unspecified,SNELL ROCK CREEK,173326.0,groundwater/spring
+CO_1799,,,Unspecified,CALF CREEK,171217.0,groundwater/spring
+CO_1800,,,Unspecified,GROUNDWATER: YAMPA RIVER,169566.0,groundwater/well
+CO_1801,,,Unspecified,BROWN GULCH,171294.0,groundwater/spring
+CO_1802,,,Unspecified,DEACON GULCH,171312.0,groundwater/spring
+CO_1803,,,Unspecified,HALE GULCH,171000.0,groundwater/spring
+CO_1804,,,Unspecified,JESSE GULCH,170976.0,groundwater/spring
+CO_1805,,,Unspecified,SAND SPRING GULCH,171243.0,groundwater/spring
+CO_1806,,,Unspecified,HOLE-IN-THE-WALL GULCH,173299.0,groundwater/spring
+CO_1807,,,Unspecified,MAUDLIN GULCH,170997.0,groundwater/spring
+CO_1808,,,Unspecified,FLUME GULCH,171389.0,Unknown
+CO_1809,,,Unspecified,BLUE GRAVEL CREEK,171185.0,groundwater/spring
+CO_1810,,,Unspecified,DEAKIN GULCH,171377.0,groundwater/spring
+CO_1811,,,Unspecified,MUD SPRING GULCH,170730.0,groundwater/spring
+CO_1812,,,Unspecified,SEARCY GULCH,171375.0,groundwater/spring
+CO_1813,,,Unspecified,JUBB CREEK,171432.0,groundwater/spring
+CO_1814,,,Unspecified,BERRY GULCH,171447.0,groundwater/spring
+CO_1815,,,Unspecified,TIMBER CREEK,173333.0,groundwater/spring
+CO_1816,,,Unspecified,NORTH FORK FORTIFICATION CREEK,169860.0,Surface Water
+CO_1817,,,Unspecified,CIRCLE CREEK,170530.0,Surface Water
+CO_1818,,,Unspecified,JOKODOWSKI CREEK,170531.0,Surface Water
+CO_1819,,,Unspecified,TORSO CREEK,170523.0,Surface Water
+CO_1820,,,Unspecified,DAYTON CREEK,440016.0,groundwater/spring
+CO_1821,,,Unspecified,BORD GULCH,171187.0,groundwater/spring
+CO_1822,,,Unspecified,JOHNSON GULCH,171391.0,groundwater/spring
+CO_1823,,,Unspecified,BALD MOUNTAIN DRAW,170739.0,reservoir
+CO_1824,,,Unspecified,BOONE GULCH,171286.0,reservoir
+CO_1825,,,Unspecified,MCLERNON DRAW,440017.0,reservoir
+CO_1826,,,Unspecified,TWO SPRINGS GULCH,440002.0,reservoir
+CO_1827,,,Unspecified,POST CREEK,440013.0,reservoir
+CO_1828,,,Unspecified,HERRING DRAW,171454.0,reservoir
+CO_1829,,,Unspecified,HOLE-IN-THE-WALL CREEK,170519.0,reservoir
+CO_1830,,,Unspecified,BIG CANYON CREEK,171197.0,reservoir
+CO_1831,,,Unspecified,KNOWLES CREEK,170522.0,reservoir
+CO_1832,,,Unspecified,GROUNDWATER: PYEATT GULCH,171390.0,groundwater/well
+CO_1833,,,Unspecified,GROUNDWATER: HALE GULCH,171000.0,groundwater/well
+CO_1834,,,Unspecified,GROUNDWATER: FORTIFICATION CREEK,171183.0,groundwater/well
+CO_1835,,,Unspecified,GROUNDWATER: SAND SPRING GULCH,171243.0,groundwater/well
+CO_1836,,,Unspecified,GROUNDWATER: BOGENSCHUTZ CREEK,171242.0,groundwater/well
+CO_1837,,,Unspecified,GROUNDWATER: JEFFWAY GULCH,171373.0,groundwater/well
+CO_1838,,,Unspecified,GROUNDWATER: FLUME GULCH,171389.0,groundwater/well
+CO_1839,,,Unspecified,GROUNDWATER: PECK HOMESTEAD GULCH,171487.0,groundwater/well
+CO_1840,,,Unspecified,GROUNDWATER: GOOD SPRING CREEK,171436.0,groundwater/well
+CO_1841,,,Unspecified,GROUNDWATER: WILLIAMS FORK,171457.0,groundwater/well
+CO_1842,,,Unspecified,GROUNDWATER: SOUTH FORK WILLIAMS FORK,171448.0,groundwater/well
+CO_1843,,,Unspecified,GROUNDWATER: CEDAR MOUNTAIN GULCH,171305.0,groundwater/well
+CO_1844,,,Unspecified,GROUNDWATER: PINE RIDGE GULCH,171244.0,groundwater/well
+CO_1845,,,Unspecified,GROUNDWATER: LAY CREEK,170980.0,groundwater/well
+CO_1846,,,Unspecified,GROUNDWATER: SULPHUR GULCH,171320.0,groundwater/well
+CO_1847,,,Unspecified,GROUNDWATER: BORD GULCH,171187.0,groundwater/well
+CO_1848,,,Unspecified,GROUNDWATER: STINKING GULCH,171437.0,groundwater/well
+CO_1849,,,Unspecified,GROUNDWATER: MORAPOS CREEK,204650.0,groundwater/well
+CO_1850,,,Unspecified,GROUNDWATER: CALF CREEK,171217.0,groundwater/well
+CO_1851,,,Unspecified,GROUNDWATER: DECEPTION CREEK,170701.0,groundwater/well
+CO_1852,,,Unspecified,GROUNDWATER: SOUTH FORK FORTIFICATION CREEK,169859.0,groundwater/well
+CO_1853,,,Unspecified,GROUNDWATER: NORTH FORK ELKHEAD CREEK,169868.0,groundwater/well
+CO_1854,,,Unspecified,GROUNDWATER: DEAKIN GULCH,171377.0,groundwater/well
+CO_1855,,,Unspecified,GROUNDWATER: ELKHEAD CREEK,171295.0,groundwater/well
+CO_1856,,,Unspecified,GROUNDWATER: SAND GULCH,171307.0,groundwater/well
+CO_1857,,,Unspecified,GROUNDWATER: DEAL GULCH,171311.0,groundwater/well
+CO_1858,,,Unspecified,GROUNDWATER: BELL ROCK GULCH,171318.0,groundwater/well
+CO_1859,,,Unspecified,GROUNDWATER: JAMES CREEK,173297.0,groundwater/well
+CO_1860,,,Unspecified,GROUNDWATER: MILK CREEK,171329.0,groundwater/well
+CO_1861,,,Unspecified,GROUNDWATER: DEACON GULCH,171312.0,groundwater/well
+CO_1862,,,Unspecified,GROUNDWATER: DAYTON CREEK,440016.0,groundwater/well
+CO_1863,,,Unspecified,GROUNDWATER: SAND CREEK,170717.0,groundwater/well
+CO_1864,,,Unspecified,GROUNDWATER: BUCK GULCH,171281.0,groundwater/well
+CO_1865,,,Unspecified,HALL'S GULCH,174766.0,Surface Water
+CO_1866,,,Unspecified,GARFIELD CREEK,174797.0,Surface Water
+CO_1867,,,Unspecified,MAMM CREEK,174770.0,Surface Water
+CO_1868,,,Unspecified,WEST MAMM CREEK,174757.0,groundwater/spring
+CO_1869,,,Unspecified,WALLACE CREEK,174256.0,Surface Water
+CO_1870,,,Unspecified,BATTLEMENT CREEK,174262.0,Surface Water
+CO_1871,,,Unspecified,SPRING RUN GULCH,450001.0,Surface Water
+CO_1872,,,Unspecified,DRY HOLLOW CREEK,174769.0,Surface Water
+CO_1873,,,Unspecified,GIBSON GULCH,174780.0,Surface Water
+CO_1874,,,Unspecified,MIDDLE MAMM CREEK,174759.0,Surface Water
+CO_1875,,,Unspecified,PORCUPINE CREEK,174753.0,Surface Water
+CO_1876,,,Unspecified,BALDY CREEK,174783.0,Surface Water
+CO_1877,,,Unspecified,WEST DIVIDE CREEK,174787.0,Surface Water
+CO_1878,,,Unspecified,LITTLE ALKALI CREEK,174258.0,Surface Water
+CO_1879,,,Unspecified,EAST DIVIDE CREEK,174793.0,Surface Water
+CO_1880,,,Unspecified,EAST MAMM CREEK,174764.0,Surface Water
+CO_1881,,,Unspecified,SOUTH CANYON CREEK,174795.0,Surface Water
+CO_1882,,,Unspecified,DIVIDE CREEK,174788.0,groundwater/spring
+CO_1883,,,Unspecified,MONUMENT GULCH,174247.0,Surface Water
+CO_1884,,,Unspecified,PETE AND BILL CREEK,174245.0,Surface Water
+CO_1885,,,Unspecified,HELMER GULCH,174763.0,groundwater/spring
+CO_1886,,,Unspecified,RAMSEY GULCH,174752.0,groundwater/spring
+CO_1887,,,Unspecified,GROUNDWATER: GIBSON GULCH,174780.0,groundwater/well
+CO_1888,,,Unspecified,GROUNDWATER: GARFIELD CREEK,174797.0,groundwater/well
+CO_1889,,,Unspecified,GROUNDWATER: DRY HOLLOW CREEK,174769.0,groundwater/well
+CO_1890,,,Unspecified,GROUNDWATER: WEST DIVIDE CREEK,174787.0,groundwater/well
+CO_1891,,,Unspecified,GROUNDWATER: PORCUPINE CREEK,174753.0,groundwater/well
+CO_1892,,,Unspecified,GROUNDWATER: MAMM CREEK,174770.0,groundwater/well
+CO_1893,,,Unspecified,GROUNDWATER: EAST DIVIDE CREEK,174793.0,groundwater/well
+CO_1894,,,Unspecified,GROUNDWATER: DIVIDE CREEK,174788.0,groundwater/well
+CO_1895,,,Unspecified,GROUNDWATER: MIDDLE MAMM CREEK,174759.0,groundwater/well
+CO_1896,,,Unspecified,GROUNDWATER: HALL'S GULCH,174766.0,groundwater/well
+CO_1897,,,Unspecified,GROUNDWATER: WALLACE CREEK,174256.0,groundwater/well
+CO_1898,,,Unspecified,GROUNDWATER: CACHE CREEK,174740.0,groundwater/well
+CO_1899,,,Unspecified,GROUNDWATER: SOUTH CANYON CREEK,174795.0,groundwater/well
+CO_1900,,,Unspecified,GROUNDWATER: EAST MAMM CREEK,174764.0,groundwater/well
+CO_1901,,,Unspecified,GROUNDWATER: BATTLEMENT CREEK,174262.0,groundwater/well
+CO_1902,,,Unspecified,GROUNDWATER: RAMSEY GULCH,174752.0,groundwater/well
+CO_1903,,,Unspecified,SAMBRITO CREEK,184434.0,Surface Water
+CO_1904,,,Unspecified,ROCK GULCH,460003.0,Surface Water
+CO_1905,,,Unspecified,VALLEJO ARROYA,460002.0,Surface Water
+CO_1906,,,Unspecified,SCOGGIN ARROYO,184507.0,Surface Water
+CO_1907,,,Unspecified,SAWYER ARROYA,460001.0,Surface Water
+CO_1908,,,Unspecified,GROUNDWATER: SAMBRITO CREEK,184434.0,groundwater/well
+CO_1909,,,Unspecified,ARAPAHO CREEK,172806.0,Surface Water
+CO_1910,,,Unspecified,CROSBY CREEK,172595.0,Surface Water
+CO_1911,,,Unspecified,COYOTE CREEK,172663.0,Surface Water
+CO_1912,,,Unspecified,NORRIS CREEK,172330.0,Surface Water
+CO_1913,,,Unspecified,NEWCOMB CREEK,172328.0,Surface Water
+CO_1914,,,Unspecified,NORTH PLATTE RIVER,204647.0,Surface Water
+CO_1915,,,Unspecified,GRIZZLY CREEK,172405.0,Surface Water
+CO_1916,,,Unspecified,CANADIAN RIVER,170302.0,Surface Water
+CO_1917,,,Unspecified,MICHIGAN RIVER,172408.0,Surface Water
+CO_1918,,,Unspecified,ILLINOIS RIVER,170358.0,Surface Water
+CO_1919,,,Unspecified,SOUTH FORK CANADIAN RIVER,172692.0,Surface Water
+CO_1920,,,Unspecified,NORTH FORK NORTH PLATTE RIVER,169933.0,Surface Water
+CO_1921,,,Unspecified,LITTLE GRIZZLY CREEK,172406.0,Surface Water
+CO_1922,,,Unspecified,CHEDSEY CREEK,172560.0,Surface Water
+CO_1923,,,Unspecified,RASPBERRY CREEK,172367.0,Surface Water
+CO_1924,,,Unspecified,PINKHAM CREEK,170006.0,Surface Water
+CO_1925,,,Unspecified,LINE CREEK,169930.0,Surface Water
+CO_1926,,,Unspecified,SHERMAN CREEK,170334.0,Surface Water
+CO_1927,,,Unspecified,KIMMONS CREEK,202065.0,Surface Water
+CO_1928,,,Unspecified,SUTTON CREEK,172902.0,Surface Water
+CO_1929,,,Unspecified,DARLING CREEK,172594.0,Surface Water
+CO_1930,,,Unspecified,DRY FORK MICHIGAN RIVER,172409.0,Surface Water
+CO_1931,,,Unspecified,DORAN CREEK,172596.0,Surface Water
+CO_1932,,,Unspecified,SOUTH FORK BIG CREEK,169932.0,Surface Water
+CO_1933,,,Unspecified,HELL CREEK,172366.0,Surface Water
+CO_1934,,,Unspecified,MCKENZIE CREEK,170299.0,Surface Water
+CO_1935,,,Unspecified,BRIDGER CREEK,470005.0,Surface Water
+CO_1936,,,Unspecified,YOCKUM CREEK,170332.0,Surface Water
+CO_1937,,,Unspecified,NINEGAR CREEK,172825.0,Surface Water
+CO_1938,,,Unspecified,FRIENDS DRAW,172664.0,Surface Water
+CO_1939,,,Unspecified,FISCHER DRAW,169986.0,Surface Water
+CO_1940,,,Unspecified,EAST BRANCH WILLOW CREEK,172899.0,Surface Water
+CO_1941,,,Unspecified,MOSSMAN POLE PATCH CREEK,177048.0,Surface Water
+CO_1942,,,Unspecified,COLORADO CREEK,172775.0,Surface Water
+CO_1943,,,Unspecified,MCNALLY CREEK,170300.0,Surface Water
+CO_1944,,,Unspecified,SOUTH FORK MICHIGAN RIVER,172690.0,Surface Water
+CO_1945,,,Unspecified,MANSFIELD DRAW,170370.0,Surface Water
+CO_1946,,,Unspecified,SOUTH FORK BEAVER CREEK,172355.0,Surface Water
+CO_1947,,,Unspecified,MEXICAN CREEK,172597.0,Surface Water
+CO_1948,,,Unspecified,MENDENHALL CREEK,170323.0,Surface Water
+CO_1949,,,Unspecified,SAINT FRANCIS CREEK,170330.0,Surface Water
+CO_1950,,,Unspecified,POTTER CREEK,172372.0,Surface Water
+CO_1951,,,Unspecified,SHAFER CREEK,170427.0,Surface Water
+CO_1952,,,Unspecified,SALES CREEK,172685.0,Surface Water
+CO_1953,,,Unspecified,MCKINNON CREEK,172897.0,Surface Water
+CO_1954,,,Unspecified,LITTLE BUFFALO CREEK,172833.0,Surface Water
+CO_1955,,,Unspecified,EAST SAND CREEK,170293.0,Surface Water
+CO_1956,,,Unspecified,WHEELER CREEK,169949.0,Surface Water
+CO_1957,,,Unspecified,NORTH SAND CREEK,201921.0,Surface Water
+CO_1958,,,Unspecified,SOAP CREEK,172599.0,groundwater/spring
+CO_1959,,,Unspecified,SOUTH FORK ARAPAHO CREEK,172823.0,Surface Water
+CO_1960,,,Unspecified,MIDDLE FORK ARAPAHO CREEK,172824.0,Surface Water
+CO_1961,,,Unspecified,EAST FORK ARAPAHO CREEK,172834.0,Surface Water
+CO_1962,,,Unspecified,ENCAMPMENT RIVER,169918.0,Surface Water
+CO_1963,,,Unspecified,WEST FORK ENCAMPMENT RIVER,169923.0,Surface Water
+CO_1964,,,Unspecified,SOUTH FORK HOG PARK CREEK,169919.0,Surface Water
+CO_1965,,,Unspecified,BADGERO CREEK,172896.0,groundwater/spring
+CO_1966,,,Unspecified,BUTTE CREEK,196656.0,groundwater/spring
+CO_1967,,,Unspecified,SLOUGH CREEK,470003.0,Unknown
+CO_1968,,,Unspecified,GRASS CREEK,177247.0,Surface Water
+CO_1969,,,Unspecified,BOLTON DRAW,470001.0,groundwater/spring
+CO_1970,,,Unspecified,PARKVIEW CREEK,172926.0,groundwater/spring
+CO_1971,,,Unspecified,WHALEN CREEK,172561.0,Surface Water
+CO_1972,,,Unspecified,DAMFINO CREEK,169927.0,Surface Water
+CO_1973,,,Unspecified,NORTH FORK CANADIAN RIVER,172693.0,Surface Water
+CO_1974,,,Unspecified,ALDERDICE DRAW,172681.0,Surface Water
+CO_1975,,,Unspecified,NORTH FORK MICHIGAN RIVER,172691.0,Surface Water
+CO_1976,,,Unspecified,HOWD CREEK,172901.0,reservoir
+CO_1977,,,Unspecified,MIDDLE FORK MEXICAN CREEK,172791.0,reservoir
+CO_1978,,,Unspecified,ED VAN DRAW,172811.0,reservoir
+CO_1979,,,Unspecified,GROUNDWATER: SOUTH FORK MICHIGAN RIVER,172690.0,groundwater/well
+CO_1980,,,Unspecified,GROUNDWATER: MICHIGAN RIVER,172408.0,groundwater/well
+CO_1981,,,Unspecified,GROUNDWATER: CANADIAN RIVER,170302.0,groundwater/well
+CO_1982,,,Unspecified,GROUNDWATER: NORTH FORK NORTH PLATTE RIVER,169933.0,groundwater/well
+CO_1983,,,Unspecified,GROUNDWATER: NORTH PLATTE RIVER,204647.0,groundwater/well
+CO_1984,,,Unspecified,GROUNDWATER: GRIZZLY CREEK,172405.0,groundwater/well
+CO_1985,,,Unspecified,GROUNDWATER: ILLINOIS RIVER,170358.0,groundwater/well
+CO_1986,,,Unspecified,GROUNDWATER: ANTELOPE CREEK,172411.0,groundwater/well
+CO_1987,,,Unspecified,GROUNDWATER: LITTLE GRIZZLY CREEK,172406.0,groundwater/well
+CO_1988,,,Unspecified,GROUNDWATER: DEER CREEK,172680.0,groundwater/well
+CO_1989,,,Unspecified,GROUNDWATER: CROSBY CREEK,172595.0,groundwater/well
+CO_1990,,,Unspecified,GROUNDWATER: SOUTH FORK BEAVER CREEK,172355.0,groundwater/well
+CO_1991,,,Unspecified,GROUNDWATER: NEWCOMB CREEK,172328.0,groundwater/well
+CO_1992,,,Unspecified,LARAMIE RIVER,170459.0,Surface Water
+CO_1993,,,Unspecified,GROUNDWATER: ROARING FORK,172332.0,groundwater/well
+CO_1994,,,Unspecified,GROUNDWATER: NORTH FORK MICHIGAN RIVER,172691.0,groundwater/well
+CO_1995,,,Unspecified,GROUNDWATER: PINKHAM CREEK,170006.0,groundwater/well
+CO_1996,,,Unspecified,BRINKER CREEK,177093.0,Surface Water
+CO_1997,,,Unspecified,PORTER CREEK,177074.0,Surface Water
+CO_1998,,,Unspecified,NUNN CREEK,170286.0,Surface Water
+CO_1999,,,Unspecified,STUB CREEK,170281.0,Surface Water
+CO_2000,,,Unspecified,MCINTYRE CREEK,170057.0,Surface Water
+CO_2001,,,Unspecified,JINKS CREEK,170280.0,Surface Water
+CO_2002,,,Unspecified,STUART CREEK,170305.0,Surface Water
+CO_2003,,,Unspecified,BRITISH CREEK,170306.0,Surface Water
+CO_2004,,,Unspecified,JIMMY CREEK,170056.0,Surface Water
+CO_2005,,,Unspecified,TROLLOP CREEK,170055.0,Surface Water
+CO_2006,,,Unspecified,LA GARDE CREEK,170308.0,Surface Water
+CO_2007,,,Unspecified,MCGUIRE CREEK,170307.0,Surface Water
+CO_2008,,,Unspecified,LITTLE JENKINS CREEK,170454.0,Surface Water
+CO_2009,,,Unspecified,JENKINS CREEK,170453.0,Surface Water
+CO_2010,,,Unspecified,FORRESTER CREEK,170455.0,Surface Water
+CO_2011,,,Unspecified,GRACE CREEK,171002.0,Surface Water
+CO_2012,,,Unspecified,STUCK CREEK,170038.0,Surface Water
+CO_2013,,,Unspecified,WEST BRANCH LARAMIE RIVER,177050.0,Surface Water
+CO_2014,,,Unspecified,RAWAH CREEK,170283.0,Surface Water
+CO_2015,,,Unspecified,FRENCHWOMAN CREEK,170059.0,Unknown
+CO_2016,,,Unspecified,STINK CREEK,170085.0,Unknown
+CO_2017,,,Unspecified,SHELL CREEK,170080.0,Unknown
+CO_2018,,,Unspecified,JOHNSON CREEK,170035.0,Unknown
+CO_2019,,,Unspecified,BOSWELL CREEK,170033.0,Surface Water
+CO_2020,,,Unspecified,SOUTH FORK REPUBLICAN RIVER,833592.0,Surface Water
+CO_2021,,,Unspecified,GROUNDWATER: LARAMIE RIVER,170459.0,groundwater/well
+CO_2022,,,Unspecified,LANDSMAN CREEK,203754.0,reservoir
+CO_2023,,,Unspecified,GROUNDWATER: SOUTH FORK REPUBLICAN RIVER,833592.0,groundwater/well
+CO_2024,,,Unspecified,ALBERT CREEK,172961.0,Surface Water
+CO_2025,,,Unspecified,RED DIRT CREEK,173169.0,Surface Water
+CO_2026,,,Unspecified,WASTE CREEK,173203.0,Surface Water
+CO_2027,,,Unspecified,DIAMOND CREEK,172822.0,Surface Water
+CO_2028,,,Unspecified,PINTO CREEK,173202.0,Surface Water
+CO_2029,,,Unspecified,DUNNING CREEK,173134.0,Surface Water
+CO_2030,,,Unspecified,EAST FORK TROUBLESOME CREEK,173031.0,Surface Water
+CO_2031,,,Unspecified,LINDSEY CREEK,172998.0,Surface Water
+CO_2032,,,Unspecified,LITTLE MUDDY CREEK,172788.0,Surface Water
+CO_2033,,,Unspecified,STARR GULCH,173209.0,Surface Water
+CO_2034,,,Unspecified,ROUND CREEK,173226.0,Surface Water
+CO_2035,,,Unspecified,LAWRENCE CREEK,173204.0,Surface Water
+CO_2036,,,Unspecified,COLBURN CREEK,500001.0,Surface Water
+CO_2037,,,Unspecified,BURKE SPRING CREEK,173168.0,reservoir
+CO_2038,,,Unspecified,GROUNDWATER: RED DIRT CREEK,173169.0,groundwater/well
+CO_2039,,,Unspecified,GROUNDWATER: STARR GULCH,173209.0,groundwater/well
+CO_2040,,,Unspecified,GROUNDWATER: TROUBLESOME CREEK,173005.0,groundwater/well
+CO_2041,,,Unspecified,BULL RUN,175635.0,Surface Water
+CO_2042,,,Unspecified,KINNEY CREEK,175669.0,Surface Water
+CO_2043,,,Unspecified,BATTLE CREEK,173242.0,Surface Water
+CO_2044,,,Unspecified,SAINT LOUIS CREEK,181304.0,Surface Water
+CO_2045,,,Unspecified,COPPER CREEK,175634.0,Surface Water
+CO_2046,,,Unspecified,GARDINER CREEK,173238.0,Surface Water
+CO_2047,,,Unspecified,LITTLE COLUMBINE CREEK,178095.0,Surface Water
+CO_2048,,,Unspecified,ROHRACHER CREEK,510006.0,Surface Water
+CO_2049,,,Unspecified,RASBERRY CREEK,510003.0,Surface Water
+CO_2050,,,Unspecified,HEIMBAUGH CREEK,173239.0,Surface Water
+CO_2051,,,Unspecified,UTE BILL CREEK,173232.0,Surface Water
+CO_2052,,,Unspecified,STILLWATER CREEK,177762.0,Surface Water
+CO_2053,,,Unspecified,NINEMILE CREEK,178393.0,Surface Water
+CO_2054,,,Unspecified,FRASER RIVER,178386.0,Surface Water
+CO_2055,,,Unspecified,RANCH CREEK,180941.0,Surface Water
+CO_2056,,,Unspecified,DOE CREEK,178420.0,Surface Water
+CO_2057,,,Unspecified,REEDER CREEK,173211.0,Surface Water
+CO_2058,,,Unspecified,SKYLARK CREEK,175717.0,Surface Water
+CO_2059,,,Unspecified,MULLER CREEK,178398.0,Surface Water
+CO_2060,,,Unspecified,SHERIFF CREEK,173231.0,Surface Water
+CO_2061,,,Unspecified,GOOD YEW CREEK,510001.0,Surface Water
+CO_2062,,,Unspecified,KOVACS DRAW,510004.0,Surface Water
+CO_2063,,,Unspecified,TONAHUTU CREEK,177767.0,Surface Water
+CO_2064,,,Unspecified,REED CREEK,178399.0,Surface Water
+CO_2065,,,Unspecified,LITTLE CABIN CREEK,180940.0,Surface Water
+CO_2066,,,Unspecified,HURD CREEK,178410.0,Surface Water
+CO_2067,,,Unspecified,JONES CREEK,181312.0,Surface Water
+CO_2068,,,Unspecified,SUPPLY CREEK,177763.0,Surface Water
+CO_2069,,,Unspecified,DROWSY WATER CREEK,173280.0,Surface Water
+CO_2070,,,Unspecified,MARIETTA CREEK,173236.0,Surface Water
+CO_2071,,,Unspecified,MIDDLE FORK WILLIAMS FORK,175726.0,Surface Water
+CO_2072,,,Unspecified,ROCKWELL CREEK,178400.0,Surface Water
+CO_2073,,,Unspecified,GOLD RUN,173247.0,Surface Water
+CO_2074,,,Unspecified,MCQUEARY CREEK,181309.0,Surface Water
+CO_2075,,,Unspecified,VASQUEZ CREEK,180939.0,Surface Water
+CO_2076,,,Unspecified,COOPER CREEK,180958.0,Surface Water
+CO_2077,,,Unspecified,LITTLE VASQUEZ CREEK,180949.0,Surface Water
+CO_2078,,,Unspecified,CLINES SLOUGH,510005.0,Surface Water
+CO_2079,,,Unspecified,SOUTH FORK RANCH CREEK,180943.0,Surface Water
+CO_2080,,,Unspecified,LELAND CREEK,180961.0,Surface Water
+CO_2081,,,Unspecified,WALDEN HOLLOW CREEK,178422.0,groundwater/spring
+CO_2082,,,Unspecified,BARGER GULCH,173212.0,Surface Water
+CO_2083,,,Unspecified,JENSEN CREEK,173235.0,groundwater/spring
+CO_2084,,,Unspecified,NORTH INLET,177766.0,Surface Water
+CO_2085,,,Unspecified,SPECIMEN CREEK,204931.0,Surface Water
+CO_2086,,,Unspecified,STEELMAN CREEK,181311.0,Surface Water
+CO_2087,,,Unspecified,JIM CREEK,180945.0,Surface Water
+CO_2088,,,Unspecified,BOBTAIL CREEK,181310.0,Surface Water
+CO_2089,,,Unspecified,KEYSER CREEK,175667.0,Surface Water
+CO_2090,,,Unspecified,BUCHANAN CREEK,204993.0,Unknown
+CO_2091,,,Unspecified,ONAHU CREEK,204949.0,Surface Water
+CO_2092,,,Unspecified,EAST INLET,178127.0,Surface Water
+CO_2093,,,Unspecified,GROUNDWATER: CROOKED CREEK,178413.0,groundwater/well
+CO_2094,,,Unspecified,GROUNDWATER: TRAIL CREEK,173055.0,groundwater/well
+CO_2095,,,Unspecified,GROUNDWATER: RANCH CREEK,180941.0,groundwater/well
+CO_2096,,,Unspecified,GROUNDWATER: POLE CREEK,180917.0,groundwater/well
+CO_2097,,,Unspecified,GROUNDWATER: WALDEN HOLLOW CREEK,178422.0,groundwater/well
+CO_2098,,,Unspecified,GROUNDWATER: FRASER RIVER,178386.0,groundwater/well
+CO_2099,,,Unspecified,GROUNDWATER: STILLWATER CREEK,177762.0,groundwater/well
+CO_2100,,,Unspecified,GROUNDWATER: LITTLE COLUMBINE CREEK,178095.0,groundwater/well
+CO_2101,,,Unspecified,GROUNDWATER: CORRAL CREEK,173233.0,groundwater/well
+CO_2102,,,Unspecified,GROUNDWATER: SAINT LOUIS CREEK,181304.0,groundwater/well
+CO_2103,,,Unspecified,GROUNDWATER: SPRING BRANCH,180915.0,groundwater/well
+CO_2104,,,Unspecified,GROUNDWATER: JOHNSON GULCH,173281.0,groundwater/well
+CO_2105,,,Unspecified,GROUNDWATER: TONAHUTU CREEK,177767.0,groundwater/well
+CO_2106,,,Unspecified,GROUNDWATER: SUPPLY CREEK,177763.0,groundwater/well
+CO_2107,,,Unspecified,GROUNDWATER: NORTH INLET,177766.0,groundwater/well
+CO_2108,,,Unspecified,GROUNDWATER: COPPER CREEK,175634.0,groundwater/well
+CO_2109,,,Unspecified,GROUNDWATER: SILVER CREEK,178389.0,groundwater/well
+CO_2110,,,Unspecified,GROUNDWATER: LITTLE VASQUEZ CREEK,180949.0,groundwater/well
+CO_2111,,,Unspecified,DEBERARD DRAW,178394.0,groundwater/spring
+CO_2112,,,Unspecified,GROUNDWATER: HAMILTON CREEK,178423.0,groundwater/well
+CO_2113,,,Unspecified,GROUNDWATER: FISHER CREEK,510002.0,groundwater/well
+CO_2114,,,Unspecified,GROUNDWATER: MULLER CREEK,178398.0,groundwater/well
+CO_2115,,,Unspecified,GROUNDWATER: SKUNK CREEK,180916.0,groundwater/well
+CO_2116,,,Unspecified,GROUNDWATER: KEYSER CREEK,175667.0,groundwater/well
+CO_2117,,,Unspecified,PINEY RIVER,175797.0,Surface Water
+CO_2118,,,Unspecified,POSEY CREEK,175775.0,Surface Water
+CO_2119,,,Unspecified,ALAMO CREEK,175776.0,Surface Water
+CO_2120,,,Unspecified,IKE CREEK,174094.0,Surface Water
+CO_2121,,,Unspecified,SHEEPHORN CREEK,175759.0,Surface Water
+CO_2122,,,Unspecified,WEST BRANCH COTTONWOOD CREEK,520004.0,Surface Water
+CO_2123,,,Unspecified,BIG ALKALI CREEK,175744.0,Surface Water
+CO_2124,,,Unspecified,GOODSON CREEK,175807.0,Surface Water
+CO_2125,,,Unspecified,HENRY CREEK,520001.0,Surface Water
+CO_2126,,,Unspecified,HARTMAN GULCH,520002.0,Surface Water
+CO_2127,,,Unspecified,DEER PEN CREEK,520003.0,Surface Water
+CO_2128,,,Unspecified,BOX CANYON CREEK,175835.0,Surface Water
+CO_2129,,,Unspecified,STARK CREEK,175819.0,reservoir
+CO_2130,,,Unspecified,COLE BLACK CREEK,175834.0,reservoir
+CO_2131,,,Unspecified,FIRST FORK SOUTH FORK PINEY RIVER,175814.0,reservoir
+CO_2132,,,Unspecified,GROUNDWATER: SHEEPHORN CREEK,175759.0,groundwater/well
+CO_2133,,,Unspecified,TRAIL GULCH,173877.0,groundwater/spring
+CO_2134,,,Unspecified,GROUNDWATER: BIG ALKALI CREEK,175744.0,groundwater/well
+CO_2135,,,Unspecified,GROUNDWATER: PINEY RIVER,175797.0,groundwater/well
+CO_2136,,,Unspecified,DERBY CREEK,173714.0,groundwater/spring
+CO_2137,,,Unspecified,YARMONY CREEK,196516.0,Surface Water
+CO_2138,,,Unspecified,BLACKTAIL CREEK,173136.0,Surface Water
+CO_2139,,,Unspecified,SUNNYSIDE CREEK,173718.0,Surface Water
+CO_2140,,,Unspecified,SWEETWATER CREEK,173675.0,Surface Water
+CO_2141,,,Unspecified,NORTH FORK CEDAR CREEK,173707.0,Surface Water
+CO_2142,,,Unspecified,EGERIA CREEK,175749.0,Surface Water
+CO_2143,,,Unspecified,TOPONAS CREEK,173128.0,Surface Water
+CO_2144,,,Unspecified,DARNELL CREEK,173862.0,Surface Water
+CO_2145,,,Unspecified,RILAND CREEK,173855.0,Surface Water
+CO_2146,,,Unspecified,NORTH FORK DERBY CREEK,173703.0,Surface Water
+CO_2147,,,Unspecified,WEST BRANCH RED DIRT CREEK,175734.0,Surface Water
+CO_2148,,,Unspecified,HACK CREEK,173869.0,Surface Water
+CO_2149,,,Unspecified,IRRAWADDY CREEK,173983.0,Surface Water
+CO_2150,,,Unspecified,TURRET CREEK,173672.0,Surface Water
+CO_2151,,,Unspecified,SOUTH FORK DERBY CREEK,173678.0,Surface Water
+CO_2152,,,Unspecified,LITTLE BLACKTAIL CREEK,173166.0,Surface Water
+CO_2153,,,Unspecified,POISON CREEK,173874.0,Surface Water
+CO_2154,,,Unspecified,SKINNER BRANCH,530001.0,Surface Water
+CO_2155,,,Unspecified,WEST FORK SHEEP CREEK,173870.0,Surface Water
+CO_2156,,,Unspecified,TEPEE CREEK,175737.0,Surface Water
+CO_2157,,,Unspecified,LITTLE ROCK CREEK,173151.0,Surface Water
+CO_2158,,,Unspecified,DEAD HORSE CREEK,196550.0,Surface Water
+CO_2159,,,Unspecified,BLUE GULCH,174102.0,reservoir
+CO_2160,,,Unspecified,EAST FORK DEAD HORSE CREEK,173985.0,reservoir
+CO_2161,,,Unspecified,WEST FORK DEAD HORSE CREEK,173984.0,reservoir
+CO_2162,,,Unspecified,MIDDLE FORK DERBY CREEK,173663.0,reservoir
+CO_2163,,,Unspecified,JOLLEY CREEK,173155.0,reservoir
+CO_2164,,,Unspecified,TIE CREEK,196781.0,reservoir
+CO_2165,,,Unspecified,GRUNER CREEK,173861.0,reservoir
+CO_2166,,,Unspecified,GROUNDWATER: TOPONAS CREEK,173128.0,groundwater/well
+CO_2167,,,Unspecified,GROUNDWATER: SWEETWATER CREEK,173675.0,groundwater/well
+CO_2168,,,Unspecified,GROUNDWATER: HORSE CREEK,173885.0,groundwater/well
+CO_2169,,,Unspecified,GROUNDWATER: DERBY CREEK,173714.0,groundwater/well
+CO_2170,,,Unspecified,GROUNDWATER: EGERIA CREEK,175749.0,groundwater/well
+CO_2171,,,Unspecified,GROUNDWATER: HACK CREEK,173869.0,groundwater/well
+CO_2172,,,Unspecified,GROUNDWATER: YARMONY CREEK,196516.0,groundwater/well
+CO_2173,,,Unspecified,BROKEN RIB CREEK,173954.0,groundwater/spring
+CO_2174,,,Unspecified,LITTLE SNAKE RIVER,201744.0,Surface Water
+CO_2175,,,Unspecified,SOUTH FORK LITTLE SNAKE RIVER,169891.0,Surface Water
+CO_2176,,,Unspecified,JACK RABBIT CREEK,169740.0,Surface Water
+CO_2177,,,Unspecified,ROARING FORK SLATER CREEK,169634.0,Surface Water
+CO_2178,,,Unspecified,BEDROCK CREEK,169898.0,Surface Water
+CO_2179,,,Unspecified,INDEPENDENCE CREEK,169908.0,Surface Water
+CO_2180,,,Unspecified,CANTLING CREEK,169639.0,Surface Water
+CO_2181,,,Unspecified,WEST PRONG SOUTH FORK SLATER CREEK,169864.0,Surface Water
+CO_2182,,,Unspecified,GOLD BLOSSOM CREEK,169851.0,Surface Water
+CO_2183,,,Unspecified,HARTZELL CREEK,540003.0,Surface Water
+CO_2184,,,Unspecified,LAKE FORK CREEK,540001.0,Surface Water
+CO_2185,,,Unspecified,ADAMS CREEK,169861.0,Surface Water
+CO_2186,,,Unspecified,SUMMIT CREEK,169907.0,Surface Water
+CO_2187,,,Unspecified,PUTT CREEK,169749.0,Surface Water
+CO_2188,,,Unspecified,SOUTH FORK SLATER CREEK,169865.0,groundwater/spring
+CO_2189,,,Unspecified,KING SOLOMON CREEK,169883.0,groundwater/spring
+CO_2190,,,Unspecified,MIDDLE FORK LITTLE SNAKE RIVER,169887.0,groundwater/spring
+CO_2191,,,Unspecified,GOVERNMENT CORRAL CREEK,169623.0,Groundwater
+CO_2192,,,Unspecified,FLY CREEK,169738.0,Surface Water
+CO_2193,,,Unspecified,WEST TIMBERLAKE CREEK,169826.0,groundwater/spring
+CO_2194,,,Unspecified,EAST TIMBERLAKE CREEK,169825.0,groundwater/spring
+CO_2195,,,Unspecified,THORNBURGH GULCH,169732.0,groundwater/spring
+CO_2196,,,Unspecified,TIMBERLAKE CREEK,169725.0,groundwater/spring
+CO_2197,,,Unspecified,HOUSEL GULCH,169824.0,groundwater/spring
+CO_2198,,,Unspecified,MUD SPRINGS DRAW,169753.0,groundwater/spring
+CO_2199,,,Unspecified,POLE GULCH,169724.0,groundwater/spring
+CO_2200,,,Unspecified,BOX SPRING CREEK,169748.0,groundwater/spring
+CO_2201,,,Unspecified,CRAWFORD CREEK,170525.0,Surface Water
+CO_2202,,,Unspecified,EAST FORK WHISKEY CREEK,540005.0,Surface Water
+CO_2203,,,Unspecified,NORTH FORK LITTLE SNAKE RIVER,169886.0,Surface Water
+CO_2204,,,Unspecified,SILVER CITY CREEK,169906.0,Surface Water
+CO_2205,,,Unspecified,WEST FORK WHISKEY CREEK,540004.0,Surface Water
+CO_2206,,,Unspecified,GROUNDWATER: EAST TIMBERLAKE CREEK,169825.0,groundwater/well
+CO_2207,,,Unspecified,GROUNDWATER: DRY GULCH,169736.0,groundwater/well
+CO_2208,,,Unspecified,GROUNDWATER: KING SOLOMON CREEK,169883.0,groundwater/well
+CO_2209,,,Unspecified,GROUNDWATER: INDEPENDENCE CREEK,169908.0,groundwater/well
+CO_2210,,,Unspecified,GROUNDWATER: SOUTH FORK LITTLE SNAKE RIVER,169891.0,groundwater/well
+CO_2211,,,Unspecified,GROUNDWATER: LITTLE SNAKE RIVER,201744.0,groundwater/well
+CO_2212,,,Unspecified,SAWTOOTH CREEK,169870.0,reservoir
+CO_2213,,,Unspecified,GROUNDWATER: WEST TIMBERLAKE CREEK,169826.0,groundwater/well
+CO_2214,,,Unspecified,GROUNDWATER: HOUSEL GULCH,169824.0,groundwater/well
+CO_2215,,,Unspecified,BROWNS DRAW,170621.0,Surface Water
+CO_2216,,,Unspecified,RICE DRAW,550001.0,groundwater/spring
+CO_2217,,,Unspecified,HOLLAND DRAW,170646.0,groundwater/spring
+CO_2218,,,Unspecified,FIVE SPRINGS DRAW,170642.0,groundwater/spring
+CO_2219,,,Unspecified,BIG JOE DRAW,170651.0,groundwater/spring
+CO_2220,,,Unspecified,LITTLE JOE DRAW,170652.0,groundwater/spring
+CO_2221,,,Unspecified,BUCK DRAW,170655.0,groundwater/spring
+CO_2222,,,Unspecified,THOMPSON DRAW,170677.0,groundwater/spring
+CO_2223,,,Unspecified,SAND WASH,170673.0,groundwater/spring
+CO_2224,,,Unspecified,TURNERS CREEK,170808.0,Unknown
+CO_2225,,,Unspecified,TEPEE DRAW,170620.0,groundwater/spring
+CO_2226,,,Unspecified,SCANDINAVIAN GULCH,169735.0,groundwater/spring
+CO_2227,,,Unspecified,GREASEWOOD GULCH,169821.0,groundwater/spring
+CO_2228,,,Unspecified,BIGHOLE GULCH,169734.0,groundwater/spring
+CO_2229,,,Unspecified,DAY CREEK,171225.0,Surface Water
+CO_2230,,,Unspecified,POWDER WASH,169720.0,groundwater/spring
+CO_2231,,,Unspecified,BUFFALO GULCH,170877.0,groundwater/spring
+CO_2232,,,Unspecified,SHAFFERS DRAW,170722.0,reservoir
+CO_2233,,,Unspecified,RED ROCK CANYON,170813.0,reservoir
+CO_2234,,,Unspecified,SAND CANYON,170665.0,reservoir
+CO_2235,,,Unspecified,GROUNDWATER: BIGHOLE GULCH,169734.0,groundwater/well
+CO_2236,,,Unspecified,GROUNDWATER: POWDER WASH,169720.0,groundwater/well
+CO_2237,,,Unspecified,DOUGLAS DRAW,170580.0,groundwater/spring
+CO_2238,,,Unspecified,GOODMAN GULCH,169769.0,Surface Water
+CO_2239,,,Unspecified,ZENOBIA CREEK,170541.0,Unknown
+CO_2240,,,Unspecified,BULL CANYON,169787.0,groundwater/spring
+CO_2241,,,Unspecified,MATT CREEK,169790.0,Surface Water
+CO_2242,,,Unspecified,WILSON DRAW,560003.0,Surface Water
+CO_2243,,,Unspecified,GREEN RIVER,1428399.0,groundwater/spring
+CO_2244,,,Unspecified,POOL CREEK,170590.0,Surface Water
+CO_2245,,,Unspecified,RYE GRASS DRAW,170560.0,Surface Water
+CO_2246,,,Unspecified,HAUNTED SPRING GULCH,560001.0,Surface Water
+CO_2247,,,Unspecified,POT CREEK,201946.0,Surface Water
+CO_2248,,,Unspecified,K CREEK,170864.0,Surface Water
+CO_2249,,,Unspecified,TALAMANTES CREEK,169704.0,Surface Water
+CO_2250,,,Unspecified,SPITZIE DRAW,169659.0,Surface Water
+CO_2251,,,Unspecified,FONCE WASH,169701.0,Surface Water
+CO_2252,,,Unspecified,STERLING SPRINGS DRAW,560002.0,Surface Water
+CO_2253,,,Unspecified,LIMESTONE DRAW,170609.0,groundwater/spring
+CO_2254,,,Unspecified,O-WI-YU-KUTS CREEK,169643.0,groundwater/spring
+CO_2255,,,Unspecified,NS CREEK,169696.0,Surface Water
+CO_2256,,,Unspecified,G WASH,169699.0,groundwater/spring
+CO_2257,,,Unspecified,CRAIG DRAW,201742.0,groundwater/spring
+CO_2258,,,Unspecified,CONWAY DRAW,170555.0,groundwater/spring
+CO_2259,,,Unspecified,SKELTCHER CREEK,169664.0,groundwater/spring
+CO_2260,,,Unspecified,LITTLE RED CREEK,169614.0,groundwater/spring
+CO_2261,,,Unspecified,BIRDIE GULCH,169613.0,groundwater/spring
+CO_2262,,,Unspecified,JOHNSON DRAW,170770.0,groundwater/spring
+CO_2263,,,Unspecified,CHOKECHERRY DRAW,169781.0,groundwater/spring
+CO_2264,,,Unspecified,MINERS DRAW,170820.0,groundwater/spring
+CO_2265,,,Unspecified,MY VALLEY CREEK,169668.0,groundwater/spring
+CO_2266,,,Unspecified,BIG DRAW,169690.0,groundwater/spring
+CO_2267,,,Unspecified,FONDILLOS DRAW,169693.0,groundwater/spring
+CO_2268,,,Unspecified,CHENEY CREEK,171258.0,Surface Water
+CO_2269,,,Unspecified,GROUNDWATER: GREEN RIVER,1428399.0,groundwater/well
+CO_2270,,,Unspecified,GROUNDWATER: K CREEK,170864.0,groundwater/well
+CO_2271,,,Unspecified,GROUNDWATER: BULL CANYON,169787.0,groundwater/well
+CO_2272,,,Unspecified,GROUNDWATER: RYE GRASS DRAW,170560.0,groundwater/well
+CO_2273,,,Unspecified,BUCHANAN GULCH,440009.0,Surface Water
+CO_2274,,,Unspecified,FOIDEL CREEK,171396.0,Surface Water
+CO_2275,,,Unspecified,DILL GULCH,171379.0,Surface Water
+CO_2276,,,Unspecified,PURINGTON DRAW,570006.0,Surface Water
+CO_2277,,,Unspecified,WEST FISH CREEK,171523.0,Surface Water
+CO_2278,,,Unspecified,YOAST CREEK,171514.0,Surface Water
+CO_2279,,,Unspecified,SMUIN GULCH,171380.0,Surface Water
+CO_2280,,,Unspecified,MCCROSKY GULCH,171255.0,Surface Water
+CO_2281,,,Unspecified,MILNER SPRING CREEK,171397.0,Surface Water
+CO_2282,,,Unspecified,SAGE CREEK,171355.0,groundwater/spring
+CO_2283,,,Unspecified,MIDDLE FISH CREEK,171524.0,Surface Water
+CO_2284,,,Unspecified,TOW CREEK,171259.0,Surface Water
+CO_2285,,,Unspecified,WHETSTONE CREEK,570007.0,Surface Water
+CO_2286,,,Unspecified,HUTCHINSON GULCH,570001.0,groundwater/spring
+CO_2287,,,Unspecified,BUTCHERKNIFE GULCH,171257.0,Surface Water
+CO_2288,,,Unspecified,COAL BANK GULCH,171277.0,groundwater/spring
+CO_2289,,,Unspecified,BALANGER CREEK,570010.0,groundwater/spring
+CO_2290,,,Unspecified,LITTLE TROUT CREEK,171502.0,groundwater/spring
+CO_2291,,,Unspecified,HOOKER DRAW,570003.0,groundwater/spring
+CO_2292,,,Unspecified,MILLER DRAW,570002.0,groundwater/spring
+CO_2293,,,Unspecified,SCOTCHMANS GULCH,171352.0,groundwater/spring
+CO_2294,,,Unspecified,GRASSY CREEK,171356.0,Groundwater
+CO_2295,,,Unspecified,SHAEFERMEYER CREEK,171328.0,groundwater/spring
+CO_2296,,,Unspecified,STOKES GULCH,171381.0,groundwater/spring
+CO_2297,,,Unspecified,HOLDERNESS GULCH,171366.0,Unknown
+CO_2298,,,Unspecified,HUBBERSON GULCH,171364.0,groundwater/spring
+CO_2299,,,Unspecified,WATERING TROUGH GULCH,171363.0,groundwater/spring
+CO_2300,,,Unspecified,AUSTRIAN CREEK,171525.0,Surface Water
+CO_2301,,,Unspecified,BROCK GULCH,570004.0,reservoir
+CO_2302,,,Unspecified,GROUNDWATER: SAGE CREEK,171355.0,groundwater/well
+CO_2303,,,Unspecified,GROUNDWATER: GRASSY CREEK,171356.0,groundwater/well
+CO_2304,,,Unspecified,GROUNDWATER: FOIDEL CREEK,171396.0,groundwater/well
+CO_2305,,,Unspecified,GROUNDWATER: MIDDLE CREEK,171406.0,groundwater/well
+CO_2306,,,Unspecified,GROUNDWATER: FISH CREEK,171395.0,groundwater/well
+CO_2307,,,Unspecified,GROUNDWATER: WHETSTONE CREEK,570007.0,groundwater/well
+CO_2308,,,Unspecified,GROUNDWATER: TROUT CREEK,171394.0,groundwater/well
+CO_2309,,,Unspecified,GROUNDWATER: BROCK GULCH,570004.0,groundwater/well
+CO_2310,,,Unspecified,GROUNDWATER: DILL GULCH,171379.0,groundwater/well
+CO_2311,,,Unspecified,GROUNDWATER: CHENEY CREEK,171258.0,groundwater/well
+CO_2312,,,Unspecified,GROUNDWATER: SMUIN GULCH,171380.0,groundwater/well
+CO_2313,,,Unspecified,GROUNDWATER: HUBBERSON GULCH,171364.0,groundwater/well
+CO_2314,,,Unspecified,GROUNDWATER: COAL BANK GULCH,171277.0,groundwater/well
+CO_2315,,,Unspecified,GROUNDWATER: LITTLE TROUT CREEK,171502.0,groundwater/well
+CO_2316,,,Unspecified,GROUNDWATER: BUTCHERKNIFE GULCH,171257.0,groundwater/well
+CO_2317,,,Unspecified,BEAR RIVER,173065.0,Surface Water
+CO_2318,,,Unspecified,WALTON CREEK,172751.0,Surface Water
+CO_2319,,,Unspecified,ELK RIVER,172505.0,Surface Water
+CO_2320,,,Unspecified,WEST SALT CREEK,580043.0,Surface Water
+CO_2321,,,Unspecified,TRULL CREEK,172509.0,Surface Water
+CO_2322,,,Unspecified,BARBER CREEK,580011.0,Surface Water
+CO_2323,,,Unspecified,CHIMNEY CREEK,171232.0,Surface Water
+CO_2324,,,Unspecified,BURGESS CREEK,172742.0,Surface Water
+CO_2325,,,Unspecified,MCKINNIS CREEK,172733.0,Surface Water
+CO_2326,,,Unspecified,BIG CREEK,172259.0,Surface Water
+CO_2327,,,Unspecified,SOUTH HUNT CREEK,173399.0,Surface Water
+CO_2328,,,Unspecified,SCOTT CREEK,580037.0,Surface Water
+CO_2329,,,Unspecified,BOWERS CREEK,580018.0,Surface Water
+CO_2330,,,Unspecified,ALKALI SLOUGH CREEK,580022.0,Surface Water
+CO_2331,,,Unspecified,MOORE PARK CREEK,173563.0,Surface Water
+CO_2332,,,Unspecified,BULL CREEK,173394.0,Surface Water
+CO_2333,,,Unspecified,LITTLE WHITE SNAKE CREEK,173397.0,Surface Water
+CO_2334,,,Unspecified,CANTRELL CREEK,580004.0,Surface Water
+CO_2335,,,Unspecified,FLOYD CREEK,170437.0,Surface Water
+CO_2336,,,Unspecified,MIDDLE HUNT CREEK,173395.0,Surface Water
+CO_2337,,,Unspecified,COULTON CREEK,170500.0,Surface Water
+CO_2338,,,Unspecified,PHILLIPS CREEK,173066.0,Surface Water
+CO_2339,,,Unspecified,LITTLE FISH CREEK,580033.0,Surface Water
+CO_2340,,,Unspecified,NORTH FORK FISH CREEK,172557.0,Surface Water
+CO_2341,,,Unspecified,DEADMAN'S CREEK,580027.0,Surface Water
+CO_2342,,,Unspecified,FIVE PINE MESA CREEK,173095.0,Surface Water
+CO_2343,,,Unspecified,NORTH FORK ELK CREEK,170507.0,Surface Water
+CO_2344,,,Unspecified,COLEMAN CREEK,171220.0,Surface Water
+CO_2345,,,Unspecified,LAWSON CREEK,173069.0,Surface Water
+CO_2346,,,Unspecified,BUSHY CREEK,196774.0,Surface Water
+CO_2347,,,Unspecified,FARNSWORTH CREEK,172508.0,Surface Water
+CO_2348,,,Unspecified,WATSON CREEK,173393.0,Surface Water
+CO_2349,,,Unspecified,FRANZ CREEK,172278.0,Surface Water
+CO_2350,,,Unspecified,HARRISON CREEK,172956.0,groundwater/spring
+CO_2351,,,Unspecified,RENFRO CREEK,171221.0,Surface Water
+CO_2352,,,Unspecified,NORTH HUNT CREEK,173396.0,Surface Water
+CO_2353,,,Unspecified,HOT SPRING CREEK,172525.0,groundwater/spring
+CO_2354,,,Unspecified,GUNN CREEK,172534.0,Groundwater
+CO_2355,,,Unspecified,ROARING FORK CREEK,172295.0,Surface Water
+CO_2356,,,Unspecified,BUTCHERKNIFE CREEK,172730.0,Surface Water
+CO_2357,,,Unspecified,EMMA CREEK,580030.0,Surface Water
+CO_2358,,,Unspecified,KIRKBRIDE CREEK,580015.0,Surface Water
+CO_2359,,,Unspecified,BARTON CREEK,580023.0,Surface Water
+CO_2360,,,Unspecified,SOUTH FORK LAWSON CREEK,580050.0,Surface Water
+CO_2361,,,Unspecified,WHIPPLE CREEK,173068.0,Surface Water
+CO_2362,,,Unspecified,GEORGES GULCH,172511.0,Surface Water
+CO_2363,,,Unspecified,BRATTON CREEK,580024.0,Surface Water
+CO_2364,,,Unspecified,MEADOWBROOK CREEK,173059.0,Surface Water
+CO_2365,,,Unspecified,CURTIS GULCH,580026.0,Surface Water
+CO_2366,,,Unspecified,LITTLE MORRISON CREEK,172953.0,Surface Water
+CO_2367,,,Unspecified,DANVERS CREEK,580009.0,Surface Water
+CO_2368,,,Unspecified,NORTH FORK MAD CREEK,172303.0,Surface Water
+CO_2369,,,Unspecified,LARSON CREEK,170438.0,Surface Water
+CO_2370,,,Unspecified,GREENVILLE CREEK,172285.0,Surface Water
+CO_2371,,,Unspecified,PRIEST CREEK,172739.0,Surface Water
+CO_2372,,,Unspecified,ROE BRANCH,580006.0,Surface Water
+CO_2373,,,Unspecified,MIDDLE FORK ELK RIVER,170484.0,Surface Water
+CO_2374,,,Unspecified,PINE SPRING GULCH,172737.0,Surface Water
+CO_2375,,,Unspecified,HUNTERS CABIN CREEK,580008.0,Surface Water
+CO_2376,,,Unspecified,SOUTH FORK SODA CREEK,172530.0,Surface Water
+CO_2377,,,Unspecified,HINMAN CREEK,170501.0,Surface Water
+CO_2378,,,Unspecified,ASPEN GULCH,580002.0,Surface Water
+CO_2379,,,Unspecified,SCHOLLE CREEK,580036.0,Surface Water
+CO_2380,,,Unspecified,WOMMER CREEK,580016.0,groundwater/spring
+CO_2381,,,Unspecified,WILLEY CREEK,580051.0,groundwater/spring
+CO_2382,,,Unspecified,ROCKHILL DRAW,580017.0,Surface Water
+CO_2383,,,Unspecified,HILTON GULCH,580021.0,groundwater/spring
+CO_2384,,,Unspecified,WOODCHUCK CREEK,580041.0,groundwater/spring
+CO_2385,,,Unspecified,DE CORA GULCH,172523.0,groundwater/spring
+CO_2386,,,Unspecified,WAYS GULCH,170467.0,groundwater/spring
+CO_2387,,,Unspecified,SARVIS CREEK,203887.0,Surface Water
+CO_2388,,,Unspecified,CROWNER CREEK,173070.0,Surface Water
+CO_2389,,,Unspecified,ROCKY CREEK,580012.0,Groundwater
+CO_2390,,,Unspecified,FRITZ DRAW,580031.0,Surface Water
+CO_2391,,,Unspecified,MIDDLE FORK FISH CREEK,172772.0,Surface Water
+CO_2392,,,Unspecified,FISHHOOK CREEK,172760.0,Surface Water
+CO_2393,,,Unspecified,MCPHEE CREEK,172268.0,Surface Water
+CO_2394,,,Unspecified,BRUCE CREEK,580045.0,Surface Water
+CO_2395,,,Unspecified,TURNER CREEK,171253.0,groundwater/spring
+CO_2396,,,Unspecified,LESTER CREEK,170478.0,Groundwater
+CO_2397,,,Unspecified,DOME CREEK,173557.0,Surface Water
+CO_2398,,,Unspecified,BURN CREEK,172299.0,Surface Water
+CO_2399,,,Unspecified,EAST FORK FISHHOOK CREEK,580047.0,Surface Water
+CO_2400,,,Unspecified,EAST COAL CREEK,173543.0,Surface Water
+CO_2401,,,Unspecified,ENGLISH CREEK,170505.0,Surface Water
+CO_2402,,,Unspecified,FARWELL CREEK,170499.0,Surface Water
+CO_2403,,,Unspecified,GILPIN CREEK,170433.0,Surface Water
+CO_2404,,,Unspecified,GRANITE CREEK,172558.0,Surface Water
+CO_2405,,,Unspecified,HOGAN CREEK,172765.0,Surface Water
+CO_2406,,,Unspecified,LONG PARK CREEK,172766.0,Surface Water
+CO_2407,,,Unspecified,LOST DOG CREEK,170504.0,Surface Water
+CO_2408,,,Unspecified,MANDALL CREEK,173548.0,Surface Water
+CO_2409,,,Unspecified,MICA CREEK,170415.0,Surface Water
+CO_2410,,,Unspecified,SOUTH FORK WALTON CREEK,580042.0,Surface Water
+CO_2411,,,Unspecified,NORTH FORK MORRISON CREEK,173118.0,Surface Water
+CO_2412,,,Unspecified,NORTH FORK SERVICE CREEK,580019.0,Surface Water
+CO_2413,,,Unspecified,SOUTH FORK ELK RIVER,170506.0,Surface Water
+CO_2414,,,Unspecified,SOUTH FORK SERVICE CREEK,580020.0,Surface Water
+CO_2415,,,Unspecified,SOUTH FORK SILVER CREEK,173148.0,Surface Water
+CO_2416,,,Unspecified,SCOTT RUN,170498.0,Surface Water
+CO_2417,,,Unspecified,STEVENS CREEK,170502.0,Surface Water
+CO_2418,,,Unspecified,STORM KING CREEK,172753.0,Surface Water
+CO_2419,,,Unspecified,NORTH THREE ISLAND CREEK,170428.0,Surface Water
+CO_2420,,,Unspecified,WEST FORK NORTH FORK ELK RIVER,580040.0,Surface Water
+CO_2421,,,Unspecified,WEST COAL CREEK,173544.0,Surface Water
+CO_2422,,,Unspecified,WOLVERINE CREEK,172313.0,Surface Water
+CO_2423,,,Unspecified,LITTLE OAK CREEK,173398.0,reservoir
+CO_2424,,,Unspecified,GARDNER CREEK,173537.0,reservoir
+CO_2425,,,Unspecified,SOUTH FORK FISH CREEK,580052.0,reservoir
+CO_2426,,,Unspecified,MIDDLE FORK MAD CREEK,172292.0,reservoir
+CO_2427,,,Unspecified,GROUNDWATER: GUNN CREEK,172534.0,groundwater/well
+CO_2428,,,Unspecified,GROUNDWATER: BRATTON CREEK,580024.0,groundwater/well
+CO_2429,,,Unspecified,GROUNDWATER: OAK CREEK,172735.0,groundwater/well
+CO_2430,,,Unspecified,GROUNDWATER: WAYS GULCH,170467.0,groundwater/well
+CO_2431,,,Unspecified,GROUNDWATER: MILL CREEK,170439.0,groundwater/well
+CO_2432,,,Unspecified,GROUNDWATER: WILLEY CREEK,580051.0,groundwater/well
+CO_2433,,,Unspecified,GROUNDWATER: GROUSE CREEK,172750.0,groundwater/well
+CO_2434,,,Unspecified,GROUNDWATER: LITTLE FISH CREEK,580033.0,groundwater/well
+CO_2435,,,Unspecified,GROUNDWATER: KIRKBRIDE CREEK,580015.0,groundwater/well
+CO_2436,,,Unspecified,GROUNDWATER: MCFADDEN CREEK,580048.0,groundwater/well
+CO_2437,,,Unspecified,GROUNDWATER: MARTIN CREEK,172944.0,groundwater/well
+CO_2438,,,Unspecified,GROUNDWATER: MCKINNIS CREEK,172733.0,groundwater/well
+CO_2439,,,Unspecified,GROUNDWATER: MORRISON CREEK,172954.0,groundwater/well
+CO_2440,,,Unspecified,GROUNDWATER: LITTLE MORRISON CREEK,172953.0,groundwater/well
+CO_2441,,,Unspecified,GROUNDWATER: WALTON CREEK,172751.0,groundwater/well
+CO_2442,,,Unspecified,GROUNDWATER: WATSON CREEK,173393.0,groundwater/well
+CO_2443,,,Unspecified,GROUNDWATER: LONG GULCH,171235.0,groundwater/well
+CO_2444,,,Unspecified,GROUNDWATER: ELK RIVER,172505.0,groundwater/well
+CO_2445,,,Unspecified,GROUNDWATER: BUTCHERKNIFE CREEK,172730.0,groundwater/well
+CO_2446,,,Unspecified,GROUNDWATER: GREENVILLE CREEK,172285.0,groundwater/well
+CO_2447,,,Unspecified,GROUNDWATER: HILTON GULCH,580021.0,groundwater/well
+CO_2448,,,Unspecified,GROUNDWATER: BARBER CREEK,580011.0,groundwater/well
+CO_2449,,,Unspecified,GROUNDWATER: COW CREEK,171426.0,groundwater/well
+CO_2450,,,Unspecified,GROUNDWATER: ROCKY CREEK,580012.0,groundwater/well
+CO_2451,,,Unspecified,GROUNDWATER: MAD CREEK,172302.0,groundwater/well
+CO_2452,,,Unspecified,EAST RIVER,188856.0,Surface Water
+CO_2453,,,Unspecified,OHIO CREEK,186665.0,Surface Water
+CO_2454,,,Unspecified,SLATE RIVER,186481.0,Surface Water
+CO_2455,,,Unspecified,TAYLOR RIVER,188791.0,Surface Water
+CO_2456,,,Unspecified,CARBON CREEK,186666.0,Surface Water
+CO_2457,,,Unspecified,WASHINGTON GULCH,186480.0,Surface Water
+CO_2458,,,Unspecified,STEUBEN CREEK,186975.0,Surface Water
+CO_2459,,,Unspecified,CURECANTI CREEK,186757.0,Surface Water
+CO_2460,,,Unspecified,GROUNDWATER: OHIO CREEK,186665.0,groundwater/well
+CO_2461,,,Unspecified,GROUNDWATER: NAVAJO RIVER,184550.0,groundwater/well
+CO_2462,,,Unspecified,PIEDRA RIVER,184069.0,reservoir
+CO_2463,,,Unspecified,MYERS GULCH,186900.0,groundwater/spring
+CO_2464,,,Unspecified,SAN MIGUEL RIVER,169587.0,groundwater/spring
+CO_2465,,,Unspecified,POVERTY GULCH,186465.0,Surface Water
+CO_2466,,,Unspecified,GROUNDWATER: SLATE RIVER,186481.0,groundwater/well
+CO_2467,,,Unspecified,GROUNDWATER: EAST RIVER,188856.0,groundwater/well
+CO_2468,,,Unspecified,GROUNDWATER: TAYLOR RIVER,188791.0,groundwater/well
+CO_2469,,,Unspecified,GROUNDWATER: WASHINGTON GULCH,186480.0,groundwater/well
+CO_2470,,,Unspecified,NATURITA CREEK,186061.0,Surface Water
+CO_2471,,,Unspecified,SOUTH FORK SAN MIGUEL RIVER,176431.0,Surface Water
+CO_2472,,,Unspecified,MAVERICK DRAW,186038.0,Surface Water
+CO_2473,,,Unspecified,SALTADO CREEK,176393.0,Surface Water
+CO_2474,,,Unspecified,TABEGUACHE CREEK,185780.0,Surface Water
+CO_2475,,,Unspecified,HOWARD FORK,187466.0,Surface Water
+CO_2476,,,Unspecified,BIG BEAR CREEK,176430.0,Surface Water
+CO_2477,,,Unspecified,SPECIE CREEK,176423.0,Surface Water
+CO_2478,,,Unspecified,BRIDAL VEIL CREEK,187151.0,Surface Water
+CO_2479,,,Unspecified,CEBOLLA CREEK,188213.0,Surface Water
+CO_2480,,,Unspecified,GROUNDWATER: MAVERICK DRAW,186038.0,groundwater/well
+CO_2481,,,Unspecified,GROUNDWATER: NATURITA CREEK,186061.0,groundwater/well
+CO_2482,,,Unspecified,GROUNDWATER: SAN MIGUEL RIVER,169587.0,groundwater/well
+CO_2483,,,Unspecified,GROUNDWATER: TABEGUACHE CREEK,185780.0,groundwater/well
+CO_2484,,,Unspecified,GROUNDWATER: LEOPARD CREEK,186240.0,groundwater/well
+CO_2485,,,Unspecified,GROUNDWATER: LAKE FORK,187467.0,groundwater/well
+CO_2486,,,Unspecified,GROUNDWATER: BIG BEAR CREEK,176430.0,groundwater/well
+CO_2487,,,Unspecified,GROUNDWATER: FALL CREEK,176419.0,groundwater/well
+CO_2488,,,Unspecified,GROUNDWATER: SOUTH FORK SAN MIGUEL RIVER,176431.0,groundwater/well
+CO_2489,,,Unspecified,GROUNDWATER: HOWARD FORK,187466.0,groundwater/well
+CO_2490,,,Unspecified,GROUNDWATER: PROSPECT CREEK,187112.0,groundwater/well
+CO_2491,,,Unspecified,GROUNDWATER: VANCE CREEK,176429.0,groundwater/well
+CO_2492,,,Unspecified,LA SAL CREEK,201773.0,Surface Water
+CO_2493,,,Unspecified,GROUNDWATER: SPECIE CREEK,176423.0,groundwater/well
+CO_2494,,,Unspecified,GROUNDWATER: HAY CREEK,188553.0,groundwater/well
+CO_2495,,,Unspecified,WEST PARADOX CREEK,185668.0,groundwater/spring
+CO_2496,,,Unspecified,EAST PARADOX CREEK,185864.0,groundwater/spring
+CO_2497,,,Unspecified,DOLORES RIVER,1440517.0,Groundwater
+CO_2498,,,Unspecified,KNOWLES SPRING RUN,640001.0,Surface Water
+CO_2499,,,Unspecified,GROUNDWATER: WEST PARADOX CREEK,185668.0,groundwater/well
+CO_2500,,,Unspecified,GROUNDWATER: DOLORES RIVER,1440517.0,groundwater/well
+CO_2501,,,Unspecified,LITTLE BLUE CREEK,188187.0,Surface Water
+CO_2502,,,Unspecified,STUMPY CREEK,188166.0,Surface Water
+CO_2503,,,Unspecified,POWDERHORN CREEK,188342.0,Surface Water
+CO_2504,,,Unspecified,BIG BLUE CREEK,188184.0,Surface Water
+CO_2505,,,Unspecified,LITTLE CIMARRON RIVER,188161.0,Surface Water
+CO_2506,,,Unspecified,CIMARRON RIVER,188160.0,Surface Water
+CO_2507,,,Unspecified,BURDECK CREEK,188281.0,Surface Water
+CO_2508,,,Unspecified,TOPLISS DRAW,620001.0,Surface Water
+CO_2509,,,Unspecified,VEO CREEK,188288.0,Surface Water
+CO_2510,,,Unspecified,STEWART CREEK,188271.0,Surface Water
+CO_2511,,,Unspecified,OSO CREEK,188323.0,groundwater/spring
+CO_2512,,,Unspecified,HENSON CREEK,187344.0,Surface Water
+CO_2513,,,Unspecified,DRY FORK ROAN CREEK,174222.0,reservoir
+CO_2514,,,Unspecified,GROUNDWATER: POWDERHORN CREEK,188342.0,groundwater/well
+CO_2515,,,Unspecified,DELDORADO CREEK,188352.0,Groundwater
+CO_2516,,,Unspecified,GROUNDWATER: HENSON CREEK,187344.0,groundwater/well
+CO_2517,,,Unspecified,GROUNDWATER: CIMARRON RIVER,188160.0,groundwater/well
+CO_2518,,,Unspecified,GROUNDWATER: CEBOLLA CREEK,188213.0,groundwater/well
+CO_2519,,,Unspecified,GROUNDWATER: LITTLE CIMARRON RIVER,188161.0,groundwater/well
+CO_2520,,,Unspecified,GROUNDWATER: BIG BLUE CREEK,188184.0,groundwater/well
+CO_2521,,,Unspecified,JOHN BROWN CREEK,185164.0,Surface Water
+CO_2522,,,Unspecified,GILL CREEK,185322.0,Surface Water
+CO_2523,,,Unspecified,NORTH LOBE CREEK,185329.0,Surface Water
+CO_2524,,,Unspecified,PANSY CREEK,185318.0,Surface Water
+CO_2525,,,Unspecified,ROC CREEK,185662.0,Surface Water
+CO_2526,,,Unspecified,SOUTH LOBE CREEK,185317.0,Surface Water
+CO_2527,,,Unspecified,NORTH FORK WEST CREEK,185305.0,groundwater/spring
+CO_2528,,,Unspecified,GROUNDWATER: WEST CREEK,185308.0,groundwater/well
+CO_2529,,,Unspecified,GROUNDWATER: NORTH LOBE CREEK,185329.0,groundwater/well
+CO_2530,,,Unspecified,PAWNEE CREEK,182794.0,Surface Water
+CO_2531,,,Unspecified,RAMSEY DRAW,182663.0,Surface Water
+CO_2532,,,Unspecified,SPRINGDALE CREEK,171134.0,Surface Water
+CO_2533,,,Unspecified,NORTH PAWNEE CREEK,182738.0,Surface Water
+CO_2534,,,Unspecified,TWOMILE CREEK,171139.0,Surface Water
+CO_2535,,,Unspecified,SPRING CREEK DRAW,640005.0,Surface Water
+CO_2536,,,Unspecified,SPRING CANYON,182661.0,Surface Water
+CO_2537,,,Unspecified,KAUTZ DRAW,640002.0,Surface Water
+CO_2538,,,Unspecified,MUNSON DRAW,640004.0,Surface Water
+CO_2539,,,Unspecified,LEUCK DRAW,640003.0,Surface Water
+CO_2540,,,Unspecified,SKINNER DRAW,182662.0,Surface Water
+CO_2541,,,Unspecified,SCHUPPE DRAW,640008.0,Surface Water
+CO_2542,,,Unspecified,TAP DRAW,640007.0,Surface Water
+CO_2543,,,Unspecified,KORREY DRAW,640006.0,Surface Water
+CO_2544,,,Unspecified,SIMPSONS DRAW,182713.0,Surface Water
+CO_2545,,,Unspecified,GROUNDWATER: UPPER PIERRE,,groundwater/well
+CO_2546,,,Unspecified,GROUNDWATER: OGALLALA,,groundwater/well
+CO_2547,,,Unspecified,HAYES CREEK,183033.0,Surface Water
+CO_2548,,,Unspecified,NORTH FORK REPUBLICAN RIVER,183028.0,Surface Water
+CO_2549,,,Unspecified,CHIEF CREEK,183029.0,Surface Water
+CO_2550,,,Unspecified,HOLY JOE CREEK,183035.0,Surface Water
+CO_2551,,,Unspecified,OLIVE CREEK,183039.0,Surface Water
+CO_2552,,,Unspecified,RUSH CREEK,183041.0,Surface Water
+CO_2553,,,Unspecified,ARIKAREE RIVER,835484.0,Surface Water
+CO_2554,,,Unspecified,DRY WILLOW CREEK,183070.0,Surface Water
+CO_2555,,,Unspecified,BLACK WOLF CREEK,183065.0,Groundwater
+CO_2556,,,Unspecified,PATENT CREEK,182890.0,reservoir
+CO_2557,,,Unspecified,GROUNDWATER: ARIKAREE RIVER,835484.0,groundwater/well
+CO_2558,,,Unspecified,BAR SEVEN L CREEK,660001.0,Surface Water
+CO_2559,,,Unspecified,COUCHMAN DRAW,196245.0,Surface Water
+CO_2560,,,Unspecified,TOMASA CREEK,196309.0,Surface Water
+CO_2561,,,Unspecified,OWL ROOST CREEK,1947580.0,Surface Water
+CO_2562,,,Unspecified,SALAZ ARROYO,660002.0,Surface Water
+CO_2563,,,Unspecified,WEST CARRIZO CREEK,196234.0,Surface Water
+CO_2564,,,Unspecified,NORTH CANYON,196352.0,groundwater/spring
+CO_2565,,,Unspecified,PICTURE CANYON,196353.0,groundwater/spring
+CO_2566,,,Unspecified,TWO BUTTE CREEK,201785.0,reservoir
+CO_2567,,,Unspecified,NORTH FORK CIMARRON RIVER,485074.0,reservoir
+CO_2568,,,Unspecified,NORTH CARRIZO CREEK,196326.0,reservoir
+CO_2569,,,Unspecified,NORTH UTE CANYON,196263.0,reservoir
+CO_2570,,,Unspecified,AUBURY CREEK,196365.0,reservoir
+CO_2571,,,Unspecified,GROUNDWATER: TECOLATE CREEK,196248.0,groundwater/well
+CO_2572,,,Unspecified,PLEASANT VALLEY DRAINAGE DITCH,203818.0,Surface Water
+CO_2573,,,Unspecified,SIMPSON DRAW,670002.0,Surface Water
+CO_2574,,,Unspecified,MARKHAM ARROYO,195569.0,Surface Water
+CO_2575,,,Unspecified,WILEY DRAINAGE DITCH,203816.0,Surface Water
+CO_2576,,,Unspecified,LUBERS DRAINAGE DITCH,203812.0,Surface Water
+CO_2577,,,Unspecified,GRAVEYARD CREEK,195422.0,Surface Water
+CO_2578,,,Unspecified,LIMESTONE CREEK,195352.0,Surface Water
+CO_2579,,,Unspecified,BOGGS CREEK,195457.0,Surface Water
+CO_2580,,,Unspecified,DEADMAN DITCH,203822.0,Surface Water
+CO_2581,,,Unspecified,BIG SANDY CREEK,201781.0,Groundwater
+CO_2582,,,Unspecified,LEVERE DITCH,195545.0,Surface Water
+CO_2583,,,Unspecified,WILD HORSE CREEK,195363.0,Surface Water
+CO_2584,,,Unspecified,EAST HORSE CREEK,195467.0,Groundwater
+CO_2585,,,Unspecified,JOHN DONLON DRAW,195523.0,Surface Water
+CO_2586,,,Unspecified,EAST FORK DEADMAN DITCH,203824.0,Surface Water
+CO_2587,,,Unspecified,GAGEBY CREEK,195412.0,Surface Water
+CO_2588,,,Unspecified,MIDDLE RUSH CREEK,195165.0,Surface Water
+CO_2589,,,Unspecified,MIDDLE FORK BIG SPRING CREEK,203784.0,groundwater/spring
+CO_2590,,,Unspecified,HANNA DRAW,670001.0,reservoir
+CO_2591,,,Unspecified,PAULS ARROYO,195466.0,reservoir
+CO_2592,,,Unspecified,EAST FORK BIG SPRING CREEK,203772.0,reservoir
+CO_2593,,,Unspecified,MCCLAVE DRAINAGE DITCH,203813.0,reservoir
+CO_2594,,,Unspecified,MCRAE ARROYO,195413.0,reservoir
+CO_2595,,,Unspecified,DALLAS CREEK,188418.0,groundwater/spring
+CO_2596,,,Unspecified,BILLY CREEK,188245.0,Surface Water
+CO_2597,,,Unspecified,ONION CREEK,188246.0,Surface Water
+CO_2598,,,Unspecified,CUDDIGAN GULCH,188415.0,groundwater/spring
+CO_2599,,,Unspecified,CUTLER CREEK,188641.0,Surface Water
+CO_2600,,,Unspecified,PORTEOUS CREEK,680001.0,Surface Water
+CO_2601,,,Unspecified,DEXTER CREEK,188637.0,groundwater/spring
+CO_2602,,,Unspecified,CORBETT CREEK,188618.0,Surface Water
+CO_2603,,,Unspecified,KETTLE GULCH,188565.0,groundwater/spring
+CO_2604,,,Unspecified,PLUMMER CREEK,680002.0,Surface Water
+CO_2605,,,Unspecified,BROMAN CANYON,188238.0,groundwater/spring
+CO_2606,,,Unspecified,MERLING CREEK,680003.0,groundwater/spring
+CO_2607,,,Unspecified,CONN CREEK,174225.0,Surface Water
+CO_2608,,,Unspecified,KIMBALL CREEK,174180.0,Surface Water
+CO_2609,,,Unspecified,ROAN CREEK,174229.0,Surface Water
+CO_2610,,,Unspecified,GROUNDWATER: DALLAS CREEK,188418.0,groundwater/well
+CO_2611,,,Unspecified,GROUNDWATER: BROMAN CANYON,188238.0,groundwater/well
+CO_2612,,,Unspecified,GROUNDWATER: PORTEOUS CREEK,680001.0,groundwater/well
+CO_2613,,,Unspecified,GROUNDWATER: MCKENZIE CREEK,188237.0,groundwater/well
+CO_2614,,,Unspecified,GROUNDWATER: CUTLER CREEK,188641.0,groundwater/well
+CO_2615,,,Unspecified,GROUNDWATER: KETTLE GULCH,188565.0,groundwater/well
+CO_2616,,,Unspecified,DISAPPOINTMENT CREEK,176313.0,Surface Water
+CO_2617,,,Unspecified,PINE ARROYO,176326.0,Surface Water
+CO_2618,,,Unspecified,NORTH DRAW,690002.0,Surface Water
+CO_2619,,,Unspecified,RYMAN CREEK,176512.0,Surface Water
+CO_2620,,,Unspecified,RINCONE CREEK,690001.0,reservoir
+CO_2621,,,Unspecified,GROUNDWATER: DISAPPOINTMENT CREEK,176313.0,groundwater/well
+CO_2622,,,Unspecified,CARR CREEK,172016.0,Surface Water
+CO_2623,,,Unspecified,GROUNDWATER: ROAN CREEK,174229.0,groundwater/well
+CO_2624,,,Unspecified,GROUNDWATER: DRY FORK ROAN CREEK,174222.0,groundwater/well
+CO_2625,,,Unspecified,GROUNDWATER: KIMBALL CREEK,174180.0,groundwater/well
+CO_2626,,,Unspecified,GROUNDWATER: CARR CREEK,172016.0,groundwater/well
+CO_2627,,,Unspecified,GROUNDWATER: CONN CREEK,174225.0,groundwater/well
+CO_2628,,,Unspecified,PRIEST GULCH,176781.0,Surface Water
+CO_2629,,,Unspecified,WEST DOLORES RIVER,176571.0,groundwater/spring
+CO_2630,,,Unspecified,LOST CANYON CREEK,178791.0,groundwater/spring
+CO_2631,,,Unspecified,GROUNDHOG CREEK,176559.0,Surface Water
+CO_2632,,,Unspecified,ROARING FORKS CREEK,177009.0,Surface Water
+CO_2633,,,Unspecified,STONER CREEK,176762.0,Surface Water
+CO_2634,,,Unspecified,GROUNDWATER: WEST DOLORES RIVER,176571.0,groundwater/well
+CO_2635,,,Unspecified,GROUNDWATER: GROUNDHOG CREEK,176559.0,groundwater/well
+CO_2636,,,Unspecified,GROUNDWATER: LOST CANYON CREEK,178791.0,groundwater/well
+CO_2637,,,Unspecified,SMALLEY GULCH,174885.0,Surface Water
+CO_2638,,,Unspecified,BUZZARD CREEK,175049.0,Surface Water
+CO_2639,,,Unspecified,COLLIER CREEK,174889.0,Surface Water
+CO_2640,,,Unspecified,PLATEAU CREEK,174440.0,Surface Water
+CO_2641,,,Unspecified,GROVE CREEK,175050.0,Surface Water
+CO_2642,,,Unspecified,KENNEY CREEK,175350.0,Surface Water
+CO_2643,,,Unspecified,LEON CREEK,175074.0,Surface Water
+CO_2644,,,Unspecified,TATE CREEK,174452.0,Surface Water
+CO_2645,,,Unspecified,SINK CREEK,174624.0,Groundwater
+CO_2646,,,Unspecified,BIG SALT WASH,174395.0,Surface Water
+CO_2647,,,Unspecified,EAST SALT CREEK,174273.0,Surface Water
+CO_2648,,,Unspecified,HAWXHURST CREEK,174876.0,Surface Water
+CO_2649,,,Unspecified,WEST PORTER CREEK,175102.0,Surface Water
+CO_2650,,,Unspecified,REED WASH,174283.0,Surface Water
+CO_2651,,,Unspecified,WEST HAWXHURST CREEK,174877.0,Surface Water
+CO_2652,,,Unspecified,MIDDLETON CREEK,174899.0,Surface Water
+CO_2653,,,Unspecified,EAST BRANCH WEST SALT CREEK,172117.0,Surface Water
+CO_2654,,,Unspecified,EAST BRANCH REED WASH,174374.0,Groundwater
+CO_2655,,,Unspecified,LEACH CREEK,174403.0,Surface Water
+CO_2656,,,Unspecified,OWENS CREEK,174929.0,Surface Water
+CO_2657,,,Unspecified,LIMEKILN GULCH,720001.0,Surface Water
+CO_2658,,,Unspecified,MACK WASH,174276.0,Surface Water
+CO_2659,,,Unspecified,INDIAN WASH,174402.0,Groundwater
+CO_2660,,,Unspecified,LITTLE SALT WASH,174282.0,Groundwater
+CO_2661,,,Unspecified,LEWIS WASH,174417.0,Surface Water
+CO_2662,,,Unspecified,EAST BRANCH BIG SALT WASH,174290.0,groundwater/spring
+CO_2663,,,Unspecified,BULKLEY WASH,174376.0,Surface Water
+CO_2664,,,Unspecified,PERSIGO WASH,174388.0,Surface Water
+CO_2665,,,Unspecified,HUNTER WASH,174390.0,Surface Water
+CO_2666,,,Unspecified,PECK AND BEEDE WASH,174277.0,Groundwater
+CO_2667,,,Unspecified,EAST HAWXHURST CREEK,174878.0,reservoir
+CO_2668,,,Unspecified,MULESHOE CREEK,175075.0,reservoir
+CO_2669,,,Unspecified,HIGHTOWER CREEK,174918.0,reservoir
+CO_2670,,,Unspecified,MICHAELSEN CREEK,175306.0,reservoir
+CO_2671,,,Unspecified,COYOTE WASH,174278.0,reservoir
+CO_2672,,,Unspecified,JERRY CREEK,174419.0,reservoir
+CO_2673,,,Unspecified,MIDDLE LEON CREEK,175387.0,Surface Water
+CO_2674,,,Unspecified,GROUNDWATER: PLATEAU CREEK,174440.0,groundwater/well
+CO_2675,,,Unspecified,GROUNDWATER: BIG CREEK,174475.0,groundwater/well
+CO_2676,,,Unspecified,GROUNDWATER: COON CREEK,174454.0,groundwater/well
+CO_2677,,,Unspecified,GROUNDWATER: BULL CREEK,174489.0,groundwater/well
+CO_2678,,,Unspecified,GROUNDWATER: BUZZARD CREEK,175049.0,groundwater/well
+CO_2679,,,Unspecified,GROUNDWATER: LIMEKILN GULCH,720001.0,groundwater/well
+CO_2680,,,Unspecified,GROUNDWATER: EAST SALT CREEK,174273.0,groundwater/well
+CO_2681,,,Unspecified,GROUNDWATER: BIG SALT WASH,174395.0,groundwater/well
+CO_2682,,,Unspecified,GROUNDWATER: GROVE CREEK,175050.0,groundwater/well
+CO_2683,,,Unspecified,COATES CREEK,201763.0,Surface Water
+CO_2684,,,Unspecified,BIESER CREEK,185172.0,Surface Water
+CO_2685,,,Unspecified,LITTLE DOLORES RIVER,174500.0,Surface Water
+CO_2686,,,Unspecified,DIERICH CREEK,185179.0,Surface Water
+CO_2687,,,Unspecified,HAY PRESS CREEK,185183.0,Surface Water
+CO_2688,,,Unspecified,MAIDEN CREEK,185188.0,groundwater/spring
+CO_2689,,,Unspecified,CLARK WASH,174514.0,Surface Water
+CO_2690,,,Unspecified,THOMPSON DITCH DRAW,185211.0,groundwater/spring
+CO_2691,,,Unspecified,TOMMY DODSON CANYON,185181.0,groundwater/spring
+CO_2692,,,Unspecified,PAYNE CANYON,185180.0,groundwater/spring
+CO_2693,,,Unspecified,CRUSE WASH,185212.0,Surface Water
+CO_2694,,,Unspecified,GROUNDWATER: LITTLE DOLORES RIVER,174500.0,groundwater/well
+CO_2695,,,Unspecified,TWENTYEIGHT HOLE WASH,174505.0,reservoir
+CO_2696,,,Unspecified,MIDDLE CANYON,185170.0,groundwater/spring
+CO_2697,,,Unspecified,KINGS CANYON,185176.0,groundwater/spring
+CO_2698,,,Unspecified,RYAN CREEK,201765.0,groundwater/spring
+CO_2699,,,Unspecified,RENEGADE CREEK,201764.0,groundwater/spring
+CO_2700,,,Unspecified,MILLER CANYON,185210.0,groundwater/spring
+CO_2701,,,Unspecified,TRAIL CANYON WASH,174506.0,reservoir
+CO_2702,,,Unspecified,GROUNDWATER: CLARK WASH,174514.0,groundwater/well
+CO_2703,,,Unspecified,GROUNDWATER: TWENTYEIGHT HOLE WASH,174505.0,groundwater/well
+CO_2704,,,Unspecified,GROUNDWATER: TRAIL CANYON WASH,174506.0,groundwater/well
+CO_2705,,,Unspecified,GROUNDWATER: BIESER CREEK,185172.0,groundwater/well
+CO_2706,,,Unspecified,TOMS CANYON,174503.0,groundwater/spring
+CO_2707,,,Unspecified,LITTLE NAVAJO RIVER,191045.0,Surface Water
+CO_2708,,,Unspecified,NAVAJO RIVER,184550.0,Surface Water
+CO_2709,,,Unspecified,OIL WELL CREEK,191042.0,Surface Water
+CO_2710,,,Unspecified,VILLAREAL CANYON,184554.0,groundwater/spring
+CO_2711,,,Unspecified,AGUA CANYON,184527.0,groundwater/spring
+CO_2712,,,Unspecified,SEGURO CANYON,184526.0,groundwater/spring
+CO_2713,,,Unspecified,GROUNDWATER: LITTLE NAVAJO RIVER,191045.0,groundwater/well
+CO_2714,,,Unspecified,GROUNDWATER: COYOTE CREEK,191035.0,groundwater/well
+CO_2715,,,Unspecified,YELLOWJACKET CREEK,184229.0,Surface Water
+CO_2716,,,Unspecified,EAST FORK PIEDRA RIVER,184082.0,Surface Water
+CO_2717,,,Unspecified,STOLLSTEIMER CREEK,184435.0,Surface Water
+CO_2718,,,Unspecified,PAGOSA CREEK,184083.0,Surface Water
+CO_2719,,,Unspecified,PLUMTAW CREEK,184080.0,Surface Water
+CO_2720,,,Unspecified,CABEZON CANYON,184437.0,Surface Water
+CO_2721,,,Unspecified,DEVIL CREEK,184283.0,Surface Water
+CO_2722,,,Unspecified,MIDDLE FORK PIEDRA RIVER,184081.0,Surface Water
+CO_2723,,,Unspecified,DUTTON CREEK,184341.0,Surface Water
+CO_2724,,,Unspecified,LITTLE PAGOSA CREEK,184084.0,Surface Water
+CO_2725,,,Unspecified,O'NEAL CREEK,184077.0,Surface Water
+CO_2726,,,Unspecified,GROUNDWATER: PIEDRA RIVER,184069.0,groundwater/well
+CO_2727,,,Unspecified,GROUNDWATER: DEVIL CREEK,184283.0,groundwater/well
+CO_2728,,,Unspecified,GROUNDWATER: STOLLSTEIMER CREEK,184435.0,groundwater/well
+CO_2729,,,Unspecified,GROUNDWATER: WILLIAMS CREEK,184076.0,groundwater/well
+CO_2730,,,Unspecified,GROUNDWATER: MIDDLE FORK PIEDRA RIVER,184081.0,groundwater/well
+CO_2731,,,Unspecified,BRUFF CREEK,192577.0,Surface Water
+CO_2732,,,Unspecified,RIO ALTO CREEK,790005.0,Surface Water
+CO_2733,,,Unspecified,CUSTER CREEK,192533.0,Surface Water
+CO_2734,,,Unspecified,PALO DURO CREEK,192673.0,Surface Water
+CO_2735,,,Unspecified,MAES CREEK,192546.0,Surface Water
+CO_2736,,,Unspecified,YELLOWSTONE CREEK (AKA PIEDRAS AMERILLAS CREEK),192687.0,Surface Water
+CO_2737,,,Unspecified,SOUTH MAY CREEK,192583.0,Surface Water
+CO_2738,,,Unspecified,STANLEY CREEK,192666.0,Surface Water
+CO_2739,,,Unspecified,SOUTH FORK YELLOWSTONE CREEK,192688.0,Surface Water
+CO_2740,,,Unspecified,GROSS CREEK,191765.0,groundwater/spring
+CO_2741,,,Unspecified,MEXICAN SPRINGS BRANCH GREASEWOOD ARROYO,194051.0,groundwater/spring
+CO_2742,,,Unspecified,PANTLEON CREEK,192570.0,reservoir
+CO_2743,,,Unspecified,CHINCHUE ARROYA,790002.0,reservoir
+CO_2744,,,Unspecified,POPE ARROYO,194046.0,reservoir
+CO_2745,,,Unspecified,GROUNDWATER: HUERFANO RIVER,201778.0,groundwater/well
+CO_2746,,,Unspecified,BEN TYLER GULCH,183217.0,Surface Water
+CO_2747,,,Unspecified,GROUNDWATER: NORTH FORK SOUTH PLATTE RIVER,183164.0,groundwater/well
+CO_2748,,,Unspecified,NORTH FORK SOUTH PLATTE RIVER,183164.0,Surface Water
+CO_2749,,,Unspecified,ROSALIE RIVER,800005.0,Surface Water
+CO_2750,,,Unspecified,SCOTT GOMER CREEK,182474.0,Surface Water
+CO_2751,,,Unspecified,NORTH GOMER CREEK,183212.0,Surface Water
+CO_2752,,,Unspecified,KENOSHA CREEK,183216.0,Surface Water
+CO_2753,,,Unspecified,GENEVA CREEK,183198.0,Surface Water
+CO_2754,,,Unspecified,FRENCHMAN GULCH,183205.0,Surface Water
+CO_2755,,,Unspecified,HALFMILE GULCH,183202.0,Surface Water
+CO_2756,,,Unspecified,PREACHER GULCH,183201.0,Surface Water
+CO_2757,,,Unspecified,SHUTETOWN CREEK,183213.0,Surface Water
+CO_2758,,,Unspecified,BRANDY CREEK,183199.0,Surface Water
+CO_2759,,,Unspecified,FOSTER GULCH,183220.0,Surface Water
+CO_2760,,,Unspecified,BILL TYLER GULCH,183239.0,Surface Water
+CO_2761,,,Unspecified,GIBBS GULCH,183238.0,Surface Water
+CO_2762,,,Unspecified,MCARTHUR GULCH,183237.0,Surface Water
+CO_2763,,,Unspecified,WEST COOK CREEK,800006.0,Surface Water
+CO_2764,,,Unspecified,BROOKSIDE GULCH,183236.0,Surface Water
+CO_2765,,,Unspecified,WEST CLAY CREEK,800010.0,Surface Water
+CO_2766,,,Unspecified,CRAIG CREEK,183241.0,Surface Water
+CO_2767,,,Unspecified,CLIFFORD GULCH STREAM,800002.0,Surface Water
+CO_2768,,,Unspecified,TURKEY GULCH CREEK,800009.0,Surface Water
+CO_2769,,,Unspecified,WET GULCH CREEK,800007.0,Surface Water
+CO_2770,,,Unspecified,BLACK MOUNTAIN CREEK,182531.0,Surface Water
+CO_2771,,,Unspecified,SCHUYLER GULCH,183313.0,Surface Water
+CO_2772,,,Unspecified,LAST RESORT CREEK,183295.0,Surface Water
+CO_2773,,,Unspecified,EAST RESORT CREEK,800008.0,Surface Water
+CO_2774,,,Unspecified,WEST RESORT CREEK,197629.0,Surface Water
+CO_2775,,,Unspecified,WIGWAM CREEK,183502.0,Surface Water
+CO_2776,,,Unspecified,SLAUGHTERHOUSE GULCH,183227.0,Surface Water
+CO_2777,,,Unspecified,NORTH ROLLING CREEK,183507.0,Surface Water
+CO_2778,,,Unspecified,WISP CREEK,183283.0,reservoir
+CO_2779,,,Unspecified,BURNING BEAR CREEK,182384.0,Surface Water
+CO_2780,,,Unspecified,BRUNO GULCH,182383.0,Surface Water
+CO_2781,,,Unspecified,HANKINS GULCH,183684.0,Surface Water
+CO_2782,,,Unspecified,KENNEDY GULCH,183294.0,Surface Water
+CO_2783,,,Unspecified,KIRBY GULCH,182385.0,Surface Water
+CO_2784,,,Unspecified,LAMPING CREEK,183167.0,Surface Water
+CO_2785,,,Unspecified,TANGLEWOOD CREEK,182496.0,Surface Water
+CO_2786,,,Unspecified,CASTO CREEK,183300.0,reservoir
+CO_2787,,,Unspecified,HOLMES GULCH,183263.0,reservoir
+CO_2788,,,Unspecified,ROLAND GULCH,183261.0,reservoir
+CO_2789,,,Unspecified,PAYNE CREEK,183243.0,Surface Water
+CO_2790,,,Unspecified,MAVERICK CANYON,185538.0,reservoir
+CO_2791,,,Unspecified,GROUNDWATER: IKE CREEK,174094.0,groundwater/well
+CO_2792,,,Unspecified,GROUNDWATER: SPRUCE CREEK,174092.0,groundwater/well
+CO_2793,,,Unspecified,GROUNDWATER: CHEYENNE,,groundwater/well
+CO_2794,,,Unspecified,MCINTYRE GULCH,182131.0,Surface Water
+CO_2795,,,Unspecified,DRY SAINT VRAIN CREEK,178266.0,reservoir
+CO_2796,,,Unspecified,SENAC CREEK,184994.0,reservoir
+CO_2797,,,Unspecified,GROUNDWATER: SHELL CREEK,169705.0,groundwater/well
+CO_2798,,,Unspecified,WASHOUT GULCH,177105.0,Surface Water
+CO_2799,,,Unspecified,GROUSE SPRING CREEK,186384.0,Surface Water
+CO_2800,,,Unspecified,BRANCH CREEK,185461.0,reservoir
+CO_2801,,,Unspecified,NORTH FORK ESCALANTE CREEK,185477.0,reservoir
+CO_2802,,,Unspecified,GROUNDWATER: CASTEEL CREEK,176071.0,groundwater/well
+CO_2803,,,Unspecified,QUINLAN GULCH,183846.0,reservoir
+CO_2804,,,Unspecified,SOUTH BAINARD CREEK,175123.0,reservoir
+CO_2805,,,Unspecified,REMINE CREEK,176427.0,groundwater/spring
+CO_2806,,,Unspecified,GROUNDWATER: EAST PARADOX CREEK,185864.0,groundwater/well
+CO_2807,,,Unspecified,EAST FORK MC KENZIE CREEK,186144.0,reservoir
+CO_2808,,,Unspecified,BARREL SPRING CREEK,172135.0,Surface Water
+CO_2809,,,Unspecified,GOLDSMITH GULCH,184785.0,reservoir
+CO_2810,,,Unspecified,BIRDSEYE GULCH,179912.0,Surface Water
+CO_2811,,,Unspecified,CRESSMANS GULCH,181592.0,Surface Water
+CO_2812,,,Unspecified,HOOP CREEK,181339.0,Surface Water
+CO_2813,,,Unspecified,PROWERS ARROYO,195417.0,reservoir
+CO_2814,,,Unspecified,WARREN GULCH,182025.0,reservoir
+CO_2815,,,Unspecified,PINEY CREEK,185047.0,reservoir
+CO_2816,,,Unspecified,DENVER,,Unknown
+CO_2817,,,Unspecified,J IRA VALLEY,182032.0,reservoir
+CO_2818,,,Unspecified,GROUNDWATER: WARREN CREEK,380005.0,groundwater/well
+CO_2819,,,Unspecified,GROUNDWATER: FREEMAN CREEK,174813.0,groundwater/well
+CO_2820,,,Unspecified,DAWSON,,Unknown
+CO_2821,,,Unspecified,NORTH FORK WALLACE CREEK,174356.0,Surface Water
+CO_2822,,,Unspecified,GROUNDWATER: YELLOW JACKET CANYON,178994.0,groundwater/well
+CO_2823,,,Unspecified,POSSUM CREEK,173949.0,reservoir
+CO_2824,,,Unspecified,BLACK HOLLOW,177110.0,Surface Water
+CO_2825,,,Unspecified,RYE SLOUGH,191448.0,Surface Water
+CO_2826,,,Unspecified,LITTLE WOLF CREEK,171339.0,reservoir
+CO_2827,,,Unspecified,SHORTY CREEK,169636.0,reservoir
+CO_2828,,,Unspecified,DROZ CREEK,189871.0,reservoir
+CO_2829,,,Unspecified,CENTRAL BRANCH,192652.0,Surface Water
+CO_2830,,,Unspecified,SOUTH FORK HUERFANO RIVER,192663.0,Surface Water
+CO_2831,,,Unspecified,CHICO CREEK,193750.0,groundwater/spring
+CO_2832,,,Unspecified,EAST ROATCAP CREEK,186291.0,reservoir
+CO_2833,,,Unspecified,CRAMER CREEK,195220.0,reservoir
+CO_2834,,,Unspecified,WHITNEY CREEK,570005.0,reservoir
+CO_2835,,,Unspecified,LOPEZ CANYON,194607.0,reservoir
+CO_2836,,,Unspecified,GROUNDWATER: SEVEN CASTLES CREEK,179401.0,groundwater/well
+CO_2837,,,Unspecified,GROUNDWATER: RUEDI CREEK,203937.0,groundwater/well
+CO_2838,,,Unspecified,GROUNDWATER: HOT SPRING CREEK,172525.0,groundwater/well
+CO_2839,,,Unspecified,RABBIT EARS CREEK,173015.0,Surface Water
+CO_2840,,,Unspecified,GROUNDWATER: TENNESSEE CREEK,179881.0,groundwater/well
+CO_2841,,,Unspecified,GRIZZLY GULCH,181849.0,reservoir
+CO_2842,,,Unspecified,LITTLE HIGH CREEK,191614.0,Surface Water
+CO_2843,,,Unspecified,CHAPARRAL CREEK,192888.0,Surface Water
+CO_2844,,,Unspecified,SIG CREEK,187730.0,Surface Water
+CO_2845,,,Unspecified,RELAY CREEK,187729.0,Surface Water
+CO_2846,,,Unspecified,SOUTH FORK HERMOSA CREEK,178925.0,Surface Water
+CO_2847,,,Unspecified,BIG LICK CREEK,187929.0,Surface Water
+CO_2848,,,Unspecified,DEER PARK CREEK,187607.0,Surface Water
+CO_2849,,,Unspecified,MAGGIE GULCH,187629.0,Surface Water
+CO_2850,,,Unspecified,ROAD BEAVER CREEK,188541.0,Groundwater
+CO_2851,,,Unspecified,NORTH FORK SNAKE RIVER,181808.0,Surface Water
+CO_2852,,,Unspecified,GROUNDWATER: HURD CREEK,178410.0,groundwater/well
+CO_2853,,,Unspecified,SEVEN CASTLES CREEK,179401.0,Surface Water
+CO_2854,,,Unspecified,THODE DRAW,390007.0,reservoir
+CO_2855,,,Unspecified,GROUNDWATER: EIGHTMILE CREEK,175728.0,groundwater/well
+CO_2856,,,Unspecified,SOUTH FORK LOST CREEK,183481.0,Surface Water
+CO_2857,,,Unspecified,MONTGOMERY CREEK,177241.0,Surface Water
+CO_2858,,,Unspecified,NORTH FORK LOST CREEK,183482.0,Surface Water
+CO_2859,,,Unspecified,LITTLE GREEN CREEK,500002.0,Surface Water
+CO_2860,,,Unspecified,COAL BANK DRAW,180564.0,reservoir
+CO_2861,,,Unspecified,GROUNDWATER: SHEARER CREEK,183966.0,groundwater/well
+CO_2862,,,Unspecified,SPOTTLEWOOD CREEK,171090.0,groundwater/spring
+CO_2863,,,Unspecified,PARADOX VALLEY,670004.0,Surface Water
+CO_2864,,,Unspecified,GROUNDWATER: OPHIR CREEK,192354.0,groundwater/well
+CO_2865,,,Unspecified,GROUNDWATER: SQUIRREL CREEK,192374.0,groundwater/well
+CO_2866,,,Unspecified,NORTH SMITH FORK GUNNISON RIVER,186598.0,Surface Water
+CO_2867,,,Unspecified,SHOE AND STOCKING CREEK,173153.0,reservoir
+CO_2868,,,Unspecified,GROUNDWATER: TWO ELK CREEK,176119.0,groundwater/well
+CO_2869,,,Unspecified,GROUNDWATER: BEARD CREEK,175901.0,groundwater/well
+CO_2870,,,Unspecified,GROUNDWATER: LARAMIE,,groundwater/well
+CO_2871,,,Unspecified,SMITH CANYON CREEK,195728.0,reservoir
+CO_2872,,,Unspecified,GROUNDWATER: MURPHY CREEK,184995.0,groundwater/well
+CO_2873,,,Unspecified,SOUTH FORK CEMENT CREEK,187338.0,Surface Water
+CO_2874,,,Unspecified,LEEMAN GULCH,179452.0,reservoir
+CO_2875,,,Unspecified,UHL CREEK,174900.0,reservoir
+CO_2876,,,Unspecified,GROUNDWATER: THOMPSON DRAW,170677.0,groundwater/well
+CO_2877,,,Unspecified,BURGESS RIVER,193289.0,reservoir
+CO_2878,,,Unspecified,GINRIGHT CREEK,174976.0,reservoir
+CO_2879,,,Unspecified,RITO AGUA DULCE,194944.0,Surface Water
+CO_2880,,,Unspecified,SOUTH APACHE CREEK,192604.0,Surface Water
+CO_2881,,,Unspecified,APACHE CREEK,194049.0,reservoir
+CO_2882,,,Unspecified,TOM BRANCH,194050.0,Surface Water
+CO_2883,,,Unspecified,NORTH APACHE CREEK,194047.0,Surface Water
+CO_2884,,,Unspecified,HILL ARROYA,790008.0,Surface Water
+CO_2885,,,Unspecified,BEAVER DAM CREEK,174977.0,Surface Water
+CO_2886,,,Unspecified,NORTH FORK HORSE CREEK,193310.0,Surface Water
+CO_2887,,,Unspecified,LONETREE CREEK,196535.0,reservoir
+CO_2888,,,Unspecified,GROUNDWATER: ROC CREEK,185662.0,groundwater/well
+CO_2889,,,Unspecified,BRACKEN CREEK,186657.0,groundwater/spring
+CO_2890,,,Unspecified,GORDON GULCH,180411.0,Surface Water
+CO_2891,,,Unspecified,SOUTH OAK CREEK,192686.0,groundwater/spring
+CO_2892,,,Unspecified,MANZANARES CREEK,192665.0,groundwater/spring
+CO_2893,,,Unspecified,CLEAR FORK,186717.0,groundwater/spring
+CO_2894,,,Unspecified,CHANNING CREEK,173101.0,Surface Water
+CO_2895,,,Unspecified,GROUNDWATER: SOUTH FORK SOUTH PLATTE RIVER,183790.0,groundwater/well
+CO_2896,,,Unspecified,GROUNDWATER: GREENHORN CREEK,193782.0,groundwater/well
+CO_2897,,,Unspecified,SOUTH CROOKED CREEK,180006.0,reservoir
+CO_2898,,,Unspecified,NORTH MAY CREEK,192582.0,Surface Water
+CO_2899,,,Unspecified,GROUNDWATER: KERR GULCH,182114.0,groundwater/well
+CO_2900,,,Unspecified,EAST FORK SPRING CREEK,188233.0,reservoir
+CO_2901,,,Unspecified,GROUNDWATER: UPPER ARAPAHOE,,groundwater/well
+CO_2902,,,Unspecified,GRAVES CREEK,171091.0,Surface Water
+CO_2903,,,Unspecified,WILMER GULCH,192294.0,reservoir
+CO_2904,,,Unspecified,DRY FORK LIGHTNER CREEK,179156.0,groundwater/spring
+CO_2905,,,Unspecified,QUINN CREEK,184164.0,groundwater/spring
+CO_2906,,,Unspecified,GROUNDWATER: WILDCAT CREEK,179702.0,groundwater/well
+CO_2907,,,Unspecified,SCHAEFER CREEK,186385.0,Surface Water
+CO_2908,,,Unspecified,EAST FORK TURKEY CREEK,193578.0,reservoir
+CO_2909,,,Unspecified,WEST FORK TURKEY CREEK,193577.0,reservoir
+CO_2910,,,Unspecified,GROUNDWATER: CUCUMBER CREEK,179629.0,groundwater/well
+CO_2911,,,Unspecified,BULL RUN CREEK,170083.0,reservoir
+CO_2912,,,Unspecified,GROUNDWATER: LITTLE TURKEY CREEK,193579.0,groundwater/well
+CO_2913,,,Unspecified,GROUNDWATER: SOUTH ARKANSAS RIVER,189315.0,groundwater/well
+CO_2914,,,Unspecified,SNELSON CREEK,188186.0,Groundwater
+CO_2915,,,Unspecified,STUKEY CREEK,170520.0,reservoir
+CO_2916,,,Unspecified,FANCHER CREEK,172779.0,reservoir
+CO_2917,,,Unspecified,CARR GULCH,191690.0,Surface Water
+CO_2918,,,Unspecified,RED SANDSTONE CREEK,175926.0,Surface Water
+CO_2919,,,Unspecified,WATSON GULCH,182593.0,reservoir
+CO_2920,,,Unspecified,MORGAN GULCH,196756.0,Surface Water
+CO_2921,,,Unspecified,NORTH FORK HENSON CREEK,188670.0,groundwater/spring
+CO_2922,,,Unspecified,FOURTH OF JULY CREEK,188488.0,Surface Water
+CO_2923,,,Unspecified,JOANNA CREEK,230001.0,Surface Water
+CO_2924,,,Unspecified,SWITZERS GULCH,182604.0,reservoir
+CO_2925,,,Unspecified,EVERGREEN SPRINGS CREEK,90010.0,reservoir
+CO_2926,,,Unspecified,GROUNDWATER: WEST FORK ELK RIVER,171405.0,groundwater/well
+CO_2927,,,Unspecified,GODFREY GULCH,195075.0,reservoir
+CO_2928,,,Unspecified,PALLAORO CREEK,90013.0,reservoir
+CO_2929,,,Unspecified,DENVER BASIN - MULTIPLE AQUIFERS,,Unknown
+CO_2930,,,Unspecified,GROUNDWATER: SHEEP CABIN CREEK,191002.0,groundwater/well
+CO_2931,,,Unspecified,MIDDLE BLUE CREEK,188317.0,groundwater/spring
+CO_2932,,,Unspecified,PLEASANT VALLEY CREEK,188393.0,reservoir
+CO_2933,,,Unspecified,WEST FORK CURRANT CREEK,186267.0,Surface Water

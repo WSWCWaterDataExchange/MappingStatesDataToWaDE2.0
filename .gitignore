@@ -108,9 +108,6 @@ Washington/WaterAllocation/ProcessedInputData/WAalloc/variables.csv
 Washington/WaterAllocation/ProcessedInputData/WAalloc/sites.csv
 Washington/WaterAllocation/ProcessedInputData/WAalloc/organizations.csv
 Washington/WaterAllocation/ProcessedInputData/WAalloc/methods.csv
-*.csv
-*.csv
-*.csv
 Arizona/WaterAllocation/ProcessedInputData/methods.csv
 Arizona/WaterAllocation/ProcessedInputData/methods.csv
 Arizona/WaterAllocation/ProcessedInputData/methods.csv
@@ -119,13 +116,9 @@ Arizona/WaterAllocation/ProcessedInputData/sites.csv
 Arizona/WaterAllocation/ProcessedInputData/variables.csv
 Arizona/WaterAllocation/ProcessedInputData/waterallocations.csv
 Arizona/WaterAllocation/ProcessedInputData/watersources.csv
-*.csv
 Oregon/WaterAllocation/ProcessedInputData/methods.csv
 Oregon/WaterAllocation/3_OR_Organizations.py
 Idaho/WaterAllocation/ProcessedInputData/watersources.csv
-Colorado/WaterAllocation/ProcessedInputData/watersources.csv
-Colorado/WaterAllocation/ProcessedInputData/waterallocations.csv
-Colorado/WaterAllocation/ProcessedInputData/sites.csv
 Arizona/WaterAllocation/ProcessedInputData/watersources.csv
 Arizona/WaterAllocation/ProcessedInputData/waterallocations.csv
 Arizona/WaterAllocation/ProcessedInputData/variables.csv
@@ -167,7 +160,6 @@ Oregon/WaterAllocation/ProcessedInputData/variables.csv
 Oregon/WaterAllocation/ProcessedInputData/waterallocations.csv
 Oregon/WaterAllocation/ProcessedInputData/waterallocations_longsiteid.csv
 Oregon/WaterAllocation/ProcessedInputData/watersources.csv
-*.csv
 NorthDakota/WaterAllocation/ProcessedInputData/watersources.csv
 NorthDakota/WaterAllocation/ProcessedInputData/waterallocations.csv
 NorthDakota/WaterAllocation/ProcessedInputData/variables.csv

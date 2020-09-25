@@ -1,0 +1,4 @@
+OrganizationUUID,OrganizationName,OrganizationPurview,OrganizationWebsite,OrganizationPhoneNumber,OrganizationContactName,OrganizationContactEmail,OrganizationDataMappingURL,State
+CODWR,Colorado Division of Water Resources,Water Administration for the State of Colorado,https://github.com/WSWCWaterDataExchange/WaDE2.0,303-866-3581,Doug Stenzel,abc@co.com,https://github.com/WSWCWaterDataExchange/WaDE2.0,UT
+CWCB,Colorado Water Conservation Board,Water Planning for the State of Colorado,https://github.com/WSWCWaterDataExchange/WaDE2.1,303-866-3441,Rebecca Mitchell,abc@co.com,https://github.com/WSWCWaterDataExchange/WaDE2.1,UT
+UTDWRE,Utah Something or Other,Something or Other for the State of Utah,https://github.com/WSWCWaterDataExchange/WaDE2.1,303-866-3441,Rebecca Mitchell,abc@co.com,https://github.com/WSWCWaterDataExchange/WaDE2.1,UT

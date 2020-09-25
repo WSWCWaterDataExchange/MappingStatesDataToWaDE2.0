@@ -1,0 +1,406 @@
+,CoordinateAccuracy,CoordinateMethodCV,County,EPSGCodeCV,GNISCodeCV,Geometry,HUC12,HUC8,Latitude,Longitude,NHDNetworkStatusCV,NHDProductCV,ReasonRemoved,SiteName,SiteNativeID,SitePoint,SiteTypeCV,SiteUUID,StateCV,USGSSiteID,index
+0,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SILVER CREEK PIPELINE 2,1101010,,Pipeline,CO_3,CO,,2.0
+1,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,NORTH GALLERY,2006687,,Well,CO_8,CO,,7.0
+2,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,AURORA DEN WL FLD,210013,,Well Field,CO_9620,CO,,9619.0
+3,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,AURORA UAR WL FLD,210014,,Well Field,CO_9621,CO,,9620.0
+4,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,AURORA LAR WL FLD,210017,,Well Field,CO_9624,CO,,9623.0
+5,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,AURORA LFH WL FLD,210018,,Well Field,CO_9625,CO,,9624.0
+6,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,DICKENS PRIVATE DITCH 2,500955,,Ditch,CO_14170,CO,,14169.0
+7,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,HAPPY VALLEY FL PL,600529,,Pipeline,CO_15048,CO,,15047.0
+8,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,WATERWHEEL DITCH,600556,,Ditch,CO_15066,CO,,15065.0
+9,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,GREENLEE RES 1,604198,,Reservoir,CO_15756,CO,,15755.0
+10,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TRENTON DEEP WELL,808284,,Well,CO_21918,CO,,21917.0
+11,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,HAMILTON TRUST W DA-5,808601,,Well,CO_21979,CO,,21978.0
+12,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,HAMILTON TRUST W DN-7,808608,,Well,CO_21986,CO,,21985.0
+13,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,HAMILTON TRUST W AR-3,808611,,Well,CO_21989,CO,,21988.0
+14,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,BURLINGTON N DA WL FLD,810395,,Well Field,CO_23181,CO,,23180.0
+15,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,BURLINGTON N UDA WL FLD,810396,,Well Field,CO_23182,CO,,23181.0
+16,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,LITTLETON LFH WL FLD,811501,,Well Field,CO_24205,CO,,24204.0
+17,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,LITTLETON AR WL FLD,811502,,Well Field,CO_24206,CO,,24205.0
+18,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,LITTLETON LAR WL FLD,811503,,Well Field,CO_24207,CO,,24206.0
+19,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,LITTLETON DEN WL FLD,811504,,Well Field,CO_24208,CO,,24207.0
+20,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,LAKEWOOD W 10-1SF,905353,,Well,CO_28128,CO,,28127.0
+21,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,CAMP CREEK PIPELINE,1000522,,Pipeline,CO_28755,CO,,28754.0
+22,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,DOUGLAS DITCH NO 1,1000656,,Ditch,CO_28807,CO,,28806.0
+23,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,RESERVOIR SPRINGS DITCH,1000682,,Ditch,CO_28818,CO,,28817.0
+24,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,DOUGLAS SPRING DITCH 1,1000695,,Ditch,CO_28826,CO,,28825.0
+25,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,DOUGLAS SPRING DITCH 2,1000696,,Ditch,CO_28827,CO,,28826.0
+26,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,RESERVOIR DITCH,1000966,,Ditch,CO_28904,CO,,28903.0
+27,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,CHEROKEE METRO WWTP,1000972,,Other,CO_28906,CO,,28905.0
+28,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,NORTHGATE AUG PLAN,1007000,,Augmentation/Replacement Plan,CO_30301,CO,,30300.0
+29,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,FOUNTAIN AUG PLAN,1007001,,Augmentation/Replacement Plan,CO_30302,CO,,30301.0
+30,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SPROUL AUG PLAN,1007010,,Augmentation/Replacement Plan,CO_30307,CO,,30306.0
+31,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,FOREST LAKES AUG PLAN,1007015,,Augmentation/Replacement Plan,CO_30308,CO,,30307.0
+32,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,COLO SPGS ARK RIV EXCHG,1007044,,Other,CO_30313,CO,,30312.0
+33,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,COLO SPGS NONSEW EXCH,1007045,,Other,CO_30314,CO,,30313.0
+34,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,DONALA AUG PLAN,1007092,,Augmentation/Replacement Plan,CO_30346,CO,,30345.0
+35,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TRIVIEW METRO (ARAP) AUG PLAN,1007096,,Augmentation/Replacement Plan,CO_30349,CO,,30348.0
+36,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,COMANCHE RESOURCES AUG PLAN,1007133,,Augmentation/Replacement Plan,CO_30379,CO,,30378.0
+37,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,FOREST LAKES AUG PLAN,1007176,,Augmentation/Replacement Plan,CO_30402,CO,,30401.0
+38,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,FOREST LAKES AUG PLAN,1007177,,Augmentation/Replacement Plan,CO_30403,CO,,30402.0
+39,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,FOREST LAKES AUG PLAN,1007178,,Augmentation/Replacement Plan,CO_30404,CO,,30403.0
+40,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,JC ORANGE WELL NO 1,1008188,,Well,CO_30476,CO,,30475.0
+41,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,GUYER DITCH,1100636,,Ditch,CO_30997,CO,,30996.0
+42,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TOWN OF ST ELMO,1100878,,Ditch,CO_31162,CO,,31161.0
+43,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SILVER CREEK PIPELINE 1,1101007,,Pipeline,CO_31246,CO,,31245.0
+44,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ANGEL OF SHAVANO CG WELL,1105768,,Well,CO_32220,CO,,32219.0
+45,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,BATES DITCH,1200536,,Ditch,CO_32294,CO,,32293.0
+46,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,WEST PERRY DITCH,1200550,,Ditch,CO_32308,CO,,32307.0
+47,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SAND CREEK SPRING DITCH,1200810,,Ditch,CO_32477,CO,,32476.0
+48,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TOOF DITCH NO 1,1201023,,Ditch,CO_32568,CO,,32567.0
+49,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,COTTONWOOD SPRING,1202079,,Spring,CO_32682,CO,,32681.0
+50,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,WHEATON COLLEGE SPG 15,1202548,,Spring,CO_33140,CO,,33139.0
+51,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TAYLOR SPRING & PIPELINE,1202688,,Spring,CO_33262,CO,,33261.0
+52,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,COTTER SAND CREEK EXCH,1202800,,Reach,CO_33292,CO,,33291.0
+53,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,GLEN VISTA AUG PLAN,1207008,,Augmentation/Replacement Plan,CO_33636,CO,,33635.0
+54,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,CARR WELL NO 1 115565,1208045,,Well,CO_33684,CO,,33683.0
+55,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TAYLOR WELL NO 1,1208229,,Well,CO_33864,CO,,33863.0
+56,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,BURGMAN DITCH NO 2,1300963,,Ditch,CO_34325,CO,,34324.0
+57,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,MCCLURKIN DITCH NO 2,1301012,,Ditch,CO_34364,CO,,34363.0
+58,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ABBOTT D (SHORT CRK) APD,1301039,,Ditch,CO_34389,CO,,34388.0
+59,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,RESERVOIR NO 9,1403527,,Reservoir,CO_35089,CO,,35088.0
+60,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,PUEBLO WW RESERVOIRS 1-7,1403563,,Reservoir,CO_35111,CO,,35110.0
+61,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,CARLSON WELL NO 2,1408025,,Well,CO_35637,CO,,35636.0
+62,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,BARNES WELL NO 1,1408005,,Well,CO_35921,CO,,35920.0
+63,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,CARLSON WELL NO 1,1408024,,Well,CO_35939,CO,,35938.0
+64,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,FABIAN HOME WELL,1408068,,Well,CO_35981,CO,,35980.0
+65,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,HARBOUR WELL,1408099,,Well,CO_36012,CO,,36011.0
+66,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,HITZING DOMESTIC & STOCK,1408109,,Well,CO_36022,CO,,36021.0
+67,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,HUTTON WELL,1408117,,Well,CO_36030,CO,,36029.0
+68,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,KLOMP WELL NO 31201,1408136,,Well,CO_36049,CO,,36048.0
+69,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,LINDVAY WELL NO 1,1408150,,Well,CO_36063,CO,,36062.0
+70,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,PISCIOTTA DOM & STK WELL,1408194,,Well,CO_36106,CO,,36105.0
+71,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,PISCIOTTA DOMESTIC WELL,1408195,,Well,CO_36107,CO,,36106.0
+72,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,VIVODA OVERFLOW NO 1,1502080,,Spring,CO_36419,CO,,36418.0
+73,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,FISHER WELL,1508084,,Well,CO_36682,CO,,36681.0
+74,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,MICHAELS WELL,1508152,,Well,CO_36749,CO,,36748.0
+75,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,PATTI WELL NO 1,1508164,,Well,CO_36761,CO,,36760.0
+76,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,PATTI WELL NO 2,1508165,,Well,CO_36762,CO,,36761.0
+77,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,WILLOW RESERVOIR,1603512,,Reservoir,CO_37370,CO,,37369.0
+78,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,NEESOPAH RESERVOIR,1703605,,Reservoir,CO_37939,CO,,37938.0
+79,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,NEE GRONDA RESERVOIR,1703606,,Reservoir,CO_37940,CO,,37939.0
+80,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,NEENOSHE RESERVOIR,1703607,,Reservoir,CO_37941,CO,,37940.0
+81,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,NEESKAH RESERVOIR,1703608,,Reservoir,CO_37942,CO,,37941.0
+82,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,EBERHART WELL,1706445,,Well,CO_39160,CO,,39159.0
+83,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SPORLEDER SPRING NO 2,1802053,,Spring,CO_39168,CO,,39167.0
+84,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,HCWUA AUG PLAN,1707005,,Augmentation/Replacement Plan,CO_39196,CO,,39195.0
+85,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ADAMSON WELL,1708027,,Well,CO_39223,CO,,39222.0
+86,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,BUSH WELL,1708065,,Well,CO_39261,CO,,39260.0
+87,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,LAKE WELL,1708198,,Well,CO_39393,CO,,39392.0
+88,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,USTICK WELL NO 1,1708319,,Well,CO_39513,CO,,39512.0
+89,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,USTICK WELL NO 1,1708320,,Well,CO_39514,CO,,39513.0
+90,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,WILSON WELL,1708348,,Well,CO_39541,CO,,39540.0
+91,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,HART DITCH,1900617,,Ditch,CO_40064,CO,,40063.0
+92,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,O T HOLLINGSWORTH DITCH,1900663,,Ditch,CO_40097,CO,,40096.0
+93,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,HALL DITCH,1900782,,Ditch,CO_40168,CO,,40167.0
+94,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,STARKVILLE SPRINGS,1900878,,Spring,CO_40223,CO,,40222.0
+95,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,CIMARRON RANCH AUG PLAN,1907000,,Augmentation/Replacement Plan,CO_40604,CO,,40603.0
+96,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TED JACKSON & CO AUG PLN,1907001,,Augmentation/Replacement Plan,CO_40605,CO,,40604.0
+97,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,HILL RANCH AUG PLAN,1907003,,Augmentation/Replacement Plan,CO_40606,CO,,40605.0
+98,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SPANISH PEAKS WELL NO  1,1908001,,Well,CO_40607,CO,,40606.0
+99,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SPANISH PEAKS WELL NO 14,1908014,,Well,CO_40620,CO,,40619.0
+100,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,AGUA RAMON D,2000504,,Ditch,CO_40704,CO,,40703.0
+101,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,EMBARGO CR MIN FLOW,2001033,,Minimum Flow,CO_41045,CO,,41044.0
+102,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,RGWCD RECHARGE PROJECT,2001670,,Recharge Area Group,CO_41171,CO,,41170.0
+103,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,RGWUA RECHARGE PROJECT,2001675,,Other,CO_41176,CO,,41175.0
+104,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TRES RIOS NO 3,2001702,,Ditch,CO_41201,CO,,41200.0
+105,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,VILLAGE D,2001708,,Ditch,CO_41204,CO,,41203.0
+106,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SKI AREA PIPELINE,2001709,,Pipeline,CO_41205,CO,,41204.0
+107,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,USFS QP37J,2001963,,Minimum Flow,CO_41447,CO,,41446.0
+108,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,VILLAGE POND,2003639,,Reservoir,CO_41596,CO,,41595.0
+109,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SOUTH GALLERY,2006688,,Other,CO_42923,CO,,42922.0
+110,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,DEL NORTE AUG PLAN,2007010,,Augmentation/Replacement Plan,CO_42932,CO,,42931.0
+111,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SAHULA WELL,3806341,,Well,CO_47327,CO,,47326.0
+112,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ANTHES WELL,3806343,,Well,CO_47529,CO,,47528.0
+113,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,W1959 WELL NO 02,2205690,,Well,CO_49597,CO,,49596.0
+114,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,CHINO SPRING,2200856,,Spring,CO_49843,CO,,49842.0
+115,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,GALLO SPRING,2200867,,Spring,CO_49855,CO,,49854.0
+116,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,GOMEZ SPRING,2200868,,Spring,CO_49856,CO,,49855.0
+117,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,NATIVE LAKE,2203301,,Reservoir,CO_49942,CO,,49941.0
+118,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,BRUSH FENCE LAKE,2203302,,Reservoir,CO_49943,CO,,49942.0
+119,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,T J RAMSEY LAKE,2203303,,Reservoir,CO_49944,CO,,49943.0
+120,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SEXTO CREEK LAKE,2203304,,Reservoir,CO_49945,CO,,49944.0
+121,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TRAIL LAKE,2203593,,Reservoir,CO_49964,CO,,49963.0
+122,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,CLYDES CORRALS RESERVOIR,2203597,,Reservoir,CO_49968,CO,,49967.0
+123,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,W1959 WELL NO 01,2205689,,Well,CO_50666,CO,,50665.0
+124,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,HAYMAN SPRG STOCK WTR DE,2301504,,Spring,CO_51815,CO,,51814.0
+125,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,DOUBLE BAR LAKE NO 1,2303335,,Reservoir,CO_52128,CO,,52127.0
+126,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,NEW SECTION 36 SPG WELL,2305548,,Well,CO_52807,CO,,52806.0
+127,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SOUTHWEST PASTURE SPG W,2305559,,Well,CO_52818,CO,,52817.0
+128,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,N HOUSE PASTURE SPG WELL,2305560,,Well,CO_52819,CO,,52818.0
+129,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,N CAMP AREA SPG WELL,2305562,,Well,CO_52821,CO,,52820.0
+130,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ABUNDO MARTINEZ D,2400609,,Ditch,CO_53837,CO,,53836.0
+131,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,84CW061 WELL NO 03,2405013,,Well,CO_53861,CO,,53860.0
+132,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,W3065 WELL NO 02,2405334,,Well,CO_54150,CO,,54149.0
+133,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,W3209 WELL NO 01,2405342,,Well,CO_54158,CO,,54157.0
+134,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,W3262 WELL NO 01,2405350,,Well,CO_54166,CO,,54165.0
+135,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,W3386 WELL NO 02,2405359,,Well,CO_54175,CO,,54174.0
+136,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,BACA GRANT 4 IRR D 6,2500510,,Ditch,CO_54212,CO,,54211.0
+137,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,BACA GRANT 4 IRR D 7,2500511,,Ditch,CO_54213,CO,,54212.0
+138,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,DRISCOLL D 2,2500566,,Ditch,CO_54253,CO,,54252.0
+139,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,KAUFMAN D,2500611,,Ditch,CO_54281,CO,,54280.0
+140,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,GOLDEN TREAS POND NO 1,2500728,,Reservoir,CO_54357,CO,,54356.0
+141,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,GOLDEN TREAS POND NO 2,2500729,,Reservoir,CO_54358,CO,,54357.0
+142,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,GOLDEN TREAS POND NO 3,2500730,,Reservoir,CO_54359,CO,,54358.0
+143,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,GOLDEN TREAS POND NO 4,2500731,,Reservoir,CO_54360,CO,,54359.0
+144,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,LINDISFARNE PIPELINE,2500772,,Pipeline,CO_54384,CO,,54383.0
+145,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TRAIL SPRING,2500783,,Spring,CO_54395,CO,,54394.0
+146,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SOUTH CRESTONE CK MSF,2500824,,Minimum Flow,CO_54433,CO,,54432.0
+147,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,COTTONWOOD CK MSF,2500825,,Minimum Flow,CO_54434,CO,,54433.0
+148,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,WILLOW CK MSF,2500826,,Minimum Flow,CO_54435,CO,,54434.0
+149,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,LOWER WILLOW CR LAKE,2503505,,Reservoir,CO_54541,CO,,54540.0
+150,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,W1189 WELL NO 11,2505202,,Well,CO_54741,CO,,54740.0
+151,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,W2057 WELL NO 21,2505327,,Well,CO_54864,CO,,54863.0
+152,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ROUND PARK SPRING NO 2,2600828,,Spring,CO_55294,CO,,55293.0
+153,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,CURBY D 1,2700508,,Ditch,CO_56601,CO,,56600.0
+154,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,BENINO CR MSF,2700560,,Minimum Flow,CO_56633,CO,,56632.0
+155,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,GROUNDHOG CR MSF,2700577,,Minimum Flow,CO_56635,CO,,56634.0
+156,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,LA GARITA CR MSF,2700584,,Minimum Flow,CO_56637,CO,,56636.0
+157,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,KEITH DITCH,2900641,,Ditch,CO_59078,CO,,59077.0
+158,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ANDERSON PUMP,2900832,,Pump,CO_59220,CO,,59219.0
+159,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SQUAW CREEK DAM,2903745,,Reservoir,CO_59475,CO,,59474.0
+160,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,POSEY DITCH,3200797,,Ditch,CO_62286,CO,,62285.0
+161,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,RGWCD RECHGE STRUCT NO 1,3500669,,Ditch,CO_63552,CO,,63551.0
+162,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,91CW020 WELL NO 01,3505094,,Well,CO_63705,CO,,63704.0
+163,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,LOWER MOHAWK RESERVOIR,3603649,,Reservoir,CO_64643,CO,,64642.0
+164,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,JEFFREY WELL,3605048,,Well,CO_64753,CO,,64752.0
+165,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,MARUGG FOX FARM WELL,3705182,,Well,CO_66523,CO,,66522.0
+166,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,WOLVERTON SPRING,3705431,,Spring,CO_66737,CO,,66736.0
+167,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,BRADSHAW NO 2 DITCH,3800551,,Ditch,CO_67026,CO,,67025.0
+168,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,BRACKEN DITCH & PIPELINE,3800552,,Ditch,CO_67027,CO,,67026.0
+169,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,FEINSINGER DITCH,3800674,,Ditch,CO_67125,CO,,67124.0
+170,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,MCKENZIE DITCH,3800889,,Ditch,CO_67285,CO,,67284.0
+171,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TWENTY PEAKS SP 1 2 3 4,3801056,,Spring,CO_67410,CO,,67409.0
+172,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,HIGHLAND DITCH NO 1,3801301,,Ditch,CO_67594,CO,,67593.0
+173,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TENTH MTN DV SP & D HG 1,3801446,,Spring,CO_67701,CO,,67700.0
+174,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TENTH MTN DV SP & D HG 2,3801447,,Spring,CO_67702,CO,,67701.0
+175,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TENTH MTN DV SP & D HG 3,3801448,,Spring,CO_67703,CO,,67702.0
+176,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,AVALANCHE CNL DIVR SYS2A,3805045,,Ditch,CO_67765,CO,,67764.0
+177,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,OKANELA DITCH SYSTEM,3801824,,Ditch,CO_67996,CO,,67995.0
+178,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,AVALANCHE CNL DIVR SYS2B,3805046,,Ditch,CO_68110,CO,,68109.0
+179,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TIE CAMP POND,3803659,,Reservoir,CO_68317,CO,,68316.0
+180,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,HANSEN POND,3804152,,Reservoir,CO_68593,CO,,68592.0
+181,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,W DIV PR FOUR MI C & S(4MI),3804681,,Other,CO_68901,CO,,68900.0
+182,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,W DIV PR FOUR MI C & S(3MI),3804684,,Other,CO_68902,CO,,68901.0
+183,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,CASSIDY WELL,3805244,,Well,CO_69114,CO,,69113.0
+184,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,COMMONWEALTH SPRING,3805289,,Spring,CO_69146,CO,,69145.0
+185,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,HIGHLAND BAVARIAN WELL,3805456,,Well,CO_69285,CO,,69284.0
+186,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SHOHET SPGS COLL DIST SY,3805721,,Spring,CO_69517,CO,,69516.0
+187,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,STEINMETZ WELL NO 1,3805788,,Well,CO_69561,CO,,69560.0
+188,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,STEINMETZ WELL NO 2,3805789,,Well,CO_69562,CO,,69561.0
+189,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,DRIVEWAY SPRING NO 2,3806053,,Spring,CO_69777,CO,,69776.0
+190,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,FISHER CREEK SPRING NO 1,3806054,,Spring,CO_69778,CO,,69777.0
+191,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,BRADFORD WELL D,3806128,,Well,CO_69834,CO,,69833.0
+192,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TYBAR SPRING NO 1,3806296,,Spring,CO_69957,CO,,69956.0
+193,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,HAYLEY SPRING,3806315,,Spring,CO_69969,CO,,69968.0
+194,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,MOOCHIE SPRING,3806316,,Spring,CO_69970,CO,,69969.0
+195,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,LEE'S WELL,3806318,,Well,CO_69971,CO,,69970.0
+196,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,LOESCHEN HOUSE WELL,3806321,,Well,CO_69974,CO,,69973.0
+197,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,CRISTY SPRING,3806322,,Spring,CO_69975,CO,,69974.0
+198,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,EASH WELL NO 1,3806355,,Well,CO_70001,CO,,70000.0
+199,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,BOWERS GUL 1 SPRING,3806828,,Spring,CO_70369,CO,,70368.0
+200,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,PORTAL CG SPRING,3806915,,Spring,CO_70456,CO,,70455.0
+201,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,RIPPLECRRES,4302824,,Spring,CO_78703,CO,,78702.0
+202,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SFKMEADWS1,4303065,,Spring,CO_78937,CO,,78936.0
+203,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,DIVIDEPOND,4303068,,Spring,CO_78940,CO,,78939.0
+204,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SI350/INDC,4303070,,Spring,CO_78942,CO,,78941.0
+205,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,CHINESEWALL,4303090,,Spring,CO_78962,CO,,78961.0
+206,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SISPOND,4303092,,Spring,CO_78964,CO,,78963.0
+207,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,PROSPECT,4303094,,Spring,CO_78966,CO,,78965.0
+208,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,OVERLOOK,4303096,,Spring,CO_78968,CO,,78967.0
+209,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,HIMESPRCG,4303111,,Spring,CO_78983,CO,,78982.0
+210,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SI24BIGFI C,4303113,,Spring,CO_78985,CO,,78984.0
+211,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SI255BIGFIL,4303114,,Spring,CO_78986,CO,,78985.0
+212,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SI27LWOODS,4303115,,Spring,CO_78987,CO,,78986.0
+213,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SI26BIGFISHCR,4303116,,Spring,CO_78988,CO,,78987.0
+214,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SI28SKINF 1,4303117,,Spring,CO_78989,CO,,78988.0
+215,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SI29SKINF 2,4303118,,Spring,CO_78990,CO,,78989.0
+216,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,PAGODALK,4303119,,Spring,CO_78991,CO,,78990.0
+217,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,PAGODALK,4303120,,Spring,CO_78992,CO,,78991.0
+218,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SLIDELAKE,4303121,,Spring,CO_78993,CO,,78992.0
+219,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,NELSONCOWC,4303124,,Spring,CO_78995,CO,,78994.0
+220,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,NATEC MINERALS AUG AND EXCH PLAN,4307012,,Augmentation/Replacement Plan,CO_79623,CO,,79622.0
+221,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,BURNSPOND,4402430,,Spring,CO_81352,CO,,81351.0
+222,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,BENCHPOND,4402431,,Spring,CO_81353,CO,,81352.0
+223,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ANTELOPE WELL NO. 1,4705051,,Well,CO_85369,CO,,85368.0
+224,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,STEPHENS SPRING & PL,5305171,,Pipeline,CO_88976,CO,,88975.0
+225,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,GARY HORN NO 1 WELL,5305172,,Well,CO_88977,CO,,88976.0
+226,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,BEAR PK SPRING,5305289,,Spring,CO_89061,CO,,89060.0
+227,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,L ELK MDS SPRING,5305343,,Spring,CO_89114,CO,,89113.0
+228,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,PROSPECT RGS SPRING,5305362,,Spring,CO_89133,CO,,89132.0
+229,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SPRUCE SP,5405075,,Reservoir,CO_89837,CO,,89836.0
+230,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,COLORADO STATE PARK AUG PLAN,5707013,,Augmentation/Replacement Plan,CO_91929,CO,,91928.0
+231,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TOP CG,5802680,,Spring,CO_93715,CO,,93714.0
+232,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SUNSHINE,5802707,,Spring,CO_93741,CO,,93740.0
+233,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,EASTWOOD SPRING,6001669,,Spring,CO_97227,CO,,97226.0
+234,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,MADERA PIPELINE,6200665,,Pipeline,CO_98433,CO,,98432.0
+235,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,WORKMAN SPG DITCH,6200804,,Ditch,CO_98546,CO,,98545.0
+236,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,BURKEY SPG & PL NO 10,6200889,,Spring,CO_98623,CO,,98622.0
+237,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,BURKEY SPG & POND NO 11,6200890,,Reservoir,CO_98624,CO,,98623.0
+238,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,RUSSELL SIDEBOTHAM DITCH,6400624,,Ditch,CO_100282,CO,,100281.0
+239,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,NORTH STERLING PAWNEE CR,6400685,,Ditch,CO_100291,CO,,100290.0
+240,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,USFS SPRING FS-2-62-596,6602010,,Spring,CO_102204,CO,,102203.0
+241,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,USFS SPRING FS-2-62-607,6602021,,Spring,CO_102215,CO,,102214.0
+242,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,USFS SPRING FS-2-62-612,6602024,,Spring,CO_102218,CO,,102217.0
+243,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,USFS SPRING FS-2-62-645,6602028,,Pipeline,CO_102222,CO,,102221.0
+244,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,USFS POND 2A PIT 11,6603510,,Reservoir,CO_102256,CO,,102255.0
+245,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,USFS POND FS-2-62-556,6603592,,Reservoir,CO_102337,CO,,102336.0
+246,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SEEPAGE DITCH PUMP NO 1,6702025,,Spring,CO_102532,CO,,102531.0
+247,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SEEPAGE DITCH PUMP NO 2,6702026,,Spring,CO_102533,CO,,102532.0
+248,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,HASS SPRING NO 1,6702028,,Spring,CO_102535,CO,,102534.0
+249,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,WM D PURSE RES NO 1,6703596,,Reservoir,CO_102623,CO,,102622.0
+250,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,MISSION VIEJO NT LFH WELL FIELD,816295,,Well Field,CO_102879,CO,,102878.0
+251,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,MCCORMICK WELL NO 9,6708185,,Well,CO_103983,CO,,103982.0
+252,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SCHMIDT WELL NO 7,6708231,,Well,CO_104028,CO,,104027.0
+253,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,WILLIAMS WELL NO 4,6708619,,Well,CO_104411,CO,,104410.0
+254,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,UNION PACIFIC RR WELL,6708683,,Well,CO_104418,CO,,104417.0
+255,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,RUTH MTN RESERVOIR,7203662,,Reservoir,CO_107479,CO,,107478.0
+256,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,KRAMER SPRING,7205223,,Spring,CO_108043,CO,,108042.0
+257,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,NEESH PUMP #2,7700632,,Pump,CO_108570,CO,,108569.0
+258,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,PIEDRA VALLEY RANCH D #1,7800679,,Ditch,CO_108763,CO,,108762.0
+259,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ONEAL PARK RESERVOIR,7803632,,Reservoir,CO_108853,CO,,108852.0
+260,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,PERRINO SPRING NO 3,7902080,,Spring,CO_109151,CO,,109150.0
+261,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,HUDSON SPRING 14,7902096,,Spring,CO_109167,CO,,109166.0
+262,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,GOOSE RANCH RESERVOIR,7903707,,Reservoir,CO_109457,CO,,109456.0
+263,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,REA DITCH 2,8000816,,Ditch,CO_109810,CO,,109809.0
+264,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TOMAHAWK RES,8003905,,Reservoir,CO_110104,CO,,110103.0
+265,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,HENRY WELL 1,8005179,,Well,CO_110283,CO,,110282.0
+266,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 04,8005704,,Well,CO_110763,CO,,110762.0
+267,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 01,8005701,,Well,CO_110776,CO,,110775.0
+268,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 02,8005702,,Well,CO_110777,CO,,110776.0
+269,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 03,8005703,,Well,CO_110778,CO,,110777.0
+270,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 05,8005705,,Well,CO_110779,CO,,110778.0
+271,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 06,8005706,,Well,CO_110780,CO,,110779.0
+272,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 07,8005707,,Well,CO_110781,CO,,110780.0
+273,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 08,8005708,,Well,CO_110782,CO,,110781.0
+274,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 09,8005709,,Well,CO_110783,CO,,110782.0
+275,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 10,8005710,,Well,CO_110784,CO,,110783.0
+276,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 11,8005711,,Well,CO_110785,CO,,110784.0
+277,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 12,8005712,,Well,CO_110786,CO,,110785.0
+278,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 13,8005713,,Well,CO_110787,CO,,110786.0
+279,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 14,8005714,,Well,CO_110788,CO,,110787.0
+280,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 15,8005715,,Well,CO_110789,CO,,110788.0
+281,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 16,8005716,,Well,CO_110790,CO,,110789.0
+282,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 17,8005717,,Well,CO_110791,CO,,110790.0
+283,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 18,8005718,,Well,CO_110792,CO,,110791.0
+284,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 19,8005719,,Well,CO_110793,CO,,110792.0
+285,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 20,8005720,,Well,CO_110794,CO,,110793.0
+286,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 21,8005721,,Well,CO_110795,CO,,110794.0
+287,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 22,8005722,,Well,CO_110796,CO,,110795.0
+288,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 23,8005723,,Well,CO_110797,CO,,110796.0
+289,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 24,8005724,,Well,CO_110798,CO,,110797.0
+290,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 25,8005725,,Well,CO_110799,CO,,110798.0
+291,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 26,8005726,,Well,CO_110800,CO,,110799.0
+292,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 27,8005727,,Well,CO_110801,CO,,110800.0
+293,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 28,8005728,,Well,CO_110802,CO,,110801.0
+294,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 29,8005729,,Well,CO_110803,CO,,110802.0
+295,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 30,8005730,,Well,CO_110804,CO,,110803.0
+296,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 31,8005731,,Well,CO_110805,CO,,110804.0
+297,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 32,8005732,,Well,CO_110806,CO,,110805.0
+298,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 33,8005733,,Well,CO_110807,CO,,110806.0
+299,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 34,8005734,,Well,CO_110808,CO,,110807.0
+300,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 35,8005735,,Well,CO_110809,CO,,110808.0
+301,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 36,8005736,,Well,CO_110810,CO,,110809.0
+302,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 37,8005737,,Well,CO_110811,CO,,110810.0
+303,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 38,8005738,,Well,CO_110812,CO,,110811.0
+304,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 39,8005739,,Well,CO_110813,CO,,110812.0
+305,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 40,8005740,,Well,CO_110814,CO,,110813.0
+306,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 41,8005741,,Well,CO_110815,CO,,110814.0
+307,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 42,8005742,,Well,CO_110816,CO,,110815.0
+308,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 43,8005743,,Well,CO_110817,CO,,110816.0
+309,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 44,8005744,,Well,CO_110818,CO,,110817.0
+310,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 45,8005745,,Well,CO_110819,CO,,110818.0
+311,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 46,8005746,,Well,CO_110820,CO,,110819.0
+312,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 47,8005747,,Well,CO_110821,CO,,110820.0
+313,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 48,8005748,,Well,CO_110822,CO,,110821.0
+314,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 49,8005749,,Well,CO_110823,CO,,110822.0
+315,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 50,8005750,,Well,CO_110824,CO,,110823.0
+316,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 51,8005751,,Well,CO_110825,CO,,110824.0
+317,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 52,8005752,,Well,CO_110826,CO,,110825.0
+318,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 53,8005753,,Well,CO_110827,CO,,110826.0
+319,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 54,8005754,,Well,CO_110828,CO,,110827.0
+320,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 55,8005755,,Well,CO_110829,CO,,110828.0
+321,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 56,8005756,,Well,CO_110830,CO,,110829.0
+322,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 57,8005757,,Well,CO_110831,CO,,110830.0
+323,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 58,8005758,,Well,CO_110832,CO,,110831.0
+324,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 59,8005759,,Well,CO_110833,CO,,110832.0
+325,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 60,8005760,,Well,CO_110834,CO,,110833.0
+326,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 61,8005761,,Well,CO_110835,CO,,110834.0
+327,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 62,8005762,,Well,CO_110836,CO,,110835.0
+328,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 63,8005763,,Well,CO_110837,CO,,110836.0
+329,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 64,8005764,,Well,CO_110838,CO,,110837.0
+330,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 65,8005765,,Well,CO_110839,CO,,110838.0
+331,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 66,8005766,,Well,CO_110840,CO,,110839.0
+332,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 67,8005767,,Well,CO_110841,CO,,110840.0
+333,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 68,8005768,,Well,CO_110842,CO,,110841.0
+334,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 69,8005769,,Well,CO_110843,CO,,110842.0
+335,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ELK CREEK PROPERTIES WELL 70,8005770,,Well,CO_110844,CO,,110843.0
+336,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,COLO ST LND BRD NNT DEN WL FLD,204002,,Well Field,CO_110860,CO,,110859.0
+337,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,COLO ST LND BRD DEN WL FLD,204003,,Well Field,CO_110861,CO,,110860.0
+338,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,COLO ST LND BRD LFH WL FLD,204005,,Well Field,CO_110882,CO,,110881.0
+339,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,GVR PARTNERSHIP UAR WL FLD,204006,,Well Field,CO_111122,CO,,111121.0
+340,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,GVR PARTNERSHIP LAR WL FLD,204007,,Well Field,CO_111124,CO,,111123.0
+341,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,GVR PARTNERSHIP LFH WL FLD,204008,,Well Field,CO_111125,CO,,111124.0
+342,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TELLER SPRINGS WELL NO 4,3815173,,Well,CO_112388,CO,,112387.0
+343,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TELLER SPRINGS WELL NO 5,3815174,,Well,CO_112389,CO,,112388.0
+344,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,R R RUTHERFORD WELL NO 2,6706334,,Well,CO_113033,CO,,113032.0
+345,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,MOUNTAIN VALLEY RANCH WELL FIELD,3006406,,Well Field,CO_113516,CO,,113515.0
+346,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TIMBERS AUG PLAN,5807024,,Augmentation/Replacement Plan,CO_113726,CO,,113725.0
+347,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,VIDLER WATER COMPANY AUG POOL,3617024,,Augmentation/Replacement Plan,CO_115936,CO,,115935.0
+348,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SHERIFF,5700764,,Spring,CO_115981,CO,,115980.0
+349,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,CREEDE 240 LLC AUGMENTATION PLAN,2007065,,Augmentation/Replacement Plan,CO_117646,CO,,117645.0
+350,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,EVANS WELL NO. 1,4505065,,Well,CO_118020,CO,,118019.0
+351,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,METCALF AUG. PLAN,4517030,,Augmentation/Replacement Plan,CO_118147,CO,,118146.0
+352,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,BERLAIMONT ESTATES DITCH,3701428,,Ditch,CO_120218,CO,,120217.0
+353,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,HIGHLANDS RANCH NT DEN WELL FIELD,816292,,Well Field,CO_121350,CO,,121349.0
+354,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,MISSION VIEJO NNT DEN WELL FIELD,816293,,Well Field,CO_121352,CO,,121351.0
+355,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,MISSION VIEJO NT AR WELL FIELD,816294,,Well Field,CO_121353,CO,,121352.0
+356,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,HERNAGE CREEK SPRING,3706168,,Spring,CO_121985,CO,,121984.0
+357,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,BREWERY CREEK ISF,2502000,,Minimum Flow,CO_124037,CO,,124036.0
+358,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,COLO ST LND BRD NNT4P DEN WL FLD,204004,,Well Field,CO_124954,CO,,124953.0
+359,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,RIO GRANDE FISHERY CHANNEL NO. 1,2002109,,Ditch,CO_125350,CO,,125349.0
+360,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,RIO GRANDE FISHERY CHANNEL NO. 2,2002110,,Ditch,CO_125374,CO,,125373.0
+361,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TROUT CREEK FISHERY CHANNEL NO. 1,2002101,,Reservoir System,CO_125435,CO,,125434.0
+362,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TROUT CREEK FISHERY CHANNEL NO. 2,2002102,,Reservoir System,CO_125436,CO,,125435.0
+363,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TROUT CREEK FISHERY CHANNEL NO. 3,2002103,,Reservoir System,CO_125437,CO,,125436.0
+364,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TROUT CREEK FISHERY CHANNEL NO. 4,2002104,,Reservoir System,CO_125438,CO,,125437.0
+365,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TROUT CREEK FISHERY CHANNEL NO. 5,2002105,,Reservoir System,CO_125439,CO,,125438.0
+366,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,JOHN R GRANT DITCH FISHERY ENLARGEMENT,2002106,,Reservoir System,CO_125440,CO,,125439.0
+367,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SHALLOW CREEK FISHERY CHANNEL NO. 1,2002107,,Ditch,CO_125441,CO,,125440.0
+368,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,MINERS CREEK FISHERY CHANNEL NO. 1,2002108,,Ditch,CO_125442,CO,,125441.0
+369,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,GRACE SPRING,4003165,,Spring,CO_125494,CO,,125493.0
+370,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,CHIPMUNK STOCKPIT,5303610,,Reservoir,CO_125904,CO,,125903.0
+371,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,PARIS PUMP AND PIPE,4501186,,Pump,CO_126223,CO,,126222.0
+372,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,BROADACRES COMPOUND IRRIGATION DIVERSION,2002112,,Ditch,CO_126391,CO,,126390.0
+373,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,BROADACRES COMPOUND IRRIGATION DIVERSION APD 1,2002113,,Ditch,CO_126392,CO,,126391.0
+374,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,BROADACRES COMPOUND IRRIGATION DIVERSION APD 2,2002114,,Ditch,CO_126393,CO,,126392.0
+375,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,RYAN GULCH EXCHANGE,4308002,,Exchange Plan,CO_127215,CO,,127214.0
+376,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,DWCD HARTMAN DRAW,3201121,,Ditch,CO_128783,CO,,128782.0
+377,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,DEERFIELD DEPLETION REACH,3809043,,Exchange Plan,CO_128809,CO,,128808.0
+378,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,HIGH CIMARRON P/A,6208001,,Augmentation/Replacement Plan,CO_128823,CO,,128822.0
+379,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,MARCOTT CREEK EMERGENCY INLET,4003139,,Pipeline,CO_128929,CO,,128928.0
+380,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,SURFACE CREEK INLET,4003140,,Pipeline,CO_128930,CO,,128929.0
+381,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,CC&V DIVERSION POINT 3,1201139,,Measuring Point,CO_128931,CO,,128930.0
+382,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,LITTLE FLAT DITCH,2901126,,Ditch,CO_128967,CO,,128966.0
+383,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,MT WERNER YAMPA RIVER MUNICIPAL WELL A,5805209,,Well,CO_130003,CO,,130002.0
+384,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,MT WERNER YAMPA RIVER DIV WORKS STRUCTURE NO5,5805207,,Well,CO_130032,CO,,130031.0
+385,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,MT WERNER YAMPA RIVER DIV WORKS STRUCTURE NO6,5805208,,Well,CO_130033,CO,,130032.0
+386,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,MT WERNER YAMPA RIVER MUNICIPAL WELL B,5805210,,Well,CO_130034,CO,,130033.0
+387,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,MT WERNER YAMPA RIVER MUNICIPAL WELL C,5805211,,Well,CO_130035,CO,,130034.0
+388,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,MT WERNER YAMPA RIVER MUNICIPAL WELL D,5805212,,Well,CO_130038,CO,,130037.0
+389,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,MT WERNER YAMPA RIVER MUNICIPAL WELL E,5805213,,Well,CO_130039,CO,,130038.0
+390,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,MT WERNER YAMPA RIVER MUNICIPAL WELL F,5805214,,Well,CO_130040,CO,,130039.0
+391,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,PROVIDENCE SPRING,4003166,,Spring,CO_130328,CO,,130327.0
+392,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,QUEEN POND,4006571,,Reservoir,CO_130331,CO,,130330.0
+393,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,NITA SPRING,6202025,,Spring,CO_130333,CO,,130332.0
+394,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,STILES WASTEWATER DRAIN,6202026,,Pipeline,CO_130334,CO,,130333.0
+395,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ASHLEIGH SPRING,6300828,,Spring,CO_130339,CO,,130338.0
+396,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,ALYSSA SPRING,6300829,,Spring,CO_130340,CO,,130339.0
+397,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TYSON POND,6300830,,Reservoir,CO_130341,CO,,130340.0
+398,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,TANAGER SPRING,6002170,,Spring,CO_130344,CO,,130343.0
+399,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,COTTONWOOD SPRING,4101220,,Spring,CO_130366,CO,,130365.0
+400,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,MUELLER NNT UDA WELL FIELD,817448,,Well Field,CO_130643,CO,,130642.0
+401,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,MUELLER NT LDA WELL FIELD,817449,,Well Field,CO_130644,CO,,130643.0
+402,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,MUELLER NT DEN WELL FIELD,817450,,Well Field,CO_130645,CO,,130644.0
+403,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,MUELLER NT AR WELL FIELD,817451,,Well Field,CO_130646,CO,,130645.0
+404,,Unspecified,,EPSG:4326,,,,,,,,,Bad Latitude,MUELLER NT LFH WELL FIELD,817452,,Well Field,CO_130647,CO,,130646.0
