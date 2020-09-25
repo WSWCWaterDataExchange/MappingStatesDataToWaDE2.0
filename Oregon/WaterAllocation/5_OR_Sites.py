@@ -13,7 +13,8 @@ import os
 from pyproj import Transformer, transform
 
 transformer = Transformer.from_proj(2992, 4326)  # A trick to drastically optimize the Transformer of pyproj.
-# Oregon projection = EPSG:2992. WGS84 projection used by WaDE 2.0 = epsg:4326.
+# Oregon projection = EPSG:2992.
+# WGS84 projection used by WaDE 2.0 = epsg:4326.
 
 # Inputs
 ############################################################################

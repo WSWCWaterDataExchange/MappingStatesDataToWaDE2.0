@@ -1,5 +1,5 @@
 #Date Created: 04/01/2020
-#Purpose: To extract WA organization use information and population dataframe for WaDE_QA 2.0.
+#Purpose: To extract OR organization use information and population dataframe for WaDE_QA 2.0.
 #Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
 
 

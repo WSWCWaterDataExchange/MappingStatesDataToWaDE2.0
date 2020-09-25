@@ -38,7 +38,7 @@ outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires
 
 outdf.MethodUUID = "OWRD_Water Rights"
 
-outdf.ApplicableResourceTypeCV = "Surface/Ground/Storage"
+outdf.ApplicableResourceTypeCV = "Surface Ground Storage"
 
 outdf.DataConfidenceValue = ""
 
