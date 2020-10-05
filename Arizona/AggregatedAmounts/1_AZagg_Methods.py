@@ -1,4 +1,4 @@
-#Date Created: 06/15/2020
+#Date Created: 10/05/2020
 #Purpose: To create AZ agg methods use information and population dataframe for WaDE_QA 2.0.
 #Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
 
@@ -38,7 +38,7 @@ outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires
 
 outdf.MethodUUID = "AZ_AMAModels"
 
-outdf.ApplicableResourceTypeCV = "Groundwater"
+outdf.ApplicableResourceTypeCV = "Surface Ground Water"
 
 outdf.DataConfidenceValue = ""
 

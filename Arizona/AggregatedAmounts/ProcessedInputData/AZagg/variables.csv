@@ -1,11 +1,8 @@
 VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
-AZ_Consumptive Use_1,1,Year,Cumulative,CFS,AFY,1,CalendarYear,Inflow,Incidental Recharge
-AZ_Consumptive Use_2,1,Year,Cumulative,CFS,AFY,1,CalendarYear,Inflow,Canal Seepage
-AZ_Consumptive Use_3,1,Year,Cumulative,CFS,AFY,1,CalendarYear,Inflow,Cut to the Aquifer
-AZ_Consumptive Use_4,1,Year,Cumulative,CFS,AFY,1,CalendarYear,Inflow,CAGRD Replenishment
-AZ_Consumptive Use_5,1,Year,Cumulative,CFS,AFY,1,CalendarYear,Inflow,Groundwater Inflow
-AZ_Consumptive Use_6,1,Year,Cumulative,CFS,AFY,1,CalendarYear,Inflow,Mountain-front Recharge
-AZ_Consumptive Use_7,1,Year,Cumulative,CFS,AFY,1,CalendarYear,Inflow,Streambed Recharge
-AZ_Consumptive Use_8,1,Year,Cumulative,CFS,AFY,1,CalendarYear,Outflow,Groundwater Demand
-AZ_Consumptive Use_9,1,Year,Cumulative,CFS,AFY,1,CalendarYear,Outflow,Groundwater Outflow
-AZ_Consumptive Use_10,1,Year,Cumulative,CFS,AFY,1,CalendarYear,Outflow,Riparian Demand
+AZ_Consumptive Use_1,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Consumptive Use,Allotment
+AZ_Consumptive Use_2,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Consumptive Use,Demand
+AZ_Consumptive Use_3,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Consumptive Use,Incidental Recharge
+AZ_Consumptive Use_4,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Consumptive Use,Exempt Wells
+AZ_Consumptive Use_5,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Consumptive Use,Population
+AZ_Consumptive Use_6,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Consumptive Use,Natural
+AZ_Consumptive Use_7,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Consumptive Use,Supply

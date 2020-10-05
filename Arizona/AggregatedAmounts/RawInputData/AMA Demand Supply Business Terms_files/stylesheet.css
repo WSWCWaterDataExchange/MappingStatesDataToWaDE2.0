@@ -55,14 +55,11 @@ td
 	mso-rotate:0;}
 .xl65
 	{mso-style-parent:style0;
-	font-size:8.0pt;
-	font-weight:700;
-	text-align:center;
-	vertical-align:middle;
-	white-space:normal;}
+	text-align:center;}
 .xl66
 	{mso-style-parent:style0;
-	font-size:8.0pt;}
+	font-size:8.0pt;
+	white-space:normal;}
 .xl67
 	{mso-style-parent:style0;
 	color:blue;
@@ -71,10 +68,19 @@ td
 	text-align:center;}
 .xl68
 	{mso-style-parent:style0;
-	text-align:center;}
+	font-size:12.0pt;
+	font-weight:700;
+	text-align:center;
+	vertical-align:middle;
+	white-space:normal;}
 .xl69
 	{mso-style-parent:style0;
 	font-size:8.0pt;
-	vertical-align:top;
-	border:.5pt solid windowtext;
+	text-align:center;
+	white-space:normal;}
+.xl70
+	{mso-style-parent:style0;
+	color:#C00000;
+	font-size:8.0pt;
+	font-weight:700;
 	white-space:normal;}

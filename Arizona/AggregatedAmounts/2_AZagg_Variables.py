@@ -1,5 +1,5 @@
-#Date Created: 06/15/2020
-#Purpose: To create AZ agg variable use information and population dataframe for WaDE_QA 2.0.
+#Date Created: 10/05/2020
+#Purpose: To create AZ agg variable use information and populate a dataframe for WaDE_QA 2.0.
 #Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
 #       2) Special case of VariableCV and VariableSpecificCV.
 #       3) Using a temp df to count out number for rows for outbound df for VariableSpecificUUID.
@@ -47,28 +47,15 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 # outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableCV = ["Inflow",
-                    "Inflow",
-                    "Inflow",
-                    "Inflow",
-                    "Inflow",
-                    "Inflow",
-                    "Inflow",
-                    "Outflow",
-                    "Outflow",
-                    "Outflow"]
+outdf.VariableSpecificCV = ["Allotment",
+                            "Demand",
+                            "Incidental Recharge",
+                            "Exempt Wells",
+                            "Population",
+                            "Natural",
+                            "Supply"]
 
-
-outdf.VariableSpecificCV = ["Incidental Recharge",
-                            "Canal Seepage",
-                            "Cut to the Aquifer",
-                            "CAGRD Replenishment",
-                            "Groundwater Inflow",
-                            "Mountain-front Recharge",
-                            "Streambed Recharge",
-                            "Groundwater Demand",
-                            "Groundwater Outflow",
-                            "Riparian Demand"]
+outdf.VariableCV = "Consumptive Use"
 
 outdf.AggregationInterval = "1"
 
@@ -76,7 +63,7 @@ outdf.AggregationIntervalUnitCV = "Year"
 
 outdf.AggregationStatisticCV = "Cumulative"
 
-outdf.AmountUnitCV = "CFS"
+outdf.AmountUnitCV = "AFY"
 
 outdf.MaximumAmountUnitCV = "AFY"
 

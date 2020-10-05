@@ -1,6 +1,6 @@
-#Date Created: 06/15/2020
+#Date Created: 10/15/2020
 #Author: Ryan James
-#Purpose: To extract AZ agg aggregated information and population dataframe WaDEQA 2.0.
+#Purpose: To extract AZ agg aggregated information and populate a dataframe WaDEQA 2.0.
 #         1) Simple creation of working dataframe (df), with output dataframe (outdf).
 #         2) Drop all nulls before combining duplicate rows on NativeID.
 
@@ -61,7 +61,7 @@ columnslist = [
 # Custom Functions
 ############################################################################
 
-# For creating ReportingUnits
+# For creating ReportingUnitsUUID
 def retrieveReportingUnits(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = ''
@@ -74,31 +74,28 @@ def retrieveReportingUnits(colrowValue):
     return outList
 
 # For creating VariableSpecificUUID
-def retrieveVariableSpecificUUID(colrowValueA, colrowValueB, df_variables):
-    if (colrowValueA == '' and colrowValueB == '') or (pd.isnull(colrowValueA) and pd.isnull(colrowValueB)):
+def retrieveVariableSpecificUUID(colrowValue):
+    if colrowValue == '' or pd.isnull(colrowValue):
         outList = ''
     else:
-        ml = df_variables.loc[(df_variables['VariableCV'] == colrowValueA) & (df_variables['VariableSpecificCV'] == colrowValueB), 'VariableSpecificUUID']
-        if not(ml.empty):  # check if the series is empty
-            outList = ml.iloc[0]
-        else:
-            outList = ''
+        String1 = colrowValue
+        try:
+            outList = VariableSpecificUUIDdict[String1]
+        except:
+            outList = colrowValue
     return outList
 
 # For creating WaterSourceUUID
-def retrieveWaterSourceUUID(colrowValueA, colrowValueB, df_watersources):
-    if (colrowValueA == '' and colrowValueB == '') or (pd.isnull(colrowValueA) and pd.isnull(colrowValueB)):
+def retrieveWaterSourceUUID(colrowValue):
+    if colrowValue == '' or pd.isnull(colrowValue):
         outList = ''
     else:
-        colrowValueA = str(colrowValueA).strip()
-        colrowValueB = str(colrowValueB).strip()
-        ml = df_watersources.loc[(df_watersources['WaterSourceNativeID'] == colrowValueA) & (df_watersources['WaterSourceTypeCV'] == colrowValueB), 'WaterSourceUUID']
-        if not(ml.empty):  # check if the series is empty
-            outList = ml.iloc[0]
-        else:
-            outList = ''
+        String1 = colrowValue
+        try:
+            outList = WaterSourceUUIDdict[String1]
+        except:
+            outList = colrowValue
     return outList
-
 
 
 # Creating output dataframe (outdf)
@@ -110,24 +107,25 @@ print("MethodUUID")  # Hardcoded
 outdf.MethodUUID = "AZ_AMAModels"
 
 print("OrganizationUUID")  # Hardcoded
-outdf.OrganizationUUID = "ADWR"
+outdf.OrganizationUUID = "ADWR_AMA"
 
 print("ReportingUnitUUID")  # Using SiteNativeID to identify ID
-ReportingUnitUUIDdict = pd.Series(df_reportingunits.ReportingUnitUUID.values, index = df_reportingunits.ReportingUnitNativeID).to_dict()
-outdf['ReportingUnitUUID'] = df_DM.apply(lambda row: retrieveReportingUnits(row['Basin Code']), axis=1)
-
+ReportingUnitUUIDdict = pd.Series(df_reportingunits.ReportingUnitUUID.values, index = df_reportingunits.ReportingUnitName).to_dict()
+outdf['ReportingUnitUUID'] = df_DM.apply(lambda row: retrieveReportingUnits(row['AMA']), axis=1)
 
 print("VariableSpecificUUID")  # Hardcoded
-outdf['VariableSpecificUUID'] = df_DM.apply(lambda row: retrieveVariableSpecificUUID(row['Inflow/Outflow'], row['Component'], df_variables), axis=1)
+VariableSpecificUUIDdict = pd.Series(df_variables.VariableSpecificUUID.values, index = df_variables.VariableSpecificCV).to_dict()
+outdf['VariableSpecificUUID'] = df_DM.apply(lambda row: retrieveVariableSpecificUUID(row['CATEGORY']), axis=1)
 
 print("WaterSourceUUID")  # Using WaterSourceTypeCV to identify ID
-outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['Basin Code'], row["Water Type"], df_watersources), axis=1)
+WaterSourceUUIDdict = pd.Series(df_watersources.WaterSourceUUID.values, index = df_watersources.WaterSourceTypeCV).to_dict()
+outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['Custom WSWC Water Type Translation']), axis=1)
 
 print("Amount")
-outdf['Amount'] = df_DM['Quantity']
+outdf['Amount'] = df_DM['QUANTITY']
 
 print("BeneficialUseCategory")
-outdf['BeneficialUseCategory'] = df_DM['Sector']
+outdf['BeneficialUseCategory'] = df_DM['SECTOR']
 
 print("CommunityWaterSupplySystem")  # Hardcoded
 outdf.CommunityWaterSupplySystem = ""
@@ -139,7 +137,7 @@ print("CustomerTypeCV")  # Hardcoded
 outdf.CustomerTypeCV = ""
 
 print("DataPublicationDate")  # Hardcoded
-outdf.DataPublicationDate = "06/15/2020"
+outdf.DataPublicationDate = "10/05/2020"
 
 print("DataPublicationDOI")  # Hardcoded
 outdf.DataPublicationDOI = ""
@@ -169,7 +167,7 @@ print("PrimaryUseCategory")  # Hardcoded
 outdf.PrimaryUseCategory = ""
 
 print("ReportYearCV")  # Hardcoded
-outdf['ReportYearCV'] = df_DM['Year']
+outdf['ReportYearCV'] = df_DM['YEAR']
 
 print("SDWISIdentifierCV")  # Hardcoded
 outdf.SDWISIdentifierCV = ""

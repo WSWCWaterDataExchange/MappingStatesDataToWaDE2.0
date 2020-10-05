@@ -1,5 +1,5 @@
-#Date Created: 06/15/2020
-#Purpose: To extract AZ agg reporting unit information and population dataframe for WaDEQA 2.0.
+#Date Created: 10/05/2020
+#Purpose: To extract AZ agg reporting unit information and populate a dataframe for WaDEQA 2.0.
 #Notes:
 
 
@@ -20,13 +20,13 @@ df = pd.read_csv(fileInput)
 columnslist =[
     "ReportingUnitUUID",
     "EPSGCodeCV",
-    "Geometry",
     "ReportingUnitName",
     "ReportingUnitNativeID",
     "ReportingUnitProductVersion",
     "ReportingUnitTypeCV",
     "ReportingUnitUpdateDate",
-    "StateCV"]
+    "StateCV",
+    "Geometry"]
 
 
 # Custom Functions
@@ -37,7 +37,7 @@ columnslist =[
 # For creating SiteUUID
 def assignReportingUnitID(colrowValue):
     string1 = str(colrowValue)
-    outstring = "AZ_" + string1
+    outstring = "AZag_RU" + string1
     return outstring
 
 
@@ -49,14 +49,11 @@ outdf = pd.DataFrame(columns=columnslist, index=df.index)
 print("EPSGCodeCV")  # Hardcoded
 outdf.EPSGCodeCV = 'EPSG:4326'
 
-print("Geometry")
-outdf['Geometry'] = df['Geometry']
-
 print("ReportingUnitName")
-outdf['ReportingUnitName'] = df['AMA Name']
+outdf['ReportingUnitName'] = df['AMA']
 
 print("ReportingUnitNativeID")
-outdf['ReportingUnitNativeID'] = df['Basin Code']
+outdf.ReportingUnitNativeID = 'Unspecified'
 
 print("ReportingUnitProductVersion")  # Hardcoded
 outdf.ReportingUnitProductVersion = ''
@@ -69,6 +66,9 @@ outdf.ReportingUnitUpdateDate = ''
 
 print("StateCV")  # Hardcoded
 outdf.StateCV = "AZ"
+
+print("Geometry")
+outdf['Geometry'] = df['Geometry']
 
 print("Resetting Index")
 outdf.reset_index()

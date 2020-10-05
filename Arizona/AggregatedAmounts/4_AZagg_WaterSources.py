@@ -1,5 +1,5 @@
-#Date Created: 06/15/2020
-#Purpose: To extract AZ agg water source use information and population dataframe for WaDE_QA 2.0.
+#Date Created: 10/05/2020
+#Purpose: To extract AZ agg water source use information and populate a dataframe for WaDE_QA 2.0.
 #Notes:
 
 
@@ -35,7 +35,7 @@ columnslist = [
 # For creating WaDESiteUUID
 def assignWaterSourceUUID(colrowValue):
     string1 = str(colrowValue)
-    outstring = "AZ_" + string1
+    outstring = "AZag_WS" + string1
     return outstring
 
 
@@ -54,18 +54,18 @@ print("WaterQualityIndicatorCV")  # Hardcoded
 outdf.WaterQualityIndicatorCV = "Fresh"
 
 print("WaterSourceName")
-outdf.WaterSourceName = df["AMA Name"]
+outdf.WaterSourceName = 'Unspecified'
 
 print("WaterSourceNativeID")  # has to be one of the last, need length of created outdf
-outdf['WaterSourceNativeID'] = df["Basin Code"]
+outdf.WaterSourceNativeID = 'Unspecified'
 
 print("WaterSourceTypeCV") # Pre-processed code
-outdf['WaterSourceTypeCV'] = df["Water Type"].str.strip()
+outdf['WaterSourceTypeCV'] = df["Custom WSWC Water Type Translation"].str.strip()
 
 ##############################
 # Dropping duplicate
 print("Dropping duplicates")
-outdf = outdf.drop_duplicates(subset=['WaterSourceName', 'WaterSourceNativeID', 'WaterSourceTypeCV']).reset_index(drop=True)
+outdf = outdf.drop_duplicates(subset=['WaterSourceTypeCV']).reset_index(drop=True)
 ##############################
 
 print("WaterSourceUUID")
