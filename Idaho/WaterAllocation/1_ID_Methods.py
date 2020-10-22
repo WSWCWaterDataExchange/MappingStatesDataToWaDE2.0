@@ -1,4 +1,4 @@
-#Date Created: 02/05/2020
+#Date Created: 10/22/2020
 #Purpose: To extract ID methods use information and population dataframe for WaDE_QA 2.0.
 #Notes:   1) Single row of entries, inpVals, for Methods Table.
 
@@ -34,14 +34,14 @@ columns = [
 print("Populating dataframe...")
 inpVals = [
     "IDWR_Diversion Tracking",
-    "Surface Ground",
+    "Surface Ground Water",
     np.nan,
     np.nan,
     np.nan,
     "Methodology used for tracking diversions in the state of Idaho.",
     "Idaho Water Rights Method",
     np.nan,
-    "Legal"]
+    "Water Use"]
 
 outdf = pd.DataFrame([inpVals], columns=columns)
 

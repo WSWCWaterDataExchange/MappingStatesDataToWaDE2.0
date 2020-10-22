@@ -1,4 +1,4 @@
-#Date Created: 02/05/2020
+#Date Created: 10/22/2020
 #Purpose: To extract ID site use information and population dataframe for WaDEQA 2.0.
 #Notes: 1) For 'SiteTypeCV', easier to label everything that is not a surface water first.
 #       2) For 'CoordinateMethodCV', list out all Idaho specific CV values (should already be in WaDE Vocab).
@@ -14,17 +14,16 @@ import numpy as np
 import os
 from pyproj import Transformer, transform
 
+# Note: Idaho Transverse Mercator projection used by IDWR = epsg:8826.
+# Note: WGS84 projection used by WaDE 2.0 = epsg:4326.
 transformer = Transformer.from_proj(8826, 4326)  # A trick to drastically optimize the Transformer of pyproj.
-# Idaho Transverse Mercator projection used by IDWR = epsg:8826.
-# WGS84 projection used by WaDE 2.0 = epsg:4326.
-
 
 # Inputs
 ############################################################################
 print("Reading input csv...")
 workingDir="C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Idaho/WaterAllocation"
 os.chdir(workingDir)
-fileInput="RawinputData/P_IdahoMaster.csv"
+fileInput = "RawinputData/P_IdahoMaster.csv"
 df = pd.read_csv(fileInput)
 
 columnslist = [
@@ -50,81 +49,14 @@ columnslist = [
 
 # Custom Functions
 ############################################################################
-# For creating SiteName
-UnknownSNameDict = {
-    "Ground Water":"Unnamed",
-    "Spring":"Unnamed",
-    "Unnamed Stream":"Unnamed",
-    "Unnamed Streams":"Unnamed"}
-def assignSiteName(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outList = ''
-    else:
-        String1 = colrowValue.strip()  # remove whitespace chars
-        try:
-            outList = UnknownSNameDict[String1]
-        except:
-            outList = colrowValue
-
-    return outList
-
-
-# For creating SiteTypeCV
-UnknownSTCVDict = {
-    "Ground Water":"Ground Water",
-    "Spring":"spring",
-    "Lake":"lake",
-    "Pond":"pond",
-    "Canal":"Canal",
-    "Fork":"Surface Water",
-    "Waste":"waste water",
-    "Drain":"drain",
-    "Reservoir":"reservoir",
-    "Ditch":"ditch"}
-def assignSiteTypeCV(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outList = ''
-    else:
-        String1 = colrowValue.strip()  # remove whitespace chars
-        try:
-            outList = UnknownSTCVDict[String1]
-        except:
-            outList = "Surface Water"
-
-    return outList
-
-
 # For creating CoordinateMethodCV
-UnknownCMCVDict = {
-    "GPS" : "GPS",
-    "Digitized" : "Digitized",
-    "Survey" : "Surveyed",
-    "Parcel" : "ID parcel by map",
-    "Geocoded" : "ID Geocoded",
-    "Q" : "ID Q",
-    "QQ" : "ID QQ",
-    "QQQ" : "ID QQQ",
-    "WMIS QQ Crossover" : "ID QQ",
-    "WMIS QQQ Crossover" : "ID QQQ",
-    "Online Claim" : "ID Online Claim"}
 def assignCoordinateMethodCV(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = "Unspecified"
     else:
         String1 = colrowValue.strip()  # remove whitespace chars
-        try:
-            outList = UnknownCMCVDict[String1]
-        except:
-            outList = "Unspecified"
-
+        outList = String1
     return outList
-
-
-# For creating SiteUUID
-def assignSiteUUID(colrowValue):
-    string1 = str(colrowValue)
-    outstring = "ID_" + string1
-    return outstring
 
 # For converting IDWR projection latitude.
 def assignLat(colrowValueLat, colrowValueLong):
@@ -136,6 +68,22 @@ def assignLong(colrowValueLat, colrowValueLong):
     lat, long = transformer.transform(colrowValueLat, colrowValueLong)
     return long
 
+# For creating SiteName
+def assignSiteName(colrowValue):
+    colrowValue = str(colrowValue)
+    colrowValue = colrowValue.strip()
+    if colrowValue == "" or colrowValue == "nan":
+        outList = "Unspecified"
+    else:
+        outList = colrowValue
+    return outList
+
+# For creating SiteUUID
+def assignSiteUUID(colrowValue):
+    string1 = str(colrowValue)
+    outstring = "ID_S" + string1
+    return outstring
+
 
 # Creating output dataframe (outdf)
 ############################################################################
@@ -143,10 +91,10 @@ print("Populating dataframe...")
 outdf=pd.DataFrame(columns=columnslist)
 
 print("CoordinateAccuracy")  # Hardcoded
-outdf.CoordinateAccuracy = "Unknown"
+outdf.CoordinateAccuracy = ""
 
 print("CoordinateMethodCV")
-outdf['CoordinateMethodCV'] = df.apply(lambda row: assignCoordinateMethodCV(row['DataSource']), axis=1)
+outdf['CoordinateMethodCV'] = df.apply(lambda row: assignCoordinateMethodCV(row['DataSource_POD']), axis=1)
 
 print("County")  # Hardcoded
 outdf.County = ""
@@ -167,10 +115,10 @@ print("HUC8")  # Hardcoded
 outdf.HUC8 = ""
 
 print("Latitude")
-outdf['Latitude'] = df.apply(lambda row: assignLat(row['X'], row['Y']), axis=1)
+outdf['Latitude'] = df.apply(lambda row: assignLat(row['X_POD'], row['Y_POD']), axis=1)
 
 print("Longitude")
-outdf['Longitude'] = df.apply(lambda row: assignLong(row['X'], row['Y']), axis=1)
+outdf['Longitude'] = df.apply(lambda row: assignLong(row['X_POD'], row['Y_POD']), axis=1)
 
 print("NHDNetworkStatusCV")  # Hardcoded
 outdf.NHDNetworkStatusCV = ""
@@ -179,18 +127,19 @@ print("NHDProductCV")  # Hardcoded
 outdf.NHDProductCV = ""
 
 print("SiteName")
-outdf['SiteName'] = df.apply(lambda row: assignSiteName(row['Source']), axis=1)
+outdf['SiteName'] = df.apply(lambda row: assignSiteName(row['DiversionName_POD']), axis=1)
 
 print("SiteNativeID")
-outdf['SiteNativeID'] = df['WaterRightNumber']
+outdf['SiteNativeID'] = df['PointOfDiversionID_POD'].astype(str)
 
 print("SitePoint")  # Hardcoded
 outdf.SitePoint = ""
 
 print("SiteTypeCV")
-outdf['SiteTypeCV'] = df.apply(lambda row: assignSiteTypeCV(row['Source']), axis=1)
+outdf['SiteTypeCV'] = df['inputSiteType']
+# outdf['SiteTypeCV'] = df.apply(lambda row: assignSiteTypeCV(row['Source']), axis=1)
 
-print("StateCV")  #
+print("StateCV")  # Hardcoded
 outdf.StateCV = "ID"
 
 print("USGSSiteID")  # Hardcoded

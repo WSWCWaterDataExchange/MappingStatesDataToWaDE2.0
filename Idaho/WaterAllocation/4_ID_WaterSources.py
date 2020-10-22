@@ -1,4 +1,4 @@
-#Date Created: 02/05/2020
+#Date Created: 10/22/2020
 #Purpose: To extract ID water source use information and population dataframe for WaDE_QA 2.0.
 #Notes: 1) For 'WaterSourceTypeCV', easier to label everything that is not a surface water first.
 
@@ -35,36 +35,15 @@ columnslist = [
 # For creating WaterSourceName
 def assignWaterSourceName(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
-        outList = "Unknown"
+        outList = "Unspecified"
     else:
         outList = colrowValue
-    return outList
-
-# For creating WaterSourceTypeCV
-UnknownWSCVDict = {
-"Ground Water" : "Ground Water",
-"Spring" : "groundwater/spring",
-"Waste Water" : "Reuse",
-"Wasteway" : "Reuse",
-"Wastewater" : "Reuse",
-"Drain" : "Drain",
-"Reservoir" : "reservoir"
-}
-def assignWaterSourceTypeCV(colrowValue):
-    if colrowValue == "" or pd.isnull(colrowValue):
-        outList = ""
-    else:
-        String1 = colrowValue.strip()  # remove whitespace chars
-        try:
-            outList = UnknownWSCVDict[String1]
-        except:
-            outList = "Surface Water"
     return outList
 
 # For creating WaDESiteUUID
 def assignWaterSourceUUID(colrowValue):
     string1 = str(colrowValue)
-    outstring = "ID_" + string1
+    outstring = "ID_WS" + string1
     return outstring
 
 
@@ -83,13 +62,13 @@ print("WaterQualityIndicatorCV")  # Hardcoded
 outdf.WaterQualityIndicatorCV = "Unspecified"
 
 print("WaterSourceName")
-outdf['WaterSourceName'] = df.apply(lambda row: assignWaterSourceName(row['TributaryOf']), axis=1)
+outdf['WaterSourceName'] = df.apply(lambda row: assignWaterSourceName(row['Source_POD']), axis=1)
 
 print("WaterSourceNativeID")  # has to be one of the last, need length of created outdf
-outdf['WaterSourceNativeID'] = df['WaterDistrictNumber'].str.upper()
+outdf.WaterSourceNativeID = "Unspecified"
 
 print("WaterSourceTypeCV")
-outdf['WaterSourceTypeCV'] = df.apply(lambda row: assignWaterSourceTypeCV(row['Source']), axis=1)
+outdf['WaterSourceTypeCV']  = df['inputWaterSourceType']
 
 ##############################
 # Dropping duplicate

@@ -1,4 +1,4 @@
-#Date Created: 02/05/2020
+#Date Created: 10/22/2020
 #Purpose: To extract ID variable use information and population dataframe for WaDE_QA 2.0.
 #Notes: 1) Single row of entries, inpVals, for Variable Table.
 
