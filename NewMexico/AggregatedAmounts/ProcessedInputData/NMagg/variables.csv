@@ -1,2 +1,2 @@
 VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
-NMOSE_Consumptive Use,1,Year,Cumulative,AF,AF,10,WaterYear,Consumptive Use,Consumptive Use
+NMOSE_Withdrawal,1,Year,Cumulative,AF,AF,10,WaterYear,Withdrawal,Withdrawal

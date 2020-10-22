@@ -102,7 +102,7 @@ ReportingUnitUUIDdict = pd.Series(df_reportingunits.ReportingUnitUUID.values, in
 outdf['ReportingUnitUUID'] = df_DM.apply(lambda row: retrieveReportingUnits(row['COUNTY']), axis=1)
 
 print("VariableSpecificUUID")  # Hardcoded
-outdf.VariableSpecificUUID = "NMOSE_Consumptive Use"
+outdf.VariableSpecificUUID = "NMOSE_Withdrawal"
 
 print("WaterSourceUUID")  # Using WaterSourceTypeCV to identify ID
 waterSourceDict = pd.Series(df_watersources.WaterSourceUUID.values, index = df_watersources.WaterSourceTypeCV).to_dict()

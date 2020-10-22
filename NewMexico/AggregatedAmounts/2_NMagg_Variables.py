@@ -42,7 +42,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = "NMOSE_Consumptive Use"
+outdf.VariableSpecificUUID = "NMOSE_Withdrawal"
 
 outdf.AggregationInterval = "1"
 
@@ -58,9 +58,9 @@ outdf.ReportYearStartMonth = "10"
 
 outdf.ReportYearTypeCV = "WaterYear"
 
-outdf.VariableCV = "Consumptive Use"
+outdf.VariableCV = "Withdrawal"
 
-outdf.VariableSpecificCV = "Consumptive Use"
+outdf.VariableSpecificCV = "Withdrawal"
 
 
 # Check required fields are not null
