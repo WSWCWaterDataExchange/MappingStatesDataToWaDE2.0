@@ -52,13 +52,13 @@ def assignWaterSourceUUID(colrowValue):
 print("Populating dataframe...")
 outdf = pd.DataFrame(index=df.index, columns=columnslist)  # The output dataframe for CSV.
 
-print("Geometry")  # Hardcoded
+print("Geometry")  
 outdf.Geometry = ""
 
-print("GNISFeatureNameCV")  # Hardcoded
+print("GNISFeatureNameCV")  
 outdf.Geometry = ""
 
-print("WaterQualityIndicatorCV")  # Hardcoded
+print("WaterQualityIndicatorCV")  
 outdf.WaterQualityIndicatorCV = "Unspecified"
 
 print("WaterSourceName")
@@ -82,7 +82,7 @@ outdf['WaterSourceUUID'] = df.apply(lambda row: assignWaterSourceUUID(row['Count
 
 # Error Checking each Field
 ############################################################################
-print("Error checking each field.  Purging bad inputs.")  # Hardcoded
+print("Error checking each field.  Purging bad inputs.")  
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 

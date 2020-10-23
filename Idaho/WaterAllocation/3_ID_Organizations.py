@@ -60,7 +60,7 @@ outdf_nullMand = outdf.loc[(outdf["OrganizationUUID"].isnull()) | (outdf["Organi
                            (outdf["State"].isnull()) | (outdf["State"] == '')]
 
 if(len(outdf_nullMand.index) > 0):
-    outdf_nullMand.to_csv('organizations_mandatoryFieldMissing.csv')  # index=False,
+    outdf_nullMand.to_csv('organizations_missing.csv')  # index=False,
 
 
 # Export to new csv
