@@ -114,12 +114,12 @@ ReportingUnitUUIDdict = pd.Series(df_reportingunits.ReportingUnitUUID.values, in
 outdf['ReportingUnitUUID'] = df_DM.apply(lambda row: retrieveReportingUnits(row['AMA']), axis=1)
 
 print("VariableSpecificUUID")  # Hardcoded
-VariableSpecificUUIDdict = pd.Series(df_variables.VariableSpecificUUID.values, index = df_variables.VariableSpecificCV).to_dict()
+VariableSpecificUUIDdict = pd.Series(df_variables.VariableSpecificUUID.values, index = df_variables.VariableCV).to_dict()
 outdf['VariableSpecificUUID'] = df_DM.apply(lambda row: retrieveVariableSpecificUUID(row['CATEGORY']), axis=1)
 
 print("WaterSourceUUID")  # Using WaterSourceTypeCV to identify ID
 WaterSourceUUIDdict = pd.Series(df_watersources.WaterSourceUUID.values, index = df_watersources.WaterSourceTypeCV).to_dict()
-outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['Custom WSWC Water Type Translation']), axis=1)
+outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['inputWaterSourceTypeCV']), axis=1)
 
 print("Amount")
 outdf['Amount'] = df_DM['QUANTITY']
@@ -137,7 +137,7 @@ print("CustomerTypeCV")  # Hardcoded
 outdf.CustomerTypeCV = ""
 
 print("DataPublicationDate")  # Hardcoded
-outdf.DataPublicationDate = "10/05/2020"
+outdf.DataPublicationDate = "10/28/2020"
 
 print("DataPublicationDOI")  # Hardcoded
 outdf.DataPublicationDOI = ""

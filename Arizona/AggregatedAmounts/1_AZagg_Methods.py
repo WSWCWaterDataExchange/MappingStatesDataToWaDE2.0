@@ -48,7 +48,7 @@ outdf.DataCoverageValue = ""
 
 outdf.MethodDescription = "Simulated water supply and demand throughout the active management area."
 
-outdf.MethodName = "AMA Aggregated Models"
+outdf.MethodName = "AMA_Aggregated Models"
 
 outdf.MethodNEMILink = "https://new.azwater.gov/hydrology/groundwater-modeling/adwr-models"
 

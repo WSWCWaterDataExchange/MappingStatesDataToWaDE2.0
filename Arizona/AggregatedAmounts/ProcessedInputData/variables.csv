@@ -1,8 +1,3 @@
 VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
-AZ_Consumptive Use_1,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Consumptive Use,Allotment
-AZ_Consumptive Use_2,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Consumptive Use,Demand
-AZ_Consumptive Use_3,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Consumptive Use,Incidental Recharge
-AZ_Consumptive Use_4,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Consumptive Use,Exempt Wells
-AZ_Consumptive Use_5,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Consumptive Use,Population
-AZ_Consumptive Use_6,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Consumptive Use,Natural
-AZ_Consumptive Use_7,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Consumptive Use,Supply
+AZ_Demand,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Demand,Demand
+AZ_Supply,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Supply,Supply

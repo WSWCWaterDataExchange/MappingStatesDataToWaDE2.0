@@ -1,10 +1,5 @@
 WaterSourceUUID,Geometry,GNISFeatureNameCV,WaterQualityIndicatorCV,WaterSourceName,WaterSourceNativeID,WaterSourceTypeCV
-AZag_WS1,,,Fresh,Unspecified,Unspecified,Effluent
-AZag_WS2,,,Fresh,Unspecified,Unspecified,Groundwater
-AZag_WS3,,,Fresh,Unspecified,Unspecified,Lost
-AZag_WS4,,,Fresh,Unspecified,Unspecified,Recharge
-AZag_WS5,,,Fresh,Unspecified,Unspecified,Surface Water
-AZag_WS6,,,Fresh,Unspecified,Unspecified,Unknown
-AZag_WS7,,,Fresh,Unspecified,Unspecified,Unspecified
-AZag_WS8,,,Fresh,Unspecified,Unspecified,GroundWater
-AZag_WS9,,,Fresh,Unspecified,Unspecified,Reuse
+AZag_WS1,,,Fresh,Unspecified,Unspecified,Unknown
+AZag_WS2,,,Fresh,Unspecified,Unspecified,Effluent
+AZag_WS3,,,Fresh,Unspecified,Unspecified,Groundwater
+AZag_WS4,,,Fresh,Unspecified,Unspecified,Surface Water

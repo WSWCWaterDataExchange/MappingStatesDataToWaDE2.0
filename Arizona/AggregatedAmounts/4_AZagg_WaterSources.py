@@ -1,4 +1,4 @@
-#Date Created: 10/05/2020
+#Date Created: 10/28/2020
 #Purpose: To extract AZ agg water source use information and populate a dataframe for WaDE_QA 2.0.
 #Notes:
 
@@ -60,7 +60,7 @@ print("WaterSourceNativeID")  # has to be one of the last, need length of create
 outdf.WaterSourceNativeID = 'Unspecified'
 
 print("WaterSourceTypeCV") # Pre-processed code
-outdf['WaterSourceTypeCV'] = df["Custom WSWC Water Type Translation"].str.strip()
+outdf['WaterSourceTypeCV'] = df["inputWaterSourceTypeCV"].str.strip()
 
 ##############################
 # Dropping duplicate

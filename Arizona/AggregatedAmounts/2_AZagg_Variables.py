@@ -1,4 +1,4 @@
-#Date Created: 10/05/2020
+#Date Created: 10/28/2020
 #Purpose: To create AZ agg variable use information and populate a dataframe for WaDE_QA 2.0.
 #Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
 #       2) Special case of VariableCV and VariableSpecificCV.
@@ -34,11 +34,11 @@ columnslist = [
 # Custom Functions
 ############################################################################
 
-# For creating VariableSpecificUUID
-def assignVariableSpecificUUID(colrowValue):
-    string1 = str(colrowValue)
-    outstring = "AZ_Consumptive Use_" + string1
-    return outstring
+# # For creating VariableSpecificUUID
+# def assignVariableSpecificUUID(colrowValue):
+#     string1 = str(colrowValue)
+#     outstring = "AZ_Consumptive Use_" + string1
+#     return outstring
 
 # Creating output dataframe (outdf)
 ############################################################################
@@ -47,15 +47,17 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 # outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificCV = ["Allotment",
-                            "Demand",
-                            "Incidental Recharge",
-                            "Exempt Wells",
-                            "Population",
-                            "Natural",
-                            "Supply"]
+outdf.VariableSpecificCV = [
+    "Demand",
+    "Supply"]
 
-outdf.VariableCV = "Consumptive Use"
+outdf.VariableCV = [
+    "Demand",
+    "Supply"]
+
+outdf.VariableSpecificUUID = [
+    "AZ_Demand",
+    "AZ_Supply"]
 
 outdf.AggregationInterval = "1"
 
@@ -71,12 +73,12 @@ outdf.ReportYearStartMonth = "1"
 
 outdf.ReportYearTypeCV = "CalendarYear"
 
-print("VariableSpecificUUID")
-#using temp df to count out number of rows for outdf
-tempdf = pd.DataFrame(columns=columnslist)
-tempdf['VariableCV'] = outdf['VariableCV']
-tempdf["Count"] = range(1, len(tempdf.index) + 1)
-outdf['VariableSpecificUUID'] = tempdf.apply(lambda row: assignVariableSpecificUUID(row['Count']), axis=1)
+# print("VariableSpecificUUID")
+# #using temp df to count out number of rows for outdf
+# tempdf = pd.DataFrame(columns=columnslist)
+# tempdf['VariableCV'] = outdf['VariableCV']
+# tempdf["Count"] = range(1, len(tempdf.index) + 1)
+# outdf['VariableSpecificUUID'] = tempdf.apply(lambda row: assignVariableSpecificUUID(row['Count']), axis=1)
 
 
 # Check required fields are not null
