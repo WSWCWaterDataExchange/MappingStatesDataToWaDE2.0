@@ -1,5 +1,5 @@
 # IDWR Water Rights (Allocation) Data Preparation for WaDE
-This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [Idaho Department of Water Resources (IDWR)](https://idwr.idaho.gov/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and cost-effective way.
+This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [Idaho Department of Water Resources (IDWR)](https://idwr.idaho.gov/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 ## Overview of Data Utilized
 The following data was used for water allocations...
@@ -27,7 +27,7 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 
 ***
 ### 0) Code File: 0_PreProcessIdahoAllocationData.ipynb
-Purpose: Pre-process the Idaho input data files into one master file for simple dataframe creation and extraction.
+Purpose: Pre-process the Idaho input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
  - ID_Water_Right_PODs_input.xlsx
