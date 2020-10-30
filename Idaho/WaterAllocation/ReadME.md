@@ -248,12 +248,11 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Idaho Department of Water Resources (IDWR)](https://idwr.idaho.gov/).
 
 WSWC Staff
-- Ryan James, rjames@wswc.utah.gov
-- Adel Abdallah, adelabdallah@wswc.utah.gov
+- Ryan James <rjames@wswc.utah.gov>
+- Adel Abdallah <adelabdallah@wswc.utah.gov>
 
 IDWR Staff
-- Linda Davis, linda.davis@idwr.idaho.gov
-- Danielle Favreau, Danielle.Favreau@idwr.idaho.gov
-- Dan Narsavage, Dan.Narsavage@idwr.idaho.gov
-- PhilBlankenau, phil.blankenau@idwr.idaho.gov
-
+- Linda Davis <linda.davis@idwr.idaho.gov>
+- Danielle Favreau <Danielle.Favreau@idwr.idaho.gov>
+- Dan Narsavage <Dan.Narsavage@idwr.idaho.gov>
+- Phil Blankenau <phil.blankenau@idwr.idaho.gov>

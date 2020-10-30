@@ -6,7 +6,7 @@ The following data was used for aggregated water budget...
 
 - **AMA Demand Supply from DW**, and was obtained from the ADWR website at:  http://www.azwater.gov/querycenter/query.aspx?qrysessionid=8CF17C8B1CB88E14E0534C64850A39FA
 - **AMA shape files**, and was obtained from the ADWR website at: https://new.azwater.gov/gis.
-- Water source type dictionary, and was obtained from meeting / email correspondence with ADWR.
+- **AMA WaterSourceType Dictionary.xlsx**, which contains a water source type dictionary, and was obtained from meeting / email correspondence with ADWR.
 
 Two unique files were created, one used by the WSWC staff to understand the available data (*"_with Notes"*), the second resulting files to be used as input to the Python codes that prepare WaDE2 input files.  Input files used are as follows...
  - AMA Demand Supply from DW_use as input.xlsx
@@ -42,7 +42,7 @@ Purpose: Pre-process the Arizona input data files into one master file for simpl
 - Create inputWaterSourceTypeCV from provided AMA WaterSourceType Dictionary.xlss file.
 - Dropped unnecessary columns for WaDE input, **PARENT WATER TYPE OR SECTOR** & **BUDGET ELEMENT**.
 - Dropped and only kept rows who's **CATEGORY** value was either *Supply* or *Demand*.
-- Aggregated data based on **AMA**,**YEAR**, **SECTOR**, **CATEGORY**, & **inputWaterSourceTypeCV** to quanity an annual year value for **QUANTITY**.
+- Aggregated data based on **AMA**,**YEAR**, **SECTOR**, **CATEGORY**, & **inputWaterSourceTypeCV** to quantity an annual year value for **QUANTITY**.
 - Generated WKT from AMA_and_INA.shp file to create *Geometry* WaDE input.
 - Export output dataframe as new csv file, *P_AZagg.csv*.
 
@@ -234,8 +234,8 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Arizona Department of Water Resources (ADWR)](https://new.azwater.gov/).
 
 WSWC Staff
-- Ryan James, rjames@wswc.utah.gov
-- Adel Abdallah, adelabdallah@wswc.utah.gov
+- Ryan James <rjames@wswc.utah.gov>
+- Adel Abdallah <adelabdallah@wswc.utah.gov>
 
 ADWR Staff
 -

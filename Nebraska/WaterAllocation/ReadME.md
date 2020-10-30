@@ -1,177 +1,251 @@
-# WaDE Water Rights Data Preparation
-
-This readme details an overview, the specific steps taken, and the final product of the process applied to water rights data made available by the [Utah Division of Water Rights (UTDWR)](https://www.waterrights.utah.gov/contact.asp) for inclusion into the Water Data Exchange (WaDE). 
-
-### Overview 
-The Utah Division of Water Rights hosts its water right data at the [PUBDUMP Database table dump Utility](https://www.waterrights.utah.gov/cgi-bin/pubdump.exe?DBNAME=WRDB&SECURITYKEY=wrt2012access).
-The dataset is updated annually. For more information on WaDE, please visit http://wade.westernstateswater.org/
+# NeDNR Water Rights (Allocation) Data Preparation for WaDE
+This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [Nebraska Department of Natural Resources (NeDNR)](https://dnr.nebraska.gov/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 
-### Summary
-This document summarizes the process to prepare and share UTDWR’s Water Rights data from the PUBDUMP database for inclusion in the Western States Water Council’s Water Data Exchange (WaDE 2.0). In order to extract Utah water rights data from the PUBDUMP database and publish it online through ESRI layers to be ready for WaDE 2.0, you must execute 8 Python Scripts to generate CSV data compatible with WaDE 2.0.
- 
- ## Data Prep
- ### Step 1: Execute 8 Python Scripts to generate CSV data compatible with WaDE 2.0
-
-There are 8 Python Scripts that use queries to extract UTDWR’s water rights data into views compatible with WaDE 2.0. Two of the scripts, **beneficialuseDictionary.py** and **waterallocationsFunctions.py**, are required as input scripts for **watersources_Ut.py** and **waterallocations_UT.py**, respectively.  All scripts can be found at the following link in WaDE’s Github repository “MappingStatesDataToWaDE2.0” in the Utah folder:
-https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Utah
+## Overview of Data Utilized
+The following data was used for water allocations...
+- Surface water rights were obtained from [NeDNR API](https://nednr.nebraska.gov/IwipApi/swagger/ui/index#/).  Data from the API was exported to a hard copy for review (see below section *0) Code File: 0_PreProcessNebraskaAllocationData.ipynb* for details).
+- **SurfaceWaterWebSimpleSearch_metaData.pdf** which contains metadata to translate water rights data terminology and fields, available at: https://nednr.nebraska.gov/media/WaterRights/SurfaceWaterWebSimpleSearch.pdf
 
 
-The overall objective of the data migration scripts are to prepare datasets retrieved from state repositories for upload into WaDE 2.0.  This process applied to Utah Water Rights data, and considering the data included in this dataset involves passing the raw data through eight Python scripts. These scripts are outlined below.
+## Summary of Data Prep
+The following text summarizes the process used by the WSWC staff to prepare and share NeDNR's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *ID_Allocation Schema Mapping to WaDE_QA.xlsx*.  Six executable code files were used to extract the IDWR's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those six code files are as follows...
 
-The 8 Scripts are entitled:
-- **sites_UT.py**
-- **watersources_UT.py**
-   - **beneficialuseDictionary.py**
-- **waterallocations_UT.py**
-   - **waterallocationsFunctions.py**
--  **methods_UT.py**
--  **organizations_UT.py**
--  **variables_UT.py**
-
+- 0_PreProcessNebraskaAllocationData.ipynb
+- 1_NE_WR_Methods.py
+- 2_NE_WR_Variables.py
+- 3_NE_WR_Organizations.py
+- 4_NE_WR_WaterSources.py
+- 5_NE_WR_Sites.py
+- 6_NE_WR_AllocationsAmounts_facts.py
 
 
-##  1.  sites_UT.py - generate a list of sites where water is allocated
- Table Required: **Water_Master.csv** (Master Table containing Utah Water Right and Exchange Information on [PUBDUMP](https://www.waterrights.utah.gov/cgi-bin/pubdump.exe?DBNAME=WRDB&SECURITYKEY=wrt2012access))
+***
+### 0) Code File: 0_PreProcessNebraskaAllocationData.ipynb
+Purpose: Pre-process the Idaho input data files and merge them into one master file for simple dataframe creation and extraction.
 
-        - generate empty sites.csv file with controlled vocabulary headers
-        - assign SiteNativeID from RECORD_ID
-        - generate WaDESiteUUID (Concatenate UT with SiteNativeID)
-        - drop data if missing latitude/longitude
-        - copy results into **sites.csv** and export
+#### Inputs: 
+ - None
 
+#### Outputs:
+ - NebraskaSurfaceWaterAPIData.xlsx
+ - P_NebraskaMaster.csv
+ - (optional) DataRemoved_NeDNR.xlsx
 
-
-#### Sample data (all columns not included):
-
-   WaDESiteUUID | SiteNativeID | SiteTypeCV | Long | Lat
-   ------------ | ------------ | ---------- | ---- | ----
-   UTDWRE_177983 | 177983 |U | 431092.606 |4616232.618
-
-Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
-  Mandatory fields include: 
- - SiteUUID 
- - SiteName
- - CoordinateMethodCV 
- - EPSGCodeCV
+#### Operation and Steps:
+- Use state agency to to acquire data.  Save as dataframe (optional: export dataframe to xlsx for visual inspection).
+- Format **PriorityDate** field to %m/%d/%Y format.
+- Format **HUC12** to int datatype.
+- Generate WaDE *BeneficialUseCV* using the **SurfaceWaterWebSimpleSearch_metaData.pdf** for reference.
+- Inspect output dataframe for additional errors / datatypes.
+- Export output dataframe as new csv file, *P_IdahoMaster.csv*.
+- (optional) Export error check dataframe *DataRemoved_NeDNR.xlsx*.  Used to track WaDE problematic fields and for state review.
 
 
+***
+### 1) Code File: 1_NE_WR_Methods.py
+Purpose: generate legend of granular methods used on data collection.
 
-##  2. watersources_UT.py - generate list of water sources from which water is allocated from
-Tables required:
-**Water_Master.csv** (Master Table containing Utah Water Right and Exchange Information from [PUBDUMP](https://www.waterrights.utah.gov/cgi-bin/pubdump.exe?DBNAME=WRDB&SECURITYKEY=wrt2012access)) and **PointofDiversionTable.csv** (Water Rights, Change, and Exchange Point of Diversion Table from [PUBDUMP](https://www.waterrights.utah.gov/cgi-bin/pubdump.exe?DBNAME=WRDB&SECURITYKEY=wrt2012access))    
+#### Inputs:
+- None
 
-Supplemental Script required:
-**beneficialuseDictionary.py**
- -Includes the following code dictionaries for Utah: Beneficial Use, Allocation Legal Status, Allocation Type CV, Water Source Type CV, and Site Type. 
+#### Outputs:
+- methods.csv
+- methods_missing.csv (error check only)
 
-       - generate empty UTWaterSources.csv file with controlled vocabulary headers  
-       - call beneficialUseDictionary.py and assign defined Water Source Types to their respective codes
-       - generate WaterSourceNativeID 
-       - generate WaterSourceUUID (Concatenate UT with WaterSourceNativeID)
-       - drop data if missing WaterSourceUUID, WaterSourceTypeCV, and WaterQualityIndicatorCV
-       - copy results into **UTWaterSources.csv** and export 
- 
-  UTWaterSources.csv is input to waterallocations_UT.py.
+#### Operation and Steps:
+- Generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE Method* specific columns.
+- Assign state agency info to the *WaDE Method* specific columns (this was hardcoded by hand for simplicity).
+- Assign method UUID identifier to each (unique) row.
+- Perform error check on output dataframe.
+- Export output dataframe *methods.csv*.
 
-   #### Sample data (all columns not included):
-   
-   WaterSourceUUID | WaterSourceNativeID | WaterSourceName | WaterSourceTypeCV | WaterQualityIndicatorCV
-   ------------ | ------------ | -------- | ---------- | ---- 
-   UT_1 | 1 | Underground Water Well  | groundwaterall | Fresh
-
-Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data. 
-  Mandatory fields include: 
- - SiteUUID 
- - SiteName 
- - CoordinateMethodCV 
- - EPSGCodeCV
+#### Sample Output (WARNING: not all fields shown):
+MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
+---------- | ---------- | ------------
+NEDNR_Water Rights | Surface Water | Modeled
 
 
+***
+### 2) Code File: 2_NE_WR_Variables.py
+Purpose: generate legend of granular variables specific to each state.
+
+#### Inputs:
+- None
+
+#### Outputs:
+- variables.csv
+- variables_missing.csv (error check only)
+
+#### Operation and Steps:
+- Generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE Variable* specific columns.
+- Assign state agency info to the *WaDE Variable* specific columns (this was hardcoded by hand for simplicity).
+- Assign variable UUID identifier to each (unique) row.
+- Perform error check on output dataframe.
+- Export output dataframe *variables.csv*.
+
+#### Sample Output (WARNING: not all fields shown):
+VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
+---------- | ---------- | ------------ | ------------
+NEDNR_Allocation All | 1 | Year | CFS
 
 
+***
+### 3) Code File: 3_NE_WR_Organizations.py
+Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
+
+#### Inputs:
+- None
+
+#### Outputs:
+- organizations.csv
+- organizations_missing.csv (error check only)
+
+#### Operation and Steps:
+- Generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE Organizations* specific columns.
+- Assign state agency info to the *WaDE Organizations* specific columns (this was hardcoded by hand for simplicity).
+- Assign organization UUID identifier to each (unique) row.
+- Perform error check on output dataframe.
+- Export output dataframe *organizations.csv*.
+
+#### Sample Output (WARNING: not all fields shown):
+OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
+---------- | ---------- | ------------ | ------------
+NEDNR | Nebraska Department of Natural Resources | Jennifer Schellpeper | https://dnr.nebraska.gov/
 
 
-##  3. waterallocations_UT.py - generate master sheet of water allocations to import into WaDE 2.0
-Table Required: **Water_Master.csv** (Master Table containing Utah Water Right and Exchange Information on [PUBDUMP](https://www.waterrights.utah.gov/cgi-bin/pubdump.exe?DBNAME=WRDB&SECURITYKEY=wrt2012access)) 
+***
+### 4) Code File: 4_NE_WR_WaterSources.py
+Purpose: generate a list of water sources specific to a water right.
 
-Supplemental Script required:
-**waterallocationFunctions.py**
+#### Inputs:
+- P_NebraskaMaster.csv
 
-       - generate empty UTWaterAllocations.csv file with controlled vocabulary headers
-       - call waterallocationFunctions.py and assign defined beneficial uses to water right 
-       - call UTWaterSources.csv and assign WaDE prepared water sources to water right
-       - assign AllocationOwner based on Company OR FirstName/LastName
-       - drop data if AllocationAmount and Allocation Maximum are null
-       - copy results into **UTWaterAllocations.csv** and export
-        
+#### Outputs:
+- WaterSources.csv
+- watersources_missing.csv (error check only)
 
+#### Operation and Steps:
+- Read the input file and generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE WaterSources* specific columns.
+- Assign state agency info to the *WaDE WaterSources* specific columns.  See *ID_Allocation Schema Mapping to WaDE_QA* for specific details.  Items of note are as follows...
+    - *WaterSourceName* = **SourceName**, Unspecified if not given.
+- Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceName* field.
+- Assign water source UUID identifier to each (unique) row.
+- Perform error check on output dataframe.
+- Export output dataframe *WaterSources.csv*.
 
-####  Sample data (all columns not included):
-   
-   OrganizationUUID | SiteUUID | WaterSourceUUID | BeneficialUseCategory | AllocationNativeID | AllocationTypeCV | AllocationOwner | AllocationLegalStatusCV | AllocationAmount | 
-   ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- |------|
-  UTDWRE | UTDWRE_72714 | UTDWRE_2 | Irrigation, Stockwatering | 61-2981 |Underground Water Claim| Morgan Ranches, LLC | Certificated | 0.4223| 
+#### Sample Output (WARNING: not all fields shown):
+WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceTypeCV
+---------- | ---------- | ------------ | ------------ 
+NE_1 | Fresh | Wolf Creek | Surface Water
 
-Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
-Mandatory fields include: 
- - SiteUUID 
- - SiteName 
- - CoordinateMethodCV
- - EPSGCodeCV
- 
- 
- 
- 
- 
-### 4. variables_UT.py - generate legend of granular variables specific to each state
-        - all values are hard-coded according to state
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
+- WaterSourceUUID
+- WaterQualityIndicatorCV
+- WaterSourceTypeCV
 
 
-#### Sample data (all columns not included):
-   
-   VariableSpecificCV | VariableCV | AggregationStatisticCV| AggregationInterval | AggregationIntervalUnitCV | ReportYearStartMonth| ReportYearTypeCV | AmountUnitCV | MaximumAmountUnitCV
-   ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- |----|
-  Allocation All | Allocation | Average| 1 | Year |10| WaterYear| CFS|AF|
-  
-  Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
-Mandatory fields include: 
- - SiteUUID 
- - SiteName 
- - CoordinateMethodCV
- - EPSGCodeCV
-   
-  
-### 5. methods_ut.py - generate legend of granular variables specific to each state detailing water right/allocation/etc data collection.
-       - all values are hard-coded according to state
-       
-#### Sample data (all columns not included):
-   
-   MethodUUID | MethodName | MethodDescription| MethodNEMLink | ApplicableResourceTypeCV | MethodTypeCV| DataCoverageValue | DataQualityValueCV | DataConfidenceValue|
-   ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- | --------|
-  UT_STREAMFLOW_SUPPLY| Average Streamflow Method | Average Streamflow Method|  | Surface Water | Modeled|      |         |
+***
+### 5) Code File: 5_NE_WR_Sites.py
+Purpose: generate a list of sites where water is diverted (also known as Points Of Diversion, PODs).
 
-Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
-Mandatory fields include: 
- - SiteUUID 
- - SiteName 
- - CoordinateMethodCV
- - EPSGCodeCV
- 
-  
-  ### 6. Organizations_UT.py - generate organization directory, including names, email addresses, and website hyper links for organization suppyling data source
-  
-        -All variables are hardcoded according to organization.
-        
- #### Sample data (all columns not included):
-   
-   OrganizationUUID | OrganizationName | OrganizationPurview| OrganizationWebsite | OrganizationPhoneNumber | OrganizationContactName| OrganizationContactEmail | DataMappingURL | 
-   ---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- |
-  UTDWRE | Utah Division of Water Resources | Water Planning| Water Planning| 8015387280 |Craig Miller| craigmiller@utah.gov| https://github.com/WSWCWaterDataExchange/WaDE2.0|
-       
-Any data missing required values and dropped from the WaDE-ready dataset are saved in a csv file (**sites_mandatoryFieldMissing.csv**) to be passed back to the organization supplying the data.
-Mandatory fields include: 
- - SiteUUID 
- - SiteName 
- - CoordinateMethodCV
- - EPSGCodeCV
+#### Inputs:
+- P_NebraskaMaster.csv
+
+#### Outputs:
+- sites.csv
+- sites_missing.csv (error check only)
+
+#### Operation and Steps:
+- Read the input file and generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE Site* specific columns.
+- Assign state agency info to the *WaDE Site* specific columns.  See *ID_Allocation Schema Mapping to WaDE_QA* for specific details.  Items of note are as follows...
+    - *County* = **County**, Unspecified if not given.
+    - *Latitude* = **Lat**.
+    - *Longitude* = **Long**.
+    - *SiteNativeID* = **PointOfDiversionID**.
+- Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *SiteNativeID*, *SiteName*, *SiteTypeCV*, *Longitude*, & *Latitude* fields.
+- Assign site UUID identifier to each (unique) row.
+- Perform error check on output dataframe.
+- Export output dataframe *sites.csv*.
+
+#### Sample Output (WARNING: not all fields shown):
+SiteUUID | CoordinateMethodCV | Latitude | Longitude | SiteName
+---------- | ---------- | ------------ | ------------ | ------------
+NE_1 | Unspecified | 40.0946892092528 | -96.5146943671114 | Unspecified
+
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
+- SiteUUID 
+- CoordinateMethodCV
+- EPSGCodeCV
+- SiteName
+
+
+***
+### 6) Code File: 6_NE_WR_AllocationsAmounts_facts.py
+Purpose: generate master sheet of water allocations to import into WaDE 2.0.
+
+#### Inputs:
+- P_NebraskaMaster.csv
+- methods.csv
+- variables.csv
+- organizations.csv
+- watersources.csv
+- sites.csv
+
+#### Outputs:
+- waterallocations.csv
+- waterallocations_missing.csv (error check only)
+
+#### Operation and Steps:
+- Read the input files and generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE Water Allocations* specific columns.
+- Assign **IDWR** info to the *WaDE Water Allocations* specific columns.  See *ID_Allocation Schema Mapping to WaDE_QA* for specific details.  Items of note are as follows...
+    - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
+    - *AllocationAmount* = **ProGrant**.
+    - *AllocationLegalStatusCV* = **RightStatus**, Unspecified if not given.
+    - *AllocationNativeID* = **ApplicationNumber**.
+    - *AllocationPriorityDate* = **PriorityDate**.
+    - *AllocationTypeCV* = **Status**, Unknown if not given.
+    - *BeneficialUseCategory* = **RightUse**, Unknown if not given.  See *0_PreProcessNebraskaAllocationData.ipynb* for specifics on generation.
+- Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.
+- Perform error check on output dataframe.
+- Export output dataframe *waterallocations.csv*.
+
+#### Sample Output (WARNING: not all fields shown):
+AllocationNativeID | AllocationAmount | AllocationLegalStatusCV | BeneficialUseCategory
+---------- | ---------- | ------------ | ------------
+A-10003 | 2.64 | Active | DIrrigation from Natural Stream
+
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
+- MethodUUID
+- VariableSpecificUUID
+- OrganizationUUID
+- WaterSourceUUID
+- SiteUUID
+- AllocationPriorityDate
+- BeneficialUseCategory
+- AllocationAmount or AllocationMaximum
+- DataPublicationDate
+
+
+## Staff Contributions
+Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Nebraska Department of Natural Resources (NeDNR)](https://dnr.nebraska.gov/).
+
+WSWC Staff
+- Ryan James <rjames@wswc.utah.gov>
+- Adel Abdallah <adelabdallah@wswc.utah.gov>
+
+NeDNR Staff
+-Jennifer Schellpepe <jennifer.schellpeper@nebraska.gov>
+-Kim Menke <kim.menke@nebraska.gov>
+-Jesse Bradley <Jesse.Bradley@nebraska.gov>
+-Shea Winkler shea.winkler@nebraska.gov
+-Dan Kloch <dan.kloch@nebraska.gov>
+-Mike Thompson  <mike.thompson@nebraska.gov>
+-Ryan Werne <ryan.werner@nebraska.gov>
+-B J Green <bj.green@nebraska.gov>
