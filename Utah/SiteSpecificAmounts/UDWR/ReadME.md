@@ -233,7 +233,7 @@ Purpose: generate master sheet of state agency site specific time series water d
 
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | OrganizationUUID | SiteUUID | VariableSpecificUUID | WaterSourceUUID | Amount | ReportYearCV
----------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | -----------
+---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------
 UDWR_Water Use Data | UDWR | UTSS_S1 | UDWR_Site Specific Withdrawal | UTSS_WS1 | 89.07131598 | 1979
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
@@ -248,4 +248,8 @@ WSWC Staff
 - Adel Abdallah, adelabdallah@wswc.utah.gov
 
 UDWR Staff
-- Adam Clark
+- Jessie Pierson <jpierson@utah.gov>
+- Tom Moore <tmoore@utah.gov>
+- Aaron Austin <aaronaustin@utah.gov>
+- Craig Miller <craigmiller@utah.gov>
+- Leila Ahmadi <lahmadi@utah.gov>

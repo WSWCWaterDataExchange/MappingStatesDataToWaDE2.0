@@ -1,2 +1,2 @@
 # Processed WaDE 2.0 Input Data
-This folder stores the resulting python script processed gagregated water budget data files.  These files (tables) are used by the WSWC staff to import state water rights data into the WaDE 2.0 system.
+This folder stores the resulting python script processed aggregated water budget data files.  These files (tables) are used by the WSWC staff to import state water rights data into the WaDE 2.0 system.
