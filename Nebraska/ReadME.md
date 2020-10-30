@@ -1,7 +1,7 @@
 # WaDE Preparation
 
-This repository stores code and data for Utah water rights and uses data made available by the 
-[Utah Division of Water Rights (UTDWR)](https://www.waterrights.utah.gov/contact.asp) for inclusion into the 
+This repository stores code and data for water rights, aggregated area use, site specific time series, and regulatory boundary data made available by the 
+[Nebraska Department of Natural Resources (NeDNR)](https://dnr.nebraska.gov/) for inclusion into the 
 Water Data Exchange version 2 (WaDE 2). For more information on WaDE, please visit http://wade.westernstateswater.org/
 
 ### Overview 

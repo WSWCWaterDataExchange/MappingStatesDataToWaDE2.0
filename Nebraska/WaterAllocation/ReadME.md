@@ -33,7 +33,7 @@ Purpose: Pre-process the Idaho input data files and merge them into one master f
  - (optional) DataRemoved_NeDNR.xlsx
 
 #### Operation and Steps:
-- Use state agency to to acquire data.  Save as dataframe (optional: export dataframe to xlsx for visual inspection).
+- Use state agency API to to acquire data.  Save as dataframe (optional: export dataframe to xlsx for visual inspection).
 - Format **PriorityDate** field to %m/%d/%Y format.
 - Format **HUC12** to int datatype.
 - Generate WaDE *BeneficialUseCV* using the **SurfaceWaterWebSimpleSearch_metaData.pdf** for reference.
@@ -241,11 +241,11 @@ WSWC Staff
 - Adel Abdallah <adelabdallah@wswc.utah.gov>
 
 NeDNR Staff
--Jennifer Schellpepe <jennifer.schellpeper@nebraska.gov>
--Kim Menke <kim.menke@nebraska.gov>
--Jesse Bradley <Jesse.Bradley@nebraska.gov>
--Shea Winkler shea.winkler@nebraska.gov
--Dan Kloch <dan.kloch@nebraska.gov>
--Mike Thompson  <mike.thompson@nebraska.gov>
--Ryan Werne <ryan.werner@nebraska.gov>
--B J Green <bj.green@nebraska.gov>
+- Jennifer Schellpepe <jennifer.schellpeper@nebraska.gov>
+- Kim Menke <kim.menke@nebraska.gov>
+- Jesse Bradley <Jesse.Bradley@nebraska.gov>
+- Shea Winkler shea.winkler@nebraska.gov
+- Dan Kloch <dan.kloch@nebraska.gov>
+- Mike Thompson  <mike.thompson@nebraska.gov>
+- Ryan Werne <ryan.werner@nebraska.gov>
+- B J Green <bj.green@nebraska.gov>
