@@ -1,4 +1,4 @@
-#Last Updated: 09/08/2020
+#Last Updated: 10/29/2020
 #Purpose: To extract UT site specific water source use information and population dataframe for WaDE_QA 2.0.
 #Notes:
 
@@ -95,13 +95,13 @@ print("WaterQualityIndicatorCV")  # Hardcoded
 outdf.WaterQualityIndicatorCV = "Fresh"
 
 print("WaterSourceName")
-outdf['WaterSourceName'] = df.apply(lambda row: assignWaterSourceName(row['Source Name']), axis=1)
+outdf['WaterSourceName'] = df.apply(lambda row: assignWaterSourceName(row['Source Name_Sour']), axis=1)
 
 print("WaterSourceNativeID")
-outdf['WaterSourceNativeID'] = df.apply(lambda row: assignWaterSourceNativeID(row['Source ID']), axis=1)
+outdf['WaterSourceNativeID'] = df.apply(lambda row: assignWaterSourceNativeID(row['Source ID_Sour']), axis=1)
 
 print("WaterSourceTypeCV")
-outdf['WaterSourceTypeCV'] = df.apply(lambda row: assignWaterSourceTypeCV(row['Source Type']), axis=1)
+outdf['WaterSourceTypeCV'] = df.apply(lambda row: assignWaterSourceTypeCV(row['Source Type_Sour']), axis=1)
 
 
 ##############################

@@ -1,4 +1,4 @@
-#Last Updated: 09/08/2020
+#Last Updated: 10/29/2020
 #Purpose: To extract UT site specific site use information and population dataframe for WaDEQA 2.0.
 #Notes:
 
@@ -85,7 +85,7 @@ print("againCoordinateMethodCV")  # Hardcoded
 outdf.CoordinateMethodCV = 'Unspecified'
 
 print("County")
-outdf['County'] = df['County']
+outdf['County'] = df['County_Sys']
 
 print("EPSGCodeCV")  # Hardcoded
 outdf.EPSGCodeCV = 'EPSG:4326'
@@ -103,10 +103,10 @@ print("HUC8")  # Hardcoded
 outdf.HUC8 = ""
 
 print("Latitude")
-outdf['Latitude'] = df.apply(lambda row: assignLat(row['Lat NAD83'], row['Lon NAD83']), axis=1)
+outdf['Latitude'] = df.apply(lambda row: assignLat(row['Lat NAD83_Sour'], row['Lon NAD83_Sour']), axis=1)
 
 print("Longitude")
-outdf['Longitude'] = df.apply(lambda row: assignLong(row['Lat NAD83'], row['Lon NAD83']), axis=1)
+outdf['Longitude'] = df.apply(lambda row: assignLong(row['Lat NAD83_Sour'], row['Lon NAD83_Sour']), axis=1)
 
 print("NHDNetworkStatusCV")  # Hardcoded
 outdf.NHDNetworkStatusCV = ""
@@ -115,16 +115,16 @@ print("NHDProductCV")  # Hardcoded
 outdf.NHDProductCV = ""
 
 print("SiteName")
-outdf['SiteName'] = df['System Name_x']
+outdf['SiteName'] = df['System Name_Sys']
 
 print("SiteNativeID")
-outdf['SiteNativeID'] = df['System ID_x'].astype(str) # Native dbtype is float. Need to return this value as a string
+outdf['SiteNativeID'] = df['System ID_Sys'].astype(str) # Native dbtype is float. Need to return this value as a string
 
 print("SitePoint")  # Hardcoded
 outdf.SitePoint = ""
 
 print("SiteTypeCV")
-outdf['SiteTypeCV'] = df.apply(lambda row: assignSiteTypeCV(row['System Type']), axis=1)
+outdf['SiteTypeCV'] = df.apply(lambda row: assignSiteTypeCV(row['System Type_Sys']), axis=1)
 
 print("StateCV")  # Hardcoded
 outdf.StateCV = "UT"

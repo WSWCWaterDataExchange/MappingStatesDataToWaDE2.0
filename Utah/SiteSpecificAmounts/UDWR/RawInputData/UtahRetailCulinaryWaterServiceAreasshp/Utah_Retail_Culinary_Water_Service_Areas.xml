@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?><metadata>
+    <idinfo>
+        <citation>
+            <citeinfo>
+                <origin/>
+                <pubdate>20151001</pubdate>
+                <title>Retail Culinary Water Suppliers</title>
+                <geoform>vector digital data</geoform>
+            </citeinfo>
+        </citation>
+        <descript>
+            <abstract>This dataset represents public community water suppliers. Eventually, public non-community (transient) and self-supplied industry (non-transient) suppliers will be added. This feature class includes system boundaries that are historical and no longer active. It also includes some systems that are outside the state. Historical and outside the state systems can be filtered using the ENDYEAR and STATE fields, respectively.These boundaries are derived from many different sources. They include spatial data received directly from the supplier, municipal boundaries, phone call descriptions of service areas, printed maps that had hand drawn boundaries that were then digitized, etc.</abstract>
+            <purpose>This dataset attempts to represent the retail culinary water suppliers service area boundaries for the State of Utah, with a small selection of suppliers in Idaho and Wyoming represented as well.  Data sources include the Utah Division of Water Resources, Utah Division of Drinking Water, Utah Division of Water Rights, Utah Division of Public Utilites, and the Utah Automated Geographic Reference Center. Boundaries were derived from a combination of the following data layers available in the State Geographic Information Database (SGID): Counties, various county parcels, Municipalities, PLSSSections, and TaxEntities2013.
+
+Last update May, 2020.</purpose>
+        </descript>
+        <timeperd>
+            <timeinfo>
+                <rngdates>
+                    <begdate>20151001</begdate>
+                </rngdates>
+            </timeinfo>
+            <current>Water supplier service areas change often (annually).  The Division of Water Resources investigates water supplier service areas on a five year basis (2010, 2015, 2020, etc.).  Annual updates do occur, but they aren't systematic.  These boundaries have been updated through 2015, but a large investigation will occur in 2016.</current>
+        </timeperd>
+        <status>
+            <progress>In work</progress>
+            <update>Annually</update>
+        </status>
+        <spdom>
+            <bounding>
+                <westbc>-114.137012</westbc>
+                <eastbc>-108.914937</eastbc>
+                <northbc>42.682967</northbc>
+                <southbc>36.914040</southbc>
+            </bounding>
+        </spdom>
+        <keywords>
+            <theme>
+                <themekt>None</themekt>
+                <themekey>Utah</themekey>
+                <themekey>water</themekey>
+                <themekey>culinary</themekey>
+                <themekey>culinary water</themekey>
+                <themekey>potable</themekey>
+                <themekey>potable water</themekey>
+                <themekey>water systems</themekey>
+                <themekey>water suppliers</themekey>
+                <themekey>culinary water suppliers</themekey>
+                <themekey>public culinary water suppliers</themekey>
+                <themekey>potable water suppliers</themekey>
+                <themekey>potable water systems</themekey>
+                <themekey>public water suppliers</themekey>
+                <themekey>public water systems</themekey>
+                <themekey>retail culinary system boundaries</themekey>
+                <themekey>municipal</themekey>
+                <themekey>municipal water</themekey>
+                <themekey>industrial</themekey>
+                <themekey>industrial water</themekey>
+                <themekey>water use</themekey>
+                <themekey>culinary water use</themekey>
+                <themekey>potable water use</themekey>
+                <themekey>public community water systems</themekey>
+            </theme>
+        </keywords>
+        <accconst>None</accconst>
+        <useconst>These boundaries or service areas are not legal descriptions, and are meant to generally represent service areas. No claim is made regarding boundary accuracy, and the data should be used with that understanding. This dataset may be shared, so long as sources and time relevance are cited. Be aware that this dataset is a work in progress, and does receive updates on at least an annual basis.For reference use only. Although this product represents the work of natural resource professionals, the Utah Department of Natural Resources, makes no warranty, expressed or implied, regarding its suitability for a particular use. The Utah Department of Natural Resources, shall not be liable under any circumstances for any direct, indirect, special, incidental, or consequential damages with respect to claims by users of this product.</useconst>
+        <ptcontac>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>Utah Division of Water Resources</cntorg>
+                    <cntper>Adam Clark</cntper>
+                </cntorgp>
+                <cntpos>Senior GIS Analyst</cntpos>
+                <cntaddr>
+                    <addrtype>mailing</addrtype>
+                    <address>1594 W. North Temple Suite 310</address>
+                    <city>Salt Lake City</city>
+                    <state>Utah</state>
+                    <postal>84114</postal>
+                    <country>US</country>
+                </cntaddr>
+                <cntvoice>8015387256</cntvoice>
+            </cntinfo>
+        </ptcontac>
+        <datacred>Utah Division of Water Resources, Utah Department of Natural Resources, (Data Steward)
+Utah Division of Water Rights, Utah Department of Natural Resources
+Utah Division of Drinking Water, Utah Department of Environmental Quality
+Division of Public Utilities, Utah Department of Commerce
+Utah Automated Geographic Reference Center, Utah Department of Technology Services</datacred>
+        <native> Version 6.2 (Build 9200) ; Esri ArcGIS 10.7.1.11595</native>
+    </idinfo>
+    <spdoinfo>
+        <direct>Vector</direct>
+        <ptvctinf>
+            <sdtsterm>
+                <sdtstype>GT-polygon composed of chains</sdtstype>
+                <ptvctcnt>1285</ptvctcnt>
+            </sdtsterm>
+        </ptvctinf>
+    </spdoinfo>
+    <eainfo>
+        <detailed>
+            <enttyp>
+                <enttypl>RetailCulinaryWaterServiceAreas</enttypl>
+                <enttypd>File geodatabase feature class</enttypd>
+                <enttypds>DWRe</enttypds>
+            </enttyp>
+            <attr>
+                <attrlabl>OBJECTID</attrlabl>
+                <attrdef>Internal feature number.</attrdef>
+                <attrdefs>Esri</attrdefs>
+                <attrdomv>
+                                        
+                    
+                    <udom>Sequential unique whole numbers that are automatically generated.</udom>
+                                        
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>SHAPE</attrlabl>
+                <attrdef>Feature geometry.</attrdef>
+                <attrdefs>Esri</attrdefs>
+                <attrdomv>
+                                        
+                    
+                    <udom>Coordinates defining the features.</udom>
+                                        
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>WRENAME</attrlabl>
+                <attrdef>The name of the water supplier that the Division of Water Resources uses.</attrdef>
+                <attrdefs>DWRe</attrdefs>
+                <attrdomv>
+                                        
+                    
+                    <udom>Text string representing the name of a water supplier.</udom>
+                                        
+                
+                </attrdomv>
+                <attrmfrq>009</attrmfrq>
+            </attr>
+            <attr>
+                <attrlabl>WRNAME</attrlabl>
+                <attrdef>The name of the water supplier that the Division of Water Rights uses.</attrdef>
+                <attrdefs>DWRe</attrdefs>
+                <attrdomv>
+                                        
+                    
+                    <udom>Text string representing the name of a water supplier.</udom>
+                                        
+                
+                </attrdomv>
+                <attrmfrq>009</attrmfrq>
+            </attr>
+            <attr>
+                <attrlabl>DWNAME</attrlabl>
+                <attrdef>The name of the water supplier that the Division of Drinking Water uses.</attrdef>
+                <attrdefs>DWRe</attrdefs>
+                <attrdomv>
+                                        
+                    
+                    <udom>Text string representing the name of a water supplier.</udom>
+                                        
+                
+                </attrdomv>
+                <attrmfrq>009</attrmfrq>
+            </attr>
+            <attr>
+                <attrlabl>SYSTEMTYPE</attrlabl>
+                <attrdef>The type of water supplier as defined by the EPA and the Division of Drinking Water.</attrdef>
+                <attrdefs>Drinking Water</attrdefs>
+                <attrdomv>
+                                        
+                    
+                    <udom>Text string representing water system classification code.</udom>
+                                        
+                
+                </attrdomv>
+                <attrmfrq>009</attrmfrq>
+            </attr>
+            <attr>
+                <attrlabl>WATERRESID</attrlabl>
+                <attrdef>A unique integer ID that the Division of Water Resources uses to join the suppliers to water use databases and to perform other queries.</attrdef>
+                <attrdefs>DWRe</attrdefs>
+                <attrdomv>
+                                        
+                    
+                    <udom>Unique integer values.</udom>
+                                        
+                
+                </attrdomv>
+                <attrmfrq>010</attrmfrq>
+            </attr>
+            <attr>
+                <attrlabl>WRID</attrlabl>
+                <attrdef>A unique integer ID that the Division of Water Rights uses to track water suppliers.</attrdef>
+                <attrdefs>Water Rights</attrdefs>
+                <attrdomv>
+                                        
+                    
+                    <udom>Integer values.</udom>
+                                        
+                
+                </attrdomv>
+                <attrmfrq>009</attrmfrq>
+            </attr>
+            <attr>
+                <attrlabl>DWSYSNUM</attrlabl>
+                <attrdef>A unique string ID that the Division of Drinking Water uses to distinquish water suppliers in their databases.</attrdef>
+                <attrdefs>Drinking Water</attrdefs>
+                <attrdomv>
+                                        
+                    
+                    <udom>Text values.</udom>
+                                        
+                
+                </attrdomv>
+                <attrmfrq>009</attrmfrq>
+            </attr>
+            <attr>
+                <attrlabl>WRLINK</attrlabl>
+                <attrdef>A weblink to the corresponding water supplier webpage on the Division of Water Rights' website.</attrdef>
+                <attrdefs>DWRe</attrdefs>
+                <attrdomv>
+                                        
+                    
+                    <udom>Hyperlink text string.</udom>
+                                        
+                
+                </attrdomv>
+                <attrmfrq>009</attrmfrq>
+            </attr>
+            <attr>
+                <attrlabl>WHOLESALER</attrlabl>
+                <attrdef>This field lists the wholesaler who sells water to the supplier.  Many suppliers are fully self-supplied.</attrdef>
+                <attrdefs>DWRe</attrdefs>
+                <attrdomv>
+                                        
+                    
+                    <udom>Variable length text string.</udom>
+                                        
+                
+                </attrdomv>
+                <attrmfrq>009</attrmfrq>
+            </attr>
+            <attr>
+                <attrlabl>LABEL</attrlabl>
+                <attrdef>This is an abbreviated version of the WHOLESALER field for shorthand and labeling purposes.</attrdef>
+                <attrdefs>DWRe</attrdefs>
+                <attrdomv>
+                                        
+                    
+                    <udom>Abbreviated length text string.</udom>
+                                        
+                
+                </attrdomv>
+                <attrmfrq>009</attrmfrq>
+            </attr>
+            <attr>
+                <attrlabl>STATE</attrlabl>
+                <attrdef>The name of the state that the water supplier serves.</attrdef>
+                <attrdefs>DWRe</attrdefs>
+                <attrdomv>
+                                        
+                    
+                    <udom>Full length text string of US states' names.</udom>
+                                        
+                
+                </attrdomv>
+                <attrmfrq>009</attrmfrq>
+            </attr>
+            <attr>
+                <attrlabl>COUNTY</attrlabl>
+                <attrdef>The name of the county that the water supplier serves.</attrdef>
+                <attrdefs>DWRe</attrdefs>
+                <attrdomv>
+                                        
+                    
+                    <udom>Full length text string county name.</udom>
+                                        
+                
+                </attrdomv>
+                <attrmfrq>009</attrmfrq>
+            </attr>
+            <attr>
+                <attrlabl>BASIN</attrlabl>
+                <attrdef>The name of the hydrobasin that the water supplier serves.  Basins are named and derived by the Division of Water Resources.  Basins are generally based on WBD HUC 6. HUC 8, and HUC 10 watersheds.</attrdef>
+                <attrdefs>DWRe</attrdefs>
+                <attrdomv>
+                                        
+                    
+                    <udom>Variable length text string of basin name.</udom>
+                                        
+                
+                </attrdomv>
+                <attrmfrq>009</attrmfrq>
+            </attr>
+            <attr>
+                <attrlabl>SUBAREA</attrlabl>
+                <attrdef>A unique string ID for subareas, which are sub-watersheds delineated by the Division of Water Resources.</attrdef>
+                <attrdefs>DWRe</attrdefs>
+                <attrdomv>
+                                        
+                    
+                    <udom>8-9 character text string.</udom>
+                                        
+                
+                </attrdomv>
+                <attrmfrq>009</attrmfrq>
+            </attr>
+            <attr>
+                <attrlabl>SUBAREANAM</attrlabl>
+                <attrdef>The name of the subarea that the water supplier serves.  Subareas are sub-watersheds that are delineated and named by the Division of Water Resources.</attrdef>
+                <attrdefs>DWRe</attrdefs>
+                <attrdomv>
+                                        
+                    
+                    <udom>Variable length text string of subarea name.</udom>
+                                        
+                
+                </attrdomv>
+                <attrmfrq>009</attrmfrq>
+            </attr>
+            <attr>
+                <attrlabl>LANUM</attrlabl>
+                <attrdef>A unique string ID for landareas, which are subdivisions of subareas.  Landareas are delineated by the Division of Water Resources.</attrdef>
+                <attrdefs>DWRe</attrdefs>
+                <attrdomv>
+                                        
+                    
+                    <udom>9-10 character text string.</udom>
+                                        
+                
+                </attrdomv>
+                <attrmfrq>009</attrmfrq>
+            </attr>
+            <attr>
+                <attrlabl>LANAME</attrlabl>
+                <attrdef>The name of the landarea, which is a subdivision of a subarea.  Landarea names are created by the Division of Water Resources.</attrdef>
+                <attrdefs>DWRe</attrdefs>
+                <attrdomv>
+                                        
+                    
+                    <udom>Variable length text string of landarea name.</udom>
+                                        
+                
+                </attrdomv>
+                <attrmfrq>009</attrmfrq>
+            </attr>
+            <attr>
+                <attrlabl>ENDYEAR</attrlabl>
+                <attrdef>A four digit integer, representing the last year of record (water use) for a water supplier.  This field can be used to query current suppliers vs historical suppliers.  Some out of state suppliers have a NULL value in this field, because the Division of Water Resources doesn't have water use data for these suppliers.</attrdef>
+                <attrdefs>DWRe</attrdefs>
+                <attrdomv>
+                                        
+                    
+                    <udom>4 digit integer values representing last years of record.</udom>
+                                        
+                
+                </attrdomv>
+                <attrmfrq>010</attrmfrq>
+            </attr>
+            <attr>
+                <attrlabl>DATASOURCE</attrlabl>
+                <attrdef>This field identifies where the service area delineation information came from originally.  Documentation for this field is limited and is a work in progress.</attrdef>
+                <attrdefs>DWRe</attrdefs>
+                <attrdomv>
+                                        
+                    
+                    <udom>Variable length text string.</udom>
+                                        
+                
+                </attrdomv>
+                <attrmfrq>009</attrmfrq>
+            </attr>
+            <attr>
+                <attrlabl>SOURCEDATE</attrlabl>
+                <attrdef>The date that the original service area data was added to the geodatabase.  This field is a work in progress, since documentation for original data sources is limited.</attrdef>
+                <attrdefs>DWRe</attrdefs>
+                <attrdomv>
+                                        
+                    
+                    <udom>Date value.  Day and time of day are often arbitrary.</udom>
+                                        
+                
+                </attrdomv>
+                <attrmfrq>009</attrmfrq>
+            </attr>
+            <attr>
+                <attrlabl>EDITOR</attrlabl>
+                <attrdef>The editor who last edited a particular feature.  This field is automatically populated by Edit Tracking.</attrdef>
+                <attrdefs>DWRe</attrdefs>
+                <attrdomv>
+                                        
+                    
+                    <udom>Text string based on Microsoft login name.</udom>
+                                        
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>EDITDATE</attrlabl>
+                <attrdef>The most recent edit date to the feature.  This field is automatically populated by Edit Tracking.</attrdef>
+                <attrdefs>DWRe</attrdefs>
+                <attrdomv>
+                                        
+                    
+                    <udom>Automatic date values.</udom>
+                                        
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>COLOR4</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>Shape.STArea()</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>Shape.STLength()</attrlabl>
+            </attr>
+        </detailed>
+    </eainfo>
+    <metainfo>
+        <metd>20200519</metd>
+        <metc>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>Utah Division of Water Resources</cntorg>
+                    <cntper>Adam Clark</cntper>
+                </cntorgp>
+                <cntpos>Senior GIS Analyst</cntpos>
+                <cntaddr>
+                    <addrtype>mailing</addrtype>
+                    <address>1594 W. North Temple Suite 310</address>
+                    <city>Salt Lake City</city>
+                    <state>Utah</state>
+                    <postal>84114</postal>
+                    <country>US</country>
+                </cntaddr>
+                <cntvoice>8015387256</cntvoice>
+            </cntinfo>
+        </metc>
+        <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+        <metstdv>FGDC-STD-001-1998</metstdv>
+        <mettc>local time</mettc>
+    </metainfo>
+</metadata>

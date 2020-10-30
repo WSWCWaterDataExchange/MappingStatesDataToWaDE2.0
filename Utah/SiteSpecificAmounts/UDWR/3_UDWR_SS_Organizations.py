@@ -40,7 +40,7 @@ outdf.OrganizationUUID = "UDWR"
 
 outdf.OrganizationContactEmail = "waterrights@utah.gov"
 
-outdf.OrganizationContactName = " James Greer"
+outdf.OrganizationContactName = "James Greer"
 
 outdf.OrganizationDataMappingURL = "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Utah"
 

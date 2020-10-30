@@ -1,4 +1,4 @@
-#Last Updated: 09/08/2020
+#Last Updated: 10/29/2020
 #Author: Ryan James
 #Purpose: To extract UT site specific site amount use information and population dataframe WaDEQA 2.0.
 #Notes:
@@ -20,11 +20,13 @@ M_fileInput = "RawinputData/P_MasterUTSiteSpecific.csv"
 variables_fileInput = "ProcessedInputData/variables.csv"
 watersources_fileInput = "ProcessedInputData/watersources.csv"
 sites_fileInput = "ProcessedInputData/sites.csv"
+shapefileInput = "RawinputData/P_Geometry.csv"
 
 df_DM = pd.read_csv(M_fileInput)  # The State's Master input dataframe.
-df_variables = pd.read_csv(variables_fileInput)  # WaterSources dataframe
+df_variables = pd.read_csv(variables_fileInput)  # Variable dataframe
 df_watersources = pd.read_csv(watersources_fileInput)  # WaterSources dataframe
 df_sites = pd.read_csv(sites_fileInput)  # Sites dataframe
+df_shape = pd.read_csv(shapefileInput)
 
 transformer = Transformer.from_crs(4269, 4326)
 # NAD83 projection = epsg:4269.
@@ -62,20 +64,21 @@ columnslist = [
 # Custom Functions
 ############################################################################
 
-# For creating VariableSpecificUUID
-def retrieveVariableSpecificUUID(colrowValue):
+# For retrieving VariableSpecificUUID.
+VariableUUIDDict = pd.Series(df_variables.VariableSpecificUUID.values, index=df_variables.VariableCV).to_dict()
+def retrieveVariableUUID(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
-        outList = 0
+        outList = ''
     else:
-        String1 = colrowValue  # remove whitespace chars
+        String1 = colrowValue.strip()  # remove whitespace chars
         try:
-            outList = VarUUIDdict[String1]
+            outList = VariableUUIDDict[String1]
         except:
-            outList = colrowValue
+            outList = ''
     return outList
 
 
-#########################################################
+#-------------------------------------
 # For creating SiteUUID
 def assignLat(colrowValLat, colrowValLong):
     lat, long = transformer.transform(colrowValLat, colrowValLong)
@@ -100,9 +103,9 @@ def retrieveSiteUUID(colrowValA, colrowValB, colrowValC, colrowValD, colrowValE)
             outList = ''
     return outList
 
-#########################################################
+#-------------------------------------
 
-#########################################################
+#-------------------------------------
 # For creating WaterSourceUUID
 def assignWaterSourceName(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
@@ -140,14 +143,26 @@ def retrieveWaterSourceUUID(colrowValA, colrowValC):
     outList = ml.iloc[0]
     return outList
 
-#########################################################
-
+#-------------------------------------
 # For creating BeneficialUseCategory
 def assignBenUseCategory(colrowVal):
     if colrowVal == '' or pd.isnull(colrowVal):
         outList = 'Unknown'
     else:
         outList = colrowVal.strip()
+    return outList
+
+# For retrieving Geometry
+GeometryDict = pd.Series(df_shape.culGeometry.values, index=df_shape.WRID).to_dict()
+def retrieveGeometry(colrowValue):
+    if colrowValue == '' or pd.isnull(colrowValue):
+        outList = ''
+    else:
+        String1 = colrowValue  # remove whitespace chars
+        try:
+            outList = GeometryDict[String1]
+        except:
+            outList = ''
     return outList
 
 
@@ -162,33 +177,29 @@ outdf.MethodUUID = "UDWR_Water Use Data"
 print("OrganizationUUID")  # Hardcoded
 outdf.OrganizationUUID = "UDWR"
 
-########################################################################
+#-------------------------------------
 print("SiteUUID")  # Using Lat, long, SiteName, SiteNativeID & SiteTypeCV to correctly identify SiteUUIDID
-df_DM['Latitude'] = df_DM.apply(lambda row: assignLat(row['Lat NAD83'], row['Lon NAD83']), axis=1)
-df_DM['Longitude'] = df_DM.apply(lambda row: assignLong(row['Lat NAD83'], row['Lon NAD83']), axis=1)
+df_DM['Latitude'] = df_DM.apply(lambda row: assignLat(row['Lat NAD83_Sour'], row['Lon NAD83_Sour']), axis=1)
+df_DM['Longitude'] = df_DM.apply(lambda row: assignLong(row['Lat NAD83_Sour'], row['Lon NAD83_Sour']), axis=1)
 outdf['SiteUUID'] = df_DM.apply(lambda row: retrieveSiteUUID(row['Latitude'],
                                                              row['Longitude'],
-                                                             row['System Name_x'],
-                                                             row['System ID_x'],
-                                                             row['System Type']), axis=1)
-########################################################################
+                                                             row['System Name_Sys'],
+                                                             row['System ID_Sys'],
+                                                             row['System Type_Sys']), axis=1)
+#-------------------------------------
 
-
-########################################################################
 print("VariableSpecificUUID")
-outdf.VariableSpecificUUID = 'UDWR_Site Specific Withdrawal'
-########################################################################
+outdf['VariableSpecificUUID'] = df_DM.apply(lambda row: retrieveVariableUUID(row['Diversion Type_Sour']), axis=1)
 
-
-########################################################################
+#-------------------------------------
 print("WaterSourceUUID")  # Using Lat, long, SiteName, SiteNativeID & SiteTypeCV to correctly identify SiteUUIDID
-df_DM['WaterSourceName'] = df_DM.apply(lambda row: assignWaterSourceName(row['Source Name']), axis=1)
-df_DM['WaterSourceTypeCV'] = df_DM.apply(lambda row: assignWaterSourceTypeCV(row['Source Type']), axis=1)
+df_DM['WaterSourceName'] = df_DM.apply(lambda row: assignWaterSourceName(row['Source Name_Sour']), axis=1)
+df_DM['WaterSourceTypeCV'] = df_DM.apply(lambda row: assignWaterSourceTypeCV(row['Source Type_Sour']), axis=1)
 outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['WaterSourceName'], row['WaterSourceTypeCV']), axis=1)
-########################################################################
+#-------------------------------------
 
 print("Amount")
-outdf['Amount'] = df_DM['Total']
+outdf['Amount'] = df_DM['Total Use_Sys']
 
 print('AllocationCropDutyAmount')  # Hardcoded
 outdf.AllocationCropDutyAmount = ''
@@ -209,13 +220,13 @@ print("CustomerTypeCV")  # Hardcoded
 outdf.CustomerTypeCV = ''
 
 print("DataPublicationDate")  # Hardcoded
-outdf.DataPublicationDate = '09/08/2020'
+outdf.DataPublicationDate = '10/29/2020'
 
 print("DataPublicationDOI")  # Hardcoded
 outdf.DataPublicationDOI = ''
 
 print("Geometry")  # Hardcoded
-outdf.Geometry = ''
+outdf['Geometry'] = df_DM.apply(lambda row: retrieveGeometry(row['Source ID_Sour']), axis=1)
 
 print("IrrigatedAcreage")  # Hardcoded
 outdf.IrrigatedAcreage = ''
@@ -236,7 +247,7 @@ print("PrimaryUseCategory")  # Hardcoded
 outdf.PrimaryUseCategory = 'Irrigation'
 
 print("ReportYearCV")
-outdf['ReportYearCV'] = df_DM['History Year'].astype(str)
+outdf['ReportYearCV'] = df_DM['History Year_Sys'].astype(str)
 
 print("SDWISIdentifier")  # Hardcoded
 outdf.SDWISIdentifier = ''

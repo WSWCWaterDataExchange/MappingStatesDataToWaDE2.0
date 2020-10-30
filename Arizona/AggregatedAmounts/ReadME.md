@@ -124,7 +124,7 @@ ADWR_AMA | Arizona Department of Water Resources | Lisa Williams | http://gisdat
 
 ***
 ### 4) Code File: 4_AZagg_WaterSources.py
-Purpose: generate a list of water sources specific to a water right.
+Purpose: generate a list of water sources specific to an aggregated water budget data area.
 
 #### Inputs:
 - P_AZagg.csv
@@ -167,12 +167,12 @@ Purpose: generate a list of polygon areas associated with the state agency speci
 
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE Site* specific columns.
-- Assign state agency data info to the *WaDE Site* specific columns.  See *AZ_Aggregated Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+- Populate output dataframe with *WaDE ReportingUnits* specific columns.
+- Assign state agency data info to the *WaDE ReportingUnits* specific columns.  See *AZ_Aggregated Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
     - *ReportingUnitName* = **AMA**.
     - *Geometry* = WKT created **Geometry**, see *0_AZAggregatedDataPreprocess.ipynb* for specifics.
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *ReportingUnitName* field.
-- Assign site UUID identifier to each (unique) row.
+- Assign reportingunits UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *sites.csv*.
 
@@ -228,3 +228,15 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - WaterSourceUUID
 - ReportingUnitUUID
 - Amount
+
+
+## Staff Contributions
+Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Arizona Department of Water Resources (ADWR)](https://new.azwater.gov/).
+
+WSWC Staff
+- Ryan James, rjames@wswc.utah.gov
+- Adel Abdallah, adelabdallah@wswc.utah.gov
+
+ADWR Staff
+-
+-
