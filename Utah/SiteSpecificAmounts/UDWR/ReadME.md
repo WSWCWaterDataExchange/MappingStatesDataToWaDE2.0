@@ -42,7 +42,7 @@ Purpose: Pre-process the UDWR input data files into one master file for simple d
 #### Outputs:
  - P_MasterUTSiteSpecific.csv
  - P_Geometry.csv
- - inputDataRemoved.csv
+ - DataRemoved_UDWR.csv
 
 #### Operation and Steps:
 - Read the input files and generate temporary input dataframes.
@@ -244,8 +244,8 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Utah Division of Water Rights (UTDWR)](https://www.waterrights.utah.gov/contact.asp).
 
 WSWC Staff
-- Ryan James, rjames@wswc.utah.gov
-- Adel Abdallah, adelabdallah@wswc.utah.gov
+- Ryan James <rjames@wswc.utah.gov>
+- Adel Abdallah <adelabdallah@wswc.utah.gov>
 
 UDWR Staff
 - Jessie Pierson <jpierson@utah.gov>
