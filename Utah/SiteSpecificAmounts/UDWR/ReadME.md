@@ -1,18 +1,18 @@
 # UDWR Site Specific Data Preparation for WaDE
-This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting site specific time series water data made available by the [Utah Division of Water Rights (UTDWR)](https://www.waterrights.utah.gov/contact.asp), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
+This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting site specific time series water data made available by the [Utah Division of Water Rights (UTDWRi)](https://www.waterrights.utah.gov/contact.asp), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 
 ## Overview of Data Utilized
 The following data was used for aggregated water budget...
 
-- **Water Use Data Portal**, also known as M&I data, and broken up into **System** and **Source** data.  Obtained from the UDWR website at:  https://waterrights.utah.gov/asp_apps/waterUseData/setFilters.asp
-- **Utah Retail Culinary Water Service Areas shape files**, and was obtained from the Utah Division of Water Resrouces (UDWRe) website at: https://opendata.gis.utah.gov/datasets/1d2535e8c31247b9aaff664f6ac9c45d_0?geometry=-131.898%2C36.940%2C-91.216%2C42.682.
+- **Water Use Data Portal**, also known as M&I data, and broken up into **System** and **Source** data.  Obtained from the UDWRi website at:  https://waterrights.utah.gov/asp_apps/waterUseData/setFilters.asp
+- **Utah Culinary Water Service Areas shape files**, and was obtained from the Utah Division of Water Resources (UDWRe) website at: https://opendata.gis.utah.gov/datasets/1d2535e8c31247b9aaff664f6ac9c45d_0?geometry=-131.898%2C36.940%2C-91.216%2C42.682.
 
-Please note that the UDWR has this webpage for Municipal and Industrial Water Use Data. The page has helpful notes at the bottom that explain the context of the data. We didnt not use this data because the Division of Water Rights data source above compiles all the years data together which is easier for WaDE use.  
+Please note that the UDWRe has this webpage for Municipal and Industrial Water Use Data. The page has helpful notes at the bottom that explain the context of the data. We didn’t use this data because the Division of Water Rights data source above compiles all the years data together which is easier for WaDE use.  
 https://dwre-utahdnr.opendata.arcgis.com/pages/municipal-and-industrial-data
 
 Adam Clark summarized:   
->The Utah Retail Culinary Water Service Areas spatial database is a combination of work and collaboration between the Div of Water Resources (UDWRe), Div of Water Rights (UDWR), and the Div of Drinking Water (UDDW).  Water Resources is the data steward/creator, but receives input from the other divisions on systems.  Water Rights and Drinking Water both maintain separate non-spatial databases of water systems.  Water Rights is mostly focused on water usage and sources, while Drinking Water is more focused on compliance and water quality.*  While all three divisions share attributes in some ways, they differ in others.  If you were to join their own databases, you would find that the number of systems differs between all three.  The Utah Retail Culinary Water Service Areas spatial database is the Div of Water Resources's master database that includes all systems, past and present.  It also includes large and small systems, non-public systems, and self-supplied industry.  You will find three columns of system IDs, because all three divisions use different ID systems for tracking/updating.  You can think of the spatial database as a bridge or hybrid between the other two.*  Feel free to use Water Rights' query service to get more information on systems.  Just realize that it will not have information on all of the systems included in the spatial database.  Water Rights uses our feature service in their website to show boundaries for systems, but I guarantee that many of the systems in the service are not used.
+>The Utah Culinary Water Service Areas spatial database is a combination of work and collaboration between the Division of Water Resources (UDWRe) and the Division of Water Rights (UDWRi) within the Department of Natural Resources, and the Division of Drinking Water (UDDW) within the Department of Environmental Quality. Water Resources is the data steward/creator, but receives input from the other divisions on systems.  Water Rights and Drinking Water both maintain separate non-spatial databases of water systems.  Water Rights is mostly focused on water usage and sources, while Drinking Water is more focused on compliance and water quality.*  While all three divisions share attributes in some ways, they differ in others.  If you were to join their own databases, you would find that the number of systems differs between all three.  The Utah Culinary Water Service Areas spatial database is the Division of Water Resources’ master database that includes all systems, past and present.  It also includes large and small systems, non-public systems, and self-supplied industry.  You will find three columns of system IDs, because all three divisions use different ID systems for tracking/updating.  You can think of the spatial database as a bridge or hybrid between the other two.*  Feel free to use Water Rights' query service to get more information on systems.  Just realize that it will not have information on all of the systems included in the spatial database.  Water Rights uses our feature service in their website to show boundaries for systems, but I guarantee that many of the systems in the service are not used.
     
 ![](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Utah/SiteSpecificAmounts/UDWR/Utah_data_flow.png)
 
@@ -237,20 +237,20 @@ Purpose: generate master sheet of state agency site specific time series water d
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | OrganizationUUID | SiteUUID | VariableSpecificUUID | WaterSourceUUID | Amount | ReportYearCV
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------
-UDWR_Water Use Data | UDWR | UTSS_S1 | UDWR_Site Specific Withdrawal | UTSS_WS1 | 89.07131598 | 1979
+UDWR_Water Use Data | UDWRe | UTSS_S1 | UDWR_Site Specific Withdrawal | UTSS_WS1 | 89.07131598 | 1979
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - ?
 
 
 ## Staff Contributions
-Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Utah Division of Water Rights (UTDWR)](https://www.waterrights.utah.gov/contact.asp).
+Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Utah Division of Water Resources (UTDWRe)](https://water.utah.gov/).
 
 WSWC Staff
 - Ryan James <rjames@wswc.utah.gov>
 - Adel Abdallah <adelabdallah@wswc.utah.gov>
 
-UDWR Staff
+UDWRe Staff
 - Jessie Pierson <jpierson@utah.gov>
 - Tom Moore <tmoore@utah.gov>
 - Aaron Austin <aaronaustin@utah.gov>
