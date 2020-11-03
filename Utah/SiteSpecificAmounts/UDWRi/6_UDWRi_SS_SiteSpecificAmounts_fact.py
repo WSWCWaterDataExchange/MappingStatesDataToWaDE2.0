@@ -217,8 +217,8 @@ print("CropTypeCV")
 outdf.CropTypeCV = ''
 
 # Issue of CustomerTypeCV of being converted from nvarchar to float
-# print("CustomerTypeCV")
-# outdf['CustomerTypeCV'] = df_DM['System Type_Sys'].astype(str)
+print("CustomerTypeCV")
+outdf['CustomerTypeCV'] = df_DM['System Type_Sys']
 
 print("DataPublicationDate")
 outdf.DataPublicationDate = '11/02/2020'
@@ -236,8 +236,8 @@ print("IrrigationMethodCV")
 outdf.IrrigationMethodCV = ''
 
 # Issue of PopulationServed of being converted from nvarchar to float
-# print("PopulationServed")
-# outdf['PopulationServed'] = df_DM['Population_Sys']
+print("PopulationServed")
+outdf['PopulationServed'] = df_DM['Population_Sys']
 
 print("PowerGeneratedGWh")
 outdf.PowerGeneratedGWh = ''
