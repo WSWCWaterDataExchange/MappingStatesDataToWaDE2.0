@@ -1,11 +1,4 @@
 VariableSpecificUUID,VariableSpecificCV,VariableCV,AggregationStatisticCV,AggregationInterval,AggregationIntervalUnitCV,ReportYearStartMonth,ReportYearTypeCV,AmountUnitCV,MaximumAmountUnitCV
-Diversion All-CODWR,Diversion All,Withdrawal,Average,1,seconds,11,Irrigation,CFS,CFS
-1,"Consumptive Use, Irrigation",Consumptive use      ,Cumulative,1,Year,1-Oct,WaterYear,Acre feet,
-2,"Withdrawal, Irrigation",Withdrawal               ,Cumulative,1,Year,1-Oct,WaterYear,Acre feet,
-3,"Withdrawal, Public Supply",Withdrawal        ,Cumulative,1,Year,1-Oct,WaterYear,Acre feet,
-4,Allocation All,Allocation,Average,1,Day,11,Irrigation,CFS,AFY
-Allocation All-CODWR,Allocation All,Allocation,Average,1,Day,11,Irrigation,CFS,AFY
-"Consumptive Use, Irrigation","Consumptive Use, Irrigation",Consumptive use,Cumulative,1,Year,1-Oct,WaterYear,Acre feet,
-"Withdrawal, Irrigation","Withdrawal, Irrigation",Withdrawal,Cumulative,1,Year,1-Oct,WaterYear,Acre feet,
-"Withdrawal, Public Supply","Withdrawal, Public Supply",Withdrawal,Cumulative,1,Year,1-Oct,WaterYear,Acre feet,
-Allocation All,Allocation All,Allocation,Average,1,Day,11,Irrigation,CFS,AFY
+UT_Consumptive Use Irrigation,"Consumptive Use, Irrigation",Consumptive Use,Cumulative,1,Year,1-Oct,WaterYear,Acre feet,
+UT_Withdrawal Irrigation,"Withdrawal, Irrigation",Withdrawal,Cumulative,1,Year,1-Oct,WaterYear,Acre feet,
+UT_Withdrawal Public Supply,"Withdrawal, Public Supply",Withdrawal,Cumulative,1,Year,1-Oct,WaterYear,Acre feet,

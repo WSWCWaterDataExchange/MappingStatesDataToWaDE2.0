@@ -1,2 +1,2 @@
 VariableSpecificUUID,VariableSpecificCV,VariableCV,AggregationStatisticCV,AggregationInterval,AggregationIntervalUnitCV,ReportYearStartMonth,ReportYearTypeCV,AmountUnitCV,MaximumAmountUnitCV
-Consumptive Use,Consumptive Use,Consumptive Use,Cumulative,1,Year,1-Oct,WaterYear,Acre feet,
+WY_Consumptive Use,Consumptive Use,Consumptive Use,Cumulative,1,Year,1-Oct,WaterYear,Acre feet,
