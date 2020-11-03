@@ -1,0 +1,1271 @@
+WaterSourceUUID,Geometry,GNISFeatureNameCV,WaterQualityIndicatorCV,WaterSourceName,WaterSourceNativeID,WaterSourceTypeCV
+UTSS_WS1,,,Fresh,Rock Canyon Springs (WS024),10100017,groundwater/spring
+UTSS_WS2,,,Fresh,"Parkside,Nunn Springs (WS015), (WS016)",10100018,groundwater/spring
+UTSS_WS3,,,Fresh,South Fork Springs (Group 6),10100019,groundwater/spring
+UTSS_WS4,,,Fresh,"Thayer Flat/Rotary Park Springs WS017,18",108545265,groundwater/spring
+UTSS_WS5,,,Fresh,City Center Well,10100010,groundwater/well
+UTSS_WS6,,,Fresh,So. Robinson Spring (WS001),10110001,groundwater/spring
+UTSS_WS7,,,Fresh,MONTE VISTA Well #1& 2 (WS001)(WS002),108541924,groundwater/well
+UTSS_WS8,,,Fresh,Ogden Bench Canal,10180009,Surface Water
+UTSS_WS9,,,Fresh,Pine View Reservoir (WS001),10180002,Surface Water
+UTSS_WS10,,,Fresh,Cold Water Creek,10180006,Surface Water
+UTSS_WS11,,,Fresh,Woodland Spring (WS001),10190001,groundwater/spring
+UTSS_WS12,,,Fresh,Woodland Well 1 (WS002),10190002,groundwater/well
+UTSS_WS13,,,Fresh,Manderfield Well (WS001),10200001,groundwater/well
+UTSS_WS14,,,Fresh,Town Well (WS001),10240001,groundwater/well
+UTSS_WS15,,,Fresh,Fool Creek Canyon Springs Group (SS026),10240002,groundwater/spring
+UTSS_WS16,,,Fresh,Well No. 1 (WS002),10290002,groundwater/well
+UTSS_WS17,,,Fresh,Little Missouri Spring (WS001),10330006,groundwater/spring
+UTSS_WS18,,,Fresh,Alder Creek Spring (WS002),10330003,groundwater/spring
+UTSS_WS19,,,Fresh,Lower  Springs (WS001),10340001,groundwater/spring
+UTSS_WS20,,,Fresh,Upper Spring (WS002),108544949,groundwater/spring
+UTSS_WS21,,,Fresh,TinTic Junction  Well 2 (WS008),108543334,groundwater/well
+UTSS_WS22,,,Fresh,Homansville Group  (SS161),10360004,groundwater/well
+UTSS_WS23,,,Fresh,Rilda Upper Spring (WS001),10390002,groundwater/spring
+UTSS_WS24,,,Fresh,Elk Springs Group (WS010) (WS011),108542330,groundwater/spring
+UTSS_WS25,,,Fresh,Main Canyon Springs (Group),10390004,groundwater/spring
+UTSS_WS26,,,Fresh,Birch Spring (WS007),10390007,groundwater/spring
+UTSS_WS27,,,Fresh,Sunridge System 4 Spring (WS004),10420004,groundwater/spring
+UTSS_WS28,,,Fresh,Sunridge Spring No.2,10420001,groundwater/spring
+UTSS_WS29,,,Fresh,Wylie Spring,10470001,groundwater/spring
+UTSS_WS30,,,Fresh,Temple of Sinawava Spring,10470002,groundwater/spring
+UTSS_WS31,,,Fresh,Lower Grotto Spring (WS003),10470003,groundwater/spring
+UTSS_WS32,,,Fresh,Upper Grotto Spring (WS004),10470004,groundwater/spring
+UTSS_WS33,,,Fresh,East Gate Well,10470005,groundwater/well
+UTSS_WS34,,,Fresh,Birch Springs (WS001),10470006,groundwater/spring
+UTSS_WS35,,,Fresh,Watercress Spring (WS002),10470009,groundwater/spring
+UTSS_WS36,,,Fresh,Rosebush Springs Group (WS002) (WS003),10480002,groundwater/spring
+UTSS_WS37,,,Fresh,Tunnel Spring (WS004),10480004,groundwater/spring
+UTSS_WS38,,,Fresh,Stockings Meadow Spring aka W.A. Crane,10500005,groundwater/spring
+UTSS_WS39,,,Fresh,HP Well # 1 (WS006),10500004,groundwater/well
+UTSS_WS40,,,Fresh,Main Spring (Culinary),10510002,groundwater/spring
+UTSS_WS41,,,Fresh,Well #3 (Culinary),10510010,groundwater/well
+UTSS_WS42,,,Fresh,Well/Springs Group (8146),10560001,groundwater/spring
+UTSS_WS43,,,Fresh,Burr Springs,10580001,groundwater/spring
+UTSS_WS44,,,Fresh,Lower Mueller Well (WS013),10600017,groundwater/well
+UTSS_WS45,,,Fresh,Barton Creek Well (20`),10600005,groundwater/well
+UTSS_WS46,,,Fresh,Town Well (WS002),108540043,groundwater/well
+UTSS_WS47,,,Fresh,Henrieville Spring (WS002),10620002,groundwater/spring
+UTSS_WS48,,,Fresh,Bennett/Mckee Springs (Group SS215),10640001,groundwater/spring
+UTSS_WS49,,,Fresh,Hy Bair Spring (WS001),10660002,groundwater/spring
+UTSS_WS50,,,Fresh,Well #2 (WS003),10680002,groundwater/well
+UTSS_WS51,,,Fresh,Well  #2 (WS002),10690001,groundwater/well
+UTSS_WS52,,,Fresh,Well #3 (WS003),10690003,groundwater/well
+UTSS_WS53,,,Fresh,Well #4 North (WS004),108541105,groundwater/well
+UTSS_WS54,,,Fresh,Replacement Well #1 (WS006),108542658,groundwater/well
+UTSS_WS55,,,Fresh,Monte Verde Well (WS001),10710001,groundwater/well
+UTSS_WS56,,,Fresh,Hop  Well (WS005),10730002,groundwater/well
+UTSS_WS57,,,Fresh,Lydias Spring (WS004),10730004,groundwater/spring
+UTSS_WS58,,,Fresh,Buttermilk (aka Rimrock) Springs,10740004,groundwater/spring
+UTSS_WS59,,,Fresh,WcLyman Park Well,10750014,groundwater/well
+UTSS_WS60,,,Fresh,Substation Well,10750006,groundwater/well
+UTSS_WS61,,,Fresh,Golf Course Well,10750008,groundwater/well
+UTSS_WS62,,,Fresh,Johnson Creek Well,10750005,groundwater/well
+UTSS_WS63,,,Fresh,South Park Well,10750015,groundwater/well
+UTSS_WS64,,,Fresh,Dusit Canyon Spring,10750010,groundwater/spring
+UTSS_WS65,,,Fresh,Well #1 (WS002),10760001,groundwater/well
+UTSS_WS66,,,Fresh,Upper 12 Mile Spring (WS001),10830002,groundwater/spring
+UTSS_WS67,,,Fresh,Olsen/Order Canyon Springs Group (SS099),108540268,groundwater/well
+UTSS_WS68,,,Fresh,Mayfield Town Well (WS003),10830003,groundwater/well
+UTSS_WS69,,,Fresh,Granite Mesa Well,10840005,groundwater/well
+UTSS_WS70,,,Fresh,Small Canyon Well,10840008,groundwater/well
+UTSS_WS71,,,Fresh,Pepperwood Well,10840009,groundwater/well
+UTSS_WS72,,,Fresh,Grambling Way (Severson),10840013,groundwater/well
+UTSS_WS73,,,Fresh,Falcon Park (Palmer),10840015,groundwater/well
+UTSS_WS74,,,Fresh,Prowswood Well,10840016,groundwater/well
+UTSS_WS75,,,Fresh,Wildflower Well,10840023,groundwater/well
+UTSS_WS76,,,Fresh,Richards Ditch Well,10840025,groundwater/well
+UTSS_WS77,,,Fresh,Dimple Dell Well,108540540,groundwater/well
+UTSS_WS78,,,Fresh,Lone Hollow Well,108540541,groundwater/well
+UTSS_WS79,,,Fresh,Paradise Valley Well,108541231,groundwater/well
+UTSS_WS80,,,Fresh,Big Canyon Well,10840007,groundwater/well
+UTSS_WS81,,,Fresh,7500 South Well,10840011,groundwater/well
+UTSS_WS82,,,Fresh,Cemetery Well,10840017,groundwater/well
+UTSS_WS83,,,Fresh,Canyon Village Well,10840019,groundwater/well
+UTSS_WS84,,,Fresh,Bicentennial (Wallin),10840022,groundwater/well
+UTSS_WS85,,,Fresh,Alta Canyon Village Well,10840026,groundwater/well
+UTSS_WS86,,,Fresh,Brandon Canyon Park Well,108540227,groundwater/well
+UTSS_WS87,,,Fresh,Little Cottonwood Well,10840020,groundwater/well
+UTSS_WS88,,,Fresh,Well #1 (WS001),10850001,groundwater/well
+UTSS_WS89,,,Fresh,Commanche Spring (WS002),10850003,groundwater/spring
+UTSS_WS90,,,Fresh,Rose Hill Well 3 (WS009),108541845,groundwater/well
+UTSS_WS91,,,Fresh,Binkerhoff Spring (WS007),10910006,groundwater/spring
+UTSS_WS92,,,Fresh,Snow Creek,10920002,Surface Water
+UTSS_WS93,,,Fresh,Crooked Hollow Spring,10920008,groundwater/spring
+UTSS_WS94,,,Fresh,Union Fort  (Phillip) Well,108544652,groundwater/well
+UTSS_WS95,,,Fresh,Dickey Spring,10940004,groundwater/spring
+UTSS_WS96,,,Fresh,Springs Group (SS162),10940001,groundwater/spring
+UTSS_WS97,,,Fresh,Town Well (WS003),10940005,groundwater/well
+UTSS_WS98,,,Fresh,Big Birch Spring (WS002),10970002,groundwater/spring
+UTSS_WS99,,,Fresh,Burch Creek and Strong Canyon Creek,108541121,Surface Water
+UTSS_WS100,,,Fresh,Plain City Well (12`),11030006,groundwater/well
+UTSS_WS101,,,Fresh,Well (12`),11060002,groundwater/well
+UTSS_WS102,,,Fresh,Randolph Spring (WS001),11080001,groundwater/spring
+UTSS_WS103,,,Fresh,Park Well (WS003),11080002,groundwater/well
+UTSS_WS104,,,Fresh,Field St 1st West Well (WS002),11080003,groundwater/well
+UTSS_WS105,,,Fresh,East Spring (WS004),11090004,groundwater/spring
+UTSS_WS106,,,Fresh,Dewitt Spring (WS001),11120001,groundwater/spring
+UTSS_WS107,,,Fresh,Bartholomew Well,11150004,groundwater/well
+UTSS_WS108,,,Fresh,Peacock Spring,11150002,groundwater/spring
+UTSS_WS109,,,Fresh,Mill Flat Lower Spring (WS003),11160003,groundwater/spring
+UTSS_WS110,,,Fresh,Prince Albert Springs Group (SS196),108540262,groundwater/spring
+UTSS_WS111,,,Fresh,Artesian North Well (WS007),11190003,groundwater/well
+UTSS_WS112,,,Fresh,Upper South Well (WS006),11190004,groundwater/well
+UTSS_WS113,,,Fresh,Upper North Well (WS009),11190006,groundwater/well
+UTSS_WS114,,,Fresh,Well No. 7 (20`),11220007,groundwater/well
+UTSS_WS115,,,Fresh,Well 8 (WS014),11220008,groundwater/well
+UTSS_WS116,,,Fresh,Pitless Adaptor Well  (WS003),108544349,groundwater/well
+UTSS_WS117,,,Fresh,North Well (WS001),11230001,groundwater/well
+UTSS_WS118,,,Fresh,Spring Canyon Spring #3 (WS003),11260001,groundwater/spring
+UTSS_WS119,,,Fresh,Hoytsville Well (WS004),11260003,groundwater/well
+UTSS_WS120,,,Fresh,Flowing Well No. 1,11280001,groundwater/well
+UTSS_WS121,,,Fresh,Pump Well (WS004),11280002,groundwater/well
+UTSS_WS122,,,Fresh,Flowing Well No. 2,11280003,groundwater/well
+UTSS_WS123,,,Fresh,Golf Course Well (10`),11300003,groundwater/well
+UTSS_WS124,,,Fresh,Brian Head Seeps Spring,11370008,groundwater/spring
+UTSS_WS125,,,Fresh,Golf Course Well (WS004),11380004,groundwater/well
+UTSS_WS126,,,Fresh,Mineral Mountain Well #6 (WS005),108540373,groundwater/well
+UTSS_WS127,,,Fresh,Fire House Well (Irrigation),11380007,groundwater/well
+UTSS_WS128,,,Fresh,Red Butte Creek #2,108543092,Surface Water
+UTSS_WS129,,,Fresh,"Upper and Lower Spring (WS001, WS002)",11450001,groundwater/spring
+UTSS_WS130,,,Fresh,Cobblestone Well (WS003),11450002,groundwater/well
+UTSS_WS131,,,Fresh,Old Town Well (WS002),11460002,groundwater/well
+UTSS_WS132,,,Fresh,Sorensen Well (Fire Truck Fill) (WS001),11480003,groundwater/well
+UTSS_WS133,,,Fresh,Main Spring 1 and 2 (WS003),11480001,groundwater/spring
+UTSS_WS134,,,Fresh,Well No. 1 (WS005),11480004,groundwater/well
+UTSS_WS135,,,Fresh,Fairfield Spring,11490001,groundwater/spring
+UTSS_WS136,,,Fresh,Boyden Well,11510002,groundwater/well
+UTSS_WS137,,,Fresh,Lewis Hollow Well (WS004),11510004,groundwater/well
+UTSS_WS138,,,Fresh,Hoytsville Well (WS003),11510003,groundwater/well
+UTSS_WS139,,,Fresh,North Well #2 (WS002),11520001,groundwater/well
+UTSS_WS140,,,Fresh,Well 1 East (WS002),11530001,groundwater/well
+UTSS_WS141,,,Fresh,Well 2 West (WS003),11530002,groundwater/well
+UTSS_WS142,,,Fresh,Hillside Springs (WS004),11550001,groundwater/spring
+UTSS_WS143,,,Fresh,1977 Well (WS003),11550004,groundwater/well
+UTSS_WS144,,,Fresh,Peoa Spring (WS001),11560001,groundwater/spring
+UTSS_WS145,,,Fresh,Well #1,11610003,groundwater/well
+UTSS_WS146,,,Fresh,Middle Canyon Well (WS002),11620002,groundwater/well
+UTSS_WS147,,,Fresh,Well no.7 (Golf Course),11640006,groundwater/well
+UTSS_WS148,,,Fresh,Spring Lake,108540881,Surface Water
+UTSS_WS149,,,Fresh,2010 Edmunds Well (WS003),108544274,groundwater/well
+UTSS_WS150,,,Fresh,1992 Replacement Well (WS004),108544977,groundwater/well
+UTSS_WS151,,,Fresh,Lime Kiln Spring (WS001),11670001,groundwater/spring
+UTSS_WS152,,,Fresh,Gardner Spring (Culinary),11680006,groundwater/spring
+UTSS_WS153,,,Fresh,Fish Spring (WS004) (Culinary),11680002,groundwater/spring
+UTSS_WS154,,,Fresh,South Spring (WS003) (Culinary),11680004,groundwater/spring
+UTSS_WS155,,,Fresh,Stratton Well #1 Repl-1 (WS008),108540273,groundwater/well
+UTSS_WS156,,,Fresh,West Well (WS007),11690003,groundwater/well
+UTSS_WS157,,,Fresh,Toquerville/Ash Creek Springs (Group),11690001,groundwater/spring
+UTSS_WS158,,,Fresh,Ash Creek Spring (WS002),11690002,groundwater/spring
+UTSS_WS159,,,Fresh,Treatment Plant Well,108545203,groundwater/well
+UTSS_WS160,,,Fresh,Sols Canyon Well 1 (WS008),108540402,groundwater/well
+UTSS_WS161,,,Fresh,Wanship Cottages Well (WS001),11740001,groundwater/well
+UTSS_WS162,,,Fresh,West Fork Well #2 (WS019),11760012,groundwater/well
+UTSS_WS163,,,Fresh,Well #6 (WS008),11770009,groundwater/well
+UTSS_WS164,,,Fresh,Well No. 1 (WS001) 231 W. Mesa Way,11780001,groundwater/well
+UTSS_WS165,,,Fresh,Circleville Well  (WS001),11840001,groundwater/well
+UTSS_WS166,,,Fresh,Cottonwood & Wade Canyon Springs (Group),11840002,groundwater/spring
+UTSS_WS167,,,Fresh,Indian Spring,11850001,groundwater/spring
+UTSS_WS168,,,Fresh,Birch Spring,11850002,groundwater/spring
+UTSS_WS169,,,Fresh,Chaffen Spring,11850004,groundwater/spring
+UTSS_WS170,,,Fresh,Minersville Well (WS002),11870001,groundwater/well
+UTSS_WS171,,,Fresh,"Minersville Springs (Group) WS001, WS003",11870002,groundwater/spring
+UTSS_WS172,,,Fresh,Spring No. 1 (E) (WS001),11880001,groundwater/spring
+UTSS_WS173,,,Fresh,Shallow Dug Well (WS002),11980002,groundwater/well
+UTSS_WS174,,,Fresh,T Johnson Well (WS003),11980003,groundwater/well
+UTSS_WS175,,,Fresh,No 1 South Well (WS001),11990002,groundwater/well
+UTSS_WS176,,,Fresh,Hawkins Spring,12000001,groundwater/spring
+UTSS_WS177,,,Fresh,Mountain Green Well (WS001),12010001,groundwater/well
+UTSS_WS178,,,Fresh,Thatcher-Penrose Well (WS001),12020001,groundwater/well
+UTSS_WS179,,,Fresh,North Blind Spring Well (WS002),12020002,groundwater/well
+UTSS_WS180,,,Fresh,Sugar Factory Well #2 (WS002),12030001,groundwater/well
+UTSS_WS181,,,Fresh,Main Well (16`),12030002,groundwater/well
+UTSS_WS182,,,Fresh,Yard Well (12`),12030004,groundwater/well
+UTSS_WS183,,,Fresh,Gardner Well  (WS004),12030005,groundwater/well
+UTSS_WS184,,,Fresh,Veyo Spring (WS001),12060001,groundwater/spring
+UTSS_WS185,,,Fresh,Veyo Well #1 (WS002),108540304,groundwater/well
+UTSS_WS186,,,Fresh,Purchased From PVMF,12060006,groundwater/well
+UTSS_WS187,,,Fresh,Bachelor Canyon Springs,12140001,groundwater/spring
+UTSS_WS188,,,Fresh,Indian Spring,12150002,groundwater/spring
+UTSS_WS189,,,Fresh,Park Well  (WS003),12160002,groundwater/well
+UTSS_WS190,,,Fresh,Bullion Canyon Well,108542262,groundwater/well
+UTSS_WS191,,,Fresh,Lloyd Canyon Well  (WS002),108540872,groundwater/well
+UTSS_WS192,,,Fresh,"Lloyd Canyon Springs Group WS003, 004",108540393,groundwater/spring
+UTSS_WS193,,,Fresh,Major Well or West Erda Well (WS001),12220001,groundwater/well
+UTSS_WS194,,,Fresh,Norton Springs Area (SW001),12250002,groundwater/spring
+UTSS_WS195,,,Fresh,Tunnel Springs (WS001),108542589,groundwater/spring
+UTSS_WS196,,,Fresh,Tunnel,12260003,Groundwater
+UTSS_WS197,,,Fresh,Olsen Spring (WS005),12280010,groundwater/spring
+UTSS_WS198,,,Fresh,Effie L Wright Spring (WS001),12290001,groundwater/spring
+UTSS_WS199,,,Fresh,Laketown Spring (WS001),12300001,groundwater/spring
+UTSS_WS200,,,Fresh,Waste Water Treatment Well,108540331,groundwater/well
+UTSS_WS201,,,Fresh,Well No. 10 (12 in. 143 ft deep),108541050,groundwater/well
+UTSS_WS202,,,Fresh,Well No. 32 (8 inch),108541052,groundwater/well
+UTSS_WS203,,,Fresh,Well No. 34 (10 inch),108541051,groundwater/well
+UTSS_WS204,,,Fresh,Well No. 19 (16 inch) (Irrigation),12350004,groundwater/well
+UTSS_WS205,,,Fresh,Well No. 18 (16 inch) (Irrigation),12350005,groundwater/well
+UTSS_WS206,,,Fresh,Storage Tank 2011 Well (WS002),108542810,groundwater/well
+UTSS_WS207,,,Fresh,Cool Creek Springs (WS001),12360001,groundwater/spring
+UTSS_WS208,,,Fresh,Well No. 1 West,12370001,groundwater/well
+UTSS_WS209,,,Fresh,Maple Grove Spring (WS001),12380001,groundwater/spring
+UTSS_WS210,,,Fresh,Reservoir Well (WS003),12380003,groundwater/well
+UTSS_WS211,,,Fresh,Old Well or # 1 (WS002),12380002,groundwater/well
+UTSS_WS212,,,Fresh,Peterson Well (WS001),12430001,groundwater/well
+UTSS_WS213,,,Fresh,Boulder Spring,12450001,groundwater/spring
+UTSS_WS214,,,Fresh,Goshen Town Well (WS002),108542723,groundwater/well
+UTSS_WS215,,,Fresh,Ercanbrack Spring (WS001),12460001,groundwater/spring
+UTSS_WS216,,,Fresh,Browns Spring (WS001),12510001,groundwater/spring
+UTSS_WS217,,,Fresh,"Existing Well (12`, 355`)",108542591,groundwater/well
+UTSS_WS218,,,Fresh,Sullivan Well  (Existing),12540005,groundwater/well
+UTSS_WS219,,,Fresh,Prisbrey/Westover Spring,12540006,groundwater/spring
+UTSS_WS220,,,Fresh,Well (Ensign Bickford),108540048,groundwater/well
+UTSS_WS221,,,Fresh,Shop Well,12570021,groundwater/well
+UTSS_WS222,,,Fresh,Lower Spring (WS002),12630001,groundwater/spring
+UTSS_WS223,,,Fresh,Upper Spring (WS001),12630002,groundwater/spring
+UTSS_WS224,,,Fresh,Charleston Well (WS003),12630003,groundwater/well
+UTSS_WS225,,,Fresh,Gravity Springs 2-5 (WS001),12680001,groundwater/spring
+UTSS_WS226,,,Fresh,Well #1 (WS004),12700004,groundwater/well
+UTSS_WS227,,,Fresh,Cove Hole Springs/Well Group (SS197),12720002,groundwater/spring
+UTSS_WS228,,,Fresh,Arco Well,12730002,groundwater/well
+UTSS_WS229,,,Fresh,Hullinger Well,12730005,groundwater/well
+UTSS_WS230,,,Fresh,County Park Well,12730006,groundwater/well
+UTSS_WS231,,,Fresh,Ashley Spring,12730001,groundwater/spring
+UTSS_WS232,,,Fresh,Atherton West Well (WS024),12770028,groundwater/well
+UTSS_WS233,,,Fresh,Town Well #3 (WS003),108540023,groundwater/well
+UTSS_WS234,,,Fresh,Ekker Well (6 1/4`),12780001,groundwater/well
+UTSS_WS235,,,Fresh,Kannarraville Spring (WS001),12820002,groundwater/spring
+UTSS_WS236,,,Fresh,Well #2 (WS003),12820001,groundwater/well
+UTSS_WS237,,,Fresh,Aagard Well (WS001),108542143,groundwater/well
+UTSS_WS238,,,Fresh,Canyon Well (WS004),12870004,groundwater/well
+UTSS_WS239,,,Fresh,North/South Springs (Group),12900002,Groundwater
+UTSS_WS240,,,Fresh,DownTown Well (WS001),12900003,groundwater/well
+UTSS_WS241,,,Fresh,Mecham Well (WS004),12900005,groundwater/well
+UTSS_WS242,,,Fresh,Mecham Spring (WS005),12900004,groundwater/spring
+UTSS_WS243,,,Fresh,Springs Group (SS451),12930003,groundwater/spring
+UTSS_WS244,,,Fresh,Barton Well No. 5 (Culinary),12940005,groundwater/well
+UTSS_WS245,,,Fresh,Blue Mountain Water Treatment Plant,12950005,groundwater/spring
+UTSS_WS246,,,Fresh,STP Well No. 1,12950008,groundwater/well
+UTSS_WS247,,,Fresh,Snow Canyon Spring,12960003,groundwater/spring
+UTSS_WS248,,,Fresh,1978 Well,13000003,groundwater/well
+UTSS_WS249,,,Fresh,Upper Well,13010001,groundwater/well
+UTSS_WS250,,,Fresh,Starvation Well,13010002,groundwater/well
+UTSS_WS251,,,Fresh,Miles Spring (Culinary) (WS002),13030002,groundwater/spring
+UTSS_WS252,,,Fresh,Well #1 (3 in),13050002,groundwater/well
+UTSS_WS253,,,Fresh,Birch Spring (WS001),13070002,groundwater/spring
+UTSS_WS254,,,Fresh,Seegmiller Springs #1(WS002),13070003,groundwater/spring
+UTSS_WS255,,,Fresh,Picayune Spring (WS001),13100002,groundwater/spring
+UTSS_WS256,,,Fresh,New East Well (WS003),13100004,groundwater/well
+UTSS_WS257,,,Fresh,South Cove Well,108543056,groundwater/well
+UTSS_WS258,,,Fresh,Atkinson Spring,13130001,groundwater/spring
+UTSS_WS259,,,Fresh,Hy Bair Spring,13130003,groundwater/spring
+UTSS_WS260,,,Fresh,Thompson Springs  (WS001),13140001,groundwater/spring
+UTSS_WS261,,,Fresh,Martin Spring (WS001),13260002,groundwater/spring
+UTSS_WS262,,,Fresh,Tubbs Spring (WS002),13260003,groundwater/spring
+UTSS_WS263,,,Fresh,Ophir Well (WS003),13260004,groundwater/well
+UTSS_WS264,,,Fresh,Well #1 (WS001),13280001,groundwater/well
+UTSS_WS265,,,Fresh,Well #2 (WS002),13280002,groundwater/well
+UTSS_WS266,,,Fresh,Humbug Well (WS004),108540289,groundwater/well
+UTSS_WS267,,,Fresh,Cottonwood Spring (WS001),13290001,groundwater/spring
+UTSS_WS268,,,Fresh,Canyon Tank Springs Group (Group SS143),13300014,groundwater/spring
+UTSS_WS269,,,Fresh,Matthews Spring,13320003,groundwater/spring
+UTSS_WS270,,,Fresh,1982 Well (WS003),13330005,groundwater/well
+UTSS_WS271,,,Fresh,Mitchell Well (WS001),108544001,groundwater/well
+UTSS_WS272,,,Fresh,Well #1 (WS001),13400002,groundwater/well
+UTSS_WS273,,,Fresh,Konold Spring (WS009),13430011,Groundwater
+UTSS_WS274,,,Fresh,Hite Marina Well (WS002),108542362,groundwater/well
+UTSS_WS275,,,Fresh,Springs/Wells Group (SS199),13530002,groundwater/well
+UTSS_WS276,,,Fresh,Broadhead Spring,13530003,groundwater/spring
+UTSS_WS277,,,Fresh,White Bally Spring,13530005,groundwater/spring
+UTSS_WS278,,,Fresh,Denmark Wash Springs (WS002),13530001,groundwater/spring
+UTSS_WS279,,,Fresh,Standby Well,13530004,groundwater/well
+UTSS_WS280,,,Fresh,Sage Hollow Spring,13550001,groundwater/spring
+UTSS_WS281,,,Fresh,Wilde Spring,13550002,groundwater/spring
+UTSS_WS282,,,Fresh,Spring,13570001,groundwater/spring
+UTSS_WS283,,,Fresh,Deseret - Oasis Well (WS002),108541349,groundwater/well
+UTSS_WS284,,,Fresh,Well #1 (Dansie Well) (WS001),13670001,groundwater/well
+UTSS_WS285,,,Fresh,Loosle Spring,13710001,groundwater/spring
+UTSS_WS286,,,Fresh,Little Birch Spring,13710002,groundwater/spring
+UTSS_WS287,,,Fresh,Hansen-Jones Spring,13710004,groundwater/spring
+UTSS_WS288,,,Fresh,Big Birch Spring,13710006,groundwater/spring
+UTSS_WS289,,,Fresh,Green Canyon Springs (WS001),13720001,groundwater/spring
+UTSS_WS290,,,Fresh,Great Western Mine Tunnel Spring (WS001),13730001,Groundwater
+UTSS_WS291,,,Fresh,Vivian Park Spring (WS002),13750001,groundwater/spring
+UTSS_WS292,,,Fresh,Vivian Park Well (WS001),13750002,groundwater/well
+UTSS_WS293,,,Fresh,Taggart Hollow Springs (WS001),13800001,groundwater/spring
+UTSS_WS294,,,Fresh,Hy Bair Spring,13810001,groundwater/spring
+UTSS_WS295,,,Fresh,Goaslind Spring (WS001),13810002,groundwater/spring
+UTSS_WS296,,,Fresh,Pole Canyon Spring (WS001),13820001,groundwater/spring
+UTSS_WS297,,,Fresh,East Bench Spring (WS002),13820002,groundwater/spring
+UTSS_WS298,,,Fresh,Wagon Trail Well No. 2,13920006,groundwater/well
+UTSS_WS299,,,Fresh,Willow Creek,13920001,Surface Water
+UTSS_WS300,,,Fresh,Gulch Well No. 1,13920004,groundwater/well
+UTSS_WS301,,,Fresh,District Well (WS001),13970001,groundwater/well
+UTSS_WS302,,,Fresh,Mountain Well (WS002),13990003,groundwater/well
+UTSS_WS303,,,Fresh,Maple Canyon (Salem Well) (WS005),14050002,groundwater/well
+UTSS_WS304,,,Fresh,Well,14080001,groundwater/well
+UTSS_WS305,,,Fresh,Harris Spring,14080003,groundwater/spring
+UTSS_WS306,,,Fresh,Beef Hollow Spring (WS008),14100001,groundwater/spring
+UTSS_WS307,,,Fresh,Hidden Valley Springs Group (7959),14100002,groundwater/spring
+UTSS_WS308,,,Fresh,Spring Area (WS001),14110001,groundwater/spring
+UTSS_WS309,,,Fresh,"6"" Well (WS002)",14110002,groundwater/well
+UTSS_WS310,,,Fresh,Bear Canyon Mine Tunnel,108542898,Groundwater
+UTSS_WS311,,,Fresh,Lower Water Mine Tunnel Spring (WS001),14120001,groundwater/spring
+UTSS_WS312,,,Fresh,Well #1,14130001,groundwater/well
+UTSS_WS313,,,Fresh,Well (Noell),14130003,groundwater/well
+UTSS_WS314,,,Fresh,Well (Osborne/Farnsworth),14130005,groundwater/well
+UTSS_WS315,,,Fresh,Well (Joe`s 2nd),14130006,groundwater/well
+UTSS_WS316,,,Fresh,Well #2,14130002,groundwater/well
+UTSS_WS317,,,Fresh,Well (Joe`s 1st),14130004,groundwater/well
+UTSS_WS318,,,Fresh,Existing Well #1,108542970,groundwater/well
+UTSS_WS319,,,Fresh,Existing Well #2,108542971,groundwater/well
+UTSS_WS320,,,Fresh,Existing Well #3,108542972,groundwater/well
+UTSS_WS321,,,Fresh,Existing Well #6,108542973,groundwater/well
+UTSS_WS322,,,Fresh,Existing Well #4,108542974,groundwater/well
+UTSS_WS323,,,Fresh,Existing Well #5,108542975,groundwater/well
+UTSS_WS324,,,Fresh,Upper Spring (WS002),14180001,groundwater/spring
+UTSS_WS325,,,Fresh,Lower Cow Canyon Spring 2 (WS003),14180002,groundwater/spring
+UTSS_WS326,,,Fresh,Storm Haven Well 2 (WS002),108545748,groundwater/well
+UTSS_WS327,,,Fresh,Storm Haven Well 1 (WS001),14200001,groundwater/well
+UTSS_WS328,,,Fresh,Nelson Well,14230002,groundwater/well
+UTSS_WS329,,,Fresh,Dixon Spring (WS001),14240001,groundwater/spring
+UTSS_WS330,,,Fresh,Shuler Well (WS002),14240002,groundwater/well
+UTSS_WS331,,,Fresh,East Greens Lake Spr #1,14290005,groundwater/spring
+UTSS_WS332,,,Fresh,SH18 Well,108541005,groundwater/well
+UTSS_WS333,,,Fresh,SH20 Well,108541006,groundwater/well
+UTSS_WS334,,,Fresh,SH21 Well,108541007,groundwater/well
+UTSS_WS335,,,Fresh,SH22 Well,108541008,groundwater/well
+UTSS_WS336,,,Fresh,SH10A Well,108541012,groundwater/well
+UTSS_WS337,,,Fresh,SH03 Well,108541013,groundwater/well
+UTSS_WS338,,,Fresh,Crystal Creek,108541030,Surface Water
+UTSS_WS339,,,Fresh,Well (Kayenta Upper Well),108541223,groundwater/well
+UTSS_WS340,,,Fresh,Old Farm Road Well,108542508,groundwater/well
+UTSS_WS341,,,Fresh,Cottam Well #2B,14350001,groundwater/well
+UTSS_WS342,,,Fresh,Ence Lower Well (delivered to Ivins),108540013,groundwater/well
+UTSS_WS343,,,Fresh,Well #2 Repl-1 (WS003),14360001,groundwater/well
+UTSS_WS344,,,Fresh,Morrison Tunnel (WS001),14380001,Groundwater
+UTSS_WS345,,,Fresh,Marble Hills Well (WS001),14400001,groundwater/well
+UTSS_WS346,,,Fresh,Power Plant Well (WS012),108543555,groundwater/well
+UTSS_WS347,,,Fresh,Springs (Group),108545314,groundwater/spring
+UTSS_WS348,,,Fresh,Treatment Plant Wells (Group),108545315,groundwater/well
+UTSS_WS349,,,Fresh,North Ridge Well #4 (WS005),108540481,groundwater/well
+UTSS_WS350,,,Fresh,North Ridge Well #3 (WS003),14450003,groundwater/well
+UTSS_WS351,,,Fresh,White Hills Well #1 (WS001),14460001,groundwater/well
+UTSS_WS352,,,Fresh,Well #1 (WS001),14490001,groundwater/well
+UTSS_WS353,,,Fresh,Forest Service Spring (WS005),108543188,groundwater/spring
+UTSS_WS354,,,Fresh,Puffer Lake Upper/Middle Springs Group,14550005,groundwater/spring
+UTSS_WS355,,,Fresh,Triple Chair Well (WS010),14550001,groundwater/spring
+UTSS_WS356,,,Fresh,Meadows Well  - (WS002) Sec. Water Only,19030001,groundwater/well
+UTSS_WS357,,,Fresh,Coalville Well (6 inch),19040005,groundwater/well
+UTSS_WS358,,,Fresh,Coalville Well (8 inch),19040001,groundwater/well
+UTSS_WS359,,,Fresh,Wells  (Combined),19100003,groundwater/well
+UTSS_WS360,,,Fresh,Well (6`),19150001,groundwater/well
+UTSS_WS361,,,Fresh,Beaver Spring Ranch Well (WS002),108542632,groundwater/well
+UTSS_WS362,,,Fresh,North Springs Group,108544312,groundwater/spring
+UTSS_WS363,,,Fresh,Combined Three Springs-Deer Valley,20040002,groundwater/spring
+UTSS_WS364,,,Fresh,Springs-Snow Park,20040001,groundwater/spring
+UTSS_WS365,,,Fresh,Purchased from Wellsville City (WS001),20070001,groundwater/spring
+UTSS_WS366,,,Fresh,Slate/Boardman Canyon Springs (WS001),20210001,groundwater/spring
+UTSS_WS367,,,Fresh,Utah Hospital Well (WS002),20210002,groundwater/well
+UTSS_WS368,,,Fresh,Hop Canyon Spring,20260001,groundwater/spring
+UTSS_WS369,,,Fresh,Skyline South #5 (WS010),108542341,groundwater/well
+UTSS_WS370,,,Fresh,Skyline South Irrigation Well,108544703,groundwater/well
+UTSS_WS371,,,Fresh,Skyline North Irrigation Well,108544704,groundwater/well
+UTSS_WS372,,,Fresh,North Well  (12`),20280001,groundwater/well
+UTSS_WS373,,,Fresh,South Well,20280002,groundwater/well
+UTSS_WS374,,,Fresh,South Sump,20280003,Surface Water
+UTSS_WS375,,,Fresh,Drain Field Sump,20280004,Surface Water
+UTSS_WS376,,,Fresh,Parking Lot Sump,20280005,Surface Water
+UTSS_WS377,,,Fresh,Culinary Well (12`),20280006,groundwater/well
+UTSS_WS378,,,Fresh,South Well - Little (Parking Lot Well),20290002,groundwater/well
+UTSS_WS379,,,Fresh,Theater Well,20290004,groundwater/well
+UTSS_WS380,,,Fresh,North Well - Big (Hotel),20290001,groundwater/well
+UTSS_WS381,,,Fresh,"Well #1,#2,#3,#4 (Are Combined)",20300002,groundwater/well
+UTSS_WS382,,,Fresh,Dry Creek,20300005,Surface Water
+UTSS_WS383,,,Fresh,Return Flow to Dry Creek,20300006,Surface Water
+UTSS_WS384,,,Fresh,Well #3 (8 inches),20300001,groundwater/well
+UTSS_WS385,,,Fresh,B-K RV Park Well (WS001),20310001,groundwater/well
+UTSS_WS386,,,Fresh,P-N Great Salt Lake,108545102,Surface Water
+UTSS_WS387,,,Fresh,P-10 Skull Valley Drain,21010002,Surface Water
+UTSS_WS388,,,Fresh,Well A,21010005,groundwater/well
+UTSS_WS389,,,Fresh,Well D,21010006,groundwater/well
+UTSS_WS390,,,Fresh,P-0 Great Salt Lake,21010011,Surface Water
+UTSS_WS391,,,Fresh,Well #2 (B-Well),21010013,groundwater/well
+UTSS_WS392,,,Fresh,Stansbury Island Springs (Group),108541098,groundwater/spring
+UTSS_WS393,,,Fresh,Great Salt Lake (Sec 25),21040001,Surface Water
+UTSS_WS394,,,Fresh,Fire Pond Well,21040003,groundwater/well
+UTSS_WS395,,,Fresh,Timpie Springs Canal,21040004,Surface Water
+UTSS_WS396,,,Fresh,Well (12`),21120001,groundwater/well
+UTSS_WS397,,,Fresh,McElmo Residence Well,21130004,groundwater/well
+UTSS_WS398,,,Fresh,Well (10`),21170001,groundwater/well
+UTSS_WS399,,,Fresh,Marble Head Well (8`),21170002,groundwater/well
+UTSS_WS400,,,Fresh,Green River,21210001,Surface Water
+UTSS_WS401,,,Fresh,Well #1 (10`),21220001,groundwater/well
+UTSS_WS402,,,Fresh,Well #2 (16`),21220002,groundwater/well
+UTSS_WS403,,,Fresh,Well (South Weber),108541438,groundwater/well
+UTSS_WS404,,,Fresh,Well (6`) Orem,21320001,groundwater/well
+UTSS_WS405,,,Fresh,Well (12`) Orem,21320002,groundwater/well
+UTSS_WS406,,,Fresh,Well (16`) Mona,108540032,groundwater/well
+UTSS_WS407,,,Fresh,West Haven Pond,21340007,Surface Water
+UTSS_WS408,,,Fresh,Well (6`) Between Plants,21350001,groundwater/well
+UTSS_WS409,,,Fresh,Blue Springs Well,21350007,groundwater/well
+UTSS_WS410,,,Fresh,Fingerpoint Well,108540224,groundwater/well
+UTSS_WS411,,,Fresh,Bear River Bay (PS2 & PS22),108541818,Surface Water
+UTSS_WS412,,,Fresh,GSL - South Arm Pump Station 23,108545096,Surface Water
+UTSS_WS413,,,Fresh,Well Old (PS113),108545097,groundwater/well
+UTSS_WS414,,,Fresh,Well (PS112),108545098,groundwater/well
+UTSS_WS415,,,Fresh,GSL - Pump Station 1,21360002,Surface Water
+UTSS_WS416,,,Fresh,Wells Pond Control,21360005,groundwater/well
+UTSS_WS417,,,Fresh,GSL - West Pond (PS113 & PS114),21360009,Surface Water
+UTSS_WS418,,,Fresh,Lakeside Well,21360010,groundwater/well
+UTSS_WS419,,,Fresh,Bear River Bay PS#3,108541819,Surface Water
+UTSS_WS420,,,Fresh,Wells near Pond 26 (10),21360004,groundwater/well
+UTSS_WS421,,,Fresh,Hansen Pit #11 Well,108540030,groundwater/well
+UTSS_WS422,,,Fresh,Well (12`) 3900S. 350 W.,21370001,groundwater/well
+UTSS_WS423,,,Fresh,Well (12`) Baechus-WVC,21370003,groundwater/well
+UTSS_WS424,,,Fresh,Well (10`) #9 Well (Point of Mtn.),21370002,groundwater/well
+UTSS_WS425,,,Fresh,Well,21370005,groundwater/well
+UTSS_WS426,,,Fresh,Well (Federal 1-10),108542123,groundwater/well
+UTSS_WS427,,,Fresh,Well OSC #1,21410004,groundwater/well
+UTSS_WS428,,,Fresh,Well (8`) (Site B: Main Well),21440003,groundwater/well
+UTSS_WS429,,,Fresh,Spring Well (4`)(Pond),21440005,groundwater/well
+UTSS_WS430,,,Fresh,Well (8`) (Site B: Upper Well),21440002,groundwater/well
+UTSS_WS431,,,Fresh,Well (6`) (Site A Well),21440001,groundwater/well
+UTSS_WS432,,,Fresh,Irrigation Well,21450001,groundwater/well
+UTSS_WS433,,,Fresh,Well #4 (West Side Feed Mill),21530002,groundwater/well
+UTSS_WS434,,,Fresh,Well #5 (East Side Feed Mill),21530003,groundwater/well
+UTSS_WS435,,,Fresh,Well #1 (WS001),21530001,groundwater/well
+UTSS_WS436,,,Fresh,Well #2 (WS002),21530004,groundwater/well
+UTSS_WS437,,,Fresh,Well #3 (WS003),21530005,groundwater/well
+UTSS_WS438,,,Fresh,Canyon Springs (SS130),21550002,groundwater/spring
+UTSS_WS439,,,Fresh,Well #2,21580001,groundwater/well
+UTSS_WS440,,,Fresh,Unnamed Spring,21580005,groundwater/spring
+UTSS_WS441,,,Fresh,Well #1,21580002,groundwater/well
+UTSS_WS442,,,Fresh,Well #4 (Lamb Well),21580004,groundwater/well
+UTSS_WS443,,,Fresh,Water Reclamation Well,21590003,groundwater/well
+UTSS_WS444,,,Fresh,Post Knock Well,21590002,groundwater/well
+UTSS_WS445,,,Fresh,Spring Creek,21600001,groundwater/spring
+UTSS_WS446,,,Fresh,Boardman Springs,21600006,groundwater/spring
+UTSS_WS447,,,Fresh,Well No. 3,21600011,groundwater/well
+UTSS_WS448,,,Fresh,Well No. 2,21600012,groundwater/well
+UTSS_WS449,,,Fresh,Spring No. 2,21600007,groundwater/spring
+UTSS_WS450,,,Fresh,South Weber Pit Well,21610002,groundwater/well
+UTSS_WS451,,,Fresh,Cove Pit Well #1,21610004,groundwater/well
+UTSS_WS452,,,Fresh,MagCorp Pond to Cargill P5,21680006,Surface Water
+UTSS_WS453,,,Fresh,Skull Valley Well,21680007,groundwater/well
+UTSS_WS454,,,Fresh,Timpie Spring,21680003,groundwater/spring
+UTSS_WS455,,,Fresh,Spring - Water Fowl Mgnt,21680004,groundwater/spring
+UTSS_WS456,,,Fresh,Whiting Well,108544902,groundwater/well
+UTSS_WS457,,,Fresh,R-3 Well,108540275,groundwater/well
+UTSS_WS458,,,Fresh,Lower Well,21690001,groundwater/well
+UTSS_WS459,,,Fresh,Ouray Water Target Trucking,21700007,groundwater/well
+UTSS_WS460,,,Fresh,Well Uintah #1,21700004,groundwater/well
+UTSS_WS461,,,Fresh,Fire Pond-Slough,21710004,groundwater/spring
+UTSS_WS462,,,Fresh,Combined Wells,21710006,groundwater/well
+UTSS_WS463,,,Fresh,Well (8`),21710005,groundwater/well
+UTSS_WS464,,,Fresh,Grassy Mount North Well,21720004,groundwater/well
+UTSS_WS465,,,Fresh,Grassy Mount South Well,21720002,groundwater/well
+UTSS_WS466,,,Fresh,Well no.1,21770001,groundwater/well
+UTSS_WS467,,,Fresh,Well no.2,21770002,groundwater/well
+UTSS_WS468,,,Fresh,Well (8`),21790001,groundwater/well
+UTSS_WS469,,,Fresh,White River Wells,21840001,groundwater/well
+UTSS_WS470,,,Fresh,Old Well,21850001,groundwater/well
+UTSS_WS471,,,Fresh,Well #1,108543261,groundwater/well
+UTSS_WS472,,,Fresh,Well,21900001,groundwater/well
+UTSS_WS473,,,Fresh,Shallow Well #1 (2060 N Beck St),21920001,groundwater/well
+UTSS_WS474,,,Fresh,Geothermal Well 3,108541416,groundwater/well
+UTSS_WS475,,,Fresh,Geothermal Well 7-1,108544692,groundwater/well
+UTSS_WS476,,,Fresh,Geothermal Well 7-2,108544693,groundwater/well
+UTSS_WS477,,,Fresh,Geothermal Well 1,21960001,groundwater/well
+UTSS_WS478,,,Fresh,Injection Northwest Well,21960002,groundwater/well
+UTSS_WS479,,,Fresh,Mine Tunnel,22030001,Groundwater
+UTSS_WS480,,,Fresh,Spring,22030002,groundwater/spring
+UTSS_WS481,,,Fresh,Clive #2 Well,22050003,groundwater/well
+UTSS_WS482,,,Fresh,Pineview Water Well No. 1,22060001,groundwater/well
+UTSS_WS483,,,Fresh,Brennan Well,26020007,groundwater/well
+UTSS_WS484,,,Fresh,PW-3,108540532,groundwater/well
+UTSS_WS485,,,Fresh,PW-4,108544768,groundwater/well
+UTSS_WS486,,,Fresh,PW-8,108544771,groundwater/well
+UTSS_WS487,,,Fresh,PW-11,108544774,groundwater/well
+UTSS_WS488,,,Fresh,PW-12,108544775,groundwater/well
+UTSS_WS489,,,Fresh,Woods Well,108544776,groundwater/well
+UTSS_WS490,,,Fresh,PW-7,26050001,groundwater/well
+UTSS_WS491,,,Fresh,Spring No. 1 & 2 (Combined),108543225,groundwater/spring
+UTSS_WS492,,,Fresh,Sufco Minesite,108543508,Groundwater
+UTSS_WS493,,,Fresh,MWP-20,108542017,groundwater/well
+UTSS_WS494,,,Fresh,MWP-19,108542019,groundwater/well
+UTSS_WS495,,,Fresh,MWP-21,108542020,groundwater/well
+UTSS_WS496,,,Fresh,MWP-22,108542021,groundwater/well
+UTSS_WS497,,,Fresh,MWP-23,108542022,groundwater/well
+UTSS_WS498,,,Fresh,MWP-24,108542023,groundwater/well
+UTSS_WS499,,,Fresh,MWP-25,108542024,groundwater/well
+UTSS_WS500,,,Fresh,MWP-26,108542025,groundwater/well
+UTSS_WS501,,,Fresh,MWP-28,108542026,groundwater/well
+UTSS_WS502,,,Fresh,MWP-34,108542027,groundwater/well
+UTSS_WS503,,,Fresh,MWP-32,108542030,groundwater/well
+UTSS_WS504,,,Fresh,MWP-30,108542031,groundwater/well
+UTSS_WS505,,,Fresh,MWP-31,108542032,groundwater/well
+UTSS_WS506,,,Fresh,MWP-29,108542035,groundwater/well
+UTSS_WS507,,,Fresh,MWP-2,108542037,groundwater/well
+UTSS_WS508,,,Fresh,MWP-3,108542038,groundwater/well
+UTSS_WS509,,,Fresh,MWP-4,108542039,groundwater/well
+UTSS_WS510,,,Fresh,MWP-5,108542040,groundwater/well
+UTSS_WS511,,,Fresh,MWP-6,108542041,groundwater/well
+UTSS_WS512,,,Fresh,MWP-7,108542042,groundwater/well
+UTSS_WS513,,,Fresh,MWP-8,108542043,groundwater/well
+UTSS_WS514,,,Fresh,MWP-9,108542044,groundwater/well
+UTSS_WS515,,,Fresh,MWP-10,108542045,groundwater/well
+UTSS_WS516,,,Fresh,MWP-11,108542046,groundwater/well
+UTSS_WS517,,,Fresh,MWP-13,108542048,groundwater/well
+UTSS_WS518,,,Fresh,MWP-14,108542049,groundwater/well
+UTSS_WS519,,,Fresh,MWP-16,108542051,groundwater/well
+UTSS_WS520,,,Fresh,MWP-17,108542052,groundwater/well
+UTSS_WS521,,,Fresh,MWP-27,108542081,groundwater/well
+UTSS_WS522,,,Fresh,WP-2A,26100001,groundwater/well
+UTSS_WS523,,,Fresh,WP-1,26100002,groundwater/well
+UTSS_WS524,,,Fresh,MWP-33,108542028,groundwater/well
+UTSS_WS525,,,Fresh,MWP-1,108542036,groundwater/well
+UTSS_WS526,,,Fresh,Guard Shack Well,26130008,groundwater/well
+UTSS_WS527,,,Fresh,SME - 1 Well (WS001),26130007,groundwater/well
+UTSS_WS528,,,Fresh,Rail Loadout Well #3,108544700,groundwater/well
+UTSS_WS529,,,Fresh,South Fork Eccles Well #1 (WS001),26160001,groundwater/well
+UTSS_WS530,,,Fresh,Minesite Sediment Pond,26160002,Surface Water
+UTSS_WS531,,,Fresh,Well (10`),26200001,groundwater/well
+UTSS_WS532,,,Fresh,Well drilled under 94-53,108543103,groundwater/well
+UTSS_WS533,,,Fresh,Well (14`),26290002,groundwater/well
+UTSS_WS534,,,Fresh,Wells (12`),26290001,groundwater/well
+UTSS_WS535,,,Fresh,Mill Well #1,108541106,groundwater/well
+UTSS_WS536,,,Fresh,Mill Well #2,26310001,groundwater/well
+UTSS_WS537,,,Fresh,Brackish Group 6-9 Wells,26330001,groundwater/well
+UTSS_WS538,,,Fresh,Brackish Group 10-13 Wells,26330002,groundwater/well
+UTSS_WS539,,,Fresh,Drains,26330012,Surface Water
+UTSS_WS540,,,Fresh,Brine Well No. 16,26330005,groundwater/well
+UTSS_WS541,,,Fresh,Brine Well No. 14,26330009,groundwater/well
+UTSS_WS542,,,Fresh,Brine Well No. 17,26330011,groundwater/well
+UTSS_WS543,,,Fresh,DBW-24,26330006,groundwater/well
+UTSS_WS544,,,Fresh,Well No.1,26340001,groundwater/well
+UTSS_WS545,,,Fresh,Well No.2,26340002,groundwater/well
+UTSS_WS546,,,Fresh,Fort Pierce Well,108542893,groundwater/well
+UTSS_WS547,,,Fresh,Sorenson Well,26410002,groundwater/well
+UTSS_WS548,,,Fresh,CC Main Well No. 1,26410003,groundwater/well
+UTSS_WS549,,,Fresh,CC Yard Well No. 2,26410004,groundwater/well
+UTSS_WS550,,,Fresh,WRP Well (14 in),26410001,groundwater/well
+UTSS_WS551,,,Fresh,Well,26470001,groundwater/well
+UTSS_WS552,,,Fresh,Collector 2,27100001,groundwater/well
+UTSS_WS553,,,Fresh,Collector 3,27100002,groundwater/well
+UTSS_WS554,,,Fresh,Collector 4,27100003,groundwater/well
+UTSS_WS555,,,Fresh,South Fork of Spring Creek,108542334,groundwater/spring
+UTSS_WS556,,,Fresh,North Fork of Spring Creek,108542335,Surface Water
+UTSS_WS557,,,Fresh,Geothermal Injection Well 61-12,108543012,groundwater/well
+UTSS_WS558,,,Fresh,Geothermal Injection Well 72-12,108543018,groundwater/well
+UTSS_WS559,,,Fresh,Geothermal Injection Well  (B01-1),108543022,groundwater/well
+UTSS_WS560,,,Fresh,Willow Spring,27150005,groundwater/spring
+UTSS_WS561,,,Fresh,Warm Spring,27150012,groundwater/spring
+UTSS_WS562,,,Fresh,Steve`s Spring,27150013,groundwater/spring
+UTSS_WS563,,,Fresh,Geothermal Production Well 44-7,108543010,groundwater/well
+UTSS_WS564,,,Fresh,Geothermal Production Well 51-7,108543015,groundwater/well
+UTSS_WS565,,,Fresh,Geothermal Production Well 33-7,108543016,groundwater/well
+UTSS_WS566,,,Fresh,Geothermal Production Well 47A-6,108543020,groundwater/well
+UTSS_WS567,,,Fresh,Geothermal Production Well 16-7 (P91-4),108543019,groundwater/well
+UTSS_WS568,,,Fresh,Geothermal Injection Well 65-12 (B01-1),108541220,groundwater/well
+UTSS_WS569,,,Fresh,Scofield Reservoir,108542345,Surface Water
+UTSS_WS570,,,Fresh,Jordan River,27220001,Surface Water
+UTSS_WS571,,,Fresh,Grassy Trail Reservoir,27230003,Surface Water
+UTSS_WS572,,,Fresh,Production Wells 45-3,27320001,groundwater/well
+UTSS_WS573,,,Fresh,Salt Lake Pit Well,28010001,groundwater/well
+UTSS_WS574,,,Fresh,Well No. 4,28040002,groundwater/well
+UTSS_WS575,,,Fresh,Lake Park Well #2,28060002,groundwater/well
+UTSS_WS576,,,Fresh,Lake Park Well #3,28060003,groundwater/well
+UTSS_WS577,,,Fresh,Well,28070001,groundwater/well
+UTSS_WS578,,,Fresh,Irrigation Ditch (North Jordan),108540222,Surface Water
+UTSS_WS579,,,Fresh,Well,100010001,groundwater/well
+UTSS_WS580,,,Fresh,Parleys Creek,100030002,Surface Water
+UTSS_WS581,,,Fresh,Well,100030001,groundwater/well
+UTSS_WS582,,,Fresh,Primary Well,100120001,groundwater/well
+UTSS_WS583,,,Fresh,13100 South Well (8`),100150001,groundwater/well
+UTSS_WS584,,,Fresh,Mountain View Highway Well,100150002,groundwater/well
+UTSS_WS585,,,Fresh,Wasatch Lawn Well,100160001,groundwater/well
+UTSS_WS586,,,Fresh,Dimple Dell Well,100180001,groundwater/well
+UTSS_WS587,,,Fresh,Mountain View New Well,100180003,groundwater/well
+UTSS_WS588,,,Fresh,Meadowbrook New Well,100180004,groundwater/well
+UTSS_WS589,,,Fresh,Meadowbrook East Well,100180005,groundwater/well
+UTSS_WS590,,,Fresh,Meadowbrook South Well,100180006,groundwater/well
+UTSS_WS591,,,Fresh,Mountain View Old Well,100180008,groundwater/well
+UTSS_WS592,,,Fresh,South Mountain Well,100180009,groundwater/well
+UTSS_WS593,,,Fresh,Elysian Well 1,100190001,groundwater/well
+UTSS_WS594,,,Fresh,South Well 4800 West,100200001,groundwater/well
+UTSS_WS595,,,Fresh,North Well 4800 West,100200002,groundwater/well
+UTSS_WS596,,,Fresh,Well (8`),100220001,groundwater/well
+UTSS_WS597,,,Fresh,Pond Well,100230001,groundwater/well
+UTSS_WS598,,,Fresh,Shop Well,100230002,groundwater/well
+UTSS_WS599,,,Fresh,New Well,108545783,groundwater/well
+UTSS_WS600,,,Fresh,Deep Well,100260001,groundwater/well
+UTSS_WS601,,,Fresh,Geothermal Well,101000001,groundwater/well
+UTSS_WS602,,,Fresh,Well,108040001,groundwater/well
+UTSS_WS603,,,Fresh,Well,108050001,groundwater/well
+UTSS_WS604,,,Fresh,Well,108050002,groundwater/well
+UTSS_WS605,,,Fresh,Well #1 (Main),108100001,groundwater/well
+UTSS_WS606,,,Fresh,Well 1,108130001,groundwater/well
+UTSS_WS607,,,Fresh,Well 2,108130002,groundwater/well
+UTSS_WS608,,,Fresh,Well 3,108540101,groundwater/well
+UTSS_WS609,,,Fresh,Well 4,108540923,groundwater/well
+UTSS_WS610,,,Fresh,Well 5,108540924,groundwater/well
+UTSS_WS611,,,Fresh,Well 6,108540925,groundwater/well
+UTSS_WS612,,,Fresh,Well 7,108540926,groundwater/well
+UTSS_WS613,,,Fresh,Well 8,108540927,groundwater/well
+UTSS_WS614,,,Fresh,Well 9,108540928,groundwater/well
+UTSS_WS615,,,Fresh,Well 10,108540929,groundwater/well
+UTSS_WS616,,,Fresh,Well 11,108540930,groundwater/well
+UTSS_WS617,,,Fresh,Well 12,108540931,groundwater/well
+UTSS_WS618,,,Fresh,Well 13,108540932,groundwater/well
+UTSS_WS619,,,Fresh,Well 14,108540933,groundwater/well
+UTSS_WS620,,,Fresh,Well 15,108540934,groundwater/well
+UTSS_WS621,,,Fresh,Main Well,108160001,groundwater/well
+UTSS_WS622,,,Fresh,North Well,108545823,groundwater/well
+UTSS_WS623,,,Fresh,Artesian Well,108190001,groundwater/well
+UTSS_WS624,,,Fresh,Geothermal Well #1,108200002,groundwater/well
+UTSS_WS625,,,Fresh,Cottwood High Well,108210005,groundwater/well
+UTSS_WS626,,,Fresh,GTI Greenhouse Well,108545093,groundwater/well
+UTSS_WS627,,,Fresh,GTI AG Well,108545094,groundwater/well
+UTSS_WS628,,,Fresh,Well,108240001,groundwater/well
+UTSS_WS629,,,Fresh,Well (Reurn),108300001,groundwater/well
+UTSS_WS630,,,Fresh,Well,108310001,groundwater/well
+UTSS_WS631,,,Fresh,McCarthy Properties Well,108320001,groundwater/well
+UTSS_WS632,,,Fresh,Main Well,108390001,groundwater/well
+UTSS_WS633,,,Fresh,Ashley Well,108390002,groundwater/well
+UTSS_WS634,,,Fresh,Donna Schmidt Trust Well,108400001,groundwater/well
+UTSS_WS635,,,Fresh,Willow Cove Main Well,108400002,groundwater/well
+UTSS_WS636,,,Fresh,Main Well,108410001,groundwater/well
+UTSS_WS637,,,Fresh,Small Well,108545075,groundwater/well
+UTSS_WS638,,,Fresh,Well,108440001,groundwater/well
+UTSS_WS639,,,Fresh,Emigration Creek,108541616,Surface Water
+UTSS_WS640,,,Fresh,Red Butte Creek,108541617,Surface Water
+UTSS_WS641,,,Fresh,Deep Well,108450001,groundwater/well
+UTSS_WS642,,,Fresh,Well #1,108510001,groundwater/well
+UTSS_WS643,,,Fresh,Well #2,108510002,groundwater/well
+UTSS_WS644,,,Fresh,2016 Well,108520001,groundwater/well
+UTSS_WS645,,,Fresh,XL Well,108540001,groundwater/well
+UTSS_WS646,,,Fresh,Main Well,108541094,groundwater/well
+UTSS_WS647,,,Fresh,North South East Well,108541095,groundwater/well
+UTSS_WS648,,,Fresh,Ferguson Well,108541096,groundwater/well
+UTSS_WS649,,,Fresh,Cat  Well,108540118,groundwater/well
+UTSS_WS650,,,Fresh,Shop Well,108540119,groundwater/well
+UTSS_WS651,,,Fresh,Wakashaw Well,108540120,groundwater/well
+UTSS_WS652,,,Fresh,Old Essex Mill Site Well ( 8` 600 Feet),108541696,groundwater/well
+UTSS_WS653,,,Fresh,Jackson Well,108540124,groundwater/well
+UTSS_WS654,,,Fresh,Well #4 (Culinary House),108544941,groundwater/well
+UTSS_WS655,,,Fresh,Well #1 & Well #2 (Combined),108540131,groundwater/well
+UTSS_WS656,,,Fresh,Well #2,108540132,groundwater/well
+UTSS_WS657,,,Fresh,Well #1,108540135,groundwater/well
+UTSS_WS658,,,Fresh,Well #1 (8`),108540165,groundwater/well
+UTSS_WS659,,,Fresh,Paria River,108540197,Surface Water
+UTSS_WS660,,,Fresh,Big Cabin Spring (East),108540209,groundwater/spring
+UTSS_WS661,,,Fresh,Little Cabin Spring (West),108540210,groundwater/spring
+UTSS_WS662,,,Fresh,"Well (6`, 100-300` deep)",108540211,groundwater/well
+UTSS_WS663,,,Fresh,"Well (8`, 500` deep)",108540212,groundwater/well
+UTSS_WS664,,,Fresh,Culinary Well (Original Well),108542874,groundwater/well
+UTSS_WS665,,,Fresh,"Well (8 inch, 245 feet  deep)",108540213,groundwater/well
+UTSS_WS666,,,Fresh,"Well (8`, 425` deep)",108540214,groundwater/well
+UTSS_WS667,,,Fresh,Last Chance Bench Well,108540291,groundwater/well
+UTSS_WS668,,,Fresh,Well,108540305,groundwater/well
+UTSS_WS669,,,Fresh,Wolf Creek Well (WS001),108540317,groundwater/well
+UTSS_WS670,,,Fresh,Thads Peak Well (WS002),108540321,groundwater/well
+UTSS_WS671,,,Fresh,Clubhouse Well (WS001),108540320,groundwater/well
+UTSS_WS672,,,Fresh,Store Well (10 inch),108540326,groundwater/well
+UTSS_WS673,,,Fresh,"Well (8 inch, 460 feet deep)",108544135,groundwater/well
+UTSS_WS674,,,Fresh,Well (10 in. 100-500` deep),108540328,groundwater/well
+UTSS_WS675,,,Fresh,Lodge Well (WS001),108540340,groundwater/well
+UTSS_WS676,,,Fresh,Zwahlen House Well,108540361,groundwater/well
+UTSS_WS677,,,Fresh,Primary Camp Well,108540362,groundwater/well
+UTSS_WS678,,,Fresh,Well (8 in. 132` deep),108540369,groundwater/well
+UTSS_WS679,,,Fresh,Well #3 (WS003),108540412,groundwater/well
+UTSS_WS680,,,Fresh,Well #2 (WS002) West Side,108540411,groundwater/well
+UTSS_WS681,,,Fresh,Shotgun Springs,108540428,groundwater/spring
+UTSS_WS682,,,Fresh,Blue Creek,108540429,Surface Water
+UTSS_WS683,,,Fresh,Gines Well (WS001),108540433,groundwater/well
+UTSS_WS684,,,Fresh,Stockmore Well (WS002),108540434,groundwater/well
+UTSS_WS685,,,Fresh,Annie Mae Spring (WS003),108543515,groundwater/spring
+UTSS_WS686,,,Fresh,New Castle Irrigation Well,108544646,groundwater/well
+UTSS_WS687,,,Fresh,Bulkhead Spring,108540454,groundwater/spring
+UTSS_WS688,,,Fresh,"Well (6 in, 470 ft deep)",108540462,groundwater/well
+UTSS_WS689,,,Fresh,Old Meadows Ranchos Well (WS001),108540464,groundwater/well
+UTSS_WS690,,,Fresh,Lower/Upper Deliverance Springs (Group),108540473,groundwater/spring
+UTSS_WS691,,,Fresh,Upper Deliverance Springs (Group),108540474,groundwater/spring
+UTSS_WS692,,,Fresh,Hackleberry Horizontal Well 1 Irrigation,108540530,groundwater/well
+UTSS_WS693,,,Fresh,Hollow Spring & Horizontal Well 2,108540531,groundwater/well
+UTSS_WS694,,,Fresh,Rye Field Springs Horizontal Wells,108541229,groundwater/well
+UTSS_WS695,,,Fresh,Horse Pasture Springs Area (Irrigation),108543849,groundwater/spring
+UTSS_WS696,,,Fresh,Crocodile Spring  (Irrigation),108543850,groundwater/spring
+UTSS_WS697,,,Fresh,Disney Set Springs (Irrigation),108543851,groundwater/spring
+UTSS_WS698,,,Fresh,Big Lake Honey Bee Springs (Irrig),108543852,groundwater/spring
+UTSS_WS699,,,Fresh,John R. Canyon Creek Group,108544971,groundwater/spring
+UTSS_WS700,,,Fresh,Kanab Creek (Irrigation),108544973,Surface Water
+UTSS_WS701,,,Fresh,Water Canyon Springs (Irrigation),108544975,groundwater/spring
+UTSS_WS702,,,Fresh,Flood Canyon Creek,108540524,Surface Water
+UTSS_WS703,,,Fresh,Johnson Creek,108540525,Surface Water
+UTSS_WS704,,,Fresh,"Well (8 in, 119 feet deep)",108540526,groundwater/well
+UTSS_WS705,,,Fresh,"Well (16in, 158 feet deep)",108540527,groundwater/well
+UTSS_WS706,,,Fresh,8400 W Well A (South),108540554,groundwater/well
+UTSS_WS707,,,Fresh,8400 W Well B (North),108540555,groundwater/well
+UTSS_WS708,,,Fresh,Christensen Lease Well #1,108540563,groundwater/well
+UTSS_WS709,,,Fresh,Environmental Sampling Ranch Well,108540569,groundwater/well
+UTSS_WS710,,,Fresh,Golf Course Well,108540575,groundwater/well
+UTSS_WS711,,,Fresh,Inland Sea Shore Bird Reserve Wells,108540577,groundwater/well
+UTSS_WS712,,,Fresh,Jordan River,108540578,Surface Water
+UTSS_WS713,,,Fresh,Middle Oquirrh Stockwater Sources,108540581,groundwater/spring
+UTSS_WS714,,,Fresh,N. Section 21 Stock Wells,108540583,groundwater/well
+UTSS_WS715,,,Fresh,Section 17 Well,108540588,groundwater/well
+UTSS_WS716,,,Fresh,Utah and Salt Lake Canal,108540593,Surface Water
+UTSS_WS717,,,Fresh,Utah Metals Tunnel (Mid Canyon Drainage),108540594,Groundwater
+UTSS_WS718,,,Fresh,Utah Metals Tunnel (Pit Side Drainage),108540595,Groundwater
+UTSS_WS719,,,Fresh,W. Section 21 Stock Wells,108540596,groundwater/well
+UTSS_WS720,,,Fresh,White Well A,108540878,groundwater/well
+UTSS_WS721,,,Fresh,White Well B,108540879,groundwater/well
+UTSS_WS722,,,Fresh,Jones and Spitz Springs,108540880,groundwater/spring
+UTSS_WS723,,,Fresh,Gray Spring,108541460,groundwater/spring
+UTSS_WS724,,,Fresh,EBay Rainwater Diversion,108542151,groundwater/spring
+UTSS_WS725,,,Fresh,North Point Ranch Wells,108543175,groundwater/well
+UTSS_WS726,,,Fresh,Valley View Orchards Lease,108543514,groundwater/well
+UTSS_WS727,,,Fresh,North Jordan Canal,108540585,Surface Water
+UTSS_WS728,,,Fresh,Barneys Pit Lake,108543623,Surface Water
+UTSS_WS729,,,Fresh,Adobe Rock Ranch 180 Stockpond,108540559,Surface Water
+UTSS_WS730,,,Fresh,Barneys Canyon Potable Water Well,108540560,groundwater/well
+UTSS_WS731,,,Fresh,Copperton Channel Well (ECG1185),108540564,groundwater/well
+UTSS_WS732,,,Fresh,Garfield Well 3,108540571,groundwater/well
+UTSS_WS733,,,Fresh,Garfield Well 4,108540572,groundwater/well
+UTSS_WS734,,,Fresh,Garfield Well 5,108540573,groundwater/well
+UTSS_WS735,,,Fresh,Kessler Canyon Well (NES728),108540579,groundwater/well
+UTSS_WS736,,,Fresh,Kessler Springs,108541765,groundwater/spring
+UTSS_WS737,,,Fresh,"Well (8` diameter, 100-500` deep)",108540616,groundwater/well
+UTSS_WS738,,,Fresh,"Well (10`, 100`-500`)",108540618,groundwater/well
+UTSS_WS739,,,Fresh,Spring No. 2 (Group),108540704,groundwater/spring
+UTSS_WS740,,,Fresh,Well #1 (WS001),108540624,groundwater/well
+UTSS_WS741,,,Fresh,Well #1,108540625,groundwater/well
+UTSS_WS742,,,Fresh,Well #1 (16 in 200-600 ft deep),108540647,groundwater/well
+UTSS_WS743,,,Fresh,Existing Well (a38322),108542822,groundwater/well
+UTSS_WS744,,,Fresh,"Well #1 (6`, 100-500`)",108540655,groundwater/well
+UTSS_WS745,,,Fresh,"Well (16`, 300-500`)",108540658,groundwater/well
+UTSS_WS746,,,Fresh,Well #1,108540661,groundwater/well
+UTSS_WS747,,,Fresh,Deliverance Spring,108540667,groundwater/spring
+UTSS_WS748,,,Fresh,Well #1,108540663,groundwater/well
+UTSS_WS749,,,Fresh,Well #2,108540664,groundwater/well
+UTSS_WS750,,,Fresh,"Well (8 inch, 400 ft deep)",108540678,groundwater/well
+UTSS_WS751,,,Fresh,Turkey Shed Well (6 in 553 ft deep),108540692,groundwater/well
+UTSS_WS752,,,Fresh,Deep Creek (Weir in Snowville),108541766,Surface Water
+UTSS_WS753,,,Fresh,Gravel Pit Well,108540884,groundwater/well
+UTSS_WS754,,,Fresh,North House Manager Well,108544934,groundwater/well
+UTSS_WS755,,,Fresh,South Mink Shed Well,108544935,groundwater/well
+UTSS_WS756,,,Fresh,Farm Hand House Well,108544936,groundwater/well
+UTSS_WS757,,,Fresh,Well 16` (150 ft. deep),108541072,groundwater/well
+UTSS_WS758,,,Fresh,Well (Culinary),108541200,groundwater/well
+UTSS_WS759,,,Fresh,Well (12 in Depth 250 ft),108541036,groundwater/well
+UTSS_WS760,,,Fresh,"Well (8 in, 400 ft deep)",108541046,groundwater/well
+UTSS_WS761,,,Fresh,Well #1 (West) WS001,108541108,groundwater/well
+UTSS_WS762,,,Fresh,Well #2 (East) WS002,108541109,groundwater/well
+UTSS_WS763,,,Fresh,Colorado River,108542579,Surface Water
+UTSS_WS764,,,Fresh,Blue Sky Well 1,108541130,groundwater/well
+UTSS_WS765,,,Fresh,Lakeview Sub Well (Culinary),108541222,groundwater/well
+UTSS_WS766,,,Fresh,Artesian Wells,108541383,groundwater/well
+UTSS_WS767,,,Fresh,H. Bradshaw Well,108541385,groundwater/well
+UTSS_WS768,,,Fresh,Big Well,108541387,groundwater/well
+UTSS_WS769,,,Fresh,Chalk Creek,108541302,Surface Water
+UTSS_WS770,,,Fresh,Well,108541366,groundwater/well
+UTSS_WS771,,,Fresh,Well (6 in. 100 ft.-500 ft.),108541400,groundwater/well
+UTSS_WS772,,,Fresh,SUBDV.  Well (WS003),108541402,groundwater/well
+UTSS_WS773,,,Fresh,North Well (16 in. 712 ft),108541412,groundwater/well
+UTSS_WS774,,,Fresh,South Well (12 in. 418 ft),108541413,groundwater/well
+UTSS_WS775,,,Fresh,South Well,108541472,groundwater/well
+UTSS_WS776,,,Fresh,North Well,108541473,groundwater/well
+UTSS_WS777,,,Fresh,Well #11,108541538,groundwater/well
+UTSS_WS778,,,Fresh,Well #12,108541539,groundwater/well
+UTSS_WS779,,,Fresh,Well #14,108541541,groundwater/well
+UTSS_WS780,,,Fresh,Well #9 Gibs,108541542,groundwater/well
+UTSS_WS781,,,Fresh,Well #3,108541545,groundwater/well
+UTSS_WS782,,,Fresh,Well #4,108541546,groundwater/well
+UTSS_WS783,,,Fresh,Well #6,108541547,groundwater/well
+UTSS_WS784,,,Fresh,Well Shanney,108541543,groundwater/well
+UTSS_WS785,,,Fresh,Wildcat Spring (Irrigation) (WS003),108541550,groundwater/spring
+UTSS_WS786,,,Fresh,Wheeler Spring (Irrigation) (WS002),108541557,groundwater/spring
+UTSS_WS787,,,Fresh,Bluebell Flats Well (WS004),108543195,groundwater/well
+UTSS_WS788,,,Fresh,Blue Grouse Well (WS006),108543196,groundwater/well
+UTSS_WS789,,,Fresh,Spring #3,108541551,groundwater/spring
+UTSS_WS790,,,Fresh,Spring #4,108541552,groundwater/spring
+UTSS_WS791,,,Fresh,Spring #7,108541554,groundwater/spring
+UTSS_WS792,,,Fresh,Spring #8,108541555,groundwater/spring
+UTSS_WS793,,,Fresh,Spring #9,108541556,groundwater/spring
+UTSS_WS794,,,Fresh,High Span Well (Snow Making) (WS005),108543194,groundwater/well
+UTSS_WS795,,,Fresh,HI Lo EST. Well (WS001),108541646,groundwater/well
+UTSS_WS796,,,Fresh,Beaver Valley Rancheros Well,108541711,groundwater/well
+UTSS_WS797,,,Fresh,Well 13-34 Site Water,108542795,groundwater/well
+UTSS_WS798,,,Fresh,Castle Lake Reservoir Outlet,108541859,Surface Water
+UTSS_WS799,,,Fresh,Oak Haven Well (WS003),108543481,groundwater/well
+UTSS_WS800,,,Fresh,Little Pivot Well,108541873,groundwater/well
+UTSS_WS801,,,Fresh,House Well,108541875,groundwater/well
+UTSS_WS802,,,Fresh,Dunn Well,108541880,groundwater/well
+UTSS_WS803,,,Fresh,Section 36 Stock Well,108545393,groundwater/well
+UTSS_WS804,,,Fresh,"Well #7 (existing 2`, 268` deep)",108541876,groundwater/well
+UTSS_WS805,,,Fresh,"Well #8 (existing 2`, 263` deep)",108541877,groundwater/well
+UTSS_WS806,,,Fresh,"Well #9 (existing 2`, 275` deep)",108541878,groundwater/well
+UTSS_WS807,,,Fresh,"Well #10 (existing 2`, 273` deep)",108541879,groundwater/well
+UTSS_WS808,,,Fresh,"Well (drilled 2007, 5`, 203` deep)",108541898,groundwater/well
+UTSS_WS809,,,Fresh,"Well (existing 6`, 175` deep)",108541899,groundwater/well
+UTSS_WS810,,,Fresh,Surface Source,108541941,Surface Water
+UTSS_WS811,,,Fresh,East Seep Creek,108542912,Surface Water
+UTSS_WS812,,,Fresh,Earthen Dam,108542016,Surface Water
+UTSS_WS813,,,Fresh,Field House Well,108542186,groundwater/well
+UTSS_WS814,,,Fresh,Main Creek Mander,108542083,Surface Water
+UTSS_WS815,,,Fresh,Main Creek #2,108542084,Surface Water
+UTSS_WS816,,,Fresh,Spring Creek,108542085,Surface Water
+UTSS_WS817,,,Fresh,Main Creek,108542086,Surface Water
+UTSS_WS818,,,Fresh,Hobble Creek,108542087,Surface Water
+UTSS_WS819,,,Fresh,Hobble Creek #2,108542088,Surface Water
+UTSS_WS820,,,Fresh,Springs (Combined 7 springs),108542090,groundwater/spring
+UTSS_WS821,,,Fresh,Red Barn Well,108542101,groundwater/well
+UTSS_WS822,,,Fresh,Spring Creek #3,108542102,groundwater/spring
+UTSS_WS823,,,Fresh,Shallow Well,108545317,groundwater/well
+UTSS_WS824,,,Fresh,Pump Pond,108545319,Surface Water
+UTSS_WS825,,,Fresh,Ranch Feedlot Well,108542106,groundwater/well
+UTSS_WS826,,,Fresh,Nine Mile Creek (Harmon Canyon),108542120,Surface Water
+UTSS_WS827,,,Fresh,Nine Mile Creek (Cottonwood Bridge),108542122,Surface Water
+UTSS_WS828,,,Fresh,Well #1,108542314,groundwater/well
+UTSS_WS829,,,Fresh,Well #2,108542315,groundwater/well
+UTSS_WS830,,,Fresh,Well #4,108542316,groundwater/well
+UTSS_WS831,,,Fresh,Well #3,108542317,groundwater/well
+UTSS_WS832,,,Fresh,Dry Canyon Creek,108542121,Surface Water
+UTSS_WS833,,,Fresh,448 proposed wells,108542134,groundwater/well
+UTSS_WS834,,,Fresh,Well #1,108542187,groundwater/well
+UTSS_WS835,,,Fresh,Well #2,108542188,groundwater/well
+UTSS_WS836,,,Fresh,Well #3,108542189,groundwater/well
+UTSS_WS837,,,Fresh,Well #4 (Stock Water),108542190,groundwater/well
+UTSS_WS838,,,Fresh,Well #8,108542194,groundwater/well
+UTSS_WS839,,,Fresh,Well #9,108542195,groundwater/well
+UTSS_WS840,,,Fresh,Well #10,108542196,groundwater/well
+UTSS_WS841,,,Fresh,Well #11,108542197,groundwater/well
+UTSS_WS842,,,Fresh,Well #13,108542199,groundwater/well
+UTSS_WS843,,,Fresh,Well #16,108542202,groundwater/well
+UTSS_WS844,,,Fresh,Little Salty,108545223,groundwater/well
+UTSS_WS845,,,Fresh,"Well #12 (existing 20`, 400` deep)",108542198,groundwater/well
+UTSS_WS846,,,Fresh,"Well #14 (existing 16`, 400` deep)",108542200,groundwater/well
+UTSS_WS847,,,Fresh,Lower Topliff Well,108542203,groundwater/well
+UTSS_WS848,,,Fresh,Upper Topliff Well,108542204,groundwater/well
+UTSS_WS849,,,Fresh,South Quirk Street Well,108543512,groundwater/well
+UTSS_WS850,,,Fresh,"Well (10 inch, 100-500 feet deep)",108542213,groundwater/well
+UTSS_WS851,,,Fresh,"Well (14-inches, 100-500 feet deep)",108542214,groundwater/well
+UTSS_WS852,,,Fresh,"Well (5 inch, 340 feet deep)",108542244,groundwater/well
+UTSS_WS853,,,Fresh,"12-inch well, 100-500 feet deep",108542252,groundwater/well
+UTSS_WS854,,,Fresh,Spring,108542264,groundwater/spring
+UTSS_WS855,,,Fresh,Well No. 1 (WS001),108542267,groundwater/well
+UTSS_WS856,,,Fresh,Well #1,108542283,groundwater/well
+UTSS_WS857,,,Fresh,Westwater Creek (Stream,108542358,Surface Water
+UTSS_WS858,,,Fresh,Crandall Canyon Spring (WS001),108542295,groundwater/spring
+UTSS_WS859,,,Fresh,Fern Basin Spring (WS002),108542296,groundwater/spring
+UTSS_WS860,,,Fresh,Bathtub Spring (WS003),108542297,groundwater/spring
+UTSS_WS861,,,Fresh,Lizard Bench Well 1 (WS001),108542364,groundwater/well
+UTSS_WS862,,,Fresh,"Well (10`, 357 feet deep)",108542385,groundwater/well
+UTSS_WS863,,,Fresh,Browns Canyon,108542389,Surface Water
+UTSS_WS864,,,Fresh,Daniels Summit Spring (WS001),108542407,groundwater/spring
+UTSS_WS865,,,Fresh,Well #1 (WS002),108542447,groundwater/well
+UTSS_WS866,,,Fresh,Surface 2 (Small Pond),108542408,Surface Water
+UTSS_WS867,,,Fresh,Surface 1 (Large Pond),108544884,Surface Water
+UTSS_WS868,,,Fresh,"Well #1 (6`, 100-500 feet deep)",108542413,groundwater/well
+UTSS_WS869,,,Fresh,Temp. Adjustment,108545250,Surface Water
+UTSS_WS870,,,Fresh,New Dairy Well,108544748,groundwater/well
+UTSS_WS871,,,Fresh,Old Dairy Well (D1),108543215,groundwater/well
+UTSS_WS872,,,Fresh,"Well (10`, 75` deep)",108543284,groundwater/well
+UTSS_WS873,,,Fresh,"Well (10`, 75` deep)",108543285,groundwater/well
+UTSS_WS874,,,Fresh,"Well (12`, 340` deep)",108543286,groundwater/well
+UTSS_WS875,,,Fresh,"Well (10`, 375` deep)",108543287,groundwater/well
+UTSS_WS876,,,Fresh,"Well (6`, 330` deep)",108542532,groundwater/well
+UTSS_WS877,,,Fresh,Pumped from river into trucks,108542560,Surface Water
+UTSS_WS878,,,Fresh,Lower Well,108542570,groundwater/well
+UTSS_WS879,,,Fresh,Mid Well,108542571,groundwater/well
+UTSS_WS880,,,Fresh,Bryce Woodland Well (WS001),108542610,groundwater/well
+UTSS_WS881,,,Fresh,Middle Well (WS001),108543878,groundwater/well
+UTSS_WS882,,,Fresh,Legacy Mountain Well #2 (WS002),108542624,groundwater/well
+UTSS_WS883,,,Fresh,1982 Existing Well,108542681,groundwater/well
+UTSS_WS884,,,Fresh,"Well #1 (8 inches, 100 to 500` deep)",108542712,groundwater/well
+UTSS_WS885,,,Fresh,"Well #2 (8 inches, 100 to 500` deep)",108542713,groundwater/well
+UTSS_WS886,,,Fresh,"Well (9 inch, 120` deep)",108542722,groundwater/well
+UTSS_WS887,,,Fresh,"Well (10 inch, 137 feet deep)",108542724,groundwater/well
+UTSS_WS888,,,Fresh,Summer Well (Culinary),108542760,groundwater/well
+UTSS_WS889,,,Fresh,Brad`s Well (Culinary),108542761,groundwater/well
+UTSS_WS890,,,Fresh,Winter Well (Culinary),108542762,groundwater/well
+UTSS_WS891,,,Fresh,Howlett Well (Culinary),108542766,groundwater/well
+UTSS_WS892,,,Fresh,Duplex Well (Culinary),108542767,groundwater/well
+UTSS_WS893,,,Fresh,Steve Well (Culinary),108542768,groundwater/well
+UTSS_WS894,,,Fresh,South Farm  Well (AG/Culinary),108543058,groundwater/well
+UTSS_WS895,,,Fresh,Howlett Well,108542764,groundwater/well
+UTSS_WS896,,,Fresh,Pump intake (Utah Lake),108543005,Surface Water
+UTSS_WS897,,,Fresh,Dry Well (Culinary),108542759,groundwater/well
+UTSS_WS898,,,Fresh,Well #1 (WS001),108542800,groundwater/well
+UTSS_WS899,,,Fresh,Existing Well (6 ins. 350` deep),108542832,groundwater/well
+UTSS_WS900,,,Fresh,Surface Source #2,108542845,Surface Water
+UTSS_WS901,,,Fresh,Green River,108542850,groundwater/spring
+UTSS_WS902,,,Fresh,Well NP10,108544737,groundwater/well
+UTSS_WS903,,,Fresh,North Fork Provo River,108542862,groundwater/spring
+UTSS_WS904,,,Fresh,Paradise West HOA Well,108542905,groundwater/well
+UTSS_WS905,,,Fresh,Existing Well (drilled in 2009),108542907,groundwater/well
+UTSS_WS906,,,Fresh,"Well (8-inch, 200-500` deep)",108542908,groundwater/well
+UTSS_WS907,,,Fresh,Well #1,108542928,groundwater/well
+UTSS_WS908,,,Fresh,Well #2,108542932,groundwater/well
+UTSS_WS909,,,Fresh,Dairy Spring,108543870,groundwater/spring
+UTSS_WS910,,,Fresh,Well #3,108542978,groundwater/well
+UTSS_WS911,,,Fresh,Well #4,108542979,groundwater/well
+UTSS_WS912,,,Fresh,Well #1,108543470,groundwater/well
+UTSS_WS913,,,Fresh,Well #2,108545348,groundwater/well
+UTSS_WS914,,,Fresh,Staker/Parson Point South Well,108542985,groundwater/well
+UTSS_WS915,,,Fresh,Well,108543071,groundwater/well
+UTSS_WS916,,,Fresh,Oak Creek Irrigation,108544246,Surface Water
+UTSS_WS917,,,Fresh,Wagner Springs (Group),108543086,groundwater/spring
+UTSS_WS918,,,Fresh,Well,108543095,groundwater/well
+UTSS_WS919,,,Fresh,"Well No. 1 (12 in, 250 feet deep)",108543176,groundwater/well
+UTSS_WS920,,,Fresh,Well No. 3 (Jenkins),108543872,groundwater/well
+UTSS_WS921,,,Fresh,Well No. 4 (Dee East),108543873,groundwater/well
+UTSS_WS922,,,Fresh,Well No. 6 (Dee West),108543875,groundwater/well
+UTSS_WS923,,,Fresh,Well No. 7(McPherson),108543876,groundwater/well
+UTSS_WS924,,,Fresh,Surface,108543220,Surface Water
+UTSS_WS925,,,Fresh,Surface,108543221,Surface Water
+UTSS_WS926,,,Fresh,East Well,108543222,groundwater/well
+UTSS_WS927,,,Fresh,Elberta House Well,108545433,groundwater/well
+UTSS_WS928,,,Fresh,Busch No. 2,108543606,groundwater/well
+UTSS_WS929,,,Fresh,Busch No. 1,108543740,groundwater/well
+UTSS_WS930,,,Fresh,Busch No. 4,108543223,groundwater/well
+UTSS_WS931,,,Fresh,Busch No. 3,108543224,groundwater/well
+UTSS_WS932,,,Fresh,Paskett3p Well,108543250,groundwater/well
+UTSS_WS933,,,Fresh,Diversion #9,108543264,Surface Water
+UTSS_WS934,,,Fresh,Well #2,108543300,groundwater/well
+UTSS_WS935,,,Fresh,Well #1,108543301,groundwater/well
+UTSS_WS936,,,Fresh,Against Wind Properties Well #2,108545131,groundwater/well
+UTSS_WS937,,,Fresh,Against Wind Properties Well #3,108545132,groundwater/well
+UTSS_WS938,,,Fresh,Against Wind Properties Well #4,108545133,groundwater/well
+UTSS_WS939,,,Fresh,Green River/Ashley Creek,108543341,Surface Water
+UTSS_WS940,,,Fresh,Mine Shaft,108543346,Groundwater
+UTSS_WS941,,,Fresh,Well 1,108543404,groundwater/well
+UTSS_WS942,,,Fresh,Wetland Mitigation,108543414,Surface Water
+UTSS_WS943,,,Fresh,Lodge Pond Diversion,108543416,Surface Water
+UTSS_WS944,,,Fresh,Well #1,108543433,groundwater/well
+UTSS_WS945,,,Fresh,Well #3,108543434,groundwater/well
+UTSS_WS946,,,Fresh,Well #2,108543435,groundwater/well
+UTSS_WS947,,,Fresh,House Well,108543478,groundwater/well
+UTSS_WS948,,,Fresh,South Well,108543479,groundwater/well
+UTSS_WS949,,,Fresh,Green River,108543484,Surface Water
+UTSS_WS950,,,Fresh,North Canyon Creek,108543491,groundwater/spring
+UTSS_WS951,,,Fresh,Colorado River #1,108543565,Surface Water
+UTSS_WS952,,,Fresh,Colorado River #2,108543597,Surface Water
+UTSS_WS953,,,Fresh,Colorado River #3,108544015,Surface Water
+UTSS_WS954,,,Fresh,Well,108543608,groundwater/well
+UTSS_WS955,,,Fresh,Well,108543609,groundwater/well
+UTSS_WS956,,,Fresh,Well,108543611,groundwater/well
+UTSS_WS957,,,Fresh,"Well (6-inch, 345 feet deep)",108543618,groundwater/well
+UTSS_WS958,,,Fresh,"Well (8-inch, 400 feet deep)",108543619,groundwater/well
+UTSS_WS959,,,Fresh,Processing Plant Well,108543620,groundwater/well
+UTSS_WS960,,,Fresh,Well (10 Inch),108544067,groundwater/well
+UTSS_WS961,,,Fresh,New Well,108543644,groundwater/well
+UTSS_WS962,,,Fresh,North Well,108545570,groundwater/well
+UTSS_WS963,,,Fresh,10 Inch Well,108545571,groundwater/well
+UTSS_WS964,,,Fresh,House Well,108545572,groundwater/well
+UTSS_WS965,,,Fresh,South Spring,108545784,groundwater/spring
+UTSS_WS966,,,Fresh,North Spring,108545785,groundwater/spring
+UTSS_WS967,,,Fresh,Stream,108545786,Surface Water
+UTSS_WS968,,,Fresh,Greenhouse Sump #1 (Group),108543661,Surface Water
+UTSS_WS969,,,Fresh,Well #1,108543684,groundwater/well
+UTSS_WS970,,,Fresh,Well #2,108543685,groundwater/well
+UTSS_WS971,,,Fresh,Bradford Acres Well (WS001),108543762,groundwater/well
+UTSS_WS972,,,Fresh,Cole Water Canyon Springs (WS001),108544006,groundwater/spring
+UTSS_WS973,,,Fresh,Northwest Resevoir Inlet,108545374,Surface Water
+UTSS_WS974,,,Fresh,Cottonwood Creek/Diversion Dam,108543776,Surface Water
+UTSS_WS975,,,Fresh,Deseret Land and Livestock Well,108543780,groundwater/well
+UTSS_WS976,,,Fresh,Well #1,108543784,groundwater/well
+UTSS_WS977,,,Fresh,Well #3 (WS003),108544597,groundwater/well
+UTSS_WS978,,,Fresh,Wester Spring Creek,108543796,Surface Water
+UTSS_WS979,,,Fresh,Fisher Spring (WS001),108544116,groundwater/spring
+UTSS_WS980,,,Fresh,Sunset Park Well,108543799,groundwater/well
+UTSS_WS981,,,Fresh,Upper Devils Hole Spring (WS001),108543802,groundwater/spring
+UTSS_WS982,,,Fresh,Released from Quail Creek Reservoir,108544953,Surface Water
+UTSS_WS983,,,Fresh,Well #1 (East Well) (WS001),108543971,groundwater/well
+UTSS_WS984,,,Fresh,Well #2 (West Well) (WS002),108543972,groundwater/well
+UTSS_WS985,,,Fresh,Well #1 And Well # 2 Combined,108543973,groundwater/well
+UTSS_WS986,,,Fresh,60 Arce Well (WS003),108543997,groundwater/well
+UTSS_WS987,,,Fresh,Big Spring (WS002),108543995,groundwater/spring
+UTSS_WS988,,,Fresh,Johnston Well (WS002),108544031,groundwater/well
+UTSS_WS989,,,Fresh,Well,108544043,groundwater/well
+UTSS_WS990,,,Fresh,Utah Lake (Westside),108544057,Surface Water
+UTSS_WS991,,,Fresh,Green River,108544060,Surface Water
+UTSS_WS992,,,Fresh,Spring,108544087,groundwater/spring
+UTSS_WS993,,,Fresh,Well No. 2,108544088,groundwater/well
+UTSS_WS994,,,Fresh,Well,108544090,groundwater/well
+UTSS_WS995,,,Fresh,Test Well,108544091,groundwater/well
+UTSS_WS996,,,Fresh,Tooele Pit Well,108544092,groundwater/well
+UTSS_WS997,,,Fresh,"Well (16 inch, 770 feet deep)",108544094,groundwater/well
+UTSS_WS998,,,Fresh,North Willow Well,108544137,groundwater/well
+UTSS_WS999,,,Fresh,17th Hole Well (Irrigation),108544139,groundwater/well
+UTSS_WS1000,,,Fresh,Well 1 (WS001),108544148,groundwater/well
+UTSS_WS1001,,,Fresh,Coleman MHC Well (WS001),108544149,groundwater/well
+UTSS_WS1002,,,Fresh,Well #1 (WS001),108544154,groundwater/well
+UTSS_WS1003,,,Fresh,Lodge Well (WS002),108544174,groundwater/well
+UTSS_WS1004,,,Fresh,60 Acre Well (WS003),108544175,groundwater/well
+UTSS_WS1005,,,Fresh,Bull River (North Bench) (Irrigation),108544191,Surface Water
+UTSS_WS1006,,,Fresh,Minni Creek Well,108545603,groundwater/well
+UTSS_WS1007,,,Fresh,North Canyon Creek (Irrigation),108544210,Surface Water
+UTSS_WS1008,,,Fresh,Timpie 2001 Well (Irrigation),108544214,groundwater/well
+UTSS_WS1009,,,Fresh,Timpie South Well (Irrigation),108544215,groundwater/well
+UTSS_WS1010,,,Fresh,Timpie Tree Well (Irrigation),108544216,groundwater/well
+UTSS_WS1011,,,Fresh,North Timpie Well (Irrigation),108544976,groundwater/well
+UTSS_WS1012,,,Fresh,Southfield/Salem Canal Powerhouse Road,108544237,Surface Water
+UTSS_WS1013,,,Fresh,Spanish Fork River (Irrigation),108544238,Surface Water
+UTSS_WS1014,,,Fresh,Weeping Rock (Irrigation),108544240,Surface Water
+UTSS_WS1015,,,Fresh,"Wylie, Thomas and Bulter Springs",108545268,groundwater/spring
+UTSS_WS1016,,,Fresh,Beaver River Drainage (Irrigation),108544261,Surface Water
+UTSS_WS1017,,,Fresh,"Millcreek, Via Sheley Tunnel (Irrigation",108544266,Groundwater
+UTSS_WS1018,,,Fresh,Received from PGIC,108544272,Surface Water
+UTSS_WS1019,,,Fresh,Zelda Spring (WS004),108544283,groundwater/spring
+UTSS_WS1020,,,Fresh,Sunbrook Well #2 (Irrigation),108544296,groundwater/well
+UTSS_WS1021,,,Fresh,East City Spring (Irrigation),108544301,groundwater/spring
+UTSS_WS1022,,,Fresh,St.George Clara Field Canal Co.(Irriga),108544304,Surface Water
+UTSS_WS1023,,,Fresh,Artesian Well (WS001),108544320,groundwater/well
+UTSS_WS1024,,,Fresh,Price/Pierce Springs (Irrigation),108544325,groundwater/spring
+UTSS_WS1025,,,Fresh,Prisbrey/Westover Spring (Irrigation),108544326,groundwater/spring
+UTSS_WS1026,,,Fresh,Sproul Spring (Irrigation),108544327,groundwater/spring
+UTSS_WS1027,,,Fresh,Cottonwood Spring/Lakes Group,108544336,Surface Water
+UTSS_WS1028,,,Fresh,Piute Canal Co. (Irrigation),108544339,Surface Water
+UTSS_WS1029,,,Fresh,Monroe Creek (Irrigation),108544341,Surface Water
+UTSS_WS1030,,,Fresh,Salina Creek (Irrigation),108544344,Surface Water
+UTSS_WS1031,,,Fresh,Golf Course Well (Irrigation),108544363,groundwater/well
+UTSS_WS1032,,,Fresh,Sevier Valley Canal (Irrigation,108544364,Surface Water
+UTSS_WS1033,,,Fresh,Richfield Canal (Irrigation),108544365,Surface Water
+UTSS_WS1034,,,Fresh,Received from AF Irrigation,108544406,Surface Water
+UTSS_WS1035,,,Fresh,Received from Lehi Irrigation,108544407,Surface Water
+UTSS_WS1036,,,Fresh,American Fork River AF Irrigation Compan,108544412,Surface Water
+UTSS_WS1037,,,Fresh,Grover Canyon Creek (Irrigation),108544414,Surface Water
+UTSS_WS1038,,,Fresh,Cemetery Well (Irrigation),108544443,groundwater/well
+UTSS_WS1039,,,Fresh,Received  from Delta Canal Company (Irri,108544447,Surface Water
+UTSS_WS1040,,,Fresh,Gladstan Well (Irrigation),108544521,groundwater/well
+UTSS_WS1041,,,Fresh,Well No. 1 (Irrigation),108544524,groundwater/well
+UTSS_WS1042,,,Fresh,Upper Pond (Irrigation),108544526,Surface Water
+UTSS_WS1043,,,Fresh,Castle Lake Reservoir Outlet,108544556,Surface Water
+UTSS_WS1044,,,Fresh,Well No. 2 (Irrigation),108544558,groundwater/well
+UTSS_WS1045,,,Fresh,Hop Canyon Spring (WS001),108544566,groundwater/spring
+UTSS_WS1046,,,Fresh,New Dairy Well,108544745,groundwater/well
+UTSS_WS1047,,,Fresh,Currant Creek Headgate,108544746,Surface Water
+UTSS_WS1048,,,Fresh,Blanding No. 3 (Irrigation),108544604,Surface Water
+UTSS_WS1049,,,Fresh,Spring,108544602,groundwater/spring
+UTSS_WS1050,,,Fresh,North Well,108544608,groundwater/well
+UTSS_WS1051,,,Fresh,Production Well,108544610,groundwater/well
+UTSS_WS1052,,,Fresh,Sevy Well (Irrigation),108544612,groundwater/well
+UTSS_WS1053,,,Fresh,Well (Culinary),108544613,groundwater/well
+UTSS_WS1054,,,Fresh,Highline  (Irrigation),108544632,Surface Water
+UTSS_WS1055,,,Fresh,Plat A (Irrigation),108544634,Surface Water
+UTSS_WS1056,,,Fresh,Well #2 (Irrigation),108544647,groundwater/well
+UTSS_WS1057,,,Fresh,Well #3 (Irrigation),108544648,groundwater/well
+UTSS_WS1058,,,Fresh,Freshwater Well #1,108544691,groundwater/well
+UTSS_WS1059,,,Fresh,Geothermal Well 6-1,108544694,groundwater/well
+UTSS_WS1060,,,Fresh,GVA Well (WS001),108544718,groundwater/well
+UTSS_WS1061,,,Fresh,Surface Source (Pump),108544826,Surface Water
+UTSS_WS1062,,,Fresh,Spring Creek,108544852,Surface Water
+UTSS_WS1063,,,Fresh,Well 8 & Well 6 Combined (Culinary),108544873,groundwater/well
+UTSS_WS1064,,,Fresh,Hilton Well,108544900,groundwater/well
+UTSS_WS1065,,,Fresh,Jones Well,108544901,groundwater/well
+UTSS_WS1066,,,Fresh,Virgin River,108544968,Surface Water
+UTSS_WS1067,,,Fresh,Robins Well (Irrigation),108545285,groundwater/well
+UTSS_WS1068,,,Fresh,Well Combined,108545001,groundwater/well
+UTSS_WS1069,,,Fresh,Panguitch Lake (Irrigation),108545014,Surface Water
+UTSS_WS1070,,,Fresh,Gunnison Irrigation Company (Irrigation),108545022,Surface Water
+UTSS_WS1071,,,Fresh,Peacock Spring (Irrigation),108545023,groundwater/spring
+UTSS_WS1072,,,Fresh,West Well (WS001),108545026,groundwater/well
+UTSS_WS1073,,,Fresh,North Willow Park Well (Irrigation),108545030,groundwater/well
+UTSS_WS1074,,,Fresh,Red Brick Well (Irrigation),108545034,groundwater/well
+UTSS_WS1075,,,Fresh,Cemetery Well #5 (Irrigation),108545035,groundwater/well
+UTSS_WS1076,,,Fresh,McConkie Spring (Irrigation),108545036,groundwater/spring
+UTSS_WS1077,,,Fresh,McGuire Pit Well,108545073,groundwater/well
+UTSS_WS1078,,,Fresh,Cove Pit Well,108545074,groundwater/well
+UTSS_WS1079,,,Fresh,Tooele Bauer Well,108545086,groundwater/well
+UTSS_WS1080,,,Fresh,Well No. 2 (Irrigation),108545100,groundwater/well
+UTSS_WS1081,,,Fresh,Drain (Irrigation),108545101,Surface Water
+UTSS_WS1082,,,Fresh,Well #1 (WS001),108545118,groundwater/well
+UTSS_WS1083,,,Fresh,Well #2 (WS002),108545119,groundwater/well
+UTSS_WS1084,,,Fresh,Morgan Well  #1,108545146,groundwater/well
+UTSS_WS1085,,,Fresh,Asphalt Material Well #1,108545147,groundwater/well
+UTSS_WS1086,,,Fresh,Roberts Legacy Well #1,108545157,groundwater/well
+UTSS_WS1087,,,Fresh,Roberts Legacy Well #2,108545474,groundwater/well
+UTSS_WS1088,,,Fresh,Well,108545158,groundwater/well
+UTSS_WS1089,,,Fresh,Leap Creek,108545652,Surface Water
+UTSS_WS1090,,,Fresh,Drainage Channel from Jackson Spring,108545169,Surface Water
+UTSS_WS1091,,,Fresh,Inlet Pipe (Reservoir),108545182,Surface Water
+UTSS_WS1092,,,Fresh,North Bear Lake Pump,108545183,Surface Water
+UTSS_WS1093,,,Fresh,South Bear Lake Pump,108545184,Surface Water
+UTSS_WS1094,,,Fresh,Colt Well (WS001),108545196,groundwater/well
+UTSS_WS1095,,,Fresh,West Pond,108545200,Surface Water
+UTSS_WS1096,,,Fresh,East Pond,108545338,Surface Water
+UTSS_WS1097,,,Fresh,Well No. 1,108545201,groundwater/well
+UTSS_WS1098,,,Fresh,Well B,108545207,groundwater/well
+UTSS_WS1099,,,Fresh,Well A,108545208,groundwater/well
+UTSS_WS1100,,,Fresh,South Well,108545209,groundwater/well
+UTSS_WS1101,,,Fresh,North Well,108545210,groundwater/well
+UTSS_WS1102,,,Fresh,Dented Brick Well,108545225,groundwater/well
+UTSS_WS1103,,,Fresh,Welby Jacob Canal (90 shares of stock),108545226,Surface Water
+UTSS_WS1104,,,Fresh,Nielson Well,108545234,groundwater/well
+UTSS_WS1105,,,Fresh,Bragger Spring,108545235,groundwater/spring
+UTSS_WS1106,,,Fresh,Bragger Well,108545236,groundwater/well
+UTSS_WS1107,,,Fresh,North Grantsville Mud Spring,108545237,groundwater/spring
+UTSS_WS1108,,,Fresh,Well #16 & 17,108545253,groundwater/well
+UTSS_WS1109,,,Fresh,Well #18,108545254,groundwater/well
+UTSS_WS1110,,,Fresh,Well #19,108545255,groundwater/well
+UTSS_WS1111,,,Fresh,Well #1,108545627,groundwater/well
+UTSS_WS1112,,,Fresh,Pinnacle P4,108545621,groundwater/well
+UTSS_WS1113,,,Fresh,City Center Well (Return),108545274,groundwater/well
+UTSS_WS1114,,,Fresh,Purchased from Toquerville City (Culinar,108545306,groundwater/spring
+UTSS_WS1115,,,Fresh,Sold to Hurricane City (Culinary),108545307,groundwater/spring
+UTSS_WS1116,,,Fresh,Canaan Springs (WS001),108545316,groundwater/spring
+UTSS_WS1117,,,Fresh,Steinaker Reservoir,108545361,Surface Water
+UTSS_WS1118,,,Fresh,CC Main Well No. 1,108545413,groundwater/well
+UTSS_WS1119,,,Fresh,CC Yard Well No. 2,108545414,groundwater/well
+UTSS_WS1120,,,Fresh,Well #2,108545418,groundwater/well
+UTSS_WS1121,,,Fresh,Robins Well,108545417,groundwater/well
+UTSS_WS1122,,,Fresh,Walkers Well,108545419,groundwater/well
+UTSS_WS1123,,,Fresh,Livestock Well,108545420,groundwater/well
+UTSS_WS1124,,,Fresh,House Well,108545421,groundwater/well
+UTSS_WS1125,,,Fresh,Irrigation Well,108545422,groundwater/well
+UTSS_WS1126,,,Fresh,Main Well,108545425,groundwater/well
+UTSS_WS1127,,,Fresh,Well,108545423,groundwater/well
+UTSS_WS1128,,,Fresh,Dean Well,108545426,groundwater/well
+UTSS_WS1129,,,Fresh,Dean`s Well #2,108545427,groundwater/well
+UTSS_WS1130,,,Fresh,Chad Well,108545428,groundwater/well
+UTSS_WS1131,,,Fresh,Donna Well,108545429,groundwater/well
+UTSS_WS1132,,,Fresh,Ted Well,108545430,groundwater/well
+UTSS_WS1133,,,Fresh,Ted`s Top Well,108545431,groundwater/well
+UTSS_WS1134,,,Fresh,Island Well,108545629,groundwater/well
+UTSS_WS1135,,,Fresh,loveless Well,108545630,groundwater/well
+UTSS_WS1136,,,Fresh,Scotty`s Ranch Well,108545436,groundwater/well
+UTSS_WS1137,,,Fresh,Josh`s Well,108545437,groundwater/well
+UTSS_WS1138,,,Fresh,North Well,108545438,groundwater/well
+UTSS_WS1139,,,Fresh,Pond Well,108545439,groundwater/well
+UTSS_WS1140,,,Fresh,Duplex Well,108545440,groundwater/well
+UTSS_WS1141,,,Fresh,Scott House Well,108545441,groundwater/well
+UTSS_WS1142,,,Fresh,South Well,108545442,groundwater/well
+UTSS_WS1143,,,Fresh,Willow Well 2,108545444,groundwater/well
+UTSS_WS1144,,,Fresh,1300 S 2300 W Well,108545446,groundwater/well
+UTSS_WS1145,,,Fresh,Haystack West Well,108545447,groundwater/well
+UTSS_WS1146,,,Fresh,North Center Well,108545448,groundwater/well
+UTSS_WS1147,,,Fresh,Unnamed Springs,108545449,groundwater/spring
+UTSS_WS1148,,,Fresh,Southeast Well,108545450,groundwater/well
+UTSS_WS1149,,,Fresh,Haystack Well,108545451,groundwater/well
+UTSS_WS1150,,,Fresh,Front Runner North Well,108545452,groundwater/well
+UTSS_WS1151,,,Fresh,Buckwalter or Brown Slough,108545453,groundwater/spring
+UTSS_WS1152,,,Fresh,Northeast Well,108545454,groundwater/well
+UTSS_WS1153,,,Fresh,Northwest Well,108545455,groundwater/well
+UTSS_WS1154,,,Fresh,Large North Well,108545456,groundwater/well
+UTSS_WS1155,,,Fresh,South Well,108545457,groundwater/well
+UTSS_WS1156,,,Fresh,Blue Spring,108545461,groundwater/spring
+UTSS_WS1157,,,Fresh,East Ditch Drainage,108545776,Surface Water
+UTSS_WS1158,,,Fresh,Artesian Well,108545778,groundwater/well
+UTSS_WS1159,,,Fresh,Alpine Country Club Well,108545463,groundwater/well
+UTSS_WS1160,,,Fresh,Eastside House Well,108545480,groundwater/well
+UTSS_WS1161,,,Fresh,North Well 16 Acres,108545481,groundwater/well
+UTSS_WS1162,,,Fresh,South Well 16 Acres,108545482,groundwater/well
+UTSS_WS1163,,,Fresh,Well by Taylors,108545483,groundwater/well
+UTSS_WS1164,,,Fresh,Westside House Well,108545484,groundwater/well
+UTSS_WS1165,,,Fresh,Well in Corral,108545485,groundwater/well
+UTSS_WS1166,,,Fresh,Top of Big Field Well,108545486,groundwater/well
+UTSS_WS1167,,,Fresh,2 Inch Well,108545487,groundwater/well
+UTSS_WS1168,,,Fresh,Well in Field 28,108545488,groundwater/well
+UTSS_WS1169,,,Fresh,Southside Well of 22,108545489,groundwater/well
+UTSS_WS1170,,,Fresh,Drain at Bottom of Big Field,108545490,Surface Water
+UTSS_WS1171,,,Fresh,Northside Well of 22,108545491,groundwater/well
+UTSS_WS1172,,,Fresh,Bolinder Well,108545493,groundwater/well
+UTSS_WS1173,,,Fresh,Front Runner West Well,108545494,groundwater/well
+UTSS_WS1174,,,Fresh,Front Runner Central Well,108545495,groundwater/well
+UTSS_WS1175,,,Fresh,Front Runner East Well,108545496,groundwater/well
+UTSS_WS1176,,,Fresh,Williamson West Well,108545497,groundwater/well
+UTSS_WS1177,,,Fresh,Williamson East Well,108545498,groundwater/well
+UTSS_WS1178,,,Fresh,Sinah Lee Well,108545499,groundwater/well
+UTSS_WS1179,,,Fresh,Hayman Duncan Slough,108545500,Surface Water
+UTSS_WS1180,,,Fresh,South Side Hunter Slough,108545501,groundwater/spring
+UTSS_WS1181,,,Fresh,South Side South Well,108545502,groundwater/well
+UTSS_WS1182,,,Fresh,South Side Central Well,108545503,groundwater/well
+UTSS_WS1183,,,Fresh,South Side North Well,108545504,groundwater/well
+UTSS_WS1184,,,Fresh,Big Well,108545505,groundwater/well
+UTSS_WS1185,,,Fresh,Devy North East Well,108545506,groundwater/well
+UTSS_WS1186,,,Fresh,Devy Slough,108545507,Surface Water
+UTSS_WS1187,,,Fresh,Tattersall Well,108545789,groundwater/well
+UTSS_WS1188,,,Fresh,Lehi/North Bench Diversion (Group),108545513,Surface Water
+UTSS_WS1189,,,Fresh,American Fork Canyon River,108545514,Surface Water
+UTSS_WS1190,,,Fresh,Bear River Pump,108545521,Surface Water
+UTSS_WS1191,,,Fresh,517 Well,108545523,groundwater/well
+UTSS_WS1192,,,Fresh,Broken Valve Well,108545524,groundwater/well
+UTSS_WS1193,,,Fresh,Derek`s Well,108545525,groundwater/well
+UTSS_WS1194,,,Fresh,Shed Well,108545526,groundwater/well
+UTSS_WS1195,,,Fresh,Boyd`s Well,108545527,groundwater/well
+UTSS_WS1196,,,Fresh,Amber Well 1,108545528,groundwater/well
+UTSS_WS1197,,,Fresh,Amber Well 2,108545529,groundwater/well
+UTSS_WS1198,,,Fresh,South Well,108545530,groundwater/well
+UTSS_WS1199,,,Fresh,Mill Pond South,108545531,Surface Water
+UTSS_WS1200,,,Fresh,Mill Pond North,108545532,Surface Water
+UTSS_WS1201,,,Fresh,4 Inch Well,108545533,groundwater/well
+UTSS_WS1202,,,Fresh,Daken`s Well,108545534,groundwater/well
+UTSS_WS1203,,,Fresh,8 Inch Well,108545535,groundwater/well
+UTSS_WS1204,,,Fresh,Moonridge Academy Well #1,108545537,groundwater/well
+UTSS_WS1205,,,Fresh,Pump House Well,108545542,groundwater/well
+UTSS_WS1206,,,Fresh,North Well,108545543,groundwater/well
+UTSS_WS1207,,,Fresh,Springs/Drain (Group),108545545,groundwater/spring
+UTSS_WS1208,,,Fresh,761 Wells (Group),108545546,groundwater/well
+UTSS_WS1209,,,Fresh,808 Stock Water Well,108545547,groundwater/well
+UTSS_WS1210,,,Fresh,South Pipe Line Well,108545548,groundwater/well
+UTSS_WS1211,,,Fresh,2522 Wells,108545549,groundwater/well
+UTSS_WS1212,,,Fresh,Water Trough Well,108545550,groundwater/well
+UTSS_WS1213,,,Fresh,House Well,108545552,groundwater/well
+UTSS_WS1214,,,Fresh,4425 Drain,108545554,Surface Water
+UTSS_WS1215,,,Fresh,3970 Wells,108545556,groundwater/well
+UTSS_WS1216,,,Fresh,Fountain Well,108545558,groundwater/well
+UTSS_WS1217,,,Fresh,Gillman Well,108545559,groundwater/well
+UTSS_WS1218,,,Fresh,766 Wells,108545561,groundwater/well
+UTSS_WS1219,,,Fresh,8 Inch Well,108545562,groundwater/well
+UTSS_WS1220,,,Fresh,6 Inch Well,108545563,groundwater/well
+UTSS_WS1221,,,Fresh,Washburn (Drain),108545564,Surface Water
+UTSS_WS1222,,,Fresh,By State Pond (Drain),108545565,Surface Water
+UTSS_WS1223,,,Fresh,Four Springs (Group),108545566,groundwater/spring
+UTSS_WS1224,,,Fresh,Utah Pacific (Drain),108545567,Surface Water
+UTSS_WS1225,,,Fresh,Highway Wells (Group),108545568,groundwater/well
+UTSS_WS1226,,,Fresh,Bandy Well,108545573,groundwater/well
+UTSS_WS1227,,,Fresh,Well #2,108545598,groundwater/well
+UTSS_WS1228,,,Fresh,Brad Well #1,108545604,groundwater/well
+UTSS_WS1229,,,Fresh,Brad Well #2,108545605,groundwater/well
+UTSS_WS1230,,,Fresh,Brad Spring Creek,108545626,Surface Water
+UTSS_WS1231,,,Fresh,Gloria Well #1,108545607,groundwater/well
+UTSS_WS1232,,,Fresh,Gloria Well #2,108545608,groundwater/well
+UTSS_WS1233,,,Fresh,Gloria Minnie CK #1,108545609,Surface Water
+UTSS_WS1234,,,Fresh,Gloria Minnie CK #2,108545610,Surface Water
+UTSS_WS1235,,,Fresh,Gloria Minnie CK #3,108545611,Surface Water
+UTSS_WS1236,,,Fresh,Gloria Well #3,108545612,groundwater/well
+UTSS_WS1237,,,Fresh,Gloria Well #4,108545613,groundwater/well
+UTSS_WS1238,,,Fresh,Gloria Well #5,108545615,groundwater/well
+UTSS_WS1239,,,Fresh,Gloria Well #6,108545616,groundwater/well
+UTSS_WS1240,,,Fresh,Gloria Well #7,108545758,groundwater/well
+UTSS_WS1241,,,Fresh,Gloria Well #8,108545759,groundwater/well
+UTSS_WS1242,,,Fresh,TPC Pond,108545619,groundwater/spring
+UTSS_WS1243,,,Fresh,Academy Well,108545651,groundwater/well
+UTSS_WS1244,,,Fresh,Pine Creek No. 1,108545656,Surface Water
+UTSS_WS1245,,,Fresh,Pine Creek No. 2,108545657,Surface Water
+UTSS_WS1246,,,Fresh,Unnamed Spring,108545658,groundwater/spring
+UTSS_WS1247,,,Fresh,Pine Creek No. 3,108545659,Surface Water
+UTSS_WS1248,,,Fresh,Well-6 233 feet,108545660,groundwater/well
+UTSS_WS1249,,,Fresh,Drain,108545661,Surface Water
+UTSS_WS1250,,,Fresh,Well-4 210 feet,108545662,groundwater/well
+UTSS_WS1251,,,Fresh,Well-4 252 feet,108545765,groundwater/well
+UTSS_WS1252,,,Fresh,Spring,108545766,groundwater/spring
+UTSS_WS1253,,,Fresh,Well 55-9193,108545767,groundwater/well
+UTSS_WS1254,,,Fresh,Well 55-9192,108545768,groundwater/well
+UTSS_WS1255,,,Fresh,House Well,108545666,groundwater/well
+UTSS_WS1256,,,Fresh,Garden Well,108545667,groundwater/well
+UTSS_WS1257,,,Fresh,Cement Well,108545668,groundwater/well
+UTSS_WS1258,,,Fresh,Corral Well,108545669,groundwater/well
+UTSS_WS1259,,,Fresh,Sink Hole Well,108545670,groundwater/well
+UTSS_WS1260,,,Fresh,Middle Field Well,108545671,groundwater/well
+UTSS_WS1261,,,Fresh,Eastside Field Well #1,108545672,groundwater/well
+UTSS_WS1262,,,Fresh,Eastside Field Well #2,108545673,groundwater/well
+UTSS_WS1263,,,Fresh,Porcupine Reservoir,108545744,Surface Water
+UTSS_WS1264,,,Fresh,East Fork Little Bear River,108545745,Surface Water
+UTSS_WS1265,,,Fresh,Hitching Post Well,108545761,groundwater/well
+UTSS_WS1266,,,Fresh,Well No. 1,108545769,groundwater/well
+UTSS_WS1267,,,Fresh,Well No. 2,108545770,groundwater/well
+UTSS_WS1268,,,Fresh,Horton Well,108545779,groundwater/well
+UTSS_WS1269,,,Fresh,Buckwalter Sough,108545875,Surface Water
+UTSS_WS1270,,,Fresh,Well No. 1,108545894,groundwater/well
