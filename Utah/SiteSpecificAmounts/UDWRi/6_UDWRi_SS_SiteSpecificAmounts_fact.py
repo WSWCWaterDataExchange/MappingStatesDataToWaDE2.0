@@ -14,7 +14,7 @@ from pyproj import Transformer, transform
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Utah/SiteSpecificAmounts/UDWR"
+workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Utah/SiteSpecificAmounts/UDWRi"
 os.chdir(workingDir)
 M_fileInput = "RawinputData/P_MasterUTSiteSpecific.csv"
 variables_fileInput = "ProcessedInputData/variables.csv"
@@ -171,10 +171,10 @@ def retrieveGeometry(colrowValue):
 print("Populating dataframe outdf...")
 outdf = pd.DataFrame(index=df_DM.index, columns=columnslist)  # The output dataframe
 
-print("MethodUUID")  # Hardcoded
+print("MethodUUID")
 outdf.MethodUUID = "UDWRi_Water Use Data"
 
-print("OrganizationUUID")  # Hardcoded
+print("OrganizationUUID")
 outdf.OrganizationUUID = "UDWRi"
 
 #-------------------------------------
@@ -201,55 +201,57 @@ outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['
 print("Amount")
 outdf['Amount'] = df_DM['Total Use_Sys']
 
-print('AllocationCropDutyAmount')  # Hardcoded
+print('AllocationCropDutyAmount')
 outdf.AllocationCropDutyAmount = ''
 
-print("AssociatedNativeAllocationIDs")  # Hardcoded
+print("AssociatedNativeAllocationIDs")
 outdf.AssociatedNativeAllocationIDs = ''
 
-print("CommunityWaterSupplySystem")  # Hardcoded
-outdf['CommunityWaterSupplySystem'] = df_DM['System Name_Sys']
+print("CommunityWaterSupplySystem")
+outdf['CommunityWaterSupplySystem'] = df_DM['System Name_Sys'].astype(str)
 
-print('BeneficialUseCategory')  # Hardcoded
-outdf['BeneficialUseCategory'] = df_DM['Use Type_Sour']
+print('BeneficialUseCategory')
+outdf['BeneficialUseCategory'] = df_DM['Use Type_Sour'].astype(str)
 
-print("CropTypeCV")  # Hardcoded
+print("CropTypeCV")
 outdf.CropTypeCV = ''
 
-print("CustomerTypeCV")  # Hardcoded
-outdf['CustomerTypeCV'] = df_DM['System Type_Sys']
+# Issue of CustomerTypeCV of being converted from nvarchar to float
+# print("CustomerTypeCV")
+# outdf['CustomerTypeCV'] = df_DM['System Type_Sys'].astype(str)
 
-print("DataPublicationDate")  # Hardcoded
-outdf.DataPublicationDate = '10/29/2020'
+print("DataPublicationDate")
+outdf.DataPublicationDate = '11/02/2020'
 
-print("DataPublicationDOI")  # Hardcoded
+print("DataPublicationDOI")
 outdf.DataPublicationDOI = ''
 
-print("Geometry")  # Hardcoded
-outdf['Geometry'] = df_DM.apply(lambda row: retrieveGeometry(row['Source ID_Sour']), axis=1)
+print("Geometry")
+outdf['Geometry'] = df_DM.apply(lambda row: retrieveGeometry(row['System ID_Sys']), axis=1)
 
-print("IrrigatedAcreage")  # Hardcoded
+print("IrrigatedAcreage")
 outdf.IrrigatedAcreage = ''
 
-print("IrrigationMethodCV")  # Hardcoded
+print("IrrigationMethodCV")
 outdf.IrrigationMethodCV = ''
 
-print("PopulationServed")  # Hardcoded
-outdf['PopulationServed'] = df_DM['Population_Sys']
+# Issue of PopulationServed of being converted from nvarchar to float
+# print("PopulationServed")
+# outdf['PopulationServed'] = df_DM['Population_Sys']
 
-print("PowerGeneratedGWh")  # Hardcoded
+print("PowerGeneratedGWh")
 outdf.PowerGeneratedGWh = ''
 
-print("PowerType")  # Hardcoded
+print("PowerType")
 outdf.PowerType = ''
 
-print("PrimaryUseCategory")  # Hardcoded
+print("PrimaryUseCategory")
 outdf['PrimaryUseCategory'] = df_DM['Use Type_Sour']
 
 print("ReportYearCV")
 outdf['ReportYearCV'] = df_DM['History Year_Sys'].astype(str)
 
-print("SDWISIdentifier")  # Hardcoded
+print("SDWISIdentifier")
 outdf.SDWISIdentifier = ''
 
 print("TimeframeEnd")
@@ -258,7 +260,7 @@ outdf['TimeframeEnd'] = df_DM['TimeframeEnd']
 print("TimeframeStart")
 outdf['TimeframeStart'] = df_DM['TimeframeStart']
 
-print("Resetting Index")  # Hardcoded
+print("Resetting Index")
 outdf.reset_index()
 
 print("Joining outdf duplicates based on AllocationNativeID...")
@@ -274,7 +276,7 @@ print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to uploa
 
 #Error Checking each Field
 ############################################################################
-print("Error checking each field.  Purging bad inputs.")  # Hardcoded
+print("Error checking each field.  Purging bad inputs.")  
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 

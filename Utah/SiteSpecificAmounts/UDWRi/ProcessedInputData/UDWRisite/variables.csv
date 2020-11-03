@@ -1,0 +1,7 @@
+VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
+UDWRi_Site Specific Unspecified,1,Year,Cumulative,AF,AF,1,CalendarYear,Unspecified,Site Specific
+UDWRi_Site Specific Withdrawal,1,Year,Cumulative,AF,AF,1,CalendarYear,Withdrawal,Site Specific
+UDWRi_Site Specific Transfer In,1,Year,Cumulative,AF,AF,1,CalendarYear,Transfer In,Site Specific
+UDWRi_Site Specific Transfer Out,1,Year,Cumulative,AF,AF,1,CalendarYear,Transfer Out,Site Specific
+UDWRi_Site Specific Delivery,1,Year,Cumulative,AF,AF,1,CalendarYear,Delivery,Site Specific
+UDWRi_Site Specific Return,1,Year,Cumulative,AF,AF,1,CalendarYear,Return,Site Specific

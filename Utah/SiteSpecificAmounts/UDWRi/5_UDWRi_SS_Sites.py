@@ -19,7 +19,7 @@ transformer = Transformer.from_crs(4269, 4326)
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Utah/SiteSpecificAmounts/UDWR"
+workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Utah/SiteSpecificAmounts/UDWRi"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_MasterUTSiteSpecific.csv"
 df = pd.read_csv(fileInput)
@@ -115,7 +115,7 @@ print("NHDProductCV")  # Hardcoded
 outdf.NHDProductCV = ""
 
 print("SiteName")
-outdf['SiteName'] = df['Source Name_Sour']
+outdf['SiteName'] = df['Source Name_Sour'].astype(str)
 
 print("SiteNativeID")
 outdf['SiteNativeID'] = df['Source ID_Sour'].astype(str) # Native dbtype is float. Need to return this value as a string
