@@ -7,7 +7,7 @@ The California water use data are obtained from the online [ftp site](ftp://mae2
 The Python scripts described here are [Jupyter Notebooks](https://jupyter.org/) to prepare the aggregated water use data at DAUCO level for five years (2011 - 2015) for which data currently exist at the ftp site.  
 
 ## Summary
-This document summarizes the process to prepare and share CDWR’s Water Use data for inclusion into the WSWC’s Water Data Exchange (WaDE 2.0) project.  Input files taken from the [ftp site](ftp://mae2.sdsc.edu/published/) for each year are combined by the scripts into unified dataframe that uses DAUCO as aggregation unit.  In order to extract the CDWR’s water use data from the input files and publish it online through ESRI layers so that it can be ready for WaDE 2.0, two Python scripts are used to generate CSV files for aggregated amounts and reporting units input tables (Step 1), and four other CSV files are manually created (Step 2), in data tables compatible with WaDE 2.0.
+This document summarizes the process to prepare and share CDWR’s Water Use data for inclusion into the WSWC’s Water Data Exchange (WaDE 2.0) project.  Input files taken from the ftp site: ftp://mae2.sdsc.edu/published/ for each year are combined by the scripts into unified dataframe that uses DAUCO as aggregation unit.  In order to extract the CDWR’s water use data from the input files and publish it online through ESRI layers so that it can be ready for WaDE 2.0, two Python scripts are used to generate CSV files for aggregated amounts and reporting units input tables (Step 1), and four other CSV files are manually created (Step 2), in data tables compatible with WaDE 2.0.
 
 
 # Step 1: Execute Python Scripts to Generate CSV Data for aggregated amounts and reporting units.
