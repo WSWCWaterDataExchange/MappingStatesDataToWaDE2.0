@@ -1,192 +1,252 @@
-# Water Rights (Allocation amounts) Data Preparation for WaDE
-This read me details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water allocations data made available by the [Oregon Water Resources Department (OWRD)](https://www.oregon.gov/OWRD/access_Data/Pages/Data.aspx), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined way that allows regional analysis to inform planning purposes.
+# OWRD Water Rights (Allocation amounts) Data Preparation for WaDE
+This read me details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [Oregon Water Resources Department (OWRD)](https://www.oregon.gov/OWRD/access_Data/Pages/Data.aspx), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined way that allows regional analysis to inform planning purposes.  WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
-## Overview 
-The water rights data were downloaded from the website https://www.oregon.gov/OWRD/access_Data/Pages/Data.aspx
+## Overview of Data Utilized
+The following data was used for water rights...
 
-There are multiple rows for different data types. The data used here were downloaded from the row named **"Statewide Water Right Spatial Data with Metadata"**. Spatial data for Points of Diversions (PODs) and Points of Use (POUs) and a file linking water rights to PODs are available in Geodatabase and shapefile formats which we exported to CSV files (in QGIS) to be used as inputs to the Python codes developed here to prepare WaDE2 input files:
+- [**Oregon Access Data Maps.**](https://www.oregon.gov/OWRD/access_Data/Pages/Data.aspx)  The data used here were downloaded from the **"Statewide Water Right Spatial Data with Metadata"**, which contained spatial data for Points of Diversions (PODs) and Points of Use (POUs) in a shapefile format.  Data was imported into [ArcGIS PRO](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview), then exported table into csv file format.
+- [**Oregon Water Right Points of Diversion**](https://arcgis.wrd.state.or.us/data/wr_pod_metadata.pdf) was used to translate and understand the data.
+- [**Oregon Water Right Places of Use**](https://arcgis.wrd.state.or.us/data/wr_pou_metadata.pdf) was used to translate and understand the data.
 
- - **wr_pod_nhdevent.csv**
- - **wr_v_pod_public.csv   (POD info with related Water right)**      
- 
-PODs refer to Water right surface Points of Diversion (POD) and groundwater Points of Appropriation (POA) locations in the state of Oregon.
+From the available state agency data, the following input files were created, which were used as input to the Python codes that prepares WaDE 2.0 input files.  Input files used are as follows...
+ - ORwr_v_pod_public_input.csv
 
-The Python scripts described here are [Jupyter Notebooks](https://jupyter.org/) to prepare the water allocations data in csv format that can be ingested into the WaDE2 DB.  
 
-## Documentations
-The following documentation downloaded from the website above provides the metadata information:
+## Summary of Data Prep
+The following text summarizes the process used by the WSWC staff to prepare and share OWRD's water right data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *Oregon_Allocation Schema Mapping to WaDE_QA*.  Six executable code files were used to extract the state agencies site specific time series data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(AllocationAmounts_facts)* is dependent on the previous files.  Those six code files are as follows...
 
- - **wr_pod_metadata.pdf**
+- 0_PreProcessOregonAllocationData.ipynb
+- 1_OR_Methods.py
+- 2_OR_Variables.py
+- 3_OR_Organizations.py
+- 4_OR_WaterSources.py
+- 5_OR_Sites.py
+- 6_OR_AllocationsAmounts_facts.py
 
-And the water rights related code keys are available at: **https://www.oregon.gov/owrd/WRDFormsPDF/wris_code_key.pdf**
 
-## Summary
-This document summarizes the process to prepare and share OWRD’s water rights data for inclusion into the WSWC’s Water Data Exchange (WaDE 2.0) project. In order to extract the OWRD’s water allocations data from the input files and publish it online through ESRI layers so that it can be ready for WaDE 2.0, three Python scripts are used to generate CSV files for water sources, sites, and water allocations input tables (Step 1), and three other CSV files are manually created (Step 2), in data tables compatible with WaDE 2.0.
-
-# Step 1: Execute Python Scripts to Generate CSV Data for water sources, sites, and water allocations.
-The following scripts use queries to extract OWRD’s water rights data into views compatible with WaDE 2.0 (see list below for name of each script).  
-
-- #1. watersources_OR.ipynb
-- #2. sites_OR.ipynb
-- #3. waterallocations_OR.ipynb
-
-Note: The outputs from 'watersources_OR.ipynb' and 'sites_OR.ipynb' (water sources and sites csv files) provide inputs to the 'waterallocations_OR.ipynb', so the order in which scripts are operated is important.  
-
-All scripts can be found at the WaDE’s Github repository [MappingStatesDataToWaDE2.0 in the Oregon folder](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/edit/master/Oregon/).
-
-#### Inputs: The following spreadsheet is input file to all scripts:
-
-- **wr_v_pod_public_xy.csv**   (POD file including the relationship between water rights and POD and xy coordinates of PODs)
-
-## 1-1. watersources_OR.ipynb
-Purpose: generate a list of water source names, source types, and quality indicators.
+***
+### 0) Code File: 0_PreProcessOregonAllocationData.ipynb
+Purpose: Pre-process the state agency input data files into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
-- **spreadsheet listed above**
+ - ORwr_v_pod_public_input.csv
 
-Dependency:  None
+#### Outputs:
+ - P_OregonMaster.csv
+ - inputOregonDataRemoved.csv
 
-Supplemental Scripts Required:  None
-
-#### Operation:
-- Read the input file.
-- Form the output dataframe.
-- Generate empty **watersources.csv** file with controlled vocabulary headers.
-- Assign water soure type based on the dictionary mapping the code 'wr_type' to storage, surface water, and ground water.
-- Assign water source name from 'source' if it exists, or else put source name as 'Unspecified'.
-- Enter default values for fields with constant values or those that do not have values currently.
-- Drop duplicate rows if they exist.
-- Generate WaterSourceNativeID.
-- Assign water source UUID to each (unique) row.
-- Copy results into **watersources.csv** and export.			
-
-#### Sample Data (Note: not all fields shown):
-WaterSourceUUID | WaterSourceNativeID | WaterSourceName | WaterSourceTypeCV | WaterQualityIndicatorCV
------------- | ------------ | -------- | ---------- | ---- 
-OR_1  | 1 | FORMOSA 1 ADIT | groundwater | Fresh
-
-Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. **watersources_mandatoryFieldMissing.csv**) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the **watersources_OR.ipynb** include the following: 
-- WaterSourceUUID
-- WaterSourceTypeCV
-- WaterQualityIndicatorCV
-
-## 1-2. sites_OR.ipynb
-Purpose: generate a list of sites where water is diverted for use (also known as Points Of Diversion, PODs).
-
-Dependency:  None
-
-Supplemental Scripts Required: None
-
-#### Inputs: 
-- **spreadsheet listed above**
-
-#### Operation:   
-- Generate empty sites.csv file with controlled vocabulary headers.
-- Assign SiteNativeID from 'pod_location_id'.
-- Specify site type based on dictionary that maps the 'source_type' code to its respective values.
-- Leave site name as 'Unspecified'.
-- Project X and Y coordindates in EPSG:2992 to longitude and latitude in EPSG:4236.
-- Enter coordinate mathod as 'Unspecified'.
-- Specify State controlled vocabulary as 'OR'.
-- Drop duplicates if any.
-- Generate SiteUUID based on SiteNativeID. 
-- Drop data if missing latitude/longitude.
-- copy results into **sites.csv** and export.  
-
-#### Sample Data (Note: not all fields shown):
-SiteUUID | SiteNativeID | SiteName  | SiteTypeCV | Longitude | Latitude | StateCV
------------- | ------------ | ---------- | ---- | ---- | ---- | -------
-OR_6909 | 6909 | Unspecified  | well  | -123.3828 | 42.8558 | OR
-
-Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. **sites_mandatoryFieldMissing.csv**) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the **sites_OR.ipynb** include the following: 
-- SiteUUID 
-- SiteName
-- CoordinateMethodCV 
-- EPSGCodeCV
-
-## 1-3. waterallocations_OR.ipynb
-Purpose: generate master sheet of water allocations to import into WaDE 2.0.
-
-Dependency: watersources.csv and sites.csv generated above.
-
-Supplemental Scripts Required: None
-
-#### Inputs: 
-- **spreadsheet listed above**
-
-#### Operation:
- - Generate empty waterAllocations.csv file with controlled vocabulary headers.
- - Assign Native Allocation ID from 'snp_id'.
- - Map Site IDs from sites.csv based on the 'pod_location_id's that correspond to the NativeAllocationID ('snp_id'). Note there might be multiple sites mapped into one water right.
- - Map Watersource IDs from watersources.csv based on source name and source type.
- - Assign Beneficial Use from 'use_code_description'.
- - Map Allocation type from dictionary for 'claim_char' code. 
- - Specify Allocation owner as company name from 'name_company' or the 'name_last' and 'name_first' of individual owners.
- - Get Allocation priority date from 'priority_date' and format it in WaDE2 compatible form.
- - Get Allocation time frame start by concatenating 'begin_month' and 'begin_day' and formating them to 'mm/dd' form.
- - Get Allocation time frame end by concatenating 'end_month' and 'end_day' and formating them to 'mm/dd' form.
- - Get Allocation amount from 'rate_cfs' for each POD corresponding to a given water right, and aggregate/sum them to obtain value for a the water right.
- - Get Allocation maximum from 'max_rate_acre_feet' for each POD corresponding to a given water right, and aggregate/sum them to obtain value for a the water right.
- - Assign WaterAllcation Native URL from 'wris_link'.
- - Drop rows if both Allocation amount and Allocation maximum are null.
- - Drop duplicates if any.
- - Copy results into **waterallocations.csv** and export.  
-
-#### Sample Data (Note: not all fields shown):
-OrganizationUUID | SiteUUID | WaterSourceUUID | BeneficialUseCategory | AllocationNativeID | AllocationOwner | AllocationTypeCV | AllocationLegalStatusCV   
----------------- | ------------ | -------- | ---------- | ----------- | ---------- | ---------- | ----------- 
-OWRD| OR_6909, OR_6910| OR_1  | MINING | 21755 |FORMOSA EXPLORATION INC. |  |  
-
-Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. **allocations_mandatoryFieldMissing.csv**) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the **waterallocations_OR.ipynb** include the following: 
-- OrganizationUUID
-- VariableSpecificUUID
-- WaterSourceUUID
-- MethodUUID
-- AllocationPriorityDate
-
-# Step 2: Manually Modify Existing Files to Generate OR CSV Data Compatible with WaDE 2.0.
-The following is a quick description of three CSV files manually created to be used as inputs into WaDE 2.0.  These tables usually have single rows, so are prepared by manual inspection.
+#### Operation and Steps:
+- Read the input files and generate temporary input dataframes.
+- Format **priority_date** field to %m/%d/%Y format.
+- Remove NULL or missing (999) values for both **max_rate_acre_feet** and **rate_cfs**.  Need amount values for WaDE.
+- Generate WaDE *Owner* by determining company vs individual using **name_company**, **name_last**, and **name_first** input fields. Concatenating name of individual.
+- Formate string for WaDE *TimeframeStart* and *TimeframeEnd* fields.  Use **begin_month** and **begin_day** input fields.
+- Format string for WaDE *BeneficialUse**.  Use **use_code_description** input field.  Need to remove special characters.
+- Inspect output dataframe for additional errors / datatypes.
+- Export output dataframe as new csv file, *P_OregonMaster.csv*.
+- Export all input data rows removed for future review (see *inputOregonDataRemoved.csv*).
 
 
-## 2-1. variables.csv 
+***
+### 1) Code File: 1_OR_Methods.py
+Purpose: generate legend of granular methods used on data collection.
+
+#### Inputs:
+- None
+
+#### Outputs:
+- methods.csv
+- methods_missing.csv (error check only)
+
+#### Operation and Steps:
+- Generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE Method* specific columns.
+- Assign state agency info to the *WaDE Method* specific columns (this was hardcoded by hand for simplicity).
+- Assign method UUID identifier to each (unique) row.
+- Perform error check on output dataframe.
+- Export output dataframe *methods.csv*.
+
+#### Sample Output (WARNING: not all fields shown):
+MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
+---------- | ---------- | ------------
+OWRD_Water Rights | Surface Ground Storage | Adjudicated
+
+
+***
+### 2) Code File: 2_OR_Variables.py
 Purpose: generate legend of granular variables specific to each state.
 
-Dependency:  None
-
-Supplemental Scripts Required:  None
-
 #### Inputs:
-- See the below prepared table.
+- None
 
-VariableSpecificUUID | VariableSpecificCV | VariableCV | AggregationStatisticCV| AggregationInterval | AggregationIntervalUnitCV | ReportYearStartMonth| ReportYearTypeCV | AmountUnitCV | MaximumAmountUnitCV
----------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- | --------- | -------
-OWRD Allocation all  | Allocation All | Allocation | Average | 1 | Year |10 | WaterYear| CFS | AFY
+#### Outputs:
+- variables.csv
+- variables_missing.csv (error check only)
 
-## 2-2. methods.csv
-Purpose: generate legend of granular variables specific to each state detailing water right / allocation / etc data collection.
+#### Operation and Steps:
+- Generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE Variable* specific columns.
+- Assign state agency info to the *WaDE Variable* specific columns (this was hardcoded by hand for simplicity).
+- Assign variable UUID identifier to each (unique) row.
+- Perform error check on output dataframe.
+- Export output dataframe *variables.csv*.
 
-Dependency:  None
+#### Sample Output (WARNING: not all fields shown):
+VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
+---------- | ---------- | ------------ | ------------
+OWRD_Allocation All | 1 | Year | CFS
 
-Supplemental Scripts Required:  None
 
-#### Inputs:
-- See the below prepared table.       
-
-MethodUUID | MethodName | MethodDescription| MethodNEMLink | ApplicableResourceTypeCV | MethodTypeCV | DataCoverageValue | DataQualityValueCV	| DataConfidenceValue
----------- | ---------- | ------------ | ------------- | ------------- | ------------ | -------------| ------------ | ---------- 
-OWRD-Water Rights | Oregon Water Rights | Water Rights | https://www.oregon.gov/OWRD/access_Data/Pages/Data.aspx| Surface/Ground/Storage | Adjudicated	|         |         |                 
-
-  
-## 2-3. Organizations.csv
+***
+### 3) Code File: 3_OR_Organizations.py
 Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
 
-Dependency:  None
+#### Inputs:
+- None
 
-Supplemental Scripts Required:  None
+#### Outputs:
+- organizations.csv
+- organizations_missing.csv (error check only)
+
+#### Operation and Steps:
+- Generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE Organizations* specific columns.
+- Assign state agency info to the *WaDE Organizations* specific columns (this was hardcoded by hand for simplicity).
+- Assign organization UUID identifier to each (unique) row.
+- Perform error check on output dataframe.
+- Export output dataframe *organizations.csv*.
+
+#### Sample Output (WARNING: not all fields shown):
+OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
+---------- | ---------- | ------------ | ------------
+OWRD | Oregon Water Resources Department | Tom Byler | https://www.oregon.gov/OWRD/
+
+
+***
+### 4) Code File: 4_OR_WaterSources.py
+Purpose: generate a list of water sources specific to a water right.
 
 #### Inputs:
-- See the below prepared table.               
+- P_OregonMaster.csv
 
-OrganizationUUID | OrganizationName | OrganizationPurview| OrganizationWebsite | OrganizationPhoneNumber |	OrganizationContactName	| OrganizationContactEmail |	OrganizationDataMappingURL |	State 
----------------- | ------------ | -------- | ---------- | ---------- | ------------ | -------------- | ------------ | ---------
-OWRD |Oregon Water Resources Department | Water right surface Points of Diversion (POD) and groundwater Points of Appropriation (POA) locations in the state of Oregon are collectively referred to as PODs. | https://www.oregon.gov/OWRD/access_Data/Pages/Data.aspx   | 503-986-0900 |	Tom Byler | wrd_dl_Director@oregon.gov |https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Oregon	| OR
+#### Outputs:
+- waterSources.csv
+- watersources_missing.csv (error check only)
+
+#### Operation and Steps:
+- Read the input file and generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE WaterSources* specific columns.
+- Assign state agency info to the *WaDE WaterSources* specific columns.  See *Oregon_Allocation Schema Mapping to WaDE_QA* for specific details.  Items of note are as follows...
+    - *WaterSourceName* = **source**, Unknown if not given.
+    - *WaterSourceTypeCV* = **wr_type**, Unknown if not given.
+- Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceName* & *WaterSourceTypeCV* fields.
+- Assign water source UUID identifier to each (unique) row.
+- Perform error check on output dataframe.
+- Export output dataframe *WaterSources.csv*.
+
+#### Sample Output (WARNING: not all fields shown):
+WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceNativeID | WaterSourceTypeCV
+---------- | ---------- | ------------ | ------------ | ------------
+OR_1 | Fresh | FORMOSA 1 ADIT | Unspecified | groundwater
+
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
+- WaterSourceUUID
+- WaterQualityIndicatorCV
+- WaterSourceTypeCV
+
+
+***
+### 5) Code File: 5_OR_Sites.py
+Purpose: generate a list of sites where water is diverted (also known as Points Of Diversion, PODs).
+
+#### Inputs:
+- P_OregonMaster.csv
+
+#### Outputs:
+- sites.csv
+- sites_missing.csv (error check only)
+
+#### Operation and Steps:
+- Read the input file and generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE Site* specific columns.
+- Assign state agency info to the *WaDE Site* specific columns.  See *Oregon_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+    - *Latitude* = converted **POINT_X** projection from OWRD EPSG:2992 -to- WaDE EPSG:4326.
+    - *Longitude* = converted **POINT_Y** projection from OWRD EPSG:2992 -to- WaDE EPSG:4326.
+    - *SiteName* = concatenate **snp_id** & **pod_nbr** together. Unspecified if not given.
+    - *SiteNativeID* = **pod_location_id**.
+    - *SiteTypeCV* = **source_type** & **pod_nbr**, Unknown if not given.
+- Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *SiteNativeID*, *SiteName*, *SiteTypeCV*, *Longitude* & *Latitude* fields.
+- Assign site UUID identifier to each (unique) row.
+- Perform error check on output dataframe.
+- Export output dataframe *sites.csv*.
+
+#### Sample Output (WARNING: not all fields shown):
+SiteUUID | CoordinateMethodCV | Latitude | Longitude | SiteName
+---------- | ---------- | ------------ | ------------ | ------------
+OR_1 | Unspecified | 42.855812902123 | -123.382876619485 | 21755_1
+
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
+- SiteUUID 
+- CoordinateMethodCV
+- EPSGCodeCV
+- SiteName
+
+
+***
+### 6) Code File: 6_OR_AllocationsAmounts_facts.py
+Purpose: generate master sheet of water allocations to import into WaDE 2.0.
+
+#### Inputs:
+- P_OregonMaster.csv
+- methods.csv
+- variables.csv
+- organizations.csv
+- watersources.csv
+- sites.csv
+
+#### Outputs:
+- waterallocations.csv
+- waterallocations_missing.csv (error check only)
+
+#### Operation and Steps:
+- Read the input files and generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE Water Allocations* specific columns.
+- Assign stage agency info to the *WaDE Water Allocations* specific columns.  See *Oregon_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+    - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
+    - *AllocationAmount* = **rate_cfs**.
+    - *AllocationMaximum* = **max_rate_acre_feet**.
+    - *AllocationNativeID* = **snp_id**.
+    - *AllocationOwner* = **Owner**.
+    - *AllocationPriorityDate* = **priority_date**.
+    - *AllocationTypeCV* = **claim_char**, Unspecified if not given.
+    - *BeneficialUseCategory* = **use_code_description**, Unknown if not given.
+- Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.
+- Perform error check on output dataframe.
+- Export output dataframe *waterallocations.csv*.
+
+#### Sample Output (WARNING: not all fields shown):
+AllocationNativeID | AllocationAmount | AllocationPriorityDate | BeneficialUseCategory
+---------- | ---------- | ------------ | ------------
+100001 | 0.01 | 6/3/1976 | DOMESTIC INCLUDING LAWN AND GARDEN
+
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
+- MethodUUID
+- VariableSpecificUUID
+- OrganizationUUID
+- WaterSourceUUID
+- SiteUUID
+- AllocationPriorityDate
+- BeneficialUseCategory
+- AllocationAmount or AllocationMaximum
+- DataPublicationDate
+
+
+## Staff Contributions
+Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Oregon Water Resources Department (OWRD)](https://www.oregon.gov/OWRD/access_Data/Pages/Data.aspx).
+
+WSWC Staff
+- Ryan James <rjames@wswc.utah.gov>
+- Adel Abdallah <adelabdallah@wswc.utah.gov>
+
+OWRD Staff
+- 
