@@ -131,7 +131,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName  | OrganizationWebsite
----------- | ---------- | ------------ | ------------
+---------- | ---------- | ------------
 CDWR | California Department of Water Resources |https://water.ca.gov/
 
 
