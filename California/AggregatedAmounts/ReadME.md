@@ -1,257 +1,154 @@
-# CDWR Aggregated Data Preparation for WaDE
-This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting aggregated water budget data made available by the [California Department of Water Resources (CDWR)](https://data.ca.gov/dataset/water-plan-water-balance-data), for inclusion into the Water Data Exchange (WaDE) project.   WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
+# Water Use (Aggregated amounts) Data Preparation for WaDE
+This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water use data made available by the [California Department of Water Resources (CDWR)](https://data.ca.gov/dataset/water-plan-water-balance-data), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and cost-effective way.
 
-## Overview of Data Utilized
-The following data was used for aggregated water budget...
+## Overview 
+The California water use data are obtained from the online [ftp site](ftp://mae2.sdsc.edu/published/).  The water use data are provided in preadsheets for each year that summarize water balance at the Detailed Analysis Units by County (DAUCO), state (ST), hydrologic region (HR), and planning areas (PA) levels of aggregation.
 
-- **CA-DWR-WaterBalance-Level2-DP-1000-year-DAUCO** csv files contained aggregated water budget data and info and were obtained from the provided [CDWR ft site:](ftp://mae2.sdsc.edu/published/).  Data used was for the years 2011-2016.  DAUCO files were used as they provided the most information.
-- **Water_Plan_Planning_Areas-shp** files were used to extract geometry, create shape files, and were obtained from the [DWR Atlas](https://atlas-dwr.opendata.arcgis.com/datasets/a911dd793cae48f1a3662e08f4811382_0?geometry=-152.647%2C31.071%2C-85.894%2C43.276).
-- **Hydrologic_Regions-shp** files were used to extract geometry, create shape files, and were obtained from the [DWR Atlas](https://atlas-dwr.opendata.arcgis.com/datasets/2a572a181e094020bdaeb5203162de15_0).
-- **DAUCO-shp** files were used to extract geometry, create shape files, and were provided with previous WaDE 1.0 correspondence in the past between the CDWR and the WSWC.
+The Python scripts described here are [Jupyter Notebooks](https://jupyter.org/) to prepare the aggregated water use data at DAUCO level for five years (2011 - 2015) for which data currently exist at the ftp site.  
 
-From the above mentioned [CDWR ft site:](ftp://mae2.sdsc.edu/published/), 5 unique files were used as input to the Python codes that prepare WaDE 2.0 input files.  Input files used are as follows...
- - CA-DWR-WaterBalance-Level2-DP-1000-2011-DAUCO_input.csv
- - CA-DWR-WaterBalance-Level2-DP-1000-2012-DAUCO_input.csv
- - CA-DWR-WaterBalance-Level2-DP-1000-2013-DAUCO_input.csv
- - CA-DWR-WaterBalance-Level2-DP-1000-2014-DAUCO_input.csv
- - CA-DWR-WaterBalance-Level2-DP-1000-2015-DAUCO_input.csv
- - CA-DWR-WaterBalance-Level2-DP-1000-2016-DAUCO_input.csv
-
-## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share CDWR's aggregated water budget data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *CA_Aggregated Schema Mapping to WaDE_QAR.xlsx*.  Six executable code files were used to extract the CDWR's aggregated water budget data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(AggregatedAmounts_facts)* is dependent on the previous files.  Those six code files are as follows...
-
-- 0_CAAggregatedDataPreprocess.ipynb
-- 1_CAagg_Methods.py
-- 2_CAagg_Variables.py
-- 3_CAagg_Organizations.py
-- 4_CAagg_WaterSources.py
-- 5_CAagg_ReportingUnits.py
-- 6_CAagg_AggregatedAmounts_facts.py
+## Summary
+This document summarizes the process to prepare and share CDWR’s Water Use data for inclusion into the WSWC’s Water Data Exchange (WaDE 2.0) project.  Input files taken from the ftp site: ftp://mae2.sdsc.edu/published/ for each year are combined by the scripts into unified dataframe that uses DAUCO as aggregation unit.  In order to extract the CDWR’s water use data from the input files and publish it online through ESRI layers so that it can be ready for WaDE 2.0, two Python scripts are used to generate CSV files for aggregated amounts and reporting units input tables (Step 1), and four other CSV files are manually created (Step 2), in data tables compatible with WaDE 2.0.
 
 
-***
-### 0) Code File: 0_CAAggregatedDataPreprocess.ipynb
-Purpose: Pre-process the Arizona input data files into one master file for simple dataframe creation and extraction.
+# Step 1: Execute Python Scripts to Generate CSV Data for aggregated amounts and reporting units.
+The following scripts use queries to extract CDWR’s water use data into views compatible with WaDE 2.0 (see list below for name of each script).  
+
+- #1. reportingunits_CA.ipynb
+- #2. aggregatedamounts_CA.ipynb
+
+Note: The outputs from 'reportingunits_CA.ipynb' (reportingunit csv file) provides an input to the 'aggregatedamounts_CA.ipynb', so the order in which scripts are operated is important.  
+
+All scripts can be found at the WaDE’s Github repository [MappingStatesDataToWaDE2.0 in the California folder](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/California).
+
+#### Inputs: The following spreadsheets are inputs to both scripts:
+
+  CA-DWR-WaterBalance-Level2-DP-1000-2015-DAUCO.csv
+  
+  CA-DWR-WaterBalance-Level2-DP-1000-2014-DAUCO.csv
+  
+  CA-DWR-WaterBalance-Level2-DP-1000-2013-DAUCO.csv
+  
+  CA-DWR-WaterBalance-Level2-DP-1000-2012-DAUCO.csv
+  
+  CA-DWR-WaterBalance-Level2-DP-1000-2011-DAUCO.csv
+
+Note: If data for others years become available, the scripts can run just for the new data and update the WaDE database.
+
+## 1-1. reportingunits_CA.ipynb
+Purpose: generate a list of DAUCO units where water use is aggregated and their associated metadata.
 
 #### Inputs: 
- - CA-DWR-WaterBalance-Level2-DP-1000-2011-DAUCO_input.csv
- - CA-DWR-WaterBalance-Level2-DP-1000-2012-DAUCO_input.csv
- - CA-DWR-WaterBalance-Level2-DP-1000-2013-DAUCO_input.csv
- - CA-DWR-WaterBalance-Level2-DP-1000-2014-DAUCO_input.csv
- - CA-DWR-WaterBalance-Level2-DP-1000-2015-DAUCO_input.csv
- - CA-DWR-WaterBalance-Level2-DP-1000-2016-DAUCO_input.csv
- - Water_Plan_Planning_Areas.shp
- - Hydrologic_Regions.shp
- - WaDECADAU.shp
+- **spreadsheets listed above**
+
+Dependency:  None
+
+Supplemental Scripts Required:  None
+
+#### Operation:
+- Read the input file into one dataframe for all years.
+- Generate empty **reportingunits.csv** file with controlled vocabulary headers.
+- Assign DAUCOs as reporting units
+- Assign reporting units IDs.
+- Assign geometry for the coordinate of the center of the reporting unit
+- Enter default values for fields with constant values or those that do not have values currently.
+- Drop duplicate rows if they exist.
+- Copy results into **reportingunits.csv** and export.			
+
+#### Sample Data (Note: not all fields shown):
+ReportingUnitUUID	| ReportingUnitNativeID | ReportingUnitName | ReportingUnitTypeCV | ReportingUnitUpdateDate | EPSGCodeCV | Geometry
+------------------| --------------------- | ----------------- | --------------------| ------------------------| ---------- | ---------
+CA_DAU01949 | DAU01949	| Gualala	| Detailed Analysis Unit by County (DAUCO)	| 1/2/2020	|	EPSG:4326 | POINT (-123.28035020000002 38.66392589)
 
 
-#### Outputs:
- - P_caAggMaster.csv
- - P_caGeometry.csv
+## 1-2. aggregatedallocations_CA.ipynb
+Purpose: generate master sheet of water uses to import into WaDE 2.0.
 
-#### Operation and Steps:
-- Read the DAUCO csv input files and generate temporary input dataframes, then concatenate together to form one large dataframe.
-- For **Planing Area** reporting unit type, group by **PA**, **Year**, & **CategoryA**, and sum the **KAcreFt**.  Input into PA temporary dataframe.
-- For **Hydrologic Region** reporting unit type, group by **HR_NAME**, **HR_CODE**, **Year**, & **CategoryA**, and sum the **KAcreFt**.  Input into HR temporary dataframe.
-- For **Detailed Analysis Units by County** reporting unit type, group by **DAU**, **DAU_NAME**, **Year**, & **CategoryA**, and sum the **KAcreFt**.  Input into DAUCO temporary dataframe.
-- Concatenate temporary, PA, HR, and DAUCO dataframes together.
-- Inspect dataframes for errors.
-- Generated WKT from AMA_and_INA.shp file to create *Geometry* WaDE input.
-- Export output dataframe as new csv files, *P_caAggMaster.csv* & *P_caGeometry.csv*.
+Dependency:  None
 
+Supplemental Scripts Required: None
 
-***
-### 1) Code File: - 1_CAagg_Methods.py
-Purpose: generate legend of granular methods used on data collection.
+#### Inputs: 
+- **spreadsheets listed above**
+- **reportingunits.csv**
+- **watersources.csv**
 
-#### Inputs:
-- None
+#### Operation:   
+- Read the input files and join contents into one dataframe for all years.
+- Generate empty **aggregatedalloctions.csv** file with controlled vocabulary headers.
+- Assign water source IDs from water sources input file.
+- Assign for each water use the corresponding reporting unit ID from reporting units input file.
+- Assign beneficial uses from the column **CategoryA** in the input files.
+- Calculate water use amount for each row as aggregate (Sum) of those for unique DAUCO and Beneficial use (CategoryA) groups. Convert units to AF
+- Assign default values for fields with constant values or those with no detailed information currently.
+- Copy results into **aggregatedamounts.csv** and export.
+        
 
-#### Outputs:
-- methods.csv
-- methods_missing.csv (error check only)
+#### Sample Data (Note: not all fields shown):
+OrganizationUUID | ReportingUnitUUID | BeneficialUseCategory | WaterSourceUUID | MethodUUID | ReportYearCV | Amount   
+---------------- | ----------------- | ------------------ | --------------------- | --------------- | ----------- | --------- 
+CDWR | CA_DAU04827| Instream Flow Requirements | CA_1 | CDWR_Water_uses | 2011 | 723700
 
-#### Operation and Steps:
-- Generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE Method* specific columns.
-- Assign state agency data  info to the *WaDE Method* specific columns (this was hardcoded by hand for simplicity).
-- Assign method UUID identifier to each (unique) row.
-- Perform error check on output dataframe.
-- Export output dataframe *methods.csv*.
-
-#### Sample Output (WARNING: not all fields shown):
-MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
----------- | ---------- | ------------
-CDWR_Water Use | Unspecified | Water Use
-
-
-***
-### 2) Code File: 2_CAagg_Variables.py
-Purpose: generate legend of granular variables specific to each state.
-
-#### Inputs:
-- None
-
-#### Outputs:
-- variables.csv
-- variables_missing.csv (error check only)
-
-#### Operation and Steps:
-- Generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE Variable* specific columns.
-- Assign state agency data info to the *WaDE Variable* specific columns (this was hardcoded by hand for simplicity).
-- Assign variable UUID identifier to each (unique) row.
-- Perform error check on output dataframe.
-- Export output dataframe *variables.csv*.
-
-#### Sample Output (WARNING: not all fields shown):
-VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
----------- | ---------- | ------------ | ------------
-CA_Consumptive Use | 1 | Year | AFY
-
-
-***
-### 3) Code File: 3_CAagg_Organizations.py
-Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
-
-#### Inputs:
-- None
-
-#### Outputs:
-- organizations.csv
-- organizations_missing.csv (error check only)
-
-#### Operation and Steps:
-- Generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE Organizations* specific columns.
-- Assign state agency data info to the *WaDE Organizations* specific columns (this was hardcoded by hand for simplicity).
-- Assign organization UUID identifier to each (unique) row.
-- Perform error check on output dataframe.
-- Export output dataframe *organizations.csv*.
-
-#### Sample Output (WARNING: not all fields shown):
-OrganizationUUID | OrganizationName  | OrganizationWebsite
----------- | ---------- | ------------ | ------------
-CDWR | California Department of Water Resources |https://water.ca.gov/
-
-
-***
-### 4) Code File: 4_CAagg_WaterSources.py
-Purpose: generate a list of water sources specific to an aggregated water budget data area.
-
-#### Inputs:
-- P_caAggMaster.csv
-
-#### Outputs:
-- WaterSources.csv
-- watersources_missing.csv (error check only)
-
-#### Operation and Steps:
-- Read the input file and generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign state agency data info to the *WaDE WaterSources* specific columns.  See *CA_Aggregated Schema Mapping to WaDE_QAR.xlsx* for specific details.  Items of note are as follows...
-    - *WaterSourceTypeCV* = Groundwater, Surface Water.
-- Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceTypeCV* field.
-- Assign water source UUID identifier to each (unique) row.
-- Perform error check on output dataframe.
-- Export output dataframe *WaterSources.csv*.
-
-#### Sample Output (WARNING: not all fields shown):
-WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceNativeID | WaterSourceTypeCV
----------- | ---------- | ------------ | ------------ | ------------
-CAag_WS1 | Fresh | Unspecified | Unspecified | Groundwater, Surface Water
-
-Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
-- WaterSourceUUID
-- WaterQualityIndicatorCV
-- WaterSourceTypeCV
-
-
-***
-### 5) Code File: 5_CAagg_ReportingUnits.py
-Purpose: generate a list of polygon areas associated with the state agency specific area on aggregated water budget data.
-
-#### Inputs:
-- P_caAggMaster.csv
-
-#### Outputs:
-- reportingunits.csv
-- reportingunits_missing.csv (error check only)
-
-#### Operation and Steps:
-- Read the input file and generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE ReportingUnits* specific columns.
-- Assign state agency data info to the *WaDE ReportingUnits* specific columns.  See *CA_Aggregated Schema Mapping to WaDE_QAR.xlsx* for specific details.  Items of note are as follows...
-    - *ReportingUnitName* = inReportingUnitName, see *0_CAAggregatedDataPreprocess.ipynb* for specifics.
-    - *ReportingUnitNativeID* = inReportingUnitNativeID, see *0_CAAggregatedDataPreprocess.ipynb* for specifics.
-    - *ReportingUnitTypeCV* = inReportingUnitTypeCV, see *0_CAAggregatedDataPreprocess.ipynb* for specifics.
-    - *Geometry* = WKT created **Geometry**, see *0_CAAggregatedDataPreprocess.ipynb* for specifics.
-- Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *ReportingUnitName*, *ReportingUnitNativeID* & *ReportingUnitTypeCV* fields.
-- Assign reportingunits UUID identifier to each (unique) row.
-- Perform error check on output dataframe.
-- Export output dataframe *sites.csv*.
-
-#### Sample Output (WARNING: not all fields shown):
-SiteUUID | ReportingUnitName | ReportingUnitTypeCV 
----------- | ---------- | ------------ 
-CAag_RU1| 101 | Planning Area
-
-Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *reportingunits_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the reportingunits include the following...
-- ReportingUnitUUID
-- ReportingUnitName
-- ReportingUnitNativeID
-- ReportingUnitTypeCV
-- StateCV
-
-
-***
-### 6) Code File: 6_CAagg_AggregatedAmounts_facts.py
-Purpose: generate master sheet of state agency specified area aggregated water budget information to import into WaDE 2.0.
-
-#### Inputs:
-- P_caAggMaster.csv
-- methods.csv
-- variables.csv
-- organizations.csv
-- watersources.csv
-- sites.csv
-
-#### Outputs:
-- aggregatedamounts.csv
-- aggregatedamounts_missing.csv (error check only)
-
-#### Operation and Steps:
-- Read the input files and generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE Water Allocations* specific columns.
-- Assign state agency data info to the *WaDE Water Allocations* specific columns.  See *CA_Aggregated Schema Mapping to WaDE_QAR.xlsx* for specific details.  Items of note are as follows...
-    - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
-    - *Amount* = inAmount, see *0_CAAggregatedDataPreprocess.ipynb* for specifics.
-    - *BeneficialUseCategory* = inBenUse, see *0_CAAggregatedDataPreprocess.ipynb* for specifics.
-    - *ReportYearCV* = inYear, see *0_CAAggregatedDataPreprocess.ipynb* for specifics.
-- Perform error check on output dataframe.
-- Export output dataframe *waterallocations.csv*.
-
-#### Sample Output (WARNING: not all fields shown):
-MethodUUID | OrganizationUUID | ReportingUnitUUID | VariableSpecificUUID | WaterSourceUUID | Amount | BeneficialUseCategory | ReportYearCV
----------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | -----------
-CDWR_Water Use | CDWR | CAag_RU1 | CA_Consumptive Use | CAag_WS1 | 3389.59999999999 | Agricultural | 2011
-
-Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
-- MethodUUID
-- VariableSpecificUUID
+Any rows that are missing required fields are dropped from the WaDE-ready dataset and instead are saved in a separate csv file (e.g. **aggregatedamounts_mandatoryFieldMissing.csv**) for review.  This allows for ease of future inspection on missing items.  Mandatory fields for the **aggregatedallocations_CA.ipynb** include the following:
 - OrganizationUUID
-- WaterSourceUUID
 - ReportingUnitUUID
+- WaterSourceUUID
+- MethodUUID
 - Amount
 
 
-## Staff Contributions
-Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Arizona Department of Water Resources (CDWR)](https://new.azwater.gov/).
+# Step 2: Manually Modify Existing Files to Generate CA CSV Data Compatible with WaDE 2.0.
+The following is a quick description of four CSV files manually created by hand to be used as inputs into WaDE 2.0.  These tables usually have single rows, so are prepared by manual inspection.
 
-WSWC Staff
-- Ryan James <rjames@wswc.utah.gov>
-- Adel Abdallah <adelabdallah@wswc.utah.gov>
 
-CDWR Staff
--
--
+## 2-1. watersources.csv
+Purpose: generate list of water sources from which water is allocated from.
+Dependency:  None
+Supplemental Scripts Required:  None
+
+#### Inputs:
+ - See the below prepared table.
+
+WaterSourceUUID | WaterSourceNativeID | WaterSourceName | WaterSourceTypeCV | WaterQualityIndicatorCV | GNISFeatureNameCV | Geometry
+--------------- | ------------------- | --------------- | ----------------- | ------------------------|-------------------|--------- 
+CA_1	| 1     | Unspecificed	| Groundwater, Surface Water  | Fresh         	      | 		  |		
+
+   		
+
+## 2-2. variables.csv 
+Purpose: generate legend of granular variables specific to each state.
+Dependency:  None
+Supplemental Scripts Required:  None
+
+#### Inputs:
+- See the below prepared table.
+
+VariableSpecificUUID | VariableSpecificCV | VariableCV | AggregationStatisticCV| AggregationInterval | AggregationIntervalUnitCV | ReportYearStartMonth| ReportYearTypeCV | AmountUnitCV 
+---------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- | -------------
+Consumptive Use  | Consumptive Use | Consumptive Use | Cumulative| 1 | Year |1-Jan| CalendarYear| Acre feet
+  
+
+## 2-3. methods.csv
+Purpose: generate legend of granular variables specific to each state detailing water right / allocation / etc data collection.
+Dependency:  None
+Supplemental Scripts Required:  None
+
+#### Inputs:
+- See the below prepared table.       
+
+MethodUUID | MethodName | MethodDescription| MethodNEMLink | ApplicableResourceTypeCV | MethodTypeCV | DataCoverageValue | DataQualityValueCV	| DataConfidenceValue
+---------- | ---------- | ------------ | ------------- | ------------- | ------------ | -------------| ------------ | ---------- 
+CDWR_Water_uses | California Water Uses | OWIA Standard Operating Procedure: Water Balance | ftp://mae2.sdsc.edu/published/ | Unspecified | Water Use	|         |         |                 
+
+  
+## 2-4. Organizations.csv
+Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
+Dependency:  None
+Supplemental Scripts Required:  None
+
+#### Inputs:
+- See the below prepared table.               
+
+OrganizationUUID | OrganizationName | OrganizationPurview| OrganizationWebsite | OrganizationPhoneNumber |	OrganizationContactName	| OrganizationContactEmail |	OrganizationDataMappingURL |	State 
+---------------- | ------------ | -------- | ---------- | ---------- | ------------ | -------------- | ------------ | ---------
+CDWR |California Department of Water Resources | Department of Water Resources California Water Plan program computes applied, net, and depletion water balances for California. | https://data.ca.gov/dataset/water-plan-water-balance-data | xxx-xxx-xxxx |	Jennifer Stricklin | Jennifer.Stricklin@water.ca.gov | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/California	| CA
+
