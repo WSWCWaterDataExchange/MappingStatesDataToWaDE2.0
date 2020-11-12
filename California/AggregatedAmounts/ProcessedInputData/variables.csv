@@ -1,2 +1,2 @@
-VariableSpecificUUID,VariableSpecificCV,VariableCV,AggregationStatisticCV,AggregationInterval,AggregationIntervalUnitCV,ReportYearStartMonth,ReportYearTypeCV,AmountUnitCV,MaximumAmountUnitCV
-CA_Consumptive Use,Consumptive Use,Consumptive Use,Cumulative,1,Year,1-Jan,CalendarYear,Acre feet,
+VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
+CA_Consumptive Use,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Consumptive Use,Consumptive Use

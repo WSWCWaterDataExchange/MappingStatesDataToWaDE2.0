@@ -1,2 +1,2 @@
-WaterSourceUUID,WaterSourceNativeID,WaterSourceName,WaterSourceTypeCV,WaterQualityIndicatorCV,GNISFeatureNameCV,Geometry
-CA_1,1,"Unspecificed	","Groundwater, Surface Water",Fresh,,
+WaterSourceUUID,Geometry,GNISFeatureNameCV,WaterQualityIndicatorCV,WaterSourceName,WaterSourceNativeID,WaterSourceTypeCV
+CAag_WS1,,,Fresh,Unspecified,Unspecified,"Groundwater, Surface Water"
