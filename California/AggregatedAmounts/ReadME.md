@@ -253,5 +253,8 @@ WSWC Staff
 - Adel Abdallah <adelabdallah@wswc.utah.gov>
 
 CDWR Staff
--
--
+- Gary Darling <Gary.Darling@water.ca.gov>
+- Jennifer Stricklin <Jennifer.Stricklin@water.ca.gov>
+
+San Diego Supercomputer Center
+- John Helly <hellyj@ucsd.edu>

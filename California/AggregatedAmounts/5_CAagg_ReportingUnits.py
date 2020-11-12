@@ -82,8 +82,8 @@ outdf.ReportingUnitUpdateDate = ''
 print("StateCV")
 outdf.StateCV = "CA"
 
-print("Geometry")
-outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['inReportingUnitNativeID']), axis=1)
+# print("Geometry")
+# outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['inReportingUnitNativeID']), axis=1)
 
 print("Resetting Index")
 outdf.reset_index()
