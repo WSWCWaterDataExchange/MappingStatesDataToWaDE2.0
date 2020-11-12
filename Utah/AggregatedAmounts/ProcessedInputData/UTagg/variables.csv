@@ -1,0 +1,4 @@
+VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
+UT_Consumptive Use,1,Year,Average,AFY,AFY,10,WaterYear,Consumptive Use,"Consumptive Use, Irrigation"
+UT_Withdrawal Irrigation,1,Year,Average,AFY,AFY,10,WaterYear,Withdrawal,"Withdrawal, Irrigation"
+UT_Withdrawal Public Supply,1,Year,Average,AFY,AFY,10,WaterYear,Withdrawal,"Withdrawal, Public Supply"

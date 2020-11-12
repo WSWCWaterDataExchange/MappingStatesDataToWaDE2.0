@@ -11,6 +11,7 @@ import pandas as pd
 import os
 from pyproj import Transformer, transform
 
+
 # Inputs
 ############################################################################
 print("Reading input csv...")
@@ -489,3 +490,4 @@ if(len(dfpurge.index) > 0):
     dfpurge.to_csv('ProcessedInputData/sitespecificamounts_missing.csv', index=False)
 
 print("Done.")
+outdf100.to_excel('ProcessedInputData/temp_sitespecificamounts.xlsx', index=False)

@@ -1,0 +1,11 @@
+MethodUUID,MethodName,MethodDescription,MethodNEMILink,ApplicableResourceTypeCV,MethodTypeCV,DataCoverageValue,DataQualityValueCV,DataConfidenceValue
+CODWR-DiversionTracking,DiversionTracking,Methodology used for tracking diversions in the state of Colorado.,,Unspecified,Water withdrawals,,,
+STREAMFLOW_SUPPLY,Average Streamflow Method,Average Streamflow Method,Surface Water,Modeled,Modeled,,,
+"Use, Agricultural Landuse Survey",Agricultural Landuse Survey,Agricultural Landuse Survey,Surface/Ground,Modeled,Modeled,,,
+LEGAVLBLE,Legally Available Water,Legally Available Water,Surface/Ground,Modeled,Modeled,,,
+RETURNFLOW,Return Flow Estimates,Return Flow Estimates,Surface Water,Modeled,Modeled,,,
+Consumptive Use Estimate,Consumptive Use Estimate Method,Consumptive Use Estimate Method,Surface/Ground,Modeled,Modeled,,,
+Withdrawal Volume Estimate,Diversion Volume Estimate,Diversion Volume Estimate,Surface/Ground,Modeled,Modeled,,,
+INSTREAM_FLOW,Instream Flow Estimate,Instream Flow Estimate,Surface,Modeled,Modeled,,,
+STORAGE_SUPPLY,Estimate of Reservoir Storage,Estimate of Reservoir Storage,Surface,Modeled,Modeled,,,
+CODWR-DiversionTracking2,Diversion Volume Estimate,Diversion Volume Estimate,Surface/Ground,Modeled,Modeled,,,
