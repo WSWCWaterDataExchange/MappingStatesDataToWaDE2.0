@@ -4,16 +4,19 @@ The WaDE data dictionary is an agreed upon metadata schema and information syste
 Below are the metadata Excel workbook templates that define the required and optional metadata items for sharing water rights and water use data in the Water Data Exchange (WaDE) system. The templates are structured in a way that simplified data sharing without needing to understand the underlying database structures. The templates have all common metadata between them with a few unique metadata that define each data type in WaDE.
 
 
-# 1. Water allocations, water rights, or permitting data for surface and groundwater
+# 1. Water allocations for surface and groundwater
+Also known as water rights or permitting data     
 [Download Template](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/DataDict/Allocation/Template_Allocation_data_dictionary_WaDE_Oct2020.xlsx)
 
-# 2. Aggregate time series water use and budget data for any polygon (HUC, County, Watershed)
+# 2. Aggregate time series water use and budget data
+For any polygon (HUC, County, Watershed)   
 [Download Template](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/DataDict/Aggregate/Template_basin_aggregate_data_dictionary_WaDE_Oct2020.xlsx)
 
 
-# 3. Site-specific time series water use/diversion/withdrawal data 
+# 3. Site-specific time series water use/diversion/withdrawal data  
 [Download Template](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/DataDict/Site/Template_Metered_data_dictionary_WaDE_Oct2020.xlsx)
 
 
-# 4. Regulatory water related data over geospatial areas (polygons)
+# 4. Regulatory water related data   
+Over geospatial areas (polygons)   
 [Download Template](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/DataDict/Regulatory/template_RegulatoryInfo%20Schema%20Mapping%20to%20WaDE_QA.xlsx)
