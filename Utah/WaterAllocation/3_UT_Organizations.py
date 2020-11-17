@@ -33,10 +33,10 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "UTDWRE",
+    "UTDWRe",
     "craigmiller@utah.gov",
     "Craig Miller",
-    "https://github.com/WSWCWaterDataExchange/WaDE2.0",
+    "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Utah",
     "Utah Division of Water Resources",
     "801-538-7280",
     "Water Planning",
