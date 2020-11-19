@@ -53,7 +53,7 @@ outdf.ReportYearStartMonth = "10"
 
 outdf.ReportYearTypeCV = "WaterYear"
 
-outdf.VariableCV = "Allocation"
+outdf.VariableCV = "Consumptive Use"
 
 outdf.VariableSpecificCV = "Allocation All"
 

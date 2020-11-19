@@ -52,7 +52,7 @@ outdf.MethodName = "Washington Water Rights"
 
 outdf.MethodNEMILink = "https://ecology.wa.gov/Water-Shorelines/Water-supply/Water-rights"
 
-outdf.MethodTypeCV = "Adjudicated/Allocated"
+outdf.MethodTypeCV = "Adjudicated"
 
 # Check required fields are not null
 ############################################################################
