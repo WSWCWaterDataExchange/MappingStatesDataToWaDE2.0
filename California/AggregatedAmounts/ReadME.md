@@ -8,8 +8,10 @@ The following data was used for aggregated water budget...
 - **Water_Plan_Planning_Areas-shp** files were used to extract geometry, create shape files, and were obtained from the [DWR Atlas](https://atlas-dwr.opendata.arcgis.com/datasets/a911dd793cae48f1a3662e08f4811382_0?geometry=-152.647%2C31.071%2C-85.894%2C43.276).
 - **Hydrologic_Regions-shp** files were used to extract geometry, create shape files, and were obtained from the [DWR Atlas](https://atlas-dwr.opendata.arcgis.com/datasets/2a572a181e094020bdaeb5203162de15_0).
 - **DAUCO-shp** files were used to extract geometry, create shape files, and were provided with previous WaDE 1.0 correspondence in the past between the CDWR and the WSWC.  DAUCO is more granular than the actual county shape (see below Figure 1).
+   
+![](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/California/AggregatedAmounts/RawInputData/Images/DAUCOvsCounty.png)
+**Figure 1:** Detailed Analysis Units by County (DAUCO) by CA vs County
 
-![Detailed Analysis Units by County (DAUCO) by CA vs County](/RawInputData/images/DAUCOvsCounty.png)Format: ![Alt Text](url)
 
 From the above mentioned [CDWR ft site:](ftp://mae2.sdsc.edu/published/), 5 unique files were used as input to the Python codes that prepare WaDE 2.0 input files.  Input files used are as follows...
  - CA-DWR-WaterBalance-Level2-DP-1000-2011-DAUCO_input.csv
