@@ -4,7 +4,7 @@ This readme details the process that was applied by the staff of the [Western St
 ## Overview of Data Utilized
 The following data was used for aggregated water budget...
 
-- **CA-DWR-WaterBalance-Level2-DP-1000-year-DAUCO** csv files contained aggregated water budget data and info and were obtained from the provided [CDWR Water Plan Balance Data site:](https://data.cnra.ca.gov/dataset/water-plan-water-balance-data).  Data used was for the years 2011-2016.  DAUCO files were used as they provided the most information.
+- **CA-DWR-WaterBalance-Level2-DP-1000-year-DAUCO** csv files contained aggregated water budget data and info and were obtained from the provided [CDWR Water Plan Balance Data site](https://data.cnra.ca.gov/dataset/water-plan-water-balance-data).  Data used was for the years 2011-2016.  DAUCO files were used as they provided the most information.
 - **Water_Plan_Planning_Areas-shp** files were used to extract geometry, create shape files, and were obtained from the [DWR Atlas](https://atlas-dwr.opendata.arcgis.com/datasets/a911dd793cae48f1a3662e08f4811382_0?geometry=-152.647%2C31.071%2C-85.894%2C43.276).
 - **Hydrologic_Regions-shp** files were used to extract geometry, create shape files, and were obtained from the [DWR Atlas](https://atlas-dwr.opendata.arcgis.com/datasets/2a572a181e094020bdaeb5203162de15_0).
 - **DAUCO-shp** files were used to extract geometry, create shape files, and were provided with previous WaDE 1.0 correspondence in the past between the CDWR and the WSWC.
