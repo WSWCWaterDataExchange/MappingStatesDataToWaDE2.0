@@ -38,7 +38,6 @@ Purpose: Pre-process the state agency input data files into one master file for 
 #### Operation and Steps:
 - Read the input files and generate temporary input dataframes.
 - Format **priority_date** field to %m/%d/%Y format.
-- Remove NULL or missing (999) values for both **max_rate_acre_feet** and **rate_cfs**.  Need amount values for WaDE.
 - Generate WaDE *Owner* by determining company vs individual using **name_company**, **name_last**, and **name_first** input fields. Concatenating name of individual.
 - Formate string for WaDE *TimeframeStart* and *TimeframeEnd* fields.  Use **begin_month** and **begin_day** input fields.
 - Format string for WaDE *BeneficialUse**.  Use **use_code_description** input field.  Need to remove special characters.
