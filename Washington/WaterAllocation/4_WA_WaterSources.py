@@ -73,7 +73,7 @@ outdf['WaterSourceTypeCV'] = df.apply(lambda row: assignWaterSourceTypeCV(row['W
 ##############################
 # Dropping duplicate
 print("Dropping duplicates")
-outdf = outdf.drop_duplicates(subset=['WaterSourceName', 'WaterSourceTypeCV']).reset_index(drop=True)
+outdf = outdf.drop_duplicates(subset=['WaterSourceTypeCV']).reset_index(drop=True)
 ##############################
 
 print("WaterSourceUUID")

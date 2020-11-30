@@ -193,7 +193,7 @@ def assignallocLegalStatausCV(colrowValue):
 # For creating AllocationTypeCV
 def assignAllocationTypeCV(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
-        outList = ''
+        outList = 'Unknown'
     else:
         outList = colrowValue.strip()
     return outList
@@ -210,55 +210,8 @@ outdf.MethodUUID = "WSDE_Water Rights"
 print("OrganizationUUID")
 outdf.OrganizationUUID = "WSDE"
 
-# ###########################################################################################
 print("SiteUUID")
 outdf['SiteUUID'] = df_DM.apply(lambda row: retrieveSiteUUID(row['D_Point_ID']), axis=1)
-
-# def assignLat(colrowValueLat, colrowValueLong):
-#     lat, long = transformer.transform(colrowValueLat, colrowValueLong)
-#     return lat
-# df_DM['Latitude'] = df_DM.apply(lambda row: assignLat(row['POINT_X'], row['POINT_Y']), axis=1)
-#
-# def assignLong(colrowValueLat, colrowValueLong):
-#     lat, long = transformer.transform(colrowValueLat, colrowValueLong)
-#     return long
-# df_DM['Longitude'] = df_DM.apply(lambda row: assignLong(row['POINT_X'], row['POINT_Y']), axis=1)
-#
-# UnknownSTCVDict = {
-#     "GC":"ground water collector",
-#     "HW":"headworks gravity flow (or surface water device unknown)",
-#     "ID":"irrigation dam",
-#     "MW":"monitoring well",
-#     "PM":"surface water pump",
-#     "RD":"reservoir dam",
-#     "WL":"well (or ground water device unknown)"}
-# def assignSiteTypeCV(colrowValue):
-#     if colrowValue == '' or pd.isnull(colrowValue):
-#         outList = 'Unknown'
-#     else:
-#         String1 = colrowValue.strip()  # remove whitespace chars
-#         try:
-#             outList = UnknownSTCVDict[String1]
-#         except:
-#             outList = 'Unknown'
-#
-#     return outList
-# df_DM['SiteTypeCV'] = df_DM.apply(lambda row: assignSiteTypeCV(row['D_Point_Ty']), axis=1)
-#
-# df_DM['SiteNativeID'] = df_DM['D_Point_ID'].astype(str) # Native dbtype is float. Need to return this value as a string
-#
-# def retrieveSiteUUID(colrowValueA, colrowValueB, colrowValueD, colrowValueE):
-#     ml = df_sites.loc[((df_sites['Latitude'] == colrowValueA) &
-#                        (df_sites['Longitude'] == colrowValueB) &
-#                        (df_sites['SiteTypeCV'] == colrowValueD) &
-#                        (df_sites['SiteNativeID'] == colrowValueE)), 'SiteUUID']
-#     if not(ml.empty):  # check if the series is empty
-#         outList = ml.iloc[0]
-#     else:
-#         outList = ''
-#     return outList
-# outdf['SiteUUID'] = df_DM.apply(lambda row: retrieveSiteUUID(row['Latitude'], row['Longitude'], row['SiteTypeCV'], row['SiteNativeID']), axis=1)
-###########################################################################################
 
 print("VariableSpecificUUID")
 outdf.VariableSpecificUUID = "WSDE_Allocation All"
@@ -707,8 +660,6 @@ outdf100.to_csv('ProcessedInputData/waterallocations.csv', index=False)
 if(len(dfpurge.index) > 0):
     dfpurge.to_csv('ProcessedInputData/waterallocations_missing.csv')  # index=False,
 
-# error check by hand
-outdf100.to_excel('ProcessedInputData/ErrorCheck_waterallocations.xlsx', index=False)
 print("Done.")
 
 

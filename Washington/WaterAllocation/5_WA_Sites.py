@@ -184,7 +184,7 @@ outdf.reset_index()
 #####################################
 # Dropping duplicate
 # filter the whole table based on a unique combination of SiteNativeID, SiteName, SiteTypeCV, Longitude & Latitude
-outdf = outdf.drop_duplicates(subset=['SiteNativeID', 'SiteName', 'SiteTypeCV', 'Longitude', 'Latitude'])
+outdf = outdf.drop_duplicates(subset=['SiteNativeID', 'SiteTypeCV', 'Longitude', 'Latitude'])
 outdf = outdf.reset_index(drop=True)
 ######################################
 
