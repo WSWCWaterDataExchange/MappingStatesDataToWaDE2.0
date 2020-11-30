@@ -189,15 +189,6 @@ Washington/WaterAllocation/ProcessedInputData/waterallocations_missing.csv
 Washington/WaterAllocation/ProcessedInputData/watersources.csv
 Idaho/WaterAllocation/ProcessedInputData/sites.csv
 Idaho/WaterAllocation/ProcessedInputData/watersources.csv
-Washington/WaterAllocation/RawInputData/WR_Doc_POU1.csv
-Washington/WaterAllocation/RawInputData/WaterRights_Simple.csv
-Washington/WaterAllocation/RawInputData/WaterRights_Diversion2.csv
-Washington/WaterAllocation/RawInputData/WaterRights_Diversion.csv
-Washington/WaterAllocation/RawInputData/Person_Plus_EXTRACT_FromWRTSnotGWIS.csv
-Washington/WaterAllocation/RawInputData/P_WashingtonMaster.csv
-Washington/WaterAllocation/RawInputData/D_PointTable.csv
-Washington/WaterAllocation/RawInputData/D_Point_WR_Doc.csv
-Washington/WaterAllocation/RawInputData/D_Point.csv
 Arizona/AggregatedAmounts/RawInputData/P_AZagg.csv
 Utah/WaterAllocation/RawInputData/P_UtahErrorCheckExp.csv
 Utah/WaterAllocation/RawInputData/P_UtahMaster - Copy.csv

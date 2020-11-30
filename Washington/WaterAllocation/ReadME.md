@@ -5,7 +5,7 @@ This readme details the process that was applied by the staff of the [Western St
 ## Overview of Data Utilized
 The following data was used for water allocations...
 
-- [WA GWIS_Data download](https://fortress.wa.gov/ecy/gispublic/DataDownload/wr/GWIS_Data/). Data made available can be found within the **GWIS_SDEexport.zip option.
+- [WA GWIS_Data download](https://fortress.wa.gov/ecy/gispublic/DataDownload/wr/GWIS_Data/). Data made available can be found within the **GWIS_SDEexport.zip** option.
 - D_PointTable.csv, obtained from above GWIS_SDEexport.zip.
 - D_Point_WR_Doc.csv, obtained from above GWIS_SDEexport.zip.
 - Person_Plus_EXTRACT_FromWRTSnotGWIS.csv, obtained from above GWIS_SDEexport.zip.
