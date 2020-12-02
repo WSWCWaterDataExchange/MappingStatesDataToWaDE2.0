@@ -1,6 +1,6 @@
 #Date Created: 11/23/2020
 #Purpose: To extract MT methods use information and population dataframe for WaDE_QA 2.0.
-#Notes:   1) UT possesses multiple methods
+#Notes:  asdf
 
 
 # Needed Libraries
@@ -74,7 +74,7 @@ outdf.to_csv('ProcessedInputData/methods.csv', index=False)
 
 #Report missing values if need be to separate csv
 if(len(outdf_nullMand.index) > 0):
-    outdf_nullMand.to_csv('ProcessedInputData/methods_mandatoryFieldMissing.csv')  # index=False,
+    outdf_nullMand.to_csv('ProcessedInputData/methods_mandatoryFieldMissing.csv')
 
 
 print("Done.")

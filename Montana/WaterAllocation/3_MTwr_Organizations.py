@@ -1,6 +1,6 @@
 #Date Created: 11/23/2020
-#Purpose: To extract MT methods use information and population dataframe for WaDE_QA 2.0.
-#Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
+#Purpose: To extract MT organization information and population dataframe for WaDE_QA 2.0.
+#Notes: asdf
 
 
 # Needed Libraries
@@ -60,7 +60,7 @@ outdf_nullMand = outdf.loc[(outdf["OrganizationUUID"].isnull()) | (outdf["Organi
                            (outdf["State"].isnull()) | (outdf["State"] == '')]
 
 if(len(outdf_nullMand.index) > 0):
-    outdf_nullMand.to_csv('organizations_mandatoryFieldMissing.csv')  # index=False,
+    outdf_nullMand.to_csv('organizations_mandatoryFieldMissing.csv')
 
 
 # Export to new csv

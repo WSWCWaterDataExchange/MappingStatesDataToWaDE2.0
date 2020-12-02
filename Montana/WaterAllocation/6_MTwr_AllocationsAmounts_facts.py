@@ -1,5 +1,5 @@
 #Date Created: 11/23/2020
-#Purpose: To extract MT methods use information and population dataframe for WaDE_QA 2.0.
+#Purpose: To extract MT water right use information and population dataframe for WaDE_QA 2.0.
 #         1) Simple creation of working dataframe (df), with output dataframe (outdf).
 #         2) Drop all nulls before combining duplicate rows on NativeID.
 
@@ -189,11 +189,11 @@ outdf.AllocationSDWISIdentifierCV = ""
 print("AllocationPriorityDate")
 outdf['AllocationPriorityDate'] = df_DM['ENF_PRIORITY_DATE']
 
-# print("AllocationTimeframeEnd")
-# outdf['AllocationTimeframeEnd'] = df_DM['inputTimeframeEnd']
-#
-# print("AllocationTimeframeStart")
-# outdf['AllocationTimeframeStart'] = df_DM['inputTimeframeStart']
+print("AllocationTimeframeEnd")
+outdf['AllocationTimeframeEnd'] = df_DM['inputTimeframeEnd']
+
+print("AllocationTimeframeStart")
+outdf['AllocationTimeframeStart'] = df_DM['inputTimeframeStart']
 
 print("AllocationTypeCV")
 outdf['AllocationTypeCV'] = df_DM['WR_TYPE']
@@ -220,7 +220,7 @@ print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = df_DM['ABST_LINK']
 
 print("ExemptOfVolumeFlowPriority")
-outdf.ExemptOfVolumeFlowPriority = 1
+outdf['ExemptOfVolumeFlowPriority'] = df_DM['in_ExemptOfVolumeFlowPriority'].astype(int)
 
 print("GeneratedPowerCapacityMW")
 outdf.GeneratedPowerCapacityMW = ""
@@ -269,7 +269,7 @@ dfpurge = dfpurge.assign(ReasonRemoved='')
 # MethodUUID_nvarchar(200)_-
 mask = outdf100.loc[ (outdf100["MethodUUID"].isnull()) | (outdf100["MethodUUID"] == '') | (outdf100['MethodUUID'].str.len() > 200) ].assign(ReasonRemoved='Bad MethodUUID').reset_index()
 if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)  # Append to purge DataFrame
+    dfpurge = dfpurge.append(mask)
     dropIndex = outdf100.loc[ (outdf100["MethodUUID"].isnull()) | (outdf100["MethodUUID"] == '') | (outdf100['MethodUUID'].str.len() > 200) ].index
     outdf100 = outdf100.drop(dropIndex)
     outdf100 = outdf100.reset_index(drop=True)
@@ -311,15 +311,6 @@ if len(mask.index) > 0:
     dropIndex = outdf100.loc[ (outdf100["SiteUUID"].isnull()) | (outdf100["SiteUUID"] == '') | (outdf100['SiteUUID'].str.len() > 200) ].index
     outdf100 = outdf100.drop(dropIndex)
     outdf100 = outdf100.reset_index(drop=True)
-
-# AllocationFlow_CFS_float_Yes
-# We do allow for Null AllowcationFlow_CFS now
-# mask = outdf100.loc[ (outdf100["AllocationFlow_CFS"].isnull()) | (outdf100["AllocationFlow_CFS"] == '') ].assign(ReasonRemoved='Bad AllocationFlow_CFS').reset_index()
-# if len(mask.index) > 0:
-#     dfpurge = dfpurge.append(mask)
-#     dropIndex = outdf100.loc[ (outdf100["AllocationFlow_CFS"].isnull()) | (outdf100["AllocationFlow_CFS"] == '') ].index
-#     outdf100 = outdf100.drop(dropIndex)
-#     outdf100 = outdf100.reset_index(drop=True)
 
 # AllocationApplicationDate_date_Yes
 mask = outdf100.loc[outdf100["AllocationApplicationDate"].str.contains(',') == True].assign(ReasonRemoved='Bad AllocationApplicationDate').reset_index()
@@ -386,6 +377,27 @@ if len(mask.index) > 0:
     outdf100 = outdf100.drop(dropIndex)
     outdf100 = outdf100.reset_index(drop=True)
 
+# AllocationFlow_CFS_float_Yes & AllocationVolume_AF_float_Yes
+# We have to have either a flow or a volume
+mask = outdf100.loc[ (outdf100['ExemptOfVolumeFlowPriority'] == "0") &
+                     ((outdf100["AllocationFlow_CFS"].isnull()) |
+                      (outdf100["AllocationFlow_CFS"] == "") |
+                      (outdf100['AllocationFlow_CFS'].str.contains(','))) &
+                     ((outdf100["AllocationVolume_AF"].isnull()) |
+                      (outdf100["AllocationVolume_AF"] == '') |
+                      (outdf100['AllocationVolume_AF'].str.contains(','))) ].assign(ReasonRemoved='Bad Flow or Volume').reset_index()
+if len(mask.index) > 0:
+    dfpurge = dfpurge.append(mask)
+    dropIndex = outdf100.loc[ (outdf100['ExemptOfVolumeFlowPriority'] == "0") &
+                              ((outdf100["AllocationFlow_CFS"].isnull()) |
+                               (outdf100["AllocationFlow_CFS"] == "") |
+                               (outdf100['AllocationFlow_CFS'].str.contains(','))) &
+                              ((outdf100["AllocationVolume_AF"].isnull()) |
+                               (outdf100["AllocationVolume_AF"] == '') |
+                               (outdf100['AllocationVolume_AF'].str.contains(','))) ].index
+    outdf100 = outdf100.drop(dropIndex)
+    outdf100 = outdf100.reset_index(drop=True)
+
 # AllocationLegalStatusCV_nvarchar(250)_Yes
 mask = outdf100.loc[ outdf100["AllocationLegalStatusCV"].str.len() > 250 ].assign(ReasonRemoved='Bad AllocationLegalStatusCV').reset_index()
 if len(mask.index) > 0:
@@ -393,15 +405,6 @@ if len(mask.index) > 0:
     dropIndex = outdf100.loc[ outdf100["AllocationLegalStatusCV"].str.len() > 250 ].index
     outdf100 = outdf100.drop(dropIndex)
     outdf100 = outdf100.reset_index(drop=True)
-
-# # AllocationVolume_AF_float_Yes
-# we do allow for Null Volumes now...
-# mask = outdf100.loc[ (outdf100["AllocationVolume_AF"].isnull()) | (outdf100["AllocationVolume_AF"] == '') | (outdf100['AllocationVolume_AF'].str.contains(',') == True) ].assign(ReasonRemoved='Bad AllocationVolume_AF').reset_index()
-# if len(mask.index) > 0:
-#     dfpurge = dfpurge.append(mask)
-#     dropIndex = outdf100.loc[ (outdf100["AllocationVolume_AF"].isnull()) | (outdf100["AllocationVolume_AF"] == '') | (outdf100['AllocationVolume_AF'].str.contains(',') == True) ].index
-#     outdf100 = outdf100.drop(dropIndex)
-#     outdf100 = outdf100.reset_index(drop=True)
 
 # AllocationNativeID_nvarchar(250)_Yes
 mask = outdf100.loc[ outdf100["AllocationNativeID"].str.len() > 250 ].assign(ReasonRemoved='Bad AllocationNativeID').reset_index()
@@ -420,10 +423,16 @@ if len(mask.index) > 0:
     outdf100 = outdf100.reset_index(drop=True)
 
 # AllocationPriorityDate_string_-
-mask = outdf100.loc[ (outdf100["AllocationPriorityDate"].isnull() == True) | (outdf100["AllocationPriorityDate"] == '') | (outdf100["AllocationPriorityDate"].str.contains(',') == True) ].assign(ReasonRemoved='Bad AllocationPriorityDate').reset_index()
+mask = outdf100.loc[ (outdf100['ExemptOfVolumeFlowPriority'] == "0") &
+                     ((outdf100["AllocationPriorityDate"].isnull()) |
+                      (outdf100["AllocationPriorityDate"] == '') |
+                      (outdf100["AllocationPriorityDate"].str.contains(','))) ].assign(ReasonRemoved='Bad AllocationPriorityDate').reset_index()
 if len(mask.index) > 0:
     dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ (outdf100["AllocationPriorityDate"].isnull() == True) | (outdf100["AllocationPriorityDate"] == '') | (outdf100["AllocationPriorityDate"].str.contains(',') == True) ].index
+    dropIndex = outdf100.loc[ (outdf100['ExemptOfVolumeFlowPriority'] == "0") &
+                              ((outdf100["AllocationPriorityDate"].isnull()) |
+                               (outdf100["AllocationPriorityDate"] == '') |
+                               (outdf100["AllocationPriorityDate"].str.contains(','))) ].index
     outdf100 = outdf100.drop(dropIndex)
     outdf100 = outdf100.reset_index(drop=True)
 
@@ -499,11 +508,11 @@ if len(mask.index) > 0:
     outdf100 = outdf100.drop(dropIndex)
     outdf100 = outdf100.reset_index(drop=True)
 
-# # ExemptOfVolumeFlowPriority_bit_Yes
-# mask = outdf100.loc[ outdf100["ExemptOfVolumeFlowPriority"].str.len() > 10 ].assign(ReasonRemoved='Bad ExemptOfVolumeFlowPriority').reset_index()
+# ExemptOfVolumeFlowPriority_bit_Yes
+# mask = outdf100.loc[ (outdf100["ExemptOfVolumeFlowPriority"] > 1) ].assign(ReasonRemoved='Bad ExemptOfVolumeFlowPriority').reset_index()
 # if len(mask.index) > 0:
 #     dfpurge = dfpurge.append(mask)
-#     dropIndex = outdf100.loc[ outdf100["ExemptOfVolumeFlowPriority"].str.len() > 10 ].index
+#     dropIndex = outdf100.loc[ (outdf100["ExemptOfVolumeFlowPriority"] > 1) ].index
 #     outdf100 = outdf100.drop(dropIndex)
 #     outdf100 = outdf100.reset_index(drop=True)
 

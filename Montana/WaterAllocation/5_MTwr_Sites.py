@@ -1,5 +1,5 @@
 #Date Created: 11/23/2020
-#Purpose: To extract MT methods use information and population dataframe for WaDE_QA 2.0.
+#Purpose: To extract MT site information and population dataframe for WaDE_QA 2.0.
 #Notes: asdf
 
 
@@ -171,7 +171,7 @@ dfpurge = dfpurge.assign(ReasonRemoved='')
 # SiteUUID_nvarchar(200)_
 mask = outdf.loc[ (outdf["SiteUUID"].isnull()) | (outdf["SiteUUID"] == '') | (outdf['SiteUUID'].str.len() > 200) ].assign(ReasonRemoved='Bad SiteUUID').reset_index()
 if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)  # Append to purge DataFrame
+    dfpurge = dfpurge.append(mask)
     dropIndex = outdf.loc[ (outdf["SiteUUID"].isnull()) | (outdf["SiteUUID"] == '') | (outdf['SiteUUID'].str.len() > 200) ].index
     outdf = outdf.drop(dropIndex)
     outdf = outdf.reset_index(drop=True)
@@ -187,7 +187,7 @@ if len(mask.index) > 0:
 # CoordinateMethodCV_nvarchar(100)_-
 mask = outdf.loc[ (outdf["CoordinateMethodCV"].isnull()) | (outdf["CoordinateMethodCV"] == '') | (outdf['CoordinateMethodCV'].str.len() > 100) ].assign(ReasonRemoved='Bad CoordinateMethodCV').reset_index()
 if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)  # Append to purge DataFrame
+    dfpurge = dfpurge.append(mask)
     dropIndex = outdf.loc[ (outdf["CoordinateMethodCV"].isnull()) | (outdf["CoordinateMethodCV"] == '') | (outdf['CoordinateMethodCV'].str.len() > 100) ].index
     outdf = outdf.drop(dropIndex)
     outdf = outdf.reset_index(drop=True)
@@ -203,7 +203,7 @@ if len(mask.index) > 0:
 # EPSGCodeCV_nvarchar(50)_-
 mask = outdf.loc[ (outdf["EPSGCodeCV"].isnull()) | (outdf["EPSGCodeCV"] == '') | (outdf['EPSGCodeCV'].str.len() > 50) ].assign(ReasonRemoved='Bad EPSGCodeCV').reset_index()
 if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)  # Append to purge DataFrame
+    dfpurge = dfpurge.append(mask)
     dropIndex = outdf.loc[ (outdf["EPSGCodeCV"].isnull()) | (outdf["EPSGCodeCV"] == '') | (outdf['EPSGCodeCV'].str.len() > 50) ].index
     outdf = outdf.drop(dropIndex)
     outdf = outdf.reset_index(drop=True)
@@ -327,7 +327,7 @@ outdf.to_csv('ProcessedInputData/sites.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
-    dfpurge.to_csv('ProcessedInputData/sites_missing.csv')  # index=False,
+    dfpurge.to_csv('ProcessedInputData/sites_missing.csv')
 
 print("Done.")
 

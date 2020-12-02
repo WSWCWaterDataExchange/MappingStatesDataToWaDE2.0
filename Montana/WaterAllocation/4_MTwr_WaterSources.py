@@ -1,5 +1,5 @@
 #Date Created: 11/23/2020
-#Purpose: To extract MT methods use information and population dataframe for WaDE_QA 2.0.
+#Purpose: To extract MT water source information and population dataframe for WaDE_QA 2.0.
 #Notes: 1) asdf
 
 
@@ -120,7 +120,7 @@ if len(mask.index) > 0:
 # WaterQualityIndicatorCV_nvarchar(100)_-
 mask = outdf.loc[ (outdf["WaterQualityIndicatorCV"].isnull()) | (outdf["WaterQualityIndicatorCV"] == '') | (outdf['WaterQualityIndicatorCV'].str.len() > 250) ].assign(ReasonRemoved='Bad WaterQualityIndicatorCV').reset_index()
 if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)  # Append to purge DataFrame
+    dfpurge = dfpurge.append(mask)
     dropIndex = outdf.loc[ (outdf["WaterQualityIndicatorCV"].isnull()) | (outdf["WaterQualityIndicatorCV"] == '') | (outdf['WaterQualityIndicatorCV'].str.len() > 250) ].index
     outdf = outdf.drop(dropIndex)
     outdf = outdf.reset_index(drop=True)
@@ -144,7 +144,7 @@ if len(mask.index) > 0:
 # WaterSourceTypeCV_nvarchar(100)_-
 mask = outdf.loc[ (outdf["WaterSourceTypeCV"].isnull()) | (outdf["WaterSourceTypeCV"] == '') | (outdf['WaterSourceTypeCV'].str.len() > 100) ].assign(ReasonRemoved='Bad WaterSourceTypeCV').reset_index()
 if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)  # Append to purge DataFrame
+    dfpurge = dfpurge.append(mask)
     dropIndex = outdf.loc[ (outdf["WaterSourceTypeCV"].isnull()) | (outdf["WaterSourceTypeCV"] == '') | (outdf['WaterSourceTypeCV'].str.len() > 100) ].index
     outdf = outdf.drop(dropIndex)
     outdf = outdf.reset_index(drop=True)
@@ -158,6 +158,6 @@ outdf.to_csv('ProcessedInputData/watersources.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
-    dfpurge.to_csv('ProcessedInputData/watersources_missing.csv')  # index=False,
+    dfpurge.to_csv('ProcessedInputData/watersources_missing.csv')
 
 print("Done.")
