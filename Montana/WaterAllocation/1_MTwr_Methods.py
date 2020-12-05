@@ -50,7 +50,7 @@ outdf.MethodDescription = ["Water rights that were established prior to July 1,1
 
 outdf.MethodName = ["Adjudication", "Appropriations"]
 
-outdf.MethodNEMILink = ["'http://dnrc.mt.gov/divisions/water/water-rights", "'http://dnrc.mt.gov/divisions/water/water-rights"]
+outdf.MethodNEMILink = ["http://dnrc.mt.gov/divisions/water/water-rights", "http://dnrc.mt.gov/divisions/water/water-rights"]
 
 outdf.MethodTypeCV = ["Adjudication", "Appropriations"]
 

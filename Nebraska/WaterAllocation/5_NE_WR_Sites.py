@@ -32,6 +32,7 @@ columnslist = [
     "Longitude",
     "NHDNetworkStatusCV",
     "NHDProductCV",
+    "PODorPOUSite",
     "SiteName",
     "SiteNativeID",
     "SitePoint",
@@ -53,7 +54,7 @@ def assignCountyName(colrowValue):
 # For creating SiteUUID
 def assignSiteUUID(colrowValue):
     string1 = str(colrowValue)
-    outstring = "NE_" + string1
+    outstring = "NEwr_S" + string1
     return outstring
 
 
@@ -69,7 +70,7 @@ print("CoordinateMethodCV")
 outdf.CoordinateMethodCV = 'Unspecified'
 
 print("County")  # Hardcoded
-outdf['County'] = df.apply(lambda row: assignCountyName(row['County']), axis=1)
+outdf['County'] = df.apply(lambda row: assignCountyName(row['county']), axis=1)
 
 print("EPSGCodeCV")  # Hardcoded
 outdf.EPSGCodeCV = 'EPSG:4326'
@@ -95,8 +96,11 @@ outdf['Longitude'] = df['Long']
 print("NHDNetworkStatusCV")  # Hardcoded
 outdf.NHDNetworkStatusCV = ""
 
-print("NHDProductCV")  # Hardcoded
+print("NHDProductCV")
 outdf.NHDProductCV = ""
+
+print("PODorPOUSite")
+outdf['PODorPOUSite'] = "POD"
 
 print("SiteName")  # Hardcoded
 outdf.SiteName = 'Unspecified'
@@ -135,14 +139,14 @@ outdf['SiteUUID'] = dftemp.apply(lambda row: assignSiteUUID(row['Count']), axis=
 
 #Error Checking each Field
 ############################################################################
-print("Error checking each field.  Purging bad inputs.")  # Hardcoded
+print("Error checking each field.  Purging bad inputs.")
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 
 # SiteUUID_nvarchar(200)_
 mask = outdf.loc[ (outdf["SiteUUID"].isnull()) | (outdf["SiteUUID"] == '') | (outdf['SiteUUID'].str.len() > 200) ].assign(ReasonRemoved='Bad SiteUUID').reset_index()
 if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)  # Append to purge DataFrame
+    dfpurge = dfpurge.append(mask)
     dropIndex = outdf.loc[ (outdf["SiteUUID"].isnull()) | (outdf["SiteUUID"] == '') | (outdf['SiteUUID'].str.len() > 200) ].index
     outdf = outdf.drop(dropIndex)
     outdf = outdf.reset_index(drop=True)
@@ -158,7 +162,7 @@ if len(mask.index) > 0:
 # CoordinateMethodCV_nvarchar(100)_-
 mask = outdf.loc[ (outdf["CoordinateMethodCV"].isnull()) | (outdf["CoordinateMethodCV"] == '') | (outdf['CoordinateMethodCV'].str.len() > 100) ].assign(ReasonRemoved='Bad CoordinateMethodCV').reset_index()
 if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)  # Append to purge DataFrame
+    dfpurge = dfpurge.append(mask)
     dropIndex = outdf.loc[ (outdf["CoordinateMethodCV"].isnull()) | (outdf["CoordinateMethodCV"] == '') | (outdf['CoordinateMethodCV'].str.len() > 100) ].index
     outdf = outdf.drop(dropIndex)
     outdf = outdf.reset_index(drop=True)
@@ -174,7 +178,7 @@ if len(mask.index) > 0:
 # EPSGCodeCV_nvarchar(50)_-
 mask = outdf.loc[ (outdf["EPSGCodeCV"].isnull()) | (outdf["EPSGCodeCV"] == '') | (outdf['EPSGCodeCV'].str.len() > 50) ].assign(ReasonRemoved='Bad EPSGCodeCV').reset_index()
 if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)  # Append to purge DataFrame
+    dfpurge = dfpurge.append(mask)
     dropIndex = outdf.loc[ (outdf["EPSGCodeCV"].isnull()) | (outdf["EPSGCodeCV"] == '') | (outdf['EPSGCodeCV'].str.len() > 50) ].index
     outdf = outdf.drop(dropIndex)
     outdf = outdf.reset_index(drop=True)
@@ -206,7 +210,7 @@ if len(mask.index) > 0:
     outdf = outdf.drop(dropIndex)
     outdf = outdf.reset_index(drop=True)
 
-# Latitude_float_Yes
+# Latitude_float_-
 mask = outdf.loc[ (outdf["Latitude"].isnull()) | (outdf["Latitude"] == '') | (outdf["Latitude"] < 20) ].assign(ReasonRemoved='Bad Latitude').reset_index()
 if len(mask.index) > 0:
     dfpurge = dfpurge.append(mask)
@@ -214,7 +218,7 @@ if len(mask.index) > 0:
     outdf = outdf.drop(dropIndex)
     outdf = outdf.reset_index(drop=True)
 
-# Longitude_float_Yes
+# Longitude_float_-
 mask = outdf.loc[ (outdf["Longitude"].isnull()) | (outdf["Longitude"] == '') | (outdf["Longitude"] > -80) ].assign(ReasonRemoved='Bad Longitude').reset_index()
 if len(mask.index) > 0:
     dfpurge = dfpurge.append(mask)
@@ -235,6 +239,14 @@ mask = outdf.loc[ outdf["NHDProductCV"].str.len() > 50 ].assign(ReasonRemoved='B
 if len(mask.index) > 0:
     dfpurge = dfpurge.append(mask)
     dropIndex = outdf.loc[ outdf["NHDProductCV"].str.len() > 50 ].index
+    outdf = outdf.drop(dropIndex)
+    outdf = outdf.reset_index(drop=True)
+
+# PODorPOUSite_nvarchar(50)_Yes
+mask = outdf.loc[ outdf["PODorPOUSite"].str.len() > 50 ].assign(ReasonRemoved='Bad PODorPOUSite').reset_index()
+if len(mask.index) > 0:
+    dfpurge = dfpurge.append(mask)
+    dropIndex = outdf.loc[ outdf["PODorPOUSite"].str.len() > 50 ].index
     outdf = outdf.drop(dropIndex)
     outdf = outdf.reset_index(drop=True)
 

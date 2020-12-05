@@ -43,7 +43,7 @@ def assignWaterSourceName(colrowValue):
 # For creating WaDESiteUUID
 def assignWaterSourceUUID(colrowValue):
     string1 = str(colrowValue)
-    outstring = "NE_" + string1
+    outstring = "NEwr_WS" + string1
     return outstring
 
 

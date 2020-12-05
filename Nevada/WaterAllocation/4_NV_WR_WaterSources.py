@@ -68,7 +68,7 @@ def assignWaterSourceTypeCV(colrowValue):
 # For creating WaDESiteUUID
 def assignWaterSourceUUID(colrowValue):
     string1 = str(colrowValue)
-    outstring = "NV_" + string1
+    outstring = "NVwr_WS" + string1
     return outstring
 
 

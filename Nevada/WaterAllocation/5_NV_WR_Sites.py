@@ -8,7 +8,7 @@
 import pandas as pd
 import numpy as np
 import os
-from pyproj import Transformer, transform
+# from pyproj import Transformer, transform
 
 
 # Inputs
@@ -113,7 +113,7 @@ def assignCounty(colrowValue):
 # For creating SiteUUID
 def assignSiteUUID(colrowValue):
     string1 = str(colrowValue)
-    outstring = "NV_" + string1
+    outstring = "NVwr_S" + string1
     return outstring
 
 

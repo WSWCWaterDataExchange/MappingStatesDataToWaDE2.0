@@ -101,8 +101,10 @@ outdf['County'] = df['LLDS_COUNTY_NAME']
 print("EPSGCodeCV")
 outdf.EPSGCodeCV = 'EPSG:4326'
 
+# print("Geometry")
+# outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['WR_NUMBER']), axis=1)
 print("Geometry")
-outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['WR_NUMBER']), axis=1)
+outdf.Geometry = ""
 
 print("GNISCodeCV")
 outdf.GNISCodeCV = ""
