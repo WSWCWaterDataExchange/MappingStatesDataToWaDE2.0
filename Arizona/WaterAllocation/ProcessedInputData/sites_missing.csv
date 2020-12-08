@@ -1,353 +1,353 @@
 ,SiteUUID,CoordinateAccuracy,CoordinateMethodCV,County,EPSGCodeCV,Geometry,GNISCodeCV,HUC12,HUC8,Latitude,Longitude,NHDNetworkStatusCV,NHDProductCV,PODorPOUSite,SiteName,SiteNativeID,SitePoint,SiteTypeCV,StateCV,USGSSiteID,ReasonRemoved,index
-0,AZwr_S217915,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B29020000000,,Unspecified,AZ,,Bad Latitude,217914.0
-1,AZwr_S217917,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B05001000000,,Unspecified,AZ,,Bad Latitude,217916.0
-2,AZwr_S217924,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D20020000000,,Unspecified,AZ,,Bad Latitude,217923.0
-3,AZwr_S217932,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B04002000000,,Unspecified,AZ,,Bad Latitude,217931.0
-4,AZwr_S217962,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A08029000000,,Unspecified,AZ,,Bad Latitude,217961.0
-5,AZwr_S217968,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B30016000000,,Unspecified,AZ,,Bad Latitude,217967.0
-6,AZwr_S217990,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B30022000000,,Unspecified,AZ,,Bad Latitude,217989.0
-7,AZwr_S217997,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B040020,,Unspecified,AZ,,Bad Latitude,217996.0
-8,AZwr_S217999,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B19020000000,,Unspecified,AZ,,Bad Latitude,217998.0
-9,AZwr_S218005,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B31020000000,,Unspecified,AZ,,Bad Latitude,218004.0
-10,AZwr_S218014,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A010504000,,Unspecified,AZ,,Bad Latitude,218013.0
-11,AZwr_S218045,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A010401000,,Unspecified,AZ,,Bad Latitude,218044.0
-12,AZwr_S218083,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11019000000,,Unspecified,AZ,,Bad Latitude,218082.0
-13,AZwr_S218085,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B27021000000,,Unspecified,AZ,,Bad Latitude,218084.0
-14,AZwr_S218109,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A09024000000,,Unspecified,AZ,,Bad Latitude,218108.0
-15,AZwr_S218116,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D02007000000,,Unspecified,AZ,,Bad Latitude,218115.0
-16,AZwr_S218125,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B28016000000,,Unspecified,AZ,,Bad Latitude,218124.0
-17,AZwr_S218128,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D19019000000,,Unspecified,AZ,,Bad Latitude,218127.0
-18,AZwr_S218167,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A35003000000,,Unspecified,AZ,,Bad Latitude,218166.0
-19,AZwr_S218216,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D06030000000,,Unspecified,AZ,,Bad Latitude,218215.0
-20,AZwr_S218234,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B31015000000,,Unspecified,AZ,,Bad Latitude,218233.0
-21,AZwr_S218236,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B29019000000,,Unspecified,AZ,,Bad Latitude,218235.0
-22,AZwr_S218273,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A010505000,,Unspecified,AZ,,Bad Latitude,218272.0
-23,AZwr_S218304,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B03002000000,,Unspecified,AZ,,Bad Latitude,218303.0
-24,AZwr_S218305,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B29016000000,,Unspecified,AZ,,Bad Latitude,218304.0
-25,AZwr_S218340,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B10013000000,,Unspecified,AZ,,Bad Latitude,218339.0
-26,AZwr_S218343,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A010506000,,Unspecified,AZ,,Bad Latitude,218342.0
-27,AZwr_S218350,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A06030000000,,Unspecified,AZ,,Bad Latitude,218349.0
-28,AZwr_S218369,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D04030000000,,Unspecified,AZ,,Bad Latitude,218368.0
-29,AZwr_S218374,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C01002000000,,Unspecified,AZ,,Bad Latitude,218373.0
-30,AZwr_S218383,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B13018000000,,Unspecified,AZ,,Bad Latitude,218382.0
-31,AZwr_S218384,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D06031000000,,Unspecified,AZ,,Bad Latitude,218383.0
-32,AZwr_S218399,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11024000000,,Unspecified,AZ,,Bad Latitude,218398.0
-33,AZwr_S218404,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A04017000000,,Unspecified,AZ,,Bad Latitude,218403.0
-34,AZwr_S218429,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A010402000,,Unspecified,AZ,,Bad Latitude,218428.0
-35,AZwr_S218434,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A010503000,,Unspecified,AZ,,Bad Latitude,218433.0
-36,AZwr_S218440,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B30018000000,,Unspecified,AZ,,Bad Latitude,218439.0
-37,AZwr_S218444,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11018000000,,Unspecified,AZ,,Bad Latitude,218443.0
-38,AZwr_S218804,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D190210,,Unspecified,AZ,,Bad Latitude,218803.0
-39,AZwr_S218805,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D200210,,Unspecified,AZ,,Bad Latitude,218804.0
-40,AZwr_S218817,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D18013000000,,Unspecified,AZ,,Bad Latitude,218816.0
-41,AZwr_S219404,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11512031DB0,,Unspecified,AZ,,Bad Latitude,219403.0
-42,AZwr_S219793,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A100120100C0,,Unspecified,AZ,,Bad Latitude,219792.0
-43,AZwr_S220019,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A12504003AA0,,Unspecified,AZ,,Bad Latitude,220018.0
-44,AZwr_S220035,Unspecified,Unspecified,YUMA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B05011000000,,Unspecified,AZ,,Bad Latitude,220034.0
-45,AZwr_S220176,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C03006000000,,Unspecified,AZ,,Bad Latitude,220175.0
-46,AZwr_S220571,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D21018000000,,Unspecified,AZ,,Bad Latitude,220570.0
-47,AZwr_S220572,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D21019000000,,Unspecified,AZ,,Bad Latitude,220571.0
-48,AZwr_S220686,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A39006000000,,Unspecified,AZ,,Bad Latitude,220685.0
-49,AZwr_S221190,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D24019023A00,,Unspecified,AZ,,Bad Latitude,221189.0
-50,AZwr_S221276,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A10512022CC0,,Unspecified,AZ,,Bad Latitude,221275.0
-51,AZwr_S221343,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A09029000000,,Unspecified,AZ,,Bad Latitude,221342.0
-52,AZwr_S221725,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11512016000,,Unspecified,AZ,,Bad Latitude,221724.0
-53,AZwr_S221726,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11512008000,,Unspecified,AZ,,Bad Latitude,221725.0
-54,AZwr_S221729,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11512006000,,Unspecified,AZ,,Bad Latitude,221728.0
-55,AZwr_S221885,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D24019019BB0,,Unspecified,AZ,,Bad Latitude,221884.0
-56,AZwr_S221951,Unspecified,Unspecified,MOHAVE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B16013000000,,Unspecified,AZ,,Bad Latitude,221950.0
-57,AZwr_S221959,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B170130260AB,,Unspecified,AZ,,Bad Latitude,221958.0
-58,AZwr_S221981,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B17013010D0A,,Unspecified,AZ,,Bad Latitude,221980.0
-59,AZwr_S221991,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B170130260DD,,Unspecified,AZ,,Bad Latitude,221990.0
-60,AZwr_S222000,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B17013010A0B,,Unspecified,AZ,,Bad Latitude,221999.0
-61,AZwr_S222002,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B170130100DA,,Unspecified,AZ,,Bad Latitude,222001.0
-62,AZwr_S222003,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,16013003ACC,,Unspecified,AZ,,Bad Latitude,222002.0
-63,AZwr_S222004,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A16513027CDB,,Unspecified,AZ,,Bad Latitude,222003.0
-64,AZwr_S222005,Unspecified,Unspecified,MOHAVE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B17013014B0A,,Unspecified,AZ,,Bad Latitude,222004.0
-65,AZwr_S222012,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B160130030AB,,Unspecified,AZ,,Bad Latitude,222011.0
-66,AZwr_S222024,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B18013027B0C,,Unspecified,AZ,,Bad Latitude,222023.0
-67,AZwr_S222025,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B16513027C0B,,Unspecified,AZ,,Bad Latitude,222024.0
-68,AZwr_S222349,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D17032025CA0,,Unspecified,AZ,,Bad Latitude,222348.0
-69,AZwr_S222416,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A03027001A00,,Unspecified,AZ,,Bad Latitude,222415.0
-70,AZwr_S222543,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A09002000000,,Unspecified,AZ,,Bad Latitude,222542.0
-71,AZwr_S222875,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A01030000000,,Unspecified,AZ,,Bad Latitude,222874.0
-72,AZwr_S222877,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A02030000000,,Unspecified,AZ,,Bad Latitude,222876.0
-73,AZwr_S222881,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A03031000000,,Unspecified,AZ,,Bad Latitude,222880.0
-74,AZwr_S222884,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A03030000000,,Unspecified,AZ,,Bad Latitude,222883.0
-75,AZwr_S222899,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D01031000000,,Unspecified,AZ,,Bad Latitude,222898.0
-76,AZwr_S222926,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D02031000000,,Unspecified,AZ,,Bad Latitude,222925.0
-77,AZwr_S223058,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B28018000000,,Unspecified,AZ,,Bad Latitude,223057.0
-78,AZwr_S223339,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B15008000000,,Unspecified,AZ,,Bad Latitude,223338.0
-79,AZwr_S223587,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B11501035CB0,,Unspecified,AZ,,Bad Latitude,223586.0
-80,AZwr_S223648,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D23010019CB0,,Unspecified,AZ,,Bad Latitude,223647.0
-81,AZwr_S224096,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B08002000000,,Unspecified,AZ,,Bad Latitude,224095.0
-82,AZwr_S224598,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B14011000000,,Unspecified,AZ,,Bad Latitude,224597.0
-83,AZwr_S224894,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11512017DC0,,Unspecified,AZ,,Bad Latitude,224893.0
-84,AZwr_S224914,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11512018AC0,,Unspecified,AZ,,Bad Latitude,224913.0
-85,AZwr_S224915,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11512016BB0,,Unspecified,AZ,,Bad Latitude,224914.0
-86,AZwr_S224991,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D23011000000,,Unspecified,AZ,,Bad Latitude,224990.0
-87,AZwr_S225029,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A010160180B0,,Unspecified,AZ,,Bad Latitude,225028.0
-88,AZwr_S225197,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A10512024DD0,,Unspecified,AZ,,Bad Latitude,225196.0
-89,AZwr_S225199,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A10512036CB0,,Unspecified,AZ,,Bad Latitude,225198.0
-90,AZwr_S225200,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A10512025CA0,,Unspecified,AZ,,Bad Latitude,225199.0
-91,AZwr_S225207,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A10512025CC0,,Unspecified,AZ,,Bad Latitude,225206.0
-92,AZwr_S225460,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B09002000000,,Unspecified,AZ,,Bad Latitude,225459.0
-93,AZwr_S225474,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A09501024DC0,,Unspecified,AZ,,Bad Latitude,225473.0
-94,AZwr_S225596,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D17031000000,,Unspecified,AZ,,Bad Latitude,225595.0
-95,AZwr_S225605,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D17032000000,,Unspecified,AZ,,Bad Latitude,225604.0
-96,AZwr_S225729,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A03002000000,,Unspecified,AZ,,Bad Latitude,225728.0
-97,AZwr_S225804,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A12506001BA0,,Unspecified,AZ,,Bad Latitude,225803.0
-98,AZwr_S225867,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A10006000000,,Unspecified,AZ,,Bad Latitude,225866.0
-99,AZwr_S226025,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B05012000000,,Unspecified,AZ,,Bad Latitude,226024.0
-100,AZwr_S226463,Unspecified,Unspecified,MOHAVE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B20015000CA0,,Unspecified,AZ,,Bad Latitude,226462.0
-101,AZwr_S226567,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D19008000000,,Unspecified,AZ,,Bad Latitude,226566.0
-102,AZwr_S226637,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B20004000000,,Unspecified,AZ,,Bad Latitude,226636.0
-103,AZwr_S227334,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B28013000000,,Unspecified,AZ,,Bad Latitude,227333.0
-104,AZwr_S227338,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D21065018000,,Unspecified,AZ,,Bad Latitude,227337.0
-105,AZwr_S227340,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B28012000000,,Unspecified,AZ,,Bad Latitude,227339.0
-106,AZwr_S227349,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A40008000000,,Unspecified,AZ,,Bad Latitude,227348.0
-107,AZwr_S227352,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B17022033BA0,,Unspecified,AZ,,Bad Latitude,227351.0
-108,AZwr_S227354,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C08023000000,,Unspecified,AZ,,Bad Latitude,227353.0
-109,AZwr_S227355,Unspecified,Unspecified,COCONINO,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A34005000000,,Unspecified,AZ,,Bad Latitude,227354.0
-110,AZwr_S227359,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D20068036000,,Unspecified,AZ,,Bad Latitude,227358.0
-111,AZwr_S227368,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B27010000000,,Unspecified,AZ,,Bad Latitude,227367.0
-112,AZwr_S227371,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D21065013000,,Unspecified,AZ,,Bad Latitude,227370.0
-113,AZwr_S227378,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B27012000000,,Unspecified,AZ,,Bad Latitude,227377.0
-114,AZwr_S227382,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A40028000000,,Unspecified,AZ,,Bad Latitude,227381.0
-115,AZwr_S227395,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B13019000000,,Unspecified,AZ,,Bad Latitude,227394.0
-116,AZwr_S227401,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C09023000000,,Unspecified,AZ,,Bad Latitude,227400.0
-117,AZwr_S227404,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D20061036000,,Unspecified,AZ,,Bad Latitude,227403.0
-118,AZwr_S227504,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A12026000000,,Unspecified,AZ,,Bad Latitude,227503.0
-119,AZwr_S227511,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A22026000000,,Unspecified,AZ,,Bad Latitude,227510.0
-120,AZwr_S228039,Unspecified,Unspecified,COCONINO,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B15004003DA0,,Unspecified,AZ,,Bad Latitude,228038.0
-121,AZwr_S228954,Unspecified,Unspecified,YUMA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B07015000000,,Unspecified,AZ,,Bad Latitude,228953.0
-122,AZwr_S229170,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D24019019AB0,,Unspecified,AZ,,Bad Latitude,229169.0
-123,AZwr_S229574,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B170020,,Unspecified,AZ,,Bad Latitude,229573.0
-124,AZwr_S229657,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B10005000000,,Unspecified,AZ,,Bad Latitude,229656.0
-125,AZwr_S229795,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11512004000,,Unspecified,AZ,,Bad Latitude,229794.0
-126,AZwr_S229880,Unspecified,Unspecified,PIMA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D13001000000,,Unspecified,AZ,,Bad Latitude,229879.0
-127,AZwr_S230388,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A05015508CC0,,Unspecified,AZ,,Bad Latitude,230387.0
-128,AZwr_S230848,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A01028000000,,Unspecified,AZ,,Bad Latitude,230847.0
-129,AZwr_S230853,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D01028000000,,Unspecified,AZ,,Bad Latitude,230852.0
-130,AZwr_S231469,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D24020021AA0,,Unspecified,AZ,,Bad Latitude,231468.0
-131,AZwr_S231513,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B28022000000,,Unspecified,AZ,,Bad Latitude,231512.0
-132,AZwr_S231728,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D07024000000,,Unspecified,AZ,,Bad Latitude,231727.0
-133,AZwr_S232003,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B410020,,Unspecified,AZ,,Bad Latitude,232002.0
-134,AZwr_S232042,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A08028000000,,Unspecified,AZ,,Bad Latitude,232041.0
-135,AZwr_S232269,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A08015012CB0,,Unspecified,AZ,,Bad Latitude,232268.0
-136,AZwr_S232375,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11007031000,,Unspecified,AZ,,Bad Latitude,232374.0
-137,AZwr_S232379,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11007030000,,Unspecified,AZ,,Bad Latitude,232378.0
-138,AZwr_S232866,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B11501029CD0,,Unspecified,AZ,,Bad Latitude,232865.0
-139,AZwr_S232940,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D24024025AC0,,Unspecified,AZ,,Bad Latitude,232939.0
-140,AZwr_S232942,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D24024025DB0,,Unspecified,AZ,,Bad Latitude,232941.0
-141,AZwr_S232974,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D06025000000,,Unspecified,AZ,,Bad Latitude,232973.0
-142,AZwr_S232975,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D05024000000,,Unspecified,AZ,,Bad Latitude,232974.0
-143,AZwr_S232976,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D06024000000,,Unspecified,AZ,,Bad Latitude,232975.0
-144,AZwr_S232978,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D04023000000,,Unspecified,AZ,,Bad Latitude,232977.0
-145,AZwr_S232979,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D07025000000,,Unspecified,AZ,,Bad Latitude,232978.0
-146,AZwr_S232983,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D07026000000,,Unspecified,AZ,,Bad Latitude,232982.0
-147,AZwr_S232984,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D08032000000,,Unspecified,AZ,,Bad Latitude,232983.0
-148,AZwr_S232986,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D08031000000,,Unspecified,AZ,,Bad Latitude,232985.0
-149,AZwr_S232987,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D07027000000,,Unspecified,AZ,,Bad Latitude,232986.0
-150,AZwr_S232995,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D07031000000,,Unspecified,AZ,,Bad Latitude,232994.0
-151,AZwr_S233004,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D09032000000,,Unspecified,AZ,,Bad Latitude,233003.0
-152,AZwr_S233011,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D05023000000,,Unspecified,AZ,,Bad Latitude,233010.0
-153,AZwr_S233012,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D06027000000,,Unspecified,AZ,,Bad Latitude,233011.0
-154,AZwr_S233035,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D05025000000,,Unspecified,AZ,,Bad Latitude,233034.0
-155,AZwr_S233071,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D05030000000,,Unspecified,AZ,,Bad Latitude,233070.0
-156,AZwr_S233096,Unspecified,Unspecified,YUMA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C06013000000,,Unspecified,AZ,,Bad Latitude,233095.0
-157,AZwr_S233117,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D06028000000,,Unspecified,AZ,,Bad Latitude,233116.0
-158,AZwr_S233187,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C07016000000,,Unspecified,AZ,,Bad Latitude,233186.0
-159,AZwr_S233240,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C07015000000,,Unspecified,AZ,,Bad Latitude,233239.0
-160,AZwr_S233244,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C08016000000,,Unspecified,AZ,,Bad Latitude,233243.0
-161,AZwr_S233248,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C19021004AB0,,Unspecified,AZ,,Bad Latitude,233247.0
-162,AZwr_S233311,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C07002000000,,Unspecified,AZ,,Bad Latitude,233310.0
-163,AZwr_S233562,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A10513519DC0,,Unspecified,AZ,,Bad Latitude,233561.0
-164,AZwr_S233576,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A10513520CB0,,Unspecified,AZ,,Bad Latitude,233575.0
-165,AZwr_S233577,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A10513519DD0,,Unspecified,AZ,,Bad Latitude,233576.0
-166,AZwr_S233583,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A10513519DA0,,Unspecified,AZ,,Bad Latitude,233582.0
-167,AZwr_S233597,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A100120080C0,,Unspecified,AZ,,Bad Latitude,233596.0
-168,AZwr_S233699,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B13002000000,,Unspecified,AZ,,Bad Latitude,233698.0
-169,AZwr_S233705,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B11501025AD0,,Unspecified,AZ,,Bad Latitude,233704.0
-170,AZwr_S233733,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B11201025AD0,,Unspecified,AZ,,Bad Latitude,233732.0
-171,AZwr_S233784,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B15002000000,,Unspecified,AZ,,Bad Latitude,233783.0
-172,AZwr_S234063,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A10511035AC0,,Unspecified,AZ,,Bad Latitude,234062.0
-173,AZwr_S234064,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A10512019000,,Unspecified,AZ,,Bad Latitude,234063.0
-174,AZwr_S234066,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A10512019CB0,,Unspecified,AZ,,Bad Latitude,234065.0
-175,AZwr_S234126,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D24031019000,,Unspecified,AZ,,Bad Latitude,234125.0
-176,AZwr_S234127,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D24031019A00,,Unspecified,AZ,,Bad Latitude,234126.0
-177,AZwr_S234341,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B130010,,Unspecified,AZ,,Bad Latitude,234340.0
-178,AZwr_S234385,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A26003000000,,Unspecified,AZ,,Bad Latitude,234384.0
-179,AZwr_S234596,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B36005000000,,Unspecified,AZ,,Bad Latitude,234595.0
-180,AZwr_S234872,Unspecified,Unspecified,SANTA CRUZ,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C22016025000,,Unspecified,AZ,,Bad Latitude,234871.0
-181,AZwr_S234873,Unspecified,Unspecified,SANTA CRUZ,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C22016035000,,Unspecified,AZ,,Bad Latitude,234872.0
-182,AZwr_S234876,Unspecified,Unspecified,SANTA CRUZ,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C22016026000,,Unspecified,AZ,,Bad Latitude,234875.0
-183,AZwr_S234879,Unspecified,Unspecified,SANTA CRUZ,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C22016028000,,Unspecified,AZ,,Bad Latitude,234878.0
-184,AZwr_S234880,Unspecified,Unspecified,SANTA CRUZ,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C22016033000,,Unspecified,AZ,,Bad Latitude,234879.0
-185,AZwr_S234884,Unspecified,Unspecified,SANTA CRUZ,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C22016027000,,Unspecified,AZ,,Bad Latitude,234883.0
-186,AZwr_S234898,Unspecified,Unspecified,SANTA CRUZ,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C22016034000,,Unspecified,AZ,,Bad Latitude,234897.0
-187,AZwr_S234998,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B09003000000,,Unspecified,AZ,,Bad Latitude,234997.0
-188,AZwr_S235067,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B06004000000,,Unspecified,AZ,,Bad Latitude,235066.0
-189,AZwr_S235103,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A07004000000,,Unspecified,AZ,,Bad Latitude,235102.0
-190,AZwr_S235382,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A100120110A0,,Unspecified,AZ,,Bad Latitude,235381.0
-191,AZwr_S235881,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B31016000000,,Unspecified,AZ,,Bad Latitude,235880.0
-192,AZwr_S235943,Unspecified,Unspecified,PIMA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C16018015AD0,,Unspecified,AZ,,Bad Latitude,235942.0
-193,AZwr_S236004,Unspecified,Unspecified,SANTA CRUZ,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D21014042DD0,,Unspecified,AZ,,Bad Latitude,236003.0
-194,AZwr_S236210,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B15505030CD0,,Unspecified,AZ,,Bad Latitude,236209.0
-195,AZwr_S236217,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B30002000000,,Unspecified,AZ,,Bad Latitude,236216.0
-196,AZwr_S236225,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11512002BC0,,Unspecified,AZ,,Bad Latitude,236224.0
-197,AZwr_S236288,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A37004000000,,Unspecified,AZ,,Bad Latitude,236287.0
-198,AZwr_S236487,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D070190290B0,,Unspecified,AZ,,Bad Latitude,236486.0
-199,AZwr_S236687,Unspecified,Unspecified,LA PAZ,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B05014000000,,Unspecified,AZ,,Bad Latitude,236686.0
-200,AZwr_S237193,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C02006000000,,Unspecified,AZ,,Bad Latitude,237192.0
-201,AZwr_S237824,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B42006016CB0,,Unspecified,AZ,,Bad Latitude,237823.0
-202,AZwr_S237967,Unspecified,Unspecified,PINAL,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D07018000000,,Unspecified,AZ,,Bad Latitude,237966.0
-203,AZwr_S238017,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A10512029CA0,,Unspecified,AZ,,Bad Latitude,238016.0
-204,AZwr_S238773,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B31017000000,,Unspecified,AZ,,Bad Latitude,238772.0
-205,AZwr_S238970,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D040190360A0,,Unspecified,AZ,,Bad Latitude,238969.0
-206,AZwr_S239066,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D24019021AA0,,Unspecified,AZ,,Bad Latitude,239065.0
-207,AZwr_S239106,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B10004000000,,Unspecified,AZ,,Bad Latitude,239105.0
-208,AZwr_S239332,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A29009000000,,Unspecified,AZ,,Bad Latitude,239331.0
-209,AZwr_S239353,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B10019006000,,Unspecified,AZ,,Bad Latitude,239352.0
-210,AZwr_S239953,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A09023000BC0,,Unspecified,AZ,,Bad Latitude,239952.0
-211,AZwr_S240772,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D20014000000,,Unspecified,AZ,,Bad Latitude,240771.0
-212,AZwr_S240773,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D19014000000,,Unspecified,AZ,,Bad Latitude,240772.0
-213,AZwr_S241394,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A100120030A0,,Unspecified,AZ,,Bad Latitude,241393.0
-214,AZwr_S241419,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D03023000000,,Unspecified,AZ,,Bad Latitude,241418.0
-215,AZwr_S241467,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11512018BB0,,Unspecified,AZ,,Bad Latitude,241466.0
-216,AZwr_S241755,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D24022021BA0,,Unspecified,AZ,,Bad Latitude,241754.0
-217,AZwr_S241757,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D24022021BAA,,Unspecified,AZ,,Bad Latitude,241756.0
-218,AZwr_S242122,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A07029000000,,Unspecified,AZ,,Bad Latitude,242121.0
-219,AZwr_S242199,Unspecified,Unspecified,APACHE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A10025000000,,Unspecified,AZ,,Bad Latitude,242198.0
-220,AZwr_S242212,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A12025000000,,Unspecified,AZ,,Bad Latitude,242211.0
-221,AZwr_S242255,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11025000000,,Unspecified,AZ,,Bad Latitude,242254.0
-222,AZwr_S242290,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A14001532CC0,,Unspecified,AZ,,Bad Latitude,242289.0
-223,AZwr_S242291,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A14001501BB0,,Unspecified,AZ,,Bad Latitude,242290.0
-224,AZwr_S242292,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A14001503DA0,,Unspecified,AZ,,Bad Latitude,242291.0
-225,AZwr_S242293,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A14001528BA0,,Unspecified,AZ,,Bad Latitude,242292.0
-226,AZwr_S242294,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A14001532CD0,,Unspecified,AZ,,Bad Latitude,242293.0
-227,AZwr_S242296,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A14001529CC0,,Unspecified,AZ,,Bad Latitude,242295.0
-228,AZwr_S242687,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D15522028CA0,,Unspecified,AZ,,Bad Latitude,242686.0
-229,AZwr_S243227,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D24023024D00,,Unspecified,AZ,,Bad Latitude,243226.0
-230,AZwr_S243518,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A06028000000,,Unspecified,AZ,,Bad Latitude,243517.0
-231,AZwr_S243572,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D03012000000,,Unspecified,AZ,,Bad Latitude,243571.0
-232,AZwr_S243922,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A10512024AA0,,Unspecified,AZ,,Bad Latitude,243921.0
-233,AZwr_S243979,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D24025000000,,Unspecified,AZ,,Bad Latitude,243978.0
-234,AZwr_S243996,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D28028002DB0,,Unspecified,AZ,,Bad Latitude,243995.0
-235,AZwr_S243999,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A10512024000,,Unspecified,AZ,,Bad Latitude,243998.0
-236,AZwr_S244098,Unspecified,Unspecified,SANTA CRUZ,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D24014019AA0,,Unspecified,AZ,,Bad Latitude,244097.0
-237,AZwr_S244135,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D24025019CA0,,Unspecified,AZ,,Bad Latitude,244134.0
-238,AZwr_S244163,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D24025028BB0,,Unspecified,AZ,,Bad Latitude,244162.0
-239,AZwr_S244221,Unspecified,Unspecified,APACHE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B11029032BB0,,Unspecified,AZ,,Bad Latitude,244220.0
-240,AZwr_S244512,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B12019029BB0,,Unspecified,AZ,,Bad Latitude,244511.0
-241,AZwr_S244568,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B12021004C00,,Unspecified,AZ,,Bad Latitude,244567.0
-242,AZwr_S244753,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B12021010A00,,Unspecified,AZ,,Bad Latitude,244752.0
-243,AZwr_S244909,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B12021014B00,,Unspecified,AZ,,Bad Latitude,244908.0
-244,AZwr_S245023,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B32017028C00,,Unspecified,AZ,,Bad Latitude,245022.0
-245,AZwr_S245244,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D22014000000,,Unspecified,AZ,,Bad Latitude,245243.0
-246,AZwr_S245362,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A08030000000,,Unspecified,AZ,,Bad Latitude,245361.0
-247,AZwr_S245370,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A07030000000,,Unspecified,AZ,,Bad Latitude,245369.0
-248,AZwr_S245398,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A140040280B0,,Unspecified,AZ,,Bad Latitude,245397.0
-249,AZwr_S245552,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A180060040A0,,Unspecified,AZ,,Bad Latitude,245551.0
-250,AZwr_S245600,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A17027DD0,,Unspecified,AZ,,Bad Latitude,245599.0
-251,AZwr_S245655,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A16004001DCD,,Unspecified,AZ,,Bad Latitude,245654.0
-252,AZwr_S245870,Unspecified,Unspecified,SANTA CRUZ,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D21014000000,,Unspecified,AZ,,Bad Latitude,245869.0
-253,AZwr_S246041,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C22010024CC0,,Unspecified,AZ,,Bad Latitude,246040.0
-254,AZwr_S246049,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C22010023DD0,,Unspecified,AZ,,Bad Latitude,246048.0
-255,AZwr_S246346,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A41007000000,,Unspecified,AZ,,Bad Latitude,246345.0
-256,AZwr_S247086,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A020150070A0,,Unspecified,AZ,,Bad Latitude,247085.0
-257,AZwr_S247160,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B11501027CA0,,Unspecified,AZ,,Bad Latitude,247159.0
-258,AZwr_S247184,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B11501032CB0,,Unspecified,AZ,,Bad Latitude,247183.0
-259,AZwr_S247411,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A01013000000,,Unspecified,AZ,,Bad Latitude,247410.0
-260,AZwr_S247715,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B27022000000,,Unspecified,AZ,,Bad Latitude,247714.0
-261,AZwr_S247872,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11513034CD0,,Unspecified,AZ,,Bad Latitude,247871.0
-262,AZwr_S247889,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D14016000000,,Unspecified,AZ,,Bad Latitude,247888.0
-263,AZwr_S248526,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D24027021BB0,,Unspecified,AZ,,Bad Latitude,248525.0
-264,AZwr_S248556,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B06008000000,,Unspecified,AZ,,Bad Latitude,248555.0
-265,AZwr_S248777,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A01015530BB0,,Unspecified,AZ,,Bad Latitude,248776.0
-266,AZwr_S248861,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A16006003CB0,,Unspecified,AZ,,Bad Latitude,248860.0
-267,AZwr_S249555,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D13014000000,,Unspecified,AZ,,Bad Latitude,249554.0
-268,AZwr_S249868,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11512018B00,,Unspecified,AZ,,Bad Latitude,249867.0
-269,AZwr_S250206,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A20006000000,,Unspecified,AZ,,Bad Latitude,250205.0
-270,AZwr_S250450,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D19029000000,,Unspecified,AZ,,Bad Latitude,250449.0
-271,AZwr_S250573,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11007018DC0,,Unspecified,AZ,,Bad Latitude,250572.0
-272,AZwr_S250899,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D13015000000,,Unspecified,AZ,,Bad Latitude,250898.0
-273,AZwr_S251050,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11006525AC0,,Unspecified,AZ,,Bad Latitude,251049.0
-274,AZwr_S251077,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A03010000000,,Unspecified,AZ,,Bad Latitude,251076.0
-275,AZwr_S251079,Unspecified,Unspecified,MARICOPA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A05008000000,,Unspecified,AZ,,Bad Latitude,251078.0
-276,AZwr_S251081,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A01002000000,,Unspecified,AZ,,Bad Latitude,251080.0
-277,AZwr_S251085,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A02009000000,,Unspecified,AZ,,Bad Latitude,251084.0
-278,AZwr_S251101,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A03011000000,,Unspecified,AZ,,Bad Latitude,251100.0
-279,AZwr_S251139,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A01005000000,,Unspecified,AZ,,Bad Latitude,251138.0
-280,AZwr_S251163,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A10512030000,,Unspecified,AZ,,Bad Latitude,251162.0
-281,AZwr_S251220,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B30017000000,,Unspecified,AZ,,Bad Latitude,251219.0
-282,AZwr_S251240,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C11020000000,,Unspecified,AZ,,Bad Latitude,251239.0
-283,AZwr_S251322,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A05032016DD0,,Unspecified,AZ,,Bad Latitude,251321.0
-284,AZwr_S251385,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D24022019BA0,,Unspecified,AZ,,Bad Latitude,251384.0
-285,AZwr_S251404,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D15020000BD0,,Unspecified,AZ,,Bad Latitude,251403.0
-286,AZwr_S251497,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D17020000000,,Unspecified,AZ,,Bad Latitude,251496.0
-287,AZwr_S251694,Unspecified,Unspecified,SANTA CRUZ,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D24014000000,,Unspecified,AZ,,Bad Latitude,251693.0
-288,AZwr_S251753,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D22013000000,,Unspecified,AZ,,Bad Latitude,251752.0
-289,AZwr_S251787,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D21013000000,,Unspecified,AZ,,Bad Latitude,251786.0
-290,AZwr_S251803,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D23014000000,,Unspecified,AZ,,Bad Latitude,251802.0
-291,AZwr_S251837,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D23013000000,,Unspecified,AZ,,Bad Latitude,251836.0
-292,AZwr_S251919,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D06007000000,,Unspecified,AZ,,Bad Latitude,251918.0
-293,AZwr_S251932,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D06008000000,,Unspecified,AZ,,Bad Latitude,251931.0
-294,AZwr_S251973,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D14013000000,,Unspecified,AZ,,Bad Latitude,251972.0
-295,AZwr_S252004,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D19013000000,,Unspecified,AZ,,Bad Latitude,252003.0
-296,AZwr_S252005,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D17013000000,,Unspecified,AZ,,Bad Latitude,252004.0
-297,AZwr_S252347,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A10512019CA0,,Unspecified,AZ,,Bad Latitude,252346.0
-298,AZwr_S253823,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D22015000000,,Unspecified,AZ,,Bad Latitude,253822.0
-299,AZwr_S254106,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B15505002DC0,,Unspecified,AZ,,Bad Latitude,254105.0
-300,AZwr_S254499,Unspecified,Unspecified,YUMA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C01017000000,,Unspecified,AZ,,Bad Latitude,254498.0
-301,AZwr_S254557,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B03009000000,,Unspecified,AZ,,Bad Latitude,254556.0
-302,AZwr_S254871,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B080140,,Unspecified,AZ,,Bad Latitude,254870.0
-303,AZwr_S254872,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,00018031BB0,,Unspecified,AZ,,Bad Latitude,254871.0
-304,AZwr_S254998,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B29022000000,,Unspecified,AZ,,Bad Latitude,254997.0
-305,AZwr_S255274,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A12506026AC0,,Unspecified,AZ,,Bad Latitude,255273.0
-306,AZwr_S255951,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A37005000000,,Unspecified,AZ,,Bad Latitude,255950.0
-307,AZwr_S256033,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A10512021000,,Unspecified,AZ,,Bad Latitude,256032.0
-308,AZwr_S256042,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A10512028DA0,,Unspecified,AZ,,Bad Latitude,256041.0
-309,AZwr_S256501,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A02007000000,,Unspecified,AZ,,Bad Latitude,256500.0
-310,AZwr_S256505,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11512033000,,Unspecified,AZ,,Bad Latitude,256504.0
-311,AZwr_S256506,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11512009000,,Unspecified,AZ,,Bad Latitude,256505.0
-312,AZwr_S256538,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B14508005AA0,,Unspecified,AZ,,Bad Latitude,256537.0
-313,AZwr_S257037,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B11501028BD0,,Unspecified,AZ,,Bad Latitude,257036.0
-314,AZwr_S257261,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C22020002BB0,,Unspecified,AZ,,Bad Latitude,257260.0
-315,AZwr_S257383,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,4000,,Unspecified,AZ,,Bad Latitude,257382.0
-316,AZwr_S257542,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A19022000000,,Unspecified,AZ,,Bad Latitude,257541.0
-317,AZwr_S257680,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,00000010BC0,,Unspecified,AZ,,Bad Latitude,257679.0
-318,AZwr_S258017,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B10001000000,,Unspecified,AZ,,Bad Latitude,258016.0
-319,AZwr_S258087,Unspecified,Unspecified,NAVAJO,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A19019000000,,Unspecified,AZ,,Bad Latitude,258086.0
-320,AZwr_S258539,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B41012000000,,Unspecified,AZ,,Bad Latitude,258538.0
-321,AZwr_S258576,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11007030CB0,,Unspecified,AZ,,Bad Latitude,258575.0
-322,AZwr_S259078,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B23006006BB0,,Unspecified,AZ,,Bad Latitude,259077.0
-323,AZwr_S260144,Unspecified,Unspecified,COCONINO,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B15004003BA0,,Unspecified,AZ,,Bad Latitude,260143.0
-324,AZwr_S260478,Unspecified,Unspecified,GREENLEE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D01032027CC0,,Unspecified,AZ,,Bad Latitude,260477.0
-325,AZwr_S260784,Unspecified,Unspecified,GRAHAM,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D05028028C0C,,Unspecified,AZ,,Bad Latitude,260783.0
-326,AZwr_S260810,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D24019019BA0,,Unspecified,AZ,,Bad Latitude,260809.0
-327,AZwr_S261254,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A16031014DD0,,Unspecified,AZ,,Bad Latitude,261253.0
-328,AZwr_S261773,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D06032023D00,,Unspecified,AZ,,Bad Latitude,261772.0
-329,AZwr_S262559,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11006536AC0,,Unspecified,AZ,,Bad Latitude,262558.0
-330,AZwr_S264285,Unspecified,Unspecified,PINAL,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D02012000000,,Unspecified,AZ,,Bad Latitude,264284.0
-331,AZwr_S264580,Unspecified,Unspecified,COCONINO,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A190010170D0,,Unspecified,AZ,,Bad Latitude,264579.0
-332,AZwr_S265119,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A12006507DA0,,Unspecified,AZ,,Bad Latitude,265118.0
-333,AZwr_S265865,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D24013020AA0,,Unspecified,AZ,,Bad Latitude,265864.0
-334,AZwr_S266031,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D07009000000,,Unspecified,AZ,,Bad Latitude,266030.0
-335,AZwr_S266263,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D17030000000,,Unspecified,AZ,,Bad Latitude,266262.0
-336,AZwr_S266552,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A14004000000,,Unspecified,AZ,,Bad Latitude,266551.0
-337,AZwr_S266574,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A14004000AD0,,Unspecified,AZ,,Bad Latitude,266573.0
-338,AZwr_S266950,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,14000032CD0,,Unspecified,AZ,,Bad Latitude,266949.0
-339,AZwr_S267012,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B41013000000,,Unspecified,AZ,,Bad Latitude,267011.0
-340,AZwr_S267568,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11509002AD0,,Unspecified,AZ,,Bad Latitude,267567.0
-341,AZwr_S267574,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11509002AB0,,Unspecified,AZ,,Bad Latitude,267573.0
-342,AZwr_S267626,Unspecified,Unspecified,SANTA CRUZ,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C23015025BC0,,Unspecified,AZ,,Bad Latitude,267625.0
-343,AZwr_S267657,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,D21017000000,,Unspecified,AZ,,Bad Latitude,267656.0
-344,AZwr_S267696,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C05002000000,,Unspecified,AZ,,Bad Latitude,267695.0
-345,AZwr_S267901,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,15015019CC0,,Unspecified,AZ,,Bad Latitude,267900.0
-346,AZwr_S268425,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A10512021DA0,,Unspecified,AZ,,Bad Latitude,268424.0
-347,AZwr_S268518,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C04013000000,,Unspecified,AZ,,Bad Latitude,268517.0
-348,AZwr_S268837,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A09510012DB0,,Unspecified,AZ,,Bad Latitude,268836.0
-349,AZwr_S269080,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,A11512007D00,,Unspecified,AZ,,Bad Latitude,269079.0
-350,AZwr_S269089,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,B11501025D00,,Unspecified,AZ,,Bad Latitude,269088.0
-351,AZwr_S269369,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Unspecified,C02009000000,,Unspecified,AZ,,Bad Latitude,269368.0
+0,AZwr_S217915,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B29020000000,,Unspecified,AZ,,Bad Latitude,217914.0
+1,AZwr_S217917,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B05001000000,,Unspecified,AZ,,Bad Latitude,217916.0
+2,AZwr_S217924,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D20020000000,,Unspecified,AZ,,Bad Latitude,217923.0
+3,AZwr_S217932,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B04002000000,,Unspecified,AZ,,Bad Latitude,217931.0
+4,AZwr_S217962,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A08029000000,,Unspecified,AZ,,Bad Latitude,217961.0
+5,AZwr_S217968,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B30016000000,,Unspecified,AZ,,Bad Latitude,217967.0
+6,AZwr_S217990,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B30022000000,,Unspecified,AZ,,Bad Latitude,217989.0
+7,AZwr_S217997,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B040020,,Unspecified,AZ,,Bad Latitude,217996.0
+8,AZwr_S217999,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B19020000000,,Unspecified,AZ,,Bad Latitude,217998.0
+9,AZwr_S218005,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B31020000000,,Unspecified,AZ,,Bad Latitude,218004.0
+10,AZwr_S218014,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A010504000,,Unspecified,AZ,,Bad Latitude,218013.0
+11,AZwr_S218045,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A010401000,,Unspecified,AZ,,Bad Latitude,218044.0
+12,AZwr_S218083,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11019000000,,Unspecified,AZ,,Bad Latitude,218082.0
+13,AZwr_S218085,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B27021000000,,Unspecified,AZ,,Bad Latitude,218084.0
+14,AZwr_S218109,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A09024000000,,Unspecified,AZ,,Bad Latitude,218108.0
+15,AZwr_S218116,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D02007000000,,Unspecified,AZ,,Bad Latitude,218115.0
+16,AZwr_S218125,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B28016000000,,Unspecified,AZ,,Bad Latitude,218124.0
+17,AZwr_S218128,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D19019000000,,Unspecified,AZ,,Bad Latitude,218127.0
+18,AZwr_S218167,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A35003000000,,Unspecified,AZ,,Bad Latitude,218166.0
+19,AZwr_S218216,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D06030000000,,Unspecified,AZ,,Bad Latitude,218215.0
+20,AZwr_S218234,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B31015000000,,Unspecified,AZ,,Bad Latitude,218233.0
+21,AZwr_S218236,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B29019000000,,Unspecified,AZ,,Bad Latitude,218235.0
+22,AZwr_S218273,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A010505000,,Unspecified,AZ,,Bad Latitude,218272.0
+23,AZwr_S218304,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B03002000000,,Unspecified,AZ,,Bad Latitude,218303.0
+24,AZwr_S218305,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B29016000000,,Unspecified,AZ,,Bad Latitude,218304.0
+25,AZwr_S218340,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B10013000000,,Unspecified,AZ,,Bad Latitude,218339.0
+26,AZwr_S218343,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A010506000,,Unspecified,AZ,,Bad Latitude,218342.0
+27,AZwr_S218350,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A06030000000,,Unspecified,AZ,,Bad Latitude,218349.0
+28,AZwr_S218369,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D04030000000,,Unspecified,AZ,,Bad Latitude,218368.0
+29,AZwr_S218374,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C01002000000,,Unspecified,AZ,,Bad Latitude,218373.0
+30,AZwr_S218383,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B13018000000,,Unspecified,AZ,,Bad Latitude,218382.0
+31,AZwr_S218384,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D06031000000,,Unspecified,AZ,,Bad Latitude,218383.0
+32,AZwr_S218399,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11024000000,,Unspecified,AZ,,Bad Latitude,218398.0
+33,AZwr_S218404,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A04017000000,,Unspecified,AZ,,Bad Latitude,218403.0
+34,AZwr_S218429,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A010402000,,Unspecified,AZ,,Bad Latitude,218428.0
+35,AZwr_S218434,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A010503000,,Unspecified,AZ,,Bad Latitude,218433.0
+36,AZwr_S218440,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B30018000000,,Unspecified,AZ,,Bad Latitude,218439.0
+37,AZwr_S218444,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11018000000,,Unspecified,AZ,,Bad Latitude,218443.0
+38,AZwr_S218804,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D190210,,Unspecified,AZ,,Bad Latitude,218803.0
+39,AZwr_S218805,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D200210,,Unspecified,AZ,,Bad Latitude,218804.0
+40,AZwr_S218817,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D18013000000,,Unspecified,AZ,,Bad Latitude,218816.0
+41,AZwr_S219404,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11512031DB0,,Unspecified,AZ,,Bad Latitude,219403.0
+42,AZwr_S219793,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A100120100C0,,Unspecified,AZ,,Bad Latitude,219792.0
+43,AZwr_S220019,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A12504003AA0,,Unspecified,AZ,,Bad Latitude,220018.0
+44,AZwr_S220035,Unspecified,Unspecified,YUMA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B05011000000,,Unspecified,AZ,,Bad Latitude,220034.0
+45,AZwr_S220176,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C03006000000,,Unspecified,AZ,,Bad Latitude,220175.0
+46,AZwr_S220571,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D21018000000,,Unspecified,AZ,,Bad Latitude,220570.0
+47,AZwr_S220572,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D21019000000,,Unspecified,AZ,,Bad Latitude,220571.0
+48,AZwr_S220686,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A39006000000,,Unspecified,AZ,,Bad Latitude,220685.0
+49,AZwr_S221190,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D24019023A00,,Unspecified,AZ,,Bad Latitude,221189.0
+50,AZwr_S221276,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A10512022CC0,,Unspecified,AZ,,Bad Latitude,221275.0
+51,AZwr_S221343,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A09029000000,,Unspecified,AZ,,Bad Latitude,221342.0
+52,AZwr_S221725,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11512016000,,Unspecified,AZ,,Bad Latitude,221724.0
+53,AZwr_S221726,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11512008000,,Unspecified,AZ,,Bad Latitude,221725.0
+54,AZwr_S221729,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11512006000,,Unspecified,AZ,,Bad Latitude,221728.0
+55,AZwr_S221885,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D24019019BB0,,Unspecified,AZ,,Bad Latitude,221884.0
+56,AZwr_S221951,Unspecified,Unspecified,MOHAVE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B16013000000,,Unspecified,AZ,,Bad Latitude,221950.0
+57,AZwr_S221959,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B170130260AB,,Unspecified,AZ,,Bad Latitude,221958.0
+58,AZwr_S221981,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B17013010D0A,,Unspecified,AZ,,Bad Latitude,221980.0
+59,AZwr_S221991,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B170130260DD,,Unspecified,AZ,,Bad Latitude,221990.0
+60,AZwr_S222000,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B17013010A0B,,Unspecified,AZ,,Bad Latitude,221999.0
+61,AZwr_S222002,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B170130100DA,,Unspecified,AZ,,Bad Latitude,222001.0
+62,AZwr_S222003,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,16013003ACC,,Unspecified,AZ,,Bad Latitude,222002.0
+63,AZwr_S222004,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A16513027CDB,,Unspecified,AZ,,Bad Latitude,222003.0
+64,AZwr_S222005,Unspecified,Unspecified,MOHAVE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B17013014B0A,,Unspecified,AZ,,Bad Latitude,222004.0
+65,AZwr_S222012,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B160130030AB,,Unspecified,AZ,,Bad Latitude,222011.0
+66,AZwr_S222024,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B18013027B0C,,Unspecified,AZ,,Bad Latitude,222023.0
+67,AZwr_S222025,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B16513027C0B,,Unspecified,AZ,,Bad Latitude,222024.0
+68,AZwr_S222349,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D17032025CA0,,Unspecified,AZ,,Bad Latitude,222348.0
+69,AZwr_S222416,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A03027001A00,,Unspecified,AZ,,Bad Latitude,222415.0
+70,AZwr_S222543,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A09002000000,,Unspecified,AZ,,Bad Latitude,222542.0
+71,AZwr_S222875,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A01030000000,,Unspecified,AZ,,Bad Latitude,222874.0
+72,AZwr_S222877,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A02030000000,,Unspecified,AZ,,Bad Latitude,222876.0
+73,AZwr_S222881,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A03031000000,,Unspecified,AZ,,Bad Latitude,222880.0
+74,AZwr_S222884,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A03030000000,,Unspecified,AZ,,Bad Latitude,222883.0
+75,AZwr_S222899,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D01031000000,,Unspecified,AZ,,Bad Latitude,222898.0
+76,AZwr_S222926,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D02031000000,,Unspecified,AZ,,Bad Latitude,222925.0
+77,AZwr_S223058,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B28018000000,,Unspecified,AZ,,Bad Latitude,223057.0
+78,AZwr_S223339,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B15008000000,,Unspecified,AZ,,Bad Latitude,223338.0
+79,AZwr_S223587,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B11501035CB0,,Unspecified,AZ,,Bad Latitude,223586.0
+80,AZwr_S223648,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D23010019CB0,,Unspecified,AZ,,Bad Latitude,223647.0
+81,AZwr_S224096,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B08002000000,,Unspecified,AZ,,Bad Latitude,224095.0
+82,AZwr_S224598,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B14011000000,,Unspecified,AZ,,Bad Latitude,224597.0
+83,AZwr_S224894,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11512017DC0,,Unspecified,AZ,,Bad Latitude,224893.0
+84,AZwr_S224914,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11512018AC0,,Unspecified,AZ,,Bad Latitude,224913.0
+85,AZwr_S224915,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11512016BB0,,Unspecified,AZ,,Bad Latitude,224914.0
+86,AZwr_S224991,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D23011000000,,Unspecified,AZ,,Bad Latitude,224990.0
+87,AZwr_S225029,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A010160180B0,,Unspecified,AZ,,Bad Latitude,225028.0
+88,AZwr_S225197,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A10512024DD0,,Unspecified,AZ,,Bad Latitude,225196.0
+89,AZwr_S225199,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A10512036CB0,,Unspecified,AZ,,Bad Latitude,225198.0
+90,AZwr_S225200,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A10512025CA0,,Unspecified,AZ,,Bad Latitude,225199.0
+91,AZwr_S225207,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A10512025CC0,,Unspecified,AZ,,Bad Latitude,225206.0
+92,AZwr_S225460,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B09002000000,,Unspecified,AZ,,Bad Latitude,225459.0
+93,AZwr_S225474,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A09501024DC0,,Unspecified,AZ,,Bad Latitude,225473.0
+94,AZwr_S225596,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D17031000000,,Unspecified,AZ,,Bad Latitude,225595.0
+95,AZwr_S225605,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D17032000000,,Unspecified,AZ,,Bad Latitude,225604.0
+96,AZwr_S225729,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A03002000000,,Unspecified,AZ,,Bad Latitude,225728.0
+97,AZwr_S225804,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A12506001BA0,,Unspecified,AZ,,Bad Latitude,225803.0
+98,AZwr_S225867,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A10006000000,,Unspecified,AZ,,Bad Latitude,225866.0
+99,AZwr_S226025,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B05012000000,,Unspecified,AZ,,Bad Latitude,226024.0
+100,AZwr_S226463,Unspecified,Unspecified,MOHAVE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B20015000CA0,,Unspecified,AZ,,Bad Latitude,226462.0
+101,AZwr_S226567,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D19008000000,,Unspecified,AZ,,Bad Latitude,226566.0
+102,AZwr_S226637,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B20004000000,,Unspecified,AZ,,Bad Latitude,226636.0
+103,AZwr_S227334,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B28013000000,,Unspecified,AZ,,Bad Latitude,227333.0
+104,AZwr_S227338,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D21065018000,,Unspecified,AZ,,Bad Latitude,227337.0
+105,AZwr_S227340,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B28012000000,,Unspecified,AZ,,Bad Latitude,227339.0
+106,AZwr_S227349,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A40008000000,,Unspecified,AZ,,Bad Latitude,227348.0
+107,AZwr_S227352,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B17022033BA0,,Unspecified,AZ,,Bad Latitude,227351.0
+108,AZwr_S227354,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C08023000000,,Unspecified,AZ,,Bad Latitude,227353.0
+109,AZwr_S227355,Unspecified,Unspecified,COCONINO,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A34005000000,,Unspecified,AZ,,Bad Latitude,227354.0
+110,AZwr_S227359,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D20068036000,,Unspecified,AZ,,Bad Latitude,227358.0
+111,AZwr_S227368,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B27010000000,,Unspecified,AZ,,Bad Latitude,227367.0
+112,AZwr_S227371,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D21065013000,,Unspecified,AZ,,Bad Latitude,227370.0
+113,AZwr_S227378,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B27012000000,,Unspecified,AZ,,Bad Latitude,227377.0
+114,AZwr_S227382,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A40028000000,,Unspecified,AZ,,Bad Latitude,227381.0
+115,AZwr_S227395,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B13019000000,,Unspecified,AZ,,Bad Latitude,227394.0
+116,AZwr_S227401,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C09023000000,,Unspecified,AZ,,Bad Latitude,227400.0
+117,AZwr_S227404,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D20061036000,,Unspecified,AZ,,Bad Latitude,227403.0
+118,AZwr_S227504,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A12026000000,,Unspecified,AZ,,Bad Latitude,227503.0
+119,AZwr_S227511,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A22026000000,,Unspecified,AZ,,Bad Latitude,227510.0
+120,AZwr_S228039,Unspecified,Unspecified,COCONINO,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B15004003DA0,,Unspecified,AZ,,Bad Latitude,228038.0
+121,AZwr_S228954,Unspecified,Unspecified,YUMA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B07015000000,,Unspecified,AZ,,Bad Latitude,228953.0
+122,AZwr_S229170,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D24019019AB0,,Unspecified,AZ,,Bad Latitude,229169.0
+123,AZwr_S229574,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B170020,,Unspecified,AZ,,Bad Latitude,229573.0
+124,AZwr_S229657,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B10005000000,,Unspecified,AZ,,Bad Latitude,229656.0
+125,AZwr_S229795,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11512004000,,Unspecified,AZ,,Bad Latitude,229794.0
+126,AZwr_S229880,Unspecified,Unspecified,PIMA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D13001000000,,Unspecified,AZ,,Bad Latitude,229879.0
+127,AZwr_S230388,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A05015508CC0,,Unspecified,AZ,,Bad Latitude,230387.0
+128,AZwr_S230848,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A01028000000,,Unspecified,AZ,,Bad Latitude,230847.0
+129,AZwr_S230853,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D01028000000,,Unspecified,AZ,,Bad Latitude,230852.0
+130,AZwr_S231469,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D24020021AA0,,Unspecified,AZ,,Bad Latitude,231468.0
+131,AZwr_S231513,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B28022000000,,Unspecified,AZ,,Bad Latitude,231512.0
+132,AZwr_S231728,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D07024000000,,Unspecified,AZ,,Bad Latitude,231727.0
+133,AZwr_S232003,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B410020,,Unspecified,AZ,,Bad Latitude,232002.0
+134,AZwr_S232042,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A08028000000,,Unspecified,AZ,,Bad Latitude,232041.0
+135,AZwr_S232269,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A08015012CB0,,Unspecified,AZ,,Bad Latitude,232268.0
+136,AZwr_S232375,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11007031000,,Unspecified,AZ,,Bad Latitude,232374.0
+137,AZwr_S232379,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11007030000,,Unspecified,AZ,,Bad Latitude,232378.0
+138,AZwr_S232866,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B11501029CD0,,Unspecified,AZ,,Bad Latitude,232865.0
+139,AZwr_S232940,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D24024025AC0,,Unspecified,AZ,,Bad Latitude,232939.0
+140,AZwr_S232942,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D24024025DB0,,Unspecified,AZ,,Bad Latitude,232941.0
+141,AZwr_S232974,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D06025000000,,Unspecified,AZ,,Bad Latitude,232973.0
+142,AZwr_S232975,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D05024000000,,Unspecified,AZ,,Bad Latitude,232974.0
+143,AZwr_S232976,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D06024000000,,Unspecified,AZ,,Bad Latitude,232975.0
+144,AZwr_S232978,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D04023000000,,Unspecified,AZ,,Bad Latitude,232977.0
+145,AZwr_S232979,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D07025000000,,Unspecified,AZ,,Bad Latitude,232978.0
+146,AZwr_S232983,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D07026000000,,Unspecified,AZ,,Bad Latitude,232982.0
+147,AZwr_S232984,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D08032000000,,Unspecified,AZ,,Bad Latitude,232983.0
+148,AZwr_S232986,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D08031000000,,Unspecified,AZ,,Bad Latitude,232985.0
+149,AZwr_S232987,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D07027000000,,Unspecified,AZ,,Bad Latitude,232986.0
+150,AZwr_S232995,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D07031000000,,Unspecified,AZ,,Bad Latitude,232994.0
+151,AZwr_S233004,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D09032000000,,Unspecified,AZ,,Bad Latitude,233003.0
+152,AZwr_S233011,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D05023000000,,Unspecified,AZ,,Bad Latitude,233010.0
+153,AZwr_S233012,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D06027000000,,Unspecified,AZ,,Bad Latitude,233011.0
+154,AZwr_S233035,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D05025000000,,Unspecified,AZ,,Bad Latitude,233034.0
+155,AZwr_S233071,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D05030000000,,Unspecified,AZ,,Bad Latitude,233070.0
+156,AZwr_S233096,Unspecified,Unspecified,YUMA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C06013000000,,Unspecified,AZ,,Bad Latitude,233095.0
+157,AZwr_S233117,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D06028000000,,Unspecified,AZ,,Bad Latitude,233116.0
+158,AZwr_S233187,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C07016000000,,Unspecified,AZ,,Bad Latitude,233186.0
+159,AZwr_S233240,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C07015000000,,Unspecified,AZ,,Bad Latitude,233239.0
+160,AZwr_S233244,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C08016000000,,Unspecified,AZ,,Bad Latitude,233243.0
+161,AZwr_S233248,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C19021004AB0,,Unspecified,AZ,,Bad Latitude,233247.0
+162,AZwr_S233311,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C07002000000,,Unspecified,AZ,,Bad Latitude,233310.0
+163,AZwr_S233562,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A10513519DC0,,Unspecified,AZ,,Bad Latitude,233561.0
+164,AZwr_S233576,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A10513520CB0,,Unspecified,AZ,,Bad Latitude,233575.0
+165,AZwr_S233577,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A10513519DD0,,Unspecified,AZ,,Bad Latitude,233576.0
+166,AZwr_S233583,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A10513519DA0,,Unspecified,AZ,,Bad Latitude,233582.0
+167,AZwr_S233597,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A100120080C0,,Unspecified,AZ,,Bad Latitude,233596.0
+168,AZwr_S233699,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B13002000000,,Unspecified,AZ,,Bad Latitude,233698.0
+169,AZwr_S233705,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B11501025AD0,,Unspecified,AZ,,Bad Latitude,233704.0
+170,AZwr_S233733,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B11201025AD0,,Unspecified,AZ,,Bad Latitude,233732.0
+171,AZwr_S233784,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B15002000000,,Unspecified,AZ,,Bad Latitude,233783.0
+172,AZwr_S234063,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A10511035AC0,,Unspecified,AZ,,Bad Latitude,234062.0
+173,AZwr_S234064,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A10512019000,,Unspecified,AZ,,Bad Latitude,234063.0
+174,AZwr_S234066,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A10512019CB0,,Unspecified,AZ,,Bad Latitude,234065.0
+175,AZwr_S234126,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D24031019000,,Unspecified,AZ,,Bad Latitude,234125.0
+176,AZwr_S234127,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D24031019A00,,Unspecified,AZ,,Bad Latitude,234126.0
+177,AZwr_S234341,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B130010,,Unspecified,AZ,,Bad Latitude,234340.0
+178,AZwr_S234385,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A26003000000,,Unspecified,AZ,,Bad Latitude,234384.0
+179,AZwr_S234596,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B36005000000,,Unspecified,AZ,,Bad Latitude,234595.0
+180,AZwr_S234872,Unspecified,Unspecified,SANTA CRUZ,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C22016025000,,Unspecified,AZ,,Bad Latitude,234871.0
+181,AZwr_S234873,Unspecified,Unspecified,SANTA CRUZ,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C22016035000,,Unspecified,AZ,,Bad Latitude,234872.0
+182,AZwr_S234876,Unspecified,Unspecified,SANTA CRUZ,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C22016026000,,Unspecified,AZ,,Bad Latitude,234875.0
+183,AZwr_S234879,Unspecified,Unspecified,SANTA CRUZ,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C22016028000,,Unspecified,AZ,,Bad Latitude,234878.0
+184,AZwr_S234880,Unspecified,Unspecified,SANTA CRUZ,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C22016033000,,Unspecified,AZ,,Bad Latitude,234879.0
+185,AZwr_S234884,Unspecified,Unspecified,SANTA CRUZ,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C22016027000,,Unspecified,AZ,,Bad Latitude,234883.0
+186,AZwr_S234898,Unspecified,Unspecified,SANTA CRUZ,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C22016034000,,Unspecified,AZ,,Bad Latitude,234897.0
+187,AZwr_S234998,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B09003000000,,Unspecified,AZ,,Bad Latitude,234997.0
+188,AZwr_S235067,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B06004000000,,Unspecified,AZ,,Bad Latitude,235066.0
+189,AZwr_S235103,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A07004000000,,Unspecified,AZ,,Bad Latitude,235102.0
+190,AZwr_S235382,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A100120110A0,,Unspecified,AZ,,Bad Latitude,235381.0
+191,AZwr_S235881,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B31016000000,,Unspecified,AZ,,Bad Latitude,235880.0
+192,AZwr_S235943,Unspecified,Unspecified,PIMA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C16018015AD0,,Unspecified,AZ,,Bad Latitude,235942.0
+193,AZwr_S236004,Unspecified,Unspecified,SANTA CRUZ,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D21014042DD0,,Unspecified,AZ,,Bad Latitude,236003.0
+194,AZwr_S236210,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B15505030CD0,,Unspecified,AZ,,Bad Latitude,236209.0
+195,AZwr_S236217,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B30002000000,,Unspecified,AZ,,Bad Latitude,236216.0
+196,AZwr_S236225,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11512002BC0,,Unspecified,AZ,,Bad Latitude,236224.0
+197,AZwr_S236288,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A37004000000,,Unspecified,AZ,,Bad Latitude,236287.0
+198,AZwr_S236487,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D070190290B0,,Unspecified,AZ,,Bad Latitude,236486.0
+199,AZwr_S236687,Unspecified,Unspecified,LA PAZ,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B05014000000,,Unspecified,AZ,,Bad Latitude,236686.0
+200,AZwr_S237193,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C02006000000,,Unspecified,AZ,,Bad Latitude,237192.0
+201,AZwr_S237824,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B42006016CB0,,Unspecified,AZ,,Bad Latitude,237823.0
+202,AZwr_S237967,Unspecified,Unspecified,PINAL,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D07018000000,,Unspecified,AZ,,Bad Latitude,237966.0
+203,AZwr_S238017,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A10512029CA0,,Unspecified,AZ,,Bad Latitude,238016.0
+204,AZwr_S238773,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B31017000000,,Unspecified,AZ,,Bad Latitude,238772.0
+205,AZwr_S238970,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D040190360A0,,Unspecified,AZ,,Bad Latitude,238969.0
+206,AZwr_S239066,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D24019021AA0,,Unspecified,AZ,,Bad Latitude,239065.0
+207,AZwr_S239106,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B10004000000,,Unspecified,AZ,,Bad Latitude,239105.0
+208,AZwr_S239332,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A29009000000,,Unspecified,AZ,,Bad Latitude,239331.0
+209,AZwr_S239353,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B10019006000,,Unspecified,AZ,,Bad Latitude,239352.0
+210,AZwr_S239953,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A09023000BC0,,Unspecified,AZ,,Bad Latitude,239952.0
+211,AZwr_S240772,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D20014000000,,Unspecified,AZ,,Bad Latitude,240771.0
+212,AZwr_S240773,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D19014000000,,Unspecified,AZ,,Bad Latitude,240772.0
+213,AZwr_S241394,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A100120030A0,,Unspecified,AZ,,Bad Latitude,241393.0
+214,AZwr_S241419,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D03023000000,,Unspecified,AZ,,Bad Latitude,241418.0
+215,AZwr_S241467,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11512018BB0,,Unspecified,AZ,,Bad Latitude,241466.0
+216,AZwr_S241755,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D24022021BA0,,Unspecified,AZ,,Bad Latitude,241754.0
+217,AZwr_S241757,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D24022021BAA,,Unspecified,AZ,,Bad Latitude,241756.0
+218,AZwr_S242122,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A07029000000,,Unspecified,AZ,,Bad Latitude,242121.0
+219,AZwr_S242199,Unspecified,Unspecified,APACHE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A10025000000,,Unspecified,AZ,,Bad Latitude,242198.0
+220,AZwr_S242212,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A12025000000,,Unspecified,AZ,,Bad Latitude,242211.0
+221,AZwr_S242255,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11025000000,,Unspecified,AZ,,Bad Latitude,242254.0
+222,AZwr_S242290,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A14001532CC0,,Unspecified,AZ,,Bad Latitude,242289.0
+223,AZwr_S242291,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A14001501BB0,,Unspecified,AZ,,Bad Latitude,242290.0
+224,AZwr_S242292,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A14001503DA0,,Unspecified,AZ,,Bad Latitude,242291.0
+225,AZwr_S242293,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A14001528BA0,,Unspecified,AZ,,Bad Latitude,242292.0
+226,AZwr_S242294,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A14001532CD0,,Unspecified,AZ,,Bad Latitude,242293.0
+227,AZwr_S242296,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A14001529CC0,,Unspecified,AZ,,Bad Latitude,242295.0
+228,AZwr_S242687,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D15522028CA0,,Unspecified,AZ,,Bad Latitude,242686.0
+229,AZwr_S243227,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D24023024D00,,Unspecified,AZ,,Bad Latitude,243226.0
+230,AZwr_S243518,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A06028000000,,Unspecified,AZ,,Bad Latitude,243517.0
+231,AZwr_S243572,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D03012000000,,Unspecified,AZ,,Bad Latitude,243571.0
+232,AZwr_S243922,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A10512024AA0,,Unspecified,AZ,,Bad Latitude,243921.0
+233,AZwr_S243979,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D24025000000,,Unspecified,AZ,,Bad Latitude,243978.0
+234,AZwr_S243996,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D28028002DB0,,Unspecified,AZ,,Bad Latitude,243995.0
+235,AZwr_S243999,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A10512024000,,Unspecified,AZ,,Bad Latitude,243998.0
+236,AZwr_S244098,Unspecified,Unspecified,SANTA CRUZ,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D24014019AA0,,Unspecified,AZ,,Bad Latitude,244097.0
+237,AZwr_S244135,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D24025019CA0,,Unspecified,AZ,,Bad Latitude,244134.0
+238,AZwr_S244163,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D24025028BB0,,Unspecified,AZ,,Bad Latitude,244162.0
+239,AZwr_S244221,Unspecified,Unspecified,APACHE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B11029032BB0,,Unspecified,AZ,,Bad Latitude,244220.0
+240,AZwr_S244512,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B12019029BB0,,Unspecified,AZ,,Bad Latitude,244511.0
+241,AZwr_S244568,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B12021004C00,,Unspecified,AZ,,Bad Latitude,244567.0
+242,AZwr_S244753,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B12021010A00,,Unspecified,AZ,,Bad Latitude,244752.0
+243,AZwr_S244909,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B12021014B00,,Unspecified,AZ,,Bad Latitude,244908.0
+244,AZwr_S245023,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B32017028C00,,Unspecified,AZ,,Bad Latitude,245022.0
+245,AZwr_S245244,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D22014000000,,Unspecified,AZ,,Bad Latitude,245243.0
+246,AZwr_S245362,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A08030000000,,Unspecified,AZ,,Bad Latitude,245361.0
+247,AZwr_S245370,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A07030000000,,Unspecified,AZ,,Bad Latitude,245369.0
+248,AZwr_S245398,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A140040280B0,,Unspecified,AZ,,Bad Latitude,245397.0
+249,AZwr_S245552,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A180060040A0,,Unspecified,AZ,,Bad Latitude,245551.0
+250,AZwr_S245600,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A17027DD0,,Unspecified,AZ,,Bad Latitude,245599.0
+251,AZwr_S245655,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A16004001DCD,,Unspecified,AZ,,Bad Latitude,245654.0
+252,AZwr_S245870,Unspecified,Unspecified,SANTA CRUZ,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D21014000000,,Unspecified,AZ,,Bad Latitude,245869.0
+253,AZwr_S246041,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C22010024CC0,,Unspecified,AZ,,Bad Latitude,246040.0
+254,AZwr_S246049,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C22010023DD0,,Unspecified,AZ,,Bad Latitude,246048.0
+255,AZwr_S246346,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A41007000000,,Unspecified,AZ,,Bad Latitude,246345.0
+256,AZwr_S247086,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A020150070A0,,Unspecified,AZ,,Bad Latitude,247085.0
+257,AZwr_S247160,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B11501027CA0,,Unspecified,AZ,,Bad Latitude,247159.0
+258,AZwr_S247184,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B11501032CB0,,Unspecified,AZ,,Bad Latitude,247183.0
+259,AZwr_S247411,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A01013000000,,Unspecified,AZ,,Bad Latitude,247410.0
+260,AZwr_S247715,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B27022000000,,Unspecified,AZ,,Bad Latitude,247714.0
+261,AZwr_S247872,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11513034CD0,,Unspecified,AZ,,Bad Latitude,247871.0
+262,AZwr_S247889,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D14016000000,,Unspecified,AZ,,Bad Latitude,247888.0
+263,AZwr_S248526,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D24027021BB0,,Unspecified,AZ,,Bad Latitude,248525.0
+264,AZwr_S248556,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B06008000000,,Unspecified,AZ,,Bad Latitude,248555.0
+265,AZwr_S248777,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A01015530BB0,,Unspecified,AZ,,Bad Latitude,248776.0
+266,AZwr_S248861,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A16006003CB0,,Unspecified,AZ,,Bad Latitude,248860.0
+267,AZwr_S249555,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D13014000000,,Unspecified,AZ,,Bad Latitude,249554.0
+268,AZwr_S249868,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11512018B00,,Unspecified,AZ,,Bad Latitude,249867.0
+269,AZwr_S250206,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A20006000000,,Unspecified,AZ,,Bad Latitude,250205.0
+270,AZwr_S250450,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D19029000000,,Unspecified,AZ,,Bad Latitude,250449.0
+271,AZwr_S250573,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11007018DC0,,Unspecified,AZ,,Bad Latitude,250572.0
+272,AZwr_S250899,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D13015000000,,Unspecified,AZ,,Bad Latitude,250898.0
+273,AZwr_S251050,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11006525AC0,,Unspecified,AZ,,Bad Latitude,251049.0
+274,AZwr_S251077,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A03010000000,,Unspecified,AZ,,Bad Latitude,251076.0
+275,AZwr_S251079,Unspecified,Unspecified,MARICOPA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A05008000000,,Unspecified,AZ,,Bad Latitude,251078.0
+276,AZwr_S251081,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A01002000000,,Unspecified,AZ,,Bad Latitude,251080.0
+277,AZwr_S251085,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A02009000000,,Unspecified,AZ,,Bad Latitude,251084.0
+278,AZwr_S251101,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A03011000000,,Unspecified,AZ,,Bad Latitude,251100.0
+279,AZwr_S251139,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A01005000000,,Unspecified,AZ,,Bad Latitude,251138.0
+280,AZwr_S251163,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A10512030000,,Unspecified,AZ,,Bad Latitude,251162.0
+281,AZwr_S251220,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B30017000000,,Unspecified,AZ,,Bad Latitude,251219.0
+282,AZwr_S251240,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C11020000000,,Unspecified,AZ,,Bad Latitude,251239.0
+283,AZwr_S251322,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A05032016DD0,,Unspecified,AZ,,Bad Latitude,251321.0
+284,AZwr_S251385,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D24022019BA0,,Unspecified,AZ,,Bad Latitude,251384.0
+285,AZwr_S251404,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D15020000BD0,,Unspecified,AZ,,Bad Latitude,251403.0
+286,AZwr_S251497,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D17020000000,,Unspecified,AZ,,Bad Latitude,251496.0
+287,AZwr_S251694,Unspecified,Unspecified,SANTA CRUZ,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D24014000000,,Unspecified,AZ,,Bad Latitude,251693.0
+288,AZwr_S251753,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D22013000000,,Unspecified,AZ,,Bad Latitude,251752.0
+289,AZwr_S251787,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D21013000000,,Unspecified,AZ,,Bad Latitude,251786.0
+290,AZwr_S251803,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D23014000000,,Unspecified,AZ,,Bad Latitude,251802.0
+291,AZwr_S251837,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D23013000000,,Unspecified,AZ,,Bad Latitude,251836.0
+292,AZwr_S251919,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D06007000000,,Unspecified,AZ,,Bad Latitude,251918.0
+293,AZwr_S251932,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D06008000000,,Unspecified,AZ,,Bad Latitude,251931.0
+294,AZwr_S251973,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D14013000000,,Unspecified,AZ,,Bad Latitude,251972.0
+295,AZwr_S252004,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D19013000000,,Unspecified,AZ,,Bad Latitude,252003.0
+296,AZwr_S252005,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D17013000000,,Unspecified,AZ,,Bad Latitude,252004.0
+297,AZwr_S252347,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A10512019CA0,,Unspecified,AZ,,Bad Latitude,252346.0
+298,AZwr_S253823,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D22015000000,,Unspecified,AZ,,Bad Latitude,253822.0
+299,AZwr_S254106,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B15505002DC0,,Unspecified,AZ,,Bad Latitude,254105.0
+300,AZwr_S254499,Unspecified,Unspecified,YUMA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C01017000000,,Unspecified,AZ,,Bad Latitude,254498.0
+301,AZwr_S254557,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B03009000000,,Unspecified,AZ,,Bad Latitude,254556.0
+302,AZwr_S254871,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B080140,,Unspecified,AZ,,Bad Latitude,254870.0
+303,AZwr_S254872,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,00018031BB0,,Unspecified,AZ,,Bad Latitude,254871.0
+304,AZwr_S254998,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B29022000000,,Unspecified,AZ,,Bad Latitude,254997.0
+305,AZwr_S255274,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A12506026AC0,,Unspecified,AZ,,Bad Latitude,255273.0
+306,AZwr_S255951,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A37005000000,,Unspecified,AZ,,Bad Latitude,255950.0
+307,AZwr_S256033,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A10512021000,,Unspecified,AZ,,Bad Latitude,256032.0
+308,AZwr_S256042,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A10512028DA0,,Unspecified,AZ,,Bad Latitude,256041.0
+309,AZwr_S256501,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A02007000000,,Unspecified,AZ,,Bad Latitude,256500.0
+310,AZwr_S256505,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11512033000,,Unspecified,AZ,,Bad Latitude,256504.0
+311,AZwr_S256506,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11512009000,,Unspecified,AZ,,Bad Latitude,256505.0
+312,AZwr_S256538,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B14508005AA0,,Unspecified,AZ,,Bad Latitude,256537.0
+313,AZwr_S257037,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B11501028BD0,,Unspecified,AZ,,Bad Latitude,257036.0
+314,AZwr_S257261,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C22020002BB0,,Unspecified,AZ,,Bad Latitude,257260.0
+315,AZwr_S257383,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,4000,,Unspecified,AZ,,Bad Latitude,257382.0
+316,AZwr_S257542,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A19022000000,,Unspecified,AZ,,Bad Latitude,257541.0
+317,AZwr_S257680,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,00000010BC0,,Unspecified,AZ,,Bad Latitude,257679.0
+318,AZwr_S258017,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B10001000000,,Unspecified,AZ,,Bad Latitude,258016.0
+319,AZwr_S258087,Unspecified,Unspecified,NAVAJO,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A19019000000,,Unspecified,AZ,,Bad Latitude,258086.0
+320,AZwr_S258539,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B41012000000,,Unspecified,AZ,,Bad Latitude,258538.0
+321,AZwr_S258576,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11007030CB0,,Unspecified,AZ,,Bad Latitude,258575.0
+322,AZwr_S259078,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B23006006BB0,,Unspecified,AZ,,Bad Latitude,259077.0
+323,AZwr_S260144,Unspecified,Unspecified,COCONINO,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B15004003BA0,,Unspecified,AZ,,Bad Latitude,260143.0
+324,AZwr_S260478,Unspecified,Unspecified,GREENLEE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D01032027CC0,,Unspecified,AZ,,Bad Latitude,260477.0
+325,AZwr_S260784,Unspecified,Unspecified,GRAHAM,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D05028028C0C,,Unspecified,AZ,,Bad Latitude,260783.0
+326,AZwr_S260810,Unspecified,Unspecified,COCHISE,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D24019019BA0,,Unspecified,AZ,,Bad Latitude,260809.0
+327,AZwr_S261254,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A16031014DD0,,Unspecified,AZ,,Bad Latitude,261253.0
+328,AZwr_S261773,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D06032023D00,,Unspecified,AZ,,Bad Latitude,261772.0
+329,AZwr_S262559,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11006536AC0,,Unspecified,AZ,,Bad Latitude,262558.0
+330,AZwr_S264285,Unspecified,Unspecified,PINAL,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D02012000000,,Unspecified,AZ,,Bad Latitude,264284.0
+331,AZwr_S264580,Unspecified,Unspecified,COCONINO,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A190010170D0,,Unspecified,AZ,,Bad Latitude,264579.0
+332,AZwr_S265119,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A12006507DA0,,Unspecified,AZ,,Bad Latitude,265118.0
+333,AZwr_S265865,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D24013020AA0,,Unspecified,AZ,,Bad Latitude,265864.0
+334,AZwr_S266031,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D07009000000,,Unspecified,AZ,,Bad Latitude,266030.0
+335,AZwr_S266263,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D17030000000,,Unspecified,AZ,,Bad Latitude,266262.0
+336,AZwr_S266552,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A14004000000,,Unspecified,AZ,,Bad Latitude,266551.0
+337,AZwr_S266574,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A14004000AD0,,Unspecified,AZ,,Bad Latitude,266573.0
+338,AZwr_S266950,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,14000032CD0,,Unspecified,AZ,,Bad Latitude,266949.0
+339,AZwr_S267012,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B41013000000,,Unspecified,AZ,,Bad Latitude,267011.0
+340,AZwr_S267568,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11509002AD0,,Unspecified,AZ,,Bad Latitude,267567.0
+341,AZwr_S267574,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11509002AB0,,Unspecified,AZ,,Bad Latitude,267573.0
+342,AZwr_S267626,Unspecified,Unspecified,SANTA CRUZ,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C23015025BC0,,Unspecified,AZ,,Bad Latitude,267625.0
+343,AZwr_S267657,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,D21017000000,,Unspecified,AZ,,Bad Latitude,267656.0
+344,AZwr_S267696,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C05002000000,,Unspecified,AZ,,Bad Latitude,267695.0
+345,AZwr_S267901,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,15015019CC0,,Unspecified,AZ,,Bad Latitude,267900.0
+346,AZwr_S268425,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A10512021DA0,,Unspecified,AZ,,Bad Latitude,268424.0
+347,AZwr_S268518,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C04013000000,,Unspecified,AZ,,Bad Latitude,268517.0
+348,AZwr_S268837,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A09510012DB0,,Unspecified,AZ,,Bad Latitude,268836.0
+349,AZwr_S269080,Unspecified,Unspecified,GILA,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,A11512007D00,,Unspecified,AZ,,Bad Latitude,269079.0
+350,AZwr_S269089,Unspecified,Unspecified,YAVAPAI,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,B11501025D00,,Unspecified,AZ,,Bad Latitude,269088.0
+351,AZwr_S269369,Unspecified,Unspecified,,EPSG:4326,,,,,0.0,-115.4887438843872,,,POD,Surface Water,C02009000000,,Unspecified,AZ,,Bad Latitude,269368.0

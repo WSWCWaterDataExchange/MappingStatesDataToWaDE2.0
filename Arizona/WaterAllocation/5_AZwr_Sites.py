@@ -117,7 +117,7 @@ print("PODorPOUSite")
 outdf['PODorPOUSite'] = df['in_PODorPOUSite']
 
 print("SiteName")
-outdf['SiteName'] = "Unspecified"
+outdf['SiteName'] = df['in_SiteName']
 
 print("SiteNativeID")
 outdf['SiteNativeID'] = df.apply(lambda row: assignSiteNativeID(row['in_SiteNativeID']), axis=1)
