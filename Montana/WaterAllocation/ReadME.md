@@ -232,7 +232,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 - Export output dataframe *waterallocations.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-AllocationNativeID | AllocationAmount | AllocationLegalStatusCV | BeneficialUseCategory
+AllocationNativeID | AllocationFlow_CFS | AllocationLegalStatusCV | BeneficialUseCategory
 ---------- | ---------- | ------------ | ------------
 38H 126342 00 | 0.01 | ACTIVE | STOCK
 

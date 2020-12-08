@@ -132,7 +132,7 @@ Purpose: generate a list of water sources specific to a water right.
 - P_IdahoMaster.csv
 
 #### Outputs:
-- WaterSources.csv
+- waterSources.csv
 - watersources_missing.csv (error check only)
 
 #### Operation and Steps:
@@ -216,7 +216,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
 - Assign **IDWR** info to the *WaDE Water Allocations* specific columns.  See *ID_Allocation Schema Mapping to WaDE_QA* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
-    - *AllocationAmount* = **OverallMaxDiversionRate**.
+    - *AllocationFlow_CFS* = **OverallMaxDiversionRate**.
     - *AllocationLegalStatusCV* = **Basis**, Unknown if not given.
     - *AllocationNativeID* = **RightID**.
     - *AllocationOwner* = **Owner_Update**, see *0_PreProcessIdahoAllocationData.ipynb* for specifics.
@@ -228,7 +228,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 - Export output dataframe *waterallocations.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-AllocationNativeID | AllocationAmount | AllocationLegalStatusCV | BeneficialUseCategory
+AllocationNativeID | AllocationFlow_CFS | AllocationLegalStatusCV | BeneficialUseCategory
 ---------- | ---------- | ------------ | ------------
 10000 | 0.04 | License | DOMESTIC
 
