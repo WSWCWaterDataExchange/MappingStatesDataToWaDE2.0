@@ -5,8 +5,8 @@ This readme details the process that was applied by the staff of the [Western St
 ## Overview of Data Utilized
 The following data was used for aggregated water budget...
 
-- **Water Use Data Portal**, also known as M&I data, and broken up into **System** and **Source** data.  Obtained from the UDWRi website at:  https://waterrights.utah.gov/asp_apps/waterUseData/setFilters.asp
-- **Utah Culinary Water Service Areas shape files**, and was obtained from the Utah Division of Water Resources (UDWRe) website at: https://opendata.gis.utah.gov/datasets/1d2535e8c31247b9aaff664f6ac9c45d_0?geometry=-131.898%2C36.940%2C-91.216%2C42.682.
+- **Water Use Data Portal**, also known as M&I data, and broken up into **System** data.  Obtained from the UDWRi website at:  https://waterrights.utah.gov/asp_apps/waterUseData/setFilters.asp
+- **Utah Culinary Water Service Areas**, and was obtained from the Utah Division of Water Resources (UDWRe) website at: https://opendata.gis.utah.gov/datasets/1d2535e8c31247b9aaff664f6ac9c45d_0?geometry=-131.898%2C36.940%2C-91.216%2C42.682.
 
 Please note that the UDWRe has this webpage for Municipal and Industrial Water Use Data.  The page has helpful notes at the bottom that explain the context of the data.  We didn’t use this data because the Division of Water Rights data source above compiles all the years data together which is easier for WaDE use.
 https://dwre-utahdnr.opendata.arcgis.com/pages/municipal-and-industrial-data
@@ -17,9 +17,8 @@ Adam Clark summarized:
 ![](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Utah/SiteSpecificAmounts/UDWRi/Utah_data_flow.png)
 
 Unique files were created, one used by the WSWC staff to understand the available data (*"_with Notes"*), the second resulting files to be used as input to the Python codes that prepare WaDE2 input files.  Input files used are as follows...
- - SystemData_input.xlsx (extracted from the M&I data)
- - SourceData_input.xlsx (extracted from the M&I data)
- - CulinaryWaterServiceAreas.shp
+ - UDWRi_SystemData_input
+ - UDWRe_CulinaryWaterServiceAreas_input
 
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share UDWR's site specific time series water data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *UDWRi MI_SiteSpecificAmounts Schema Mapping to WaDE_QA.xlsx*.  Six executable code files were used to extract the state agenecies site specific time series data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(SiteSpecificAmounts)* is dependent on the previous files.  Those six code files are as follows...
@@ -35,25 +34,22 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 
 ***
 ### 0) Code File: 0_PreProcessUDWRiSiteSpecificData.ipynb
-Purpose: Pre-process the UDWR input data files into one master file for simple dataframe creation and extraction.
+Purpose: Pre-process the state agency input data files into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
- - SystemData_input.xlsx (extracted from the M&I data)
- - SourceData_input.xlsx (extracted from the M&I data)
- - RetailCulinaryWaterServiceAreas.shp
+ - UDWRi_SystemData_input
+ - UDWRe_CulinaryWaterServiceAreas_input
 
 #### Outputs:
  - P_MasterUTSiteSpecific.csv
- - P_Geometry.csv
- - inputUDWRiDataRemoved.csv
 
 #### Operation and Steps:
 - Read the input files and generate temporary input dataframes.
-- Generate custom ID to link **System** and **Source** data together.  ID will combine **System ID** with **Year** value.
-- Left join **System** and **Source** on custom ID.
+- Drop unused **System** & **Utah Culinary Water Service Area** data fields not used for WaDE import to minimize file size.
+- Seperate out **System** data annual water use and connection number by reported customer type: *Domestic*, *Commercial*, *Industrial*, *Institutional* & *Total*.  Create temp dataframes for each customer type.
+- Concatenate temp customer type dataframes into new longer dataframe.
+- Left join new longer **System** by customer type and **Utah Culinary Water Service Area** on **System ID** and **WRID**.
 - Generate WaDE specific *TimeframeStart* & *TimeframeEnd* fields. Assume start date is 01/01/+**History Year** and end date is 12/31/+**History Year**.
-- Removed rows who's **Lat NAD83** & **Lon NAD83** value were NULL.  Removed rows were placed into *inputDataRemoved.csv* for ease of  inspection and future reporting.
-- Generated WKT from CulinaryWaterServiceAreas.shp file to create *Geometry* WaDE input.  Will match on **Source ID** = **WRID**.
 - Export output dataframe as new csv file, *P_MasterUTSiteSpecific.csv*.
 
 
@@ -79,7 +75,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
-UDWRi_Water Use Data | Surface Ground Water | Measured
+UDWRi_Water Use Data | Unspecified | Unspecified
 
 
 ***
@@ -104,7 +100,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
 ---------- | ---------- | ------------ | ------------
-UDWRi_Site Specific Withdrawal | 1 | Year | AFY
+UDWRi_Site Specific | 1 | Year | AFY
 
 
 ***
@@ -137,28 +133,18 @@ UDWRi | Utah Division of Water Rights | James Greer | https://waterrights.utah.g
 Purpose: generate a list of water sources specific to the site specific time series water data.
 
 #### Inputs:
-- P_MasterUTSiteSpecific.csv
+- None
 
 #### Outputs:
-- WaterSources.csv
-- watersources_missing.csv (error check only)
+- None
 
 #### Operation and Steps:
-- Read the input file and generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign state agency data info to the *WaDE WaterSources* specific columns.  See *UDWRi MI_SiteSpecificAmounts Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
-    - *WaterSourceTypeCV* = **Source Name**, Unspecified if not provided.
-    - *WaterSourceNativeID* = **Source ID**, Unknown if not provided.
-    - *WaterSourceTypeCV* = **Source Type**, Unknown if not provided.
-- Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceName*, *WaterSourceNativeID*, and *WaterSourceTypeCV* fields.
-- Assign water source UUID identifier to each (unique) row.
-- Perform error check on output dataframe.
-- Export output dataframe *WaterSources.csv*.
+- Input data used as this time is relevant to **System** data only and is missing vital water source information.
 
 #### Sample Output (WARNING: not all fields shown):
 WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceNativeID | WaterSourceTypeCV
 ---------- | ---------- | ------------ | ------------ | ------------
-UTSS_WS1 | Fresh | Oak Grove Spring (WS001) | 10000001 | groundwater/spring
+UTSS_WS1 | Unspecified | Unspecified | Unspecified | Unspecified
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
 - WaterSourceUUID
@@ -181,12 +167,12 @@ Purpose: generate a list of polygon areas associated with the state agency speci
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
 - Assign state agency data info to the *WaDE Site* specific columns.  See *UDWRi MI_SiteSpecificAmounts Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
-    - *County* = **County**.
-    - *Latitude* = converted **Lat NAD83** projection from UDWR EPSG:4269 -to- WaDE EPSG:4326.
-    - *Longitude* = converted **Lon NAD83** projection from UDWR EPSG:4269 -to- WaDE EPSG:4326.
-    - *SiteName* = **System Name**.
-    - *SiteNativeID* == **System ID**.
-    - *SiteTypeCV* = **System Type**, Unknown if not provided.
+    - *County* = **County**, UDWRi.
+    - *Latitude* = **Latitude**, UDWRe.
+    - *Longitude* = **Longitude**, UDWRe.
+    - *SiteName* = **System Name**, UDWRi.
+    - *SiteNativeID* == **System ID**, UDWRi.
+    - *SiteTypeCV* = **System Type**, UDWRi & Unknown if not provided.
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, group by WaDE specific *SiteName*, *SiteNativeID*, *SiteTypeCV*, *Latitude*, and *Longitude* fields.
 - Assign site UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
@@ -226,8 +212,10 @@ Purpose: generate master sheet of state agency site specific time series water d
 - Populate output dataframe with *WaDE Water Site Specific Amounts* data columns.
 - Assign state agency data info to the *WaDE Water Allocations* specific columns.  See *UDWRi MI_SiteSpecificAmounts Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
-    - *Amount* = **Total Use**.
-    - *Geometry* = generated WKT geometry from P_Geometry.csv.  See *0_PreProcessUDWRiSiteSpecificData.ipynb* for specific on generation.
+    - *Amount* = *WaterUse*, see *0_PreProcessUDWRiSiteSpecificData.ipynb* for specific on generation.
+    - *CommunityWaterSupplySystem* = **System Name**, UDWRi.
+    - *CustomerTypeCV* = *BenUse*, see *0_PreProcessUDWRiSiteSpecificData.ipynb* for specific on generation.
+    - *PopulationServed* = **Population**, UDWRi.
     - *ReportYearCV* = **History Year**.
     - *TimeframeStart* = 01/01/+**History Year**.  See *0_PreProcessUDWRiSiteSpecificData.ipynb* for specific on generation.
     - *TimeframeEnd* = 12/31/+**History Year**.  See *0_PreProcessUDWRiSiteSpecificData.ipynb* for specific on generation.

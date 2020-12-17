@@ -1,4 +1,4 @@
-#Last Updated: 09/08/2020
+#Last Updated: 12/16/2020
 #Purpose: To create UT site specific variable use information and population dataframe for WaDE_QA 2.0.
 #Notes: 1) Used a list approach.  Needed to have five rows for VaribleCVs.
 
@@ -33,30 +33,28 @@ columnslist = [
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-
 outdf = pd.DataFrame(columns=columnslist)
+outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = ["UDWRi_Site Specific Unspecified", "UDWRi_Site Specific Withdrawal",
-                              "UDWRi_Site Specific Transfer In", "UDWRi_Site Specific Transfer Out",
-                              "UDWRi_Site Specific Delivery", "UDWRi_Site Specific Return"]
+outdf.VariableSpecificUUID = "UDWRi_Site Specific"
 
-outdf.AggregationInterval = ["1", "1", "1", "1", "1", "1"]
+outdf.AggregationInterval = "1"
 
-outdf.AggregationIntervalUnitCV = ["Year", "Year", "Year", "Year", "Year", "Year"]
+outdf.AggregationIntervalUnitCV = "year"
 
-outdf.AggregationStatisticCV = ["Cumulative", "Cumulative", "Cumulative", "Cumulative", "Cumulative", "Cumulative"]
+outdf.AggregationStatisticCV = "Cumulative"
 
-outdf.AmountUnitCV = ["AF", "AF", "AF", "AF", "AF", "AF"]
+outdf.AmountUnitCV = "AF"
 
-outdf.MaximumAmountUnitCV = ["AF", "AF", "AF", "AF", "AF", "AF"]
+outdf.MaximumAmountUnitCV = "AF"
 
-outdf.ReportYearStartMonth = ["1", "1", "1", "1", "1", "1"]
+outdf.ReportYearStartMonth = "1"
 
-outdf.ReportYearTypeCV = ["CalendarYear", "CalendarYear", "CalendarYear", "CalendarYear", "CalendarYear", "CalendarYear"]
+outdf.ReportYearTypeCV = "CalendarYear"
 
-outdf.VariableCV = ["Unspecified", "Withdrawal", "Transfer In", "Transfer Out", "Delivery", "Return"]
+outdf.VariableCV = "Unspecified"
 
-outdf.VariableSpecificCV = ["Site Specific", "Site Specific", "Site Specific", "Site Specific", "Site Specific", "Site Specific"]
+outdf.VariableSpecificCV = "Unspecified"
 
 
 # Check required fields are not null
