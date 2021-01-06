@@ -10,7 +10,7 @@ The following data was used for water allocations...
 
 Two unique files were created, one used by the WSWC staff to understand the available data (*"_with Notes"*), the second resulting files to be used as input to the Python codes that prepare WaDE2 input files.  Input files used are as follows...
  - qty_input.csv
- - wimas_input.csv (have not incorporated yet)
+ - wimas_input.csv
 
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share KDADWR's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *KS_Allocation Schema Mapping to WaDE_QA.xlsx*.  Six executable code files were used to extract the KDADWR's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those six code files are as follows...
@@ -29,7 +29,8 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 Purpose: Pre-process the Kansas input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
- - WaDE_PODs_input.csv
+ - qty_input.csv
+ - wimas_input.csv
 
 #### Outputs:
  - P_KansasMaster.csv
