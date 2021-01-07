@@ -1,4 +1,5 @@
 #Date Created: 08/26/2020
+#Author: Ryan James
 #Purpose: To extract NE variable use information and population dataframe for WaDE_QA 2.0.
 #Notes: 1) Single row of entries, inpVals, for Variable Table.
 
