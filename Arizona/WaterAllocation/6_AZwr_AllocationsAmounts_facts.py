@@ -188,7 +188,7 @@ print("AllocationFlow_CFS")
 outdf['AllocationFlow_CFS'] = df_DM['in_AllocationFlow_CFS']
 
 print("AllocationLegalStatusCV")
-outdf['AllocationLegalStatusCV'] = ""
+outdf['AllocationLegalStatusCV'] = df_DM['in_AllocationLegalStatusCV']
 
 print("AllocationNativeID")  # Will use this with a .groupby() statement towards the ends.
 outdf['AllocationNativeID'] = df_DM['in_AllocationNativeID'].astype(str)
@@ -203,10 +203,12 @@ print("AllocationSDWISIdentifierCV")
 outdf.AllocationSDWISIdentifierCV = ""
 
 print("AllocationTimeframeEnd")
-outdf['AllocationTimeframeEnd'] = df_DM['in_AllocationTimeframeEnd']
+# outdf['AllocationTimeframeEnd'] = df_DM['in_AllocationTimeframeEnd']
+outdf['AllocationTimeframeEnd'] = '12/31'
 
 print("AllocationTimeframeStart")
-outdf['AllocationTimeframeStart'] = df_DM['in_AllocationTimeframeStart']
+# outdf['AllocationTimeframeStart'] = df_DM['in_AllocationTimeframeStart']
+outdf['AllocationTimeframeStart'] = '01/01'
 
 print("AllocationTypeCV")
 outdf['AllocationTypeCV'] = df_DM['in_AllocationTypeCV']
