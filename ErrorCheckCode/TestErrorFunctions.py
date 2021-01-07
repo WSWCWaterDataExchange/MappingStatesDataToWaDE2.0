@@ -50,30 +50,20 @@ def WaterQualityIndicatorCV_WS_Check(dfx, dfy):
 
 # WaterSourceName_nvarchar(250)_Yes
 def WaterSourceName_WS_Check(dfx, dfy):
-    mask = dfx.loc[dfx["WaterSourceName"].str.len() > 250].assign(ReasonRemoved='Bad WaterSourceName').reset_index()
+    mask = dfx.loc[ dfx["WaterSourceName"].astype(str).str.len() > 250 ].assign(ReasonRemoved='Bad WaterSourceName').reset_index()
     if len(mask.index) > 0:
         dfy = dfy.append(mask)
-        dropIndex = dfx.loc[dfx["WaterSourceName"].str.len() > 250].index
-        dfx = dfx.drop(dropIndex)
-        dfx = dfx.reset_index(drop=True)
-    return (dfx, dfy)
-
-# WaterSourceNativeID_nvarchar(250)_Yes
-def WaterSourceName_WS_Check(dfx, dfy):
-    mask = dfx.loc[dfx["WaterSourceNativeID"].str.len() > 250].assign(ReasonRemoved='Bad WaterSourceNativeID').reset_index()
-    if len(mask.index) > 0:
-        dfy = dfy.append(mask)
-        dropIndex = dfx.loc[dfx["WaterSourceNativeID"].str.len() > 250].index
+        dropIndex = dfx.loc[ dfx["WaterSourceName"].astype(str).str.len() > 250 ].index
         dfx = dfx.drop(dropIndex)
         dfx = dfx.reset_index(drop=True)
     return (dfx, dfy)
 
 # WaterSourceNativeID_nvarchar(250)_Yes
 def WaterSourceNativeID_WS_Check(dfx, dfy):
-    mask = dfx.loc[dfx["WaterSourceNativeID"].str.len() > 250].assign(ReasonRemoved='Bad WaterSourceNativeID').reset_index()
+    mask = dfx.loc[ dfx["WaterSourceNativeID"].astype(str).str.len() > 250 ].assign(ReasonRemoved='Bad WaterSourceNativeID').reset_index()
     if len(mask.index) > 0:
         dfy = dfy.append(mask)
-        dropIndex = dfx.loc[dfx["WaterSourceNativeID"].str.len() > 250].index
+        dropIndex = dfx.loc[ dfx["WaterSourceNativeID"].astype(str).str.len() > 250 ].index
         dfx = dfx.drop(dropIndex)
         dfx = dfx.reset_index(drop=True)
     return (dfx, dfy)
@@ -266,10 +256,10 @@ def SiteName_S_Check(dfx, dfy):
 
 # SiteNativeID_nvarchar(50)_Yes
 def SiteNativeID_S_Check(dfx, dfy):
-    mask = dfx.loc[ dfx["SiteNativeID"].str.len() > 50 ].assign(ReasonRemoved='Bad SiteNativeID').reset_index()
+    mask = dfx.loc[ dfx["SiteNativeID"].astype(str).str.len() > 50 ].assign(ReasonRemoved='Bad SiteNativeID').reset_index()
     if len(mask.index) > 0:
         dfy = dfy.append(mask)
-        dropIndex = dfx.loc[ dfx["SiteNativeID"].str.len() > 50 ].index
+        dropIndex = dfx.loc[ dfx["SiteNativeID"].astype(str).str.len() > 50 ].index
         dfx = dfx.drop(dropIndex)
         dfx = dfx.reset_index(drop=True)
     return (dfx, dfy)
@@ -468,31 +458,33 @@ def AllocationExpirationDate_AA_Check(dfx, dfy):
 # We have to have either a flow or a volume
 def AllocationFlowVolume_CFSAF_float_Yes_AA_Check(dfx, dfy):
     mask = dfx.loc[ (dfx['ExemptOfVolumeFlowPriority'] == "0") &
-                         ((dfx["AllocationFlow_CFS"].isnull()) |
-                          (dfx["AllocationFlow_CFS"] == "") |
-                          (dfx['AllocationFlow_CFS'].str.contains(','))) &
-                         ((dfx["AllocationVolume_AF"].isnull()) |
-                          (dfx["AllocationVolume_AF"] == '') |
-                          (dfx['AllocationVolume_AF'].str.contains(','))) ].assign(ReasonRemoved='Bad Flow or Volume').reset_index()
+                    (((dfx["AllocationFlow_CFS"].isnull()) |
+                      (dfx["AllocationFlow_CFS"] == "") |
+                      (dfx['AllocationFlow_CFS'].str.contains(',') == True)) &
+                     ((dfx["AllocationVolume_AF"].isnull()) |
+                      (dfx["AllocationVolume_AF"] == '') |
+                      (dfx['AllocationVolume_AF'].str.contains(',') == True))) ].assign(ReasonRemoved='Bad Flow or Volume').reset_index()
     if len(mask.index) > 0:
         dfy = dfy.append(mask)
         dropIndex = dfx.loc[ (dfx['ExemptOfVolumeFlowPriority'] == "0") &
-                                  ((dfx["AllocationFlow_CFS"].isnull()) |
-                                   (dfx["AllocationFlow_CFS"] == "") |
-                                   (dfx['AllocationFlow_CFS'].str.contains(','))) &
-                                  ((dfx["AllocationVolume_AF"].isnull()) |
-                                   (dfx["AllocationVolume_AF"] == '') |
-                                   (dfx['AllocationVolume_AF'].str.contains(','))) ].index
+                             (((dfx["AllocationFlow_CFS"].isnull()) |
+                               (dfx["AllocationFlow_CFS"] == "") |
+                               (dfx['AllocationFlow_CFS'].str.contains(',') == True)) &
+                              ((dfx["AllocationVolume_AF"].isnull()) |
+                               (dfx["AllocationVolume_AF"] == '') |
+                               (dfx['AllocationVolume_AF'].str.contains(',') == True))) ].index
         dfx = dfx.drop(dropIndex)
         dfx = dfx.reset_index(drop=True)
     return (dfx, dfy)
 
 # AllocationLegalStatusCV_nvarchar(250)_Yes
 def AllocationLegalStatusCV_AA_Check(dfx, dfy):
-    mask = dfx.loc[ dfx["AllocationLegalStatusCV"].str.len() > 250 ].assign(ReasonRemoved='Bad AllocationLegalStatusCV').reset_index()
+    mask = dfx.loc[ (dfx["AllocationLegalStatusCV"].str.len() > 250) |
+                    (dfx['AllocationVolume_AF'].str.contains(',') == True) ].assign(ReasonRemoved='Bad AllocationLegalStatusCV').reset_index()
     if len(mask.index) > 0:
         dfy = dfy.append(mask)
-        dropIndex = dfx.loc[ dfx["AllocationLegalStatusCV"].str.len() > 250 ].index
+        dropIndex = dfx.loc[ (dfx["AllocationLegalStatusCV"].str.len() > 250) |
+                             (dfx['AllocationVolume_AF'].str.contains(',') == True) ].index
         dfx = dfx.drop(dropIndex)
         dfx = dfx.reset_index(drop=True)
     return (dfx, dfy)
@@ -521,13 +513,15 @@ def AllocationOwner_AA_Check(dfx, dfy):
 def AllocationPriorityDate_AA_Check(dfx, dfy):
     mask = dfx.loc[ (dfx['ExemptOfVolumeFlowPriority'] == "0") &
                     ((dfx["AllocationPriorityDate"].isnull()) |
-                     (dfx["AllocationPriorityDate"] == '') |
+                     (dfx["AllocationPriorityDate"] == "") |
+                     (dfx["AllocationPriorityDate"] == " ") |
                      (dfx["AllocationPriorityDate"].str.contains(','))) ].assign(ReasonRemoved='Bad AllocationPriorityDate').reset_index()
     if len(mask.index) > 0:
         dfy = dfy.append(mask)
         dropIndex = dfx.loc[ (dfx['ExemptOfVolumeFlowPriority'] == "0") &
                              ((dfx["AllocationPriorityDate"].isnull()) |
-                              (dfx["AllocationPriorityDate"] == '') |
+                              (dfx["AllocationPriorityDate"] == "") |
+                              (dfx["AllocationPriorityDate"] == " ") |
                               (dfx["AllocationPriorityDate"].str.contains(','))) ].index
         dfx = dfx.drop(dropIndex)
         dfx = dfx.reset_index(drop=True)
@@ -555,20 +549,26 @@ def AllocationTimeframeStart_AA_Check(dfx, dfy):
 
 # AllocationTypeCV_nvarchar(250)_Yes
 def AllocationTypeCV_AA_Check(dfx, dfy):
-    mask = dfx.loc[ dfx["AllocationTypeCV"].str.len() > 250 ].assign(ReasonRemoved='Bad AllocationTypeCV').reset_index()
+    mask = dfx.loc[ (dfx["AllocationTypeCV"].str.len() > 250) |
+                    (dfx["AllocationTypeCV"].str.contains(',')) ].assign(ReasonRemoved='Bad AllocationTypeCV').reset_index()
     if len(mask.index) > 0:
         dfy = dfy.append(mask)
-        dropIndex = dfx.loc[ dfx["AllocationTypeCV"].str.len() > 250 ].index
+        dropIndex = dfx.loc[ (dfx["AllocationTypeCV"].str.len() > 250) |
+                             (dfx["AllocationTypeCV"].str.contains(',')) ].index
         dfx = dfx.drop(dropIndex)
         dfx = dfx.reset_index(drop=True)
     return (dfx, dfy)
 
-# BeneficialUseCategory_nvarchar(250)_-
+# BeneficialUseCategory_nvarchar(100)_-
 def BeneficialUseCategory_AA_Check(dfx, dfy):
-    mask = dfx.loc[ (dfx["BeneficialUseCategory"].isnull()) | (dfx["BeneficialUseCategory"] == '') | (dfx["BeneficialUseCategory"].str.len() > 250) ].assign(ReasonRemoved='Bad BeneficialUseCategory').reset_index()
+    mask = dfx.loc[ (dfx["BeneficialUseCategory"].isnull()) |
+                    (dfx["BeneficialUseCategory"] == '') |
+                    (dfx["BeneficialUseCategory"].str.len() > 100) ].assign(ReasonRemoved='Bad BeneficialUseCategory').reset_index()
     if len(mask.index) > 0:
         dfy = dfy.append(mask)
-        dropIndex = dfx.loc[ (dfx["BeneficialUseCategory"].isnull()) | (dfx["BeneficialUseCategory"] == '') | (dfx["BeneficialUseCategory"].str.len() > 250) ].index
+        dropIndex = dfx.loc[ (dfx["BeneficialUseCategory"].isnull()) |
+                             (dfx["BeneficialUseCategory"] == '') |
+                             (dfx["BeneficialUseCategory"].str.len() > 100) ].index
         dfx = dfx.drop(dropIndex)
         dfx = dfx.reset_index(drop=True)
     return (dfx, dfy)
@@ -723,3 +723,287 @@ def WaterAllocationNativeURL_AA_Check(dfx, dfy):
         dfx = dfx.reset_index(drop=True)
     return (dfx, dfy)
 
+
+# SiteSpecificAmounts_fact
+########################################################################################################################
+########################################################################################################################
+
+# MethodUUID_nvarchar(200)_-
+def MethodUUID_SS_Check(dfx, dfy):
+    mask = dfx.loc[ (dfx["MethodUUID"].isnull()) |
+                    (dfx["MethodUUID"] == '') |
+                    (dfx['MethodUUID'].str.len() > 200) ].assign(ReasonRemoved='Bad MethodUUID').reset_index()
+    if len(mask.index) > 0:
+        dfy = dfy.append(mask)
+        dropIndex = dfx.loc[ (dfx["MethodUUID"].isnull()) |
+                             (dfx["MethodUUID"] == '') |
+                             (dfx['MethodUUID'].str.len() > 200) ].index
+        dfx = dfx.drop(dropIndex)
+        dfx = dfx.reset_index(drop=True)
+    return (dfx, dfy)
+
+# VariableSpecificUUID_nvarchar(200)_-
+def VariableSpecificUUID_SS_Check(dfx, dfy):
+    mask = dfx.loc[ (dfx["VariableSpecificUUID"].isnull()) |
+                    (dfx["VariableSpecificUUID"] == '') |
+                    (dfx['VariableSpecificUUID'].str.len() > 200) ].assign(ReasonRemoved='Bad VariableSpecificUUID').reset_index()
+    if len(mask.index) > 0:
+        dfy = dfy.append(mask)
+        dropIndex = dfx.loc[ (dfx["VariableSpecificUUID"].isnull()) |
+                             (dfx["VariableSpecificUUID"] == '') |
+                             (dfx['VariableSpecificUUID'].str.len() > 200) ].index
+        dfx = dfx.drop(dropIndex)
+        dfx = dfx.reset_index(drop=True)
+    return (dfx, dfy)
+
+# WaterSourceUUID_nvarchar(200)_-
+def WaterSourceUUID_SS_Check(dfx, dfy):
+    mask = dfx.loc[ (dfx["WaterSourceUUID"].isnull()) |
+                    (dfx["WaterSourceUUID"] == '') |
+                    (dfx['WaterSourceUUID'].str.len() > 200) |
+                    (dfx["WaterSourceUUID"].str.contains(',')) ].assign(ReasonRemoved='Bad WaterSourceUUID').reset_index()
+    if len(mask.index) > 0:
+        dfy = dfy.append(mask)
+        dropIndex = dfx.loc[ (dfx["WaterSourceUUID"].isnull()) |
+                             (dfx["WaterSourceUUID"] == '') |
+                             (dfx['WaterSourceUUID'].str.len() > 200) |
+                             (dfx["WaterSourceUUID"].str.contains(',')) ].index
+        dfx = dfx.drop(dropIndex)
+        dfx = dfx.reset_index(drop=True)
+    return (dfx, dfy)
+
+# OrganizationUUID_nvarchar(200)_-
+def OrganizationUUID_SS_Check(dfx, dfy):
+    mask = dfx.loc[ (dfx["OrganizationUUID"].isnull()) |
+                    (dfx["OrganizationUUID"] == '') |
+                    (dfx['OrganizationUUID'].str.len() > 200) ].assign(ReasonRemoved='Bad OrganizationUUID').reset_index()
+    if len(mask.index) > 0:
+        dfy = dfy.append(mask)
+        dropIndex = dfx.loc[ (dfx["OrganizationUUID"].isnull()) |
+                             (dfx["OrganizationUUID"] == '') |
+                             (dfx['OrganizationUUID'].str.len() > 200) ].index
+        dfx = dfx.drop(dropIndex)
+        dfx = dfx.reset_index(drop=True)
+    return (dfx, dfy)
+
+# SiteUUID_nvarchar(200)_-
+def SiteUUID_SS_Check(dfx, dfy):
+    mask = dfx.loc[ (dfx["SiteUUID"].isnull()) |
+                    (dfx["SiteUUID"] == '') |
+                    (dfx['SiteUUID'].str.len() > 200) ].assign(ReasonRemoved='Bad SiteUUID').reset_index()
+    if len(mask.index) > 0:
+        dfy = dfy.append(mask)
+        dropIndex = dfx.loc[ (dfx["SiteUUID"].isnull()) |
+                             (dfx["SiteUUID"] == '') |
+                             (dfx['SiteUUID'].str.len() > 200) ].index
+        dfx = dfx.drop(dropIndex)
+        dfx = dfx.reset_index(drop=True)
+    return (dfx, dfy)
+
+# Amount_float_-
+def Amount_SS_Check(dfx, dfy):
+    mask = dfx.loc[ (dfx["Amount"].isnull()) |
+                    (dfx["Amount"] == '') ].assign(ReasonRemoved='Bad Amount').reset_index()
+    if len(mask.index) > 0:
+        dfy = dfy.append(mask)
+        dropIndex = dfx.loc[ (dfx["Amount"].isnull()) |
+                             (dfx["Amount"] == '') ].index
+        dfx = dfx.drop(dropIndex)
+        dfx = dfx.reset_index(drop=True)
+    return (dfx, dfy)
+
+# AllocationCropDutyAmount_float_Yes
+def AllocationCropDutyAmount_SS_Check(dfx, dfy):
+    mask = dfx.loc[ dfx["AllocationCropDutyAmount"].str.contains(',')].assign(ReasonRemoved='Bad AllocationCropDutyAmount').reset_index()
+    if len(mask.index) > 0:
+        dfy = dfy.append(mask)
+        dropIndex = dfx.loc[ dfx["AllocationCropDutyAmount"].str.contains(',')].index
+        dfx = dfx.drop(dropIndex)
+        dfx = dfx.reset_index(drop=True)
+    return (dfx, dfy)
+
+# AssociatedNativeAllocationIDs_nvarchar(500)_Yes
+def AssociatedNativeAllocationIDs_SS_Check(dfx, dfy):
+    mask = dfx.loc[ dfx["AssociatedNativeAllocationIDs"].str.len() > 500 ].assign(ReasonRemoved='Bad AssociatedNativeAllocationIDs').reset_index()
+    if len(mask.index) > 0:
+        dfy = dfy.append(mask)
+        dropIndex = dfx.loc[ dfx["AssociatedNativeAllocationIDs"].str.len() > 500 ].index
+        dfx = dfx.drop(dropIndex)
+        dfx = dfx.reset_index(drop=True)
+    return (dfx, dfy)
+
+# BeneficialUseCategory_nvarchar(250)_Yes
+def BeneficialUseCategory_SS_Check(dfx, dfy):
+    mask = dfx.loc[ (dfx["BeneficialUseCategory"].str.len() > 250) ].assign(ReasonRemoved='Bad BeneficialUseCategory').reset_index()
+    if len(mask.index) > 0:
+        dfy = dfy.append(mask)
+        dropIndex = dfx.loc[ (dfx["BeneficialUseCategory"].str.len() > 250) ].index
+        dfx = dfx.drop(dropIndex)
+        dfx = dfx.reset_index(drop=True)
+    return (dfx, dfy)
+
+# CommunityWaterSupplySystem_nvarchar(250)_Yes
+def CommunityWaterSupplySystem_SS_Check(dfx, dfy):
+    mask = dfx.loc[dfx["CommunityWaterSupplySystem"].str.len() > 250].assign(ReasonRemoved='Bad CommunityWaterSupplySystem').reset_index()
+    if len(mask.index) > 0:
+        dfy = dfy.append(mask)
+        dropIndex = dfx.loc[dfx["CommunityWaterSupplySystem"].str.len() > 250].index
+        dfx = dfx.drop(dropIndex)
+        dfx = dfx.reset_index(drop=True)
+    return (dfx, dfy)
+
+# CropTypeCV_nvarchar(100)_Yes
+def CropTypeCV_SS_Check(dfx, dfy):
+    mask = dfx.loc[ dfx["CropTypeCV"].str.len() > 100 ].assign(ReasonRemoved='Bad CropTypeCV').reset_index()
+    if len(mask.index) > 0:
+        dfy = dfy.append(mask)
+        dropIndex = dfx.loc[ dfx["CropTypeCV"].str.len() > 100 ].index
+        dfx = dfx.drop(dropIndex)
+        dfx = dfx.reset_index(drop=True)
+    return (dfx, dfy)
+
+# CustomerTypeCV_nvarchar((100)_Yes
+def CustomerTypeCV_SS_Check(dfx, dfy):
+    mask = dfx.loc[ dfx["CustomerTypeCV"].str.len() > 100 ].assign(ReasonRemoved='Bad CustomerTypeCV').reset_index()
+    if len(mask.index) > 0:
+        dfy = dfy.append(mask)
+        dropIndex = dfx.loc[ dfx["CustomerTypeCV"].str.len() > 100 ].index
+        dfx = dfx.drop(dropIndex)
+        dfx = dfx.reset_index(drop=True)
+    return (dfx, dfy)
+
+# DataPublicationDate_date_Yes
+def DataPublicationDate_SS_Check(dfx, dfy):
+    mask = dfx.loc[dfx["DataPublicationDate"].str.contains(',')].assign(ReasonRemoved='Bad DataPublicationDate').reset_index()
+    if len(mask.index) > 0:
+        dfy = dfy.append(mask)
+        dropIndex = dfx.loc[ dfx["DataPublicationDate"].str.contains(',')].index
+        dfx = dfx.drop(dropIndex)
+        dfx = dfx.reset_index(drop=True)
+    return (dfx, dfy)
+
+# DataPublicationDOI_nvarchar(100)_Yes
+def DataPublicationDOI_SS_Check(dfx, dfy):
+    mask = dfx.loc[ dfx["DataPublicationDOI"].str.len() > 100 ].assign(ReasonRemoved='Bad DataPublicationDOI').reset_index()
+    if len(mask.index) > 0:
+        dfy = dfy.append(mask)
+        dropIndex = dfx.loc[ dfx["DataPublicationDOI"].str.len() > 100 ].index
+        dfx = dfx.drop(dropIndex)
+        dfx = dfx.reset_index(drop=True)
+    return (dfx, dfy)
+
+# Geometry_geometry_Yes
+# ???? How to check for geometry datatype
+
+# IrrigatedAcreage_float_Yes
+def IrrigatedAcreage_SS_Check(dfx, dfy):
+    mask = dfx.loc[ dfx["IrrigatedAcreage"].str.contains(',')].assign(ReasonRemoved='Bad IrrigatedAcreage').reset_index()
+    if len(mask.index) > 0:
+        dfy = dfy.append(mask)
+        dropIndex = dfx.loc[ dfx["IrrigatedAcreage"].str.contains(',')].index
+        dfx = dfx.drop(dropIndex)
+        dfx = dfx.reset_index(drop=True)
+    return (dfx, dfy)
+
+# IrrigationMethodCV_nvarchar(100)_Yes
+def IrrigationMethodCV_SS_Check(dfx, dfy):
+    mask = dfx.loc[ dfx["IrrigationMethodCV"].astype(str).str.len() > 100 ].assign(ReasonRemoved='Bad IrrigationMethodCV').reset_index()
+    if len(mask.index) > 0:
+        dfy = dfy.append(mask)
+        dropIndex = dfx.loc[ dfx["IrrigationMethodCV"].astype(str).str.len() > 100 ].index
+        dfx = dfx.drop(dropIndex)
+        dfx = dfx.reset_index(drop=True)
+    return (dfx, dfy)
+
+# PopulationServed_float_Yes
+def PopulationServed_SS_Check(dfx, dfy):
+    mask = dfx.loc[ dfx["PopulationServed"].astype(str).str.contains(',') ].assign(ReasonRemoved='Bad PopulationServed').reset_index()
+    if len(mask.index) > 0:
+        dfy = dfy.append(mask)
+        dropIndex = dfx.loc[ dfx["PopulationServed"].astype(str).str.contains(',') ].index
+        dfx = dfx.drop(dropIndex)
+        dfx = dfx.reset_index(drop=True)
+    return (dfx, dfy)
+
+# PowerGeneratedGWh_float_Yes
+def PowerGeneratedGWh_SS_Check(dfx, dfy):
+    mask = dfx.loc[ dfx["PowerGeneratedGWh"].astype(str).str.contains(',') ].assign(ReasonRemoved='Bad PowerGeneratedGWh').reset_index()
+    if len(mask.index) > 0:
+        dfy = dfy.append(mask)
+        dropIndex = dfx.loc[ dfx["PowerGeneratedGWh"].astype(str).str.contains(',')].index
+        dfx = dfx.drop(dropIndex)
+        dfx = dfx.reset_index(drop=True)
+    return (dfx, dfy)
+
+# PowerType_nvarchar(50)_Yes
+def PowerType_SS_Check(dfx, dfy):
+    mask = dfx.loc[ dfx["PowerType"].str.len() > 50 ].assign(ReasonRemoved='Bad PowerType').reset_index()
+    if len(mask.index) > 0:
+        dfy = dfy.append(mask)
+        dropIndex = dfx.loc[ dfx["PowerType"].str.len() > 50 ].index
+        dfx = dfx.drop(dropIndex)
+        dfx = dfx.reset_index(drop=True)
+    return (dfx, dfy)
+
+# PrimaryUseCategory_nvarchar(250)_Yes
+# This might be bugged.  Issue of must have PrimaryUseCategory for Beneficial Use to be uploaded.
+def PrimaryUseCategory_SS_Check(dfx, dfy):
+    mask = dfx.loc[ (dfx["PrimaryUseCategory"].str.len() > 250) |
+                    (dfx["PrimaryUseCategory"].isnull()) |
+                    (dfx["PrimaryUseCategory"] == '') ].assign(ReasonRemoved='Bad PrimaryUseCategory').reset_index()
+    if len(mask.index) > 0:
+        dfy = dfy.append(mask)
+        dropIndex = dfx.loc[ (dfx["PrimaryUseCategory"].str.len() > 250) |
+                             (dfx["PrimaryUseCategory"].isnull()) |
+                             (dfx["PrimaryUseCategory"] == '') ].index
+        dfx = dfx.drop(dropIndex)
+        dfx = dfx.reset_index(drop=True)
+    return (dfx, dfy)
+
+# ReportYearCV_nchar(4)_Yes
+def ReportYearCV_SS_Check(dfx, dfy):
+    mask = dfx.loc[ dfx["ReportYearCV"].astype(str).str.len() > 4 ].assign(ReasonRemoved='Bad ReportYearCV').reset_index()
+    if len(mask.index) > 0:
+        dfy = dfy.append(mask)
+        dropIndex = dfx.loc[ dfx["ReportYearCV"].astype(str).str.len() > 4 ].index
+        dfx = dfx.drop(dropIndex)
+        dfx = dfx.reset_index(drop=True)
+    return (dfx, dfy)
+
+# SDWISIdentifier_nvarchar(100)_Yes
+def SDWISIdentifier_SS_Check(dfx, dfy):
+    mask = dfx.loc[ dfx["SDWISIdentifier"].str.len() > 250 ].assign(ReasonRemoved='Bad SDWISIdentifier').reset_index()
+    if len(mask.index) > 0:
+        dfy = dfy.append(mask)
+        dropIndex = dfx.loc[ dfx["SDWISIdentifier"].str.len() > 250 ].index
+        dfx = dfx.drop(dropIndex)
+        dfx = dfx.reset_index(drop=True)
+    return (dfx, dfy)
+
+# TimeframeEnd_BigInt_-
+def TimeframeEnd_SS_Check(dfx, dfy):
+    mask = dfx.loc[ (dfx["TimeframeEnd"].isnull()) |
+                    (dfx["TimeframeEnd"] == '') |
+                    (dfx["TimeframeEnd"].str.contains(',')) ].assign(ReasonRemoved='Bad TimeframeEnd').reset_index()
+    if len(mask.index) > 0:
+        dfy = dfy.append(mask)
+        dropIndex = dfx.loc[ (dfx["TimeframeEnd"].isnull()) |
+                             (dfx["TimeframeEnd"] == '') |
+                             (dfx["TimeframeEnd"].str.contains(',')) ].index
+        dfx = dfx.drop(dropIndex)
+        dfx = dfx.reset_index(drop=True)
+    return (dfx, dfy)
+
+# TimeframeStart_BigInt_-
+def TimeframeStart_SS_Check(dfx, dfy):
+    mask = dfx.loc[(dfx["TimeframeStart"].isnull()) |
+                   (dfx["TimeframeStart"] == '') |
+                   (dfx["TimeframeStart"].str.contains(','))].assign(ReasonRemoved='Bad TimeframeStart').reset_index()
+    if len(mask.index) > 0:
+        dfy = dfy.append(mask)
+        dropIndex = dfx.loc[(dfx["TimeframeStart"].isnull()) |
+                            (dfx["TimeframeStart"] == '') |
+                            (dfx["TimeframeStart"].str.contains(','))].index
+        dfx = dfx.drop(dropIndex)
+        dfx = dfx.reset_index(drop=True)
+    return (dfx, dfy)
