@@ -1,0 +1,90 @@
+WaterSourceUUID,Geometry,GNISFeatureNameCV,WaterQualityIndicatorCV,WaterSourceName,WaterSourceNativeID,WaterSourceTypeCV
+NMwr_WS1,,,Fresh,Unknown,0,Groundwater
+NMwr_WS2,,,Fresh,Unknown,0,Unknown
+NMwr_WS3,,,Fresh,ABO ARROYO,5,"Groundwater,Surface Water"
+NMwr_WS4,,,Fresh,AGUA CHIQUITA CREEK,8,"Groundwater,Surface Water"
+NMwr_WS5,,,Fresh,LITTLE CREEK,895,Surface Water
+NMwr_WS6,,,Fresh,SAN MATEO CREEK,1395,Surface Water
+NMwr_WS7,,,Fresh,RIO BONITO,1227,Surface Water
+NMwr_WS8,,,Fresh,AGUA CALIENTE,7,"Groundwater,Surface Water"
+NMwr_WS9,,,Fresh,RIO RUIDOSO,1279,"Groundwater,Surface Water"
+NMwr_WS10,,,Fresh,PECOS RIVER AREA 4,1124,"Groundwater,Surface Water"
+NMwr_WS11,,,Fresh,BLACK RIVER,216,Surface Water
+NMwr_WS12,,,Fresh,RIO BRAZOS,1228,Surface Water
+NMwr_WS13,,,Fresh,CANONES CREEK /N,360,Surface Water
+NMwr_WS14,,,Fresh,RIO CHAMA,1232,Surface Water
+NMwr_WS15,,,Fresh,CHAVEZ CREEK,410,Surface Water
+NMwr_WS16,,,Fresh,CANONES CREEK /N,361,Surface Water
+NMwr_WS17,,,Fresh,PATOS CREEK,1119,Surface Water
+NMwr_WS18,,,Fresh,JONES CANYON /NM,798,Surface Water
+NMwr_WS19,,,Fresh,JIM GOODLOE CANYON /NM,792,Surface Water
+NMwr_WS20,,,Fresh,INDIAN RIDGE CANYON /NM,778,Surface Water
+NMwr_WS21,,,Fresh,RITO DEL TANQUE,1312,Surface Water
+NMwr_WS22,,,Fresh,GALISTEO CREEK,653,Surface Water
+NMwr_WS23,,,Fresh,EMBUDO CREEK,609,Surface Water
+NMwr_WS24,,,Fresh,RIO PUERCO,1276,Surface Water
+NMwr_WS25,,,Fresh,JEMEZ RIVER,790,Surface Water
+NMwr_WS26,,,Fresh,HARRIS CREEK,728,Surface Water
+NMwr_WS27,,,Fresh,FRESNAL CANYON,645,Surface Water
+NMwr_WS28,,,Fresh,TULAROSA BASIN,1598,Surface Water
+NMwr_WS29,,,Fresh,PALOMAS CREEK,1116,Surface Water
+NMwr_WS30,,,Fresh,LA LUZ CREEK,841,Surface Water
+NMwr_WS31,,,Fresh,RIO TULAROSA,1288,Surface Water
+NMwr_WS32,,,Fresh,HAYNES CANYON,735,Surface Water
+NMwr_WS33,,,Fresh,WILSON CANYON,1702,Surface Water
+NMwr_WS34,,,Fresh,RIO HONDO,1260,Surface Water
+NMwr_WS35,,,Fresh,RIO PENASCO,1272,"Groundwater,Surface Water"
+NMwr_WS36,,,Fresh,OJO DE GALLO SPRING,1086,Surface Water
+NMwr_WS37,,,Fresh,CORRALITOS CREEK,478,Surface Water
+NMwr_WS38,,,Fresh,SANTA CLARA CREEK,1411,Surface Water
+NMwr_WS39,,,Fresh,BARRANCONES CREEK,162,Surface Water
+NMwr_WS40,,,Fresh,CANJILON CREEK,310,"Groundwater,Surface Water"
+NMwr_WS41,,,Fresh,CANJILON CREEK,310,Surface Water
+NMwr_WS42,,,Fresh,RIO DEL OSO,1243,Surface Water
+NMwr_WS43,,,Fresh,RIO NUTRIAS,1269,Surface Water
+NMwr_WS44,,,Fresh,SPRING ARROYO /NM,1509,Surface Water
+NMwr_WS45,,,Fresh,RITO DE TIERRA AMARILLA,1307,Surface Water
+NMwr_WS46,,,Fresh,SAN JUAN AREA 2,1387,Surface Water
+NMwr_WS47,,,Fresh,RIO GRANDE AREA 2,1253,Surface Water
+NMwr_WS48,,,Fresh,ANIMAS RIVER,62,"Groundwater,Surface Water"
+NMwr_WS49,,,Fresh,SAN JUAN AREA 1,1386,Surface Water
+NMwr_WS50,,,Fresh,ABBOTT LAKE,2,"Groundwater,Surface Water"
+NMwr_WS51,,,Fresh,ALLISON DRAW /NM,50,Surface Water
+NMwr_WS52,,,Fresh,CHACO WASH,400,Surface Water
+NMwr_WS53,,,Fresh,DRY CIMARRON RIVER,570,Surface Water
+NMwr_WS54,,,Fresh,FISHER CREEK,628,Surface Water
+NMwr_WS55,,,Fresh,TRINCHERITA CREEK /NM,1587,Surface Water
+NMwr_WS56,,,Fresh,BONITO LAKE,241,Surface Water
+NMwr_WS57,,,Fresh,RIO RUIDOSO,1279,Surface Water
+NMwr_WS58,,,Fresh,ADAMS CANYON,6,"Groundwater,Surface Water"
+NMwr_WS59,,,Fresh,BLACK RIVER,216,"Groundwater,Surface Water"
+NMwr_WS60,,,Fresh,AGUA NEGRA RIVER /N,14,"Groundwater,Surface Water"
+NMwr_WS61,,,Fresh,ALAMOSA CREEK,40,"Groundwater,Surface Water"
+NMwr_WS62,,,Fresh,ABIQUIU CREEK,3,"Groundwater,Surface Water"
+NMwr_WS63,,,Fresh,AGUA SARCA,16,Surface Water
+NMwr_WS64,,,Fresh,ANIMAS RIVER,62,Surface Water
+NMwr_WS65,,,Fresh,RIO GRANDE AREA 5,1256,Surface Water
+NMwr_WS66,,,Fresh,PECOS RIVER AREA 5,1125,"Groundwater,Surface Water"
+NMwr_WS67,,,Fresh,VALLECITO CREEK,1621,Surface Water
+NMwr_WS68,,,Fresh,ELEPHANT BUTTE RESERVOIR,602,Surface Water
+NMwr_WS69,,,Fresh,COYOTE CREEK,504,Surface Water
+NMwr_WS70,,,Fresh,YOUNG CANYON,1723,Surface Water
+NMwr_WS71,,,Fresh,RIO EN MEDIO,1245,Surface Water
+NMwr_WS72,,,Fresh,ALAMOSA CREEK,40,Surface Water
+NMwr_WS73,,,Fresh,EMBUDO CREEK,609,"Groundwater,Surface Water"
+NMwr_WS74,,,Fresh,RIO DE LAS VACAS,1239,Surface Water
+NMwr_WS75,,,Fresh,DUCK CREEK,571,"Groundwater,Surface Water"
+NMwr_WS76,,,Fresh,WILD HORSE CANYON,1687,Surface Water
+NMwr_WS77,,,Fresh,CABRESTO CREEK,283,Surface Water
+NMwr_WS78,,,Fresh,LONG CANYON,912,Surface Water
+NMwr_WS79,,,Fresh,RANCHERIA CANYON,1197,Surface Water
+NMwr_WS80,,,Fresh,WHITE OAKS CANYON,1676,Surface Water
+NMwr_WS81,,,Fresh,LABORCITA CANYON,852,Surface Water
+NMwr_WS82,,,Fresh,COYOTE CANYON,501,Surface Water
+NMwr_WS83,,,Fresh,NOGAL CREEK /N,1045,Surface Water
+NMwr_WS84,,,Fresh,KARR CANYON,813,Surface Water
+NMwr_WS85,,,Fresh,CASS DRAW,386,"Groundwater,Surface Water"
+NMwr_WS86,,,Fresh,DARK CANYON /N,526,"Groundwater,Surface Water"
+NMwr_WS87,,,Fresh,RED RIVER,1208,Surface Water
+NMwr_WS88,,,Fresh,CARRACAS CANYON,371,Surface Water
+NMwr_WS89,,,Fresh,RIO TUSAS,1289,Surface Water
