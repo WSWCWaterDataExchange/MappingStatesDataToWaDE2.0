@@ -1,5 +1,5 @@
 #Date Created: 12/01/2020
-#Purpose: To extract AZ methods use information and population dataframe for WaDE_QA 2.0.
+#Purpose: To extract WY methods use information and population dataframe for WaDE_QA 2.0.
 #Notes: 1) Two different data sets, groundwater vs surface water.
 
 
@@ -13,7 +13,7 @@ import os
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Arizona/WaterAllocation"
+workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Wyoming/WaterAllocation"
 os.chdir(workingDir)
 
 #WaDE columns
@@ -32,26 +32,19 @@ columnslist = [
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
+inpVals = [
+    "WY_Water Allocation",
+    "Surface Ground Water",
+    np.nan,
+    np.nan,
+    np.nan,
+    "Water allocations points of diversions for surface water springs and ground water wells.",
+    "Adjudicated",
+    "http://library.wrds.uwyo.edu/wrp/90-17/",
+    "Adjudicated"]
 
-outdf = pd.DataFrame(columns=columnslist)
+outdf = pd.DataFrame([inpVals], columns=columnslist)
 
-outdf.MethodUUID = ["ADWR_Water Rights GW", "ADWR_Water Rights SW"]
-
-outdf.ApplicableResourceTypeCV = ["Groundwater", "Surface Water"]
-
-outdf.DataConfidenceValue = ""
-
-outdf.DataQualityValueCV = ""
-
-outdf.DataCoverageValue = ""
-
-outdf.MethodDescription = ["Water Rights", "Water Rights"]
-
-outdf.MethodName = ["Arizona Water Rights", "Arizona Water Rights"]
-
-outdf.MethodNEMILink = ["http://gisdata-azwater.opendata.arcgis.com/", "http://gisdata-azwater.opendata.arcgis.com/"]
-
-outdf.MethodTypeCV = ["Adjudicated", "Adjudicated"]
 
 # Check required fields are not null
 ############################################################################

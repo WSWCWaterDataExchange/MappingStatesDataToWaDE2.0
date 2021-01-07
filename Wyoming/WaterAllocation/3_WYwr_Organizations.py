@@ -1,5 +1,5 @@
-#Date Created: 12/01/2020
-#Purpose: To extract AZ organization information and population dataframe for WaDE_QA 2.0.
+#Date Created: 12/11/2020
+#Purpose: To extract WY organization information and population dataframe for WaDE_QA 2.0.
 #Notes: asdf
 
 
@@ -13,7 +13,7 @@ import os
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Arizona/WaterAllocation"
+workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Wyoming/WaterAllocation"
 os.chdir(workingDir)
 
 # Needed WaDE columns
@@ -33,15 +33,15 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "ADWR",
-    "lmwilliams@azwater.gov",
-    "Lisa Williams",
-    "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Arizona",
-    "Arizona Department of Water Resources",
-    "602-771-8500",
-    "The Arizona Department of Water Resources is the steward of Arizona’s water future and ensures long-term, reliable water supplies to support the continued economic prosperity of the State.",
-    "http://gisdata-azwater.opendata.arcgis.com/",
-    "AZ"]
+    "WWDO",
+    "mabel.jones1@wyo.gov",
+    "Mabel Jones",
+    "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Wyoming",
+    "Wyoming Water Development Office",
+    "307-777-7626",
+    "This agency contributes to the quality of life by addressing the water resources needs of our citizens through the construction of new water supply projects and the rehabilitation of existing water supply projects.",
+    "https://wwdc.state.wy.us/",
+    "WY"]
 
 outdf = pd.DataFrame([inpVals], columns=columnslist)
 

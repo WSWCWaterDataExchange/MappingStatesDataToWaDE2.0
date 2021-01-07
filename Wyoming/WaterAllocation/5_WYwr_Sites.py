@@ -1,5 +1,5 @@
-#Date Created: 12/01/2020
-#Purpose: To extract AZ site information and population dataframe for WaDE_QA 2.0.
+#Date Created: 12/11/2020
+#Purpose: To extract WY site information and population dataframe for WaDE_QA 2.0.
 #Notes: asdf
 
 
@@ -12,7 +12,6 @@ import os
 # transformer = Transformer.from_proj(4326, 4326)  # A trick to drastically optimize the Transformer of pyproj.
 # MT projection = EPSG:4326, same as WGS84 projection used by WaDE 2.0 = epsg:4326.
 
-
 # Custom Libraries
 ############################################################################
 import sys
@@ -23,9 +22,9 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Arizona/WaterAllocation"
+workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Wyoming/WaterAllocation"
 os.chdir(workingDir)
-fileInput = "RawinputData/P_ArizonaMaster.csv"
+fileInput = "RawinputData/P_WyomingMaster.csv"
 df = pd.read_csv(fileInput)
 
 columnslist = [
@@ -53,29 +52,34 @@ columnslist = [
 # Custom Functions
 ############################################################################
 
-# For creating SiteNativeID
-def assignSiteNativeID(colrowValue):
-    strVal = str(colrowValue)
-    strVal = strVal.strip()
-    if strVal == '' or pd.isnull(strVal):
+# For creating WaterSourceName
+def assignSiteName(colrowValue):
+    colrowValue = str(colrowValue).strip()
+    if colrowValue == "" or pd.isnull(colrowValue):
         outList = "Unspecified"
     else:
-        outList = strVal
+        try:
+            outList = str(colrowValue).strip()
+        except:
+            outList = "Unspecified"
     return outList
 
 # For creating SiteTypeCV
 def assignSiteTypeCV(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
+    colrowValue = str(colrowValue).strip()
+    if colrowValue == "" or pd.isnull(colrowValue):
         outList = "Unspecified"
     else:
-        strVal = str(colrowValue)
-        outList = strVal.strip()
+        try:
+            outList = str(colrowValue).strip()
+        except:
+            outList = "Unspecified"
     return outList
 
 # For creating SiteUUID
 def assignSiteUUID(colrowValue):
     string1 = str(colrowValue)
-    outstring = "AZwr_S" + string1
+    outstring = "WYwr_S" + string1
     return outstring
 
 
@@ -91,7 +95,7 @@ print("CoordinateMethodCV")
 outdf.CoordinateMethodCV = "Unspecified"
 
 print("County")
-outdf['County'] = df['in_County']
+outdf['County'] = ""
 
 print("EPSGCodeCV")
 outdf.EPSGCodeCV = "EPSG:4326"
@@ -106,7 +110,7 @@ print("HUC12")
 outdf['HUC12'] = ""
 
 print("HUC8")
-outdf.HUC8 = ""
+outdf["HUC8"] = ""
 
 print("Latitude")
 outdf['Latitude'] = df['in_Latitude']
@@ -121,13 +125,13 @@ print("NHDProductCV")
 outdf.NHDProductCV = ""
 
 print("PODorPOUSite")
-outdf['PODorPOUSite'] = df['in_PODorPOUSite']
+outdf['PODorPOUSite'] = "POD"
 
 print("SiteName")
-outdf['SiteName'] = df['in_SiteName']
+outdf['SiteName'] = df.apply(lambda row: assignSiteName(row['in_SiteName']), axis=1)
 
 print("SiteNativeID")
-outdf['SiteNativeID'] = df.apply(lambda row: assignSiteNativeID(row['in_SiteNativeID']), axis=1)
+outdf['SiteNativeID'] = df['in_SiteNativeID']
 
 print("SitePoint")
 outdf['SitePoint'] = ""
@@ -136,7 +140,7 @@ print("SiteTypeCV")
 outdf['SiteTypeCV'] = df.apply(lambda row: assignSiteTypeCV(row['in_SiteTypeCV']), axis=1)
 
 print("StateCV")
-outdf['StateCV'] = "AZ"
+outdf['StateCV'] = "WY"
 
 print("USGSSiteID")
 outdf['USGSSiteID'] = ""
@@ -232,6 +236,6 @@ outdf.to_csv('ProcessedInputData/sites.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
-    dfpurge.to_csv('ProcessedInputData/sites_missing.csv')  # index=False,
+    dfpurge.to_csv('ProcessedInputData/sites_missing.csv', index=False)
 
 print("Done.")

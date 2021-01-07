@@ -1,55 +1,78 @@
 work in progress.  This should be rewritten for WY.
 
-# MDNRC Water Rights (Allocation) Data Preparation for WaDE
-This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [Montana Department of Natural Resources and Conservation (MDNRC)](https://opendata-mtdnrc.hub.arcgis.com/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
+# WWDO Water Rights (Allocation) Data Preparation for WaDE
+This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [Wyoming Water Development Office (WWDO)](https://wwdc.state.wy.us/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 
 ## Overview of Data Utilized
 The following data was used for water allocations...
 
-- Point of diversion (POD) data was obtained from MDNRC Maps and GIS Data Hub at: https://opendata-mtdnrc.hub.arcgis.com/datasets/wade-pods
-- Point of use (PoU) data was obtained from MDNRC Maps and GIS Data Hub at: https://opendata-mtdnrc.hub.arcgis.com/datasets/wade-pous
+- Point of diversion (POD) surface and groundwater data files were made temporary available to the WSWC staff temporary by the WWDO via email correspondence and shared through Google Drive.  Links no longer available, contact WWDO for further instructions.
 
 Two unique files were created, one used by the WSWC staff to understand the available data (*"_with Notes"*), the second resulting files to be used as input to the Python codes that prepare WaDE2 input files.  Input files used are as follows...
- - WaDE_PODs_input.csv
- - WaDE_PoUs_input.csv (have not incorporated yet)
+ - POD_SW_DepthI_FC_input
+ - POD_GW_DepthI_FC_input
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share MDNRC's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *MT_Allocation Schema Mapping to WaDE_QA.xlsx*.  Six executable code files were used to extract the MDNRC's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those six code files are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share WWDO's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *WY_Allocation Schema Mapping to WaDE_QA.xlsx*.  Six executable code files were used to extract the WWDO's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those six code files are as follows...
 
-- 0_PreProcessMontanaWaterRightData.ipynb
-- 1_MTwr_Methods.py
-- 2_MTwr_Variables.py
-- 3_MTwr_Organizations.pys
-- 4_MTwr_WaterSources.py
-- 5_MTwr_Sites.py
-- 6_MTwr_AllocationsAmounts_fac`ts.py
+- 0_PreProcessWyomingAllocationData.ipynb
+- 1_WYwr_Methods.py
+- 2_WYwr_Variables.py
+- 3_WYwr_Organizations.py
+- 4_WYwr_WaterSources.py
+- 5_WYwr_Sites.py
+- 6_WYwr_AllocationsAmounts_facts.py
 
 
 ***
-### 0) Code File: 0_PreProcessMontanaWaterRightData.ipynb
+### 0) Code File: 0_PreProcessWyomingAllocationData.ipynb
 Purpose: Pre-process the Montana input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
- - WaDE_PODs_input.csv
+- POD_SW_DepthI_FC_input
+- POD_GW_DepthI_FC_input
 
 #### Outputs:
- - P_MontanaMaster.csv
+ - P_WyomingMaster.csv
 
 #### Operation and Steps:
-- Read the input files and generate temporary input dataframes.
-- Generate WaDE specific field *WaterSourceTypeC* from MDNRC **SOURCE_TYPE** field (see pre-process code for specific dictionary used).
-- Format **ENF_PRIORITY_DATE** field to %m/%d/%Y format.
-- Generate WaDE specific field *MethodTypeCV* from MDNRC **ENF_PRIORITY_DATE** field (see pre-process code for specific dictionary used).  Water rights that were established prior to July 1,1973 are administered by the Adjudication Bureau. Water rights that were established from July 1, 1973 through the present are administered by the New Appropriations Program.
-- Generate WaDE Specific Field *TimeframeStart* from MDNRC **PER_DIV_BGN_DT** field (see pre-process code for specific dictionary used).
-- Generate WaDE Specific Field *TimeframeEnd* from MDNRC **PER_DIV_END_DT** field (see pre-process code for specific dictionary used).
-- Generate WaDE Specific Field *ExemptOfVolumeFlowPriority* from MDNRC **WR_TYPE** field.  If **WR_TYPE** = EXEMPT NOTICE, allow exempt .
+- Read the input files and generate temporary input dataframes for groundwater and surface water data.  Goal will be to create two separate clean tables and concatenate to single output table.
+- Perform the following additional actions on the groundwater data...
+    - *WaterSourceTypeCV* == Groundwater.
+    - *WaterSourceName* == Unspecified.
+    - *Latitude* = **Latitude_Double**, ensure float datatype.
+    - *Longitude* = **Longitude_Double**, ensure float datatype.
+    - *SiteName* = **FacilityName**, ensure string datatype.
+    - *SiteTypeCV* = **Facility_type**, ensure string datatype.
+    - *AllocationFlow_CFS* = **Total_Flow_CFS___Appropriation_GPM_**, ensure float datatype.
+    - *AllocationNativeID* = **WR_Number**, ensure string datatype.
+    - *AllocationOwner* =  **Company**, **FirstName**, and **LastName** fields, see pre-process code for specifics.
+    - *AllocationPriorityDate* = **PriorityDate**.  Format **PriorityDate** field to %m/%d/%Y format.
+    - *AllocationTypeCV* = **SummaryWRStatus**, ensure string datatype.
+    - *BeneficialUseCategory* = **Uses**, ensure string datatype.  Use provided WWDO terminology code and **Uses** field, see see pre-process code for specifics.
+- Perform the following additional actions on the surface water data...
+    - *WaterSourceTypeCV* == Surface Water.
+    - *WaterSourceName* == **Stream_Source**, ensure string datatype.
+    - *Latitude* = **Latitude_Double**, ensure float datatype.
+    - *Longitude* = **Longitude_Double**, ensure float datatype.
+    - *SiteName* = **FacilityName**, ensure string datatype.
+    - *SiteTypeCV* = **Facility_type**, ensure string datatype.
+    - *AllocationFlow_CFS* = **Total_Flow_CFS___Appropriation_GPM_**, ensure float datatype.
+    - *AllocationNativeID* = **WR_Number**, ensure string datatype.
+    - *AllocationOwner* =  **Company**, **FirstName**, and **LastName** fields, see pre-process code for specifics.
+    - *AllocationPriorityDate* = **PriorityDate**.  Format **PriorityDate** field to %m/%d/%Y format.
+    - *AllocationTypeCV* = **SummaryWRStatus**, ensure string datatype.
+    - *BeneficialUseCategory* = **Uses**, ensure string datatype.  Use provided WWDO terminology code and **Uses** field, see see pre-process code for specifics.
+- Concatenate groundwater and surface water dataframes together to create single long output table.
+- Generate WaDE specific field *SiteNativeID* from latitude, longitude, SiteType and SiteName fields.  Used to identify unique PODs.
+- Generate WaDE specific field *WaterSourceNativeID* from Watersource Name & Watersource Type fields.  Used to identify unique sources of water.
 - Inspect output dataframe for additional errors / datatypes.
-- Export output dataframe as new csv file, *P_MontanaMaster.csv*.
+- Export output dataframe as new csv file, *P_WyomingMaster.csv*.
 
 
 ***
-### 1) Code File: 1_MTwr_Methods.py
+### 1) Code File: 1_WYwr_Methods.py
 Purpose: generate legend of granular methods used on data collection.
 
 #### Inputs:
@@ -62,7 +85,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Method* specific columns.
-- Assign **MDNRC** info to the *WaDE Method* specific columns (this was hardcoded by hand for simplicity).
+- Assign **WWDO** info to the *WaDE Method* specific columns (this was hardcoded by hand for simplicity).
 - Assign method UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *methods.csv*.
@@ -70,11 +93,11 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
-MT_Water Allocation Adj | Surface Ground Water | Adjudication
+WY_Water Allocation | Surface Ground Water | Adjudicated
 
 
 ***
-### 2) Code File: 2_MTwr_Variables.py
+### 2) Code File: 2_WYwr_Variables.py
 Purpose: generate legend of granular variables specific to each state.
 
 #### Inputs:
@@ -87,7 +110,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Variable* specific columns.
-- Assign **MDNRC** info to the *WaDE Variable* specific columns (this was hardcoded by hand for simplicity).
+- Assign **WWDO** info to the *WaDE Variable* specific columns (this was hardcoded by hand for simplicity).
 - Assign variable UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *variables.csv*.
@@ -95,11 +118,11 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
 ---------- | ---------- | ------------ | ------------
-MT_Consumptive Use | 1 | Year | CFS
+WY_Allocation All | 1 | Year | CFS
 
 
 ***
-### 3) Code File: 3_MTwr_Organizations.py
+### 3) Code File: 3_WYwr_Organizations.py
 Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
 
 #### Inputs:
@@ -112,7 +135,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Organizations* specific columns.
-- Assign **MDNRC** info to the *WaDE Organizations* specific columns (this was hardcoded by hand for simplicity).
+- Assign **WWDO** info to the *WaDE Organizations* specific columns (this was hardcoded by hand for simplicity).
 - Assign organization UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *organizations.csv*.
@@ -120,15 +143,15 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
 ---------- | ---------- | ------------ | ------------
-MDNRC | Montana Dept. of Water Rights | Chris Kuntz | http://dnrc.mt.gov/
+WWDO | Wyoming Water Development Office | Mabel Jones | https://wwdc.state.wy.us/
 
 
 ***
-### 4) Code File: 4_MTwr_WaterSources.py
+### 4) Code File: 4_WYwr_WaterSources.py
 Purpose: generate a list of water sources specific to a water right.
 
 #### Inputs:
-- P_MontanaMaster.csv
+- P_WyomingMaster.csv
 
 #### Outputs:
 - waterSources.csv
@@ -137,9 +160,10 @@ Purpose: generate a list of water sources specific to a water right.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign **MDNRC** info to the *WaDE WaterSources* specific columns.  See *MT_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
-    - *WaterSourceName* = **SOURCE_NAME**, Unspecified if not given.
-    - *WaterSourceTypeCV* = generated list of sources from **SOURCE_TYPE**, see *0_PreProcessMontanaWaterRightData.ipynb* for specifics.
+- Assign **WWDO** info to the *WaDE WaterSources* specific columns.  See *WY_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+    - *WaterSourceName* = *in_WaterSourceName*, Unspecified if not given, see *0_PreProcessWyomingAllocationData.ipynb* for specifics.
+    - *WaterSourceNativeID* = *in_WaterSourceNativeID*, see *0_PreProcessWyomingAllocationData.ipynb* for specifics.
+    - *WaterSourceTypeCV* = *in_WaterSourceTypeCV*, see *0_PreProcessWyomingAllocationData.ipynb* for specifics.
 - Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceName* & *WaterSourceTypeCV* fields.
 - Assign water source UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
@@ -148,7 +172,7 @@ Purpose: generate a list of water sources specific to a water right.
 #### Sample Output (WARNING: not all fields shown):
 WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceNativeID | WaterSourceTypeCV
 ---------- | ---------- | ------------ | ------------ | ------------
-MTwr_WS7 | Fresh | FROZEN HORSE CREEK | Unspecified | SURFACE
+WYwr_WS2 | Fresh | Buffalo Creek | WaDEWY_WS2 | Surface Water
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
 - WaterSourceUUID
@@ -157,11 +181,11 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 
 ***
-### 5) Code File: 5_MTwr_Sites.py
+### 5) Code File: 5_WYwr_Sites.py
 Purpose: generate a list of sites information.
 
 #### Inputs:
-- P_MontanaMaster.csv
+- P_WyomingMaster.csv
 
 #### Outputs:
 - sites.csv
@@ -170,14 +194,12 @@ Purpose: generate a list of sites information.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
-- Assign **MDNRC** info to the *WaDE Site* specific columns.  See *MT_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
-    - *County* = **LLDS_COUNTY_NAME**.
-    - *HUC12* = **HUC_12**.
-    - *Latitude* = **X**.
-    - *Longitude* = **Y**.
-    - *SiteName* = **DITCH_NAME**, Unspecified if not given.
-    - *SiteNativeID* = **PODV_ID_SEQ**.
-    - *SiteTypeCV* = **MEANS_OF_DIV**, Unspecified if not given.
+- Assign **WWDO** info to the *WaDE Site* specific columns.  See *WY_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+    - *Latitude* = **Latitude_Double**.
+    - *Longitude* = **Longitude_Double**.
+    - *SiteName* = **FacilityName**, Unspecified if not given.
+    - *SiteNativeID* = *in_SiteNativeID*, see *0_PreProcessWyomingAllocationData.ipynb* for specifics.
+    - *SiteTypeCV* = **Facility_type**, Unspecified if not given.
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *SiteNativeID*, *SiteName*, *SiteTypeCV*, *Longitude* & *Latitude* fields.
 - Assign site UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
@@ -186,7 +208,7 @@ Purpose: generate a list of sites information.
 #### Sample Output (WARNING: not all fields shown):
 SiteUUID | CoordinateMethodCV | Latitude | Longitude | SiteName
 ---------- | ---------- | ------------ | ------------ | ------------
-MTwr_S1 | Unknown | 45.10645361 | -104.1225607 | Unspecified
+WYwr_S1 | Unspecified | 42.9129 | -104.46127 | O W WELL #1
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
 - SiteUUID 
@@ -196,11 +218,11 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 
 ***
-### 6) Code File: 6_MTwr_AllocationsAmounts_facts.py
+### 6) Code File: 6_WYwr_AllocationsAmounts_facts.py
 Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 
 #### Inputs:
-- P_MontanaMaster.csv
+- P_WyomingMaster.csv
 - methods.csv
 - variables.csv
 - organizations.csv
@@ -214,21 +236,14 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
-- Assign **MDNRC** info to the *WaDE Water Allocations* specific columns.  See *MT_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+- Assign **WWDO** info to the *WaDE Water Allocations* specific columns.  See *WY_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
-    - *AllocationFlow_CFS* = **FLW_RT_CFS**.
-    - *AllocationLegalStatusCV* = **WR_STATUS**.
-    - *AllocationNativeID* = **WR_NUMBER**.
-    - *AllocationOwner* = **ALL_OWNERS**.
-    - *AllocationPriorityDate* = **ENF_PRIORITY_DATE**.
-    - *AllocationTimeframeEnd* = **PER_DIV_END_DT**.
-    - *AllocationTimeframeStart* = **PER_DIV_BGN_DT**.
-    - *AllocationTypeCV* = **WR_TYPE**.
-    - *AllocationVolume_AF* = **VOLUME**.
-    - *BeneficialUseCategory* = **PURPOSES**.
-    - *DataPublicationDOI* = **ABST_LINK**.
-    - *ExemptOfVolumeFlowPriority* = **WR_TYPE**, see *0_PreProcessMontanaWaterRightData.ipynb* for details.
-    - *IrrigatedAcreage* = **MAX_ACRES**.
+    - *AllocationFlow_CFS* = **Total_Flow_CFS___Appropriation_GPM_**.
+    - *AllocationNativeID* = **WR_Number**.
+    - *AllocationOwner* =  **Company**, **FirstName**, and **LastName** fields, see pre-process code for specifics.
+    - *AllocationPriorityDate* = **PriorityDate**.
+    - *AllocationTypeCV* = **SummaryWRStatus**.
+    - *BeneficialUseCategory* = **Uses**.   
 - Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.
 - Perform error check on output dataframe.
 - Export output dataframe *waterallocations.csv*.
@@ -236,7 +251,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 #### Sample Output (WARNING: not all fields shown):
 AllocationNativeID | AllocationFlow_CFS | AllocationLegalStatusCV | BeneficialUseCategory
 ---------- | ---------- | ------------ | ------------
-38H 126342 00 | 0.01 | ACTIVE | STOCK
+A1612.0Q | 130.18 | ACTIVE | Stock and/or Domestic
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID
@@ -251,14 +266,11 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 
 ## Staff Contributions
-Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Montana Department of Natural Resources and Conservation (MDNRC)](https://opendata-mtdnrc.hub.arcgis.com/).
+Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Wyoming Water Development Office (WWDO)](https://wwdc.state.wy.us/).
 
 WSWC Staff
 - Adel Abdallah <adelabdallah@wswc.utah.gov>
 - Ryan James <rjames@wswc.utah.gov>
 
 Montana DNRC Staff
-- Chris Kuntz <CKuntz@mt.gov>
-- David Coey <dcoey@mt.gov>
-- Karen Coleman <Karen.Coleman@mt.gov>
-- Matthew Norberg <MNorberg@mt.gov>
+- Mabel Jones <mabel.jones1@wyo.gov>

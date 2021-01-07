@@ -1,5 +1,5 @@
-#Date Created: 12/10/2020
-#Purpose: To extract AZ water right information and population dataframe for WaDE_QA 2.0.
+#Date Created: 12/11/2020
+#Purpose: To extract WY water right information and population dataframe for WaDE_QA 2.0.
 #         1) Simple creation of working dataframe (df), with output dataframe (outdf).
 #         2) Drop all nulls before combining duplicate rows on NativeID.
 
@@ -21,9 +21,9 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Arizona/WaterAllocation"
+workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Wyoming/WaterAllocation"
 os.chdir(workingDir)
-DM_fileInput = "RawinputData/P_ArizonaMaster.csv"
+DM_fileInput = "RawinputData/P_WyomingMaster.csv"
 method_fileInput = "ProcessedInputData/methods.csv"
 variables_fileInput = "ProcessedInputData/variables.csv"
 watersources_fileInput = "ProcessedInputData/watersources.csv"
@@ -34,6 +34,12 @@ df_method = pd.read_csv(method_fileInput)  # Method dataframe
 df_variables = pd.read_csv(variables_fileInput)  # Variables dataframe
 df_watersources = pd.read_csv(watersources_fileInput)  # WaterSources dataframe
 df_sites = pd.read_csv(sites_fileInput)  # Sites dataframe
+
+df_sites['SiteName'] = df_sites['SiteName'].astype(str)
+df_sites['SiteTypeCV'] = df_sites['SiteTypeCV'].astype(str)
+df_sites['Latitude'] = df_sites['Latitude'].astype(float)
+df_sites['Longitude'] = df_sites['Longitude'].astype(float)
+
 
 #WaDE dataframe columns
 columnslist = [
@@ -74,68 +80,51 @@ columnslist = [
     "SiteUUID",
     "VariableSpecificUUID",
     "WaterAllocationNativeURL",
-    "WaterSourceUUID"]
+    "WaterSourceUUID",
+    'SiteName',
+    'SiteTypeCV',
+    'Latitude',
+    'Longitude']
 
 # Custom Functions
 ############################################################################
 
-# For creating MethodUUID
-MethodUUIDdict = pd.Series(df_method.MethodUUID.values, index = df_method.ApplicableResourceTypeCV).to_dict()
-def retrieveMethodUUID(colrowValue):
+# For Creating SiteUUID
+SitUUIDdict = pd.Series(df_sites.SiteUUID.values, index = df_sites.SiteNativeID).to_dict()
+def retrieveSiteUUID(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = ''
     else:
         String1 = colrowValue
         try:
-            outList = MethodUUIDdict[String1]
-        except:
-            outList = ''
-    return outList
-
-# For creating SiteUUID
-SiteUUIDDdict = pd.Series(df_sites.SiteUUID.values, index = df_sites.SiteNativeID).to_dict()
-def retrieveSiteUUID(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outList = ''
-    else:
-        # strVal = str(colrowValue)
-        # strVal = strVal.strip()
-        strVal = colrowValue
-        try:
-            outList = SiteUUIDDdict[strVal]
+            outList = SitUUIDdict[String1]
         except:
             outList = ''
     return outList
 
 # For creating WaterSourceUUID
-WaterSourceUUIDdict = pd.Series(df_watersources.WaterSourceUUID.values, index = df_watersources.WaterSourceName).to_dict()
+WaterSourceUUIDdict = pd.Series(df_watersources.WaterSourceUUID.values, index = df_watersources.WaterSourceNativeID).to_dict()
 def retrieveWaterSourceUUID(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = ''
     else:
-        # strVal = str(colrowValue)
-        # strVal = strVal.strip()
-        strVal = colrowValue
-        outList = WaterSourceUUIDdict[strVal]
-    return outList
-
-# For fixing AllocationOwner
-def fixAllocationOwner(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outList = ''
-    else:
-        strVal = str(colrowValue)
-        strVal = strVal.strip()
-        outList = strVal
+        String1 = colrowValue.strip()
+        try:
+            outList = WaterSourceUUIDdict[String1]
+        except:
+            outList = ''
     return outList
 
 # For creating BeneficialUseCategory
 def assignBeneficialUseCategory(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
+    colrowValue = str(colrowValue).strip()
+    if colrowValue == "" or pd.isnull(colrowValue):
         outList = "Unspecified"
     else:
-        strVal = str(colrowValue)
-        outList = strVal.strip()
+        try:
+            outList = str(colrowValue).strip()
+        except:
+            outList = "Unspecified"
     return outList
 
 # Creating output dataframe (outdf)
@@ -144,20 +133,19 @@ print("Populating dataframe outdf...")
 outdf = pd.DataFrame(index=df_DM.index, columns=columnslist)  # The output dataframe
 
 print("MethodUUID")
-outdf['MethodUUID'] = df_DM.apply(lambda row: retrieveMethodUUID(row['in_ApplicableResourceTypeCV']), axis=1)
+outdf['MethodUUID'] = "WY_Water Allocation"
 
 print("OrganizationUUID")
-outdf.OrganizationUUID = "ADWR"
+outdf.OrganizationUUID = "WWDO"
 
 print("SiteUUID")
 outdf['SiteUUID'] = df_DM.apply(lambda row: retrieveSiteUUID(row['in_SiteNativeID']), axis=1)
 
 print("VariableSpecificUUID")
-outdf.VariableSpecificUUID = "ADWR_Allocation All"
+outdf['VariableSpecificUUID'] = "WY_Consumptive Use"
 
 print("WaterSourceUUID")
-outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceName']), axis=1)
-print(WaterSourceUUIDdict)
+outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
 
 print("AllocationApplicationDate")
 outdf['AllocationApplicationDate'] = ""
@@ -187,13 +175,13 @@ print("AllocationFlow_CFS")
 outdf['AllocationFlow_CFS'] = df_DM['in_AllocationFlow_CFS']
 
 print("AllocationLegalStatusCV")
-outdf['AllocationLegalStatusCV'] = ""
+outdf['AllocationLegalStatusCV'] = "Active"
 
 print("AllocationNativeID")  # Will use this with a .groupby() statement towards the ends.
 outdf['AllocationNativeID'] = df_DM['in_AllocationNativeID'].astype(str)
 
 print("AllocationOwner")
-outdf['AllocationOwner'] = df_DM.apply(lambda row: fixAllocationOwner(row['in_AllocationOwner']), axis=1)
+outdf['AllocationOwner'] = df_DM['in_AllocationOwner']
 
 print("AllocationSDWISIdentifierCV")
 outdf.AllocationSDWISIdentifierCV = ""
@@ -202,10 +190,10 @@ print("AllocationPriorityDate")
 outdf['AllocationPriorityDate'] = df_DM['in_AllocationPriorityDate']
 
 print("AllocationTimeframeEnd")
-outdf['AllocationTimeframeEnd'] = df_DM['in_AllocationTimeframeEnd']
+outdf['AllocationTimeframeEnd'] = '12/31'
 
 print("AllocationTimeframeStart")
-outdf['AllocationTimeframeStart'] = df_DM['in_AllocationTimeframeStart']
+outdf['AllocationTimeframeStart'] = '01/01'
 
 print("AllocationTypeCV")
 outdf['AllocationTypeCV'] = df_DM['in_AllocationTypeCV']
@@ -226,13 +214,13 @@ print("CustomerTypeCV")
 outdf.CustomerTypeCV = ""
 
 print("DataPublicationDate")
-outdf.DataPublicationDate = "12/01/2020"
+outdf.DataPublicationDate = "12/11/2020"
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""
 
 print("ExemptOfVolumeFlowPriority")
-outdf['ExemptOfVolumeFlowPriority'] = df_DM['in_ExemptOfVolumeFlowPriority']
+outdf['ExemptOfVolumeFlowPriority'] = "0"
 
 print("GeneratedPowerCapacityMW")
 outdf.GeneratedPowerCapacityMW = ""
@@ -273,7 +261,7 @@ print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to uploa
 
 # N/A
 
-#Error AA_Checking each Field
+#Error checking each field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
 # Purge DataFrame to hold removed elements
@@ -400,7 +388,7 @@ outdf100.to_csv('ProcessedInputData/waterallocations.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
-    dfpurge.to_csv('ProcessedInputData/waterallocations_missing.csv')  # index=False,
+    dfpurge.to_csv('ProcessedInputData/waterallocations_missing.csv', index=False)
 
 print("Done.")
 

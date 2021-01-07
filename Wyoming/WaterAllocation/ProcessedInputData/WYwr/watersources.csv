@@ -1,0 +1,2591 @@
+WaterSourceUUID,Geometry,GNISFeatureNameCV,WaterQualityIndicatorCV,WaterSourceName,WaterSourceNativeID,WaterSourceTypeCV
+WYwr_WS1,,,Fresh,Unspecified,WaDEWY_WS1,Groundwater
+WYwr_WS2,,,Fresh,Buffalo Creek,WaDEWY_WS2,Surface Water
+WYwr_WS3,,,Fresh,Spring Creek,WaDEWY_WS3,Surface Water
+WYwr_WS4,,,Fresh,Middle Fork Powder River,WaDEWY_WS4,Surface Water
+WYwr_WS5,,,Fresh,Deep Creek,WaDEWY_WS5,Surface Water
+WYwr_WS6,,,Fresh,Lone Tree Creek,WaDEWY_WS6,Surface Water
+WYwr_WS7,,,Fresh,Kitchings Draw,WaDEWY_WS7,Surface Water
+WYwr_WS8,,,Fresh,Antelope Creek,WaDEWY_WS8,Surface Water
+WYwr_WS9,,,Fresh,Horse Creek,WaDEWY_WS9,Surface Water
+WYwr_WS10,,,Fresh,Torrey Creek,WaDEWY_WS10,Surface Water
+WYwr_WS11,,,Fresh,Nowood River,WaDEWY_WS11,Surface Water
+WYwr_WS12,,,Fresh,West Kirby Creek,WaDEWY_WS12,Surface Water
+WYwr_WS13,,,Fresh,Bear Creek,WaDEWY_WS13,Surface Water
+WYwr_WS14,,,Fresh,Cottonwood Creek,WaDEWY_WS14,Surface Water
+WYwr_WS15,,,Fresh,Four Mile Creek (5-43-78),WaDEWY_WS15,Surface Water
+WYwr_WS16,,,Fresh,Powder River,WaDEWY_WS16,Surface Water
+WYwr_WS17,,,Fresh,Red Fork Powder River,WaDEWY_WS17,Surface Water
+WYwr_WS18,,,Fresh,Beaver Creek,WaDEWY_WS18,Surface Water
+WYwr_WS19,,,Fresh,Kirby Creek,WaDEWY_WS19,Surface Water
+WYwr_WS20,,,Fresh,Big Horn River,WaDEWY_WS20,Surface Water
+WYwr_WS21,,,Fresh,Unspecified,WaDEWY_WS21,Surface Water
+WYwr_WS22,,,Fresh,Burroughs Creek,WaDEWY_WS22,Surface Water
+WYwr_WS23,,,Fresh,East Fork Du Noir River,WaDEWY_WS23,Surface Water
+WYwr_WS24,,,Fresh,Willow Branch,WaDEWY_WS24,Surface Water
+WYwr_WS25,,,Fresh,Six Mile Creek,WaDEWY_WS25,Surface Water
+WYwr_WS26,,,Fresh,Du Noir River,WaDEWY_WS26,Surface Water
+WYwr_WS27,,,Fresh,Soldier Creek,WaDEWY_WS27,Surface Water
+WYwr_WS28,,,Fresh,Crooked Creek,WaDEWY_WS28,Surface Water
+WYwr_WS29,,,Fresh,Horn Creek,WaDEWY_WS29,Surface Water
+WYwr_WS30,,,Fresh,Otter Creek,WaDEWY_WS30,Surface Water
+WYwr_WS31,,,Fresh,Coal Creek,WaDEWY_WS31,Surface Water
+WYwr_WS32,,,Fresh,Pole Creek,WaDEWY_WS32,Surface Water
+WYwr_WS33,,,Fresh,Gooseberry Creek,WaDEWY_WS33,Surface Water
+WYwr_WS34,,,Fresh,Wellman Draw,WaDEWY_WS34,Surface Water
+WYwr_WS35,,,Fresh,Crazy Woman Creek,WaDEWY_WS35,Surface Water
+WYwr_WS36,,,Fresh,Middle Fork Crazy Woman Creek,WaDEWY_WS36,Surface Water
+WYwr_WS37,,,Fresh,Poison Creek,WaDEWY_WS37,Surface Water
+WYwr_WS38,,,Fresh,Big Canyon Creek,WaDEWY_WS38,Surface Water
+WYwr_WS39,,,Fresh,Ten Sleep Creek,WaDEWY_WS39,Surface Water
+WYwr_WS40,,,Fresh,Belle Fourche River,WaDEWY_WS40,Surface Water
+WYwr_WS41,,,Fresh,Dry Creek,WaDEWY_WS41,Surface Water
+WYwr_WS42,,,Fresh,Bonepile Creek,WaDEWY_WS42,Surface Water
+WYwr_WS43,,,Fresh,Duck Nest Creek,WaDEWY_WS43,Surface Water
+WYwr_WS44,,,Fresh,South Prong Caballo Creek,WaDEWY_WS44,Surface Water
+WYwr_WS45,,,Fresh,Stage Draw,WaDEWY_WS45,Surface Water
+WYwr_WS46,,,Fresh,Lewis Draw,WaDEWY_WS46,Surface Water
+WYwr_WS47,,,Fresh,North Fork Crazy Woman Creek,WaDEWY_WS47,Surface Water
+WYwr_WS48,,,Fresh,Muddy Creek,WaDEWY_WS48,Surface Water
+WYwr_WS49,,,Fresh,Billy Creek,WaDEWY_WS49,Surface Water
+WYwr_WS50,,,Fresh,Drain Ditch,WaDEWY_WS50,Surface Water
+WYwr_WS51,,,Fresh,Inyan Kara Creek,WaDEWY_WS51,Surface Water
+WYwr_WS52,,,Fresh,Dry Gulch,WaDEWY_WS52,Surface Water
+WYwr_WS53,,,Fresh,West Fork Wind Creek,WaDEWY_WS53,Surface Water
+WYwr_WS54,,,Fresh,Gossett Draw,WaDEWY_WS54,Surface Water
+WYwr_WS55,,,Fresh,Buffalo Wallows Creek,WaDEWY_WS55,Surface Water
+WYwr_WS56,,,Fresh,Little North Fork Crazy Woman Creek,WaDEWY_WS56,Surface Water
+WYwr_WS57,,,Fresh,Crane Creek,WaDEWY_WS57,Surface Water
+WYwr_WS58,,,Fresh,South Fork Shoshone River,WaDEWY_WS58,Surface Water
+WYwr_WS59,,,Fresh,Houston Creek,WaDEWY_WS59,Surface Water
+WYwr_WS60,,,Fresh,Field Draw,WaDEWY_WS60,Surface Water
+WYwr_WS61,,,Fresh,East Prong Hakert Draw,WaDEWY_WS61,Surface Water
+WYwr_WS62,,,Fresh,Sand Creek (36-51-82),WaDEWY_WS62,Surface Water
+WYwr_WS63,,,Fresh,Clear Creek,WaDEWY_WS63,Surface Water
+WYwr_WS64,,,Fresh,Kelly Creek,WaDEWY_WS64,Surface Water
+WYwr_WS65,,,Fresh,North Fork Clear Creek,WaDEWY_WS65,Surface Water
+WYwr_WS66,,,Fresh,Adobe Creek,WaDEWY_WS66,Surface Water
+WYwr_WS67,,,Fresh,Greybull River,WaDEWY_WS67,Surface Water
+WYwr_WS68,,,Fresh,South Sage Creek,WaDEWY_WS68,Surface Water
+WYwr_WS69,,,Fresh,Belknap Creek,WaDEWY_WS69,Surface Water
+WYwr_WS70,,,Fresh,Hardpan Creek,WaDEWY_WS70,Surface Water
+WYwr_WS71,,,Fresh,Bobcat Creek,WaDEWY_WS71,Surface Water
+WYwr_WS72,,,Fresh,Ishawooa Creek,WaDEWY_WS72,Surface Water
+WYwr_WS73,,,Fresh,Rawhide Creek,WaDEWY_WS73,Surface Water
+WYwr_WS74,,,Fresh,Rock Creek,WaDEWY_WS74,Surface Water
+WYwr_WS75,,,Fresh,French Creek,WaDEWY_WS75,Surface Water
+WYwr_WS76,,,Fresh,Cemetery Draw,WaDEWY_WS76,Surface Water
+WYwr_WS77,,,Fresh,Sayles Creek,WaDEWY_WS77,Surface Water
+WYwr_WS78,,,Fresh,Johnson Creek,WaDEWY_WS78,Surface Water
+WYwr_WS79,,,Fresh,Slough (16-51-96),WaDEWY_WS79,Surface Water
+WYwr_WS80,,,Fresh,Sage Creek (23-53-101),WaDEWY_WS80,Surface Water
+WYwr_WS81,,,Fresh,Ashworth Creek,WaDEWY_WS81,Surface Water
+WYwr_WS82,,,Fresh,Carter Creek,WaDEWY_WS82,Surface Water
+WYwr_WS83,,,Fresh,Whit Creek,WaDEWY_WS83,Surface Water
+WYwr_WS84,,,Fresh,Bull Creek,WaDEWY_WS84,Surface Water
+WYwr_WS85,,,Fresh,Sand Creek,WaDEWY_WS85,Surface Water
+WYwr_WS86,,,Fresh,Cow Creek,WaDEWY_WS86,Surface Water
+WYwr_WS87,,,Fresh,Miller Creek  (12-52-66),WaDEWY_WS87,Surface Water
+WYwr_WS88,,,Fresh,Little Powder River,WaDEWY_WS88,Surface Water
+WYwr_WS89,,,Fresh,Shell Creek,WaDEWY_WS89,Surface Water
+WYwr_WS90,,,Fresh,South Piney Creek,WaDEWY_WS90,Surface Water
+WYwr_WS91,,,Fresh,Buckley Creek,WaDEWY_WS91,Surface Water
+WYwr_WS92,,,Fresh,Trapper Creek,WaDEWY_WS92,Surface Water
+WYwr_WS93,,,Fresh,Shores Drain,WaDEWY_WS93,Surface Water
+WYwr_WS94,,,Fresh,Dry Creek (5-52-93),WaDEWY_WS94,Surface Water
+WYwr_WS95,,,Fresh,Kellerman Drain,WaDEWY_WS95,Surface Water
+WYwr_WS96,,,Fresh,Shoshone River,WaDEWY_WS96,Surface Water
+WYwr_WS97,,,Fresh,North Fork Shoshone River,WaDEWY_WS97,Surface Water
+WYwr_WS98,,,Fresh,Jim Creek,WaDEWY_WS98,Surface Water
+WYwr_WS99,,,Fresh,Big Creek,WaDEWY_WS99,Surface Water
+WYwr_WS100,,,Fresh,Redwater Creek,WaDEWY_WS100,Surface Water
+WYwr_WS101,,,Fresh,Lytle Creek,WaDEWY_WS101,Surface Water
+WYwr_WS102,,,Fresh,Jeffers Draw No. 4,WaDEWY_WS102,Surface Water
+WYwr_WS103,,,Fresh,Piney Creek,WaDEWY_WS103,Surface Water
+WYwr_WS104,,,Fresh,North Piney Creek,WaDEWY_WS104,Surface Water
+WYwr_WS105,,,Fresh,Little Piney Creek,WaDEWY_WS105,Surface Water
+WYwr_WS106,,,Fresh,J. A. Creek,WaDEWY_WS106,Surface Water
+WYwr_WS107,,,Fresh,Little Spring Creek,WaDEWY_WS107,Surface Water
+WYwr_WS108,,,Fresh,Little Goose Creek,WaDEWY_WS108,Surface Water
+WYwr_WS109,,,Fresh,East Fork Big Goose Creek,WaDEWY_WS109,Surface Water
+WYwr_WS110,,,Fresh,Cross Creek,WaDEWY_WS110,Surface Water
+WYwr_WS111,,,Fresh,West Fork Big Goose Creek,WaDEWY_WS111,Surface Water
+WYwr_WS112,,,Fresh,White Creek,WaDEWY_WS112,Surface Water
+WYwr_WS113,,,Fresh,Frazier Draw,WaDEWY_WS113,Surface Water
+WYwr_WS114,,,Fresh,Rattlesnake Creek,WaDEWY_WS114,Surface Water
+WYwr_WS115,,,Fresh,North Fork Hay Creek,WaDEWY_WS115,Surface Water
+WYwr_WS116,,,Fresh,Blacktail Creek,WaDEWY_WS116,Surface Water
+WYwr_WS117,,,Fresh,Barnard Creek,WaDEWY_WS117,Surface Water
+WYwr_WS118,,,Fresh,O.K. Draw,WaDEWY_WS118,Surface Water
+WYwr_WS119,,,Fresh,Sackett Creek,WaDEWY_WS119,Surface Water
+WYwr_WS120,,,Fresh,East Fork Cruse Creek,WaDEWY_WS120,Surface Water
+WYwr_WS121,,,Fresh,East Fork Trabing Creek,WaDEWY_WS121,Surface Water
+WYwr_WS122,,,Fresh,Rapid Creek,WaDEWY_WS122,Surface Water
+WYwr_WS123,,,Fresh,Red Grade Spring Draw,WaDEWY_WS123,Surface Water
+WYwr_WS124,,,Fresh,Teepee Creek,WaDEWY_WS124,Surface Water
+WYwr_WS125,,,Fresh,Crystal Creek,WaDEWY_WS125,Surface Water
+WYwr_WS126,,,Fresh,Sour Dough Creek,WaDEWY_WS126,Surface Water
+WYwr_WS127,,,Fresh,Snider Draw,WaDEWY_WS127,Surface Water
+WYwr_WS128,,,Fresh,Whitmire Creek,WaDEWY_WS128,Surface Water
+WYwr_WS129,,,Fresh,Dow Prong,WaDEWY_WS129,Surface Water
+WYwr_WS130,,,Fresh,Prairie Dog Creek,WaDEWY_WS130,Surface Water
+WYwr_WS131,,,Fresh,Choke Cherry Gulch,WaDEWY_WS131,Surface Water
+WYwr_WS132,,,Fresh,Denio Draw,WaDEWY_WS132,Surface Water
+WYwr_WS133,,,Fresh,Big Goose Creek,WaDEWY_WS133,Surface Water
+WYwr_WS134,,,Fresh,Apple Run,WaDEWY_WS134,Surface Water
+WYwr_WS135,,,Fresh,Wolf Creek,WaDEWY_WS135,Surface Water
+WYwr_WS136,,,Fresh,Cave Creek,WaDEWY_WS136,Surface Water
+WYwr_WS137,,,Fresh,Bitter Creek,WaDEWY_WS137,Surface Water
+WYwr_WS138,,,Fresh,North Branch Alkali Creek,WaDEWY_WS138,Surface Water
+WYwr_WS139,,,Fresh,Alkali Creek,WaDEWY_WS139,Surface Water
+WYwr_WS140,,,Fresh,Paint Creek,WaDEWY_WS140,Surface Water
+WYwr_WS141,,,Fresh,Pat O'Hara Creek,WaDEWY_WS141,Surface Water
+WYwr_WS142,,,Fresh,Sunlight Creek,WaDEWY_WS142,Surface Water
+WYwr_WS143,,,Fresh,Crow Creek,WaDEWY_WS143,Surface Water
+WYwr_WS144,,,Fresh,Kilpatrick Creek,WaDEWY_WS144,Surface Water
+WYwr_WS145,,,Fresh,Little Missouri River,WaDEWY_WS145,Surface Water
+WYwr_WS146,,,Fresh,Elkhorn Creek,WaDEWY_WS146,Surface Water
+WYwr_WS147,,,Fresh,Cedar Creek,WaDEWY_WS147,Surface Water
+WYwr_WS148,,,Fresh,Joe Creek,WaDEWY_WS148,Surface Water
+WYwr_WS149,,,Fresh,Cat Creek,WaDEWY_WS149,Surface Water
+WYwr_WS150,,,Fresh,Claussen Creek,WaDEWY_WS150,Surface Water
+WYwr_WS151,,,Fresh,Tongue River,WaDEWY_WS151,Surface Water
+WYwr_WS152,,,Fresh,Little Tongue River,WaDEWY_WS152,Surface Water
+WYwr_WS153,,,Fresh,Sheep Creek,WaDEWY_WS153,Surface Water
+WYwr_WS154,,,Fresh,Willow Creek,WaDEWY_WS154,Surface Water
+WYwr_WS155,,,Fresh,Black Draw,WaDEWY_WS155,Surface Water
+WYwr_WS156,,,Fresh,Bars Creek,WaDEWY_WS156,Surface Water
+WYwr_WS157,,,Fresh,Boyd Draw No. 3,WaDEWY_WS157,Surface Water
+WYwr_WS158,,,Fresh,Bill Creek,WaDEWY_WS158,Surface Water
+WYwr_WS159,,,Fresh,North Fork Little Missouri River,WaDEWY_WS159,Surface Water
+WYwr_WS160,,,Fresh,Big Badger Creek,WaDEWY_WS160,Surface Water
+WYwr_WS161,,,Fresh,West Fork Six Mile Creek,WaDEWY_WS161,Surface Water
+WYwr_WS162,,,Fresh,Columbus Creek,WaDEWY_WS162,Surface Water
+WYwr_WS163,,,Fresh,Smith Creek,WaDEWY_WS163,Surface Water
+WYwr_WS164,,,Fresh,East Pass Creek,WaDEWY_WS164,Surface Water
+WYwr_WS165,,,Fresh,West Pass Creek,WaDEWY_WS165,Surface Water
+WYwr_WS166,,,Fresh,Branch (North Fork) West Pass Creek,WaDEWY_WS166,Surface Water
+WYwr_WS167,,,Fresh,Clark's Fork River,WaDEWY_WS167,Surface Water
+WYwr_WS168,,,Fresh,Bennett Creek,WaDEWY_WS168,Surface Water
+WYwr_WS169,,,Fresh,Little Rocky Creek,WaDEWY_WS169,Surface Water
+WYwr_WS170,,,Fresh,Thompson Creek,WaDEWY_WS170,Surface Water
+WYwr_WS171,,,Fresh,North Draw,WaDEWY_WS171,Surface Water
+WYwr_WS172,,,Fresh,Five Mile Creek,WaDEWY_WS172,Surface Water
+WYwr_WS173,,,Fresh,Deer Creek,WaDEWY_WS173,Surface Water
+WYwr_WS174,,,Fresh,Sykes Springs Creek,WaDEWY_WS174,Surface Water
+WYwr_WS175,,,Fresh,Gypsum Creek,WaDEWY_WS175,Surface Water
+WYwr_WS176,,,Fresh,Line Creek,WaDEWY_WS176,Surface Water
+WYwr_WS177,,,Fresh,Big Wind River,WaDEWY_WS177,Surface Water
+WYwr_WS178,,,Fresh,Coleman Draw,WaDEWY_WS178,Surface Water
+WYwr_WS179,,,Fresh,Dry Creek (18-3N-1W),WaDEWY_WS179,Surface Water
+WYwr_WS180,,,Fresh,Dry Creek (1-4N-4W),WaDEWY_WS180,Surface Water
+WYwr_WS181,,,Fresh,Stagner Creek,WaDEWY_WS181,Surface Water
+WYwr_WS182,,,Fresh,Red Creek,WaDEWY_WS182,Surface Water
+WYwr_WS183,,,Fresh,Dry Muddy Creek,WaDEWY_WS183,Surface Water
+WYwr_WS184,,,Fresh,West Fork Sheep Creek,WaDEWY_WS184,Surface Water
+WYwr_WS185,,,Fresh,Painter Creek,WaDEWY_WS185,Surface Water
+WYwr_WS186,,,Fresh,Grinnell Creek,WaDEWY_WS186,Surface Water
+WYwr_WS187,,,Fresh,Kitty Creek,WaDEWY_WS187,Surface Water
+WYwr_WS188,,,Fresh,Beaver Dam Creek,WaDEWY_WS188,Surface Water
+WYwr_WS189,,,Fresh,Green River,WaDEWY_WS189,Surface Water
+WYwr_WS190,,,Fresh,Pine Grove Creek,WaDEWY_WS190,Surface Water
+WYwr_WS191,,,Fresh,Hogarty Creek,WaDEWY_WS191,Surface Water
+WYwr_WS192,,,Fresh,Dry Piney Creek,WaDEWY_WS192,Surface Water
+WYwr_WS193,,,Fresh,Black Canyon Creek,WaDEWY_WS193,Surface Water
+WYwr_WS194,,,Fresh,Cabin Creek,WaDEWY_WS194,Surface Water
+WYwr_WS195,,,Fresh,New Fork River,WaDEWY_WS195,Surface Water
+WYwr_WS196,,,Fresh,Middle Piney Creek,WaDEWY_WS196,Surface Water
+WYwr_WS197,,,Fresh,Fish Creek,WaDEWY_WS197,Surface Water
+WYwr_WS198,,,Fresh,East Fork New Fork River,WaDEWY_WS198,Surface Water
+WYwr_WS199,,,Fresh,Nerd Creek,WaDEWY_WS199,Surface Water
+WYwr_WS200,,,Fresh,West Meadow Canyon Creek,WaDEWY_WS200,Surface Water
+WYwr_WS201,,,Fresh,Beason Creek,WaDEWY_WS201,Surface Water
+WYwr_WS202,,,Fresh,Big or Middle Fork Popo Agie River,WaDEWY_WS202,Surface Water
+WYwr_WS203,,,Fresh,Sawmill Creek,WaDEWY_WS203,Surface Water
+WYwr_WS204,,,Fresh,Silver Creek,WaDEWY_WS204,Surface Water
+WYwr_WS205,,,Fresh,West Fork New Fork River,WaDEWY_WS205,Surface Water
+WYwr_WS206,,,Fresh,Camp Creek,WaDEWY_WS206,Surface Water
+WYwr_WS207,,,Fresh,Little Cottonwood Creek,WaDEWY_WS207,Surface Water
+WYwr_WS208,,,Fresh,West Fork Shawnee Creek,WaDEWY_WS208,Surface Water
+WYwr_WS209,,,Fresh,North Platte River,WaDEWY_WS209,Surface Water
+WYwr_WS210,,,Fresh,Iron Creek,WaDEWY_WS210,Surface Water
+WYwr_WS211,,,Fresh,Peterson Draw,WaDEWY_WS211,Surface Water
+WYwr_WS212,,,Fresh,Baldwin Creek,WaDEWY_WS212,Surface Water
+WYwr_WS213,,,Fresh,Little Popo Agie River,WaDEWY_WS213,Surface Water
+WYwr_WS214,,,Fresh,North Fork Popo Agie River,WaDEWY_WS214,Surface Water
+WYwr_WS215,,,Fresh,Boulder Creek,WaDEWY_WS215,Surface Water
+WYwr_WS216,,,Fresh,Scab Creek,WaDEWY_WS216,Surface Water
+WYwr_WS217,,,Fresh,Fall Creek,WaDEWY_WS217,Surface Water
+WYwr_WS218,,,Fresh,Airport Slough Draw,WaDEWY_WS218,Surface Water
+WYwr_WS219,,,Fresh,North Cottonwood Creek,WaDEWY_WS219,Surface Water
+WYwr_WS220,,,Fresh,South Cottonwood Creek,WaDEWY_WS220,Surface Water
+WYwr_WS221,,,Fresh,Aspen Creek,WaDEWY_WS221,Surface Water
+WYwr_WS222,,,Fresh,Willow Creek (12-33-119),WaDEWY_WS222,Surface Water
+WYwr_WS223,,,Fresh,Kraft Draw,WaDEWY_WS223,Surface Water
+WYwr_WS224,,,Fresh,Sweed Creek,WaDEWY_WS224,Surface Water
+WYwr_WS225,,,Fresh,Lance Creek,WaDEWY_WS225,Surface Water
+WYwr_WS226,,,Fresh,Duck Creek,WaDEWY_WS226,Surface Water
+WYwr_WS227,,,Fresh,Little Duck Creek,WaDEWY_WS227,Surface Water
+WYwr_WS228,,,Fresh,Forty Rod Creek,WaDEWY_WS228,Surface Water
+WYwr_WS229,,,Fresh,Failer Creek,WaDEWY_WS229,Surface Water
+WYwr_WS230,,,Fresh,Spring Creek (11-34-112),WaDEWY_WS230,Surface Water
+WYwr_WS231,,,Fresh,Spring Creek (8-34-112),WaDEWY_WS231,Surface Water
+WYwr_WS232,,,Fresh,South Fork Horse Creek,WaDEWY_WS232,Surface Water
+WYwr_WS233,,,Fresh,Meadow Creek,WaDEWY_WS233,Surface Water
+WYwr_WS234,,,Fresh,Lost Creek,WaDEWY_WS234,Surface Water
+WYwr_WS235,,,Fresh,Strawberry Creek,WaDEWY_WS235,Surface Water
+WYwr_WS236,,,Fresh,North Middle Spring Creek,WaDEWY_WS236,Surface Water
+WYwr_WS237,,,Fresh,Salt River,WaDEWY_WS237,Surface Water
+WYwr_WS238,,,Fresh,Flat Creek,WaDEWY_WS238,Surface Water
+WYwr_WS239,,,Fresh,Hales Draw,WaDEWY_WS239,Surface Water
+WYwr_WS240,,,Fresh,Hat Creek,WaDEWY_WS240,Surface Water
+WYwr_WS241,,,Fresh,Cole Creek,WaDEWY_WS241,Surface Water
+WYwr_WS242,,,Fresh,Lake Creek,WaDEWY_WS242,Surface Water
+WYwr_WS243,,,Fresh,School section Creek,WaDEWY_WS243,Surface Water
+WYwr_WS244,,,Fresh,Dumphrey Creek,WaDEWY_WS244,Surface Water
+WYwr_WS245,,,Fresh,North Beaver Creek,WaDEWY_WS245,Surface Water
+WYwr_WS246,,,Fresh,Little Beaver Creek (12-35-112),WaDEWY_WS246,Surface Water
+WYwr_WS247,,,Fresh,Lead Creek,WaDEWY_WS247,Surface Water
+WYwr_WS248,,,Fresh,Alum Creek,WaDEWY_WS248,Surface Water
+WYwr_WS249,,,Fresh,South Fork Wildcat Draw,WaDEWY_WS249,Surface Water
+WYwr_WS250,,,Fresh,Lightning Creek,WaDEWY_WS250,Surface Water
+WYwr_WS251,,,Fresh,North Casper Creek,WaDEWY_WS251,Surface Water
+WYwr_WS252,,,Fresh,Marsh Creek,WaDEWY_WS252,Surface Water
+WYwr_WS253,,,Fresh,Middle Beaver Creek,WaDEWY_WS253,Surface Water
+WYwr_WS254,,,Fresh,Hoback River,WaDEWY_WS254,Surface Water
+WYwr_WS255,,,Fresh,Bell Creek,WaDEWY_WS255,Surface Water
+WYwr_WS256,,,Fresh,Stewart Creek,WaDEWY_WS256,Surface Water
+WYwr_WS257,,,Fresh,Birch Creek,WaDEWY_WS257,Surface Water
+WYwr_WS258,,,Fresh,Old Woman Creek,WaDEWY_WS258,Surface Water
+WYwr_WS259,,,Fresh,Wagenfuher Creek,WaDEWY_WS259,Surface Water
+WYwr_WS260,,,Fresh,Big Twin Creek,WaDEWY_WS260,Surface Water
+WYwr_WS261,,,Fresh,Little Twin Creek,WaDEWY_WS261,Surface Water
+WYwr_WS262,,,Fresh,Fisherman Creek,WaDEWY_WS262,Surface Water
+WYwr_WS263,,,Fresh,Jack Creek,WaDEWY_WS263,Surface Water
+WYwr_WS264,,,Fresh,Fan Gulch,WaDEWY_WS264,Surface Water
+WYwr_WS265,,,Fresh,Marcus Draw,WaDEWY_WS265,Surface Water
+WYwr_WS266,,,Fresh,Dogie Creek,WaDEWY_WS266,Surface Water
+WYwr_WS267,,,Fresh,Hancock Draw,WaDEWY_WS267,Surface Water
+WYwr_WS268,,,Fresh,Badwater Creek,WaDEWY_WS268,Surface Water
+WYwr_WS269,,,Fresh,Hamilton Creek,WaDEWY_WS269,Surface Water
+WYwr_WS270,,,Fresh,Dell Creek,WaDEWY_WS270,Surface Water
+WYwr_WS271,,,Fresh,Mule Creek,WaDEWY_WS271,Surface Water
+WYwr_WS272,,,Fresh,Bridge Creek,WaDEWY_WS272,Surface Water
+WYwr_WS273,,,Fresh,Scoby Draw,WaDEWY_WS273,Surface Water
+WYwr_WS274,,,Fresh,Boggy Creek,WaDEWY_WS274,Surface Water
+WYwr_WS275,,,Fresh,South Fork Cheyenne River,WaDEWY_WS275,Surface Water
+WYwr_WS276,,,Fresh,Woody Creek,WaDEWY_WS276,Surface Water
+WYwr_WS277,,,Fresh,Stinking Water Creek,WaDEWY_WS277,Surface Water
+WYwr_WS278,,,Fresh,Bridger Creek,WaDEWY_WS278,Surface Water
+WYwr_WS279,,,Fresh,Roaring Fork,WaDEWY_WS279,Surface Water
+WYwr_WS280,,,Fresh,Tosi Creek,WaDEWY_WS280,Surface Water
+WYwr_WS281,,,Fresh,Lime Creek,WaDEWY_WS281,Surface Water
+WYwr_WS282,,,Fresh,East Branch Robbers Roost Creek,WaDEWY_WS282,Surface Water
+WYwr_WS283,,,Fresh,Robbers Roost Creek,WaDEWY_WS283,Surface Water
+WYwr_WS284,,,Fresh,Sand Draw,WaDEWY_WS284,Surface Water
+WYwr_WS285,,,Fresh,Count Creek,WaDEWY_WS285,Surface Water
+WYwr_WS286,,,Fresh,Gros Ventre River,WaDEWY_WS286,Surface Water
+WYwr_WS287,,,Fresh,Kinky Creek,WaDEWY_WS287,Surface Water
+WYwr_WS288,,,Fresh,Darwin Creek,WaDEWY_WS288,Surface Water
+WYwr_WS289,,,Fresh,Snake River,WaDEWY_WS289,Surface Water
+WYwr_WS290,,,Fresh,Alder Creek,WaDEWY_WS290,Surface Water
+WYwr_WS291,,,Fresh,Spring Gulch Creek,WaDEWY_WS291,Surface Water
+WYwr_WS292,,,Fresh,Harris Draw,WaDEWY_WS292,Surface Water
+WYwr_WS293,,,Fresh,Porcupine Creek,WaDEWY_WS293,Surface Water
+WYwr_WS294,,,Fresh,Parks Draw,WaDEWY_WS294,Surface Water
+WYwr_WS295,,,Fresh,Big Cow Creek,WaDEWY_WS295,Surface Water
+WYwr_WS296,,,Fresh,Little Cow Creek,WaDEWY_WS296,Surface Water
+WYwr_WS297,,,Fresh,North Twin Creek,WaDEWY_WS297,Surface Water
+WYwr_WS298,,,Fresh,South Twin Creek,WaDEWY_WS298,Surface Water
+WYwr_WS299,,,Fresh,Nickells Spring Creek,WaDEWY_WS299,Surface Water
+WYwr_WS300,,,Fresh,Cache Creek,WaDEWY_WS300,Surface Water
+WYwr_WS301,,,Fresh,Granite Creek,WaDEWY_WS301,Surface Water
+WYwr_WS302,,,Fresh,Aspen Spring Creek,WaDEWY_WS302,Surface Water
+WYwr_WS303,,,Fresh,Model-T Creek,WaDEWY_WS303,Surface Water
+WYwr_WS304,,,Fresh,Sulphur Springs,WaDEWY_WS304,Surface Water
+WYwr_WS305,,,Fresh,Black Tail Creek,WaDEWY_WS305,Surface Water
+WYwr_WS306,,,Fresh,Stockade Beaver Creek,WaDEWY_WS306,Surface Water
+WYwr_WS307,,,Fresh,Black Thunder Creek,WaDEWY_WS307,Surface Water
+WYwr_WS308,,,Fresh,Shorty Creek,WaDEWY_WS308,Surface Water
+WYwr_WS309,,,Fresh,Oil Creek,WaDEWY_WS309,Surface Water
+WYwr_WS310,,,Fresh,Hay Creek,WaDEWY_WS310,Surface Water
+WYwr_WS311,,,Fresh,North Prong Little Thunder Creek,WaDEWY_WS311,Surface Water
+WYwr_WS312,,,Fresh,Stewart Drain,WaDEWY_WS312,Surface Water
+WYwr_WS313,,,Fresh,Owl Creek,WaDEWY_WS313,Surface Water
+WYwr_WS314,,,Fresh,South Fork Owl Creek,WaDEWY_WS314,Surface Water
+WYwr_WS315,,,Fresh,North Fork Owl Creek,WaDEWY_WS315,Surface Water
+WYwr_WS316,,,Fresh,Ditch Creek,WaDEWY_WS316,Surface Water
+WYwr_WS317,,,Fresh,Darby Creek,WaDEWY_WS317,Surface Water
+WYwr_WS318,,,Fresh,Elliott Draw,WaDEWY_WS318,Surface Water
+WYwr_WS319,,,Fresh,Spread Creek,WaDEWY_WS319,Surface Water
+WYwr_WS320,,,Fresh,South Leigh Creek,WaDEWY_WS320,Surface Water
+WYwr_WS321,,,Fresh,Wood Draw,WaDEWY_WS321,Surface Water
+WYwr_WS322,,,Fresh,Teton Creek,WaDEWY_WS322,Surface Water
+WYwr_WS323,,,Fresh,Little Oil (Cambria) Creek,WaDEWY_WS323,Surface Water
+WYwr_WS324,,,Fresh,Salt Creek,WaDEWY_WS324,Surface Water
+WYwr_WS325,,,Fresh,Lissolo Draw,WaDEWY_WS325,Surface Water
+WYwr_WS326,,,Fresh,Lodge Pole Creek,WaDEWY_WS326,Surface Water
+WYwr_WS327,,,Fresh,Blackrock Creek,WaDEWY_WS327,Surface Water
+WYwr_WS328,,,Fresh,Lava Creek,WaDEWY_WS328,Surface Water
+WYwr_WS329,,,Fresh,Buffalo Fork,WaDEWY_WS329,Surface Water
+WYwr_WS330,,,Fresh,Emma Matilda Creek,WaDEWY_WS330,Surface Water
+WYwr_WS331,,,Fresh,Skull Creek,WaDEWY_WS331,Surface Water
+WYwr_WS332,,,Fresh,Sheep Canyon Creek,WaDEWY_WS332,Surface Water
+WYwr_WS333,,,Fresh,Grass Creek,WaDEWY_WS333,Surface Water
+WYwr_WS334,,,Fresh,Wood River,WaDEWY_WS334,Surface Water
+WYwr_WS335,,,Fresh,Renneberg Creek,WaDEWY_WS335,Surface Water
+WYwr_WS336,,,Fresh,Coyote Creek,WaDEWY_WS336,Surface Water
+WYwr_WS337,,,Fresh,North Fork Dick Creek,WaDEWY_WS337,Surface Water
+WYwr_WS338,,,Fresh,South Boone Creek,WaDEWY_WS338,Surface Water
+WYwr_WS339,,,Fresh,Indian Lake Creek,WaDEWY_WS339,Surface Water
+WYwr_WS340,,,Fresh,Sunshine Creek,WaDEWY_WS340,Surface Water
+WYwr_WS341,,,Fresh,Franc's Fork,WaDEWY_WS341,Surface Water
+WYwr_WS342,,,Fresh,Medicine Lodge Creek,WaDEWY_WS342,Surface Water
+WYwr_WS343,,,Fresh,Meeteetse Creek,WaDEWY_WS343,Surface Water
+WYwr_WS344,,,Fresh,Paint Rock Creek,WaDEWY_WS344,Surface Water
+WYwr_WS345,,,Fresh,Little Wind River,WaDEWY_WS345,Surface Water
+WYwr_WS346,,,Fresh,Dry Cottonwood Creek,WaDEWY_WS346,Surface Water
+WYwr_WS347,,,Fresh,South Spring Creek,WaDEWY_WS347,Surface Water
+WYwr_WS348,,,Fresh,Heather Creek,WaDEWY_WS348,Surface Water
+WYwr_WS349,,,Fresh,Quealy Lakes Creek,WaDEWY_WS349,Surface Water
+WYwr_WS350,,,Fresh,North Spring Creek,WaDEWY_WS350,Surface Water
+WYwr_WS351,,,Fresh,Snow Creek,WaDEWY_WS351,Surface Water
+WYwr_WS352,,,Fresh,Little Jack Creek,WaDEWY_WS352,Surface Water
+WYwr_WS353,,,Fresh,Methodist Creek,WaDEWY_WS353,Surface Water
+WYwr_WS354,,,Fresh,Crawford Slough,WaDEWY_WS354,Surface Water
+WYwr_WS355,,,Fresh,Low Creek,WaDEWY_WS355,Surface Water
+WYwr_WS356,,,Fresh,Cooper Creek,WaDEWY_WS356,Surface Water
+WYwr_WS357,,,Fresh,Dutton Creek,WaDEWY_WS357,Surface Water
+WYwr_WS358,,,Fresh,North Dutton Creek,WaDEWY_WS358,Surface Water
+WYwr_WS359,,,Fresh,South Dutton Creek,WaDEWY_WS359,Surface Water
+WYwr_WS360,,,Fresh,Carlson Creek,WaDEWY_WS360,Surface Water
+WYwr_WS361,,,Fresh,Medicine Bow River,WaDEWY_WS361,Surface Water
+WYwr_WS362,,,Fresh,Turpin Creek,WaDEWY_WS362,Surface Water
+WYwr_WS363,,,Fresh,Sage Creek (28-19-85),WaDEWY_WS363,Surface Water
+WYwr_WS364,,,Fresh,Miller Creek,WaDEWY_WS364,Surface Water
+WYwr_WS365,,,Fresh,Deadman Creek,WaDEWY_WS365,Surface Water
+WYwr_WS366,,,Fresh,Watkins Creek,WaDEWY_WS366,Surface Water
+WYwr_WS367,,,Fresh,Eades Creek,WaDEWY_WS367,Surface Water
+WYwr_WS368,,,Fresh,Seepage Creek,WaDEWY_WS368,Surface Water
+WYwr_WS369,,,Fresh,Foote Creek,WaDEWY_WS369,Surface Water
+WYwr_WS370,,,Fresh,Fox Creek,WaDEWY_WS370,Surface Water
+WYwr_WS371,,,Fresh,Wagonhound Creek,WaDEWY_WS371,Surface Water
+WYwr_WS372,,,Fresh,Mill Creek,WaDEWY_WS372,Surface Water
+WYwr_WS373,,,Fresh,Halleck Creek,WaDEWY_WS373,Surface Water
+WYwr_WS374,,,Fresh,Ham's Fork,WaDEWY_WS374,Surface Water
+WYwr_WS375,,,Fresh,Unnamed Draw,WaDEWY_WS375,Surface Water
+WYwr_WS376,,,Fresh,Twin Creek,WaDEWY_WS376,Surface Water
+WYwr_WS377,,,Fresh,Bear River,WaDEWY_WS377,Surface Water
+WYwr_WS378,,,Fresh,Rabbit Creek,WaDEWY_WS378,Surface Water
+WYwr_WS379,,,Fresh,Branch of Willow Creek,WaDEWY_WS379,Surface Water
+WYwr_WS380,,,Fresh,Arnold Drain,WaDEWY_WS380,Surface Water
+WYwr_WS381,,,Fresh,T.B. Creek,WaDEWY_WS381,Surface Water
+WYwr_WS382,,,Fresh,Austin Creek,WaDEWY_WS382,Surface Water
+WYwr_WS383,,,Fresh,Bull Springs Creek,WaDEWY_WS383,Surface Water
+WYwr_WS384,,,Fresh,Eden Project Drain No. 1,WaDEWY_WS384,Surface Water
+WYwr_WS385,,,Fresh,Fontenelle Creek,WaDEWY_WS385,Surface Water
+WYwr_WS386,,,Fresh,Corral Creek,WaDEWY_WS386,Surface Water
+WYwr_WS387,,,Fresh,Wilkinson Creek,WaDEWY_WS387,Surface Water
+WYwr_WS388,,,Fresh,Smith's Fork,WaDEWY_WS388,Surface Water
+WYwr_WS389,,,Fresh,Sublette Creek,WaDEWY_WS389,Surface Water
+WYwr_WS390,,,Fresh,Troublesome Creek,WaDEWY_WS390,Surface Water
+WYwr_WS391,,,Fresh,Deep Wash,WaDEWY_WS391,Surface Water
+WYwr_WS392,,,Fresh,Hurt Creek,WaDEWY_WS392,Surface Water
+WYwr_WS393,,,Fresh,South Fork Fontenelle Creek,WaDEWY_WS393,Surface Water
+WYwr_WS394,,,Fresh,Carrol Creek,WaDEWY_WS394,Surface Water
+WYwr_WS395,,,Fresh,Pine Creek,WaDEWY_WS395,Surface Water
+WYwr_WS396,,,Fresh,Laramie River,WaDEWY_WS396,Surface Water
+WYwr_WS397,,,Fresh,East Branch Cave Creek,WaDEWY_WS397,Surface Water
+WYwr_WS398,,,Fresh,Hill Creek,WaDEWY_WS398,Surface Water
+WYwr_WS399,,,Fresh,Quealy Creek,WaDEWY_WS399,Surface Water
+WYwr_WS400,,,Fresh,Sage Creek (4-26-84),WaDEWY_WS400,Surface Water
+WYwr_WS401,,,Fresh,LaBarge Creek,WaDEWY_WS401,Surface Water
+WYwr_WS402,,,Fresh,Spring Creek (14-26-114),WaDEWY_WS402,Surface Water
+WYwr_WS403,,,Fresh,Minnie Holden Creek,WaDEWY_WS403,Surface Water
+WYwr_WS404,,,Fresh,Raymond Creek,WaDEWY_WS404,Surface Water
+WYwr_WS405,,,Fresh,Forty (40) Mile Creek,WaDEWY_WS405,Surface Water
+WYwr_WS406,,,Fresh,Davidson Creek,WaDEWY_WS406,Surface Water
+WYwr_WS407,,,Fresh,Pass Creek,WaDEWY_WS407,Surface Water
+WYwr_WS408,,,Fresh,Indian Creek,WaDEWY_WS408,Surface Water
+WYwr_WS409,,,Fresh,Spring Gulch,WaDEWY_WS409,Surface Water
+WYwr_WS410,,,Fresh,DeWeese Creek,WaDEWY_WS410,Surface Water
+WYwr_WS411,,,Fresh,Arkansas Creek,WaDEWY_WS411,Surface Water
+WYwr_WS412,,,Fresh,Layland Creek,WaDEWY_WS412,Surface Water
+WYwr_WS413,,,Fresh,South Fork Little Medicine Bow River,WaDEWY_WS413,Surface Water
+WYwr_WS414,,,Fresh,Three Mile Creek,WaDEWY_WS414,Surface Water
+WYwr_WS415,,,Fresh,Little Canyon Creek,WaDEWY_WS415,Surface Water
+WYwr_WS416,,,Fresh,Cherry Creek,WaDEWY_WS416,Surface Water
+WYwr_WS417,,,Fresh,Crook's Creek,WaDEWY_WS417,Surface Water
+WYwr_WS418,,,Fresh,Sweetwater River,WaDEWY_WS418,Surface Water
+WYwr_WS419,,,Fresh,Big Sandy River,WaDEWY_WS419,Surface Water
+WYwr_WS420,,,Fresh,Red Cloud Slough,WaDEWY_WS420,Surface Water
+WYwr_WS421,,,Fresh,Red Hill Draw,WaDEWY_WS421,Surface Water
+WYwr_WS422,,,Fresh,LaBonte Creek,WaDEWY_WS422,Surface Water
+WYwr_WS423,,,Fresh,Rocky Ford Creek,WaDEWY_WS423,Surface Water
+WYwr_WS424,,,Fresh,Elk Creek,WaDEWY_WS424,Surface Water
+WYwr_WS425,,,Fresh,Big Hermit Creek,WaDEWY_WS425,Surface Water
+WYwr_WS426,,,Fresh,Lander Creek,WaDEWY_WS426,Surface Water
+WYwr_WS427,,,Fresh,Little Sandy Creek,WaDEWY_WS427,Surface Water
+WYwr_WS428,,,Fresh,Cottonwood Creek (36-30-68),WaDEWY_WS428,Surface Water
+WYwr_WS429,,,Fresh,West Fork LaBonte Creek,WaDEWY_WS429,Surface Water
+WYwr_WS430,,,Fresh,Latham Creek,WaDEWY_WS430,Surface Water
+WYwr_WS431,,,Fresh,Blue Nose Creek,WaDEWY_WS431,Surface Water
+WYwr_WS432,,,Fresh,Bates Creek,WaDEWY_WS432,Surface Water
+WYwr_WS433,,,Fresh,Sage Hen Creek,WaDEWY_WS433,Surface Water
+WYwr_WS434,,,Fresh,Blucher Creek,WaDEWY_WS434,Surface Water
+WYwr_WS435,,,Fresh,"Long Draw, Sheep and Johns Draw",WaDEWY_WS435,Surface Water
+WYwr_WS436,,,Fresh,Meadow Canyon Creek,WaDEWY_WS436,Surface Water
+WYwr_WS437,,,Fresh,Niobrara River,WaDEWY_WS437,Surface Water
+WYwr_WS438,,,Fresh,King Creek,WaDEWY_WS438,Surface Water
+WYwr_WS439,,,Fresh,Long's Creek,WaDEWY_WS439,Surface Water
+WYwr_WS440,,,Fresh,Spring Creek (22-31-114),WaDEWY_WS440,Surface Water
+WYwr_WS441,,,Fresh,Lost Creek (36-31-69),WaDEWY_WS441,Surface Water
+WYwr_WS442,,,Fresh,Box Elder Creek,WaDEWY_WS442,Surface Water
+WYwr_WS443,,,Fresh,Little Deer Creek,WaDEWY_WS443,Surface Water
+WYwr_WS444,,,Fresh,Muddy Creek (36-34-77),WaDEWY_WS444,Surface Water
+WYwr_WS445,,,Fresh,Clear Fork Muddy Creek,WaDEWY_WS445,Surface Water
+WYwr_WS446,,,Fresh,West Fork Garden Creek,WaDEWY_WS446,Surface Water
+WYwr_WS447,,,Fresh,Middle Fork Dobbins Spring Creek,WaDEWY_WS447,Surface Water
+WYwr_WS448,,,Fresh,Muddy Creek (4-29-111),WaDEWY_WS448,Surface Water
+WYwr_WS449,,,Fresh,Periodic Spring,WaDEWY_WS449,Surface Water
+WYwr_WS450,,,Fresh,Swift Creek,WaDEWY_WS450,Surface Water
+WYwr_WS451,,,Fresh,Stump Creek,WaDEWY_WS451,Surface Water
+WYwr_WS452,,,Fresh,Hunton Creek,WaDEWY_WS452,Surface Water
+WYwr_WS453,,,Fresh,Elkhorn Creek (32-34-78),WaDEWY_WS453,Surface Water
+WYwr_WS454,,,Fresh,Garden Creek,WaDEWY_WS454,Surface Water
+WYwr_WS455,,,Fresh,East Fork Elkhorn Creek,WaDEWY_WS455,Surface Water
+WYwr_WS456,,,Fresh,Squaw Creek,WaDEWY_WS456,Surface Water
+WYwr_WS457,,,Fresh,Killpecker Creek,WaDEWY_WS457,Surface Water
+WYwr_WS458,,,Fresh,South Fork Killpecker Creek,WaDEWY_WS458,Surface Water
+WYwr_WS459,,,Fresh,Vail Creek,WaDEWY_WS459,Surface Water
+WYwr_WS460,,,Fresh,Tom's Canon Creek,WaDEWY_WS460,Surface Water
+WYwr_WS461,,,Fresh,Barrel Spring Creek,WaDEWY_WS461,Surface Water
+WYwr_WS462,,,Fresh,South Fork Green Timber Creek,WaDEWY_WS462,Surface Water
+WYwr_WS463,,,Fresh,Columbine Creek,WaDEWY_WS463,Surface Water
+WYwr_WS464,,,Fresh,Gage Creek,WaDEWY_WS464,Surface Water
+WYwr_WS465,,,Fresh,Daisy Creek,WaDEWY_WS465,Surface Water
+WYwr_WS466,,,Fresh,Orchid Creek,WaDEWY_WS466,Surface Water
+WYwr_WS467,,,Fresh,Rose Creek,WaDEWY_WS467,Surface Water
+WYwr_WS468,,,Fresh,South Fork Rose Creek,WaDEWY_WS468,Surface Water
+WYwr_WS469,,,Fresh,Roaring Fork Little Snake River,WaDEWY_WS469,Surface Water
+WYwr_WS470,,,Fresh,Sweetwater Creek,WaDEWY_WS470,Surface Water
+WYwr_WS471,,,Fresh,Savery Creek,WaDEWY_WS471,Surface Water
+WYwr_WS472,,,Fresh,Little Snake River,WaDEWY_WS472,Surface Water
+WYwr_WS473,,,Fresh,Lizzie Spring Creek,WaDEWY_WS473,Surface Water
+WYwr_WS474,,,Fresh,Henry's Fork,WaDEWY_WS474,Surface Water
+WYwr_WS475,,,Fresh,Burnt Fork Creek,WaDEWY_WS475,Surface Water
+WYwr_WS476,,,Fresh,Burnt Fork,WaDEWY_WS476,Surface Water
+WYwr_WS477,,,Fresh,Carter Spring Creek,WaDEWY_WS477,Surface Water
+WYwr_WS478,,,Fresh,West Fork Smith's Fork Creek,WaDEWY_WS478,Surface Water
+WYwr_WS479,,,Fresh,Black's Fork River,WaDEWY_WS479,Surface Water
+WYwr_WS480,,,Fresh,West Muddy Creek,WaDEWY_WS480,Surface Water
+WYwr_WS481,,,Fresh,Van Tassel Creek,WaDEWY_WS481,Surface Water
+WYwr_WS482,,,Fresh,South Fork South Crow Creek,WaDEWY_WS482,Surface Water
+WYwr_WS483,,,Fresh,South Crow Creek,WaDEWY_WS483,Surface Water
+WYwr_WS484,,,Fresh,Evans Creek,WaDEWY_WS484,Surface Water
+WYwr_WS485,,,Fresh,Henry Creek,WaDEWY_WS485,Surface Water
+WYwr_WS486,,,Fresh,Collins Creek,WaDEWY_WS486,Surface Water
+WYwr_WS487,,,Fresh,Little Bear Creek,WaDEWY_WS487,Surface Water
+WYwr_WS488,,,Fresh,North Fork Big Creek,WaDEWY_WS488,Surface Water
+WYwr_WS489,,,Fresh,Third Creek,WaDEWY_WS489,Surface Water
+WYwr_WS490,,,Fresh,Ted Creek,WaDEWY_WS490,Surface Water
+WYwr_WS491,,,Fresh,Dale Creek,WaDEWY_WS491,Surface Water
+WYwr_WS492,,,Fresh,Harrison Creek,WaDEWY_WS492,Surface Water
+WYwr_WS493,,,Fresh,North Fork Little Snake River,WaDEWY_WS493,Surface Water
+WYwr_WS494,,,Fresh,First Creek,WaDEWY_WS494,Surface Water
+WYwr_WS495,,,Fresh,Solomon Creek,WaDEWY_WS495,Surface Water
+WYwr_WS496,,,Fresh,Green Timber Creek,WaDEWY_WS496,Surface Water
+WYwr_WS497,,,Fresh,East Branch Solomon Creek,WaDEWY_WS497,Surface Water
+WYwr_WS498,,,Fresh,Needle Creek,WaDEWY_WS498,Surface Water
+WYwr_WS499,,,Fresh,Standard Creek,WaDEWY_WS499,Surface Water
+WYwr_WS500,,,Fresh,South Branch Rabbit Creek,WaDEWY_WS500,Surface Water
+WYwr_WS501,,,Fresh,North Fork Deadline Creek,WaDEWY_WS501,Surface Water
+WYwr_WS502,,,Fresh,Deadline Creek,WaDEWY_WS502,Surface Water
+WYwr_WS503,,,Fresh,Sage Creek,WaDEWY_WS503,Surface Water
+WYwr_WS504,,,Fresh,Smith's Fork Creek,WaDEWY_WS504,Surface Water
+WYwr_WS505,,,Fresh,East Fork Smith's Fork Creek,WaDEWY_WS505,Surface Water
+WYwr_WS506,,,Fresh,East Muddy Creek,WaDEWY_WS506,Surface Water
+WYwr_WS507,,,Fresh,Big Muddy Creek,WaDEWY_WS507,Surface Water
+WYwr_WS508,,,Fresh,Bones Hollow,WaDEWY_WS508,Surface Water
+WYwr_WS509,,,Fresh,Sulphur Creek,WaDEWY_WS509,Surface Water
+WYwr_WS510,,,Fresh,Middle Crow Creek,WaDEWY_WS510,Surface Water
+WYwr_WS511,,,Fresh,South Fork Little Laramie River,WaDEWY_WS511,Surface Water
+WYwr_WS512,,,Fresh,Douglas Creek,WaDEWY_WS512,Surface Water
+WYwr_WS513,,,Fresh,Mullen Creek,WaDEWY_WS513,Surface Water
+WYwr_WS514,,,Fresh,Little Beaver Creek,WaDEWY_WS514,Surface Water
+WYwr_WS515,,,Fresh,Grand Encampment River,WaDEWY_WS515,Surface Water
+WYwr_WS516,,,Fresh,North Fork Grand Encampment River,WaDEWY_WS516,Surface Water
+WYwr_WS517,,,Fresh,Doane's Brook,WaDEWY_WS517,Surface Water
+WYwr_WS518,,,Fresh,Black Canyon Draw,WaDEWY_WS518,Surface Water
+WYwr_WS519,,,Fresh,Little Dry Creek,WaDEWY_WS519,Surface Water
+WYwr_WS520,,,Fresh,Jones Creek,WaDEWY_WS520,Surface Water
+WYwr_WS521,,,Fresh,Little Creek,WaDEWY_WS521,Surface Water
+WYwr_WS522,,,Fresh,North Crow Creek,WaDEWY_WS522,Surface Water
+WYwr_WS523,,,Fresh,Little Laramie River,WaDEWY_WS523,Surface Water
+WYwr_WS524,,,Fresh,Barkley Creek,WaDEWY_WS524,Surface Water
+WYwr_WS525,,,Fresh,North Fork Little Laramie River,WaDEWY_WS525,Surface Water
+WYwr_WS526,,,Fresh,Middle Fork Little Laramie River,WaDEWY_WS526,Surface Water
+WYwr_WS527,,,Fresh,North French Creek,WaDEWY_WS527,Surface Water
+WYwr_WS528,,,Fresh,Brush Creek,WaDEWY_WS528,Surface Water
+WYwr_WS529,,,Fresh,Calf Creek,WaDEWY_WS529,Surface Water
+WYwr_WS530,,,Fresh,Otto Creek,WaDEWY_WS530,Surface Water
+WYwr_WS531,,,Fresh,Teddy Creek,WaDEWY_WS531,Surface Water
+WYwr_WS532,,,Fresh,Brewster Draw,WaDEWY_WS532,Surface Water
+WYwr_WS533,,,Fresh,Cottonwood Hollow,WaDEWY_WS533,Surface Water
+WYwr_WS534,,,Fresh,Pleasant Valley Creek,WaDEWY_WS534,Surface Water
+WYwr_WS535,,,Fresh,Yellow Creek,WaDEWY_WS535,Surface Water
+WYwr_WS536,,,Fresh,Jacoby Draw,WaDEWY_WS536,Surface Water
+WYwr_WS537,,,Fresh,Nash Fork Creek,WaDEWY_WS537,Surface Water
+WYwr_WS538,,,Fresh,Libby Creek,WaDEWY_WS538,Surface Water
+WYwr_WS539,,,Fresh,North Brush Creek,WaDEWY_WS539,Surface Water
+WYwr_WS540,,,Fresh,South Brush Creek,WaDEWY_WS540,Surface Water
+WYwr_WS541,,,Fresh,Elk Hollow Creek,WaDEWY_WS541,Surface Water
+WYwr_WS542,,,Fresh,Corner Stone Draw,WaDEWY_WS542,Surface Water
+WYwr_WS543,,,Fresh,Antelope Draw,WaDEWY_WS543,Surface Water
+WYwr_WS544,,,Fresh,Urie Draw,WaDEWY_WS544,Surface Water
+WYwr_WS545,,,Fresh,Quarry Creek,WaDEWY_WS545,Surface Water
+WYwr_WS546,,,Fresh,Albert Creek,WaDEWY_WS546,Surface Water
+WYwr_WS547,,,Fresh,Little Byrne Creek,WaDEWY_WS547,Surface Water
+WYwr_WS548,,,Fresh,North Fork Horse Creek,WaDEWY_WS548,Surface Water
+WYwr_WS549,,,Fresh,McKechnie Draw,WaDEWY_WS549,Surface Water
+WYwr_WS550,,,Fresh,Twenty-five Creek,WaDEWY_WS550,Surface Water
+WYwr_WS551,,,Fresh,Seven Mile Creek,WaDEWY_WS551,Surface Water
+WYwr_WS552,,,Fresh,North Fork Mill Creek,WaDEWY_WS552,Surface Water
+WYwr_WS553,,,Fresh,South Fork Lake Creek,WaDEWY_WS553,Surface Water
+WYwr_WS554,,,Fresh,North Cedar Creek,WaDEWY_WS554,Surface Water
+WYwr_WS555,,,Fresh,Cadwell Slough,WaDEWY_WS555,Surface Water
+WYwr_WS556,,,Fresh,West Kellehan Creek,WaDEWY_WS556,Surface Water
+WYwr_WS557,,,Fresh,Little Horse Creek,WaDEWY_WS557,Surface Water
+WYwr_WS558,,,Fresh,South Chugwater Creek,WaDEWY_WS558,Surface Water
+WYwr_WS559,,,Fresh,Ricker Creek,WaDEWY_WS559,Surface Water
+WYwr_WS560,,,Fresh,Lee Creek,WaDEWY_WS560,Surface Water
+WYwr_WS561,,,Fresh,Little Muddy Creek,WaDEWY_WS561,Surface Water
+WYwr_WS562,,,Fresh,North Bear Creek (North Forks),WaDEWY_WS562,Surface Water
+WYwr_WS563,,,Fresh,Middle Chugwater Creek,WaDEWY_WS563,Surface Water
+WYwr_WS564,,,Fresh,Elkol Draw,WaDEWY_WS564,Surface Water
+WYwr_WS565,,,Fresh,Baumgartner Draw,WaDEWY_WS565,Surface Water
+WYwr_WS566,,,Fresh,Long Gulch,WaDEWY_WS566,Surface Water
+WYwr_WS567,,,Fresh,Cherry Creek (Drain),WaDEWY_WS567,Surface Water
+WYwr_WS568,,,Fresh,North Laramie River,WaDEWY_WS568,Surface Water
+WYwr_WS569,,,Fresh,Anderson Creek,WaDEWY_WS569,Surface Water
+WYwr_WS570,,,Fresh,Bar M Creek,WaDEWY_WS570,Surface Water
+WYwr_WS571,,,Fresh,Horseshoe Creek,WaDEWY_WS571,Surface Water
+WYwr_WS572,,,Fresh,"29"""" Draw",WaDEWY_WS572,Surface Water
+WYwr_WS573,,,Fresh,Harney Creek,WaDEWY_WS573,Surface Water
+WYwr_WS574,,,Fresh,Fox Creek (29-14-77),WaDEWY_WS574,Surface Water
+WYwr_WS575,,,Fresh,Spicer Gulch,WaDEWY_WS575,Surface Water
+WYwr_WS576,,,Fresh,Chugwater Creek,WaDEWY_WS576,Surface Water
+WYwr_WS577,,,Fresh,Middle Sybille Creek,WaDEWY_WS577,Surface Water
+WYwr_WS578,,,Fresh,North Chugwater Creek,WaDEWY_WS578,Surface Water
+WYwr_WS579,,,Fresh,Scotch Creek,WaDEWY_WS579,Surface Water
+WYwr_WS580,,,Fresh,Canyon Creek,WaDEWY_WS580,Surface Water
+WYwr_WS581,,,Fresh,Richeau Creek,WaDEWY_WS581,Surface Water
+WYwr_WS582,,,Fresh,North Richeau Creek,WaDEWY_WS582,Surface Water
+WYwr_WS583,,,Fresh,McMurry Creek,WaDEWY_WS583,Surface Water
+WYwr_WS584,,,Fresh,Sybille Creek,WaDEWY_WS584,Surface Water
+WYwr_WS585,,,Fresh,Cooney Creek,WaDEWY_WS585,Surface Water
+WYwr_WS586,,,Fresh,Coyote Draw,WaDEWY_WS586,Surface Water
+WYwr_WS587,,,Fresh,L. X. Bar Creek,WaDEWY_WS587,Surface Water
+WYwr_WS588,,,Fresh,Dead Horse Creek (6-57-75),WaDEWY_WS588,Surface Water
+WYwr_WS589,,,Fresh,Twenty-One Butte Fork,WaDEWY_WS589,Surface Water
+WYwr_WS590,,,Fresh,East Fork Buffalo Creek,WaDEWY_WS590,Surface Water
+WYwr_WS591,,,Fresh,Mason Creek,WaDEWY_WS591,Surface Water
+WYwr_WS592,,,Fresh,Sage Draw,WaDEWY_WS592,Surface Water
+WYwr_WS593,,,Fresh,Arch Creek,WaDEWY_WS593,Surface Water
+WYwr_WS594,,,Fresh,Miller Creek (12-52-66),WaDEWY_WS594,Surface Water
+WYwr_WS595,,,Fresh,Havens Creek,WaDEWY_WS595,Surface Water
+WYwr_WS596,,,Fresh,Humbolt Creek,WaDEWY_WS596,Surface Water
+WYwr_WS597,,,Fresh,Belish Draw,WaDEWY_WS597,Surface Water
+WYwr_WS598,,,Fresh,Young's Creek,WaDEWY_WS598,Surface Water
+WYwr_WS599,,,Fresh,"Padlock """"SE-5"""" Drain",WaDEWY_WS599,Surface Water
+WYwr_WS600,,,Fresh,Little Young's Creek,WaDEWY_WS600,Surface Water
+WYwr_WS601,,,Fresh,Foster Gulch,WaDEWY_WS601,Surface Water
+WYwr_WS602,,,Fresh,West Branch Mead Creek,WaDEWY_WS602,Surface Water
+WYwr_WS603,,,Fresh,Holding Pond,WaDEWY_WS603,Surface Water
+WYwr_WS604,,,Fresh,Jackson Creek,WaDEWY_WS604,Surface Water
+WYwr_WS605,,,Fresh,North Piney Creek and South Piney Creek,WaDEWY_WS605,Surface Water
+WYwr_WS606,,,Fresh,Water Stored in Big Horn Reservoir Permit No. 1352 Res.,WaDEWY_WS606,Surface Water
+WYwr_WS607,,,Fresh,Unnamed trib,WaDEWY_WS607,Surface Water
+WYwr_WS608,,,Fresh,South Fork Shoshone River (12-51-104),WaDEWY_WS608,Surface Water
+WYwr_WS609,,,Fresh,Johnstone Draw,WaDEWY_WS609,Surface Water
+WYwr_WS610,,,Fresh,Marquette Creek,WaDEWY_WS610,Surface Water
+WYwr_WS611,,,Fresh,Schlenker Draw,WaDEWY_WS611,Surface Water
+WYwr_WS612,,,Fresh,Sunshine Creek and Greybull River,WaDEWY_WS612,Surface Water
+WYwr_WS613,,,Fresh,Burlington Drain,WaDEWY_WS613,Surface Water
+WYwr_WS614,,,Fresh,Mobley Drain & Slough,WaDEWY_WS614,Surface Water
+WYwr_WS615,,,Fresh,Alkali Gulch,WaDEWY_WS615,Surface Water
+WYwr_WS616,,,Fresh,"!st Ext. Reservoir, Permit No. 6944 Res.",WaDEWY_WS616,Surface Water
+WYwr_WS617,,,Fresh,O.L. Draw,WaDEWY_WS617,Surface Water
+WYwr_WS618,,,Fresh,Muddy Ceek,WaDEWY_WS618,Surface Water
+WYwr_WS619,,,Fresh,Torrey Lake,WaDEWY_WS619,Surface Water
+WYwr_WS620,,,Fresh,Little Warm Springs,WaDEWY_WS620,Surface Water
+WYwr_WS621,,,Fresh,Geyser Creek,WaDEWY_WS621,Surface Water
+WYwr_WS622,,,Fresh,Wiggins Fork,WaDEWY_WS622,Surface Water
+WYwr_WS623,,,Fresh,North Fork Big Wind River,WaDEWY_WS623,Surface Water
+WYwr_WS624,,,Fresh,East Fork North Fork Big Wind River,WaDEWY_WS624,Surface Water
+WYwr_WS625,,,Fresh,Bull Lake Creek,WaDEWY_WS625,Surface Water
+WYwr_WS626,,,Fresh,Flood Gulch,WaDEWY_WS626,Surface Water
+WYwr_WS627,,,Fresh,Cox Slough,WaDEWY_WS627,Surface Water
+WYwr_WS628,,,Fresh,West Fork Dry Creek,WaDEWY_WS628,Surface Water
+WYwr_WS629,,,Fresh,Clear Creek (drainage of),WaDEWY_WS629,Surface Water
+WYwr_WS630,,,Fresh,Water stored in George Hakert No. 1 Reservoir (Permit No. 4939 Res.),WaDEWY_WS630,Surface Water
+WYwr_WS631,,,Fresh,Water stored in Evans No. 2 Reservoir (Permit No. 4474 Res.),WaDEWY_WS631,Surface Water
+WYwr_WS632,,,Fresh,Water stored in Burtron Reservoir (Permit No. 4948 Res.),WaDEWY_WS632,Surface Water
+WYwr_WS633,,,Fresh,Water stored in Zezas Reservoir Permit No. 7285 Res.,WaDEWY_WS633,Surface Water
+WYwr_WS634,,,Fresh,South Fork,WaDEWY_WS634,Surface Water
+WYwr_WS635,,,Fresh,Lack 20 Draw,WaDEWY_WS635,Surface Water
+WYwr_WS636,,,Fresh,South Fork Red Fork Powder River,WaDEWY_WS636,Surface Water
+WYwr_WS637,,,Fresh,Cedar Ridge Gulch,WaDEWY_WS637,Surface Water
+WYwr_WS638,,,Fresh,Blue Creek,WaDEWY_WS638,Surface Water
+WYwr_WS639,,,Fresh,Trout Creek,WaDEWY_WS639,Surface Water
+WYwr_WS640,,,Fresh,South Fork Little Canon Creek,WaDEWY_WS640,Surface Water
+WYwr_WS641,,,Fresh,Olsen Creek,WaDEWY_WS641,Surface Water
+WYwr_WS642,,,Fresh,Walchle Draw,WaDEWY_WS642,Surface Water
+WYwr_WS643,,,Fresh,Long Hollow Creek,WaDEWY_WS643,Surface Water
+WYwr_WS644,,,Fresh,Foster Draw,WaDEWY_WS644,Surface Water
+WYwr_WS645,,,Fresh,Timber Creek,WaDEWY_WS645,Surface Water
+WYwr_WS646,,,Fresh,West Timber Creek,WaDEWY_WS646,Surface Water
+WYwr_WS647,,,Fresh,East Timber Creek,WaDEWY_WS647,Surface Water
+WYwr_WS648,,,Fresh,South Fork Dick Creek,WaDEWY_WS648,Surface Water
+WYwr_WS649,,,Fresh,Wilcox Draw,WaDEWY_WS649,Surface Water
+WYwr_WS650,,,Fresh,North Rawhide Creek,WaDEWY_WS650,Surface Water
+WYwr_WS651,,,Fresh,Dry Draw (26-38-62),WaDEWY_WS651,Surface Water
+WYwr_WS652,,,Fresh,Section 12 Playa (A Closed Basin),WaDEWY_WS652,Surface Water
+WYwr_WS653,,,Fresh,West Fork Little Deep Creek,WaDEWY_WS653,Surface Water
+WYwr_WS654,,,Fresh,Lone Tree Draw (19-40-60),WaDEWY_WS654,Surface Water
+WYwr_WS655,,,Fresh,Mush Creek,WaDEWY_WS655,Surface Water
+WYwr_WS656,,,Fresh,West Fork Twenty Mile Creek,WaDEWY_WS656,Surface Water
+WYwr_WS657,,,Fresh,Baker Draw,WaDEWY_WS657,Surface Water
+WYwr_WS658,,,Fresh,Dry Draw (4-37-61),WaDEWY_WS658,Surface Water
+WYwr_WS659,,,Fresh,Black Creek,WaDEWY_WS659,Surface Water
+WYwr_WS660,,,Fresh,Chapman Draw,WaDEWY_WS660,Surface Water
+WYwr_WS661,,,Fresh,Rattlesnake Draw,WaDEWY_WS661,Surface Water
+WYwr_WS662,,,Fresh,Dixon Draw,WaDEWY_WS662,Surface Water
+WYwr_WS663,,,Fresh,East Hay Creek,WaDEWY_WS663,Surface Water
+WYwr_WS664,,,Fresh,Dick Draw,WaDEWY_WS664,Surface Water
+WYwr_WS665,,,Fresh,Porter Creek,WaDEWY_WS665,Surface Water
+WYwr_WS666,,,Fresh,Spring Draw,WaDEWY_WS666,Surface Water
+WYwr_WS667,,,Fresh,Cherry Draw,WaDEWY_WS667,Surface Water
+WYwr_WS668,,,Fresh,Gootchy Draw,WaDEWY_WS668,Surface Water
+WYwr_WS669,,,Fresh,Bud Gulch,WaDEWY_WS669,Surface Water
+WYwr_WS670,,,Fresh,H.M. Ely's Spring,WaDEWY_WS670,Surface Water
+WYwr_WS671,,,Fresh,Jensen Creek,WaDEWY_WS671,Surface Water
+WYwr_WS672,,,Fresh,Taylor Creek,WaDEWY_WS672,Surface Water
+WYwr_WS673,,,Fresh,Spring Gulch Creek and Springs,WaDEWY_WS673,Surface Water
+WYwr_WS674,,,Fresh,Swamp Creek,WaDEWY_WS674,Surface Water
+WYwr_WS675,,,Fresh,Phillip's Canyon Creek,WaDEWY_WS675,Surface Water
+WYwr_WS676,,,Fresh,Spring Creek (NWSE 10-37-113),WaDEWY_WS676,Surface Water
+WYwr_WS677,,,Fresh,Budge Slough,WaDEWY_WS677,Surface Water
+WYwr_WS678,,,Fresh,May's Slough Creek,WaDEWY_WS678,Surface Water
+WYwr_WS679,,,Fresh,South Fork Ditch Creek,WaDEWY_WS679,Surface Water
+WYwr_WS680,,,Fresh,West or South Twin Creek,WaDEWY_WS680,Surface Water
+WYwr_WS681,,,Fresh,South Gulch,WaDEWY_WS681,Surface Water
+WYwr_WS682,,,Fresh,Cody Creek,WaDEWY_WS682,Surface Water
+WYwr_WS683,,,Fresh,Teal Run,WaDEWY_WS683,Surface Water
+WYwr_WS684,,,Fresh,Round Spring,WaDEWY_WS684,Surface Water
+WYwr_WS685,,,Fresh,Cascade Creek,WaDEWY_WS685,Surface Water
+WYwr_WS686,,,Fresh,Meeyero Creek,WaDEWY_WS686,Surface Water
+WYwr_WS687,,,Fresh,Grunt Gulch,WaDEWY_WS687,Surface Water
+WYwr_WS688,,,Fresh,Garrison Draw,WaDEWY_WS688,Surface Water
+WYwr_WS689,,,Fresh,South Fork Bridger Creek,WaDEWY_WS689,Surface Water
+WYwr_WS690,,,Fresh,South Channel North Fork Horse Creek,WaDEWY_WS690,Surface Water
+WYwr_WS691,,,Fresh,North Mud Creek,WaDEWY_WS691,Surface Water
+WYwr_WS692,,,Fresh,Pine Creek(drainage of),WaDEWY_WS692,Surface Water
+WYwr_WS693,,,Fresh,South Branch Creek,WaDEWY_WS693,Surface Water
+WYwr_WS694,,,Fresh,Nelson Creek,WaDEWY_WS694,Surface Water
+WYwr_WS695,,,Fresh,Water Stored in Fremont Lake Reservoir,WaDEWY_WS695,Surface Water
+WYwr_WS696,,,Fresh,Surveyor Creek,WaDEWY_WS696,Surface Water
+WYwr_WS697,,,Fresh,Water Stored in Willow Lake Reservoir (Permit No. 3831 Res.),WaDEWY_WS697,Surface Water
+WYwr_WS698,,,Fresh,Water Stored in Enl. Willow Lake Reservoir (Permit No. 4475 Res.),WaDEWY_WS698,Surface Water
+WYwr_WS699,,,Fresh,Poison Spider Creek,WaDEWY_WS699,Surface Water
+WYwr_WS700,,,Fresh,Blue Bank Draw,WaDEWY_WS700,Surface Water
+WYwr_WS701,,,Fresh,Flood and Storm Water,WaDEWY_WS701,Surface Water
+WYwr_WS702,,,Fresh,North Fork South Casper Creek,WaDEWY_WS702,Surface Water
+WYwr_WS703,,,Fresh,East Fork Hemingway Draw,WaDEWY_WS703,Surface Water
+WYwr_WS704,,,Fresh,Shalerock Draw,WaDEWY_WS704,Surface Water
+WYwr_WS705,,,Fresh,Stinking Creek,WaDEWY_WS705,Surface Water
+WYwr_WS706,,,Fresh,Oil Field Draw,WaDEWY_WS706,Surface Water
+WYwr_WS707,,,Fresh,South Fork Casper Creek,WaDEWY_WS707,Surface Water
+WYwr_WS708,,,Fresh,Shed Draw,WaDEWY_WS708,Surface Water
+WYwr_WS709,,,Fresh,Railroad Draw,WaDEWY_WS709,Surface Water
+WYwr_WS710,,,Fresh,South Fork Little Wind River,WaDEWY_WS710,Surface Water
+WYwr_WS711,,,Fresh,Baxter Creek,WaDEWY_WS711,Surface Water
+WYwr_WS712,,,Fresh,Baker's Slough,WaDEWY_WS712,Surface Water
+WYwr_WS713,,,Fresh,Pendleton Spring Creek,WaDEWY_WS713,Surface Water
+WYwr_WS714,,,Fresh,Miller Creek (28-36-119),WaDEWY_WS714,Surface Water
+WYwr_WS715,,,Fresh,Osborne Spring Creek,WaDEWY_WS715,Surface Water
+WYwr_WS716,,,Fresh,Green Canyon Creek,WaDEWY_WS716,Surface Water
+WYwr_WS717,,,Fresh,North Prater Creek,WaDEWY_WS717,Surface Water
+WYwr_WS718,,,Fresh,Tin Cup Creek,WaDEWY_WS718,Surface Water
+WYwr_WS719,,,Fresh,Sage Creek (12-33-73),WaDEWY_WS719,Surface Water
+WYwr_WS720,,,Fresh,Amspoker Draw,WaDEWY_WS720,Surface Water
+WYwr_WS721,,,Fresh,Tartar Gulch Spring,WaDEWY_WS721,Surface Water
+WYwr_WS722,,,Fresh,North Channel Middle Piney Creek,WaDEWY_WS722,Surface Water
+WYwr_WS723,,,Fresh,Sago Creek,WaDEWY_WS723,Surface Water
+WYwr_WS724,,,Fresh,North Fork Killpecker Creek,WaDEWY_WS724,Surface Water
+WYwr_WS725,,,Fresh,Channel of South Horse Creek,WaDEWY_WS725,Surface Water
+WYwr_WS726,,,Fresh,WATER STORED IN MCNINCH NO. 1 AND NO. 2 RESERVOIRS AND ENL. MCNINCH NO. 1 RESERVOIR,WaDEWY_WS726,Surface Water
+WYwr_WS727,,,Fresh,Water Stored in 67 Reservoir,WaDEWY_WS727,Surface Water
+WYwr_WS728,,,Fresh,WATER STORED IN MCNINCH NO. 1 RESERVOIR (Permit Nos. 5413 Res. and 5801 Res.),WaDEWY_WS728,Surface Water
+WYwr_WS729,,,Fresh,Spring Creek (5-30-112),WaDEWY_WS729,Surface Water
+WYwr_WS730,,,Fresh,South Fork Beaver Creek,WaDEWY_WS730,Surface Water
+WYwr_WS731,,,Fresh,Middle Burton Spring Creek,WaDEWY_WS731,Surface Water
+WYwr_WS732,,,Fresh,Burton Meadow Springs Draw,WaDEWY_WS732,Surface Water
+WYwr_WS733,,,Fresh,Spring Branch/Reeves Slough,WaDEWY_WS733,Surface Water
+WYwr_WS734,,,Fresh,Sand Creek (26-28-85),WaDEWY_WS734,Surface Water
+WYwr_WS735,,,Fresh,Cottonwood Creek (10-27-67),WaDEWY_WS735,Surface Water
+WYwr_WS736,,,Fresh,Gates Creek,WaDEWY_WS736,Surface Water
+WYwr_WS737,,,Fresh,Muddy Creek (34-77),WaDEWY_WS737,Surface Water
+WYwr_WS738,,,Fresh,East Fork Camp Creek,WaDEWY_WS738,Surface Water
+WYwr_WS739,,,Fresh,East Fork Wolf Creek,WaDEWY_WS739,Surface Water
+WYwr_WS740,,,Fresh,Claud Creek,WaDEWY_WS740,Surface Water
+WYwr_WS741,,,Fresh,Mickey Creek,WaDEWY_WS741,Surface Water
+WYwr_WS742,,,Fresh,Hazel Draw,WaDEWY_WS742,Surface Water
+WYwr_WS743,,,Fresh,Little Box Elder Spring,WaDEWY_WS743,Surface Water
+WYwr_WS744,,,Fresh,Bear Pen Creek,WaDEWY_WS744,Surface Water
+WYwr_WS745,,,Fresh,Little Boxelder Creek,WaDEWY_WS745,Surface Water
+WYwr_WS746,,,Fresh,Snow Shoe Creek,WaDEWY_WS746,Surface Water
+WYwr_WS747,,,Fresh,West Creek,WaDEWY_WS747,Surface Water
+WYwr_WS748,,,Fresh,Coal Bank Draw,WaDEWY_WS748,Surface Water
+WYwr_WS749,,,Fresh,Quinn Creek,WaDEWY_WS749,Surface Water
+WYwr_WS750,,,Fresh,LaPrele Creek,WaDEWY_WS750,Surface Water
+WYwr_WS751,,,Fresh,Crazy Horse Creek (2-29-75),WaDEWY_WS751,Surface Water
+WYwr_WS752,,,Fresh,Badger Creek,WaDEWY_WS752,Surface Water
+WYwr_WS753,,,Fresh,Dry LaPrele Creek,WaDEWY_WS753,Surface Water
+WYwr_WS754,,,Fresh,Red Canon Creek,WaDEWY_WS754,Surface Water
+WYwr_WS755,,,Fresh,Downey Creek,WaDEWY_WS755,Surface Water
+WYwr_WS756,,,Fresh,Sled Creek,WaDEWY_WS756,Surface Water
+WYwr_WS757,,,Fresh,Water Stored in Saddleback Reservoir (Permit No. 5522 Res.),WaDEWY_WS757,Surface Water
+WYwr_WS758,,,Fresh,Muddy Wagonhound Creek,WaDEWY_WS758,Surface Water
+WYwr_WS759,,,Fresh,North Five Mile Creek,WaDEWY_WS759,Surface Water
+WYwr_WS760,,,Fresh,Little Deep Creek,WaDEWY_WS760,Surface Water
+WYwr_WS761,,,Fresh,Pete's Creek,WaDEWY_WS761,Surface Water
+WYwr_WS762,,,Fresh,Whiskey Creek,WaDEWY_WS762,Surface Water
+WYwr_WS763,,,Fresh,Pacific Creek,WaDEWY_WS763,Surface Water
+WYwr_WS764,,,Fresh,Dutch Joe Creek,WaDEWY_WS764,Surface Water
+WYwr_WS765,,,Fresh,Leeds Creek,WaDEWY_WS765,Surface Water
+WYwr_WS766,,,Fresh,Erwin Creek,WaDEWY_WS766,Surface Water
+WYwr_WS767,,,Fresh,Grade Canyon Creek,WaDEWY_WS767,Surface Water
+WYwr_WS768,,,Fresh,Bruner Creek,WaDEWY_WS768,Surface Water
+WYwr_WS769,,,Fresh,Thompson Slough,WaDEWY_WS769,Surface Water
+WYwr_WS770,,,Fresh,Nelson Slough,WaDEWY_WS770,Surface Water
+WYwr_WS771,,,Fresh,West Fork Medicine Bow River,WaDEWY_WS771,Surface Water
+WYwr_WS772,,,Fresh,One Mile Creek,WaDEWY_WS772,Surface Water
+WYwr_WS773,,,Fresh,Fieland Creek,WaDEWY_WS773,Surface Water
+WYwr_WS774,,,Fresh,Hadsell Slough a channel Medicine Bow River,WaDEWY_WS774,Surface Water
+WYwr_WS775,,,Fresh,Jimmie Creek,WaDEWY_WS775,Surface Water
+WYwr_WS776,,,Fresh,Snow Gulch Creek,WaDEWY_WS776,Surface Water
+WYwr_WS777,,,Fresh,U.L. Creek,WaDEWY_WS777,Surface Water
+WYwr_WS778,,,Fresh,Bishop Creek,WaDEWY_WS778,Surface Water
+WYwr_WS779,,,Fresh,Little Medicine Bow River,WaDEWY_WS779,Surface Water
+WYwr_WS780,,,Fresh,Water Stored in Cavender Reservoir Permit No. 5520 Res.,WaDEWY_WS780,Surface Water
+WYwr_WS781,,,Fresh,Schoen Lake Draw,WaDEWY_WS781,Surface Water
+WYwr_WS782,,,Fresh,Coal Mine Draw,WaDEWY_WS782,Surface Water
+WYwr_WS783,,,Fresh,Sullivan Creek,WaDEWY_WS783,Surface Water
+WYwr_WS784,,,Fresh,Lamont Creek,WaDEWY_WS784,Surface Water
+WYwr_WS785,,,Fresh,Lost Creek (26-84),WaDEWY_WS785,Surface Water
+WYwr_WS786,,,Fresh,Water stored in Irene Res #2,WaDEWY_WS786,Surface Water
+WYwr_WS787,,,Fresh,Dry Creek or North Fork Sage Creek,WaDEWY_WS787,Surface Water
+WYwr_WS788,,,Fresh,Peternal Draw,WaDEWY_WS788,Surface Water
+WYwr_WS789,,,Fresh,Centennial Creek,WaDEWY_WS789,Surface Water
+WYwr_WS790,,,Fresh,LaMarsh Creek,WaDEWY_WS790,Surface Water
+WYwr_WS791,,,Fresh,Separation Creek,WaDEWY_WS791,Surface Water
+WYwr_WS792,,,Fresh,Owl Creek Gulch,WaDEWY_WS792,Surface Water
+WYwr_WS793,,,Fresh,School Creek,WaDEWY_WS793,Surface Water
+WYwr_WS794,,,Fresh,McPhail Creek,WaDEWY_WS794,Surface Water
+WYwr_WS795,,,Fresh,Doubleday Draw,WaDEWY_WS795,Surface Water
+WYwr_WS796,,,Fresh,Water stored in McMillan Reservoir No. Three Permit No. 6080 Reservoir,WaDEWY_WS796,Surface Water
+WYwr_WS797,,,Fresh,Sinnard Draw,WaDEWY_WS797,Surface Water
+WYwr_WS798,,,Fresh,South Fork Red Creek,WaDEWY_WS798,Surface Water
+WYwr_WS799,,,Fresh,Water Stored in Fontenelle Reservoir,WaDEWY_WS799,Surface Water
+WYwr_WS800,,,Fresh,Lake Creek Lake Outlet Channel,WaDEWY_WS800,Surface Water
+WYwr_WS801,,,Fresh,Buck Springs Gulch,WaDEWY_WS801,Surface Water
+WYwr_WS802,,,Fresh,Rankin Creek,WaDEWY_WS802,Surface Water
+WYwr_WS803,,,Fresh,Little Brush Creek,WaDEWY_WS803,Surface Water
+WYwr_WS804,,,Fresh,Loco Draw,WaDEWY_WS804,Surface Water
+WYwr_WS805,,,Fresh,Benita Draw,WaDEWY_WS805,Surface Water
+WYwr_WS806,,,Fresh,Snake Draw,WaDEWY_WS806,Surface Water
+WYwr_WS807,,,Fresh,Water stored in the Enl. Wasatch reservoir (Permit No. 4645 Res.),WaDEWY_WS807,Surface Water
+WYwr_WS808,,,Fresh,Water Stored in Clifford F Graham Reservoir,WaDEWY_WS808,Surface Water
+WYwr_WS809,,,Fresh,Spring Branch,WaDEWY_WS809,Surface Water
+WYwr_WS810,,,Fresh,Wagner Draw,WaDEWY_WS810,Surface Water
+WYwr_WS811,,,Fresh,Cold Spring Creek,WaDEWY_WS811,Surface Water
+WYwr_WS812,,,Fresh,Lyman Draw,WaDEWY_WS812,Surface Water
+WYwr_WS813,,,Fresh,Oackes Draw,WaDEWY_WS813,Surface Water
+WYwr_WS814,,,Fresh,North Fork Muddy Creek,WaDEWY_WS814,Surface Water
+WYwr_WS815,,,Fresh,South Lodge Pole Creek,WaDEWY_WS815,Surface Water
+WYwr_WS816,,,Fresh,North Lodge Pole Creek,WaDEWY_WS816,Surface Water
+WYwr_WS817,,,Fresh,North Bear Creek (North Forks) (10-19-66),WaDEWY_WS817,Surface Water
+WYwr_WS818,,,Fresh,Bush Creek,WaDEWY_WS818,Surface Water
+WYwr_WS819,,,Fresh,East Kellehan Creek,WaDEWY_WS819,Surface Water
+WYwr_WS820,,,Fresh,Sage Creek Draw,WaDEWY_WS820,Surface Water
+WYwr_WS821,,,Fresh,Slough of Bear River (Evanston),WaDEWY_WS821,Surface Water
+WYwr_WS822,,,Fresh,Bazoo Hollow,WaDEWY_WS822,Surface Water
+WYwr_WS823,,,Fresh,Water Stored in Enl Crompton Reservoir,WaDEWY_WS823,Surface Water
+WYwr_WS824,,,Fresh,Cotton Creek,WaDEWY_WS824,Surface Water
+WYwr_WS825,,,Fresh,North Fork Lone Tree Gulch,WaDEWY_WS825,Surface Water
+WYwr_WS826,,,Fresh,West Fork Cherokee Creek,WaDEWY_WS826,Surface Water
+WYwr_WS827,,,Fresh,Walck Gulch,WaDEWY_WS827,Surface Water
+WYwr_WS828,,,Fresh,North Fork of Miner Creek,WaDEWY_WS828,Surface Water
+WYwr_WS829,,,Fresh,North Fork Miner Creek,WaDEWY_WS829,Surface Water
+WYwr_WS830,,,Fresh,Cherokee Creek,WaDEWY_WS830,Surface Water
+WYwr_WS831,,,Fresh,Beaver Creek or Big Beaver Creek,WaDEWY_WS831,Surface Water
+WYwr_WS832,,,Fresh,Trent Creek,WaDEWY_WS832,Surface Water
+WYwr_WS833,,,Fresh,Big Beaver Creek,WaDEWY_WS833,Surface Water
+WYwr_WS834,,,Fresh,West Fork Birch Creek,WaDEWY_WS834,Surface Water
+WYwr_WS835,,,Fresh,Little Snake River(drainage of),WaDEWY_WS835,Surface Water
+WYwr_WS836,,,Fresh,Quartz Gulch,WaDEWY_WS836,Surface Water
+WYwr_WS837,,,Fresh,Madre Gulch,WaDEWY_WS837,Surface Water
+WYwr_WS838,,,Fresh,Granite Gulch,WaDEWY_WS838,Surface Water
+WYwr_WS839,,,Fresh,Rendle Spring,WaDEWY_WS839,Surface Water
+WYwr_WS840,,,Fresh,Dirty Man Fork,WaDEWY_WS840,Surface Water
+WYwr_WS841,,,Fresh,Middle Fork Savery Creek,WaDEWY_WS841,Surface Water
+WYwr_WS842,,,Fresh,Lily Creek,WaDEWY_WS842,Surface Water
+WYwr_WS843,,,Fresh,Magnolia Creek,WaDEWY_WS843,Surface Water
+WYwr_WS844,,,Fresh,Violet Draw,WaDEWY_WS844,Surface Water
+WYwr_WS845,,,Fresh,Gladiola Creek,WaDEWY_WS845,Surface Water
+WYwr_WS846,,,Fresh,West Fork North Fork Little Snake River,WaDEWY_WS846,Surface Water
+WYwr_WS847,,,Fresh,East Fork West Fork North Fork Little Snake River,WaDEWY_WS847,Surface Water
+WYwr_WS848,,,Fresh,South Fork Columbine Creek,WaDEWY_WS848,Surface Water
+WYwr_WS849,,,Fresh,Battle Creek,WaDEWY_WS849,Surface Water
+WYwr_WS850,,,Fresh,Cottonwood Creek (13-12-87),WaDEWY_WS850,Surface Water
+WYwr_WS851,,,Fresh,Middle Fork Deadline Creek,WaDEWY_WS851,Surface Water
+WYwr_WS852,,,Fresh,Broyles Creek,WaDEWY_WS852,Surface Water
+WYwr_WS853,,,Fresh,Storey Creek,WaDEWY_WS853,Surface Water
+WYwr_WS854,,,Fresh,Noe Creek,WaDEWY_WS854,Surface Water
+WYwr_WS855,,,Fresh,Applegate Gulch,WaDEWY_WS855,Surface Water
+WYwr_WS856,,,Fresh,Fourth Creek,WaDEWY_WS856,Surface Water
+WYwr_WS857,,,Fresh,Wilson Creek,WaDEWY_WS857,Surface Water
+WYwr_WS858,,,Fresh,Horse Shoe Creek,WaDEWY_WS858,Surface Water
+WYwr_WS859,,,Fresh,North Elkhorn Creek,WaDEWY_WS859,Surface Water
+WYwr_WS860,,,Fresh,Hecht Creek,WaDEWY_WS860,Surface Water
+WYwr_WS861,,,Fresh,Ward's Gulch,WaDEWY_WS861,Surface Water
+WYwr_WS862,,,Fresh,Four Mile Creek,WaDEWY_WS862,Surface Water
+WYwr_WS863,,,Fresh,Water stored in Sundby Res. (Permit No. 5555 Res.),WaDEWY_WS863,Surface Water
+WYwr_WS864,,,Fresh,Poverty Draw,WaDEWY_WS864,Surface Water
+WYwr_WS865,,,Fresh,Baily Creek Channel,WaDEWY_WS865,Surface Water
+WYwr_WS866,,,Fresh,"Dry Creek, channel Little Laramie River",WaDEWY_WS866,Surface Water
+WYwr_WS867,,,Fresh,North Fork Bar M Creek (Unnamed Creek or North Branch),WaDEWY_WS867,Surface Water
+WYwr_WS868,,,Fresh,Eggelston Creek,WaDEWY_WS868,Surface Water
+WYwr_WS869,,,Fresh,John Creek,WaDEWY_WS869,Surface Water
+WYwr_WS870,,,Fresh,Drainage into Lake Ione,WaDEWY_WS870,Surface Water
+WYwr_WS871,,,Fresh,North Fork Stink Creek,WaDEWY_WS871,Surface Water
+WYwr_WS872,,,Fresh,Water stored in Hundred Springs Reservoir Permit No. 2679 Res.,WaDEWY_WS872,Surface Water
+WYwr_WS873,,,Fresh,Waste Water From Laramie River Ditches Through Soda Lakes,WaDEWY_WS873,Surface Water
+WYwr_WS874,,,Fresh,Duck and Blackburn Lakes,WaDEWY_WS874,Surface Water
+WYwr_WS875,,,Fresh,North Strong Creek,WaDEWY_WS875,Surface Water
+WYwr_WS876,,,Fresh,Fence Creek,WaDEWY_WS876,Surface Water
+WYwr_WS877,,,Fresh,Spring Creek (26 27-20-68),WaDEWY_WS877,Surface Water
+WYwr_WS878,,,Fresh,Logan Drain,WaDEWY_WS878,Surface Water
+WYwr_WS879,,,Fresh,Water Stored in Plumbago Reservoir Permit No. 4448,WaDEWY_WS879,Surface Water
+WYwr_WS880,,,Fresh,Water Stored in Lines Reservoir Permit No. 5390 Res.,WaDEWY_WS880,Surface Water
+WYwr_WS881,,,Fresh,K Bar Z Spring,WaDEWY_WS881,Surface Water
+WYwr_WS882,,,Fresh,Blaine Creek Spring,WaDEWY_WS882,Surface Water
+WYwr_WS883,,,Fresh,Wiliams No. 2 Spring,WaDEWY_WS883,Surface Water
+WYwr_WS884,,,Fresh,NWCC Spring No. 4,WaDEWY_WS884,Surface Water
+WYwr_WS885,,,Fresh,Spring Creek (7-56-103),WaDEWY_WS885,Surface Water
+WYwr_WS886,,,Fresh,Brunner Spring No. 2,WaDEWY_WS886,Surface Water
+WYwr_WS887,,,Fresh,Spring (24-57-102),WaDEWY_WS887,Surface Water
+WYwr_WS888,,,Fresh,Deer Springs,WaDEWY_WS888,Surface Water
+WYwr_WS889,,,Fresh,Black Tail Springs,WaDEWY_WS889,Surface Water
+WYwr_WS890,,,Fresh,Hogan Springs,WaDEWY_WS890,Surface Water
+WYwr_WS891,,,Fresh,Springs,WaDEWY_WS891,Surface Water
+WYwr_WS892,,,Fresh,Dilworth Springs,WaDEWY_WS892,Surface Water
+WYwr_WS893,,,Fresh,Springs (NWNE 11-55-105),WaDEWY_WS893,Surface Water
+WYwr_WS894,,,Fresh,Sunlight Spring,WaDEWY_WS894,Surface Water
+WYwr_WS895,,,Fresh,Sayles Spring,WaDEWY_WS895,Surface Water
+WYwr_WS896,,,Fresh,Geo. Heald Spring No. 1,WaDEWY_WS896,Surface Water
+WYwr_WS897,,,Fresh,Geo. Heald Spring No. 2,WaDEWY_WS897,Surface Water
+WYwr_WS898,,,Fresh,Bald Ridge Spring,WaDEWY_WS898,Surface Water
+WYwr_WS899,,,Fresh,Painter Gulch Spring,WaDEWY_WS899,Surface Water
+WYwr_WS900,,,Fresh,Huff Gulch Spring,WaDEWY_WS900,Surface Water
+WYwr_WS901,,,Fresh,Hunter Peak Spring,WaDEWY_WS901,Surface Water
+WYwr_WS902,,,Fresh,Spring (1-55-105),WaDEWY_WS902,Surface Water
+WYwr_WS903,,,Fresh,Spring No. One,WaDEWY_WS903,Surface Water
+WYwr_WS904,,,Fresh,Spring No. Two,WaDEWY_WS904,Surface Water
+WYwr_WS905,,,Fresh,Spring No. Three,WaDEWY_WS905,Surface Water
+WYwr_WS906,,,Fresh,Riddle Spring,WaDEWY_WS906,Surface Water
+WYwr_WS907,,,Fresh,Gautsch Spring,WaDEWY_WS907,Surface Water
+WYwr_WS908,,,Fresh,David Powell Spring,WaDEWY_WS908,Surface Water
+WYwr_WS909,,,Fresh,LaFonde Spring,WaDEWY_WS909,Surface Water
+WYwr_WS910,,,Fresh,Braten No. 1 Spring,WaDEWY_WS910,Surface Water
+WYwr_WS911,,,Fresh,Goodyear No. 1 Spring,WaDEWY_WS911,Surface Water
+WYwr_WS912,,,Fresh,Goodyear No. 2 Spring,WaDEWY_WS912,Surface Water
+WYwr_WS913,,,Fresh,Moore No. 1 Spring,WaDEWY_WS913,Surface Water
+WYwr_WS914,,,Fresh,Clarksfork Spring No. 3,WaDEWY_WS914,Surface Water
+WYwr_WS915,,,Fresh,Clarksfork Spring No. 4,WaDEWY_WS915,Surface Water
+WYwr_WS916,,,Fresh,Clarksfork Spring No. 5,WaDEWY_WS916,Surface Water
+WYwr_WS917,,,Fresh,Clarksfork Spring No. 6,WaDEWY_WS917,Surface Water
+WYwr_WS918,,,Fresh,Clarksfork Spring No. 7,WaDEWY_WS918,Surface Water
+WYwr_WS919,,,Fresh,Clarksfork Spring No. 8,WaDEWY_WS919,Surface Water
+WYwr_WS920,,,Fresh,Clarksfork Spring No. 9,WaDEWY_WS920,Surface Water
+WYwr_WS921,,,Fresh,Clarksfork Spring No. 10,WaDEWY_WS921,Surface Water
+WYwr_WS922,,,Fresh,Clarksfork Spring No. 11,WaDEWY_WS922,Surface Water
+WYwr_WS923,,,Fresh,Clarksfork Spring No. 13,WaDEWY_WS923,Surface Water
+WYwr_WS924,,,Fresh,Clarksfork Spring No. 2,WaDEWY_WS924,Surface Water
+WYwr_WS925,,,Fresh,Prante No. 2 Spring,WaDEWY_WS925,Surface Water
+WYwr_WS926,,,Fresh,Cary No. 2 Spring,WaDEWY_WS926,Surface Water
+WYwr_WS927,,,Fresh,Cary No. 3 Spring,WaDEWY_WS927,Surface Water
+WYwr_WS928,,,Fresh,Cary No. 1 Spring,WaDEWY_WS928,Surface Water
+WYwr_WS929,,,Fresh,Peterson No. 1 Spring,WaDEWY_WS929,Surface Water
+WYwr_WS930,,,Fresh,Brunner Spring No. 1,WaDEWY_WS930,Surface Water
+WYwr_WS931,,,Fresh,Cain Springs,WaDEWY_WS931,Surface Water
+WYwr_WS932,,,Fresh,Firor Spring,WaDEWY_WS932,Surface Water
+WYwr_WS933,,,Fresh,Goodyear Spring No. 90,WaDEWY_WS933,Surface Water
+WYwr_WS934,,,Fresh,R.E.A. Spring,WaDEWY_WS934,Surface Water
+WYwr_WS935,,,Fresh,Firor Spring No. 6,WaDEWY_WS935,Surface Water
+WYwr_WS936,,,Fresh,Firor Spring No. 5,WaDEWY_WS936,Surface Water
+WYwr_WS937,,,Fresh,Goodyear No. 3 Spring,WaDEWY_WS937,Surface Water
+WYwr_WS938,,,Fresh,Riddle Spring No. 3,WaDEWY_WS938,Surface Water
+WYwr_WS939,,,Fresh,Whipple Spring,WaDEWY_WS939,Surface Water
+WYwr_WS940,,,Fresh,Riddle Spring No. 4,WaDEWY_WS940,Surface Water
+WYwr_WS941,,,Fresh,Duggleby Spring No. 1,WaDEWY_WS941,Surface Water
+WYwr_WS942,,,Fresh,Sunlight Water Association Spring,WaDEWY_WS942,Surface Water
+WYwr_WS943,,,Fresh,Braten No. 3 Spring,WaDEWY_WS943,Surface Water
+WYwr_WS944,,,Fresh,Dickey Springs,WaDEWY_WS944,Surface Water
+WYwr_WS945,,,Fresh,Bear Tooth Creek,WaDEWY_WS945,Surface Water
+WYwr_WS946,,,Fresh,Firehouse Spring,WaDEWY_WS946,Surface Water
+WYwr_WS947,,,Fresh,Ridgway Spring No. 1,WaDEWY_WS947,Surface Water
+WYwr_WS948,,,Fresh,Stratton Spring No. 1,WaDEWY_WS948,Surface Water
+WYwr_WS949,,,Fresh,Higgins Spring,WaDEWY_WS949,Surface Water
+WYwr_WS950,,,Fresh,Williams No. 1 Spring,WaDEWY_WS950,Surface Water
+WYwr_WS951,,,Fresh,Braten No. 2 Spring,WaDEWY_WS951,Surface Water
+WYwr_WS952,,,Fresh,Dickey Spring No. 2,WaDEWY_WS952,Surface Water
+WYwr_WS953,,,Fresh,Andersen Spring,WaDEWY_WS953,Surface Water
+WYwr_WS954,,,Fresh,Big Spring,WaDEWY_WS954,Surface Water
+WYwr_WS955,,,Fresh,R.E.A. Draw,WaDEWY_WS955,Surface Water
+WYwr_WS956,,,Fresh,Paquette Spring,WaDEWY_WS956,Surface Water
+WYwr_WS957,,,Fresh,Cary-Fisher Spring No. 1,WaDEWY_WS957,Surface Water
+WYwr_WS958,,,Fresh,Cary-Fisher Spring No. 2,WaDEWY_WS958,Surface Water
+WYwr_WS959,,,Fresh,Otto Spring,WaDEWY_WS959,Surface Water
+WYwr_WS960,,,Fresh,Spring Run,WaDEWY_WS960,Surface Water
+WYwr_WS961,,,Fresh,Fitzgerald Spring,WaDEWY_WS961,Surface Water
+WYwr_WS962,,,Fresh,Little North Fork Shell Creek,WaDEWY_WS962,Surface Water
+WYwr_WS963,,,Fresh,Adams Draw,WaDEWY_WS963,Surface Water
+WYwr_WS964,,,Fresh,Asp & Murphy Spring,WaDEWY_WS964,Surface Water
+WYwr_WS965,,,Fresh,Buell Spring Area,WaDEWY_WS965,Surface Water
+WYwr_WS966,,,Fresh,Rattlesnake Spring Draw,WaDEWY_WS966,Surface Water
+WYwr_WS967,,,Fresh,Hay Springs,WaDEWY_WS967,Surface Water
+WYwr_WS968,,,Fresh,Helvey Spring No. 1,WaDEWY_WS968,Surface Water
+WYwr_WS969,,,Fresh,Bright Spring Draw,WaDEWY_WS969,Surface Water
+WYwr_WS970,,,Fresh,Gold Dollar Spring,WaDEWY_WS970,Surface Water
+WYwr_WS971,,,Fresh,Elmore Spring,WaDEWY_WS971,Surface Water
+WYwr_WS972,,,Fresh,I Bar U Spring,WaDEWY_WS972,Surface Water
+WYwr_WS973,,,Fresh,Riley Ridge Spring Creek,WaDEWY_WS973,Surface Water
+WYwr_WS974,,,Fresh,Bowman Springs,WaDEWY_WS974,Surface Water
+WYwr_WS975,,,Fresh,Sundance Creek,WaDEWY_WS975,Surface Water
+WYwr_WS976,,,Fresh,Cundy Creek,WaDEWY_WS976,Surface Water
+WYwr_WS977,,,Fresh,Lynch Spring,WaDEWY_WS977,Surface Water
+WYwr_WS978,,,Fresh,Primary Spring,WaDEWY_WS978,Surface Water
+WYwr_WS979,,,Fresh,Spring (23-51-63),WaDEWY_WS979,Surface Water
+WYwr_WS980,,,Fresh,Rhodie Spring,WaDEWY_WS980,Surface Water
+WYwr_WS981,,,Fresh,Pearson's Spring,WaDEWY_WS981,Surface Water
+WYwr_WS982,,,Fresh,Hemler Spring,WaDEWY_WS982,Surface Water
+WYwr_WS983,,,Fresh,Spring (8-52-61),WaDEWY_WS983,Surface Water
+WYwr_WS984,,,Fresh,Spring No. 2 (21-48-61),WaDEWY_WS984,Surface Water
+WYwr_WS985,,,Fresh,Two Springs,WaDEWY_WS985,Surface Water
+WYwr_WS986,,,Fresh,Spring,WaDEWY_WS986,Surface Water
+WYwr_WS987,,,Fresh,Spring (1-48-61),WaDEWY_WS987,Surface Water
+WYwr_WS988,,,Fresh,Spring (10-51-63),WaDEWY_WS988,Surface Water
+WYwr_WS989,,,Fresh,Hawken Springs No. 1,WaDEWY_WS989,Surface Water
+WYwr_WS990,,,Fresh,Hawken Springs No. 2,WaDEWY_WS990,Surface Water
+WYwr_WS991,,,Fresh,Spring (34-50-62),WaDEWY_WS991,Surface Water
+WYwr_WS992,,,Fresh,Alpha Spring,WaDEWY_WS992,Surface Water
+WYwr_WS993,,,Fresh,Spring Drain,WaDEWY_WS993,Surface Water
+WYwr_WS994,,,Fresh,Spring (27-54-62),WaDEWY_WS994,Surface Water
+WYwr_WS995,,,Fresh,Warner Springs,WaDEWY_WS995,Surface Water
+WYwr_WS996,,,Fresh,Storts Spring,WaDEWY_WS996,Surface Water
+WYwr_WS997,,,Fresh,Benton Creek,WaDEWY_WS997,Surface Water
+WYwr_WS998,,,Fresh,Spring Pond,WaDEWY_WS998,Surface Water
+WYwr_WS999,,,Fresh,Balm of Gilead Spring,WaDEWY_WS999,Surface Water
+WYwr_WS1000,,,Fresh,Kudlock Spring,WaDEWY_WS1000,Surface Water
+WYwr_WS1001,,,Fresh,Spring No. 1,WaDEWY_WS1001,Surface Water
+WYwr_WS1002,,,Fresh,Spring No. 2,WaDEWY_WS1002,Surface Water
+WYwr_WS1003,,,Fresh,Spring No. 3,WaDEWY_WS1003,Surface Water
+WYwr_WS1004,,,Fresh,Butterfield Spring,WaDEWY_WS1004,Surface Water
+WYwr_WS1005,,,Fresh,Harper Spring,WaDEWY_WS1005,Surface Water
+WYwr_WS1006,,,Fresh,Goodson Spring,WaDEWY_WS1006,Surface Water
+WYwr_WS1007,,,Fresh,Wright No. 1 Spring,WaDEWY_WS1007,Surface Water
+WYwr_WS1008,,,Fresh,Mammoth Spring,WaDEWY_WS1008,Surface Water
+WYwr_WS1009,,,Fresh,Goodson Spring No. 2,WaDEWY_WS1009,Surface Water
+WYwr_WS1010,,,Fresh,Mitchell No. 2 Spring,WaDEWY_WS1010,Surface Water
+WYwr_WS1011,,,Fresh,Lone Spring,WaDEWY_WS1011,Surface Water
+WYwr_WS1012,,,Fresh,Huntington Spring,WaDEWY_WS1012,Surface Water
+WYwr_WS1013,,,Fresh,Eaton Spring,WaDEWY_WS1013,Surface Water
+WYwr_WS1014,,,Fresh,Hanff Spring,WaDEWY_WS1014,Surface Water
+WYwr_WS1015,,,Fresh,Cook Spring No. 1,WaDEWY_WS1015,Surface Water
+WYwr_WS1016,,,Fresh,Beaver's Spring No. One,WaDEWY_WS1016,Surface Water
+WYwr_WS1017,,,Fresh,Twin Buttes Spring,WaDEWY_WS1017,Surface Water
+WYwr_WS1018,,,Fresh,Ash Springs,WaDEWY_WS1018,Surface Water
+WYwr_WS1019,,,Fresh,Hanft Spring,WaDEWY_WS1019,Surface Water
+WYwr_WS1020,,,Fresh,Wolf Spring,WaDEWY_WS1020,Surface Water
+WYwr_WS1021,,,Fresh,Wolfe Spring No. 2,WaDEWY_WS1021,Surface Water
+WYwr_WS1022,,,Fresh,B. C. Spring,WaDEWY_WS1022,Surface Water
+WYwr_WS1023,,,Fresh,Elkhorn Spring,WaDEWY_WS1023,Surface Water
+WYwr_WS1024,,,Fresh,Camp Bethel Spring,WaDEWY_WS1024,Surface Water
+WYwr_WS1025,,,Fresh,Four-H Camp Spring,WaDEWY_WS1025,Surface Water
+WYwr_WS1026,,,Fresh,Five Springs Creek,WaDEWY_WS1026,Surface Water
+WYwr_WS1027,,,Fresh,Cookstove Spring Draw,WaDEWY_WS1027,Surface Water
+WYwr_WS1028,,,Fresh,Cool Spring Draw,WaDEWY_WS1028,Surface Water
+WYwr_WS1029,,,Fresh,Elk Springs Creek,WaDEWY_WS1029,Surface Water
+WYwr_WS1030,,,Fresh,East Troughs Springs,WaDEWY_WS1030,Surface Water
+WYwr_WS1031,,,Fresh,Springs (1-56-94),WaDEWY_WS1031,Surface Water
+WYwr_WS1032,,,Fresh,Harmon Springs,WaDEWY_WS1032,Surface Water
+WYwr_WS1033,,,Fresh,Bitter Springs,WaDEWY_WS1033,Surface Water
+WYwr_WS1034,,,Fresh,Sykes Springs,WaDEWY_WS1034,Surface Water
+WYwr_WS1035,,,Fresh,Lovell A.R.S.R. Spring,WaDEWY_WS1035,Surface Water
+WYwr_WS1036,,,Fresh,Harmon Spring No. 11,WaDEWY_WS1036,Surface Water
+WYwr_WS1037,,,Fresh,Harmon Spring No. 2,WaDEWY_WS1037,Surface Water
+WYwr_WS1038,,,Fresh,Harmon Spring No. 4,WaDEWY_WS1038,Surface Water
+WYwr_WS1039,,,Fresh,Harmon Spring No. 9,WaDEWY_WS1039,Surface Water
+WYwr_WS1040,,,Fresh,Harmon Spring No. 10,WaDEWY_WS1040,Surface Water
+WYwr_WS1041,,,Fresh,Harmon Spring No. 6,WaDEWY_WS1041,Surface Water
+WYwr_WS1042,,,Fresh,Harmon Spring No. 5,WaDEWY_WS1042,Surface Water
+WYwr_WS1043,,,Fresh,Harmon Spring No. 8,WaDEWY_WS1043,Surface Water
+WYwr_WS1044,,,Fresh,Stockgrowers Spring Draw,WaDEWY_WS1044,Surface Water
+WYwr_WS1045,,,Fresh,Crystal Creek Spring,WaDEWY_WS1045,Surface Water
+WYwr_WS1046,,,Fresh,Crystal Creek Spring No. 1,WaDEWY_WS1046,Surface Water
+WYwr_WS1047,,,Fresh,Hodgson Spring No. 4,WaDEWY_WS1047,Surface Water
+WYwr_WS1048,,,Fresh,Hodgson Spring No. 6,WaDEWY_WS1048,Surface Water
+WYwr_WS1049,,,Fresh,Kessler Springs Draw,WaDEWY_WS1049,Surface Water
+WYwr_WS1050,,,Fresh,Thurman Spring Draw,WaDEWY_WS1050,Surface Water
+WYwr_WS1051,,,Fresh,Gat No. 1 Spring,WaDEWY_WS1051,Surface Water
+WYwr_WS1052,,,Fresh,Gat No. 2 Spring,WaDEWY_WS1052,Surface Water
+WYwr_WS1053,,,Fresh,Quinn Spring No. 1,WaDEWY_WS1053,Surface Water
+WYwr_WS1054,,,Fresh,Quinn Spring No. 3,WaDEWY_WS1054,Surface Water
+WYwr_WS1055,,,Fresh,Hunnell No. 1 Spring,WaDEWY_WS1055,Surface Water
+WYwr_WS1056,,,Fresh,Mead-Banner Springs,WaDEWY_WS1056,Surface Water
+WYwr_WS1057,,,Fresh,Mead-Banner Spring No. 2,WaDEWY_WS1057,Surface Water
+WYwr_WS1058,,,Fresh,Highway Spring,WaDEWY_WS1058,Surface Water
+WYwr_WS1059,,,Fresh,Arn Spring,WaDEWY_WS1059,Surface Water
+WYwr_WS1060,,,Fresh,Post Spring,WaDEWY_WS1060,Surface Water
+WYwr_WS1061,,,Fresh,Koltiska Spring No. One,WaDEWY_WS1061,Surface Water
+WYwr_WS1062,,,Fresh,Koltiska Spring No. Two,WaDEWY_WS1062,Surface Water
+WYwr_WS1063,,,Fresh,Cormany Springs,WaDEWY_WS1063,Surface Water
+WYwr_WS1064,,,Fresh,Lillian Springs,WaDEWY_WS1064,Surface Water
+WYwr_WS1065,,,Fresh,Beaver Springs,WaDEWY_WS1065,Surface Water
+WYwr_WS1066,,,Fresh,Wright No. 2 Spring,WaDEWY_WS1066,Surface Water
+WYwr_WS1067,,,Fresh,Davis Spring No. 1,WaDEWY_WS1067,Surface Water
+WYwr_WS1068,,,Fresh,Davis Spring No. 2,WaDEWY_WS1068,Surface Water
+WYwr_WS1069,,,Fresh,Westbrook Spring Nos. 1&2,WaDEWY_WS1069,Surface Water
+WYwr_WS1070,,,Fresh,Leon Spring No. 1,WaDEWY_WS1070,Surface Water
+WYwr_WS1071,,,Fresh,Hunnell No. 2 Spring,WaDEWY_WS1071,Surface Water
+WYwr_WS1072,,,Fresh,Cooley Spring,WaDEWY_WS1072,Surface Water
+WYwr_WS1073,,,Fresh,Stringer Springs,WaDEWY_WS1073,Surface Water
+WYwr_WS1074,,,Fresh,Buck Trail Springs Area,WaDEWY_WS1074,Surface Water
+WYwr_WS1075,,,Fresh,Visconti Spring No. 1,WaDEWY_WS1075,Surface Water
+WYwr_WS1076,,,Fresh,Hanft Spring No. 1,WaDEWY_WS1076,Surface Water
+WYwr_WS1077,,,Fresh,Hodgson Spring No. 5,WaDEWY_WS1077,Surface Water
+WYwr_WS1078,,,Fresh,Hodgson Spring No. 1,WaDEWY_WS1078,Surface Water
+WYwr_WS1079,,,Fresh,Lewis Spring,WaDEWY_WS1079,Surface Water
+WYwr_WS1080,,,Fresh,Turner No. 3 Spring,WaDEWY_WS1080,Surface Water
+WYwr_WS1081,,,Fresh,South Springs,WaDEWY_WS1081,Surface Water
+WYwr_WS1082,,,Fresh,Wallop No. 1 Spring,WaDEWY_WS1082,Surface Water
+WYwr_WS1083,,,Fresh,Spear O Spring,WaDEWY_WS1083,Surface Water
+WYwr_WS1084,,,Fresh,Helvey Spring No. 2,WaDEWY_WS1084,Surface Water
+WYwr_WS1085,,,Fresh,Folly Spring Area,WaDEWY_WS1085,Surface Water
+WYwr_WS1086,,,Fresh,Styx No. 1 Spring,WaDEWY_WS1086,Surface Water
+WYwr_WS1087,,,Fresh,Sherman Draw,WaDEWY_WS1087,Surface Water
+WYwr_WS1088,,,Fresh,Iberlin Spring No. 1,WaDEWY_WS1088,Surface Water
+WYwr_WS1089,,,Fresh,Amy Two Spring,WaDEWY_WS1089,Surface Water
+WYwr_WS1090,,,Fresh,Amy Three Spring,WaDEWY_WS1090,Surface Water
+WYwr_WS1091,,,Fresh,Spring Draw (34-55-84),WaDEWY_WS1091,Surface Water
+WYwr_WS1092,,,Fresh,Needham Springs Creek,WaDEWY_WS1092,Surface Water
+WYwr_WS1093,,,Fresh,Hamilton Springs Creek,WaDEWY_WS1093,Surface Water
+WYwr_WS1094,,,Fresh,Hanna Creek,WaDEWY_WS1094,Surface Water
+WYwr_WS1095,,,Fresh,Spring Creek (18-55-85),WaDEWY_WS1095,Surface Water
+WYwr_WS1096,,,Fresh,Springs (5-54-84),WaDEWY_WS1096,Surface Water
+WYwr_WS1097,,,Fresh,Pioneer Springs,WaDEWY_WS1097,Surface Water
+WYwr_WS1098,,,Fresh,Supplemental Springs,WaDEWY_WS1098,Surface Water
+WYwr_WS1099,,,Fresh,Hanna Springs,WaDEWY_WS1099,Surface Water
+WYwr_WS1100,,,Fresh,Sunlight Springs,WaDEWY_WS1100,Surface Water
+WYwr_WS1101,,,Fresh,Moore Spring,WaDEWY_WS1101,Surface Water
+WYwr_WS1102,,,Fresh,Hillman Spring,WaDEWY_WS1102,Surface Water
+WYwr_WS1103,,,Fresh,Bard Spring,WaDEWY_WS1103,Surface Water
+WYwr_WS1104,,,Fresh,Moore Springs,WaDEWY_WS1104,Surface Water
+WYwr_WS1105,,,Fresh,Pioneer Springs No. 2,WaDEWY_WS1105,Surface Water
+WYwr_WS1106,,,Fresh,South Hanna Spring No. Two,WaDEWY_WS1106,Surface Water
+WYwr_WS1107,,,Fresh,South Hanna Springs,WaDEWY_WS1107,Surface Water
+WYwr_WS1108,,,Fresh,Schroeder & Wells Springs,WaDEWY_WS1108,Surface Water
+WYwr_WS1109,,,Fresh,Gregg Spring No. One,WaDEWY_WS1109,Surface Water
+WYwr_WS1110,,,Fresh,Moller No. One Spring,WaDEWY_WS1110,Surface Water
+WYwr_WS1111,,,Fresh,Moller No. Two Spring,WaDEWY_WS1111,Surface Water
+WYwr_WS1112,,,Fresh,Needham Spring No. Three,WaDEWY_WS1112,Surface Water
+WYwr_WS1113,,,Fresh,Hicks Spring No. 1,WaDEWY_WS1113,Surface Water
+WYwr_WS1114,,,Fresh,Olson Spring,WaDEWY_WS1114,Surface Water
+WYwr_WS1115,,,Fresh,Dome Spring No. 1,WaDEWY_WS1115,Surface Water
+WYwr_WS1116,,,Fresh,Dome Spring No. 2,WaDEWY_WS1116,Surface Water
+WYwr_WS1117,,,Fresh,Dome Spring No. 3,WaDEWY_WS1117,Surface Water
+WYwr_WS1118,,,Fresh,Powell Spring,WaDEWY_WS1118,Surface Water
+WYwr_WS1119,,,Fresh,Yeckel Spring,WaDEWY_WS1119,Surface Water
+WYwr_WS1120,,,Fresh,Knode No. 1 Spring,WaDEWY_WS1120,Surface Water
+WYwr_WS1121,,,Fresh,Knode No. 2 Spring,WaDEWY_WS1121,Surface Water
+WYwr_WS1122,,,Fresh,Kibbee Spring,WaDEWY_WS1122,Surface Water
+WYwr_WS1123,,,Fresh,TP Spring Area,WaDEWY_WS1123,Surface Water
+WYwr_WS1124,,,Fresh,Beuf Springs No. 6,WaDEWY_WS1124,Surface Water
+WYwr_WS1125,,,Fresh,TP Domestic Spring No. 1,WaDEWY_WS1125,Surface Water
+WYwr_WS1126,,,Fresh,TP Domestic Spring No. 2,WaDEWY_WS1126,Surface Water
+WYwr_WS1127,,,Fresh,TP Domestic Spring No. 3,WaDEWY_WS1127,Surface Water
+WYwr_WS1128,,,Fresh,TP Domestic Spring No. 4,WaDEWY_WS1128,Surface Water
+WYwr_WS1129,,,Fresh,Widener Spring No. 1,WaDEWY_WS1129,Surface Water
+WYwr_WS1130,,,Fresh,Garber Spring Area,WaDEWY_WS1130,Surface Water
+WYwr_WS1131,,,Fresh,Sieweke Springs No. 1,WaDEWY_WS1131,Surface Water
+WYwr_WS1132,,,Fresh,Sieweke Springs No. 2,WaDEWY_WS1132,Surface Water
+WYwr_WS1133,,,Fresh,Slack Spring,WaDEWY_WS1133,Surface Water
+WYwr_WS1134,,,Fresh,Catron Spring #1,WaDEWY_WS1134,Surface Water
+WYwr_WS1135,,,Fresh,Catron Spring #2,WaDEWY_WS1135,Surface Water
+WYwr_WS1136,,,Fresh,Catron Spring #3,WaDEWY_WS1136,Surface Water
+WYwr_WS1137,,,Fresh,Folly No. 1 Spring Draw,WaDEWY_WS1137,Surface Water
+WYwr_WS1138,,,Fresh,Benen Spring No. 1,WaDEWY_WS1138,Surface Water
+WYwr_WS1139,,,Fresh,Shepperd Spring No. 1,WaDEWY_WS1139,Surface Water
+WYwr_WS1140,,,Fresh,Shepperd Spring No. 2,WaDEWY_WS1140,Surface Water
+WYwr_WS1141,,,Fresh,Brinton No. 1 Spring,WaDEWY_WS1141,Surface Water
+WYwr_WS1142,,,Fresh,Meadow Spring Creek,WaDEWY_WS1142,Surface Water
+WYwr_WS1143,,,Fresh,Spring Creek No. 1,WaDEWY_WS1143,Surface Water
+WYwr_WS1144,,,Fresh,Indian Cave Spring,WaDEWY_WS1144,Surface Water
+WYwr_WS1145,,,Fresh,Frost Spring No. 2,WaDEWY_WS1145,Surface Water
+WYwr_WS1146,,,Fresh,Potter Spring,WaDEWY_WS1146,Surface Water
+WYwr_WS1147,,,Fresh,Springs (23-51-104) and Tilden Spring Draw,WaDEWY_WS1147,Surface Water
+WYwr_WS1148,,,Fresh,Rattlesnake Spring,WaDEWY_WS1148,Surface Water
+WYwr_WS1149,,,Fresh,Eckard Spring,WaDEWY_WS1149,Surface Water
+WYwr_WS1150,,,Fresh,Darrah No. 2 Springs,WaDEWY_WS1150,Surface Water
+WYwr_WS1151,,,Fresh,Springs (36-49-106),WaDEWY_WS1151,Surface Water
+WYwr_WS1152,,,Fresh,Three Springs,WaDEWY_WS1152,Surface Water
+WYwr_WS1153,,,Fresh,Colton Springs,WaDEWY_WS1153,Surface Water
+WYwr_WS1154,,,Fresh,Stonebridge Springs,WaDEWY_WS1154,Surface Water
+WYwr_WS1155,,,Fresh,Boulder Springs,WaDEWY_WS1155,Surface Water
+WYwr_WS1156,,,Fresh,McLaughlin Spring,WaDEWY_WS1156,Surface Water
+WYwr_WS1157,,,Fresh,Trail Creek,WaDEWY_WS1157,Surface Water
+WYwr_WS1158,,,Fresh,Jewett Springs,WaDEWY_WS1158,Surface Water
+WYwr_WS1159,,,Fresh,Spring Creek No. 3,WaDEWY_WS1159,Surface Water
+WYwr_WS1160,,,Fresh,Davies Spring No. 1,WaDEWY_WS1160,Surface Water
+WYwr_WS1161,,,Fresh,Davies Spring No. 2,WaDEWY_WS1161,Surface Water
+WYwr_WS1162,,,Fresh,Nichol's Spring,WaDEWY_WS1162,Surface Water
+WYwr_WS1163,,,Fresh,Webster Creek,WaDEWY_WS1163,Surface Water
+WYwr_WS1164,,,Fresh,Rhoades Spring,WaDEWY_WS1164,Surface Water
+WYwr_WS1165,,,Fresh,Aspen Spring,WaDEWY_WS1165,Surface Water
+WYwr_WS1166,,,Fresh,Aspen Spring No. 2,WaDEWY_WS1166,Surface Water
+WYwr_WS1167,,,Fresh,Gumbo Gulch Spring,WaDEWY_WS1167,Surface Water
+WYwr_WS1168,,,Fresh,Chalk Mountain Spring,WaDEWY_WS1168,Surface Water
+WYwr_WS1169,,,Fresh,Hanging Rock Spring,WaDEWY_WS1169,Surface Water
+WYwr_WS1170,,,Fresh,Newton Creek Spring,WaDEWY_WS1170,Surface Water
+WYwr_WS1171,,,Fresh,Wilde Spring,WaDEWY_WS1171,Surface Water
+WYwr_WS1172,,,Fresh,Lake Marion Spring,WaDEWY_WS1172,Surface Water
+WYwr_WS1173,,,Fresh,Coe Spring,WaDEWY_WS1173,Surface Water
+WYwr_WS1174,,,Fresh,Bloom Spring,WaDEWY_WS1174,Surface Water
+WYwr_WS1175,,,Fresh,Blackwater Spring No. 1,WaDEWY_WS1175,Surface Water
+WYwr_WS1176,,,Fresh,Sweitzer Spring,WaDEWY_WS1176,Surface Water
+WYwr_WS1177,,,Fresh,Elephant Head Spring,WaDEWY_WS1177,Surface Water
+WYwr_WS1178,,,Fresh,Holm Lodge Spring,WaDEWY_WS1178,Surface Water
+WYwr_WS1179,,,Fresh,Spring Creek (18-49-105),WaDEWY_WS1179,Surface Water
+WYwr_WS1180,,,Fresh,Spring Creek (24-49-106),WaDEWY_WS1180,Surface Water
+WYwr_WS1181,,,Fresh,King Spring No. 1 & King Spring No. 2,WaDEWY_WS1181,Surface Water
+WYwr_WS1182,,,Fresh,Kershaw Spring,WaDEWY_WS1182,Surface Water
+WYwr_WS1183,,,Fresh,Willow Springs,WaDEWY_WS1183,Surface Water
+WYwr_WS1184,,,Fresh,Isadora Spring,WaDEWY_WS1184,Surface Water
+WYwr_WS1185,,,Fresh,Legg Spring No. 1,WaDEWY_WS1185,Surface Water
+WYwr_WS1186,,,Fresh,Legg Spring No. 2,WaDEWY_WS1186,Surface Water
+WYwr_WS1187,,,Fresh,Webster Spring No. 1,WaDEWY_WS1187,Surface Water
+WYwr_WS1188,,,Fresh,Webster Spring No. 2,WaDEWY_WS1188,Surface Water
+WYwr_WS1189,,,Fresh,Nichols Spring Branch,WaDEWY_WS1189,Surface Water
+WYwr_WS1190,,,Fresh,Nichols East Spring Branch,WaDEWY_WS1190,Surface Water
+WYwr_WS1191,,,Fresh,Diamond Bar Ranch No. 2 Spring Area,WaDEWY_WS1191,Surface Water
+WYwr_WS1192,,,Fresh,Diamond Bar Ranch No. 3 Spring Area,WaDEWY_WS1192,Surface Water
+WYwr_WS1193,,,Fresh,Diamond Bar Ranch No. 1 Spring Area,WaDEWY_WS1193,Surface Water
+WYwr_WS1194,,,Fresh,Fred J. Richard Spring,WaDEWY_WS1194,Surface Water
+WYwr_WS1195,,,Fresh,Hill Spring,WaDEWY_WS1195,Surface Water
+WYwr_WS1196,,,Fresh,Hindman Spring,WaDEWY_WS1196,Surface Water
+WYwr_WS1197,,,Fresh,Price Spring No. 1,WaDEWY_WS1197,Surface Water
+WYwr_WS1198,,,Fresh,Mock Spring,WaDEWY_WS1198,Surface Water
+WYwr_WS1199,,,Fresh,Price Spring No. 4,WaDEWY_WS1199,Surface Water
+WYwr_WS1200,,,Fresh,Price Spring No. 2,WaDEWY_WS1200,Surface Water
+WYwr_WS1201,,,Fresh,Reachard No. 3 Spring,WaDEWY_WS1201,Surface Water
+WYwr_WS1202,,,Fresh,Sheba Spring,WaDEWY_WS1202,Surface Water
+WYwr_WS1203,,,Fresh,Rand Creek Spring,WaDEWY_WS1203,Surface Water
+WYwr_WS1204,,,Fresh,Putz Spring,WaDEWY_WS1204,Surface Water
+WYwr_WS1205,,,Fresh,DeWitt Spring,WaDEWY_WS1205,Surface Water
+WYwr_WS1206,,,Fresh,Reachard No. 1 Spring,WaDEWY_WS1206,Surface Water
+WYwr_WS1207,,,Fresh,Bathtub Spring,WaDEWY_WS1207,Surface Water
+WYwr_WS1208,,,Fresh,Poulsen Spring No. 2,WaDEWY_WS1208,Surface Water
+WYwr_WS1209,,,Fresh,Stires Spring Creek,WaDEWY_WS1209,Surface Water
+WYwr_WS1210,,,Fresh,Berta Spring,WaDEWY_WS1210,Surface Water
+WYwr_WS1211,,,Fresh,Will Spring,WaDEWY_WS1211,Surface Water
+WYwr_WS1212,,,Fresh,Kent No. 1 Spring,WaDEWY_WS1212,Surface Water
+WYwr_WS1213,,,Fresh,Kent Spring No. 3,WaDEWY_WS1213,Surface Water
+WYwr_WS1214,,,Fresh,Kent No. 2 Spring,WaDEWY_WS1214,Surface Water
+WYwr_WS1215,,,Fresh,Kent Spring No. 4,WaDEWY_WS1215,Surface Water
+WYwr_WS1216,,,Fresh,Kent Spring No. 5,WaDEWY_WS1216,Surface Water
+WYwr_WS1217,,,Fresh,Poulsen Spring No. 1,WaDEWY_WS1217,Surface Water
+WYwr_WS1218,,,Fresh,Nye Spring,WaDEWY_WS1218,Surface Water
+WYwr_WS1219,,,Fresh,King's Ranch Spring No. 1,WaDEWY_WS1219,Surface Water
+WYwr_WS1220,,,Fresh,Spiegelberg No. 2 Spring,WaDEWY_WS1220,Surface Water
+WYwr_WS1221,,,Fresh,Spiegelberg No. 1 Spring,WaDEWY_WS1221,Surface Water
+WYwr_WS1222,,,Fresh,Spiegelberg No. 3 Spring,WaDEWY_WS1222,Surface Water
+WYwr_WS1223,,,Fresh,Weiss Spring No. 2,WaDEWY_WS1223,Surface Water
+WYwr_WS1224,,,Fresh,Weiss Spring No. 1,WaDEWY_WS1224,Surface Water
+WYwr_WS1225,,,Fresh,Jill Spring,WaDEWY_WS1225,Surface Water
+WYwr_WS1226,,,Fresh,Weiss Spring No. 3,WaDEWY_WS1226,Surface Water
+WYwr_WS1227,,,Fresh,Virginia Springs No. 1,WaDEWY_WS1227,Surface Water
+WYwr_WS1228,,,Fresh,Virginia Springs No. 2,WaDEWY_WS1228,Surface Water
+WYwr_WS1229,,,Fresh,Virginia Springs No. 3,WaDEWY_WS1229,Surface Water
+WYwr_WS1230,,,Fresh,Morehead No. 6 Spring,WaDEWY_WS1230,Surface Water
+WYwr_WS1231,,,Fresh,Morehead No. 7 Spring,WaDEWY_WS1231,Surface Water
+WYwr_WS1232,,,Fresh,Morehead No. 8 Spring,WaDEWY_WS1232,Surface Water
+WYwr_WS1233,,,Fresh,Morehead No. 4 Spring,WaDEWY_WS1233,Surface Water
+WYwr_WS1234,,,Fresh,Morehead No. 5 Spring,WaDEWY_WS1234,Surface Water
+WYwr_WS1235,,,Fresh,LSV No. 1 Spring,WaDEWY_WS1235,Surface Water
+WYwr_WS1236,,,Fresh,LSV No. 2 Spring,WaDEWY_WS1236,Surface Water
+WYwr_WS1237,,,Fresh,Morehead No. 1 Spring,WaDEWY_WS1237,Surface Water
+WYwr_WS1238,,,Fresh,Morehead No. 3 Spring,WaDEWY_WS1238,Surface Water
+WYwr_WS1239,,,Fresh,Winants Spring No. 1,WaDEWY_WS1239,Surface Water
+WYwr_WS1240,,,Fresh,Ross Spring No. 1,WaDEWY_WS1240,Surface Water
+WYwr_WS1241,,,Fresh,McGee Spring Draw,WaDEWY_WS1241,Surface Water
+WYwr_WS1242,,,Fresh,Morehead No. 2 Spring,WaDEWY_WS1242,Surface Water
+WYwr_WS1243,,,Fresh,Petty Spring No. 2,WaDEWY_WS1243,Surface Water
+WYwr_WS1244,,,Fresh,Petty Spring No. 1,WaDEWY_WS1244,Surface Water
+WYwr_WS1245,,,Fresh,Grinnell Spring,WaDEWY_WS1245,Surface Water
+WYwr_WS1246,,,Fresh,Mitzi Spring Creek,WaDEWY_WS1246,Surface Water
+WYwr_WS1247,,,Fresh,Henson Spring,WaDEWY_WS1247,Surface Water
+WYwr_WS1248,,,Fresh,Nielson Spring,WaDEWY_WS1248,Surface Water
+WYwr_WS1249,,,Fresh,Norman Spring,WaDEWY_WS1249,Surface Water
+WYwr_WS1250,,,Fresh,Hubner Spring,WaDEWY_WS1250,Surface Water
+WYwr_WS1251,,,Fresh,LSV No. 3 Spring,WaDEWY_WS1251,Surface Water
+WYwr_WS1252,,,Fresh,Bereman Spring,WaDEWY_WS1252,Surface Water
+WYwr_WS1253,,,Fresh,Draper Spring No. 1,WaDEWY_WS1253,Surface Water
+WYwr_WS1254,,,Fresh,Draper Spring No. 2,WaDEWY_WS1254,Surface Water
+WYwr_WS1255,,,Fresh,Draper Spring No. 3,WaDEWY_WS1255,Surface Water
+WYwr_WS1256,,,Fresh,Draper Spring No. 4,WaDEWY_WS1256,Surface Water
+WYwr_WS1257,,,Fresh,Draper Spring No. 5,WaDEWY_WS1257,Surface Water
+WYwr_WS1258,,,Fresh,Swan Spring,WaDEWY_WS1258,Surface Water
+WYwr_WS1259,,,Fresh,Greenwald No. 1 Spring,WaDEWY_WS1259,Surface Water
+WYwr_WS1260,,,Fresh,Hubner Spring Draw,WaDEWY_WS1260,Surface Water
+WYwr_WS1261,,,Fresh,Davies Spring Draw,WaDEWY_WS1261,Surface Water
+WYwr_WS1262,,,Fresh,Uncle Al Spring,WaDEWY_WS1262,Surface Water
+WYwr_WS1263,,,Fresh,Appaloosa Draw,WaDEWY_WS1263,Surface Water
+WYwr_WS1264,,,Fresh,Hedrick Spring,WaDEWY_WS1264,Surface Water
+WYwr_WS1265,,,Fresh,Winants Spring No. 2,WaDEWY_WS1265,Surface Water
+WYwr_WS1266,,,Fresh,Girl Scout Spring,WaDEWY_WS1266,Surface Water
+WYwr_WS1267,,,Fresh,Girl Scout No. 3 Spring,WaDEWY_WS1267,Surface Water
+WYwr_WS1268,,,Fresh,Girl Scout No. 2 Spring,WaDEWY_WS1268,Surface Water
+WYwr_WS1269,,,Fresh,C.C. No. 18 Spring,WaDEWY_WS1269,Surface Water
+WYwr_WS1270,,,Fresh,Holm Lodge No. 2 Spring,WaDEWY_WS1270,Surface Water
+WYwr_WS1271,,,Fresh,Dahlem Spring No. 3,WaDEWY_WS1271,Surface Water
+WYwr_WS1272,,,Fresh,Dahlem Spring No. 4,WaDEWY_WS1272,Surface Water
+WYwr_WS1273,,,Fresh,Heinrich Spring #2,WaDEWY_WS1273,Surface Water
+WYwr_WS1274,,,Fresh,Dead Horse Spring,WaDEWY_WS1274,Surface Water
+WYwr_WS1275,,,Fresh,West Spring No. 1,WaDEWY_WS1275,Surface Water
+WYwr_WS1276,,,Fresh,West Spring No. 2,WaDEWY_WS1276,Surface Water
+WYwr_WS1277,,,Fresh,Lodge Draw Spring,WaDEWY_WS1277,Surface Water
+WYwr_WS1278,,,Fresh,Winzenried Spring,WaDEWY_WS1278,Surface Water
+WYwr_WS1279,,,Fresh,Simek Spring No. 1,WaDEWY_WS1279,Surface Water
+WYwr_WS1280,,,Fresh,Simek Spring No. 2,WaDEWY_WS1280,Surface Water
+WYwr_WS1281,,,Fresh,Frost Spring No. 3,WaDEWY_WS1281,Surface Water
+WYwr_WS1282,,,Fresh,Whaley Spring,WaDEWY_WS1282,Surface Water
+WYwr_WS1283,,,Fresh,Cabin Creek Campground Spring,WaDEWY_WS1283,Surface Water
+WYwr_WS1284,,,Fresh,Shell Falls Spring,WaDEWY_WS1284,Surface Water
+WYwr_WS1285,,,Fresh,Shell River Spring,WaDEWY_WS1285,Surface Water
+WYwr_WS1286,,,Fresh,Rialto Spring,WaDEWY_WS1286,Surface Water
+WYwr_WS1287,,,Fresh,Ranch Spring,WaDEWY_WS1287,Surface Water
+WYwr_WS1288,,,Fresh,Boyle Spring,WaDEWY_WS1288,Surface Water
+WYwr_WS1289,,,Fresh,Flitner Spring,WaDEWY_WS1289,Surface Water
+WYwr_WS1290,,,Fresh,Horn No. 3 Spring,WaDEWY_WS1290,Surface Water
+WYwr_WS1291,,,Fresh,Rath Springs,WaDEWY_WS1291,Surface Water
+WYwr_WS1292,,,Fresh,Spring Creek (26-53-92),WaDEWY_WS1292,Surface Water
+WYwr_WS1293,,,Fresh,Davis Spring,WaDEWY_WS1293,Surface Water
+WYwr_WS1294,,,Fresh,Shell Ranger Station Spring No. 1,WaDEWY_WS1294,Surface Water
+WYwr_WS1295,,,Fresh,Shell Ranger Station Spring No. 2,WaDEWY_WS1295,Surface Water
+WYwr_WS1296,,,Fresh,Horn No. 1 Spring,WaDEWY_WS1296,Surface Water
+WYwr_WS1297,,,Fresh,W.C.P. Spring,WaDEWY_WS1297,Surface Water
+WYwr_WS1298,,,Fresh,Lockard Spring,WaDEWY_WS1298,Surface Water
+WYwr_WS1299,,,Fresh,Meier Spring,WaDEWY_WS1299,Surface Water
+WYwr_WS1300,,,Fresh,Perkins No. 2 Spring,WaDEWY_WS1300,Surface Water
+WYwr_WS1301,,,Fresh,Emmett Spring,WaDEWY_WS1301,Surface Water
+WYwr_WS1302,,,Fresh,Hamilton Spring,WaDEWY_WS1302,Surface Water
+WYwr_WS1303,,,Fresh,Sabin Spring No. 1,WaDEWY_WS1303,Surface Water
+WYwr_WS1304,,,Fresh,Leavitt Spring,WaDEWY_WS1304,Surface Water
+WYwr_WS1305,,,Fresh,Allen No. 1 Spring,WaDEWY_WS1305,Surface Water
+WYwr_WS1306,,,Fresh,Goton Spring Branch,WaDEWY_WS1306,Surface Water
+WYwr_WS1307,,,Fresh,Spring Creek (27-53-91),WaDEWY_WS1307,Surface Water
+WYwr_WS1308,,,Fresh,Drwenski No. 1 Spring,WaDEWY_WS1308,Surface Water
+WYwr_WS1309,,,Fresh,Woods Spring Draw,WaDEWY_WS1309,Surface Water
+WYwr_WS1310,,,Fresh,McCune Springs,WaDEWY_WS1310,Surface Water
+WYwr_WS1311,,,Fresh,Coyote Springs,WaDEWY_WS1311,Surface Water
+WYwr_WS1312,,,Fresh,Squaw Springs,WaDEWY_WS1312,Surface Water
+WYwr_WS1313,,,Fresh,Shimogaki Springs,WaDEWY_WS1313,Surface Water
+WYwr_WS1314,,,Fresh,Stagner Springs,WaDEWY_WS1314,Surface Water
+WYwr_WS1315,,,Fresh,Morrison Spring,WaDEWY_WS1315,Surface Water
+WYwr_WS1316,,,Fresh,Springs (10-5N-5E),WaDEWY_WS1316,Surface Water
+WYwr_WS1317,,,Fresh,Springs (9-5N-5E),WaDEWY_WS1317,Surface Water
+WYwr_WS1318,,,Fresh,Two Mile Springs,WaDEWY_WS1318,Surface Water
+WYwr_WS1319,,,Fresh,Spring (10-5N-5E),WaDEWY_WS1319,Surface Water
+WYwr_WS1320,,,Fresh,Round-Up Creek,WaDEWY_WS1320,Surface Water
+WYwr_WS1321,,,Fresh,Muddy Spring Creek,WaDEWY_WS1321,Surface Water
+WYwr_WS1322,,,Fresh,Deep Springs Creek,WaDEWY_WS1322,Surface Water
+WYwr_WS1323,,,Fresh,Alkali Springs Creek,WaDEWY_WS1323,Surface Water
+WYwr_WS1324,,,Fresh,O'Shea Springs,WaDEWY_WS1324,Surface Water
+WYwr_WS1325,,,Fresh,Little Warm Springs Creek,WaDEWY_WS1325,Surface Water
+WYwr_WS1326,,,Fresh,Warm Springs Creek,WaDEWY_WS1326,Surface Water
+WYwr_WS1327,,,Fresh,East Fork Guard Station Spring,WaDEWY_WS1327,Surface Water
+WYwr_WS1328,,,Fresh,Double Cabin Guard Station Springs,WaDEWY_WS1328,Surface Water
+WYwr_WS1329,,,Fresh,Double Cabin Campground Spring,WaDEWY_WS1329,Surface Water
+WYwr_WS1330,,,Fresh,Campground Spring,WaDEWY_WS1330,Surface Water
+WYwr_WS1331,,,Fresh,Lodge Spring,WaDEWY_WS1331,Surface Water
+WYwr_WS1332,,,Fresh,Lovatt Creek,WaDEWY_WS1332,Surface Water
+WYwr_WS1333,,,Fresh,Timberline Spring,WaDEWY_WS1333,Surface Water
+WYwr_WS1334,,,Fresh,Mud Springs,WaDEWY_WS1334,Surface Water
+WYwr_WS1335,,,Fresh,Springs (15-5N-5E),WaDEWY_WS1335,Surface Water
+WYwr_WS1336,,,Fresh,Ingalls Springs,WaDEWY_WS1336,Surface Water
+WYwr_WS1337,,,Fresh,"Springs (NE¼SW¼, 34-8N-5W)",WaDEWY_WS1337,Surface Water
+WYwr_WS1338,,,Fresh,Springs (30-41-105),WaDEWY_WS1338,Surface Water
+WYwr_WS1339,,,Fresh,Alkali Springs,WaDEWY_WS1339,Surface Water
+WYwr_WS1340,,,Fresh,Spring (34-6N-5E),WaDEWY_WS1340,Surface Water
+WYwr_WS1341,,,Fresh,Wind Canyon Spring,WaDEWY_WS1341,Surface Water
+WYwr_WS1342,,,Fresh,Fish Springs,WaDEWY_WS1342,Surface Water
+WYwr_WS1343,,,Fresh,Fish Spring  No. 2,WaDEWY_WS1343,Surface Water
+WYwr_WS1344,,,Fresh,Four Mile Springs,WaDEWY_WS1344,Surface Water
+WYwr_WS1345,,,Fresh,Blaha Spring No. 1,WaDEWY_WS1345,Surface Water
+WYwr_WS1346,,,Fresh,Blaha Spring No. 2,WaDEWY_WS1346,Surface Water
+WYwr_WS1347,,,Fresh,Falls Campground Spring,WaDEWY_WS1347,Surface Water
+WYwr_WS1348,,,Fresh,Warm Springs,WaDEWY_WS1348,Surface Water
+WYwr_WS1349,,,Fresh,Fish No. 2 Spring,WaDEWY_WS1349,Surface Water
+WYwr_WS1350,,,Fresh,Fish No. 1 Spring,WaDEWY_WS1350,Surface Water
+WYwr_WS1351,,,Fresh,Detimore Spring,WaDEWY_WS1351,Surface Water
+WYwr_WS1352,,,Fresh,San Juan Spring,WaDEWY_WS1352,Surface Water
+WYwr_WS1353,,,Fresh,Geyser Spring,WaDEWY_WS1353,Surface Water
+WYwr_WS1354,,,Fresh,Parker Spring No. 1,WaDEWY_WS1354,Surface Water
+WYwr_WS1355,,,Fresh,Parker Spring No. 2,WaDEWY_WS1355,Surface Water
+WYwr_WS1356,,,Fresh,Parker Spring No. 3,WaDEWY_WS1356,Surface Water
+WYwr_WS1357,,,Fresh,Parker Spring No. 4,WaDEWY_WS1357,Surface Water
+WYwr_WS1358,,,Fresh,Ski Spring Creek,WaDEWY_WS1358,Surface Water
+WYwr_WS1359,,,Fresh,Saloon Spring Creek,WaDEWY_WS1359,Surface Water
+WYwr_WS1360,,,Fresh,Baseball Spring Creek,WaDEWY_WS1360,Surface Water
+WYwr_WS1361,,,Fresh,Buffalo Spring Creek,WaDEWY_WS1361,Surface Water
+WYwr_WS1362,,,Fresh,High Acres Spring,WaDEWY_WS1362,Surface Water
+WYwr_WS1363,,,Fresh,Carey Spring,WaDEWY_WS1363,Surface Water
+WYwr_WS1364,,,Fresh,Stratton Spring No. 3,WaDEWY_WS1364,Surface Water
+WYwr_WS1365,,,Fresh,Spring Branch Creek,WaDEWY_WS1365,Surface Water
+WYwr_WS1366,,,Fresh,Boysen Spring Creek,WaDEWY_WS1366,Surface Water
+WYwr_WS1367,,,Fresh,Sunter Spring Draw,WaDEWY_WS1367,Surface Water
+WYwr_WS1368,,,Fresh,Rawhide Spring Draw,WaDEWY_WS1368,Surface Water
+WYwr_WS1369,,,Fresh,Lowe Spring,WaDEWY_WS1369,Surface Water
+WYwr_WS1370,,,Fresh,South Fork Hay Creek,WaDEWY_WS1370,Surface Water
+WYwr_WS1371,,,Fresh,Spring Creek No. Two (8-54-84),WaDEWY_WS1371,Surface Water
+WYwr_WS1372,,,Fresh,Tetley Springs,WaDEWY_WS1372,Surface Water
+WYwr_WS1373,,,Fresh,Spring (22-49-83),WaDEWY_WS1373,Surface Water
+WYwr_WS1374,,,Fresh,Cole Spring Draw,WaDEWY_WS1374,Surface Water
+WYwr_WS1375,,,Fresh,Three Springs Draw,WaDEWY_WS1375,Surface Water
+WYwr_WS1376,,,Fresh,West Spring,WaDEWY_WS1376,Surface Water
+WYwr_WS1377,,,Fresh,High Spring,WaDEWY_WS1377,Surface Water
+WYwr_WS1378,,,Fresh,Trailside Spring,WaDEWY_WS1378,Surface Water
+WYwr_WS1379,,,Fresh,North Elk Spring,WaDEWY_WS1379,Surface Water
+WYwr_WS1380,,,Fresh,Caribou Spring,WaDEWY_WS1380,Surface Water
+WYwr_WS1381,,,Fresh,Purdy Spring,WaDEWY_WS1381,Surface Water
+WYwr_WS1382,,,Fresh,Fraley Spring,WaDEWY_WS1382,Surface Water
+WYwr_WS1383,,,Fresh,Guess Spring,WaDEWY_WS1383,Surface Water
+WYwr_WS1384,,,Fresh,Braten Spring,WaDEWY_WS1384,Surface Water
+WYwr_WS1385,,,Fresh,South Fork Sayles Creek,WaDEWY_WS1385,Surface Water
+WYwr_WS1386,,,Fresh,Sandy Creek,WaDEWY_WS1386,Surface Water
+WYwr_WS1387,,,Fresh,Hall Spring #2,WaDEWY_WS1387,Surface Water
+WYwr_WS1388,,,Fresh,Springs No. 1 and No. 2,WaDEWY_WS1388,Surface Water
+WYwr_WS1389,,,Fresh,G&F No. 1 Spring,WaDEWY_WS1389,Surface Water
+WYwr_WS1390,,,Fresh,Brock Spring #2,WaDEWY_WS1390,Surface Water
+WYwr_WS1391,,,Fresh,Roberson Springs,WaDEWY_WS1391,Surface Water
+WYwr_WS1392,,,Fresh,School Section Spring Gulch,WaDEWY_WS1392,Surface Water
+WYwr_WS1393,,,Fresh,A Spring,WaDEWY_WS1393,Surface Water
+WYwr_WS1394,,,Fresh,Loomis Spring,WaDEWY_WS1394,Surface Water
+WYwr_WS1395,,,Fresh,Arndt Spring,WaDEWY_WS1395,Surface Water
+WYwr_WS1396,,,Fresh,Twin Springs,WaDEWY_WS1396,Surface Water
+WYwr_WS1397,,,Fresh,Red Spring No. One,WaDEWY_WS1397,Surface Water
+WYwr_WS1398,,,Fresh,Red Spring No. Two,WaDEWY_WS1398,Surface Water
+WYwr_WS1399,,,Fresh,Red Spring No. Three,WaDEWY_WS1399,Surface Water
+WYwr_WS1400,,,Fresh,Red Spring No. Four,WaDEWY_WS1400,Surface Water
+WYwr_WS1401,,,Fresh,MacGuire Springs,WaDEWY_WS1401,Surface Water
+WYwr_WS1402,,,Fresh,Otter Springs,WaDEWY_WS1402,Surface Water
+WYwr_WS1403,,,Fresh,Woosley Spring No. 1,WaDEWY_WS1403,Surface Water
+WYwr_WS1404,,,Fresh,Woosley Spring No. 2,WaDEWY_WS1404,Surface Water
+WYwr_WS1405,,,Fresh,Fauber Springs,WaDEWY_WS1405,Surface Water
+WYwr_WS1406,,,Fresh,Hell Spring No. 1,WaDEWY_WS1406,Surface Water
+WYwr_WS1407,,,Fresh,West Fork Keg Spring Draw,WaDEWY_WS1407,Surface Water
+WYwr_WS1408,,,Fresh,East Fork Keg Spring Draw,WaDEWY_WS1408,Surface Water
+WYwr_WS1409,,,Fresh,Buffalo Springs Creek,WaDEWY_WS1409,Surface Water
+WYwr_WS1410,,,Fresh,Ski Spring Draw,WaDEWY_WS1410,Surface Water
+WYwr_WS1411,,,Fresh,Indian Creek Spring Draw,WaDEWY_WS1411,Surface Water
+WYwr_WS1412,,,Fresh,Boulder Park Spring,WaDEWY_WS1412,Surface Water
+WYwr_WS1413,,,Fresh,Clark Spring Draw,WaDEWY_WS1413,Surface Water
+WYwr_WS1414,,,Fresh,Christiansen Spring,WaDEWY_WS1414,Surface Water
+WYwr_WS1415,,,Fresh,Spring (13-43-94),WaDEWY_WS1415,Surface Water
+WYwr_WS1416,,,Fresh,Pyramid Spring No. 1,WaDEWY_WS1416,Surface Water
+WYwr_WS1417,,,Fresh,Pyramid Spring No. 2,WaDEWY_WS1417,Surface Water
+WYwr_WS1418,,,Fresh,Pyramid Spring No. 3,WaDEWY_WS1418,Surface Water
+WYwr_WS1419,,,Fresh,Pyramid Spring No. 4,WaDEWY_WS1419,Surface Water
+WYwr_WS1420,,,Fresh,Gardner Springs,WaDEWY_WS1420,Surface Water
+WYwr_WS1421,,,Fresh,Wigwam Spring No. 1,WaDEWY_WS1421,Surface Water
+WYwr_WS1422,,,Fresh,Lee Creek Spring No. 2,WaDEWY_WS1422,Surface Water
+WYwr_WS1423,,,Fresh,Wigwam Spring No. 2,WaDEWY_WS1423,Surface Water
+WYwr_WS1424,,,Fresh,Spring Branch Brokenback Creek,WaDEWY_WS1424,Surface Water
+WYwr_WS1425,,,Fresh,Coon Hollow Springs,WaDEWY_WS1425,Surface Water
+WYwr_WS1426,,,Fresh,Alkali Spring,WaDEWY_WS1426,Surface Water
+WYwr_WS1427,,,Fresh,North Fork Otter Creek,WaDEWY_WS1427,Surface Water
+WYwr_WS1428,,,Fresh,Hanson Spring,WaDEWY_WS1428,Surface Water
+WYwr_WS1429,,,Fresh,North Fork Spring Creek,WaDEWY_WS1429,Surface Water
+WYwr_WS1430,,,Fresh,Winter Spring,WaDEWY_WS1430,Surface Water
+WYwr_WS1431,,,Fresh,Red Spring Creek,WaDEWY_WS1431,Surface Water
+WYwr_WS1432,,,Fresh,Tom Springs,WaDEWY_WS1432,Surface Water
+WYwr_WS1433,,,Fresh,Ray Spring No. 1,WaDEWY_WS1433,Surface Water
+WYwr_WS1434,,,Fresh,Ray Spring No. 2,WaDEWY_WS1434,Surface Water
+WYwr_WS1435,,,Fresh,Ray Spring No. 3,WaDEWY_WS1435,Surface Water
+WYwr_WS1436,,,Fresh,Dalzelle Spring No. 1,WaDEWY_WS1436,Surface Water
+WYwr_WS1437,,,Fresh,Dalzelle Spring No. 2,WaDEWY_WS1437,Surface Water
+WYwr_WS1438,,,Fresh,Deer Haven Spring,WaDEWY_WS1438,Surface Water
+WYwr_WS1439,,,Fresh,Gordon Spring,WaDEWY_WS1439,Surface Water
+WYwr_WS1440,,,Fresh,Clare Spring,WaDEWY_WS1440,Surface Water
+WYwr_WS1441,,,Fresh,Lost Spring,WaDEWY_WS1441,Surface Water
+WYwr_WS1442,,,Fresh,Big Horn Hot Springs,WaDEWY_WS1442,Surface Water
+WYwr_WS1443,,,Fresh,White Sulphur Spring,WaDEWY_WS1443,Surface Water
+WYwr_WS1444,,,Fresh,Iversen Spring,WaDEWY_WS1444,Surface Water
+WYwr_WS1445,,,Fresh,E.W. Anderson Spring,WaDEWY_WS1445,Surface Water
+WYwr_WS1446,,,Fresh,Wilke's Spring,WaDEWY_WS1446,Surface Water
+WYwr_WS1447,,,Fresh,Tolman No. 1 Spring,WaDEWY_WS1447,Surface Water
+WYwr_WS1448,,,Fresh,Burnham Spring No. 1,WaDEWY_WS1448,Surface Water
+WYwr_WS1449,,,Fresh,Childs Spring No. 2,WaDEWY_WS1449,Surface Water
+WYwr_WS1450,,,Fresh,Boemerman Spring,WaDEWY_WS1450,Surface Water
+WYwr_WS1451,,,Fresh,Springs (33-43-86),WaDEWY_WS1451,Surface Water
+WYwr_WS1452,,,Fresh,Spring (4-42-86),WaDEWY_WS1452,Surface Water
+WYwr_WS1453,,,Fresh,Brush Cabin Spring No. 1,WaDEWY_WS1453,Surface Water
+WYwr_WS1454,,,Fresh,Brush Cabin Spring No. 2,WaDEWY_WS1454,Surface Water
+WYwr_WS1455,,,Fresh,Tyrrell Springs,WaDEWY_WS1455,Surface Water
+WYwr_WS1456,,,Fresh,Sitting Bull Spring,WaDEWY_WS1456,Surface Water
+WYwr_WS1457,,,Fresh,Lee Creek Spring No. 1 Draw,WaDEWY_WS1457,Surface Water
+WYwr_WS1458,,,Fresh,Lee Creek Spring No. 3,WaDEWY_WS1458,Surface Water
+WYwr_WS1459,,,Fresh,Sulphur Spring,WaDEWY_WS1459,Surface Water
+WYwr_WS1460,,,Fresh,Wigwam Spring No. One,WaDEWY_WS1460,Surface Water
+WYwr_WS1461,,,Fresh,Jones No. 1 Spring,WaDEWY_WS1461,Surface Water
+WYwr_WS1462,,,Fresh,Moses No. 1 Spring,WaDEWY_WS1462,Surface Water
+WYwr_WS1463,,,Fresh,Rice Camp No. 1 Spring,WaDEWY_WS1463,Surface Water
+WYwr_WS1464,,,Fresh,Nort Forty Drain,WaDEWY_WS1464,Surface Water
+WYwr_WS1465,,,Fresh,Rannells Spring,WaDEWY_WS1465,Surface Water
+WYwr_WS1466,,,Fresh,Cold Spring,WaDEWY_WS1466,Surface Water
+WYwr_WS1467,,,Fresh,Hyatt Spring,WaDEWY_WS1467,Surface Water
+WYwr_WS1468,,,Fresh,Paintrock Spring,WaDEWY_WS1468,Surface Water
+WYwr_WS1469,,,Fresh,Wesley Spring,WaDEWY_WS1469,Surface Water
+WYwr_WS1470,,,Fresh,Milton Draw,WaDEWY_WS1470,Surface Water
+WYwr_WS1471,,,Fresh,Spring (TR 72-50-89),WaDEWY_WS1471,Surface Water
+WYwr_WS1472,,,Fresh,Lot D Spring,WaDEWY_WS1472,Surface Water
+WYwr_WS1473,,,Fresh,Venus Cabin Spring,WaDEWY_WS1473,Surface Water
+WYwr_WS1474,,,Fresh,Roadside Spring,WaDEWY_WS1474,Surface Water
+WYwr_WS1475,,,Fresh,Jo Jo Spring,WaDEWY_WS1475,Surface Water
+WYwr_WS1476,,,Fresh,Z-T Spring,WaDEWY_WS1476,Surface Water
+WYwr_WS1477,,,Fresh,McCarty Spring,WaDEWY_WS1477,Surface Water
+WYwr_WS1478,,,Fresh,Turnell Spring No. 1,WaDEWY_WS1478,Surface Water
+WYwr_WS1479,,,Fresh,Schmidt Spring No. 1,WaDEWY_WS1479,Surface Water
+WYwr_WS1480,,,Fresh,Heckert No. 1 Spring,WaDEWY_WS1480,Surface Water
+WYwr_WS1481,,,Fresh,Wagner Spring,WaDEWY_WS1481,Surface Water
+WYwr_WS1482,,,Fresh,Conner No. 2 Spring,WaDEWY_WS1482,Surface Water
+WYwr_WS1483,,,Fresh,Pisgah No. 5 Spring,WaDEWY_WS1483,Surface Water
+WYwr_WS1484,,,Fresh,Springs (10-46-60),WaDEWY_WS1484,Surface Water
+WYwr_WS1485,,,Fresh,Spring on Elk Mountain,WaDEWY_WS1485,Surface Water
+WYwr_WS1486,,,Fresh,Parmalee (Spring) Canyon,WaDEWY_WS1486,Surface Water
+WYwr_WS1487,,,Fresh,Big Spring No. 1,WaDEWY_WS1487,Surface Water
+WYwr_WS1488,,,Fresh,Big Spring No. 2,WaDEWY_WS1488,Surface Water
+WYwr_WS1489,,,Fresh,Spring (18-45-60),WaDEWY_WS1489,Surface Water
+WYwr_WS1490,,,Fresh,Smith Spring,WaDEWY_WS1490,Surface Water
+WYwr_WS1491,,,Fresh,Pisgah Spring,WaDEWY_WS1491,Surface Water
+WYwr_WS1492,,,Fresh,Dohrman Spring,WaDEWY_WS1492,Surface Water
+WYwr_WS1493,,,Fresh,Pisgah Spring No. 1,WaDEWY_WS1493,Surface Water
+WYwr_WS1494,,,Fresh,Pisgah Spring No. 2,WaDEWY_WS1494,Surface Water
+WYwr_WS1495,,,Fresh,Pisgah Spring No. 3,WaDEWY_WS1495,Surface Water
+WYwr_WS1496,,,Fresh,Harvey Spring,WaDEWY_WS1496,Surface Water
+WYwr_WS1497,,,Fresh,Donahoe Spring,WaDEWY_WS1497,Surface Water
+WYwr_WS1498,,,Fresh,Salt Spring No. 1,WaDEWY_WS1498,Surface Water
+WYwr_WS1499,,,Fresh,Salt Spring No. 2,WaDEWY_WS1499,Surface Water
+WYwr_WS1500,,,Fresh,Salt Spring No. 3,WaDEWY_WS1500,Surface Water
+WYwr_WS1501,,,Fresh,Ackley Spring,WaDEWY_WS1501,Surface Water
+WYwr_WS1502,,,Fresh,Parker Springs,WaDEWY_WS1502,Surface Water
+WYwr_WS1503,,,Fresh,Maris Spring (Bear Canyon Spring),WaDEWY_WS1503,Surface Water
+WYwr_WS1504,,,Fresh,Blaine Spring,WaDEWY_WS1504,Surface Water
+WYwr_WS1505,,,Fresh,Hollingsworth Spring Area,WaDEWY_WS1505,Surface Water
+WYwr_WS1506,,,Fresh,West Fork Spring Creek,WaDEWY_WS1506,Surface Water
+WYwr_WS1507,,,Fresh,"Long Springs No. 1,2,3,4,5,6",WaDEWY_WS1507,Surface Water
+WYwr_WS1508,,,Fresh,Callahan's Slough,WaDEWY_WS1508,Surface Water
+WYwr_WS1509,,,Fresh,Hicks Spring Creek,WaDEWY_WS1509,Surface Water
+WYwr_WS1510,,,Fresh,Holland Springs,WaDEWY_WS1510,Surface Water
+WYwr_WS1511,,,Fresh,Rafter J Springs,WaDEWY_WS1511,Surface Water
+WYwr_WS1512,,,Fresh,Falsehood Spring,WaDEWY_WS1512,Surface Water
+WYwr_WS1513,,,Fresh,Goosewing Spring,WaDEWY_WS1513,Surface Water
+WYwr_WS1514,,,Fresh,LCC Spring,WaDEWY_WS1514,Surface Water
+WYwr_WS1515,,,Fresh,ETC Spring,WaDEWY_WS1515,Surface Water
+WYwr_WS1516,,,Fresh,GC Spring,WaDEWY_WS1516,Surface Water
+WYwr_WS1517,,,Fresh,SCC Spring,WaDEWY_WS1517,Surface Water
+WYwr_WS1518,,,Fresh,Boll Weevil Spring,WaDEWY_WS1518,Surface Water
+WYwr_WS1519,,,Fresh,VandeWater Spring,WaDEWY_WS1519,Surface Water
+WYwr_WS1520,,,Fresh,Holmes Spring,WaDEWY_WS1520,Surface Water
+WYwr_WS1521,,,Fresh,Burts Canyon Spring No. 1,WaDEWY_WS1521,Surface Water
+WYwr_WS1522,,,Fresh,Hidden Spring,WaDEWY_WS1522,Surface Water
+WYwr_WS1523,,,Fresh,Adams Springs,WaDEWY_WS1523,Surface Water
+WYwr_WS1524,,,Fresh,Long Springs,WaDEWY_WS1524,Surface Water
+WYwr_WS1525,,,Fresh,Valdez & Uncle Mike Spring,WaDEWY_WS1525,Surface Water
+WYwr_WS1526,,,Fresh,White (Peterson) Springs,WaDEWY_WS1526,Surface Water
+WYwr_WS1527,,,Fresh,Botcher Spring,WaDEWY_WS1527,Surface Water
+WYwr_WS1528,,,Fresh,Manning Springs,WaDEWY_WS1528,Surface Water
+WYwr_WS1529,,,Fresh,Mattson Springs,WaDEWY_WS1529,Surface Water
+WYwr_WS1530,,,Fresh,Springs(Munger Mtn),WaDEWY_WS1530,Surface Water
+WYwr_WS1531,,,Fresh,Twin Spring Creek,WaDEWY_WS1531,Surface Water
+WYwr_WS1532,,,Fresh,Nethercott Springs,WaDEWY_WS1532,Surface Water
+WYwr_WS1533,,,Fresh,Newbold Spring,WaDEWY_WS1533,Surface Water
+WYwr_WS1534,,,Fresh,North Twin Springs,WaDEWY_WS1534,Surface Water
+WYwr_WS1535,,,Fresh,West Spring of Twin Springs,WaDEWY_WS1535,Surface Water
+WYwr_WS1536,,,Fresh,Fisk's Springs,WaDEWY_WS1536,Surface Water
+WYwr_WS1537,,,Fresh,Beaver Dam Spring,WaDEWY_WS1537,Surface Water
+WYwr_WS1538,,,Fresh,Redmond Spring,WaDEWY_WS1538,Surface Water
+WYwr_WS1539,,,Fresh,Schofield Springs,WaDEWY_WS1539,Surface Water
+WYwr_WS1540,,,Fresh,Kissinger Spring,WaDEWY_WS1540,Surface Water
+WYwr_WS1541,,,Fresh,Swamp Springs,WaDEWY_WS1541,Surface Water
+WYwr_WS1542,,,Fresh,Meadow Springs,WaDEWY_WS1542,Surface Water
+WYwr_WS1543,,,Fresh,Collier's Spring,WaDEWY_WS1543,Surface Water
+WYwr_WS1544,,,Fresh,Spruce Spring,WaDEWY_WS1544,Surface Water
+WYwr_WS1545,,,Fresh,Sam's Spring,WaDEWY_WS1545,Surface Water
+WYwr_WS1546,,,Fresh,Garton Springs,WaDEWY_WS1546,Surface Water
+WYwr_WS1547,,,Fresh,Spring Creek (23-43-115),WaDEWY_WS1547,Surface Water
+WYwr_WS1548,,,Fresh,Leeks Springs,WaDEWY_WS1548,Surface Water
+WYwr_WS1549,,,Fresh,Beaver Springs Creek,WaDEWY_WS1549,Surface Water
+WYwr_WS1550,,,Fresh,Upper Poorman Spring,WaDEWY_WS1550,Surface Water
+WYwr_WS1551,,,Fresh,Dietz Spring,WaDEWY_WS1551,Surface Water
+WYwr_WS1552,,,Fresh,Palmer Springs,WaDEWY_WS1552,Surface Water
+WYwr_WS1553,,,Fresh,Antelope Spring,WaDEWY_WS1553,Surface Water
+WYwr_WS1554,,,Fresh,Shive Springs,WaDEWY_WS1554,Surface Water
+WYwr_WS1555,,,Fresh,Hoagland Springs,WaDEWY_WS1555,Surface Water
+WYwr_WS1556,,,Fresh,Huckleberry Spring,WaDEWY_WS1556,Surface Water
+WYwr_WS1557,,,Fresh,Romey Springs (17-42-115),WaDEWY_WS1557,Surface Water
+WYwr_WS1558,,,Fresh,Cottonwood Spring,WaDEWY_WS1558,Surface Water
+WYwr_WS1559,,,Fresh,Pemble Springs,WaDEWY_WS1559,Surface Water
+WYwr_WS1560,,,Fresh,Kin Spring,WaDEWY_WS1560,Surface Water
+WYwr_WS1561,,,Fresh,Springs (25-42-116),WaDEWY_WS1561,Surface Water
+WYwr_WS1562,,,Fresh,Erwin Springs,WaDEWY_WS1562,Surface Water
+WYwr_WS1563,,,Fresh,East Poorman Spring,WaDEWY_WS1563,Surface Water
+WYwr_WS1564,,,Fresh,Two Ocean Creek,WaDEWY_WS1564,Surface Water
+WYwr_WS1565,,,Fresh,Brody Spring,WaDEWY_WS1565,Surface Water
+WYwr_WS1566,,,Fresh,Eynon Spring,WaDEWY_WS1566,Surface Water
+WYwr_WS1567,,,Fresh,Cow Camp Springs,WaDEWY_WS1567,Surface Water
+WYwr_WS1568,,,Fresh,Smith Springs,WaDEWY_WS1568,Surface Water
+WYwr_WS1569,,,Fresh,Coyote Spring,WaDEWY_WS1569,Surface Water
+WYwr_WS1570,,,Fresh,Three Spring Creek,WaDEWY_WS1570,Surface Water
+WYwr_WS1571,,,Fresh,Robertson Springs,WaDEWY_WS1571,Surface Water
+WYwr_WS1572,,,Fresh,Swamp Spring,WaDEWY_WS1572,Surface Water
+WYwr_WS1573,,,Fresh,W.E. Lloyd Spring,WaDEWY_WS1573,Surface Water
+WYwr_WS1574,,,Fresh,DeRham Spring,WaDEWY_WS1574,Surface Water
+WYwr_WS1575,,,Fresh,Gray's Spring,WaDEWY_WS1575,Surface Water
+WYwr_WS1576,,,Fresh,Brundage Spring,WaDEWY_WS1576,Surface Water
+WYwr_WS1577,,,Fresh,Unnamed Spring,WaDEWY_WS1577,Surface Water
+WYwr_WS1578,,,Fresh,Lower Spring,WaDEWY_WS1578,Surface Water
+WYwr_WS1579,,,Fresh,Upper Spring,WaDEWY_WS1579,Surface Water
+WYwr_WS1580,,,Fresh,Edmiston Spring,WaDEWY_WS1580,Surface Water
+WYwr_WS1581,,,Fresh,"Long Springs Nos. 1,2,3,4,5,6",WaDEWY_WS1581,Surface Water
+WYwr_WS1582,,,Fresh,Elk Ranch Spring,WaDEWY_WS1582,Surface Water
+WYwr_WS1583,,,Fresh,Slide Gulch Spring,WaDEWY_WS1583,Surface Water
+WYwr_WS1584,,,Fresh,Porter Spring,WaDEWY_WS1584,Surface Water
+WYwr_WS1585,,,Fresh,Bill Spring,WaDEWY_WS1585,Surface Water
+WYwr_WS1586,,,Fresh,Bierer Spring,WaDEWY_WS1586,Surface Water
+WYwr_WS1587,,,Fresh,Huff Spring,WaDEWY_WS1587,Surface Water
+WYwr_WS1588,,,Fresh,Soeset Spring,WaDEWY_WS1588,Surface Water
+WYwr_WS1589,,,Fresh,Mack Spring,WaDEWY_WS1589,Surface Water
+WYwr_WS1590,,,Fresh,Jennifer Spring,WaDEWY_WS1590,Surface Water
+WYwr_WS1591,,,Fresh,Beaman Spring No. 1,WaDEWY_WS1591,Surface Water
+WYwr_WS1592,,,Fresh,Spring Creek No. Two,WaDEWY_WS1592,Surface Water
+WYwr_WS1593,,,Fresh,Spring Creek (SENW 10-37-113),WaDEWY_WS1593,Surface Water
+WYwr_WS1594,,,Fresh,Black Canyon Spring,WaDEWY_WS1594,Surface Water
+WYwr_WS1595,,,Fresh,Warm Springs Area,WaDEWY_WS1595,Surface Water
+WYwr_WS1596,,,Fresh,Imeson Spring Creek,WaDEWY_WS1596,Surface Water
+WYwr_WS1597,,,Fresh,Rendevous Spring No. 3,WaDEWY_WS1597,Surface Water
+WYwr_WS1598,,,Fresh,Emil's Spring,WaDEWY_WS1598,Surface Water
+WYwr_WS1599,,,Fresh,Rendevous Spring No. 1,WaDEWY_WS1599,Surface Water
+WYwr_WS1600,,,Fresh,Rendevous Spring No. 2,WaDEWY_WS1600,Surface Water
+WYwr_WS1601,,,Fresh,Bertagnolli Spring,WaDEWY_WS1601,Surface Water
+WYwr_WS1602,,,Fresh,Baker Spring,WaDEWY_WS1602,Surface Water
+WYwr_WS1603,,,Fresh,Hearley Spring,WaDEWY_WS1603,Surface Water
+WYwr_WS1604,,,Fresh,Jacob's Spring,WaDEWY_WS1604,Surface Water
+WYwr_WS1605,,,Fresh,Beck's Spring,WaDEWY_WS1605,Surface Water
+WYwr_WS1606,,,Fresh,Ellen Creek Spring,WaDEWY_WS1606,Surface Water
+WYwr_WS1607,,,Fresh,Kearns Spring No. 1,WaDEWY_WS1607,Surface Water
+WYwr_WS1608,,,Fresh,Kearns Spring No. 2,WaDEWY_WS1608,Surface Water
+WYwr_WS1609,,,Fresh,Imeson Spring,WaDEWY_WS1609,Surface Water
+WYwr_WS1610,,,Fresh,Ross Spring,WaDEWY_WS1610,Surface Water
+WYwr_WS1611,,,Fresh,Yokel Spring,WaDEWY_WS1611,Surface Water
+WYwr_WS1612,,,Fresh,Goosewing Spring No. 2,WaDEWY_WS1612,Surface Water
+WYwr_WS1613,,,Fresh,Dell No. 1 Spring,WaDEWY_WS1613,Surface Water
+WYwr_WS1614,,,Fresh,O B Springs Area,WaDEWY_WS1614,Surface Water
+WYwr_WS1615,,,Fresh,Wickett Spring,WaDEWY_WS1615,Surface Water
+WYwr_WS1616,,,Fresh,Aspen No. 1 Spring,WaDEWY_WS1616,Surface Water
+WYwr_WS1617,,,Fresh,Woods Spring,WaDEWY_WS1617,Surface Water
+WYwr_WS1618,,,Fresh,North Spring,WaDEWY_WS1618,Surface Water
+WYwr_WS1619,,,Fresh,vonGontard's Spring No. 3,WaDEWY_WS1619,Surface Water
+WYwr_WS1620,,,Fresh,Crystal Springs,WaDEWY_WS1620,Surface Water
+WYwr_WS1621,,,Fresh,Price Springs,WaDEWY_WS1621,Surface Water
+WYwr_WS1622,,,Fresh,Zajac Spring,WaDEWY_WS1622,Surface Water
+WYwr_WS1623,,,Fresh,Box K Draw,WaDEWY_WS1623,Surface Water
+WYwr_WS1624,,,Fresh,Babe Mack Spring,WaDEWY_WS1624,Surface Water
+WYwr_WS1625,,,Fresh,Teton Mountain Spring,WaDEWY_WS1625,Surface Water
+WYwr_WS1626,,,Fresh,Coles Canyon Spring,WaDEWY_WS1626,Surface Water
+WYwr_WS1627,,,Fresh,Rieck Springs Area,WaDEWY_WS1627,Surface Water
+WYwr_WS1628,,,Fresh,Paul Imeson Spring,WaDEWY_WS1628,Surface Water
+WYwr_WS1629,,,Fresh,MacKenzie Spring Creek,WaDEWY_WS1629,Surface Water
+WYwr_WS1630,,,Fresh,Tanner Spring,WaDEWY_WS1630,Surface Water
+WYwr_WS1631,,,Fresh,Yarrow Spring Draw,WaDEWY_WS1631,Surface Water
+WYwr_WS1632,,,Fresh,Alpine Spring,WaDEWY_WS1632,Surface Water
+WYwr_WS1633,,,Fresh,Ross Spring No. 2,WaDEWY_WS1633,Surface Water
+WYwr_WS1634,,,Fresh,Knobloch Spring,WaDEWY_WS1634,Surface Water
+WYwr_WS1635,,,Fresh,Nelson Springs,WaDEWY_WS1635,Surface Water
+WYwr_WS1636,,,Fresh,North Branch of North Spring Creek,WaDEWY_WS1636,Surface Water
+WYwr_WS1637,,,Fresh,Alta Spring,WaDEWY_WS1637,Surface Water
+WYwr_WS1638,,,Fresh,Resort Spring,WaDEWY_WS1638,Surface Water
+WYwr_WS1639,,,Fresh,Adam Spring,WaDEWY_WS1639,Surface Water
+WYwr_WS1640,,,Fresh,Curtis Spring,WaDEWY_WS1640,Surface Water
+WYwr_WS1641,,,Fresh,Camp Spring,WaDEWY_WS1641,Surface Water
+WYwr_WS1642,,,Fresh,H-Diamond-W Spring No. 2,WaDEWY_WS1642,Surface Water
+WYwr_WS1643,,,Fresh,H-Diamond-W Spring No. 3,WaDEWY_WS1643,Surface Water
+WYwr_WS1644,,,Fresh,H-Diamond-W Spring No. 1,WaDEWY_WS1644,Surface Water
+WYwr_WS1645,,,Fresh,Sawmill Spring,WaDEWY_WS1645,Surface Water
+WYwr_WS1646,,,Fresh,Milk Spring,WaDEWY_WS1646,Surface Water
+WYwr_WS1647,,,Fresh,Spaulding Spring,WaDEWY_WS1647,Surface Water
+WYwr_WS1648,,,Fresh,Proplesch Spring No. 1,WaDEWY_WS1648,Surface Water
+WYwr_WS1649,,,Fresh,Proplesch Spring No. 2,WaDEWY_WS1649,Surface Water
+WYwr_WS1650,,,Fresh,Nostrum Spring,WaDEWY_WS1650,Surface Water
+WYwr_WS1651,,,Fresh,Red Canyon Spring,WaDEWY_WS1651,Surface Water
+WYwr_WS1652,,,Fresh,Spring (35-43-95),WaDEWY_WS1652,Surface Water
+WYwr_WS1653,,,Fresh,Spring (19-43-101),WaDEWY_WS1653,Surface Water
+WYwr_WS1654,,,Fresh,Spring (4-6N-5E),WaDEWY_WS1654,Surface Water
+WYwr_WS1655,,,Fresh,Spring (NE1/4NW1/4 9-6N-5E),WaDEWY_WS1655,Surface Water
+WYwr_WS1656,,,Fresh,Spring (11-8N-4E),WaDEWY_WS1656,Surface Water
+WYwr_WS1657,,,Fresh,Spring No. 4,WaDEWY_WS1657,Surface Water
+WYwr_WS1658,,,Fresh,Spring No. 5,WaDEWY_WS1658,Surface Water
+WYwr_WS1659,,,Fresh,Campbell Springs,WaDEWY_WS1659,Surface Water
+WYwr_WS1660,,,Fresh,McCumber Spring,WaDEWY_WS1660,Surface Water
+WYwr_WS1661,,,Fresh,Sinclair Draw,WaDEWY_WS1661,Surface Water
+WYwr_WS1662,,,Fresh,Beltz Spring,WaDEWY_WS1662,Surface Water
+WYwr_WS1663,,,Fresh,A spring,WaDEWY_WS1663,Surface Water
+WYwr_WS1664,,,Fresh,Horn Springs,WaDEWY_WS1664,Surface Water
+WYwr_WS1665,,,Fresh,Black Diamond Springs,WaDEWY_WS1665,Surface Water
+WYwr_WS1666,,,Fresh,Lime Kiln Springs,WaDEWY_WS1666,Surface Water
+WYwr_WS1667,,,Fresh,Poison Springs,WaDEWY_WS1667,Surface Water
+WYwr_WS1668,,,Fresh,Iron Spring,WaDEWY_WS1668,Surface Water
+WYwr_WS1669,,,Fresh,Poison Springs Draw,WaDEWY_WS1669,Surface Water
+WYwr_WS1670,,,Fresh,Burnt Springs Draw,WaDEWY_WS1670,Surface Water
+WYwr_WS1671,,,Fresh,Sour Dough Springs,WaDEWY_WS1671,Surface Water
+WYwr_WS1672,,,Fresh,71 Spring,WaDEWY_WS1672,Surface Water
+WYwr_WS1673,,,Fresh,Brennan Spring,WaDEWY_WS1673,Surface Water
+WYwr_WS1674,,,Fresh,Cheever Spring,WaDEWY_WS1674,Surface Water
+WYwr_WS1675,,,Fresh,Maple Spring,WaDEWY_WS1675,Surface Water
+WYwr_WS1676,,,Fresh,Reck Spring,WaDEWY_WS1676,Surface Water
+WYwr_WS1677,,,Fresh,Spaulding Spring No. 3,WaDEWY_WS1677,Surface Water
+WYwr_WS1678,,,Fresh,Spaulding Spring No. 2,WaDEWY_WS1678,Surface Water
+WYwr_WS1679,,,Fresh,Gourley Springs,WaDEWY_WS1679,Surface Water
+WYwr_WS1680,,,Fresh,Nickelson Spring,WaDEWY_WS1680,Surface Water
+WYwr_WS1681,,,Fresh,Forty Rod Spring Creek,WaDEWY_WS1681,Surface Water
+WYwr_WS1682,,,Fresh,Strawberry Spring,WaDEWY_WS1682,Surface Water
+WYwr_WS1683,,,Fresh,Spring Creek (1-34-114),WaDEWY_WS1683,Surface Water
+WYwr_WS1684,,,Fresh,Boroff Springs,WaDEWY_WS1684,Surface Water
+WYwr_WS1685,,,Fresh,Lone Pine Springs,WaDEWY_WS1685,Surface Water
+WYwr_WS1686,,,Fresh,Spring Creek (18-34-112),WaDEWY_WS1686,Surface Water
+WYwr_WS1687,,,Fresh,Harrison Spring,WaDEWY_WS1687,Surface Water
+WYwr_WS1688,,,Fresh,Albano Spring,WaDEWY_WS1688,Surface Water
+WYwr_WS1689,,,Fresh,Middle Butte Spring No. 1,WaDEWY_WS1689,Surface Water
+WYwr_WS1690,,,Fresh,Sunny Slope Spring,WaDEWY_WS1690,Surface Water
+WYwr_WS1691,,,Fresh,Pisciculture Spring,WaDEWY_WS1691,Surface Water
+WYwr_WS1692,,,Fresh,Q5 Spring No. 1,WaDEWY_WS1692,Surface Water
+WYwr_WS1693,,,Fresh,Q5 Spring No. 2,WaDEWY_WS1693,Surface Water
+WYwr_WS1694,,,Fresh,Q5 Spring No. 3,WaDEWY_WS1694,Surface Water
+WYwr_WS1695,,,Fresh,Dale Spring,WaDEWY_WS1695,Surface Water
+WYwr_WS1696,,,Fresh,Phillip Spring,WaDEWY_WS1696,Surface Water
+WYwr_WS1697,,,Fresh,Sand Springs Creek,WaDEWY_WS1697,Surface Water
+WYwr_WS1698,,,Fresh,Trails End Campground Spring,WaDEWY_WS1698,Surface Water
+WYwr_WS1699,,,Fresh,Halfmoon Spring No. 1,WaDEWY_WS1699,Surface Water
+WYwr_WS1700,,,Fresh,New Springs,WaDEWY_WS1700,Surface Water
+WYwr_WS1701,,,Fresh,Elk Gulch,WaDEWY_WS1701,Surface Water
+WYwr_WS1702,,,Fresh,Jerry Spring,WaDEWY_WS1702,Surface Water
+WYwr_WS1703,,,Fresh,Ritchie Springs,WaDEWY_WS1703,Surface Water
+WYwr_WS1704,,,Fresh,Dally Spring,WaDEWY_WS1704,Surface Water
+WYwr_WS1705,,,Fresh,Unnamed Springs No. 1&2,WaDEWY_WS1705,Surface Water
+WYwr_WS1706,,,Fresh,Stanley Springs,WaDEWY_WS1706,Surface Water
+WYwr_WS1707,,,Fresh,Spring No. 1 Area,WaDEWY_WS1707,Surface Water
+WYwr_WS1708,,,Fresh,Sylvan Spring,WaDEWY_WS1708,Surface Water
+WYwr_WS1709,,,Fresh,Quealy Spring,WaDEWY_WS1709,Surface Water
+WYwr_WS1710,,,Fresh,NC Spring,WaDEWY_WS1710,Surface Water
+WYwr_WS1711,,,Fresh,FLC Spring,WaDEWY_WS1711,Surface Water
+WYwr_WS1712,,,Fresh,Goose Egg Springs,WaDEWY_WS1712,Surface Water
+WYwr_WS1713,,,Fresh,Poison Spring Creek,WaDEWY_WS1713,Surface Water
+WYwr_WS1714,,,Fresh,Water Stored in Lee's Reservoir (Permit No. 2330 Res.),WaDEWY_WS1714,Surface Water
+WYwr_WS1715,,,Fresh,Tank Farm Spring,WaDEWY_WS1715,Surface Water
+WYwr_WS1716,,,Fresh,Johnston No. 3 Spring,WaDEWY_WS1716,Surface Water
+WYwr_WS1717,,,Fresh,Johnston No. 1 Spring,WaDEWY_WS1717,Surface Water
+WYwr_WS1718,,,Fresh,Johnston No. 2 Spring,WaDEWY_WS1718,Surface Water
+WYwr_WS1719,,,Fresh,Forgey Spring No. 1,WaDEWY_WS1719,Surface Water
+WYwr_WS1720,,,Fresh,Spring (24-1S-2W),WaDEWY_WS1720,Surface Water
+WYwr_WS1721,,,Fresh,L.L.C. Draw,WaDEWY_WS1721,Surface Water
+WYwr_WS1722,,,Fresh,Louis Lake Guard Station Spring,WaDEWY_WS1722,Surface Water
+WYwr_WS1723,,,Fresh,Guard Station No. 1 Spring Draw,WaDEWY_WS1723,Surface Water
+WYwr_WS1724,,,Fresh,Lone Tree Spring,WaDEWY_WS1724,Surface Water
+WYwr_WS1725,,,Fresh,North Fork Trout Creek,WaDEWY_WS1725,Surface Water
+WYwr_WS1726,,,Fresh,Commissary Springs,WaDEWY_WS1726,Surface Water
+WYwr_WS1727,,,Fresh,Gable Springs,WaDEWY_WS1727,Surface Water
+WYwr_WS1728,,,Fresh,Miller Springs,WaDEWY_WS1728,Surface Water
+WYwr_WS1729,,,Fresh,Harvey Springs,WaDEWY_WS1729,Surface Water
+WYwr_WS1730,,,Fresh,Padget Springs,WaDEWY_WS1730,Surface Water
+WYwr_WS1731,,,Fresh,Weiser Spring,WaDEWY_WS1731,Surface Water
+WYwr_WS1732,,,Fresh,Weiser Creek,WaDEWY_WS1732,Surface Water
+WYwr_WS1733,,,Fresh,Cold Sulphur Springs,WaDEWY_WS1733,Surface Water
+WYwr_WS1734,,,Fresh,Brice Springs,WaDEWY_WS1734,Surface Water
+WYwr_WS1735,,,Fresh,Baer Spring,WaDEWY_WS1735,Surface Water
+WYwr_WS1736,,,Fresh,Table Mountain Springs,WaDEWY_WS1736,Surface Water
+WYwr_WS1737,,,Fresh,O'Brien Spring,WaDEWY_WS1737,Surface Water
+WYwr_WS1738,,,Fresh,Louis Lake Campground Spring,WaDEWY_WS1738,Surface Water
+WYwr_WS1739,,,Fresh,High Spring No. Two,WaDEWY_WS1739,Surface Water
+WYwr_WS1740,,,Fresh,Chimney Spring Draw,WaDEWY_WS1740,Surface Water
+WYwr_WS1741,,,Fresh,Gable Springs Draw,WaDEWY_WS1741,Surface Water
+WYwr_WS1742,,,Fresh,Bruce Campground Spring,WaDEWY_WS1742,Surface Water
+WYwr_WS1743,,,Fresh,Bill's Spring,WaDEWY_WS1743,Surface Water
+WYwr_WS1744,,,Fresh,Lee Spring,WaDEWY_WS1744,Surface Water
+WYwr_WS1745,,,Fresh,Hale Spring,WaDEWY_WS1745,Surface Water
+WYwr_WS1746,,,Fresh,Susan No. 1 Spring,WaDEWY_WS1746,Surface Water
+WYwr_WS1747,,,Fresh,Marble Spring,WaDEWY_WS1747,Surface Water
+WYwr_WS1748,,,Fresh,Robin Spring,WaDEWY_WS1748,Surface Water
+WYwr_WS1749,,,Fresh,Crown Spring,WaDEWY_WS1749,Surface Water
+WYwr_WS1750,,,Fresh,Hayes Spring Draw,WaDEWY_WS1750,Surface Water
+WYwr_WS1751,,,Fresh,Green Spring,WaDEWY_WS1751,Surface Water
+WYwr_WS1752,,,Fresh,Guard Station No. 2 Spring Draw,WaDEWY_WS1752,Surface Water
+WYwr_WS1753,,,Fresh,Trebelcock Spring,WaDEWY_WS1753,Surface Water
+WYwr_WS1754,,,Fresh,North Meadows Spring,WaDEWY_WS1754,Surface Water
+WYwr_WS1755,,,Fresh,Donald's Springs,WaDEWY_WS1755,Surface Water
+WYwr_WS1756,,,Fresh,Seepage Springs,WaDEWY_WS1756,Surface Water
+WYwr_WS1757,,,Fresh,Nickel Spring Creek,WaDEWY_WS1757,Surface Water
+WYwr_WS1758,,,Fresh,Butterworth Spring,WaDEWY_WS1758,Surface Water
+WYwr_WS1759,,,Fresh,Weaver Springs,WaDEWY_WS1759,Surface Water
+WYwr_WS1760,,,Fresh,Fluckiger Spring,WaDEWY_WS1760,Surface Water
+WYwr_WS1761,,,Fresh,Nelson Springs (25-34-119),WaDEWY_WS1761,Surface Water
+WYwr_WS1762,,,Fresh,Corsi Spring,WaDEWY_WS1762,Surface Water
+WYwr_WS1763,,,Fresh,Hasel Spring,WaDEWY_WS1763,Surface Water
+WYwr_WS1764,,,Fresh,Titensor Springs,WaDEWY_WS1764,Surface Water
+WYwr_WS1765,,,Fresh,Cella Spring,WaDEWY_WS1765,Surface Water
+WYwr_WS1766,,,Fresh,Round Osborne Spring,WaDEWY_WS1766,Surface Water
+WYwr_WS1767,,,Fresh,Reese's Springs,WaDEWY_WS1767,Surface Water
+WYwr_WS1768,,,Fresh,Swan Springs,WaDEWY_WS1768,Surface Water
+WYwr_WS1769,,,Fresh,Wolfley Spring,WaDEWY_WS1769,Surface Water
+WYwr_WS1770,,,Fresh,Gem Spring,WaDEWY_WS1770,Surface Water
+WYwr_WS1771,,,Fresh,Fluckinger Spring,WaDEWY_WS1771,Surface Water
+WYwr_WS1772,,,Fresh,Hell Hole Spring,WaDEWY_WS1772,Surface Water
+WYwr_WS1773,,,Fresh,Gottlieb Spring No. 1,WaDEWY_WS1773,Surface Water
+WYwr_WS1774,,,Fresh,Gottlieb Spring No. 2,WaDEWY_WS1774,Surface Water
+WYwr_WS1775,,,Fresh,Gottlieb Spring No. 3,WaDEWY_WS1775,Surface Water
+WYwr_WS1776,,,Fresh,Heap Springs,WaDEWY_WS1776,Surface Water
+WYwr_WS1777,,,Fresh,Marion Spring,WaDEWY_WS1777,Surface Water
+WYwr_WS1778,,,Fresh,Gillis Spring,WaDEWY_WS1778,Surface Water
+WYwr_WS1779,,,Fresh,John Fluckiger Spring,WaDEWY_WS1779,Surface Water
+WYwr_WS1780,,,Fresh,Salt Hollow Springs,WaDEWY_WS1780,Surface Water
+WYwr_WS1781,,,Fresh,Lever Spring,WaDEWY_WS1781,Surface Water
+WYwr_WS1782,,,Fresh,Merritt Spring,WaDEWY_WS1782,Surface Water
+WYwr_WS1783,,,Fresh,Unnamed Spring (37-118),WaDEWY_WS1783,Surface Water
+WYwr_WS1784,,,Fresh,Nelson Springs (24-34-119),WaDEWY_WS1784,Surface Water
+WYwr_WS1785,,,Fresh,Beta Spring,WaDEWY_WS1785,Surface Water
+WYwr_WS1786,,,Fresh,Nester Spring,WaDEWY_WS1786,Surface Water
+WYwr_WS1787,,,Fresh,Fink Spring,WaDEWY_WS1787,Surface Water
+WYwr_WS1788,,,Fresh,Young's Spring,WaDEWY_WS1788,Surface Water
+WYwr_WS1789,,,Fresh,Titensor Spring,WaDEWY_WS1789,Surface Water
+WYwr_WS1790,,,Fresh,Flat Creek Springs,WaDEWY_WS1790,Surface Water
+WYwr_WS1791,,,Fresh,North Prater Seeping Spring,WaDEWY_WS1791,Surface Water
+WYwr_WS1792,,,Fresh,Verdi Spring,WaDEWY_WS1792,Surface Water
+WYwr_WS1793,,,Fresh,Max Larsen Spring,WaDEWY_WS1793,Surface Water
+WYwr_WS1794,,,Fresh,Etna Springs,WaDEWY_WS1794,Surface Water
+WYwr_WS1795,,,Fresh,North Springs,WaDEWY_WS1795,Surface Water
+WYwr_WS1796,,,Fresh,Marsh Springs,WaDEWY_WS1796,Surface Water
+WYwr_WS1797,,,Fresh,Pond Springs,WaDEWY_WS1797,Surface Water
+WYwr_WS1798,,,Fresh,Middle Springs,WaDEWY_WS1798,Surface Water
+WYwr_WS1799,,,Fresh,Watch Spring,WaDEWY_WS1799,Surface Water
+WYwr_WS1800,,,Fresh,Wakeman Springs,WaDEWY_WS1800,Surface Water
+WYwr_WS1801,,,Fresh,Mill Creek Springs Area,WaDEWY_WS1801,Surface Water
+WYwr_WS1802,,,Fresh,Abba Spring,WaDEWY_WS1802,Surface Water
+WYwr_WS1803,,,Fresh,Boyd-Hand Spring,WaDEWY_WS1803,Surface Water
+WYwr_WS1804,,,Fresh,Stewart Springs,WaDEWY_WS1804,Surface Water
+WYwr_WS1805,,,Fresh,Wray Spring,WaDEWY_WS1805,Surface Water
+WYwr_WS1806,,,Fresh,Forest Park Feedground Spring No. 1,WaDEWY_WS1806,Surface Water
+WYwr_WS1807,,,Fresh,Murphy Spring,WaDEWY_WS1807,Surface Water
+WYwr_WS1808,,,Fresh,Big Dad Spring,WaDEWY_WS1808,Surface Water
+WYwr_WS1809,,,Fresh,Castile Slough,WaDEWY_WS1809,Surface Water
+WYwr_WS1810,,,Fresh,Water Canyon Spring #1,WaDEWY_WS1810,Surface Water
+WYwr_WS1811,,,Fresh,Water Canyon Spring #2,WaDEWY_WS1811,Surface Water
+WYwr_WS1812,,,Fresh,Spring (8-33-72),WaDEWY_WS1812,Surface Water
+WYwr_WS1813,,,Fresh,Spring (34-76),WaDEWY_WS1813,Surface Water
+WYwr_WS1814,,,Fresh,Railroad Springs Nos. 1 and 2,WaDEWY_WS1814,Surface Water
+WYwr_WS1815,,,Fresh,Spring Creek (10-29-113),WaDEWY_WS1815,Surface Water
+WYwr_WS1816,,,Fresh,Phillbrook Spring No. 1,WaDEWY_WS1816,Surface Water
+WYwr_WS1817,,,Fresh,Freeon Spring,WaDEWY_WS1817,Surface Water
+WYwr_WS1818,,,Fresh,Harrower Cabin Spring,WaDEWY_WS1818,Surface Water
+WYwr_WS1819,,,Fresh,Vernon Spring Creek,WaDEWY_WS1819,Surface Water
+WYwr_WS1820,,,Fresh,Frank Burney Spring,WaDEWY_WS1820,Surface Water
+WYwr_WS1821,,,Fresh,Spring Creek (6-30-112),WaDEWY_WS1821,Surface Water
+WYwr_WS1822,,,Fresh,Spring Creek (23-30-114),WaDEWY_WS1822,Surface Water
+WYwr_WS1823,,,Fresh,Granger Springs,WaDEWY_WS1823,Surface Water
+WYwr_WS1824,,,Fresh,Muskrat Springs,WaDEWY_WS1824,Surface Water
+WYwr_WS1825,,,Fresh,Springs (28-33-113),WaDEWY_WS1825,Surface Water
+WYwr_WS1826,,,Fresh,Muddy Spring,WaDEWY_WS1826,Surface Water
+WYwr_WS1827,,,Fresh,New Spring Gulch,WaDEWY_WS1827,Surface Water
+WYwr_WS1828,,,Fresh,Archie Spring,WaDEWY_WS1828,Surface Water
+WYwr_WS1829,,,Fresh,Cary A. Snider Spring,WaDEWY_WS1829,Surface Water
+WYwr_WS1830,,,Fresh,Piney Spring,WaDEWY_WS1830,Surface Water
+WYwr_WS1831,,,Fresh,Springs (10-29-113),WaDEWY_WS1831,Surface Water
+WYwr_WS1832,,,Fresh,Springs (26-33-113),WaDEWY_WS1832,Surface Water
+WYwr_WS1833,,,Fresh,Tiptop Spring,WaDEWY_WS1833,Surface Water
+WYwr_WS1834,,,Fresh,Middle Piney Summer Home Spr,WaDEWY_WS1834,Surface Water
+WYwr_WS1835,,,Fresh,North Piney No. 2 Spring,WaDEWY_WS1835,Surface Water
+WYwr_WS1836,,,Fresh,North Piney No. 1 Spring,WaDEWY_WS1836,Surface Water
+WYwr_WS1837,,,Fresh,Spring Creek (11-33-113),WaDEWY_WS1837,Surface Water
+WYwr_WS1838,,,Fresh,"Gentle Annie's Springs No. 1,2",WaDEWY_WS1838,Surface Water
+WYwr_WS1839,,,Fresh,DeGraw Spring,WaDEWY_WS1839,Surface Water
+WYwr_WS1840,,,Fresh,Lander Trail Spring,WaDEWY_WS1840,Surface Water
+WYwr_WS1841,,,Fresh,SC Spring,WaDEWY_WS1841,Surface Water
+WYwr_WS1842,,,Fresh,Springs and Seepage,WaDEWY_WS1842,Surface Water
+WYwr_WS1843,,,Fresh,Jensen Canyon,WaDEWY_WS1843,Surface Water
+WYwr_WS1844,,,Fresh,Lower Gomm Spring,WaDEWY_WS1844,Surface Water
+WYwr_WS1845,,,Fresh,Trail Spring Creek,WaDEWY_WS1845,Surface Water
+WYwr_WS1846,,,Fresh,Bassett Spring No. 1,WaDEWY_WS1846,Surface Water
+WYwr_WS1847,,,Fresh,Bassett Spring No. 2,WaDEWY_WS1847,Surface Water
+WYwr_WS1848,,,Fresh,Parkin Spring No. 1,WaDEWY_WS1848,Surface Water
+WYwr_WS1849,,,Fresh,Hale Canyon Spring,WaDEWY_WS1849,Surface Water
+WYwr_WS1850,,,Fresh,Spring Branch/Reeves/Holbrook Slough,WaDEWY_WS1850,Surface Water
+WYwr_WS1851,,,Fresh,North Afton Spring No. 4,WaDEWY_WS1851,Surface Water
+WYwr_WS1852,,,Fresh,Hurd Canon And Astle Springs,WaDEWY_WS1852,Surface Water
+WYwr_WS1853,,,Fresh,Hepworth Springs,WaDEWY_WS1853,Surface Water
+WYwr_WS1854,,,Fresh,Henrie's Spring Creek,WaDEWY_WS1854,Surface Water
+WYwr_WS1855,,,Fresh,Jensen Springs,WaDEWY_WS1855,Surface Water
+WYwr_WS1856,,,Fresh,Bradshaw Springs,WaDEWY_WS1856,Surface Water
+WYwr_WS1857,,,Fresh,Peterson Springs,WaDEWY_WS1857,Surface Water
+WYwr_WS1858,,,Fresh,Henrie Spring,WaDEWY_WS1858,Surface Water
+WYwr_WS1859,,,Fresh,Jensen Spring,WaDEWY_WS1859,Surface Water
+WYwr_WS1860,,,Fresh,Clark Springs Draw,WaDEWY_WS1860,Surface Water
+WYwr_WS1861,,,Fresh,Hammon Spring,WaDEWY_WS1861,Surface Water
+WYwr_WS1862,,,Fresh,Clear Spring,WaDEWY_WS1862,Surface Water
+WYwr_WS1863,,,Fresh,Water Cress Spring,WaDEWY_WS1863,Surface Water
+WYwr_WS1864,,,Fresh,Durney Springs,WaDEWY_WS1864,Surface Water
+WYwr_WS1865,,,Fresh,Horse Spring,WaDEWY_WS1865,Surface Water
+WYwr_WS1866,,,Fresh,Bullfrog Spring,WaDEWY_WS1866,Surface Water
+WYwr_WS1867,,,Fresh,Terrance Springs,WaDEWY_WS1867,Surface Water
+WYwr_WS1868,,,Fresh,Hillyard Spring,WaDEWY_WS1868,Surface Water
+WYwr_WS1869,,,Fresh,Cranney Spring,WaDEWY_WS1869,Surface Water
+WYwr_WS1870,,,Fresh,South Fork Spring Creek,WaDEWY_WS1870,Surface Water
+WYwr_WS1871,,,Fresh,Dry Gulch Spring,WaDEWY_WS1871,Surface Water
+WYwr_WS1872,,,Fresh,Hill Point Springs,WaDEWY_WS1872,Surface Water
+WYwr_WS1873,,,Fresh,Creamery Spring,WaDEWY_WS1873,Surface Water
+WYwr_WS1874,,,Fresh,Branch Spring,WaDEWY_WS1874,Surface Water
+WYwr_WS1875,,,Fresh,Kennington Springs,WaDEWY_WS1875,Surface Water
+WYwr_WS1876,,,Fresh,Hyde Spring,WaDEWY_WS1876,Surface Water
+WYwr_WS1877,,,Fresh,Beta Springs,WaDEWY_WS1877,Surface Water
+WYwr_WS1878,,,Fresh,Gamma Springs,WaDEWY_WS1878,Surface Water
+WYwr_WS1879,,,Fresh,Delta Springs,WaDEWY_WS1879,Surface Water
+WYwr_WS1880,,,Fresh,Epsilon Springs,WaDEWY_WS1880,Surface Water
+WYwr_WS1881,,,Fresh,ETA Springs,WaDEWY_WS1881,Surface Water
+WYwr_WS1882,,,Fresh,Child Spring,WaDEWY_WS1882,Surface Water
+WYwr_WS1883,,,Fresh,Child's Spring,WaDEWY_WS1883,Surface Water
+WYwr_WS1884,,,Fresh,Halling Spring,WaDEWY_WS1884,Surface Water
+WYwr_WS1885,,,Fresh,Indian Spring,WaDEWY_WS1885,Surface Water
+WYwr_WS1886,,,Fresh,"Guernsey Springs No. 1,,2,3",WaDEWY_WS1886,Surface Water
+WYwr_WS1887,,,Fresh,Water Cress Spring No. 1,WaDEWY_WS1887,Surface Water
+WYwr_WS1888,,,Fresh,Alpha Spring Creek,WaDEWY_WS1888,Surface Water
+WYwr_WS1889,,,Fresh,Green Canyon Spring,WaDEWY_WS1889,Surface Water
+WYwr_WS1890,,,Fresh,Pine Canyon Spring,WaDEWY_WS1890,Surface Water
+WYwr_WS1891,,,Fresh,Unnamed Spring (24-31-118),WaDEWY_WS1891,Surface Water
+WYwr_WS1892,,,Fresh,Gomm Spring,WaDEWY_WS1892,Surface Water
+WYwr_WS1893,,,Fresh,Gomm Spring No. 2,WaDEWY_WS1893,Surface Water
+WYwr_WS1894,,,Fresh,Grover Spring,WaDEWY_WS1894,Surface Water
+WYwr_WS1895,,,Fresh,Swamp Spring (8-30-118),WaDEWY_WS1895,Surface Water
+WYwr_WS1896,,,Fresh,Kingston Spring,WaDEWY_WS1896,Surface Water
+WYwr_WS1897,,,Fresh,Reeves Spring,WaDEWY_WS1897,Surface Water
+WYwr_WS1898,,,Fresh,Beaver Lake Spring,WaDEWY_WS1898,Surface Water
+WYwr_WS1899,,,Fresh,Unnamed Springs,WaDEWY_WS1899,Surface Water
+WYwr_WS1900,,,Fresh,Forks Spring,WaDEWY_WS1900,Surface Water
+WYwr_WS1901,,,Fresh,East Blacker Spring Creek,WaDEWY_WS1901,Surface Water
+WYwr_WS1902,,,Fresh,Middle Blacker Spring Creek,WaDEWY_WS1902,Surface Water
+WYwr_WS1903,,,Fresh,West Blacker Spring Creek,WaDEWY_WS1903,Surface Water
+WYwr_WS1904,,,Fresh,Brown Spring,WaDEWY_WS1904,Surface Water
+WYwr_WS1905,,,Fresh,Forks Spring No. 2,WaDEWY_WS1905,Surface Water
+WYwr_WS1906,,,Fresh,Little Brown Spring,WaDEWY_WS1906,Surface Water
+WYwr_WS1907,,,Fresh,Old Home Spring,WaDEWY_WS1907,Surface Water
+WYwr_WS1908,,,Fresh,Allred Springs,WaDEWY_WS1908,Surface Water
+WYwr_WS1909,,,Fresh,Seeping Spring,WaDEWY_WS1909,Surface Water
+WYwr_WS1910,,,Fresh,Hillstead Spring,WaDEWY_WS1910,Surface Water
+WYwr_WS1911,,,Fresh,Nielsen Spring,WaDEWY_WS1911,Surface Water
+WYwr_WS1912,,,Fresh,Hillside Spring,WaDEWY_WS1912,Surface Water
+WYwr_WS1913,,,Fresh,Ben Gomm Spring,WaDEWY_WS1913,Surface Water
+WYwr_WS1914,,,Fresh,Max West Spring,WaDEWY_WS1914,Surface Water
+WYwr_WS1915,,,Fresh,Osmond Spring,WaDEWY_WS1915,Surface Water
+WYwr_WS1916,,,Fresh,Johnson Spring,WaDEWY_WS1916,Surface Water
+WYwr_WS1917,,,Fresh,Brown Spring Creek,WaDEWY_WS1917,Surface Water
+WYwr_WS1918,,,Fresh,Nield Spring,WaDEWY_WS1918,Surface Water
+WYwr_WS1919,,,Fresh,Richardson Spring,WaDEWY_WS1919,Surface Water
+WYwr_WS1920,,,Fresh,Raymond Spring,WaDEWY_WS1920,Surface Water
+WYwr_WS1921,,,Fresh,Yeaman Spring No. 3,WaDEWY_WS1921,Surface Water
+WYwr_WS1922,,,Fresh,Rainbow Spring No. 3,WaDEWY_WS1922,Surface Water
+WYwr_WS1923,,,Fresh,Rainbow Spring No. 2,WaDEWY_WS1923,Surface Water
+WYwr_WS1924,,,Fresh,Lone Pine Spring,WaDEWY_WS1924,Surface Water
+WYwr_WS1925,,,Fresh,Anderson Spring,WaDEWY_WS1925,Surface Water
+WYwr_WS1926,,,Fresh,Bagley Spring,WaDEWY_WS1926,Surface Water
+WYwr_WS1927,,,Fresh,Rachel Spring No. 1,WaDEWY_WS1927,Surface Water
+WYwr_WS1928,,,Fresh,Bagley Spring Area,WaDEWY_WS1928,Surface Water
+WYwr_WS1929,,,Fresh,Reeves Spring Creek,WaDEWY_WS1929,Surface Water
+WYwr_WS1930,,,Fresh,Swamp Springs Creek,WaDEWY_WS1930,Surface Water
+WYwr_WS1931,,,Fresh,Tolman Spring Area,WaDEWY_WS1931,Surface Water
+WYwr_WS1932,,,Fresh,Balls Spring No. 1,WaDEWY_WS1932,Surface Water
+WYwr_WS1933,,,Fresh,Balls Spring No. 2,WaDEWY_WS1933,Surface Water
+WYwr_WS1934,,,Fresh,North Afton Spring No. 1,WaDEWY_WS1934,Surface Water
+WYwr_WS1935,,,Fresh,North Afton Spring No. 3,WaDEWY_WS1935,Surface Water
+WYwr_WS1936,,,Fresh,Kennington Spring No. 1,WaDEWY_WS1936,Surface Water
+WYwr_WS1937,,,Fresh,Kennington Spring No. 2,WaDEWY_WS1937,Surface Water
+WYwr_WS1938,,,Fresh,Rainbow Spring No. 1,WaDEWY_WS1938,Surface Water
+WYwr_WS1939,,,Fresh,Rainbow Spring No. 4,WaDEWY_WS1939,Surface Water
+WYwr_WS1940,,,Fresh,Delbert Clark Spring No. 1,WaDEWY_WS1940,Surface Water
+WYwr_WS1941,,,Fresh,Mack Balls No. 1 Spring,WaDEWY_WS1941,Surface Water
+WYwr_WS1942,,,Fresh,North Afton Spring No. 2,WaDEWY_WS1942,Surface Water
+WYwr_WS1943,,,Fresh,Auston Spring,WaDEWY_WS1943,Surface Water
+WYwr_WS1944,,,Fresh,Water Cress Spring No. 2,WaDEWY_WS1944,Surface Water
+WYwr_WS1945,,,Fresh,Spring Creek Spring,WaDEWY_WS1945,Surface Water
+WYwr_WS1946,,,Fresh,Nelson's Spring,WaDEWY_WS1946,Surface Water
+WYwr_WS1947,,,Fresh,Perkins Spring No. 1,WaDEWY_WS1947,Surface Water
+WYwr_WS1948,,,Fresh,Perkins Spring No. 2,WaDEWY_WS1948,Surface Water
+WYwr_WS1949,,,Fresh,Perkins Spring No. 3,WaDEWY_WS1949,Surface Water
+WYwr_WS1950,,,Fresh,Perkins Spring No. 4,WaDEWY_WS1950,Surface Water
+WYwr_WS1951,,,Fresh,Perkins Spring No. 5,WaDEWY_WS1951,Surface Water
+WYwr_WS1952,,,Fresh,Perkins Spring No. 6,WaDEWY_WS1952,Surface Water
+WYwr_WS1953,,,Fresh,Perkins Spring No. 7,WaDEWY_WS1953,Surface Water
+WYwr_WS1954,,,Fresh,Child-Merrit Spring,WaDEWY_WS1954,Surface Water
+WYwr_WS1955,,,Fresh,Hunsaker Spring No. 1,WaDEWY_WS1955,Surface Water
+WYwr_WS1956,,,Fresh,Whalen Canon Creek,WaDEWY_WS1956,Surface Water
+WYwr_WS1957,,,Fresh,Hoyer Spring,WaDEWY_WS1957,Surface Water
+WYwr_WS1958,,,Fresh,Buckcamp Spring,WaDEWY_WS1958,Surface Water
+WYwr_WS1959,,,Fresh,Spring Canyon Creek,WaDEWY_WS1959,Surface Water
+WYwr_WS1960,,,Fresh,Lost Creek Spring,WaDEWY_WS1960,Surface Water
+WYwr_WS1961,,,Fresh,Dobbins Spring Creek,WaDEWY_WS1961,Surface Water
+WYwr_WS1962,,,Fresh,Canon Village Spring No. 1,WaDEWY_WS1962,Surface Water
+WYwr_WS1963,,,Fresh,Canon Village Spring No. 3,WaDEWY_WS1963,Surface Water
+WYwr_WS1964,,,Fresh,Canon Village Spring No. 4,WaDEWY_WS1964,Surface Water
+WYwr_WS1965,,,Fresh,Canon Village Spring No. 2,WaDEWY_WS1965,Surface Water
+WYwr_WS1966,,,Fresh,Canon Village Spring No. 5,WaDEWY_WS1966,Surface Water
+WYwr_WS1967,,,Fresh,Springs (31&32-32-81),WaDEWY_WS1967,Surface Water
+WYwr_WS1968,,,Fresh,Stinking Springs,WaDEWY_WS1968,Surface Water
+WYwr_WS1969,,,Fresh,Dry Springs,WaDEWY_WS1969,Surface Water
+WYwr_WS1970,,,Fresh,East Springs,WaDEWY_WS1970,Surface Water
+WYwr_WS1971,,,Fresh,Allen Spring,WaDEWY_WS1971,Surface Water
+WYwr_WS1972,,,Fresh,Red Spring,WaDEWY_WS1972,Surface Water
+WYwr_WS1973,,,Fresh,House Spring,WaDEWY_WS1973,Surface Water
+WYwr_WS1974,,,Fresh,Kamwall Spring,WaDEWY_WS1974,Surface Water
+WYwr_WS1975,,,Fresh,Vosbach Spring,WaDEWY_WS1975,Surface Water
+WYwr_WS1976,,,Fresh,Community Spring,WaDEWY_WS1976,Surface Water
+WYwr_WS1977,,,Fresh,Bailey Spring,WaDEWY_WS1977,Surface Water
+WYwr_WS1978,,,Fresh,McIntire Spring,WaDEWY_WS1978,Surface Water
+WYwr_WS1979,,,Fresh,Spring on North Side Casper Mountain,WaDEWY_WS1979,Surface Water
+WYwr_WS1980,,,Fresh,Wilson Spring,WaDEWY_WS1980,Surface Water
+WYwr_WS1981,,,Fresh,Carlson Spring,WaDEWY_WS1981,Surface Water
+WYwr_WS1982,,,Fresh,Kimball Spring,WaDEWY_WS1982,Surface Water
+WYwr_WS1983,,,Fresh,Springs Nos. 1 & 2,WaDEWY_WS1983,Surface Water
+WYwr_WS1984,,,Fresh,"Worthington Springs Nos. 3,4,5,6",WaDEWY_WS1984,Surface Water
+WYwr_WS1985,,,Fresh,East Opening Kamwall Spring,WaDEWY_WS1985,Surface Water
+WYwr_WS1986,,,Fresh,Casper Spring No. 1,WaDEWY_WS1986,Surface Water
+WYwr_WS1987,,,Fresh,Hogadone Springs,WaDEWY_WS1987,Surface Water
+WYwr_WS1988,,,Fresh,Omcor Spring,WaDEWY_WS1988,Surface Water
+WYwr_WS1989,,,Fresh,Blind Spring,WaDEWY_WS1989,Surface Water
+WYwr_WS1990,,,Fresh,Moonshiner Spring,WaDEWY_WS1990,Surface Water
+WYwr_WS1991,,,Fresh,Mina Spring,WaDEWY_WS1991,Surface Water
+WYwr_WS1992,,,Fresh,Wa Wa Spring No. 1,WaDEWY_WS1992,Surface Water
+WYwr_WS1993,,,Fresh,Wa Wa Spring No. 2,WaDEWY_WS1993,Surface Water
+WYwr_WS1994,,,Fresh,Layman Spring,WaDEWY_WS1994,Surface Water
+WYwr_WS1995,,,Fresh,Asbestos Spring,WaDEWY_WS1995,Surface Water
+WYwr_WS1996,,,Fresh,Hollywood Spring No. 1,WaDEWY_WS1996,Surface Water
+WYwr_WS1997,,,Fresh,Dolph Creek,WaDEWY_WS1997,Surface Water
+WYwr_WS1998,,,Fresh,Hollywood Spring No. 4,WaDEWY_WS1998,Surface Water
+WYwr_WS1999,,,Fresh,Gothmore Spring,WaDEWY_WS1999,Surface Water
+WYwr_WS2000,,,Fresh,"Boyer Spring No. 1,2,4,5",WaDEWY_WS2000,Surface Water
+WYwr_WS2001,,,Fresh,Fred's Spring,WaDEWY_WS2001,Surface Water
+WYwr_WS2002,,,Fresh,Anniversary Spring,WaDEWY_WS2002,Surface Water
+WYwr_WS2003,,,Fresh,Burgess Spring,WaDEWY_WS2003,Surface Water
+WYwr_WS2004,,,Fresh,Jourgensen Main Spring,WaDEWY_WS2004,Surface Water
+WYwr_WS2005,,,Fresh,"Jourgensen No. 1,2,3 Spring",WaDEWY_WS2005,Surface Water
+WYwr_WS2006,,,Fresh,Cabin Spring,WaDEWY_WS2006,Surface Water
+WYwr_WS2007,,,Fresh,Nash Spring,WaDEWY_WS2007,Surface Water
+WYwr_WS2008,,,Fresh,WaWa Springs No. 3,WaDEWY_WS2008,Surface Water
+WYwr_WS2009,,,Fresh,WaWa Springs No. 4,WaDEWY_WS2009,Surface Water
+WYwr_WS2010,,,Fresh,Cole Spring,WaDEWY_WS2010,Surface Water
+WYwr_WS2011,,,Fresh,Collier Spring,WaDEWY_WS2011,Surface Water
+WYwr_WS2012,,,Fresh,Beaver Spring No. 1,WaDEWY_WS2012,Surface Water
+WYwr_WS2013,,,Fresh,Beaver Spring No. 2,WaDEWY_WS2013,Surface Water
+WYwr_WS2014,,,Fresh,Fuller Spring,WaDEWY_WS2014,Surface Water
+WYwr_WS2015,,,Fresh,Weaver Spring,WaDEWY_WS2015,Surface Water
+WYwr_WS2016,,,Fresh,Curry Spring,WaDEWY_WS2016,Surface Water
+WYwr_WS2017,,,Fresh,Vanhorn Spring,WaDEWY_WS2017,Surface Water
+WYwr_WS2018,,,Fresh,Haigler Spring,WaDEWY_WS2018,Surface Water
+WYwr_WS2019,,,Fresh,Moyle Spring,WaDEWY_WS2019,Surface Water
+WYwr_WS2020,,,Fresh,Hales Spring,WaDEWY_WS2020,Surface Water
+WYwr_WS2021,,,Fresh,Haines Spring No. 2,WaDEWY_WS2021,Surface Water
+WYwr_WS2022,,,Fresh,Huber Spring No. 1,WaDEWY_WS2022,Surface Water
+WYwr_WS2023,,,Fresh,Olson Springs Area,WaDEWY_WS2023,Surface Water
+WYwr_WS2024,,,Fresh,Olson Spring No. 4,WaDEWY_WS2024,Surface Water
+WYwr_WS2025,,,Fresh,Walkinshaw Spring No. 1,WaDEWY_WS2025,Surface Water
+WYwr_WS2026,,,Fresh,Porcupine Spring No. 2,WaDEWY_WS2026,Surface Water
+WYwr_WS2027,,,Fresh,Casper Spring No. 2,WaDEWY_WS2027,Surface Water
+WYwr_WS2028,,,Fresh,Hat Six No. 1 Spring,WaDEWY_WS2028,Surface Water
+WYwr_WS2029,,,Fresh,Alpine Spring Creek,WaDEWY_WS2029,Surface Water
+WYwr_WS2030,,,Fresh,Susan Spring Draw,WaDEWY_WS2030,Surface Water
+WYwr_WS2031,,,Fresh,Box Elder Spring,WaDEWY_WS2031,Surface Water
+WYwr_WS2032,,,Fresh,Lindgren Spring Creek,WaDEWY_WS2032,Surface Water
+WYwr_WS2033,,,Fresh,Saw Mill Canyon Spring,WaDEWY_WS2033,Surface Water
+WYwr_WS2034,,,Fresh,Spring Canon Creek,WaDEWY_WS2034,Surface Water
+WYwr_WS2035,,,Fresh,Curtis Springs,WaDEWY_WS2035,Surface Water
+WYwr_WS2036,,,Fresh,Lacy Mountain Springs,WaDEWY_WS2036,Surface Water
+WYwr_WS2037,,,Fresh,Little Boxelder Spring,WaDEWY_WS2037,Surface Water
+WYwr_WS2038,,,Fresh,Arnold Spring Slough,WaDEWY_WS2038,Surface Water
+WYwr_WS2039,,,Fresh,Triangle Creek,WaDEWY_WS2039,Surface Water
+WYwr_WS2040,,,Fresh,Bird Springs Draw,WaDEWY_WS2040,Surface Water
+WYwr_WS2041,,,Fresh,Trenton Spring,WaDEWY_WS2041,Surface Water
+WYwr_WS2042,,,Fresh,VR Springs,WaDEWY_WS2042,Surface Water
+WYwr_WS2043,,,Fresh,Kimball Springs,WaDEWY_WS2043,Surface Water
+WYwr_WS2044,,,Fresh,Middle Spring,WaDEWY_WS2044,Surface Water
+WYwr_WS2045,,,Fresh,Silver Springs,WaDEWY_WS2045,Surface Water
+WYwr_WS2046,,,Fresh,Silver Springs Creek,WaDEWY_WS2046,Surface Water
+WYwr_WS2047,,,Fresh,North Branch Silver Springs Creek,WaDEWY_WS2047,Surface Water
+WYwr_WS2048,,,Fresh,Quinn Spring,WaDEWY_WS2048,Surface Water
+WYwr_WS2049,,,Fresh,Reynolds Spring,WaDEWY_WS2049,Surface Water
+WYwr_WS2050,,,Fresh,Rice Spring,WaDEWY_WS2050,Surface Water
+WYwr_WS2051,,,Fresh,Howard Spring,WaDEWY_WS2051,Surface Water
+WYwr_WS2052,,,Fresh,Station Spring,WaDEWY_WS2052,Surface Water
+WYwr_WS2053,,,Fresh,Rudd Spring,WaDEWY_WS2053,Surface Water
+WYwr_WS2054,,,Fresh,Corrall Spring,WaDEWY_WS2054,Surface Water
+WYwr_WS2055,,,Fresh,Black Spring,WaDEWY_WS2055,Surface Water
+WYwr_WS2056,,,Fresh,Spring Creek (24-31-70),WaDEWY_WS2056,Surface Water
+WYwr_WS2057,,,Fresh,Jackson Springs,WaDEWY_WS2057,Surface Water
+WYwr_WS2058,,,Fresh,Bishop Spring,WaDEWY_WS2058,Surface Water
+WYwr_WS2059,,,Fresh,Hart Spring,WaDEWY_WS2059,Surface Water
+WYwr_WS2060,,,Fresh,Cummings Spring,WaDEWY_WS2060,Surface Water
+WYwr_WS2061,,,Fresh,Brow Spring,WaDEWY_WS2061,Surface Water
+WYwr_WS2062,,,Fresh,Carothers Spring,WaDEWY_WS2062,Surface Water
+WYwr_WS2063,,,Fresh,Sportsman Spring,WaDEWY_WS2063,Surface Water
+WYwr_WS2064,,,Fresh,Bull Spring,WaDEWY_WS2064,Surface Water
+WYwr_WS2065,,,Fresh,Little Sand Creek,WaDEWY_WS2065,Surface Water
+WYwr_WS2066,,,Fresh,Gold Springs,WaDEWY_WS2066,Surface Water
+WYwr_WS2067,,,Fresh,Butte Spring,WaDEWY_WS2067,Surface Water
+WYwr_WS2068,,,Fresh,Major Springs,WaDEWY_WS2068,Surface Water
+WYwr_WS2069,,,Fresh,Black Rock Springs,WaDEWY_WS2069,Surface Water
+WYwr_WS2070,,,Fresh,Burnt Gulch Spring,WaDEWY_WS2070,Surface Water
+WYwr_WS2071,,,Fresh,Stampede Springs,WaDEWY_WS2071,Surface Water
+WYwr_WS2072,,,Fresh,Happy Springs,WaDEWY_WS2072,Surface Water
+WYwr_WS2073,,,Fresh,Ox Yoke Springs,WaDEWY_WS2073,Surface Water
+WYwr_WS2074,,,Fresh,Hay No. 1 Spring,WaDEWY_WS2074,Surface Water
+WYwr_WS2075,,,Fresh,Hay No. 2 Spring,WaDEWY_WS2075,Surface Water
+WYwr_WS2076,,,Fresh,Hay No. 3 Spring,WaDEWY_WS2076,Surface Water
+WYwr_WS2077,,,Fresh,Hay No. 4 Spring,WaDEWY_WS2077,Surface Water
+WYwr_WS2078,,,Fresh,Reservoir Spring,WaDEWY_WS2078,Surface Water
+WYwr_WS2079,,,Fresh,Hillside No. 2 Spring,WaDEWY_WS2079,Surface Water
+WYwr_WS2080,,,Fresh,Hillside No. 1 Spring,WaDEWY_WS2080,Surface Water
+WYwr_WS2081,,,Fresh,Manganese Spring,WaDEWY_WS2081,Surface Water
+WYwr_WS2082,,,Fresh,Fifteen Hundred Dollar Spring,WaDEWY_WS2082,Surface Water
+WYwr_WS2083,,,Fresh,Prospect Mountain Springs,WaDEWY_WS2083,Surface Water
+WYwr_WS2084,,,Fresh,Chilton's Steamboat Mountain Springs,WaDEWY_WS2084,Surface Water
+WYwr_WS2085,,,Fresh,Deer Spring,WaDEWY_WS2085,Surface Water
+WYwr_WS2086,,,Fresh,Springs (Buck and Anthony),WaDEWY_WS2086,Surface Water
+WYwr_WS2087,,,Fresh,Tabor Spring,WaDEWY_WS2087,Surface Water
+WYwr_WS2088,,,Fresh,Barrass Spring,WaDEWY_WS2088,Surface Water
+WYwr_WS2089,,,Fresh,Timba Bah Spring,WaDEWY_WS2089,Surface Water
+WYwr_WS2090,,,Fresh,Flader Spring,WaDEWY_WS2090,Surface Water
+WYwr_WS2091,,,Fresh,Hotchkiss Spring,WaDEWY_WS2091,Surface Water
+WYwr_WS2092,,,Fresh,Swabes Spring,WaDEWY_WS2092,Surface Water
+WYwr_WS2093,,,Fresh,Olson Springs Draw,WaDEWY_WS2093,Surface Water
+WYwr_WS2094,,,Fresh,Haddenham Spring No. 2,WaDEWY_WS2094,Surface Water
+WYwr_WS2095,,,Fresh,Spring No. 1 and Smith's Hollow,WaDEWY_WS2095,Surface Water
+WYwr_WS2096,,,Fresh,Stanifird Spr No. 2,WaDEWY_WS2096,Surface Water
+WYwr_WS2097,,,Fresh,Stanifird Spr No. 3,WaDEWY_WS2097,Surface Water
+WYwr_WS2098,,,Fresh,Potatoe Hollow Spring Creek,WaDEWY_WS2098,Surface Water
+WYwr_WS2099,,,Fresh,North Lake Spring Creek,WaDEWY_WS2099,Surface Water
+WYwr_WS2100,,,Fresh,Six Springs,WaDEWY_WS2100,Surface Water
+WYwr_WS2101,,,Fresh,Springs (31-26-119),WaDEWY_WS2101,Surface Water
+WYwr_WS2102,,,Fresh,Spring (12-25-120),WaDEWY_WS2102,Surface Water
+WYwr_WS2103,,,Fresh,Springs (T56-25-119),WaDEWY_WS2103,Surface Water
+WYwr_WS2104,,,Fresh,Groo Creek,WaDEWY_WS2104,Surface Water
+WYwr_WS2105,,,Fresh,Spring Creek (5-25-119),WaDEWY_WS2105,Surface Water
+WYwr_WS2106,,,Fresh,Spring Creek (T93-24-119),WaDEWY_WS2106,Surface Water
+WYwr_WS2107,,,Fresh,Springs (5-25-119),WaDEWY_WS2107,Surface Water
+WYwr_WS2108,,,Fresh,Spring in Coal Canyon,WaDEWY_WS2108,Surface Water
+WYwr_WS2109,,,Fresh,Birch Creek Spring No. 1,WaDEWY_WS2109,Surface Water
+WYwr_WS2110,,,Fresh,Turner Spring,WaDEWY_WS2110,Surface Water
+WYwr_WS2111,,,Fresh,Wyman Spring Branch,WaDEWY_WS2111,Surface Water
+WYwr_WS2112,,,Fresh,ERA Spring No. One,WaDEWY_WS2112,Surface Water
+WYwr_WS2113,,,Fresh,ERA Spring No. Two,WaDEWY_WS2113,Surface Water
+WYwr_WS2114,,,Fresh,Poker Hollow Spring,WaDEWY_WS2114,Surface Water
+WYwr_WS2115,,,Fresh,Birch Creek Spring No. 3,WaDEWY_WS2115,Surface Water
+WYwr_WS2116,,,Fresh,Ford Spring,WaDEWY_WS2116,Surface Water
+WYwr_WS2117,,,Fresh,Garrett Springs,WaDEWY_WS2117,Surface Water
+WYwr_WS2118,,,Fresh,Kenyon Spring and Wyman Spring,WaDEWY_WS2118,Surface Water
+WYwr_WS2119,,,Fresh,Cokeville Springs,WaDEWY_WS2119,Surface Water
+WYwr_WS2120,,,Fresh,Little Beaver Spring,WaDEWY_WS2120,Surface Water
+WYwr_WS2121,,,Fresh,Feuz Spring,WaDEWY_WS2121,Surface Water
+WYwr_WS2122,,,Fresh,Kenyon Springs,WaDEWY_WS2122,Surface Water
+WYwr_WS2123,,,Fresh,Sulphur Springs Creek,WaDEWY_WS2123,Surface Water
+WYwr_WS2124,,,Fresh,Stanifird Spring No. 1,WaDEWY_WS2124,Surface Water
+WYwr_WS2125,,,Fresh,Maninfior Spring Creek,WaDEWY_WS2125,Surface Water
+WYwr_WS2126,,,Fresh,Succor Springs,WaDEWY_WS2126,Surface Water
+WYwr_WS2127,,,Fresh,Salt Spring,WaDEWY_WS2127,Surface Water
+WYwr_WS2128,,,Fresh,Broadbent Spring,WaDEWY_WS2128,Surface Water
+WYwr_WS2129,,,Fresh,Spring Creek (32-27-114),WaDEWY_WS2129,Surface Water
+WYwr_WS2130,,,Fresh,Shumlak Spring,WaDEWY_WS2130,Surface Water
+WYwr_WS2131,,,Fresh,LS Spring,WaDEWY_WS2131,Surface Water
+WYwr_WS2132,,,Fresh,LaBarge G.S. Spring,WaDEWY_WS2132,Surface Water
+WYwr_WS2133,,,Fresh,Fontenelle Spring No. 3,WaDEWY_WS2133,Surface Water
+WYwr_WS2134,,,Fresh,Spring Branch Roney Creek,WaDEWY_WS2134,Surface Water
+WYwr_WS2135,,,Fresh,Bernie's Branch,WaDEWY_WS2135,Surface Water
+WYwr_WS2136,,,Fresh,Allison Spring,WaDEWY_WS2136,Surface Water
+WYwr_WS2137,,,Fresh,Springs (9-21-80),WaDEWY_WS2137,Surface Water
+WYwr_WS2138,,,Fresh,Spring Creek (28-78),WaDEWY_WS2138,Surface Water
+WYwr_WS2139,,,Fresh,Carlin Springs,WaDEWY_WS2139,Surface Water
+WYwr_WS2140,,,Fresh,Beery Springs,WaDEWY_WS2140,Surface Water
+WYwr_WS2141,,,Fresh,Bean Creek,WaDEWY_WS2141,Surface Water
+WYwr_WS2142,,,Fresh,Scott's Spring,WaDEWY_WS2142,Surface Water
+WYwr_WS2143,,,Fresh,Hanna Sheep Company Springs No. 1,WaDEWY_WS2143,Surface Water
+WYwr_WS2144,,,Fresh,Hanna Sheep Company Springs No. 2,WaDEWY_WS2144,Surface Water
+WYwr_WS2145,,,Fresh,Hanna Sheep Company Springs No. 3,WaDEWY_WS2145,Surface Water
+WYwr_WS2146,,,Fresh,Bore Hole Spring,WaDEWY_WS2146,Surface Water
+WYwr_WS2147,,,Fresh,Spring No. 11,WaDEWY_WS2147,Surface Water
+WYwr_WS2148,,,Fresh,Spring and Flood Water,WaDEWY_WS2148,Surface Water
+WYwr_WS2149,,,Fresh,Pine Springs,WaDEWY_WS2149,Surface Water
+WYwr_WS2150,,,Fresh,Gibson Springs,WaDEWY_WS2150,Surface Water
+WYwr_WS2151,,,Fresh,Ring Spring No. 1,WaDEWY_WS2151,Surface Water
+WYwr_WS2152,,,Fresh,Ring Spring No. 2,WaDEWY_WS2152,Surface Water
+WYwr_WS2153,,,Fresh,Boswell Springs Creek,WaDEWY_WS2153,Surface Water
+WYwr_WS2154,,,Fresh,Seven Mile Springs,WaDEWY_WS2154,Surface Water
+WYwr_WS2155,,,Fresh,Amesberry Springs,WaDEWY_WS2155,Surface Water
+WYwr_WS2156,,,Fresh,"76"""" Spring",WaDEWY_WS2156,Surface Water
+WYwr_WS2157,,,Fresh,Nelson Spring,WaDEWY_WS2157,Surface Water
+WYwr_WS2158,,,Fresh,Como Lake,WaDEWY_WS2158,Surface Water
+WYwr_WS2159,,,Fresh,Aurora Lake Spring,WaDEWY_WS2159,Surface Water
+WYwr_WS2160,,,Fresh,Cronberg Spring,WaDEWY_WS2160,Surface Water
+WYwr_WS2161,,,Fresh,Tennant Spring,WaDEWY_WS2161,Surface Water
+WYwr_WS2162,,,Fresh,Morgan Spring,WaDEWY_WS2162,Surface Water
+WYwr_WS2163,,,Fresh,Sand Lake Spring,WaDEWY_WS2163,Surface Water
+WYwr_WS2164,,,Fresh,Sand Lake Camp Ground Spring,WaDEWY_WS2164,Surface Water
+WYwr_WS2165,,,Fresh,Mowry Springs,WaDEWY_WS2165,Surface Water
+WYwr_WS2166,,,Fresh,Dolling Spring,WaDEWY_WS2166,Surface Water
+WYwr_WS2167,,,Fresh,Boylan Springs,WaDEWY_WS2167,Surface Water
+WYwr_WS2168,,,Fresh,Boylan Spring Number Three,WaDEWY_WS2168,Surface Water
+WYwr_WS2169,,,Fresh,Boylan Spring Number Four,WaDEWY_WS2169,Surface Water
+WYwr_WS2170,,,Fresh,Difficulty Spring,WaDEWY_WS2170,Surface Water
+WYwr_WS2171,,,Fresh,Diamond Creek,WaDEWY_WS2171,Surface Water
+WYwr_WS2172,,,Fresh,One Spring,WaDEWY_WS2172,Surface Water
+WYwr_WS2173,,,Fresh,Spring (8-26-82),WaDEWY_WS2173,Surface Water
+WYwr_WS2174,,,Fresh,Hurt Gulch,WaDEWY_WS2174,Surface Water
+WYwr_WS2175,,,Fresh,Shaw Springs,WaDEWY_WS2175,Surface Water
+WYwr_WS2176,,,Fresh,Comygy's Springs,WaDEWY_WS2176,Surface Water
+WYwr_WS2177,,,Fresh,Twin Springs Creek,WaDEWY_WS2177,Surface Water
+WYwr_WS2178,,,Fresh,Granite Spring No. 1,WaDEWY_WS2178,Surface Water
+WYwr_WS2179,,,Fresh,Granite Spring No. 2,WaDEWY_WS2179,Surface Water
+WYwr_WS2180,,,Fresh,Granite Spring No. 3,WaDEWY_WS2180,Surface Water
+WYwr_WS2181,,,Fresh,Bush No. 3 Spring,WaDEWY_WS2181,Surface Water
+WYwr_WS2182,,,Fresh,Bush No. 2 Spring,WaDEWY_WS2182,Surface Water
+WYwr_WS2183,,,Fresh,Bush No. 1 Spring,WaDEWY_WS2183,Surface Water
+WYwr_WS2184,,,Fresh,Black Rock No. One Spring,WaDEWY_WS2184,Surface Water
+WYwr_WS2185,,,Fresh,Black Rock No. Two Spring,WaDEWY_WS2185,Surface Water
+WYwr_WS2186,,,Fresh,Black Rock No. Three Spring,WaDEWY_WS2186,Surface Water
+WYwr_WS2187,,,Fresh,Rador No. 1 Spring,WaDEWY_WS2187,Surface Water
+WYwr_WS2188,,,Fresh,Rador No.2 Spring,WaDEWY_WS2188,Surface Water
+WYwr_WS2189,,,Fresh,Slough & Springs,WaDEWY_WS2189,Surface Water
+WYwr_WS2190,,,Fresh,"Spring No. 1,2&3",WaDEWY_WS2190,Surface Water
+WYwr_WS2191,,,Fresh,Rocky Gap Springs,WaDEWY_WS2191,Surface Water
+WYwr_WS2192,,,Fresh,Kemmerer Springs,WaDEWY_WS2192,Surface Water
+WYwr_WS2193,,,Fresh,Kovach No. 1 Spring,WaDEWY_WS2193,Surface Water
+WYwr_WS2194,,,Fresh,Ham's Fork Spring,WaDEWY_WS2194,Surface Water
+WYwr_WS2195,,,Fresh,Springs (4 In Number),WaDEWY_WS2195,Surface Water
+WYwr_WS2196,,,Fresh,Spring Creek (24-17-84),WaDEWY_WS2196,Surface Water
+WYwr_WS2197,,,Fresh,Cherokee Spring,WaDEWY_WS2197,Surface Water
+WYwr_WS2198,,,Fresh,Randolph Gulch Spring,WaDEWY_WS2198,Surface Water
+WYwr_WS2199,,,Fresh,Bells Spring Creek,WaDEWY_WS2199,Surface Water
+WYwr_WS2200,,,Fresh,Smiley Spring,WaDEWY_WS2200,Surface Water
+WYwr_WS2201,,,Fresh,P & R Spring #1,WaDEWY_WS2201,Surface Water
+WYwr_WS2202,,,Fresh,P & R Spring #2,WaDEWY_WS2202,Surface Water
+WYwr_WS2203,,,Fresh,P & R Spring #3,WaDEWY_WS2203,Surface Water
+WYwr_WS2204,,,Fresh,P & R Spring #4,WaDEWY_WS2204,Surface Water
+WYwr_WS2205,,,Fresh,P & R Spring #5,WaDEWY_WS2205,Surface Water
+WYwr_WS2206,,,Fresh,P & R Spring #6,WaDEWY_WS2206,Surface Water
+WYwr_WS2207,,,Fresh,Cold Spring Draw,WaDEWY_WS2207,Surface Water
+WYwr_WS2208,,,Fresh,Robertson Spring,WaDEWY_WS2208,Surface Water
+WYwr_WS2209,,,Fresh,Hobo Pool Hot Springs,WaDEWY_WS2209,Surface Water
+WYwr_WS2210,,,Fresh,Spring No. 15,WaDEWY_WS2210,Surface Water
+WYwr_WS2211,,,Fresh,Stone Quarry Spring,WaDEWY_WS2211,Surface Water
+WYwr_WS2212,,,Fresh,Salisbury Spring No. 2,WaDEWY_WS2212,Surface Water
+WYwr_WS2213,,,Fresh,Hawk Springs,WaDEWY_WS2213,Surface Water
+WYwr_WS2214,,,Fresh,State Line Spring Creek,WaDEWY_WS2214,Surface Water
+WYwr_WS2215,,,Fresh,McCompsey Spring,WaDEWY_WS2215,Surface Water
+WYwr_WS2216,,,Fresh,Home Spring,WaDEWY_WS2216,Surface Water
+WYwr_WS2217,,,Fresh,Sheila Spring No. 1,WaDEWY_WS2217,Surface Water
+WYwr_WS2218,,,Fresh,Sheila Spring No. 2,WaDEWY_WS2218,Surface Water
+WYwr_WS2219,,,Fresh,Sheila Spring No. 4,WaDEWY_WS2219,Surface Water
+WYwr_WS2220,,,Fresh,Water stored in Drummond No. 2 Reservoir (Permit No. 2180 Res.),WaDEWY_WS2220,Surface Water
+WYwr_WS2221,,,Fresh,Marsh Spring,WaDEWY_WS2221,Surface Water
+WYwr_WS2222,,,Fresh,Kinney Spring,WaDEWY_WS2222,Surface Water
+WYwr_WS2223,,,Fresh,Springs Nos. 1 and 2,WaDEWY_WS2223,Surface Water
+WYwr_WS2224,,,Fresh,Snow Spring,WaDEWY_WS2224,Surface Water
+WYwr_WS2225,,,Fresh,"Antelope Springs 1, 2, & 3",WaDEWY_WS2225,Surface Water
+WYwr_WS2226,,,Fresh,Spring on Head of Pretty Water Creek,WaDEWY_WS2226,Surface Water
+WYwr_WS2227,,,Fresh,Big Spring on Mellor Creek,WaDEWY_WS2227,Surface Water
+WYwr_WS2228,,,Fresh,Springs on Head of Mellor Creek,WaDEWY_WS2228,Surface Water
+WYwr_WS2229,,,Fresh,Springs on Head of Horse Creek,WaDEWY_WS2229,Surface Water
+WYwr_WS2230,,,Fresh,Fork Spring,WaDEWY_WS2230,Surface Water
+WYwr_WS2231,,,Fresh,Samuel Spring,WaDEWY_WS2231,Surface Water
+WYwr_WS2232,,,Fresh,Snow Spring Creek,WaDEWY_WS2232,Surface Water
+WYwr_WS2233,,,Fresh,Spring (24-17-104),WaDEWY_WS2233,Surface Water
+WYwr_WS2234,,,Fresh,Spring (9-17-103),WaDEWY_WS2234,Surface Water
+WYwr_WS2235,,,Fresh,Circle Creek Spring,WaDEWY_WS2235,Surface Water
+WYwr_WS2236,,,Fresh,Antelope Spring No. One,WaDEWY_WS2236,Surface Water
+WYwr_WS2237,,,Fresh,Antelope Spring No. Two,WaDEWY_WS2237,Surface Water
+WYwr_WS2238,,,Fresh,Antelope Spring No. Three,WaDEWY_WS2238,Surface Water
+WYwr_WS2239,,,Fresh,Antelope Spring No. Four,WaDEWY_WS2239,Surface Water
+WYwr_WS2240,,,Fresh,Antelope Spring No. Five,WaDEWY_WS2240,Surface Water
+WYwr_WS2241,,,Fresh,Vivienne Spring,WaDEWY_WS2241,Surface Water
+WYwr_WS2242,,,Fresh,Six Mile Spring Creek,WaDEWY_WS2242,Surface Water
+WYwr_WS2243,,,Fresh,Albert No. One Spring,WaDEWY_WS2243,Surface Water
+WYwr_WS2244,,,Fresh,Albert No. Two Spring,WaDEWY_WS2244,Surface Water
+WYwr_WS2245,,,Fresh,Roner No. 1 Spring,WaDEWY_WS2245,Surface Water
+WYwr_WS2246,,,Fresh,Roner No. 2 Spring,WaDEWY_WS2246,Surface Water
+WYwr_WS2247,,,Fresh,Roner No. 3 Spring,WaDEWY_WS2247,Surface Water
+WYwr_WS2248,,,Fresh,McCabe Spring No. Ten,WaDEWY_WS2248,Surface Water
+WYwr_WS2249,,,Fresh,McCabe Spring No. Nine,WaDEWY_WS2249,Surface Water
+WYwr_WS2250,,,Fresh,McCabe Spring No. Eight,WaDEWY_WS2250,Surface Water
+WYwr_WS2251,,,Fresh,McCabe Spring No. Five,WaDEWY_WS2251,Surface Water
+WYwr_WS2252,,,Fresh,McCabe Spring No. Three,WaDEWY_WS2252,Surface Water
+WYwr_WS2253,,,Fresh,McCabe Spring No. Two,WaDEWY_WS2253,Surface Water
+WYwr_WS2254,,,Fresh,McCabe Spring No. One,WaDEWY_WS2254,Surface Water
+WYwr_WS2255,,,Fresh,Paul Williams Spring,WaDEWY_WS2255,Surface Water
+WYwr_WS2256,,,Fresh,Fisher Creek,WaDEWY_WS2256,Surface Water
+WYwr_WS2257,,,Fresh,Young Spring,WaDEWY_WS2257,Surface Water
+WYwr_WS2258,,,Fresh,Two Bar No. 1 Spring,WaDEWY_WS2258,Surface Water
+WYwr_WS2259,,,Fresh,Two Bar No. 2 Spring,WaDEWY_WS2259,Surface Water
+WYwr_WS2260,,,Fresh,Cherokee Springs No. 3,WaDEWY_WS2260,Surface Water
+WYwr_WS2261,,,Fresh,Dana Spring Creek,WaDEWY_WS2261,Surface Water
+WYwr_WS2262,,,Fresh,Percy Springs,WaDEWY_WS2262,Surface Water
+WYwr_WS2263,,,Fresh,Springs 6909,WaDEWY_WS2263,Surface Water
+WYwr_WS2264,,,Fresh,Springs 6908,WaDEWY_WS2264,Surface Water
+WYwr_WS2265,,,Fresh,Dickerson Spring,WaDEWY_WS2265,Surface Water
+WYwr_WS2266,,,Fresh,Cheesbrough Spring,WaDEWY_WS2266,Surface Water
+WYwr_WS2267,,,Fresh,Derf Springs,WaDEWY_WS2267,Surface Water
+WYwr_WS2268,,,Fresh,Gourley Meadow Spring No. Four,WaDEWY_WS2268,Surface Water
+WYwr_WS2269,,,Fresh,Swamp of White Spring,WaDEWY_WS2269,Surface Water
+WYwr_WS2270,,,Fresh,Spring (11-13-116),WaDEWY_WS2270,Surface Water
+WYwr_WS2271,,,Fresh,Rocky Spring,WaDEWY_WS2271,Surface Water
+WYwr_WS2272,,,Fresh,Dugway Spring Draw (4-14-115),WaDEWY_WS2272,Surface Water
+WYwr_WS2273,,,Fresh,White Spring Creek,WaDEWY_WS2273,Surface Water
+WYwr_WS2274,,,Fresh,Spring (36-14-116),WaDEWY_WS2274,Surface Water
+WYwr_WS2275,,,Fresh,Dry Wash Spring,WaDEWY_WS2275,Surface Water
+WYwr_WS2276,,,Fresh,Covey Spring,WaDEWY_WS2276,Surface Water
+WYwr_WS2277,,,Fresh,Polson Spring,WaDEWY_WS2277,Surface Water
+WYwr_WS2278,,,Fresh,Dugway Spring (Draw),WaDEWY_WS2278,Surface Water
+WYwr_WS2279,,,Fresh,Jenkins Spring Branch,WaDEWY_WS2279,Surface Water
+WYwr_WS2280,,,Fresh,Partridge Spring Area,WaDEWY_WS2280,Surface Water
+WYwr_WS2281,,,Fresh,Buck Fever Springs Area,WaDEWY_WS2281,Surface Water
+WYwr_WS2282,,,Fresh,David Spring,WaDEWY_WS2282,Surface Water
+WYwr_WS2283,,,Fresh,Thunderbolt Spring,WaDEWY_WS2283,Surface Water
+WYwr_WS2284,,,Fresh,Owen Spring No. 2,WaDEWY_WS2284,Surface Water
+WYwr_WS2285,,,Fresh,Owen Spring No. 4,WaDEWY_WS2285,Surface Water
+WYwr_WS2286,,,Fresh,Owen Spring No. 5,WaDEWY_WS2286,Surface Water
+WYwr_WS2287,,,Fresh,Owen Spring No. 1,WaDEWY_WS2287,Surface Water
+WYwr_WS2288,,,Fresh,Jack Hollow,WaDEWY_WS2288,Surface Water
+WYwr_WS2289,,,Fresh,Mark Spring,WaDEWY_WS2289,Surface Water
+WYwr_WS2290,,,Fresh,Big Spring Draw,WaDEWY_WS2290,Surface Water
+WYwr_WS2291,,,Fresh,Grass Spring Draw,WaDEWY_WS2291,Surface Water
+WYwr_WS2292,,,Fresh,Crow Spring,WaDEWY_WS2292,Surface Water
+WYwr_WS2293,,,Fresh,Medicine Bow Spring,WaDEWY_WS2293,Surface Water
+WYwr_WS2294,,,Fresh,Spring Creek (36-14-79),WaDEWY_WS2294,Surface Water
+WYwr_WS2295,,,Fresh,Troublesome Creek or North Branch Cedar Creek,WaDEWY_WS2295,Surface Water
+WYwr_WS2296,,,Fresh,Spring Gulch or Creek,WaDEWY_WS2296,Surface Water
+WYwr_WS2297,,,Fresh,Roosevelt Spring,WaDEWY_WS2297,Surface Water
+WYwr_WS2298,,,Fresh,Armstrong Spring,WaDEWY_WS2298,Surface Water
+WYwr_WS2299,,,Fresh,Keystone Spring No. 1,WaDEWY_WS2299,Surface Water
+WYwr_WS2300,,,Fresh,Keystone Spring No. 2,WaDEWY_WS2300,Surface Water
+WYwr_WS2301,,,Fresh,Kennaday Spring,WaDEWY_WS2301,Surface Water
+WYwr_WS2302,,,Fresh,Silver Spring No. Two,WaDEWY_WS2302,Surface Water
+WYwr_WS2303,,,Fresh,Keystone Ranger Station Spring,WaDEWY_WS2303,Surface Water
+WYwr_WS2304,,,Fresh,Freeman Spring,WaDEWY_WS2304,Surface Water
+WYwr_WS2305,,,Fresh,Bluejay Springs No. 2,WaDEWY_WS2305,Surface Water
+WYwr_WS2306,,,Fresh,Konold Spring,WaDEWY_WS2306,Surface Water
+WYwr_WS2307,,,Fresh,Tract B Spring,WaDEWY_WS2307,Surface Water
+WYwr_WS2308,,,Fresh,Spring 2,WaDEWY_WS2308,Surface Water
+WYwr_WS2309,,,Fresh,McCue-Carter Spring Draw,WaDEWY_WS2309,Surface Water
+WYwr_WS2310,,,Fresh,Spring Channel,WaDEWY_WS2310,Surface Water
+WYwr_WS2311,,,Fresh,Quad-States Spring,WaDEWY_WS2311,Surface Water
+WYwr_WS2312,,,Fresh,Hague Creek,WaDEWY_WS2312,Surface Water
+WYwr_WS2313,,,Fresh,Watson Spring Creek,WaDEWY_WS2313,Surface Water
+WYwr_WS2314,,,Fresh,Youth Camp Spring No. 2,WaDEWY_WS2314,Surface Water
+WYwr_WS2315,,,Fresh,Lyman Springs,WaDEWY_WS2315,Surface Water
+WYwr_WS2316,,,Fresh,Cross Meadow Spring No. 1,WaDEWY_WS2316,Surface Water
+WYwr_WS2317,,,Fresh,Cross Meadow Spring No. 2,WaDEWY_WS2317,Surface Water
+WYwr_WS2318,,,Fresh,Cross Meadow Spring No. 4,WaDEWY_WS2318,Surface Water
+WYwr_WS2319,,,Fresh,Cross Meadow Spring No. 5,WaDEWY_WS2319,Surface Water
+WYwr_WS2320,,,Fresh,Robert Spring,WaDEWY_WS2320,Surface Water
+WYwr_WS2321,,,Fresh,Cross Meadow Spring No. 3,WaDEWY_WS2321,Surface Water
+WYwr_WS2322,,,Fresh,Seepage and Springs (7-13-116),WaDEWY_WS2322,Surface Water
+WYwr_WS2323,,,Fresh,Guild Spring,WaDEWY_WS2323,Surface Water
+WYwr_WS2324,,,Fresh,Bridger Butte Spring,WaDEWY_WS2324,Surface Water
+WYwr_WS2325,,,Fresh,Barrel Springs,WaDEWY_WS2325,Surface Water
+WYwr_WS2326,,,Fresh,Bald Knob Spring,WaDEWY_WS2326,Surface Water
+WYwr_WS2327,,,Fresh,Spring and Seepage,WaDEWY_WS2327,Surface Water
+WYwr_WS2328,,,Fresh,Quarry Creek Springs,WaDEWY_WS2328,Surface Water
+WYwr_WS2329,,,Fresh,Pate Springs,WaDEWY_WS2329,Surface Water
+WYwr_WS2330,,,Fresh,Guild Hollow Springs,WaDEWY_WS2330,Surface Water
+WYwr_WS2331,,,Fresh,White Spring No. 1,WaDEWY_WS2331,Surface Water
+WYwr_WS2332,,,Fresh,White Spring No. 2,WaDEWY_WS2332,Surface Water
+WYwr_WS2333,,,Fresh,Spring No. 7,WaDEWY_WS2333,Surface Water
+WYwr_WS2334,,,Fresh,Spring No. 9,WaDEWY_WS2334,Surface Water
+WYwr_WS2335,,,Fresh,Spring No. 10,WaDEWY_WS2335,Surface Water
+WYwr_WS2336,,,Fresh,Spring No. 11-A,WaDEWY_WS2336,Surface Water
+WYwr_WS2337,,,Fresh,Spring No. 12,WaDEWY_WS2337,Surface Water
+WYwr_WS2338,,,Fresh,Spring No. 13,WaDEWY_WS2338,Surface Water
+WYwr_WS2339,,,Fresh,Spring No. 10-A,WaDEWY_WS2339,Surface Water
+WYwr_WS2340,,,Fresh,Garner Springs Draw,WaDEWY_WS2340,Surface Water
+WYwr_WS2341,,,Fresh,Morse Spring No. 1,WaDEWY_WS2341,Surface Water
+WYwr_WS2342,,,Fresh,Wall Springs Creek,WaDEWY_WS2342,Surface Water
+WYwr_WS2343,,,Fresh,Wall Springs,WaDEWY_WS2343,Surface Water
+WYwr_WS2344,,,Fresh,Bugas Spring Creek,WaDEWY_WS2344,Surface Water
+WYwr_WS2345,,,Fresh,Bradshaw Spring,WaDEWY_WS2345,Surface Water
+WYwr_WS2346,,,Fresh,Ogburn Spring,WaDEWY_WS2346,Surface Water
+WYwr_WS2347,,,Fresh,Scoop Shovel Spring Area,WaDEWY_WS2347,Surface Water
+WYwr_WS2348,,,Fresh,Forman Spring,WaDEWY_WS2348,Surface Water
+WYwr_WS2349,,,Fresh,Meeks Spring,WaDEWY_WS2349,Surface Water
+WYwr_WS2350,,,Fresh,Youth Camp Spring No. 1,WaDEWY_WS2350,Surface Water
+WYwr_WS2351,,,Fresh,Youth Camp Spring No. 3,WaDEWY_WS2351,Surface Water
+WYwr_WS2352,,,Fresh,Youth Camp Spring No. 4,WaDEWY_WS2352,Surface Water
+WYwr_WS2353,,,Fresh,Eyre Spring Area No. 1,WaDEWY_WS2353,Surface Water
+WYwr_WS2354,,,Fresh,Eyre Spring Area No. 2,WaDEWY_WS2354,Surface Water
+WYwr_WS2355,,,Fresh,Eyre Spring Area No. 3,WaDEWY_WS2355,Surface Water
+WYwr_WS2356,,,Fresh,Eyre Spring Area No. 4,WaDEWY_WS2356,Surface Water
+WYwr_WS2357,,,Fresh,Eyre Spring Area No. 5,WaDEWY_WS2357,Surface Water
+WYwr_WS2358,,,Fresh,Millburne Spring,WaDEWY_WS2358,Surface Water
+WYwr_WS2359,,,Fresh,Stoddard Spring,WaDEWY_WS2359,Surface Water
+WYwr_WS2360,,,Fresh,Mathes Springs,WaDEWY_WS2360,Surface Water
+WYwr_WS2361,,,Fresh,Medicine Butte Spring,WaDEWY_WS2361,Surface Water
+WYwr_WS2362,,,Fresh,Springs on Diamond Creek (13-67-6-NWSE),WaDEWY_WS2362,Surface Water
+WYwr_WS2363,,,Fresh,Sullivan Spring,WaDEWY_WS2363,Surface Water
+WYwr_WS2364,,,Fresh,Spring Creek (20-14-67),WaDEWY_WS2364,Surface Water
+WYwr_WS2365,,,Fresh,Bramford Springs,WaDEWY_WS2365,Surface Water
+WYwr_WS2366,,,Fresh,Van Tassel Spring No. 1,WaDEWY_WS2366,Surface Water
+WYwr_WS2367,,,Fresh,Branch Horse Creek,WaDEWY_WS2367,Surface Water
+WYwr_WS2368,,,Fresh,Ingleside Spring,WaDEWY_WS2368,Surface Water
+WYwr_WS2369,,,Fresh,Jean Spring,WaDEWY_WS2369,Surface Water
+WYwr_WS2370,,,Fresh,Ranger Spring,WaDEWY_WS2370,Surface Water
+WYwr_WS2371,,,Fresh,Happy Jack Spring,WaDEWY_WS2371,Surface Water
+WYwr_WS2372,,,Fresh,Nursery Spring,WaDEWY_WS2372,Surface Water
+WYwr_WS2373,,,Fresh,Colonel Jones Spring,WaDEWY_WS2373,Surface Water
+WYwr_WS2374,,,Fresh,Happy Jack Campground Spring No. 2,WaDEWY_WS2374,Surface Water
+WYwr_WS2375,,,Fresh,Happy Jack Campground Spring No. 3,WaDEWY_WS2375,Surface Water
+WYwr_WS2376,,,Fresh,Artillery Spring,WaDEWY_WS2376,Surface Water
+WYwr_WS2377,,,Fresh,Seals Spring,WaDEWY_WS2377,Surface Water
+WYwr_WS2378,,,Fresh,Read Spring,WaDEWY_WS2378,Surface Water
+WYwr_WS2379,,,Fresh,Mud Spring Creek,WaDEWY_WS2379,Surface Water
+WYwr_WS2380,,,Fresh,Dolan Spring No. 1,WaDEWY_WS2380,Surface Water
+WYwr_WS2381,,,Fresh,Dolan Spring No. 2,WaDEWY_WS2381,Surface Water
+WYwr_WS2382,,,Fresh,Dolan Spring No. 3,WaDEWY_WS2382,Surface Water
+WYwr_WS2383,,,Fresh,Sulphur Creek Canyon Springs,WaDEWY_WS2383,Surface Water
+WYwr_WS2384,,,Fresh,Marialaky Springs,WaDEWY_WS2384,Surface Water
+WYwr_WS2385,,,Fresh,Three Springs in Thomas Canyon,WaDEWY_WS2385,Surface Water
+WYwr_WS2386,,,Fresh,Knight Hollow Spring,WaDEWY_WS2386,Surface Water
+WYwr_WS2387,,,Fresh,Crompton Spring,WaDEWY_WS2387,Surface Water
+WYwr_WS2388,,,Fresh,Knight Hollow Spring Number One,WaDEWY_WS2388,Surface Water
+WYwr_WS2389,,,Fresh,Knight Hollow Spring Number Two,WaDEWY_WS2389,Surface Water
+WYwr_WS2390,,,Fresh,Burton Spring No. 1,WaDEWY_WS2390,Surface Water
+WYwr_WS2391,,,Fresh,Burton Spring No. 2,WaDEWY_WS2391,Surface Water
+WYwr_WS2392,,,Fresh,Burton Spring No. 3,WaDEWY_WS2392,Surface Water
+WYwr_WS2393,,,Fresh,Burton Spring No. 4,WaDEWY_WS2393,Surface Water
+WYwr_WS2394,,,Fresh,Bear Spring,WaDEWY_WS2394,Surface Water
+WYwr_WS2395,,,Fresh,Springs (14-121),WaDEWY_WS2395,Surface Water
+WYwr_WS2396,,,Fresh,Springs (15-121),WaDEWY_WS2396,Surface Water
+WYwr_WS2397,,,Fresh,West Fork Sulphur Spring Draw,WaDEWY_WS2397,Surface Water
+WYwr_WS2398,,,Fresh,Sheep Corral Spring,WaDEWY_WS2398,Surface Water
+WYwr_WS2399,,,Fresh,Myers Spring,WaDEWY_WS2399,Surface Water
+WYwr_WS2400,,,Fresh,Jamison Spring,WaDEWY_WS2400,Surface Water
+WYwr_WS2401,,,Fresh,Dipping Corral Spring,WaDEWY_WS2401,Surface Water
+WYwr_WS2402,,,Fresh,Russell Spring No. 1,WaDEWY_WS2402,Surface Water
+WYwr_WS2403,,,Fresh,Altamont Spring,WaDEWY_WS2403,Surface Water
+WYwr_WS2404,,,Fresh,Mountain Springs,WaDEWY_WS2404,Surface Water
+WYwr_WS2405,,,Fresh,Fait Spring & Gulch,WaDEWY_WS2405,Surface Water
+WYwr_WS2406,,,Fresh,"Seepage, Spring and Surface Water",WaDEWY_WS2406,Surface Water
+WYwr_WS2407,,,Fresh,Elwood Springs,WaDEWY_WS2407,Surface Water
+WYwr_WS2408,,,Fresh,Bottle Spring,WaDEWY_WS2408,Surface Water
+WYwr_WS2409,,,Fresh,Battle Spring,WaDEWY_WS2409,Surface Water
+WYwr_WS2410,,,Fresh,Webber Spring,WaDEWY_WS2410,Surface Water
+WYwr_WS2411,,,Fresh,Blackhall Spring No. 2,WaDEWY_WS2411,Surface Water
+WYwr_WS2412,,,Fresh,New Spring,WaDEWY_WS2412,Surface Water
+WYwr_WS2413,,,Fresh,Rock Spring No. 1,WaDEWY_WS2413,Surface Water
+WYwr_WS2414,,,Fresh,Rock Spring No. 2,WaDEWY_WS2414,Surface Water
+WYwr_WS2415,,,Fresh,Six Mile Gap Spring,WaDEWY_WS2415,Surface Water
+WYwr_WS2416,,,Fresh,Blackhall Spring No. 1,WaDEWY_WS2416,Surface Water
+WYwr_WS2417,,,Fresh,Tom Welch Spring Creek,WaDEWY_WS2417,Surface Water
+WYwr_WS2418,,,Fresh,Senior Spring,WaDEWY_WS2418,Surface Water
+WYwr_WS2419,,,Fresh,Unnamed Spring 'B',WaDEWY_WS2419,Surface Water
+WYwr_WS2420,,,Fresh,Lodge Spring Creek,WaDEWY_WS2420,Surface Water
+WYwr_WS2421,,,Fresh,Stephens Spring,WaDEWY_WS2421,Surface Water
+WYwr_WS2422,,,Fresh,Lamb Creek,WaDEWY_WS2422,Surface Water
+WYwr_WS2423,,,Fresh,Baldie Spring Creek,WaDEWY_WS2423,Surface Water
+WYwr_WS2424,,,Fresh,Van Dusen Spring Creek,WaDEWY_WS2424,Surface Water
+WYwr_WS2425,,,Fresh,Stove Spring,WaDEWY_WS2425,Surface Water
+WYwr_WS2426,,,Fresh,Five Springs,WaDEWY_WS2426,Surface Water
+WYwr_WS2427,,,Fresh,Small Spring(beach),WaDEWY_WS2427,Surface Water
+WYwr_WS2428,,,Fresh,Small Spring (Showers),WaDEWY_WS2428,Surface Water
+WYwr_WS2429,,,Fresh,Small Spring,WaDEWY_WS2429,Surface Water
+WYwr_WS2430,,,Fresh,Terry Spring Creek,WaDEWY_WS2430,Surface Water
+WYwr_WS2431,,,Fresh,Stove Spring Creek,WaDEWY_WS2431,Surface Water
+WYwr_WS2432,,,Fresh,Eubank Spring,WaDEWY_WS2432,Surface Water
+WYwr_WS2433,,,Fresh,Twin Spring,WaDEWY_WS2433,Surface Water
+WYwr_WS2434,,,Fresh,Beauty Spring,WaDEWY_WS2434,Surface Water
+WYwr_WS2435,,,Fresh,Brady Spring Creek,WaDEWY_WS2435,Surface Water
+WYwr_WS2436,,,Fresh,Showers Spring Draw,WaDEWY_WS2436,Surface Water
+WYwr_WS2437,,,Fresh,Section 15 Spring,WaDEWY_WS2437,Surface Water
+WYwr_WS2438,,,Fresh,Gregory Spring,WaDEWY_WS2438,Surface Water
+WYwr_WS2439,,,Fresh,Tract 43 Spring Creek,WaDEWY_WS2439,Surface Water
+WYwr_WS2440,,,Fresh,Behunin No. 1 Spring,WaDEWY_WS2440,Surface Water
+WYwr_WS2441,,,Fresh,Section 7 Spring,WaDEWY_WS2441,Surface Water
+WYwr_WS2442,,,Fresh,Circle Bar Spring,WaDEWY_WS2442,Surface Water
+WYwr_WS2443,,,Fresh,Box Spring,WaDEWY_WS2443,Surface Water
+WYwr_WS2444,,,Fresh,Luckey Spring,WaDEWY_WS2444,Surface Water
+WYwr_WS2445,,,Fresh,Swink No. 4 Spring Draw,WaDEWY_WS2445,Surface Water
+WYwr_WS2446,,,Fresh,Swink No. 5 Spring Draw,WaDEWY_WS2446,Surface Water
+WYwr_WS2447,,,Fresh,Bullock Spring Creek,WaDEWY_WS2447,Surface Water
+WYwr_WS2448,,,Fresh,Conner No. 1 Spring,WaDEWY_WS2448,Surface Water
+WYwr_WS2449,,,Fresh,Honnold Spring,WaDEWY_WS2449,Surface Water
+WYwr_WS2450,,,Fresh,Salisbury Spring No. 1,WaDEWY_WS2450,Surface Water
+WYwr_WS2451,,,Fresh,Larsen Spring,WaDEWY_WS2451,Surface Water
+WYwr_WS2452,,,Fresh,Allen Spring #1,WaDEWY_WS2452,Surface Water
+WYwr_WS2453,,,Fresh,Willow Creek (15-12-87),WaDEWY_WS2453,Surface Water
+WYwr_WS2454,,,Fresh,Miller Creek Spring,WaDEWY_WS2454,Surface Water
+WYwr_WS2455,,,Fresh,Stemp Spring Creek,WaDEWY_WS2455,Surface Water
+WYwr_WS2456,,,Fresh,Sandstone Spring,WaDEWY_WS2456,Surface Water
+WYwr_WS2457,,,Fresh,Clark Spring No. 3,WaDEWY_WS2457,Surface Water
+WYwr_WS2458,,,Fresh,Anderson Spring No. 1,WaDEWY_WS2458,Surface Water
+WYwr_WS2459,,,Fresh,Anderson Spring No. 2,WaDEWY_WS2459,Surface Water
+WYwr_WS2460,,,Fresh,Anderson Spring No. 3,WaDEWY_WS2460,Surface Water
+WYwr_WS2461,,,Fresh,Cobb Spring No. 1,WaDEWY_WS2461,Surface Water
+WYwr_WS2462,,,Fresh,Anderson Spring No. 4,WaDEWY_WS2462,Surface Water
+WYwr_WS2463,,,Fresh,Esterbrook Spring,WaDEWY_WS2463,Surface Water
+WYwr_WS2464,,,Fresh,Della Payton Draw,WaDEWY_WS2464,Surface Water
+WYwr_WS2465,,,Fresh,Robb Springs,WaDEWY_WS2465,Surface Water
+WYwr_WS2466,,,Fresh,Kenyon Spring,WaDEWY_WS2466,Surface Water
+WYwr_WS2467,,,Fresh,Sheep Mountain Spring,WaDEWY_WS2467,Surface Water
+WYwr_WS2468,,,Fresh,Crisman Spring Area,WaDEWY_WS2468,Surface Water
+WYwr_WS2469,,,Fresh,Spring Creek (31-15-77),WaDEWY_WS2469,Surface Water
+WYwr_WS2470,,,Fresh,Springs (12-14-78),WaDEWY_WS2470,Surface Water
+WYwr_WS2471,,,Fresh,Forest Spring,WaDEWY_WS2471,Surface Water
+WYwr_WS2472,,,Fresh,Cascade Spring No. 1,WaDEWY_WS2472,Surface Water
+WYwr_WS2473,,,Fresh,Cascade Spring No. 2,WaDEWY_WS2473,Surface Water
+WYwr_WS2474,,,Fresh,Cascade Spring No. 3,WaDEWY_WS2474,Surface Water
+WYwr_WS2475,,,Fresh,Brooklyn Spring No. 1,WaDEWY_WS2475,Surface Water
+WYwr_WS2476,,,Fresh,Brooklyn Spring No. 2,WaDEWY_WS2476,Surface Water
+WYwr_WS2477,,,Fresh,Bald Mountain Spring,WaDEWY_WS2477,Surface Water
+WYwr_WS2478,,,Fresh,"Brooklyn Lake Springs Nos. 1,2,3,4,5,6",WaDEWY_WS2478,Surface Water
+WYwr_WS2479,,,Fresh,Spruce Mountain Spring,WaDEWY_WS2479,Surface Water
+WYwr_WS2480,,,Fresh,Hall Spring,WaDEWY_WS2480,Surface Water
+WYwr_WS2481,,,Fresh,Margaret Spring,WaDEWY_WS2481,Surface Water
+WYwr_WS2482,,,Fresh,Mary Spring,WaDEWY_WS2482,Surface Water
+WYwr_WS2483,,,Fresh,Katy Spring,WaDEWY_WS2483,Surface Water
+WYwr_WS2484,,,Fresh,Button Spring,WaDEWY_WS2484,Surface Water
+WYwr_WS2485,,,Fresh,Buchanan Springs,WaDEWY_WS2485,Surface Water
+WYwr_WS2486,,,Fresh,Sundby-Wilson Spring,WaDEWY_WS2486,Surface Water
+WYwr_WS2487,,,Fresh,Crouse Spring,WaDEWY_WS2487,Surface Water
+WYwr_WS2488,,,Fresh,Baucum Spring,WaDEWY_WS2488,Surface Water
+WYwr_WS2489,,,Fresh,Springs (10-26-74),WaDEWY_WS2489,Surface Water
+WYwr_WS2490,,,Fresh,Newell Springs (11-25-74),WaDEWY_WS2490,Surface Water
+WYwr_WS2491,,,Fresh,Asbestos Springs,WaDEWY_WS2491,Surface Water
+WYwr_WS2492,,,Fresh,Spring Creek (9-26-74),WaDEWY_WS2492,Surface Water
+WYwr_WS2493,,,Fresh,Solomon Spring No. 1,WaDEWY_WS2493,Surface Water
+WYwr_WS2494,,,Fresh,Solomon Spring No. 2,WaDEWY_WS2494,Surface Water
+WYwr_WS2495,,,Fresh,Solomon Spring No. 3,WaDEWY_WS2495,Surface Water
+WYwr_WS2496,,,Fresh,Jock Draw Springs,WaDEWY_WS2496,Surface Water
+WYwr_WS2497,,,Fresh,Soldier Spring,WaDEWY_WS2497,Surface Water
+WYwr_WS2498,,,Fresh,Water stored in Bell and Scranton No. 1 Res. (Permit No. 5591 Res.),WaDEWY_WS2498,Surface Water
+WYwr_WS2499,,,Fresh,Pope Springs Draw,WaDEWY_WS2499,Surface Water
+WYwr_WS2500,,,Fresh,Gramm Spring,WaDEWY_WS2500,Surface Water
+WYwr_WS2501,,,Fresh,Maggie Creek Spring,WaDEWY_WS2501,Surface Water
+WYwr_WS2502,,,Fresh,Pope Springs,WaDEWY_WS2502,Surface Water
+WYwr_WS2503,,,Fresh,Soldier Springs,WaDEWY_WS2503,Surface Water
+WYwr_WS2504,,,Fresh,Springs and Small Creek,WaDEWY_WS2504,Surface Water
+WYwr_WS2505,,,Fresh,City Springs Creek,WaDEWY_WS2505,Surface Water
+WYwr_WS2506,,,Fresh,Springs & Small Creek,WaDEWY_WS2506,Surface Water
+WYwr_WS2507,,,Fresh,Valentine Springs,WaDEWY_WS2507,Surface Water
+WYwr_WS2508,,,Fresh,Thornton Springs,WaDEWY_WS2508,Surface Water
+WYwr_WS2509,,,Fresh,Perennial Springs,WaDEWY_WS2509,Surface Water
+WYwr_WS2510,,,Fresh,Trapper Spring,WaDEWY_WS2510,Surface Water
+WYwr_WS2511,,,Fresh,City Springs,WaDEWY_WS2511,Surface Water
+WYwr_WS2512,,,Fresh,Bell Spring,WaDEWY_WS2512,Surface Water
+WYwr_WS2513,,,Fresh,Gabrielson Spring,WaDEWY_WS2513,Surface Water
+WYwr_WS2514,,,Fresh,Drainage Ditch,WaDEWY_WS2514,Surface Water
+WYwr_WS2515,,,Fresh,Dickey Spring,WaDEWY_WS2515,Surface Water
+WYwr_WS2516,,,Fresh,Laycock Spring,WaDEWY_WS2516,Surface Water
+WYwr_WS2517,,,Fresh,Telephone Spring,WaDEWY_WS2517,Surface Water
+WYwr_WS2518,,,Fresh,Happy Jack Campground Spring No. 1,WaDEWY_WS2518,Surface Water
+WYwr_WS2519,,,Fresh,Jelm Spring,WaDEWY_WS2519,Surface Water
+WYwr_WS2520,,,Fresh,Malody Spring No. 2,WaDEWY_WS2520,Surface Water
+WYwr_WS2521,,,Fresh,Malody Spring No. 1,WaDEWY_WS2521,Surface Water
+WYwr_WS2522,,,Fresh,Hatcher Spring,WaDEWY_WS2522,Surface Water
+WYwr_WS2523,,,Fresh,Hansel Spring,WaDEWY_WS2523,Surface Water
+WYwr_WS2524,,,Fresh,Magrath Spring,WaDEWY_WS2524,Surface Water
+WYwr_WS2525,,,Fresh,A-Spring,WaDEWY_WS2525,Surface Water
+WYwr_WS2526,,,Fresh,B-Spring,WaDEWY_WS2526,Surface Water
+WYwr_WS2527,,,Fresh,C-Spring,WaDEWY_WS2527,Surface Water
+WYwr_WS2528,,,Fresh,D-Spring,WaDEWY_WS2528,Surface Water
+WYwr_WS2529,,,Fresh,E-Spring,WaDEWY_WS2529,Surface Water
+WYwr_WS2530,,,Fresh,F-Spring,WaDEWY_WS2530,Surface Water
+WYwr_WS2531,,,Fresh,G-Spring,WaDEWY_WS2531,Surface Water
+WYwr_WS2532,,,Fresh,H-Spring,WaDEWY_WS2532,Surface Water
+WYwr_WS2533,,,Fresh,I-Spring,WaDEWY_WS2533,Surface Water
+WYwr_WS2534,,,Fresh,J-Spring,WaDEWY_WS2534,Surface Water
+WYwr_WS2535,,,Fresh,J-2 Spring,WaDEWY_WS2535,Surface Water
+WYwr_WS2536,,,Fresh,K-1 Spring,WaDEWY_WS2536,Surface Water
+WYwr_WS2537,,,Fresh,K-2 Spring,WaDEWY_WS2537,Surface Water
+WYwr_WS2538,,,Fresh,K-3 Spring,WaDEWY_WS2538,Surface Water
+WYwr_WS2539,,,Fresh,L-Spring,WaDEWY_WS2539,Surface Water
+WYwr_WS2540,,,Fresh,M-Spring,WaDEWY_WS2540,Surface Water
+WYwr_WS2541,,,Fresh,N-1 Spring,WaDEWY_WS2541,Surface Water
+WYwr_WS2542,,,Fresh,N-2 Spring,WaDEWY_WS2542,Surface Water
+WYwr_WS2543,,,Fresh,N-3 Spring,WaDEWY_WS2543,Surface Water
+WYwr_WS2544,,,Fresh,P-Spring,WaDEWY_WS2544,Surface Water
+WYwr_WS2545,,,Fresh,Q-Spring,WaDEWY_WS2545,Surface Water
+WYwr_WS2546,,,Fresh,R-Spring,WaDEWY_WS2546,Surface Water
+WYwr_WS2547,,,Fresh,S-Spring,WaDEWY_WS2547,Surface Water
+WYwr_WS2548,,,Fresh,T-Spring,WaDEWY_WS2548,Surface Water
+WYwr_WS2549,,,Fresh,Tie Siding Spring,WaDEWY_WS2549,Surface Water
+WYwr_WS2550,,,Fresh,Schoer Spring,WaDEWY_WS2550,Surface Water
+WYwr_WS2551,,,Fresh,Zigurs No.2 Spring,WaDEWY_WS2551,Surface Water
+WYwr_WS2552,,,Fresh,Zigurs No. 3 Spring,WaDEWY_WS2552,Surface Water
+WYwr_WS2553,,,Fresh,Zigurs No. 1 Spring,WaDEWY_WS2553,Surface Water
+WYwr_WS2554,,,Fresh,McDonald No. Three Spring,WaDEWY_WS2554,Surface Water
+WYwr_WS2555,,,Fresh,Big Springs,WaDEWY_WS2555,Surface Water
+WYwr_WS2556,,,Fresh,Slate Creek Springs,WaDEWY_WS2556,Surface Water
+WYwr_WS2557,,,Fresh,Seepage from Wyoming Development Company's Irrigation System (Canal No.2),WaDEWY_WS2557,Surface Water
+WYwr_WS2558,,,Fresh,Lee Springs Creek,WaDEWY_WS2558,Surface Water
+WYwr_WS2559,,,Fresh,Van Ortwick Creek,WaDEWY_WS2559,Surface Water
+WYwr_WS2560,,,Fresh,Halleck Creek Springs,WaDEWY_WS2560,Surface Water
+WYwr_WS2561,,,Fresh,Spring Creek (6-19-68),WaDEWY_WS2561,Surface Water
+WYwr_WS2562,,,Fresh,East Fork Spring Creek,WaDEWY_WS2562,Surface Water
+WYwr_WS2563,,,Fresh,Grant Creek and Grant Canyon Reservoir Permit No 2057,WaDEWY_WS2563,Surface Water
+WYwr_WS2564,,,Fresh,Snyder Spring No. 1,WaDEWY_WS2564,Surface Water
+WYwr_WS2565,,,Fresh,Snyder Spring No. 2,WaDEWY_WS2565,Surface Water
+WYwr_WS2566,,,Fresh,Snyder Spring No. 3,WaDEWY_WS2566,Surface Water
+WYwr_WS2567,,,Fresh,Richeau Spring,WaDEWY_WS2567,Surface Water
+WYwr_WS2568,,,Fresh,Trenholm Springs,WaDEWY_WS2568,Surface Water
+WYwr_WS2569,,,Fresh,McDonald No. Five Spring,WaDEWY_WS2569,Surface Water
+WYwr_WS2570,,,Fresh,McDonald No. Four Spring,WaDEWY_WS2570,Surface Water
+WYwr_WS2571,,,Fresh,McDonald No. Two Spring,WaDEWY_WS2571,Surface Water
+WYwr_WS2572,,,Fresh,McDonald No. One Spring,WaDEWY_WS2572,Surface Water
+WYwr_WS2573,,,Fresh,Double L. Spring,WaDEWY_WS2573,Surface Water
+WYwr_WS2574,,,Fresh,Bookout Spring,WaDEWY_WS2574,Surface Water
+WYwr_WS2575,,,Fresh,Spring Draw No. 1,WaDEWY_WS2575,Surface Water
+WYwr_WS2576,,,Fresh,Spring Draw No. 2,WaDEWY_WS2576,Surface Water
+WYwr_WS2577,,,Fresh,Spring Draw No. 3,WaDEWY_WS2577,Surface Water
+WYwr_WS2578,,,Fresh,Plumbago Spring,WaDEWY_WS2578,Surface Water
+WYwr_WS2579,,,Fresh,Meadow Spring,WaDEWY_WS2579,Surface Water
+WYwr_WS2580,,,Fresh,Basin Spring,WaDEWY_WS2580,Surface Water
+WYwr_WS2581,,,Fresh,Guernsey Fish Pond Springs,WaDEWY_WS2581,Surface Water
+WYwr_WS2582,,,Fresh,Burnett Spring No. 1,WaDEWY_WS2582,Surface Water
+WYwr_WS2583,,,Fresh,Burnett Spring No. 2,WaDEWY_WS2583,Surface Water
+WYwr_WS2584,,,Fresh,Manning Spring,WaDEWY_WS2584,Surface Water
+WYwr_WS2585,,,Fresh,Burnett Spring No. 3,WaDEWY_WS2585,Surface Water
+WYwr_WS2586,,,Fresh,High Spring No. One,WaDEWY_WS2586,Surface Water
+WYwr_WS2587,,,Fresh,Phillbrook Spring No. 2,WaDEWY_WS2587,Surface Water
+WYwr_WS2588,,,Fresh,Paintrock Lodge Spring,WaDEWY_WS2588,Surface Water
+WYwr_WS2589,,,Fresh,Springs (1-52-63),WaDEWY_WS2589,Surface Water
+WYwr_WS2590,,,Fresh,South Redwater Creek,WaDEWY_WS2590,Surface Water

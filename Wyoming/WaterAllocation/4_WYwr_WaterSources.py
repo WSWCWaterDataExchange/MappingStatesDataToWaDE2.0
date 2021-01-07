@@ -1,5 +1,5 @@
-#Date Created: 12/10/2020
-#Purpose: To extract AZ water source information and population dataframe for WaDE_QA 2.0.
+#Date Created: 12/11/2020
+#Purpose: To extract WY water source information and population dataframe for WaDE_QA 2.0.
 #Notes: 1) asdf
 
 # Needed Libraries
@@ -17,9 +17,9 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Arizona/WaterAllocation"
+workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Wyoming/WaterAllocation"
 os.chdir(workingDir)
-fileInput = "RawinputData/P_ArizonaMaster.csv"
+fileInput = "RawinputData/P_WyomingMaster.csv"
 df = pd.read_csv(fileInput)
 
 #WaDE columns
@@ -33,22 +33,25 @@ columnslist = [
     "WaterSourceTypeCV"]
 
 
-# Custom Site Functions
+# Custom Functions
 ############################################################################
 
 # For creating WaterSourceName
 def assignWaterSourceName(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
+    colrowValue = str(colrowValue).strip()
+    if colrowValue == "" or pd.isnull(colrowValue):
         outList = "Unspecified"
     else:
-        strVal = str(colrowValue)
-        outList = strVal.strip()
+        try:
+            outList = str(colrowValue).strip()
+        except:
+            outList = "Unspecified"
     return outList
 
-# For creating WaDESiteUUID
+# For creating WaterSourceUUID
 def assignWaterSourceUUID(colrowValue):
     string1 = str(colrowValue)
-    outstring = "AZwr_WS" + string1
+    outstring = "WYwr_WS" + string1
     return outstring
 
 
@@ -70,7 +73,7 @@ print("WaterSourceName")
 outdf['WaterSourceName'] = df.apply(lambda row: assignWaterSourceName(row['in_WaterSourceName']), axis=1)
 
 print("WaterSourceNativeID")
-outdf["WaterSourceNativeID"] = "Unspecified"
+outdf["WaterSourceNativeID"] = df['in_WaterSourceNativeID']
 
 print("WaterSourceTypeCV")
 outdf['WaterSourceTypeCV'] = df['in_WaterSourceTypeCV']
@@ -125,6 +128,6 @@ outdf.to_csv('ProcessedInputData/watersources.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
-    dfpurge.to_csv('ProcessedInputData/watersources_missing.csv')  # index=False,
+    dfpurge.to_csv('ProcessedInputData/watersources_missing.csv', index=False)
 
 print("Done.")

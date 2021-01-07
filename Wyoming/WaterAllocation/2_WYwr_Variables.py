@@ -1,5 +1,5 @@
-#Date Created: 12/01/2020
-#Purpose: To extract AZ variable information and population dataframe for WaDE_QA 2.0.
+#Date Created: 12/11/2020
+#Purpose: To extract WY variable information and population dataframe for WaDE_QA 2.0.
 #Notes: asdf
 
 
@@ -13,7 +13,7 @@ import os
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Arizona/WaterAllocation"
+workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Wyoming/WaterAllocation"
 os.chdir(workingDir)
 
 #WaDE columns
@@ -34,13 +34,13 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "ADWR_Allocation All",
+    "WY_Allocation All",
     "1",
     "Year",
     "Average",
     "CFS",
     "AFY",
-    "10",
+    "11",
     "WaterYear",
     "Consumptive Use",
     "Consumptive Use"]
