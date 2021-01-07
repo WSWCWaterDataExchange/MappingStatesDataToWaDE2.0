@@ -125,6 +125,6 @@ outdf.to_csv('ProcessedInputData/watersources.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
-    dfpurge.to_csv('ProcessedInputData/watersources_missing.csv')  # index=False,
+    dfpurge.to_csv('ProcessedInputData/watersources_missing.csv', index=False)
 
 print("Done.")

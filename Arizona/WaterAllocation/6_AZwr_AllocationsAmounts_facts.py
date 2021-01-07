@@ -138,6 +138,7 @@ def assignBeneficialUseCategory(colrowValue):
         outList = strVal.strip()
     return outList
 
+
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe outdf...")
@@ -195,11 +196,11 @@ outdf['AllocationNativeID'] = df_DM['in_AllocationNativeID'].astype(str)
 print("AllocationOwner")
 outdf['AllocationOwner'] = df_DM.apply(lambda row: fixAllocationOwner(row['in_AllocationOwner']), axis=1)
 
-print("AllocationSDWISIdentifierCV")
-outdf.AllocationSDWISIdentifierCV = ""
-
 print("AllocationPriorityDate")
 outdf['AllocationPriorityDate'] = df_DM['in_AllocationPriorityDate']
+
+print("AllocationSDWISIdentifierCV")
+outdf.AllocationSDWISIdentifierCV = ""
 
 print("AllocationTimeframeEnd")
 outdf['AllocationTimeframeEnd'] = df_DM['in_AllocationTimeframeEnd']
@@ -273,7 +274,7 @@ print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to uploa
 
 # N/A
 
-#Error AA_Checking each Field
+#Error Checking Each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
 # Purge DataFrame to hold removed elements
@@ -400,7 +401,6 @@ outdf100.to_csv('ProcessedInputData/waterallocations.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
-    dfpurge.to_csv('ProcessedInputData/waterallocations_missing.csv')  # index=False,
+    dfpurge.to_csv('ProcessedInputData/waterallocations_missing.csv', index=False)
 
 print("Done.")
-

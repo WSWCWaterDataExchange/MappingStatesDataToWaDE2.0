@@ -2,7 +2,6 @@
 #Purpose: To extract AZ site information and population dataframe for WaDE_QA 2.0.
 #Notes: asdf
 
-
 # Needed Libraries
 ############################################################################
 import pandas as pd
@@ -11,7 +10,6 @@ import os
 # from pyproj import Transformer, transform
 # transformer = Transformer.from_proj(4326, 4326)  # A trick to drastically optimize the Transformer of pyproj.
 # MT projection = EPSG:4326, same as WGS84 projection used by WaDE 2.0 = epsg:4326.
-
 
 # Custom Libraries
 ############################################################################
@@ -232,6 +230,6 @@ outdf.to_csv('ProcessedInputData/sites.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
-    dfpurge.to_csv('ProcessedInputData/sites_missing.csv')  # index=False,
+    dfpurge.to_csv('ProcessedInputData/sites_missing.csv', index=False)
 
 print("Done.")
