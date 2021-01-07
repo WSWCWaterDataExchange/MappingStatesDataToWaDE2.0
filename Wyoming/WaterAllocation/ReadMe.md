@@ -1,5 +1,3 @@
-work in progress.  This should be rewritten for WY.
-
 # WWDO Water Rights (Allocation) Data Preparation for WaDE
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [Wyoming Water Development Office (WWDO)](https://wwdc.state.wy.us/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
@@ -7,7 +5,7 @@ This readme details the process that was applied by the staff of the [Western St
 ## Overview of Data Utilized
 The following data was used for water allocations...
 
-- Point of diversion (POD) surface and groundwater data files were made temporary available to the WSWC staff temporary by the WWDO via email correspondence and shared through Google Drive.  Links no longer available, contact WWDO for further instructions.
+- Point of diversion (POD) surface and groundwater data files were made temporary available to the WSWC staff by the WWDO via email correspondence and shared through Google Drive.  Links no longer available, contact WWDO for further instructions.
 
 Two unique files were created, one used by the WSWC staff to understand the available data (*"_with Notes"*), the second resulting files to be used as input to the Python codes that prepare WaDE2 input files.  Input files used are as follows...
  - POD_SW_DepthI_FC_input
@@ -27,7 +25,7 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 
 ***
 ### 0) Code File: 0_PreProcessWyomingAllocationData.ipynb
-Purpose: Pre-process the Montana input data files and merge them into one master file for simple dataframe creation and extraction.
+Purpose: Pre-process the Wyoming input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
 - POD_SW_DepthI_FC_input
@@ -272,5 +270,5 @@ WSWC Staff
 - Adel Abdallah <adelabdallah@wswc.utah.gov>
 - Ryan James <rjames@wswc.utah.gov>
 
-Montana DNRC Staff
+Wyoming DNRC Staff
 - Mabel Jones <mabel.jones1@wyo.gov>
