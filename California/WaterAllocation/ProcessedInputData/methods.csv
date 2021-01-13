@@ -1,2 +1,2 @@
-MethodUUID,MethodName,MethodDescription,MethodNEMILink,ApplicableResourceTypeCV,MethodTypeCV,DataCoverageValue,DataQualityValueCV,DataConfidenceValue
-CSWRCB_Water Rights,California Water Rights,Water Rights,https://www.waterboards.ca.gov/waterrights/water_issues/programs/ewrims/,Surface water or subsurface water,Adjudicated,,,
+MethodUUID,ApplicableResourceTypeCV,DataConfidenceValue,DataCoverageValue,DataQualityValueCV,MethodDescription,MethodName,MethodNEMILink,MethodTypeCV
+CSWRCB_Water Rights,Surface water or subsurface water,,,,Water Rights.,California Water Rights,https://www.waterboards.ca.gov/waterrights/water_issues/programs/ewrims/,Adjudicated
