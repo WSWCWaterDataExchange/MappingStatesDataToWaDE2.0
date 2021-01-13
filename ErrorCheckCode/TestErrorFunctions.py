@@ -164,20 +164,20 @@ def GNISCodeCV_S_Check(dfx, dfy):
 
 # HUC12_nvarchar(20)_Yes
 def HUC12_S_Check(dfx, dfy):
-    mask = dfx.loc[ dfx["HUC12"].str.len() > 20 ].assign(ReasonRemoved='Bad HUC12').reset_index()
+    mask = dfx.loc[ dfx["HUC12"].astype(str).str.len() > 20 ].assign(ReasonRemoved='Bad HUC12').reset_index()
     if len(mask.index) > 0:
         dfy = dfy.append(mask)
-        dropIndex = dfx.loc[ dfx["HUC12"].str.len() > 20 ].index
+        dropIndex = dfx.loc[ dfx["HUC12"].astype(str).str.len() > 20 ].index
         dfx = dfx.drop(dropIndex)
         dfx = dfx.reset_index(drop=True)
     return (dfx, dfy)
 
 # HUC8_nvarchar(20)_Yes
 def HUC8_S_Check(dfx, dfy):
-    mask = dfx.loc[ dfx["HUC8"].str.len() > 20 ].assign(ReasonRemoved='Bad HUC8').reset_index()
+    mask = dfx.loc[ dfx["HUC8"].astype(str).str.len() > 20 ].assign(ReasonRemoved='Bad HUC8').reset_index()
     if len(mask.index) > 0:
         dfy = dfy.append(mask)
-        dropIndex = dfx.loc[ dfx["HUC8"].str.len() > 20 ].index
+        dropIndex = dfx.loc[ dfx["HUC8"].astype(str).str.len() > 20 ].index
         dfx = dfx.drop(dropIndex)
         dfx = dfx.reset_index(drop=True)
     return (dfx, dfy)
