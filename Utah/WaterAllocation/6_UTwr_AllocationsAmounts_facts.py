@@ -4,13 +4,18 @@
 #         1) Simple creation of working dataframe (df), with output dataframe (outdf).
 #         2) Drop all nulls before combining duplicate rows on NativeID.
 
-
 # Needed Libraries
 ############################################################################
 import numpy as np
 import pandas as pd
 import os
 from datetime import datetime
+
+# Custom Libraries
+############################################################################
+import sys
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+import TestErrorFunctions
 
 
 # Inputs
@@ -285,7 +290,7 @@ print("MethodUUID")
 outdf.MethodUUID = "UT_Water Allocation"
 
 print("OrganizationUUID")
-outdf.OrganizationUUID = "UTDWRe"
+outdf.OrganizationUUID = "UTDWRi"
 
 print("SiteUUID")
 SitUUIDdict = pd.Series(df_sites.SiteUUID.values, index = df_sites.SiteNativeID).to_dict()
@@ -412,316 +417,123 @@ outdf100 = outdf.groupby('AllocationNativeID').agg(lambda x: ','.join([str(elem)
 print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to upload data to QA here.
 
 
-#Error Checking each Field
+#Error checking each field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
+# Purge DataFrame to hold removed elements
+dfpurge = pd.DataFrame(columns=columnslist)
 dfpurge = dfpurge.assign(ReasonRemoved='')
 
-# MethodUUID_nvarchar(200)_-
-mask = outdf100.loc[ (outdf100["MethodUUID"].isnull()) | (outdf100["MethodUUID"] == '') | (outdf100['MethodUUID'].str.len() > 200) ].assign(ReasonRemoved='Bad MethodUUID').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)  # Append to purge DataFrame
-    dropIndex = outdf100.loc[ (outdf100["MethodUUID"].isnull()) | (outdf100["MethodUUID"] == '') | (outdf100['MethodUUID'].str.len() > 200) ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# MethodUUID
+outdf100, dfpurge = TestErrorFunctions.MethodUUID_AA_Check(outdf100, dfpurge)
 
-# VariableSpecificUUID_nvarchar(200)_-
-mask = outdf100.loc[ (outdf100["VariableSpecificUUID"].isnull()) | (outdf100["VariableSpecificUUID"] == '') | (outdf100['VariableSpecificUUID'].str.len() > 200) ].assign(ReasonRemoved='Bad VariableSpecificUUID').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ (outdf100["VariableSpecificUUID"].isnull()) | (outdf100["VariableSpecificUUID"] == '') | (outdf100['VariableSpecificUUID'].str.len() > 200) ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# OrganizationUUID
+outdf100, dfpurge = TestErrorFunctions.OrganizationUUID_AA_Check(outdf100, dfpurge)
 
-# WaterSourceUUID_nvarchar(200)_-
-mask = outdf100.loc[ (outdf100["WaterSourceUUID"].isnull()) | (outdf100["WaterSourceUUID"] == '') | (outdf100['WaterSourceUUID'].str.len() > 200) ].assign(ReasonRemoved='Bad WaterSourceUUID').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ (outdf100["WaterSourceUUID"].isnull()) | (outdf100["WaterSourceUUID"] == '') | (outdf100['WaterSourceUUID'].str.len() > 200) ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# SiteUUID
+outdf100, dfpurge = TestErrorFunctions.SiteUUID_AA_Check(outdf100, dfpurge)
 
-# OrganizationUUID_nvarchar(200)_-
-mask = outdf100.loc[ (outdf100["OrganizationUUID"].isnull()) | (outdf100["OrganizationUUID"] == '') | (outdf100['OrganizationUUID'].str.len() > 200) ].assign(ReasonRemoved='Bad OrganizationUUID').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ (outdf100["OrganizationUUID"].isnull()) | (outdf100["OrganizationUUID"] == '') | (outdf100['OrganizationUUID'].str.len() > 200) ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# VariableSpecificUUID
+outdf100, dfpurge = TestErrorFunctions.VariableSpecificUUID_AA_Check(outdf100, dfpurge)
 
-# SiteUUID_nvarchar(200)_-
-mask = outdf100.loc[ (outdf100["SiteUUID"].isnull()) | (outdf100["SiteUUID"] == '') | (outdf100['SiteUUID'].str.len() > 200) ].assign(ReasonRemoved='Bad SiteUUID').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ (outdf100["SiteUUID"].isnull()) | (outdf100["SiteUUID"] == '') | (outdf100['SiteUUID'].str.len() > 200) ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# WaterSourceUUID
+outdf100, dfpurge = TestErrorFunctions.WaterSourceUUID_AA_Check(outdf100, dfpurge)
 
-# AllocationFlow_CFS_float_Yes
-mask = outdf100.loc[ (outdf100["AllocationFlow_CFS"].isnull()) | (outdf100["AllocationFlow_CFS"] == '') ].assign(ReasonRemoved='Bad AllocationFlow_CFS').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ (outdf100["AllocationFlow_CFS"].isnull()) | (outdf100["AllocationFlow_CFS"] == '') ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# AllocationApplicationDateID
+outdf100, dfpurge = TestErrorFunctions.AllocationApplicationDate_AA_Check(outdf100, dfpurge)
 
-# AllocationApplicationDate_date_Yes
-mask = outdf100.loc[outdf100["AllocationApplicationDate"].str.contains(',') == True].assign(ReasonRemoved='Bad AllocationApplicationDate').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["AllocationApplicationDate"].str.contains(',') == True ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# AllocationAssociatedConsumptiveUseSiteIDs
+outdf100, dfpurge = TestErrorFunctions.AllocationAssociatedConsumptiveUseSiteIDs_AA_Check(outdf100, dfpurge)
 
-# AllocationAssociatedConsumptiveUseSiteIDs_nvarchar(500)_Yes
-mask = outdf100.loc[ outdf100["AllocationAssociatedConsumptiveUseSiteIDs"].str.len() > 500 ].assign(ReasonRemoved='Bad AllocationAssociatedConsumptiveUseSiteIDs').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["AllocationAssociatedConsumptiveUseSiteIDs"].str.len() > 500 ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# AllocationAssociatedWithdrawalSiteIDs
+outdf100, dfpurge = TestErrorFunctions.AllocationAssociatedWithdrawalSiteIDs_AA_Check(outdf100, dfpurge)
 
-# AllocationAssociatedWithdrawalSiteIDs_nvarchar(500)_Yes
-mask = outdf100.loc[ outdf100["AllocationAssociatedWithdrawalSiteIDs"].str.len() > 500 ].assign(ReasonRemoved='Bad AllocationAssociatedWithdrawalSiteIDs').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["AllocationAssociatedWithdrawalSiteIDs"].str.len() > 500 ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# AllocationBasisCV
+outdf100, dfpurge = TestErrorFunctions.AllocationBasisCV_AA_Check(outdf100, dfpurge)
 
-# AllocationBasisCV_nvarchar(250)_Yes
-mask = outdf100.loc[ outdf100["AllocationBasisCV"].str.len() > 250 ].assign(ReasonRemoved='Bad AllocationBasisCV').reset_index()
-purge = outdf100[mask]
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["AllocationBasisCV"].str.len() > 250 ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# AllocationChangeApplicationIndicator
+outdf100, dfpurge = TestErrorFunctions.AllocationChangeApplicationIndicator_AA_Check(outdf100, dfpurge)
 
-# AllocationChangeApplicationIndicator_nvarchar(100)_Yes
-mask= outdf100.loc[ outdf100["AllocationChangeApplicationIndicator"].str.len() > 100 ].assign(ReasonRemoved='Bad AllocationChangeApplicationIndicator').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["AllocationChangeApplicationIndicator"].str.len() > 100 ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# AllocationCommunityWaterSupplySystem
+outdf100, dfpurge = TestErrorFunctions.AllocationCommunityWaterSupplySystem_AA_Check(outdf100, dfpurge)
 
-# AllocationCommunityWaterSupplySystem_nvarchar(250)_Yes
-mask= outdf100.loc[ outdf100["AllocationCommunityWaterSupplySystem"].str.len() > 250 ].assign(ReasonRemoved='Bad AllocationCommunityWaterSupplySystem').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["AllocationCommunityWaterSupplySystem"].str.len() > 250 ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# AllocationCropDutyAmount
+outdf100, dfpurge = TestErrorFunctions.AllocationCropDutyAmount_AA_Check(outdf100, dfpurge)
 
-# AllocationCropDutyAmount_float_Yes
-mask = outdf100.loc[ outdf100["AllocationCropDutyAmount"].str.contains(',') == True ].assign(ReasonRemoved='Bad AllocationCropDutyAmount').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["AllocationCropDutyAmount"].str.contains(',') == True ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# AllocationExpirationDate
+outdf100, dfpurge = TestErrorFunctions.AllocationExpirationDate_AA_Check(outdf100, dfpurge)
 
-# AllocationExpirationDate_string_Yes
-mask = outdf100.loc[ outdf100["AllocationExpirationDate"].str.contains(',') == True ].assign(ReasonRemoved='Bad AllocationExpirationDate').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["AllocationExpirationDate"].str.contains(',') == True ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# # AllocationFlow_CFS_float_Yes & AllocationVolume_AF_float_Yes
+outdf100, dfpurge = TestErrorFunctions.AllocationFlowVolume_CFSAF_float_Yes_AA_Check(outdf100, dfpurge)
 
-# AllocationLegalStatusCV_nvarchar(250)_Yes
-mask = outdf100.loc[ outdf100["AllocationLegalStatusCV"].str.len() > 250 ].assign(ReasonRemoved='Bad AllocationLegalStatusCV').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["AllocationLegalStatusCV"].str.len() > 250 ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# AllocationLegalStatusCV
+outdf100, dfpurge = TestErrorFunctions.AllocationLegalStatusCV_AA_Check(outdf100, dfpurge)
 
-# AllocationVolume_AF_float_Yes
-mask = outdf100.loc[ (outdf100["AllocationVolume_AF"].isnull()) | (outdf100["AllocationVolume_AF"] == '') | (outdf100['AllocationVolume_AF'].str.contains(',') == True) ].assign(ReasonRemoved='Bad AllocationVolume_AF').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ (outdf100["AllocationVolume_AF"].isnull()) | (outdf100["AllocationVolume_AF"] == '') | (outdf100['AllocationVolume_AF'].str.contains(',') == True) ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# AllocationNativeID
+outdf100, dfpurge = TestErrorFunctions.AllocationNativeID_AA_Check(outdf100, dfpurge)
 
-# AllocationNativeID_nvarchar(250)_Yes
-mask = outdf100.loc[ outdf100["AllocationNativeID"].str.len() > 250 ].assign(ReasonRemoved='Bad AllocationNativeID').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["AllocationNativeID"].str.len() > 250 ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# AllocationOwner
+outdf100, dfpurge = TestErrorFunctions.AllocationOwner_AA_Check(outdf100, dfpurge)
 
-# AllocationOwner_nvarchar(500)_Yes
-mask = outdf100.loc[ outdf100["AllocationOwner"].str.len() > 500 ].assign(ReasonRemoved='Bad AllocationOwner').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["AllocationOwner"].str.len() > 500 ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# AllocationPriorityDate
+outdf100, dfpurge = TestErrorFunctions.AllocationPriorityDate_AA_Check(outdf100, dfpurge)
 
-# AllocationPriorityDate_string_-
-mask = outdf100.loc[ (outdf100["AllocationPriorityDate"].isnull() == True) | (outdf100["AllocationPriorityDate"] == '') | (outdf100["AllocationPriorityDate"].str.contains(',') == True) ].assign(ReasonRemoved='Bad AllocationPriorityDate').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ (outdf100["AllocationPriorityDate"].isnull() == True) | (outdf100["AllocationPriorityDate"] == '') | (outdf100["AllocationPriorityDate"].str.contains(',') == True) ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# AllocationSDWISIdentifierCV
+outdf100, dfpurge = TestErrorFunctions.AllocationSDWISIdentifierCV_AA_Check(outdf100, dfpurge)
 
-# AllocationTimeframeEnd_nvarchar(5)_Yes
-mask = outdf100.loc[ outdf100["AllocationTimeframeEnd"].str.len() > 5 ].assign(ReasonRemoved='Bad AllocationTimeframeEnd').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["AllocationTimeframeEnd"].str.len() > 5 ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# AllocationTimeframeEnd
+outdf100, dfpurge = TestErrorFunctions.AllocationTimeframeEnd_AA_Check(outdf100, dfpurge)
 
-# AllocationTimeframeStart_nvarchar(5)_Yes
-mask = outdf100.loc[ outdf100["AllocationTimeframeStart"].str.len() > 5 ].assign(ReasonRemoved='Bad AllocationTimeframeStart').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["AllocationTimeframeStart"].str.len() > 5 ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# AllocationTimeframeStart
+outdf100, dfpurge = TestErrorFunctions.AllocationTimeframeStart_AA_Check(outdf100, dfpurge)
 
-# AllocationTypeCV_nvarchar(250)_Yes
-mask = outdf100.loc[ outdf100["AllocationTypeCV"].str.len() > 250 ].assign(ReasonRemoved='Bad AllocationTypeCV').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["AllocationTypeCV"].str.len() > 250 ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# AllocationTypeCV
+outdf100, dfpurge = TestErrorFunctions.AllocationTypeCV_AA_Check(outdf100, dfpurge)
 
-# BeneficialUseCategory_nvarchar(250)_-
-mask = outdf100.loc[ (outdf100["BeneficialUseCategory"].isnull()) | (outdf100["BeneficialUseCategory"] == '') | (outdf100["BeneficialUseCategory"].str.len() > 250) ].assign(ReasonRemoved='Bad BeneficialUseCategory').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ (outdf100["BeneficialUseCategory"].isnull()) | (outdf100["BeneficialUseCategory"] == '') | (outdf100["BeneficialUseCategory"].str.len() > 250) ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# BeneficialUseCategory
+outdf100, dfpurge = TestErrorFunctions.BeneficialUseCategory_AA_Check(outdf100, dfpurge)
 
-# CommunityWaterSupplySystem_nvarchar(250)_Yes
-mask = outdf100.loc[ outdf100["CommunityWaterSupplySystem"].str.len() > 250 ].assign(ReasonRemoved='Bad CommunityWaterSupplySystem').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["CommunityWaterSupplySystem"].str.len() > 250 ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# CommunityWaterSupplySystem
+outdf100, dfpurge = TestErrorFunctions.CommunityWaterSupplySystem_AA_Check(outdf100, dfpurge)
 
-# CropTypeCV_nvarchar(100)_Yes
-mask = outdf100.loc[ outdf100["CommunityWaterSupplySystem"].str.len() > 250 ].assign(ReasonRemoved='Bad CommunityWaterSupplySystem').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["CommunityWaterSupplySystem"].str.len() > 250 ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# CropTypeCV
+outdf100, dfpurge = TestErrorFunctions.CropTypeCV_AA_Check(outdf100, dfpurge)
 
-# CustomerTypeCV_nvarchar(100)_Yes
-mask = outdf100.loc[ outdf100["CustomerTypeCV"].str.len() > 100 ].assign(ReasonRemoved='Bad CustomerTypeCV').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["CustomerTypeCV"].str.len() > 100 ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# CustomerTypeCV
+outdf100, dfpurge = TestErrorFunctions.CustomerTypeCV_AA_Check(outdf100, dfpurge)
 
-# DataPublicationDate_string_-
-mask = outdf100.loc[ (outdf100["DataPublicationDate"].isnull()) | (outdf100["DataPublicationDate"] == '') | (outdf100["DataPublicationDate"].str.contains(',') == True) ].assign(ReasonRemoved='Bad DataPublicationDate').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ (outdf100["DataPublicationDate"].isnull()) | (outdf100["DataPublicationDate"] == '') | (outdf100["DataPublicationDate"].str.contains(',') == True)  ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# DataPublicationDate
+outdf100, dfpurge = TestErrorFunctions.DataPublicationDate_AA_Check(outdf100, dfpurge)
 
-# DataPublicationDOI_nvarchar(100)_Yes
-mask = outdf100.loc[ outdf100["DataPublicationDOI"].str.len() > 100 ].assign(ReasonRemoved='Bad DataPublicationDOI').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["DataPublicationDOI"].str.len() > 100 ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# DataPublicationDOI
+outdf100, dfpurge = TestErrorFunctions.DataPublicationDOI_AA_Check(outdf100, dfpurge)
 
-# # ExemptOfVolumeFlowPriority_bit_Yes
-# mask = outdf100.loc[ outdf100["ExemptOfVolumeFlowPriority"].str.len() > 10 ].assign(ReasonRemoved='Bad ExemptOfVolumeFlowPriority').reset_index()
-# if len(mask.index) > 0:
-#     dfpurge = dfpurge.append(mask)
-#     dropIndex = outdf100.loc[ outdf100["ExemptOfVolumeFlowPriority"].str.len() > 10 ].index
-#     outdf100 = outdf100.drop(dropIndex)
-#     outdf100 = outdf100.reset_index(drop=True)
+# # ExemptOfVolumeFlowPriority
+# outdf100, dfpurge = TestErrorFunctions.ExemptOfVolumeFlowPriority_AA_Check(outdf100, dfpurge)
 
-# GeneratedPowerCapacityMW_float_Yes
-mask = outdf100.loc[ outdf100["GeneratedPowerCapacityMW"].str.contains(',') == True ].assign(ReasonRemoved='Bad GeneratedPowerCapacityMW').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["GeneratedPowerCapacityMW"].str.contains(',') == True ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# GeneratedPowerCapacityMW
+outdf100, dfpurge = TestErrorFunctions.GeneratedPowerCapacityMW_AA_Check(outdf100, dfpurge)
 
-# IrrigatedAcreage_float_Yes
-mask = outdf100.loc[ outdf100["IrrigatedAcreage"].str.contains(',') == True ].assign(ReasonRemoved='Bad IrrigatedAcreage').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["IrrigatedAcreage"].str.contains(',') == True ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# IrrigatedAcreage
+outdf100, dfpurge = TestErrorFunctions.IrrigatedAcreage_AA_Check(outdf100, dfpurge)
 
-# IrrigationMethodCV_nvarchar(100)_Yes
-mask = outdf100.loc[ outdf100["IrrigationMethodCV"].str.len() > 100 ].assign(ReasonRemoved='Bad IrrigationMethodCV').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["IrrigationMethodCV"].str.len() > 100 ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# IrrigationMethodCV
+outdf100, dfpurge = TestErrorFunctions.IrrigationMethodCV_AA_Check(outdf100, dfpurge)
 
-# LegacyAllocationIDs_nvarchar(250)_Yes
-mask = outdf100.loc[ outdf100["LegacyAllocationIDs"].str.len() > 250 ].assign(ReasonRemoved='Bad LegacyAllocationIDs').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["LegacyAllocationIDs"].str.len() > 250 ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# LegacyAllocationIDs
+outdf100, dfpurge = TestErrorFunctions.LegacyAllocationIDs_AA_Check(outdf100, dfpurge)
 
-# PopulationServed_bigint_Yes
-mask = outdf100.loc[ outdf100["PopulationServed"].str.contains(',') == True ].assign(ReasonRemoved='Bad PopulationServed').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["PopulationServed"].str.contains(',') == True ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# PopulationServed
+outdf100, dfpurge = TestErrorFunctions.PopulationServed_AA_Check(outdf100, dfpurge)
 
-# PowerType_nvarchar(50)_Yes
-mask = outdf100.loc[ outdf100["PowerType"].str.len() > 50 ].assign(ReasonRemoved='Bad PowerType').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["PowerType"].str.len() > 50 ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# PowerType
+outdf100, dfpurge = TestErrorFunctions.PowerType_AA_Check(outdf100, dfpurge)
 
-# PrimaryUseCategory_Nvarchar(100)_Yes
-mask = outdf100.loc[ outdf100["PrimaryUseCategory"].str.len() > 100 ].assign(ReasonRemoved='Bad PrimaryUseCategory').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["PrimaryUseCategory"].str.len() > 100 ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# PrimaryUseCategory
+outdf100, dfpurge = TestErrorFunctions.PrimaryUseCategory_AA_Check(outdf100, dfpurge)
 
-# AllocationSDWISIdentifierCV_nvarchar(100)_Yes
-mask = outdf100.loc[ outdf100["AllocationSDWISIdentifierCV"].str.len() > 100 ].assign(ReasonRemoved='Bad AllocationSDWISIdentifierCV').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["AllocationSDWISIdentifierCV"].str.len() > 100 ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
-
-# WaterAllocationNativeURL_nvarchar(250)_Yes
-mask = outdf100.loc[ outdf100["WaterAllocationNativeURL"].str.len() > 250 ].assign(ReasonRemoved='Bad WaterAllocationNativeURL').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf100.loc[ outdf100["WaterAllocationNativeURL"].str.len() > 250 ].index
-    outdf100 = outdf100.drop(dropIndex)
-    outdf100 = outdf100.reset_index(drop=True)
+# WaterAllocationNativeURL
+outdf100, dfpurge = TestErrorFunctions.WaterAllocationNativeURL_AA_Check(outdf100, dfpurge)
 
 
 # Export to new csv
@@ -732,8 +544,6 @@ outdf100.to_csv('ProcessedInputData/waterallocations.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
-    dfpurge.to_csv('ProcessedInputData/waterallocations_missing.csv')  # index=False,
+    dfpurge.to_csv('ProcessedInputData/waterallocations_missing.csv', index=False)
 
-# error check by hand
-outdf100.to_excel('ProcessedInputData/ErrorCheck_waterallocations.xlsx', index=False)
 print("Done.")

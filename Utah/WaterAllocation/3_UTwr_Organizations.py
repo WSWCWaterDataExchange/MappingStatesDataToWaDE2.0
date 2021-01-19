@@ -33,15 +33,18 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "UTDWRe",
-    "craigmiller@utah.gov",
-    "Craig Miller",
+    "UTDWRi",
+    "jamesgreer@utah.gov",
+    "James Greer",
     "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Utah",
-    "Utah Division of Water Resources",
+    "Utah Division of Water Rights",
     "801-538-7280",
     "Water Planning",
     "https://water.utah.gov/",
     "UT"]
+
+
+
 
 outdf = pd.DataFrame([inpVals], columns=columnslist)
 
@@ -68,6 +71,5 @@ if(len(outdf_nullMand.index) > 0):
 print("Exporting dataframe to csv...")
 # save to output
 outdf.to_csv('ProcessedInputData/organizations.csv', index=False)
-
 
 print("Done.")
