@@ -75,11 +75,7 @@ columnslist = [
     "SiteUUID",
     "VariableSpecificUUID",
     "WaterAllocationNativeURL",
-    "WaterSourceUUID",
-    'SiteName',
-    'SiteTypeCV',
-    'Latitude',
-    'Longitude']
+    "WaterSourceUUID"]
 
 # Custom Functions
 ############################################################################
@@ -138,7 +134,7 @@ print("SiteUUID")
 outdf['SiteUUID'] = df_DM.apply(lambda row: retrieveSiteUUID(row['in_SiteNativeID']), axis=1)
 
 print("VariableSpecificUUID")
-outdf['VariableSpecificUUID'] = "SD_Consumptive Use"
+outdf['VariableSpecificUUID'] = "SD_Allocation All"
 
 print("WaterSourceUUID")
 outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
@@ -183,7 +179,7 @@ print("AllocationSDWISIdentifierCV")
 outdf.AllocationSDWISIdentifierCV = ""
 
 print("AllocationPriorityDate")
-outdf['AllocationPriorityDate'] = df_DM['PERMIT_NO']
+outdf['AllocationPriorityDate'] = df_DM['PRIORDATE']
 
 print("AllocationTimeframeEnd")
 outdf['AllocationTimeframeEnd'] = '12/31'
