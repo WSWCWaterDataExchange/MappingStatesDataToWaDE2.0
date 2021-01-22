@@ -1,0 +1,15 @@
+MethodUUID,OrganizationUUID,ReportingUnitUUID,VariableSpecificUUID,WaterSourceUUID,AllocationCropDutyAmount,Amount,BeneficialUseCategory,CommunityWaterSupplySystem,CropTypeCV,CustomerTypeCV,DataPublicationDate,DataPublicationDOI,InterbasinTransferFromID,InterbasinTransferToID,IrrigatedAcreage,IrrigationMethodCV,PopulationServed,PowerGeneratedGWh,PowerType,PrimaryUseCategory,ReportYearCV,SDWISIdentifierCV,TimeframeEnd,TimeframeStart,ReasonRemoved,index
+WWDO_Water Use,WWDO,WYag_RU1,WY_Consumptive Use,WYag_WS1,,,Industrial Use,,,,01/21/2021,,,,,,,,,,2000,,,,Bad Amount,76.0
+WWDO_Water Use,WWDO,WYag_RU1,WY_Consumptive Use,WYag_WS2,,,Industrial Use,,,,01/21/2021,,,,,,,,,,2000,,,,Bad Amount,95.0
+WWDO_Water Use,WWDO,WYag_RU4,WY_Consumptive Use,WYag_WS1,,,Municipal  Use,,,,01/21/2021,,,,,,,,,,2000,,,,Bad Amount,589.0
+WWDO_Water Use,WWDO,WYag_RU4,WY_Consumptive Use,WYag_WS1,,,Municipal  Use,,,,01/21/2021,,,,,,,,,,2001,,,,Bad Amount,590.0
+WWDO_Water Use,WWDO,WYag_RU4,WY_Consumptive Use,WYag_WS2,,,Municipal  Use,,,,01/21/2021,,,,,,,,,,2000,,,,Bad Amount,608.0
+WWDO_Water Use,WWDO,WYag_RU4,WY_Consumptive Use,WYag_WS2,,,Municipal  Use,,,,01/21/2021,,,,,,,,,,2001,,,,Bad Amount,609.0
+WWDO_Water Use,WWDO,WYag_RU7,WY_Consumptive Use,WYag_WS1,,,Domestic Use,,,,01/21/2021,,,,,,,,,,2000,,,,Bad Amount,969.0
+WWDO_Water Use,WWDO,WYag_RU7,WY_Consumptive Use,WYag_WS1,,,Domestic Use,,,,01/21/2021,,,,,,,,,,2001,,,,Bad Amount,970.0
+WWDO_Water Use,WWDO,WYag_RU7,WY_Consumptive Use,WYag_WS2,,,Domestic Use,,,,01/21/2021,,,,,,,,,,2000,,,,Bad Amount,988.0
+WWDO_Water Use,WWDO,WYag_RU7,WY_Consumptive Use,WYag_WS2,,,Domestic Use,,,,01/21/2021,,,,,,,,,,2001,,,,Bad Amount,989.0
+WWDO_Water Use,WWDO,WYag_RU7,WY_Consumptive Use,WYag_WS1,,,Municipal  Use,,,,01/21/2021,,,,,,,,,,2000,,,,Bad Amount,1045.0
+WWDO_Water Use,WWDO,WYag_RU7,WY_Consumptive Use,WYag_WS1,,,Municipal  Use,,,,01/21/2021,,,,,,,,,,2001,,,,Bad Amount,1046.0
+WWDO_Water Use,WWDO,WYag_RU7,WY_Consumptive Use,WYag_WS2,,,Municipal  Use,,,,01/21/2021,,,,,,,,,,2000,,,,Bad Amount,1064.0
+WWDO_Water Use,WWDO,WYag_RU7,WY_Consumptive Use,WYag_WS2,,,Municipal  Use,,,,01/21/2021,,,,,,,,,,2001,,,,Bad Amount,1065.0
