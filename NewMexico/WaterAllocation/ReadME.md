@@ -2,7 +2,7 @@
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting New Mexico water rights data, made available by the [New Mexico Office of the State Engineer (NMOSE)](http://geospatialdata-ose.opendata.arcgis.com/datasets/ose-points-of-diversion), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and cost-effective way.
 
 ## Overview 
-The NMOSE hosts its water rights data using ArcGIS online at: http://geospatialdata-ose.opendata.arcgis.com/datasets/ose-points-of-diversion.
+The NMOSE hosts its water rights data using ArcGIS online at: https://geospatialdata-ose.opendata.arcgis.com/datasets/ose-pods
 
 The metadata for the water rights data is available at: http://www.ose.state.nm.us/GIS/PODS/nmose_WATERS_PODs_data_dictionary_v8.xlsx.
 
