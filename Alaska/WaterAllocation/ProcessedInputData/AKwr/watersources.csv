@@ -1,0 +1,853 @@
+WaterSourceUUID,Geometry,GNISFeatureNameCV,WaterQualityIndicatorCV,WaterSourceName,WaterSourceNativeID,WaterSourceTypeCV
+AKwr_WS1,,,Fresh,Well 13,1422,well
+AKwr_WS2,,,Fresh,Captain's Bay,16432,creek
+AKwr_WS3,,,Fresh,Big Lake,2684,lake
+AKwr_WS4,,,Fresh,Well 14,37209,well
+AKwr_WS5,,,Fresh,Monashka Creek #2,844,creek
+AKwr_WS6,,,Fresh,Pump 1,20910,well
+AKwr_WS7,,,Fresh,Pump 2,20912,well
+AKwr_WS8,,,Fresh,R-25 Creek,18027,creek
+AKwr_WS9,,,Fresh,Bons Creek,14462,river
+AKwr_WS10,,,Fresh,Lacy Lane,9319,well
+AKwr_WS11,,,Fresh,Mission Hills,9320,well
+AKwr_WS12,,,Fresh,GRUENING,37211,well
+AKwr_WS13,,,Fresh,North Slope Assets,21319,well
+AKwr_WS14,,,Fresh,North Slope Assets,21321,well
+AKwr_WS15,,,Fresh,North Slope Assets,21324,well
+AKwr_WS16,,,Fresh,Salmon Creek,19976,river
+AKwr_WS17,,,Fresh,North Slope Assets,21341,lake
+AKwr_WS18,,,Fresh,North Slope Assets,21343,lake
+AKwr_WS19,,,Fresh,North Slope Assets,21345,lake
+AKwr_WS20,,,Fresh,North Slope Assets,21347,well
+AKwr_WS21,,,Fresh,Kuparuk Unit,3302,lake
+AKwr_WS22,,,Fresh,EKLUTNA WTF,37213,lake
+AKwr_WS23,,,Fresh,Kuparuk Unit,2764,lake
+AKwr_WS24,,,Fresh,Bradley Lake Powerhouse,54563,lake
+AKwr_WS25,,,Fresh,Well #4,1902,well
+AKwr_WS26,,,Fresh,Well #1,1882,well
+AKwr_WS27,,,Fresh,Well #3,2061,well
+AKwr_WS28,,,Fresh,Well #5,2062,well
+AKwr_WS29,,,Fresh,WELL #2,57013,well
+AKwr_WS30,,,Fresh,ER #06 MCALPINE,37215,well
+AKwr_WS31,,,Fresh,ER #09 PALO VERDES,37217,well
+AKwr_WS32,,,Fresh,Honnor Garden,9321,well
+AKwr_WS33,,,Fresh,East Susitna,9322,well
+AKwr_WS34,,,Fresh,Muck,9323,well
+AKwr_WS35,,,Fresh,Spruce Avenue,9324,well
+AKwr_WS36,,,Fresh,Spruce Stand-by well,9325,well
+AKwr_WS37,,,Fresh,Wonderland Irrigation well,9326,well
+AKwr_WS38,,,Fresh,City Creek,15542,river
+AKwr_WS39,,,Fresh,Pump Station 6,52111,well
+AKwr_WS40,,,Fresh,WELL,9957,well
+AKwr_WS41,,,Fresh,"Little Campbell Creek, Lot 11",58589,creek
+AKwr_WS42,,,Fresh,Pillar Creek Hatchery,55877,creek
+AKwr_WS43,,,Fresh,Eyak Lake,28541,lake
+AKwr_WS44,,,Fresh,Wells #4 & #5,16021,well
+AKwr_WS45,,,Fresh,Well E,12119,well
+AKwr_WS46,,,Fresh,Fort Richardson Hatchery,55891,well
+AKwr_WS47,,,Fresh,Linkum Creek,19899,creek
+AKwr_WS48,,,Fresh,Buskin Lake,8146,well
+AKwr_WS49,,,Fresh,Water Lake,10575,lake
+AKwr_WS50,,,Fresh,St Nicholas - North Fork Lake,28140,lake
+AKwr_WS51,,,Fresh,Pillar Creek Hatchery,55879,well
+AKwr_WS52,,,Fresh,Humboldt Creek Reservoir,14099,river
+AKwr_WS53,,,Fresh,Allison Creek/Marine Terminal,52113,well
+AKwr_WS54,,,Fresh,Haines - Lutak,53459,lake
+AKwr_WS55,,,Fresh,creek,14823,creek
+AKwr_WS56,,,Fresh,North PRB State No. 2,2672,lake
+AKwr_WS57,,,Fresh,Drill Site 12 Lake,2670,lake
+AKwr_WS58,,,Fresh,Drill Site 13 Lake,2666,creek
+AKwr_WS59,,,Fresh,Drill Site 09 Lake (Exxon Pit),2664,lake
+AKwr_WS60,,,Fresh,Drill Site 4 Lake,2662,lake
+AKwr_WS61,,,Fresh,East Drill Site 4  Area Lake,33278,lake
+AKwr_WS62,,,Fresh,South Drill Site 4  Area Lake,33280,lake
+AKwr_WS63,,,Fresh,West Drill Site 4  Area Lake,33282,lake
+AKwr_WS64,,,Fresh,MCC Lake,2658,lake
+AKwr_WS65,,,Fresh,Drill Site 07 Lake,2656,lake
+AKwr_WS66,,,Fresh,Drill Site L-3 Lake,2650,lake
+AKwr_WS67,,,Fresh,Drill Site 5 Lake,2678,lake
+AKwr_WS68,,,Fresh,Drill Site 17 Lake,2676,lake
+AKwr_WS69,,,Fresh,Colleen Lake,2674,lake
+AKwr_WS70,,,Fresh,Webster Reservoir,2648,lake
+AKwr_WS71,,,Fresh,Drill Site 15 Lake,2646,lake
+AKwr_WS72,,,Fresh,Lisburne Production Center LPC Lake,2644,lake
+AKwr_WS73,,,Fresh,Drill Site 18 Lake,2642,lake
+AKwr_WS74,,,Fresh,Fort Richardson Hatchery,55881,well
+AKwr_WS75,,,Fresh,well,9068,well
+AKwr_WS76,,,Fresh,William Jack Hernandez Sport Fish Hatchery,55883,creek
+AKwr_WS77,,,Fresh,Halfmile Creek Dam,19153,lake
+AKwr_WS78,,,Fresh,well at Akakeek and Ridgecrest Roads,37095,well
+AKwr_WS79,,,Fresh,IFP-Kasilof,16933,well
+AKwr_WS80,,,Fresh,UAA Energy Module 1,10015,well
+AKwr_WS81,,,Fresh,UAA Energy Module 2,9995,well
+AKwr_WS82,,,Fresh,Battle Creek,54565,river
+AKwr_WS83,,,Fresh,Well House #2,8378,well
+AKwr_WS84,,,Fresh,Well House #1,8380,well
+AKwr_WS85,,,Fresh,Nenana River,23002,river
+AKwr_WS86,,,Fresh,"Two wells, 159 ft & 138 ft",7702,well
+AKwr_WS87,,,Fresh,UAA Rasmussen Hall,9997,well
+AKwr_WS88,,,Fresh,well,28089,well
+AKwr_WS89,,,Fresh,Fort Knox Mine,26717,well
+AKwr_WS90,,,Fresh,Fort Knox Mine,26720,well
+AKwr_WS91,,,Fresh,Cabin Creek,15545,well
+AKwr_WS92,,,Fresh,Chum Creek,32461,creek
+AKwr_WS93,,,Fresh,Seven Wells,11668,well
+AKwr_WS94,,,Fresh,Alyeska Infiltration System Gallery,3766,creek
+AKwr_WS95,,,Fresh,CHUGIAK #3,37219,well
+AKwr_WS96,,,Fresh,Bridge Creek,20787,creek
+AKwr_WS97,,,Fresh,Goat Lake,53461,lake
+AKwr_WS98,,,Fresh,Unnamed Spring,302,spring
+AKwr_WS99,,,Fresh,Sagavanirktok River,2846,river
+AKwr_WS100,,,Fresh,140' well,13964,well
+AKwr_WS101,,,Fresh,Pyramid Creek/ Icy Lake,8382,well
+AKwr_WS102,,,Fresh,"Drilled Wells, 140ft & 119ft, Glot4",2622,well
+AKwr_WS103,,,Fresh,North Slope Assets,21349,well
+AKwr_WS104,,,Fresh,Well # 2D,19432,well
+AKwr_WS105,,,Fresh,Well # 2E,19433,well
+AKwr_WS106,,,Fresh,Well # 3,19434,well
+AKwr_WS107,,,Fresh,Well # 4,19435,well
+AKwr_WS108,,,Fresh,North Slope Assets,21351,well
+AKwr_WS109,,,Fresh,Delta Creek Wellfield,2026,well
+AKwr_WS110,,,Fresh,Softball Fields,9317,well
+AKwr_WS111,,,Fresh,Bldg 4972-Well 1,7922,well
+AKwr_WS112,,,Fresh,Bldg 4972-Well 2,7924,well
+AKwr_WS113,,,Fresh,Bldg 6983-Well 1,7926,well
+AKwr_WS114,,,Fresh,Fort Knox Mine,26723,lake
+AKwr_WS115,,,Fresh,South Fork Hydro Plant,53463,lake
+AKwr_WS116,,,Fresh,Lake Hood Well,51889,well
+AKwr_WS117,,,Fresh,well,15438,well
+AKwr_WS118,,,Fresh,Shotgun Creek,18954,creek
+AKwr_WS119,,,Fresh,Falls Creek,18956,creek
+AKwr_WS120,,,Fresh,Rolling Rock,18958,creek
+AKwr_WS121,,,Fresh,well,14369,well
+AKwr_WS122,,,Fresh,Badami Mine Site Reservoir,24993,lake
+AKwr_WS123,,,Fresh,Pump Station 4_ Tea Lake,52115,well
+AKwr_WS124,,,Fresh,Sag Mine Site C (Vern Lake),2682,lake
+AKwr_WS125,,,Fresh,Alpine Unit,21353,lake
+AKwr_WS126,,,Fresh,Alpine Unit,28636,lake
+AKwr_WS127,,,Fresh,Alpine Unit,28639,lake
+AKwr_WS128,,,Fresh,Kuparuk Unit,2762,lake
+AKwr_WS129,,,Fresh,Alpine Unit,21355,lake
+AKwr_WS130,,,Fresh,Kuparuk Unit,2766,lake
+AKwr_WS131,,,Fresh,Kuparuk Unit,28644,lake
+AKwr_WS132,,,Fresh,Well No. 1,14636,well
+AKwr_WS133,,,Fresh,Well No. 2,14637,well
+AKwr_WS134,,,Fresh,Well No. 3,14638,well
+AKwr_WS135,,,Fresh,MCCF2 Pump Station 3 Well PW-3,52117,well
+AKwr_WS136,,,Fresh,"Wells #1, #2, & #3 combined",17634,well
+AKwr_WS137,,,Fresh,Office/Camp Well and Well 43-5,23145,well
+AKwr_WS138,,,Fresh,Swanson River Field Tank Setting,23147,well
+AKwr_WS139,,,Fresh,Swanson River Field Compressor wells,23149,well
+AKwr_WS140,,,Fresh,Swanson River Field Tank Setting 1-33 Well,23151,well
+AKwr_WS141,,,Fresh,Fort Richardson Hatchery,55885,well
+AKwr_WS142,,,Fresh,Kensington Gold,32632,creek
+AKwr_WS143,,,Fresh,"Ranch well 1, 281'",9327,well
+AKwr_WS144,,,Fresh,"Ranch well 3, 299'",9328,well
+AKwr_WS145,,,Fresh,Pogo,14950,well
+AKwr_WS146,,,Fresh,Pogo,14951,well
+AKwr_WS147,,,Fresh,Pogo,14952,well
+AKwr_WS148,,,Fresh,Pogo,14953,well
+AKwr_WS149,,,Fresh,Pogo,14954,well
+AKwr_WS150,,,Fresh,Drilled well,13913,well
+AKwr_WS151,,,Fresh,Drilled Well(s),25607,well
+AKwr_WS152,,,Fresh,Moonlight Wells,16987,well
+AKwr_WS153,,,Fresh,Fort Richardson Hatchery,55887,well
+AKwr_WS154,,,Fresh,496' well on Tract C Block 9,37097,well
+AKwr_WS155,,,Fresh,491' well at Bethel Regional High School site,37100,well
+AKwr_WS156,,,Fresh,Wells 1 & 2,32656,well
+AKwr_WS157,,,Fresh,NANA Reservoir,16668,lake
+AKwr_WS158,,,Fresh,Alyeska Snowmaking Well # 1,3762,well
+AKwr_WS159,,,Fresh,Alyeska Snowmaking Well # 2&3,3764,well
+AKwr_WS160,,,Fresh,225' well,9183,well
+AKwr_WS161,,,Fresh,Ruth Burnett Sport Fish Hatchery,55889,well
+AKwr_WS162,,,Fresh,Main Well,9070,well
+AKwr_WS163,,,Fresh,Moose Ridge L06 B1,17562,well
+AKwr_WS164,,,Fresh,cooling well,26638,well
+AKwr_WS165,,,Fresh,Gravel Pit,25605,lake
+AKwr_WS166,,,Fresh,Tyee Lake Hydro,12022,lake
+AKwr_WS167,,,Fresh,Well C-2,12121,well
+AKwr_WS168,,,Fresh,Wilderness Lodge Well,17436,well
+AKwr_WS169,,,Fresh,Nikiski well,55236,well
+AKwr_WS170,,,Fresh,well 1,2285,well
+AKwr_WS171,,,Fresh,Alaska State C-1 Pit,407,lake
+AKwr_WS172,,,Fresh,UAA Alaska Airlines Center,9999,well
+AKwr_WS173,,,Fresh,well,9942,well
+AKwr_WS174,,,Fresh,UAA ANSEP Bldg,10001,well
+AKwr_WS175,,,Fresh,UAA Allied Health Bldg,10003,well
+AKwr_WS176,,,Fresh,UAA Professional Studies Bldg,10005,well
+AKwr_WS177,,,Fresh,Two Drilled Wells 3559-A and 3559-B,4622,well
+AKwr_WS178,,,Fresh,Natural Science,10007,well
+AKwr_WS179,,,Fresh,Big Creek Well,58562,well
+AKwr_WS180,,,Fresh,UAA Consortium Library,10009,well
+AKwr_WS181,,,Fresh,Pillar Creek,2067,creek
+AKwr_WS182,,,Fresh,"Drilled Wells, 260 ft USS1095",10642,well
+AKwr_WS183,,,Fresh,Well B,12117,well
+AKwr_WS184,,,Fresh,Wells (Combined use of Wells (1&5)_ 6_ (7_15 &16) and (10_12 & 14),55757,well
+AKwr_WS185,,,Fresh,Ram's Creek,2043,creek
+AKwr_WS186,,,Fresh,Monashka Creek,221,lake
+AKwr_WS187,,,Fresh,Monashka Creek #1,18022,river
+AKwr_WS188,,,Fresh,Long Lake,12685,well
+AKwr_WS189,,,Fresh,Indian River,13862,river
+AKwr_WS190,,,Fresh,Indian River #2,12802,river
+AKwr_WS191,,,Fresh,Indian River #3,12803,river
+AKwr_WS192,,,Fresh,Indian River #4,12804,river
+AKwr_WS193,,,Fresh,Blue Lake 4 - SMCIP,12809,lake
+AKwr_WS194,,,Fresh,Blue Lake 5 - SMCIP,12810,lake
+AKwr_WS195,,,Fresh,Hatchery 6- NSRAA,12811,lake
+AKwr_WS196,,,Fresh,Dewey Lake,53455,lake
+AKwr_WS197,,,Fresh,"Wells, Dewey Lake & W Creek",12739,well
+AKwr_WS198,,,Fresh,ER #07 SUNNY SLOPE,37223,well
+AKwr_WS199,,,Fresh,"Wells #1, 2, 4, 5 & #3 Bypass",19980,well
+AKwr_WS200,,,Fresh,CITY WELL NO. 01 - AIRPORT HEIGHTS,37225,well
+AKwr_WS201,,,Fresh,CITY WELL NO. 02 - MERRILL FIELD,37226,well
+AKwr_WS202,,,Fresh,CITY WELL NO. 03 -CONCRETE STREET,37227,well
+AKwr_WS203,,,Fresh,CITY WELL NO. 04 - COMMERCIAL DRIVE,37228,well
+AKwr_WS204,,,Fresh,CITY WELL NO. 05 - ARCTIC BOULEVARD,37229,well
+AKwr_WS205,,,Fresh,CITY WELL NO. 06 - NORTHWOOD DRIVE,37230,well
+AKwr_WS206,,,Fresh,CITY WELL NO. 08 - GOOSE LAKE,37231,well
+AKwr_WS207,,,Fresh,GIRDWOOD #2,37232,well
+AKwr_WS208,,,Fresh,SHIP CREEK WTF,37233,river
+AKwr_WS209,,,Fresh,CITY WELL NO. 44 - BROOKWOOD NO. 1,37251,well
+AKwr_WS210,,,Fresh,CITY WELL NO. 34 - HOLLOWBROOK,37253,well
+AKwr_WS211,,,Fresh,Salmon Creek,12683,creek
+AKwr_WS212,,,Fresh,Annex Creek Development,12681,creek
+AKwr_WS213,,,Fresh,Meals Lake,1946,lake
+AKwr_WS214,,,Fresh,Fort Knox Mine,26714,lake
+AKwr_WS215,,,Fresh,Murcheson Falls,1944,lake
+AKwr_WS216,,,Fresh,ARCTIC IND. #1,37255,well
+AKwr_WS217,,,Fresh,CITY WELL NO. 20 - CREEKSIDE PARK,37258,well
+AKwr_WS218,,,Fresh,CITY WELL NO. 40 - DIMOND,37260,well
+AKwr_WS219,,,Fresh,CITY WELL NO. 37 - CAMPBELL LAKE,37262,well
+AKwr_WS220,,,Fresh,CITY WELL NO. 27 - HOMESTEAD,37264,well
+AKwr_WS221,,,Fresh,CITY WELL NO. 21 - KLUANE TERRACE,37266,well
+AKwr_WS222,,,Fresh,CITY WELL NO. 33 - MESA VERDE,37276,well
+AKwr_WS223,,,Fresh,NUNAKA VALLEY #01,37278,well
+AKwr_WS224,,,Fresh,CITY WELL NO. 23 - NUNAKA VALLEY,37280,well
+AKwr_WS225,,,Fresh,NUNAKA VALLEY #03,37282,well
+AKwr_WS226,,,Fresh,PIERCE,37284,well
+AKwr_WS227,,,Fresh,SCENIC PARK,37286,well
+AKwr_WS228,,,Fresh,CITY WELL NO. 22 - SHADY LANE,37288,well
+AKwr_WS229,,,Fresh,SHADY BIRCH TERRACE,37293,well
+AKwr_WS230,,,Fresh,SOUTHWOOD PARK,37290,well
+AKwr_WS231,,,Fresh,CITY WELL NO. 32 - STATE MANOR NO. 2,37304,well
+AKwr_WS232,,,Fresh,CITY WELL NO. 41 - TOWN AND COUNTRY,37306,well
+AKwr_WS233,,,Fresh,CITY WELL NO. 26 - WICKERSHAM PARK,37308,well
+AKwr_WS234,,,Fresh,CITY WELL NO. 42 - WINDEMERE,37310,well
+AKwr_WS235,,,Fresh,Blue Lake #1 UVD-221,12816,lake
+AKwr_WS236,,,Fresh,Blue Lake #2 UVD-222,12817,lake
+AKwr_WS237,,,Fresh,Blue Lake #3 UVD-223,12820,lake
+AKwr_WS238,,,Fresh,ER #04 EAGLE RIVER HEIGHTS NORTH,37312,well
+AKwr_WS239,,,Fresh,ER #05 EAGLE RIVER HEIGHTS SOUTH,37314,well
+AKwr_WS240,,,Fresh,DRILLED WELL,25562,well
+AKwr_WS241,,,Fresh,Well # 1,19424,well
+AKwr_WS242,,,Fresh,Well # 2A,19426,well
+AKwr_WS243,,,Fresh,Well # 2C,19427,well
+AKwr_WS244,,,Fresh,Crystal Creek Pond - Tailrace,28073,lake
+AKwr_WS245,,,Fresh,Fire Well 3,2081,well
+AKwr_WS246,,,Fresh,Well #1,24942,well
+AKwr_WS247,,,Fresh,Well #2,24962,well
+AKwr_WS248,,,Fresh,Well #3,24963,well
+AKwr_WS249,,,Fresh,CITY WELL NO. 10 - NF CAMPBELL CREEK,37316,well
+AKwr_WS250,,,Fresh,CITY WELL NO. 11 - NF CAMPBELL CREEK,37318,well
+AKwr_WS251,,,Fresh,UAA Arts Bldg,10011,well
+AKwr_WS252,,,Fresh,WOODLAND LAKES,37320,well
+AKwr_WS253,,,Fresh,CITY WELL NO. 24 - CHUGACH FOOTHILLS,37328,well
+AKwr_WS254,,,Fresh,GIRDWOOD #1,37330,well
+AKwr_WS255,,,Fresh,CITY WELL NO. 25 - MILITARY NO. 1,37332,well
+AKwr_WS256,,,Fresh,CITY WELL NO. 28 - WINCHESTER,37334,well
+AKwr_WS257,,,Fresh,Pump Station 3,52105,well
+AKwr_WS258,,,Fresh,Pump Station 3,52107,well
+AKwr_WS259,,,Fresh,ARCTIC IND. NO. 2,37336,well
+AKwr_WS260,,,Fresh,CITY WELL NO. 36 - QUEENSGATE,37338,well
+AKwr_WS261,,,Fresh,Crater Lake,12687,well
+AKwr_WS262,,,Fresh,CITY WELL NO. 07 - KHAR TOWER,37340,well
+AKwr_WS263,,,Fresh,CITY WELL NO. 9 - SHIP CREEK FAN,37348,well
+AKwr_WS264,,,Fresh,Solomon Gulch Hydro,27998,river
+AKwr_WS265,,,Fresh,Sagavanirktok River,2844,river
+AKwr_WS266,,,Fresh,Burnett Lake,6762,creek
+AKwr_WS267,,,Fresh,CITY WELL NO. 30 - TURNAGAIN VIEW,37350,well
+AKwr_WS268,,,Fresh,PETERS CREEK #1,37352,well
+AKwr_WS269,,,Fresh,Settler's Bay Tract C-5,17559,well
+AKwr_WS270,,,Fresh,Kuparuk Reservoirs 1 thru 5,33293,lake
+AKwr_WS271,,,Fresh,Dam,11581,lake
+AKwr_WS272,,,Fresh,"Drilled Well 160ft, USS1095",2262,well
+AKwr_WS273,,,Fresh,Well #3,19982,well
+AKwr_WS274,,,Fresh,Swan Lake Hydro,11875,lake
+AKwr_WS275,,,Fresh,Indian River #1,12823,river
+AKwr_WS276,,,Fresh,Black Bear Hydro Plant,53457,lake
+AKwr_WS277,,,Fresh,IFP-Kenai,16940,well
+AKwr_WS278,,,Fresh,Well #1,16019,well
+AKwr_WS279,,,Fresh,CITY WELL NO. 35 - ALAGCO,37354,well
+AKwr_WS280,,,Fresh,Terror River,18952,river
+AKwr_WS281,,,Fresh,ER #01 EAGLE GLEN WEST,37356,well
+AKwr_WS282,,,Fresh,CITY WELL NO. 43 - Campbell Heights,37358,well
+AKwr_WS283,,,Fresh,Well 29,1442,well
+AKwr_WS284,,,Fresh,CITY WELL NO. 38 - SPENARD BUILDERS,37362,well
+AKwr_WS285,,,Fresh,KNIK#2,37364,well
+AKwr_WS286,,,Fresh,CITY WELL NO. 39 - NORTHWOOD,37366,well
+AKwr_WS287,,,Fresh,Well #12,1502,well
+AKwr_WS288,,,Fresh,"Drilled Well 160ft, USS1095",2242,well
+AKwr_WS289,,,Fresh,Well 31,1462,well
+AKwr_WS290,,,Fresh,Well C-1,12123,well
+AKwr_WS291,,,Fresh,BUMPUS #1,9311,well
+AKwr_WS292,,,Fresh,BUMPUS #2,9313,well
+AKwr_WS293,,,Fresh,ER #08 EAGLE CREST,37370,well
+AKwr_WS294,,,Fresh,Orca Creek,1922,creek
+AKwr_WS295,,,Fresh,UAA Administration Bldg,10013,well
+AKwr_WS296,,,Fresh,ER #02 EAGLE GLEN EAST,37372,well
+AKwr_WS297,,,Fresh,60' well,17245,well
+AKwr_WS298,,,Fresh,Kuparuk Unit,2768,lake
+AKwr_WS299,,,Fresh,Pump Station 5,52109,well
+AKwr_WS300,,,Fresh,Devil's Lake/ Vortec Lake,17996,lake
+AKwr_WS301,,,Fresh,well,16842,well
+AKwr_WS302,,,Fresh,Kuparuk Unit,2770,lake
+AKwr_WS303,,,Fresh,Well,54144,well
+AKwr_WS304,,,Fresh,Well,54146,well
+AKwr_WS305,,,Fresh,Lake,37122,lake
+AKwr_WS306,,,Fresh,Swanson River Field - four wells,23232,well
+AKwr_WS307,,,Fresh,Alpine Unit,28647,lake
+AKwr_WS308,,,Fresh,Alpine Unit,28661,lake
+AKwr_WS309,,,Fresh,Compressor Plant Wells,23235,well
+AKwr_WS310,,,Fresh,Swanson River Field Office/Camp well,23236,well
+AKwr_WS311,,,Fresh,Alpine Unit,28663,lake
+AKwr_WS312,,,Fresh,NNA #1,23239,well
+AKwr_WS313,,,Fresh,Lewis River Unit D-1 Pad Well 1,23241,well
+AKwr_WS314,,,Fresh,well,54148,well
+AKwr_WS315,,,Fresh,MPU F Pad Wells,33296,well
+AKwr_WS316,,,Fresh,"Drilled Well TW-7, 350ft",10675,well
+AKwr_WS317,,,Fresh,Kuparuk Reservoirs 4 & 5 and 3 Unnamed Lakes,33299,lake
+AKwr_WS318,,,Fresh,Granite Point Tank Farm Wells,23243,well
+AKwr_WS319,,,Fresh,Stump Lake 44-33 Pad Well 1,23245,well
+AKwr_WS320,,,Fresh,K304 DS-30 lake & Mine Site E,27582,lake
+AKwr_WS321,,,Fresh,Kuparuk Unit,28665,lake
+AKwr_WS322,,,Fresh,Kuparuk Unit,28667,lake
+AKwr_WS323,,,Fresh,Alpine Unit,28669,lake
+AKwr_WS324,,,Fresh,Kuparuk Mine Sites C & F and Lakes K209- K201- M9514- and L9334,32979,lake
+AKwr_WS325,,,Fresh,W Pad Impoundments,33302,lake
+AKwr_WS326,,,Fresh,17 Ponds/ Impoundments in EOA,33305,lake
+AKwr_WS327,,,Fresh,"Lakes 12, 13, 14, 15",25009,lake
+AKwr_WS328,,,Fresh,Exp Unit,28671,lake
+AKwr_WS329,,,Fresh,Kuparuk Unit,28673,lake
+AKwr_WS330,,,Fresh,Webster Reservoir outside EOA,33308,lake
+AKwr_WS331,,,Fresh,Webster Reservoir within EOA,33310,lake
+AKwr_WS332,,,Fresh,Lake 24,26764,lake
+AKwr_WS333,,,Fresh,C-1 Pit,26767,lake
+AKwr_WS334,,,Fresh,Shaviovik Reservoir,26769,lake
+AKwr_WS335,,,Fresh,Lake 1,26772,lake
+AKwr_WS336,,,Fresh,Lake 17,26774,lake
+AKwr_WS337,,,Fresh,Lake 14 (Ice Chips),26777,lake
+AKwr_WS338,,,Fresh,Lake 14 (Water),26779,lake
+AKwr_WS339,,,Fresh,Lake 6 (Ice Chips),26781,lake
+AKwr_WS340,,,Fresh,Lake 7 (Ice Chips),26783,lake
+AKwr_WS341,,,Fresh,Badami Reservoir,26786,lake
+AKwr_WS342,,,Fresh,Duck Island Mine Site Water,26788,lake
+AKwr_WS343,,,Fresh,Lake (Ice Chips),26790,lake
+AKwr_WS344,,,Fresh,Sag River (Water),26793,river
+AKwr_WS345,,,Fresh,Beaufort Sea along Endicott Cswy,33327,other
+AKwr_WS346,,,Fresh,"reinjection well-Lake Tract, B5 Tudor Centre",54150,well
+AKwr_WS347,,,Fresh,"Drilled Well TW-8, 344 ft",10678,well
+AKwr_WS348,,,Fresh,PBU W Pad Source Well (W-400),33329,well
+AKwr_WS349,,,Fresh,Lakes RO886_ RO897_ RO887_ RO894_ and RO896,33331,lake
+AKwr_WS350,,,Fresh,Lakes RO888_ RO891_ TBA-8_ RO895_ and RO889,33333,lake
+AKwr_WS351,,,Fresh,"Lake K309, water and ice",27585,lake
+AKwr_WS352,,,Fresh,West Dock Lake (Lake 18),17383,lake
+AKwr_WS353,,,Fresh,Lake Coleen,17384,lake
+AKwr_WS354,,,Fresh,K209 Lake,57053,lake
+AKwr_WS355,,,Fresh,"Lakes 1, 2, 3, 4, 5",25014,lake
+AKwr_WS356,,,Fresh,Badami Mine Site,25023,lake
+AKwr_WS357,,,Fresh,Lake 6,25024,lake
+AKwr_WS358,,,Fresh,Shav Mine Site,25027,lake
+AKwr_WS359,,,Fresh,Lake 18,25029,lake
+AKwr_WS360,,,Fresh,Alpine Unit,28676,lake
+AKwr_WS361,,,Fresh,Alpine Unit,28658,lake
+AKwr_WS362,,,Fresh,Endicott Rd Lake A,33335,lake
+AKwr_WS363,,,Fresh,Alpine Unit,28679,river
+AKwr_WS364,,,Fresh,Well TS 1-33,23247,well
+AKwr_WS365,,,Fresh,Lake SE of V Pad,33349,lake
+AKwr_WS366,,,Fresh,PBU L Pad Access Rd Lake,33353,lake
+AKwr_WS367,,,Fresh,Unconfined Aquifer Wells,10681,well
+AKwr_WS368,,,Fresh,Kuparuk Unit,28682,lake
+AKwr_WS369,,,Fresh,East and West SID shallow wells (saltwater),27588,well
+AKwr_WS370,,,Fresh,Shaviovik River Reservoir,33351,river
+AKwr_WS371,,,Fresh,Lakes L9120- L9121- L9122- L9123/K210-and M9515,32981,lake
+AKwr_WS372,,,Fresh,Alpine Unit,28685,river
+AKwr_WS373,,,Fresh,Kuparuk Unit,28688,lake
+AKwr_WS374,,,Fresh,Kuparuk Unit,28691,lake
+AKwr_WS375,,,Fresh,Drill Site 4 Lakes,33356,lake
+AKwr_WS376,,,Fresh,E Pad Lake,33358,lake
+AKwr_WS377,,,Fresh,Kuparuk Unit,28694,lake
+AKwr_WS378,,,Fresh,Drill Site 12 Lake,33360,lake
+AKwr_WS379,,,Fresh,West Dock Staging Lake,33362,lake
+AKwr_WS380,,,Fresh,Drill Site 18 Lake,33364,lake
+AKwr_WS381,,,Fresh,Kuparuk Reservoirs 4 & 5 and 3 Unnamed Lakes,33366,lake
+AKwr_WS382,,,Fresh,Creek btwn CFP and B Pads,33337,creek
+AKwr_WS383,,,Fresh,Five MPU Sources,33339,lake
+AKwr_WS384,,,Fresh,Alpine Unit,28697,lake
+AKwr_WS385,,,Fresh,"Kuparuk Reservoir 1, 2 & 3 (Uses outside WOA)",33371,lake
+AKwr_WS386,,,Fresh,North Slope Assets,21238,creek
+AKwr_WS387,,,Fresh,Badami Mine Site,33382,lake
+AKwr_WS388,,,Fresh,North PRB State No. 2,33380,lake
+AKwr_WS389,,,Fresh,Lake 25,26796,lake
+AKwr_WS390,,,Fresh,Lake #6 (Ice Chips),26799,lake
+AKwr_WS391,,,Fresh,Lake #8 (Ice Chips),26801,lake
+AKwr_WS392,,,Fresh,Lake (Ice Chips),26803,lake
+AKwr_WS393,,,Fresh,Lake 22,25031,lake
+AKwr_WS394,,,Fresh,Alpine Unit,21241,lake
+AKwr_WS395,,,Fresh,Alpine Unit,21244,lake
+AKwr_WS396,,,Fresh,well,54152,well
+AKwr_WS397,,,Fresh,S Pad Lake,33378,lake
+AKwr_WS398,,,Fresh,Lake 18 (Ice and water),26806,lake
+AKwr_WS399,,,Fresh,Lake 19,26808,lake
+AKwr_WS400,,,Fresh,North Slope Assets,21247,lake
+AKwr_WS401,,,Fresh,Lake K214,32983,lake
+AKwr_WS402,,,Fresh,Exp Unit,28705,lake
+AKwr_WS403,,,Fresh,Kenai Gas Field Pad 34-31,23249,well
+AKwr_WS404,,,Fresh,Exp Unit,28708,lake
+AKwr_WS405,,,Fresh,Nikiski well,55232,well
+AKwr_WS406,,,Fresh,North and South OPP Shallow wells (saltwater),27591,well
+AKwr_WS407,,,Fresh,North Slope Assets,21250,well
+AKwr_WS408,,,Fresh,Spy Island area,27594,well
+AKwr_WS409,,,Fresh,Historic Railroad Depot well,53352,well
+AKwr_WS410,,,Fresh,340 ft well,10684,well
+AKwr_WS411,,,Fresh,5 SOURCES,32658,lake
+AKwr_WS412,,,Fresh,DIU Mine Site,33388,lake
+AKwr_WS413,,,Fresh,Frontier Camp Lake,33390,lake
+AKwr_WS414,,,Fresh,Lake between G & E Pads,33391,lake
+AKwr_WS415,,,Fresh,DS3H LAKE,32660,lake
+AKwr_WS416,,,Fresh,Compressor Plant Wells,23251,well
+AKwr_WS417,,,Fresh,Kuparuk Reservoirs 4 and 5,33394,lake
+AKwr_WS418,,,Fresh,B8542/L94104,51485,lake
+AKwr_WS419,,,Fresh,L9101/M9204,51486,well
+AKwr_WS420,,,Fresh,L9104/B8542,51487,well
+AKwr_WS421,,,Fresh,L9203/M9208,51488,well
+AKwr_WS422,,,Fresh,L9204,51489,well
+AKwr_WS423,,,Fresh,MC7901,51495,lake
+AKwr_WS424,,,Fresh,B8453/L9202,51497,lake
+AKwr_WS425,,,Fresh,Kupigrunak Lake,51499,lake
+AKwr_WS426,,,Fresh,K207/M0109,51605,lake
+AKwr_WS427,,,Fresh,M108,51607,lake
+AKwr_WS428,,,Fresh,MB1103,51609,lake
+AKwr_WS429,,,Fresh,Annie Pit,58321,lake
+AKwr_WS430,,,Fresh,L9113,51501,lake
+AKwr_WS431,,,Fresh,L9211,51503,well
+AKwr_WS432,,,Fresh,MC7902,51505,lake
+AKwr_WS433,,,Fresh,L9831,51507,lake
+AKwr_WS434,,,Fresh,L9830,51509,well
+AKwr_WS435,,,Fresh,Coleen and Duck Lakes,24893,lake
+AKwr_WS436,,,Fresh,Alpine Unit,21253,well
+AKwr_WS437,,,Fresh,Alpine Unit,21256,lake
+AKwr_WS438,,,Fresh,Exp Unit,21259,lake
+AKwr_WS439,,,Fresh,Kuparuk Unit,28714,lake
+AKwr_WS440,,,Fresh,Exp Unit,21262,lake
+AKwr_WS441,,,Fresh,Duck Island Pit (DIU),25033,well
+AKwr_WS442,,,Fresh,Lake 11,25035,lake
+AKwr_WS443,,,Fresh,Vern Lake (Sag Mine site C),25037,lake
+AKwr_WS444,,,Fresh,well,14354,well
+AKwr_WS445,,,Fresh,Cannery Loop Unit Pad 2 Water Well,23253,well
+AKwr_WS446,,,Fresh,Cannery Loop Unit Pad 3,23255,well
+AKwr_WS447,,,Fresh,Pretty Creek Unit Pad 2 Well,23257,well
+AKwr_WS448,,,Fresh,Alpine Unit,21265,lake
+AKwr_WS449,,,Fresh,BOC Impoundments,33396,lake
+AKwr_WS450,,,Fresh,CC2 Impoundment,33398,lake
+AKwr_WS451,,,Fresh,CSP Impoundments,33400,lake
+AKwr_WS452,,,Fresh,Five  Impoundments in PBU,33402,lake
+AKwr_WS453,,,Fresh,J Pad Impoundments,33404,lake
+AKwr_WS454,,,Fresh,NVTA Well #1,17230,well
+AKwr_WS455,,,Fresh,Office/Camp Well and Well 43-5,23259,well
+AKwr_WS456,,,Fresh,Kuparuk Unit,28717,lake
+AKwr_WS457,,,Fresh,Kuparuk Unit,28720,lake
+AKwr_WS458,,,Fresh,Kuparuk Unit,28723,lake
+AKwr_WS459,,,Fresh,Kuparuk Unit,28726,lake
+AKwr_WS460,,,Fresh,Kuparuk Unit,28729,lake
+AKwr_WS461,,,Fresh,Kuparuk Unit,28732,lake
+AKwr_WS462,,,Fresh,North Slope Assets,21268,lake
+AKwr_WS463,,,Fresh,Ivan River Wells,23261,well
+AKwr_WS464,,,Fresh,Badami Lake #1,33411,lake
+AKwr_WS465,,,Fresh,Badami Lake #2,33412,lake
+AKwr_WS466,,,Fresh,Badami Lake #8,35210,well
+AKwr_WS467,,,Fresh,William Jack Hernandez Sport Fish Hatchery,55895,well
+AKwr_WS468,,,Fresh,West Beach State Lake,2829,lake
+AKwr_WS469,,,Fresh,North Slope Assets,21271,well
+AKwr_WS470,,,Fresh,L9272,51511,lake
+AKwr_WS471,,,Fresh,L9117,51513,well
+AKwr_WS472,,,Fresh,MC7920,51515,lake
+AKwr_WS473,,,Fresh,Sag River,24895,river
+AKwr_WS474,,,Fresh,Kuparuk Mine Sites C & F and Lakes K201- M9514- and L9334,32985,lake
+AKwr_WS475,,,Fresh,K210/L9123,51517,well
+AKwr_WS476,,,Fresh,M9514,51518,well
+AKwr_WS477,,,Fresh,M9515,51520,well
+AKwr_WS478,,,Fresh,MB1201,51522,lake
+AKwr_WS479,,,Fresh,K210,51524,well
+AKwr_WS480,,,Fresh,Kaldacabuna,51836,lake
+AKwr_WS481,,,Fresh,Pad G well,51838,well
+AKwr_WS482,,,Fresh,L9121,51541,lake
+AKwr_WS483,,,Fresh,M0251,51543,lake
+AKwr_WS484,,,Fresh,MC7920,51545,lake
+AKwr_WS485,,,Fresh,MB1202,51547,lake
+AKwr_WS486,,,Fresh,L9118,51549,lake
+AKwr_WS487,,,Fresh,MB1209,51551,lake
+AKwr_WS488,,,Fresh,MB1203,51553,lake
+AKwr_WS489,,,Fresh,B8540,51555,lake
+AKwr_WS490,,,Fresh,M9206,51557,lake
+AKwr_WS491,,,Fresh,K201/L9123,51559,lake
+AKwr_WS492,,,Fresh,RTS07119,17764,lake
+AKwr_WS493,,,Fresh,RTS07118,17756,lake
+AKwr_WS494,,,Fresh,RTS07124,17758,lake
+AKwr_WS495,,,Fresh,RTS07131,17760,lake
+AKwr_WS496,,,Fresh,RTS07132,17762,lake
+AKwr_WS497,,,Fresh,RTS07121,17766,lake
+AKwr_WS498,,,Fresh,River Crossing 1A-S,51561,river
+AKwr_WS499,,,Fresh,River Crossing 1B-N,51563,river
+AKwr_WS500,,,Fresh,River Crossing 1A-N,51565,river
+AKwr_WS501,,,Fresh,Exp Unit,28735,lake
+AKwr_WS502,,,Fresh,Exp Unit,28738,lake
+AKwr_WS503,,,Fresh,Exp Unit,28741,lake
+AKwr_WS504,,,Fresh,Exp Unit,28744,lake
+AKwr_WS505,,,Fresh,K304 DS-30 lake & Mine Site E,27597,lake
+AKwr_WS506,,,Fresh,EAST HARRISON BAY,32662,other
+AKwr_WS507,,,Fresh,Kuparuk Unit,28746,lake
+AKwr_WS508,,,Fresh,Alpine Unit,4053,lake
+AKwr_WS509,,,Fresh,Drilled Well(s),25614,well
+AKwr_WS510,,,Fresh,Kuparuk Unit,2774,lake
+AKwr_WS511,,,Fresh,Kuparuk Unit,28749,lake
+AKwr_WS512,,,Fresh,D-Pit Water,59166,lake
+AKwr_WS513,,,Fresh,Alpine Unit,21274,lake
+AKwr_WS514,,,Fresh,Alpine Unit,21277,lake
+AKwr_WS515,,,Fresh,North Slope Assets,21280,lake
+AKwr_WS516,,,Fresh,No. 21,424,lake
+AKwr_WS517,,,Fresh,No. 22,425,lake
+AKwr_WS518,,,Fresh,No. 23,426,lake
+AKwr_WS519,,,Fresh,No. 25,428,lake
+AKwr_WS520,,,Fresh,No. 24,429,lake
+AKwr_WS521,,,Fresh,#21 through #25,26741,lake
+AKwr_WS522,,,Fresh,Beaufort Sea,422,icechips
+AKwr_WS523,,,Fresh,#7,354,lake
+AKwr_WS524,,,Fresh,#6,355,lake
+AKwr_WS525,,,Fresh,#5,356,lake
+AKwr_WS526,,,Fresh,#8,357,lake
+AKwr_WS527,,,Fresh,#9,358,lake
+AKwr_WS528,,,Fresh,#5 thru #9,26751,lake
+AKwr_WS529,,,Fresh,#10,324,lake
+AKwr_WS530,,,Fresh,#11,325,lake
+AKwr_WS531,,,Fresh,#12,326,lake
+AKwr_WS532,,,Fresh,#13,327,lake
+AKwr_WS533,,,Fresh,#14,328,lake
+AKwr_WS534,,,Fresh,#10 thru #14,26743,lake
+AKwr_WS535,,,Fresh,#10-09,330,lake
+AKwr_WS536,,,Fresh,#10-10,331,lake
+AKwr_WS537,,,Fresh,#10-11,332,lake
+AKwr_WS538,,,Fresh,#10-14,333,lake
+AKwr_WS539,,,Fresh,#10-18,334,lake
+AKwr_WS540,,,Fresh,5 Lakes,26745,lake
+AKwr_WS541,,,Fresh,#10-01,336,lake
+AKwr_WS542,,,Fresh,#10-02,337,lake
+AKwr_WS543,,,Fresh,#10-04,338,lake
+AKwr_WS544,,,Fresh,#10-03,339,lake
+AKwr_WS545,,,Fresh,#10-05,340,lake
+AKwr_WS546,,,Fresh,#17,342,lake
+AKwr_WS547,,,Fresh,#1,343,lake
+AKwr_WS548,,,Fresh,#2,344,lake
+AKwr_WS549,,,Fresh,#3,345,lake
+AKwr_WS550,,,Fresh,#4 E/W,346,lake
+AKwr_WS551,,,Fresh,5 Lakes,26747,lake
+AKwr_WS552,,,Fresh,#20,360,lake
+AKwr_WS553,,,Fresh,#18,361,lake
+AKwr_WS554,,,Fresh,#19,362,lake
+AKwr_WS555,,,Fresh,Shaviovik Pit,363,lake
+AKwr_WS556,,,Fresh,Alaska State C-1 Pit,364,lake
+AKwr_WS557,,,Fresh,3 Lakes & 2 Ponds,26753,lake
+AKwr_WS558,,,Fresh,#15,348,lake
+AKwr_WS559,,,Fresh,#16,349,lake
+AKwr_WS560,,,Fresh,Duck Is. Mine Site,350,lake
+AKwr_WS561,,,Fresh,Sag Mine Site C (Vern Lake),351,lake
+AKwr_WS562,,,Fresh,Badami Mine Site,352,lake
+AKwr_WS563,,,Fresh,5 sources,26749,lake
+AKwr_WS564,,,Fresh,Offshore Portion of Sag River,366,river
+AKwr_WS565,,,Fresh,Unnamed Lake 22,368,lake
+AKwr_WS566,,,Fresh,Unnamed Lake 13,369,lake
+AKwr_WS567,,,Fresh,Unnamed Lake 14,370,lake
+AKwr_WS568,,,Fresh,Unnamed Lake 15,371,lake
+AKwr_WS569,,,Fresh,Unnamed Lake 18,372,lake
+AKwr_WS570,,,Fresh,5 Lakes,26755,lake
+AKwr_WS571,,,Fresh,Unnamed Lake 20,374,lake
+AKwr_WS572,,,Fresh,Unnamed Lake 21,375,lake
+AKwr_WS573,,,Fresh,Unnamed Lake 10,376,lake
+AKwr_WS574,,,Fresh,Unnamed Lake 12,377,lake
+AKwr_WS575,,,Fresh,Unnamed Lake,378,lake
+AKwr_WS576,,,Fresh,Alpine Unit,21283,well
+AKwr_WS577,,,Fresh,Coleen Lake,380,lake
+AKwr_WS578,,,Fresh,Granite Point Tank Farm Wells,23263,well
+AKwr_WS579,,,Fresh,GCI Impoundments,2831,lake
+AKwr_WS580,,,Fresh,Small Ponds Adjacent to W Pad Access Road,2832,lake
+AKwr_WS581,,,Fresh,W Pad Impoundments,2834,creek
+AKwr_WS582,,,Fresh,17 Ponds/ Impoundments in EOA,2862,lake
+AKwr_WS583,,,Fresh,Beluga River Unit,21286,well
+AKwr_WS584,,,Fresh,North Slope Assets,21289,well
+AKwr_WS585,,,Fresh,Well # 2B,19440,well
+AKwr_WS586,,,Fresh,Drilled Well(s),25616,well
+AKwr_WS587,,,Fresh,"reinjection well-Lake Tract, B5 Tudor Centre",2344,well
+AKwr_WS588,,,Fresh,Put 23 Mine Site,2836,lake
+AKwr_WS589,,,Fresh,Alpine Unit,4023,lake
+AKwr_WS590,,,Fresh,Kuparuk Deadarm - K2 Reservoir,27600,lake
+AKwr_WS591,,,Fresh,West Eagle,32963,well
+AKwr_WS592,,,Fresh,"Drilled Well TW-8, 344 ft",2282,well
+AKwr_WS593,,,Fresh,"TW-1A, addition to TW-8",11386,well
+AKwr_WS594,,,Fresh,Alpine Unit,4028,lake
+AKwr_WS595,,,Fresh,Alpine Unit,3386,lake
+AKwr_WS596,,,Fresh,Exp Unit,28754,lake
+AKwr_WS597,,,Fresh,Alpine Unit,28624,lake
+AKwr_WS598,,,Fresh,M1312,51567,lake
+AKwr_WS599,,,Fresh,M1321,51569,lake
+AKwr_WS600,,,Fresh,"Lakes M0651, M0653, M0654",32664,lake
+AKwr_WS601,,,Fresh,Exp Unit,28757,lake
+AKwr_WS602,,,Fresh,Exp Unit,28760,lake
+AKwr_WS603,,,Fresh,Cook Inlet Field Office well 2,23266,well
+AKwr_WS604,,,Fresh,Exp Unit,28766,lake
+AKwr_WS605,,,Fresh,LO 2013-29-02,409,lake
+AKwr_WS606,,,Fresh,LO 2013-33-00,410,lake
+AKwr_WS607,,,Fresh,LO 2013-33-01,411,lake
+AKwr_WS608,,,Fresh,LO 2013-34-01,412,lake
+AKwr_WS609,,,Fresh,LO 2013-38-00,413,lake
+AKwr_WS610,,,Fresh,LO 2013-18-00,382,lake
+AKwr_WS611,,,Fresh,LO 2013-20-00,383,lake
+AKwr_WS612,,,Fresh,LO 2013-22-00,384,lake
+AKwr_WS613,,,Fresh,LO 2013-23-00,385,lake
+AKwr_WS614,,,Fresh,LO 2013-25-00,386,lake
+AKwr_WS615,,,Fresh,Point Thomson 5 Lakes,26759,lake
+AKwr_WS616,,,Fresh,LO 2013-25-01,388,lake
+AKwr_WS617,,,Fresh,LO 2013-26-00,389,lake
+AKwr_WS618,,,Fresh,LO 2013-28-00,390,lake
+AKwr_WS619,,,Fresh,LO 2013-01-00,392,lake
+AKwr_WS620,,,Fresh,LO 2013-26-01,393,lake
+AKwr_WS621,,,Fresh,LO 2013-31-00,394,lake
+AKwr_WS622,,,Fresh,LO 2013-32-00,395,lake
+AKwr_WS623,,,Fresh,Point Thomson 4 lakes,26761,lake
+AKwr_WS624,,,Fresh,LO 2013-35-00,397,lake
+AKwr_WS625,,,Fresh,LO 2013-19-01,399,lake
+AKwr_WS626,,,Fresh,Alpine Unit,28767,lake
+AKwr_WS627,,,Fresh,Heart 360 lake,17768,lake
+AKwr_WS628,,,Fresh,RTS07118,17770,lake
+AKwr_WS629,,,Fresh,RTS07124,17772,lake
+AKwr_WS630,,,Fresh,Kuparuk Unit,28769,lake
+AKwr_WS631,,,Fresh,1B-S CHANNEL,51571,lake
+AKwr_WS632,,,Fresh,Alpine Unit,21298,river
+AKwr_WS633,,,Fresh,Kenai Gas Field Pad 41-18 G&I Water Well,23268,well
+AKwr_WS634,,,Fresh,Ninilchik Unit Paxton Pad,23270,well
+AKwr_WS635,,,Fresh,Beaver Creek Unit Pad 1A Well No. 1A,23272,well
+AKwr_WS636,,,Fresh,"Lakes 1, 2, 3, 4, 5",25525,lake
+AKwr_WS637,,,Fresh,Badami Mine Site,24995,lake
+AKwr_WS638,,,Fresh,"Lakes 18, 19",24999,lake
+AKwr_WS639,,,Fresh,Trading Bay Production - wells,23274,well
+AKwr_WS640,,,Fresh,Kuparuk Unit,28780,lake
+AKwr_WS641,,,Fresh,Webster Reservoir outside EOA,2838,lake
+AKwr_WS642,,,Fresh,Alpine Unit,4046,river
+AKwr_WS643,,,Fresh,"Drilled Well TW-7, 350ft",2302,well
+AKwr_WS644,,,Fresh,North Slope Assets,21302,river
+AKwr_WS645,,,Fresh,PBU W Pad Source Well (W-400),2722,well
+AKwr_WS646,,,Fresh,Drilled Well(s),25618,well
+AKwr_WS647,,,Fresh,E Pad Lake,2686,lake
+AKwr_WS648,,,Fresh,Drill Site 7 Lake,2688,lake
+AKwr_WS649,,,Fresh,Drill Site 3 Lake,33285,lake
+AKwr_WS650,,,Fresh,PTP Minesite,401,lake
+AKwr_WS651,,,Fresh,Drill Site 4 Lakes,2802,lake
+AKwr_WS652,,,Fresh,L9109,51573,lake
+AKwr_WS653,,,Fresh,L9129,51575,lake
+AKwr_WS654,,,Fresh,M1407,51577,lake
+AKwr_WS655,,,Fresh,M1408,51579,lake
+AKwr_WS656,,,Fresh,MC7903,51581,lake
+AKwr_WS657,,,Fresh,L9109,51583,lake
+AKwr_WS658,,,Fresh,M9502,51585,lake
+AKwr_WS659,,,Fresh,M9505,51587,lake
+AKwr_WS660,,,Fresh,M1404,51589,lake
+AKwr_WS661,,,Fresh,L9334,51591,lake
+AKwr_WS662,,,Fresh,Alpine Unit,4055,lake
+AKwr_WS663,,,Fresh,Kuparuk Unit,28776,lake
+AKwr_WS664,,,Fresh,North Slope Assets,58802,lake
+AKwr_WS665,,,Fresh,North Slope Assets,58805,lake
+AKwr_WS666,,,Fresh,Drilled Well(s),25620,well
+AKwr_WS667,,,Fresh,North Slope Assets,21311,lake
+AKwr_WS668,,,Fresh,North Slope Assets,21312,lake
+AKwr_WS669,,,Fresh,Kuparuk Unit,28778,lake
+AKwr_WS670,,,Fresh,M 1418 and L9006,51593,lake
+AKwr_WS671,,,Fresh,North Slope Assets,21313,lake
+AKwr_WS672,,,Fresh,North Slope Assets,21314,lake
+AKwr_WS673,,,Fresh,North and South OPP Shallow wells (saltwater),27603,well
+AKwr_WS674,,,Fresh,Ninilchik Unit Kalotsa and Blossom Pad Water Wells,23191,well
+AKwr_WS675,,,Fresh,Drummer Lake,403,lake
+AKwr_WS676,,,Fresh,Fox Lake,404,lake
+AKwr_WS677,,,Fresh,Agviq Lake,405,lake
+AKwr_WS678,,,Fresh,Unconfined Aquifer Wells,2322,well
+AKwr_WS679,,,Fresh,Lake 5,24869,lake
+AKwr_WS680,,,Fresh,Lake 13,24871,lake
+AKwr_WS681,,,Fresh,Lake 22A,24873,lake
+AKwr_WS682,,,Fresh,Smith Bay,32666,other
+AKwr_WS683,,,Fresh,North Prudhoe Bay State #2,54483,well
+AKwr_WS684,,,Fresh,Drill Site 18,54485,well
+AKwr_WS685,,,Fresh,Drill Site 15,54487,well
+AKwr_WS686,,,Fresh,Duck Island  Mine Site,54489,lake
+AKwr_WS687,,,Fresh,Sag River Mine Site C/Vern Lake,54491,lake
+AKwr_WS688,,,Fresh,East and West SID shallow wells (saltwater),27606,well
+AKwr_WS689,,,Fresh,Alpine Unit,4048,river
+AKwr_WS690,,,Fresh,Kuparuk Unit,3026,lake
+AKwr_WS691,,,Fresh,Kuparuk Unit,3028,lake
+AKwr_WS692,,,Fresh,Beluga River Unit,23193,well
+AKwr_WS693,,,Fresh,Artesian Well near Granite Point,23195,well
+AKwr_WS694,,,Fresh,Kuparuk Mine Sites D,32987,lake
+AKwr_WS695,,,Fresh,Lake #3,26574,lake
+AKwr_WS696,,,Fresh,Deep Creek Unit Star Pad Well #1,23197,well
+AKwr_WS697,,,Fresh,Oooguruk Island in Harrison Bay,32668,other
+AKwr_WS698,,,Fresh,Kuparuk Unit,3307,lake
+AKwr_WS699,,,Fresh,Kenai Gas Field Pad 14-6 and 41-7 Wells,23199,well
+AKwr_WS700,,,Fresh,Kenai Gas Field Electrical Shop,23201,well
+AKwr_WS701,,,Fresh,Deep Creek Unit Happy Valley B Pad Well #1,23203,well
+AKwr_WS702,,,Fresh,North Slope Assets,4095,well
+AKwr_WS703,,,Fresh,Ninilchik Unit Grassim Oskolkoff (GO) Pad Water Well 1,23206,well
+AKwr_WS704,,,Fresh,Exp Unit,28787,lake
+AKwr_WS705,,,Fresh,Lake M0250,51264,well
+AKwr_WS706,,,Fresh,Lake MB1202,51265,well
+AKwr_WS707,,,Fresh,Kuparuk Reservoir 2,2813,lake
+AKwr_WS708,,,Fresh,"Kuparuk Reservoir 2, Uses outside WOA",2814,lake
+AKwr_WS709,,,Fresh,Exp Unit,28789,lake
+AKwr_WS710,,,Fresh,"TW-1A, addition to TW-8",2304,well
+AKwr_WS711,,,Fresh,Lake K120,51261,lake
+AKwr_WS712,,,Fresh,Lake M0251,51262,lake
+AKwr_WS713,,,Fresh,Kuparuk Unit,28791,lake
+AKwr_WS714,,,Fresh,North Slope Assets,3790,lake
+AKwr_WS715,,,Fresh,Exp Unit,28793,lake
+AKwr_WS716,,,Fresh,North Slope Assets,4059,lake
+AKwr_WS717,,,Fresh,Cannery Loop Unit Pad 1 Water Well,23208,well
+AKwr_WS718,,,Fresh,"Lake K309, Kuparuk Mine Site E East and other lakes",32670,lake
+AKwr_WS719,,,Fresh,North Slope Assets,21223,creek
+AKwr_WS720,,,Fresh,Production - #3 Lake Pump,3902,lake
+AKwr_WS721,,,Fresh,#1 Lake Pump,4034,lake
+AKwr_WS722,,,Fresh,#2 Lake Pump,4035,lake
+AKwr_WS723,,,Fresh,Domestic - #1 Lake house,4036,lake
+AKwr_WS724,,,Fresh,well #4,4037,well
+AKwr_WS725,,,Fresh,Lake L9123/K210,58796,lake
+AKwr_WS726,,,Fresh,Well,17720,well
+AKwr_WS727,,,Fresh,"Lakes 20, 21, 22, 23, 24",25001,lake
+AKwr_WS728,,,Fresh,Ikroavik Lake,16617,lake
+AKwr_WS729,,,Fresh,Isatkoak Lagoon,16618,lake
+AKwr_WS730,,,Fresh,Alpine Unit,4062,creek
+AKwr_WS731,,,Fresh,Alpine Unit,4064,lake
+AKwr_WS732,,,Fresh,Kuparuk Unit,28796,lake
+AKwr_WS733,,,Fresh,Vern Lake,15815,lake
+AKwr_WS734,,,Fresh,Duck Island Mine Site,15816,lake
+AKwr_WS735,,,Fresh,Ikroavik Lake plus 2,17774,lake
+AKwr_WS736,,,Fresh,Nikiski well,55234,well
+AKwr_WS737,,,Fresh,Exp Unit,28799,lake
+AKwr_WS738,,,Fresh,Duck Island Mine Site,2734,lake
+AKwr_WS739,,,Fresh,North Slope Assets,21226,well
+AKwr_WS740,,,Fresh,Tolsona Lake,55730,lake
+AKwr_WS741,,,Fresh,Kuparuk Reservoir 5,2737,creek
+AKwr_WS742,,,Fresh,Alpine Unit,4050,lake
+AKwr_WS743,,,Fresh,MP381 Mine Site,56834,lake
+AKwr_WS744,,,Fresh,W Sag R. Channel,56835,river
+AKwr_WS745,,,Fresh,William Jack Hernandez Sport Fish Hatchery,55893,well
+AKwr_WS746,,,Fresh,well,58742,well
+AKwr_WS747,,,Fresh,Cannery Loop Unit Pad 3 Water Well,23210,well
+AKwr_WS748,,,Fresh,Alpine Unit,4057,lake
+AKwr_WS749,,,Fresh,Drilled Well(s),25622,well
+AKwr_WS750,,,Fresh,Wells 1,1102,well
+AKwr_WS751,,,Fresh,Well 2,1104,well
+AKwr_WS752,,,Fresh,Well #3,2069,well
+AKwr_WS753,,,Fresh,Lake Colleen,15823,lake
+AKwr_WS754,,,Fresh,Alpine Unit,4042,lake
+AKwr_WS755,,,Fresh,Kuparuk Reservoir #2,15820,lake
+AKwr_WS756,,,Fresh,LAKE K301,32672,lake
+AKwr_WS757,,,Fresh,Kokolik River,1400,river
+AKwr_WS758,,,Fresh,LAKE COLLEEN,54554,well
+AKwr_WS759,,,Fresh,Alpine Unit,4080,lake
+AKwr_WS760,,,Fresh,Exp Unit,28633,lake
+AKwr_WS761,,,Fresh,Beaver Creek Unit Pad 1A Well No. 1A,23212,well
+AKwr_WS762,,,Fresh,Four Lakes in PBU,33428,lake
+AKwr_WS763,,,Fresh,Exp Unit,4082,lake
+AKwr_WS764,,,Fresh,Exp Unit,28803,lake
+AKwr_WS765,,,Fresh,3 water sources,58762,lake
+AKwr_WS766,,,Fresh,Exp Unit,28805,lake
+AKwr_WS767,,,Fresh,Alpine Unit,4068,lake
+AKwr_WS768,,,Fresh,Exp Unit,4084,lake
+AKwr_WS769,,,Fresh,Pearl Pad pad well 1A / Camp Water,23214,well
+AKwr_WS770,,,Fresh,K210,51595,lake
+AKwr_WS771,,,Fresh,Ninilchik Unit State Pad,23216,well
+AKwr_WS772,,,Fresh,5 water sources,58765,lake
+AKwr_WS773,,,Fresh,5 water sources,58768,well
+AKwr_WS774,,,Fresh,5 water sources,58771,lake
+AKwr_WS775,,,Fresh,5 water sources,58774,lake
+AKwr_WS776,,,Fresh,5 water sources,58777,lake
+AKwr_WS777,,,Fresh,Exp Unit,4087,lake
+AKwr_WS778,,,Fresh,Exp Unit,28808,lake
+AKwr_WS779,,,Fresh,Exp Unit,4093,lake
+AKwr_WS780,,,Fresh,Ninilchik Unit Falls Creek,23218,well
+AKwr_WS781,,,Fresh,Four  Impoundments in PBU,33430,lake
+AKwr_WS782,,,Fresh,Alpine Unit,4074,lake
+AKwr_WS783,,,Fresh,South Well,27969,well
+AKwr_WS784,,,Fresh,Little Goldstream Creek,27970,creek
+AKwr_WS785,,,Fresh,Ninilchik Unit Susan Dionne Pad,23220,well
+AKwr_WS786,,,Fresh,Pearl Pad pad well 1A / Camp Water,23222,well
+AKwr_WS787,,,Fresh,Kenai Gas Field Pad 14-6 Electrical Shop Well,23224,well
+AKwr_WS788,,,Fresh,Granite Point Tank Farm Well #1 and Well #2,58808,well
+AKwr_WS789,,,Fresh,Kuparuk Unit,2928,lake
+AKwr_WS790,,,Fresh,Alpine Unit,28811,lake
+AKwr_WS791,,,Fresh,Kuparuk Impoundments,2926,lake
+AKwr_WS792,,,Fresh,Kuparuk Impoundments,2924,lake
+AKwr_WS793,,,Fresh,Kuparuk Impoundments,2922,lake
+AKwr_WS794,,,Fresh,200' DEEP WELL,17957,well
+AKwr_WS795,,,Fresh,"Drilled Well TW-9, 348ft",10664,well
+AKwr_WS796,,,Fresh,Lake 10 and 11,25003,lake
+AKwr_WS797,,,Fresh,"Lakes 12, 13, 14, 15",25007,lake
+AKwr_WS798,,,Fresh,Five Impoundments in PBU,2823,lake
+AKwr_WS799,,,Fresh,Olliktok Point,14621,lake
+AKwr_WS800,,,Fresh,Kuparuk Unit,3743,lake
+AKwr_WS801,,,Fresh,IFP-Kenai,16942,well
+AKwr_WS802,,,Fresh,DS16 Reserve Pits and Impoundments,33432,lake
+AKwr_WS803,,,Fresh,North Slope Assets,21229,creek
+AKwr_WS804,,,Fresh,Lake 9006,24881,lake
+AKwr_WS805,,,Fresh,Lake GBP001,24882,lake
+AKwr_WS806,,,Fresh,Lake GBP004,24883,lake
+AKwr_WS807,,,Fresh,5 water sources,58799,lake
+AKwr_WS808,,,Fresh,Exp Unit,28821,lake
+AKwr_WS809,,,Fresh,Exp Unit,28823,lake
+AKwr_WS810,,,Fresh,Exp Unit,28826,lake
+AKwr_WS811,,,Fresh,Exp Unit,28828,lake
+AKwr_WS812,,,Fresh,Exp Unit,28830,lake
+AKwr_WS813,,,Fresh,"Drilled Well TW-7, 350ft",10667,well
+AKwr_WS814,,,Fresh,MM1851,51597,lake
+AKwr_WS815,,,Fresh,M9620,51599,lake
+AKwr_WS816,,,Fresh,North Slope Assets,21232,well
+AKwr_WS817,,,Fresh,1B-N/NS,51601,lake
+AKwr_WS818,,,Fresh,1B-S,51603,lake
+AKwr_WS819,,,Fresh,LAKE R0507 AND LAKE K302 WEST.,58780,lake
+AKwr_WS820,,,Fresh,Ninilchik Unit Paxton Pad,23226,well
+AKwr_WS821,,,Fresh,NGI Impoundments,58783,lake
+AKwr_WS822,,,Fresh,WDSP Impoundments,58785,lake
+AKwr_WS823,,,Fresh,17 Ponds/ Impoundments in EOA,58793,lake
+AKwr_WS824,,,Fresh,DS13/LGI Ponds and Impoundments,58788,lake
+AKwr_WS825,,,Fresh,PBOC Ponds and impoundments,33434,lake
+AKwr_WS826,,,Fresh,East Dock Ponds,58791,lake
+AKwr_WS827,,,Fresh,Put 23 Mine Site,33436,lake
+AKwr_WS828,,,Fresh,Alpine Unit,28839,river
+AKwr_WS829,,,Fresh,West Beach State Lake,33438,lake
+AKwr_WS830,,,Fresh,"Muskrat Hole, Davis Pond and three creeks",32674,creek
+AKwr_WS831,,,Fresh,Exp Unit,28841,lake
+AKwr_WS832,,,Fresh,Kuparuk Unit,28843,lake
+AKwr_WS833,,,Fresh,Exp Unit,28845,lake
+AKwr_WS834,,,Fresh,North Slope Assets,21235,well
+AKwr_WS835,,,Fresh,Kenai Gas Field Pad 41-18 G&I Water Well,23228,well
+AKwr_WS836,,,Fresh,Beluga River Unit Pads Water Wells,23230,well
+AKwr_WS837,,,Fresh,"Drilled Well TW-8, 344 ft",10670,well
+AKwr_WS838,,,Fresh,"TW-1A, addition to TW-8",10672,well
+AKwr_WS839,,,Fresh,Great Bear Lake 3,24887,lake
+AKwr_WS840,,,Fresh,Mine Site Annie Pit,24889,lake
+AKwr_WS841,,,Fresh,Exp Unit,28847,lake
+AKwr_WS842,,,Fresh,Pogo,14961,well
+AKwr_WS843,,,Fresh,Pogo,14964,well
+AKwr_WS844,,,Fresh,Pogo,14967,well
+AKwr_WS845,,,Fresh,Pogo,14972,well
+AKwr_WS846,,,Fresh,Pogo,14975,well
+AKwr_WS847,,,Fresh,Pogo,14977,well
+AKwr_WS848,,,Fresh,Well Pump Station 7,52119,well
+AKwr_WS849,,,Fresh,Pond_ Pump Station 5,52121,well
+AKwr_WS850,,,Fresh,Well_ Pump Station 5,52123,well
+AKwr_WS851,,,Fresh,OMS 53-2,52125,well
+AKwr_WS852,,,Fresh,Yukon River,54558,river

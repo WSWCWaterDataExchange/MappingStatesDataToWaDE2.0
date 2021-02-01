@@ -137,7 +137,7 @@ print("SitePoint")
 outdf['SitePoint'] = ""
 
 print("SiteTypeCV")
-outdf['SiteTypeCV'] = "Unspecified"
+outdf['SiteTypeCV'] = df['WATER_SOURCE_TYPE']
 
 print("StateCV")
 outdf['StateCV'] = "AK"
