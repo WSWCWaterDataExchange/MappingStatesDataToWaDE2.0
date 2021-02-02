@@ -55,8 +55,8 @@ Purpose: Pre-process the Arizona input data files into one master file for simpl
 
 #### Operation and Steps:
 - Read the DAUCO csv input files and generate temporary input dataframes, then concatenate together to form one large dataframe.
-- For **Planing Area** reporting unit type, group by **PA**, **Year**, & **CategoryA**, and sum the **KAcreFt**.  Input into PA temporary dataframe.
-- For **Hydrologic Region** reporting unit type, group by **HR_NAME**, **HR_CODE**, **Year**, & **CategoryA**, and sum the **KAcreFt**.  Input into HR temporary dataframe.
+- For **Planing Area** reporting unit type, group by **PA**, **Year**, **CategoryA**, and **CategoryC** = Applied Water Use, and sum the **KAcreFt**.  Input into PA temporary dataframe.
+- For **Hydrologic Region** reporting unit type, group by **HR_NAME**, **HR_CODE**, **Year**, **CategoryA**, **CategoryC** = Depletion, and sum the **KAcreFt**.  Input into HR temporary dataframe.
 - For **Detailed Analysis Units by County** reporting unit type, group by **DAU**, **DAU_NAME**, **Year**, & **CategoryA**, and sum the **KAcreFt**.  Input into DAUCO temporary dataframe.
 - Concatenate temporary, PA, HR, and DAUCO dataframes together.
 - Inspect dataframes for errors.
