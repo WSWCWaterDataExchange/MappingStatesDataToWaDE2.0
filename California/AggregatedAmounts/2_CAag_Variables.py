@@ -40,29 +40,27 @@ columnslist = [
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-
 outdf = pd.DataFrame(columns=columnslist)
-outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = 'CA_Consumptive Use'
+outdf.VariableSpecificUUID = ["CA_Applied Water Use", "CA_Depletion"]
 
-outdf.VariableSpecificCV = 'Consumptive Use'
+outdf.VariableSpecificCV = ["Applied Water Use", "Depletion"]
 
-outdf.VariableCV = 'Consumptive Use'
+outdf.VariableCV = ["Applied Water Use", "Depletion"]
 
-outdf.AggregationInterval = "1"
+outdf.AggregationInterval = ["1", "1"]
 
-outdf.AggregationIntervalUnitCV = "Year"
+outdf.AggregationIntervalUnitCV = ["Year", "Year"]
 
-outdf.AggregationStatisticCV = "Cumulative"
+outdf.AggregationStatisticCV = ["Cumulative", "Cumulative"]
 
-outdf.AmountUnitCV = "AFY"
+outdf.AmountUnitCV = ["AFY", "AFY"]
 
-outdf.MaximumAmountUnitCV = "AFY"
+outdf.MaximumAmountUnitCV = ["AFY", "AFY"]
 
-outdf.ReportYearStartMonth = "1"
+outdf.ReportYearStartMonth = ["1", "1"]
 
-outdf.ReportYearTypeCV = "CalendarYear"
+outdf.ReportYearTypeCV = ["CalendarYear", "CalendarYear"]
 
 
 # Check required fields are not null
@@ -89,7 +87,6 @@ outdf.to_csv('ProcessedInputData/variables.csv', index=False)
 
 #Report missing values if need be to separate csv
 if(len(outdf_nullMand.index) > 0):
-    outdf_nullMand.to_csv('ProcessedInputData/variables_missing.csv')  # index=False,
-
+    outdf_nullMand.to_csv('ProcessedInputData/variables_missing.csv', index=False)
 
 print("Done.")

@@ -75,7 +75,6 @@ outdf.to_csv('ProcessedInputData/methods.csv', index=False)
 
 #Report missing values if need be to separate csv
 if(len(outdf_nullMand.index) > 0):
-    outdf_nullMand.to_csv('ProcessedInputData/methods_missing.csv')  # index=False,
-
+    outdf_nullMand.to_csv('ProcessedInputData/methods_missing.csv', index=False)
 
 print("Done.")
