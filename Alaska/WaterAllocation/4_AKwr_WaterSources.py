@@ -100,7 +100,7 @@ print("WaterSourceNativeID")
 outdf["WaterSourceNativeID"] = df.apply(lambda row: assignWaterSourceNativeID(row['WATER_SOURCE_ID']), axis=1)
 
 print("WaterSourceTypeCV")
-outdf['WaterSourceTypeCV'] = df.apply(lambda row: assignWaterSourceTypeCV(row['WATER_SOURCE_TYPE']), axis=1)
+outdf['WaterSourceTypeCV'] = df.apply(lambda row: assignWaterSourceTypeCV(row['in_WaterSourceTypeCV']), axis=1)
 
 ##############################
 # Dropping duplicate

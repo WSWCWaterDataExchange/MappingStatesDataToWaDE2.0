@@ -72,7 +72,6 @@ outdf.to_csv('ProcessedInputData/variables.csv', index=False)
 
 #Report missing values if need be to separate csv
 if(len(outdf_nullMand.index) > 0):
-    outdf_nullMand.to_csv('ProcessedInputData/variables_mandatoryFieldMissing.csv')  # index=False,
-
+    outdf_nullMand.to_csv('ProcessedInputData/variables_mandatoryFieldMissing.csv', index=False)
 
 print("Done.")
