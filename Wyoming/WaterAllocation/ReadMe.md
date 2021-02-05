@@ -12,7 +12,7 @@ Two unique files were created, one used by the WSWC staff to understand the avai
  - POD_GW_DepthI_FC_input
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share WWDO's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *[WY_Allocation Schema Mapping to WaDE_QA.xlsx]*(https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/raw/master/Wyoming/WaterAllocation/WY_Allocation%20Schema%20Mapping%20to%20WaDE_QA.xlsx)*.  Six executable code files were used to extract the WWDO's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those six code files are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share WWDO's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *[WY_Allocation Schema Mapping to WaDE_QA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/raw/master/Wyoming/WaterAllocation/WY_Allocation%20Schema%20Mapping%20to%20WaDE_QA.xlsx)*.  Six executable code files were used to extract the WWDO's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those six code files are as follows...
 
 - 0_PreProcessWyomingAllocationData.ipynb
 - 1_WYwr_Methods.py
@@ -158,7 +158,7 @@ Purpose: generate a list of water sources specific to a water right.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign **WWDO** info to the *WaDE WaterSources* specific columns.  See *[WY_Allocation Schema Mapping to WaDE_QA.xlsx]*(https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/raw/master/Wyoming/WaterAllocation/WY_Allocation%20Schema%20Mapping%20to%20WaDE_QA.xlsx)* for specific details.  Items of note are as follows...
+- Assign **WWDO** info to the *WaDE WaterSources* specific columns.  See *[WY_Allocation Schema Mapping to WaDE_QA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/raw/master/Wyoming/WaterAllocation/WY_Allocation%20Schema%20Mapping%20to%20WaDE_QA.xlsx)* for specific details.  Items of note are as follows...
     - *WaterSourceName* = *in_WaterSourceName*, Unspecified if not given, see *0_PreProcessWyomingAllocationData.ipynb* for specifics.
     - *WaterSourceNativeID* = *in_WaterSourceNativeID*, see *0_PreProcessWyomingAllocationData.ipynb* for specifics.
     - *WaterSourceTypeCV* = *in_WaterSourceTypeCV*, see *0_PreProcessWyomingAllocationData.ipynb* for specifics.
@@ -192,7 +192,7 @@ Purpose: generate a list of sites information.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
-- Assign **WWDO** info to the *WaDE Site* specific columns.  See *[WY_Allocation Schema Mapping to WaDE_QA.xlsx]*(https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/raw/master/Wyoming/WaterAllocation/WY_Allocation%20Schema%20Mapping%20to%20WaDE_QA.xlsx)* for specific details.  Items of note are as follows...
+- Assign **WWDO** info to the *WaDE Site* specific columns.  See *[WY_Allocation Schema Mapping to WaDE_QA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/raw/master/Wyoming/WaterAllocation/WY_Allocation%20Schema%20Mapping%20to%20WaDE_QA.xlsx)* for specific details.  Items of note are as follows...
     - *Latitude* = **Latitude_Double**.
     - *Longitude* = **Longitude_Double**.
     - *SiteName* = **FacilityName**, Unspecified if not given.
@@ -234,7 +234,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
-- Assign **WWDO** info to the *WaDE Water Allocations* specific columns.  See *[WY_Allocation Schema Mapping to WaDE_QA.xlsx]*(https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/raw/master/Wyoming/WaterAllocation/WY_Allocation%20Schema%20Mapping%20to%20WaDE_QA.xlsx)* for specific details.  Items of note are as follows...
+- Assign **WWDO** info to the *WaDE Water Allocations* specific columns.  See *[WY_Allocation Schema Mapping to WaDE_QA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/raw/master/Wyoming/WaterAllocation/WY_Allocation%20Schema%20Mapping%20to%20WaDE_QA.xlsx)* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *AllocationFlow_CFS* = **Total_Flow_CFS___Appropriation_GPM_**.
     - *AllocationNativeID* = **WR_Number**.
