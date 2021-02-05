@@ -80,11 +80,7 @@ columnslist = [
     "SiteUUID",
     "VariableSpecificUUID",
     "WaterAllocationNativeURL",
-    "WaterSourceUUID",
-    'SiteName',
-    'SiteTypeCV',
-    'Latitude',
-    'Longitude']
+    "WaterSourceUUID"]
 
 # Custom Functions
 ############################################################################

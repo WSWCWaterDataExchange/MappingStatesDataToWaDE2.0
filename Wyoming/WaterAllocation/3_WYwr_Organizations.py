@@ -59,15 +59,16 @@ outdf_nullMand = outdf.loc[(outdf["OrganizationUUID"].isnull()) | (outdf["Organi
                            (outdf["OrganizationWebsite"].isnull()) | (outdf["OrganizationWebsite"] == '') |
                            (outdf["State"].isnull()) | (outdf["State"] == '')]
 
-if(len(outdf_nullMand.index) > 0):
-    outdf_nullMand.to_csv('organizations_mandatoryFieldMissing.csv')  # index=False,
-
 
 # Export to new csv
 ############################################################################
 print("Exporting dataframe to csv...")
 # save to output
 outdf.to_csv('ProcessedInputData/organizations.csv', index=False)
+
+#Report missing values if need be to separate csv
+if(len(outdf_nullMand.index) > 0):
+    outdf_nullMand.to_csv('organizations_mandatoryFieldMissing.csv')  # index=False,
 
 
 print("Done.")
