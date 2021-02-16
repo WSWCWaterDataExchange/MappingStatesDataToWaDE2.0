@@ -271,5 +271,3 @@ if(len(dfpurge.index) > 0):
     dfpurge.to_csv('ProcessedInputData/sites_missing.csv', index=False)
 
 print("Done.")
-
-

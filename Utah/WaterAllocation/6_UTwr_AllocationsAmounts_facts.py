@@ -154,7 +154,7 @@ benUseDict = {
 }
 def assignBenUseCategory(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
-        outList = 'Unknown'
+        outList = 'Unspecified'
     else:
         benUseListStr = colrowValue.strip()  # remove whitespace chars
         outList = ",".join(benUseDict[inx] for inx in list(str(benUseListStr)))
