@@ -1,0 +1,3 @@
+VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
+CA_Applied Water Use,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Applied Water Use,Applied Water Use
+CA_Depletion,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Depletion,Depletion

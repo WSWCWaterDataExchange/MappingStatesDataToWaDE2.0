@@ -167,10 +167,10 @@ print("SDWISIdentifierCV")
 outdf.SDWISIdentifierCV = ""
 
 print("TimeframeEnd")
-outdf.TimeframeEnd = ""
+outdf['TimeframeEnd'] = df_DM['inTimeframeEnd']
 
 print("TimeframeStart")
-outdf.TimeframeStart = ""
+outdf['TimeframeStart'] = df_DM['inTimeframeStart']
 
 print("Resetting Index")
 outdf.reset_index()
@@ -272,6 +272,7 @@ outdf, dfpurge = TestErrorFunctions.TimeframeStart_AG_Check(outdf, dfpurge)
 # Export to new csv
 ############################################################################
 print("Exporting dataframe outdf100 to csv...")
+
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/aggregatedamounts.csv', index=False)
 
@@ -280,5 +281,3 @@ if(len(dfpurge.index) > 0):
     dfpurge.to_csv('ProcessedInputData/aggregatedamounts_missing.csv', index=False)
 
 print("Done.")
-
-
