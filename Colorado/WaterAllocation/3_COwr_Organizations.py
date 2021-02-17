@@ -1,5 +1,5 @@
-#Date Created: 03/02/2020
-#Author: Ryan James
+#Date Created: 02/10/2021
+#Author: Ryan James, WSWC
 #Purpose: To create CO organization use information and population dataframe for WaDE_QA 2.0.
 #Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
 
@@ -35,13 +35,13 @@ columns = [
 print("Populating dataframe...")
 inpVals = [
     "CODWR",
-    "abc@co.com",
+    "doug.stenzel@state.co.us",
     "Doug Stenzel",
     "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Colorado",
     "Colorado Division of Water Resources",
     "303-866-3581",
     "Water Administration for the State of Colorado",
-    "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Colorado",
+    "https://dwr.colorado.gov/about-us/contact-us/denver-office",
     "CO"]
 
 outdf = pd.DataFrame([inpVals], columns=columns)
@@ -60,15 +60,17 @@ outdf_nullMand = outdf.loc[(outdf["OrganizationUUID"].isnull()) | (outdf["Organi
                            (outdf["OrganizationWebsite"].isnull()) | (outdf["OrganizationWebsite"] == '') |
                            (outdf["State"].isnull()) | (outdf["State"] == '')]
 
-if(len(outdf_nullMand.index) > 0):
-    outdf_nullMand.to_csv('organizations_mandatoryFieldMissing.csv')  # index=False,
 
 
 # Export to new csv
 ############################################################################
 print("Exporting dataframe to csv...")
-# save to output
+
+# The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/organizations.csv', index=False)
 
+# Report purged values.
+if(len(outdf_nullMand.index) > 0):
+    outdf_nullMand.to_csv('organizations_mandatoryFieldMissing.csv', index=False)
 
 print("Done.")

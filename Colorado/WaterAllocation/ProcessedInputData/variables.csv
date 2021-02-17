@@ -1,2 +1,2 @@
-VariableSpecificUUID,VariableSpecificCV,VariableCV,AggregationStatisticCV,AggregationInterval,AggregationIntervalUnitCV,ReportYearStartMonth,ReportYearTypeCV,AmountUnitCV,MaximumAmountUnitCV
-CODWR_Allocation All,Allocation All,Allocation,Average,1,Day,11,Irrigation,CFS,AFY
+VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
+CODWR_Allocation All,1,Day,Average,CFS,AFY,11,WaterYear,Allocation,Allocation All
