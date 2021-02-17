@@ -38,19 +38,19 @@ outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires
 
 outdf.OrganizationUUID = "NMOSE"
 
-outdf.OrganizationContactEmail = "abc@co.com"
+outdf.OrganizationContactEmail = "ose.webmaster@state.nm.us"
 
-outdf.OrganizationContactName = "Rebecca Mitchell"
+outdf.OrganizationContactName = "David Hatchner (GIS Manager)"
 
 outdf.OrganizationDataMappingURL = "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/NewMexico"
 
 outdf.OrganizationName = "New Mexico Office of the State Engineer"
 
-outdf.OrganizationPhoneNumber = "303-866-3581"
+outdf.OrganizationPhoneNumber = "505-827-3846"
 
 outdf.OrganizationPurview = "The New Mexico Office of the State Engineer (OSE) provides this geographic data and any associated metadata as is without warranty of any kind."
 
-outdf.OrganizationWebsite = "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/NewMexico"
+outdf.OrganizationWebsite = "https://www.ose.state.nm.us/"
 
 outdf.State = "NM"
 

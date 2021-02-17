@@ -75,7 +75,7 @@ outdf = pd.DataFrame(columns=columnslist, index=df.index)
 print("CoordinateAccuracy")
 outdf.CoordinateAccuracy = ''
 
-print("againCoordinateMethodCV")
+print("CoordinateMethodCV")
 outdf.CoordinateMethodCV = 'Unspecified'
 
 print("County")
@@ -97,10 +97,10 @@ print("HUC8")
 outdf.HUC8 = ""
 
 print("Latitude")
-outdf['Latitude'] = df['Latitude']
+outdf['Latitude'] = df['in_Latitude']
 
 print("Longitude")
-outdf['Longitude'] = df['Longitude']
+outdf['Longitude'] = df['in_Longitude']
 
 print("NHDNetworkStatusCV")
 outdf.NHDNetworkStatusCV = ""
@@ -112,16 +112,16 @@ print("PODorPOUSite")
 outdf['PODorPOUSite'] = "POD"
 
 print("SiteName")
-outdf['SiteName'] = df['SiteName']
+outdf['SiteName'] = df['in_SiteName']
 
 print("SiteNativeID")
-outdf['SiteNativeID'] = df.apply(lambda row: assignSiteNativeID(row['pod_nbr']), axis=1)
+outdf['SiteNativeID'] = df['in_SiteNativeID']
 
 print("SitePoint")
 outdf.SitePoint = ""
 
 print("SiteTypeCV")
-outdf['SiteTypeCV'] = df['SiteTypeCV']
+outdf['SiteTypeCV'] = "Unspecified"
 
 print("StateCV")
 outdf.StateCV = "NM"
@@ -215,6 +215,7 @@ outdf, dfpurge = TestErrorFunctions.USGSSiteID_S_Check(outdf, dfpurge)
 # Export to new csv
 ############################################################################
 print("Exporting dataframe outdf to csv...")
+
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/sites.csv', index=False)
 

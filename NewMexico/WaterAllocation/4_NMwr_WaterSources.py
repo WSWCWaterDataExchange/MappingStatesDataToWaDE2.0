@@ -67,23 +67,23 @@ def assignWaterSourceUUID(colrowValue):
 print("Populating dataframe...")
 outdf = pd.DataFrame(index=df.index, columns=columnslist)  # The output dataframe for CSV.
 
-print("Geometry")  # Hardcoded
+print("Geometry")
 outdf.Geometry = ""
 
-print("GNISFeatureNameCV")  # Hardcoded
+print("GNISFeatureNameCV")
 outdf.GNISFeatureNameCV = ""
 
-print("WaterQualityIndicatorCV")  # Hardcoded
+print("WaterQualityIndicatorCV")
 outdf.WaterQualityIndicatorCV = "Fresh"
 
 print("WaterSourceName")
-outdf['WaterSourceName'] = df['WaterSourceName']
+outdf['WaterSourceName'] = df['in_WaterSourceName']
 
-print("WaterSourceNativeID")  # has to be one of the last, need length of created outdf
-outdf['WaterSourceNativeID'] = df.apply(lambda row: assignWaterSourceNativeID(row['surface_co']), axis=1)
+print("WaterSourceNativeID")
+outdf['WaterSourceNativeID'] = df['in_WaterSourceNativeID']
 
 print("WaterSourceTypeCV") # Pre-processed code
-outdf['WaterSourceTypeCV'] = df.apply(lambda row: assignWaterSourceTypeCV(row['WaterSourceTypeCV']), axis=1)
+outdf['WaterSourceTypeCV'] = df.apply(lambda row: assignWaterSourceTypeCV(row['in_WaterSourceTypeCV']), axis=1)
 
 ##############################
 # Dropping duplicate
@@ -95,13 +95,13 @@ print("WaterSourceUUID")
 df["Count"] = range(1, len(df.index) + 1)
 outdf['WaterSourceUUID'] = df.apply(lambda row: assignWaterSourceUUID(row['Count']), axis=1)
 
-print("Resetting Index")  # Hardcoded
+print("Resetting Index")
 outdf.reset_index()
 
 
 #Error Checking each Field
 ############################################################################
-print("Error checking each field.  Purging bad inputs.")  # Hardcoded
+print("Error checking each field.  Purging bad inputs.")
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 
@@ -130,6 +130,7 @@ outdf, dfpurge = TestErrorFunctions.WaterSourceTypeCV_WS_Check(outdf, dfpurge)
 # Export to new csv
 ############################################################################
 print("Exporting dataframe outdf to csv...")
+
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/watersources.csv', index=False)
 

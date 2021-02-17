@@ -37,7 +37,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = "NMOSE_Allocation All"
+outdf.VariableSpecificUUID = "NMOSE_Allocation"
 
 outdf.AggregationInterval = "1"
 
@@ -55,7 +55,7 @@ outdf.ReportYearTypeCV = "WaterYear"
 
 outdf.VariableCV = "Allocation"
 
-outdf.VariableSpecificCV = "Allocation All"
+outdf.VariableSpecificCV = "Allocation"
 
 
 # Check required fields are not null

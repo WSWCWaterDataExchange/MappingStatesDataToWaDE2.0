@@ -45,7 +45,7 @@ outdf.DataQualityValueCV = ""
 
 outdf.DataCoverageValue = ""
 
-outdf.MethodDescription = "Water Rights"
+outdf.MethodDescription = "Water Allocation"
 
 outdf.MethodName = "Water Allocation"
 
