@@ -35,11 +35,6 @@ df_variables = pd.read_csv(variables_fileInput)  # Variables dataframe
 df_watersources = pd.read_csv(watersources_fileInput)  # WaterSources dataframe
 df_sites = pd.read_csv(sites_fileInput)  # Sites dataframe
 
-df_sites['SiteName'] = df_sites['SiteName'].astype(str)
-df_sites['SiteTypeCV'] = df_sites['SiteTypeCV'].astype(str)
-df_sites['Latitude'] = df_sites['Latitude'].astype(float)
-df_sites['Longitude'] = df_sites['Longitude'].astype(float)
-
 
 #WaDE dataframe columns
 columnslist = [
