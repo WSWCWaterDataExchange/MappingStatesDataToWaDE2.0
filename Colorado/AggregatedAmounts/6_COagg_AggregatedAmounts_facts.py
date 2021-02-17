@@ -68,41 +68,43 @@ columnslist = [
 ############################################################################
 
 # For creating ReportingUnitsUUID
+ReportingUnitUUIDdict = pd.Series(df_reportingunits.ReportingUnitUUID.values, index = df_reportingunits.ReportingUnitName).to_dict()
 def retrieveReportingUnits(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
-        outList = ''
+        outString = ''
     else:
         String1 = colrowValue
         try:
-            outList = ReportingUnitUUIDdict[String1]
+            outString = ReportingUnitUUIDdict[String1]
         except:
-            outList = colrowValue
-    return outList
+            outString = colrowValue
+    return outString
 
 # For creating VariableSpecificUUID
+VariableSpecificUUIDdict = pd.Series(df_variables.VariableSpecificUUID.values, index = df_variables.VariableSpecificCV).to_dict()
 def retrieveVariableSpecificUUID(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
-        outList = ''
+        outString = ''
     else:
         String1 = colrowValue
         try:
-            outList = VariableSpecificUUIDdict[String1]
+            outString = VariableSpecificUUIDdict[String1]
         except:
-            outList = colrowValue
-    return outList
+            outString = colrowValue
+    return outString
 
 # For creating WaterSourceUUID
 def retrieveWaterSourceUUID(colrowValueA, colrowValueB, df_watersources):
     if (colrowValueA == '' and colrowValueB == '') or (pd.isnull(colrowValueA) and pd.isnull(colrowValueB)):
-        outList = ''
+        outString = ''
     else:
         ml = df_watersources.loc[(df_watersources['WaterSourceName'] == colrowValueA) & (
                     df_watersources['WaterSourceNativeID'] == colrowValueB), 'WaterSourceUUID']
         if not (ml.empty):  # check if the series is empty
-            outList = ml.iloc[0]
+            outString = ml.iloc[0]
         else:
-            outList = ''
-    return outList
+            outString = ''
+    return outString
 
 
 # Creating output dataframe (outdf)
@@ -116,12 +118,10 @@ outdf.MethodUUID = "CO_SWSIModels"
 print("OrganizationUUID")
 outdf.OrganizationUUID = "CODWR"
 
-print("ReportingUnitUUID")  # Using SiteNativeID to identify ID
-ReportingUnitUUIDdict = pd.Series(df_reportingunits.ReportingUnitUUID.values, index = df_reportingunits.ReportingUnitName).to_dict()
+print("ReportingUnitUUID")
 outdf['ReportingUnitUUID'] = df_DM.apply(lambda row: retrieveReportingUnits(row['HUC8 Name']), axis=1)
 
 print("VariableSpecificUUID")
-VariableSpecificUUIDdict = pd.Series(df_variables.VariableSpecificUUID.values, index = df_variables.VariableSpecificCV).to_dict()
 outdf['VariableSpecificUUID'] = df_DM.apply(lambda row: retrieveVariableSpecificUUID(row['Component Type']), axis=1)
 
 print("WaterSourceUUID")
@@ -284,6 +284,7 @@ outdf, dfpurge = TestErrorFunctions.TimeframeStart_AG_Check(outdf, dfpurge)
 # Export to new csv
 ############################################################################
 print("Exporting dataframe outdf100 to csv...")
+
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/aggregatedamounts.csv', index=False)
 
@@ -292,4 +293,3 @@ if(len(dfpurge.index) > 0):
     dfpurge.to_csv('ProcessedInputData/aggregatedamounts_missing.csv', index=False)
 
 print("Done.")
-

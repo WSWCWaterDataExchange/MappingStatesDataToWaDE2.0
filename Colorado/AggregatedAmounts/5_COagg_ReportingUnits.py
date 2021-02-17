@@ -54,28 +54,28 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist, index=df.index)
 
 print("EPSGCodeCV")
-outdf.EPSGCodeCV = 'EPSG:4326'
+outdf['EPSGCodeCV'] = 'EPSG:4326'
 
 print("ReportingUnitName")
 outdf['ReportingUnitName'] = df['HUC8 Name']
 
 print("ReportingUnitNativeID")
-outdf['ReportingUnitNativeID'] = (df['HUC8'])
+outdf['ReportingUnitNativeID'] = df['HUC8']
 
 print("ReportingUnitProductVersion")
-outdf.ReportingUnitProductVersion = ''
+outdf['ReportingUnitProductVersion'] = ''
 
 print("ReportingUnitTypeCV")
-outdf.ReportingUnitTypeCV = 'HUC8'
+outdf['ReportingUnitTypeCV'] = 'HUC8'
 
 print("ReportingUnitUpdateDate")
-outdf.ReportingUnitUpdateDate = ''
+outdf['ReportingUnitUpdateDate'] = ''
 
 print("StateCV")
-outdf.StateCV = "CO"
+outdf['StateCV'] = "CO"
 
 print("Geometry")
-outdf['Geometry'] = df['Geometry']
+#outdf['Geometry'] = df['Geometry']
 
 print("Resetting Index")
 outdf.reset_index()
@@ -130,6 +130,7 @@ outdf, dfpurge = TestErrorFunctions.StateCV_RU_Check(outdf, dfpurge)
 # Export to new csv
 ############################################################################
 print("Exporting dataframe outdf to csv...")
+
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/reportingunits.csv', index=False)
 

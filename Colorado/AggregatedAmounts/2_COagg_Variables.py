@@ -37,7 +37,7 @@ columnslist = [
 # For creating VariableSpecificUUID
 def assignVariableSpecificUUID(colrowValue):
     string1 = str(colrowValue)
-    outstring = "CO_Consumptive Use_" + string1
+    outstring = "CO_Supply_" + string1
     return outstring
 
 # Creating output dataframe (outdf)
@@ -51,7 +51,7 @@ outdf.VariableSpecificCV = ["ReservoirStorage",
                             "ForecastedRunoff",
                             "PrevMoStreamflow"]
 
-outdf.VariableCV = "Consumptive Use"
+outdf.VariableCV = "Supply"
 
 outdf.AggregationInterval = "1"
 
@@ -95,9 +95,11 @@ outdf_nullMand = outdf.loc[(outdf["VariableSpecificUUID"].isnull()) | (outdf["Va
 # Export to new csv
 ############################################################################
 print("Exporting dataframe to csv...")
+
+# save to output
 outdf.to_csv('ProcessedInputData/variables.csv', index=False)
 
-#Report missing values if need be to separate csv
+# Report purged values.
 if(len(outdf_nullMand.index) > 0):
     outdf_nullMand.to_csv('ProcessedInputData/variables_missing.csv', index=False)
 

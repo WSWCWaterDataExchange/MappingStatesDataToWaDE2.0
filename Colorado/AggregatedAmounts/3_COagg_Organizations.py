@@ -38,7 +38,7 @@ outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires
 
 outdf.OrganizationUUID = "CODWR"
 
-outdf.OrganizationContactEmail = "abc@co.com"
+outdf.OrganizationContactEmail = "doug.stenzel@state.co.us"
 
 outdf.OrganizationContactName = "Doug Stenzel"
 
@@ -50,7 +50,7 @@ outdf.OrganizationPhoneNumber = "303-866-3581"
 
 outdf.OrganizationPurview = "Water Administration for the State of Colorado."
 
-outdf.OrganizationWebsite = "https://data.colorado.gov/"
+outdf.OrganizationWebsite = "https://dwr.colorado.gov/about-us/contact-us/denver-office"
 
 outdf.State = "CO"
 
@@ -72,9 +72,11 @@ outdf_nullMand = outdf.loc[(outdf["OrganizationUUID"].isnull()) | (outdf["Organi
 # Export to new csv
 ############################################################################
 print("Exporting dataframe to csv...")
+
 # save to output
 outdf.to_csv('ProcessedInputData/organizations.csv', index=False)
 
+# Report purged values.
 if(len(outdf_nullMand.index) > 0):
     outdf_nullMand.to_csv('organizations_mandatoryFieldMissing.csv', index=False)
 

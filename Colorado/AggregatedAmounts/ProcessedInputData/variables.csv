@@ -1,4 +1,4 @@
 VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
-CO_Consumptive Use_1,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Consumptive Use,ReservoirStorage
-CO_Consumptive Use_2,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Consumptive Use,ForecastedRunoff
-CO_Consumptive Use_3,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Consumptive Use,PrevMoStreamflow
+CO_Supply_1,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Supply,ReservoirStorage
+CO_Supply_2,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Supply,ForecastedRunoff
+CO_Supply_3,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Supply,PrevMoStreamflow
