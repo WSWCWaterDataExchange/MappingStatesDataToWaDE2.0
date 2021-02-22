@@ -5,6 +5,7 @@ This readme details the process that was applied by the staff of the [Western St
 The following data was used for aggregated water budget...
 
 - **2000-2016 Historical Water Use Estimates** csv files contained aggregated water budget data and info and were obtained from the provided [TWDB Historical Water Use Estimates](http://www.twdb.texas.gov/waterplanning/waterusesurvey/estimates/index.asp).  Each year is separated out into two different area types: Basin and County.  Information for each area type can be found in the **SumFinal_BasinReport.xlsx** and **SumFinal_CountyReport.xlsx** per year respectively.
+- Texas County and Basin shapefiles data retrieved from personal correspondence via email from between the TWDB and the WSWC.
 
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share TWDB's aggregated water budget data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *TX_Aggregated Schema Mapping to WaDE_QA.xlsx*.  Six executable code files were used to extract the TWDB's aggregated water budget data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(AggregatedAmounts_facts)* is dependent on the previous files.  Those six code files are as follows...
@@ -25,19 +26,20 @@ Purpose: Pre-process the Arizona input data files into one master file for simpl
 #### Inputs: 
  - SumFinal_BasinReport.xlsx, for 2000-2016
  - SumFinal_CountyReport.xlsx, for 2000-2016
+ - County and Basin shapefiles.
 
 #### Outputs:
  - P_txAggMaster.csv
  - P_TXGeometry.csv
 
 #### Operation and Steps:
-- Read the Basin.csv input files for 2000-2016, concatenate into a single basin dataframes.
+- Read the Basin.csv input files for 2000-2016, concatenate into a single basin dataframe.
 - Basin data needs to be restructured with beneficial use per water amounts by year.
     - Preserve **Year**, **Basin**, and **Population** columns.
     - Include *TX_BenUse* column, based on column names.
     - Concatenate each *TX_BenUse* column entry with it's respective Texas **SumFinal_BasinReport.xlsx** column field.
     - *ReportingUnitType* = Basin.
-- Read in County.csv input files for 2000-2016, concatenate into a single basin dataframes.
+- Read in County.csv input files for 2000-2016, concatenate into a single basin dataframe.
 - County data needs to be restructured with beneficial use per water amounts by year.
     - Preserve **Year**, **Basin**, and **Population** columns.
     - Include *TX_BenUse* column, based on column names.
@@ -47,9 +49,9 @@ Purpose: Pre-process the Arizona input data files into one master file for simpl
 - Assign *WaterSourceType* based on respective Texas beneficial use.
 - Assign *TimeframeStart* & *TimeframeEnd* using **Year**, and making assumptions that start month and day is 01/01, and end is 12/31.
 - Repair string errors in beneficial use columns.
-- Generate WaDE specific field *WaterSourceNativeID* from water source type fields.  Used to identify unique sources of water.
-- Generate WaDE specific field *SiteNativeID* from area name and area type fields.  Used to identify unique reporting units.
-- Generated WKT from AMA_and_INA.shp file to create *Geometry* WaDE input.
+- Generate WaDE specific field *WaterSourceNativeID* from *WaterSourceType* fields.  Used to identify unique sources of water.
+- Generate WaDE specific field *ReportingUnitNativeID* from area name and area type fields.  Used to identify unique reporting units.
+- Generated WKT from the County and Basin shapefiles, used to to create *geometry* WaDE input.
 - Export output dataframe as new csv files, *P_txAggMaster.csv* & *P_TXGeometry.csv*.
 
 
@@ -136,7 +138,7 @@ Purpose: generate a list of water sources specific to an aggregated water budget
 - P_txAggMaster.csv
 
 #### Outputs:
-- WaterSources.csv
+- watersources.csv
 - watersources_missing.csv (error check only)
 
 #### Operation and Steps:
@@ -180,7 +182,7 @@ Purpose: generate a list of polygon areas associated with the state agency speci
     - *ReportingUnitName* = respective **Basin** and **County** fields.
     - *ReportingUnitNativeID* = custom WaDE specific ID of *in_ReportingUnitNativeID*, see *0_TXAggregatedDataPreprocess.ipynb* for specifics.
     - *ReportingUnitTypeCV* = Basin or County respectively.
-    - *Geometry* = WKT created **geometry**, see *0_TXAggregatedDataPreprocess.ipynb* for specifics.
+    - *geometry* = WKT created **geometry**, see *0_TXAggregatedDataPreprocess.ipynb* for specifics.
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *ReportingUnitName*, *ReportingUnitNativeID* & *ReportingUnitTypeCV* fields.
 - Assign reportingunits UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
@@ -219,7 +221,7 @@ Purpose: generate master sheet of state agency specified area aggregated water b
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
 - Assign state agency data info to the *WaDE Water Allocations* specific columns.  See *TX_Aggregated Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
-    - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
+    - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *ReportingUnitUUID* from respective input csv files. See code for specific implementation of extraction.
     - *Amount* = *in_Amount*, see *0_TXAggregatedDataPreprocess.ipynb* for specifics.
     - *BeneficialUseCategory* = *TX_BenUse*, see *0_TXAggregatedDataPreprocess.ipynb* for specifics.
     - *PopulationServed* = **Population**.
