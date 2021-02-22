@@ -119,7 +119,7 @@ print("Amount")
 outdf['Amount'] = df_DM['in_Amount']
 
 print("BeneficialUseCategory")
-outdf['BeneficialUseCategory'] = df_DM['TX_BenUse']
+outdf['BeneficialUseCategory'] = df_DM['*TX_BenUse']
 
 print("CommunityWaterSupplySystem")
 outdf['CommunityWaterSupplySystem' ] = ""
