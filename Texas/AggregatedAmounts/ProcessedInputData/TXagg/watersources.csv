@@ -1,0 +1,4 @@
+WaterSourceUUID,Geometry,GNISFeatureNameCV,WaterQualityIndicatorCV,WaterSourceName,WaterSourceNativeID,WaterSourceTypeCV
+TXag_WS1,,,Fresh,Unspecified,WaDETX_WS1,Reuse
+TXag_WS2,,,Fresh,Unspecified,WaDETX_WS2,Groundwater
+TXag_WS3,,,Fresh,Unspecified,WaDETX_WS3,Surface Water
