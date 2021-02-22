@@ -34,11 +34,8 @@ columnslist = [
 # Custom Functions
 ############################################################################
 
-# # For creating VariableSpecificUUID
-# def assignVariableSpecificUUID(colrowValue):
-#     string1 = str(colrowValue)
-#     outstring = "AZ_Consumptive Use_" + string1
-#     return outstring
+# N/A
+
 
 # Creating output dataframe (outdf)
 ############################################################################
@@ -73,13 +70,6 @@ outdf.ReportYearStartMonth = "1"
 
 outdf.ReportYearTypeCV = "CalendarYear"
 
-# print("VariableSpecificUUID")
-# #using temp df to count out number of rows for outdf
-# tempdf = pd.DataFrame(columns=columnslist)
-# tempdf['VariableCV'] = outdf['VariableCV']
-# tempdf["Count"] = range(1, len(tempdf.index) + 1)
-# outdf['VariableSpecificUUID'] = tempdf.apply(lambda row: assignVariableSpecificUUID(row['Count']), axis=1)
-
 
 # Check required fields are not null
 ############################################################################
@@ -101,11 +91,12 @@ outdf_nullMand = outdf.loc[(outdf["VariableSpecificUUID"].isnull()) | (outdf["Va
 # Export to new csv
 ############################################################################
 print("Exporting dataframe to csv...")
+
+# save to output
 outdf.to_csv('ProcessedInputData/variables.csv', index=False)
 
 #Report missing values if need be to separate csv
 if(len(outdf_nullMand.index) > 0):
-    outdf_nullMand.to_csv('ProcessedInputData/variables_missing.csv')  # index=False,
-
+    outdf_nullMand.to_csv('ProcessedInputData/variables_missing.csv', index=False)
 
 print("Done.")
