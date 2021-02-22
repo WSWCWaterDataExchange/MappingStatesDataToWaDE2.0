@@ -209,7 +209,7 @@ Purpose: generate master sheet of state agency specified area aggregated water b
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
 - Assign state agency data info to the *WaDE Water Allocations* specific columns.  See *WY_Aggregated Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
-    - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
+    - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *ReportingUnitUUID* from respective input csv files. See code for specific implementation of extraction.
     - *Amount* = **Amount**.
     - *BeneficialUseCategory* = **UseType**.
     - *ReportYearCV* = **ReportYearCV**.
