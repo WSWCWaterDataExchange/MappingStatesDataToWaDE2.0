@@ -71,7 +71,7 @@ outdf['WaterSourceTypeCV'] = "Surface Water"
 ##############################
 # Dropping duplicate
 print("Dropping duplicates")
-outdf = outdf.drop_duplicates(subset=['WaterSourceName', 'WaterSourceNativeID', 'WaterSourceTypeCV']).reset_index(drop=True)
+outdf = outdf.drop_duplicates(subset=['WaterSourceNativeID']).reset_index(drop=True) # Going to only use WaterSourceNativeID, temp fix.
 ##############################
 
 print("WaterSourceUUID")

@@ -94,16 +94,16 @@ def retrieveVariableSpecificUUID(colrowValue):
     return outString
 
 # For creating WaterSourceUUID
-def retrieveWaterSourceUUID(colrowValueA, colrowValueB, df_watersources):
-    if (colrowValueA == '' and colrowValueB == '') or (pd.isnull(colrowValueA) and pd.isnull(colrowValueB)):
+WaterSourceUUIDUUIDdict = pd.Series(df_watersources.WaterSourceUUID.values, index = df_watersources.WaterSourceNativeID).to_dict()
+def retrieveWaterSourceUUID(colrowValue):
+    if colrowValue == '' or pd.isnull(colrowValue):
         outString = ''
     else:
-        ml = df_watersources.loc[(df_watersources['WaterSourceName'] == colrowValueA) & (
-                    df_watersources['WaterSourceNativeID'] == colrowValueB), 'WaterSourceUUID']
-        if not (ml.empty):  # check if the series is empty
-            outString = ml.iloc[0]
-        else:
-            outString = ''
+        String1 = colrowValue
+        try:
+            outString = WaterSourceUUIDUUIDdict[String1]
+        except:
+            outString = colrowValue
     return outString
 
 
@@ -125,7 +125,7 @@ print("VariableSpecificUUID")
 outdf['VariableSpecificUUID'] = df_DM.apply(lambda row: retrieveVariableSpecificUUID(row['Component Type']), axis=1)
 
 print("WaterSourceUUID")
-outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['Component Name'], row['Component ID'], df_watersources), axis=1)
+outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['Component ID']), axis=1)
 
 print("Amount")
 outdf['Amount'] = df_DM['Component Volume']

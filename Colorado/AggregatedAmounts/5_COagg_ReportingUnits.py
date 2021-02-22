@@ -75,7 +75,7 @@ print("StateCV")
 outdf['StateCV'] = "CO"
 
 print("Geometry")
-#outdf['Geometry'] = df['Geometry']
+outdf['Geometry'] = df['Geometry']
 
 print("Resetting Index")
 outdf.reset_index()
