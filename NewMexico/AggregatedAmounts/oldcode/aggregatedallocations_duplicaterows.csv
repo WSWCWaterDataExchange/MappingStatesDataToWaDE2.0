@@ -1,2 +1,0 @@
-,OrganizationUUID,VariableSpecificUUID,ReportingUnitUUID,PrimaryUseCategory,BeneficialUseCategory,WaterSourceUUID,MethodUUID,TimeframeStart,TimeframeEnd,DataPublicationDate,DataPublicationDOI,ReportYearCV,Amount,PopulationServed,PowerGeneratedGWh,IrrigatedAcreage,InterbasinTransferToID,InterbasinTransferFromID,CustomerTypeCV,AllocationCropDutyAmount,IrrigationMethodCV,CropTypeCV,CommunityWaterSupplySystem,SDWISIdentifierCV
-2700,NMOSE,Consumptive Use,NM_C_35003,Irrigation,Commercial (self-supplied),Fresh_Surface,NMOSE_Water_uses,01/01,12/31,06/25/2020,,2015,0.0,,,,,,,,,,,

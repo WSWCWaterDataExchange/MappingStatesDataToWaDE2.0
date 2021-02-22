@@ -1,3 +1,3 @@
 WaterSourceUUID,Geometry,GNISFeatureNameCV,WaterQualityIndicatorCV,WaterSourceName,WaterSourceNativeID,WaterSourceTypeCV
-NM_C_1,,,Fresh,Unspecified,Unspecified,Ground Water
-NM_C_2,,,Fresh,Unspecified,Unspecified,Surface Water
+NMag_WS1,,,Fresh,Unspecified,Unspecified,Groundwater
+NMag_WS2,,,Fresh,Unspecified,Unspecified,Surface Water

@@ -38,19 +38,19 @@ outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires
 
 outdf.OrganizationUUID = "NMOSE"
 
-outdf.OrganizationContactEmail = "abc@co.com"
+outdf.OrganizationContactEmail = "ose.webmaster@state.nm.us"
 
-outdf.OrganizationContactName = "Rebecca Mitchell"
+outdf.OrganizationContactName = "David Hatchner (GIS Manager)"
 
 outdf.OrganizationDataMappingURL = "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/NewMexico"
 
 outdf.OrganizationName = "New Mexico Office of the State Engineer"
 
-outdf.OrganizationPhoneNumber = "303-866-3581"
+outdf.OrganizationPhoneNumber = "505-827-3846"
 
 outdf.OrganizationPurview = "The New Mexico Office of the State Engineer (OSE) provides this geographic data and any associated metadata as is without warranty of any kind."
 
-outdf.OrganizationWebsite = "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/NewMexico"
+outdf.OrganizationWebsite = "https://www.ose.state.nm.us/"
 
 outdf.State = "NM"
 
@@ -72,11 +72,11 @@ outdf_nullMand = outdf.loc[(outdf["OrganizationUUID"].isnull()) | (outdf["Organi
 # Export to new csv
 ############################################################################
 print("Exporting dataframe to csv...")
-# save to output
+
+# The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/organizations.csv', index=False)
 
 if(len(outdf_nullMand.index) > 0):
-    outdf_nullMand.to_csv('organizations_mandatoryFieldMissing.csv')  # index=False,
-
+    outdf_nullMand.to_csv('organizations_mandatoryFieldMissing.csv', index=False)
 
 print("Done.")
