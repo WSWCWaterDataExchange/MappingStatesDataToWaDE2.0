@@ -1,15 +1,10 @@
-Work in progress. This read me should be written for WY data.
-
-
-
 # WWDO Aggregated Data Preparation for WaDE
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting aggregated water budget data made available by the [Wyoming Water Development Office (WWDO)](https://wwdc.state.wy.us/), for inclusion into the Water Data Exchange (WaDE) project.   WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 ## Overview of Data Utilized
 The following data was used for...
 
-- Water Use data and basin shapefile data were made temporary available to the WSWC staff by the WWDO via email correspondence and shared through Google Drive.  Links no longer available, contact WWDO for further instructions.
-- Wyoming Basin shapefile data made available   
+- Water Use data and basin shapefile data were made temporary available to the WSWC staff by the WWDO via email correspondence and shared through Google Drive.  Links no longer available, contact WWDO for further questions.
 
 Input files used are as follows...
  - WYAggData_input.csv
@@ -40,11 +35,11 @@ Purpose: Pre-process the state agency input data files into one master file for 
  - P_wyGeometry.csv
 
 #### Operation and Steps:
-- Read water use input file and generate temporary input dataframes.
+- Read water use input file and generate temporary input dataframe.
 - Restructure temporary water use dataframe, with report year and amount of water tied to river basin by beneficial use.
 - Generate WaDE specific field *ReportingUnitNativeID* from **Water Use by Basin** field.  Used to identify unique areas.
 - Generate WaDE specific field *WaterSourceNativeID* from **Source** field.  Used to identify unique watersources of water.
-- Generated WKT from WYBasinShapefile.shp file to create *Geometry* WaDE input.
+- Generated WKT from WYBasinShapefile.shp file to create *geometry* WaDE input.
 - Inspect output dataframe for additional errors / datatypes.
 - Export output dataframe as new csv files, *P_wyAggMaster.csv* & *P_caGeometry.csv*.
 
@@ -132,15 +127,15 @@ Purpose: generate a list of water sources specific to an aggregated water budget
 - P_wyAggMaster.csv
 
 #### Outputs:
-- WaterSources.csv
+- watersources.csv
 - watersources_missing.csv (error check only)
 
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
 - Assign state agency data info to the *WaDE WaterSources* specific columns.  See *WY_Aggregated Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
-    - *WaterSourceTypeCV* = **Source**.
     - *WaterSourceNativeID* = *in_WaterSourceNativeID*, see *0_WYAggregatedDataPreprocess.ipynb* for specifics.
+    - *WaterSourceTypeCV* = **Source**.
 - Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceTypeCV* field.
 - Assign water source UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
@@ -175,7 +170,7 @@ Purpose: generate a list of polygon areas associated with the state agency speci
     - *ReportingUnitName* = **Water Use by Basin**.
     - *ReportingUnitNativeID* = *in_ReportingUnitNativeID*, see *0_WYAggregatedDataPreprocess.ipynb* for specifics.
     - *ReportingUnitTypeCV* = Basin.
-    - *Geometry* = WKT created **Geometry**, see *0_WYAggregatedDataPreprocess.ipynb* for specifics.
+    - *Geometry* = WKT created **geometry**, see *0_WYAggregatedDataPreprocess.ipynb* for specifics.
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *ReportingUnitName*, *ReportingUnitNativeID* & *ReportingUnitTypeCV* fields.
 - Assign reportingunits UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
