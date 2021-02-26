@@ -1,0 +1,629 @@
+SiteUUID,CoordinateAccuracy,CoordinateMethodCV,County,EPSGCodeCV,Geometry,GNISCodeCV,HUC12,HUC8,Latitude,Longitude,NHDNetworkStatusCV,NHDProductCV,PODorPOUSite,SiteName,SiteNativeID,SitePoint,SiteTypeCV,StateCV,USGSSiteID,ReasonRemoved,index
+CAss_S16,,Centroid of Area,,EPSG:4326,,,,,,,,,,SFPUC-PLEASANTON WELLS,,,,CA,,Bad Latitude,15.0
+CAss_S17,,Centroid of Area,,EPSG:4326,,,,,,,,,,USBR-SLDMWA - CVP JONES PUMPING PLANT,,,,CA,,Bad Latitude,16.0
+CAss_S20,,Centroid of Area,,EPSG:4326,,,,,,,,,,CALTRANS-CAPLES LAKE MAINTENANCE STATION,,,,CA,,Bad Latitude,19.0
+CAss_S21,,Centroid of Area,,EPSG:4326,,,,,,,,,,CA STATE PARKS - GROVER HOT SPRINGS,,,,CA,,Bad Latitude,20.0
+CAss_S39,,Centroid of Area,,EPSG:4326,,,,,,,,,,RABB PARK COMMUNITY SER. DIST.,,,,CA,,Bad Latitude,38.0
+CAss_S42,,Centroid of Area,,EPSG:4326,,,,,,,,,,THE OAKS MOBILE HOME PARK,,,,CA,,Bad Latitude,41.0
+CAss_S49,,Centroid of Area,,EPSG:4326,,,,,,,,,,BRUSH CREEK RANGER STATION,,,,CA,,Bad Latitude,48.0
+CAss_S51,,Centroid of Area,,EPSG:4326,,,,,,,,,,PONDEROSA MOBILE ESTATES,,,,CA,,Bad Latitude,50.0
+CAss_S58,,Centroid of Area,,EPSG:4326,,,,,,,,,,FRANCIS PROPERTY MANAGEMENT,,,,CA,,Bad Latitude,57.0
+CAss_S61,,Centroid of Area,,EPSG:4326,,,,,,,,,,PG&E - TABLE MOUNTAIN,,,,CA,,Bad Latitude,60.0
+CAss_S71,,Centroid of Area,,EPSG:4326,,,,,,,,,,DEL ORO WATER CO.-LIME SADDLE,,,,CA,,Bad Latitude,70.0
+CAss_S73,,Centroid of Area,,EPSG:4326,,,,,,,,,,TOYON PARK WATER SYSTEM LLC,,,,CA,,Bad Latitude,72.0
+CAss_S98,,Centroid of Area,,EPSG:4326,,,,,,,,,,KINGDOM HALL OF JEHOVAH'S WITNESS-WMS,,,,CA,,Bad Latitude,97.0
+CAss_S103,,Centroid of Area,,EPSG:4326,,,,,,,,,,THOMAS DENOVA LLC WATER SYSTEM,,,,CA,,Bad Latitude,102.0
+CAss_S130,,Centroid of Area,,EPSG:4326,,,,,,,,,,BEAR STATE WATER WORKS,,,,CA,,Bad Latitude,129.0
+CAss_S132,,Centroid of Area,,EPSG:4326,,,,,,,,,,SPRING CREEK TRACT ASSOCIATION,,,,CA,,Bad Latitude,131.0
+CAss_S133,,Centroid of Area,,EPSG:4326,,,,,,,,,,PHILLIPS TRACT MUTUAL WATER COMPANY,,,,CA,,Bad Latitude,132.0
+CAss_S134,,Centroid of Area,,EPSG:4326,,,,,,,,,,FALLEN LEAF MUTUAL WATER CO,,,,CA,,Bad Latitude,133.0
+CAss_S135,,Centroid of Area,,EPSG:4326,,,,,,,,,,ECHO LAKE CAMP,,,,CA,,Bad Latitude,134.0
+CAss_S137,,Centroid of Area,,EPSG:4326,,,,,,,,,,EL DORADO ID - MAIN,,,,CA,,Bad Latitude,136.0
+CAss_S142,,Centroid of Area,,EPSG:4326,,,,,,,,,,"PLACERVILLE, CITY OF - SIERRA GOLF & CC",,,,CA,,Bad Latitude,141.0
+CAss_S143,,Centroid of Area,EL DORADO,EPSG:4326,,,,,,,,,,TAHOE CITY PUD - RUBICON,CA0910012,,Water Service Area,CA,,Bad Latitude,142.0
+CAss_S155,,Centroid of Area,,EPSG:4326,,,,,,,,,,IDYLWILDE TRACT ASSOCIATION,,,,CA,,Bad Latitude,154.0
+CAss_S156,,Centroid of Area,,EPSG:4326,,,,,,,,,,COURTRIGHT LAKE VILLAGE,,,,CA,,Bad Latitude,155.0
+CAss_S165,,Centroid of Area,,EPSG:4326,,,,,,,,,,HUCKLEBERRY WATER DEVELOPMENT,,,,CA,,Bad Latitude,164.0
+CAss_S175,,Centroid of Area,,EPSG:4326,,,,,,,,,,BSA/CAMP OLJATO,,,,CA,,Bad Latitude,174.0
+CAss_S176,,Centroid of Area,,EPSG:4326,,,,,,,,,,CAMP EL-O-WIN,,,,CA,,Bad Latitude,175.0
+CAss_S184,,Centroid of Area,,EPSG:4326,,,,,,,,,,USFS/PINEHURST WORK CENTER,,,,CA,,Bad Latitude,183.0
+CAss_S186,,Centroid of Area,,EPSG:4326,,,,,,,,,,PG&E MARMOT ROCK CAMPGROUND,,,,CA,,Bad Latitude,185.0
+CAss_S187,,Centroid of Area,,EPSG:4326,,,,,,,,,,PG&E TRAPPER SPRINGS CAMPGRND,,,,CA,,Bad Latitude,186.0
+CAss_S204,,Centroid of Area,,EPSG:4326,,,,,,,,,,SUMNER PECK RANCH WINERY & FRUIT STAND,,,,CA,,Bad Latitude,203.0
+CAss_S206,,Centroid of Area,,EPSG:4326,,,,,,,,,,VULCAN MATERIALS COMPANY - FRIANT,,,,CA,,Bad Latitude,205.0
+CAss_S209,,Centroid of Area,,EPSG:4326,,,,,,,,,,PG&E HELMS HQ/POWERHOUSE,,,,CA,,Bad Latitude,208.0
+CAss_S241,,Centroid of Area,,EPSG:4326,,,,,,,,,,NPS-SHEEP CREEK,,,,CA,,Bad Latitude,240.0
+CAss_S243,,Centroid of Area,,EPSG:4326,,,,,,,,,,CITY OF CLOVIS,,,,CA,,Bad Latitude,242.0
+CAss_S250,,Centroid of Area,,EPSG:4326,,,,,,,,,,AFTON STORE,,,,CA,,Bad Latitude,249.0
+CAss_S251,,Centroid of Area,,EPSG:4326,,,,,,,,,,SOUTH WILLOWS INDUSTRIAL PARK,,,,CA,,Bad Latitude,250.0
+CAss_S252,,Centroid of Area,,EPSG:4326,,,,,,,,,,HAIGH FIELD INDUSTRIAL PARK,,,,CA,,Bad Latitude,251.0
+CAss_S253,,Centroid of Area,,EPSG:4326,,,,,,,,,,"CITY OF ORLAND, HAIGH FIELD PARK",,,,CA,,Bad Latitude,252.0
+CAss_S257,,Centroid of Area,,EPSG:4326,,,,,,,,,,VALLEY VIEW C.C,,,,CA,,Bad Latitude,256.0
+CAss_S273,,Centroid of Area,,EPSG:4326,,,,,,,,,,YELLOW ROSE,,,,CA,,Bad Latitude,272.0
+CAss_S306,,Centroid of Area,,EPSG:4326,,,,,,,,,,COCO PALMS MOBILE HOME PARK,,,,CA,,Bad Latitude,305.0
+CAss_S311,,Centroid of Area,,EPSG:4326,,,,,,,,,,RED HILL MARINA,,,,CA,,Bad Latitude,310.0
+CAss_S314,,Centroid of Area,,EPSG:4326,,,,,,,,,,WESTSIDE SCHOOL,,,,CA,,Bad Latitude,313.0
+CAss_S318,,Centroid of Area,,EPSG:4326,,,,,,,,,,WIEST LAKE,,,,CA,,Bad Latitude,317.0
+CAss_S321,,Centroid of Area,,EPSG:4326,,,,,,,,,,GORDON'S WELL #1,,,,CA,,Bad Latitude,320.0
+CAss_S326,,Centroid of Area,,EPSG:4326,,,,,,,,,,CALVARY CHAPEL CHURCH,,,,CA,,Bad Latitude,325.0
+CAss_S329,,Centroid of Area,,EPSG:4326,,,,,,,,,,HUDSON RANCH POWER I LLC,,,,CA,,Bad Latitude,328.0
+CAss_S330,,Centroid of Area,,EPSG:4326,,,,,,,,,,ORMAT NEVADA NORTH BRAWLEY,,,,CA,,Bad Latitude,329.0
+CAss_S331,,Centroid of Area,,EPSG:4326,,,,,,,,,,SIMBOL MATERIALS,,,,CA,,Bad Latitude,330.0
+CAss_S332,,Centroid of Area,,EPSG:4326,,,,,,,,,,CAMACHO'S RESTAURANT,,,,CA,,Bad Latitude,331.0
+CAss_S333,,Centroid of Area,,EPSG:4326,,,,,,,,,,OCOTILLO CHEVRON STATION,,,,CA,,Bad Latitude,332.0
+CAss_S344,,Centroid of Area,,EPSG:4326,,,,,,,,,,GSA CALEXICO PORT OF ENTRY,,,,CA,,Bad Latitude,343.0
+CAss_S345,,Centroid of Area,,EPSG:4326,,,,,,,,,,CHP CALEXICO PORT OF ENTRY,,,,CA,,Bad Latitude,344.0
+CAss_S346,,Centroid of Area,,EPSG:4326,,,,,,,,,,DHS CALEXICO,,,,CA,,Bad Latitude,345.0
+CAss_S374,,Centroid of Area,,EPSG:4326,,,,,,,,,,NPS - MANZANAR,,,,CA,,Bad Latitude,373.0
+CAss_S378,,Centroid of Area,,EPSG:4326,,,,,,,,,,RIVERKERN MUTUAL WATER COMPANY,,,,CA,,Bad Latitude,377.0
+CAss_S384,,Centroid of Area,,EPSG:4326,,,,,,,,,,UNION PACIFIC RAILROAD CO.-KEENE WATER,,,,CA,,Bad Latitude,383.0
+CAss_S390,,Centroid of Area,,EPSG:4326,,,,,,,,,,METTLER COUNTY WATER DISTRICT,,,,CA,,Bad Latitude,389.0
+CAss_S391,,Centroid of Area,,EPSG:4326,,,,,,,,,,AERIAL ACRES WATER SYSTEM,,,,CA,,Bad Latitude,390.0
+CAss_S392,,Centroid of Area,,EPSG:4326,,,,,,,,,,"AERIAL ACRES WATER COMPANY, INC.",,,,CA,,Bad Latitude,391.0
+CAss_S393,,Centroid of Area,,EPSG:4326,,,,,,,,,,TRADEWIND WATER ASSOC.,,,,CA,,Bad Latitude,392.0
+CAss_S395,,Centroid of Area,,EPSG:4326,,,,,,,,,,CWS COUNTRYWOOD SYSTEM,,,,CA,,Bad Latitude,394.0
+CAss_S396,,Centroid of Area,,EPSG:4326,,,,,,,,,,TEJON RANCH MAIN HEADQUARTERS,,,,CA,,Bad Latitude,395.0
+CAss_S397,,Centroid of Area,,EPSG:4326,,,,,,,,,,TEJON RANCH GRAPEVINE WATER,,,,CA,,Bad Latitude,396.0
+CAss_S398,,Centroid of Area,,EPSG:4326,,,,,,,,,,LANDS OF PROMISE MWC,,,,CA,,Bad Latitude,397.0
+CAss_S400,,Centroid of Area,,EPSG:4326,,,,,,,,,,CANYON MEADOWS MUTUAL WATER,,,,CA,,Bad Latitude,399.0
+CAss_S401,,Centroid of Area,,EPSG:4326,,,,,,,,,,SIERRA BREEZE MUTUAL WATER COMPANY,,,,CA,,Bad Latitude,400.0
+CAss_S402,,Centroid of Area,,EPSG:4326,,,,,,,,,,HILLVIEW ACRES MUTUAL WATER COMPANY,,,,CA,,Bad Latitude,401.0
+CAss_S403,,Centroid of Area,,EPSG:4326,,,,,,,,,,FOURTH STREET WATER SYSTEM,,,,CA,,Bad Latitude,402.0
+CAss_S404,,Centroid of Area,,EPSG:4326,,,,,,,,,,R.S. MUTUAL WATER COMPANY,,,,CA,,Bad Latitude,403.0
+CAss_S406,,Centroid of Area,,EPSG:4326,,,,,,,,,,"VALLEY ESTATES POA, INC.",,,,CA,,Bad Latitude,405.0
+CAss_S407,,Centroid of Area,,EPSG:4326,,,,,,,,,,RIVERNOOK CAMPGROUND,,,,CA,,Bad Latitude,406.0
+CAss_S413,,Centroid of Area,,EPSG:4326,,,,,,,,,,STOCO MUTUAL WATER COMPANY,,,,CA,,Bad Latitude,412.0
+CAss_S414,,Centroid of Area,,EPSG:4326,,,,,,,,,,BOULDER CANYON WATER ASSOCIATION,,,,CA,,Bad Latitude,413.0
+CAss_S417,,Centroid of Area,,EPSG:4326,,,,,,,,,,WEST VALLEY MUTUAL WATER COMPANY,,,,CA,,Bad Latitude,416.0
+CAss_S421,,Centroid of Area,,EPSG:4326,,,,,,,,,,CHINA LAKE ACRES MUTUAL WATER COMPANY,,,,CA,,Bad Latitude,420.0
+CAss_S423,,Centroid of Area,,EPSG:4326,,,,,,,,,,VALLEY VIEW ESTATES MUTUAL WATER CO,,,,CA,,Bad Latitude,422.0
+CAss_S424,,Centroid of Area,,EPSG:4326,,,,,,,,,,"LUCKY 18 ON ROSAMOND, LLC",,,,CA,,Bad Latitude,423.0
+CAss_S428,,Centroid of Area,,EPSG:4326,,,,,,,,,,EL TEJON ELEMENTARY SCHOOL,,,,CA,,Bad Latitude,427.0
+CAss_S430,,Centroid of Area,,EPSG:4326,,,,,,,,,,ROSAMOND MOBILEHOME PARK,,,,CA,,Bad Latitude,429.0
+CAss_S431,,Centroid of Area,,EPSG:4326,,,,,,,,,,DESERT BREEZE MOBILE HOME ESTATES,,,,CA,,Bad Latitude,430.0
+CAss_S435,,Centroid of Area,,EPSG:4326,,,,,,,,,,KERN CO P&R-GREENHORN MT. PARK WATER,,,,CA,,Bad Latitude,434.0
+CAss_S437,,Centroid of Area,,EPSG:4326,,,,,,,,,,KERN CO P&R-TEHACHAPI MT PARK WATER,,,,CA,,Bad Latitude,436.0
+CAss_S440,,Centroid of Area,,EPSG:4326,,,,,,,,,,USFS - FULTON WORK CENTER,,,,CA,,Bad Latitude,439.0
+CAss_S448,,Centroid of Area,,EPSG:4326,,,,,,,,,,USFS - SOUTH FORK RECREATION AREA,,,,CA,,Bad Latitude,447.0
+CAss_S449,,Centroid of Area,,EPSG:4326,,,,,,,,,,USFS - LK ISABELLA OFFICE WATER SYSTEM,,,,CA,,Bad Latitude,448.0
+CAss_S450,,Centroid of Area,,EPSG:4326,,,,,,,,,,USFS - FRENCH GULCH CAMPGROUND WS,,,,CA,,Bad Latitude,449.0
+CAss_S451,,Centroid of Area,,EPSG:4326,,,,,,,,,,USFS - CAMP 9,,,,CA,,Bad Latitude,450.0
+CAss_S454,,Centroid of Area,,EPSG:4326,,,,,,,,,,WILDLAND TRAINING CENTER,,,,CA,,Bad Latitude,453.0
+CAss_S455,,Centroid of Area,,EPSG:4326,,,,,,,,,,QUAIL VALLEY WATER DIST-EASTSIDE SYSTEM,,,,CA,,Bad Latitude,454.0
+CAss_S457,,Centroid of Area,,EPSG:4326,,,,,,,,,,TEHACHAPI CHURCH OF THE NAZARENE,,,,CA,,Bad Latitude,456.0
+CAss_S458,,Centroid of Area,,EPSG:4326,,,,,,,,,,KERN OIL AND REFINING COMPANY,,,,CA,,Bad Latitude,457.0
+CAss_S459,,Centroid of Area,,EPSG:4326,,,,,,,,,,KERN OIL AND REFINING CO.,,,,CA,,Bad Latitude,458.0
+CAss_S461,,Centroid of Area,,EPSG:4326,,,,,,,,,,PARADISE WATER SYSTEM,,,,CA,,Bad Latitude,460.0
+CAss_S462,,Centroid of Area,,EPSG:4326,,,,,,,,,,SUPERIOR MUTUAL WATER COMPANY,,,,CA,,Bad Latitude,461.0
+CAss_S464,,Centroid of Area,,EPSG:4326,,,,,,,,,,SOUTH KERN INDUSTRIAL CENTER,,,,CA,,Bad Latitude,463.0
+CAss_S465,,Centroid of Area,,EPSG:4326,,,,,,,,,,ED OAKLEY HALL,,,,CA,,Bad Latitude,464.0
+CAss_S466,,Centroid of Area,,EPSG:4326,,,,,,,,,,USFS - OLD ISABELLA AUXILIARY DAM WS,,,,CA,,Bad Latitude,465.0
+CAss_S468,,Centroid of Area,,EPSG:4326,,,,,,,,,,GOLDEN EMPIRE CONCRETE COMPANY,,,,CA,,Bad Latitude,467.0
+CAss_S469,,Centroid of Area,,EPSG:4326,,,,,,,,,,TEJON-CASTAC WATER DISTRICT-15 &LAVAL RD,,,,CA,,Bad Latitude,468.0
+CAss_S470,,Centroid of Area,,EPSG:4326,,,,,,,,,,DIAMOND JIM S CASINO,,,,CA,,Bad Latitude,469.0
+CAss_S471,,Centroid of Area,,EPSG:4326,,,,,,,,,,CAL MAT - PANAMA LANE FACILITY,,,,CA,,Bad Latitude,470.0
+CAss_S474,,Centroid of Area,,EPSG:4326,,,,,,,,,,SUMMIT INDUSTRIAL PARK WATER SYSTEM,,,,CA,,Bad Latitude,473.0
+CAss_S475,,Centroid of Area,,EPSG:4326,,,,,,,,,,SHEPHERD OF THE MOUNTAINS LUTHERAN CHURC,,,,CA,,Bad Latitude,474.0
+CAss_S476,,Centroid of Area,,EPSG:4326,,,,,,,,,,SOLEDAD MOUNTAIN PROJECT WATER SYSTEM,,,,CA,,Bad Latitude,475.0
+CAss_S477,,Centroid of Area,,EPSG:4326,,,,,,,,,,SOS CRANE AND TRUCKING,,,,CA,,Bad Latitude,476.0
+CAss_S478,,Centroid of Area,,EPSG:4326,,,,,,,,,,SUNNYGEM JUICE PLANT,,,,CA,,Bad Latitude,477.0
+CAss_S479,,Centroid of Area,,EPSG:4326,,,,,,,,,,BROOKFIELD RENEWABLE POWER WATER SYSTEM,,,,CA,,Bad Latitude,478.0
+CAss_S480,,Centroid of Area,,EPSG:4326,,,,,,,,,,CHINA LAKE NAVAL AIR - SOUTH RANGE,,,,CA,,Bad Latitude,479.0
+CAss_S481,,Centroid of Area,,EPSG:4326,,,,,,,,,,"SUNSELECT PRODUCE, INC.",,,,CA,,Bad Latitude,480.0
+CAss_S482,,Centroid of Area,,EPSG:4326,,,,,,,,,,FAMOSO NUT COMPANY,,,,CA,,Bad Latitude,481.0
+CAss_S493,,Centroid of Area,,EPSG:4326,,,,,,,,,,RAND COMMUNITIES WATER DISTRICT,,,,CA,,Bad Latitude,492.0
+CAss_S512,,Centroid of Area,,EPSG:4326,,,,,,,,,,NORTH OF THE RIVER MWD,,,,CA,,Bad Latitude,511.0
+CAss_S520,,Centroid of Area,,EPSG:4326,,,,,,,,,,ANTELOPE VALLEY E KERN WTR AGY F,,,,CA,,Bad Latitude,519.0
+CAss_S521,,Centroid of Area,,EPSG:4326,,,,,,,,,,ANTELOPE VALLEY E KERN WTR AGY-ROSAMOND,,,,CA,,Bad Latitude,520.0
+CAss_S527,,Centroid of Area,,EPSG:4326,,,,,,,,,,PIONEER ELEMENTARY SCHOOL,,,,CA,,Bad Latitude,526.0
+CAss_S535,,Centroid of Area,,EPSG:4326,,,,,,,,,,JAGO BAY MUTUAL WATER COMPANY,,,,CA,,Bad Latitude,534.0
+CAss_S536,,Centroid of Area,,EPSG:4326,,,,,,,,,,LAKE COUNTY CSA 16 - PARADISE VALLEY,,,,CA,,Bad Latitude,535.0
+CAss_S538,,Centroid of Area,,EPSG:4326,,,,,,,,,,PINE GROVE WATER SYSTEM,,,,CA,,Bad Latitude,537.0
+CAss_S541,,Centroid of Area,,EPSG:4326,,,,,,,,,,LAKE COUNTY CSA 7 - BONANZA SPRINGS,,,,CA,,Bad Latitude,540.0
+CAss_S544,,Centroid of Area,,EPSG:4326,,,,,,,,,,HILL NINE AND TEN,,,,CA,,Bad Latitude,543.0
+CAss_S546,,Centroid of Area,,EPSG:4326,,,,,,,,,,LAKE COUNTY CSA 22 - MT. HANNAH,,,,CA,,Bad Latitude,545.0
+CAss_S549,,Centroid of Area,,EPSG:4326,,,,,,,,,,LAKE COUNTY CSA 18 - STARVIEW,,,,CA,,Bad Latitude,548.0
+CAss_S554,,Centroid of Area,,EPSG:4326,,,,,,,,,,USFS-MIDDLE CREEK CG,,,,CA,,Bad Latitude,553.0
+CAss_S574,,Centroid of Area,,EPSG:4326,,,,,,,,,,LASSEN COUNTY SERVICE AREA NO. 2,,,,CA,,Bad Latitude,573.0
+CAss_S576,,Centroid of Area,,EPSG:4326,,,,,,,,,,WEST PATTON VILLAGE CSD,,,,CA,,Bad Latitude,575.0
+CAss_S581,,Centroid of Area,,EPSG:4326,,,,,,,,,,ADAMS RANCH MUTUAL WATER COMPANY,,,,CA,,Bad Latitude,580.0
+CAss_S599,,Centroid of Area,,EPSG:4326,,,,,,,,,,HENNINGER FLATS,,,,CA,,Bad Latitude,598.0
+CAss_S610,,Centroid of Area,,EPSG:4326,,,,,,,,,,ACTON CONSERVATION CAMP #11,,,,CA,,Bad Latitude,609.0
+CAss_S614,,Centroid of Area,,EPSG:4326,,,,,,,,,,BIG OAKS LODGE,,,,CA,,Bad Latitude,613.0
+CAss_S615,,Centroid of Area,,EPSG:4326,,,,,,,,,,GENERAL ATOMICS AERONAUTICAL - GRAY BUTT,,,,CA,,Bad Latitude,614.0
+CAss_S620,,Centroid of Area,,EPSG:4326,,,,,,,,,,ANTELOPE VALLEY AIRPORT EXPRESS,,,,CA,,Bad Latitude,619.0
+CAss_S686,,Centroid of Area,,EPSG:4326,,,,,,,,,,METROPOLITAN WATER DIST. OF SO. CAL.,,,,CA,,Bad Latitude,685.0
+CAss_S706,,Centroid of Area,,EPSG:4326,,,,,,,,,,COVINA IRRIGATING CO.,,,,CA,,Bad Latitude,705.0
+CAss_S711,,Centroid of Area,,EPSG:4326,,,,,,,,,,RURBAN HOMES MUTUAL WATER CO.,,,,CA,,Bad Latitude,710.0
+CAss_S772,,Centroid of Area,,EPSG:4326,,,,,,,,,,FAIRMEAD LANDFILL,,,,CA,,Bad Latitude,771.0
+CAss_S773,,Centroid of Area,,EPSG:4326,,,,,,,,,,WARNOCK FOOD PRODUCTS #2,,,,CA,,Bad Latitude,772.0
+CAss_S783,,Centroid of Area,,EPSG:4326,,,,,,,,,,SA#02W WISHON COVE,,,,CA,,Bad Latitude,782.0
+CAss_S790,,Centroid of Area,,EPSG:4326,,,,,,,,,,PETE S PLACE (WATER),,,,CA,,Bad Latitude,789.0
+CAss_S793,,Centroid of Area,,EPSG:4326,,,,,,,,,,ALMADEN - MADERA,,,,CA,,Bad Latitude,792.0
+CAss_S795,,Centroid of Area,,EPSG:4326,,,,,,,,,,BALTIMORE AIRCOIIL COMPANY,,,,CA,,Bad Latitude,794.0
+CAss_S796,,Centroid of Area,,EPSG:4326,,,,,,,,,,CERTAINTEED,,,,CA,,Bad Latitude,795.0
+CAss_S805,,Centroid of Area,,EPSG:4326,,,,,,,,,,PG&E OAKHURST SERVICE CENTER,,,,CA,,Bad Latitude,804.0
+CAss_S810,,Centroid of Area,,EPSG:4326,,,,,,,,,,SAND CASTLE DAY CARE,,,,CA,,Bad Latitude,809.0
+CAss_S855,,Centroid of Area,,EPSG:4326,,,,,,,,,,JACK BOYD SCHOOL,,,,CA,,Bad Latitude,854.0
+CAss_S860,,Centroid of Area,,EPSG:4326,,,,,,,,,,NORTH WAWONA PARK MUTUAL (A SYSTEM),,,,CA,,Bad Latitude,859.0
+CAss_S861,,Centroid of Area,,EPSG:4326,,,,,,,,,,NORTH WAWONA ESTATES (B SYSTEM),,,,CA,,Bad Latitude,860.0
+CAss_S862,,Centroid of Area,,EPSG:4326,,,,,,,,,,REDWOODS MAIN WATER SYSTEM,,,,CA,,Bad Latitude,861.0
+CAss_S863,,Centroid of Area,,EPSG:4326,,,,,,,,,,WAMPUM HILL TRAILER VILLAGE,,,,CA,,Bad Latitude,862.0
+CAss_S864,,Centroid of Area,,EPSG:4326,,,,,,,,,,YOSEMITE ALPINE CSD,,,,CA,,Bad Latitude,863.0
+CAss_S867,,Centroid of Area,,EPSG:4326,,,,,,,,,,REDWOODS 70'S WATER SYSTEM,,,,CA,,Bad Latitude,866.0
+CAss_S870,,Centroid of Area,,EPSG:4326,,,,,,,,,,ORR SPRINGS RESORT,,,,CA,,Bad Latitude,869.0
+CAss_S872,,Centroid of Area,,EPSG:4326,,,,,,,,,,COAST INN AND SPA,,,,CA,,Bad Latitude,871.0
+CAss_S879,,Centroid of Area,,EPSG:4326,,,,,,,,,,CLEONE CAMPGROUND,,,,CA,,Bad Latitude,878.0
+CAss_S885,,Centroid of Area,,EPSG:4326,,,,,,,,,,U.S. ARMY CORPS-LAKE MENDO (BUSHAY SITE),,,,CA,,Bad Latitude,884.0
+CAss_S886,,Centroid of Area,,EPSG:4326,,,,,,,,,,U.S. ARMY CORPS-LAKE MENDO (KYEN CMPGRD),,,,CA,,Bad Latitude,885.0
+CAss_S887,,Centroid of Area,,EPSG:4326,,,,,,,,,,U.S. ARMY CORPS-LAKE MENDO(MARINA SITE),,,,CA,,Bad Latitude,886.0
+CAss_S888,,Centroid of Area,,EPSG:4326,,,,,,,,,,U.S. ARMY CORPS-LAKE MENDO(POMO SITE),,,,CA,,Bad Latitude,887.0
+CAss_S904,,Centroid of Area,,EPSG:4326,,,,,,,,,,CSP-WESTPORT STATE BEACH,,,,CA,,Bad Latitude,903.0
+CAss_S905,,Centroid of Area,,EPSG:4326,,,,,,,,,,CSP-PT. CABRILLO LIGHTHOUSE,,,,CA,,Bad Latitude,904.0
+CAss_S906,,Centroid of Area,,EPSG:4326,,,,,,,,,,"TURLOCK AUCTION YARD, INC.",,,,CA,,Bad Latitude,905.0
+CAss_S907,,Centroid of Area,,EPSG:4326,,,,,,,,,,LIBERTY PACKING COMPANY LLC,,,,CA,,Bad Latitude,906.0
+CAss_S913,,Centroid of Area,,EPSG:4326,,,,,,,,,,THE MORNING STAR PACKING COMPANY,,,,CA,,Bad Latitude,912.0
+CAss_S925,,Centroid of Area,,EPSG:4326,,,,,,,,,,CITY OF MERCED,,,,CA,,Bad Latitude,924.0
+CAss_S930,,Centroid of Area,,EPSG:4326,,,,,,,,,,CDPR FOUR RIVERS DISTRICT-BASALT,,,,CA,,Bad Latitude,929.0
+CAss_S931,,Centroid of Area,,EPSG:4326,,,,,,,,,,CDPR FOUR RIVERS DISTRICT-SAN LUIS CREEK,,,,CA,,Bad Latitude,930.0
+CAss_S932,,Centroid of Area,,EPSG:4326,,,,,,,,,,CDPR-LOS BANOS CREEK,,,,CA,,Bad Latitude,931.0
+CAss_S933,,Centroid of Area,,EPSG:4326,,,,,,,,,,CDPR-MEDEIROS,,,,CA,,Bad Latitude,932.0
+CAss_S935,,Centroid of Area,,EPSG:4326,,,,,,,,,,DWR - SAN LUIS DIVISION O&M,,,,CA,,Bad Latitude,934.0
+CAss_S939,,Centroid of Area,,EPSG:4326,,,,,,,,,,VIRGINIA LAKES MUTUAL WATER CO.,,,,CA,,Bad Latitude,938.0
+CAss_S940,,Centroid of Area,,EPSG:4326,,,,,,,,,,TOPAZ LAKE RV PARK,,,,CA,,Bad Latitude,939.0
+CAss_S946,,Centroid of Area,,EPSG:4326,,,,,,,,,,HOT CREEK HATCHERY,,,,CA,,Bad Latitude,945.0
+CAss_S954,,Centroid of Area,,EPSG:4326,,,,,,,,,,ECHO VALLEY SCHOOL WS,,,,CA,,Bad Latitude,953.0
+CAss_S967,,Centroid of Area,,EPSG:4326,,,,,,,,,,OASIS CAFE WS,,,,CA,,Bad Latitude,966.0
+CAss_S983,,Centroid of Area,,EPSG:4326,,,,,,,,,,CHAMISAL WA,,,,CA,,Bad Latitude,982.0
+CAss_S1003,,Centroid of Area,,EPSG:4326,,,,,,,,,,ROSEHART INDUSTRIAL PARK WS,,,,CA,,Bad Latitude,1002.0
+CAss_S1016,,Centroid of Area,,EPSG:4326,,,,,,,,,,GROWERS SERVICE ASSN WS (ICE),,,,CA,,Bad Latitude,1015.0
+CAss_S1020,,Centroid of Area,,EPSG:4326,,,,,,,,,,LEWIS RD WS #20,,,,CA,,Bad Latitude,1019.0
+CAss_S1021,,Centroid of Area,,EPSG:4326,,,,,,,,,,UNI-KOOL WS,,,,CA,,Bad Latitude,1020.0
+CAss_S1022,,Centroid of Area,,EPSG:4326,,,,,,,,,,CAMPHORA-GLORIA RD WS #01,,,,CA,,Bad Latitude,1021.0
+CAss_S1023,,Centroid of Area,,EPSG:4326,,,,,,,,,,UNITARIAN UNIVERSALIST CHURCH WS,,,,CA,,Bad Latitude,1022.0
+CAss_S1024,,Centroid of Area,,EPSG:4326,,,,,,,,,,HOLMAN RANCH WS,,,,CA,,Bad Latitude,1023.0
+CAss_S1025,,Centroid of Area,,EPSG:4326,,,,,,,,,,ALCO WATER SERVICE,,,,CA,,Bad Latitude,1024.0
+CAss_S1026,,Centroid of Area,,EPSG:4326,,,,,,,,,,MONTE DEL LAGO MHC,,,,CA,,Bad Latitude,1025.0
+CAss_S1055,,Centroid of Area,,EPSG:4326,,,,,,,,,,CALISTOGA RANCH,,,,CA,,Bad Latitude,1054.0
+CAss_S1057,,Centroid of Area,,EPSG:4326,,,,,,,,,,"WOODLOT ASSOC.,INC.",,,,CA,,Bad Latitude,1056.0
+CAss_S1058,,Centroid of Area,,EPSG:4326,,,,,,,,,,DOMAINE CHANDON,,,,CA,,Bad Latitude,1057.0
+CAss_S1059,,Centroid of Area,,EPSG:4326,,,,,,,,,,NAPA COUNTY SCHOOLS: POPE VALLEY,,,,CA,,Bad Latitude,1058.0
+CAss_S1060,,Centroid of Area,,EPSG:4326,,,,,,,,,,HOWELL MTN SCHOOL,,,,CA,,Bad Latitude,1059.0
+CAss_S1061,,Centroid of Area,,EPSG:4326,,,,,,,,,,CHATEAU MONTELENA WINERY,,,,CA,,Bad Latitude,1060.0
+CAss_S1062,,Centroid of Area,,EPSG:4326,,,,,,,,,,CONN CREEK WINERY,,,,CA,,Bad Latitude,1061.0
+CAss_S1063,,Centroid of Area,,EPSG:4326,,,,,,,,,,COSENTINO WINERY,,,,CA,,Bad Latitude,1062.0
+CAss_S1064,,Centroid of Area,,EPSG:4326,,,,,,,,,,CARDINALE ESTATE,,,,CA,,Bad Latitude,1063.0
+CAss_S1065,,Centroid of Area,,EPSG:4326,,,,,,,,,,RANCHO LA JOTA,,,,CA,,Bad Latitude,1064.0
+CAss_S1066,,Centroid of Area,,EPSG:4326,,,,,,,,,,RAYMOND VINEYARD & CELLAR,,,,CA,,Bad Latitude,1065.0
+CAss_S1067,,Centroid of Area,,EPSG:4326,,,,,,,,,,THE RANCH WINERY,,,,CA,,Bad Latitude,1066.0
+CAss_S1079,,Centroid of Area,,EPSG:4326,,,,,,,,,,U.S. BUREAU OF RECLAMATION-LK. BERRYESSA,,,,CA,,Bad Latitude,1078.0
+CAss_S1081,,Centroid of Area,,EPSG:4326,,,,,,,,,,KINGVALE PROPERTY OWNERS & WATER USERS,,,,CA,,Bad Latitude,1080.0
+CAss_S1083,,Centroid of Area,,EPSG:4326,,,,,,,,,,TAHOE NATIONAL FOREST/LIAHONA CLUB WATER,,,,CA,,Bad Latitude,1082.0
+CAss_S1086,,Centroid of Area,,EPSG:4326,,,,,,,,,,SOUTH YUBA RIVER STATE PARK,,,,CA,,Bad Latitude,1085.0
+CAss_S1092,,Centroid of Area,,EPSG:4326,,,,,,,,,,NEVADA ID - CASCADE SHORES,,,,CA,,Bad Latitude,1091.0
+CAss_S1098,,Centroid of Area,,EPSG:4326,,,,,,,,,,MALAKOFF DIGGINS SHP,,,,CA,,Bad Latitude,1097.0
+CAss_S1101,,Centroid of Area,,EPSG:4326,,,,,,,,,,RANCHO MISSION VIEJO,,,,CA,,Bad Latitude,1100.0
+CAss_S1102,,Centroid of Area,,EPSG:4326,,,,,,,,,,SANTA MARGARITA WATER DISTRICT-NICHOLS I,,,,CA,,Bad Latitude,1101.0
+CAss_S1111,,Centroid of Area,ORANGE,EPSG:4326,,,,,,,,,,CITY OF NEWPORT BEACH,CA3010023,,Water Service Area,CA,,Bad Latitude,1110.0
+CAss_S1123,,Centroid of Area,,EPSG:4326,,,,,,,,,,SOUTH COAST WD - CAPISTRANO BEACH,,,,CA,,Bad Latitude,1122.0
+CAss_S1128,,Centroid of Area,,EPSG:4326,,,,,,,,,,GOLDEN STATE WC - YORBA LINDA,,,,CA,,Bad Latitude,1127.0
+CAss_S1129,,Centroid of Area,,EPSG:4326,,,,,,,,,,JOINT REGIONAL WATER SUPPLY SYSTEM,,,,CA,,Bad Latitude,1128.0
+CAss_S1134,,Centroid of Area,,EPSG:4326,,,,,,,,,,EAST ORANGE COUNTY WD - WZ,,,,CA,,Bad Latitude,1133.0
+CAss_S1139,,Centroid of Area,,EPSG:4326,,,,,,,,,,SAN JUAN BASIN AUTHORITY,,,,CA,,Bad Latitude,1138.0
+CAss_S1148,,Centroid of Area,,EPSG:4326,,,,,,,,,,OLIVERS GROCERY,,,,CA,,Bad Latitude,1147.0
+CAss_S1150,,Centroid of Area,,EPSG:4326,,,,,,,,,,SILVER CREEK SUMMER HOME TRACT,,,,CA,,Bad Latitude,1149.0
+CAss_S1152,,Centroid of Area,,EPSG:4326,,,,,,,,,,NORTHSTAR AT TAHOE COMSTOCK WATER SYSTEM,,,,CA,,Bad Latitude,1151.0
+CAss_S1153,,Centroid of Area,,EPSG:4326,,,,,,,,,,KILNER PARK,,,,CA,,Bad Latitude,1152.0
+CAss_S1154,,Centroid of Area,,EPSG:4326,,,,,,,,,,WISE VILLA WINERY,,,,CA,,Bad Latitude,1153.0
+CAss_S1174,,Centroid of Area,,EPSG:4326,,,,,,,,,,LAKE FOREST UTILITY COMPANY,,,,CA,,Bad Latitude,1173.0
+CAss_S1189,,Centroid of Area,,EPSG:4326,,,,,,,,,,PNF MT. HOUGH RANGER STATION,,,,CA,,Bad Latitude,1188.0
+CAss_S1190,,Centroid of Area,,EPSG:4326,,,,,,,,,,WALTONS GRIZZLY LODGE,,,,CA,,Bad Latitude,1189.0
+CAss_S1194,,Centroid of Area,,EPSG:4326,,,,,,,,,,ALMANOR HEIGHTS MWC,,,,CA,,Bad Latitude,1193.0
+CAss_S1196,,Centroid of Area,,EPSG:4326,,,,,,,,,,ASSOCIATIONS OF THOMPSON LAKE,,,,CA,,Bad Latitude,1195.0
+CAss_S1199,,Centroid of Area,,EPSG:4326,,,,,,,,,,PLUMAS SIERRA RURAL ELECTRIC PORTOLA,,,,CA,,Bad Latitude,1198.0
+CAss_S1208,,Centroid of Area,,EPSG:4326,,,,,,,,,,EAST QUINCY SERVICES DISTRICT,,,,CA,,Bad Latitude,1207.0
+CAss_S1209,,Centroid of Area,,EPSG:4326,,,,,,,,,,HAMILTON BRANCH CSD,,,,CA,,Bad Latitude,1208.0
+CAss_S1211,,Centroid of Area,,EPSG:4326,,,,,,,,,,PLUMAS-EUREKA S.P.,,,,CA,,Bad Latitude,1210.0
+CAss_S1217,,Centroid of Area,,EPSG:4326,,,,,,,,,,"CVUSD, WESTSIDE SCHOOL",,,,CA,,Bad Latitude,1216.0
+CAss_S1219,,Centroid of Area,,EPSG:4326,,,,,,,,,,COWBOY COUNTRY CAMPGROUND,,,,CA,,Bad Latitude,1218.0
+CAss_S1221,,Centroid of Area,,EPSG:4326,,,,,,,,,,THERMAL MUTUAL WATER COMPANY,,,,CA,,Bad Latitude,1220.0
+CAss_S1224,,Centroid of Area,,EPSG:4326,,,,,,,,,,ANZA RV RESORT,,,,CA,,Bad Latitude,1223.0
+CAss_S1226,,Centroid of Area,,EPSG:4326,,,,,,,,,,DESERT DUNES GOLF CLUB LTD,,,,CA,,Bad Latitude,1225.0
+CAss_S1238,,Centroid of Area,,EPSG:4326,,,,,,,,,,STAGECOACH INN,,,,CA,,Bad Latitude,1237.0
+CAss_S1241,,Centroid of Area,,EPSG:4326,,,,,,,,,,WALLER TRACT WATER DISTRICT,,,,CA,,Bad Latitude,1240.0
+CAss_S1248,,Centroid of Area,,EPSG:4326,,,,,,,,,,ANZA PETROLEUM INC,,,,CA,,Bad Latitude,1247.0
+CAss_S1250,,Centroid of Area,,EPSG:4326,,,,,,,,,,MORONGO GOLF COURSE AT TUKWET CNYN,,,,CA,,Bad Latitude,1249.0
+CAss_S1251,,Centroid of Area,,EPSG:4326,,,,,,,,,,PARADISE VALLEY CAFE,,,,CA,,Bad Latitude,1250.0
+CAss_S1252,,Centroid of Area,,EPSG:4326,,,,,,,,,,COACHELLA VALLEY FACILITY,,,,CA,,Bad Latitude,1251.0
+CAss_S1263,,Centroid of Area,,EPSG:4326,,,,,,,,,,ELSINORE VALLEY MWD - TEMESCAL,,,,CA,,Bad Latitude,1262.0
+CAss_S1271,,Centroid of Area,,EPSG:4326,,,,,,,,,,"NORCO, CITY OF",,,,CA,,Bad Latitude,1270.0
+CAss_S1291,,Centroid of Area,,EPSG:4326,,,,,,,,,,WESTERN MWD (ARLINGTON),,,,CA,,Bad Latitude,1290.0
+CAss_S1297,,Centroid of Area,,EPSG:4326,,,,,,,,,,CHINO BASIN DESALTER AUTH. - DESALTER 2,,,,CA,,Bad Latitude,1296.0
+CAss_S1298,,Centroid of Area,,EPSG:4326,,,,,,,,,,MT SAN JACINTO ST PARK (STONE CREEK),,,,CA,,Bad Latitude,1297.0
+CAss_S1304,,Centroid of Area,,EPSG:4326,,,,,,,,,,CLIFF'S MARINA,,,,CA,,Bad Latitude,1303.0
+CAss_S1316,,Centroid of Area,SACRAMENTO,EPSG:4326,,,,,,,,,,COLONIAL ESTATES MHP,CA3400217,,Water Service Area,CA,,Bad Latitude,1315.0
+CAss_S1317,,Centroid of Area,SACRAMENTO,EPSG:4326,,,,,,,,,,HOMETOWN COLONIAL ESTATES LLC,CA3400217,,Water Service Area,CA,,Bad Latitude,1316.0
+CAss_S1318,,Centroid of Area,,EPSG:4326,,,,,,,,,,FRANKLIN ELEMENTARY SCHOOL,,,,CA,,Bad Latitude,1317.0
+CAss_S1319,,Centroid of Area,,EPSG:4326,,,,,,,,,,COSUMNES RIVER ELEMENTARY SCHOOL,,,,CA,,Bad Latitude,1318.0
+CAss_S1321,,Centroid of Area,,EPSG:4326,,,,,,,,,,ACORN MOBILE VILLAGE,,,,CA,,Bad Latitude,1320.0
+CAss_S1322,,Centroid of Area,,EPSG:4326,,,,,,,,,,SLOUGHHOUSE INN,,,,CA,,Bad Latitude,1321.0
+CAss_S1325,,Centroid of Area,,EPSG:4326,,,,,,,,,,SILVERADO WATER SYSTEM,,,,CA,,Bad Latitude,1324.0
+CAss_S1326,,Centroid of Area,,EPSG:4326,,,,,,,,,,MATSUDA OF SACRAMENTO,,,,CA,,Bad Latitude,1325.0
+CAss_S1327,,Centroid of Area,,EPSG:4326,,,,,,,,,,"MATSUDA'S BY GREEN ACRES, LLC",,,,CA,,Bad Latitude,1326.0
+CAss_S1328,,Centroid of Area,,EPSG:4326,,,,,,,,,,STAFFORD MEAT COMPANY,,,,CA,,Bad Latitude,1327.0
+CAss_S1329,,Centroid of Area,,EPSG:4326,,,,,,,,,,CHURCH OF JESUS CHRIST OF LDS (SWS),,,,CA,,Bad Latitude,1328.0
+CAss_S1330,,Centroid of Area,,EPSG:4326,,,,,,,,,,"RIVER CITY RECOVERY CENTER, INC. (SWS)",,,,CA,,Bad Latitude,1329.0
+CAss_S1331,,Centroid of Area,,EPSG:4326,,,,,,,,,,STS,,,,CA,,Bad Latitude,1330.0
+CAss_S1351,,Centroid of Area,,EPSG:4326,,,,,,,,,,CALAM - SECURITY PARK,,,,CA,,Bad Latitude,1350.0
+CAss_S1361,,Centroid of Area,,EPSG:4326,,,,,,,,,,RIVER OAKS R.V.P.,,,,CA,,Bad Latitude,1360.0
+CAss_S1364,,Centroid of Area,SAN BENITO,EPSG:4326,,,,,,,,,,SAN JUSTO MUTUAL WATER COMPANY,CA3500550,,Water Service Area,CA,,Bad Latitude,1363.0
+CAss_S1370,,Centroid of Area,,EPSG:4326,,,,,,,,,,TRI-CAL INCORPORATED,,,,CA,,Bad Latitude,1369.0
+CAss_S1376,,Centroid of Area,,EPSG:4326,,,,,,,,,,PAICINES WATER SYSTEM,,,,CA,,Bad Latitude,1375.0
+CAss_S1387,,Centroid of Area,,EPSG:4326,,,,,,,,,,CALLIER WATER SYSTEM,,,,CA,,Bad Latitude,1386.0
+CAss_S1393,,Centroid of Area,,EPSG:4326,,,,,,,,,,LAW'S CIDER MILL,,,,CA,,Bad Latitude,1392.0
+CAss_S1398,,Centroid of Area,,EPSG:4326,,,,,,,,,,PG & E PIPELINE OPERATION,,,,CA,,Bad Latitude,1397.0
+CAss_S1405,,Centroid of Area,,EPSG:4326,,,,,,,,,,R W RANCH,,,,CA,,Bad Latitude,1404.0
+CAss_S1413,,Centroid of Area,,EPSG:4326,,,,,,,,,,WINDMILL RESORT,,,,CA,,Bad Latitude,1412.0
+CAss_S1414,,Centroid of Area,,EPSG:4326,,,,,,,,,,BIG BEND RESORT,,,,CA,,Bad Latitude,1413.0
+CAss_S1416,,Centroid of Area,,EPSG:4326,,,,,,,,,,LONE WOLF COLONY,,,,CA,,Bad Latitude,1415.0
+CAss_S1421,,Centroid of Area,,EPSG:4326,,,,,,,,,,AERONAUTICAL SYSTEMS,,,,CA,,Bad Latitude,1420.0
+CAss_S1423,,Centroid of Area,,EPSG:4326,,,,,,,,,,PARKER DAM & POWER PLANT,,,,CA,,Bad Latitude,1422.0
+CAss_S1426,,Centroid of Area,,EPSG:4326,,,,,,,,,,BARTON FLATS WATER SYSTEM,,,,CA,,Bad Latitude,1425.0
+CAss_S1427,,Centroid of Area,,EPSG:4326,,,,,,,,,,"OMYA CALIFORNIA, A DIVISION OF OMYA INC",,,,CA,,Bad Latitude,1426.0
+CAss_S1429,,Centroid of Area,,EPSG:4326,,,,,,,,,,FUJI NATURAL FOOD,,,,CA,,Bad Latitude,1428.0
+CAss_S1430,,Centroid of Area,,EPSG:4326,,,,,,,,,,HITCHIN LUCERNE INC,,,,CA,,Bad Latitude,1429.0
+CAss_S1431,,Centroid of Area,,EPSG:4326,,,,,,,,,,DUCOMMUN AEROSTRUCTURES,,,,CA,,Bad Latitude,1430.0
+CAss_S1432,,Centroid of Area,,EPSG:4326,,,,,,,,,,WAGON TRAIN ROAD LLC,,,,CA,,Bad Latitude,1431.0
+CAss_S1433,,Centroid of Area,,EPSG:4326,,,,,,,,,,VICTOR VALLEY  WASTEWATER RECLAM,,,,CA,,Bad Latitude,1432.0
+CAss_S1434,,Centroid of Area,,EPSG:4326,,,,,,,,,,BIG BEAR ADMINISTRATION,,,,CA,,Bad Latitude,1433.0
+CAss_S1435,,Centroid of Area,,EPSG:4326,,,,,,,,,,SPECIALTY MINERALS INC,,,,CA,,Bad Latitude,1434.0
+CAss_S1436,,Centroid of Area,,EPSG:4326,,,,,,,,,,HELENDALE CSD COMMUNITY CENTER,,,,CA,,Bad Latitude,1435.0
+CAss_S1437,,Centroid of Area,,EPSG:4326,,,,,,,,,,EL MIRAGE SCHOOL,,,,CA,,Bad Latitude,1436.0
+CAss_S1438,,Centroid of Area,,EPSG:4326,,,,,,,,,,CALI BURGER,,,,CA,,Bad Latitude,1437.0
+CAss_S1444,,Centroid of Area,,EPSG:4326,,,,,,,,,,WATER FACILITIES AUTHORITY-JPA,,,,CA,,Bad Latitude,1443.0
+CAss_S1487,,Centroid of Area,,EPSG:4326,,,,,,,,,,DWP - SUGARLOAF/ERWIN LAKE,,,,CA,,Bad Latitude,1486.0
+CAss_S1492,,Centroid of Area,,EPSG:4326,,,,,,,,,,CHINO BASIN DESALTER AUTH. - DESALTER 1,,,,CA,,Bad Latitude,1491.0
+CAss_S1494,,Centroid of Area,,EPSG:4326,,,,,,,,,,WEST END CONSOLIDATED WATER COMPANY,,,,CA,,Bad Latitude,1493.0
+CAss_S1509,,Centroid of Area,,EPSG:4326,,,,,,,,,,MOJAVE WATER AGENCY,,,,CA,,Bad Latitude,1508.0
+CAss_S1515,,Centroid of Area,,EPSG:4326,,,,,,,,,,CYA-YOUTH CORRECTIONAL FACILITY,,,,CA,,Bad Latitude,1514.0
+CAss_S1517,,Centroid of Area,,EPSG:4326,,,,,,,,,,LEAPIN' LIZARD RV RANCH,,,,CA,,Bad Latitude,1516.0
+CAss_S1518,,Centroid of Area,,EPSG:4326,,,,,,,,,,AUERBACH FARMS,,,,CA,,Bad Latitude,1517.0
+CAss_S1522,,Centroid of Area,,EPSG:4326,,,,,,,,,,BARRETT HONOR CAMP,,,,CA,,Bad Latitude,1521.0
+CAss_S1541,,Centroid of Area,,EPSG:4326,,,,,,,,,,NARCONON SOUTHERN CALIFORNIA,,,,CA,,Bad Latitude,1540.0
+CAss_S1548,,Centroid of Area,,EPSG:4326,,,,,,,,,,MOUNT LAGUNA IMPROVEMENT ASSN.,,,,CA,,Bad Latitude,1547.0
+CAss_S1552,,Centroid of Area,,EPSG:4326,,,,,,,,,,VALLECITOS WD,,,,CA,,Bad Latitude,1551.0
+CAss_S1570,,Centroid of Area,,EPSG:4326,,,,,,,,,,VISTA IRRIGATION DISTRICT,,,,CA,,Bad Latitude,1569.0
+CAss_S1577,,Centroid of Area,,EPSG:4326,,,,,,,,,,POSEIDON RESOURCES - CDP,,,,CA,,Bad Latitude,1576.0
+CAss_S1579,,Centroid of Area,,EPSG:4326,,,,,,,,,,"CALTRANS, TECATE CVEF",,,,CA,,Bad Latitude,1578.0
+CAss_S1584,,Centroid of Area,,EPSG:4326,,,,,,,,,,USN SERE CAMP WARNER SPRINGS,,,,CA,,Bad Latitude,1583.0
+CAss_S1588,,Centroid of Area,,EPSG:4326,,,,,,,,,,SAN FRANCISCO REGIONAL WATER SYSTEM,,,,CA,,Bad Latitude,1587.0
+CAss_S1589,,Centroid of Area,,EPSG:4326,,,,,,,,,,HHW&P-CHERRY COMPOUND - SFPUC,,,,CA,,Bad Latitude,1588.0
+CAss_S1591,,Centroid of Area,,EPSG:4326,,,,,,,,,,HHW&P-O'SHAUGHNESSY DAM CPD-SFPUC,,,,CA,,Bad Latitude,1590.0
+CAss_S1592,,Centroid of Area,,EPSG:4326,,,,,,,,,,HHW&P-EARLY INTAKE CPD-SFPUC,,,,CA,,Bad Latitude,1591.0
+CAss_S1600,,Centroid of Area,,EPSG:4326,,,,,,,,,,SJC MICKE GROVE PARK,,,,CA,,Bad Latitude,1599.0
+CAss_S1610,,Centroid of Area,,EPSG:4326,,,,,,,,,,ST FRANCIS MOTEL,,,,CA,,Bad Latitude,1609.0
+CAss_S1612,,Centroid of Area,,EPSG:4326,,,,,,,,,,HARNEY LANE MIGRANT CENTER WS,,,,CA,,Bad Latitude,1611.0
+CAss_S1613,,Centroid of Area,,EPSG:4326,,,,,,,,,,TIKI LAGUN RESORT & MARINA,,,,CA,,Bad Latitude,1612.0
+CAss_S1614,,Centroid of Area,,EPSG:4326,,,,,,,,,,RODEWAY INN,,,,CA,,Bad Latitude,1613.0
+CAss_S1616,,Centroid of Area,,EPSG:4326,,,,,,,,,,TOWN & COUNTRY INN,,,,CA,,Bad Latitude,1615.0
+CAss_S1617,,Centroid of Area,,EPSG:4326,,,,,,,,,,UNION POINT MARINA BAR & GRILL INC,,,,CA,,Bad Latitude,1616.0
+CAss_S1619,,Centroid of Area,,EPSG:4326,,,,,,,,,,MARIONS RANCH HOUSE MOTEL,,,,CA,,Bad Latitude,1618.0
+CAss_S1623,,Centroid of Area,,EPSG:4326,,,,,,,,,,WINDMILL COVE RESORT/MARINA LLC,,,,CA,,Bad Latitude,1622.0
+CAss_S1626,,Centroid of Area,,EPSG:4326,,,,,,,,,,TURTLE BEACH & WATER SYSTEM,,,,CA,,Bad Latitude,1625.0
+CAss_S1629,,Centroid of Area,,EPSG:4326,,,,,,,,,,KING ISLAND RESORT PWS,,,,CA,,Bad Latitude,1628.0
+CAss_S1633,,Centroid of Area,,EPSG:4326,,,,,,,,,,EL RANCHO MOTEL,,,,CA,,Bad Latitude,1632.0
+CAss_S1640,,Centroid of Area,,EPSG:4326,,,,,,,,,,J M EAGLE (WS),,,,CA,,Bad Latitude,1639.0
+CAss_S1641,,Centroid of Area,,EPSG:4326,,,,,,,,,,ESCALON USD- COLLEGEVILLE SCH,,,,CA,,Bad Latitude,1640.0
+CAss_S1642,,Centroid of Area,,EPSG:4326,,,,,,,,,,HILDRETH WATER SYSTEM,,,,CA,,Bad Latitude,1641.0
+CAss_S1644,,Centroid of Area,,EPSG:4326,,,,,,,,,,LINDEN USD-GLENWOOD SCHOOL,,,,CA,,Bad Latitude,1643.0
+CAss_S1645,,Centroid of Area,,EPSG:4326,,,,,,,,,,LINDEN USD-WATERLOO ELEMENTARY,,,,CA,,Bad Latitude,1644.0
+CAss_S1647,,Centroid of Area,,EPSG:4326,,,,,,,,,,PARADISE POINT MARINA,,,,CA,,Bad Latitude,1646.0
+CAss_S1648,,Centroid of Area,,EPSG:4326,,,,,,,,,,BTQC-ESCALON,,,,CA,,Bad Latitude,1647.0
+CAss_S1649,,Centroid of Area,,EPSG:4326,,,,,,,,,,ESCALON PREMIER BRANDS,,,,CA,,Bad Latitude,1648.0
+CAss_S1650,,Centroid of Area,,EPSG:4326,,,,,,,,,,FRANZIA WINERY,,,,CA,,Bad Latitude,1649.0
+CAss_S1651,,Centroid of Area,,EPSG:4326,,,,,,,,,,OLDE TOWNE,,,,CA,,Bad Latitude,1650.0
+CAss_S1653,,Centroid of Area,,EPSG:4326,,,,,,,,,,JR SIMPLOT CO,,,,CA,,Bad Latitude,1652.0
+CAss_S1655,,Centroid of Area,,EPSG:4326,,,,,,,,,,TWO RIVERS RV PARK,,,,CA,,Bad Latitude,1654.0
+CAss_S1656,,Centroid of Area,,EPSG:4326,,,,,,,,,,DELICATO VINEYARDS,,,,CA,,Bad Latitude,1655.0
+CAss_S1657,,Centroid of Area,,EPSG:4326,,,,,,,,,,OWENS-BROCKWAY GLASS CONTAINER INC,,,,CA,,Bad Latitude,1656.0
+CAss_S1660,,Centroid of Area,,EPSG:4326,,,,,,,,,,SMK CHEVRON,,,,CA,,Bad Latitude,1659.0
+CAss_S1661,,Centroid of Area,,EPSG:4326,,,,,,,,,,OAK VIEW UNION ELEMENTARY SCH,,,,CA,,Bad Latitude,1660.0
+CAss_S1662,,Centroid of Area,,EPSG:4326,,,,,,,,,,LODI USD-TURNER ACADEMY AT TOKAY COLONY,,,,CA,,Bad Latitude,1661.0
+CAss_S1663,,Centroid of Area,,EPSG:4326,,,,,,,,,,LODI USD-LIVE OAK SCHOOL,,,,CA,,Bad Latitude,1662.0
+CAss_S1664,,Centroid of Area,,EPSG:4326,,,,,,,,,,LODI USD-HOUSTON SCHOOL,,,,CA,,Bad Latitude,1663.0
+CAss_S1665,,Centroid of Area,,EPSG:4326,,,,,,,,,,FRANKS ONE/STOP FOOD MART WATER SYS,,,,CA,,Bad Latitude,1664.0
+CAss_S1669,,Centroid of Area,,EPSG:4326,,,,,,,,,,RANCH COFFEE SHOP,,,,CA,,Bad Latitude,1668.0
+CAss_S1670,,Centroid of Area,,EPSG:4326,,,,,,,,,,STAR MOTEL,,,,CA,,Bad Latitude,1669.0
+CAss_S1671,,Centroid of Area,,EPSG:4326,,,,,,,,,,SJ COUNTY-REDWOOD SCHOOL,,,,CA,,Bad Latitude,1670.0
+CAss_S1673,,Centroid of Area,,EPSG:4326,,,,,,,,,,NEW JERUSALEM SCHOOL,,,,CA,,Bad Latitude,1672.0
+CAss_S1674,,Centroid of Area,,EPSG:4326,,,,,,,,,,OASIS MARINA-RESORT,,,,CA,,Bad Latitude,1673.0
+CAss_S1675,,Centroid of Area,,EPSG:4326,,,,,,,,,,ARP MINIMART CORP WS,,,,CA,,Bad Latitude,1674.0
+CAss_S1676,,Centroid of Area,,EPSG:4326,,,,,,,,,,ST FRANCIS YACHT CLUB,,,,CA,,Bad Latitude,1675.0
+CAss_S1677,,Centroid of Area,,EPSG:4326,,,,,,,,,,BANTA ELEMENTARY SCHOOL,,,,CA,,Bad Latitude,1676.0
+CAss_S1679,,Centroid of Area,,EPSG:4326,,,,,,,,,,LODI USD-TURNER ACADEMY,,,,CA,,Bad Latitude,1678.0
+CAss_S1680,,Centroid of Area,,EPSG:4326,,,,,,,,,,LODI USD-HENDERSON SCHOOL,,,,CA,,Bad Latitude,1679.0
+CAss_S1681,,Centroid of Area,,EPSG:4326,,,,,,,,,,LODI AIRPORT CAFE,,,,CA,,Bad Latitude,1680.0
+CAss_S1682,,Centroid of Area,,EPSG:4326,,,,,,,,,,COUNTRYSIDE LIQUORS & GAS,,,,CA,,Bad Latitude,1681.0
+CAss_S1685,,Centroid of Area,,EPSG:4326,,,,,,,,,,ALPINE MEATS INC,,,,CA,,Bad Latitude,1684.0
+CAss_S1687,,Centroid of Area,,EPSG:4326,,,,,,,,,,ST JOSEPHS HOSPITAL,,,,CA,,Bad Latitude,1686.0
+CAss_S1688,,Centroid of Area,,EPSG:4326,,,,,,,,,,LODI USD-DAVIS SCHOOL,,,,CA,,Bad Latitude,1687.0
+CAss_S1689,,Centroid of Area,,EPSG:4326,,,,,,,,,,PACIFIC BELL UE17L WATER SYSTEM,,,,CA,,Bad Latitude,1688.0
+CAss_S1690,,Centroid of Area,,EPSG:4326,,,,,,,,,,NORTH VALLEY SCHOOL PWS,,,,CA,,Bad Latitude,1689.0
+CAss_S1692,,Centroid of Area,,EPSG:4326,,,,,,,,,,TRACY WILDLIFE ASSOC,,,,CA,,Bad Latitude,1691.0
+CAss_S1693,,Centroid of Area,,EPSG:4326,,,,,,,,,,JEFFERSON ESD-JEFFERSON SCHOOL,,,,CA,,Bad Latitude,1692.0
+CAss_S1694,,Centroid of Area,,EPSG:4326,,,,,,,,,,JAHANT FOOD N FUEL STOP,,,,CA,,Bad Latitude,1693.0
+CAss_S1697,,Centroid of Area,,EPSG:4326,,,,,,,,,,NAVARRA WATER SYSTEM,,,,CA,,Bad Latitude,1696.0
+CAss_S1698,,Centroid of Area,,EPSG:4326,,,,,,,,,,MORADA CHEVRON FAST N EASY #60*,,,,CA,,Bad Latitude,1697.0
+CAss_S1700,,Centroid of Area,,EPSG:4326,,,,,,,,,,EUSD-VAN ALLEN SCHOOL,,,,CA,,Bad Latitude,1699.0
+CAss_S1703,,Centroid of Area,,EPSG:4326,,,,,,,,,,LODI WINE & BUSINESS CENTER,,,,CA,,Bad Latitude,1702.0
+CAss_S1704,,Centroid of Area,,EPSG:4326,,,,,,,,,,AMERON INTERNATIONAL,,,,CA,,Bad Latitude,1703.0
+CAss_S1705,,Centroid of Area,,EPSG:4326,,,,,,,,,,VALIMET INC,,,,CA,,Bad Latitude,1704.0
+CAss_S1706,,Centroid of Area,,EPSG:4326,,,,,,,,,,"OAK RIDGE WINERY, LLC",,,,CA,,Bad Latitude,1705.0
+CAss_S1707,,Centroid of Area,,EPSG:4326,,,,,,,,,,LOWER SAC PLAZA,,,,CA,,Bad Latitude,1706.0
+CAss_S1708,,Centroid of Area,,EPSG:4326,,,,,,,,,,ST MARYS HIGH SCHOOL,,,,CA,,Bad Latitude,1707.0
+CAss_S1713,,Centroid of Area,,EPSG:4326,,,,,,,,,,HAMMER LANE WATER SYSTEM,,,,CA,,Bad Latitude,1712.0
+CAss_S1714,,Centroid of Area,,EPSG:4326,,,,,,,,,,ESCALON GOLF COURSE WS,,,,CA,,Bad Latitude,1713.0
+CAss_S1715,,Centroid of Area,,EPSG:4326,,,,,,,,,,MOKELUMNE BEACH RV PARK,,,,CA,,Bad Latitude,1714.0
+CAss_S1716,,Centroid of Area,,EPSG:4326,,,,,,,,,,CALIFORNIA FRUIT PROCESSORS,,,,CA,,Bad Latitude,1715.0
+CAss_S1718,,Centroid of Area,,EPSG:4326,,,,,,,,,,WATERLOO GUN & BOCCE CLUB,,,,CA,,Bad Latitude,1717.0
+CAss_S1719,,Centroid of Area,,EPSG:4326,,,,,,,,,,AT&T CALIFORNIA - UER47,,,,CA,,Bad Latitude,1718.0
+CAss_S1721,,Centroid of Area,,EPSG:4326,,,,,,,,,,"COLOR SPOT, LODI",,,,CA,,Bad Latitude,1720.0
+CAss_S1722,,Centroid of Area,,EPSG:4326,,,,,,,,,,HORIZON CHRISTIAN FELLOWSHIP,,,,CA,,Bad Latitude,1721.0
+CAss_S1723,,Centroid of Area,,EPSG:4326,,,,,,,,,,CBUSO DBA WOODBRIDGE WINERY,,,,CA,,Bad Latitude,1722.0
+CAss_S1724,,Centroid of Area,,EPSG:4326,,,,,,,,,,ZAPIEN MARKET,,,,CA,,Bad Latitude,1723.0
+CAss_S1725,,Centroid of Area,,EPSG:4326,,,,,,,,,,SJC SPORTS COMPLEX,,,,CA,,Bad Latitude,1724.0
+CAss_S1726,,Centroid of Area,,EPSG:4326,,,,,,,,,,VICTOR SERVICE CENTER,,,,CA,,Bad Latitude,1725.0
+CAss_S1727,,Centroid of Area,,EPSG:4326,,,,,,,,,,FISHER NURSERY,,,,CA,,Bad Latitude,1726.0
+CAss_S1728,,Centroid of Area,,EPSG:4326,,,,,,,,,,ITALIAN ATHLETIC CLUB,,,,CA,,Bad Latitude,1727.0
+CAss_S1729,,Centroid of Area,,EPSG:4326,,,,,,,,,,PETES PLACE LLC,,,,CA,,Bad Latitude,1728.0
+CAss_S1732,,Centroid of Area,,EPSG:4326,,,,,,,,,,CARMELO INDUSTRIAL PARK,,,,CA,,Bad Latitude,1731.0
+CAss_S1733,,Centroid of Area,,EPSG:4326,,,,,,,,,,KELLOGG GARDEN PRODUCTS,,,,CA,,Bad Latitude,1732.0
+CAss_S1734,,Centroid of Area,,EPSG:4326,,,,,,,,,,PACIFIC TRIPLE E LTD,,,,CA,,Bad Latitude,1733.0
+CAss_S1735,,Centroid of Area,,EPSG:4326,,,,,,,,,,DARRIGOS WATER SYSTEM,,,,CA,,Bad Latitude,1734.0
+CAss_S1736,,Centroid of Area,,EPSG:4326,,,,,,,,,,ROYCE FARMS BBQ,,,,CA,,Bad Latitude,1735.0
+CAss_S1737,,Centroid of Area,,EPSG:4326,,,,,,,,,,CBUSO DBA TURNER ROAD VINTNERS (EAST),,,,CA,,Bad Latitude,1736.0
+CAss_S1738,,Centroid of Area,,EPSG:4326,,,,,,,,,,GAF MATERIALS CO,,,,CA,,Bad Latitude,1737.0
+CAss_S1739,,Centroid of Area,,EPSG:4326,,,,,,,,,,S M S BRINERS INC,,,,CA,,Bad Latitude,1738.0
+CAss_S1740,,Centroid of Area,,EPSG:4326,,,,,,,,,,INTERNATIONAL PAPER,,,,CA,,Bad Latitude,1739.0
+CAss_S1741,,Centroid of Area,,EPSG:4326,,,,,,,,,,OLIN CHLOR ALKALI PRODUCTS WTR SYS,,,,CA,,Bad Latitude,1740.0
+CAss_S1743,,Centroid of Area,,EPSG:4326,,,,,,,,,,COZAD WATER SYSTEM,,,,CA,,Bad Latitude,1742.0
+CAss_S1744,,Centroid of Area,,EPSG:4326,,,,,,,,,,SUBWAY SANDWICHES WATER SYS,,,,CA,,Bad Latitude,1743.0
+CAss_S1745,,Centroid of Area,,EPSG:4326,,,,,,,,,,RIPON CHRISTIAN SCHOOLS,,,,CA,,Bad Latitude,1744.0
+CAss_S1746,,Centroid of Area,,EPSG:4326,,,,,,,,,,WEST KINGDOM HALL OF JEHOVAH WITNES,,,,CA,,Bad Latitude,1745.0
+CAss_S1747,,Centroid of Area,,EPSG:4326,,,,,,,,,,CHEROKEE FREIGHT LINES WATER SYSTEM,,,,CA,,Bad Latitude,1746.0
+CAss_S1748,,Centroid of Area,,EPSG:4326,,,,,,,,,,RIPON USD-COLONY OAK SCHOOL,,,,CA,,Bad Latitude,1747.0
+CAss_S1749,,Centroid of Area,,EPSG:4326,,,,,,,,,,BJJ COMPANY LLC,,,,CA,,Bad Latitude,1748.0
+CAss_S1750,,Centroid of Area,,EPSG:4326,,,,,,,,,,PALLET KING,,,,CA,,Bad Latitude,1749.0
+CAss_S1751,,Centroid of Area,,EPSG:4326,,,,,,,,,,WESTERN PALLET SUPPLY & LOGISTICS,,,,CA,,Bad Latitude,1750.0
+CAss_S1753,,Centroid of Area,,EPSG:4326,,,,,,,,,,RO LAB AMERICAN RUBBER CO,,,,CA,,Bad Latitude,1752.0
+CAss_S1754,,Centroid of Area,,EPSG:4326,,,,,,,,,,"DYNATECT RO-LAB, INC.",,,,CA,,Bad Latitude,1753.0
+CAss_S1755,,Centroid of Area,,EPSG:4326,,,,,,,,,,RAUDEL DELGADO WATER SYSTEM,,,,CA,,Bad Latitude,1754.0
+CAss_S1756,,Centroid of Area,,EPSG:4326,,,,,,,,,,VALLEY CREST TREE COMPANY,,,,CA,,Bad Latitude,1755.0
+CAss_S1757,,Centroid of Area,,EPSG:4326,,,,,,,,,,ESCALON LIVESTOCK MKT,,,,CA,,Bad Latitude,1756.0
+CAss_S1758,,Centroid of Area,,EPSG:4326,,,,,,,,,,NORMANS NURSERY,,,,CA,,Bad Latitude,1757.0
+CAss_S1760,,Centroid of Area,,EPSG:4326,,,,,,,,,,BOETHING TREELAND FARMS INC,,,,CA,,Bad Latitude,1759.0
+CAss_S1761,,Centroid of Area,,EPSG:4326,,,,,,,,,,LARSEN RANCH 39-40/WATER SYSTEM,,,,CA,,Bad Latitude,1760.0
+CAss_S1762,,Centroid of Area,,EPSG:4326,,,,,,,,,,"RIVER MILL, THE",,,,CA,,Bad Latitude,1761.0
+CAss_S1763,,Centroid of Area,,EPSG:4326,,,,,,,,,,OM SCOTT & SONS/HYPONEX CORP,,,,CA,,Bad Latitude,1762.0
+CAss_S1764,,Centroid of Area,,EPSG:4326,,,,,,,,,,BASALITE - TRACY,,,,CA,,Bad Latitude,1763.0
+CAss_S1765,,Centroid of Area,,EPSG:4326,,,,,,,,,,JIMMYS ONE STOP,,,,CA,,Bad Latitude,1764.0
+CAss_S1766,,Centroid of Area,,EPSG:4326,,,,,,,,,,LOCKEFORD SPRINGS GOLF COURSE,,,,CA,,Bad Latitude,1765.0
+CAss_S1767,,Centroid of Area,,EPSG:4326,,,,,,,,,,EUSD-HEAD START CHILD DEV SERVICES INC,,,,CA,,Bad Latitude,1766.0
+CAss_S1768,,Centroid of Area,,EPSG:4326,,,,,,,,,,FRENCH CAMP GOLF COURSE,,,,CA,,Bad Latitude,1767.0
+CAss_S1769,,Centroid of Area,,EPSG:4326,,,,,,,,,,SAN-I-PAK INC,,,,CA,,Bad Latitude,1768.0
+CAss_S1770,,Centroid of Area,,EPSG:4326,,,,,,,,,,O-G PACKING CO,,,,CA,,Bad Latitude,1769.0
+CAss_S1771,,Centroid of Area,,EPSG:4326,,,,,,,,,,STOCKTON BAPTIST CHURCH,,,,CA,,Bad Latitude,1770.0
+CAss_S1772,,Centroid of Area,,EPSG:4326,,,,,,,,,,P G & E-TURNER CUT WATER SYSTEM,,,,CA,,Bad Latitude,1771.0
+CAss_S1773,,Centroid of Area,,EPSG:4326,,,,,,,,,,FRANK C ALEGRE TRUCKING INC WS,,,,CA,,Bad Latitude,1772.0
+CAss_S1774,,Centroid of Area,,EPSG:4326,,,,,,,,,,MCHENRY AVE RECREATION AREA,,,,CA,,Bad Latitude,1773.0
+CAss_S1775,,Centroid of Area,,EPSG:4326,,,,,,,,,,"ENVIROPLEX, INC",,,,CA,,Bad Latitude,1774.0
+CAss_S1776,,Centroid of Area,,EPSG:4326,,,,,,,,,,CBUSO DBA TURNER ROAD VINTNERS (WEST),,,,CA,,Bad Latitude,1775.0
+CAss_S1777,,Centroid of Area,,EPSG:4326,,,,,,,,,,CALVA PRODUCTS CO INC,,,,CA,,Bad Latitude,1776.0
+CAss_S1778,,Centroid of Area,,EPSG:4326,,,,,,,,,,WOODBRIDGE COMMUNITY CHURCH,,,,CA,,Bad Latitude,1777.0
+CAss_S1779,,Centroid of Area,,EPSG:4326,,,,,,,,,,VALLEY LANDSCAPING & MAINT INC,,,,CA,,Bad Latitude,1778.0
+CAss_S1780,,Centroid of Area,,EPSG:4326,,,,,,,,,,FAITH COMMUNITY CHURCH OF THE NAZARENE,,,,CA,,Bad Latitude,1779.0
+CAss_S1781,,Centroid of Area,,EPSG:4326,,,,,,,,,,BEAR CREEK COMMUNITY CHURCH,,,,CA,,Bad Latitude,1780.0
+CAss_S1782,,Centroid of Area,,EPSG:4326,,,,,,,,,,BEAR CREEK WINERY,,,,CA,,Bad Latitude,1781.0
+CAss_S1783,,Centroid of Area,,EPSG:4326,,,,,,,,,,TRINIDAD BENHAM CORP WATER SYSTEM,,,,CA,,Bad Latitude,1782.0
+CAss_S1784,,Centroid of Area,,EPSG:4326,,,,,,,,,,SOUTHWINDS CHURCH OF TRACY,,,,CA,,Bad Latitude,1783.0
+CAss_S1785,,Centroid of Area,,EPSG:4326,,,,,,,,,,BURLINGTON NORTHERN SANTA FE,,,,CA,,Bad Latitude,1784.0
+CAss_S1786,,Centroid of Area,,EPSG:4326,,,,,,,,,,VALPICO INDUSTRIAL PARK,,,,CA,,Bad Latitude,1785.0
+CAss_S1787,,Centroid of Area,,EPSG:4326,,,,,,,,,,VAN RUITEN FAMILY WINERY,,,,CA,,Bad Latitude,1786.0
+CAss_S1788,,Centroid of Area,,EPSG:4326,,,,,,,,,,OAKMOORE CONGRE OF JEHOVAH WIT,,,,CA,,Bad Latitude,1787.0
+CAss_S1789,,Centroid of Area,,EPSG:4326,,,,,,,,,,KOREAN PRESBYTERIAN CHURCH,,,,CA,,Bad Latitude,1788.0
+CAss_S1790,,Centroid of Area,,EPSG:4326,,,,,,,,,,WASTEQUIP MFG CO INC,,,,CA,,Bad Latitude,1789.0
+CAss_S1791,,Centroid of Area,,EPSG:4326,,,,,,,,,,J B HUNT TRANSPORT INC,,,,CA,,Bad Latitude,1790.0
+CAss_S1792,,Centroid of Area,,EPSG:4326,,,,,,,,,,AUSTIN INDUSTRIAL PARK WATER SYSTEM,,,,CA,,Bad Latitude,1791.0
+CAss_S1793,,Centroid of Area,,EPSG:4326,,,,,,,,,,BES  WATER SYSTEM,,,,CA,,Bad Latitude,1792.0
+CAss_S1794,,Centroid of Area,,EPSG:4326,,,,,,,,,,VIEJO LTD,,,,CA,,Bad Latitude,1793.0
+CAss_S1795,,Centroid of Area,,EPSG:4326,,,,,,,,,,ST MICHAELS WATER SYSTEM,,,,CA,,Bad Latitude,1794.0
+CAss_S1796,,Centroid of Area,,EPSG:4326,,,,,,,,,,DOWN RIVER AN ITW COMPANY,,,,CA,,Bad Latitude,1795.0
+CAss_S1797,,Centroid of Area,,EPSG:4326,,,,,,,,,,DURHAM FERRY COMMUNITY SCHOOL,,,,CA,,Bad Latitude,1796.0
+CAss_S1798,,Centroid of Area,,EPSG:4326,,,,,,,,,,MORADA PRODUCE,,,,CA,,Bad Latitude,1797.0
+CAss_S1799,,Centroid of Area,,EPSG:4326,,,,,,,,,,HAVEN OF PEACE,,,,CA,,Bad Latitude,1798.0
+CAss_S1800,,Centroid of Area,,EPSG:4326,,,,,,,,,,MARTINIS BAIT & TACKLE,,,,CA,,Bad Latitude,1799.0
+CAss_S1801,,Centroid of Area,,EPSG:4326,,,,,,,,,,MUSCO FAMILY OLIVE CO,,,,CA,,Bad Latitude,1800.0
+CAss_S1802,,Centroid of Area,,EPSG:4326,,,,,,,,,,VICTORIA ISLAND FARMS,,,,CA,,Bad Latitude,1801.0
+CAss_S1803,,Centroid of Area,,EPSG:4326,,,,,,,,,,ST PATRICK CATHOLIC CHURCH WTR SYS,,,,CA,,Bad Latitude,1802.0
+CAss_S1804,,Centroid of Area,,EPSG:4326,,,,,,,,,,KINGDOM HALL OF JEHOVAHS WITNESSES,,,,CA,,Bad Latitude,1803.0
+CAss_S1805,,Centroid of Area,,EPSG:4326,,,,,,,,,,COUNTRY MART DIESEL & GAS WATER SYS,,,,CA,,Bad Latitude,1804.0
+CAss_S1806,,Centroid of Area,,EPSG:4326,,,,,,,,,,WOODBRIDGE PIZZA WATER SYSTEM,,,,CA,,Bad Latitude,1805.0
+CAss_S1807,,Centroid of Area,,EPSG:4326,,,,,,,,,,TUSCAN WINERY VILLAGE,,,,CA,,Bad Latitude,1806.0
+CAss_S1808,,Centroid of Area,,EPSG:4326,,,,,,,,,,TARDITI RENTALS WATER,,,,CA,,Bad Latitude,1807.0
+CAss_S1809,,Centroid of Area,,EPSG:4326,,,,,,,,,,JESSIES GROVE WINERY,,,,CA,,Bad Latitude,1808.0
+CAss_S1810,,Centroid of Area,,EPSG:4326,,,,,,,,,,PODESTA PACKING WATER SYSTEM,,,,CA,,Bad Latitude,1809.0
+CAss_S1811,,Centroid of Area,,EPSG:4326,,,,,,,,,,OLD RIVER GOLF COURSE,,,,CA,,Bad Latitude,1810.0
+CAss_S1812,,Centroid of Area,,EPSG:4326,,,,,,,,,,BEREA BAPTIST CHURCH STOCKTON CA,,,,CA,,Bad Latitude,1811.0
+CAss_S1813,,Centroid of Area,,EPSG:4326,,,,,,,,,,PRIMA FRUTTA PACKING,,,,CA,,Bad Latitude,1812.0
+CAss_S1814,,Centroid of Area,,EPSG:4326,,,,,,,,,,JACOBS TERMINOUS MARKET,,,,CA,,Bad Latitude,1813.0
+CAss_S1815,,Centroid of Area,,EPSG:4326,,,,,,,,,,JENSEN PRECAST,,,,CA,,Bad Latitude,1814.0
+CAss_S1816,,Centroid of Area,,EPSG:4326,,,,,,,,,,RIPON VFW POST 1051 WATER SYSTEM,,,,CA,,Bad Latitude,1815.0
+CAss_S1817,,Centroid of Area,,EPSG:4326,,,,,,,,,,TULARE FARMS LLLP WATER SYSTEM,,,,CA,,Bad Latitude,1816.0
+CAss_S1818,,Centroid of Area,,EPSG:4326,,,,,,,,,,PARK GREEN HOUSES WATER SYSTEM,,,,CA,,Bad Latitude,1817.0
+CAss_S1819,,Centroid of Area,,EPSG:4326,,,,,,,,,,GLORIANN FARM INC,,,,CA,,Bad Latitude,1818.0
+CAss_S1820,,Centroid of Area,,EPSG:4326,,,,,,,,,,PASTOR ST BERNARD CHRCH WTR SYS,,,,CA,,Bad Latitude,1819.0
+CAss_S1821,,Centroid of Area,,EPSG:4326,,,,,,,,,,FARMINGTON FRESH SALES LLC,,,,CA,,Bad Latitude,1820.0
+CAss_S1822,,Centroid of Area,,EPSG:4326,,,,,,,,,,INVESTORS OF KING ISLAND WATER SYS,,,,CA,,Bad Latitude,1821.0
+CAss_S1823,,Centroid of Area,,EPSG:4326,,,,,,,,,,DIEDE TRUCKING WATER SYSTEM,,,,CA,,Bad Latitude,1822.0
+CAss_S1825,,Centroid of Area,,EPSG:4326,,,,,,,,,,TRACY MATRL RECVRY/SLD WASTE WS,,,,CA,,Bad Latitude,1824.0
+CAss_S1826,,Centroid of Area,,EPSG:4326,,,,,,,,,,MOOSE OUTDOOR SPORTSMAN CLUB,,,,CA,,Bad Latitude,1825.0
+CAss_S1827,,Centroid of Area,,EPSG:4326,,,,,,,,,,PG&E: MANTECA SERVICE CENTER,,,,CA,,Bad Latitude,1826.0
+CAss_S1828,,Centroid of Area,,EPSG:4326,,,,,,,,,,PNP STOCKTON #80,,,,CA,,Bad Latitude,1827.0
+CAss_S1829,,Centroid of Area,,EPSG:4326,,,,,,,,,,WESTGATE LANDING PARK WATER SYSTEM,,,,CA,,Bad Latitude,1828.0
+CAss_S1830,,Centroid of Area,,EPSG:4326,,,,,,,,,,RIVER ROAD PRODUCE WATER SYSTEM,,,,CA,,Bad Latitude,1829.0
+CAss_S1831,,Centroid of Area,,EPSG:4326,,,,,,,,,,VIAGGIO WINERY WATER SYSTEM,,,,CA,,Bad Latitude,1830.0
+CAss_S1832,,Centroid of Area,,EPSG:4326,,,,,,,,,,LINDEN USD-CHARTVILLE SCHOOL,,,,CA,,Bad Latitude,1831.0
+CAss_S1833,,Centroid of Area,,EPSG:4326,,,,,,,,,,A SAMBADO & SON 39-321,,,,CA,,Bad Latitude,1832.0
+CAss_S1834,,Centroid of Area,,EPSG:4326,,,,,,,,,,SUTTER HOME WINERY INC.,,,,CA,,Bad Latitude,1833.0
+CAss_S1835,,Centroid of Area,,EPSG:4326,,,,,,,,,,SCHULTE ROAD WAREHOUSE WTR SYS,,,,CA,,Bad Latitude,1834.0
+CAss_S1836,,Centroid of Area,,EPSG:4326,,,,,,,,,,DAN R COSTA INC (WS),,,,CA,,Bad Latitude,1835.0
+CAss_S1837,,Centroid of Area,,EPSG:4326,,,,,,,,,,WOODSIDE INVESTMENTS INC DBA MICHAEL & C,,,,CA,,Bad Latitude,1836.0
+CAss_S1838,,Centroid of Area,,EPSG:4326,,,,,,,,,,WEST 11TH STREET CHEVRON WATER SYSTEM,,,,CA,,Bad Latitude,1837.0
+CAss_S1839,,Centroid of Area,,EPSG:4326,,,,,,,,,,GICO MANAGEMENT,,,,CA,,Bad Latitude,1838.0
+CAss_S1840,,Centroid of Area,,EPSG:4326,,,,,,,,,,TRACY ISLAMIC CENTER WATER SYSTEM,,,,CA,,Bad Latitude,1839.0
+CAss_S1841,,Centroid of Area,,EPSG:4326,,,,,,,,,,ROGER GORDON WATER SYSTEM,,,,CA,,Bad Latitude,1840.0
+CAss_S1863,,Centroid of Area,,EPSG:4326,,,,,,,,,,LAWRENCE LIVERMORE NATIONAL LAB-SITE 300,,,,CA,,Bad Latitude,1862.0
+CAss_S1865,,Centroid of Area,,EPSG:4326,,,,,,,,,,OAKWOOD LAKE MOBILE HOME PARK,,,,CA,,Bad Latitude,1864.0
+CAss_S1866,,Centroid of Area,,EPSG:4326,,,,,,,,,,CSP CASWELL STATE PARK,,,,CA,,Bad Latitude,1865.0
+CAss_S1867,,Centroid of Area,,EPSG:4326,,,,,,,,,,CARNEGIE SVRA,,,,CA,,Bad Latitude,1866.0
+CAss_S1868,,Centroid of Area,,EPSG:4326,,,,,,,,,,SAN JOAQUIN FAIR - 2ND DISTRICT,,,,CA,,Bad Latitude,1867.0
+CAss_S1874,,Centroid of Area,,EPSG:4326,,,,,,,,,,LAUREATE WATER COMPANY,,,,CA,,Bad Latitude,1873.0
+CAss_S1876,,Centroid of Area,,EPSG:4326,,,,,,,,,,TANK FARM BUSINESS PARK,,,,CA,,Bad Latitude,1875.0
+CAss_S1877,,Centroid of Area,,EPSG:4326,,,,,,,,,,LAETITIA VINEYARD & WINERY INC,,,,CA,,Bad Latitude,1876.0
+CAss_S1879,,Centroid of Area,,EPSG:4326,,,,,,,,,,PACIFIC DUNES RANCH,,,,CA,,Bad Latitude,1878.0
+CAss_S1884,,Centroid of Area,,EPSG:4326,,,,,,,,,,BELLA VISTA MOBILE LODGE,,,,CA,,Bad Latitude,1883.0
+CAss_S1886,,Centroid of Area,,EPSG:4326,,,,,,,,,,GUADALUPE COOLING COMPANY,,,,CA,,Bad Latitude,1885.0
+CAss_S1889,,Centroid of Area,,EPSG:4326,,,,,,,,,,CUYAMA LANE WATER COMPANY,,,,CA,,Bad Latitude,1888.0
+CAss_S1890,,Centroid of Area,,EPSG:4326,,,,,,,,,,SATCOM WATER SUPPLY--CAMP ROBERTS,,,,CA,,Bad Latitude,1889.0
+CAss_S1897,,Centroid of Area,,EPSG:4326,,,,,,,,,,TRI COUNTIES CLUB,,,,CA,,Bad Latitude,1896.0
+CAss_S1899,,Centroid of Area,,EPSG:4326,,,,,,,,,,RAGGED POINT INN,,,,CA,,Bad Latitude,1898.0
+CAss_S1902,,Centroid of Area,,EPSG:4326,,,,,,,,,,"FIERO LANE WATER COMPANY, INC.",,,,CA,,Bad Latitude,1901.0
+CAss_S1903,,Centroid of Area,,EPSG:4326,,,,,,,,,,WHITSON INDUSTRIAL PARK,,,,CA,,Bad Latitude,1902.0
+CAss_S1904,,Centroid of Area,,EPSG:4326,,,,,,,,,,HOLDGRAFER & ASSOCIATES,,,,CA,,Bad Latitude,1903.0
+CAss_S1910,,Centroid of Area,,EPSG:4326,,,,,,,,,,J M SIMS WATER SUPPLY,,,,CA,,Bad Latitude,1909.0
+CAss_S1916,,Centroid of Area,,EPSG:4326,,,,,,,,,,PORT SAN LUIS HARBOR DISTRICT,,,,CA,,Bad Latitude,1915.0
+CAss_S1920,,Centroid of Area,,EPSG:4326,,,,,,,,,,EAST AIRPORT FIERO LANE WATER CO,,,,CA,,Bad Latitude,1919.0
+CAss_S1921,,Centroid of Area,,EPSG:4326,,,,,,,,,,EAST AIRPORT FIERO LANE WATER COMPANY,,,,CA,,Bad Latitude,1920.0
+CAss_S1922,,Centroid of Area,,EPSG:4326,,,,,,,,,,EDNA VALLEY VINEYARDS,,,,CA,,Bad Latitude,1921.0
+CAss_S1923,,Centroid of Area,,EPSG:4326,,,,,,,,,,ARONHILL VINEYARD,,,,CA,,Bad Latitude,1922.0
+CAss_S1943,,Centroid of Area,,EPSG:4326,,,,,,,,,,LOPEZ PROJECT,,,,CA,,Bad Latitude,1942.0
+CAss_S1952,,Centroid of Area,,EPSG:4326,,,,,,,,,,NACIMIENTO WATER PROJECT,,,,CA,,Bad Latitude,1951.0
+CAss_S1954,,Centroid of Area,,EPSG:4326,,,,,,,,,,HEARST MONUMENT STATE PARK,,,,CA,,Bad Latitude,1953.0
+CAss_S1955,,Centroid of Area,,EPSG:4326,,,,,,,,,,HEARST MEMORIAL STATE BEACH,,,,CA,,Bad Latitude,1954.0
+CAss_S1957,,Centroid of Area,,EPSG:4326,,,,,,,,,,ESTRELLA CORRECTIONAL FACILITY,,,,CA,,Bad Latitude,1956.0
+CAss_S1966,,Centroid of Area,,EPSG:4326,,,,,,,,,,PIGEON POINT YOUTH HOSTEL,,,,CA,,Bad Latitude,1965.0
+CAss_S1968,,Centroid of Area,,EPSG:4326,,,,,,,,,,SAN GREGORIO CO,,,,CA,,Bad Latitude,1967.0
+CAss_S1974,,Centroid of Area,,EPSG:4326,,,,,,,,,,CALIFORNIA WATER SERVICE - BEAR GULCH,,,,CA,,Bad Latitude,1973.0
+CAss_S1994,,Centroid of Area,,EPSG:4326,,,,,,,,,,PILLAR RIDGE MHP (FORMER EL GRANADA MHP),,,,CA,,Bad Latitude,1993.0
+CAss_S1995,,Centroid of Area,,EPSG:4326,,,,,,,,,,CASMITE CORPORATION,,,,CA,,Bad Latitude,1994.0
+CAss_S2003,,Centroid of Area,,EPSG:4326,,,,,,,,,,FREMONT/SY IMPROVEMENT ASSN.,,,,CA,,Bad Latitude,2002.0
+CAss_S2004,,Centroid of Area,,EPSG:4326,,,,,,,,,,MORETON BAY PROFESSIONAL GROUP,,,,CA,,Bad Latitude,2003.0
+CAss_S2005,,Centroid of Area,,EPSG:4326,,,,,,,,,,SAN MARCOS CHRISTIAN CAMP,,,,CA,,Bad Latitude,2004.0
+CAss_S2006,,Centroid of Area,,EPSG:4326,,,,,,,,,,COMMUNITY CHRISTIAN SCHOOL,,,,CA,,Bad Latitude,2005.0
+CAss_S2007,,Centroid of Area,,EPSG:4326,,,,,,,,,,KINECTA FEDERAL CREDIT UNION,,,,CA,,Bad Latitude,2006.0
+CAss_S2010,,Centroid of Area,,EPSG:4326,,,,,,,,,,PACIFIC OFFSHORE PIPELINE COMP,,,,CA,,Bad Latitude,2009.0
+CAss_S2012,,Centroid of Area,,EPSG:4326,,,,,,,,,,INDIGO SYSTEMS,,,,CA,,Bad Latitude,2011.0
+CAss_S2016,,Centroid of Area,,EPSG:4326,,,,,,,,,,SOUTH COAST INN,,,,CA,,Bad Latitude,2015.0
+CAss_S2017,,Centroid of Area,,EPSG:4326,,,,,,,,,,CHANNEL TECHNOLOGIES GROUP LLC,,,,CA,,Bad Latitude,2016.0
+CAss_S2019,,Centroid of Area,,EPSG:4326,,,,,,,,,,"EXXON, LAS FLORES CYN PROJECT",,,,CA,,Bad Latitude,2018.0
+CAss_S2030,,Centroid of Area,,EPSG:4326,,,,,,,,,,VALLEY PACIFIC PETROLEUM SERVICES,,,,CA,,Bad Latitude,2029.0
+CAss_S2034,,Centroid of Area,,EPSG:4326,,,,,,,,,,SANTA BARBARA PISTACHIO CO,,,,CA,,Bad Latitude,2033.0
+CAss_S2035,,Centroid of Area,,EPSG:4326,,,,,,,,,,RUSACK VINEYARDS,,,,CA,,Bad Latitude,2034.0
+CAss_S2036,,Centroid of Area,,EPSG:4326,,,,,,,,,,BETTER COOLING PRODUCE,,,,CA,,Bad Latitude,2035.0
+CAss_S2037,,Centroid of Area,,EPSG:4326,,,,,,,,,,DIERBERG/STAR LANE VINEYARD,,,,CA,,Bad Latitude,2036.0
+CAss_S2038,,Centroid of Area,,EPSG:4326,,,,,,,,,,FLAG IS UP FARMS,,,,CA,,Bad Latitude,2037.0
+CAss_S2057,,Centroid of Area,,EPSG:4326,,,,,,,,,,CENTRAL COAST WATER AUTHORITY,,,,CA,,Bad Latitude,2056.0
+CAss_S2061,,Centroid of Area,,EPSG:4326,,,,,,,,,,ARROWHEAD COOPERATIVE COMPANY,,,,CA,,Bad Latitude,2060.0
+CAss_S2082,,Centroid of Area,,EPSG:4326,,,,,,,,,,JOSEPH GRANT COUNTY PARK,,,,CA,,Bad Latitude,2081.0
+CAss_S2090,,Centroid of Area,,EPSG:4326,,,,,,,,,,LEARNING SERVICES CORP.,,,,CA,,Bad Latitude,2089.0
+CAss_S2091,,Centroid of Area,,EPSG:4326,,,,,,,,,,"SIMONSEN LABORATORIES, INC.",,,,CA,,Bad Latitude,2090.0
+CAss_S2092,,Centroid of Area,,EPSG:4326,,,,,,,,,,SIMONSEN LABORATORIES INC,,,,CA,,Bad Latitude,2091.0
+CAss_S2093,,Centroid of Area,,EPSG:4326,,,,,,,,,,"ROYAL OAKS MUSHROOM ENTERPRISES, INC.",,,,CA,,Bad Latitude,2092.0
+CAss_S2096,,Centroid of Area,,EPSG:4326,,,,,,,,,,CALERO COUNTY PARK,,,,CA,,Bad Latitude,2095.0
+CAss_S2097,,Centroid of Area,,EPSG:4326,,,,,,,,,,NESTLDOWN RANCH,,,,CA,,Bad Latitude,2096.0
+CAss_S2114,,Centroid of Area,,EPSG:4326,,,,,,,,,,SANTA CLARA VALLEY WATER DISTRICT,,,,CA,,Bad Latitude,2113.0
+CAss_S2119,,Centroid of Area,,EPSG:4326,,,,,,,,,,MANANA WOODS,,,,CA,,Bad Latitude,2118.0
+CAss_S2138,,Centroid of Area,,EPSG:4326,,,,,,,,,,HIDDEN FALLS GIRL SCOUT CAMP,,,,CA,,Bad Latitude,2137.0
+CAss_S2151,,Centroid of Area,,EPSG:4326,,,,,,,,,,LOMPICO COUNTY WATER DISTRICT,,,,CA,,Bad Latitude,2150.0
+CAss_S2152,,Centroid of Area,,EPSG:4326,,,,,,,,,,SLVWD-LOMPICO,,,,CA,,Bad Latitude,2151.0
+CAss_S2157,,Centroid of Area,,EPSG:4326,,,,,,,,,,"SHASTA CSA - KESWICK,  #25",,,,CA,,Bad Latitude,2156.0
+CAss_S2167,,Centroid of Area,,EPSG:4326,,,,,,,,,,WHEELABRATOR SHASTA ENERGY,,,,CA,,Bad Latitude,2166.0
+CAss_S2173,,Centroid of Area,,EPSG:4326,,,,,,,,,,HAT CREEK HEREFORD RANCH RV PARK,,,,CA,,Bad Latitude,2172.0
+CAss_S2177,,Centroid of Area,,EPSG:4326,,,,,,,,,,HILL COUNTRY COMMUNITY CLINIC & WELLNESS,,,,CA,,Bad Latitude,2176.0
+CAss_S2195,,Centroid of Area,,EPSG:4326,,,,,,,,,,GREENE ACRES PROP. O.A.,,,,CA,,Bad Latitude,2194.0
+CAss_S2223,,Centroid of Area,,EPSG:4326,,,,,,,,,,SUPERIOR PACKING CO.,,,,CA,,Bad Latitude,2222.0
+CAss_S2224,,Centroid of Area,,EPSG:4326,,,,,,,,,,SUPERIOR PACKING CO,,,,CA,,Bad Latitude,2223.0
+CAss_S2225,,Centroid of Area,,EPSG:4326,,,,,,,,,,CAMPBELL SOUP SUPPLY CO - DIXON CANNING,,,,CA,,Bad Latitude,2224.0
+CAss_S2226,,Centroid of Area,,EPSG:4326,,,,,,,,,,CAMPBELL SOUP DIXON,,,,CA,,Bad Latitude,2225.0
+CAss_S2227,,Centroid of Area,,EPSG:4326,,,,,,,,,,STOCKING RANCH DEEPWELL,,,,CA,,Bad Latitude,2226.0
+CAss_S2241,,Centroid of Area,,EPSG:4326,,,,,,,,,,HINES NURSERIES WINTERS NORTH,,,,CA,,Bad Latitude,2240.0
+CAss_S2246,,Centroid of Area,,EPSG:4326,,,,,,,,,,HINES NURSERY WINTERS SOUTH,,,,CA,,Bad Latitude,2245.0
+CAss_S2247,,Centroid of Area,,EPSG:4326,,,,,,,,,,SOLANO COUNTY CORDELIA SITE,,,,CA,,Bad Latitude,2246.0
+CAss_S2284,,Centroid of Area,,EPSG:4326,,,,,,,,,,SEQUOIA GARDENS MOBILE HOME PARK,,,,CA,,Bad Latitude,2283.0
+CAss_S2294,,Centroid of Area,,EPSG:4326,,,,,,,,,,PALMS INN,,,,CA,,Bad Latitude,2293.0
+CAss_S2295,,Centroid of Area,,EPSG:4326,,,,,,,,,,MOUNT TAYLOR MOBILE HOME PARK,,,,CA,,Bad Latitude,2294.0
+CAss_S2300,,Centroid of Area,,EPSG:4326,,,,,,,,,,WEST FIELD COMMUNITY,,,,CA,,Bad Latitude,2299.0
+CAss_S2308,,Centroid of Area,,EPSG:4326,,,,,,,,,,SMOTHER'S WATER SYSTEM,,,,CA,,Bad Latitude,2307.0
+CAss_S2341,,Centroid of Area,,EPSG:4326,,,,,,,,,,LYTTON ADULT REHABILITATION CENTER,,,,CA,,Bad Latitude,2340.0
+CAss_S2355,,Centroid of Area,,EPSG:4326,,,,,,,,,,WASHOE CREEK GOLF COURSE,,,,CA,,Bad Latitude,2354.0
+CAss_S2356,,Centroid of Area,,EPSG:4326,,,,,,,,,,MARK WEST NEIGHBORHOOD CHURCH,,,,CA,,Bad Latitude,2355.0
+CAss_S2373,,Centroid of Area,SONOMA,EPSG:4326,,,,,,,,,,"KENWOOD BPSC HUNT CLUB, LLC",CA4901399,,Water Service Area,CA,,Bad Latitude,2372.0
+CAss_S2396,,Centroid of Area,,EPSG:4326,,,,,,,,,,SONOMA COUNTY WATER AGENCY,,,,CA,,Bad Latitude,2395.0
+CAss_S2414,,Centroid of Area,,EPSG:4326,,,,,,,,,,ORCHARD VILLAGE MHP,,,,CA,,Bad Latitude,2413.0
+CAss_S2419,,Centroid of Area,,EPSG:4326,,,,,,,,,,GREEN RUN MOBILE ESTATES,,,,CA,,Bad Latitude,2418.0
+CAss_S2420,,Centroid of Area,,EPSG:4326,,,,,,,,,,OID #49 - GILBERT,,,,CA,,Bad Latitude,2419.0
+CAss_S2429,,Centroid of Area,,EPSG:4326,,,,,,,,,,B & H MANUFACTURING,,,,CA,,Bad Latitude,2428.0
+CAss_S2459,,Centroid of Area,,EPSG:4326,,,,,,,,,,NUESTRO SCHOOL,,,,CA,,Bad Latitude,2458.0
+CAss_S2460,,Centroid of Area,,EPSG:4326,,,,,,,,,,GRACE BAPTIST CHURCH,,,,CA,,Bad Latitude,2459.0
+CAss_S2461,,Centroid of Area,,EPSG:4326,,,,,,,,,,LIVE OAK RECREATION AREA,,,,CA,,Bad Latitude,2460.0
+CAss_S2462,,Centroid of Area,,EPSG:4326,,,,,,,,,,RIVER RANCH CAMP W.S.,,,,CA,,Bad Latitude,2461.0
+CAss_S2466,,Centroid of Area,,EPSG:4326,,,,,,,,,,WAL*MART DIST. CTR/ECO RES,,,,CA,,Bad Latitude,2465.0
+CAss_S2471,,Centroid of Area,,EPSG:4326,,,,,,,,,,LARKSPUR MEADOWS WATER CO.,,,,CA,,Bad Latitude,2470.0
+CAss_S2472,,Centroid of Area,,EPSG:4326,,,,,,,,,,MOOSE LODGE,,,,CA,,Bad Latitude,2471.0
+CAss_S2478,,Centroid of Area,,EPSG:4326,,,,,,,,,,SALT CREEK CONSERVATION CAMP,,,,CA,,Bad Latitude,2477.0
+CAss_S2493,,Centroid of Area,,EPSG:4326,,,,,,,,,,PORTERVILLE CITRUS RAYO,,,,CA,,Bad Latitude,2492.0
+CAss_S2494,,Centroid of Area,,EPSG:4326,,,,,,,,,,SUGARLOAF VILLAGE MWC,,,,CA,,Bad Latitude,2493.0
+CAss_S2497,,Centroid of Area,,EPSG:4326,,,,,,,,,,BEVERLY GRAND MUTUAL WATER,,,,CA,,Bad Latitude,2496.0
+CAss_S2503,,Centroid of Area,,EPSG:4326,,,,,,,,,,KAWEAH HIGH SCHOOL,,,,CA,,Bad Latitude,2502.0
+CAss_S2505,,Centroid of Area,,EPSG:4326,,,,,,,,,,OAK VALLEY SCHOOL,,,,CA,,Bad Latitude,2504.0
+CAss_S2515,,Centroid of Area,,EPSG:4326,,,,,,,,,,CLM-STONEY CREEK CAMPGROUND,,,,CA,,Bad Latitude,2514.0
+CAss_S2516,,Centroid of Area,,EPSG:4326,,,,,,,,,,CLM-FIR&COVE GROUP CAMPGROUNDS,,,,CA,,Bad Latitude,2515.0
+CAss_S2519,,Centroid of Area,,EPSG:4326,,,,,,,,,,WESTLAKE VILLAGE MHP,,,,CA,,Bad Latitude,2518.0
+CAss_S2521,,Centroid of Area,,EPSG:4326,,,,,,,,,,PENINSULA PACKAGING CO,,,,CA,,Bad Latitude,2520.0
+CAss_S2523,,Centroid of Area,,EPSG:4326,,,,,,,,,,HORIZON NUT LLC,,,,CA,,Bad Latitude,2522.0
+CAss_S2525,,Centroid of Area,,EPSG:4326,,,,,,,,,,CLM-ESHOM CAMPGROUND,,,,CA,,Bad Latitude,2524.0
+CAss_S2529,,Centroid of Area,,EPSG:4326,,,,,,,,,,VISALIA CITRUS PACKERS-WOODLAKE,,,,CA,,Bad Latitude,2528.0
+CAss_S2531,,Centroid of Area,,EPSG:4326,,,,,,,,,,USFS-JOHNSONDALE WORK CENTER,,,,CA,,Bad Latitude,2530.0
+CAss_S2533,,Centroid of Area,,EPSG:4326,,,,,,,,,,USFS-JERKEY MEADOW TRAILHEAD / UHL WC,,,,CA,,Bad Latitude,2532.0
+CAss_S2543,,Centroid of Area,,EPSG:4326,,,,,,,,,,TREEHOUSE CALIFORNIA ALMONDS LLC,,,,CA,,Bad Latitude,2542.0
+CAss_S2545,,Centroid of Area,,EPSG:4326,,,,,,,,,,WAWONA PACKING COMPANY LLC,,,,CA,,Bad Latitude,2544.0
+CAss_S2546,,Centroid of Area,,EPSG:4326,,,,,,,,,,COURAGE TO CHANGE,,,,CA,,Bad Latitude,2545.0
+CAss_S2565,,Centroid of Area,,EPSG:4326,,,,,,,,,,LSID-PAGE MOORE SYSTEM,,,,CA,,Bad Latitude,2564.0
+CAss_S2570,,Centroid of Area,,EPSG:4326,,,,,,,,,,LSID - EL RANCHO,,,,CA,,Bad Latitude,2569.0
+CAss_S2574,,Centroid of Area,,EPSG:4326,,,,,,,,,,PEACH GROWERS TRACT IMPROV ASSOC,,,,CA,,Bad Latitude,2573.0
+CAss_S2575,,Centroid of Area,,EPSG:4326,,,,,,,,,,COW CREEK PERMITTEES ASSOCIATION,,,,CA,,Bad Latitude,2574.0
+CAss_S2576,,Centroid of Area,,EPSG:4326,,,,,,,,,,CAMP MATHER,,,,CA,,Bad Latitude,2575.0
+CAss_S2580,,Centroid of Area,,EPSG:4326,,,,,,,,,,LELAND MEADOW WATER DISTRICT,,,,CA,,Bad Latitude,2579.0
+CAss_S2590,,Centroid of Area,,EPSG:4326,,,,,,,,,,LOST DUTCHMAN MINING ASSOC,,,,CA,,Bad Latitude,2589.0
+CAss_S2592,,Centroid of Area,,EPSG:4326,,,,,,,,,,USFS BOULDER FLAT,,,,CA,,Bad Latitude,2591.0
+CAss_S2604,,Centroid of Area,,EPSG:4326,,,,,,,,,,TUD - CRYSTAL FALLS WATER SYSTEM,,,,CA,,Bad Latitude,2603.0
+CAss_S2610,,Centroid of Area,,EPSG:4326,,,,,,,,,,TUD -  MONO VILLAGE WATER SYSTEM,,,,CA,,Bad Latitude,2609.0
+CAss_S2612,,Centroid of Area,,EPSG:4326,,,,,,,,,,TUD-EAST SONORA WATER SYSTEM,,,,CA,,Bad Latitude,2611.0
+CAss_S2617,,Centroid of Area,,EPSG:4326,,,,,,,,,,TUD-CUESTA CENTER-LAMBERT LAKES,,,,CA,,Bad Latitude,2616.0
+CAss_S2619,,Centroid of Area,,EPSG:4326,,,,,,,,,,TUD - BIG HILL WATER SYSTEM,,,,CA,,Bad Latitude,2618.0
+CAss_S2620,,Centroid of Area,,EPSG:4326,,,,,,,,,,TUD - MONTE GRANDE WATER SYSTEM,,,,CA,,Bad Latitude,2619.0
+CAss_S2633,,Centroid of Area,,EPSG:4326,,,,,,,,,,THOMAS AQUINAS COLLEGE,,,,CA,,Bad Latitude,2632.0
+CAss_S2634,,Centroid of Area,,EPSG:4326,,,,,,,,,,LAKE PIRU PARK - UWCD,,,,CA,,Bad Latitude,2633.0
+CAss_S2636,,Centroid of Area,VENTURA,EPSG:4326,,,,,,,,,,DEL NORTE MUTUAL WATER CO.,CA5602104,,Water Service Area,CA,,Bad Latitude,2635.0
+CAss_S2644,,Centroid of Area,,EPSG:4326,,,,,,,,,,LAGUNA VISTA SCHOOL/OCEANVIEW SCHOOL DIS,,,,CA,,Bad Latitude,2643.0
+CAss_S2645,,Centroid of Area,,EPSG:4326,,,,,,,,,,RIO MESA HIGH SCHOOL/OXNARD UHS,,,,CA,,Bad Latitude,2644.0
+CAss_S2646,,Centroid of Area,,EPSG:4326,,,,,,,,,,"HOUWELING NURSERIES, LTD",,,,CA,,Bad Latitude,2645.0
+CAss_S2647,,Centroid of Area,,EPSG:4326,,,,,,,,,,"STATE READY MIX, INC.",,,,CA,,Bad Latitude,2646.0
+CAss_S2689,,Centroid of Area,,EPSG:4326,,,,,,,,,,PILOT TRAVEL CENTER #168 - WATER,,,,CA,,Bad Latitude,2688.0
+CAss_S2693,,Centroid of Area,,EPSG:4326,,,,,,,,,,CLARK PACIFIC - CR 18C,,,,CA,,Bad Latitude,2692.0
+CAss_S2694,,Centroid of Area,,EPSG:4326,,,,,,,,,,SYNGENTA SEEDS INC,,,,CA,,Bad Latitude,2693.0
+CAss_S2695,,Centroid of Area,,EPSG:4326,,,,,,,,,,UNITARIAN CHURCH OF DAVIS,,,,CA,,Bad Latitude,2694.0
+CAss_S2697,,Centroid of Area,,EPSG:4326,,,,,,,,,,JEHOVAH'S WITNESSES - SOUTHPORT,,,,CA,,Bad Latitude,2696.0
+CAss_S2706,,Centroid of Area,,EPSG:4326,,,,,,,,,,WOODLAND-DAVIS CLEAN WATER AGENCY,,,,CA,,Bad Latitude,2705.0
+CAss_S2708,,Centroid of Area,,EPSG:4326,,,,,,,,,,AEROPINES,,,,CA,,Bad Latitude,2707.0
+CAss_S2710,,Centroid of Area,,EPSG:4326,,,,,,,,,,CYO CAMP PENDOLA,,,,CA,,Bad Latitude,2709.0
