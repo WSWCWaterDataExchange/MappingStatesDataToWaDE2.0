@@ -8,7 +8,7 @@ The following data was used for aggregated water budget...
 - Texas County and Basin shapefiles data retrieved from personal correspondence via email from between the TWDB and the WSWC.
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share TWDB's aggregated water budget data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *TX_Aggregated Schema Mapping to WaDE_QA.xlsx*.  Six executable code files were used to extract the TWDB's aggregated water budget data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(AggregatedAmounts_facts)* is dependent on the previous files.  Those six code files are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share TWDB's aggregated water budget data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *[TX_Aggregated Schema Mapping to WaDE_QA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Texas/AggregatedAmounts/TX_Aggregated%20Schema%20Mapping%20to%20WaDE_QA.xlsx)*.  Six executable code files were used to extract the TWDB's aggregated water budget data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(AggregatedAmounts_facts)* is dependent on the previous files.  Those six code files are as follows...
 
 - 0_TXAggregatedDataPreprocess.ipynb
 - 1_TXagg_Methods.py
@@ -144,7 +144,7 @@ Purpose: generate a list of water sources specific to an aggregated water budget
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign state agency data info to the *WaDE WaterSources* specific columns.  See *TX_Aggregated Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+- Assign state agency data info to the *WaDE WaterSources* specific columns.  See *[TX_Aggregated Schema Mapping to WaDE_QA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Texas/AggregatedAmounts/TX_Aggregated%20Schema%20Mapping%20to%20WaDE_QA.xlsx)* for specific details.  Items of note are as follows...
     - *WaterSourceNativeID* = custom WaDE specific ID of *in_WaterSourceNativeID*, see *0_TXAggregatedDataPreprocess.ipynb* for specifics.
     - *WaterSourceTypeCV* = *in_WaterSourceType*, see *0_TXAggregatedDataPreprocess.ipynb* for specifics. Based on provided Texas beneficial use columns.
 - Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceTypeCV* field.
@@ -178,7 +178,7 @@ Purpose: generate a list of polygon areas associated with the state agency speci
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE ReportingUnits* specific columns.
-- Assign state agency data info to the *WaDE ReportingUnits* specific columns.  See *TX_Aggregated Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+- Assign state agency data info to the *WaDE ReportingUnits* specific columns.  See *[TX_Aggregated Schema Mapping to WaDE_QA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Texas/AggregatedAmounts/TX_Aggregated%20Schema%20Mapping%20to%20WaDE_QA.xlsx)* for specific details.  Items of note are as follows...
     - *ReportingUnitName* = respective **Basin** and **County** fields.
     - *ReportingUnitNativeID* = custom WaDE specific ID of *in_ReportingUnitNativeID*, see *0_TXAggregatedDataPreprocess.ipynb* for specifics.
     - *ReportingUnitTypeCV* = Basin or County respectively.
@@ -220,7 +220,7 @@ Purpose: generate master sheet of state agency specified area aggregated water b
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
-- Assign state agency data info to the *WaDE Water Allocations* specific columns.  See *TX_Aggregated Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+- Assign state agency data info to the *WaDE Water Allocations* specific columns.  See *[TX_Aggregated Schema Mapping to WaDE_QA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Texas/AggregatedAmounts/TX_Aggregated%20Schema%20Mapping%20to%20WaDE_QA.xlsx)* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *ReportingUnitUUID* from respective input csv files. See code for specific implementation of extraction.
     - *Amount* = *in_Amount*, see *0_TXAggregatedDataPreprocess.ipynb* for specifics.
     - *BeneficialUseCategory* = *TX_BenUse*, see *0_TXAggregatedDataPreprocess.ipynb* for specifics.
