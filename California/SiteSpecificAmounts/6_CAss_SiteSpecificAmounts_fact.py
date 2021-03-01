@@ -138,7 +138,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = '02/26/2021'
+outdf['DataPublicationDate'] = '03/01/2021'
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""
@@ -153,7 +153,7 @@ print("IrrigationMethodCV")
 outdf['IrrigationMethodCV'] = ""
 
 print("PopulationServed")
-outdf['PopulationServed'] = df_DM['Population Of Service Area']
+outdf['PopulationServed'] = df_DM['Population Of Service Area'].astype(int)
 
 print("PowerGeneratedGWh")
 outdf['PowerGeneratedGWh'] = ""
@@ -165,7 +165,7 @@ print("PrimaryUseCategory")
 outdf['PrimaryUseCategory'] = "Unspecified"
 
 print("ReportYearCV")
-outdf['ReportYearCV'] = df_DM['Year']
+outdf['ReportYearCV'] = df_DM['Year'].astype(int)
 
 print("SDWISIdentifier")
 outdf['SDWISIdentifier'] = ""

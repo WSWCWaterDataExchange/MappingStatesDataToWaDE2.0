@@ -1,0 +1,6 @@
+WaterSourceUUID,Geometry,GNISFeatureNameCV,WaterQualityIndicatorCV,WaterSourceName,WaterSourceNativeID,WaterSourceTypeCV
+CAss_WS1,,,Fresh,Unspecified,Unspecified,Groundwater
+CAss_WS2,,,Fresh,Unspecified,Unspecified,Groundwater Purchased
+CAss_WS3,,,Fresh,Unspecified,Unspecified,Surface Water
+CAss_WS4,,,Fresh,Unspecified,Unspecified,Surface Water Purchased
+CAss_WS6,,,Fresh,Unspecified,Unspecified,Groundwater UDI Surface Water
