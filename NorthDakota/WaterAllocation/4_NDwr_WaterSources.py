@@ -9,6 +9,12 @@ import pandas as pd
 import numpy as np
 import os
 
+# Custom Libraries
+############################################################################
+import sys
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+import TestErrorFunctions
+
 
 # Inputs
 ############################################################################
@@ -35,7 +41,7 @@ columnslist = [
 # For creating WaterSourceName
 def assignWaterSourceName(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
-        outList = 'Unknown'
+        outList = 'Unspecified'
     else:
         outList = colrowValue.strip()
     return outList
@@ -43,7 +49,7 @@ def assignWaterSourceName(colrowValue):
 # For creating WaterSourceTypeCV
 def assignWaterSourceTypeCV(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
-        outList = 'Unknown'
+        outList = 'Unspecified'
     else:
         outList = colrowValue.strip()
     return outList
@@ -60,20 +66,20 @@ def assignWaterSourceUUID(colrowValue):
 print("Populating dataframe...")
 outdf = pd.DataFrame(index=df.index, columns=columnslist)  # The output dataframe for CSV.
 
-print("Geometry")  # Hardcoded
-#outdf.Geometry = ""
+print("Geometry")
+outdf['Geometry'] = ""
 
-print("GNISFeatureNameCV")  # Hardcoded
-#outdf.GNISFeatureNameCV = ""
+print("GNISFeatureNameCV")
+outdf['GNISFeatureNameCV'] = ""
 
-print("WaterQualityIndicatorCV")  # Hardcoded
-outdf.WaterQualityIndicatorCV = "Fresh"
+print("WaterQualityIndicatorCV")
+outdf['WaterQualityIndicatorCV'] = "Fresh"
 
-print("WaterSourceName")  # Hardcoded
+print("WaterSourceName")
 outdf['WaterSourceName'] = df.apply(lambda row: assignWaterSourceName(row['source_nam']), axis=1)
 
-print("WaterSourceNativeID")  # Hardcoded
-outdf.WaterSourceNativeID = "Unspecified"
+print("WaterSourceNativeID")
+outdf['WaterSourceNativeID'] = df['in_WaterSourceNativeID']
 
 print("WaterSourceTypeCV")
 outdf['WaterSourceTypeCV'] = df.apply(lambda row: assignWaterSourceTypeCV(row['source']), axis=1)
@@ -81,84 +87,54 @@ outdf['WaterSourceTypeCV'] = df.apply(lambda row: assignWaterSourceTypeCV(row['s
 ##############################
 # Dropping duplicate
 print("Dropping duplicates")
-outdf = outdf.drop_duplicates(subset=['WaterSourceName', 'WaterSourceTypeCV']).reset_index(drop=True)
+outdf = outdf.drop_duplicates(subset=['WaterSourceName', 'WaterSourceNativeID', 'WaterSourceTypeCV']).reset_index(drop=True)
 ##############################
 
 print("WaterSourceUUID")
 df["Count"] = range(1, len(df.index) + 1)
 outdf['WaterSourceUUID'] = df.apply(lambda row: assignWaterSourceUUID(row['Count']), axis=1)
 
-print("Resetting Index")  # Hardcoded
+print("Resetting Index")
 outdf.reset_index()
 
 
 #Error Checking each Field
 ############################################################################
-print("Error checking each field.  Purging bad inputs.")  # Hardcoded
+print("Error checking each field.  Purging bad inputs.")
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 
-# WaterSourceUUID_nvarchar(250)_-
-mask = outdf.loc[ (outdf["WaterSourceUUID"].isnull()) | (outdf["WaterSourceUUID"] == '') | (outdf['WaterSourceUUID'].str.len() > 250) ].assign(ReasonRemoved='Bad WaterSourceUUID').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)  # Append to purge DataFrame
-    dropIndex = outdf.loc[ (outdf["WaterSourceUUID"].isnull()) | (outdf["WaterSourceUUID"] == '') | (outdf['WaterSourceUUID'].str.len() > 250) ].index
-    outdf = outdf.drop(dropIndex)
-    outdf = outdf.reset_index(drop=True)
-    
-# Geometry_geometry_Yes
+# WaterSourceUUID
+outdf, dfpurge = TestErrorFunctions.WaterSourceUUID_WS_Check(outdf, dfpurge)
+
+# Geometry
 # ???? How to check for geometry datatype
 
-# GNISFeatureNameCV_nvarchar(250)_Yes
-mask = outdf.loc[ outdf["GNISFeatureNameCV"].str.len() > 250 ].assign(ReasonRemoved='Bad GNISFeatureNameCV').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf.loc[ outdf["GNISFeatureNameCV"].str.len() > 250 ].index
-    outdf = outdf.drop(dropIndex)
-    outdf = outdf.reset_index(drop=True)
+# GNISFeatureNameCV
+outdf, dfpurge = TestErrorFunctions.GNISFeatureNameCV_WS_Check(outdf, dfpurge)
 
-# WaterQualityIndicatorCV_nvarchar(100)_-
-mask = outdf.loc[ (outdf["WaterQualityIndicatorCV"].isnull()) | (outdf["WaterQualityIndicatorCV"] == '') | (outdf['WaterQualityIndicatorCV'].str.len() > 250) ].assign(ReasonRemoved='Bad WaterQualityIndicatorCV').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)  # Append to purge DataFrame
-    dropIndex = outdf.loc[ (outdf["WaterQualityIndicatorCV"].isnull()) | (outdf["WaterQualityIndicatorCV"] == '') | (outdf['WaterQualityIndicatorCV'].str.len() > 250) ].index
-    outdf = outdf.drop(dropIndex)
-    outdf = outdf.reset_index(drop=True)
+# WaterQualityIndicatorCV
+outdf, dfpurge = TestErrorFunctions.WaterQualityIndicatorCV_WS_Check(outdf, dfpurge)
 
-# WaterSourceName_nvarchar(250)_Yes
-mask = outdf.loc[ outdf["WaterSourceName"].str.len() > 250 ].assign(ReasonRemoved='Bad WaterSourceName').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf.loc[ outdf["WaterSourceName"].str.len() > 250 ].index
-    outdf = outdf.drop(dropIndex)
-    outdf = outdf.reset_index(drop=True)
+# WaterSourceName
+outdf, dfpurge = TestErrorFunctions.WaterSourceName_WS_Check(outdf, dfpurge)
 
-# WaterSourceNativeID_nvarchar(250)_Yes
-mask = outdf.loc[ outdf["WaterSourceNativeID"].str.len() > 250 ].assign(ReasonRemoved='Bad WaterSourceNativeID').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)
-    dropIndex = outdf.loc[ outdf["WaterSourceNativeID"].str.len() > 250 ].index
-    outdf = outdf.drop(dropIndex)
-    outdf = outdf.reset_index(drop=True)
+# WaterSourceNativeID
+outdf, dfpurge = TestErrorFunctions.WaterSourceNativeID_WS_Check(outdf, dfpurge)
 
-# WaterSourceTypeCV_nvarchar(100)_-
-mask = outdf.loc[ (outdf["WaterSourceTypeCV"].isnull()) | (outdf["WaterSourceTypeCV"] == '') | (outdf['WaterSourceTypeCV'].str.len() > 100) ].assign(ReasonRemoved='Bad WaterSourceTypeCV').reset_index()
-if len(mask.index) > 0:
-    dfpurge = dfpurge.append(mask)  # Append to purge DataFrame
-    dropIndex = outdf.loc[ (outdf["WaterSourceTypeCV"].isnull()) | (outdf["WaterSourceTypeCV"] == '') | (outdf['WaterSourceTypeCV'].str.len() > 100) ].index
-    outdf = outdf.drop(dropIndex)
-    outdf = outdf.reset_index(drop=True)
+# WaterSourceTypeCV
+outdf, dfpurge = TestErrorFunctions.WaterSourceTypeCV_WS_Check(outdf, dfpurge)
 
 
 # Export to new csv
 ############################################################################
 print("Exporting dataframe outdf to csv...")
+
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/watersources.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
-    dfpurge.to_csv('ProcessedInputData/watersources_missing.csv')  # index=False,
-
+    dfpurge.to_csv('ProcessedInputData/watersources_missing.csv', index=False)
 
 print("Done.")

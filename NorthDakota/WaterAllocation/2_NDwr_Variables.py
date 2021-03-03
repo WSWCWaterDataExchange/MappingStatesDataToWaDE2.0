@@ -37,7 +37,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = "NDSWC_Allocation All"
+outdf.VariableSpecificUUID = "NDSWC_Allocation"
 
 outdf.AggregationInterval = "1"
 
@@ -55,7 +55,7 @@ outdf.ReportYearTypeCV = "WaterYear"
 
 outdf.VariableCV = "Allocation"
 
-outdf.VariableSpecificCV = "Allocation All"
+outdf.VariableSpecificCV = "Allocation"
 
 
 # Check required fields are not null
@@ -78,11 +78,12 @@ outdf_nullMand = outdf.loc[(outdf["VariableSpecificUUID"].isnull()) | (outdf["Va
 # Export to new csv
 ############################################################################
 print("Exporting dataframe to csv...")
+
+# save to output
 outdf.to_csv('ProcessedInputData/variables.csv', index=False)
 
 #Report missing values if need be to separate csv
 if(len(outdf_nullMand.index) > 0):
-    outdf_nullMand.to_csv('ProcessedInputData/variables_missing.csv')  # index=False,
-
+    outdf_nullMand.to_csv('ProcessedInputData/variables_missing.csv', index=False)
 
 print("Done.")
