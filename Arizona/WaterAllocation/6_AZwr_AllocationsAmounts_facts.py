@@ -214,7 +214,7 @@ print("AllocationTypeCV")
 outdf['AllocationTypeCV'] = df_DM['in_AllocationTypeCV']
 
 print("AllocationVolume_AF")
-outdf['AllocationVolume_AF'] = ""
+outdf['AllocationVolume_AF'] = df_DM['in_AllocationVolume_AF']
 
 print("BeneficialUseCategory")
 outdf['BeneficialUseCategory'] = df_DM.apply(lambda row: assignBeneficialUseCategory(row['in_BeneficialUseCategory']), axis=1)
