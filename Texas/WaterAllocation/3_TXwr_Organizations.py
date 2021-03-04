@@ -34,8 +34,8 @@ columns = [
 print("Populating dataframe...")
 inpVals = [
     "TCEQ",
-    "john-cody.stalsby@tceq.texas.gov",
-    "John-Cody Stalsby",
+    "jkathy.alexander@tceq.texas.gov",
+    "Kathy Alexander",
     "https://www.tceq.texas.gov/permitting/water_rights/wr-permitting/wrwud",
     "Texas Commission on Environmental Quality",
     "512-239-1000",
