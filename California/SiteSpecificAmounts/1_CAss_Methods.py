@@ -50,7 +50,7 @@ outdf.MethodDescription = "Public drinking water records."
 
 outdf.MethodName = "Site Specific"
 
-outdf.MethodNEMILink = "https://data.ca.gov/dataset/drinking-water-public-water-system-annually-reported-water-production-and-delivery-information"
+outdf.MethodNEMILink = ""
 
 outdf.MethodTypeCV = "Modeled"
 
