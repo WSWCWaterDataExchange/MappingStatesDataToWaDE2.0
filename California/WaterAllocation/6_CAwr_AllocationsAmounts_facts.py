@@ -265,6 +265,7 @@ print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to uploa
 
 # N/A
 
+
 #Error checking each field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
@@ -395,4 +396,3 @@ if(len(dfpurge.index) > 0):
     dfpurge.to_csv('ProcessedInputData/waterallocations_missing.csv', index=False)
 
 print("Done.")
-
