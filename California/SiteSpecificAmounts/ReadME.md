@@ -42,7 +42,7 @@ Purpose: Pre-process the state agency input data files into one master file for 
 
 #### Operation and Steps:
 - Read in input csv data, place into temporary dataframes.
-- Left join dataframes together.  Join *deliveredPWS_2013_2016* -to *PWS Facility Information* via **PWSID** and **Water System No** respectively, and *CADWS_AreaBoundaries* with **SABL_PWSID**.
+- Left join dataframes together.  Join *deliveredPWS_2013_2016.csv* -to- *PWS Facility Information.csv* via **PWSID** and **Water System No** respectively, and *CADWS_AreaBoundaries.csv* with **SABL_PWSID**.
 - Trim down joined dataframe to columns of interest.
 - Format column names to remove formatting issues.
 - Format water amount column to remove string values, format to numeric.
@@ -180,7 +180,6 @@ Purpose: generate a list of polygon areas associated with the state agency speci
 - Populate output dataframe with *WaDE Site* specific columns.
 - Assign state agency info to columns.  See *CA_SiteSpecificAmounts Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
     - *County* = **COUNTY**.
-    ` *GNISCodeCV* = **gnisId**.
     - *Latitude* = **Lat**.
     - *Longitude* = **Long**.
     - *SiteName* = **Water System Name**.
@@ -227,7 +226,7 @@ Purpose: generate master sheet of state agency site specific time series water d
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *Amount* = *in_Amount*, see *0_PreProcessCASiteSpecificData.ipynb* for specific on generation.
     - *CommunityWaterSupplySystem* = **Water System Name**.
-    - *PopulationServed* = **Population Of Service Area**
+    - *PopulationServed* = **Population Of Service Area**.
     - *ReportYearCV* = **Year**.
     - *TimeframeStart* = *in_TimeframeStart*, see *0_PreProcessCASiteSpecificData.ipynb* for specific on generation.
     - *TimeframeEnd* = *in_TimeframeEnd*, see *0_PreProcessCASiteSpecificData.ipynb* for specific on generation.
