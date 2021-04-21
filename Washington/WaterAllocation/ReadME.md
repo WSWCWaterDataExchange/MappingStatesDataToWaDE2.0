@@ -26,7 +26,7 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 
 ***
 ### 0) Code File: 0_PreProcessWashingtonAllocationData.ipynb
-Purpose: Pre-process the Idaho input data files and merge them into one master file for simple dataframe creation and extraction.
+Purpose: Pre-process the input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
  - D_PointTable.csv
