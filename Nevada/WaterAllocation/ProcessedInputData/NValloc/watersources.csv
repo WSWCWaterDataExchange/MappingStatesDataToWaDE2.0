@@ -1,7 +1,0 @@
-WaterSourceUUID,Geometry,GNISFeatureNameCV,WaterQualityIndicatorCV,WaterSourceName,WaterSourceNativeID,WaterSourceTypeCV
-NV_1,,,Unspecified,Unspecified,,Surface Water
-NV_2,,,Unspecified,Unspecified,,Groundwater
-NV_3,,,Unspecified,Unspecified,,Reservoir
-NV_4,,,Unspecified,Unspecified,,Storage
-NV_5,,,Unspecified,Unspecified,,Reuse
-NV_6,,,Unspecified,Unspecified,,Unknown
