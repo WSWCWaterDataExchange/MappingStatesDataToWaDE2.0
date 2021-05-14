@@ -1,0 +1,2 @@
+MethodUUID,ApplicableResourceTypeCV,DataConfidenceValue,DataCoverageValue,DataQualityValueCV,MethodDescription,MethodName,MethodNEMILink,MethodTypeCV
+NVDWR_Water Use,Unspecified,,,,Estimate of the total amount of groundwater pumped in an area  by manner of use in the State of Nevada for calendar year.,Nevada Pumpage,http://water.nv.gov/gisdata.aspx,Water Use
