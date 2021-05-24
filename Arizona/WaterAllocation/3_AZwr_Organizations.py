@@ -39,7 +39,7 @@ inpVals = [
     "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Arizona",
     "Arizona Department of Water Resources",
     "602-771-8500",
-    "The Arizona Department of Water Resources is the steward of Arizona’s water future and ensures long-term, reliable water supplies to support the continued economic prosperity of the State.",
+    "The Arizona Department of Water Resources is the steward of Arizonas water future and ensures long term reliable water supplies to support the continued economic prosperity of the State.",
     "http://gisdata-azwater.opendata.arcgis.com/",
     "AZ"]
 
@@ -59,15 +59,18 @@ outdf_nullMand = outdf.loc[(outdf["OrganizationUUID"].isnull()) | (outdf["Organi
                            (outdf["OrganizationWebsite"].isnull()) | (outdf["OrganizationWebsite"] == '') |
                            (outdf["State"].isnull()) | (outdf["State"] == '')]
 
-if(len(outdf_nullMand.index) > 0):
-    outdf_nullMand.to_csv('organizations_mandatoryFieldMissing.csv')  # index=False,
+
 
 
 # Export to new csv
 ############################################################################
 print("Exporting dataframe to csv...")
-# save to output
+
+# The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/organizations.csv', index=False)
 
+# Report purged values.
+if(len(outdf_nullMand.index) > 0):
+    outdf_nullMand.to_csv('organizations_mandatoryFieldMissing.csv', index=False)
 
 print("Done.")
