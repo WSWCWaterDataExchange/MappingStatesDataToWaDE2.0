@@ -1,6 +1,6 @@
-#Date Created: 03/13/2020
-#Purpose: To extract UT variable use information and population dataframe for WaDE_QA 2.0.
-#Notes: 1) Single row of entries, inpVals, for Variable Table.
+# Date Updated: 05/17/2021
+# Purpose: To extract UT variable use information and population dataframe for WaDE_QA 2.0.
+# Notes: 1) Single row of entries, inpVals, for Variable Table.
 
 
 # Needed Libraries
@@ -43,7 +43,7 @@ inpVals = [
     "10",
     "WaterYear",
     "Allocation",
-    "Allocation All"]
+    "Allocation"]
 
 outdf = pd.DataFrame([inpVals], columns=columnslist)
 
@@ -68,9 +68,11 @@ outdf_nullMand = outdf.loc[(outdf["VariableSpecificUUID"].isnull()) | (outdf["Va
 # Export to new csv
 ############################################################################
 print("Exporting dataframe to csv...")
-outdf.to_csv('ProcessedInputData/variables.csv')
 
-#Report missing values if need be to separate csv
+# The working output DataFrame for WaDE 2.0 input.
+outdf.to_csv('ProcessedInputData/variables.csv', index=False)
+
+# Report purged values.
 if(len(outdf_nullMand.index) > 0):
     outdf_nullMand.to_csv('ProcessedInputData/variables_mandatoryFieldMissing.csv', index=False)
 

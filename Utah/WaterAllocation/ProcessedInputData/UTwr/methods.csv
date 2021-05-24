@@ -1,10 +1,2 @@
 MethodUUID,ApplicableResourceTypeCV,DataConfidenceValue,DataCoverageValue,DataQualityValueCV,MethodDescription,MethodName,MethodNEMILink,MethodTypeCV
-UT_STREAMFLOW_SUPPLY,Surface Water,,,,Average Streamflow Method,Average Streamflow Method,,Modeled
-UT_Use,Surface Ground,,,,Agricultural Landuse Survey,Agricultural Landuse Survey,,Modeled
-UT_LEGAVLBLE,Surface Ground,,,,Legally Available Water,Legally Available Water,,Modeled
-UT_RETURNFLOW,Surface Water,,,,Return Flow Estimates,Return Flow Estimates,,Modeled
-UT_Consumptive Use Estimate,Surface Ground,,,,Consumptive Use Estimate Method,Consumptive Use Estimate Method,,Modeled
-UT_Withdrawal Volume Estimate,Surface Ground,,,,Diversion Volume Estimate,Diversion Volume Estimate,,Modeled
-UT_INSTREAM_FLOW,Surface Water,,,,Instream Flow Estimate,Instream Flow Estimate,,Modeled
-UT_STORAGE_SUPPLY,Surface Water,,,,Estimate of Reservoir Storage,Estimate of Reservoir Storage,,Modeled
 UT_Water Allocation,Surface Ground,,,,Water Rights,Water Allocation,,Adjudicated

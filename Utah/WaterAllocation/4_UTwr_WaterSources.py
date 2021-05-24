@@ -1,6 +1,6 @@
-#Date Created: 03/13/2020
-#Purpose: To extract UT water source use information and population dataframe for WaDE_QA 2.0.
-#Notes: 1) Used dictionary for 'WaterSourceTypeCV'.
+# Date Updated: 05/17/2021
+# Purpose: To extract UT water source use information and population dataframe for WaDE_QA 2.0.
+# Notes: 1) Used dictionary for 'WaterSourceTypeCV'.
 
 
 # Needed Libraries
@@ -12,7 +12,7 @@ import os
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -38,39 +38,6 @@ columnslist = [
 # Custom Site Functions
 ############################################################################
 
-# For creating WaterSourceName
-def assignWaterSourceName(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outList = "Unknown"
-    else:
-        outList = colrowValue
-    return outList
-
-# For creating WaterSourceTypeCV
-UnknownWSCVDict = {
-"A":"Abandoned",
-"D":"Drain",
-"C":"Sewage",
-"F":"Sewage",
-"N":"Sewage",
-"P":"Sewage",
-"G":"groundwater/spring",
-"R":"Point of Rediversion",
-"S":"Surface Water",
-"T":"Point of Return",
-"U":"Groundwater/all"
-}
-def assignWaterSourceTypeCV(colrowValue):
-    if colrowValue == "" or pd.isnull(colrowValue):
-        outList = "Unknown"
-    else:
-        String1 = colrowValue.strip()  # remove whitespace chars
-        try:
-            outList = UnknownWSCVDict[String1]
-        except:
-            outList = "Unknown"
-    return outList
-
 # For creating WaDESiteUUID
 def assignWaterSourceUUID(colrowValue):
     string1 = str(colrowValue)
@@ -81,43 +48,45 @@ def assignWaterSourceUUID(colrowValue):
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
+
 outdf = pd.DataFrame(index=df.index, columns=columnslist)  # The output dataframe for CSV.
 
-print("Geometry")  # Hardcoded
-outdf.Geometry = ""
+print("Geometry")
+outdf['Geometry'] = ""
 
-print("GNISFeatureNameCV")  # Hardcoded
-outdf.GNISFeatureNameCV = ""
+print("GNISFeatureNameCV")
+outdf['GNISFeatureNameCV'] = ""
 
-print("WaterQualityIndicatorCV")  # Hardcoded
-outdf.WaterQualityIndicatorCV = "Fresh"
+print("WaterQualityIndicatorCV")
+outdf['WaterQualityIndicatorCV'] = "Fresh"
 
 print("WaterSourceName")
-outdf['WaterSourceName'] = df.apply(lambda row: assignWaterSourceName(row['WREX_SOURCE']), axis=1)
+outdf['WaterSourceName'] = "Unspecified"
 
 print("WaterSourceNativeID")  # has to be one of the last, need length of created outdf
-outdf.WaterSourceNativeID = ""
+outdf['WaterSourceNativeID'] = df['in_WaterSourceNativeID']  # See preprocessing
 
 print("WaterSourceTypeCV")
-outdf['WaterSourceTypeCV'] = df.apply(lambda row: assignWaterSourceTypeCV(row['POD_TYPE']), axis=1)
+outdf['WaterSourceTypeCV'] = df['in_WaterSourceTypeCV']  # See preprocessing
 
 ##############################
 # Dropping duplicate
 print("Dropping duplicates")
-outdf = outdf.drop_duplicates(subset=['WaterSourceName', 'WaterSourceTypeCV']).reset_index(drop=True)
+outdf = outdf.drop_duplicates(subset=['WaterSourceName', 'WaterSourceNativeID', 'WaterSourceTypeCV']).reset_index(drop=True)
 ##############################
 
 print("WaterSourceUUID")
 df["Count"] = range(1, len(df.index) + 1)
 outdf['WaterSourceUUID'] = df.apply(lambda row: assignWaterSourceUUID(row['Count']), axis=1)
 
-print("Resetting Index")  # Hardcoded
+print("Resetting Index")
 outdf.reset_index()
 
 
 #Error Checking each Field
 ############################################################################
-print("Error checking each field.  Purging bad inputs.")  # Hardcoded
+print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 
@@ -146,6 +115,7 @@ outdf, dfpurge = TestErrorFunctions.WaterSourceTypeCV_WS_Check(outdf, dfpurge)
 # Export to new csv
 ############################################################################
 print("Exporting dataframe outdf to csv...")
+
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/watersources.csv', index=False)
 
