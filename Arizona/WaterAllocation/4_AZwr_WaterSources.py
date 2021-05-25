@@ -1,5 +1,5 @@
 #Date Created: 12/10/2020
-#Purpose: To extract AZ water source information and population dataframe for WaDE_QA 2.0.
+#Purpose: To extract AZ water source information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) asdf
 
 # Needed Libraries
@@ -11,7 +11,7 @@ import os
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 # Inputs

@@ -267,7 +267,13 @@ outdf100 = outdf.groupby('AllocationNativeID').agg(lambda x: ','.join([str(elem)
 # ############################################################################
 print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to upload data to QA here.
 
-# N/A
+# Date Noted: 05/25/2021
+# Note: OwnerClassificationCV can only accept 1 entry at this time. Error due to above merge / we don't allow multiple OwnerClassificationCV.
+def tempfixOCSV(colrowValueA):
+    result = colrowValueA.split(",", 1)[0]  # pass in text, split on "," & return first value.
+    return result
+outdf100['OwnerClassificationCV']  = outdf100.apply(lambda row: tempfixOCSV(row['OwnerClassificationCV']), axis=1)
+
 
 #Error Checking Each Field
 ############################################################################

@@ -1,5 +1,5 @@
 #Date Created: 12/01/2020
-#Purpose: To extract AZ organization information and population dataframe for WaDE_QA 2.0.
+#Purpose: To extract AZ organization information and populate dataframe for WaDE_QA 2.0.
 #Notes: asdf
 
 
