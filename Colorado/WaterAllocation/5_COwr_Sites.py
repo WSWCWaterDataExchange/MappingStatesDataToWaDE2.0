@@ -1,11 +1,7 @@
 #Date Created: 02/10/2021
 #Author: Ryan James, WSWC
-#Purpose: To extract CO site use information and population DataFrame for local WaDEQA 2.0.
-#Notes: 1) For 'SiteTypeCV', easier to label everything that is not a surface water first.
-#       2) For 'CoordinateMethodCV', list out all Idaho specific CV values (should already be in WaDE Vocab).
-#       3) Have to convert from epsg:8826 - to - epsg:4326 in order for lat and long to work in WaDE 2.0.
-#       4) Transformer from pyproj is incredibly inefficient.  Did discover trick of preloading necessary coord systems.
-#       5) Large files, better to use the '.apply() lambda row' method with a few custom functions, rather than a 'for' loop.
+#Purpose: To extract CO site use information and populate DataFrame for local WaDEQA 2.0.
+#Notes: N/A
 
 
 # Needed Libraries
@@ -17,7 +13,7 @@ import os
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -29,8 +25,13 @@ os.chdir(workingDir)
 fileInput = "RawinputData/P_ColoradoMaster.csv"
 df = pd.read_csv(fileInput)
 
+watersources_fileInput = "ProcessedInputData/watersources.csv" # watersource inputfile
+df_watersources = pd.read_csv(watersources_fileInput)  # watersources dataframe
+
 columnslist = [
     "SiteUUID",
+    "RegulatoryOverlayUUIDs",
+    "WaterSourceUUID",
     "CoordinateAccuracy",
     "CoordinateMethodCV",
     "County",
@@ -54,6 +55,21 @@ columnslist = [
 
 # Custom Functions
 ############################################################################
+
+# For creating WaterSourceUUID
+def retrieveWaterSourceUUID(colrowValueA, colrowValueB, colrowValueC, df_watersources):
+    if (colrowValueA == '' and colrowValueB == '' and colrowValueC == '') or \
+            (pd.isnull(colrowValueA) and pd.isnull(colrowValueB) and pd.isnull(colrowValueC)):
+        outString = ''
+    else:
+        ml = df_watersources.loc[((df_watersources['WaterSourceName'] == colrowValueA) &
+                                  (df_watersources['WaterSourceNativeID'] == colrowValueB) &
+                                  (df_watersources['WaterSourceTypeCV'] == colrowValueC)), 'WaterSourceUUID']
+        if not(ml.empty):  # check if the series is empty
+            outString = ml.iloc[0]
+        else:
+            outString = ''
+    return outString
 
 # For creating SiteTypeCV
 def assignCoordinateMethodCV(colrowValue):
@@ -81,7 +97,14 @@ def assignSiteUUID(colrowValue):
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
+
 outdf = pd.DataFrame(columns=columnslist, index=df.index)
+
+print("WaterSourceUUID")
+outdf['WaterSourceUUID'] = df.apply(lambda row: retrieveWaterSourceUUID(row['input_WaterSourceName'], row['GNIS ID'], row['input_WaterSourceTypeCV'], df_watersources), axis=1)
+
+print("RegulatoryOverlayUUIDs")
+outdf['RegulatoryOverlayUUIDs'] = ""
 
 print("CoordinateAccuracy")
 outdf['CoordinateAccuracy'] = ""
@@ -93,7 +116,7 @@ print("County")
 outdf['County'] = df['County']
 
 print("EPSGCodeCV")
-outdf['EPSGCodeCV'] = 'EPSG:4326'
+outdf['EPSGCodeCV'] = '4326'
 
 print("Geometry")
 outdf['Geometry'] = ""
@@ -156,11 +179,18 @@ outdf['SiteUUID'] = dftemp.apply(lambda row: assignSiteUUID(row['Count']), axis=
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 
 # SiteUUID
 outdf, dfpurge = TestErrorFunctions.SiteUUID_S_Check(outdf, dfpurge)
+
+# RegulatoryOverlayUUIDs
+outdf, dfpurge = TestErrorFunctions.RegulatoryOverlayUUIDs_S_Check(outdf, dfpurge)
+
+# WaterSourceUUID
+outdf100, dfpurge = TestErrorFunctions.WaterSourceUUID_S_Check(outdf, dfpurge)
 
 # CoordinateAccuracy
 outdf, dfpurge = TestErrorFunctions.CoordinateAccuracy_S_Check(outdf, dfpurge)

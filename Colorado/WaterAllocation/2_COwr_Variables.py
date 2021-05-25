@@ -1,6 +1,6 @@
 #Date Created: 02/10/2021
 #Author: Ryan James, WSWC
-#Purpose: To extract CO variable information and population dataframe for WaDE_QA 2.0.
+#Purpose: To extract CO variable information and populate dataframe for WaDE_QA 2.0.
 #Notes: asdf
 
 

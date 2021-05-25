@@ -1,6 +1,6 @@
 #Date Created: 02/10/2021
 #Author: Ryan James, WSWC
-#Purpose: To extract CO water source use information and population dataframe for WaDE_QA 2.0.
+#Purpose: To extract CO water source use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) For 'WaterSourceTypeCV', easier to label everything that is not a surface water first.
 
 
@@ -13,7 +13,7 @@ import os
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 

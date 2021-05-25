@@ -1,6 +1,6 @@
 #Date Created: 02/10/2021
 #Author: Ryan James, WSWC
-#Purpose: To create CO organization use information and population dataframe for WaDE_QA 2.0.
+#Purpose: To create CO organization use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
 
 
@@ -59,7 +59,6 @@ outdf_nullMand = outdf.loc[(outdf["OrganizationUUID"].isnull()) | (outdf["Organi
                            (outdf["OrganizationPhoneNumber"].isnull()) | (outdf["OrganizationPhoneNumber"] == '') |
                            (outdf["OrganizationWebsite"].isnull()) | (outdf["OrganizationWebsite"] == '') |
                            (outdf["State"].isnull()) | (outdf["State"] == '')]
-
 
 
 # Export to new csv

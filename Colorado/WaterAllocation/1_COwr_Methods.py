@@ -1,6 +1,6 @@
 #Date Created: 02/09/2020
 #Author: Ryan James, WSWC
-#Purpose: To extract CO methods use information and population dataframe for WaDE_QA 2.0.
+#Purpose: To extract CO methods use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) Two different data sets, groundwater vs surface water.
 
 
@@ -36,12 +36,12 @@ print("Populating dataframe...")
 inpVals = [
     "CODWR_Diversion Tracking",
     "Allocation",
-    np.nan,
-    np.nan,
-    np.nan,
+    "",
+    "",
+    "",
     "Methodology used for tracking diversions in the state of Colorado.",
     "DiversionTracking",
-    np.nan,
+    "",
     "Water Withdrawals"]
 
 outdf = pd.DataFrame([inpVals], columns=columnslist)
