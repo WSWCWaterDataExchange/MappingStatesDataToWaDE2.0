@@ -1,5 +1,5 @@
 #Date Created: 01/12/2021
-#Purpose: To extract CA site information and population dataframe for WaDE_QA 2.0.
+#Purpose: To extract CA site information and populate dataframe for WaDE_QA 2.0.
 #Notes: asdf
 
 
@@ -8,14 +8,12 @@
 import pandas as pd
 import numpy as np
 import os
-# from pyproj import Transformer, transform
-# transformer = Transformer.from_proj(4326, 4326)  # A trick to drastically optimize the Transformer of pyproj.
-# MT projection = EPSG:4326, same as WGS84 projection used by WaDE 2.0 = epsg:4326.
+
 
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -27,8 +25,14 @@ os.chdir(workingDir)
 fileInput = "RawinputData/P_CaliforniaMaster.csv"
 df = pd.read_csv(fileInput)
 
+
+watersources_fileInput = "ProcessedInputData/watersources.csv" # watersource inputfile
+df_watersources = pd.read_csv(watersources_fileInput)  # watersources dataframe
+
 columnslist = [
     "SiteUUID",
+    "RegulatoryOverlayUUIDs",
+    "WaterSourceUUID",
     "CoordinateAccuracy",
     "CoordinateMethodCV",
     "County",
@@ -51,6 +55,19 @@ columnslist = [
 
 # Custom Functions
 ############################################################################
+
+# For creating WaterSourceUUID
+WaterSourceUUIDdict = pd.Series(df_watersources.WaterSourceUUID.values, index = df_watersources.WaterSourceNativeID).to_dict()
+def retrieveWaterSourceUUID(colrowValue):
+    if colrowValue == '' or pd.isnull(colrowValue):
+        outList = ''
+    else:
+        String1 = colrowValue.strip()
+        try:
+            outList = WaterSourceUUIDdict[String1]
+        except:
+            outList = ''
+    return outList
 
 # For creating SiteName
 def assignSiteName(colrowValue):
@@ -95,10 +112,17 @@ def assignSiteUUID(colrowValue):
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
+
 outdf = pd.DataFrame(columns=columnslist, index=df.index)
 
+print("RegulatoryOverlayUUIDs")
+outdf['RegulatoryOverlayUUIDs'] = ""
+
+print("WaterSourceUUID")
+outdf['WaterSourceUUID'] = df.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
+
 print("CoordinateAccuracy")
-outdf.CoordinateAccuracy = "Unspecified"
+outdf["CoordinateAccuracy"] = "Unspecified"
 
 print("CoordinateMethodCV")
 outdf['CoordinateMethodCV'] = df['LOCATION_METHOD']
@@ -107,13 +131,13 @@ print("County")
 outdf['County'] = df['COUNTY']
 
 print("EPSGCodeCV")
-outdf.EPSGCodeCV = "EPSG:4326"
+outdf['EPSGCodeCV'] = "4326"
 
 print("Geometry")
 outdf['Geometry'] = ""
 
 print("GNISCodeCV")
-outdf.GNISCodeCV = ""
+outdf['GNISCodeCV'] = ""
 
 print("HUC12")
 outdf['HUC12'] = df['HUC_12_NUMBER']
@@ -128,10 +152,10 @@ print("Longitude")
 outdf['Longitude'] = df['LONGITUDE']
 
 print("NHDNetworkStatusCV")
-outdf.NHDNetworkStatusCV = ""
+outdf['NHDNetworkStatusCV'] = ""
 
 print("NHDProductCV")
-outdf.NHDProductCV = ""
+outdf['NHDProductCV'] = ""
 
 print("PODorPOUSite")
 outdf['PODorPOUSite'] = "POD"
@@ -173,11 +197,18 @@ outdf['SiteUUID'] = dftemp.apply(lambda row: assignSiteUUID(row['Count']), axis=
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 
 # SiteUUID
 outdf, dfpurge = TestErrorFunctions.SiteUUID_S_Check(outdf, dfpurge)
+
+# RegulatoryOverlayUUIDs
+outdf, dfpurge = TestErrorFunctions.RegulatoryOverlayUUIDs_S_Check(outdf, dfpurge)
+
+# WaterSourceUUID
+outdf100, dfpurge = TestErrorFunctions.WaterSourceUUID_S_Check(outdf, dfpurge)
 
 # CoordinateAccuracy
 outdf, dfpurge = TestErrorFunctions.CoordinateAccuracy_S_Check(outdf, dfpurge)
@@ -240,6 +271,7 @@ outdf, dfpurge = TestErrorFunctions.USGSSiteID_S_Check(outdf, dfpurge)
 # Export to new csv
 ############################################################################
 print("Exporting dataframe outdf to csv...")
+
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/sites.csv', index=False)
 

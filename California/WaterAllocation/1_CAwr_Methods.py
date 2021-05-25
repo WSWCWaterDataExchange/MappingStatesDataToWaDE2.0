@@ -1,5 +1,5 @@
 #Date Created: 01/12/2021
-#Purpose: To extract CA methods use information and population dataframe for WaDE_QA 2.0.
+#Purpose: To extract CA methods use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) asdf
 
 
@@ -35,9 +35,9 @@ print("Populating dataframe...")
 inpVals = [
     "CSWRCB_Water Rights",
     "Surface water or subsurface water",
-    np.nan,
-    np.nan,
-    np.nan,
+    "",
+    "",
+    "",
     "Water Rights.",
     "California Water Rights",
     "https://www.waterboards.ca.gov/waterrights/water_issues/programs/ewrims/",
@@ -62,11 +62,11 @@ outdf_nullMand = outdf.loc[(outdf["MethodUUID"].isnull()) | (outdf["MethodUUID"]
 ############################################################################
 print("Exporting dataframe to csv...")
 
+# The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/methods.csv', index=False)
 
-#Report missing values if need be to separate csv
+# Report purged values.
 if(len(outdf_nullMand.index) > 0):
-    outdf_nullMand.to_csv('ProcessedInputData/methods_mandatoryFieldMissing.csv')  # index=False,
-
+    outdf_nullMand.to_csv('ProcessedInputData/methods_mandatoryFieldMissing.csv', index=False)
 
 print("Done.")
