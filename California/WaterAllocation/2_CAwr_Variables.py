@@ -34,7 +34,7 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "CSWRCB_Allocation All",
+    "CSWRCB_Allocation",
     "1",
     "Year",
     "Average",
@@ -43,7 +43,7 @@ inpVals = [
     "11",
     "WaterYear",
     "Allocation",
-    "Allocation All"]
+    "Allocation"]
 
 outdf = pd.DataFrame([inpVals], columns=columnslist)
 
