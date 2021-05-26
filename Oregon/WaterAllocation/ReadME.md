@@ -250,6 +250,7 @@ WSWC Staff
 OWRD Staff
 - Jordan Beamer
 - Tracy Fox
+- Melendy Bradley
 - Mellony Joskinson
 - Greg Dubenko
 - Richard Marvin
