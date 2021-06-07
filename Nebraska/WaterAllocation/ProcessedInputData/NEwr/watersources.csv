@@ -1,1258 +1,1415 @@
 WaterSourceUUID,Geometry,GNISFeatureNameCV,WaterQualityIndicatorCV,WaterSourceName,WaterSourceNativeID,WaterSourceTypeCV
-NEwr_WS1,,,Fresh,Mumm Reservoir,,Surface Water
-NEwr_WS2,,,Fresh,Bowman Spring Branch Reservoir No. 2-A,,Surface Water
-NEwr_WS3,,,Fresh,Bowman Spring Branch Reservoir No. 3-E,,Surface Water
-NEwr_WS4,,,Fresh,Buckley Creek Reservoir 3-C,,Surface Water
-NEwr_WS5,,,Fresh,Buckley Creek Reservoir 3-A,,Surface Water
-NEwr_WS6,,,Fresh,Buckley Creek Reservoir 3-D,,Surface Water
-NEwr_WS7,,,Fresh,Buckley Creek Reservoir 4-B,,Surface Water
-NEwr_WS8,,,Fresh,Wilson Creek Reservoir 8-H,,Surface Water
-NEwr_WS9,,,Fresh,Wilson Creek Reservoir 5-J,,Surface Water
-NEwr_WS10,,,Fresh,Upper Big Nemaha Reservoir 21-B,,Surface Water
-NEwr_WS11,,,Fresh,Upper Big Nemaha Reservoir 13-A,,Surface Water
-NEwr_WS12,,,Fresh,Scott Reservoir,,Surface Water
-NEwr_WS13,,,Fresh,Salt Creek Reservoir 35,,Surface Water
-NEwr_WS14,,,Fresh,Haines Branch,,Surface Water
-NEwr_WS15,,,Fresh,Oak-Middle Reservoir 63-D,,Surface Water
-NEwr_WS16,,,Fresh,Oak-Middle Reservoir 66-A,,Surface Water
-NEwr_WS17,,,Fresh,Oak-Middle Reservoir 87-A,,Surface Water
-NEwr_WS18,,,Fresh,Oak-Middle Reservoir 86-A,,Surface Water
-NEwr_WS19,,,Fresh,Oak-Middle Reservoir 82-B,,Surface Water
-NEwr_WS20,,,Fresh,North Oak Reservoir 6-B,,Surface Water
-NEwr_WS21,,,Fresh,North Oak Reservoir 3-A,,Surface Water
-NEwr_WS22,,,Fresh,Carter P Johnson Reservoir,,Surface Water
-NEwr_WS23,,,Fresh,Moody Reservoir No. 1,,Surface Water
-NEwr_WS24,,,Fresh,Morris Reservoir,,Surface Water
-NEwr_WS25,,,Fresh,"Blue River, Little",,Surface Water
-NEwr_WS26,,,Fresh,"Verdigre Creek, Middle Branch",,Surface Water
-NEwr_WS27,,,Fresh,Pawnee Creek,,Surface Water
-NEwr_WS28,,,Fresh,Pohlmeier Reservoir,,Surface Water
-NEwr_WS29,,,Fresh,Logan Creek,,Surface Water
-NEwr_WS30,,,Fresh,"Nemaha River, Big, Middle Branch",,Surface Water
-NEwr_WS31,,,Fresh,Dog Creek,,Surface Water
-NEwr_WS32,,,Fresh,Platte River,,Surface Water
-NEwr_WS33,,,Fresh,"Wood River, Trib. To",,Surface Water
-NEwr_WS34,,,Fresh,Elkhorn River,,Surface Water
-NEwr_WS35,,,Fresh,"Rock Creek, Trib. To",,Surface Water
-NEwr_WS36,,,Fresh,"Nemaha River, Big, North Fork, Trib. To",,Surface Water
-NEwr_WS37,,,Fresh,"Sandy Creek, Little",,Surface Water
-NEwr_WS38,,,Fresh,Plum Creek,,Surface Water
-NEwr_WS39,,,Fresh,"North Platte River, Trib. To",,Surface Water
-NEwr_WS40,,,Fresh,"Elkhorn River, Trib. To",,Surface Water
-NEwr_WS41,,,Fresh,Cache Creek,,Surface Water
-NEwr_WS42,,,Fresh,Buffalo Creek,,Surface Water
-NEwr_WS43,,,Fresh,Oak Prairie Irrigation Pit,,Surface Water
-NEwr_WS44,,,Fresh,Cedar River,,Surface Water
-NEwr_WS45,,,Fresh,"Middle Creek, South Branch, Trib. To",,Surface Water
-NEwr_WS46,,,Fresh,Crystal Creek,,Surface Water
-NEwr_WS47,,,Fresh,"Pawnee Creek, Trib. To",,Surface Water
-NEwr_WS48,,,Fresh,"Weeping Water Creek, Trib. To",,Surface Water
-NEwr_WS49,,,Fresh,Shell Creek,,Surface Water
-NEwr_WS50,,,Fresh,"Sandy Creek, Dry, Trib. To",,Surface Water
-NEwr_WS51,,,Fresh,Salt Creek,,Surface Water
-NEwr_WS52,,,Fresh,Redbird Creek,,Surface Water
-NEwr_WS53,,,Fresh,"Thirty-Two Mile Creek, West Branch, Trib. To",,Surface Water
-NEwr_WS54,,,Fresh,North Reservoir,,Surface Water
-NEwr_WS55,,,Fresh,Spring Branch,,Surface Water
-NEwr_WS56,,,Fresh,Eagle Creek,,Surface Water
-NEwr_WS57,,,Fresh,Mud (Beaver) Creek,,Surface Water
-NEwr_WS58,,,Fresh,Loup River,,Surface Water
-NEwr_WS59,,,Fresh,Niobrara River,,Surface Water
-NEwr_WS60,,,Fresh,Sand Creek,,Surface Water
-NEwr_WS61,,,Fresh,"Sandy Creek, Big",,Surface Water
-NEwr_WS62,,,Fresh,Verdigre Creek,,Surface Water
-NEwr_WS63,,,Fresh,Callahan Creek,,Surface Water
-NEwr_WS64,,,Fresh,"Loup River, North",,Surface Water
-NEwr_WS65,,,Fresh,"Loup River, Middle",,Surface Water
-NEwr_WS66,,,Fresh,Spring Creek,,Surface Water
-NEwr_WS67,,,Fresh,Rawhide Creek,,Surface Water
-NEwr_WS68,,,Fresh,Freeman Creek,,Surface Water
-NEwr_WS69,,,Fresh,White River,,Surface Water
-NEwr_WS70,,,Fresh,Piper Creek,,Surface Water
-NEwr_WS71,,,Fresh,Lincoln Creek,,Surface Water
-NEwr_WS72,,,Fresh,Turkey Creek,,Surface Water
-NEwr_WS73,,,Fresh,Tara Reservoir,,Surface Water
-NEwr_WS74,,,Fresh,Haba Reservoir,,Surface Water
-NEwr_WS75,,,Fresh,"Verdigre Creek, South Branch",,Surface Water
-NEwr_WS76,,,Fresh,"Ash Creek, Trib. To",,Surface Water
-NEwr_WS77,,,Fresh,Munson Creek,,Surface Water
-NEwr_WS78,,,Fresh,Korgan Reservoir,,Surface Water
-NEwr_WS79,,,Fresh,Ternes Reservoir,,Surface Water
-NEwr_WS80,,,Fresh,"Nemaha River, Little, Trib. To",,Surface Water
-NEwr_WS81,,,Fresh,Wahoo Creek,,Surface Water
-NEwr_WS82,,,Fresh,"Oak Creek, Trib. To",,Surface Water
-NEwr_WS83,,,Fresh,"Salt Creek, Trib. To",,Surface Water
-NEwr_WS84,,,Fresh,"Mud Creek, Trib. To",,Surface Water
-NEwr_WS85,,,Fresh,"Muddy Creek, Trib. To",,Surface Water
-NEwr_WS86,,,Fresh,"Sampson Branch, Trib. To",,Surface Water
-NEwr_WS87,,,Fresh,Antelope Creek,,Surface Water
-NEwr_WS88,,,Fresh,Whitney Reservoir,,Surface Water
-NEwr_WS89,,,Fresh,"Warm Slough, Lower",,Surface Water
-NEwr_WS90,,,Fresh,Wood River,,Surface Water
-NEwr_WS91,,,Fresh,"Warm Slough, Upper",,Surface Water
-NEwr_WS92,,,Fresh,"Sandall, Wesley, Reservoir",,Surface Water
-NEwr_WS93,,,Fresh,Soldier Creek,,Surface Water
-NEwr_WS94,,,Fresh,"Salt Creek, Little, Trib. To",,Surface Water
-NEwr_WS95,,,Fresh,"Turkey Creek, Trib. To",,Surface Water
-NEwr_WS96,,,Fresh,"School Creek, Trib. To",,Surface Water
-NEwr_WS97,,,Fresh,Poppe Reservoir,,Surface Water
-NEwr_WS98,,,Fresh,Otter Creek,,Surface Water
-NEwr_WS99,,,Fresh,"Blue River, Big, West Fork",,Surface Water
-NEwr_WS100,,,Fresh,Buckhorn Spring,,Surface Water
-NEwr_WS101,,,Fresh,"Bordeaux Creek, Big",,Surface Water
-NEwr_WS102,,,Fresh,School Creek,,Surface Water
-NEwr_WS103,,,Fresh,Old Weeping Water Quarry Pit,,Surface Water
-NEwr_WS104,,,Fresh,Martin Marietta Fresh Water Reservoir,,Surface Water
-NEwr_WS105,,,Fresh,Andersen Reservoir,,Surface Water
-NEwr_WS106,,,Fresh,Norm Parde Reservoir,,Surface Water
-NEwr_WS107,,,Fresh,Oeltjen Reservoir,,Surface Water
-NEwr_WS108,,,Fresh,"Bow Creek, West",,Surface Water
-NEwr_WS109,,,Fresh,Behrends Reservoir,,Surface Water
-NEwr_WS110,,,Fresh,Clark Creek,,Surface Water
-NEwr_WS111,,,Fresh,Deer Creek,,Surface Water
-NEwr_WS112,,,Fresh,Antelope Creek Lake,,Surface Water
-NEwr_WS113,,,Fresh,A. Nagel Pond,,Surface Water
-NEwr_WS114,,,Fresh,"Verdigre Creek, North Branch",,Surface Water
-NEwr_WS115,,,Fresh,Thomas Reservoir,,Surface Water
-NEwr_WS116,,,Fresh,Schindler Creek,,Surface Water
-NEwr_WS117,,,Fresh,"Platte River, Trib. To",,Surface Water
-NEwr_WS118,,,Fresh,"Blue River, Little, Trib. To",,Surface Water
-NEwr_WS119,,,Fresh,"Nemaha River, Little, North Fork",,Surface Water
-NEwr_WS120,,,Fresh,Delbert Boelter Reservoir,,Surface Water
-NEwr_WS121,,,Fresh,"Sand Creek, South Branch",,Surface Water
-NEwr_WS122,,,Fresh,"Pishel Creek, Trib. To",,Surface Water
-NEwr_WS123,,,Fresh,"Liberty Creek, Trib. To",,Surface Water
-NEwr_WS124,,,Fresh,John Hubl Reservoir,,Surface Water
-NEwr_WS125,,,Fresh,"Sandy Creek, Big, Trib. To",,Surface Water
-NEwr_WS126,,,Fresh,Fish Creek,,Surface Water
-NEwr_WS127,,,Fresh,Clearwater Creek,,Surface Water
-NEwr_WS128,,,Fresh,Kriete Reservoir,,Surface Water
-NEwr_WS129,,,Fresh,Brush Creek,,Surface Water
-NEwr_WS130,,,Fresh,Squaw Creek,,Surface Water
-NEwr_WS131,,,Fresh,White Clay Creek,,Surface Water
-NEwr_WS132,,,Fresh,"Blue River, Big",,Surface Water
-NEwr_WS133,,,Fresh,Dry Creek,,Surface Water
-NEwr_WS134,,,Fresh,"Sandy Creek, Little, West",,Surface Water
-NEwr_WS135,,,Fresh,Minnechaduza Creek,,Surface Water
-NEwr_WS136,,,Fresh,"Sandy Creek, Little, West, Trib. To",,Surface Water
-NEwr_WS137,,,Fresh,"Fiddler's Creek, tributary to",,Surface Water
-NEwr_WS138,,,Fresh,Keya Paha River,,Surface Water
-NEwr_WS139,,,Fresh,"Balls Branch, Trib. To",,Surface Water
-NEwr_WS140,,,Fresh,"Lost Branch, Trib To",,Surface Water
-NEwr_WS141,,,Fresh,Owl Creek,,Surface Water
-NEwr_WS142,,,Fresh,"Blue Creek, Trib. To",,Surface Water
-NEwr_WS143,,,Fresh,"Table Creek, South, Trib. To",,Surface Water
-NEwr_WS144,,,Fresh,"Deroin Creek, Trib. To",,Surface Water
-NEwr_WS145,,,Fresh,Missouri River,,Surface Water
-NEwr_WS146,,,Fresh,"Loup River, North, Trib. To",,Surface Water
-NEwr_WS147,,,Fresh,"Papillion Creek, West, Trib. To",,Surface Water
-NEwr_WS148,,,Fresh,"Beal Slough, Trib. To",,Surface Water
-NEwr_WS149,,,Fresh,"Loup River, South",,Surface Water
-NEwr_WS150,,,Fresh,Beaver Creek,,Surface Water
-NEwr_WS151,,,Fresh,"Eagle Creek, Middle Branch, Trib. To",,Surface Water
-NEwr_WS152,,,Fresh,Oak Creek,,Surface Water
-NEwr_WS153,,,Fresh,"Dry Creek, Trib. To",,Surface Water
-NEwr_WS154,,,Fresh,"Negro Branch, Trib. To",,Surface Water
-NEwr_WS155,,,Fresh,"Nemaha River, Big, South Fork, Trib. To",,Surface Water
-NEwr_WS156,,,Fresh,"Elkhorn River, North Fork",,Surface Water
-NEwr_WS157,,,Fresh,"Oak Creek, North, Trib. To",,Surface Water
-NEwr_WS158,,,Fresh,"Oak Creek, North",,Surface Water
-NEwr_WS159,,,Fresh,"Cottonwood Creek, Big",,Surface Water
-NEwr_WS160,,,Fresh,"Nemaha River, Little, North Fork, Trib. To",,Surface Water
-NEwr_WS161,,,Fresh,"Bean Creek, Trib. To",,Surface Water
-NEwr_WS162,,,Fresh,"Long Branch, Trib. To",,Surface Water
-NEwr_WS163,,,Fresh,Crooked Branch,,Surface Water
-NEwr_WS164,,,Fresh,"Crooked Branch, Trib. To",,Surface Water
-NEwr_WS165,,,Fresh,Calamus River,,Surface Water
-NEwr_WS166,,,Fresh,"Davis Creek, Trib. To",,Surface Water
-NEwr_WS167,,,Fresh,"Beaver Creek, Trib. To",,Surface Water
-NEwr_WS168,,,Fresh,"Clear Creek, Trib. To",,Surface Water
-NEwr_WS169,,,Fresh,Box Butte Creek,,Surface Water
-NEwr_WS170,,,Fresh,Ash Creek,,Surface Water
-NEwr_WS171,,,Fresh,"Keya Paha River, Trib. To",,Surface Water
-NEwr_WS172,,,Fresh,Shingle Creek,,Surface Water
-NEwr_WS173,,,Fresh,"Coon Creek, South Branch, Trib. To",,Surface Water
-NEwr_WS174,,,Fresh,Young Creek,,Surface Water
-NEwr_WS175,,,Fresh,"Eagle Creek, Middle Branch",,Surface Water
-NEwr_WS176,,,Fresh,"Buffalo Creek, West",,Surface Water
-NEwr_WS177,,,Fresh,"Sandy Creek, Big, South Fork, Trib. To",,Surface Water
-NEwr_WS178,,,Fresh,"Buckley Creek, Trib. To",,Surface Water
-NEwr_WS179,,,Fresh,Rose Creek,,Surface Water
-NEwr_WS180,,,Fresh,Long Branch,,Surface Water
-NEwr_WS181,,,Fresh,"Canada Creek, Trib. To",,Surface Water
-NEwr_WS182,,,Fresh,Victoria Creek,,Surface Water
-NEwr_WS183,,,Fresh,Wiggle Creek,,Surface Water
-NEwr_WS184,,,Fresh,Clear Creek,,Surface Water
-NEwr_WS185,,,Fresh,"Timber Creek, Trib. To",,Surface Water
-NEwr_WS186,,,Fresh,Taylor Creek,,Surface Water
-NEwr_WS187,,,Fresh,"Maple Creek, Middle Fork",,Surface Water
-NEwr_WS188,,,Fresh,Hunters Slough,,Surface Water
-NEwr_WS189,,,Fresh,"Wagon Tongue Creek, Trib. To",,Surface Water
-NEwr_WS190,,,Fresh,"Rock Creek, Little, Trib. To",,Surface Water
-NEwr_WS191,,,Fresh,Silver Creek,,Surface Water
-NEwr_WS192,,,Fresh,Bear Creek,,Surface Water
-NEwr_WS193,,,Fresh,Gordon Creek,,Surface Water
-NEwr_WS194,,,Fresh,"Gordon Creek, North Branch",,Surface Water
-NEwr_WS195,,,Fresh,Trout Springs,,Surface Water
-NEwr_WS196,,,Fresh,Short Pine Creek,,Surface Water
-NEwr_WS197,,,Fresh,"Brush Creek, Trib. To",,Surface Water
-NEwr_WS198,,,Fresh,Honey Creek,,Surface Water
-NEwr_WS199,,,Fresh,"Redbird Creek, Trib. To",,Surface Water
-NEwr_WS200,,,Fresh,Steel Creek,,Surface Water
-NEwr_WS201,,,Fresh,"Verdigre Creek, South Branch, Trib. To",,Surface Water
-NEwr_WS202,,,Fresh,"Verdigre Creek, Trib. To",,Surface Water
-NEwr_WS203,,,Fresh,"Sand Creek, Trib. To",,Surface Water
-NEwr_WS204,,,Fresh,"French Creek, Trib. To",,Surface Water
-NEwr_WS205,,,Fresh,"Ox Bow Creek, Trib. To",,Surface Water
-NEwr_WS206,,,Fresh,"Sandy Creek, Big, South Fork",,Surface Water
-NEwr_WS207,,,Fresh,Shoemaker Reservoir,,Surface Water
-NEwr_WS208,,,Fresh,Rock Creek,,Surface Water
-NEwr_WS209,,,Fresh,"Lores Branch, Trib. To",,Surface Water
-NEwr_WS210,,,Fresh,Davis Creek,,Surface Water
-NEwr_WS211,,,Fresh,"Salt Creek, East Branch",,Surface Water
-NEwr_WS212,,,Fresh,Wagon Tongue Creek,,Surface Water
-NEwr_WS213,,,Fresh,"Four Mile Creek, Trib. To",,Surface Water
-NEwr_WS214,,,Fresh,Laughing Water Creek,,Surface Water
-NEwr_WS215,,,Fresh,Conway Branch,,Surface Water
-NEwr_WS216,,,Fresh,"Prairie Creek, Trib. To",,Surface Water
-NEwr_WS217,,,Fresh,"Scott Creek, Trib. To",,Surface Water
-NEwr_WS218,,,Fresh,"Buffalo Creek, Trib. To",,Surface Water
-NEwr_WS219,,,Fresh,"Elk Creek, Trib. To",,Surface Water
-NEwr_WS220,,,Fresh,"Slough Creek, Big",,Surface Water
-NEwr_WS221,,,Fresh,Hooper Creek,,Surface Water
-NEwr_WS222,,,Fresh,Brownell Creek,,Surface Water
-NEwr_WS223,,,Fresh,"Nemaha River, Little",,Surface Water
-NEwr_WS224,,,Fresh,"Spring Creek, Trib. To",,Surface Water
-NEwr_WS225,,,Fresh,Man's Creek,,Surface Water
-NEwr_WS226,,,Fresh,"Man's Creek, Trib. To",,Surface Water
-NEwr_WS227,,,Fresh,Car Creek,,Surface Water
-NEwr_WS228,,,Fresh,Bean Creek,,Surface Water
-NEwr_WS229,,,Fresh,Turtle Creek,,Surface Water
-NEwr_WS230,,,Fresh,Union Creek,,Surface Water
-NEwr_WS231,,,Fresh,Pebble Creek,,Surface Water
-NEwr_WS232,,,Fresh,Middle Creek,,Surface Water
-NEwr_WS233,,,Fresh,Hobson Branch,,Surface Water
-NEwr_WS234,,,Fresh,"Cottonwood Creek, Trib. To",,Surface Water
-NEwr_WS235,,,Fresh,Decker Creek,,Surface Water
-NEwr_WS236,,,Fresh,Coon Creek,,Surface Water
-NEwr_WS237,,,Fresh,Lost Creek,,Surface Water
-NEwr_WS238,,,Fresh,Camp Creek,,Surface Water
-NEwr_WS239,,,Fresh,"Verdigre Creek, East Branch",,Surface Water
-NEwr_WS240,,,Fresh,"Cedar Creek, South",,Surface Water
-NEwr_WS241,,,Fresh,"Nemaha River, Big, North Fork",,Surface Water
-NEwr_WS242,,,Fresh,"Nemaha River, Big, South Fork",,Surface Water
-NEwr_WS243,,,Fresh,Walnut Creek,,Surface Water
-NEwr_WS244,,,Fresh,Muddy Creek,,Surface Water
-NEwr_WS245,,,Fresh,"Elkhorn River, North Fork, Trib. To",,Surface Water
-NEwr_WS246,,,Fresh,Four Mile Creek,,Surface Water
-NEwr_WS247,,,Fresh,Pine Creek,,Surface Water
-NEwr_WS248,,,Fresh,Prouty Springs,,Surface Water
-NEwr_WS249,,,Fresh,Bell Creek,,Surface Water
-NEwr_WS250,,,Fresh,Pishel Creek,,Surface Water
-NEwr_WS251,,,Fresh,Dead Man Creek,,Surface Water
-NEwr_WS252,,,Fresh,French Creek,,Surface Water
-NEwr_WS253,,,Fresh,"Nemaha River, Big, Middle Branch, Trib. To",,Surface Water
-NEwr_WS254,,,Fresh,Wilson Creek,,Surface Water
-NEwr_WS255,,,Fresh,Cuming Creek,,Surface Water
-NEwr_WS256,,,Fresh,"Bone Creek, Trib. To",,Surface Water
-NEwr_WS257,,,Fresh,Blackbird Creek,,Surface Water
-NEwr_WS258,,,Fresh,Weeping Water Creek,,Surface Water
-NEwr_WS259,,,Fresh,Weeping Water Reservoir 4J,,Surface Water
-NEwr_WS260,,,Fresh,Willow Creek,,Surface Water
-NEwr_WS261,,,Fresh,"Logan Creek, Middle",,Surface Water
-NEwr_WS262,,,Fresh,Maple Creek,,Surface Water
-NEwr_WS263,,,Fresh,North Platte River,,Surface Water
-NEwr_WS264,,,Fresh,"Loup River, Trib. To",,Surface Water
-NEwr_WS265,,,Fresh,Ervine Creek,,Surface Water
-NEwr_WS266,,,Fresh,"Salt Creek, Little",,Surface Water
-NEwr_WS267,,,Fresh,"Hay Springs Creek, North Branch",,Surface Water
-NEwr_WS268,,,Fresh,Chadron Creek,,Surface Water
-NEwr_WS269,,,Fresh,"Beaver Creek, Little",,Surface Water
-NEwr_WS270,,,Fresh,Clausen Reservoir,,Surface Water
-NEwr_WS271,,,Fresh,Wallace Creek,,Surface Water
-NEwr_WS272,,,Fresh,Higgins Reservoir,,Surface Water
-NEwr_WS273,,,Fresh,"Devils Gulch, Trib. To",,Surface Water
-NEwr_WS274,,,Fresh,Cuatt Reservoir No. 1,,Surface Water
-NEwr_WS275,,,Fresh,Higer Reservoir,,Surface Water
-NEwr_WS276,,,Fresh,"Missouri River, Trib. To",,Surface Water
-NEwr_WS277,,,Fresh,"Soldier Creek, Trib. To",,Surface Water
-NEwr_WS278,,,Fresh,Dee Creek,,Surface Water
-NEwr_WS279,,,Fresh,Stevens Creek,,Surface Water
-NEwr_WS280,,,Fresh,Elk Creek,,Surface Water
-NEwr_WS281,,,Fresh,"Turkey Creek, South Fork, Trib. To",,Surface Water
-NEwr_WS282,,,Fresh,Calumet Creek,,Surface Water
-NEwr_WS283,,,Fresh,Republican River,,Surface Water
-NEwr_WS284,,,Fresh,Center Creek,,Surface Water
-NEwr_WS285,,,Fresh,Frenchman River,,Surface Water
-NEwr_WS286,,,Fresh,Red Willow Creek,,Surface Water
-NEwr_WS287,,,Fresh,Melbeta Creek,,Surface Water
-NEwr_WS288,,,Fresh,Cedar Creek,,Surface Water
-NEwr_WS289,,,Fresh,"Deer Creek, Trib. To",,Surface Water
-NEwr_WS290,,,Fresh,Blue Creek,,Surface Water
-NEwr_WS291,,,Fresh,Humbug Creek,,Surface Water
-NEwr_WS292,,,Fresh,"Bazile Creek, West",,Surface Water
-NEwr_WS293,,,Fresh,"Loup River, South, Trib. To",,Surface Water
-NEwr_WS294,,,Fresh,"Maple Creek, West Fork",,Surface Water
-NEwr_WS295,,,Fresh,Looking Glass Creek,,Surface Water
-NEwr_WS296,,,Fresh,"Larabee Creek, Trib. To",,Surface Water
-NEwr_WS297,,,Fresh,"Plum Creek, Trib. To",,Surface Water
-NEwr_WS298,,,Fresh,"Hay Springs Creek, Trib. To",,Surface Water
-NEwr_WS299,,,Fresh,"White River, Trib. To",,Surface Water
-NEwr_WS300,,,Fresh,"Blackbird Creek, South",,Surface Water
-NEwr_WS301,,,Fresh,Mission Creek,,Surface Water
-NEwr_WS302,,,Fresh,"Otter Creek, Trib. To",,Surface Water
-NEwr_WS303,,,Fresh,Oconee Drain,,Surface Water
-NEwr_WS304,,,Fresh,Moorehouse Creek,,Surface Water
-NEwr_WS305,,,Fresh,"Mud (beaver) Creek, Trib. To",,Surface Water
-NEwr_WS306,,,Fresh,"Oak Creek, Middle",,Surface Water
-NEwr_WS307,,,Fresh,"Logan Creek, Trib. To",,Surface Water
-NEwr_WS308,,,Fresh,"Nemaha River, Little, South Fork",,Surface Water
-NEwr_WS309,,,Fresh,Giles Creek,,Surface Water
-NEwr_WS310,,,Fresh,"Pleasant Run Creek, Trib. To",,Surface Water
-NEwr_WS311,,,Fresh,"Peanut Creek, Trib. To",,Surface Water
-NEwr_WS312,,,Fresh,"Niobrara River, Trib. To",,Surface Water
-NEwr_WS313,,,Fresh,"Coon Creek, South Branch",,Surface Water
-NEwr_WS314,,,Fresh,"Walnut Creek, Trib. To",,Surface Water
-NEwr_WS315,,,Fresh,"Wilson Creek, Trib. To",,Surface Water
-NEwr_WS316,,,Fresh,Fox Creek,,Surface Water
-NEwr_WS317,,,Fresh,"Salt Creek, Olive Branch, Trib. To",,Surface Water
-NEwr_WS318,,,Fresh,"Nemaha River, Big",,Surface Water
-NEwr_WS319,,,Fresh,"Salt Creek, Olive Branch",,Surface Water
-NEwr_WS320,,,Fresh,"Wahoo Creek, North Fork",,Surface Water
-NEwr_WS321,,,Fresh,"Spring Creek, Big, Trib. To",,Surface Water
-NEwr_WS322,,,Fresh,"Spring Creek, Big",,Surface Water
-NEwr_WS323,,,Fresh,Yankee Creek,,Surface Water
-NEwr_WS324,,,Fresh,Badger Branch Creek,,Surface Water
-NEwr_WS325,,,Fresh,"Clearwater Creek, Trib. To",,Surface Water
-NEwr_WS326,,,Fresh,"Salt Creek, Spring Branch",,Surface Water
-NEwr_WS327,,,Fresh,"Salt Creek, East Branch, Trib. To",,Surface Water
-NEwr_WS328,,,Fresh,Cottonwood Creek,,Surface Water
-NEwr_WS329,,,Fresh,"Antelope Creek, Trib. To",,Surface Water
-NEwr_WS330,,,Fresh,"Verdigre Creek, East Branch, Trib. To",,Surface Water
-NEwr_WS331,,,Fresh,"Verdigre Creek, Middle Branch, Trib. To",,Surface Water
-NEwr_WS332,,,Fresh,Bowman Creek,,Surface Water
-NEwr_WS333,,,Fresh,"Bowman Creek, Trib. To",,Surface Water
-NEwr_WS334,,,Fresh,Cob Creek,,Surface Water
-NEwr_WS335,,,Fresh,Gracie Creek,,Surface Water
-NEwr_WS336,,,Fresh,"Turtle Creek, Trib. To",,Surface Water
-NEwr_WS337,,,Fresh,Cardwell Branch,,Surface Water
-NEwr_WS338,,,Fresh,"Oak Creek, Middle, Trib. To",,Surface Water
-NEwr_WS339,,,Fresh,Diamond Bar Drainage Ditch,,Surface Water
-NEwr_WS340,,,Fresh,Bone Creek,,Surface Water
-NEwr_WS341,,,Fresh,"Burton Creek, Spring Branch",,Surface Water
-NEwr_WS342,,,Fresh,"Turkey Creek, Little",,Surface Water
-NEwr_WS343,,,Fresh,Larabee Creek,,Surface Water
-NEwr_WS344,,,Fresh,Snake River,,Surface Water
-NEwr_WS345,,,Fresh,"Bogus Creek, Trib. To",,Surface Water
-NEwr_WS346,,,Fresh,"Middle Creek, South Branch",,Surface Water
-NEwr_WS347,,,Fresh,Greenwood Creek,,Surface Water
-NEwr_WS348,,,Fresh,"Holt Creek, Spring Branch",,Surface Water
-NEwr_WS349,,,Fresh,Charcoal Creek,,Surface Water
-NEwr_WS350,,,Fresh,"Cottonwood Creek, Little, Trib. To",,Surface Water
-NEwr_WS351,,,Fresh,"Spotted Tail Creek, Trib. To",,Surface Water
-NEwr_WS352,,,Fresh,Louse Creek,,Surface Water
-NEwr_WS353,,,Fresh,"Thirty-Two Mile Creek, Trib. To",,Surface Water
-NEwr_WS354,,,Fresh,"Rose Creek, Trib. To",,Surface Water
-NEwr_WS355,,,Fresh,Ziegler Creek,,Surface Water
-NEwr_WS356,,,Fresh,"Fox Creek, Trib. To",,Surface Water
-NEwr_WS357,,,Fresh,Timber Creek,,Surface Water
-NEwr_WS358,,,Fresh,Perrin Creek,,Surface Water
-NEwr_WS359,,,Fresh,Long Pine Creek,,Surface Water
-NEwr_WS360,,,Fresh,"Ash Creek, East, Trib. To",,Surface Water
-NEwr_WS361,,,Fresh,Scott Creek,,Surface Water
-NEwr_WS362,,,Fresh,Thirty-Two Mile Creek,,Surface Water
-NEwr_WS363,,,Fresh,"Sandy Creek, Dry, Trib. To Dean Drain",,Surface Water
-NEwr_WS364,,,Fresh,Buckley Creek,,Surface Water
-NEwr_WS365,,,Fresh,"Cub Creek, Trib. To",,Surface Water
-NEwr_WS366,,,Fresh,"Indian Creek, Trib. To",,Surface Water
-NEwr_WS367,,,Fresh,"Victoria Creek, Trib. To",,Surface Water
-NEwr_WS368,,,Fresh,"Cedar River, Trib. To",,Surface Water
-NEwr_WS369,,,Fresh,"Skull Creek, Trib. To",,Surface Water
-NEwr_WS370,,,Fresh,"Maple Creek, Middle Fork, Trib. To",,Surface Water
-NEwr_WS371,,,Fresh,"Maple Creek, East Fork",,Surface Water
-NEwr_WS372,,,Fresh,"Rawhide Creek, Trib. To",,Surface Water
-NEwr_WS373,,,Fresh,"Salt Creek, North Branch",,Surface Water
-NEwr_WS374,,,Fresh,"Salt Creek, South Branch",,Surface Water
-NEwr_WS375,,,Fresh,Holmes Creek,,Surface Water
-NEwr_WS376,,,Fresh,Peanut Creek,,Surface Water
-NEwr_WS377,,,Fresh,Dunlap Creek,,Surface Water
-NEwr_WS378,,,Fresh,"Snake Creek, Trib. To",,Surface Water
-NEwr_WS379,,,Fresh,"Box Butte Creek, Trib. To",,Surface Water
-NEwr_WS380,,,Fresh,Betsy Creek,,Surface Water
-NEwr_WS381,,,Fresh,"Betsy Creek, Trib. To",,Surface Water
-NEwr_WS382,,,Fresh,"Minnechaduza Creek, Trib. To",,Surface Water
-NEwr_WS383,,,Fresh,"Spotted Tail Creek, Branch of",,Surface Water
-NEwr_WS384,,,Fresh,Spotted Tail Creek,,Surface Water
-NEwr_WS385,,,Fresh,"Brownell Creek, Trib. To",,Surface Water
-NEwr_WS386,,,Fresh,Hooker Creek,,Surface Water
-NEwr_WS387,,,Fresh,Dead Mans Run,,Surface Water
-NEwr_WS388,,,Fresh,"Fairfield Creek, South Branch",,Surface Water
-NEwr_WS389,,,Fresh,"Plum Creek, South Branch",,Surface Water
-NEwr_WS390,,,Fresh,English Creek,,Surface Water
-NEwr_WS391,,,Fresh,"Cottonwood Creek, Big, Trib. To",,Surface Water
-NEwr_WS392,,,Fresh,Madden Creek,,Surface Water
-NEwr_WS393,,,Fresh,Alkali Creek,,Surface Water
-NEwr_WS394,,,Fresh,Vanderbrink Creek,,Surface Water
-NEwr_WS395,,,Fresh,"Trunk Butte Creek, Trib. To",,Surface Water
-NEwr_WS396,,,Fresh,"Sandy Creek, Dry",,Surface Water
-NEwr_WS397,,,Fresh,"Wahoo Creek, South Fork",,Surface Water
-NEwr_WS398,,,Fresh,"Rush Creek, Trib. To",,Surface Water
-NEwr_WS399,,,Fresh,"Bordeaux Creek, Little",,Surface Water
-NEwr_WS400,,,Fresh,Timperley Reservoir,,Surface Water
-NEwr_WS401,,,Fresh,Duck Creek,,Surface Water
-NEwr_WS402,,,Fresh,"Maple Creek, Trib. To",,Surface Water
-NEwr_WS403,,,Fresh,Calf Creek,,Surface Water
-NEwr_WS404,,,Fresh,"Dry Creek, North",,Surface Water
-NEwr_WS405,,,Fresh,"Thirty-Two Mile Creek, West Branch",,Surface Water
-NEwr_WS406,,,Fresh,Skull Creek,,Surface Water
-NEwr_WS407,,,Fresh,Wilson Creek Reservoir 2-S,,Surface Water
-NEwr_WS408,,,Fresh,Bazile Creek,,Surface Water
-NEwr_WS409,,,Fresh,Boxelder Creek,,Surface Water
-NEwr_WS410,,,Fresh,"Hooper Creek, Trib. To",,Surface Water
-NEwr_WS411,,,Fresh,Taylor Branch Creek,,Surface Water
-NEwr_WS412,,,Fresh,"Nemaha River, Big, Trib. To",,Surface Water
-NEwr_WS413,,,Fresh,"Salt Creek, Spring Branch, Trib. To",,Surface Water
-NEwr_WS414,,,Fresh,"Point of Rocks Creek, Trib. To",,Surface Water
-NEwr_WS415,,,Fresh,Dawes-Sheridan Creek,,Surface Water
-NEwr_WS416,,,Fresh,Spring Branch Creek,,Surface Water
-NEwr_WS417,,,Fresh,"Blackbird Creek, Trib. To",,Surface Water
-NEwr_WS418,,,Fresh,"Ash Creek, West",,Surface Water
-NEwr_WS419,,,Fresh,"Humbug Creek, Trib. To",,Surface Water
-NEwr_WS420,,,Fresh,Johnson Creek,,Surface Water
-NEwr_WS421,,,Fresh,Eight Mile Creek,,Surface Water
-NEwr_WS422,,,Fresh,"Eagle Creek, North Branch",,Surface Water
-NEwr_WS423,,,Fresh,"Eagle Creek, Trib. To",,Surface Water
-NEwr_WS424,,,Fresh,"South Platte River, Trib. To",,Surface Water
-NEwr_WS425,,,Fresh,Liberty Creek,,Surface Water
-NEwr_WS426,,,Fresh,"Nemaha River, Little, South Fork, Trib. To",,Surface Water
-NEwr_WS427,,,Fresh,"Saunders Creek, Trib. To",,Surface Water
-NEwr_WS428,,,Fresh,"Decker Creek, Trib. To",,Surface Water
-NEwr_WS429,,,Fresh,"Mill Creek, Trib. To",,Surface Water
-NEwr_WS430,,,Fresh,"Rock Creek, North Fork",,Surface Water
-NEwr_WS431,,,Fresh,"Young Creek, Trib. To",,Surface Water
-NEwr_WS432,,,Fresh,West Water Creek,,Surface Water
-NEwr_WS433,,,Fresh,"Stump Ditch, Trib. To",,Surface Water
-NEwr_WS434,,,Fresh,Strever Creek,,Surface Water
-NEwr_WS435,,,Fresh,"Liberty Creek, North Branch",,Surface Water
-NEwr_WS436,,,Fresh,Justin Ellicott Reservoir,,Surface Water
-NEwr_WS437,,,Fresh,Three Mile Creek,,Surface Water
-NEwr_WS438,,,Fresh,"Sand Creek, West",,Surface Water
-NEwr_WS439,,,Fresh,Todd Creek,,Surface Water
-NEwr_WS440,,,Fresh,Elm Creek,,Surface Water
-NEwr_WS441,,,Fresh,"Logan Creek, South",,Surface Water
-NEwr_WS442,,,Fresh,"Middle Creek, North Branch",,Surface Water
-NEwr_WS443,,,Fresh,Dead Horse Creek,,Surface Water
-NEwr_WS444,,,Fresh,Maskenthine Creek,,Surface Water
-NEwr_WS445,,,Fresh,"Cedar Creek, Trib. To",,Surface Water
-NEwr_WS446,,,Fresh,Logan Creek Dredge,,Surface Water
-NEwr_WS447,,,Fresh,White Tail Creek,,Surface Water
-NEwr_WS448,,,Fresh,Houchen Creek,,Surface Water
-NEwr_WS449,,,Fresh,Craig Creek,,Surface Water
-NEwr_WS450,,,Fresh,"Blue River, Big, Trib. To",,Surface Water
-NEwr_WS451,,,Fresh,Dry Branch,,Surface Water
-NEwr_WS452,,,Fresh,"Cottonwood Creek, Little",,Surface Water
-NEwr_WS453,,,Fresh,Fremont Creek,,Surface Water
-NEwr_WS454,,,Fresh,Prairie Creek,,Surface Water
-NEwr_WS455,,,Fresh,"Cedar Creek, South, Trib. To",,Surface Water
-NEwr_WS456,,,Fresh,"Silver Creek, Trib. To",,Surface Water
-NEwr_WS457,,,Fresh,"Loup River, Middle, Trib. To",,Surface Water
-NEwr_WS458,,,Fresh,Kenyon Farm Reservoir,,Surface Water
-NEwr_WS459,,,Fresh,North Oak Reservoir 4-C,,Surface Water
-NEwr_WS460,,,Fresh,Highlands Golf Course Reservoir,,Surface Water
-NEwr_WS461,,,Fresh,"Stevens Creek, Trib. To",,Surface Water
-NEwr_WS462,,,Fresh,Himark Golf Course Res.,,Surface Water
-NEwr_WS463,,,Fresh,"Eight Mile Creek, Trib. To",,Surface Water
-NEwr_WS464,,,Fresh,"Weeping Water Creek, South Branch, Trib. To",,Surface Water
-NEwr_WS465,,,Fresh,Karens Pond,,Surface Water
-NEwr_WS466,,,Fresh,Rakes Creek,,Surface Water
-NEwr_WS467,,,Fresh,"Table Creek, North",,Surface Water
-NEwr_WS468,,,Fresh,Russell Creek,,Surface Water
-NEwr_WS469,,,Fresh,Upper Little Nemaha Res. 31 West,,Surface Water
-NEwr_WS470,,,Fresh,"Chatawa Creek, Trib. To",,Surface Water
-NEwr_WS471,,,Fresh,"Deer Branch, Trib. To",,Surface Water
-NEwr_WS472,,,Fresh,Sweet Creek,,Surface Water
-NEwr_WS473,,,Fresh,Cow Creek,,Surface Water
-NEwr_WS474,,,Fresh,Mira Creek,,Surface Water
-NEwr_WS475,,,Fresh,Auger Creek,,Surface Water
-NEwr_WS476,,,Fresh,"North Branch, Shell Creek",,Surface Water
-NEwr_WS477,,,Fresh,Indian Creek,,Surface Water
-NEwr_WS478,,,Fresh,Maskenthine Reservoir,,Surface Water
-NEwr_WS479,,,Fresh,Rattlesnake Creek,,Surface Water
-NEwr_WS480,,,Fresh,Myrtle Creek,,Surface Water
-NEwr_WS481,,,Fresh,"Cheese Creek, Trib. To",,Surface Water
-NEwr_WS482,,,Fresh,"Middle Creek, North Branch, Trib. To",,Surface Water
-NEwr_WS483,,,Fresh,Schildt Livestock Waste Control Reservoir,,Surface Water
-NEwr_WS484,,,Fresh,"Ash Hollow Creek, Trib. To",,Surface Water
-NEwr_WS485,,,Fresh,Cub Creek,,Surface Water
-NEwr_WS486,,,Fresh,SOUTH RESERVOIR,,Surface Water
-NEwr_WS487,,,Fresh,Rohrer Irrigation Reservoir,,Surface Water
-NEwr_WS488,,,Fresh,Soester Reservoir,,Surface Water
-NEwr_WS489,,,Fresh,"Brawner Creek, Trib To",,Surface Water
-NEwr_WS490,,,Fresh,Romberg Creek,,Surface Water
-NEwr_WS491,,,Fresh,"Brewers Branch, Trib. To Yankee Creek",,Surface Water
-NEwr_WS492,,,Fresh,"Haines Branch, Trib. To",,Surface Water
-NEwr_WS493,,,Fresh,"Table Creek, South",,Surface Water
-NEwr_WS494,,,Fresh,Easly Creek,,Surface Water
-NEwr_WS495,,,Fresh,"Mooney Creek, Trib. To",,Surface Water
-NEwr_WS496,,,Fresh,Shaw Creek,,Surface Water
-NEwr_WS497,,,Fresh,"Muddy Creek, Little",,Surface Water
-NEwr_WS498,,,Fresh,Bachelor Creek,,Surface Water
-NEwr_WS499,,,Fresh,"Winnebago Creek, Trib. To",,Surface Water
-NEwr_WS500,,,Fresh,Rush Creek,,Surface Water
-NEwr_WS501,,,Fresh,"Rakes Creek, Trib. To",,Surface Water
-NEwr_WS502,,,Fresh,Bee Creek,,Surface Water
-NEwr_WS503,,,Fresh,"Loseke Creek, Trib. To",,Surface Water
-NEwr_WS504,,,Fresh,"Sand Draw, West",,Surface Water
-NEwr_WS505,,,Fresh,"Wolf Creek, Trib. To",,Surface Water
-NEwr_WS506,,,Fresh,Dane Creek,,Surface Water
-NEwr_WS507,,,Fresh,"Buffalo Creek, West, Trib. To",,Surface Water
-NEwr_WS508,,,Fresh,Robinson Branch,,Surface Water
-NEwr_WS509,,,Fresh,Scout Creek,,Surface Water
-NEwr_WS510,,,Fresh,Pawnee Slough,,Surface Water
-NEwr_WS511,,,Fresh,"Kirkham Creek, Trib. To",,Surface Water
-NEwr_WS512,,,Fresh,"Elkhorn River, South Fork, Trib. To",,Surface Water
-NEwr_WS513,,,Fresh,Fishberry Canyon,,Surface Water
-NEwr_WS514,,,Fresh,Government Canyon,,Surface Water
-NEwr_WS515,,,Fresh,"Pumpkinseed Creek, Trib. To",,Surface Water
-NEwr_WS516,,,Fresh,Kirkham Creek,,Surface Water
-NEwr_WS517,,,Fresh,Lores Branch,,Surface Water
-NEwr_WS518,,,Fresh,"Loup River, Middle, South Branch",,Surface Water
-NEwr_WS519,,,Fresh,"Clear Creek, Upper",,Surface Water
-NEwr_WS520,,,Fresh,Trouble Creek,,Surface Water
-NEwr_WS521,,,Fresh,"Salt Creek, North Branch, Trib. To",,Surface Water
-NEwr_WS522,,,Fresh,"Vanderbrink Creek, Trib. To",,Surface Water
-NEwr_WS523,,,Fresh,"Salt Creek, South Branch, Trib. To",,Surface Water
-NEwr_WS524,,,Fresh,Boardman Creek,,Surface Water
-NEwr_WS525,,,Fresh,Cedar Gulch,,Surface Water
-NEwr_WS526,,,Fresh,Hay Creek,,Surface Water
-NEwr_WS527,,,Fresh,Eley Creek,,Surface Water
-NEwr_WS528,,,Fresh,"Honey Creek, Trib To",,Surface Water
-NEwr_WS529,,,Fresh,Bear-Pierce-Cedar 8-C Reservoir,,Surface Water
-NEwr_WS530,,,Fresh,"Duck Creek, Trib to",,Surface Water
-NEwr_WS531,,,Fresh,Magee Reservoir,,Surface Water
-NEwr_WS532,,,Fresh,"Wild Cat Creek, Trib. To",,Surface Water
-NEwr_WS533,,,Fresh,PIWO Reservoir,,Surface Water
-NEwr_WS534,,,Fresh,Hofeling Pond No 1,,Surface Water
-NEwr_WS535,,,Fresh,Reinsch Reservoir,,Surface Water
-NEwr_WS536,,,Fresh,"Indian Creek, Big",,Surface Water
-NEwr_WS537,,,Fresh,Grandpas Woods Pond,,Surface Water
-NEwr_WS538,,,Fresh,Asimus Reservoir,,Surface Water
-NEwr_WS539,,,Fresh,"Papillion Creek, Big",,Surface Water
-NEwr_WS540,,,Fresh,"Indian Creek, Big, Reservoir 2-A",,Surface Water
-NEwr_WS541,,,Fresh,"Union Creek, trib to",,Surface Water
-NEwr_WS542,,,Fresh,Gokie Reservoir No. 2,,Surface Water
-NEwr_WS543,,,Fresh,Stewart Reservoir #1,,Surface Water
-NEwr_WS544,,,Fresh,"Bazile Creek, Trib. To",,Surface Water
-NEwr_WS545,,,Fresh,Possum Creek,,Surface Water
-NEwr_WS546,,,Fresh,Mark Downey Farm Pond,,Surface Water
-NEwr_WS547,,,Fresh,"Laflins Branch, Trib to",,Surface Water
-NEwr_WS548,,,Fresh,"Yankee Creek, Trib. To",,Surface Water
-NEwr_WS549,,,Fresh,Cub Creek Reservoir 17-A,,Surface Water
-NEwr_WS550,,,Fresh,Swan Creek Reservoir No 68,,Surface Water
-NEwr_WS551,,,Fresh,Cub Creek Reservoir 17-B,,Surface Water
-NEwr_WS552,,,Fresh,Swan Creek Res. No. 9,,Surface Water
-NEwr_WS553,,,Fresh,Dutch Creek,,Surface Water
-NEwr_WS554,,,Fresh,Wildcat Creek,,Surface Water
-NEwr_WS555,,,Fresh,Mahon Reservoir No 2,,Surface Water
-NEwr_WS556,,,Fresh,Bow Creek,,Surface Water
-NEwr_WS557,,,Fresh,Cub Creek Reservoir 15-B,,Surface Water
-NEwr_WS558,,,Fresh,"Bow Creek, East",,Surface Water
-NEwr_WS559,,,Fresh,Crooked Elm Dam,,Surface Water
-NEwr_WS560,,,Fresh,Swan Creek Reservoir No 12,,Surface Water
-NEwr_WS561,,,Fresh,"Spring Branch Creek, Trib. To",,Surface Water
-NEwr_WS562,,,Fresh,Parde Irrigation Pond,,Surface Water
-NEwr_WS563,,,Fresh,"Mackelroy Creek, Trib. To",,Surface Water
-NEwr_WS564,,,Fresh,"Goolsby Branch,  Trib to",,Surface Water
-NEwr_WS565,,,Fresh,"Camp Creek, Trib. To",,Surface Water
-NEwr_WS566,,,Fresh,"Camp Creek, South Branch",,Surface Water
-NEwr_WS567,,,Fresh,Beatty Creek,,Surface Water
-NEwr_WS568,,,Fresh,"Weigand Creek, Trib to",,Surface Water
-NEwr_WS569,,,Fresh,New York Creek,,Surface Water
-NEwr_WS570,,,Fresh,Cub Creek Reservoir 13-C,,Surface Water
-NEwr_WS571,,,Fresh,"Burgess Creek, Trib To",,Surface Water
-NEwr_WS572,,,Fresh,"Morman Canal, Trib. To",,Surface Water
-NEwr_WS573,,,Fresh,Lydell Canyon Creek,,Surface Water
-NEwr_WS574,,,Fresh,Bear Creek Reservoir 3-A,,Surface Water
-NEwr_WS575,,,Fresh,Wolf Creek,,Surface Water
-NEwr_WS576,,,Fresh,Thomas West Reservoir,,Surface Water
-NEwr_WS577,,,Fresh,"Bow Creek, Second, Trib to",,Surface Water
-NEwr_WS578,,,Fresh,Spring Creek Reservoir 9-3,,Surface Water
-NEwr_WS579,,,Fresh,Hofeling Pond No. 2,,Surface Water
-NEwr_WS580,,,Fresh,Hofeling Pond No. 3,,Surface Water
-NEwr_WS581,,,Fresh,Schmidt Reservoir,,Surface Water
-NEwr_WS582,,,Fresh,Dan Shaw Pond,,Surface Water
-NEwr_WS583,,,Fresh,"Weeping Water Creek, South Branch",,Surface Water
-NEwr_WS584,,,Fresh,Bear Creek Reservoir 6-B,,Surface Water
-NEwr_WS585,,,Fresh,Lime Creek,,Surface Water
-NEwr_WS586,,,Fresh,"Johnson Creek, Trib. To",,Surface Water
-NEwr_WS587,,,Fresh,Mud Creek,,Surface Water
-NEwr_WS588,,,Fresh,"Spring Branch, Trib. To",,Surface Water
-NEwr_WS589,,,Fresh,"Hooker Creek, Trib. To",,Surface Water
-NEwr_WS590,,,Fresh,"Shaw Creek, Trib. To",,Surface Water
-NEwr_WS591,,,Fresh,Jakes Creek,,Surface Water
-NEwr_WS592,,,Fresh,Town Branch,,Surface Water
-NEwr_WS593,,,Fresh,Laflins Branch,,Surface Water
-NEwr_WS594,,,Fresh,"Sandy Creek, Little, Trib. To",,Surface Water
-NEwr_WS595,,,Fresh,"Wittstruck Creek, Trib. To",,Surface Water
-NEwr_WS596,,,Fresh,Wittstruck Creek,,Surface Water
-NEwr_WS597,,,Fresh,"Oneil Valley, Trib. To",,Surface Water
-NEwr_WS598,,,Fresh,"Blacksnake Creek, Trib To",,Surface Water
-NEwr_WS599,,,Fresh,Brawner Creek,,Surface Water
-NEwr_WS600,,,Fresh,"Maple Creek, East Fork, Trib. To",,Surface Water
-NEwr_WS601,,,Fresh,"Melbeta Creek, Trib. To",,Surface Water
-NEwr_WS602,,,Fresh,"Verdigree Creek, North Branch, Trib. To",,Surface Water
-NEwr_WS603,,,Fresh,"Rock Creek, North Fork, Trib. To",,Surface Water
-NEwr_WS604,,,Fresh,"Sand Draw, Trib. To",,Surface Water
-NEwr_WS605,,,Fresh,"Dry Branch, Trib. To",,Surface Water
-NEwr_WS606,,,Fresh,Pearl Creek,,Surface Water
-NEwr_WS607,,,Fresh,LAH Eickhoff EQIP Reservoir,,Surface Water
-NEwr_WS608,,,Fresh,Bear-Pierce-Cedar Creek Reservoir 5-B,,Surface Water
-NEwr_WS609,,,Fresh,Deep Creek,,Surface Water
-NEwr_WS610,,,Fresh,"Indian Creek, Big, Trib. To",,Surface Water
-NEwr_WS611,,,Fresh,Merritt Reservoir,,Surface Water
-NEwr_WS612,,,Fresh,Kilpatrick Reservoir,,Surface Water
-NEwr_WS613,,,Fresh,"Ponca Creek, Trib. To",,Surface Water
-NEwr_WS614,,,Fresh,"Muddy Creek, West Branch, Trib. to",,Surface Water
-NEwr_WS615,,,Fresh,Dodd Reservoir,,Surface Water
-NEwr_WS616,,,Fresh,Peter Birkel Reservoir No. 1,,Surface Water
-NEwr_WS617,,,Fresh,"Mira Creek, North Branch",,Surface Water
-NEwr_WS618,,,Fresh,Hickman Reservoir No. 1,,Surface Water
-NEwr_WS619,,,Fresh,Hickman Reservoir No. 2,,Surface Water
-NEwr_WS620,,,Fresh,Bellwood Reservoir 5-H,,Surface Water
-NEwr_WS621,,,Fresh,Don Doerr Reservoir,,Surface Water
-NEwr_WS622,,,Fresh,Jelinek Reservoir,,Surface Water
-NEwr_WS623,,,Fresh,Rentschler Reservoir,,Surface Water
-NEwr_WS624,,,Fresh,Bartos Reservoir No. 2,,Surface Water
-NEwr_WS625,,,Fresh,Bartos Reservoir No. 3,,Surface Water
-NEwr_WS626,,,Fresh,Coyote Springs Reservoir,,Surface Water
-NEwr_WS627,,,Fresh,Peterson Reservoir No. 1,,Surface Water
-NEwr_WS628,,,Fresh,Shadley Vale Creek,,Surface Water
-NEwr_WS629,,,Fresh,"Andrew F. Rowan, Jr  Reservoir",,Surface Water
-NEwr_WS630,,,Fresh,Coleman Reservoir No. 1,,Surface Water
-NEwr_WS631,,,Fresh,Heitmann Reservoir No 2,,Surface Water
-NEwr_WS632,,,Fresh,T. Higgins Reservoir,,Surface Water
-NEwr_WS633,,,Fresh,Kaupp Reservoir No. 1,,Surface Water
-NEwr_WS634,,,Fresh,Kaupp Reservoir No. 4,,Surface Water
-NEwr_WS635,,,Fresh,Rowan Reservoir,,Surface Water
-NEwr_WS636,,,Fresh,Weller Reservoir,,Surface Water
-NEwr_WS637,,,Fresh,Smith Reservoir No. 1,,Surface Water
-NEwr_WS638,,,Fresh,Dobias Reservoir,,Surface Water
-NEwr_WS639,,,Fresh,Pinkerman Reservoir No. 1,,Surface Water
-NEwr_WS640,,,Fresh,Musfelt Reservoir,,Surface Water
-NEwr_WS641,,,Fresh,Witherwax Reservoir,,Surface Water
-NEwr_WS642,,,Fresh,"Bartos, Frank, Reservoir",,Surface Water
-NEwr_WS643,,,Fresh,Bartos Reservoir,,Surface Water
-NEwr_WS644,,,Fresh,Prouty Young Creek Reservoir,,Surface Water
-NEwr_WS645,,,Fresh,Hamling & Hamling Reservoir,,Surface Water
-NEwr_WS646,,,Fresh,Kappelman Reservoir,,Surface Water
-NEwr_WS647,,,Fresh,Richardson Reservoir,,Surface Water
-NEwr_WS648,,,Fresh,Becker Reservoir No. 2,,Surface Water
-NEwr_WS649,,,Fresh,Hitchcock Reservoir,,Surface Water
-NEwr_WS650,,,Fresh,Hitchcock Reservoir No. 2,,Surface Water
-NEwr_WS651,,,Fresh,Cline's Reservoir,,Surface Water
-NEwr_WS652,,,Fresh,Coble Reservoir,,Surface Water
-NEwr_WS653,,,Fresh,Hipke Reservoir,,Surface Water
-NEwr_WS654,,,Fresh,Peterson Reservoir,,Surface Water
-NEwr_WS655,,,Fresh,Peterson Reservoir No. 2,,Surface Water
-NEwr_WS656,,,Fresh,Wenger Lease Reservoir,,Surface Water
-NEwr_WS657,,,Fresh,Kaupp Reservoir No. 2,,Surface Water
-NEwr_WS658,,,Fresh,Jensen Reservoir,,Surface Water
-NEwr_WS659,,,Fresh,Lukow Reservoir,,Surface Water
-NEwr_WS660,,,Fresh,Sherman Reservoir,,Surface Water
-NEwr_WS661,,,Fresh,"Indian Creek, Big, Reservoir 17-A",,Surface Water
-NEwr_WS662,,,Fresh,Lineweber South Reservoir,,Surface Water
-NEwr_WS663,,,Fresh,Thirty-Two Mile Creek Reservoir H,,Surface Water
-NEwr_WS664,,,Fresh,Lightner Reservoir No. 3,,Surface Water
-NEwr_WS665,,,Fresh,Big L Reservoir,,Surface Water
-NEwr_WS666,,,Fresh,Crappie Lake,,Surface Water
-NEwr_WS667,,,Fresh,Vonasek Reservoir,,Surface Water
-NEwr_WS668,,,Fresh,Lightner Reservoir No. 2,,Surface Water
-NEwr_WS669,,,Fresh,Big Valley Clean Water Basin,,Surface Water
-NEwr_WS670,,,Fresh,"Frenchman River, Trib. To",,Surface Water
-NEwr_WS671,,,Fresh,Clatonia Creek Reservoir 4-A,,Surface Water
-NEwr_WS672,,,Fresh,Swan Creek,,Surface Water
-NEwr_WS673,,,Fresh,"Berger Creek, Trib. to",,Surface Water
-NEwr_WS674,,,Fresh,Big Sandy Res. 20-6-7,,Surface Water
-NEwr_WS675,,,Fresh,Crooked Creek,,Surface Water
-NEwr_WS676,,,Fresh,Haineraich Reservoir,,Surface Water
-NEwr_WS677,,,Fresh,George Semler Reservoir,,Surface Water
-NEwr_WS678,,,Fresh,Buckley Creek Watershed Dam 4-A,,Surface Water
-NEwr_WS679,,,Fresh,Reiser Reservoir No 2,,Surface Water
-NEwr_WS680,,,Fresh,Thirty-Two Mile Creek Reservoir J,,Surface Water
-NEwr_WS681,,,Fresh,Pavelka Reservoir,,Surface Water
-NEwr_WS682,,,Fresh,Nejezchleb Reservoir,,Surface Water
-NEwr_WS683,,,Fresh,James J Lipovsky Reservoir,,Surface Water
-NEwr_WS684,,,Fresh,Herz Reservoir,,Surface Water
-NEwr_WS685,,,Fresh,Hubl Reservoir,,Surface Water
-NEwr_WS686,,,Fresh,Vap Reservoir,,Surface Water
-NEwr_WS687,,,Fresh,Schliep Reservoir,,Surface Water
-NEwr_WS688,,,Fresh,Skalka Reservoir,,Surface Water
-NEwr_WS689,,,Fresh,Harms-Clay County Reservoir,,Surface Water
-NEwr_WS690,,,Fresh,State Creek,,Surface Water
-NEwr_WS691,,,Fresh,Blackbird Reservoir,,Surface Water
-NEwr_WS692,,,Fresh,Flobert Springs Reservoir,,Surface Water
-NEwr_WS693,,,Fresh,Bayard Sugar Factory Drain,,Surface Water
-NEwr_WS694,,,Fresh,"Thompson Creek, West Branch, Trib. To",,Surface Water
-NEwr_WS695,,,Fresh,Lottman-Carpenter Reservoir,,Surface Water
-NEwr_WS696,,,Fresh,"Papillion Creek, South, Trib. To",,Surface Water
-NEwr_WS697,,,Fresh,Wollenburg Pond,,Surface Water
-NEwr_WS698,,,Fresh,Parde West Irrigation Pond,,Surface Water
-NEwr_WS699,,,Fresh,Wortmann Reservoir,,Surface Water
-NEwr_WS700,,,Fresh,"Elm Creek, Trib. To",,Surface Water
-NEwr_WS701,,,Fresh,Pinkerman Reservoir,,Surface Water
-NEwr_WS702,,,Fresh,Swan Creek Reservoir 20,,Surface Water
-NEwr_WS703,,,Fresh,"Buck Creek, trib to",,Surface Water
-NEwr_WS704,,,Fresh,Buck Creek,,Surface Water
-NEwr_WS705,,,Fresh,Plum Creek Reservoir 5-B,,Surface Water
-NEwr_WS706,,,Fresh,Deer Creek Reservoir,,Surface Water
-NEwr_WS707,,,Fresh,Jones Creek,,Surface Water
-NEwr_WS708,,,Fresh,"Eagle Creek, East Branch",,Surface Water
-NEwr_WS709,,,Fresh,Morrison Reservoir No. 1,,Surface Water
-NEwr_WS710,,,Fresh,Hitchcock Reservoir No 3,,Surface Water
-NEwr_WS711,,,Fresh,"Elder Creek, Trib. to",,Surface Water
-NEwr_WS712,,,Fresh,Hofeling Pond No. 15-B,,Surface Water
-NEwr_WS713,,,Fresh,"Horseshoe Creek, Trib to",,Surface Water
-NEwr_WS714,,,Fresh,North Oak Reservoir 6-A,,Surface Water
-NEwr_WS715,,,Fresh,"Bazile Creek, Little, Trib. To",,Surface Water
-NEwr_WS716,,,Fresh,Serr Irrigation Reservoir,,Surface Water
-NEwr_WS717,,,Fresh,Eagle Creek Reservoir,,Surface Water
-NEwr_WS718,,,Fresh,Evers Farm Pond,,Surface Water
-NEwr_WS719,,,Fresh,Long Branch Creek,,Surface Water
-NEwr_WS720,,,Fresh,"Swartz Creek, Trib. to",,Surface Water
-NEwr_WS721,,,Fresh,Bottle Creek,,Surface Water
-NEwr_WS722,,,Fresh,Cub Creek Reservoir 10-A,,Surface Water
-NEwr_WS723,,,Fresh,Weers Reservoir,,Surface Water
-NEwr_WS724,,,Fresh,Lottman Irrigation Reservoir,,Surface Water
-NEwr_WS725,,,Fresh,Big Indian Creek Reservoir 3-A,,Surface Water
-NEwr_WS726,,,Fresh,Singleton Reservoir,,Surface Water
-NEwr_WS727,,,Fresh,Pathfinder Reservoir,,Surface Water
-NEwr_WS728,,,Fresh,"Republican River Basin, Trib to.",,Surface Water
-NEwr_WS729,,,Fresh,"Whiskey Creek, Trib. To",,Surface Water
-NEwr_WS730,,,Fresh,Kean Pond 1,,Surface Water
-NEwr_WS731,,,Fresh,"Carr Creek, Trib to",,Surface Water
-NEwr_WS732,,,Fresh,Wehrman Reservoir,,Surface Water
-NEwr_WS733,,,Fresh,Barber Farms Reservoir,,Surface Water
-NEwr_WS734,,,Fresh,Kingsley Reservoir,,Surface Water
-NEwr_WS735,,,Fresh,Sutherland Reservoir,,Surface Water
-NEwr_WS736,,,Fresh,"Frazier Creek, Trib. to",,Surface Water
-NEwr_WS737,,,Fresh,Patterson Creek,,Surface Water
-NEwr_WS738,,,Fresh,"Republican River, Trib. To",,Surface Water
-NEwr_WS739,,,Fresh,Nine Mile Creek,,Surface Water
-NEwr_WS740,,,Fresh,Sandbox Pond,,Surface Water
-NEwr_WS741,,,Fresh,"Louse Creek, Trib to",,Surface Water
-NEwr_WS742,,,Fresh,"Bow Creek, East, Trib. To",,Surface Water
-NEwr_WS743,,,Fresh,Papillion Creek,,Surface Water
-NEwr_WS744,,,Fresh,Daubendiek Reservoir No. 3,,Surface Water
-NEwr_WS745,,,Fresh,"Turkey Creek, East Branch",,Surface Water
-NEwr_WS746,,,Fresh,"Boxelder Creek, Trib. To",,Surface Water
-NEwr_WS747,,,Fresh,"Enders, Strunk, Harlan County, Swanson And Hugh Butler Lake Reservoirs",,Surface Water
-NEwr_WS748,,,Fresh,Winters Creek,,Surface Water
-NEwr_WS749,,,Fresh,"Deep Creek, Trib. to",,Surface Water
-NEwr_WS750,,,Fresh,Damme Irrigation Reservoir,,Surface Water
-NEwr_WS751,,,Fresh,Richter Branch,,Surface Water
-NEwr_WS752,,,Fresh,"Crooked Creek, Trib. To",,Surface Water
-NEwr_WS753,,,Fresh,Cook Reservoir,,Surface Water
-NEwr_WS754,,,Fresh,Boyer Irrigation Reservoir,,Surface Water
-NEwr_WS755,,,Fresh,"Robinson Creek, Trib. To",,Surface Water
-NEwr_WS756,,,Fresh,Jerry Gokie Reservoir,,Surface Water
-NEwr_WS757,,,Fresh,"Turkey Creek, West Branch, Trib. to",,Surface Water
-NEwr_WS758,,,Fresh,Arkeketa Creek,,Surface Water
-NEwr_WS759,,,Fresh,Bradley Branch,,Surface Water
-NEwr_WS760,,,Fresh,"Foster Creek, Tributary to",,Surface Water
-NEwr_WS761,,,Fresh,Schlake Reservoir,,Surface Water
-NEwr_WS762,,,Fresh,Mud Creek Reservoir 3-A,,Surface Water
-NEwr_WS763,,,Fresh,"Twin Creek, trib to",,Surface Water
-NEwr_WS764,,,Fresh,Davis Trust Reservoir,,Surface Water
-NEwr_WS765,,,Fresh,"Thawes Creek, Trib To",,Surface Water
-NEwr_WS766,,,Fresh,Swan Creek Reservoir No 27,,Surface Water
-NEwr_WS767,,,Fresh,"Blue River, Big, West Fork, Trib. To",,Surface Water
-NEwr_WS768,,,Fresh,Beckler Small Dam,,Surface Water
-NEwr_WS769,,,Fresh,Messenger Creek,,Surface Water
-NEwr_WS770,,,Fresh,Sicily Creek,,Surface Water
-NEwr_WS771,,,Fresh,Little Indian 15-A Reservoir,,Surface Water
-NEwr_WS772,,,Fresh,Linn Creek,,Surface Water
-NEwr_WS773,,,Fresh,Big Indian Creek Reservoir 13-C,,Surface Water
-NEwr_WS774,,,Fresh,"Papillion Creek, Big, Trib. To",,Surface Water
-NEwr_WS775,,,Fresh,Springs,,Surface Water
-NEwr_WS776,,,Fresh,"Omaha Creek, North",,Surface Water
-NEwr_WS777,,,Fresh,"Buffalo Creek, Big",,Surface Water
-NEwr_WS778,,,Fresh,Carr Creek,,Surface Water
-NEwr_WS779,,,Fresh,"Papillion Creek, Little, Trib. To",,Surface Water
-NEwr_WS780,,,Fresh,"Long Creek, Trib. To",,Surface Water
-NEwr_WS781,,,Fresh,Omaha Creek,,Surface Water
-NEwr_WS782,,,Fresh,"Bell Creek, Little, Trib. To",,Surface Water
-NEwr_WS783,,,Fresh,"Papillion Creek, Big, Northwest Branch, Trib. To",,Surface Water
-NEwr_WS784,,,Fresh,"Papillion Creek, Little",,Surface Water
-NEwr_WS785,,,Fresh,Fiddler's Creek,,Surface Water
-NEwr_WS786,,,Fresh,"Brown Creek, Trib. To",,Surface Water
-NEwr_WS787,,,Fresh,Brown Creek,,Surface Water
-NEwr_WS788,,,Fresh,"Bell Creek, Little",,Surface Water
-NEwr_WS789,,,Fresh,"New York Creek, Trib. To",,Surface Water
-NEwr_WS790,,,Fresh,"Tekamah Creek, Trib. To",,Surface Water
-NEwr_WS791,,,Fresh,"Bell Creek, Trib. To",,Surface Water
-NEwr_WS792,,,Fresh,Tekamah-Mud Creek Reservoir 41-A,,Surface Water
-NEwr_WS793,,,Fresh,Buttermilk Creek,,Surface Water
-NEwr_WS794,,,Fresh,"Buffalo Creek, Big, Trib. To",,Surface Water
-NEwr_WS795,,,Fresh,"Moores Creek, Trib. To",,Surface Water
-NEwr_WS796,,,Fresh,Armbrust Creek,,Surface Water
-NEwr_WS797,,,Fresh,Moores Creek,,Surface Water
-NEwr_WS798,,,Fresh,Hell Creek,,Surface Water
-NEwr_WS799,,,Fresh,Falls Branch,,Surface Water
-NEwr_WS800,,,Fresh,Eagle Run West Reservoir,,Surface Water
-NEwr_WS801,,,Fresh,"Papillion Creek, Trib. To",,Surface Water
-NEwr_WS802,,,Fresh,"Butter Flat Creek, Trib To",,Surface Water
-NEwr_WS803,,,Fresh,"Pigeon Creek, Trib. To",,Surface Water
-NEwr_WS804,,,Fresh,"Enders, Strunk, Harlan County And Swanson Reservoirs",,Surface Water
-NEwr_WS805,,,Fresh,Papio Greens Golf Course Lake,,Surface Water
-NEwr_WS806,,,Fresh,"Papillion Creek, West, North Branch, Trib. To",,Surface Water
-NEwr_WS807,,,Fresh,Deer Creek Golf Course Ponds,,Surface Water
-NEwr_WS808,,,Fresh,Mulhalls Regulating Pit,,Surface Water
-NEwr_WS809,,,Fresh,Middle Big Nemaha Reservoir 88,,Surface Water
-NEwr_WS810,,,Fresh,Schoof Reservoir,,Surface Water
-NEwr_WS811,,,Fresh,Corman Reservoir,,Surface Water
-NEwr_WS812,,,Fresh,Jelsma Reservoir,,Surface Water
-NEwr_WS813,,,Fresh,Ahrens Reservoir,,Surface Water
-NEwr_WS814,,,Fresh,Janssen Reservoir,,Surface Water
-NEwr_WS815,,,Fresh,Hoyt Reservoir,,Surface Water
-NEwr_WS816,,,Fresh,Mazour-Schroeder Reservoir,,Surface Water
-NEwr_WS817,,,Fresh,Simonsen Reservoir,,Surface Water
-NEwr_WS818,,,Fresh,Williams Reservoir,,Surface Water
-NEwr_WS819,,,Fresh,Jeppesen Reservoir,,Surface Water
-NEwr_WS820,,,Fresh,Fisher Reservoir No. 1,,Surface Water
-NEwr_WS821,,,Fresh,Leigh Reservoir,,Surface Water
-NEwr_WS822,,,Fresh,Drohman Reservoir,,Surface Water
-NEwr_WS823,,,Fresh,Bostelman Reservoir,,Surface Water
-NEwr_WS824,,,Fresh,Elting Reservoir,,Surface Water
-NEwr_WS825,,,Fresh,Thomas Wright Reservoir No. 1,,Surface Water
-NEwr_WS826,,,Fresh,Weeping Water Old Quarry Pit,,Surface Water
-NEwr_WS827,,,Fresh,Big Indian Creek Reservoir 7-A,,Surface Water
-NEwr_WS828,,,Fresh,Ponca Creek,,Surface Water
-NEwr_WS829,,,Fresh,Ruttman Reservoir,,Surface Water
-NEwr_WS830,,,Fresh,Benson Reservoir,,Surface Water
-NEwr_WS831,,,Fresh,"Swan Creek, North Fork",,Surface Water
-NEwr_WS832,,,Fresh,Carsten's Pond,,Surface Water
-NEwr_WS833,,,Fresh,Souther Reservoir,,Surface Water
-NEwr_WS834,,,Fresh,Monroe Creek,,Surface Water
-NEwr_WS835,,,Fresh,Schlichtemeier Reservoir No. 1,,Surface Water
-NEwr_WS836,,,Fresh,Mahloch-Kastanek Reservoir,,Surface Water
-NEwr_WS837,,,Fresh,Mahon Reservoir No 1,,Surface Water
-NEwr_WS838,,,Fresh,Cedar Creek Reservoir 9-B,,Surface Water
-NEwr_WS839,,,Fresh,Spitsnogle Irrigation Reservoir,,Surface Water
-NEwr_WS840,,,Fresh,Swan Creek Reservoir 35,,Surface Water
-NEwr_WS841,,,Fresh,"Bear Creek, Trib. To",,Surface Water
-NEwr_WS842,,,Fresh,BK's Dream,,Surface Water
-NEwr_WS843,,,Fresh,Prairie Dog Creek,,Surface Water
-NEwr_WS844,,,Fresh,Moody Reservoir No. 2,,Surface Water
-NEwr_WS845,,,Fresh,Indian Tree Creek,,Surface Water
-NEwr_WS846,,,Fresh,"Little Creek, Trib. To",,Surface Water
-NEwr_WS847,,,Fresh,Clatonia Creek,,Surface Water
-NEwr_WS848,,,Fresh,"Little Logan Creek, Trib. To",,Surface Water
-NEwr_WS849,,,Fresh,"Bills Creek, Trib to",,Surface Water
-NEwr_WS850,,,Fresh,Warbonnet Creek,,Surface Water
-NEwr_WS851,,,Fresh,Fuller Family Reservoir,,Surface Water
-NEwr_WS852,,,Fresh,Bear-Pierce-Cedar Reservoir 6-A,,Surface Water
-NEwr_WS853,,,Fresh,"Mitchell Creek, Trib. To",,Surface Water
-NEwr_WS854,,,Fresh,Koehler Reservoir,,Surface Water
-NEwr_WS855,,,Fresh,Mill Creek,,Surface Water
-NEwr_WS856,,,Fresh,"Papillion Creek, West, North Branch",,Surface Water
-NEwr_WS857,,,Fresh,Kibby Reservoir,,Surface Water
-NEwr_WS858,,,Fresh,Sehi Reservoir,,Surface Water
-NEwr_WS859,,,Fresh,Vinson Reservoir,,Surface Water
-NEwr_WS860,,,Fresh,Kucera Reservoir,,Surface Water
-NEwr_WS861,,,Fresh,Funk Reservoir,,Surface Water
-NEwr_WS862,,,Fresh,O'brien Reservoir,,Surface Water
-NEwr_WS863,,,Fresh,Dunlap Reservoir,,Surface Water
-NEwr_WS864,,,Fresh,Ned Painter Reservoir,,Surface Water
-NEwr_WS865,,,Fresh,Jones Reservoir,,Surface Water
-NEwr_WS866,,,Fresh,Cameron Reservoir,,Surface Water
-NEwr_WS867,,,Fresh,Rasmussen Reservoir,,Surface Water
-NEwr_WS868,,,Fresh,"Boevau Canyon, Trib. to",,Surface Water
-NEwr_WS869,,,Fresh,Lohff Creek,,Surface Water
-NEwr_WS870,,,Fresh,Mazour Reservoir,,Surface Water
-NEwr_WS871,,,Fresh,Schroeder Reservoir,,Surface Water
-NEwr_WS872,,,Fresh,Heitmann Reservoir No 1,,Surface Water
-NEwr_WS873,,,Fresh,"Squaw Creek, Trib. To",,Surface Water
-NEwr_WS874,,,Fresh,"Coon Creek, Trib. to",,Surface Water
-NEwr_WS875,,,Fresh,"Sappa Creek, Trib. To",,Surface Water
-NEwr_WS876,,,Fresh,"Clatonia Creek, Trib. To",,Surface Water
-NEwr_WS877,,,Fresh,Reams Creek,,Surface Water
-NEwr_WS878,,,Fresh,"Willow Creek, Trib. To",,Surface Water
-NEwr_WS879,,,Fresh,"Farmers Creek, East Fork, Trib to",,Surface Water
-NEwr_WS880,,,Fresh,"Flag Creek, Trib. to",,Surface Water
-NEwr_WS881,,,Fresh,Lochile Creek,,Surface Water
-NEwr_WS882,,,Fresh,"Lovely Creek, Trib to",,Surface Water
-NEwr_WS883,,,Fresh,Swartz Creek,,Surface Water
-NEwr_WS884,,,Fresh,"Medicine Creek, Trib. To",,Surface Water
-NEwr_WS885,,,Fresh,"Prairie Dog Creek, Trib. To",,Surface Water
-NEwr_WS886,,,Fresh,Fintel Reservoir,,Surface Water
-NEwr_WS887,,,Fresh,Priess Reservoir No. 1,,Surface Water
-NEwr_WS888,,,Fresh,Morrill Drain,,Surface Water
-NEwr_WS889,,,Fresh,"Gering Drain, Trib. To",,Surface Water
-NEwr_WS890,,,Fresh,"Wildhorse Creek, West",,Surface Water
-NEwr_WS891,,,Fresh,Pumpkinseed Creek,,Surface Water
-NEwr_WS892,,,Fresh,Big Horn Creek,,Surface Water
-NEwr_WS893,,,Fresh,Muhr Reservoir,,Surface Water
-NEwr_WS894,,,Fresh,Brown Reservoir,,Surface Water
-NEwr_WS895,,,Fresh,"Hackberry Creek, Trib. To",,Surface Water
-NEwr_WS896,,,Fresh,Lawrence Fork,,Surface Water
-NEwr_WS897,,,Fresh,Schuetz Springs,,Surface Water
-NEwr_WS898,,,Fresh,"Greenwood Creek, Trib. To",,Surface Water
-NEwr_WS899,,,Fresh,"Dugout Creek, Lower",,Surface Water
-NEwr_WS900,,,Fresh,Big Indian Creek Reservoir 16-B,,Surface Water
-NEwr_WS901,,,Fresh,"Cedar Creek, West Fork",,Surface Water
-NEwr_WS902,,,Fresh,"Cedar Creek, East Fork",,Surface Water
-NEwr_WS903,,,Fresh,"Lost Creek, Trib. To",,Surface Water
-NEwr_WS904,,,Fresh,Clark Reservoir,,Surface Water
-NEwr_WS905,,,Fresh,"Spotted Tail Creek, Wet",,Surface Water
-NEwr_WS906,,,Fresh,"Calumet Creek, Trib to",,Surface Water
-NEwr_WS907,,,Fresh,Tub Springs,,Surface Water
-NEwr_WS908,,,Fresh,Skunk Creek,,Surface Water
-NEwr_WS909,,,Fresh,Mathews Creek,,Surface Water
-NEwr_WS910,,,Fresh,Sarben Slough,,Surface Water
-NEwr_WS911,,,Fresh,Birdwood Creek,,Surface Water
-NEwr_WS912,,,Fresh,Kiowa Creek,,Surface Water
-NEwr_WS913,,,Fresh,"Red Willow Creek, Trib. To",,Surface Water
-NEwr_WS914,,,Fresh,Lodgepole Creek,,Surface Water
-NEwr_WS915,,,Fresh,Gooseneck Creek,,Surface Water
-NEwr_WS916,,,Fresh,"Ash Creek, East",,Surface Water
-NEwr_WS917,,,Fresh,Grade Stabilization Reservoir 1-1,,Surface Water
-NEwr_WS918,,,Fresh,Cleveland Drain,,Surface Water
-NEwr_WS919,,,Fresh,Hoth Draw,,Surface Water
-NEwr_WS920,,,Fresh,Calamus Reservoir,,Surface Water
-NEwr_WS921,,,Fresh,Norman Reservoir,,Surface Water
-NEwr_WS922,,,Fresh,Livingston Section 8 Pond,,Surface Water
-NEwr_WS923,,,Fresh,Oxbow Reservoir,,Surface Water
-NEwr_WS924,,,Fresh,Gebauer Lake,,Surface Water
-NEwr_WS925,,,Fresh,"Thompson Creek, West Branch",,Surface Water
-NEwr_WS926,,,Fresh,Hagemeier Reservoir,,Surface Water
-NEwr_WS927,,,Fresh,Beckler Large Dam,,Surface Water
-NEwr_WS928,,,Fresh,"Barneys Branch, Trib to",,Surface Water
-NEwr_WS929,,,Fresh,Bear-Pierce-Cedar 7-J Reservoir,,Surface Water
-NEwr_WS930,,,Fresh,Buckeye Creek,,Surface Water
-NEwr_WS931,,,Fresh,"Lonergan Creek, Trib. To",,Surface Water
-NEwr_WS932,,,Fresh,White Horse Creek,,Surface Water
-NEwr_WS933,,,Fresh,"White Horse Creek, Trib. To",,Surface Water
-NEwr_WS934,,,Fresh,Bull Drain,,Surface Water
-NEwr_WS935,,,Fresh,Stump Ditch,,Surface Water
-NEwr_WS936,,,Fresh,"Strever Creek, Trib. To",,Surface Water
-NEwr_WS937,,,Fresh,Sacramento Creek,,Surface Water
-NEwr_WS938,,,Fresh,Snake Creek,,Surface Water
-NEwr_WS939,,,Fresh,"Cedar Creek, West",,Surface Water
-NEwr_WS940,,,Fresh,Dane Reservoir,,Surface Water
-NEwr_WS941,,,Fresh,Johnson Reservoir,,Surface Water
-NEwr_WS942,,,Fresh,Stratton Reservoir,,Surface Water
-NEwr_WS943,,,Fresh,Sheep Creek,,Surface Water
-NEwr_WS944,,,Fresh,"Spotted Tail Creek, Dry",,Surface Water
-NEwr_WS945,,,Fresh,Sappa Creek,,Surface Water
-NEwr_WS946,,,Fresh,Airedale Reservoir No. 3,,Surface Water
-NEwr_WS947,,,Fresh,"Lawrence Fork, Trib. To",,Surface Water
-NEwr_WS948,,,Fresh,Trausch Reservoir,,Surface Water
-NEwr_WS949,,,Fresh,Trausch Brothers Reservoir,,Surface Water
-NEwr_WS950,,,Fresh,Struebing Reservoir,,Surface Water
-NEwr_WS951,,,Fresh,Thompson Creek,,Surface Water
-NEwr_WS952,,,Fresh,"Four Mile Creek, West Branch",,Surface Water
-NEwr_WS953,,,Fresh,Flowing Springs Dam,,Surface Water
-NEwr_WS954,,,Fresh,"Randall Creek, Trib. To",,Surface Water
-NEwr_WS955,,,Fresh,"Sardine Creek, Trib To",,Surface Water
-NEwr_WS956,,,Fresh,Badland Reservoir,,Surface Water
-NEwr_WS957,,,Fresh,Root Pond,,Surface Water
-NEwr_WS958,,,Fresh,"Pearl Creek, Trib. To",,Surface Water
-NEwr_WS959,,,Fresh,Coal Creek,,Surface Water
-NEwr_WS960,,,Fresh,Driftwood Creek,,Surface Water
-NEwr_WS961,,,Fresh,Dusenbery Reservoir,,Surface Water
-NEwr_WS962,,,Fresh,"Lincoln Creek, Trib. To",,Surface Water
-NEwr_WS963,,,Fresh,Mader Reservoirs 1-2,,Surface Water
-NEwr_WS964,,,Fresh,Myron Nilson Reservoir,,Surface Water
-NEwr_WS965,,,Fresh,Dusenbery Reservoir East,,Surface Water
-NEwr_WS966,,,Fresh,Percival-Erickson Reservoir,,Surface Water
-NEwr_WS967,,,Fresh,West Limited Farm Pond,,Surface Water
-NEwr_WS968,,,Fresh,Meadow Creek,,Surface Water
-NEwr_WS969,,,Fresh,"Pebble Creek, Trib. To",,Surface Water
-NEwr_WS970,,,Fresh,Vitosh Reservoir No. 1,,Surface Water
-NEwr_WS971,,,Fresh,"Lodgepole Creek, Trib. To",,Surface Water
-NEwr_WS972,,,Fresh,Wortham Creek,,Surface Water
-NEwr_WS973,,,Fresh,Fawcus Springs,,Surface Water
-NEwr_WS974,,,Fresh,Meredith Reservoir,,Surface Water
-NEwr_WS975,,,Fresh,Schlichtemeier Reservoir No. 2,,Surface Water
-NEwr_WS976,,,Fresh,Freese Reservoir No. 1,,Surface Water
-NEwr_WS977,,,Fresh,Grote Reservoir,,Surface Water
-NEwr_WS978,,,Fresh,Little Red Creek,,Surface Water
-NEwr_WS979,,,Fresh,"Bozle Creek, Trib. To",,Surface Water
-NEwr_WS980,,,Fresh,"Cherry Creek, Trib. To",,Surface Water
-NEwr_WS981,,,Fresh,Fourmile Creek,,Surface Water
-NEwr_WS982,,,Fresh,"Bow Creek, West, Trib. To",,Surface Water
-NEwr_WS983,,,Fresh,Norwegian Bow Creek,,Surface Water
-NEwr_WS984,,,Fresh,Sow Belly Creek,,Surface Water
-NEwr_WS985,,,Fresh,Grotrian Reservoir No. 1,,Surface Water
-NEwr_WS986,,,Fresh,"Weeping Water Creek, North Branch",,Surface Water
-NEwr_WS987,,,Fresh,Schmidt Ag Irrigation Pond,,Surface Water
-NEwr_WS988,,,Fresh,Goose Creek,,Surface Water
-NEwr_WS989,,,Fresh,Oak Prairie Reservoir,,Surface Water
-NEwr_WS990,,,Fresh,Trunk Butte Creek,,Surface Water
-NEwr_WS991,,,Fresh,Medicine Creek,,Surface Water
-NEwr_WS992,,,Fresh,"Sacramento Creek, Trib. To",,Surface Water
-NEwr_WS993,,,Fresh,Hayek Farm Pond,,Surface Water
-NEwr_WS994,,,Fresh,"Swan Creek, North Fork, Trib. To",,Surface Water
-NEwr_WS995,,,Fresh,Aowa Creek,,Surface Water
-NEwr_WS996,,,Fresh,Foster Creek,,Surface Water
-NEwr_WS997,,,Fresh,Lueking Reservoir,,Surface Water
-NEwr_WS998,,,Fresh,Pierce Creek,,Surface Water
-NEwr_WS999,,,Fresh,"Aowa Creek, Trib. To",,Surface Water
-NEwr_WS1000,,,Fresh,Lake Maraguay,,Surface Water
-NEwr_WS1001,,,Fresh,Horse Creek,,Surface Water
-NEwr_WS1002,,,Fresh,Lake Maloney,,Surface Water
-NEwr_WS1003,,,Fresh,Cold Water Creek,,Surface Water
-NEwr_WS1004,,,Fresh,Yankton Slough,,Surface Water
-NEwr_WS1005,,,Fresh,Combination Ditch,,Surface Water
-NEwr_WS1006,,,Fresh,Stinking Water Creek,,Surface Water
-NEwr_WS1007,,,Fresh,Davis Creek Reservoir,,Surface Water
-NEwr_WS1008,,,Fresh,McGinnis Reservoir,,Surface Water
-NEwr_WS1009,,,Fresh,Schaardt Irrigation Dam,,Surface Water
-NEwr_WS1010,,,Fresh,Gardner Reservoir No. 2,,Surface Water
-NEwr_WS1011,,,Fresh,"Driftwood Creek, Trib. To",,Surface Water
-NEwr_WS1012,,,Fresh,"Brushy Creek, South",,Surface Water
-NEwr_WS1013,,,Fresh,Frazier Creek,,Surface Water
-NEwr_WS1014,,,Fresh,Brushy Creek,,Surface Water
-NEwr_WS1015,,,Fresh,Cut Creek,,Surface Water
-NEwr_WS1016,,,Fresh,Curtis Creek,,Surface Water
-NEwr_WS1017,,,Fresh,Kean Pond 2,,Surface Water
-NEwr_WS1018,,,Fresh,"Bazile Creek, Little",,Surface Water
-NEwr_WS1019,,,Fresh,Norman Reservoir No. 1,,Surface Water
-NEwr_WS1020,,,Fresh,Norman Reservoir No. 2,,Surface Water
-NEwr_WS1021,,,Fresh,"Blue River, Big, West Fork, North Branch",,Surface Water
-NEwr_WS1022,,,Fresh,Knigge Dam West,,Surface Water
-NEwr_WS1023,,,Fresh,Binder Reservoir,,Surface Water
-NEwr_WS1024,,,Fresh,Wildcat Reservoir,,Surface Water
-NEwr_WS1025,,,Fresh,"Muddy Creek, East Branch, Trib. To",,Surface Water
-NEwr_WS1026,,,Fresh,Robinson Reservoir,,Surface Water
-NEwr_WS1027,,,Fresh,Nissen Pit No. 3,,Surface Water
-NEwr_WS1028,,,Fresh,Milrose Creek,,Surface Water
-NEwr_WS1029,,,Fresh,Twin Creek,,Surface Water
-NEwr_WS1030,,,Fresh,Flag Creek,,Surface Water
-NEwr_WS1031,,,Fresh,Mcneil Reservoir,,Surface Water
-NEwr_WS1032,,,Fresh,Rebecca Creek,,Surface Water
-NEwr_WS1033,,,Fresh,Vining Creek,,Surface Water
-NEwr_WS1034,,,Fresh,Balls Branch,,Surface Water
-NEwr_WS1035,,,Fresh,"Spotted Tail Creek, Spring Branch",,Surface Water
-NEwr_WS1036,,,Fresh,"Thompson Creek, East Branch",,Surface Water
-NEwr_WS1037,,,Fresh,"Hicks Creek, Trib. To",,Surface Water
-NEwr_WS1038,,,Fresh,Ohmstede Reservoir,,Surface Water
-NEwr_WS1039,,,Fresh,"Gimlet Creek, Trib. To",,Surface Water
-NEwr_WS1040,,,Fresh,Schiermeyer Reservoir,,Surface Water
-NEwr_WS1041,,,Fresh,"Blakely Creek, Trib. To",,Surface Water
-NEwr_WS1042,,,Fresh,Valley Home Creek,,Surface Water
-NEwr_WS1043,,,Fresh,Saul Reservoir,,Surface Water
-NEwr_WS1044,,,Fresh,"Crosby Creek, Trib. To",,Surface Water
-NEwr_WS1045,,,Fresh,Nelson Reservoir,,Surface Water
-NEwr_WS1046,,,Fresh,Blackstone Reservoir,,Surface Water
-NEwr_WS1047,,,Fresh,Crosby Creek,,Surface Water
-NEwr_WS1048,,,Fresh,"Rope Creek, Trib. to",,Surface Water
-NEwr_WS1049,,,Fresh,Blackwood Creek,,Surface Water
-NEwr_WS1050,,,Fresh,"Blackwood Creek, Trib. To",,Surface Water
-NEwr_WS1051,,,Fresh,Hugh Butler Lake,,Surface Water
-NEwr_WS1052,,,Fresh,Eureka Creek,,Surface Water
-NEwr_WS1053,,,Fresh,Walnut Run,,Surface Water
-NEwr_WS1054,,,Fresh,South Reservoir Sullivan,,Surface Water
-NEwr_WS1055,,,Fresh,South Reservoir Home,,Surface Water
-NEwr_WS1056,,,Fresh,Tietjen Reservoir,,Surface Water
-NEwr_WS1057,,,Fresh,Hat Creek,,Surface Water
-NEwr_WS1058,,,Fresh,Jim Creek,,Surface Water
-NEwr_WS1059,,,Fresh,"Antelope Creek, South",,Surface Water
-NEwr_WS1060,,,Fresh,"Whitehead Creek, Trib. To",,Surface Water
-NEwr_WS1061,,,Fresh,Cherry Creek,,Surface Water
-NEwr_WS1062,,,Fresh,"Squaw Creek, South",,Surface Water
-NEwr_WS1063,,,Fresh,"Hat Creek, West",,Surface Water
-NEwr_WS1064,,,Fresh,"Jim Creek, East, Trib. To",,Surface Water
-NEwr_WS1065,,,Fresh,"Antelope Creek, North",,Surface Water
-NEwr_WS1066,,,Fresh,"Boggy Creek, Middle",,Surface Water
-NEwr_WS1067,,,Fresh,Lickett Creek,,Surface Water
-NEwr_WS1068,,,Fresh,"Jim Creek, East",,Surface Water
-NEwr_WS1069,,,Fresh,"Squaw Creek, West Branch",,Surface Water
-NEwr_WS1070,,,Fresh,Boggy Creek,,Surface Water
-NEwr_WS1071,,,Fresh,Cornelius Jordan Reservoir,,Surface Water
-NEwr_WS1072,,,Fresh,"Boggy Creek, West",,Surface Water
-NEwr_WS1073,,,Fresh,Turner Reservoir,,Surface Water
-NEwr_WS1074,,,Fresh,Caladonia Reservoir,,Surface Water
-NEwr_WS1075,,,Fresh,Geike Creek,,Surface Water
-NEwr_WS1076,,,Fresh,Dout Reservoir No. 1,,Surface Water
-NEwr_WS1077,,,Fresh,Dout Reservoir No. 2,,Surface Water
-NEwr_WS1078,,,Fresh,Plunkett Reservoir,,Surface Water
-NEwr_WS1079,,,Fresh,Jordan Draw,,Surface Water
-NEwr_WS1080,,,Fresh,Dan Jordan Reservoir,,Surface Water
-NEwr_WS1081,,,Fresh,Wickersham Reservoir,,Surface Water
-NEwr_WS1082,,,Fresh,Crystal Lake Reservoir,,Surface Water
-NEwr_WS1083,,,Fresh,"Monroe Creek, Trib. To",,Surface Water
-NEwr_WS1084,,,Fresh,Andrews Reservoir,,Surface Water
-NEwr_WS1085,,,Fresh,"Hat Creek, Trib. To",,Surface Water
-NEwr_WS1086,,,Fresh,"Jim Creek, Trib. To",,Surface Water
-NEwr_WS1087,,,Fresh,Whitehead Creek,,Surface Water
-NEwr_WS1088,,,Fresh,Geiser Reservoir,,Surface Water
-NEwr_WS1089,,,Fresh,Snyder Reservoir,,Surface Water
-NEwr_WS1090,,,Fresh,A Jordan Reservoir,,Surface Water
-NEwr_WS1091,,,Fresh,A Jordan Lower Reservoir,,Surface Water
-NEwr_WS1092,,,Fresh,Vyzourek Reservoir No. 2,,Surface Water
-NEwr_WS1093,,,Fresh,Vyzourek Reservoir No. 3,,Surface Water
-NEwr_WS1094,,,Fresh,Schaefer Reservoir No. 1,,Surface Water
-NEwr_WS1095,,,Fresh,Wasserburger Reservoir,,Surface Water
-NEwr_WS1096,,,Fresh,"Antelope Creek, South, Trib. To",,Surface Water
-NEwr_WS1097,,,Fresh,Schnurr Reservoir No. 2,,Surface Water
-NEwr_WS1098,,,Fresh,"Sow Belly Creek, Trib. To",,Surface Water
-NEwr_WS1099,,,Fresh,Eberspecher Reservoir No. 1,,Surface Water
-NEwr_WS1100,,,Fresh,Serres Reservoir No. 1,,Surface Water
-NEwr_WS1101,,,Fresh,Serres Reservoir No. 2,,Surface Water
-NEwr_WS1102,,,Fresh,Wallace Reservoir,,Surface Water
-NEwr_WS1103,,,Fresh,Merlo Reservoir,,Surface Water
-NEwr_WS1104,,,Fresh,Mader Reservoir No. 1,,Surface Water
-NEwr_WS1105,,,Fresh,Raben Reservoir No. 1,,Surface Water
-NEwr_WS1106,,,Fresh,"Warbonnet Creek, Trib. To",,Surface Water
-NEwr_WS1107,,,Fresh,Mader Reservoir No. 3,,Surface Water
-NEwr_WS1108,,,Fresh,Staudenmaier Reservoir,,Surface Water
-NEwr_WS1109,,,Fresh,Bodarc Springs,,Surface Water
-NEwr_WS1110,,,Fresh,Semroska Reservoir,,Surface Water
-NEwr_WS1111,,,Fresh,Henry Reservoir No. 2,,Surface Water
-NEwr_WS1112,,,Fresh,Henry Reservoir No. 1,,Surface Water
-NEwr_WS1113,,,Fresh,Summers Reservoir,,Surface Water
-NEwr_WS1114,,,Fresh,Trout Reservoir,,Surface Water
-NEwr_WS1115,,,Fresh,Anderson Reservoir,,Surface Water
-NEwr_WS1116,,,Fresh,Zimmerman Reservoir,,Surface Water
-NEwr_WS1117,,,Fresh,Raben Reservoir No. 2,,Surface Water
-NEwr_WS1118,,,Fresh,Holmgren Reservoir,,Surface Water
-NEwr_WS1119,,,Fresh,Coffee Reservoir No. 1,,Surface Water
-NEwr_WS1120,,,Fresh,Spring Creek Reservoir No. 3,,Surface Water
-NEwr_WS1121,,,Fresh,Wallace Reservoir No. 2,,Surface Water
-NEwr_WS1122,,,Fresh,Wiedenfeld Reservoir No. 1,,Surface Water
-NEwr_WS1123,,,Fresh,"Elkhorn River, North Fork, West Branch",,Surface Water
-NEwr_WS1124,,,Fresh,Mahoney Golf Course Lower Pond,,Surface Water
-NEwr_WS1125,,,Fresh,"Blue River, Big, North Fork, Trib. To",,Surface Water
-NEwr_WS1126,,,Fresh,Long Branch Reservoir N-5,,Surface Water
-NEwr_WS1127,,,Fresh,Hoyer Irrigation Reservoir,,Surface Water
-NEwr_WS1128,,,Fresh,Pigeon Creek,,Surface Water
-NEwr_WS1129,,,Fresh,Schlife Reservoir,,Surface Water
-NEwr_WS1130,,,Fresh,"Lime Creek, Trib to",,Surface Water
-NEwr_WS1131,,,Fresh,Mira Reservoir,,Surface Water
-NEwr_WS1132,,,Fresh,Holding Pond No. 3,,Surface Water
-NEwr_WS1133,,,Fresh,Dry Draw,,Surface Water
-NEwr_WS1134,,,Fresh,Dry Canyon,,Surface Water
-NEwr_WS1135,,,Fresh,Dodd-Mcdowell Reservoir,,Surface Water
-NEwr_WS1136,,,Fresh,"Cedar Creek, South Fork",,Surface Water
-NEwr_WS1137,,,Fresh,"Lincoln County Drain Dist. 1, Ditch 2",,Surface Water
-NEwr_WS1138,,,Fresh,Heath Reservoir,,Surface Water
-NEwr_WS1139,,,Fresh,Jacobson Reservoir,,Surface Water
-NEwr_WS1140,,,Fresh,Squaw Creek Reservoir,,Surface Water
-NEwr_WS1141,,,Fresh,Saxson Draw,,Surface Water
-NEwr_WS1142,,,Fresh,Reservoir 15B,,Surface Water
-NEwr_WS1143,,,Fresh,Ruhge Reservoir 2,,Surface Water
-NEwr_WS1144,,,Fresh,Woodland Hills Reservoir,,Surface Water
-NEwr_WS1145,,,Fresh,Hayes Reservoir,,Surface Water
-NEwr_WS1146,,,Fresh,"K & D Enterprises, Inc. Reservoir No. 1",,Surface Water
-NEwr_WS1147,,,Fresh,Arbor Links Pond A,,Surface Water
-NEwr_WS1148,,,Fresh,Ziegler Reservoir Z-5-1,,Surface Water
-NEwr_WS1149,,,Fresh,Haase Reservoir,,Surface Water
-NEwr_WS1150,,,Fresh,Wilson Creek Reservoir 11-A,,Surface Water
-NEwr_WS1151,,,Fresh,Steinhoff Reservoir,,Surface Water
-NEwr_WS1152,,,Fresh,Richard A Steinhoff Reservoir,,Surface Water
-NEwr_WS1153,,,Fresh,Burr Reservoir,,Surface Water
-NEwr_WS1154,,,Fresh,Biere Reservoir,,Surface Water
-NEwr_WS1155,,,Fresh,Bravinder-Roberson Reservoir,,Surface Water
-NEwr_WS1156,,,Fresh,Long's Creek,,Surface Water
-NEwr_WS1157,,,Fresh,Harris Reservoir,,Surface Water
-NEwr_WS1158,,,Fresh,Coddington Creek,,Surface Water
-NEwr_WS1159,,,Fresh,Hughes Creek,,Surface Water
-NEwr_WS1160,,,Fresh,Beadow Creek,,Surface Water
-NEwr_WS1161,,,Fresh,Big Nemaha Reservoir 23-C,,Surface Water
-NEwr_WS1162,,,Fresh,Upper Big Nemaha Reservoir 20-B,,Surface Water
-NEwr_WS1163,,,Fresh,Upper Big Nemaha Reservoir 20-A,,Surface Water
-NEwr_WS1164,,,Fresh,Upper Big Nemaha Reservoir 20-C,,Surface Water
-NEwr_WS1165,,,Fresh,Upper Big Nemaha Reservoir 9-D,,Surface Water
-NEwr_WS1166,,,Fresh,Upper Big Nemaha Reservoir 9-C,,Surface Water
-NEwr_WS1167,,,Fresh,Upper Big Nemaha Reservoir 6-A,,Surface Water
-NEwr_WS1168,,,Fresh,Upper Big Nemaha Reservoir 18-B,,Surface Water
-NEwr_WS1169,,,Fresh,Middle Big Nemaha Reservoir 12,,Surface Water
-NEwr_WS1170,,,Fresh,Bartels Reservoir,,Surface Water
-NEwr_WS1171,,,Fresh,Long Branch Reservoir 2,,Surface Water
-NEwr_WS1172,,,Fresh,Long Branch Reservoir 73,,Surface Water
-NEwr_WS1173,,,Fresh,Long Branch Reservoir 21,,Surface Water
-NEwr_WS1174,,,Fresh,Muddy Reservoir No. 10,,Surface Water
-NEwr_WS1175,,,Fresh,"Hoosier Creek, Trib. To",,Surface Water
-NEwr_WS1176,,,Fresh,Arbor Links Pond B,,Surface Water
-NEwr_WS1177,,,Fresh,Dawson County Drain Dist. No. 1 Ditch,,Surface Water
-NEwr_WS1178,,,Fresh,Haskell Creek,,Surface Water
-NEwr_WS1179,,,Fresh,Larson Reservoir,,Surface Water
-NEwr_WS1180,,,Fresh,"Blue River, Big, North Fork",,Surface Water
-NEwr_WS1181,,,Fresh,Pekarek Reservoir,,Surface Water
-NEwr_WS1182,,,Fresh,Sloup Reservoir,,Surface Water
-NEwr_WS1183,,,Fresh,Gruntorad Reservoir,,Surface Water
-NEwr_WS1184,,,Fresh,Coon Branch,,Surface Water
-NEwr_WS1185,,,Fresh,Miller Reservoir,,Surface Water
-NEwr_WS1186,,,Fresh,Coyote Springs,,Surface Water
-NEwr_WS1187,,,Fresh,"Springs, Wrede",,Surface Water
-NEwr_WS1188,,,Fresh,"Springs, Spinar",,Surface Water
-NEwr_WS1189,,,Fresh,Langenheim-Brackham Reservoir,,Surface Water
-NEwr_WS1190,,,Fresh,Hay Springs Creek,,Surface Water
-NEwr_WS1191,,,Fresh,Lake Creek,,Surface Water
-NEwr_WS1192,,,Fresh,Walz Lake,,Surface Water
-NEwr_WS1193,,,Fresh,Lavicky Reservoir,,Surface Water
-NEwr_WS1194,,,Fresh,Rolfsmeier Reservoir No. 1,,Surface Water
-NEwr_WS1195,,,Fresh,Paul Rolfsmeier Reservoir,,Surface Water
-NEwr_WS1196,,,Fresh,Centerfield Reservoir,,Surface Water
-NEwr_WS1197,,,Fresh,Patton Creek,,Surface Water
-NEwr_WS1198,,,Fresh,Heckel Creek,,Surface Water
-NEwr_WS1199,,,Fresh,Hauder Reservoir,,Surface Water
-NEwr_WS1200,,,Fresh,Andelt Reservoir,,Surface Water
-NEwr_WS1201,,,Fresh,Hastings Northwest Reservoir,,Surface Water
-NEwr_WS1202,,,Fresh,"Blue River, Big, West Fork, Hastings Branch",,Surface Water
-NEwr_WS1203,,,Fresh,Mader Reservoir No. 2,,Surface Water
-NEwr_WS1204,,,Fresh,Dunlap Reservoir No. 2,,Surface Water
-NEwr_WS1205,,,Fresh,Battle Creek,,Surface Water
-NEwr_WS1206,,,Fresh,Childs Reservoir,,Surface Water
-NEwr_WS1207,,,Fresh,"Burton Creek, Trib. To",,Surface Water
-NEwr_WS1208,,,Fresh,Grummert-Wilson Reservoir,,Surface Water
-NEwr_WS1209,,,Fresh,"Blue River, Big, West Fork, North Branch, Trib. To",,Surface Water
-NEwr_WS1210,,,Fresh,Eddie Stulken Reservoir,,Surface Water
-NEwr_WS1211,,,Fresh,Mihm Reservoir,,Surface Water
-NEwr_WS1212,,,Fresh,Kostal-Hawthorne Res.,,Surface Water
-NEwr_WS1213,,,Fresh,Nuss Reservoir,,Surface Water
-NEwr_WS1214,,,Fresh,Bergen Reservoir,,Surface Water
-NEwr_WS1215,,,Fresh,Reservoir 22-9-4,,Surface Water
-NEwr_WS1216,,,Fresh,Galaway Creek,,Surface Water
-NEwr_WS1217,,,Fresh,Gordon Valley Reservoir,,Surface Water
-NEwr_WS1218,,,Fresh,Barnum Creek,,Surface Water
-NEwr_WS1219,,,Fresh,"Lincoln County Drain Dist. 1, Ditch 1",,Surface Water
-NEwr_WS1220,,,Fresh,North Draw Reservoir,,Surface Water
-NEwr_WS1221,,,Fresh,Hawk Nest Reservoir,,Surface Water
-NEwr_WS1222,,,Fresh,Lee Creek,,Surface Water
-NEwr_WS1223,,,Fresh,"Merriman Creek, Trib. To",,Surface Water
-NEwr_WS1224,,,Fresh,South Creek,,Surface Water
-NEwr_WS1225,,,Fresh,"Timber Creek, North Branch, Trib. To",,Surface Water
-NEwr_WS1226,,,Fresh,Deepwell Farms Reservoir,,Surface Water
-NEwr_WS1227,,,Fresh,Tredway Reservoir,,Surface Water
-NEwr_WS1228,,,Fresh,Larkins Pond 1,,Surface Water
-NEwr_WS1229,,,Fresh,Stork Reservoir,,Surface Water
-NEwr_WS1230,,,Fresh,Blayne Behrends Reservoir,,Surface Water
-NEwr_WS1231,,,Fresh,Bear-Pierce-Cedar Creek Reservoir 3-B,,Surface Water
-NEwr_WS1232,,,Fresh,Linden Reservoir,,Surface Water
-NEwr_WS1233,,,Fresh,"Chadron Creek, Trib. To",,Surface Water
-NEwr_WS1234,,,Fresh,"Lone Tree Creek, Trib. To",,Surface Water
-NEwr_WS1235,,,Fresh,"Hull Lake Springs, Trib. To",,Surface Water
-NEwr_WS1236,,,Fresh,Mayfield Reservoir,,Surface Water
-NEwr_WS1237,,,Fresh,"Messenger Creek, Trib. To",,Surface Water
-NEwr_WS1238,,,Fresh,Schlegel Creek,,Surface Water
-NEwr_WS1239,,,Fresh,"Schlegel Creek, East",,Surface Water
-NEwr_WS1240,,,Fresh,"Omaha Creek, Trib to",,Surface Water
-NEwr_WS1241,,,Fresh,"Schlegel Creek, West",,Surface Water
-NEwr_WS1242,,,Fresh,"Alkali Lake, Little",,Surface Water
-NEwr_WS1243,,,Fresh,Peters Reservoir,,Surface Water
-NEwr_WS1244,,,Fresh,"Horse Head Creek, Trib. To",,Surface Water
-NEwr_WS1245,,,Fresh,South Platte River,,Surface Water
-NEwr_WS1246,,,Fresh,"Bordeaux Creek, Big, Trib. To",,Surface Water
-NEwr_WS1247,,,Fresh,Bishop Reservoir,,Surface Water
-NEwr_WS1248,,,Fresh,Brackhan Reservoir,,Surface Water
-NEwr_WS1249,,,Fresh,Lost Branch,,Surface Water
-NEwr_WS1250,,,Fresh,Winnebago Creek,,Surface Water
-NEwr_WS1251,,,Fresh,Hostetler Reservoir,,Surface Water
-NEwr_WS1252,,,Fresh,Lechtenberg-Lampman Reservoir,,Surface Water
-NEwr_WS1253,,,Fresh,Pierce Reservoir,,Surface Water
-NEwr_WS1254,,,Fresh,Hoosier Creek,,Surface Water
-NEwr_WS1255,,,Fresh,Leroy Blitzkie Reservoir,,Surface Water
-NEwr_WS1256,,,Fresh,Key Reservoir,,Surface Water
-NEwr_WS1257,,,Fresh,Hoesing Brothers Res.,,Surface Water
+NEwr_WS1,,,Fresh,Mumm Reservoir,WaDENE_WS1,Surface Water
+NEwr_WS2,,,Fresh,Bowman Spring Branch Reservoir No. 2-A,WaDENE_WS2,Surface Water
+NEwr_WS3,,,Fresh,Bowman Spring Branch Reservoir No. 3-E,WaDENE_WS3,Surface Water
+NEwr_WS4,,,Fresh,Buckley Creek Reservoir 3-C,WaDENE_WS4,Surface Water
+NEwr_WS5,,,Fresh,Buckley Creek Reservoir 3-A,WaDENE_WS5,Surface Water
+NEwr_WS6,,,Fresh,Buckley Creek Reservoir 3-D,WaDENE_WS6,Surface Water
+NEwr_WS7,,,Fresh,Buckley Creek Reservoir 4-B,WaDENE_WS7,Surface Water
+NEwr_WS8,,,Fresh,Wilson Creek Reservoir 8-H,WaDENE_WS8,Surface Water
+NEwr_WS9,,,Fresh,Wilson Creek Reservoir 5-J,WaDENE_WS9,Surface Water
+NEwr_WS10,,,Fresh,Upper Big Nemaha Reservoir 21-B,WaDENE_WS10,Surface Water
+NEwr_WS11,,,Fresh,Upper Big Nemaha Reservoir 13-A,WaDENE_WS11,Surface Water
+NEwr_WS12,,,Fresh,Scott Reservoir,WaDENE_WS12,Surface Water
+NEwr_WS13,,,Fresh,Salt Creek Reservoir 35,WaDENE_WS13,Surface Water
+NEwr_WS14,,,Fresh,Haines Branch,WaDENE_WS14,Surface Water
+NEwr_WS15,,,Fresh,Oak-Middle Reservoir 63-D,WaDENE_WS15,Surface Water
+NEwr_WS16,,,Fresh,Oak-Middle Reservoir 66-A,WaDENE_WS16,Surface Water
+NEwr_WS17,,,Fresh,Oak-Middle Reservoir 87-A,WaDENE_WS17,Surface Water
+NEwr_WS18,,,Fresh,Oak-Middle Reservoir 86-A,WaDENE_WS18,Surface Water
+NEwr_WS19,,,Fresh,Oak-Middle Reservoir 82-B,WaDENE_WS19,Surface Water
+NEwr_WS20,,,Fresh,North Oak Reservoir 6-B,WaDENE_WS20,Surface Water
+NEwr_WS21,,,Fresh,North Oak Reservoir 3-A,WaDENE_WS21,Surface Water
+NEwr_WS22,,,Fresh,Carter P Johnson Reservoir,WaDENE_WS22,Surface Water
+NEwr_WS23,,,Fresh,Moody Reservoir No. 1,WaDENE_WS23,Surface Water
+NEwr_WS24,,,Fresh,Morris Reservoir,WaDENE_WS24,Surface Water
+NEwr_WS25,,,Fresh,"Blue River, Little",WaDENE_WS25,Surface Water
+NEwr_WS26,,,Fresh,"Verdigre Creek, Middle Branch",WaDENE_WS26,Surface Water
+NEwr_WS27,,,Fresh,Pawnee Creek,WaDENE_WS27,Surface Water
+NEwr_WS28,,,Fresh,Pohlmeier Reservoir,WaDENE_WS28,Surface Water
+NEwr_WS29,,,Fresh,Logan Creek,WaDENE_WS29,Surface Water
+NEwr_WS30,,,Fresh,"Nemaha River, Big, Middle Branch",WaDENE_WS30,Surface Water
+NEwr_WS31,,,Fresh,Dog Creek,WaDENE_WS31,Surface Water
+NEwr_WS32,,,Fresh,Platte River,WaDENE_WS32,Surface Water
+NEwr_WS33,,,Fresh,"Wood River, Trib. To",WaDENE_WS33,Surface Water
+NEwr_WS34,,,Fresh,Elkhorn River,WaDENE_WS34,Surface Water
+NEwr_WS35,,,Fresh,"Rock Creek, Trib. To",WaDENE_WS35,Surface Water
+NEwr_WS36,,,Fresh,"Nemaha River, Big, North Fork, Trib. To",WaDENE_WS36,Surface Water
+NEwr_WS37,,,Fresh,"Sandy Creek, Little",WaDENE_WS37,Surface Water
+NEwr_WS38,,,Fresh,Plum Creek,WaDENE_WS38,Surface Water
+NEwr_WS39,,,Fresh,"North Platte River, Trib. To",WaDENE_WS39,Surface Water
+NEwr_WS40,,,Fresh,"Elkhorn River, Trib. To",WaDENE_WS40,Surface Water
+NEwr_WS41,,,Fresh,Cache Creek,WaDENE_WS41,Surface Water
+NEwr_WS42,,,Fresh,Buffalo Creek,WaDENE_WS42,Surface Water
+NEwr_WS43,,,Fresh,Oak Prairie Irrigation Pit,WaDENE_WS43,Surface Water
+NEwr_WS44,,,Fresh,Cedar River,WaDENE_WS44,Surface Water
+NEwr_WS45,,,Fresh,"Middle Creek, South Branch, Trib. To",WaDENE_WS45,Surface Water
+NEwr_WS46,,,Fresh,Crystal Creek,WaDENE_WS46,Surface Water
+NEwr_WS47,,,Fresh,"Pawnee Creek, Trib. To",WaDENE_WS47,Surface Water
+NEwr_WS48,,,Fresh,"Weeping Water Creek, Trib. To",WaDENE_WS48,Surface Water
+NEwr_WS49,,,Fresh,Shell Creek,WaDENE_WS49,Surface Water
+NEwr_WS50,,,Fresh,"Sandy Creek, Dry, Trib. To",WaDENE_WS50,Surface Water
+NEwr_WS51,,,Fresh,Salt Creek,WaDENE_WS51,Surface Water
+NEwr_WS52,,,Fresh,Redbird Creek,WaDENE_WS52,Surface Water
+NEwr_WS53,,,Fresh,"Thirty-Two Mile Creek, West Branch, Trib. To",WaDENE_WS53,Surface Water
+NEwr_WS54,,,Fresh,North Reservoir,WaDENE_WS54,Surface Water
+NEwr_WS55,,,Fresh,Spring Branch,WaDENE_WS55,Surface Water
+NEwr_WS56,,,Fresh,Eagle Creek,WaDENE_WS56,Surface Water
+NEwr_WS57,,,Fresh,Mud (Beaver) Creek,WaDENE_WS57,Surface Water
+NEwr_WS58,,,Fresh,Loup River,WaDENE_WS58,Surface Water
+NEwr_WS59,,,Fresh,Niobrara River,WaDENE_WS59,Surface Water
+NEwr_WS60,,,Fresh,Sand Creek,WaDENE_WS60,Surface Water
+NEwr_WS61,,,Fresh,"Sandy Creek, Big",WaDENE_WS61,Surface Water
+NEwr_WS62,,,Fresh,Verdigre Creek,WaDENE_WS62,Surface Water
+NEwr_WS63,,,Fresh,Callahan Creek,WaDENE_WS63,Surface Water
+NEwr_WS64,,,Fresh,"Loup River, North",WaDENE_WS64,Surface Water
+NEwr_WS65,,,Fresh,Spring Creek,WaDENE_WS65,Surface Water
+NEwr_WS66,,,Fresh,Rawhide Creek,WaDENE_WS66,Surface Water
+NEwr_WS67,,,Fresh,Freeman Creek,WaDENE_WS67,Surface Water
+NEwr_WS68,,,Fresh,White River,WaDENE_WS68,Surface Water
+NEwr_WS69,,,Fresh,Piper Creek,WaDENE_WS69,Surface Water
+NEwr_WS70,,,Fresh,Lincoln Creek,WaDENE_WS70,Surface Water
+NEwr_WS71,,,Fresh,Turkey Creek,WaDENE_WS71,Surface Water
+NEwr_WS72,,,Fresh,Tara Reservoir,WaDENE_WS72,Surface Water
+NEwr_WS73,,,Fresh,Haba Reservoir,WaDENE_WS73,Surface Water
+NEwr_WS74,,,Fresh,"Verdigre Creek, South Branch",WaDENE_WS74,Surface Water
+NEwr_WS75,,,Fresh,"Ash Creek, Trib. To",WaDENE_WS75,Surface Water
+NEwr_WS76,,,Fresh,Munson Creek,WaDENE_WS76,Surface Water
+NEwr_WS77,,,Fresh,Korgan Reservoir,WaDENE_WS77,Surface Water
+NEwr_WS78,,,Fresh,Ternes Reservoir,WaDENE_WS78,Surface Water
+NEwr_WS79,,,Fresh,"Nemaha River, Little, Trib. To",WaDENE_WS79,Surface Water
+NEwr_WS80,,,Fresh,Wahoo Creek,WaDENE_WS80,Surface Water
+NEwr_WS81,,,Fresh,"Oak Creek, Trib. To",WaDENE_WS81,Surface Water
+NEwr_WS82,,,Fresh,"Salt Creek, Trib. To",WaDENE_WS82,Surface Water
+NEwr_WS83,,,Fresh,"Mud Creek, Trib. To",WaDENE_WS83,Surface Water
+NEwr_WS84,,,Fresh,"Muddy Creek, Trib. To",WaDENE_WS84,Surface Water
+NEwr_WS85,,,Fresh,"Sampson Branch, Trib. To",WaDENE_WS85,Surface Water
+NEwr_WS86,,,Fresh,Antelope Creek,WaDENE_WS86,Surface Water
+NEwr_WS87,,,Fresh,Whitney Reservoir,WaDENE_WS87,Surface Water
+NEwr_WS88,,,Fresh,"Warm Slough, Lower",WaDENE_WS88,Surface Water
+NEwr_WS89,,,Fresh,Wood River,WaDENE_WS89,Surface Water
+NEwr_WS90,,,Fresh,"Warm Slough, Upper",WaDENE_WS90,Surface Water
+NEwr_WS91,,,Fresh,"Sandall, Wesley, Reservoir",WaDENE_WS91,Surface Water
+NEwr_WS92,,,Fresh,Soldier Creek,WaDENE_WS92,Surface Water
+NEwr_WS93,,,Fresh,"Salt Creek, Little, Trib. To",WaDENE_WS93,Surface Water
+NEwr_WS94,,,Fresh,"Turkey Creek, Trib. To",WaDENE_WS94,Surface Water
+NEwr_WS95,,,Fresh,"School Creek, Trib. To",WaDENE_WS95,Surface Water
+NEwr_WS96,,,Fresh,Poppe Reservoir,WaDENE_WS96,Surface Water
+NEwr_WS97,,,Fresh,Otter Creek,WaDENE_WS97,Surface Water
+NEwr_WS98,,,Fresh,"Blue River, Big, West Fork",WaDENE_WS98,Surface Water
+NEwr_WS99,,,Fresh,Buckhorn Spring,WaDENE_WS99,Surface Water
+NEwr_WS100,,,Fresh,"Bordeaux Creek, Big",WaDENE_WS100,Surface Water
+NEwr_WS101,,,Fresh,School Creek,WaDENE_WS101,Surface Water
+NEwr_WS102,,,Fresh,Old Weeping Water Quarry Pit,WaDENE_WS102,Surface Water
+NEwr_WS103,,,Fresh,Martin Marietta Fresh Water Reservoir,WaDENE_WS103,Surface Water
+NEwr_WS104,,,Fresh,Andersen Reservoir,WaDENE_WS104,Surface Water
+NEwr_WS105,,,Fresh,Norm Parde Reservoir,WaDENE_WS105,Surface Water
+NEwr_WS106,,,Fresh,Oeltjen Reservoir,WaDENE_WS106,Surface Water
+NEwr_WS107,,,Fresh,"Bow Creek, West",WaDENE_WS107,Surface Water
+NEwr_WS108,,,Fresh,Behrends Reservoir,WaDENE_WS108,Surface Water
+NEwr_WS109,,,Fresh,Clark Creek,WaDENE_WS109,Surface Water
+NEwr_WS110,,,Fresh,Deer Creek,WaDENE_WS110,Surface Water
+NEwr_WS111,,,Fresh,Antelope Creek Lake,WaDENE_WS111,Surface Water
+NEwr_WS112,,,Fresh,A. Nagel Pond,WaDENE_WS112,Surface Water
+NEwr_WS113,,,Fresh,"Verdigre Creek, North Branch",WaDENE_WS113,Surface Water
+NEwr_WS114,,,Fresh,Thomas Reservoir,WaDENE_WS114,Surface Water
+NEwr_WS115,,,Fresh,Schindler Creek,WaDENE_WS115,Surface Water
+NEwr_WS116,,,Fresh,"Platte River, Trib. To",WaDENE_WS116,Surface Water
+NEwr_WS117,,,Fresh,"Blue River, Little, Trib. To",WaDENE_WS117,Surface Water
+NEwr_WS118,,,Fresh,"Nemaha River, Little, North Fork",WaDENE_WS118,Surface Water
+NEwr_WS119,,,Fresh,Delbert Boelter Reservoir,WaDENE_WS119,Surface Water
+NEwr_WS120,,,Fresh,"Sand Creek, South Branch",WaDENE_WS120,Surface Water
+NEwr_WS121,,,Fresh,"Loup River, Middle",WaDENE_WS121,Surface Water
+NEwr_WS122,,,Fresh,"Pishel Creek, Trib. To",WaDENE_WS122,Surface Water
+NEwr_WS123,,,Fresh,"Liberty Creek, Trib. To",WaDENE_WS123,Surface Water
+NEwr_WS124,,,Fresh,John Hubl Reservoir,WaDENE_WS124,Surface Water
+NEwr_WS125,,,Fresh,"Sandy Creek, Big, Trib. To",WaDENE_WS125,Surface Water
+NEwr_WS126,,,Fresh,Fish Creek,WaDENE_WS126,Surface Water
+NEwr_WS127,,,Fresh,Clearwater Creek,WaDENE_WS127,Surface Water
+NEwr_WS128,,,Fresh,Kriete Reservoir,WaDENE_WS128,Surface Water
+NEwr_WS129,,,Fresh,Brush Creek,WaDENE_WS129,Surface Water
+NEwr_WS130,,,Fresh,Squaw Creek,WaDENE_WS130,Surface Water
+NEwr_WS131,,,Fresh,White Clay Creek,WaDENE_WS131,Surface Water
+NEwr_WS132,,,Fresh,"Blue River, Big",WaDENE_WS132,Surface Water
+NEwr_WS133,,,Fresh,Dry Creek,WaDENE_WS133,Surface Water
+NEwr_WS134,,,Fresh,"Sandy Creek, Little, West",WaDENE_WS134,Surface Water
+NEwr_WS135,,,Fresh,Minnechaduza Creek,WaDENE_WS135,Surface Water
+NEwr_WS136,,,Fresh,"Sandy Creek, Little, West, Trib. To",WaDENE_WS136,Surface Water
+NEwr_WS137,,,Fresh,"Fiddler's Creek, tributary to",WaDENE_WS137,Surface Water
+NEwr_WS138,,,Fresh,Keya Paha River,WaDENE_WS138,Surface Water
+NEwr_WS139,,,Fresh,"Balls Branch, Trib. To",WaDENE_WS139,Surface Water
+NEwr_WS140,,,Fresh,"Lost Branch, Trib To",WaDENE_WS140,Surface Water
+NEwr_WS141,,,Fresh,Owl Creek,WaDENE_WS141,Surface Water
+NEwr_WS142,,,Fresh,"Blue Creek, Trib. To",WaDENE_WS142,Surface Water
+NEwr_WS143,,,Fresh,"Table Creek, South, Trib. To",WaDENE_WS143,Surface Water
+NEwr_WS144,,,Fresh,"Deroin Creek, Trib. To",WaDENE_WS144,Surface Water
+NEwr_WS145,,,Fresh,Missouri River,WaDENE_WS145,Surface Water
+NEwr_WS146,,,Fresh,"Loup River, North, Trib. To",WaDENE_WS146,Surface Water
+NEwr_WS147,,,Fresh,"Papillion Creek, West, Trib. To",WaDENE_WS147,Surface Water
+NEwr_WS148,,,Fresh,"Beal Slough, Trib. To",WaDENE_WS148,Surface Water
+NEwr_WS149,,,Fresh,Beaver Creek,WaDENE_WS149,Surface Water
+NEwr_WS150,,,Fresh,"Eagle Creek, Middle Branch, Trib. To",WaDENE_WS150,Surface Water
+NEwr_WS151,,,Fresh,Oak Creek,WaDENE_WS151,Surface Water
+NEwr_WS152,,,Fresh,"Dry Creek, Trib. To",WaDENE_WS152,Surface Water
+NEwr_WS153,,,Fresh,"Negro Branch, Trib. To",WaDENE_WS153,Surface Water
+NEwr_WS154,,,Fresh,"Nemaha River, Big, South Fork, Trib. To",WaDENE_WS154,Surface Water
+NEwr_WS155,,,Fresh,"Elkhorn River, North Fork",WaDENE_WS155,Surface Water
+NEwr_WS156,,,Fresh,"Oak Creek, North, Trib. To",WaDENE_WS156,Surface Water
+NEwr_WS157,,,Fresh,"Oak Creek, North",WaDENE_WS157,Surface Water
+NEwr_WS158,,,Fresh,"Cottonwood Creek, Big",WaDENE_WS158,Surface Water
+NEwr_WS159,,,Fresh,"Nemaha River, Little, North Fork, Trib. To",WaDENE_WS159,Surface Water
+NEwr_WS160,,,Fresh,"Bean Creek, Trib. To",WaDENE_WS160,Surface Water
+NEwr_WS161,,,Fresh,"Long Branch, Trib. To",WaDENE_WS161,Surface Water
+NEwr_WS162,,,Fresh,Crooked Branch,WaDENE_WS162,Surface Water
+NEwr_WS163,,,Fresh,"Crooked Branch, Trib. To",WaDENE_WS163,Surface Water
+NEwr_WS164,,,Fresh,Calamus River,WaDENE_WS164,Surface Water
+NEwr_WS165,,,Fresh,"Davis Creek, Trib. To",WaDENE_WS165,Surface Water
+NEwr_WS166,,,Fresh,"Beaver Creek, Trib. To",WaDENE_WS166,Surface Water
+NEwr_WS167,,,Fresh,"Clear Creek, Trib. To",WaDENE_WS167,Surface Water
+NEwr_WS168,,,Fresh,Box Butte Creek,WaDENE_WS168,Surface Water
+NEwr_WS169,,,Fresh,Ash Creek,WaDENE_WS169,Surface Water
+NEwr_WS170,,,Fresh,"Keya Paha River, Trib. To",WaDENE_WS170,Surface Water
+NEwr_WS171,,,Fresh,Shingle Creek,WaDENE_WS171,Surface Water
+NEwr_WS172,,,Fresh,"Coon Creek, South Branch, Trib. To",WaDENE_WS172,Surface Water
+NEwr_WS173,,,Fresh,Young Creek,WaDENE_WS173,Surface Water
+NEwr_WS174,,,Fresh,"Eagle Creek, Middle Branch",WaDENE_WS174,Surface Water
+NEwr_WS175,,,Fresh,"Buffalo Creek, West",WaDENE_WS175,Surface Water
+NEwr_WS176,,,Fresh,"Sandy Creek, Big, South Fork, Trib. To",WaDENE_WS176,Surface Water
+NEwr_WS177,,,Fresh,"Buckley Creek, Trib. To",WaDENE_WS177,Surface Water
+NEwr_WS178,,,Fresh,Rose Creek,WaDENE_WS178,Surface Water
+NEwr_WS179,,,Fresh,Long Branch,WaDENE_WS179,Surface Water
+NEwr_WS180,,,Fresh,"Canada Creek, Trib. To",WaDENE_WS180,Surface Water
+NEwr_WS181,,,Fresh,Victoria Creek,WaDENE_WS181,Surface Water
+NEwr_WS182,,,Fresh,Wiggle Creek,WaDENE_WS182,Surface Water
+NEwr_WS183,,,Fresh,Clear Creek,WaDENE_WS183,Surface Water
+NEwr_WS184,,,Fresh,"Timber Creek, Trib. To",WaDENE_WS184,Surface Water
+NEwr_WS185,,,Fresh,Taylor Creek,WaDENE_WS185,Surface Water
+NEwr_WS186,,,Fresh,"Maple Creek, Middle Fork",WaDENE_WS186,Surface Water
+NEwr_WS187,,,Fresh,Hunters Slough,WaDENE_WS187,Surface Water
+NEwr_WS188,,,Fresh,"Wagon Tongue Creek, Trib. To",WaDENE_WS188,Surface Water
+NEwr_WS189,,,Fresh,"Rock Creek, Little, Trib. To",WaDENE_WS189,Surface Water
+NEwr_WS190,,,Fresh,Silver Creek,WaDENE_WS190,Surface Water
+NEwr_WS191,,,Fresh,Bear Creek,WaDENE_WS191,Surface Water
+NEwr_WS192,,,Fresh,Gordon Creek,WaDENE_WS192,Surface Water
+NEwr_WS193,,,Fresh,"Gordon Creek, North Branch",WaDENE_WS193,Surface Water
+NEwr_WS194,,,Fresh,Trout Springs,WaDENE_WS194,Surface Water
+NEwr_WS195,,,Fresh,Short Pine Creek,WaDENE_WS195,Surface Water
+NEwr_WS196,,,Fresh,"Brush Creek, Trib. To",WaDENE_WS196,Surface Water
+NEwr_WS197,,,Fresh,Honey Creek,WaDENE_WS197,Surface Water
+NEwr_WS198,,,Fresh,"Redbird Creek, Trib. To",WaDENE_WS198,Surface Water
+NEwr_WS199,,,Fresh,Steel Creek,WaDENE_WS199,Surface Water
+NEwr_WS200,,,Fresh,"Verdigre Creek, South Branch, Trib. To",WaDENE_WS200,Surface Water
+NEwr_WS201,,,Fresh,"Verdigre Creek, Trib. To",WaDENE_WS201,Surface Water
+NEwr_WS202,,,Fresh,"Sand Creek, Trib. To",WaDENE_WS202,Surface Water
+NEwr_WS203,,,Fresh,"French Creek, Trib. To",WaDENE_WS203,Surface Water
+NEwr_WS204,,,Fresh,"Ox Bow Creek, Trib. To",WaDENE_WS204,Surface Water
+NEwr_WS205,,,Fresh,"Sandy Creek, Big, South Fork",WaDENE_WS205,Surface Water
+NEwr_WS206,,,Fresh,Shoemaker Reservoir,WaDENE_WS206,Surface Water
+NEwr_WS207,,,Fresh,Rock Creek,WaDENE_WS207,Surface Water
+NEwr_WS208,,,Fresh,"Lores Branch, Trib. To",WaDENE_WS208,Surface Water
+NEwr_WS209,,,Fresh,"Loup River, South",WaDENE_WS209,Surface Water
+NEwr_WS210,,,Fresh,Davis Creek,WaDENE_WS210,Surface Water
+NEwr_WS211,,,Fresh,"Salt Creek, East Branch",WaDENE_WS211,Surface Water
+NEwr_WS212,,,Fresh,Wagon Tongue Creek,WaDENE_WS212,Surface Water
+NEwr_WS213,,,Fresh,"Four Mile Creek, Trib. To",WaDENE_WS213,Surface Water
+NEwr_WS214,,,Fresh,Laughing Water Creek,WaDENE_WS214,Surface Water
+NEwr_WS215,,,Fresh,Conway Branch,WaDENE_WS215,Surface Water
+NEwr_WS216,,,Fresh,"Prairie Creek, Trib. To",WaDENE_WS216,Surface Water
+NEwr_WS217,,,Fresh,"Scott Creek, Trib. To",WaDENE_WS217,Surface Water
+NEwr_WS218,,,Fresh,"Buffalo Creek, Trib. To",WaDENE_WS218,Surface Water
+NEwr_WS219,,,Fresh,"Elk Creek, Trib. To",WaDENE_WS219,Surface Water
+NEwr_WS220,,,Fresh,"Slough Creek, Big",WaDENE_WS220,Surface Water
+NEwr_WS221,,,Fresh,Hooper Creek,WaDENE_WS221,Surface Water
+NEwr_WS222,,,Fresh,Brownell Creek,WaDENE_WS222,Surface Water
+NEwr_WS223,,,Fresh,"Nemaha River, Little",WaDENE_WS223,Surface Water
+NEwr_WS224,,,Fresh,"Spring Creek, Trib. To",WaDENE_WS224,Surface Water
+NEwr_WS225,,,Fresh,Man's Creek,WaDENE_WS225,Surface Water
+NEwr_WS226,,,Fresh,"Man's Creek, Trib. To",WaDENE_WS226,Surface Water
+NEwr_WS227,,,Fresh,Car Creek,WaDENE_WS227,Surface Water
+NEwr_WS228,,,Fresh,Bean Creek,WaDENE_WS228,Surface Water
+NEwr_WS229,,,Fresh,Turtle Creek,WaDENE_WS229,Surface Water
+NEwr_WS230,,,Fresh,Union Creek,WaDENE_WS230,Surface Water
+NEwr_WS231,,,Fresh,Pebble Creek,WaDENE_WS231,Surface Water
+NEwr_WS232,,,Fresh,Middle Creek,WaDENE_WS232,Surface Water
+NEwr_WS233,,,Fresh,Hobson Branch,WaDENE_WS233,Surface Water
+NEwr_WS234,,,Fresh,"Cottonwood Creek, Trib. To",WaDENE_WS234,Surface Water
+NEwr_WS235,,,Fresh,Decker Creek,WaDENE_WS235,Surface Water
+NEwr_WS236,,,Fresh,Coon Creek,WaDENE_WS236,Surface Water
+NEwr_WS237,,,Fresh,Lost Creek,WaDENE_WS237,Surface Water
+NEwr_WS238,,,Fresh,Camp Creek,WaDENE_WS238,Surface Water
+NEwr_WS239,,,Fresh,"Verdigre Creek, East Branch",WaDENE_WS239,Surface Water
+NEwr_WS240,,,Fresh,"Cedar Creek, South",WaDENE_WS240,Surface Water
+NEwr_WS241,,,Fresh,"Nemaha River, Big, North Fork",WaDENE_WS241,Surface Water
+NEwr_WS242,,,Fresh,"Nemaha River, Big, South Fork",WaDENE_WS242,Surface Water
+NEwr_WS243,,,Fresh,Walnut Creek,WaDENE_WS243,Surface Water
+NEwr_WS244,,,Fresh,Muddy Creek,WaDENE_WS244,Surface Water
+NEwr_WS245,,,Fresh,"Elkhorn River, North Fork, Trib. To",WaDENE_WS245,Surface Water
+NEwr_WS246,,,Fresh,Four Mile Creek,WaDENE_WS246,Surface Water
+NEwr_WS247,,,Fresh,Pine Creek,WaDENE_WS247,Surface Water
+NEwr_WS248,,,Fresh,Prouty Springs,WaDENE_WS248,Surface Water
+NEwr_WS249,,,Fresh,Bell Creek,WaDENE_WS249,Surface Water
+NEwr_WS250,,,Fresh,Pishel Creek,WaDENE_WS250,Surface Water
+NEwr_WS251,,,Fresh,Dead Man Creek,WaDENE_WS251,Surface Water
+NEwr_WS252,,,Fresh,French Creek,WaDENE_WS252,Surface Water
+NEwr_WS253,,,Fresh,"Nemaha River, Big, Middle Branch, Trib. To",WaDENE_WS253,Surface Water
+NEwr_WS254,,,Fresh,Wilson Creek,WaDENE_WS254,Surface Water
+NEwr_WS255,,,Fresh,Cuming Creek,WaDENE_WS255,Surface Water
+NEwr_WS256,,,Fresh,"Bone Creek, Trib. To",WaDENE_WS256,Surface Water
+NEwr_WS257,,,Fresh,Blackbird Creek,WaDENE_WS257,Surface Water
+NEwr_WS258,,,Fresh,Weeping Water Creek,WaDENE_WS258,Surface Water
+NEwr_WS259,,,Fresh,Weeping Water Reservoir 4J,WaDENE_WS259,Surface Water
+NEwr_WS260,,,Fresh,Willow Creek,WaDENE_WS260,Surface Water
+NEwr_WS261,,,Fresh,"Logan Creek, Middle",WaDENE_WS261,Surface Water
+NEwr_WS262,,,Fresh,Maple Creek,WaDENE_WS262,Surface Water
+NEwr_WS263,,,Fresh,North Platte River,WaDENE_WS263,Surface Water
+NEwr_WS264,,,Fresh,"Loup River, Trib. To",WaDENE_WS264,Surface Water
+NEwr_WS265,,,Fresh,Ervine Creek,WaDENE_WS265,Surface Water
+NEwr_WS266,,,Fresh,"Salt Creek, Little",WaDENE_WS266,Surface Water
+NEwr_WS267,,,Fresh,"Hay Springs Creek, North Branch",WaDENE_WS267,Surface Water
+NEwr_WS268,,,Fresh,Chadron Creek,WaDENE_WS268,Surface Water
+NEwr_WS269,,,Fresh,"Beaver Creek, Little",WaDENE_WS269,Surface Water
+NEwr_WS270,,,Fresh,Clausen Reservoir,WaDENE_WS270,Surface Water
+NEwr_WS271,,,Fresh,Wallace Creek,WaDENE_WS271,Surface Water
+NEwr_WS272,,,Fresh,Higgins Reservoir,WaDENE_WS272,Surface Water
+NEwr_WS273,,,Fresh,"Devils Gulch, Trib. To",WaDENE_WS273,Surface Water
+NEwr_WS274,,,Fresh,Cuatt Reservoir No. 1,WaDENE_WS274,Surface Water
+NEwr_WS275,,,Fresh,Higer Reservoir,WaDENE_WS275,Surface Water
+NEwr_WS276,,,Fresh,"Missouri River, Trib. To",WaDENE_WS276,Surface Water
+NEwr_WS277,,,Fresh,"Soldier Creek, Trib. To",WaDENE_WS277,Surface Water
+NEwr_WS278,,,Fresh,Dee Creek,WaDENE_WS278,Surface Water
+NEwr_WS279,,,Fresh,Stevens Creek,WaDENE_WS279,Surface Water
+NEwr_WS280,,,Fresh,Elk Creek,WaDENE_WS280,Surface Water
+NEwr_WS281,,,Fresh,"Turkey Creek, South Fork, Trib. To",WaDENE_WS281,Surface Water
+NEwr_WS282,,,Fresh,Calumet Creek,WaDENE_WS282,Surface Water
+NEwr_WS283,,,Fresh,Republican River,WaDENE_WS283,Surface Water
+NEwr_WS284,,,Fresh,Center Creek,WaDENE_WS284,Surface Water
+NEwr_WS285,,,Fresh,Red Willow Creek,WaDENE_WS285,Surface Water
+NEwr_WS286,,,Fresh,Melbeta Creek,WaDENE_WS286,Surface Water
+NEwr_WS287,,,Fresh,Cedar Creek,WaDENE_WS287,Surface Water
+NEwr_WS288,,,Fresh,"Deer Creek, Trib. To",WaDENE_WS288,Surface Water
+NEwr_WS289,,,Fresh,Blue Creek,WaDENE_WS289,Surface Water
+NEwr_WS290,,,Fresh,Humbug Creek,WaDENE_WS290,Surface Water
+NEwr_WS291,,,Fresh,"Bazile Creek, West",WaDENE_WS291,Surface Water
+NEwr_WS292,,,Fresh,"Loup River, South, Trib. To",WaDENE_WS292,Surface Water
+NEwr_WS293,,,Fresh,"Maple Creek, West Fork",WaDENE_WS293,Surface Water
+NEwr_WS294,,,Fresh,Looking Glass Creek,WaDENE_WS294,Surface Water
+NEwr_WS295,,,Fresh,"Larabee Creek, Trib. To",WaDENE_WS295,Surface Water
+NEwr_WS296,,,Fresh,"Plum Creek, Trib. To",WaDENE_WS296,Surface Water
+NEwr_WS297,,,Fresh,"Hay Springs Creek, Trib. To",WaDENE_WS297,Surface Water
+NEwr_WS298,,,Fresh,"White River, Trib. To",WaDENE_WS298,Surface Water
+NEwr_WS299,,,Fresh,"Blackbird Creek, South",WaDENE_WS299,Surface Water
+NEwr_WS300,,,Fresh,Mission Creek,WaDENE_WS300,Surface Water
+NEwr_WS301,,,Fresh,"Otter Creek, Trib. To",WaDENE_WS301,Surface Water
+NEwr_WS302,,,Fresh,Oconee Drain,WaDENE_WS302,Surface Water
+NEwr_WS303,,,Fresh,Moorehouse Creek,WaDENE_WS303,Surface Water
+NEwr_WS304,,,Fresh,"Mud (beaver) Creek, Trib. To",WaDENE_WS304,Surface Water
+NEwr_WS305,,,Fresh,"Oak Creek, Middle",WaDENE_WS305,Surface Water
+NEwr_WS306,,,Fresh,"Logan Creek, Trib. To",WaDENE_WS306,Surface Water
+NEwr_WS307,,,Fresh,"Nemaha River, Little, South Fork",WaDENE_WS307,Surface Water
+NEwr_WS308,,,Fresh,Giles Creek,WaDENE_WS308,Surface Water
+NEwr_WS309,,,Fresh,"Pleasant Run Creek, Trib. To",WaDENE_WS309,Surface Water
+NEwr_WS310,,,Fresh,"Peanut Creek, Trib. To",WaDENE_WS310,Surface Water
+NEwr_WS311,,,Fresh,"Niobrara River, Trib. To",WaDENE_WS311,Surface Water
+NEwr_WS312,,,Fresh,"Coon Creek, South Branch",WaDENE_WS312,Surface Water
+NEwr_WS313,,,Fresh,"Walnut Creek, Trib. To",WaDENE_WS313,Surface Water
+NEwr_WS314,,,Fresh,"Wilson Creek, Trib. To",WaDENE_WS314,Surface Water
+NEwr_WS315,,,Fresh,Fox Creek,WaDENE_WS315,Surface Water
+NEwr_WS316,,,Fresh,"Salt Creek, Olive Branch, Trib. To",WaDENE_WS316,Surface Water
+NEwr_WS317,,,Fresh,"Nemaha River, Big",WaDENE_WS317,Surface Water
+NEwr_WS318,,,Fresh,"Salt Creek, Olive Branch",WaDENE_WS318,Surface Water
+NEwr_WS319,,,Fresh,"Wahoo Creek, North Fork",WaDENE_WS319,Surface Water
+NEwr_WS320,,,Fresh,"Spring Creek, Big, Trib. To",WaDENE_WS320,Surface Water
+NEwr_WS321,,,Fresh,"Spring Creek, Big",WaDENE_WS321,Surface Water
+NEwr_WS322,,,Fresh,Yankee Creek,WaDENE_WS322,Surface Water
+NEwr_WS323,,,Fresh,Badger Branch Creek,WaDENE_WS323,Surface Water
+NEwr_WS324,,,Fresh,"Clearwater Creek, Trib. To",WaDENE_WS324,Surface Water
+NEwr_WS325,,,Fresh,"Salt Creek, Spring Branch",WaDENE_WS325,Surface Water
+NEwr_WS326,,,Fresh,"Salt Creek, East Branch, Trib. To",WaDENE_WS326,Surface Water
+NEwr_WS327,,,Fresh,Cottonwood Creek,WaDENE_WS327,Surface Water
+NEwr_WS328,,,Fresh,"Antelope Creek, Trib. To",WaDENE_WS328,Surface Water
+NEwr_WS329,,,Fresh,"Verdigre Creek, East Branch, Trib. To",WaDENE_WS329,Surface Water
+NEwr_WS330,,,Fresh,"Verdigre Creek, Middle Branch, Trib. To",WaDENE_WS330,Surface Water
+NEwr_WS331,,,Fresh,Bowman Creek,WaDENE_WS331,Surface Water
+NEwr_WS332,,,Fresh,"Bowman Creek, Trib. To",WaDENE_WS332,Surface Water
+NEwr_WS333,,,Fresh,Cob Creek,WaDENE_WS333,Surface Water
+NEwr_WS334,,,Fresh,Gracie Creek,WaDENE_WS334,Surface Water
+NEwr_WS335,,,Fresh,"Turtle Creek, Trib. To",WaDENE_WS335,Surface Water
+NEwr_WS336,,,Fresh,Cardwell Branch,WaDENE_WS336,Surface Water
+NEwr_WS337,,,Fresh,"Oak Creek, Middle, Trib. To",WaDENE_WS337,Surface Water
+NEwr_WS338,,,Fresh,Diamond Bar Drainage Ditch,WaDENE_WS338,Surface Water
+NEwr_WS339,,,Fresh,Bone Creek,WaDENE_WS339,Surface Water
+NEwr_WS340,,,Fresh,"Burton Creek, Spring Branch",WaDENE_WS340,Surface Water
+NEwr_WS341,,,Fresh,"Turkey Creek, Little",WaDENE_WS341,Surface Water
+NEwr_WS342,,,Fresh,Larabee Creek,WaDENE_WS342,Surface Water
+NEwr_WS343,,,Fresh,Snake River,WaDENE_WS343,Surface Water
+NEwr_WS344,,,Fresh,"Bogus Creek, Trib. To",WaDENE_WS344,Surface Water
+NEwr_WS345,,,Fresh,"Middle Creek, South Branch",WaDENE_WS345,Surface Water
+NEwr_WS346,,,Fresh,Greenwood Creek,WaDENE_WS346,Surface Water
+NEwr_WS347,,,Fresh,"Holt Creek, Spring Branch",WaDENE_WS347,Surface Water
+NEwr_WS348,,,Fresh,Charcoal Creek,WaDENE_WS348,Surface Water
+NEwr_WS349,,,Fresh,"Cottonwood Creek, Little, Trib. To",WaDENE_WS349,Surface Water
+NEwr_WS350,,,Fresh,"Spotted Tail Creek, Trib. To",WaDENE_WS350,Surface Water
+NEwr_WS351,,,Fresh,Louse Creek,WaDENE_WS351,Surface Water
+NEwr_WS352,,,Fresh,"Thirty-Two Mile Creek, Trib. To",WaDENE_WS352,Surface Water
+NEwr_WS353,,,Fresh,"Rose Creek, Trib. To",WaDENE_WS353,Surface Water
+NEwr_WS354,,,Fresh,Ziegler Creek,WaDENE_WS354,Surface Water
+NEwr_WS355,,,Fresh,"Fox Creek, Trib. To",WaDENE_WS355,Surface Water
+NEwr_WS356,,,Fresh,Timber Creek,WaDENE_WS356,Surface Water
+NEwr_WS357,,,Fresh,Perrin Creek,WaDENE_WS357,Surface Water
+NEwr_WS358,,,Fresh,Long Pine Creek,WaDENE_WS358,Surface Water
+NEwr_WS359,,,Fresh,"Ash Creek, East, Trib. To",WaDENE_WS359,Surface Water
+NEwr_WS360,,,Fresh,Scott Creek,WaDENE_WS360,Surface Water
+NEwr_WS361,,,Fresh,Thirty-Two Mile Creek,WaDENE_WS361,Surface Water
+NEwr_WS362,,,Fresh,"Sandy Creek, Dry, Trib. To Dean Drain",WaDENE_WS362,Surface Water
+NEwr_WS363,,,Fresh,Buckley Creek,WaDENE_WS363,Surface Water
+NEwr_WS364,,,Fresh,"Cub Creek, Trib. To",WaDENE_WS364,Surface Water
+NEwr_WS365,,,Fresh,"Indian Creek, Trib. To",WaDENE_WS365,Surface Water
+NEwr_WS366,,,Fresh,"Cedar River, Trib. To",WaDENE_WS366,Surface Water
+NEwr_WS367,,,Fresh,"Skull Creek, Trib. To",WaDENE_WS367,Surface Water
+NEwr_WS368,,,Fresh,"Maple Creek, Middle Fork, Trib. To",WaDENE_WS368,Surface Water
+NEwr_WS369,,,Fresh,"Maple Creek, East Fork",WaDENE_WS369,Surface Water
+NEwr_WS370,,,Fresh,"Rawhide Creek, Trib. To",WaDENE_WS370,Surface Water
+NEwr_WS371,,,Fresh,"Salt Creek, North Branch",WaDENE_WS371,Surface Water
+NEwr_WS372,,,Fresh,"Salt Creek, South Branch",WaDENE_WS372,Surface Water
+NEwr_WS373,,,Fresh,Holmes Creek,WaDENE_WS373,Surface Water
+NEwr_WS374,,,Fresh,Peanut Creek,WaDENE_WS374,Surface Water
+NEwr_WS375,,,Fresh,Dunlap Creek,WaDENE_WS375,Surface Water
+NEwr_WS376,,,Fresh,"Snake Creek, Trib. To",WaDENE_WS376,Surface Water
+NEwr_WS377,,,Fresh,"Box Butte Creek, Trib. To",WaDENE_WS377,Surface Water
+NEwr_WS378,,,Fresh,Betsy Creek,WaDENE_WS378,Surface Water
+NEwr_WS379,,,Fresh,"Betsy Creek, Trib. To",WaDENE_WS379,Surface Water
+NEwr_WS380,,,Fresh,"Minnechaduza Creek, Trib. To",WaDENE_WS380,Surface Water
+NEwr_WS381,,,Fresh,"Spotted Tail Creek, Branch of",WaDENE_WS381,Surface Water
+NEwr_WS382,,,Fresh,Spotted Tail Creek,WaDENE_WS382,Surface Water
+NEwr_WS383,,,Fresh,"Brownell Creek, Trib. To",WaDENE_WS383,Surface Water
+NEwr_WS384,,,Fresh,Hooker Creek,WaDENE_WS384,Surface Water
+NEwr_WS385,,,Fresh,Dead Mans Run,WaDENE_WS385,Surface Water
+NEwr_WS386,,,Fresh,"Fairfield Creek, South Branch",WaDENE_WS386,Surface Water
+NEwr_WS387,,,Fresh,"Plum Creek, South Branch",WaDENE_WS387,Surface Water
+NEwr_WS388,,,Fresh,English Creek,WaDENE_WS388,Surface Water
+NEwr_WS389,,,Fresh,"Cottonwood Creek, Big, Trib. To",WaDENE_WS389,Surface Water
+NEwr_WS390,,,Fresh,Madden Creek,WaDENE_WS390,Surface Water
+NEwr_WS391,,,Fresh,Alkali Creek,WaDENE_WS391,Surface Water
+NEwr_WS392,,,Fresh,Vanderbrink Creek,WaDENE_WS392,Surface Water
+NEwr_WS393,,,Fresh,"Trunk Butte Creek, Trib. To",WaDENE_WS393,Surface Water
+NEwr_WS394,,,Fresh,"Sandy Creek, Dry",WaDENE_WS394,Surface Water
+NEwr_WS395,,,Fresh,"Wahoo Creek, South Fork",WaDENE_WS395,Surface Water
+NEwr_WS396,,,Fresh,"Rush Creek, Trib. To",WaDENE_WS396,Surface Water
+NEwr_WS397,,,Fresh,"Bordeaux Creek, Little",WaDENE_WS397,Surface Water
+NEwr_WS398,,,Fresh,Timperley Reservoir,WaDENE_WS398,Surface Water
+NEwr_WS399,,,Fresh,Duck Creek,WaDENE_WS399,Surface Water
+NEwr_WS400,,,Fresh,"Maple Creek, Trib. To",WaDENE_WS400,Surface Water
+NEwr_WS401,,,Fresh,Calf Creek,WaDENE_WS401,Surface Water
+NEwr_WS402,,,Fresh,"Dry Creek, North",WaDENE_WS402,Surface Water
+NEwr_WS403,,,Fresh,"Thirty-Two Mile Creek, West Branch",WaDENE_WS403,Surface Water
+NEwr_WS404,,,Fresh,Skull Creek,WaDENE_WS404,Surface Water
+NEwr_WS405,,,Fresh,Wilson Creek Reservoir 2-S,WaDENE_WS405,Surface Water
+NEwr_WS406,,,Fresh,Bazile Creek,WaDENE_WS406,Surface Water
+NEwr_WS407,,,Fresh,Boxelder Creek,WaDENE_WS407,Surface Water
+NEwr_WS408,,,Fresh,"Hooper Creek, Trib. To",WaDENE_WS408,Surface Water
+NEwr_WS409,,,Fresh,Taylor Branch Creek,WaDENE_WS409,Surface Water
+NEwr_WS410,,,Fresh,"Nemaha River, Big, Trib. To",WaDENE_WS410,Surface Water
+NEwr_WS411,,,Fresh,"Salt Creek, Spring Branch, Trib. To",WaDENE_WS411,Surface Water
+NEwr_WS412,,,Fresh,"Point of Rocks Creek, Trib. To",WaDENE_WS412,Surface Water
+NEwr_WS413,,,Fresh,Dawes-Sheridan Creek,WaDENE_WS413,Surface Water
+NEwr_WS414,,,Fresh,Spring Branch Creek,WaDENE_WS414,Surface Water
+NEwr_WS415,,,Fresh,"Blackbird Creek, Trib. To",WaDENE_WS415,Surface Water
+NEwr_WS416,,,Fresh,"Ash Creek, West",WaDENE_WS416,Surface Water
+NEwr_WS417,,,Fresh,"Humbug Creek, Trib. To",WaDENE_WS417,Surface Water
+NEwr_WS418,,,Fresh,Johnson Creek,WaDENE_WS418,Surface Water
+NEwr_WS419,,,Fresh,Eight Mile Creek,WaDENE_WS419,Surface Water
+NEwr_WS420,,,Fresh,"Eagle Creek, North Branch",WaDENE_WS420,Surface Water
+NEwr_WS421,,,Fresh,"Eagle Creek, Trib. To",WaDENE_WS421,Surface Water
+NEwr_WS422,,,Fresh,"South Platte River, Trib. To",WaDENE_WS422,Surface Water
+NEwr_WS423,,,Fresh,Liberty Creek,WaDENE_WS423,Surface Water
+NEwr_WS424,,,Fresh,"Nemaha River, Little, South Fork, Trib. To",WaDENE_WS424,Surface Water
+NEwr_WS425,,,Fresh,"Saunders Creek, Trib. To",WaDENE_WS425,Surface Water
+NEwr_WS426,,,Fresh,"Decker Creek, Trib. To",WaDENE_WS426,Surface Water
+NEwr_WS427,,,Fresh,"Mill Creek, Trib. To",WaDENE_WS427,Surface Water
+NEwr_WS428,,,Fresh,"Rock Creek, North Fork",WaDENE_WS428,Surface Water
+NEwr_WS429,,,Fresh,"Young Creek, Trib. To",WaDENE_WS429,Surface Water
+NEwr_WS430,,,Fresh,West Water Creek,WaDENE_WS430,Surface Water
+NEwr_WS431,,,Fresh,"Stump Ditch, Trib. To",WaDENE_WS431,Surface Water
+NEwr_WS432,,,Fresh,Strever Creek,WaDENE_WS432,Surface Water
+NEwr_WS433,,,Fresh,"Liberty Creek, North Branch",WaDENE_WS433,Surface Water
+NEwr_WS434,,,Fresh,Justin Ellicott Reservoir,WaDENE_WS434,Surface Water
+NEwr_WS435,,,Fresh,Three Mile Creek,WaDENE_WS435,Surface Water
+NEwr_WS436,,,Fresh,"Sand Creek, West",WaDENE_WS436,Surface Water
+NEwr_WS437,,,Fresh,Todd Creek,WaDENE_WS437,Surface Water
+NEwr_WS438,,,Fresh,Elm Creek,WaDENE_WS438,Surface Water
+NEwr_WS439,,,Fresh,"Logan Creek, South",WaDENE_WS439,Surface Water
+NEwr_WS440,,,Fresh,"Middle Creek, North Branch",WaDENE_WS440,Surface Water
+NEwr_WS441,,,Fresh,Dead Horse Creek,WaDENE_WS441,Surface Water
+NEwr_WS442,,,Fresh,Maskenthine Creek,WaDENE_WS442,Surface Water
+NEwr_WS443,,,Fresh,"Cedar Creek, Trib. To",WaDENE_WS443,Surface Water
+NEwr_WS444,,,Fresh,Logan Creek Dredge,WaDENE_WS444,Surface Water
+NEwr_WS445,,,Fresh,White Tail Creek,WaDENE_WS445,Surface Water
+NEwr_WS446,,,Fresh,Houchen Creek,WaDENE_WS446,Surface Water
+NEwr_WS447,,,Fresh,Craig Creek,WaDENE_WS447,Surface Water
+NEwr_WS448,,,Fresh,"Blue River, Big, Trib. To",WaDENE_WS448,Surface Water
+NEwr_WS449,,,Fresh,Dry Branch,WaDENE_WS449,Surface Water
+NEwr_WS450,,,Fresh,"Cottonwood Creek, Little",WaDENE_WS450,Surface Water
+NEwr_WS451,,,Fresh,Fremont Creek,WaDENE_WS451,Surface Water
+NEwr_WS452,,,Fresh,Prairie Creek,WaDENE_WS452,Surface Water
+NEwr_WS453,,,Fresh,"Cedar Creek, South, Trib. To",WaDENE_WS453,Surface Water
+NEwr_WS454,,,Fresh,"Silver Creek, Trib. To",WaDENE_WS454,Surface Water
+NEwr_WS455,,,Fresh,"Loup River, Middle, Trib. To",WaDENE_WS455,Surface Water
+NEwr_WS456,,,Fresh,Kenyon Farm Reservoir,WaDENE_WS456,Surface Water
+NEwr_WS457,,,Fresh,North Oak Reservoir 4-C,WaDENE_WS457,Surface Water
+NEwr_WS458,,,Fresh,Highlands Golf Course Reservoir,WaDENE_WS458,Surface Water
+NEwr_WS459,,,Fresh,"Stevens Creek, Trib. To",WaDENE_WS459,Surface Water
+NEwr_WS460,,,Fresh,Himark Golf Course Res.,WaDENE_WS460,Surface Water
+NEwr_WS461,,,Fresh,"Eight Mile Creek, Trib. To",WaDENE_WS461,Surface Water
+NEwr_WS462,,,Fresh,"Weeping Water Creek, South Branch, Trib. To",WaDENE_WS462,Surface Water
+NEwr_WS463,,,Fresh,Karens Pond,WaDENE_WS463,Surface Water
+NEwr_WS464,,,Fresh,Rakes Creek,WaDENE_WS464,Surface Water
+NEwr_WS465,,,Fresh,"Table Creek, North",WaDENE_WS465,Surface Water
+NEwr_WS466,,,Fresh,Russell Creek,WaDENE_WS466,Surface Water
+NEwr_WS467,,,Fresh,Upper Little Nemaha Res. 31 West,WaDENE_WS467,Surface Water
+NEwr_WS468,,,Fresh,"Chatawa Creek, Trib. To",WaDENE_WS468,Surface Water
+NEwr_WS469,,,Fresh,"Deer Branch, Trib. To",WaDENE_WS469,Surface Water
+NEwr_WS470,,,Fresh,Sweet Creek,WaDENE_WS470,Surface Water
+NEwr_WS471,,,Fresh,Cow Creek,WaDENE_WS471,Surface Water
+NEwr_WS472,,,Fresh,Mira Creek,WaDENE_WS472,Surface Water
+NEwr_WS473,,,Fresh,Auger Creek,WaDENE_WS473,Surface Water
+NEwr_WS474,,,Fresh,"North Branch, Shell Creek",WaDENE_WS474,Surface Water
+NEwr_WS475,,,Fresh,Indian Creek,WaDENE_WS475,Surface Water
+NEwr_WS476,,,Fresh,Maskenthine Reservoir,WaDENE_WS476,Surface Water
+NEwr_WS477,,,Fresh,Rattlesnake Creek,WaDENE_WS477,Surface Water
+NEwr_WS478,,,Fresh,Myrtle Creek,WaDENE_WS478,Surface Water
+NEwr_WS479,,,Fresh,"Cheese Creek, Trib. To",WaDENE_WS479,Surface Water
+NEwr_WS480,,,Fresh,"Middle Creek, North Branch, Trib. To",WaDENE_WS480,Surface Water
+NEwr_WS481,,,Fresh,Schildt Livestock Waste Control Reservoir,WaDENE_WS481,Surface Water
+NEwr_WS482,,,Fresh,"Ash Hollow Creek, Trib. To",WaDENE_WS482,Surface Water
+NEwr_WS483,,,Fresh,Cub Creek,WaDENE_WS483,Surface Water
+NEwr_WS484,,,Fresh,SOUTH RESERVOIR,WaDENE_WS484,Surface Water
+NEwr_WS485,,,Fresh,Rohrer Irrigation Reservoir,WaDENE_WS485,Surface Water
+NEwr_WS486,,,Fresh,Soester Reservoir,WaDENE_WS486,Surface Water
+NEwr_WS487,,,Fresh,"Brawner Creek, Trib To",WaDENE_WS487,Surface Water
+NEwr_WS488,,,Fresh,Romberg Creek,WaDENE_WS488,Surface Water
+NEwr_WS489,,,Fresh,"Brewers Branch, Trib. To Yankee Creek",WaDENE_WS489,Surface Water
+NEwr_WS490,,,Fresh,"Haines Branch, Trib. To",WaDENE_WS490,Surface Water
+NEwr_WS491,,,Fresh,"Table Creek, South",WaDENE_WS491,Surface Water
+NEwr_WS492,,,Fresh,Easly Creek,WaDENE_WS492,Surface Water
+NEwr_WS493,,,Fresh,"Mooney Creek, Trib. To",WaDENE_WS493,Surface Water
+NEwr_WS494,,,Fresh,Shaw Creek,WaDENE_WS494,Surface Water
+NEwr_WS495,,,Fresh,"Muddy Creek, Little",WaDENE_WS495,Surface Water
+NEwr_WS496,,,Fresh,Bachelor Creek,WaDENE_WS496,Surface Water
+NEwr_WS497,,,Fresh,"Winnebago Creek, Trib. To",WaDENE_WS497,Surface Water
+NEwr_WS498,,,Fresh,Rush Creek,WaDENE_WS498,Surface Water
+NEwr_WS499,,,Fresh,"Rakes Creek, Trib. To",WaDENE_WS499,Surface Water
+NEwr_WS500,,,Fresh,Bee Creek,WaDENE_WS500,Surface Water
+NEwr_WS501,,,Fresh,"Loseke Creek, Trib. To",WaDENE_WS501,Surface Water
+NEwr_WS502,,,Fresh,"Sand Draw, West",WaDENE_WS502,Surface Water
+NEwr_WS503,,,Fresh,"Wolf Creek, Trib. To",WaDENE_WS503,Surface Water
+NEwr_WS504,,,Fresh,"Buffalo Creek, West, Trib. To",WaDENE_WS504,Surface Water
+NEwr_WS505,,,Fresh,Robinson Branch,WaDENE_WS505,Surface Water
+NEwr_WS506,,,Fresh,Scout Creek,WaDENE_WS506,Surface Water
+NEwr_WS507,,,Fresh,Pawnee Slough,WaDENE_WS507,Surface Water
+NEwr_WS508,,,Fresh,"Kirkham Creek, Trib. To",WaDENE_WS508,Surface Water
+NEwr_WS509,,,Fresh,"Elkhorn River, South Fork, Trib. To",WaDENE_WS509,Surface Water
+NEwr_WS510,,,Fresh,Fishberry Canyon,WaDENE_WS510,Surface Water
+NEwr_WS511,,,Fresh,Government Canyon,WaDENE_WS511,Surface Water
+NEwr_WS512,,,Fresh,"Pumpkinseed Creek, Trib. To",WaDENE_WS512,Surface Water
+NEwr_WS513,,,Fresh,Kirkham Creek,WaDENE_WS513,Surface Water
+NEwr_WS514,,,Fresh,Lores Branch,WaDENE_WS514,Surface Water
+NEwr_WS515,,,Fresh,"Clear Creek, Upper",WaDENE_WS515,Surface Water
+NEwr_WS516,,,Fresh,Trouble Creek,WaDENE_WS516,Surface Water
+NEwr_WS517,,,Fresh,"Salt Creek, North Branch, Trib. To",WaDENE_WS517,Surface Water
+NEwr_WS518,,,Fresh,"Vanderbrink Creek, Trib. To",WaDENE_WS518,Surface Water
+NEwr_WS519,,,Fresh,"Salt Creek, South Branch, Trib. To",WaDENE_WS519,Surface Water
+NEwr_WS520,,,Fresh,Boardman Creek,WaDENE_WS520,Surface Water
+NEwr_WS521,,,Fresh,Cedar Gulch,WaDENE_WS521,Surface Water
+NEwr_WS522,,,Fresh,Hay Creek,WaDENE_WS522,Surface Water
+NEwr_WS523,,,Fresh,Eley Creek,WaDENE_WS523,Surface Water
+NEwr_WS524,,,Fresh,"Honey Creek, Trib To",WaDENE_WS524,Surface Water
+NEwr_WS525,,,Fresh,Bear-Pierce-Cedar 8-C Reservoir,WaDENE_WS525,Surface Water
+NEwr_WS526,,,Fresh,"Duck Creek, Trib to",WaDENE_WS526,Surface Water
+NEwr_WS527,,,Fresh,Magee Reservoir,WaDENE_WS527,Surface Water
+NEwr_WS528,,,Fresh,"Wild Cat Creek, Trib. To",WaDENE_WS528,Surface Water
+NEwr_WS529,,,Fresh,PIWO Reservoir,WaDENE_WS529,Surface Water
+NEwr_WS530,,,Fresh,Hofeling Pond No 1,WaDENE_WS530,Surface Water
+NEwr_WS531,,,Fresh,Reinsch Reservoir,WaDENE_WS531,Surface Water
+NEwr_WS532,,,Fresh,Frenchman River,WaDENE_WS532,Surface Water
+NEwr_WS533,,,Fresh,"Indian Creek, Big",WaDENE_WS533,Surface Water
+NEwr_WS534,,,Fresh,Grandpas Woods Pond,WaDENE_WS534,Surface Water
+NEwr_WS535,,,Fresh,Asimus Reservoir,WaDENE_WS535,Surface Water
+NEwr_WS536,,,Fresh,"Papillion Creek, Big",WaDENE_WS536,Surface Water
+NEwr_WS537,,,Fresh,"Indian Creek, Big, Reservoir 2-A",WaDENE_WS537,Surface Water
+NEwr_WS538,,,Fresh,"Union Creek, trib to",WaDENE_WS538,Surface Water
+NEwr_WS539,,,Fresh,Gokie Reservoir No. 2,WaDENE_WS539,Surface Water
+NEwr_WS540,,,Fresh,Stewart Reservoir #1,WaDENE_WS540,Surface Water
+NEwr_WS541,,,Fresh,"Bazile Creek, Trib. To",WaDENE_WS541,Surface Water
+NEwr_WS542,,,Fresh,Possum Creek,WaDENE_WS542,Surface Water
+NEwr_WS543,,,Fresh,Mark Downey Farm Pond,WaDENE_WS543,Surface Water
+NEwr_WS544,,,Fresh,"Laflins Branch, Trib to",WaDENE_WS544,Surface Water
+NEwr_WS545,,,Fresh,"Yankee Creek, Trib. To",WaDENE_WS545,Surface Water
+NEwr_WS546,,,Fresh,Cub Creek Reservoir 17-A,WaDENE_WS546,Surface Water
+NEwr_WS547,,,Fresh,Swan Creek Reservoir No 68,WaDENE_WS547,Surface Water
+NEwr_WS548,,,Fresh,Cub Creek Reservoir 17-B,WaDENE_WS548,Surface Water
+NEwr_WS549,,,Fresh,Swan Creek Res. No. 9,WaDENE_WS549,Surface Water
+NEwr_WS550,,,Fresh,Dutch Creek,WaDENE_WS550,Surface Water
+NEwr_WS551,,,Fresh,Wildcat Creek,WaDENE_WS551,Surface Water
+NEwr_WS552,,,Fresh,Mahon Reservoir No 2,WaDENE_WS552,Surface Water
+NEwr_WS553,,,Fresh,Bow Creek,WaDENE_WS553,Surface Water
+NEwr_WS554,,,Fresh,Cub Creek Reservoir 15-B,WaDENE_WS554,Surface Water
+NEwr_WS555,,,Fresh,"Bow Creek, East",WaDENE_WS555,Surface Water
+NEwr_WS556,,,Fresh,Crooked Elm Dam,WaDENE_WS556,Surface Water
+NEwr_WS557,,,Fresh,Swan Creek Reservoir No 12,WaDENE_WS557,Surface Water
+NEwr_WS558,,,Fresh,"Spring Branch Creek, Trib. To",WaDENE_WS558,Surface Water
+NEwr_WS559,,,Fresh,Parde Irrigation Pond,WaDENE_WS559,Surface Water
+NEwr_WS560,,,Fresh,"Mackelroy Creek, Trib. To",WaDENE_WS560,Surface Water
+NEwr_WS561,,,Fresh,"Goolsby Branch,  Trib to",WaDENE_WS561,Surface Water
+NEwr_WS562,,,Fresh,"Camp Creek, Trib. To",WaDENE_WS562,Surface Water
+NEwr_WS563,,,Fresh,"Camp Creek, South Branch",WaDENE_WS563,Surface Water
+NEwr_WS564,,,Fresh,Beatty Creek,WaDENE_WS564,Surface Water
+NEwr_WS565,,,Fresh,"Weigand Creek, Trib to",WaDENE_WS565,Surface Water
+NEwr_WS566,,,Fresh,New York Creek,WaDENE_WS566,Surface Water
+NEwr_WS567,,,Fresh,Cub Creek Reservoir 13-C,WaDENE_WS567,Surface Water
+NEwr_WS568,,,Fresh,"Burgess Creek, Trib To",WaDENE_WS568,Surface Water
+NEwr_WS569,,,Fresh,"Morman Canal, Trib. To",WaDENE_WS569,Surface Water
+NEwr_WS570,,,Fresh,Lydell Canyon Creek,WaDENE_WS570,Surface Water
+NEwr_WS571,,,Fresh,Bear Creek Reservoir 3-A,WaDENE_WS571,Surface Water
+NEwr_WS572,,,Fresh,Wolf Creek,WaDENE_WS572,Surface Water
+NEwr_WS573,,,Fresh,Thomas West Reservoir,WaDENE_WS573,Surface Water
+NEwr_WS574,,,Fresh,"Bow Creek, Second, Trib to",WaDENE_WS574,Surface Water
+NEwr_WS575,,,Fresh,Spring Creek Reservoir 9-3,WaDENE_WS575,Surface Water
+NEwr_WS576,,,Fresh,Hofeling Pond No. 2,WaDENE_WS576,Surface Water
+NEwr_WS577,,,Fresh,Hofeling Pond No. 3,WaDENE_WS577,Surface Water
+NEwr_WS578,,,Fresh,Schmidt Reservoir,WaDENE_WS578,Surface Water
+NEwr_WS579,,,Fresh,Dan Shaw Pond,WaDENE_WS579,Surface Water
+NEwr_WS580,,,Fresh,"Weeping Water Creek, South Branch",WaDENE_WS580,Surface Water
+NEwr_WS581,,,Fresh,Bear Creek Reservoir 6-B,WaDENE_WS581,Surface Water
+NEwr_WS582,,,Fresh,"Johnson Creek, Trib. To",WaDENE_WS582,Surface Water
+NEwr_WS583,,,Fresh,Mud Creek,WaDENE_WS583,Surface Water
+NEwr_WS584,,,Fresh,"Spring Branch, Trib. To",WaDENE_WS584,Surface Water
+NEwr_WS585,,,Fresh,"Hooker Creek, Trib. To",WaDENE_WS585,Surface Water
+NEwr_WS586,,,Fresh,"Shaw Creek, Trib. To",WaDENE_WS586,Surface Water
+NEwr_WS587,,,Fresh,Jakes Creek,WaDENE_WS587,Surface Water
+NEwr_WS588,,,Fresh,Town Branch,WaDENE_WS588,Surface Water
+NEwr_WS589,,,Fresh,Laflins Branch,WaDENE_WS589,Surface Water
+NEwr_WS590,,,Fresh,"Sandy Creek, Little, Trib. To",WaDENE_WS590,Surface Water
+NEwr_WS591,,,Fresh,"Wittstruck Creek, Trib. To",WaDENE_WS591,Surface Water
+NEwr_WS592,,,Fresh,Wittstruck Creek,WaDENE_WS592,Surface Water
+NEwr_WS593,,,Fresh,"Oneil Valley, Trib. To",WaDENE_WS593,Surface Water
+NEwr_WS594,,,Fresh,"Blacksnake Creek, Trib To",WaDENE_WS594,Surface Water
+NEwr_WS595,,,Fresh,Brawner Creek,WaDENE_WS595,Surface Water
+NEwr_WS596,,,Fresh,"Maple Creek, East Fork, Trib. To",WaDENE_WS596,Surface Water
+NEwr_WS597,,,Fresh,"Melbeta Creek, Trib. To",WaDENE_WS597,Surface Water
+NEwr_WS598,,,Fresh,"Verdigree Creek, North Branch, Trib. To",WaDENE_WS598,Surface Water
+NEwr_WS599,,,Fresh,"Rock Creek, North Fork, Trib. To",WaDENE_WS599,Surface Water
+NEwr_WS600,,,Fresh,"Sand Draw, Trib. To",WaDENE_WS600,Surface Water
+NEwr_WS601,,,Fresh,"Dry Branch, Trib. To",WaDENE_WS601,Surface Water
+NEwr_WS602,,,Fresh,Pearl Creek,WaDENE_WS602,Surface Water
+NEwr_WS603,,,Fresh,LAH Eickhoff EQIP Reservoir,WaDENE_WS603,Surface Water
+NEwr_WS604,,,Fresh,Bear-Pierce-Cedar Creek Reservoir 5-B,WaDENE_WS604,Surface Water
+NEwr_WS605,,,Fresh,Deep Creek,WaDENE_WS605,Surface Water
+NEwr_WS606,,,Fresh,"Indian Creek, Big, Trib. To",WaDENE_WS606,Surface Water
+NEwr_WS607,,,Fresh,Merritt Reservoir,WaDENE_WS607,Surface Water
+NEwr_WS608,,,Fresh,Kilpatrick Reservoir,WaDENE_WS608,Surface Water
+NEwr_WS609,,,Fresh,"Ponca Creek, Trib. To",WaDENE_WS609,Surface Water
+NEwr_WS610,,,Fresh,"Muddy Creek, West Branch, Trib. to",WaDENE_WS610,Surface Water
+NEwr_WS611,,,Fresh,Dodd Reservoir,WaDENE_WS611,Surface Water
+NEwr_WS612,,,Fresh,Peter Birkel Reservoir No. 1,WaDENE_WS612,Surface Water
+NEwr_WS613,,,Fresh,"Mira Creek, North Branch",WaDENE_WS613,Surface Water
+NEwr_WS614,,,Fresh,Hickman Reservoir No. 1,WaDENE_WS614,Surface Water
+NEwr_WS615,,,Fresh,Hickman Reservoir No. 2,WaDENE_WS615,Surface Water
+NEwr_WS616,,,Fresh,Bellwood Reservoir 5-H,WaDENE_WS616,Surface Water
+NEwr_WS617,,,Fresh,Don Doerr Reservoir,WaDENE_WS617,Surface Water
+NEwr_WS618,,,Fresh,Jelinek Reservoir,WaDENE_WS618,Surface Water
+NEwr_WS619,,,Fresh,Rentschler Reservoir,WaDENE_WS619,Surface Water
+NEwr_WS620,,,Fresh,Bartos Reservoir No. 2,WaDENE_WS620,Surface Water
+NEwr_WS621,,,Fresh,Bartos Reservoir No. 3,WaDENE_WS621,Surface Water
+NEwr_WS622,,,Fresh,Coyote Springs Reservoir,WaDENE_WS622,Surface Water
+NEwr_WS623,,,Fresh,Peterson Reservoir No. 1,WaDENE_WS623,Surface Water
+NEwr_WS624,,,Fresh,Shadley Vale Creek,WaDENE_WS624,Surface Water
+NEwr_WS625,,,Fresh,"Andrew F. Rowan, Jr  Reservoir",WaDENE_WS625,Surface Water
+NEwr_WS626,,,Fresh,Coleman Reservoir No. 1,WaDENE_WS626,Surface Water
+NEwr_WS627,,,Fresh,Heitmann Reservoir No 2,WaDENE_WS627,Surface Water
+NEwr_WS628,,,Fresh,T. Higgins Reservoir,WaDENE_WS628,Surface Water
+NEwr_WS629,,,Fresh,Kaupp Reservoir No. 1,WaDENE_WS629,Surface Water
+NEwr_WS630,,,Fresh,Kaupp Reservoir No. 4,WaDENE_WS630,Surface Water
+NEwr_WS631,,,Fresh,Rowan Reservoir,WaDENE_WS631,Surface Water
+NEwr_WS632,,,Fresh,Weller Reservoir,WaDENE_WS632,Surface Water
+NEwr_WS633,,,Fresh,Smith Reservoir No. 1,WaDENE_WS633,Surface Water
+NEwr_WS634,,,Fresh,Dobias Reservoir,WaDENE_WS634,Surface Water
+NEwr_WS635,,,Fresh,Pinkerman Reservoir No. 1,WaDENE_WS635,Surface Water
+NEwr_WS636,,,Fresh,Musfelt Reservoir,WaDENE_WS636,Surface Water
+NEwr_WS637,,,Fresh,Witherwax Reservoir,WaDENE_WS637,Surface Water
+NEwr_WS638,,,Fresh,"Bartos, Frank, Reservoir",WaDENE_WS638,Surface Water
+NEwr_WS639,,,Fresh,Bartos Reservoir,WaDENE_WS639,Surface Water
+NEwr_WS640,,,Fresh,Prouty Young Creek Reservoir,WaDENE_WS640,Surface Water
+NEwr_WS641,,,Fresh,Hamling & Hamling Reservoir,WaDENE_WS641,Surface Water
+NEwr_WS642,,,Fresh,Kappelman Reservoir,WaDENE_WS642,Surface Water
+NEwr_WS643,,,Fresh,Richardson Reservoir,WaDENE_WS643,Surface Water
+NEwr_WS644,,,Fresh,Becker Reservoir No. 2,WaDENE_WS644,Surface Water
+NEwr_WS645,,,Fresh,Hitchcock Reservoir No. 2,WaDENE_WS645,Surface Water
+NEwr_WS646,,,Fresh,Cline's Reservoir,WaDENE_WS646,Surface Water
+NEwr_WS647,,,Fresh,Coble Reservoir,WaDENE_WS647,Surface Water
+NEwr_WS648,,,Fresh,Hipke Reservoir,WaDENE_WS648,Surface Water
+NEwr_WS649,,,Fresh,Peterson Reservoir,WaDENE_WS649,Surface Water
+NEwr_WS650,,,Fresh,Peterson Reservoir No. 2,WaDENE_WS650,Surface Water
+NEwr_WS651,,,Fresh,Wenger Lease Reservoir,WaDENE_WS651,Surface Water
+NEwr_WS652,,,Fresh,Kaupp Reservoir No. 2,WaDENE_WS652,Surface Water
+NEwr_WS653,,,Fresh,Jensen Reservoir,WaDENE_WS653,Surface Water
+NEwr_WS654,,,Fresh,Lukow Reservoir,WaDENE_WS654,Surface Water
+NEwr_WS655,,,Fresh,"Indian Creek, Big, Reservoir 17-A",WaDENE_WS655,Surface Water
+NEwr_WS656,,,Fresh,Lineweber South Reservoir,WaDENE_WS656,Surface Water
+NEwr_WS657,,,Fresh,Thirty-Two Mile Creek Reservoir H,WaDENE_WS657,Surface Water
+NEwr_WS658,,,Fresh,Lightner Reservoir No. 3,WaDENE_WS658,Surface Water
+NEwr_WS659,,,Fresh,Big L Reservoir,WaDENE_WS659,Surface Water
+NEwr_WS660,,,Fresh,Crappie Lake,WaDENE_WS660,Surface Water
+NEwr_WS661,,,Fresh,Vonasek Reservoir,WaDENE_WS661,Surface Water
+NEwr_WS662,,,Fresh,Lightner Reservoir No. 2,WaDENE_WS662,Surface Water
+NEwr_WS663,,,Fresh,Big Valley Clean Water Basin,WaDENE_WS663,Surface Water
+NEwr_WS664,,,Fresh,"Frenchman River, Trib. To",WaDENE_WS664,Surface Water
+NEwr_WS665,,,Fresh,Clatonia Creek Reservoir 4-A,WaDENE_WS665,Surface Water
+NEwr_WS666,,,Fresh,Swan Creek,WaDENE_WS666,Surface Water
+NEwr_WS667,,,Fresh,"Berger Creek, Trib. to",WaDENE_WS667,Surface Water
+NEwr_WS668,,,Fresh,Big Sandy Res. 20-6-7,WaDENE_WS668,Surface Water
+NEwr_WS669,,,Fresh,Crooked Creek,WaDENE_WS669,Surface Water
+NEwr_WS670,,,Fresh,Haineraich Reservoir,WaDENE_WS670,Surface Water
+NEwr_WS671,,,Fresh,George Semler Reservoir,WaDENE_WS671,Surface Water
+NEwr_WS672,,,Fresh,Buckley Creek Watershed Dam 4-A,WaDENE_WS672,Surface Water
+NEwr_WS673,,,Fresh,Reiser Reservoir No 2,WaDENE_WS673,Surface Water
+NEwr_WS674,,,Fresh,Thirty-Two Mile Creek Reservoir J,WaDENE_WS674,Surface Water
+NEwr_WS675,,,Fresh,Pavelka Reservoir,WaDENE_WS675,Surface Water
+NEwr_WS676,,,Fresh,Nejezchleb Reservoir,WaDENE_WS676,Surface Water
+NEwr_WS677,,,Fresh,James J Lipovsky Reservoir,WaDENE_WS677,Surface Water
+NEwr_WS678,,,Fresh,Herz Reservoir,WaDENE_WS678,Surface Water
+NEwr_WS679,,,Fresh,Hubl Reservoir,WaDENE_WS679,Surface Water
+NEwr_WS680,,,Fresh,Vap Reservoir,WaDENE_WS680,Surface Water
+NEwr_WS681,,,Fresh,Schliep Reservoir,WaDENE_WS681,Surface Water
+NEwr_WS682,,,Fresh,Skalka Reservoir,WaDENE_WS682,Surface Water
+NEwr_WS683,,,Fresh,Harms-Clay County Reservoir,WaDENE_WS683,Surface Water
+NEwr_WS684,,,Fresh,State Creek,WaDENE_WS684,Surface Water
+NEwr_WS685,,,Fresh,Blackbird Reservoir,WaDENE_WS685,Surface Water
+NEwr_WS686,,,Fresh,Flobert Springs Reservoir,WaDENE_WS686,Surface Water
+NEwr_WS687,,,Fresh,Bayard Sugar Factory Drain,WaDENE_WS687,Surface Water
+NEwr_WS688,,,Fresh,"Thompson Creek, West Branch, Trib. To",WaDENE_WS688,Surface Water
+NEwr_WS689,,,Fresh,Lottman-Carpenter Reservoir,WaDENE_WS689,Surface Water
+NEwr_WS690,,,Fresh,"Papillion Creek, South, Trib. To",WaDENE_WS690,Surface Water
+NEwr_WS691,,,Fresh,Wollenburg Pond,WaDENE_WS691,Surface Water
+NEwr_WS692,,,Fresh,Parde West Irrigation Pond,WaDENE_WS692,Surface Water
+NEwr_WS693,,,Fresh,Wortmann Reservoir,WaDENE_WS693,Surface Water
+NEwr_WS694,,,Fresh,"Elm Creek, Trib. To",WaDENE_WS694,Surface Water
+NEwr_WS695,,,Fresh,Pinkerman Reservoir,WaDENE_WS695,Surface Water
+NEwr_WS696,,,Fresh,Swan Creek Reservoir 20,WaDENE_WS696,Surface Water
+NEwr_WS697,,,Fresh,"Buck Creek, trib to",WaDENE_WS697,Surface Water
+NEwr_WS698,,,Fresh,Buck Creek,WaDENE_WS698,Surface Water
+NEwr_WS699,,,Fresh,Plum Creek Reservoir 5-B,WaDENE_WS699,Surface Water
+NEwr_WS700,,,Fresh,Deer Creek Reservoir,WaDENE_WS700,Surface Water
+NEwr_WS701,,,Fresh,Jones Creek,WaDENE_WS701,Surface Water
+NEwr_WS702,,,Fresh,"Eagle Creek, East Branch",WaDENE_WS702,Surface Water
+NEwr_WS703,,,Fresh,Morrison Reservoir No. 1,WaDENE_WS703,Surface Water
+NEwr_WS704,,,Fresh,Hitchcock Reservoir No 3,WaDENE_WS704,Surface Water
+NEwr_WS705,,,Fresh,"Elder Creek, Trib. to",WaDENE_WS705,Surface Water
+NEwr_WS706,,,Fresh,Hofeling Pond No. 15-B,WaDENE_WS706,Surface Water
+NEwr_WS707,,,Fresh,"Horseshoe Creek, Trib to",WaDENE_WS707,Surface Water
+NEwr_WS708,,,Fresh,North Oak Reservoir 6-A,WaDENE_WS708,Surface Water
+NEwr_WS709,,,Fresh,"Bazile Creek, Little, Trib. To",WaDENE_WS709,Surface Water
+NEwr_WS710,,,Fresh,Serr Irrigation Reservoir,WaDENE_WS710,Surface Water
+NEwr_WS711,,,Fresh,Eagle Creek Reservoir,WaDENE_WS711,Surface Water
+NEwr_WS712,,,Fresh,Evers Farm Pond,WaDENE_WS712,Surface Water
+NEwr_WS713,,,Fresh,Long Branch Creek,WaDENE_WS713,Surface Water
+NEwr_WS714,,,Fresh,"Swartz Creek, Trib. to",WaDENE_WS714,Surface Water
+NEwr_WS715,,,Fresh,Bottle Creek,WaDENE_WS715,Surface Water
+NEwr_WS716,,,Fresh,Cub Creek Reservoir 10-A,WaDENE_WS716,Surface Water
+NEwr_WS717,,,Fresh,Weers Reservoir,WaDENE_WS717,Surface Water
+NEwr_WS718,,,Fresh,Lottman Irrigation Reservoir,WaDENE_WS718,Surface Water
+NEwr_WS719,,,Fresh,Big Indian Creek Reservoir 3-A,WaDENE_WS719,Surface Water
+NEwr_WS720,,,Fresh,Singleton Reservoir,WaDENE_WS720,Surface Water
+NEwr_WS721,,,Fresh,Pathfinder Reservoir,WaDENE_WS721,Surface Water
+NEwr_WS722,,,Fresh,"Republican River Basin, Trib to.",WaDENE_WS722,Surface Water
+NEwr_WS723,,,Fresh,"Whiskey Creek, Trib. To",WaDENE_WS723,Surface Water
+NEwr_WS724,,,Fresh,Kean Pond 1,WaDENE_WS724,Surface Water
+NEwr_WS725,,,Fresh,"Carr Creek, Trib to",WaDENE_WS725,Surface Water
+NEwr_WS726,,,Fresh,Wehrman Reservoir,WaDENE_WS726,Surface Water
+NEwr_WS727,,,Fresh,Barber Farms Reservoir,WaDENE_WS727,Surface Water
+NEwr_WS728,,,Fresh,Kingsley Reservoir,WaDENE_WS728,Surface Water
+NEwr_WS729,,,Fresh,Sutherland Reservoir,WaDENE_WS729,Surface Water
+NEwr_WS730,,,Fresh,"Frazier Creek, Trib. to",WaDENE_WS730,Surface Water
+NEwr_WS731,,,Fresh,Patterson Creek,WaDENE_WS731,Surface Water
+NEwr_WS732,,,Fresh,"Republican River, Trib. To",WaDENE_WS732,Surface Water
+NEwr_WS733,,,Fresh,Sherman Reservoir,WaDENE_WS733,Surface Water
+NEwr_WS734,,,Fresh,Sandbox Pond,WaDENE_WS734,Surface Water
+NEwr_WS735,,,Fresh,"Louse Creek, Trib to",WaDENE_WS735,Surface Water
+NEwr_WS736,,,Fresh,"Bow Creek, East, Trib. To",WaDENE_WS736,Surface Water
+NEwr_WS737,,,Fresh,Papillion Creek,WaDENE_WS737,Surface Water
+NEwr_WS738,,,Fresh,Daubendiek Reservoir No. 3,WaDENE_WS738,Surface Water
+NEwr_WS739,,,Fresh,"Turkey Creek, East Branch",WaDENE_WS739,Surface Water
+NEwr_WS740,,,Fresh,"Boxelder Creek, Trib. To",WaDENE_WS740,Surface Water
+NEwr_WS741,,,Fresh,"Enders, Strunk, Harlan County, Swanson And Hugh Butler Lake Reservoirs",WaDENE_WS741,Surface Water
+NEwr_WS742,,,Fresh,"Deep Creek, Trib. to",WaDENE_WS742,Surface Water
+NEwr_WS743,,,Fresh,Damme Irrigation Reservoir,WaDENE_WS743,Surface Water
+NEwr_WS744,,,Fresh,Richter Branch,WaDENE_WS744,Surface Water
+NEwr_WS745,,,Fresh,"Crooked Creek, Trib. To",WaDENE_WS745,Surface Water
+NEwr_WS746,,,Fresh,Cook Reservoir,WaDENE_WS746,Surface Water
+NEwr_WS747,,,Fresh,Boyer Irrigation Reservoir,WaDENE_WS747,Surface Water
+NEwr_WS748,,,Fresh,"Robinson Creek, Trib. To",WaDENE_WS748,Surface Water
+NEwr_WS749,,,Fresh,Jerry Gokie Reservoir,WaDENE_WS749,Surface Water
+NEwr_WS750,,,Fresh,"Turkey Creek, West Branch, Trib. to",WaDENE_WS750,Surface Water
+NEwr_WS751,,,Fresh,Arkeketa Creek,WaDENE_WS751,Surface Water
+NEwr_WS752,,,Fresh,Bradley Branch,WaDENE_WS752,Surface Water
+NEwr_WS753,,,Fresh,"Foster Creek, Tributary to",WaDENE_WS753,Surface Water
+NEwr_WS754,,,Fresh,Schlake Reservoir,WaDENE_WS754,Surface Water
+NEwr_WS755,,,Fresh,Mud Creek Reservoir 3-A,WaDENE_WS755,Surface Water
+NEwr_WS756,,,Fresh,"Twin Creek, trib to",WaDENE_WS756,Surface Water
+NEwr_WS757,,,Fresh,Davis Trust Reservoir,WaDENE_WS757,Surface Water
+NEwr_WS758,,,Fresh,"Thawes Creek, Trib To",WaDENE_WS758,Surface Water
+NEwr_WS759,,,Fresh,Swan Creek Reservoir No 27,WaDENE_WS759,Surface Water
+NEwr_WS760,,,Fresh,"Blue River, Big, West Fork, Trib. To",WaDENE_WS760,Surface Water
+NEwr_WS761,,,Fresh,Beckler Small Dam,WaDENE_WS761,Surface Water
+NEwr_WS762,,,Fresh,Messenger Creek,WaDENE_WS762,Surface Water
+NEwr_WS763,,,Fresh,Sicily Creek,WaDENE_WS763,Surface Water
+NEwr_WS764,,,Fresh,Little Indian 15-A Reservoir,WaDENE_WS764,Surface Water
+NEwr_WS765,,,Fresh,Linn Creek,WaDENE_WS765,Surface Water
+NEwr_WS766,,,Fresh,Big Indian Creek Reservoir 13-C,WaDENE_WS766,Surface Water
+NEwr_WS767,,,Fresh,"Papillion Creek, Big, Trib. To",WaDENE_WS767,Surface Water
+NEwr_WS768,,,Fresh,Springs,WaDENE_WS768,Surface Water
+NEwr_WS769,,,Fresh,"Omaha Creek, North",WaDENE_WS769,Surface Water
+NEwr_WS770,,,Fresh,"Buffalo Creek, Big",WaDENE_WS770,Surface Water
+NEwr_WS771,,,Fresh,Carr Creek,WaDENE_WS771,Surface Water
+NEwr_WS772,,,Fresh,"Papillion Creek, Little, Trib. To",WaDENE_WS772,Surface Water
+NEwr_WS773,,,Fresh,"Long Creek, Trib. To",WaDENE_WS773,Surface Water
+NEwr_WS774,,,Fresh,Omaha Creek,WaDENE_WS774,Surface Water
+NEwr_WS775,,,Fresh,"Bell Creek, Little, Trib. To",WaDENE_WS775,Surface Water
+NEwr_WS776,,,Fresh,"Papillion Creek, Big, Northwest Branch, Trib. To",WaDENE_WS776,Surface Water
+NEwr_WS777,,,Fresh,"Papillion Creek, Little",WaDENE_WS777,Surface Water
+NEwr_WS778,,,Fresh,Fiddler's Creek,WaDENE_WS778,Surface Water
+NEwr_WS779,,,Fresh,"Brown Creek, Trib. To",WaDENE_WS779,Surface Water
+NEwr_WS780,,,Fresh,Brown Creek,WaDENE_WS780,Surface Water
+NEwr_WS781,,,Fresh,"Bell Creek, Little",WaDENE_WS781,Surface Water
+NEwr_WS782,,,Fresh,"New York Creek, Trib. To",WaDENE_WS782,Surface Water
+NEwr_WS783,,,Fresh,"Tekamah Creek, Trib. To",WaDENE_WS783,Surface Water
+NEwr_WS784,,,Fresh,"Bell Creek, Trib. To",WaDENE_WS784,Surface Water
+NEwr_WS785,,,Fresh,Tekamah-Mud Creek Reservoir 41-A,WaDENE_WS785,Surface Water
+NEwr_WS786,,,Fresh,Buttermilk Creek,WaDENE_WS786,Surface Water
+NEwr_WS787,,,Fresh,"Buffalo Creek, Big, Trib. To",WaDENE_WS787,Surface Water
+NEwr_WS788,,,Fresh,"Moores Creek, Trib. To",WaDENE_WS788,Surface Water
+NEwr_WS789,,,Fresh,Armbrust Creek,WaDENE_WS789,Surface Water
+NEwr_WS790,,,Fresh,Moores Creek,WaDENE_WS790,Surface Water
+NEwr_WS791,,,Fresh,Hell Creek,WaDENE_WS791,Surface Water
+NEwr_WS792,,,Fresh,Falls Branch,WaDENE_WS792,Surface Water
+NEwr_WS793,,,Fresh,Eagle Run West Reservoir,WaDENE_WS793,Surface Water
+NEwr_WS794,,,Fresh,"Papillion Creek, Trib. To",WaDENE_WS794,Surface Water
+NEwr_WS795,,,Fresh,"Butter Flat Creek, Trib To",WaDENE_WS795,Surface Water
+NEwr_WS796,,,Fresh,"Pigeon Creek, Trib. To",WaDENE_WS796,Surface Water
+NEwr_WS797,,,Fresh,"Enders, Strunk, Harlan County And Swanson Reservoirs",WaDENE_WS797,Surface Water
+NEwr_WS798,,,Fresh,Papio Greens Golf Course Lake,WaDENE_WS798,Surface Water
+NEwr_WS799,,,Fresh,"Papillion Creek, West, North Branch, Trib. To",WaDENE_WS799,Surface Water
+NEwr_WS800,,,Fresh,Deer Creek Golf Course Ponds,WaDENE_WS800,Surface Water
+NEwr_WS801,,,Fresh,Mulhalls Regulating Pit,WaDENE_WS801,Surface Water
+NEwr_WS802,,,Fresh,Middle Big Nemaha Reservoir 88,WaDENE_WS802,Surface Water
+NEwr_WS803,,,Fresh,Schoof Reservoir,WaDENE_WS803,Surface Water
+NEwr_WS804,,,Fresh,Corman Reservoir,WaDENE_WS804,Surface Water
+NEwr_WS805,,,Fresh,Jelsma Reservoir,WaDENE_WS805,Surface Water
+NEwr_WS806,,,Fresh,Ahrens Reservoir,WaDENE_WS806,Surface Water
+NEwr_WS807,,,Fresh,Janssen Reservoir,WaDENE_WS807,Surface Water
+NEwr_WS808,,,Fresh,Hoyt Reservoir,WaDENE_WS808,Surface Water
+NEwr_WS809,,,Fresh,Mazour-Schroeder Reservoir,WaDENE_WS809,Surface Water
+NEwr_WS810,,,Fresh,Simonsen Reservoir,WaDENE_WS810,Surface Water
+NEwr_WS811,,,Fresh,Williams Reservoir,WaDENE_WS811,Surface Water
+NEwr_WS812,,,Fresh,Jeppesen Reservoir,WaDENE_WS812,Surface Water
+NEwr_WS813,,,Fresh,Fisher Reservoir No. 1,WaDENE_WS813,Surface Water
+NEwr_WS814,,,Fresh,Leigh Reservoir,WaDENE_WS814,Surface Water
+NEwr_WS815,,,Fresh,Drohman Reservoir,WaDENE_WS815,Surface Water
+NEwr_WS816,,,Fresh,Bostelman Reservoir,WaDENE_WS816,Surface Water
+NEwr_WS817,,,Fresh,Elting Reservoir,WaDENE_WS817,Surface Water
+NEwr_WS818,,,Fresh,Thomas Wright Reservoir No. 1,WaDENE_WS818,Surface Water
+NEwr_WS819,,,Fresh,Weeping Water Old Quarry Pit,WaDENE_WS819,Surface Water
+NEwr_WS820,,,Fresh,Big Indian Creek Reservoir 7-A,WaDENE_WS820,Surface Water
+NEwr_WS821,,,Fresh,Ponca Creek,WaDENE_WS821,Surface Water
+NEwr_WS822,,,Fresh,Ruttman Reservoir,WaDENE_WS822,Surface Water
+NEwr_WS823,,,Fresh,Benson Reservoir,WaDENE_WS823,Surface Water
+NEwr_WS824,,,Fresh,"Swan Creek, North Fork",WaDENE_WS824,Surface Water
+NEwr_WS825,,,Fresh,Carsten's Pond,WaDENE_WS825,Surface Water
+NEwr_WS826,,,Fresh,Souther Reservoir,WaDENE_WS826,Surface Water
+NEwr_WS827,,,Fresh,Monroe Creek,WaDENE_WS827,Surface Water
+NEwr_WS828,,,Fresh,Schlichtemeier Reservoir No. 1,WaDENE_WS828,Surface Water
+NEwr_WS829,,,Fresh,Mahloch-Kastanek Reservoir,WaDENE_WS829,Surface Water
+NEwr_WS830,,,Fresh,Mahon Reservoir No 1,WaDENE_WS830,Surface Water
+NEwr_WS831,,,Fresh,Cedar Creek Reservoir 9-B,WaDENE_WS831,Surface Water
+NEwr_WS832,,,Fresh,Spitsnogle Irrigation Reservoir,WaDENE_WS832,Surface Water
+NEwr_WS833,,,Fresh,Swan Creek Reservoir 35,WaDENE_WS833,Surface Water
+NEwr_WS834,,,Fresh,"Bear Creek, Trib. To",WaDENE_WS834,Surface Water
+NEwr_WS835,,,Fresh,BK's Dream,WaDENE_WS835,Surface Water
+NEwr_WS836,,,Fresh,Prairie Dog Creek,WaDENE_WS836,Surface Water
+NEwr_WS837,,,Fresh,Moody Reservoir No. 2,WaDENE_WS837,Surface Water
+NEwr_WS838,,,Fresh,Indian Tree Creek,WaDENE_WS838,Surface Water
+NEwr_WS839,,,Fresh,"Little Creek, Trib. To",WaDENE_WS839,Surface Water
+NEwr_WS840,,,Fresh,Clatonia Creek,WaDENE_WS840,Surface Water
+NEwr_WS841,,,Fresh,"Little Logan Creek, Trib. To",WaDENE_WS841,Surface Water
+NEwr_WS842,,,Fresh,"Bills Creek, Trib to",WaDENE_WS842,Surface Water
+NEwr_WS843,,,Fresh,Warbonnet Creek,WaDENE_WS843,Surface Water
+NEwr_WS844,,,Fresh,Fuller Family Reservoir,WaDENE_WS844,Surface Water
+NEwr_WS845,,,Fresh,Bear-Pierce-Cedar Reservoir 6-A,WaDENE_WS845,Surface Water
+NEwr_WS846,,,Fresh,"Mitchell Creek, Trib. To",WaDENE_WS846,Surface Water
+NEwr_WS847,,,Fresh,Koehler Reservoir,WaDENE_WS847,Surface Water
+NEwr_WS848,,,Fresh,Mill Creek,WaDENE_WS848,Surface Water
+NEwr_WS849,,,Fresh,"Papillion Creek, West, North Branch",WaDENE_WS849,Surface Water
+NEwr_WS850,,,Fresh,Kibby Reservoir,WaDENE_WS850,Surface Water
+NEwr_WS851,,,Fresh,Sehi Reservoir,WaDENE_WS851,Surface Water
+NEwr_WS852,,,Fresh,Vinson Reservoir,WaDENE_WS852,Surface Water
+NEwr_WS853,,,Fresh,Kucera Reservoir,WaDENE_WS853,Surface Water
+NEwr_WS854,,,Fresh,Funk Reservoir,WaDENE_WS854,Surface Water
+NEwr_WS855,,,Fresh,O'brien Reservoir,WaDENE_WS855,Surface Water
+NEwr_WS856,,,Fresh,Dunlap Reservoir,WaDENE_WS856,Surface Water
+NEwr_WS857,,,Fresh,Ned Painter Reservoir,WaDENE_WS857,Surface Water
+NEwr_WS858,,,Fresh,Jones Reservoir,WaDENE_WS858,Surface Water
+NEwr_WS859,,,Fresh,Cameron Reservoir,WaDENE_WS859,Surface Water
+NEwr_WS860,,,Fresh,Rasmussen Reservoir,WaDENE_WS860,Surface Water
+NEwr_WS861,,,Fresh,"Boevau Canyon, Trib. to",WaDENE_WS861,Surface Water
+NEwr_WS862,,,Fresh,Lohff Creek,WaDENE_WS862,Surface Water
+NEwr_WS863,,,Fresh,Mazour Reservoir,WaDENE_WS863,Surface Water
+NEwr_WS864,,,Fresh,Schroeder Reservoir,WaDENE_WS864,Surface Water
+NEwr_WS865,,,Fresh,Heitmann Reservoir No 1,WaDENE_WS865,Surface Water
+NEwr_WS866,,,Fresh,"Squaw Creek, Trib. To",WaDENE_WS866,Surface Water
+NEwr_WS867,,,Fresh,"Coon Creek, Trib. to",WaDENE_WS867,Surface Water
+NEwr_WS868,,,Fresh,"Sappa Creek, Trib. To",WaDENE_WS868,Surface Water
+NEwr_WS869,,,Fresh,"Clatonia Creek, Trib. To",WaDENE_WS869,Surface Water
+NEwr_WS870,,,Fresh,Reams Creek,WaDENE_WS870,Surface Water
+NEwr_WS871,,,Fresh,"Willow Creek, Trib. To",WaDENE_WS871,Surface Water
+NEwr_WS872,,,Fresh,"Farmers Creek, East Fork, Trib to",WaDENE_WS872,Surface Water
+NEwr_WS873,,,Fresh,"Flag Creek, Trib. to",WaDENE_WS873,Surface Water
+NEwr_WS874,,,Fresh,Lochile Creek,WaDENE_WS874,Surface Water
+NEwr_WS875,,,Fresh,"Lovely Creek, Trib to",WaDENE_WS875,Surface Water
+NEwr_WS876,,,Fresh,Swartz Creek,WaDENE_WS876,Surface Water
+NEwr_WS877,,,Fresh,"Medicine Creek, Trib. To",WaDENE_WS877,Surface Water
+NEwr_WS878,,,Fresh,"Prairie Dog Creek, Trib. To",WaDENE_WS878,Surface Water
+NEwr_WS879,,,Fresh,Fintel Reservoir,WaDENE_WS879,Surface Water
+NEwr_WS880,,,Fresh,Priess Reservoir No. 1,WaDENE_WS880,Surface Water
+NEwr_WS881,,,Fresh,Morrill Drain,WaDENE_WS881,Surface Water
+NEwr_WS882,,,Fresh,Winters Creek,WaDENE_WS882,Surface Water
+NEwr_WS883,,,Fresh,"Gering Drain, Trib. To",WaDENE_WS883,Surface Water
+NEwr_WS884,,,Fresh,"Wildhorse Creek, West",WaDENE_WS884,Surface Water
+NEwr_WS885,,,Fresh,Pumpkinseed Creek,WaDENE_WS885,Surface Water
+NEwr_WS886,,,Fresh,Big Horn Creek,WaDENE_WS886,Surface Water
+NEwr_WS887,,,Fresh,Muhr Reservoir,WaDENE_WS887,Surface Water
+NEwr_WS888,,,Fresh,Brown Reservoir,WaDENE_WS888,Surface Water
+NEwr_WS889,,,Fresh,"Hackberry Creek, Trib. To",WaDENE_WS889,Surface Water
+NEwr_WS890,,,Fresh,Lawrence Fork,WaDENE_WS890,Surface Water
+NEwr_WS891,,,Fresh,Schuetz Springs,WaDENE_WS891,Surface Water
+NEwr_WS892,,,Fresh,"Greenwood Creek, Trib. To",WaDENE_WS892,Surface Water
+NEwr_WS893,,,Fresh,"Dugout Creek, Lower",WaDENE_WS893,Surface Water
+NEwr_WS894,,,Fresh,Big Indian Creek Reservoir 16-B,WaDENE_WS894,Surface Water
+NEwr_WS895,,,Fresh,"Cedar Creek, West Fork",WaDENE_WS895,Surface Water
+NEwr_WS896,,,Fresh,"Cedar Creek, East Fork",WaDENE_WS896,Surface Water
+NEwr_WS897,,,Fresh,"Lost Creek, Trib. To",WaDENE_WS897,Surface Water
+NEwr_WS898,,,Fresh,Clark Reservoir,WaDENE_WS898,Surface Water
+NEwr_WS899,,,Fresh,"Spotted Tail Creek, Wet",WaDENE_WS899,Surface Water
+NEwr_WS900,,,Fresh,"Calumet Creek, Trib to",WaDENE_WS900,Surface Water
+NEwr_WS901,,,Fresh,Tub Springs,WaDENE_WS901,Surface Water
+NEwr_WS902,,,Fresh,Skunk Creek,WaDENE_WS902,Surface Water
+NEwr_WS903,,,Fresh,Mathews Creek,WaDENE_WS903,Surface Water
+NEwr_WS904,,,Fresh,Birdwood Creek,WaDENE_WS904,Surface Water
+NEwr_WS905,,,Fresh,Kiowa Creek,WaDENE_WS905,Surface Water
+NEwr_WS906,,,Fresh,"Red Willow Creek, Trib. To",WaDENE_WS906,Surface Water
+NEwr_WS907,,,Fresh,Lodgepole Creek,WaDENE_WS907,Surface Water
+NEwr_WS908,,,Fresh,Gooseneck Creek,WaDENE_WS908,Surface Water
+NEwr_WS909,,,Fresh,"Ash Creek, East",WaDENE_WS909,Surface Water
+NEwr_WS910,,,Fresh,Grade Stabilization Reservoir 1-1,WaDENE_WS910,Surface Water
+NEwr_WS911,,,Fresh,Cleveland Drain,WaDENE_WS911,Surface Water
+NEwr_WS912,,,Fresh,Hoth Draw,WaDENE_WS912,Surface Water
+NEwr_WS913,,,Fresh,Norman Reservoir,WaDENE_WS913,Surface Water
+NEwr_WS914,,,Fresh,Livingston Section 8 Pond,WaDENE_WS914,Surface Water
+NEwr_WS915,,,Fresh,Oxbow Reservoir,WaDENE_WS915,Surface Water
+NEwr_WS916,,,Fresh,Gebauer Lake,WaDENE_WS916,Surface Water
+NEwr_WS917,,,Fresh,"Thompson Creek, West Branch",WaDENE_WS917,Surface Water
+NEwr_WS918,,,Fresh,Hagemeier Reservoir,WaDENE_WS918,Surface Water
+NEwr_WS919,,,Fresh,Beckler Large Dam,WaDENE_WS919,Surface Water
+NEwr_WS920,,,Fresh,"Barneys Branch, Trib to",WaDENE_WS920,Surface Water
+NEwr_WS921,,,Fresh,Bear-Pierce-Cedar 7-J Reservoir,WaDENE_WS921,Surface Water
+NEwr_WS922,,,Fresh,Buckeye Creek,WaDENE_WS922,Surface Water
+NEwr_WS923,,,Fresh,"Lonergan Creek, Trib. To",WaDENE_WS923,Surface Water
+NEwr_WS924,,,Fresh,White Horse Creek,WaDENE_WS924,Surface Water
+NEwr_WS925,,,Fresh,"White Horse Creek, Trib. To",WaDENE_WS925,Surface Water
+NEwr_WS926,,,Fresh,Bull Drain,WaDENE_WS926,Surface Water
+NEwr_WS927,,,Fresh,Stump Ditch,WaDENE_WS927,Surface Water
+NEwr_WS928,,,Fresh,"Strever Creek, Trib. To",WaDENE_WS928,Surface Water
+NEwr_WS929,,,Fresh,Sacramento Creek,WaDENE_WS929,Surface Water
+NEwr_WS930,,,Fresh,Snake Creek,WaDENE_WS930,Surface Water
+NEwr_WS931,,,Fresh,"Cedar Creek, West",WaDENE_WS931,Surface Water
+NEwr_WS932,,,Fresh,Dane Reservoir,WaDENE_WS932,Surface Water
+NEwr_WS933,,,Fresh,Johnson Reservoir,WaDENE_WS933,Surface Water
+NEwr_WS934,,,Fresh,Stratton Reservoir,WaDENE_WS934,Surface Water
+NEwr_WS935,,,Fresh,Sheep Creek,WaDENE_WS935,Surface Water
+NEwr_WS936,,,Fresh,"Spotted Tail Creek, Dry",WaDENE_WS936,Surface Water
+NEwr_WS937,,,Fresh,Sappa Creek,WaDENE_WS937,Surface Water
+NEwr_WS938,,,Fresh,Airedale Reservoir No. 3,WaDENE_WS938,Surface Water
+NEwr_WS939,,,Fresh,"Lawrence Fork, Trib. To",WaDENE_WS939,Surface Water
+NEwr_WS940,,,Fresh,Trausch Reservoir,WaDENE_WS940,Surface Water
+NEwr_WS941,,,Fresh,Trausch Brothers Reservoir,WaDENE_WS941,Surface Water
+NEwr_WS942,,,Fresh,Struebing Reservoir,WaDENE_WS942,Surface Water
+NEwr_WS943,,,Fresh,Thompson Creek,WaDENE_WS943,Surface Water
+NEwr_WS944,,,Fresh,"Four Mile Creek, West Branch",WaDENE_WS944,Surface Water
+NEwr_WS945,,,Fresh,"Randall Creek, Trib. To",WaDENE_WS945,Surface Water
+NEwr_WS946,,,Fresh,"Sardine Creek, Trib To",WaDENE_WS946,Surface Water
+NEwr_WS947,,,Fresh,Badland Reservoir,WaDENE_WS947,Surface Water
+NEwr_WS948,,,Fresh,Root Pond,WaDENE_WS948,Surface Water
+NEwr_WS949,,,Fresh,"Pearl Creek, Trib. To",WaDENE_WS949,Surface Water
+NEwr_WS950,,,Fresh,Coal Creek,WaDENE_WS950,Surface Water
+NEwr_WS951,,,Fresh,Driftwood Creek,WaDENE_WS951,Surface Water
+NEwr_WS952,,,Fresh,Dusenbery Reservoir,WaDENE_WS952,Surface Water
+NEwr_WS953,,,Fresh,"Lincoln Creek, Trib. To",WaDENE_WS953,Surface Water
+NEwr_WS954,,,Fresh,Mader Reservoirs 1-2,WaDENE_WS954,Surface Water
+NEwr_WS955,,,Fresh,Myron Nilson Reservoir,WaDENE_WS955,Surface Water
+NEwr_WS956,,,Fresh,Dusenbery Reservoir East,WaDENE_WS956,Surface Water
+NEwr_WS957,,,Fresh,Percival-Erickson Reservoir,WaDENE_WS957,Surface Water
+NEwr_WS958,,,Fresh,West Limited Farm Pond,WaDENE_WS958,Surface Water
+NEwr_WS959,,,Fresh,Meadow Creek,WaDENE_WS959,Surface Water
+NEwr_WS960,,,Fresh,"Pebble Creek, Trib. To",WaDENE_WS960,Surface Water
+NEwr_WS961,,,Fresh,Vitosh Reservoir No. 1,WaDENE_WS961,Surface Water
+NEwr_WS962,,,Fresh,"Lodgepole Creek, Trib. To",WaDENE_WS962,Surface Water
+NEwr_WS963,,,Fresh,Wortham Creek,WaDENE_WS963,Surface Water
+NEwr_WS964,,,Fresh,Fawcus Springs,WaDENE_WS964,Surface Water
+NEwr_WS965,,,Fresh,Meredith Reservoir,WaDENE_WS965,Surface Water
+NEwr_WS966,,,Fresh,Schlichtemeier Reservoir No. 2,WaDENE_WS966,Surface Water
+NEwr_WS967,,,Fresh,Freese Reservoir No. 1,WaDENE_WS967,Surface Water
+NEwr_WS968,,,Fresh,Grote Reservoir,WaDENE_WS968,Surface Water
+NEwr_WS969,,,Fresh,Little Red Creek,WaDENE_WS969,Surface Water
+NEwr_WS970,,,Fresh,"Bozle Creek, Trib. To",WaDENE_WS970,Surface Water
+NEwr_WS971,,,Fresh,"Cherry Creek, Trib. To",WaDENE_WS971,Surface Water
+NEwr_WS972,,,Fresh,Fourmile Creek,WaDENE_WS972,Surface Water
+NEwr_WS973,,,Fresh,"Bow Creek, West, Trib. To",WaDENE_WS973,Surface Water
+NEwr_WS974,,,Fresh,Norwegian Bow Creek,WaDENE_WS974,Surface Water
+NEwr_WS975,,,Fresh,Sow Belly Creek,WaDENE_WS975,Surface Water
+NEwr_WS976,,,Fresh,Grotrian Reservoir No. 1,WaDENE_WS976,Surface Water
+NEwr_WS977,,,Fresh,"Weeping Water Creek, North Branch",WaDENE_WS977,Surface Water
+NEwr_WS978,,,Fresh,Goose Creek,WaDENE_WS978,Surface Water
+NEwr_WS979,,,Fresh,Oak Prairie Reservoir,WaDENE_WS979,Surface Water
+NEwr_WS980,,,Fresh,Trunk Butte Creek,WaDENE_WS980,Surface Water
+NEwr_WS981,,,Fresh,Medicine Creek,WaDENE_WS981,Surface Water
+NEwr_WS982,,,Fresh,"Sacramento Creek, Trib. To",WaDENE_WS982,Surface Water
+NEwr_WS983,,,Fresh,Hayek Farm Pond,WaDENE_WS983,Surface Water
+NEwr_WS984,,,Fresh,"Swan Creek, North Fork, Trib. To",WaDENE_WS984,Surface Water
+NEwr_WS985,,,Fresh,Aowa Creek,WaDENE_WS985,Surface Water
+NEwr_WS986,,,Fresh,Foster Creek,WaDENE_WS986,Surface Water
+NEwr_WS987,,,Fresh,Lueking Reservoir,WaDENE_WS987,Surface Water
+NEwr_WS988,,,Fresh,Pierce Creek,WaDENE_WS988,Surface Water
+NEwr_WS989,,,Fresh,"Aowa Creek, Trib. To",WaDENE_WS989,Surface Water
+NEwr_WS990,,,Fresh,Lake Maraguay,WaDENE_WS990,Surface Water
+NEwr_WS991,,,Fresh,Horse Creek,WaDENE_WS991,Surface Water
+NEwr_WS992,,,Fresh,Lake Maloney,WaDENE_WS992,Surface Water
+NEwr_WS993,,,Fresh,Cold Water Creek,WaDENE_WS993,Surface Water
+NEwr_WS994,,,Fresh,Yankton Slough,WaDENE_WS994,Surface Water
+NEwr_WS995,,,Fresh,Combination Ditch,WaDENE_WS995,Surface Water
+NEwr_WS996,,,Fresh,Stinking Water Creek,WaDENE_WS996,Surface Water
+NEwr_WS997,,,Fresh,Lime Creek,WaDENE_WS997,Surface Water
+NEwr_WS998,,,Fresh,Davis Creek Reservoir,WaDENE_WS998,Surface Water
+NEwr_WS999,,,Fresh,McGinnis Reservoir,WaDENE_WS999,Surface Water
+NEwr_WS1000,,,Fresh,Schaardt Irrigation Dam,WaDENE_WS1000,Surface Water
+NEwr_WS1001,,,Fresh,Gardner Reservoir No. 2,WaDENE_WS1001,Surface Water
+NEwr_WS1002,,,Fresh,"Driftwood Creek, Trib. To",WaDENE_WS1002,Surface Water
+NEwr_WS1003,,,Fresh,"Brushy Creek, South",WaDENE_WS1003,Surface Water
+NEwr_WS1004,,,Fresh,Frazier Creek,WaDENE_WS1004,Surface Water
+NEwr_WS1005,,,Fresh,Brushy Creek,WaDENE_WS1005,Surface Water
+NEwr_WS1006,,,Fresh,Cut Creek,WaDENE_WS1006,Surface Water
+NEwr_WS1007,,,Fresh,Curtis Creek,WaDENE_WS1007,Surface Water
+NEwr_WS1008,,,Fresh,Kean Pond 2,WaDENE_WS1008,Surface Water
+NEwr_WS1009,,,Fresh,Norman Reservoir No. 1,WaDENE_WS1009,Surface Water
+NEwr_WS1010,,,Fresh,Norman Reservoir No. 2,WaDENE_WS1010,Surface Water
+NEwr_WS1011,,,Fresh,"Blue River, Big, West Fork, North Branch",WaDENE_WS1011,Surface Water
+NEwr_WS1012,,,Fresh,Nine Mile Creek,WaDENE_WS1012,Surface Water
+NEwr_WS1013,,,Fresh,Knigge Dam West,WaDENE_WS1013,Surface Water
+NEwr_WS1014,,,Fresh,Binder Reservoir,WaDENE_WS1014,Surface Water
+NEwr_WS1015,,,Fresh,Dane Creek,WaDENE_WS1015,Surface Water
+NEwr_WS1016,,,Fresh,Wildcat Reservoir,WaDENE_WS1016,Surface Water
+NEwr_WS1017,,,Fresh,"Muddy Creek, East Branch, Trib. To",WaDENE_WS1017,Surface Water
+NEwr_WS1018,,,Fresh,Robinson Reservoir,WaDENE_WS1018,Surface Water
+NEwr_WS1019,,,Fresh,Nissen Pit No. 3,WaDENE_WS1019,Surface Water
+NEwr_WS1020,,,Fresh,Milrose Creek,WaDENE_WS1020,Surface Water
+NEwr_WS1021,,,Fresh,Twin Creek,WaDENE_WS1021,Surface Water
+NEwr_WS1022,,,Fresh,Flag Creek,WaDENE_WS1022,Surface Water
+NEwr_WS1023,,,Fresh,Mcneil Reservoir,WaDENE_WS1023,Surface Water
+NEwr_WS1024,,,Fresh,Rebecca Creek,WaDENE_WS1024,Surface Water
+NEwr_WS1025,,,Fresh,Vining Creek,WaDENE_WS1025,Surface Water
+NEwr_WS1026,,,Fresh,Balls Branch,WaDENE_WS1026,Surface Water
+NEwr_WS1027,,,Fresh,"Spotted Tail Creek, Spring Branch",WaDENE_WS1027,Surface Water
+NEwr_WS1028,,,Fresh,"Thompson Creek, East Branch",WaDENE_WS1028,Surface Water
+NEwr_WS1029,,,Fresh,"Hicks Creek, Trib. To",WaDENE_WS1029,Surface Water
+NEwr_WS1030,,,Fresh,Ohmstede Reservoir,WaDENE_WS1030,Surface Water
+NEwr_WS1031,,,Fresh,"Gimlet Creek, Trib. To",WaDENE_WS1031,Surface Water
+NEwr_WS1032,,,Fresh,Schiermeyer Reservoir,WaDENE_WS1032,Surface Water
+NEwr_WS1033,,,Fresh,"Blakely Creek, Trib. To",WaDENE_WS1033,Surface Water
+NEwr_WS1034,,,Fresh,Valley Home Creek,WaDENE_WS1034,Surface Water
+NEwr_WS1035,,,Fresh,Saul Reservoir,WaDENE_WS1035,Surface Water
+NEwr_WS1036,,,Fresh,"Crosby Creek, Trib. To",WaDENE_WS1036,Surface Water
+NEwr_WS1037,,,Fresh,Nelson Reservoir,WaDENE_WS1037,Surface Water
+NEwr_WS1038,,,Fresh,Blackstone Reservoir,WaDENE_WS1038,Surface Water
+NEwr_WS1039,,,Fresh,Crosby Creek,WaDENE_WS1039,Surface Water
+NEwr_WS1040,,,Fresh,"Rope Creek, Trib. to",WaDENE_WS1040,Surface Water
+NEwr_WS1041,,,Fresh,Blackwood Creek,WaDENE_WS1041,Surface Water
+NEwr_WS1042,,,Fresh,"Blackwood Creek, Trib. To",WaDENE_WS1042,Surface Water
+NEwr_WS1043,,,Fresh,Hugh Butler Lake,WaDENE_WS1043,Surface Water
+NEwr_WS1044,,,Fresh,Eureka Creek,WaDENE_WS1044,Surface Water
+NEwr_WS1045,,,Fresh,Walnut Run,WaDENE_WS1045,Surface Water
+NEwr_WS1046,,,Fresh,South Reservoir Sullivan,WaDENE_WS1046,Surface Water
+NEwr_WS1047,,,Fresh,South Reservoir Home,WaDENE_WS1047,Surface Water
+NEwr_WS1048,,,Fresh,Hat Creek,WaDENE_WS1048,Surface Water
+NEwr_WS1049,,,Fresh,Jim Creek,WaDENE_WS1049,Surface Water
+NEwr_WS1050,,,Fresh,"Antelope Creek, South",WaDENE_WS1050,Surface Water
+NEwr_WS1051,,,Fresh,"Whitehead Creek, Trib. To",WaDENE_WS1051,Surface Water
+NEwr_WS1052,,,Fresh,Cherry Creek,WaDENE_WS1052,Surface Water
+NEwr_WS1053,,,Fresh,"Squaw Creek, South",WaDENE_WS1053,Surface Water
+NEwr_WS1054,,,Fresh,"Hat Creek, West",WaDENE_WS1054,Surface Water
+NEwr_WS1055,,,Fresh,"Jim Creek, East, Trib. To",WaDENE_WS1055,Surface Water
+NEwr_WS1056,,,Fresh,"Antelope Creek, North",WaDENE_WS1056,Surface Water
+NEwr_WS1057,,,Fresh,"Boggy Creek, Middle",WaDENE_WS1057,Surface Water
+NEwr_WS1058,,,Fresh,Lickett Creek,WaDENE_WS1058,Surface Water
+NEwr_WS1059,,,Fresh,"Jim Creek, East",WaDENE_WS1059,Surface Water
+NEwr_WS1060,,,Fresh,"Squaw Creek, West Branch",WaDENE_WS1060,Surface Water
+NEwr_WS1061,,,Fresh,Boggy Creek,WaDENE_WS1061,Surface Water
+NEwr_WS1062,,,Fresh,Cornelius Jordan Reservoir,WaDENE_WS1062,Surface Water
+NEwr_WS1063,,,Fresh,"Boggy Creek, West",WaDENE_WS1063,Surface Water
+NEwr_WS1064,,,Fresh,Turner Reservoir,WaDENE_WS1064,Surface Water
+NEwr_WS1065,,,Fresh,Caladonia Reservoir,WaDENE_WS1065,Surface Water
+NEwr_WS1066,,,Fresh,Geike Creek,WaDENE_WS1066,Surface Water
+NEwr_WS1067,,,Fresh,Dout Reservoir No. 1,WaDENE_WS1067,Surface Water
+NEwr_WS1068,,,Fresh,Dout Reservoir No. 2,WaDENE_WS1068,Surface Water
+NEwr_WS1069,,,Fresh,Plunkett Reservoir,WaDENE_WS1069,Surface Water
+NEwr_WS1070,,,Fresh,Jordan Draw,WaDENE_WS1070,Surface Water
+NEwr_WS1071,,,Fresh,Dan Jordan Reservoir,WaDENE_WS1071,Surface Water
+NEwr_WS1072,,,Fresh,Wickersham Reservoir,WaDENE_WS1072,Surface Water
+NEwr_WS1073,,,Fresh,Crystal Lake Reservoir,WaDENE_WS1073,Surface Water
+NEwr_WS1074,,,Fresh,"Monroe Creek, Trib. To",WaDENE_WS1074,Surface Water
+NEwr_WS1075,,,Fresh,Andrews Reservoir,WaDENE_WS1075,Surface Water
+NEwr_WS1076,,,Fresh,"Hat Creek, Trib. To",WaDENE_WS1076,Surface Water
+NEwr_WS1077,,,Fresh,"Jim Creek, Trib. To",WaDENE_WS1077,Surface Water
+NEwr_WS1078,,,Fresh,Whitehead Creek,WaDENE_WS1078,Surface Water
+NEwr_WS1079,,,Fresh,Geiser Reservoir,WaDENE_WS1079,Surface Water
+NEwr_WS1080,,,Fresh,Snyder Reservoir,WaDENE_WS1080,Surface Water
+NEwr_WS1081,,,Fresh,A Jordan Reservoir,WaDENE_WS1081,Surface Water
+NEwr_WS1082,,,Fresh,A Jordan Lower Reservoir,WaDENE_WS1082,Surface Water
+NEwr_WS1083,,,Fresh,Vyzourek Reservoir No. 2,WaDENE_WS1083,Surface Water
+NEwr_WS1084,,,Fresh,Vyzourek Reservoir No. 3,WaDENE_WS1084,Surface Water
+NEwr_WS1085,,,Fresh,Schaefer Reservoir No. 1,WaDENE_WS1085,Surface Water
+NEwr_WS1086,,,Fresh,Wasserburger Reservoir,WaDENE_WS1086,Surface Water
+NEwr_WS1087,,,Fresh,"Antelope Creek, South, Trib. To",WaDENE_WS1087,Surface Water
+NEwr_WS1088,,,Fresh,Schnurr Reservoir No. 2,WaDENE_WS1088,Surface Water
+NEwr_WS1089,,,Fresh,"Sow Belly Creek, Trib. To",WaDENE_WS1089,Surface Water
+NEwr_WS1090,,,Fresh,Eberspecher Reservoir No. 1,WaDENE_WS1090,Surface Water
+NEwr_WS1091,,,Fresh,Serres Reservoir No. 1,WaDENE_WS1091,Surface Water
+NEwr_WS1092,,,Fresh,Serres Reservoir No. 2,WaDENE_WS1092,Surface Water
+NEwr_WS1093,,,Fresh,Wallace Reservoir,WaDENE_WS1093,Surface Water
+NEwr_WS1094,,,Fresh,Merlo Reservoir,WaDENE_WS1094,Surface Water
+NEwr_WS1095,,,Fresh,Mader Reservoir No. 1,WaDENE_WS1095,Surface Water
+NEwr_WS1096,,,Fresh,Raben Reservoir No. 1,WaDENE_WS1096,Surface Water
+NEwr_WS1097,,,Fresh,"Warbonnet Creek, Trib. To",WaDENE_WS1097,Surface Water
+NEwr_WS1098,,,Fresh,Mader Reservoir No. 3,WaDENE_WS1098,Surface Water
+NEwr_WS1099,,,Fresh,Staudenmaier Reservoir,WaDENE_WS1099,Surface Water
+NEwr_WS1100,,,Fresh,Bodarc Springs,WaDENE_WS1100,Surface Water
+NEwr_WS1101,,,Fresh,Semroska Reservoir,WaDENE_WS1101,Surface Water
+NEwr_WS1102,,,Fresh,Henry Reservoir No. 2,WaDENE_WS1102,Surface Water
+NEwr_WS1103,,,Fresh,Henry Reservoir No. 1,WaDENE_WS1103,Surface Water
+NEwr_WS1104,,,Fresh,Summers Reservoir,WaDENE_WS1104,Surface Water
+NEwr_WS1105,,,Fresh,Trout Reservoir,WaDENE_WS1105,Surface Water
+NEwr_WS1106,,,Fresh,Anderson Reservoir,WaDENE_WS1106,Surface Water
+NEwr_WS1107,,,Fresh,Zimmerman Reservoir,WaDENE_WS1107,Surface Water
+NEwr_WS1108,,,Fresh,Raben Reservoir No. 2,WaDENE_WS1108,Surface Water
+NEwr_WS1109,,,Fresh,Holmgren Reservoir,WaDENE_WS1109,Surface Water
+NEwr_WS1110,,,Fresh,Coffee Reservoir No. 1,WaDENE_WS1110,Surface Water
+NEwr_WS1111,,,Fresh,Spring Creek Reservoir No. 3,WaDENE_WS1111,Surface Water
+NEwr_WS1112,,,Fresh,Wallace Reservoir No. 2,WaDENE_WS1112,Surface Water
+NEwr_WS1113,,,Fresh,Wiedenfeld Reservoir No. 1,WaDENE_WS1113,Surface Water
+NEwr_WS1114,,,Fresh,"Elkhorn River, North Fork, West Branch",WaDENE_WS1114,Surface Water
+NEwr_WS1115,,,Fresh,Mahoney Golf Course Lower Pond,WaDENE_WS1115,Surface Water
+NEwr_WS1116,,,Fresh,"Blue River, Big, North Fork, Trib. To",WaDENE_WS1116,Surface Water
+NEwr_WS1117,,,Fresh,Long Branch Reservoir N-5,WaDENE_WS1117,Surface Water
+NEwr_WS1118,,,Fresh,Hoyer Irrigation Reservoir,WaDENE_WS1118,Surface Water
+NEwr_WS1119,,,Fresh,Pigeon Creek,WaDENE_WS1119,Surface Water
+NEwr_WS1120,,,Fresh,Schlife Reservoir,WaDENE_WS1120,Surface Water
+NEwr_WS1121,,,Fresh,"Lime Creek, Trib to",WaDENE_WS1121,Surface Water
+NEwr_WS1122,,,Fresh,Mira Reservoir,WaDENE_WS1122,Surface Water
+NEwr_WS1123,,,Fresh,Holding Pond No. 3,WaDENE_WS1123,Surface Water
+NEwr_WS1124,,,Fresh,Dry Draw,WaDENE_WS1124,Surface Water
+NEwr_WS1125,,,Fresh,Dry Canyon,WaDENE_WS1125,Surface Water
+NEwr_WS1126,,,Fresh,Dodd-Mcdowell Reservoir,WaDENE_WS1126,Surface Water
+NEwr_WS1127,,,Fresh,"Cedar Creek, South Fork",WaDENE_WS1127,Surface Water
+NEwr_WS1128,,,Fresh,"Lincoln County Drain Dist. 1, Ditch 2",WaDENE_WS1128,Surface Water
+NEwr_WS1129,,,Fresh,Heath Reservoir,WaDENE_WS1129,Surface Water
+NEwr_WS1130,,,Fresh,Squaw Creek Reservoir,WaDENE_WS1130,Surface Water
+NEwr_WS1131,,,Fresh,Saxson Draw,WaDENE_WS1131,Surface Water
+NEwr_WS1132,,,Fresh,Reservoir 15B,WaDENE_WS1132,Surface Water
+NEwr_WS1133,,,Fresh,Ruhge Reservoir 2,WaDENE_WS1133,Surface Water
+NEwr_WS1134,,,Fresh,Woodland Hills Reservoir,WaDENE_WS1134,Surface Water
+NEwr_WS1135,,,Fresh,Hayes Reservoir,WaDENE_WS1135,Surface Water
+NEwr_WS1136,,,Fresh,"K & D Enterprises, Inc. Reservoir No. 1",WaDENE_WS1136,Surface Water
+NEwr_WS1137,,,Fresh,Arbor Links Pond A,WaDENE_WS1137,Surface Water
+NEwr_WS1138,,,Fresh,Ziegler Reservoir Z-5-1,WaDENE_WS1138,Surface Water
+NEwr_WS1139,,,Fresh,Haase Reservoir,WaDENE_WS1139,Surface Water
+NEwr_WS1140,,,Fresh,Wilson Creek Reservoir 11-A,WaDENE_WS1140,Surface Water
+NEwr_WS1141,,,Fresh,Steinhoff Reservoir,WaDENE_WS1141,Surface Water
+NEwr_WS1142,,,Fresh,Richard A Steinhoff Reservoir,WaDENE_WS1142,Surface Water
+NEwr_WS1143,,,Fresh,Burr Reservoir,WaDENE_WS1143,Surface Water
+NEwr_WS1144,,,Fresh,Biere Reservoir,WaDENE_WS1144,Surface Water
+NEwr_WS1145,,,Fresh,Bravinder-Roberson Reservoir,WaDENE_WS1145,Surface Water
+NEwr_WS1146,,,Fresh,Long's Creek,WaDENE_WS1146,Surface Water
+NEwr_WS1147,,,Fresh,Harris Reservoir,WaDENE_WS1147,Surface Water
+NEwr_WS1148,,,Fresh,Coddington Creek,WaDENE_WS1148,Surface Water
+NEwr_WS1149,,,Fresh,Hughes Creek,WaDENE_WS1149,Surface Water
+NEwr_WS1150,,,Fresh,Beadow Creek,WaDENE_WS1150,Surface Water
+NEwr_WS1151,,,Fresh,Big Nemaha Reservoir 23-C,WaDENE_WS1151,Surface Water
+NEwr_WS1152,,,Fresh,Upper Big Nemaha Reservoir 20-B,WaDENE_WS1152,Surface Water
+NEwr_WS1153,,,Fresh,Upper Big Nemaha Reservoir 20-A,WaDENE_WS1153,Surface Water
+NEwr_WS1154,,,Fresh,Upper Big Nemaha Reservoir 20-C,WaDENE_WS1154,Surface Water
+NEwr_WS1155,,,Fresh,Upper Big Nemaha Reservoir 9-D,WaDENE_WS1155,Surface Water
+NEwr_WS1156,,,Fresh,Upper Big Nemaha Reservoir 9-C,WaDENE_WS1156,Surface Water
+NEwr_WS1157,,,Fresh,Upper Big Nemaha Reservoir 6-A,WaDENE_WS1157,Surface Water
+NEwr_WS1158,,,Fresh,Upper Big Nemaha Reservoir 18-B,WaDENE_WS1158,Surface Water
+NEwr_WS1159,,,Fresh,Middle Big Nemaha Reservoir 12,WaDENE_WS1159,Surface Water
+NEwr_WS1160,,,Fresh,Bartels Reservoir,WaDENE_WS1160,Surface Water
+NEwr_WS1161,,,Fresh,Long Branch Reservoir 2,WaDENE_WS1161,Surface Water
+NEwr_WS1162,,,Fresh,Long Branch Reservoir 73,WaDENE_WS1162,Surface Water
+NEwr_WS1163,,,Fresh,Long Branch Reservoir 21,WaDENE_WS1163,Surface Water
+NEwr_WS1164,,,Fresh,Muddy Reservoir No. 10,WaDENE_WS1164,Surface Water
+NEwr_WS1165,,,Fresh,"Hoosier Creek, Trib. To",WaDENE_WS1165,Surface Water
+NEwr_WS1166,,,Fresh,Arbor Links Pond B,WaDENE_WS1166,Surface Water
+NEwr_WS1167,,,Fresh,Dawson County Drain Dist. No. 1 Ditch,WaDENE_WS1167,Surface Water
+NEwr_WS1168,,,Fresh,Haskell Creek,WaDENE_WS1168,Surface Water
+NEwr_WS1169,,,Fresh,Larson Reservoir,WaDENE_WS1169,Surface Water
+NEwr_WS1170,,,Fresh,"Blue River, Big, North Fork",WaDENE_WS1170,Surface Water
+NEwr_WS1171,,,Fresh,Pekarek Reservoir,WaDENE_WS1171,Surface Water
+NEwr_WS1172,,,Fresh,Sloup Reservoir,WaDENE_WS1172,Surface Water
+NEwr_WS1173,,,Fresh,Gruntorad Reservoir,WaDENE_WS1173,Surface Water
+NEwr_WS1174,,,Fresh,Coon Branch,WaDENE_WS1174,Surface Water
+NEwr_WS1175,,,Fresh,Miller Reservoir,WaDENE_WS1175,Surface Water
+NEwr_WS1176,,,Fresh,Coyote Springs,WaDENE_WS1176,Surface Water
+NEwr_WS1177,,,Fresh,"Springs, Wrede",WaDENE_WS1177,Surface Water
+NEwr_WS1178,,,Fresh,"Springs, Spinar",WaDENE_WS1178,Surface Water
+NEwr_WS1179,,,Fresh,Langenheim-Brackham Reservoir,WaDENE_WS1179,Surface Water
+NEwr_WS1180,,,Fresh,Hay Springs Creek,WaDENE_WS1180,Surface Water
+NEwr_WS1181,,,Fresh,Lake Creek,WaDENE_WS1181,Surface Water
+NEwr_WS1182,,,Fresh,Walz Lake,WaDENE_WS1182,Surface Water
+NEwr_WS1183,,,Fresh,Lavicky Reservoir,WaDENE_WS1183,Surface Water
+NEwr_WS1184,,,Fresh,Rolfsmeier Reservoir No. 1,WaDENE_WS1184,Surface Water
+NEwr_WS1185,,,Fresh,Paul Rolfsmeier Reservoir,WaDENE_WS1185,Surface Water
+NEwr_WS1186,,,Fresh,Centerfield Reservoir,WaDENE_WS1186,Surface Water
+NEwr_WS1187,,,Fresh,Patton Creek,WaDENE_WS1187,Surface Water
+NEwr_WS1188,,,Fresh,Heckel Creek,WaDENE_WS1188,Surface Water
+NEwr_WS1189,,,Fresh,Andelt Reservoir,WaDENE_WS1189,Surface Water
+NEwr_WS1190,,,Fresh,Hastings Northwest Reservoir,WaDENE_WS1190,Surface Water
+NEwr_WS1191,,,Fresh,"Blue River, Big, West Fork, Hastings Branch",WaDENE_WS1191,Surface Water
+NEwr_WS1192,,,Fresh,Mader Reservoir No. 2,WaDENE_WS1192,Surface Water
+NEwr_WS1193,,,Fresh,Dunlap Reservoir No. 2,WaDENE_WS1193,Surface Water
+NEwr_WS1194,,,Fresh,Battle Creek,WaDENE_WS1194,Surface Water
+NEwr_WS1195,,,Fresh,Childs Reservoir,WaDENE_WS1195,Surface Water
+NEwr_WS1196,,,Fresh,"Burton Creek, Trib. To",WaDENE_WS1196,Surface Water
+NEwr_WS1197,,,Fresh,Grummert-Wilson Reservoir,WaDENE_WS1197,Surface Water
+NEwr_WS1198,,,Fresh,"Blue River, Big, West Fork, North Branch, Trib. To",WaDENE_WS1198,Surface Water
+NEwr_WS1199,,,Fresh,Eddie Stulken Reservoir,WaDENE_WS1199,Surface Water
+NEwr_WS1200,,,Fresh,Mihm Reservoir,WaDENE_WS1200,Surface Water
+NEwr_WS1201,,,Fresh,Kostal-Hawthorne Res.,WaDENE_WS1201,Surface Water
+NEwr_WS1202,,,Fresh,Nuss Reservoir,WaDENE_WS1202,Surface Water
+NEwr_WS1203,,,Fresh,Bergen Reservoir,WaDENE_WS1203,Surface Water
+NEwr_WS1204,,,Fresh,Reservoir 22-9-4,WaDENE_WS1204,Surface Water
+NEwr_WS1205,,,Fresh,Galaway Creek,WaDENE_WS1205,Surface Water
+NEwr_WS1206,,,Fresh,Gordon Valley Reservoir,WaDENE_WS1206,Surface Water
+NEwr_WS1207,,,Fresh,Barnum Creek,WaDENE_WS1207,Surface Water
+NEwr_WS1208,,,Fresh,"Lincoln County Drain Dist. 1, Ditch 1",WaDENE_WS1208,Surface Water
+NEwr_WS1209,,,Fresh,North Draw Reservoir,WaDENE_WS1209,Surface Water
+NEwr_WS1210,,,Fresh,Hawk Nest Reservoir,WaDENE_WS1210,Surface Water
+NEwr_WS1211,,,Fresh,Lee Creek,WaDENE_WS1211,Surface Water
+NEwr_WS1212,,,Fresh,"Merriman Creek, Trib. To",WaDENE_WS1212,Surface Water
+NEwr_WS1213,,,Fresh,South Creek,WaDENE_WS1213,Surface Water
+NEwr_WS1214,,,Fresh,"Timber Creek, North Branch, Trib. To",WaDENE_WS1214,Surface Water
+NEwr_WS1215,,,Fresh,Calamus Reservoir,WaDENE_WS1215,Surface Water
+NEwr_WS1216,,,Fresh,Deepwell Farms Reservoir,WaDENE_WS1216,Surface Water
+NEwr_WS1217,,,Fresh,Tredway Reservoir,WaDENE_WS1217,Surface Water
+NEwr_WS1218,,,Fresh,Larkins Pond 1,WaDENE_WS1218,Surface Water
+NEwr_WS1219,,,Fresh,Stork Reservoir,WaDENE_WS1219,Surface Water
+NEwr_WS1220,,,Fresh,Blayne Behrends Reservoir,WaDENE_WS1220,Surface Water
+NEwr_WS1221,,,Fresh,Bear-Pierce-Cedar Creek Reservoir 3-B,WaDENE_WS1221,Surface Water
+NEwr_WS1222,,,Fresh,Linden Reservoir,WaDENE_WS1222,Surface Water
+NEwr_WS1223,,,Fresh,"Chadron Creek, Trib. To",WaDENE_WS1223,Surface Water
+NEwr_WS1224,,,Fresh,"Lone Tree Creek, Trib. To",WaDENE_WS1224,Surface Water
+NEwr_WS1225,,,Fresh,"Hull Lake Springs, Trib. To",WaDENE_WS1225,Surface Water
+NEwr_WS1226,,,Fresh,Mayfield Reservoir,WaDENE_WS1226,Surface Water
+NEwr_WS1227,,,Fresh,"Messenger Creek, Trib. To",WaDENE_WS1227,Surface Water
+NEwr_WS1228,,,Fresh,Schlegel Creek,WaDENE_WS1228,Surface Water
+NEwr_WS1229,,,Fresh,"Schlegel Creek, East",WaDENE_WS1229,Surface Water
+NEwr_WS1230,,,Fresh,"Omaha Creek, Trib to",WaDENE_WS1230,Surface Water
+NEwr_WS1231,,,Fresh,"Schlegel Creek, West",WaDENE_WS1231,Surface Water
+NEwr_WS1232,,,Fresh,"Alkali Lake, Little",WaDENE_WS1232,Surface Water
+NEwr_WS1233,,,Fresh,Peters Reservoir,WaDENE_WS1233,Surface Water
+NEwr_WS1234,,,Fresh,"Horse Head Creek, Trib. To",WaDENE_WS1234,Surface Water
+NEwr_WS1235,,,Fresh,"Bordeaux Creek, Big, Trib. To",WaDENE_WS1235,Surface Water
+NEwr_WS1236,,,Fresh,Bishop Reservoir,WaDENE_WS1236,Surface Water
+NEwr_WS1237,,,Fresh,Brackhan Reservoir,WaDENE_WS1237,Surface Water
+NEwr_WS1238,,,Fresh,Lost Branch,WaDENE_WS1238,Surface Water
+NEwr_WS1239,,,Fresh,Winnebago Creek,WaDENE_WS1239,Surface Water
+NEwr_WS1240,,,Fresh,Hostetler Reservoir,WaDENE_WS1240,Surface Water
+NEwr_WS1241,,,Fresh,Lechtenberg-Lampman Reservoir,WaDENE_WS1241,Surface Water
+NEwr_WS1242,,,Fresh,Pierce Reservoir,WaDENE_WS1242,Surface Water
+NEwr_WS1243,,,Fresh,Hoosier Creek,WaDENE_WS1243,Surface Water
+NEwr_WS1244,,,Fresh,Leroy Blitzkie Reservoir,WaDENE_WS1244,Surface Water
+NEwr_WS1245,,,Fresh,Key Reservoir,WaDENE_WS1245,Surface Water
+NEwr_WS1246,,,Fresh,Hoesing Brothers Res.,WaDENE_WS1246,Surface Water
+NEwr_WS1247,,,Fresh,"Powder Creek, Trib. To",WaDENE_WS1247,Surface Water
+NEwr_WS1248,,,Fresh,"South Creek, Trib. To",WaDENE_WS1248,Surface Water
+NEwr_WS1249,,,Fresh,"Bow Creek, Trib. To",WaDENE_WS1249,Surface Water
+NEwr_WS1250,,,Fresh,Fuhrer Reservoir,WaDENE_WS1250,Surface Water
+NEwr_WS1251,,,Fresh,Eilers Reservoir,WaDENE_WS1251,Surface Water
+NEwr_WS1252,,,Fresh,"Lime Creek, West Branch",WaDENE_WS1252,Surface Water
+NEwr_WS1253,,,Fresh,Lampman Reservoir No 1,WaDENE_WS1253,Surface Water
+NEwr_WS1254,,,Fresh,Weigand Creek,WaDENE_WS1254,Surface Water
+NEwr_WS1255,,,Fresh,Powder Creek,WaDENE_WS1255,Surface Water
+NEwr_WS1256,,,Fresh,Clay Creek,WaDENE_WS1256,Surface Water
+NEwr_WS1257,,,Fresh,"Stove Creek, Trib. To",WaDENE_WS1257,Surface Water
+NEwr_WS1258,,,Fresh,Wilcox-Phillips Reservoir,WaDENE_WS1258,Surface Water
+NEwr_WS1259,,,Fresh,"Johnson Creek, North Branch, Trib. To",WaDENE_WS1259,Surface Water
+NEwr_WS1260,,,Fresh,Dorchester Reservoir 2-A,WaDENE_WS1260,Surface Water
+NEwr_WS1261,,,Fresh,Dorchester Reservoir 1-A,WaDENE_WS1261,Surface Water
+NEwr_WS1262,,,Fresh,Dorchester Reservoir 3-A,WaDENE_WS1262,Surface Water
+NEwr_WS1263,,,Fresh,Dorchester Reservoir 4-A,WaDENE_WS1263,Surface Water
+NEwr_WS1264,,,Fresh,Knigge Dam East,WaDENE_WS1264,Surface Water
+NEwr_WS1265,,,Fresh,Tyler Stewart Reservoir,WaDENE_WS1265,Surface Water
+NEwr_WS1266,,,Fresh,Clatonia Creek Reservoir 10-A,WaDENE_WS1266,Surface Water
+NEwr_WS1267,,,Fresh,Clatonia Creek Reservoir 7-A,WaDENE_WS1267,Surface Water
+NEwr_WS1268,,,Fresh,Bergmeier Reservoir No. 2,WaDENE_WS1268,Surface Water
+NEwr_WS1269,,,Fresh,Ivins Reservoir,WaDENE_WS1269,Surface Water
+NEwr_WS1270,,,Fresh,Johndreau Creek,WaDENE_WS1270,Surface Water
+NEwr_WS1271,,,Fresh,Lone Tree Creek,WaDENE_WS1271,Surface Water
+NEwr_WS1272,,,Fresh,"Turkey Creek, South Fork",WaDENE_WS1272,Surface Water
+NEwr_WS1273,,,Fresh,Shestak Reservoir,WaDENE_WS1273,Surface Water
+NEwr_WS1274,,,Fresh,"Swan Creek, South Fork, Trib. To",WaDENE_WS1274,Surface Water
+NEwr_WS1275,,,Fresh,Stratbucker Reservoir,WaDENE_WS1275,Surface Water
+NEwr_WS1276,,,Fresh,"Swan Creek, South Fork",WaDENE_WS1276,Surface Water
+NEwr_WS1277,,,Fresh,Swan Creek Reservoir 2,WaDENE_WS1277,Surface Water
+NEwr_WS1278,,,Fresh,Schwisow Reservoir,WaDENE_WS1278,Surface Water
+NEwr_WS1279,,,Fresh,Swan Creek Reservoir No. 61,WaDENE_WS1279,Surface Water
+NEwr_WS1280,,,Fresh,Glenn Springs,WaDENE_WS1280,Surface Water
+NEwr_WS1281,,,Fresh,"Schuppe Creek, West",WaDENE_WS1281,Surface Water
+NEwr_WS1282,,,Fresh,"Schuppe Creek, East",WaDENE_WS1282,Surface Water
+NEwr_WS1283,,,Fresh,"Nealy Springs, North",WaDENE_WS1283,Surface Water
+NEwr_WS1284,,,Fresh,"Nealy Springs, South",WaDENE_WS1284,Surface Water
+NEwr_WS1285,,,Fresh,Petsch Springs,WaDENE_WS1285,Surface Water
+NEwr_WS1286,,,Fresh,Huntington Springs,WaDENE_WS1286,Surface Water
+NEwr_WS1287,,,Fresh,Grandstaff Spring,WaDENE_WS1287,Surface Water
+NEwr_WS1288,,,Fresh,Farmers Canal Seep,WaDENE_WS1288,Surface Water
+NEwr_WS1289,,,Fresh,Camp Clark Seep,WaDENE_WS1289,Surface Water
+NEwr_WS1290,,,Fresh,"Spring Creek, Little",WaDENE_WS1290,Surface Water
+NEwr_WS1291,,,Fresh,South Platte River,WaDENE_WS1291,Surface Water
+NEwr_WS1292,,,Fresh,Deep Holes Creek,WaDENE_WS1292,Surface Water
+NEwr_WS1293,,,Fresh,Meglin Creek,WaDENE_WS1293,Surface Water
+NEwr_WS1294,,,Fresh,"Long Pine Creek, Trib. To",WaDENE_WS1294,Surface Water
+NEwr_WS1295,,,Fresh,Soap Creek,WaDENE_WS1295,Surface Water
+NEwr_WS1296,,,Fresh,Swan Creek Reservoir 92,WaDENE_WS1296,Surface Water
+NEwr_WS1297,,,Fresh,Kenneth Eichenberger Sr Reservoir,WaDENE_WS1297,Surface Water
+NEwr_WS1298,,,Fresh,Eldred Lake,WaDENE_WS1298,Surface Water
+NEwr_WS1299,,,Fresh,York Ground Water Recharge Reservoir,WaDENE_WS1299,Surface Water
+NEwr_WS1300,,,Fresh,Cub Creek Reservoir 17-C,WaDENE_WS1300,Surface Water
+NEwr_WS1301,,,Fresh,Cub Creek Reservoir 16-B,WaDENE_WS1301,Surface Water
+NEwr_WS1302,,,Fresh,Cub Creek Reservoir 14-A,WaDENE_WS1302,Surface Water
+NEwr_WS1303,,,Fresh,Cub Creek Reservoir 13-D,WaDENE_WS1303,Surface Water
+NEwr_WS1304,,,Fresh,Cub Creek Reservoir 12-A,WaDENE_WS1304,Surface Water
+NEwr_WS1305,,,Fresh,Cub Creek Reservoir 12-D,WaDENE_WS1305,Surface Water
+NEwr_WS1306,,,Fresh,Cub Creek Reservoir 12-C,WaDENE_WS1306,Surface Water
+NEwr_WS1307,,,Fresh,Ebbers Reservoir No. 1,WaDENE_WS1307,Surface Water
+NEwr_WS1308,,,Fresh,Little Indian Creek Reservoir 1-D,WaDENE_WS1308,Surface Water
+NEwr_WS1309,,,Fresh,Boesiger Reservoir,WaDENE_WS1309,Surface Water
+NEwr_WS1310,,,Fresh,Little Indian Creek Reservoir 3-D,WaDENE_WS1310,Surface Water
+NEwr_WS1311,,,Fresh,Bear Creek Reservoir 7-B,WaDENE_WS1311,Surface Water
+NEwr_WS1312,,,Fresh,Bear Creek Reservoir 7-C,WaDENE_WS1312,Surface Water
+NEwr_WS1313,,,Fresh,Bear Creek Reservoir 7-D,WaDENE_WS1313,Surface Water
+NEwr_WS1314,,,Fresh,Bear Creek Reservoir 8-B,WaDENE_WS1314,Surface Water
+NEwr_WS1315,,,Fresh,Bear Creek Reservoir 4-A,WaDENE_WS1315,Surface Water
+NEwr_WS1316,,,Fresh,Cedar Creek Reservoir 9-E,WaDENE_WS1316,Surface Water
+NEwr_WS1317,,,Fresh,Cedar Creek Reservoir 9-D,WaDENE_WS1317,Surface Water
+NEwr_WS1318,,,Fresh,Mud Creek Reservoir 2-H,WaDENE_WS1318,Surface Water
+NEwr_WS1319,,,Fresh,Mud Creek Reservoir 5-A,WaDENE_WS1319,Surface Water
+NEwr_WS1320,,,Fresh,Mud Creek Reservoir 4-C,WaDENE_WS1320,Surface Water
+NEwr_WS1321,,,Fresh,Bill's Creek,WaDENE_WS1321,Surface Water
+NEwr_WS1322,,,Fresh,Big Indian Creek Reservoir 10-A,WaDENE_WS1322,Surface Water
+NEwr_WS1323,,,Fresh,Big Indian Creek Reservoir 9-B,WaDENE_WS1323,Surface Water
+NEwr_WS1324,,,Fresh,Big Indian Creek Reservoir 8-E,WaDENE_WS1324,Surface Water
+NEwr_WS1325,,,Fresh,Big Indian Creek Reservoir 7-B,WaDENE_WS1325,Surface Water
+NEwr_WS1326,,,Fresh,Big Indian Creek Reservoir 5-A,WaDENE_WS1326,Surface Water
+NEwr_WS1327,,,Fresh,Reiser Reservoir No. 1,WaDENE_WS1327,Surface Water
+NEwr_WS1328,,,Fresh,Reiman Reservoir,WaDENE_WS1328,Surface Water
+NEwr_WS1329,,,Fresh,Shepherd Reservoir,WaDENE_WS1329,Surface Water
+NEwr_WS1330,,,Fresh,Wasserburger Reservoir No. 1,WaDENE_WS1330,Surface Water
+NEwr_WS1331,,,Fresh,"Indian Creek, Big, Reservoir 5-D",WaDENE_WS1331,Surface Water
+NEwr_WS1332,,,Fresh,Snyder Reservoir No. 1,WaDENE_WS1332,Surface Water
+NEwr_WS1333,,,Fresh,Wolf-Wildcat Reservoir 65,WaDENE_WS1333,Surface Water
+NEwr_WS1334,,,Fresh,Wolf-Wildcat Reservoir 52,WaDENE_WS1334,Surface Water
+NEwr_WS1335,,,Fresh,Adamson Creek,WaDENE_WS1335,Surface Water
+NEwr_WS1336,,,Fresh,Plum Creek Reservoir 4-F,WaDENE_WS1336,Surface Water
+NEwr_WS1337,,,Fresh,Plum Creek Reservoir 4-J,WaDENE_WS1337,Surface Water
+NEwr_WS1338,,,Fresh,Mission Creek Res. 7-B,WaDENE_WS1338,Surface Water
+NEwr_WS1339,,,Fresh,Vitosh Reservoir,WaDENE_WS1339,Surface Water
+NEwr_WS1340,,,Fresh,Big Indian Creek Res. 8-F,WaDENE_WS1340,Surface Water
+NEwr_WS1341,,,Fresh,Skoog Reservoir,WaDENE_WS1341,Surface Water
+NEwr_WS1342,,,Fresh,Bear Creek Reservoir 4-C,WaDENE_WS1342,Surface Water
+NEwr_WS1343,,,Fresh,Hull Reservoir,WaDENE_WS1343,Surface Water
+NEwr_WS1344,,,Fresh,Dorshorst Reservoir,WaDENE_WS1344,Surface Water
+NEwr_WS1345,,,Fresh,Steer Creek,WaDENE_WS1345,Surface Water
+NEwr_WS1346,,,Fresh,Babcock Creek,WaDENE_WS1346,Surface Water
+NEwr_WS1347,,,Fresh,Olson Reservoir,WaDENE_WS1347,Surface Water
+NEwr_WS1348,,,Fresh,"Roscoe Creek, Trib. To",WaDENE_WS1348,Surface Water
+NEwr_WS1349,,,Fresh,Box Butte Reservoir,WaDENE_WS1349,Surface Water
+NEwr_WS1350,,,Fresh,Hadar Creek,WaDENE_WS1350,Surface Water
+NEwr_WS1351,,,Fresh,Bauer's Lone Tree Reservoir,WaDENE_WS1351,Surface Water
+NEwr_WS1352,,,Fresh,Sukup Reservoir,WaDENE_WS1352,Surface Water
+NEwr_WS1353,,,Fresh,Thames Creek,WaDENE_WS1353,Surface Water
+NEwr_WS1354,,,Fresh,Hopkins Creek,WaDENE_WS1354,Surface Water
+NEwr_WS1355,,,Fresh,Kellogg Creek,WaDENE_WS1355,Surface Water
+NEwr_WS1356,,,Fresh,Fountain Creek,WaDENE_WS1356,Surface Water
+NEwr_WS1357,,,Fresh,Herpolsheimer Reservoir No. 2,WaDENE_WS1357,Surface Water
+NEwr_WS1358,,,Fresh,Skolnik Reservoir,WaDENE_WS1358,Surface Water
+NEwr_WS1359,,,Fresh,La Rue Farms Reservoir,WaDENE_WS1359,Surface Water
+NEwr_WS1360,,,Fresh,Arnold Reservoir No. 1,WaDENE_WS1360,Surface Water
+NEwr_WS1361,,,Fresh,Cub Creek Reservoir 10-C,WaDENE_WS1361,Surface Water
+NEwr_WS1362,,,Fresh,Cub Creek Reservoir 8-B,WaDENE_WS1362,Surface Water
+NEwr_WS1363,,,Fresh,Schernikau Reservoir,WaDENE_WS1363,Surface Water
+NEwr_WS1364,,,Fresh,Daubendiek Reservoir No. 1,WaDENE_WS1364,Surface Water
+NEwr_WS1365,,,Fresh,Plum Creek Reservoir 2-B,WaDENE_WS1365,Surface Water
+NEwr_WS1366,,,Fresh,Schuerman Reservoir,WaDENE_WS1366,Surface Water
+NEwr_WS1367,,,Fresh,Herpolsheimer Reservoir,WaDENE_WS1367,Surface Water
+NEwr_WS1368,,,Fresh,Reservoir No. 9-8-2E,WaDENE_WS1368,Surface Water
+NEwr_WS1369,,,Fresh,Big Indian Creek Reservoir 15-B,WaDENE_WS1369,Surface Water
+NEwr_WS1370,,,Fresh,Nuttleman Reservoir No. 1,WaDENE_WS1370,Surface Water
+NEwr_WS1371,,,Fresh,Blue Bluffs Reservoir,WaDENE_WS1371,Surface Water
+NEwr_WS1372,,,Fresh,"Kezan Creek, Trib. To",WaDENE_WS1372,Surface Water
+NEwr_WS1373,,,Fresh,"Weedy Creek, Big, Trib. To",WaDENE_WS1373,Surface Water
+NEwr_WS1374,,,Fresh,"Weedy Creek, Big",WaDENE_WS1374,Surface Water
+NEwr_WS1375,,,Fresh,Spring Creek Reservoir,WaDENE_WS1375,Surface Water
+NEwr_WS1376,,,Fresh,Bredthauer Reservoir,WaDENE_WS1376,Surface Water
+NEwr_WS1377,,,Fresh,Donald A. Cox Reservoir No. 1,WaDENE_WS1377,Surface Water
+NEwr_WS1378,,,Fresh,Donald A. Cox Reservoir No. 2,WaDENE_WS1378,Surface Water
+NEwr_WS1379,,,Fresh,"Cedar Creek, West, Trib. To",WaDENE_WS1379,Surface Water
+NEwr_WS1380,,,Fresh,Smith Creek,WaDENE_WS1380,Surface Water
+NEwr_WS1381,,,Fresh,"Turkey Creek, North Fork, Trib. To",WaDENE_WS1381,Surface Water
+NEwr_WS1382,,,Fresh,"Swan Creek, Trib. To",WaDENE_WS1382,Surface Water
+NEwr_WS1383,,,Fresh,Walnut Grove Creek,WaDENE_WS1383,Surface Water
+NEwr_WS1384,,,Fresh,Merriman Creek,WaDENE_WS1384,Surface Water
+NEwr_WS1385,,,Fresh,McMeekin Reservoir,WaDENE_WS1385,Surface Water
+NEwr_WS1386,,,Fresh,Ahern Reservoir No. 1,WaDENE_WS1386,Surface Water
+NEwr_WS1387,,,Fresh,"Town Creek, Trib. To",WaDENE_WS1387,Surface Water
+NEwr_WS1388,,,Fresh,Golf Course Pond,WaDENE_WS1388,Surface Water
+NEwr_WS1389,,,Fresh,"Pierce Creek, Trib. To",WaDENE_WS1389,Surface Water
+NEwr_WS1390,,,Fresh,Schram Creek,WaDENE_WS1390,Surface Water
+NEwr_WS1391,,,Fresh,"Bloody Run, Trib. To",WaDENE_WS1391,Surface Water
+NEwr_WS1392,,,Fresh,Bloody Run,WaDENE_WS1392,Surface Water
+NEwr_WS1393,,,Fresh,Gene Mazour Reservoir,WaDENE_WS1393,Surface Water
+NEwr_WS1394,,,Fresh,"Elm Creek And Elm Creek, Trib. To",WaDENE_WS1394,Surface Water
+NEwr_WS1395,,,Fresh,"Sicily Creek, Trib. To",WaDENE_WS1395,Surface Water
+NEwr_WS1396,,,Fresh,Tipps Creek,WaDENE_WS1396,Surface Water
+NEwr_WS1397,,,Fresh,"Mission Creek, Trib. To",WaDENE_WS1397,Surface Water
+NEwr_WS1398,,,Fresh,Zwiebel Creek,WaDENE_WS1398,Surface Water
+NEwr_WS1399,,,Fresh,Schmidt Ag Irrigation Pond,WaDENE_WS1399,Surface Water
+NEwr_WS1400,,,Fresh,Sorensen Reservoir,WaDENE_WS1400,Surface Water
+NEwr_WS1401,,,Fresh,Trib to Taylor Branch Creek,WaDENE_WS1401,Surface Water
+NEwr_WS1402,,,Fresh,"Loup River, Middle, South Branch",WaDENE_WS1402,Surface Water
+NEwr_WS1403,,,Fresh,Sarben Slough,WaDENE_WS1403,Surface Water
+NEwr_WS1404,,,Fresh,"Manns Branch, Trib. To",WaDENE_WS1404,Surface Water
+NEwr_WS1405,,,Fresh,Krogh North Pond,WaDENE_WS1405,Surface Water
+NEwr_WS1406,,,Fresh,Scholl Feedlot Pond,WaDENE_WS1406,Surface Water
+NEwr_WS1407,,,Fresh,Krogh West Pond,WaDENE_WS1407,Surface Water
+NEwr_WS1408,,,Fresh,"Victoria Creek, Trib. To",WaDENE_WS1408,Surface Water
+NEwr_WS1409,,,Fresh,Flowing Springs Dam,WaDENE_WS1409,Surface Water
+NEwr_WS1410,,,Fresh,Tietjen Reservoir,WaDENE_WS1410,Surface Water
+NEwr_WS1411,,,Fresh,"Bazile Creek, Little",WaDENE_WS1411,Surface Water
+NEwr_WS1412,,,Fresh,Bordeaux Creek,WaDENE_WS1412,Surface Water
+NEwr_WS1413,,,Fresh,Hitchcock Reservoir,WaDENE_WS1413,Surface Water
+NEwr_WS1414,,,Fresh,Removed,WaDENE_WS1414,Surface Water

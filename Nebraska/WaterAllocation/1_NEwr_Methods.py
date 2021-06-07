@@ -1,6 +1,6 @@
 #Date Created: 08/26/2020
 #Author: Ryan James
-#Purpose: To extract NE methods use information and population dataframe for WaDE_QA 2.0.
+#Purpose: To extract NE methods use information and populate dataframe for WaDE_QA 2.0.
 #Notes:   1) UT possesses multiple methods
 
 
@@ -71,11 +71,11 @@ outdf_nullMand = outdf.loc[(outdf["MethodUUID"].isnull()) | (outdf["MethodUUID"]
 ############################################################################
 print("Exporting dataframe to csv...")
 
+# The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/methods.csv', index=False)
 
-#Report missing values if need be to separate csv
+# Report purged values.
 if(len(outdf_nullMand.index) > 0):
-    outdf_nullMand.to_csv('ProcessedInputData/methods_mandatoryFieldMissing.csv')  # index=False,
-
+    outdf_nullMand.to_csv('ProcessedInputData/methods_mandatoryFieldMissing.csv', index=False)
 
 print("Done.")

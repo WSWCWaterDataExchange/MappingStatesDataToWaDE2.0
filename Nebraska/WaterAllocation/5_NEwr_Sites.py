@@ -1,6 +1,6 @@
 #Date Created: 01/04/2020
 #Author: Ryan James
-#Purpose: To extract NE site information and population dataframe for WaDEQA 2.0.
+#Purpose: To extract NE site information and populate dataframe for WaDEQA 2.0.
 #Notes: 1) Lat / Long already converted
 
 
@@ -13,7 +13,7 @@ import os
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -25,8 +25,13 @@ os.chdir(workingDir)
 fileInput = "RawinputData/P_NebraskaMaster.csv"
 df = pd.read_csv(fileInput)
 
+watersources_fileInput = "ProcessedInputData/watersources.csv" # watersource inputfile
+df_watersources = pd.read_csv(watersources_fileInput)  # watersources dataframe
+
 columnslist = [
     "SiteUUID",
+    "RegulatoryOverlayUUIDs",
+    "WaterSourceUUID",
     "CoordinateAccuracy",
     "CoordinateMethodCV",
     "County",
@@ -50,10 +55,30 @@ columnslist = [
 # Custom Functions
 ############################################################################
 
+# Use WaterSourceName to retrieve WaterSourceUUID
+def assignWaterSourceName(colrowValue):
+    if colrowValue == '' or pd.isnull(colrowValue):
+        outList = "Unspecified"
+    else:
+        outList = colrowValue.strip()
+    return outList
+
+WaterSourceUUIDdict = pd.Series(df_watersources.WaterSourceUUID.values, index = df_watersources.WaterSourceName).to_dict()
+def retrieveWaterSourceUUID(colrowValue):
+    if colrowValue == '' or pd.isnull(colrowValue):
+        outList = ''
+    else:
+        String1 = colrowValue  # remove whitespace chars
+        try:
+            outList = WaterSourceUUIDdict[String1]
+        except:
+            outList = ''
+    return outList
+
 # For creating SiteTypeCV
 def assignCountyName(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue) or colrowValue == '0':
-        outList = 'Unspecified'
+        outList = "Unspecified"
     else:
         outList = colrowValue.strip()
     return outList
@@ -68,31 +93,39 @@ def assignSiteUUID(colrowValue):
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
+
 outdf = pd.DataFrame(columns=columnslist, index=df.index)
 
+print("RegulatoryOverlayUUIDs")
+outdf['RegulatoryOverlayUUIDs'] = ""
+
+print("WaterSourceUUID")
+df['WaterSourceName'] = df.apply(lambda row: assignWaterSourceName(row['SourceName']), axis=1)
+outdf['WaterSourceUUID'] = df.apply(lambda row: retrieveWaterSourceUUID(row['WaterSourceName']), axis=1)
+
 print("CoordinateAccuracy")
-outdf.CoordinateAccuracy = ''
+outdf['CoordinateAccuracy'] = ''
 
 print("CoordinateMethodCV")
-outdf.CoordinateMethodCV = 'Unspecified'
+outdf['CoordinateMethodCV'] = "Unspecified"
 
 print("County")
 outdf['County'] = df.apply(lambda row: assignCountyName(row['CountyName']), axis=1)
 
 print("EPSGCodeCV")
-outdf.EPSGCodeCV = 'EPSG:4326'
+outdf['EPSGCodeCV'] = "4326"
 
-print("Geometry") # Hardcoded
-outdf.Geometry = ""
+print("Geometry")
+outdf['Geometry'] = ""
 
 print("GNISCodeCV")
-outdf.GNISCodeCV = ""
+outdf['GNISCodeCV'] = ""
 
 print("HUC12")
-outdf.HUC12 = df['HUC12'].astype(str)
+outdf['HUC12'] = df['HUC12'].astype(str)
 
 print("HUC8")
-outdf.HUC8 = ""
+outdf['HUC8'] = ""
 
 print("Latitude")
 outdf['Latitude'] = df['Latitude']
@@ -101,31 +134,31 @@ print("Longitude")
 outdf['Longitude'] = df['Longitude']
 
 print("NHDNetworkStatusCV")
-outdf.NHDNetworkStatusCV = ""
+outdf['NHDNetworkStatusCV'] = ""
 
 print("NHDProductCV")
-outdf.NHDProductCV = ""
+outdf['NHDProductCV'] = ""
 
 print("PODorPOUSite")
 outdf['PODorPOUSite'] = "POD"
 
 print("SiteName")
-outdf.SiteName = 'Unspecified'
+outdf['SiteName'] = "Unspecified"
 
 print("SiteNativeID")
 outdf['SiteNativeID'] = df['PointOfDiversionID'].astype(str)
 
 print("SitePoint")
-outdf.SitePoint = ""
+outdf['SitePoint'] = ""
 
 print("SiteTypeCV")
-outdf.SiteTypeCV = 'Unknown'
+outdf['SiteTypeCV'] = "Unspecified"
 
 print("StateCV")
-outdf.StateCV = "NE"
+outdf['StateCV'] = "NE"
 
 print("USGSSiteID")
-outdf.USGSSiteID = ""
+outdf['USGSSiteID'] = ""
 
 print("Resetting Index")
 outdf.reset_index()
@@ -151,6 +184,12 @@ dfpurge = dfpurge.assign(ReasonRemoved='')
 
 # SiteUUID
 outdf, dfpurge = TestErrorFunctions.SiteUUID_S_Check(outdf, dfpurge)
+
+# RegulatoryOverlayUUIDs
+outdf, dfpurge = TestErrorFunctions.RegulatoryOverlayUUIDs_S_Check(outdf, dfpurge)
+
+# WaterSourceUUID
+outdf100, dfpurge = TestErrorFunctions.WaterSourceUUID_S_Check(outdf, dfpurge)
 
 # CoordinateAccuracy
 outdf, dfpurge = TestErrorFunctions.CoordinateAccuracy_S_Check(outdf, dfpurge)
@@ -213,6 +252,7 @@ outdf, dfpurge = TestErrorFunctions.USGSSiteID_S_Check(outdf, dfpurge)
 # Export to new csv
 ############################################################################
 print("Exporting dataframe outdf to csv...")
+
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/sites.csv', index=False)
 
@@ -221,23 +261,3 @@ if(len(dfpurge.index) > 0):
     dfpurge.to_csv('ProcessedInputData/sites_missing.csv', index=False)
 
 print("Done.")
-
-
-
-# Code not Used
-############################################################################
-# from pyproj import Transformer, transform
-# transformer = Transformer.from_proj(26912, 4326)  # A trick to drastically optimize the Transformer of pyproj.
-# # Utah projection = EPSG:26912.  WGS84 projection used by WaDE 2.0 = epsg:4326.
-
-#
-# # For converting IDWR projection latitude.
-# def assignLat(colrowValueLat, colrowValueLong):
-#     lat, long = transformer.transform(colrowValueLat, colrowValueLong)
-#     return lat
-#
-#
-# # For converting IDWR projection longitude.
-# def assignLong(colrowValueLat, colrowValueLong):
-#     lat, long = transformer.transform(colrowValueLat, colrowValueLong)
-#     return long
