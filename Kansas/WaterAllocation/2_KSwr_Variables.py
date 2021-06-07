@@ -1,5 +1,5 @@
 #Date Created: 01/06/2021
-#Purpose: To extract KS variable information and population dataframe for WaDE_QA 2.0.
+#Purpose: To extract KS variable information and populate dataframe for WaDE_QA 2.0.
 #Notes:
 
 
@@ -34,7 +34,7 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "KDADWR_Allocation All",
+    "KDADWR_Consumptive Use",
     "1",
     "Year",
     "Average",
@@ -68,11 +68,12 @@ outdf_nullMand = outdf.loc[(outdf["VariableSpecificUUID"].isnull()) | (outdf["Va
 # Export to new csv
 ############################################################################
 print("Exporting dataframe to csv...")
+
+# The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/variables.csv', index=False)
 
-#Report missing values if need be to separate csv
+# Report purged values.
 if(len(outdf_nullMand.index) > 0):
     outdf_nullMand.to_csv('ProcessedInputData/variables_mandatoryFieldMissing.csv', index=False)
-
 
 print("Done.")
