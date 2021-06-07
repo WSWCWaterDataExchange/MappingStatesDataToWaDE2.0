@@ -28,7 +28,7 @@ method_fileInput = "ProcessedInputData/methods.csv"
 variables_fileInput = "ProcessedInputData/variables.csv"
 sites_fileInput = "ProcessedInputData/sites.csv"
 
-df_DM = pd.read_csv(DM_fileInput)  # The State's Master input dataframe.
+df_DM = pd.read_csv(DM_fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
 df_method = pd.read_csv(method_fileInput)  # Method dataframe
 df_variables = pd.read_csv(variables_fileInput)  # Variables dataframe
 df_sites = pd.read_csv(sites_fileInput)  # Sites dataframe
@@ -68,7 +68,7 @@ columnslist = [
     "IrrigatedAcreage",
     "IrrigationMethodCV",
     "LegacyAllocationIDs",
-    "OwnerClassificationCV"
+    "OwnerClassificationCV",
     "PopulationServed",
     "PowerType",
     "PrimaryUseCategory",
@@ -142,7 +142,7 @@ print("SiteUUID")
 outdf['SiteUUID'] = df_DM.apply(lambda row: retrieveSiteUUID(row['in_SiteNativeID']), axis=1)
 
 print("VariableSpecificUUID")
-outdf['VariableSpecificUUID'] = "ADWR_Allocation All"
+outdf['VariableSpecificUUID'] = "ADWR_Consumptive Use"
 
 print("AllocationApplicationDate")
 outdf['AllocationApplicationDate'] = ""

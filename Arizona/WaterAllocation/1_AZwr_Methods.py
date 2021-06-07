@@ -1,6 +1,6 @@
 #Date Created: 12/01/2020
 #Purpose: To extract AZ methods use information and populate dataframe for WaDE_QA 2.0.
-#Notes: 1) N/A
+#Notes: N/A
 
 
 # Needed Libraries

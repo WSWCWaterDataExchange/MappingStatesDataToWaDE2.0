@@ -1,6 +1,6 @@
 #Date Created: 12/10/2020
 #Purpose: To extract AZ water source information and populate dataframe for WaDE_QA 2.0.
-#Notes: 1) asdf
+#Notes: N/A
 
 # Needed Libraries
 ############################################################################

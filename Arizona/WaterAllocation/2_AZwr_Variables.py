@@ -1,6 +1,6 @@
 #Date Created: 12/01/2020
 #Purpose: To extract AZ variable information and populate dataframe for WaDE_QA 2.0.
-#Notes: asdf
+#Notes: N/A
 
 
 # Needed Libraries
@@ -34,7 +34,7 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "ADWR_Allocation All",
+    "ADWR_Consumptive Use",
     "1",
     "Year",
     "Average",
