@@ -1,5 +1,5 @@
 #Date Created: 10/22/2020
-#Purpose: To extract ID methods use information and population dataframe for WaDE_QA 2.0.
+#Purpose: To extract ID methods use information and populate dataframe for WaDE_QA 2.0.
 #Notes:   1) Single row of entries, inpVals, for Methods Table.
 
 
@@ -35,12 +35,12 @@ print("Populating dataframe...")
 inpVals = [
     "IDWR_Diversion Tracking",
     "Surface Ground Water",
-    np.nan,
-    np.nan,
-    np.nan,
+    "",
+    "",
+    "",
     "Methodology used for tracking diversions in the state of Idaho.",
     "Idaho Water Rights Method",
-    np.nan,
+    "",
     "Water Use"]
 
 outdf = pd.DataFrame([inpVals], columns=columns)
@@ -62,11 +62,11 @@ outdf_nullMand = outdf.loc[(outdf["MethodUUID"].isnull()) | (outdf["MethodUUID"]
 ############################################################################
 print("Exporting dataframe to csv...")
 
-outdf.to_csv('ProcessedInputData/methods', index=False)
+# The working output DataFrame for WaDE 2.0 input.
+outdf.to_csv('ProcessedInputData/methods.csv', index=False)
 
-#Report missing values if need be to separate csv
+# Report purged values.
 if(len(outdf_nullMand.index) > 0):
-    outdf_nullMand.to_csv('ProcessedInputData/methods_missing.csv')  # index=False,
-
+    outdf_nullMand.to_csv('ProcessedInputData/methods_missing.csv', index=False)
 
 print("Done.")

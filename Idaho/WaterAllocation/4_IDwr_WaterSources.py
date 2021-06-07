@@ -1,5 +1,5 @@
 #Date Created: 10/22/2020
-#Purpose: To extract ID water source use information and population dataframe for WaDE_QA 2.0.
+#Purpose: To extract ID water source use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) For 'WaterSourceTypeCV', easier to label everything that is not a surface water first.
 
 
@@ -12,7 +12,7 @@ import os
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -59,27 +59,27 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(index=df.index, columns=columnslist)  # The output dataframe for CSV.
 
 print("Geometry")  
-outdf.Geometry = ""
+outdf['Geometry'] = ""
 
 print("GNISFeatureNameCV")  
-outdf.Geometry = ""
+outdf['Geometry'] = ""
 
 print("WaterQualityIndicatorCV")  
-outdf.WaterQualityIndicatorCV = "Unspecified"
+outdf['WaterQualityIndicatorCV'] = "Unspecified"
 
 print("WaterSourceName")
-outdf['WaterSourceName'] = df.apply(lambda row: assignWaterSourceName(row['Source_POD']), axis=1)
+outdf['WaterSourceName'] = df.apply(lambda row: assignWaterSourceName(row['in_WaterSourceName']), axis=1)
 
 print("WaterSourceNativeID")  # has to be one of the last, need length of created outdf
-outdf.WaterSourceNativeID = "Unspecified"
+outdf['WaterSourceNativeID'] = df['in_WaterSourceNativeID']
 
 print("WaterSourceTypeCV")
-outdf['WaterSourceTypeCV']  = df['inputWaterSourceType']
+outdf['WaterSourceTypeCV']  = df['in_WaterSourceTypeCV']
 
 ##############################
 # Dropping duplicate
 print("Dropping duplicates")
-outdf = outdf.drop_duplicates(subset=['WaterSourceName', 'WaterSourceTypeCV']).reset_index(drop=True)
+outdf = outdf.drop_duplicates(subset=['WaterSourceName', 'WaterSourceNativeID', 'WaterSourceTypeCV']).reset_index(drop=True)
 ##############################
 
 print("WaterSourceUUID") #native source identifier and the organization univeral id. has to be one of the last, need WaterSourceNativeID to create
@@ -90,6 +90,7 @@ outdf['WaterSourceUUID'] = df.apply(lambda row: assignWaterSourceUUID(row['Count
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 
@@ -118,6 +119,7 @@ outdf, dfpurge = TestErrorFunctions.WaterSourceTypeCV_WS_Check(outdf, dfpurge)
 # Export to new csv
 ############################################################################
 print("Exporting dataframe outdf to csv...")
+
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/watersources.csv', index=False)
 

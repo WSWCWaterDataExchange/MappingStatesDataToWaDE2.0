@@ -1,5 +1,5 @@
 #Date Created: 10/22/2020
-#Purpose: To extract ID variable use information and population dataframe for WaDE_QA 2.0.
+#Purpose: To extract ID variable use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) Single row of entries, inpVals, for Variable Table.
 
 
@@ -34,7 +34,7 @@ columns = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "IDWR_Allocation All",
+    "IDWR_Allocation",
     "1",
     "Year",
     "Average",
@@ -43,7 +43,7 @@ inpVals = [
     "10",
     "WaterYear",
     "Allocation",
-    "Allocation All"]
+    "Allocation"]
 
 outdf = pd.DataFrame([inpVals], columns=columns)
 
@@ -68,11 +68,12 @@ outdf_nullMand = outdf.loc[(outdf["VariableSpecificUUID"].isnull()) | (outdf["Va
 # Export to new csv
 ############################################################################
 print("Exporting dataframe to csv...")
+
+# The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/variables.csv', index=False)
 
-#Report missing values if need be to seperate csv
+# Report purged values.
 if(len(outdf_nullMand.index) > 0):
-    outdf_nullMand.to_csv('ProcessedInputData/variables_missing.csv')  # index=False,
-
+    outdf_nullMand.to_csv('ProcessedInputData/variables_missing.csv', index=False)
 
 print("Done.")

@@ -15,7 +15,7 @@ Two unique files were created, one used by the WSWC staff to understand the avai
  - IdwrExtendedContactNamesWithFieldNames_input.xlsx
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share IDWR's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *ID_Allocation Schema Mapping to WaDE_QA.xlsx*.  Six executable code files were used to extract the IDWR's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those six code files are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share IDWR's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *ID_Allocation Schema Mapping to WaDE_QA.xlsx*.  Seven executable code files were used to extract the IDWR's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining six code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those seven code files are as follows...
 
 - 0_PreProcessIdahoAllocationData.ipynb
 - 1_ID_Methods
@@ -24,6 +24,7 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 - 4_ID_WaterSources
 - 5_ID_Sites
 - 6_ID_AllocationsAmounts_facts
+- 7_IDwr_PODSiteToPOUSiteRelationships.py
 
 
 ***
@@ -39,12 +40,22 @@ Purpose: Pre-process the Idaho input data files and merge them into one master f
  - P_IdahoMaster.csv
 
 #### Operation and Steps:
-- Read the input files and generate temporary input dataframes.
-- Left Join PoU data to the POD data via matching **RightsID** field to generate single output dataframe *df*.
-- Format **PriorityDate** field to %m/%d/%Y format.
-- Generate WaDE Specific Field *WaterSourceType* from IDWR **Source** field (see pre-process code for specific dictionary used to determine water type).
-- Generate WaDE Specific Field *SiteType* from IDWR **Source** field (see pre-process code for specific dictionary used to determine water type).
-- Extract correct owner name from Extended Contact Name data, generate *Owner_Update* for input.
+- Read the input files and generate temporary input dataframes.  Goal will be to create separate POD and POU centric dataframes, then join together into single output dataframe.
+- Left Join POU data to the POD data via matching **RightsID** field to generate single output dataframe *df*.
+- For POD data...
+    - Format **PriorityDate** field to %m/%d/%Y format.
+    - Generate WaDE Specific Field *WaterSourceType* from IDWR **Source** field (see pre-process code for specific dictionary used to determine water type).
+    - Generate WaDE Specific Field *SiteType* from IDWR **Source** field (see pre-process code for specific dictionary used to determine water type).
+    - Extract correct owner name from Extended Contact Name data, generate *Owner_Update* for input.
+    - Create WaDE POD centric temporary dataframe.  Extract ID POD relevant data (see preprocessing code).
+- For POU data...
+    - Format **PriorityDate** field to %m/%d/%Y format.
+    - Generate WaDE *AllocationVolume_AF* field = **AcreLimit** & **TotalAcres**.
+    - Generate WaDE Specific Field *WaterSourceType* from IDWR **Source** field (see pre-process code for specific dictionary used to determine water type).
+    - Extract correct owner name from Extended Contact Name data, generate *Owner_Update* for input.
+    - Create WaDE POU centric temporary dataframe.  Extract ID POU relevant data (see preprocessing code).
+- Concatenate temporary POD & POU dataframes together into single long output dataframe.
+- Generate WaDE specific field *WaterSourceNativeID* from WaDE *WaterSourceName* & *WaterSourceTypeCV* fields.  Used to identify unique sources of water.
 - Inspect output dataframe for additional errors / datatypes.
 - Export output dataframe as new csv file, *P_IdahoMaster.csv*.
 
@@ -163,6 +174,7 @@ Purpose: generate a list of sites where water is diverted (also known as Points 
 
 #### Inputs:
 - P_IdahoMaster.csv
+- waterSources.csv
 
 #### Outputs:
 - sites.csv
@@ -172,6 +184,7 @@ Purpose: generate a list of sites where water is diverted (also known as Points 
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
 - Assign **IDWR** info to the *WaDE Site* specific columns.  See *ID_Allocation Schema Mapping to WaDE_QA* for specific details.  Items of note are as follows...
+    - Extract *WaterSourceUUID* from waterSources.csv input csv file. See code for specific implementation of extraction.
     - *CoordinateMethodCV* = **DataSource**, Unspecified if not given.
     - *Latitude* = converted **X** projection from IDWR EPSG:8826 -to- WaDE EPSG:4326.
     - *Longitude* = converted **Y** projection from IDWR EPSG:8826 -to- WaDE EPSG:4326.
@@ -184,9 +197,9 @@ Purpose: generate a list of sites where water is diverted (also known as Points 
 - Export output dataframe *sites.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-SiteUUID | CoordinateMethodCV | Latitude | Longitude | SiteName
----------- | ---------- | ------------ | ------------ | ------------
-ID_S9 | Digitized | 43.6997001071638 | -116.354766990569 | EAGLE ELEMENTARY WELL #1
+SiteUUID | WaterSourceUUID | CoordinateMethodCV | Latitude | Longitude | SiteName
+---------- | ---------- | ---------- | ------------ | ------------ | ------------
+ID_S9 | IDwr_WS1| Digitized | 43.6997001071638 | -116.354766990569 | EAGLE ELEMENTARY WELL #1
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
 - SiteUUID 
@@ -204,7 +217,6 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 - methods.csv
 - variables.csv
 - organizations.csv
-- watersources.csv
 - sites.csv
 
 #### Outputs:
@@ -215,7 +227,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
 - Assign **IDWR** info to the *WaDE Water Allocations* specific columns.  See *ID_Allocation Schema Mapping to WaDE_QA* for specific details.  Items of note are as follows...
-    - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
+    - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *AllocationFlow_CFS* = **OverallMaxDiversionRate**.
     - *AllocationLegalStatusCV* = **Basis**, Unknown if not given.
     - *AllocationNativeID* = **RightID**.
@@ -236,7 +248,6 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - MethodUUID
 - VariableSpecificUUID
 - OrganizationUUID
-- WaterSourceUUID
 - SiteUUID
 - AllocationPriorityDate
 - BeneficialUseCategory
@@ -244,6 +255,36 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - DataPublicationDate
 
 
+***
+### 7) Code File: 7_IDwr_PODSiteToPOUSiteRelationships.py
+Purpose: generate linking element between POD and POU sites that share the same water right.
+Note: podsitetopousiterelationships.csv output only needed if both POD and POU data is present, otherwise produces empty file.
+
+#### Inputs:
+- sites.csv
+- waterallocations.csv
+
+#### Outputs:
+- podsitetopousiterelationships.csv
+
+#### Operation and Steps:
+- Read the sites.csv & waterallocations.csv input files.
+- Create three temporary dataframes: one for waterallocations, & two for site info that will store POD and POU data separately.
+- For the temporary POD dataframe...
+    - Read in site.csv data from sites.csv with a *PODSiteUUID* field = POD only.
+    - Create *PODSiteUUID* field = *SiteUUID*.
+- For the temporary POU dataframe
+    - Read in site.csv data from sites.csv with a *PODSiteUUID* field = POU only.
+    - Create *POUSiteUUID* field = *SiteUUID*.
+- For the temporary waterallocations dataframe, explode *SiteUUID* field to create unique rows.
+- Left-merge POD & POU dataframes to the waterallocations dataframe via *SiteUUID* field.
+- Consolidate waterallocations dataframe by grouping entries by *AllocationNativeID* filed.
+- Explode the consolidated waterallocations dataframe again using the *PODSiteUUID* field, and again for the *POUSiteUUID* field to create unique rows.
+- Perform error check on waterallocations dataframe (check for NaN values)
+- If waterallocations is not empty, export output dataframe *podsitetopousiterelationships.csv*.
+
+
+***
 ## Staff Contributions
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Idaho Department of Water Resources (IDWR)](https://idwr.idaho.gov/).
 
