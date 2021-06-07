@@ -1,0 +1,5 @@
+WaterSourceUUID,Geometry,GNISFeatureNameCV,WaterQualityIndicatorCV,WaterSourceName,WaterSourceNativeID,WaterSourceTypeCV
+WAwr_WS1,,,Fresh,Unspecified,WaDEWA_WS1,Unspecified
+WAwr_WS2,,,Fresh,Unspecified,WaDEWA_WS2,Groundwater
+WAwr_WS3,,,Fresh,Unspecified,WaDEWA_WS3,Surface Water
+WAwr_WS4,,,Fresh,Unspecified,WaDEWA_WS4,reservoir

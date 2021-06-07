@@ -8,12 +8,13 @@ The following data was used for water allocations...
 - [WA GWIS_Data download](https://fortress.wa.gov/ecy/gispublic/DataDownload/wr/GWIS_Data/). Data made available can be found within the **GWIS_SDEexport.zip** option.
 - D_PointTable.csv, obtained from above GWIS_SDEexport.zip.
 - D_Point_WR_Doc.csv, obtained from above GWIS_SDEexport.zip.
+- WA_POU_Input.cvb, obtained from above GWIS_SDEexport.zip.
 - Person_Plus_EXTRACT_FromWRTSnotGWIS.csv, obtained from above GWIS_SDEexport.zip.
 - [GWIS_Data_Dictionary](https://fortress.wa.gov/ecy/gispublic/DataDownload/wr/GWIS_Data/GWIS_Data_Dictionary/).  Used to interpret and understand the WA data.
 
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share WSDE's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *WA_Allocation Schema Mapping_WaDEQA.xlsx*.  Six executable code files were used to extract the WSDE's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those six code files are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share WSDE's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *WA_Allocation Schema Mapping_WaDEQA.xlsx*.  Seven executable code files were used to extract the WSDE's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining six code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those seven code files are as follows...
 
 - 0_PreProcessWashingtonAllocationData.ipynb
 - 1_WA_Methods.py
@@ -22,6 +23,7 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 - 4_WA_WaterSources.py
 - 5_WA_Sites.py
 - 6_WA_AllocationsAmounts_facts.py
+- 7_WAwr_PODSiteToPOUSiteRelationships.py
 
 
 ***
@@ -31,17 +33,32 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 #### Inputs: 
  - D_PointTable.csv
  - D_Point_WR_Doc.csv
+ - WA_POU_Input.csv
  - Person_Plus_EXTRACT_FromWRTSnotGWIS.csv
 
 #### Outputs:
  - P_WashingtonMaster.csv
 
 #### Operation and Steps:
-- Read the input files and generate temporary input dataframes.
-- Left Join D_PointTable.csv -to- D_Point_WR_Doc.csv via **D_Point_ID**, and Person_Plus_EXTRACT_FromWRTSnotGWIS.csv via **WR_Doc_ID**.  Generate single output dataframe *df*.
-- Format **PriorityDate** field to %m/%d/%Y format.
-- Fill in blank **WaRecRCWClassTypeCode** with *Unknown* values.
-- Drop rows with null **WaRecPhaseTypeCode** values, used for WaDE specific *AllocationTypeCV* field.
+- Read in the input files.  Goal will be to create separate POD and POU centric dataframes, then join together for single long output dataframe.
+- For POD data...
+    - Left Join D_PointTable.csv and D_Point_WR_Doc.csv via **D_Point_ID**, and Person_Plus_EXTRACT_FromWRTSnotGWIS.csv via **WR_Doc_ID**.
+    - Generate WaDE *Latitude* & *Longitude* fields with **POINT_X** & **POINT_Y** inputs.  Need to convert EPSG:2927 -to- WaDE accepted EPSG:4326.
+    - Format **PriorityDate** field to %m/%d/%Y format.
+    - Generate *Owner* field with **PersonFirstNM**, **PersonMINM**, & **PersonLastOrOrganizationNM** inputs.
+    - Fill in blank **WaRecRCWClassTypeCode** with *Unspecified* values.
+    - Generate WaDE *AllocationFlow_CFS* field with **InstantaneousQuantity** & **InstantaneousUnitCode** inputs.  Need to convert to CFS.
+    - Create WaDE POD centric temporary dataframe.  Extract POD relevant data (see preprocessing code).
+- For POU data...
+    - Left Join WA_POU_Input.csv and Person_Plus_EXTRACT_FromWRTSnotGWIS.csv via **WR_Doc_ID**.
+    - Format **PriorityDate** field to %m/%d/%Y format.
+    - Generate *Owner* field with **PersonFirstNM**, **PersonMINM**, & **PersonLastOrOrganizationNM** inputs.
+    - Fill in blank **WaRecRCWClassTypeCode** with *Unspecified* values.
+    - Generate WaDE *AllocationFlow_CFS* field with **InstantaneousQuantity** & **InstantaneousUnitCode** inputs.  Need to convert to CFS.
+    - Generate WaDE specific field *SiteNativeID* from WaDE *Latitude* & *Longitude* fields.  Used to identify unique sites.
+    - Create WaDE POU centric temporary dataframe.  Extract POU relevant data (see preprocessing code).
+- Concatenate temporary POD & POU dataframes together into single long output dataframe.
+- Generate WaDE specific field *WaterSourceNativeID* from WaDE *WaterSourceTypeCV* field.  Used to identify unique sources of water.
 - Inspect output dataframe for additional errors / datatypes.
 - Export output dataframe as new csv file, *P_WashingtonMaster.csv*.
 
@@ -159,6 +176,7 @@ Purpose: generate a list of sites where water is diverted (also known as Points 
 
 #### Inputs:
 - P_WashingtonMaster.csv
+- watersources.csv
 
 #### Outputs:
 - sites.csv
@@ -168,6 +186,7 @@ Purpose: generate a list of sites where water is diverted (also known as Points 
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
 - Assign state agency info to the *WaDE Site* specific columns.  See *WA_Allocation Schema Mapping_WaDEQA.xlsx* for specific details.  Items of note are as follows...
+    - Extract *WaterSourceUUID* from waterSources.csv input csv file. See code for specific implementation of extraction.
     - *CoordinateMethodCV* = **Location_C**, translate abbreviations code with dictionary.  Leave blank if not given.
     - *Latitude* = converted **POINT_X** projection from WSDE EPSG:2927 -to- WaDE EPSG:4326.
     - *Longitude* = converted **POINT_Y** projection from WSDE EPSG:2927 -to- WaDE EPSG:4326.
@@ -179,9 +198,9 @@ Purpose: generate a list of sites where water is diverted (also known as Points 
 - Export output dataframe *sites.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-SiteUUID | CoordinateMethodCV | Latitude | Longitude | SiteNativeID
----------- | ---------- | ------------ | ------------ | ------------
-WAwr_S1 | field checked with GPS | 46.5836906784566 | -119.798723819468 | 200889
+SiteUUID | WaterSourceUUID | CoordinateMethodCV | Latitude | Longitude | SiteName
+---------- | ---------- | ---------- | ------------ | ------------ | ------------
+WAwr_S1 | WAwr_WS1 | field checked with GPS | 46.5836906784566 | -119.798723819468 | 200889
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
 - SiteUUID 
@@ -199,7 +218,6 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 - methods.csv
 - variables.csv
 - organizations.csv
-- watersources.csv
 - sites.csv
 
 #### Outputs:
@@ -210,7 +228,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
 - Assign state agency info to the *WaDE Water Allocations* specific columns.  See *WA_Allocation Schema Mapping_WaDEQA.xlsx* for specific details.  Items of note are as follows...
-    - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
+    - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *AllocationFlow_CFS* = **InstantaneousQuantity** & **InstantaneousUnitCode**, covert to GPM or GPD, depending on code value.
     - *AllocationLegalStatusCV* = **WaRecProcessStatusTypeCode**.
     - *AllocationNativeID* = **WR_Doc_ID**.
@@ -232,7 +250,6 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - MethodUUID
 - VariableSpecificUUID
 - OrganizationUUID
-- WaterSourceUUID
 - SiteUUID
 - AllocationPriorityDate
 - BeneficialUseCategory
@@ -240,6 +257,36 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - DataPublicationDate
 
 
+***
+### 7) Code File: 7_UTwr_PODSiteToPOUSiteRelationships.py
+Purpose: generate linking element between POD and POU sites that share the same water right.
+Note: podsitetopousiterelationships.csv output only needed if both POD and POU data is present, otherwise produces empty file.
+
+#### Inputs:
+- sites.csv
+- waterallocations.csv
+
+#### Outputs:
+- podsitetopousiterelationships.csv
+
+#### Operation and Steps:
+- Read the sites.csv & waterallocations.csv input files.
+- Create three temporary dataframes: one for waterallocations, & two for site info that will store POD and POU data separately.
+- For the temporary POD dataframe...
+    - Read in site.csv data from sites.csv with a *PODSiteUUID* field = POD only.
+    - Create *PODSiteUUID* field = *SiteUUID*.
+- For the temporary POU dataframe
+    - Read in site.csv data from sites.csv with a *PODSiteUUID* field = POU only.
+    - Create *POUSiteUUID* field = *SiteUUID*.
+- For the temporary waterallocations dataframe, explode *SiteUUID* field to create unique rows.
+- Left-merge POD & POU dataframes to the waterallocations dataframe via *SiteUUID* field.
+- Consolidate waterallocations dataframe by grouping entries by *AllocationNativeID* filed.
+- Explode the consolidated waterallocations dataframe again using the *PODSiteUUID* field, and again for the *POUSiteUUID* field to create unique rows.
+- Perform error check on waterallocations dataframe (check for NaN values)
+- If waterallocations is not empty, export output dataframe *podsitetopousiterelationships.csv*.
+
+
+***
 ## Staff Contributions
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Washington State Department of Ecology (WSDE)](https://ecology.wa.gov/Water-Shorelines/Water-supply/Water-rights).
 
@@ -248,4 +295,4 @@ WSWC Staff
 - Ryan James <rjames@wswc.utah.gov>
 
 WSDE Staff
-- asdf
+- Riddle, H. Nicholas <HRID461@ECY.WA.GOV>

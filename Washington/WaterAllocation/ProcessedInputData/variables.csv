@@ -1,2 +1,2 @@
 VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
-WSDE_Allocation All,1,Year,Average,CFS,AFY,10,WaterYear,Consumptive Use,Allocation All
+WSDE_Consumptive Use,1,Year,Average,CFS,AFY,10,WaterYear,Consumptive Use,Consumptive Use
