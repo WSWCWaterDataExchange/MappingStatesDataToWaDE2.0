@@ -51,7 +51,7 @@ Purpose: preprocess the Montana input data files and merge them into one master 
     - Generate WaDE Specific Field *TimeframeStart* from MDNRC **PER_USE_BG** field (see preprocess code for specific dictionary used).
     - Generate WaDE Specific Field *TimeframeEnd* from MDNRC **PER_USE_EN** field (see preprocess code for specific dictionary used).
     - Create WaDE POU centric temporary dataframe.  Extract POU relevant data (see preprocessing code).
-    - Generate WaDE specific field *SiteType* from WaDE *Latitude*, *Longitude*, *SiteTypeCV* & *SiteName* fields.  Used to identify unique sites.
+    - Generate WaDE specific field *SiteNativeID* from WaDE *Latitude*, *Longitude*, *SiteTypeCV* & *SiteName* fields.  Used to identify unique sites.
 - Concatenate temporary POD & POU dataframes together into single long output dataframe.
 - Generate WaDE specific field *WaterSourceNativeID* from WaDE *WaterSourceName* & *WaterSourceTypeCV* fields.  Used to identify unique sources of water.
 - Inspect output dataframe for additional errors / datatypes.
@@ -182,6 +182,7 @@ Purpose: generate a list of sites information.
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
 - Assign **MDNRC** info to the *WaDE Site* specific columns.  See *MT_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+    - Extract *WaterSourceUUID* from waterSources.csv input csv file. See code for specific implementation of extraction.
     - *County* = **LLDS_COUNTY_NAME**.
     - *HUC12* = **HUC_12**.
     - *Latitude* = **X**.
