@@ -1,5 +1,5 @@
 #Date Created: 12/22/2020
-#Purpose: To extract TX water source use information and population dataframe for WaDE_QA 2.0.
+#Purpose: To extract TX water source use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) For 'WaterSourceTypeCV', easier to label everything that is not a surface water first.
 #       2) Currently using dummy row until more data made available from TX
 
@@ -12,7 +12,7 @@ import os
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -86,6 +86,7 @@ outdf.reset_index()
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 
@@ -123,4 +124,3 @@ if(len(dfpurge.index) > 0):
     dfpurge.to_csv('ProcessedInputData/watersources_missing.csv', index=False)
 
 print("Done.")
-

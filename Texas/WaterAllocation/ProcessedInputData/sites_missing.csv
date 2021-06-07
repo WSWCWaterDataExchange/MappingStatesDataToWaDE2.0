@@ -1,2 +1,2 @@
-SiteUUID,CoordinateAccuracy,CoordinateMethodCV,County,EPSGCodeCV,Geometry,GNISCodeCV,HUC12,HUC8,Latitude,Longitude,NHDNetworkStatusCV,NHDProductCV,PODorPOUSite,SiteName,SiteNativeID,SitePoint,SiteTypeCV,StateCV,USGSSiteID,ReasonRemoved,index
-TXwr_S5723,Unknown,Digitized,,EPSG:4326,,,,,0.0,0.0,,,POD,Unspecified,61401616001,,Diversion Point,TX,,Bad Latitude,5722.0
+SiteUUID,RegulatoryOverlayUUIDs,WaterSourceUUID,CoordinateAccuracy,CoordinateMethodCV,County,EPSGCodeCV,Geometry,GNISCodeCV,HUC12,HUC8,Latitude,Longitude,NHDNetworkStatusCV,NHDProductCV,PODorPOUSite,SiteName,SiteNativeID,SitePoint,SiteTypeCV,StateCV,USGSSiteID,ReasonRemoved,index
+TXwr_S5723,,TXwr_WS1,Unspecified,Digitized,,4326,,,,,0.0,0.0,,,POD,Unspecified,61401616001,,Diversion Point,TX,,Bad Latitude,5722.0

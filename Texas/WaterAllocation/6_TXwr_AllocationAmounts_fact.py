@@ -1,5 +1,5 @@
 # Date Created: 12/22/2020
-# Purpose: To extract TX allocation use information and population dataframe WaDEQA 2.0.
+# Purpose: To extract TX allocation use information and populate dataframe WaDEQA 2.0.
 #         1) Simple creation of working dataframe (df), with output dataframe (outdf).
 #         2) Drop all nulls before combining duplicate rows on NativeID.
 
@@ -13,7 +13,7 @@ import os
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -25,23 +25,19 @@ os.chdir(workingDir)
 TXM_fileInput = "RawInputData/P_TexasWRP.csv"  # Change this to fit state
 method_fileInput = "ProcessedInputData/methods.csv"
 variables_fileInput = "ProcessedInputData/variables.csv"
-watersources_fileInput = "ProcessedInputData/watersources.csv"
 sites_fileInput = "ProcessedInputData/sites.csv"
 
-use_fileInput = 'RawInputData/WaterUse.csv'
-owner_fileInput = 'RawInputData/WaterRightOwner.csv'
-
-df_DM = pd.read_csv(TXM_fileInput)  # The Texas Master input dataframe.
+df_DM = pd.read_csv(TXM_fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
 df_method = pd.read_csv(method_fileInput)  # Method dataframe
 df_variables = pd.read_csv(variables_fileInput)  # Variables dataframe
-df_watersources = pd.read_csv(watersources_fileInput)  # WaterSources dataframe
 df_sites = pd.read_csv(sites_fileInput)  # Sites dataframe
-
-df_use = pd.read_csv(use_fileInput, usecols=['Water Right ID', 'Use'])
-df_owner = pd.read_csv(owner_fileInput, usecols=['Water Right ID', 'Owner'], encoding="ISO-8859-1")
 
 # WaDE dataframe columns
 columnslist = [
+    "MethodUUID",
+    "OrganizationUUID",
+    "SiteUUID",
+    "VariableSpecificUUID",
     "AllocationApplicationDate",
     "AllocationAssociatedConsumptiveUseSiteIDs",
     "AllocationAssociatedWithdrawalSiteIDs",
@@ -71,15 +67,11 @@ columnslist = [
     "IrrigatedAcreage",
     "IrrigationMethodCV",
     "LegacyAllocationIDs",
-    "MethodUUID",
-    "OrganizationUUID",
+    "OwnerClassificationCV",
     "PopulationServed",
     "PowerType",
     "PrimaryUseCategory",
-    "SiteUUID",
-    "VariableSpecificUUID",
-    "WaterAllocationNativeURL",
-    "WaterSourceUUID"]
+    "WaterAllocationNativeURL"]
 
 
 # Custom Site Functions
@@ -98,73 +90,29 @@ def retrieveSiteUUID(colrowValue):
             outList = ""
     return outList
 
-
 # For creating AllocationLegalStatusCV
 def assignAllocationLegalStatusCV(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
-        outList = "Unknown"
+        outList = "Unspecified"
     else:
         outList = "Active"
     return outList
 
-
 # For creating AllocationLegalStatusCV
 def assignBeneficialUseCategory(colrowValue):
     if colrowValue == "[]" or colrowValue == "" or pd.isnull(colrowValue):
-        outList = "Unknown"
+        outList = "Unspecified"
     else:
         outList = colrowValue.replace("[", "").replace("]", "").replace("'", "")
     return outList
 
-
 # For creating AllocationAmount
 def assignAllocationBasis(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
-        outList = 'Unknown'
+        outList = "Unspecified"
     else:
         outList = colrowValue
     return outList
-
-
-def retrieveNames(df):
-    ids = df['Water Right ID'].drop_duplicates()
-    outdf = pd.DataFrame(ids)
-    outdf.reset_index(drop=True, inplace=True)
-    outdf['owners'] = ''
-    outdf.set_index(outdf['Water Right ID'], inplace=True)
-
-    for id in ids:
-        vals = df.loc[df['Water Right ID'] == id]
-        vals.reset_index(inplace=True)
-        names = []
-        for i, row in vals.iterrows():
-            names.append(row['Owner'])
-
-        outdf.at[id, 'owners'] = ','.join(names)
-
-    return outdf
-
-
-def retrieveUses(df):
-    ids = df['Water Right ID'].drop_duplicates()
-    outdf = pd.DataFrame(ids)
-    outdf.reset_index(drop=True, inplace=True)
-    outdf['uses'] = ''
-    outdf.set_index(outdf['Water Right ID'], inplace=True)
-
-    for id in ids:
-        vals = df.loc[df['Water Right ID'] == id]
-        vals.reset_index(inplace=True)
-        uses = []
-        for i, row in vals.iterrows():
-            new_use = row['Use']
-
-            if new_use not in uses:
-                uses.append(new_use)
-
-        outdf.at[id, 'uses'] = ','.join(uses)
-
-    return outdf
 
 
 # Creating output dataframe (outdf)
@@ -182,10 +130,7 @@ print("SiteUUID")
 outdf['SiteUUID'] = df_DM.apply(lambda row: retrieveSiteUUID(row['TCEQ_ID']), axis=1)
 
 print("VariableSpecificUUID")
-outdf['VariableSpecificUUID'] = "TCEQ_Allocation All"
-
-print("WaterSourceUUID")
-outdf['WaterSourceUUID'] = "TXwr_WS1"
+outdf['VariableSpecificUUID'] = "TCEQ_Allocation"
 
 print("AllocationApplicationDate")
 outdf['AllocationApplicationDate'] = ""
@@ -221,14 +166,7 @@ print("AllocationNativeID")  # Will use this with a .groupby() statement towards
 outdf['AllocationNativeID'] = df_DM['WR_ID']
 
 print("AllocationOwner")
-df_owners = retrieveNames(df_owner)
-for i, row in outdf.iterrows():
-    try:
-        x = row['AllocationNativeID']
-        y = df_owners.loc[df_owners['Water Right ID'] == x]
-        outdf.at[i, 'AllocationOwner'] = y.loc[x, 'owners']
-    except:
-        outdf.at[i, 'AllocationOwner'] = ''
+outdf['AllocationOwner'] = df_DM['in_AllocationOwner']
 
 print("AllocationPriorityDate")
 outdf['AllocationPriorityDate'] = "06/24/2020"
@@ -249,14 +187,7 @@ print("AllocationVolume_AF")
 outdf['AllocationVolume_AF'] = ""
 
 print("BeneficialUseCategory")
-df_uses = retrieveUses(df_use)
-for i, row in outdf.iterrows():
-    try:
-        x = row['AllocationNativeID']
-        y = df_uses.loc[df_uses['Water Right ID'] == x]
-        outdf.at[i, 'BeneficialUseCategory'] = y.loc[x, 'uses']
-    except:
-        outdf.at[i, 'BeneficialUseCategory'] = 'Unknown'
+outdf['BeneficialUseCategory'] = df_DM['in_BeneficialUseCategory']
 
 print("CommunityWaterSupplySystem")
 outdf['CommunityWaterSupplySystem'] = ""
@@ -288,6 +219,15 @@ outdf['IrrigationMethodCV'] = ""
 print("LegacyAllocationIDs")
 outdf['LegacyAllocationIDs'] = ""
 
+#####################################
+print("OwnerClassificationCV")
+# Temp solution to populate OwnerClassificationCV field.
+# Use Custom import file
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/OwnerClassification")
+import OwnerClassificationField
+outdf['OwnerClassificationCV'] = outdf.apply(lambda row: OwnerClassificationField.CreateOwnerClassification(row['AllocationOwner']), axis=1)
+#####################################
+
 print("PopulationServed")
 outdf['PopulationServed'] = ""
 
@@ -295,7 +235,7 @@ print("PowerType")
 outdf['PowerType'] = ""
 
 print("PrimaryUseCategory")
-outdf['PrimaryUseCategory'] = "Irrigation"
+outdf['PrimaryUseCategory'] = "Unspecified"
 
 print("WaterAllocationNativeURL")
 outdf["WaterAllocationNativeURL"] = ''
@@ -303,18 +243,25 @@ outdf["WaterAllocationNativeURL"] = ''
 print("Joining outdf duplicates based on AllocationNativeID...")
 outdf = outdf.replace(np.nan, '')  # Replaces NaN values with blank.
 outdf100 = pd.DataFrame(columns=columnslist)  # The output dataframe for CSV.
-outdf100 = outdf.groupby('AllocationNativeID').agg(lambda x: ','.join([str(elem) for elem in (list(set(x)))])).replace(np.nan, '').reset_index()
+outdf100 = outdf.groupby(['AllocationNativeID']).agg(lambda x: ','.join([str(elem) for elem in (list(set(x))) if elem!=''])).replace(np.nan, "").reset_index()
 
 
 # Solving WaDE 2.0 Upload Issues
 # ############################################################################
 print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to upload data to QA here.
 
-# N/A
+# Date Noted: 05/25/2021
+# Note: OwnerClassificationCV can only accept 1 entry at this time. Error due to above merge / we don't allow multiple OwnerClassificationCV.
+def tempfixOCSV(colrowValueA):
+    result = colrowValueA.split(",", 1)[0]  # pass in text, split on "," & return first value.
+    return result
+outdf100['OwnerClassificationCV']  = outdf100.apply(lambda row: tempfixOCSV(row['OwnerClassificationCV']), axis=1)
+
 
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
+
 # Purge DataFrame to hold removed elements
 dfpurge = pd.DataFrame(columns=columnslist)
 dfpurge = dfpurge.assign(ReasonRemoved='')
@@ -330,9 +277,6 @@ outdf100, dfpurge = TestErrorFunctions.SiteUUID_AA_Check(outdf100, dfpurge)
 
 # VariableSpecificUUID
 outdf100, dfpurge = TestErrorFunctions.VariableSpecificUUID_AA_Check(outdf100, dfpurge)
-
-# WaterSourceUUID
-outdf100, dfpurge = TestErrorFunctions.WaterSourceUUID_AA_Check(outdf100, dfpurge)
 
 # AllocationApplicationDateID
 outdf100, dfpurge = TestErrorFunctions.AllocationApplicationDate_AA_Check(outdf100, dfpurge)
@@ -417,6 +361,9 @@ outdf100, dfpurge = TestErrorFunctions.IrrigationMethodCV_AA_Check(outdf100, dfp
 
 # LegacyAllocationIDs
 outdf100, dfpurge = TestErrorFunctions.LegacyAllocationIDs_AA_Check(outdf100, dfpurge)
+
+# OwnerClassificationCV
+outdf100, dfpurge = TestErrorFunctions.OwnerClassificationCV_AA_Check(outdf100, dfpurge)
 
 # PopulationServed
 outdf100, dfpurge = TestErrorFunctions.PopulationServed_AA_Check(outdf100, dfpurge)

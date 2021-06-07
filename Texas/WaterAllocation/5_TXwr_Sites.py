@@ -1,5 +1,5 @@
 #Date Created: 12/22/2020
-#Purpose: To extract ID site use information and population dataframe for WaDEQA 2.0.
+#Purpose: To extract ID site use information and populate dataframe for WaDEQA 2.0.
 #Notes: 1) For 'SiteTypeCV', easier to label everything that is not a surface water first.
 #       2) For 'CoordinateMethodCV', list out all Idaho specific CV values (should already be in WaDE Vocab).
 
@@ -16,7 +16,7 @@ transformer = Transformer.from_proj(4269, 4326)  # A trick to drastically optimi
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -28,8 +28,13 @@ os.chdir(workingDir)
 fileInput = "RawInputData/P_TexasWRP.csv"
 df = pd.read_csv(fileInput)
 
+watersources_fileInput = "ProcessedInputData/watersources.csv" # watersource inputfile
+df_watersources = pd.read_csv(watersources_fileInput)  # watersources dataframe
+
 columnslist = [
     "SiteUUID",
+    "RegulatoryOverlayUUIDs",
+    "WaterSourceUUID",
     "CoordinateAccuracy",
     "CoordinateMethodCV",
     "County",
@@ -54,29 +59,6 @@ columnslist = [
 # Custom Functions
 ############################################################################
 
-# For creating SiteTypeCV
-UnknownSTCVDict = {
-    "Ground Water":"Ground Water",
-    "Spring":"spring",
-    "Lake":"lake",
-    "Pond":"pond",
-    "Canal":"Canal",
-    "Fork":"Surface Water",
-    "Waste":"waste water",
-    "Drain":"drain",
-    "Reservoir":"reservoir",
-    "Ditch":"ditch"}
-def assignSiteTypeCV(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outList = ''
-    else:
-        String1 = colrowValue.strip()
-        try:
-            outList = String1
-        except:
-            outList = "Surface Water"
-    return outList
-
 # For creating SiteUUID
 def assignSiteUUID(colrowValue):
     string1 = str(colrowValue)
@@ -100,16 +82,22 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist, index=df.index)
 
 print("CoordinateAccuracy")
-outdf["CoordinateAccuracy"] = 'Unknown'
+outdf["CoordinateAccuracy"] = "Unspecified"
+
+print("RegulatoryOverlayUUIDs")
+outdf['RegulatoryOverlayUUIDs'] = ""
+
+print("WaterSourceUUID")
+outdf['WaterSourceUUID'] = "TXwr_WS1"
 
 print("CoordinateMethodCV")
-outdf['CoordinateMethodCV'] = 'Digitized'
+outdf['CoordinateMethodCV'] = "Digitized"
 
 print("County")
 outdf['County'] = ""
 
 print("EPSGCodeCV")
-outdf['EPSGCodeCV'] = 'EPSG:4326'
+outdf['EPSGCodeCV'] = '4326'
 
 print("Geometry")
 outdf['Geometry'] = ""
@@ -148,7 +136,7 @@ print("SitePoint")
 outdf['SitePoint'] = ""
 
 print("SiteTypeCV")
-outdf['SiteTypeCV'] = df.apply(lambda row: assignSiteTypeCV(row['TYPE']), axis=1)
+outdf['SiteTypeCV'] = df['TYPE']
 
 print("StateCV")  #
 outdf['StateCV'] = "TX"
@@ -172,11 +160,18 @@ outdf['SiteUUID'] = dftemp.apply(lambda row: assignSiteUUID(row['Count']), axis=
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 
 # SiteUUID
 outdf, dfpurge = TestErrorFunctions.SiteUUID_S_Check(outdf, dfpurge)
+
+# RegulatoryOverlayUUIDs
+outdf, dfpurge = TestErrorFunctions.RegulatoryOverlayUUIDs_S_Check(outdf, dfpurge)
+
+# WaterSourceUUID
+outdf100, dfpurge = TestErrorFunctions.WaterSourceUUID_S_Check(outdf, dfpurge)
 
 # CoordinateAccuracy
 outdf, dfpurge = TestErrorFunctions.CoordinateAccuracy_S_Check(outdf, dfpurge)
@@ -239,6 +234,7 @@ outdf, dfpurge = TestErrorFunctions.USGSSiteID_S_Check(outdf, dfpurge)
 # Export to new csv
 ############################################################################
 print("Exporting dataframe outdf to csv...")
+
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/sites.csv', index=False)
 
