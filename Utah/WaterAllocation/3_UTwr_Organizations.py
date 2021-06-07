@@ -71,6 +71,6 @@ outdf.to_csv('ProcessedInputData/organizations.csv', index=False)
 
 # Report purged values.
 if(len(outdf_nullMand.index) > 0):
-    outdf_nullMand.to_csv('organizations_mandatoryFieldMissing.csv')  # index=False,
+    outdf_nullMand.to_csv('organizations_mandatoryFieldMissing.csv', index=False)
 
 print("Done.")

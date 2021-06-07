@@ -34,7 +34,7 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "UT_Allocation All",
+    "UT_Allocation",
     "1",
     "Year",
     "Average",

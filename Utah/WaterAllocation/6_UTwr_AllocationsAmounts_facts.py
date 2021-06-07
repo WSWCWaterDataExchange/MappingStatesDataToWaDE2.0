@@ -68,7 +68,7 @@ columnslist = [
     "IrrigatedAcreage",
     "IrrigationMethodCV",
     "LegacyAllocationIDs",
-    "OwnerClassificationCV"
+    "OwnerClassificationCV",
     "PopulationServed",
     "PowerType",
     "PrimaryUseCategory",
@@ -121,7 +121,7 @@ def assignGeneratedPowerCapacityMW(colrowValue):
         outList = ""
     else:
         val = float(colrowValue)/1000
-        outList = val
+        outList = float(val)
     return outList
 
 
@@ -141,7 +141,7 @@ print("SiteUUID")
 outdf['SiteUUID'] = df_DM.apply(lambda row: retrieveSiteUUID(row['OBJECTID']), axis=1)
 
 print("VariableSpecificUUID")
-outdf['VariableSpecificUUID'] = "UT_Allocation All"
+outdf['VariableSpecificUUID'] = "UT_Allocation"
 
 print("AllocationApplicationDate")
 outdf['AllocationApplicationDate'] = df_DM['DATE_FILED']
@@ -219,7 +219,8 @@ print("ExemptOfVolumeFlowPriority")
 outdf['ExemptOfVolumeFlowPriority'] = "0"
 
 print("GeneratedPowerCapacityMW")
-outdf['GeneratedPowerCapacityMW'] = df_DM.apply(lambda row: assignGeneratedPowerCapacityMW(row['POWER_CAPACITY']), axis=1)
+# outdf['GeneratedPowerCapacityMW'] = df_DM.apply(lambda row: assignGeneratedPowerCapacityMW(row['POWER_CAPACITY']), axis=1)
+outdf['GeneratedPowerCapacityMW'] = ""
 
 print("IrrigatedAcreage")
 outdf['IrrigatedAcreage'] = ""
@@ -263,6 +264,13 @@ outdf100 = outdf.groupby(['AllocationNativeID']).agg(lambda x: ",".join([str(ele
 # Solving WaDE 2.0 Upload Issues
 # ############################################################################
 print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to upload data to QA here.
+
+# Date Noted: 05/25/2021
+# Note: OwnerClassificationCV can only accept 1 entry at this time. Error due to above merge / we don't allow multiple OwnerClassificationCV.
+def tempfixOCSV(colrowValueA):
+    result = colrowValueA.split(",", 1)[0]  # pass in text, split on "," & return first value.
+    return result
+outdf100['OwnerClassificationCV']  = outdf100.apply(lambda row: tempfixOCSV(row['OwnerClassificationCV']), axis=1)
 
 
 #Error checking each field
