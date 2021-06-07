@@ -1,6 +1,6 @@
 # Date Updated: 05/25/2021
 # Purpose: To extract CA site POD and POU relation information and populate dataframe for WaDEQA 2.0.
-# Notes: Uses allocations.csv as input.  Explodes() SiteUUID values, and then groups AllocationNativeID to find POD and POU relation.
+# Notes: N/A
 
 
 # Needed Libraries
@@ -8,12 +8,6 @@
 import pandas as pd
 import numpy as np
 import os
-
-# Custom Libraries
-############################################################################
-import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
-import TestErrorFunctions
 
 
 # Inputs
@@ -37,11 +31,6 @@ allocationInput = "ProcessedInputData/waterallocations.csv"
 dfallo = pd.read_csv(allocationInput, usecols=alocationColumns)
 
 
-# Custom Functions
-############################################################################
-# N/A
-
-
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
@@ -61,11 +50,11 @@ dfallo = dfallo.assign(PODSiteUUID=dfallo['PODSiteUUID'].str.split(',')).explode
 dfallo = dfallo.assign(POUSiteUUID=dfallo['POUSiteUUID'].str.split(',')).explode('POUSiteUUID').reset_index(drop=True)
 
 # create out DataFrame
-# drops 'nan rows'
 outdf = pd.DataFrame()
 outdf['PODSiteUUID'] = dfallo['PODSiteUUID']
 outdf['POUSiteUUID'] = dfallo['POUSiteUUID']
 
+# drops 'nan rows'
 outdf = outdf[outdf['PODSiteUUID'] != 'nan'].reset_index(drop=True)
 outdf = outdf[outdf['POUSiteUUID'] != 'nan'].reset_index(drop=True)
 
@@ -73,29 +62,14 @@ outdf = outdf[outdf['POUSiteUUID'] != 'nan'].reset_index(drop=True)
 outdf['StartDate'] = "01/01/2021"
 outdf['EndDate'] = "12/31/2021"
 
-# Check if dataframe is empty, fill in 1 row if true
-if outdf.empty:
-    outdf = outdf.append({'StartDate': "01/01/2021", 'EndDate': "12/31/2021"}, ignore_index=True)
-outdf
-
-#Error Checking each Field
-############################################################################
-print("Error checking each field.  Purging bad inputs.")
-
-# dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
-# dfpurge = dfpurge.assign(ReasonRemoved='')
-
-
 
 # Export to new csv
 ############################################################################
 print("Exporting dataframe outdf to csv...")
 
 # The working output DataFrame for WaDE 2.0 input.
-outdf.to_csv('ProcessedInputData/podsitetopousiterelationships.csv', index=False)
-
-# # Report purged values.
-# if(len(dfpurge.index) > 0):
-#     dfpurge.to_csv('ProcessedInputData/podsitetopousiterelationships_missing.csv', index=False)
+# Check if dataframe is empty, print if false.
+if not outdf.empty:
+    outdf.to_csv('ProcessedInputData/podsitetopousiterelationships.csv', index=False)
 
 print("Done.")
