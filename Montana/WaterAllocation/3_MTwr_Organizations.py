@@ -1,6 +1,6 @@
 #Date Created: 11/23/2020
-#Purpose: To extract MT organization information and population dataframe for WaDE_QA 2.0.
-#Notes: asdf
+#Purpose: To extract MT organization information and populate dataframe for WaDE_QA 2.0.
+#Notes: N/A
 
 
 # Needed Libraries
@@ -59,15 +59,16 @@ outdf_nullMand = outdf.loc[(outdf["OrganizationUUID"].isnull()) | (outdf["Organi
                            (outdf["OrganizationWebsite"].isnull()) | (outdf["OrganizationWebsite"] == '') |
                            (outdf["State"].isnull()) | (outdf["State"] == '')]
 
-if(len(outdf_nullMand.index) > 0):
-    outdf_nullMand.to_csv('organizations_mandatoryFieldMissing.csv')
-
 
 # Export to new csv
 ############################################################################
 print("Exporting dataframe to csv...")
-# save to output
+
+# The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/organizations.csv', index=False)
 
+# Report purged values.
+if(len(outdf_nullMand.index) > 0):
+    outdf_nullMand.to_csv('organizations_mandatoryFieldMissing.csv', index=False)
 
 print("Done.")

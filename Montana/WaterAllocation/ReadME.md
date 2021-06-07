@@ -13,7 +13,7 @@ Two unique files were created, one used by the WSWC staff to understand the avai
  - WaDE_PoUs_input.csv (have not incorporated yet)
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share MDNRC's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *MT_Allocation Schema Mapping to WaDE_QA.xlsx*.  Six executable code files were used to extract the MDNRC's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those six code files are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share MDNRC's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *MT_Allocation Schema Mapping to WaDE_QA.xlsx*.  Seven executable code files were used to extract the MDNRC's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (preprocess) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining six code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those seven code files are as follows...
 
 - 0_PreProcessMontanaWaterRightData.ipynb
 - 1_MTwr_Methods.py
@@ -22,11 +22,12 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 - 4_MTwr_WaterSources.py
 - 5_MTwr_Sites.py
 - 6_MTwr_AllocationsAmounts_fac`ts.py
+- 7_MTwr_PODSiteToPOUSiteRelationships.py
 
 
 ***
 ### 0) Code File: 0_PreProcessMontanaWaterRightData.ipynb
-Purpose: Pre-process the Montana input data files and merge them into one master file for simple dataframe creation and extraction.
+Purpose: preprocess the Montana input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
  - WaDE_PODs_input.csv
@@ -35,13 +36,24 @@ Purpose: Pre-process the Montana input data files and merge them into one master
  - P_MontanaMaster.csv
 
 #### Operation and Steps:
-- Read the input files and generate temporary input dataframes.
-- Generate WaDE specific field *WaterSourceTypeC* from MDNRC **SOURCE_TYPE** field (see pre-process code for specific dictionary used).
-- Format **ENF_PRIORITY_DATE** field to %m/%d/%Y format.
-- Generate WaDE specific field *MethodTypeCV* from MDNRC **ENF_PRIORITY_DATE** field (see pre-process code for specific dictionary used).  Water rights that were established prior to July 1,1973 are administered by the Adjudication Bureau. Water rights that were established from July 1, 1973 through the present are administered by the New Appropriations Program.
-- Generate WaDE Specific Field *TimeframeStart* from MDNRC **PER_DIV_BGN_DT** field (see pre-process code for specific dictionary used).
-- Generate WaDE Specific Field *TimeframeEnd* from MDNRC **PER_DIV_END_DT** field (see pre-process code for specific dictionary used).
-- Generate WaDE Specific Field *ExemptOfVolumeFlowPriority* from MDNRC **WR_TYPE** field.  If **WR_TYPE** = EXEMPT NOTICE, allow exempt .
+- Read in the input files.  Goal will be to create separate POD and POU cenetric dataframes, then join together for single long output dataframe.
+- For POD data...
+    - Generate WaDE specific field *WaterSourceTypeC* from MDNRC **SOURCE_TYPE** field (see preprocess code for specific dictionary used).
+    - Format **ENF_PRIORITY_DATE** field to %m/%d/%Y format.
+    - Generate WaDE specific field *MethodTypeCV* from MDNRC **ENF_PRIORITY_DATE** field (see preprocess code for specific dictionary used).  Water rights that were established prior to July 1,1973 are administered by the Adjudication Bureau. Water rights that were established from July 1, 1973 through the present are administered by the New Appropriations Program.
+    - Generate WaDE Specific Field *TimeframeStart* from MDNRC **PER_DIV_BGN_DT** field (see preprocess code for specific dictionary used).
+    - Generate WaDE Specific Field *TimeframeEnd* from MDNRC **PER_DIV_END_DT** field (see preprocess code for specific dictionary used).
+    - Create WaDE POD centric temporary dataframe.  Extract POU relevant data (see preprocessing code).
+- For POU data...
+    - Generate WaDE specific field *WaterSourceTypeC* from MDNRC **SRCTYPE** field (see preprocess code for specific dictionary used).
+    - Format **ENF_PRIORITY_DATE** field to %m/%d/%Y format.
+    - Generate WaDE specific field *MethodTypeCV* from MDNRC **ENF_PRIORI** field (see preprocess code for specific dictionary used).  Water rights that were established prior to July 1,1973 are administered by the Adjudication Bureau. Water rights that were established from July 1, 1973 through the present are administered by the New Appropriations Program.
+    - Generate WaDE Specific Field *TimeframeStart* from MDNRC **PER_USE_BG** field (see preprocess code for specific dictionary used).
+    - Generate WaDE Specific Field *TimeframeEnd* from MDNRC **PER_USE_EN** field (see preprocess code for specific dictionary used).
+    - Create WaDE POU centric temporary dataframe.  Extract POU relevant data (see preprocessing code).
+    - Generate WaDE specific field *SiteType* from WaDE *Latitude*, *Longitude*, *SiteTypeCV* & *SiteName* fields.  Used to identify unique sites.
+- Concatenate temporary POD & POU dataframes together into single long output dataframe.
+- Generate WaDE specific field *WaterSourceNativeID* from WaDE *WaterSourceName* & *WaterSourceTypeCV* fields.  Used to identify unique sources of water.
 - Inspect output dataframe for additional errors / datatypes.
 - Export output dataframe as new csv file, *P_MontanaMaster.csv*.
 
@@ -160,6 +172,7 @@ Purpose: generate a list of sites information.
 
 #### Inputs:
 - P_MontanaMaster.csv
+- watersources.csv
 
 #### Outputs:
 - sites.csv
@@ -182,9 +195,9 @@ Purpose: generate a list of sites information.
 - Export output dataframe *sites.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-SiteUUID | CoordinateMethodCV | Latitude | Longitude | SiteName
----------- | ---------- | ------------ | ------------ | ------------
-MTwr_S1 | Unknown | 45.10645361 | -104.1225607 | Unspecified
+SiteUUID | WaterSourceUUID | CoordinateMethodCV | Latitude | Longitude | SiteName
+---------- | ---------- | ---------- | ------------ | ------------ | ------------
+MTwr_S1 | MTwr_WS1 | Unknown | 45.10645361 | -104.1225607 | Unspecified
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
 - SiteUUID 
@@ -202,7 +215,6 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 - methods.csv
 - variables.csv
 - organizations.csv
-- watersources.csv
 - sites.csv
 
 #### Outputs:
@@ -213,7 +225,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
 - Assign **MDNRC** info to the *WaDE Water Allocations* specific columns.  See *MT_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
-    - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
+    - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *AllocationFlow_CFS* = **FLW_RT_CFS**.
     - *AllocationLegalStatusCV* = **WR_STATUS**.
     - *AllocationNativeID* = **WR_NUMBER**.
@@ -240,7 +252,6 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - MethodUUID
 - VariableSpecificUUID
 - OrganizationUUID
-- WaterSourceUUID
 - SiteUUID
 - AllocationPriorityDate
 - BeneficialUseCategory
@@ -248,6 +259,36 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - DataPublicationDate
 
 
+***
+### 7) Code File: 7_MTwr_PODSiteToPOUSiteRelationships.py
+Purpose: generate linking element between POD and POU sites that share the same water right.
+Note: podsitetopousiterelationships.csv output only needed if both POD and POU data is present, otherwise produces empty file.
+
+#### Inputs:
+- sites.csv
+- waterallocations.csv
+
+#### Outputs:
+- podsitetopousiterelationships.csv
+
+#### Operation and Steps:
+- Read the sites.csv & waterallocations.csv input files.
+- Create three temporary dataframes: one for waterallocations, & two for site info that will store POD and POU data separately.
+- For the temporary POD dataframe...
+    - Read in site.csv data from sites.csv with a *PODSiteUUID* field = POD only.
+    - Create *PODSiteUUID* field = *SiteUUID*.
+- For the temporary POU dataframe
+    - Read in site.csv data from sites.csv with a *PODSiteUUID* field = POU only.
+    - Create *POUSiteUUID* field = *SiteUUID*.
+- For the temporary waterallocations dataframe, explode *SiteUUID* field to create unique rows.
+- Left-merge POD & POU dataframes to the waterallocations dataframe via *SiteUUID* field.
+- Consolidate waterallocations dataframe by grouping entries by *AllocationNativeID* filed.
+- Explode the consolidated waterallocations dataframe again using the *PODSiteUUID* field, and again for the *POUSiteUUID* field to create unique rows.
+- Perform error check on waterallocations dataframe (check for NaN values)
+- If waterallocations is not empty, export output dataframe *podsitetopousiterelationships.csv*.
+
+
+***
 ## Staff Contributions
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Montana Department of Natural Resources and Conservation (MDNRC)](https://opendata-mtdnrc.hub.arcgis.com/).
 
