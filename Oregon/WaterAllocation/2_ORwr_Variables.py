@@ -1,5 +1,5 @@
 #Date Created: 04/03/2020
-#Purpose: To extract OR variable use information and population dataframe for WaDE_QA 2.0.
+#Purpose: To extract OR variable use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) Single row of entries, inpVals, for Variable Table.
 
 
@@ -37,7 +37,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = "OWRD_Allocation All"
+outdf.VariableSpecificUUID = "OWRD_Allocation"
 
 outdf.AggregationInterval = "1"
 
@@ -55,7 +55,7 @@ outdf.ReportYearTypeCV = "WaterYear"
 
 outdf.VariableCV = "Allocation"
 
-outdf.VariableSpecificCV = "Allocation All"
+outdf.VariableSpecificCV = "Allocation"
 
 
 # Check required fields are not null
@@ -78,11 +78,12 @@ outdf_nullMand = outdf.loc[(outdf["VariableSpecificUUID"].isnull()) | (outdf["Va
 # Export to new csv
 ############################################################################
 print("Exporting dataframe to csv...")
+
+# The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/variables.csv', index=False)
 
-#Report missing values if need be to separate csv
+# Report purged values.
 if(len(outdf_nullMand.index) > 0):
-    outdf_nullMand.to_csv('ProcessedInputData/variables_missing.csv')  # index=False,
-
+    outdf_nullMand.to_csv('ProcessedInputData/variables_missing.csv', index=False)
 
 print("Done.")
