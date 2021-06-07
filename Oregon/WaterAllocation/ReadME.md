@@ -248,4 +248,9 @@ WSWC Staff
 - Adel Abdallah <adelabdallah@wswc.utah.gov>
 
 OWRD Staff
-- 
+- Jordan Beamer
+- Tracy Fox
+- Melendy Bradley
+- Mellony Joskinson
+- Greg Dubenko
+- Richard Marvin
