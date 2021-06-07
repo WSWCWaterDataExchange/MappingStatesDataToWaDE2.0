@@ -29,7 +29,7 @@ method_fileInput = "ProcessedInputData/methods.csv"
 variables_fileInput = "ProcessedInputData/variables.csv"
 sites_fileInput = "ProcessedInputData/sites.csv"
 
-df_M = pd.read_csv(CODM_fileInput)  # The Master input dataframe.
+df_M = pd.read_csv(CODM_fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
 df_method = pd.read_csv(method_fileInput)  # Method dataframe
 df_variables = pd.read_csv(variables_fileInput)  # Variables dataframe
 df_sites = pd.read_csv(sites_fileInput)  # Sites dataframe
@@ -69,7 +69,7 @@ columnslist = [
     "IrrigatedAcreage",
     "IrrigationMethodCV",
     "LegacyAllocationIDs",
-    "OwnerClassificationCV"
+    "OwnerClassificationCV",
     "PopulationServed",
     "PowerType",
     "PrimaryUseCategory",
@@ -112,7 +112,7 @@ print("SiteUUID")
 outdf['SiteUUID'] = df_M.apply(lambda row: retrieveSiteUUID(row['WDID']), axis=1)
 
 print("VariableSpecificUUID")
-outdf['VariableSpecificUUID'] = "CODWR_Allocation All"
+outdf['VariableSpecificUUID'] = "CODWR_Allocation"
 
 print("AllocationApplicationDate")
 outdf['AllocationApplicationDate'] = df_M['Appropriation Date']

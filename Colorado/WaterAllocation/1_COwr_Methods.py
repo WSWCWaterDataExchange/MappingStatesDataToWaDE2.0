@@ -35,7 +35,7 @@ columnslist = [
 print("Populating dataframe...")
 inpVals = [
     "CODWR_Diversion Tracking",
-    "Allocation",
+    "Surface Ground Water",
     "",
     "",
     "",
