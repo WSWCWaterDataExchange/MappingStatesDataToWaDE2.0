@@ -1,5 +1,3 @@
-work in progress
-
 # OWRB Water Rights (Allocation) Data Preparation for WaDE
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [Oklahoma Water Resources Board (OWRB)](https://www.owrb.ok.gov/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
@@ -9,14 +7,16 @@ The following data was used for water allocations...
 
 - Permitted Surface Water Diversion Points: http://home-owrb.opendata.arcgis.com/datasets/permitted-surface-water-diversion-points?geometry=-119.379%2C31.373%2C-77.565%2C37.701
 - Permitted Groundwater Wells (Point coverage): https://home-owrb.opendata.arcgis.com/datasets/permitted-groundwater-wells
+- Area of Use data: https://home-owrb.opendata.arcgis.com/datasets/areas-of-use?geometry=-109.718%2C33.749%2C-87.404%2C36.886
 
 
 These datasets were saved to a local csv file copy to be used as input to the Python codes that prepare WaDE2 input files.  Files can be found in the [RawInputData Folder](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Oklahoma/WaterAllocation/RawInputData)/ Input files used are as follows...
  - Permitted_Groundwater_Wells.csv
  - Permitted_Surface_Water_Diversion_Points.csv
+ - OK_AreasofUse.csv
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share OWRB's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *OK_Allocation Schema Mapping to WaDE_QA.xlsx*.  Six executable code files were used to extract the OWRB's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those six code files are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share OWRB's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *OK_Allocation Schema Mapping to WaDE_QA.xlsx*.  Seven executable code files were used to extract the OWRB's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining six code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those Seven code files are as follows...
 
 - 0_PreProcessOklahomaAllocationData.ipynb
 - 1_OKwr_Methods.py
@@ -24,7 +24,8 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 - 3_OKwr_Organizations.pys
 - 4_OKwr_WaterSources.py
 - 5_OKwr_Sites.py
-- 6_OKwr_AllocationsAmounts_factsts.py
+- 6_OKwr_AllocationsAmounts_facts.py
+- 7_OKwr_PODSiteToPOUSiteRelationships.py
 
 
 ***
@@ -34,14 +35,24 @@ Purpose: Pre-process the Oklahoma input data files and merge them into one maste
 #### Inputs: 
  - Permitted_Groundwater_Wells.csv
  - Permitted_Surface_Water_Diversion_Points.csv
+ - OK_AreasofUse.csv
 
 #### Outputs:
  - P_OklahomaMaster.csv
 
 #### Operation and Steps:
-- Read the input files and generate temporary input dataframes.  Concat into a single dataframe for convenience.
-- Format **DATE_FILED** & **DATE_ISSUED**  fields to %m/%d/%Y format.
+- Read in the input files.  Goal will be to create separate POD and POU centric dataframes, then join together for single long output dataframe.  POD & POU data share similar fields.
+- For POD data...
+    - Concatenate Permitted_Groundwater_Wells.csv & Permitted_Surface_Water_Diversion_Points.csv into one long dataframe.  Both share similar fields.
+    - Set WaDE *PODorPOUSite* field = POD.
+    - Format **DATE_FILED** & **DATE_ISSUED**  fields to %m/%d/%Y format.
+- For POU data...
+    - Set WaDE *PODorPOUSite* field = POU.
+    - Format **DATE_FILED** & **DATE_ISSUED**  fields to %m/%d/%Y format.
+- Concatenate temporary POD & POU dataframes together into single long output dataframe.
 - Format strings from **PRIMARY_PURPOSE** to reduce errors.
+- Format strings from **ENTITY_NAME** to reduce owner name error.
+- Generate WaDE specific field *SiteNativeID* from WaDE *Latitude*, *Longitude*, & *PODorPOUSite* fields.  Used to identify unique sites.
 - Inspect output dataframe for additional errors / datatypes.
 - Export output dataframe as new csv file, *P_OklahomaMaster.csv*.
 
@@ -160,6 +171,7 @@ Purpose: generate a list of sites information.
 
 #### Inputs:
 - P_OklahomaMaster.csv
+- watersources.csv
 
 #### Outputs:
 - sites.csv
@@ -169,6 +181,7 @@ Purpose: generate a list of sites information.
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
 - Assign **OWRB** info to the *WaDE Site* specific columns.  See *OK_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+    - Extract *WaterSourceUUID* from waterSources.csv input csv file. See code for specific implementation of extraction.
     - *County* = **COUNTY**.
     - *HUC8* = **HYDRO_UNIT**, empty if not provided.
     - *Latitude* = **LATITUDE**.
@@ -181,9 +194,9 @@ Purpose: generate a list of sites information.
 - Export output dataframe *sites.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-SiteUUID | CoordinateMethodCV | Latitude | Longitude | SiteName | SiteTypeCV
----------- | ---------- | ------------ | ------------ | ------------ | ------------
-OKwr_S1 | Unspecified | 36.57472754 | -101.8963396 | Unspecified | Groundwater
+SiteUUID | WaterSourceUUID | CoordinateMethodCV | Latitude | Longitude | SiteName | SiteTypeCV
+---------- | ---------- | ---------- | ------------ | ------------ | ------------ | ------------
+OKwr_S1 | OKwr_WS1 | Unspecified | 36.57472754 | -101.8963396 | Unspecified | Groundwater
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
 - SiteUUID 
@@ -201,7 +214,6 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 - methods.csv
 - variables.csv
 - organizations.csv
-- watersources.csv
 - sites.csv
 
 #### Outputs:
@@ -212,7 +224,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
 - Assign **OWRB** info to the *WaDE Water Allocations* specific columns.  See *OK_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
-    - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
+    - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *AllocationApplicationDate* = **DATE_FILED**.
     - *AllocationLegalStatusCV* = **WR_STATUS**.
     - *AllocationVolume_AF* = **TOTAL_PERMITTED_ACRE_FEET**.
@@ -234,7 +246,6 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - MethodUUID
 - VariableSpecificUUID
 - OrganizationUUID
-- WaterSourceUUID
 - SiteUUID
 - AllocationPriorityDate
 - BeneficialUseCategory
@@ -242,6 +253,36 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - DataPublicationDate
 
 
+***
+### 7) Code File: 7_OKwr_PODSiteToPOUSiteRelationships.py
+Purpose: generate linking element between POD and POU sites that share the same water right.
+Note: podsitetopousiterelationships.csv output only needed if both POD and POU data is present, otherwise produces empty file.
+
+#### Inputs:
+- sites.csv
+- waterallocations.csv
+
+#### Outputs:
+- podsitetopousiterelationships.csv
+
+#### Operation and Steps:
+- Read the sites.csv & waterallocations.csv input files.
+- Create three temporary dataframes: one for waterallocations, & two for site info that will store POD and POU data separately.
+- For the temporary POD dataframe...
+    - Read in site.csv data from sites.csv with a *PODSiteUUID* field = POD only.
+    - Create *PODSiteUUID* field = *SiteUUID*.
+- For the temporary POU dataframe
+    - Read in site.csv data from sites.csv with a *PODSiteUUID* field = POU only.
+    - Create *POUSiteUUID* field = *SiteUUID*.
+- For the temporary waterallocations dataframe, explode *SiteUUID* field to create unique rows.
+- Left-merge POD & POU dataframes to the waterallocations dataframe via *SiteUUID* field.
+- Consolidate waterallocations dataframe by grouping entries by *AllocationNativeID* filed.
+- Explode the consolidated waterallocations dataframe again using the *PODSiteUUID* field, and again for the *POUSiteUUID* field to create unique rows.
+- Perform error check on waterallocations dataframe (check for NaN values)
+- If waterallocations is not empty, export output dataframe *podsitetopousiterelationships.csv*.
+
+
+***
 ## Staff Contributions
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Oklahoma Water Resources Board (OWRB)](https://www.owrb.ok.gov/).
 

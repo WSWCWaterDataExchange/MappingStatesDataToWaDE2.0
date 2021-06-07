@@ -1,6 +1,7 @@
-#Date Created: 12/11/2020
-#Purpose: To extract OK water source use information and population dataframe for WaDE_QA 2.0.
-#Notes:
+# Date Updated: 05/17/2021
+# Author: Ryan James
+# Purpose: To extract OK water source use information and populate dataframe for WaDE_QA 2.0.
+# Notes:
 
 # Needed Libraries
 ############################################################################
@@ -11,7 +12,7 @@ import os
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -39,8 +40,8 @@ columnslist = [
 
 # For creating WaterSourceNativeID
 def assignWaterSourceNativeID(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outList = 'Unspecified'
+    if colrowValue == "" or pd.isnull(colrowValue):
+        outList = "Unspecified"
     else:
         strvalue = str(colrowValue)
         outList = strvalue.strip()
@@ -48,8 +49,8 @@ def assignWaterSourceNativeID(colrowValue):
 
 # For creating WaterSourceTypeCV
 def assignWaterSourceTypeCV(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outList = 'Unspecified'
+    if colrowValue == "" or pd.isnull(colrowValue):
+        outList = "Unspecified"
     else:
         strvalue = str(colrowValue)
         outList = strvalue.strip()
@@ -65,21 +66,22 @@ def assignWaterSourceUUID(colrowValue):
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
+
 outdf = pd.DataFrame(index=df.index, columns=columnslist)  # The output dataframe for CSV.
 
-print("Geometry")  # Hardcoded
-outdf.Geometry = ""
+print("Geometry")
+outdf['Geometry'] = ""
 
-print("GNISFeatureNameCV")  # Hardcoded
-outdf.GNISFeatureNameCV = ""
+print("GNISFeatureNameCV")
+outdf['GNISFeatureNameCV'] = ""
 
-print("WaterQualityIndicatorCV")  # Hardcoded
-outdf.WaterQualityIndicatorCV = "Fresh"
+print("WaterQualityIndicatorCV")
+outdf['WaterQualityIndicatorCV'] = "Fresh"
 
-print("WaterSourceName")  # Hardcoded
-outdf.WaterSourceName = "Unspecified"
+print("WaterSourceName")
+outdf['WaterSourceName'] = "Unspecified"
 
-print("WaterSourceNativeID")  # has to be one of the last, need length of created outdf
+print("WaterSourceNativeID")
 outdf['WaterSourceNativeID'] = df.apply(lambda row: assignWaterSourceNativeID(row['STREAM_SYSTEM']), axis=1)
 
 print("WaterSourceTypeCV")
@@ -93,13 +95,14 @@ print("WaterSourceUUID")
 df["Count"] = range(1, len(df.index) + 1)
 outdf['WaterSourceUUID'] = df.apply(lambda row: assignWaterSourceUUID(row['Count']), axis=1)
 
-print("Resetting Index")  # Hardcoded
+print("Resetting Index")
 outdf.reset_index()
 
 
 #Error Checking each Field
 ############################################################################
-print("Error checking each field.  Purging bad inputs.")  # Hardcoded
+print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 
@@ -128,8 +131,9 @@ outdf, dfpurge = TestErrorFunctions.WaterSourceTypeCV_WS_Check(outdf, dfpurge)
 # Export to new csv
 ############################################################################
 print("Exporting dataframe outdf to csv...")
+
 # The working output DataFrame for WaDE 2.0 input.
-outdf.to_csv('ProcessedInputData/watersources.csv')
+outdf.to_csv('ProcessedInputData/watersources.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):

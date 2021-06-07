@@ -1,6 +1,7 @@
-#Date Created: 04/07/2020
-#Purpose: To create OK methods use information and population dataframe for WaDE_QA 2.0.
-#Notes:
+# Date Updated: 05/17/2021
+# Author: Ryan James
+# Purpose: To create OK methods use information and populate dataframe for WaDE_QA 2.0.
+# Notes:
 
 
 # Needed Libraries
@@ -37,7 +38,7 @@ outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires
 
 outdf.MethodUUID = "OWRB_Water Rights"
 
-outdf.ApplicableResourceTypeCV = "Allocation"
+outdf.ApplicableResourceTypeCV = "Surface Ground Water"
 
 outdf.DataConfidenceValue = ""
 
@@ -70,11 +71,11 @@ outdf_nullMand = outdf.loc[(outdf["MethodUUID"].isnull()) | (outdf["MethodUUID"]
 ############################################################################
 print("Exporting dataframe to csv...")
 
+# The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/methods.csv', index=False)
 
-#Report missing values if need be to separate csv
+# Report purged values.
 if(len(outdf_nullMand.index) > 0):
-    outdf_nullMand.to_csv('ProcessedInputData/methods_missing.csv')  # index=False,
-
+    outdf_nullMand.to_csv('ProcessedInputData/methods_missing.csv', index=False)
 
 print("Done.")

@@ -1,6 +1,7 @@
-#Date Created: 12/11/2020
-#Purpose: To extract OK site use information and population dataframe for WaDEQA 2.0.
-#Notes:
+# Date Updated: 05/17/2021
+# Author: Ryan James
+# Purpose: To extract OK site use information and populate dataframe for WaDEQA 2.0.
+# Notes:
 
 # Needed Libraries
 ############################################################################
@@ -13,7 +14,7 @@ import os
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 # Inputs
@@ -24,8 +25,13 @@ os.chdir(workingDir)
 fileInput = "RawinputData/P_OklahomaMaster.csv"
 df = pd.read_csv(fileInput)
 
+watersources_fileInput = "ProcessedInputData/watersources.csv" # watersource inputfile
+df_watersources = pd.read_csv(watersources_fileInput)  # watersources dataframe
+
 columnslist = [
     "SiteUUID",
+    "RegulatoryOverlayUUIDs",
+    "WaterSourceUUID",
     "CoordinateAccuracy",
     "CoordinateMethodCV",
     "County",
@@ -49,22 +55,25 @@ columnslist = [
 # Custom Functions
 ############################################################################
 
-# For creating HUC8
-def assignHUC8(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outList = ''
+# For retrieving WaterSourceUUID
+WSUUIDdict = pd.Series(df_watersources.WaterSourceUUID.values, index = df_watersources.WaterSourceNativeID).to_dict()
+def retrieveWaterSourceUUID(colrowValue):
+    if colrowValue == "" or pd.isnull(colrowValue):
+        outList = ""
     else:
-        strvalue = str(colrowValue)
-        outList = strvalue.strip()
+        String1 = colrowValue.strip()
+        try:
+            outList = WSUUIDdict[String1]
+        except:
+            outList = colrowValue
     return outList
 
-# For creating SiteNativeID
-def assignSiteNativeID(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outList = "Unspecified"
+# For creating HUC8
+def assignHUC8(colrowValue):
+    if colrowValue == "" or pd.isnull(colrowValue):
+        outList = ""
     else:
-        intvalue = int(colrowValue)
-        strvalue = str(intvalue)
+        strvalue = str(colrowValue)
         outList = strvalue.strip()
     return outList
 
@@ -78,28 +87,35 @@ def assignSiteUUID(colrowValue):
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-outdf = pd.DataFrame(columns=columnslist, index=df.index)
+
+outdf = pd.DataFrame(columns=columnslist, index=df.index)  # The output dataframe for CSV.
+
+print("RegulatoryOverlayUUIDs")
+outdf['RegulatoryOverlayUUIDs'] = ""
+
+print("WaterSourceUUID")
+outdf['WaterSourceUUID'] = df.apply(lambda row: retrieveWaterSourceUUID(row['STREAM_SYSTEM']), axis=1)
 
 print("CoordinateAccuracy")
-outdf.CoordinateAccuracy = ''
+outdf['CoordinateAccuracy'] = ""
 
 print("againCoordinateMethodCV")
-outdf.CoordinateMethodCV = 'Unspecified'
+outdf['CoordinateMethodCV'] = "Unspecified"
 
 print("County")
 outdf['County'] = df['COUNTY']
 
 print("EPSGCodeCV")
-outdf.EPSGCodeCV = 'EPSG:4326'
+outdf['EPSGCodeCV'] = "4326"
 
-print("Geometry") # Hardcoded
-outdf.Geometry = ""
+print("Geometry")
+outdf['Geometry'] = ""
 
 print("GNISCodeCV")
-outdf.GNISCodeCV = ""
+outdf['GNISCodeCV'] = ""
 
 print("HUC12")
-outdf.HUC12 = ""
+outdf['HUC12'] = ""
 
 print("HUC8")
 outdf['HUC8'] = df.apply(lambda row: assignHUC8(row['HYDRO_UNIT']), axis=1)
@@ -111,35 +127,35 @@ print("Longitude")
 outdf['Longitude'] = df['LONGITUDE']
 
 print("NHDNetworkStatusCV")
-outdf.NHDNetworkStatusCV = ""
+outdf['NHDNetworkStatusCV'] = ""
 
 print("NHDProductCV")
-outdf.NHDProductCV = ""
+outdf['NHDProductCV'] = ""
 
 print("PODorPOUSite")
-outdf['PODorPOUSite'] = "POD"
+outdf['PODorPOUSite'] = df['in_PODorPOUSite']
 
 print("SiteName")
-outdf.SiteName = "Unspecified"
+outdf['SiteName'] = "Unspecified"
 
 print("SiteNativeID")
-outdf['SiteNativeID'] = df.apply(lambda row: assignSiteNativeID(row['OBJECTID']), axis=1)
+outdf['SiteNativeID'] = df['in_SiteNativeID']
 
 print("SitePoint")
-outdf.SitePoint = ""
+outdf['SitePoint'] = ""
 
 print("SiteTypeCV")
-outdf['SiteTypeCV'] = df['WATER']
+outdf['SiteTypeCV'] = "Unspecified"
 
 print("StateCV")
-outdf.StateCV = "OK"
+outdf['StateCV'] = "OK"
 
 print("USGSSiteID")
-outdf.USGSSiteID = ""
+outdf['USGSSiteID'] = ""
 
 print("Resetting Index")
 outdf.reset_index()
-outdf = outdf.replace(np.nan, '')
+outdf = outdf.replace(np.nan, "")
 
 # Dropping duplicate
 # filter the whole table based on a unique combination of SiteNativeID, SiteName, SiteTypeCV, Longitude, Latitude, and HUC8
@@ -154,11 +170,18 @@ outdf['SiteUUID'] = dftemp.apply(lambda row: assignSiteUUID(row['Count']), axis=
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 
 # SiteUUID
 outdf, dfpurge = TestErrorFunctions.SiteUUID_S_Check(outdf, dfpurge)
+
+# RegulatoryOverlayUUIDs
+outdf, dfpurge = TestErrorFunctions.RegulatoryOverlayUUIDs_S_Check(outdf, dfpurge)
+
+# WaterSourceUUID
+outdf100, dfpurge = TestErrorFunctions.WaterSourceUUID_S_Check(outdf, dfpurge)
 
 # CoordinateAccuracy
 outdf, dfpurge = TestErrorFunctions.CoordinateAccuracy_S_Check(outdf, dfpurge)
@@ -221,6 +244,7 @@ outdf, dfpurge = TestErrorFunctions.USGSSiteID_S_Check(outdf, dfpurge)
 # Export to new csv
 ############################################################################
 print("Exporting dataframe outdf to csv...")
+
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/sites.csv', index=False)
 
@@ -229,4 +253,3 @@ if(len(dfpurge.index) > 0):
     dfpurge.to_csv('ProcessedInputData/sites_missing.csv', index=False)
 
 print("Done.")
-
