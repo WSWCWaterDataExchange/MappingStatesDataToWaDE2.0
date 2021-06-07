@@ -1,5 +1,5 @@
 #Date Created: 04/08/2020
-#Purpose: To extract ND water source use information and population dataframe for WaDE_QA 2.0.
+#Purpose: To extract ND water source use information and populate dataframe for WaDE_QA 2.0.
 #Notes:
 
 
@@ -12,7 +12,7 @@ import os
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -41,7 +41,7 @@ columnslist = [
 # For creating WaterSourceName
 def assignWaterSourceName(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
-        outList = 'Unspecified'
+        outList = "Unspecified"
     else:
         outList = colrowValue.strip()
     return outList
@@ -49,7 +49,9 @@ def assignWaterSourceName(colrowValue):
 # For creating WaterSourceTypeCV
 def assignWaterSourceTypeCV(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
-        outList = 'Unspecified'
+        outList = "Unspecified"
+    elif colrowValue == "Ground Water":
+        outList = "Groundwater"
     else:
         outList = colrowValue.strip()
     return outList
@@ -101,6 +103,7 @@ outdf.reset_index()
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 

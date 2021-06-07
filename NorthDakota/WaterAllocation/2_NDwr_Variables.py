@@ -1,5 +1,5 @@
 #Date Created: 04/08/2020
-#Purpose: To create ND variable use information and population dataframe for WaDE_QA 2.0.
+#Purpose: To create ND variable use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) Single row of entries, inpVals, for Variable Table.
 
 
@@ -79,10 +79,10 @@ outdf_nullMand = outdf.loc[(outdf["VariableSpecificUUID"].isnull()) | (outdf["Va
 ############################################################################
 print("Exporting dataframe to csv...")
 
-# save to output
+# The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/variables.csv', index=False)
 
-#Report missing values if need be to separate csv
+# Report purged values.
 if(len(outdf_nullMand.index) > 0):
     outdf_nullMand.to_csv('ProcessedInputData/variables_missing.csv', index=False)
 

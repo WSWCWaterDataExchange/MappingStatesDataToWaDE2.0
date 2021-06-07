@@ -1,5 +1,5 @@
 #Date Created: 04/08/2020
-#Purpose: To create ND methods use information and population dataframe for WaDE_QA 2.0.
+#Purpose: To create ND methods use information and populate dataframe for WaDE_QA 2.0.
 #Notes:
 
 
@@ -70,10 +70,10 @@ outdf_nullMand = outdf.loc[(outdf["MethodUUID"].isnull()) | (outdf["MethodUUID"]
 ############################################################################
 print("Exporting dataframe to csv...")
 
-# save to output
+# The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/methods.csv', index=False)
 
-#Report missing values if need be to separate csv
+# Report purged values.
 if(len(outdf_nullMand.index) > 0):
     outdf_nullMand.to_csv('ProcessedInputData/methods_missing.csv', index=False)
 

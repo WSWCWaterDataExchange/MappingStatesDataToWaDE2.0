@@ -1,5 +1,5 @@
 #Date Created: 04/08/2020
-#Purpose: To extract ND site use information and population dataframe for WaDEQA 2.0.
+#Purpose: To extract ND site use information and populate dataframe for WaDEQA 2.0.
 #Notes:
 
 
@@ -12,7 +12,7 @@ import os
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -24,8 +24,13 @@ os.chdir(workingDir)
 fileInput = "RawinputData/P_NorthDakotaMaster.csv"
 df = pd.read_csv(fileInput)
 
+watersources_fileInput = "ProcessedInputData/watersources.csv" # watersource inputfile
+df_watersources = pd.read_csv(watersources_fileInput)  # watersources dataframe
+
 columnslist = [
     "SiteUUID",
+    "RegulatoryOverlayUUIDs",
+    "WaterSourceUUID",
     "CoordinateAccuracy",
     "CoordinateMethodCV",
     "County",
@@ -46,8 +51,22 @@ columnslist = [
     "StateCV",
     "USGSSiteID"]
 
+
 # Custom Functions
 ############################################################################
+
+# For creating WaterSourceUUID
+WaterSourceUUIDdict = pd.Series(df_watersources.WaterSourceUUID.values, index = df_watersources.WaterSourceNativeID).to_dict()
+def retrieveWaterSourceUUID(colrowValue):
+    if colrowValue == '' or pd.isnull(colrowValue):
+        outList = ''
+    else:
+        String1 = colrowValue.strip()
+        try:
+            outList = WaterSourceUUIDdict[String1]
+        except:
+            outList = ''
+    return outList
 
 # For creating SiteNativeID
 def assignSiteNativeID(colrowValue):
@@ -77,17 +96,23 @@ def assignSiteUUID(colrowValue):
 print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist, index=df.index)
 
+print("RegulatoryOverlayUUIDs")
+outdf['RegulatoryOverlayUUIDs'] = ""
+
+print("WaterSourceUUID")
+outdf['WaterSourceUUID'] = df.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
+
 print("CoordinateAccuracy")
-outdf['CoordinateAccuracy'] = ''
+outdf['CoordinateAccuracy'] = ""
 
 print("CoordinateMethodCV")
-outdf['CoordinateMethodCV'] = 'Unspecified'
+outdf['CoordinateMethodCV'] = "Unspecified"
 
 print("County")
 outdf['County'] = df['county']
 
 print("EPSGCodeCV")
-outdf['EPSGCodeCV'] = 'EPSG:4326'
+outdf['EPSGCodeCV'] = "4326"
 
 print("Geometry")
 outdf['Geometry'] = ""
@@ -153,11 +178,18 @@ outdf['SiteUUID'] = dftemp.apply(lambda row: assignSiteUUID(row['Count']), axis=
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 
 # SiteUUID
 outdf, dfpurge = TestErrorFunctions.SiteUUID_S_Check(outdf, dfpurge)
+
+# RegulatoryOverlayUUIDs
+outdf, dfpurge = TestErrorFunctions.RegulatoryOverlayUUIDs_S_Check(outdf, dfpurge)
+
+# WaterSourceUUID
+outdf100, dfpurge = TestErrorFunctions.WaterSourceUUID_S_Check(outdf, dfpurge)
 
 # CoordinateAccuracy
 outdf, dfpurge = TestErrorFunctions.CoordinateAccuracy_S_Check(outdf, dfpurge)

@@ -1,14 +1,14 @@
-SiteUUID,CoordinateAccuracy,CoordinateMethodCV,County,EPSGCodeCV,Geometry,GNISCodeCV,HUC12,HUC8,Latitude,Longitude,NHDNetworkStatusCV,NHDProductCV,PODorPOUSite,SiteName,SiteNativeID,SitePoint,SiteTypeCV,StateCV,USGSSiteID,ReasonRemoved,level_0,index
-NDwr_S443,,Unspecified,Grand Forks,EPSG:4326,,,,,0.0,0.0,,,POD,Unspecified,15105014CC,,Surface Water,ND,,Bad Latitude,442.0,459.0
-NDwr_S484,,Unspecified,Walsh,EPSG:4326,,,,,0.0,0.0,,,POD,Unspecified,15705018DA,,Surface Water,ND,,Bad Latitude,483.0,502.0
-NDwr_S5010,,Unspecified,Traill,EPSG:4326,,,,,0.0,0.0,,,POD,Unspecified,14604913C,,Surface Water,ND,,Bad Latitude,5009.0,5295.0
-NDwr_S5437,,Unspecified,Sargent,EPSG:4326,,,,,0.0,0.0,,,POD,Unspecified,12905403D,,Ground Water,ND,,Bad Latitude,5436.0,5765.0
-NDwr_S5439,,Unspecified,Sargent,EPSG:4326,,,,,0.0,0.0,,,POD,Unspecified,12905402C,,Ground Water,ND,,Bad Latitude,5438.0,5767.0
-NDwr_S5440,,Unspecified,Sargent,EPSG:4326,,,,,0.0,0.0,,,POD,Unspecified,13005427D,,Ground Water,ND,,Bad Latitude,5439.0,5768.0
-NDwr_S6171,,Unspecified,Grand Forks,EPSG:4326,,,,,0.0,0.0,,,POD,Unspecified,14904904C,,Surface Water,ND,,Bad Latitude,6170.0,6581.0
-NDwr_S6303,,Unspecified,Morton,EPSG:4326,,,,,0.0,0.0,,,POD,Unspecified,13804806B,,Surface Water,ND,,Bad Latitude,6302.0,6738.0
-NDwr_S7166,,Unspecified,Richland,EPSG:4326,,,,,0.0,0.0,,,POD,Unspecified,130049,,Ground Water,ND,,Bad Latitude,7165.0,7787.0
-NDwr_S7167,,Unspecified,Richland,EPSG:4326,,,,,0.0,0.0,,,POD,Unspecified,130050,,Ground Water,ND,,Bad Latitude,7166.0,7788.0
-NDwr_S9629,,Unspecified,Cass,EPSG:4326,,,,,0.0,0.0,,,POD,Unspecified,13704819B,,Surface Water,ND,,Bad Latitude,9628.0,10741.0
-NDwr_S10403,,Unspecified,Cass,EPSG:4326,,,,,0.0,0.0,,,POD,Unspecified,13704819CB,,Surface Water,ND,,Bad Latitude,10402.0,11583.0
-NDwr_S4888,,Unspecified,McLean,EPSG:4326,,,,,47.29043,0.0,,,POD,Unspecified,14408214C,,Surface Water,ND,,Bad Longitude,4885.0,5149.0
+SiteUUID,RegulatoryOverlayUUIDs,WaterSourceUUID,CoordinateAccuracy,CoordinateMethodCV,County,EPSGCodeCV,Geometry,GNISCodeCV,HUC12,HUC8,Latitude,Longitude,NHDNetworkStatusCV,NHDProductCV,PODorPOUSite,SiteName,SiteNativeID,SitePoint,SiteTypeCV,StateCV,USGSSiteID,ReasonRemoved,level_0,index
+NDwr_S443,,NDwr_WS2,,Unspecified,Grand Forks,4326,,,,,0.0,0.0,,,POD,Unspecified,15105014CC,,Surface Water,ND,,Bad Latitude,442.0,459.0
+NDwr_S484,,NDwr_WS2,,Unspecified,Walsh,4326,,,,,0.0,0.0,,,POD,Unspecified,15705018DA,,Surface Water,ND,,Bad Latitude,483.0,502.0
+NDwr_S5010,,NDwr_WS2,,Unspecified,Traill,4326,,,,,0.0,0.0,,,POD,Unspecified,14604913C,,Surface Water,ND,,Bad Latitude,5009.0,5295.0
+NDwr_S5437,,NDwr_WS1,,Unspecified,Sargent,4326,,,,,0.0,0.0,,,POD,Unspecified,12905403D,,Ground Water,ND,,Bad Latitude,5436.0,5765.0
+NDwr_S5439,,NDwr_WS1,,Unspecified,Sargent,4326,,,,,0.0,0.0,,,POD,Unspecified,12905402C,,Ground Water,ND,,Bad Latitude,5438.0,5767.0
+NDwr_S5440,,NDwr_WS1,,Unspecified,Sargent,4326,,,,,0.0,0.0,,,POD,Unspecified,13005427D,,Ground Water,ND,,Bad Latitude,5439.0,5768.0
+NDwr_S6171,,NDwr_WS2,,Unspecified,Grand Forks,4326,,,,,0.0,0.0,,,POD,Unspecified,14904904C,,Surface Water,ND,,Bad Latitude,6170.0,6581.0
+NDwr_S6303,,NDwr_WS2,,Unspecified,Morton,4326,,,,,0.0,0.0,,,POD,Unspecified,13804806B,,Surface Water,ND,,Bad Latitude,6302.0,6738.0
+NDwr_S7166,,NDwr_WS1,,Unspecified,Richland,4326,,,,,0.0,0.0,,,POD,Unspecified,130049,,Ground Water,ND,,Bad Latitude,7165.0,7787.0
+NDwr_S7167,,NDwr_WS1,,Unspecified,Richland,4326,,,,,0.0,0.0,,,POD,Unspecified,130050,,Ground Water,ND,,Bad Latitude,7166.0,7788.0
+NDwr_S9629,,NDwr_WS352,,Unspecified,Cass,4326,,,,,0.0,0.0,,,POD,Unspecified,13704819B,,Surface Water,ND,,Bad Latitude,9628.0,10741.0
+NDwr_S10403,,NDwr_WS352,,Unspecified,Cass,4326,,,,,0.0,0.0,,,POD,Unspecified,13704819CB,,Surface Water,ND,,Bad Latitude,10402.0,11583.0
+NDwr_S4888,,NDwr_WS14,,Unspecified,McLean,4326,,,,,47.29043,0.0,,,POD,Unspecified,14408214C,,Surface Water,ND,,Bad Longitude,4885.0,5149.0

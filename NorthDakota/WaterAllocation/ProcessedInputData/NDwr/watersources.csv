@@ -1,5 +1,5 @@
 WaterSourceUUID,Geometry,GNISFeatureNameCV,WaterQualityIndicatorCV,WaterSourceName,WaterSourceNativeID,WaterSourceTypeCV
-NDwr_WS1,,,Fresh,Unspecified,WaDEND_WS1,Ground Water
+NDwr_WS1,,,Fresh,Unspecified,WaDEND_WS1,Groundwater
 NDwr_WS2,,,Fresh,Unspecified,WaDEND_WS2,Surface Water
 NDwr_WS3,,,Fresh,Charbonneau Creek,WaDEND_WS3,Surface Water
 NDwr_WS4,,,Fresh,Beaver Creek,WaDEND_WS4,Surface Water
@@ -113,7 +113,7 @@ NDwr_WS111,,,Fresh,Unnamed Coulee To Burnt Creek,WaDEND_WS111,Surface Water
 NDwr_WS112,,,Fresh,Buffalo Coulee,WaDEND_WS112,Surface Water
 NDwr_WS113,,,Fresh,Tobacco Garden Cr & Missouri R Backwater,WaDEND_WS113,Surface Water
 NDwr_WS114,,,Fresh,Andrews Creek,WaDEND_WS114,Surface Water
-NDwr_WS115,,,Fresh,South Unit,WaDEND_WS115,Ground Water
+NDwr_WS115,,,Fresh,South Unit,WaDEND_WS115,Groundwater
 NDwr_WS116,,,Fresh,Unnamed Intermittent Stream,WaDEND_WS116,Surface Water
 NDwr_WS117,,,Fresh,Salt Water Coulee,WaDEND_WS117,Surface Water
 NDwr_WS118,,,Fresh,Beaver Creek And Missouri River,WaDEND_WS118,Surface Water
@@ -163,7 +163,7 @@ NDwr_WS161,,,Fresh,Iron Springs,WaDEND_WS161,Surface Water
 NDwr_WS162,,,Fresh,"Un-Named Draw, Tributary To Missouri Riv",WaDEND_WS162,Surface Water
 NDwr_WS163,,,Fresh,Knife River Tributary,WaDEND_WS163,Surface Water
 NDwr_WS164,,,Fresh,Long Lake Creek & Slough,WaDEND_WS164,Surface Water
-NDwr_WS165,,,Fresh,Gibbs Springs,WaDEND_WS165,Ground Water
+NDwr_WS165,,,Fresh,Gibbs Springs,WaDEND_WS165,Groundwater
 NDwr_WS166,,,Fresh,Unnamed Trib. To North Fork Of The Grand,WaDEND_WS166,Surface Water
 NDwr_WS167,,,Fresh,Unnamed Trib.,WaDEND_WS167,Surface Water
 NDwr_WS168,,,Fresh,Cottonwood Lake,WaDEND_WS168,Surface Water
@@ -291,7 +291,7 @@ NDwr_WS289,,,Fresh,Unnamed Stream Trib. To Goose Creek,WaDEND_WS289,Surface Wate
 NDwr_WS290,,,Fresh,Unnamed Trib. To Little Heart River,WaDEND_WS290,Surface Water
 NDwr_WS291,,,Fresh,Pembina County Drain #20,WaDEND_WS291,Surface Water
 NDwr_WS292,,,Fresh,Murphy Creek Trib. To Spring Creek,WaDEND_WS292,Surface Water
-NDwr_WS293,,,Fresh,Groundwater,WaDEND_WS293,Ground Water
+NDwr_WS293,,,Fresh,Groundwater,WaDEND_WS293,Groundwater
 NDwr_WS294,,,Fresh,Unnamed Trib To Charbonneau Creek,WaDEND_WS294,Surface Water
 NDwr_WS295,,,Fresh,Unnamed Tributary To Starkweather Coulee,WaDEND_WS295,Surface Water
 NDwr_WS296,,,Fresh,Unnamed Drain Trib Starkweather Coulee,WaDEND_WS296,Surface Water
@@ -301,7 +301,7 @@ NDwr_WS299,,,Fresh,"Unnamed, Crooked Creek",WaDEND_WS299,Surface Water
 NDwr_WS300,,,Fresh,Unnamed Trib To Heart River,WaDEND_WS300,Surface Water
 NDwr_WS301,,,Fresh,Unnamed Trib To Square Butte Creek,WaDEND_WS301,Surface Water
 NDwr_WS302,,,Fresh,Mount Carmel Dam,WaDEND_WS302,Surface Water
-NDwr_WS303,,,Fresh,Ground Water,WaDEND_WS303,Ground Water
+NDwr_WS303,,,Fresh,Ground Water,WaDEND_WS303,Groundwater
 NDwr_WS304,,,Fresh,Unnamed Trib. To Maple River,WaDEND_WS304,Surface Water
 NDwr_WS305,,,Fresh,Middle Branch Park River,WaDEND_WS305,Surface Water
 NDwr_WS306,,,Fresh,Unnamed Trib. To Dead Buffalo Lake,WaDEND_WS306,Surface Water
@@ -328,10 +328,10 @@ NDwr_WS326,,,Fresh,Unnamed Trib Of Coyote Creek,WaDEND_WS326,Surface Water
 NDwr_WS327,,,Fresh,Drake Sewage Lagoon,WaDEND_WS327,Surface Water
 NDwr_WS328,,,Fresh,Dayton Creek,WaDEND_WS328,Surface Water
 NDwr_WS329,,,Fresh,Unknown Tributary,WaDEND_WS329,Surface Water
-NDwr_WS330,,,Fresh,Esmond Aquifer,WaDEND_WS330,Ground Water
-NDwr_WS331,,,Fresh,Trappers Coulee Aquifer,WaDEND_WS331,Ground Water
+NDwr_WS330,,,Fresh,Esmond Aquifer,WaDEND_WS330,Groundwater
+NDwr_WS331,,,Fresh,Trappers Coulee Aquifer,WaDEND_WS331,Groundwater
 NDwr_WS332,,,Fresh,Middle Branch Of Park River,WaDEND_WS332,Surface Water
-NDwr_WS333,,,Fresh,Middle Brannch Park,WaDEND_WS333,Ground Water
+NDwr_WS333,,,Fresh,Middle Brannch Park,WaDEND_WS333,Groundwater
 NDwr_WS334,,,Fresh,East Antelope Creek,WaDEND_WS334,Surface Water
 NDwr_WS335,,,Fresh,Edmore Coulee,WaDEND_WS335,Surface Water
 NDwr_WS336,,,Fresh,Des Lacs River,WaDEND_WS336,Surface Water
@@ -477,7 +477,7 @@ NDwr_WS475,,,Fresh,Un-Named Wetland,WaDEND_WS475,Surface Water
 NDwr_WS476,,,Fresh,"Cottonwood Creek, Trib. Of James River",WaDEND_WS476,Surface Water
 NDwr_WS477,,,Fresh,Unnamed Stream-Trib. Of The James River,WaDEND_WS477,Surface Water
 NDwr_WS478,,,Fresh,Unnamed Stream Trib Of Little Muddy Riv.,WaDEND_WS478,Surface Water
-NDwr_WS479,,,Fresh,Spiritwood Aquifer,WaDEND_WS479,Ground Water
+NDwr_WS479,,,Fresh,Spiritwood Aquifer,WaDEND_WS479,Groundwater
 NDwr_WS480,,,Fresh,Unnamed Stream Trib. Of Little Muddy,WaDEND_WS480,Surface Water
 NDwr_WS481,,,Fresh,Goshke Dam On Busse Coulee,WaDEND_WS481,Surface Water
 NDwr_WS482,,,Fresh,Goschke Dam On Busse Coulee,WaDEND_WS482,Surface Water
@@ -501,7 +501,7 @@ NDwr_WS499,,,Fresh,"Bussee Coulee, Trib. Of The Tongue River",WaDEND_WS499,Surfa
 NDwr_WS500,,,Fresh,Warwick Dam On Sheynne River,WaDEND_WS500,Surface Water
 NDwr_WS501,,,Fresh,Unnamed Stream Trib. Of Heart River,WaDEND_WS501,Surface Water
 NDwr_WS502,,,Fresh,Tongue River (Renwick Dam M-4),WaDEND_WS502,Surface Water
-NDwr_WS503,,,Fresh,Sheyenne Delta Aquifer,WaDEND_WS503,Ground Water
+NDwr_WS503,,,Fresh,Sheyenne Delta Aquifer,WaDEND_WS503,Groundwater
 NDwr_WS504,,,Fresh,Treated City Wastewater,WaDEND_WS504,Surface Water
 NDwr_WS505,,,Fresh,"James River, Fesenden Dam",WaDEND_WS505,Surface Water
 NDwr_WS506,,,Fresh,Un-Named Trib To Square Butte Creek,WaDEND_WS506,Surface Water
@@ -537,16 +537,16 @@ NDwr_WS535,,,Fresh,First Larson Coulee,WaDEND_WS535,Surface Water
 NDwr_WS536,,,Fresh,Waste Water Logoons,WaDEND_WS536,Surface Water
 NDwr_WS537,,,Fresh,Waste Water Lagoons,WaDEND_WS537,Surface Water
 NDwr_WS538,,,Fresh,4 Cell Lagoon System,WaDEND_WS538,Surface Water
-NDwr_WS539,,,Fresh,Shallow Saturated Alluvium,WaDEND_WS539,Ground Water
+NDwr_WS539,,,Fresh,Shallow Saturated Alluvium,WaDEND_WS539,Groundwater
 NDwr_WS540,,,Fresh,Des Lac Lake,WaDEND_WS540,Surface Water
 NDwr_WS541,,,Fresh,Trib. To The Wild Rice River,WaDEND_WS541,Surface Water
 NDwr_WS542,,,Fresh,Hartel Dam,WaDEND_WS542,Surface Water
 NDwr_WS543,,,Fresh,Puppy Dog Coulee,WaDEND_WS543,Surface Water
 NDwr_WS544,,,Fresh,Oakes Pilot Drain,WaDEND_WS544,Surface Water
-NDwr_WS545,,,Fresh,Fort Union,WaDEND_WS545,Ground Water
+NDwr_WS545,,,Fresh,Fort Union,WaDEND_WS545,Groundwater
 NDwr_WS546,,,Fresh,Sletten Lake,WaDEND_WS546,Surface Water
 NDwr_WS547,,,Fresh,Green River Tributary,WaDEND_WS547,Surface Water
-NDwr_WS548,,,Fresh,Dakota Group,WaDEND_WS548,Ground Water
+NDwr_WS548,,,Fresh,Dakota Group,WaDEND_WS548,Groundwater
 NDwr_WS549,,,Fresh,Tongue River At Goschke Dam,WaDEND_WS549,Surface Water
 NDwr_WS550,,,Fresh,North Branch Turtle River,WaDEND_WS550,Surface Water
 NDwr_WS551,,,Fresh,Strommen Stock Pond,WaDEND_WS551,Surface Water
@@ -574,7 +574,7 @@ NDwr_WS572,,,Fresh,Holding Pond,WaDEND_WS572,Surface Water
 NDwr_WS573,,,Fresh,Halfbreed Creek,WaDEND_WS573,Surface Water
 NDwr_WS574,,,Fresh,Lake Upsilon,WaDEND_WS574,Surface Water
 NDwr_WS575,,,Fresh,Lake Trenton,WaDEND_WS575,Surface Water
-NDwr_WS576,,,Fresh,Little Stoney,WaDEND_WS576,Ground Water
+NDwr_WS576,,,Fresh,Little Stoney,WaDEND_WS576,Groundwater
 NDwr_WS577,,,Fresh,Unnamed Trib To Knife River,WaDEND_WS577,Surface Water
 NDwr_WS578,,,Fresh,Tributary Of Crooked Creek,WaDEND_WS578,Surface Water
 NDwr_WS579,,,Fresh,Cedar River,WaDEND_WS579,Surface Water
@@ -591,5 +591,5 @@ NDwr_WS589,,,Fresh,Matejcek Reservoir,WaDEND_WS589,Surface Water
 NDwr_WS590,,,Fresh,Lake Zahl,WaDEND_WS590,Surface Water
 NDwr_WS591,,,Fresh,Frank Creek,WaDEND_WS591,Surface Water
 NDwr_WS592,,,Fresh,Murphy Slough,WaDEND_WS592,Surface Water
-NDwr_WS593,,,Fresh,Mcville,WaDEND_WS593,Ground Water
+NDwr_WS593,,,Fresh,Mcville,WaDEND_WS593,Groundwater
 NDwr_WS594,,,Fresh,Dry Creek,WaDEND_WS594,Surface Water
