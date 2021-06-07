@@ -1,5 +1,5 @@
 #Date Created: 12/23/2020
-#Purpose: To extract NM water source use information and population dataframe for WaDE_QA 2.0.
+#Purpose: To extract NM water source use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) Some data solved with pre-processes code.
 
 # Needed Libraries
@@ -11,7 +11,7 @@ import os
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -40,7 +40,7 @@ columnslist = [
 # For creating WaterSourceNativeID
 def assignWaterSourceNativeID(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
-        outList = 'Unspecified'
+        outList = "Unspecified"
     else:
         strvalue = str(colrowValue)
         outList = strvalue.strip()
@@ -49,7 +49,7 @@ def assignWaterSourceNativeID(colrowValue):
 # For creating WaterSourceTypeCV
 def assignWaterSourceTypeCV(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
-        outList = 'Unspecified'
+        outList = "Unspecified"
     else:
         strvalue = str(colrowValue)
         outList = strvalue.strip()
@@ -65,24 +65,25 @@ def assignWaterSourceUUID(colrowValue):
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
+
 outdf = pd.DataFrame(index=df.index, columns=columnslist)  # The output dataframe for CSV.
 
 print("Geometry")
-outdf.Geometry = ""
+outdf['Geometry'] = ""
 
 print("GNISFeatureNameCV")
-outdf.GNISFeatureNameCV = ""
+outdf['GNISFeatureNameCV'] = ""
 
 print("WaterQualityIndicatorCV")
-outdf.WaterQualityIndicatorCV = "Fresh"
+outdf['WaterQualityIndicatorCV'] = "Fresh"
 
-print("WaterSourceName")
+print("WaterSourceName")  # see pre-processed code
 outdf['WaterSourceName'] = df['in_WaterSourceName']
 
-print("WaterSourceNativeID")
+print("WaterSourceNativeID")  # see pre-processed code
 outdf['WaterSourceNativeID'] = df['in_WaterSourceNativeID']
 
-print("WaterSourceTypeCV") # Pre-processed code
+print("WaterSourceTypeCV")  # see pre-processed code
 outdf['WaterSourceTypeCV'] = df.apply(lambda row: assignWaterSourceTypeCV(row['in_WaterSourceTypeCV']), axis=1)
 
 ##############################
@@ -102,6 +103,7 @@ outdf.reset_index()
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 

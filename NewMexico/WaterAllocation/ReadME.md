@@ -4,7 +4,7 @@ This readme details the process that was applied by the staff of the [Western St
 ## Overview 
 The NMOSE hosts its water rights data using ArcGIS online at: https://geospatialdata-ose.opendata.arcgis.com/datasets/ose-pods
 
-The metadata for the water rights data is available at: http://www.ose.state.nm.us/GIS/PODS/nmose_WATERS_PODs_data_dictionary_v8.xlsx.
+The metadata for the water rights data is available at: https://geospatialdata-ose.opendata.arcgis.com/documents/5cc5f222d5454797822964c14526a70d/explore
 
 Python scripts described here for inclusion into WaDE are operated using [Jupyter Notebooks](https://jupyter.org/).
 

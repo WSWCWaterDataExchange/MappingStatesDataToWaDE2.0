@@ -1,5 +1,5 @@
 #Date Created: 05/15/2020
-#Purpose: To extract NM site use information and population dataframe for WaDEQA 2.0.
+#Purpose: To extract NM site use information and populate dataframe for WaDEQA 2.0.
 #Notes: 1) Some data solved with pre-processes code.
 
 # Needed Libraries
@@ -12,7 +12,7 @@ from pyproj import Transformer, transform
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -22,11 +22,15 @@ print("Reading input csv...")
 workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/NewMexico/WaterAllocation"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_NewMexicoMaster.csv"
-
 df = pd.read_csv(fileInput)
+
+watersources_fileInput = "ProcessedInputData/watersources.csv" # watersource inputfile
+df_watersources = pd.read_csv(watersources_fileInput)  # watersources dataframe
 
 columnslist = [
     "SiteUUID",
+    "RegulatoryOverlayUUIDs",
+    "WaterSourceUUID",
     "CoordinateAccuracy",
     "CoordinateMethodCV",
     "County",
@@ -50,6 +54,19 @@ columnslist = [
 # Custom Functions
 ############################################################################
 
+# For creating WaterSourceUUID
+WaterSourceUUIDdict = pd.Series(df_watersources.WaterSourceUUID.values, index = df_watersources.WaterSourceNativeID).to_dict()
+def retrieveWaterSourceUUID(colrowValue):
+    if colrowValue == '' or pd.isnull(colrowValue):
+        outList = ''
+    else:
+        String1 = colrowValue.strip()
+        try:
+            outList = WaterSourceUUIDdict[String1]
+        except:
+            outList = ''
+    return outList
+
 # For creating SiteNativeID
 def assignSiteNativeID(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
@@ -70,64 +87,71 @@ def assignSiteUUID(colrowValue):
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
+
 outdf = pd.DataFrame(columns=columnslist, index=df.index)
 
+print("RegulatoryOverlayUUIDs")
+outdf['RegulatoryOverlayUUIDs'] = ""
+
+print("WaterSourceUUID")  # see pre-processed code
+outdf['WaterSourceUUID'] = df.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
+
 print("CoordinateAccuracy")
-outdf.CoordinateAccuracy = ''
+outdf['CoordinateAccuracy'] = ""
 
 print("CoordinateMethodCV")
-outdf.CoordinateMethodCV = 'Unspecified'
+outdf['CoordinateMethodCV'] = "Unspecified"
 
 print("County")
 outdf['County'] = df['county']
 
 print("EPSGCodeCV")
-outdf.EPSGCodeCV = 'EPSG:4326'
+outdf['EPSGCodeCV'] = '4326'
 
 print("Geometry")
-outdf.Geometry = ""
+outdf['Geometry'] = ""
 
 print("GNISCodeCV")
-outdf.GNISCodeCV = ""
+outdf['GNISCodeCV'] = ""
 
 print("HUC12")
-outdf.HUC12 = ""
+outdf['HUC12'] = ""
 
 print("HUC8")
-outdf.HUC8 = ""
+outdf['HUC8'] = ""
 
-print("Latitude")
+print("Latitude")  # see pre-processed code
 outdf['Latitude'] = df['in_Latitude']
 
-print("Longitude")
+print("Longitude")  # see pre-processed code
 outdf['Longitude'] = df['in_Longitude']
 
 print("NHDNetworkStatusCV")
-outdf.NHDNetworkStatusCV = ""
+outdf['NHDNetworkStatusCV'] = ""
 
 print("NHDProductCV")
-outdf.NHDProductCV = ""
+outdf['NHDProductCV'] = ""
 
 print("PODorPOUSite")
 outdf['PODorPOUSite'] = "POD"
 
-print("SiteName")
+print("SiteName")  # see pre-processed code
 outdf['SiteName'] = df['in_SiteName']
 
-print("SiteNativeID")
+print("SiteNativeID")  # see pre-processed code
 outdf['SiteNativeID'] = df['in_SiteNativeID']
 
 print("SitePoint")
-outdf.SitePoint = ""
+outdf['SitePoint'] = ""
 
 print("SiteTypeCV")
 outdf['SiteTypeCV'] = "Unspecified"
 
 print("StateCV")
-outdf.StateCV = "NM"
+outdf['StateCV'] = "NM"
 
 print("USGSSiteID")
-outdf.USGSSiteID = ""
+outdf['USGSSiteID'] = ""
 
 print("Resetting Index")
 outdf.reset_index()
@@ -148,11 +172,18 @@ outdf['SiteUUID'] = dftemp.apply(lambda row: assignSiteUUID(row['Count']), axis=
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 
 # SiteUUID
 outdf, dfpurge = TestErrorFunctions.SiteUUID_S_Check(outdf, dfpurge)
+
+# RegulatoryOverlayUUIDs
+outdf, dfpurge = TestErrorFunctions.RegulatoryOverlayUUIDs_S_Check(outdf, dfpurge)
+
+# WaterSourceUUID
+outdf100, dfpurge = TestErrorFunctions.WaterSourceUUID_S_Check(outdf, dfpurge)
 
 # CoordinateAccuracy
 outdf, dfpurge = TestErrorFunctions.CoordinateAccuracy_S_Check(outdf, dfpurge)
