@@ -571,10 +571,9 @@ def AllocationExpirationDate_AA_Check(dfx, dfy):
     return (dfx, dfy)
 
 
-
-
 # AllocationFlow_CFS_float_Yes & AllocationVolume_AF_float_Yes
 # We have to have either a flow or a volume
+# We are summing multiple entries into one
 def AllocationFlowVolume_CFSAF_float_Yes_AA_Check(dfx, dfy):
 
     # check if CFS or AF is a csv list. If true, sum values.
@@ -630,32 +629,6 @@ def AllocationFlowVolume_CFSAF_float_Yes_AA_Check(dfx, dfy):
         dfx = dfx.reset_index(drop=True)
     return (dfx, dfy)
 
-
-
-
-
-# # AllocationFlow_CFS_float_Yes & AllocationVolume_AF_float_Yes
-# # We have to have either a flow or a volume
-# def AllocationFlowVolume_CFSAF_float_Yes_AA_Check(dfx, dfy):
-#     mask = dfx.loc[ (dfx['ExemptOfVolumeFlowPriority'] == "0") &
-#                     (((dfx["AllocationFlow_CFS"].isnull()) |
-#                       (dfx["AllocationFlow_CFS"] == "") |
-#                       (dfx['AllocationFlow_CFS'].astype(str).str.contains(','))) &
-#                      ((dfx["AllocationVolume_AF"].isnull()) |
-#                       (dfx["AllocationVolume_AF"] == "") |
-#                       (dfx['AllocationVolume_AF'].astype(str).str.contains(',')))) ].assign(ReasonRemoved='Bad Flow or Volume').reset_index()
-#     if len(mask.index) > 0:
-#         dfy = dfy.append(mask)
-#         dropIndex = dfx.loc[ (dfx['ExemptOfVolumeFlowPriority'] == "0") &
-#                              (((dfx["AllocationFlow_CFS"].isnull()) |
-#                                (dfx["AllocationFlow_CFS"] == "") |
-#                                (dfx['AllocationFlow_CFS'].astype(str).str.contains(','))) &
-#                               ((dfx["AllocationVolume_AF"].isnull()) |
-#                                (dfx["AllocationVolume_AF"] == "") |
-#                                (dfx['AllocationVolume_AF'].astype(str).str.contains(',')))) ].index
-#         dfx = dfx.drop(dropIndex)
-#         dfx = dfx.reset_index(drop=True)
-#     return (dfx, dfy)
 
 # AllocationLegalStatusCV_nvarchar(250)_Yes
 def AllocationLegalStatusCV_AA_Check(dfx, dfy):
@@ -740,15 +713,14 @@ def AllocationTypeCV_AA_Check(dfx, dfy):
     return (dfx, dfy)
 
 # BeneficialUseCategory_nvarchar(100)_-
+# We are ignoring nvarchar length in the check at this time
 def BeneficialUseCategory_AA_Check(dfx, dfy):
     mask = dfx.loc[ (dfx["BeneficialUseCategory"].isnull()) |
-                    (dfx["BeneficialUseCategory"] == '') |
-                    (dfx["BeneficialUseCategory"].str.len() > 100) ].assign(ReasonRemoved='Bad BeneficialUseCategory').reset_index()
+                    (dfx["BeneficialUseCategory"] == '') ].assign(ReasonRemoved='Bad BeneficialUseCategory').reset_index()
     if len(mask.index) > 0:
         dfy = dfy.append(mask)
         dropIndex = dfx.loc[ (dfx["BeneficialUseCategory"].isnull()) |
-                             (dfx["BeneficialUseCategory"] == '') |
-                             (dfx["BeneficialUseCategory"].str.len() > 100) ].index
+                             (dfx["BeneficialUseCategory"] == '') ].index
         dfx = dfx.drop(dropIndex)
         dfx = dfx.reset_index(drop=True)
     return (dfx, dfy)
@@ -815,16 +787,36 @@ def ExemptOfVolumeFlowPriority_AA_Check(dfx, dfy):
 
 # GeneratedPowerCapacityMW_float_Yes
 def GeneratedPowerCapacityMW_AA_Check(dfx, dfy):
-    mask = dfx.loc[ dfx["GeneratedPowerCapacityMW"].str.contains(',') == True ].assign(ReasonRemoved='Bad GeneratedPowerCapacityMW').reset_index()
+    mask = dfx.loc[ dfx["GeneratedPowerCapacityMW"].astype(str).str.contains(',') == True ].assign(ReasonRemoved='Bad GeneratedPowerCapacityMW').reset_index()
     if len(mask.index) > 0:
         dfy = dfy.append(mask)
-        dropIndex = dfx.loc[ dfx["GeneratedPowerCapacityMW"].str.contains(',') == True ].index
+        dropIndex = dfx.loc[ dfx["GeneratedPowerCapacityMW"].astype(str).str.contains(',') == True ].index
         dfx = dfx.drop(dropIndex)
         dfx = dfx.reset_index(drop=True)
     return (dfx, dfy)
 
 # IrrigatedAcreage_float_Yes
+# We are summing multiple entries into one
 def IrrigatedAcreage_AA_Check(dfx, dfy):
+
+    # check if Acres is a csv list. If true, sum values.
+    for index, row in dfx.iterrows():
+        AcresNumbers = row['IrrigatedAcreage'].split(",")
+
+        # Acres
+        AcresTotal = 0
+        for x in AcresNumbers:
+            if x == "" or "," in x:
+                AcresTotal = x
+            else:
+                try:
+                    x = float(x)
+                    AcresTotal += x
+                except:
+                    AcresTotal = x
+
+        row['IrrigatedAcreage'] = AcresTotal
+
     mask = dfx.loc[ dfx["IrrigatedAcreage"].str.contains(',') == True ].assign(ReasonRemoved='Bad IrrigatedAcreage').reset_index()
     if len(mask.index) > 0:
         dfy = dfy.append(mask)
