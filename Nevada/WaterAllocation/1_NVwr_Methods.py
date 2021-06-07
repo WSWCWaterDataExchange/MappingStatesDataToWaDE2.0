@@ -1,6 +1,6 @@
 #Date Created: 07/17/2020
-#Purpose: To extract NV methods use information and population dataframe for WaDE_QA 2.0.
-#Notes:   1) Single row of entries, inpVals, for Methods Table.
+#Purpose: To extract NV methods use information and populate dataframe for WaDE_QA 2.0.
+#Notes:   1) Single row of entries for Methods Table.
 
 
 # Needed Libraries
@@ -35,9 +35,9 @@ print("Populating dataframe...")
 inpVals = [
     "NVDWR_Diversion Tracking",
     "Surface Ground",
-    np.nan,
-    np.nan,
-    np.nan,
+    "",
+    "",
+    "",
     "Methodology used for mapping diversions in the state of Nevada.",
     "Nevada Diversion Mapping",
     "https://ndwr.maps.arcgis.com/home/item.html?id=0d050f7b79724404b80bf29589f67363",
@@ -65,7 +65,7 @@ print("Exporting dataframe to csv...")
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/methods.csv', index=False)
 
-#Report missing values if need be to separate csv
+# Report purged values.
 if(len(outdf_nullMand.index) > 0):
     outdf_nullMand.to_csv('ProcessedInputData/methods_mandatoryFieldMissing.csv', index=False)
 

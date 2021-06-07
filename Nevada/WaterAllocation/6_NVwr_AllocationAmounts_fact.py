@@ -1,6 +1,6 @@
 #Date Created: 07/20/2020
 #Author(s): Joseph Brewer, Ryan James
-#Purpose: To extract NV allocation use information and population dataframe WaDEQA 2.0.
+#Purpose: To extract NV allocation use information and populate dataframe WaDEQA 2.0.
 #         1) Simple creation of working dataframe (df), with output dataframe (outdf).
 #         2) Drop all nulls before combining duplicate rows on NativeID.
 
@@ -14,7 +14,7 @@ import os
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -29,16 +29,17 @@ variables_fileInput = "ProcessedInputData/variables.csv"
 watersources_fileInput = "ProcessedInputData/watersources.csv"
 sites_fileInput = "ProcessedInputData/sites.csv"
 
-
-df_NVM = pd.read_csv(NVM_fileInput)  # The Texas Master input dataframe.
+df_NVM = pd.read_csv(NVM_fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
 df_method = pd.read_csv(method_fileInput)  # Method dataframe
 df_variables = pd.read_csv(variables_fileInput)  # Variables dataframe
-df_watersources = pd.read_csv(watersources_fileInput)  # WaterSources dataframe
 df_sites = pd.read_csv(sites_fileInput)  # Sites dataframe
-
 
 #WaDE dataframe columns
 columnslist = [
+    "MethodUUID",
+    "OrganizationUUID",
+    "SiteUUID",
+    "VariableSpecificUUID",
     "AllocationApplicationDate",
     "AllocationAssociatedConsumptiveUseSiteIDs",
     "AllocationAssociatedWithdrawalSiteIDs",
@@ -68,15 +69,11 @@ columnslist = [
     "IrrigatedAcreage",
     "IrrigationMethodCV",
     "LegacyAllocationIDs",
-    "MethodUUID",
-    "OrganizationUUID",
+    "OwnerClassificationCV",
     "PopulationServed",
     "PowerType",
     "PrimaryUseCategory",
-    "SiteUUID",
-    "VariableSpecificUUID",
-    "WaterAllocationNativeURL",
-    "WaterSourceUUID"]
+    "WaterAllocationNativeURL"]
 
 
 # Custom Site Functions
@@ -93,27 +90,6 @@ def retrieveSiteUUID(colrowValue):
             outList = SitUUIDdict[String1]
         except:
             outList = ''
-    return outList
-
-# For retrieving WaterSourceUUID
-WSUUIDdict = pd.Series(df_watersources.WaterSourceUUID.values, index = df_watersources.WaterSourceNativeID).to_dict()
-def retrieveWaterSourceUUID(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outList = ''
-    else:
-        String1 = colrowValue.strip()
-        try:
-            outList = WSUUIDdict[String1]
-        except:
-            outList = colrowValue
-    return outList
-
-# For creating AllocationAmount
-def assignAllocationAmount(colrowValue):
-    if colrowValue <= 0 or pd.isnull(colrowValue):
-        outList = 0
-    else:
-        outList = colrowValue
     return outList
 
 # For creating AllocationLegalStatusCV
@@ -175,7 +151,7 @@ BeneficialUseDict = {
 "IRD": "Irrigation-DLE",
 "IRR": "Irrigation",
 "MM": "Mining and Milling",
-"MMD": "Mining, Milling, and Dewatering",
+"MMD": "Mining Milling and Dewatering",
 "MUN": "Municipal",
 "OTH": "Other",
 "PWR": "Power",
@@ -185,7 +161,6 @@ BeneficialUseDict = {
 "STO": "Storage",
 "UKN": "Unknown",
 "WLD": "Wildlife"}
-# For creating AllocationLegalStatusCV
 def assignBeneficialUse(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = 'Unspecified'
@@ -215,10 +190,7 @@ print("SiteUUID")
 outdf['SiteUUID'] = df_NVM.apply(lambda row: retrieveSiteUUID(row['in_SiteNativeID']), axis=1)
 
 print("VariableSpecificUUID")
-outdf['VariableSpecificUUID'] = "NVDWR_Allocation All"
-
-print("WaterSourceUUID")
-outdf['WaterSourceUUID'] = df_NVM.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
+outdf['VariableSpecificUUID'] = "NVDWR_Allocation"
 
 print("AllocationApplicationDate")
 outdf['AllocationApplicationDate'] = ""
@@ -245,7 +217,7 @@ print("AllocationExpirationDate")
 outdf['AllocationExpirationDate'] = ""
 
 print("AllocationFlow_CFS")
-outdf['AllocationFlow_CFS'] = df_NVM.apply(lambda row: assignAllocationAmount(row['duty_balance']), axis=1)
+outdf['AllocationFlow_CFS'] = df_NVM['duty_balance']
 
 print("AllocationLegalStatusCV")
 outdf['AllocationLegalStatusCV'] = df_NVM.apply(lambda row: assignAllocationLegalStatusCV(row['app_status']), axis=1)
@@ -304,6 +276,15 @@ outdf['IrrigationMethodCV'] = ""
 print("LegacyAllocationIDs")
 outdf['LegacyAllocationIDs'] = ""
 
+#####################################
+print("OwnerClassificationCV")
+# Temp solution to populate OwnerClassificationCV field.
+# Use Custom import file
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/OwnerClassification")
+import OwnerClassificationField
+outdf['OwnerClassificationCV'] = outdf.apply(lambda row: OwnerClassificationField.CreateOwnerClassification(row['AllocationOwner']), axis=1)
+#####################################
+
 print("PopulationServed")
 outdf['PopulationServed'] = ""
 
@@ -319,14 +300,23 @@ outdf['AllocationSDWISIdentifierCV'] = ""
 print("WaterAllocationNativeURL")
 outdf["WaterAllocationNativeURL"] = df_NVM['permit_info']
 
+print("Resetting Index")
+outdf.reset_index()
+
+print("Joining outdf duplicates based on AllocationNativeID...")
+outdf100 = pd.DataFrame(columns=columnslist)  # The output dataframe for CSV.
+outdf100 = outdf.groupby(['AllocationNativeID']).agg(lambda x: ','.join([str(elem) for elem in (list(set(x))) if elem!=''])).replace(np.nan, "").reset_index()
+
 
 # Solving WaDE 2.0 Upload Issues
 ############################################################################
-# Date Noted: 02/28/2020
-# Note: Insure single 'AllocationNativeID' entry.
-print("Joining outdf duplicates based on AllocationNativeID...")
-outdf100 = pd.DataFrame(columns=columnslist)  # The output dataframe for CSV.
-outdf100 = outdf.groupby('AllocationNativeID', sort=False).agg(lambda x: ','.join([str(elem) for elem in (list(set(x)))])).reset_index()
+
+# Date Noted: 05/25/2021
+# Note: OwnerClassificationCV can only accept 1 entry at this time. Error due to above merge / we don't allow multiple OwnerClassificationCV.
+def tempfixOCSV(colrowValueA):
+    result = colrowValueA.split(",", 1)[0]  # pass in text, split on "," & return first value.
+    return result
+outdf100['OwnerClassificationCV']  = outdf100.apply(lambda row: tempfixOCSV(row['OwnerClassificationCV']), axis=1)
 
 
 #Error Checking each Field
@@ -348,9 +338,6 @@ outdf100, dfpurge = TestErrorFunctions.SiteUUID_AA_Check(outdf100, dfpurge)
 
 # VariableSpecificUUID
 outdf100, dfpurge = TestErrorFunctions.VariableSpecificUUID_AA_Check(outdf100, dfpurge)
-
-# WaterSourceUUID
-outdf100, dfpurge = TestErrorFunctions.WaterSourceUUID_AA_Check(outdf100, dfpurge)
 
 # AllocationApplicationDateID
 outdf100, dfpurge = TestErrorFunctions.AllocationApplicationDate_AA_Check(outdf100, dfpurge)
@@ -435,6 +422,9 @@ outdf100, dfpurge = TestErrorFunctions.IrrigationMethodCV_AA_Check(outdf100, dfp
 
 # LegacyAllocationIDs
 outdf100, dfpurge = TestErrorFunctions.LegacyAllocationIDs_AA_Check(outdf100, dfpurge)
+
+# OwnerClassificationCV
+outdf100, dfpurge = TestErrorFunctions.OwnerClassificationCV_AA_Check(outdf100, dfpurge)
 
 # PopulationServed
 outdf100, dfpurge = TestErrorFunctions.PopulationServed_AA_Check(outdf100, dfpurge)

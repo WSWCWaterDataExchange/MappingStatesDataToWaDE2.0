@@ -1,5 +1,5 @@
 #Date Created: 07/17/2020
-#Purpose: To extract NV organization use information and population dataframe for WaDE_QA 2.0.
+#Purpose: To extract NV organization use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
 
 
@@ -60,8 +60,6 @@ outdf_nullMand = outdf.loc[(outdf["OrganizationUUID"].isnull()) | (outdf["Organi
                            (outdf["State"].isnull()) | (outdf["State"] == '')]
 
 
-
-
 # Export to new csv
 ############################################################################
 print("Exporting dataframe to csv...")
@@ -69,7 +67,7 @@ print("Exporting dataframe to csv...")
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/organizations.csv', index=False)
 
-#Report missing values if need be to seperate csv
+# Report purged values.
 if(len(outdf_nullMand.index) > 0):
     outdf_nullMand.to_csv('organizations_mandatoryFieldMissing.csv', index=False)
 
