@@ -1,5 +1,5 @@
 #Date Created: 12/11/2020
-#Purpose: To extract WY variable information and population dataframe for WaDE_QA 2.0.
+#Purpose: To extract WY variable information and populate dataframe for WaDE_QA 2.0.
 #Notes: asdf
 
 
@@ -34,7 +34,7 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "WY_Allocation All",
+    "WY_Consumptive Use",
     "1",
     "Year",
     "Average",
@@ -68,11 +68,12 @@ outdf_nullMand = outdf.loc[(outdf["VariableSpecificUUID"].isnull()) | (outdf["Va
 # Export to new csv
 ############################################################################
 print("Exporting dataframe to csv...")
+
+# The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/variables.csv', index=False)
 
-#Report missing values if need be to separate csv
+# Report purged values.
 if(len(outdf_nullMand.index) > 0):
-    outdf_nullMand.to_csv('ProcessedInputData/variables_mandatoryFieldMissing.csv')  # index=False,
-
+    outdf_nullMand.to_csv('ProcessedInputData/variables_mandatoryFieldMissing.csv', index=False)
 
 print("Done.")

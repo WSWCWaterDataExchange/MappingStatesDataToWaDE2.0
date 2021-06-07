@@ -1,2 +1,2 @@
 VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
-WY_Allocation All,1,Year,Average,CFS,AFY,11,WaterYear,Consumptive Use,Consumptive Use
+WY_Consumptive Use,1,Year,Average,CFS,AFY,11,WaterYear,Consumptive Use,Consumptive Use
