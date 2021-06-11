@@ -1,8 +1,8 @@
-#Date Created: 11/04/2020
-#Author: Ryan James (WSWC)
-#Purpose: To create CA agg aggregated information and populate a dataframe WaDEQA 2.0.
-#         1) Simple creation of working dataframe (df), with output dataframe (outdf).
-#         2) Drop all nulls before combining duplicate rows on NativeID.
+# Date Created: 11/04/2020
+# Author: Ryan James (WSWC)
+# Purpose: To create CA agg aggregated information and populate a dataframe WaDEQA 2.0.
+#          1) Simple creation of working dataframe (df), with output dataframe (outdf).
+#          2) Drop all nulls before combining duplicate rows on NativeID.
 
 
 # Needed Libraries
@@ -14,7 +14,7 @@ import os
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -29,7 +29,7 @@ variables_fileInput = "ProcessedInputData/variables.csv"
 watersources_fileInput = "ProcessedInputData/watersources.csv"
 reportingunits_fileInput = "ProcessedInputData/reportingunits.csv"
 
-df_DM = pd.read_csv(M_fileInput)  # The State's Master input dataframe.
+df_DM = pd.read_csv(M_fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
 df_method = pd.read_csv(method_fileInput)  # Method dataframe
 df_variables = pd.read_csv(variables_fileInput)  # Variables dataframe
 df_watersources = pd.read_csv(watersources_fileInput)  # WaterSources dataframe
@@ -99,10 +99,10 @@ print("Populating dataframe outdf...")
 outdf = pd.DataFrame(index=df_DM.index, columns=columnslist)  # The output dataframe
 
 print("MethodUUID")
-outdf.MethodUUID = "CDWR_Water Use"
+outdf['MethodUUID'] = "CDWR_Water Use"
 
 print("OrganizationUUID")
-outdf.OrganizationUUID = "CDWR"
+outdf['OrganizationUUID'] = "CDWR"
 
 print("ReportingUnitUUID")  # Using SiteNativeID to identify ID
 ReportingUnitUUIDdict = pd.Series(df_reportingunits.ReportingUnitUUID.values, index = df_reportingunits.ReportingUnitNativeID).to_dict()
@@ -113,7 +113,7 @@ VariableSpecificUUIDdict = pd.Series(df_variables.VariableSpecificUUID.values, i
 outdf['VariableSpecificUUID'] = df_DM.apply(lambda row: retrieveVariableSpecific(row['inVariable']), axis=1)
 
 print("WaterSourceUUID")
-outdf.WaterSourceUUID = 'CAag_WS1'
+outdf['WaterSourceUUID'] = 'CAag_WS1'
 
 print("Amount")
 outdf['Amount'] = df_DM['inAmount']
@@ -122,49 +122,49 @@ print("BeneficialUseCategory")
 outdf['BeneficialUseCategory'] = df_DM['inBenUse']
 
 print("CommunityWaterSupplySystem")
-outdf.CommunityWaterSupplySystem = ""
+outdf['CommunityWaterSupplySystem'] = ""
 
 print("CropTypeCV")
-outdf.CropTypeCV = ""
+outdf['CropTypeCV'] = ""
 
 print("CustomerTypeCV")
-outdf.CustomerTypeCV = ""
+outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")
-outdf.DataPublicationDate = "11/03/2020"
+outdf['DataPublicationDate'] = "11/03/2020"
 
 print("DataPublicationDOI")
-outdf.DataPublicationDOI = ""
+outdf['DataPublicationDOI'] = ""
 
 print("InterbasinTransferFromID")
-outdf.InterbasinTransferFromID = ""
+outdf['InterbasinTransferFromID'] = ""
 
 print("InterbasinTransferToID")
-outdf.InterbasinTransferToID = ""
+outdf['InterbasinTransferToID'] = ""
 
 print("IrrigatedAcreage")
-outdf.IrrigatedAcreage = ""
+outdf['IrrigatedAcreage'] = ""
 
 print("IrrigationMethodCV")
-outdf.IrrigationMethodCV = ""
+outdf['IrrigationMethodCV'] = ""
 
 print("PopulationServed")
-outdf.PopulationServed = ""
+outdf['PopulationServed'] = ""
 
 print("PowerGeneratedGWh")
-outdf.PowerGeneratedGWh = ""
+outdf['PowerGeneratedGWh'] = ""
 
 print("PowerType")
-outdf.PowerType = ""
+outdf['PowerType'] = ""
 
 print("PrimaryUseCategory")
-outdf.PrimaryUseCategory = ""
+outdf['PrimaryUseCategory'] = "Unspecified"
 
 print("ReportYearCV")
 outdf['ReportYearCV'] = df_DM['inYear']
 
 print("SDWISIdentifierCV")
-outdf.SDWISIdentifierCV = ""
+outdf['SDWISIdentifierCV'] = ""
 
 print("TimeframeEnd")
 outdf['TimeframeEnd'] = df_DM['inTimeframeEnd']
@@ -190,6 +190,7 @@ print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to uploa
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 

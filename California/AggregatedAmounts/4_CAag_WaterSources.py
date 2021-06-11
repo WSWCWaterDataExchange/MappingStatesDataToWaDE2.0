@@ -1,7 +1,7 @@
 #Date Created: 11/04/2020
 #Author: Ryan James (WSWC)
-#Purpose: To create CA aggwater source use information and populate a dataframe for WaDE_QA 2.0.
-#Notes:
+#Purpose: To create CA agg water source use information and populate a dataframe for WaDE_QA 2.0.
+#Notes: N/A
 
 
 # Needed Libraries
@@ -13,7 +13,7 @@ import os
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -23,7 +23,7 @@ print("Reading input csv...")
 workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/California/AggregatedAmounts"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_caAggMaster.csv"
-df = pd.read_csv(fileInput)
+df = pd.read_csv(fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
 
 #WaDE columns
 columnslist = [
@@ -52,27 +52,27 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(index=df.index, columns=columnslist)  # The output dataframe for CSV.
 
 print("Geometry")
-outdf.Geometry = ""
+outdf['Geometry'] = ""
 
 print("GNISFeatureNameCV")
-outdf.GNISFeatureNameCV = ""
+outdf['GNISFeatureNameCV'] = ""
 
 print("WaterQualityIndicatorCV")
-outdf.WaterQualityIndicatorCV = "Fresh"
+outdf['WaterQualityIndicatorCV'] = "Fresh"
 
 print("WaterSourceName")
-outdf.WaterSourceName = 'Unspecified'
+outdf['WaterSourceName'] = "Unspecified"
 
 print("WaterSourceNativeID")
-outdf.WaterSourceNativeID = 'Unspecified'
+outdf['WaterSourceNativeID'] = "Unspecified"
 
 print("WaterSourceTypeCV")
-outdf.WaterSourceTypeCV = 'Surface and Groundwater'
+outdf['WaterSourceTypeCV'] = 'Surface and Groundwater'
 
 ##############################
 # Dropping duplicate
 print("Dropping duplicates")
-outdf = outdf.drop_duplicates(subset=['WaterSourceTypeCV']).reset_index(drop=True)
+outdf = outdf.drop_duplicates(subset=['WaterSourceName', 'WaterSourceNativeID', 'WaterSourceTypeCV']).reset_index(drop=True)
 ##############################
 
 print("WaterSourceUUID")
@@ -85,7 +85,8 @@ outdf.reset_index()
 
 #Error Checking each Field
 ############################################################################
-print("Error checking each field.  Purging bad inputs.")  # Hardcoded
+print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 

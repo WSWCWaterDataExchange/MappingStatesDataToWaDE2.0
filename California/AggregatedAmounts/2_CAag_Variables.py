@@ -1,7 +1,7 @@
-#Date Created: 11/04/2020
-#Author: Ryan James (WSWC)
-#Purpose: To create CA agg variable use information and populate a dataframe for WaDE_QA 2.0.
-#Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
+# Date Created: 11/04/2020
+# Author: Ryan James (WSWC)
+# Purpose: To create CA agg variable use information and populate a dataframe for WaDE_QA 2.0.
+# Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
 
 
 # Needed Libraries
@@ -83,9 +83,11 @@ outdf_nullMand = outdf.loc[(outdf["VariableSpecificUUID"].isnull()) | (outdf["Va
 # Export to new csv
 ############################################################################
 print("Exporting dataframe to csv...")
+
+# The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/variables.csv', index=False)
 
-#Report missing values if need be to separate csv
+# Report purged values.
 if(len(outdf_nullMand.index) > 0):
     outdf_nullMand.to_csv('ProcessedInputData/variables_missing.csv', index=False)
 
