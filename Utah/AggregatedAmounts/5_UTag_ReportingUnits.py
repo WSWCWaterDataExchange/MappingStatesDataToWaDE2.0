@@ -1,7 +1,7 @@
-#Date Created: 11/12/2020
-#Author: Ryan James (WSWC)
-#Purpose: To create UT agg reporting unit information and populate a dataframe for WaDEQA 2.0.
-#Notes:
+# Date Created: 11/12/2020
+# Author: Ryan James (WSWC)
+# Purpose: To create UT agg reporting unit information and populate a dataframe for WaDEQA 2.0.
+# Notes: N/A
 
 
 # Needed Libraries
@@ -13,7 +13,7 @@ import pandas as pd
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -24,7 +24,7 @@ workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0
 os.chdir(workingDir)
 fileInput = "RawinputData/P_utAggMaster.csv"
 fileInput_shape = "RawinputData/P_utGeometry.csv"
-df = pd.read_csv(fileInput)
+df = pd.read_csv(fileInput).replace(np.nan, "")
 dfshape = pd.read_csv(fileInput_shape)
 
 columnslist =[
@@ -69,7 +69,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist, index=df.index)
 
 print("EPSGCodeCV")
-outdf.EPSGCodeCV = 'EPSG:4326'
+outdf['EPSGCodeCV'] = "4326"
 
 print("ReportingUnitName")
 outdf['ReportingUnitName'] = df['ReportingUnitName']
@@ -78,16 +78,16 @@ print("ReportingUnitNativeID")
 outdf['ReportingUnitNativeID'] = df['ReportingUnitNativeID']
 
 print("ReportingUnitProductVersion")
-outdf.ReportingUnitProductVersion = ''
+outdf['ReportingUnitProductVersion'] = ''
 
 print("ReportingUnitTypeCV")
 outdf['ReportingUnitTypeCV'] = df['ReportingUnitTypeCV']
 
 print("ReportingUnitUpdateDate")
-outdf.ReportingUnitUpdateDate = ''
+outdf['ReportingUnitUpdateDate'] = ''
 
 print("StateCV")
-outdf.StateCV = "UT"
+outdf['StateCV'] = "UT"
 
 print("Geometry")
 outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['ReportingUnitNativeID']), axis=1)
@@ -111,6 +111,7 @@ outdf['ReportingUnitUUID'] = dftemp.apply(lambda row: assignReportingUnitID(row[
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 
@@ -145,6 +146,7 @@ outdf, dfpurge = TestErrorFunctions.StateCV_RU_Check(outdf, dfpurge)
 # Export to new csv
 ############################################################################
 print("Exporting dataframe outdf to csv...")
+
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/reportingunits.csv', index=False)
 

@@ -1,19 +1,19 @@
-#Date Created: 11/12/2020
-#Author: Ryan James (WSWC)
-#Purpose: To create UT agg water source use information and populate a dataframe for WaDE_QA 2.0.
-#Notes:
+# Date Created: 11/12/2020
+# Author: Ryan James (WSWC)
+# Purpose: To create UT agg water source use information and populate a dataframe for WaDE_QA 2.0.
+# Notes: N/A
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -23,7 +23,7 @@ print("Reading input csv...")
 workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Utah/AggregatedAmounts"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_utAggMaster.csv"
-df = pd.read_csv(fileInput)
+df = pd.read_csv(fileInput).replace(np.nan, "")
 
 #WaDE columns
 columnslist = [
@@ -49,30 +49,31 @@ def assignWaterSourceUUID(colrowValue):
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
+
 outdf = pd.DataFrame(index=df.index, columns=columnslist)  # The output dataframe for CSV.
 
 print("Geometry")
-outdf.Geometry = ""
+outdf['Geometry'] = ""
 
 print("GNISFeatureNameCV")
-outdf.GNISFeatureNameCV = ""
+outdf['GNISFeatureNameCV'] = ""
 
 print("WaterQualityIndicatorCV")
-outdf.WaterQualityIndicatorCV = "Fresh"
+outdf['WaterQualityIndicatorCV'] = "Fresh"
 
 print("WaterSourceName")
-outdf.WaterSourceName = 'Unspecified'
+outdf['WaterSourceName'] = "Unspecified"
 
 print("WaterSourceNativeID")
-outdf.WaterSourceNativeID = 'Unspecified'
+outdf['WaterSourceNativeID'] = "Unspecified"
 
 print("WaterSourceTypeCV")
-outdf.WaterSourceTypeCV = df['inputWaterSourceTypeCV']
+outdf['WaterSourceTypeCV'] = df['in_WaterSourceTypeCV']  # see preprocessing code.
 
 ##############################
 # Dropping duplicate
 print("Dropping duplicates")
-outdf = outdf.drop_duplicates(subset=['WaterSourceTypeCV']).reset_index(drop=True)
+outdf = outdf.drop_duplicates(subset=['WaterSourceName', 'WaterSourceNativeID', 'WaterSourceTypeCV']).reset_index(drop=True)
 ##############################
 
 print("WaterSourceUUID")
@@ -85,7 +86,8 @@ outdf.reset_index()
 
 #Error Checking each Field
 ############################################################################
-print("Error checking each field.  Purging bad inputs.")  # Hardcoded
+print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 

@@ -1,20 +1,20 @@
-#Date Created: 11/12/2020
-#Author: Ryan James (WSWC)
-#Purpose: To create UT agg aggregated information and populate a dataframe WaDEQA 2.0.
-#         1) Simple creation of working dataframe (df), with output dataframe (outdf).
-#         2) Drop all nulls before combining duplicate rows on NativeID.
+# Date Created: 11/12/2020
+# Author: Ryan James (WSWC)
+# Purpose: To create UT agg aggregated information and populate a dataframe WaDEQA 2.0.
+# Notes: 1) Simple creation of working dataframe (df), with output dataframe (outdf).
+#        2) Drop all nulls before combining duplicate rows on NativeID.
 
 
 # Needed Libraries
 ############################################################################
+import os
 import numpy as np
 import pandas as pd
-import os
 
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -29,7 +29,7 @@ variables_fileInput = "ProcessedInputData/variables.csv"
 watersources_fileInput = "ProcessedInputData/watersources.csv"
 reportingunits_fileInput = "ProcessedInputData/reportingunits.csv"
 
-df_DM = pd.read_csv(M_fileInput)  # The State's Master input dataframe.
+df_DM = pd.read_csv(M_fileInput).replace(np.nan, "")  # The State's Master input dataframe.
 df_method = pd.read_csv(method_fileInput)  # Method dataframe
 df_variables = pd.read_csv(variables_fileInput)  # Variables dataframe
 df_watersources = pd.read_csv(watersources_fileInput)  # WaterSources dataframe
@@ -138,7 +138,7 @@ outdf['VariableSpecificUUID'] = df_DM.apply(lambda row: retrieveVariableSpecific
 
 print("WaterSourceUUID")
 WaterSourceUUIDUUIDdict = pd.Series(df_watersources.WaterSourceUUID.values, index = df_watersources.WaterSourceTypeCV).to_dict()
-outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['inputWaterSourceTypeCV']), axis=1)
+outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceTypeCV']), axis=1)
 
 print("Amount")
 outdf['Amount'] = df_DM['Amount']
@@ -147,40 +147,40 @@ print("BeneficialUseCategory")
 outdf['BeneficialUseCategory'] = df_DM['BeneficialUseCategory']
 
 print("CommunityWaterSupplySystem")
-outdf.CommunityWaterSupplySystem = ""
+outdf['CommunityWaterSupplySystem'] = ""
 
 print("CropTypeCV")
-outdf.CropTypeCV = ""
+outdf['CropTypeCV'] = ""
 
 print("CustomerTypeCV")
-outdf.CustomerTypeCV = ""
+outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")
-outdf.DataPublicationDate = "11/03/2020"
+outdf['DataPublicationDate'] = "11/03/2020"
 
 print("DataPublicationDOI")
-outdf.DataPublicationDOI = ""
+outdf['DataPublicationDOI'] = ""
 
 print("InterbasinTransferFromID")
-outdf.InterbasinTransferFromID = ""
+outdf['InterbasinTransferFromID'] = ""
 
 print("InterbasinTransferToID")
-outdf.InterbasinTransferToID = ""
+outdf['InterbasinTransferToID'] = ""
 
 print("IrrigatedAcreage")
-outdf.IrrigatedAcreage = ""
+outdf['IrrigatedAcreage'] = ""
 
 print("IrrigationMethodCV")
-outdf.IrrigationMethodCV = ""
+outdf['IrrigationMethodCV'] = ""
 
 print("PopulationServed")
-outdf.PopulationServed = ""
+outdf['PopulationServed'] = ""
 
 print("PowerGeneratedGWh")
-outdf.PowerGeneratedGWh = ""
+outdf['PowerGeneratedGWh'] = ""
 
 print("PowerType")
-outdf.PowerType = ""
+outdf['PowerType'] = ""
 
 print("PrimaryUseCategory")
 outdf["PrimaryUseCategory"] =  df_DM['USGSCategoryCV']
@@ -189,7 +189,7 @@ print("ReportYearCV")
 outdf['ReportYearCV'] = df_DM['ReportYearCV']
 
 print("SDWISIdentifierCV")
-outdf.SDWISIdentifierCV = ""
+outdf['SDWISIdentifierCV'] = ""
 
 print("TimeframeEnd")
 outdf["TimeframeEnd"] =  df_DM['TimeframeEnd']
@@ -216,6 +216,7 @@ outdf100 = outdf100.drop_duplicates()
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 

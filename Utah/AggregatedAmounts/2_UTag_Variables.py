@@ -1,7 +1,7 @@
-#Date Created: 11/12/2020
-#Author: Ryan James (WSWC)
-#Purpose: To create UT agg variable use information and populate a dataframe for WaDE_QA 2.0.
-#Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
+# Date Created: 11/12/2020
+# Author: Ryan James (WSWC)
+# Purpose: To create UT agg variable use information and populate a dataframe for WaDE_QA 2.0.
+# Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
 
 
 # Needed Libraries
@@ -40,6 +40,7 @@ columnslist = [
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
+
 outdf = pd.DataFrame(columns=columnslist)
 
 outdf.VariableSpecificUUID = ["UT_Consumptive Use", "UT_Withdrawal Irrigation", "UT_Withdrawal Public Supply"]
@@ -60,7 +61,7 @@ outdf.ReportYearTypeCV = ["WaterYear", "WaterYear", "WaterYear"]
 
 outdf.VariableCV = ["Consumptive Use", "Withdrawal", "Withdrawal"]
 
-outdf.VariableSpecificCV = ["Consumptive Use, Irrigation", "Withdrawal, Irrigation", "Withdrawal, Public Supply"]
+outdf.VariableSpecificCV = ["Consumptive Use Irrigation", "Withdrawal Irrigation", "Withdrawal Public Supply"]
 
 
 # Check required fields are not null
@@ -87,9 +88,8 @@ print("Exporting dataframe to csv...")
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/variables.csv', index=False)
 
-#Report missing values if need be to separate csv
+# Report purged values.
 if(len(outdf_nullMand.index) > 0):
     outdf_nullMand.to_csv('ProcessedInputData/variables_missing.csv', index=False)
-
 
 print("Done.")
