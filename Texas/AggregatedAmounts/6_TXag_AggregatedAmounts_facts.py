@@ -1,8 +1,8 @@
-#Date Created: 02/19/2021
-#Author: Ryan James (WSWC)
-#Purpose: To create TX agg aggregated information and populate a dataframe WaDEQA 2.0.
-#         1) Simple creation of working dataframe (df), with output dataframe (outdf).
-#         2) Drop all nulls before combining duplicate rows on NativeID.
+# Date Created: 02/19/2021
+# Author: Ryan James (WSWC)
+# Purpose: To create TX agg aggregated information and populate a dataframe WaDEQA 2.0.
+#          1) Simple creation of working dataframe (df), with output dataframe (outdf).
+#          2) Drop all nulls before combining duplicate rows on NativeID.
 
 
 # Needed Libraries
@@ -14,7 +14,7 @@ import os
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -29,7 +29,7 @@ variables_fileInput = "ProcessedInputData/variables.csv"
 watersources_fileInput = "ProcessedInputData/watersources.csv"
 reportingunits_fileInput = "ProcessedInputData/reportingunits.csv"
 
-df_DM = pd.read_csv(M_fileInput)  # The State's Master input dataframe.
+df_DM = pd.read_csv(M_fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
 df_method = pd.read_csv(method_fileInput)  # Method dataframe
 df_variables = pd.read_csv(variables_fileInput)  # Variables dataframe
 df_watersources = pd.read_csv(watersources_fileInput)  # WaterSources dataframe
@@ -94,7 +94,6 @@ def retrieveWaterSourceUUID(colrowValue):
     return outList
 
 
-
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe outdf...")
@@ -119,7 +118,7 @@ print("Amount")
 outdf['Amount'] = df_DM['in_Amount']
 
 print("BeneficialUseCategory")
-outdf['BeneficialUseCategory'] = df_DM['*TX_BenUse']
+outdf['BeneficialUseCategory'] = df_DM['TX_BenUse']
 
 print("CommunityWaterSupplySystem")
 outdf['CommunityWaterSupplySystem' ] = ""
@@ -131,7 +130,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")
-outdf.DataPublicationDate = "02/19/2021"
+outdf['DataPublicationDate'] = "02/19/2021"
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""
@@ -158,7 +157,7 @@ print("PowerType")
 outdf['PowerType'] = ""
 
 print("PrimaryUseCategory")
-outdf['PrimaryUseCategory'] = "Irrigation"
+outdf['PrimaryUseCategory'] = "Unspecified"
 
 print("ReportYearCV")
 outdf['ReportYearCV'] = df_DM['Year']
@@ -190,6 +189,7 @@ print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to uploa
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 

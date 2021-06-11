@@ -1,7 +1,7 @@
-#Date Created: 02/19/2021
-#Author: Ryan James (WSWC)
-#Purpose: To create TX agg reporting unit information and populate a dataframe for WaDEQA 2.0.
-#Notes:
+# Date Created: 02/19/2021
+# Author: Ryan James (WSWC)
+# Purpose: To create TX agg reporting unit information and populate a dataframe for WaDEQA 2.0.
+# Notes:
 
 
 # Needed Libraries
@@ -13,7 +13,7 @@ import pandas as pd
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -24,7 +24,7 @@ workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0
 os.chdir(workingDir)
 fileInput = "RawinputData/P_txAggMaster.csv"
 fileInput_shape = "RawinputData/P_txGeometry.csv"
-df = pd.read_csv(fileInput)
+df = pd.read_csv(fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
 dfshape = pd.read_csv(fileInput_shape)
 
 columnslist =[
@@ -55,7 +55,6 @@ def retrieveGeometry(colrowValue):
             outList = ''
     return outList
 
-
 # For creating SiteUUID
 def assignReportingUnitID(colrowValue):
     string1 = str(colrowValue)
@@ -69,7 +68,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist, index=df.index)
 
 print("EPSGCodeCV")
-outdf.EPSGCodeCV = 'EPSG:4326'
+outdf['EPSGCodeCV'] = '4326'
 
 print("ReportingUnitName")
 outdf['ReportingUnitName'] = df['in_ReportingUnitName']
@@ -87,7 +86,7 @@ print("ReportingUnitUpdateDate")
 outdf['ReportingUnitUpdateDate'] = ''
 
 print("StateCV")
-outdf.StateCV = "TX"
+outdf['StateCV'] = "TX"
 
 print("Geometry")
 outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['in_ReportingUnitNativeID']), axis=1)
@@ -145,6 +144,7 @@ outdf, dfpurge = TestErrorFunctions.StateCV_RU_Check(outdf, dfpurge)
 # Export to new csv
 ############################################################################
 print("Exporting dataframe outdf to csv...")
+
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/reportingunits.csv', index=False)
 
