@@ -19,8 +19,8 @@ This listed provided below are used to determine WaDE **OwnerClassificationTypeC
 
 ***
 ### Generic Keywords
-- unList = ["unspecified", "unknown"]
-- nalist = ["apace tribe","apache nation","arapaho tribes","arapahoe tribes","blackfeet tribe","cheyenne tribe","indian reservation","kalispel tribe","kootenai tribe","kootenai tribes","muckleshoot indian tribe","navajo nation","navajo tribe","otoe missouria tribe","paiute tribe","peoria tribe","puyallup tribe","quapaw tribe","quileute tribe","quinault indian nation","seneca cayuga tribe","shawnee tribe","shoshone paiute tribes","shoshone tri","shoshone tribe","shoshone tribes","sioux tribe","spirit lake tribe","spokane tribe","stillaquamish indian tribe","ute indian tribe","ute mountain ute tribe","wyandotte tribe","yomba shoshone tribe","yurok tribe","zuni indian tribe","zuni tribe","apache indians","quechan tribe","navajo & hopi indian","pautte tribe","cocopah indain tribe"]
+- **Unspecified**. unList = ["unspecified", "unknown"]
+- **Native American**. nalist = ["apace tribe","apache nation","arapaho tribes","arapahoe tribes","blackfeet tribe","cheyenne tribe","indian reservation","kalispel tribe","kootenai tribe","kootenai tribes","muckleshoot indian tribe","navajo nation","navajo tribe","otoe missouria tribe","paiute tribe","peoria tribe","puyallup tribe","quapaw tribe","quileute tribe","quinault indian nation","seneca cayuga tribe","shawnee tribe","shoshone paiute tribes","shoshone tri","shoshone tribe","shoshone tribes","sioux tribe","spirit lake tribe","spokane tribe","stillaquamish indian tribe","ute indian tribe","ute mountain ute tribe","wyandotte tribe","yomba shoshone tribe","yurok tribe","zuni indian tribe","zuni tribe","apache indians","quechan tribe","navajo & hopi indian","pautte tribe","cocopah indain tribe"]
 
 
 ***
