@@ -1,7 +1,7 @@
-#Date Created: 06/25/2020
-#Purpose: To extract NM agg water source use information and population dataframe for WaDE_QA 2.0.
-#Notes:   1) Two types for NM: ground and surface.
-#         2) Easier just to hardcode it here.
+# Date Created: 06/25/2020
+# Purpose: To extract NM agg water source use information and populate dataframe for WaDE_QA 2.0.
+# Notes:   1) Two types for NM: ground and surface.
+#          2) Easier just to hardcode it here.
 
 
 # Needed Libraries
@@ -13,7 +13,7 @@ import os
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -23,7 +23,7 @@ print("Reading input csv...")
 workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/NewMexico/AggregatedAmounts"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_NMagg.csv"
-df = pd.read_csv(fileInput)
+df = pd.read_csv(fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
 
 #WaDE columns
 columnslist = [
@@ -49,6 +49,7 @@ def assignWaterSourceUUID(colrowValue):
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
+
 outdf = pd.DataFrame(columns = columnslist)  # The output dataframe for CSV.
 
 print("WaterSourceTypeCV")
@@ -72,7 +73,7 @@ outdf['WaterSourceNativeID'] = "Unspecified"
 ##############################
 # Dropping duplicate
 print("Dropping duplicates")
-outdf = outdf.drop_duplicates(subset=['WaterSourceTypeCV']).reset_index(drop=True)
+outdf = outdf.drop_duplicates(subset=['WaterSourceTypeCV', 'WaterSourceName', 'WaterSourceNativeID']).reset_index(drop=True)
 ##############################
 
 print("WaterSourceUUID")

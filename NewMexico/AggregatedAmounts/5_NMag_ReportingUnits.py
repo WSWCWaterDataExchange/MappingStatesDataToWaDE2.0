@@ -1,6 +1,6 @@
-#Date Created: 06/25/2020
-#Purpose: To extract NM agg reporting unit information and population dataframe for WaDEQA 2.0.
-#Notes:
+# Date Created: 06/25/2020
+# Purpose: To extract NM agg reporting unit information and population dataframe for WaDEQA 2.0.
+# Notes: N/A
 
 
 # Needed Libraries
@@ -12,7 +12,7 @@ import os
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -22,7 +22,7 @@ print("Reading input csv...")
 workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/NewMexico/AggregatedAmounts"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_NMagg.csv"
-df = pd.read_csv(fileInput)
+df = pd.read_csv(fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
 
 columnslist =[
     "ReportingUnitUUID",
@@ -44,7 +44,6 @@ def assignReportingUnitID(colrowValue):
     string1 = str(colrowValue)
     outstring = "NMag_RU" + string1
     return outstring
-
 
 # For creating ReportingUnitNativeID
 nameGEOIDDict = {
@@ -81,12 +80,11 @@ nameGEOIDDict = {
 "Torrance" : "35057",
 "Union" : "35059",
 "Valencia" : "35061"}
-
 def retrieveGEOID(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = colrowValue
     else:
-        String1 = colrowValue  # remove whitespace chars
+        String1 = colrowValue
         try:
             outList = nameGEOIDDict[String1]
         except:
@@ -97,10 +95,11 @@ def retrieveGEOID(colrowValue):
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
+
 outdf = pd.DataFrame(columns=columnslist, index=df.index)
 
 print("EPSGCodeCV")
-outdf['EPSGCodeCV'] = 'EPSG:4326'
+outdf['EPSGCodeCV'] = "4326"
 
 print("Geometry")
 outdf['Geometry'] = df['Geometry']
@@ -115,7 +114,7 @@ print("ReportingUnitProductVersion")
 outdf['ReportingUnitProductVersion'] = ''
 
 print("ReportingUnitTypeCV")
-outdf['ReportingUnitTypeCV'] = 'County'
+outdf['ReportingUnitTypeCV'] = "County"
 
 print("ReportingUnitUpdateDate")
 outdf['ReportingUnitUpdateDate'] = ''
@@ -129,7 +128,7 @@ outdf.reset_index()
 #####################################
 # Dropping duplicate
 # filter the whole table based on a unique combination of ReportingUnitName
-outdf = outdf.drop_duplicates(subset=['ReportingUnitName'])
+outdf = outdf.drop_duplicates(subset=['ReportingUnitName', 'ReportingUnitNativeID', 'ReportingUnitTypeCV'])
 outdf = outdf.reset_index(drop=True)
 ######################################
 
