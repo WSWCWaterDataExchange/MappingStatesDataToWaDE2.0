@@ -19,39 +19,39 @@ This listed provided below are used to determine WaDE **OwnerClassificationTypeC
 
 ***
 ### Generic Keywords
-unList = ["unspecified", "unknown"]
-nalist = ["apace tribe","apache nation","arapaho tribes","arapahoe tribes","blackfeet tribe","cheyenne tribe","indian reservation","kalispel tribe","kootenai tribe","kootenai tribes","muckleshoot indian tribe","navajo nation","navajo tribe","otoe missouria tribe","paiute tribe","peoria tribe","puyallup tribe","quapaw tribe","quileute tribe","quinault indian nation","seneca cayuga tribe","shawnee tribe","shoshone paiute tribes","shoshone tri","shoshone tribe","shoshone tribes","sioux tribe","spirit lake tribe","spokane tribe","stillaquamish indian tribe","ute indian tribe","ute mountain ute tribe","wyandotte tribe","yomba shoshone tribe","yurok tribe","zuni indian tribe","zuni tribe","apache indians","quechan tribe","navajo & hopi indian","pautte tribe","cocopah indain tribe"]
+- unList = ["unspecified", "unknown"]
+- nalist = ["apace tribe","apache nation","arapaho tribes","arapahoe tribes","blackfeet tribe","cheyenne tribe","indian reservation","kalispel tribe","kootenai tribe","kootenai tribes","muckleshoot indian tribe","navajo nation","navajo tribe","otoe missouria tribe","paiute tribe","peoria tribe","puyallup tribe","quapaw tribe","quileute tribe","quinault indian nation","seneca cayuga tribe","shawnee tribe","shoshone paiute tribes","shoshone tri","shoshone tribe","shoshone tribes","sioux tribe","spirit lake tribe","spokane tribe","stillaquamish indian tribe","ute indian tribe","ute mountain ute tribe","wyandotte tribe","yomba shoshone tribe","yurok tribe","zuni indian tribe","zuni tribe","apache indians","quechan tribe","navajo & hopi indian","pautte tribe","cocopah indain tribe"]
 
 
 ***
 ### Government Keywords
-bialist = ["bureau of indian aff", "indian affairs", "usbia"]
-ushudlist = ["housing and urban development", "housing & urban development", "ushud"]
-usfaalist = ["usfaa", "federal aviation administration"]
-usgsalist = ["usgsa", "general services administration"]
+- **Bureau of Indian Affairs (USBIA)**. bialist = ["bureau of indian aff", "indian affairs", "usbia"]
+- **Department of Housing and Urban Development (USHUD)**. ushudlist = ["housing and urban development", "housing & urban development", "ushud"]
+- **Federal Aviation Administration (USFAA)**. usfaalist = ["usfaa", "federal aviation administration"]
+- **General Services Administration (USGSA)**. usgsalist = ["usgsa", "general services administration"]
 
 
 ***
 ### Military Keywords
-usaalist = ["us army", "u s army", "usarmy", "usa army", "national guard", "corps of engineer", "corps of engineers", "army corp", "army corps", "army corp of", "usa department of the army"]
-uscbplist = ["uscbp", "border patrol", "border protection", "customs service ", "customs office"]
-usdodlist = ["department of defense", "dept of defense"]
-usdhslist = ["dhs", "homeland security"]
-usmarinelist = ["marine corps"]
-usaflist = [ "usaf", "usafb", "afb", "air force", "airforce", "aire force", "air national guard"]
+- **Army (USA)**. usaalist = ["us army", "u s army", "usarmy", "usa army", "national guard", "corps of engineer", "corps of engineers", "army corp", "army corps", "army corp of", "usa department of the army"]
+- **Customs and Border Patrol (USCBP)**. uscbplist = ["uscbp", "border patrol", "border protection", "customs service ", "customs office"]
+- **Department of Defense (USDOD)**. usdodlist = ["department of defense", "dept of defense"]
+- **Department of Homeland Security (USDHS)**. usdhslist = ["dhs", "homeland security"]
+- **Marine Corps (USMC)**. usmarinelist = ["marine corps"]
+- **United States Air Force (USAF)**. usaflist = [ "usaf", "usafb", "afb", "air force", "airforce", "aire force", "air national guard"]
 
 
 ***
 # Natural Resources Keywords
-usblmlist = ["usblm", "blm", "bureau of land mgmt", "bureau of land management", "bureau of land mgmnt", "bureau of land mgt", "bureau of land managment", "bureau of land managenemt"]
-usbrlist = ["usbr", "bureau of reclam", "bureau of reclamation", "bureau reclamation"]
-usdalist = ["u s  dept of agriculture", "u s agriculture", "us agriculture dept", "us department agriculture", "us dept of agriculture", "usa  department of agriculture", "usa  dept of agriculture", "usda"]
-usdoelist = ["department of energy", "u s department of energy", "u s dept  of energy lanl", "u s  department of energy", "u s  department of energy", "u s department of energy", "united states department of energy", "us department energy", "us department of energy", "us doe", "usa department of energy"]
-epalist = ["environmental protection agency", "epa", "e p a"]
-fwlist = ["u s department of the interior fish and wildlife service","u s dept of fish & wildlife","u s dept of the interior fish and wildlife","u s fish & wildlife","u s fish and wildlife","united states fish and wildlife","united states of america fish and wildlife","us department fish & wildlife","us department of fish & wildlife","us dept of interior fish and wildlife","us dept of the interior fish and wildlif","us fish & wild life","us fish & wildlife","us fish and wildlife","us interior dept fish & wildlife","usa department of interior fish and wildlife","usa dept of interior fish & wildlife","usa fish & wildlife","usa fish and wildlife","usdi fish & wildlife","usdi fish and wildlife","usdoi fish & wildlife","usfws"]
-usfslist = ["forest service united states","forest service usda","u s d a forest service","u s forest service","u s forest","united states forest service","us forest service","usa forest service","usda forest service","usfs"]
-usgslist = ["u s geological survey","us geological survey","usa geological survey"]
-usnplist = ["national park", "natl park serv", "national forest", "nat forest", "natl forest"]
+- **Bureau of Land Management (USBLM)**. usblmlist = ["usblm", "blm", "bureau of land mgmt", "bureau of land management", "bureau of land mgmnt", "bureau of land mgt", "bureau of land managment", "bureau of land managenemt"]
+- **Bureau Reclamation (USBR)**. usbrlist = ["usbr", "bureau of reclam", "bureau of reclamation", "bureau reclamation"]
+- **Department of Agriculture (USDA)**. usdalist = ["u s  dept of agriculture", "u s agriculture", "us agriculture dept", "us department agriculture", "us dept of agriculture", "usa  department of agriculture", "usa  dept of agriculture", "usda"]
+- **Department of Energy (USDOE)**. usdoelist = ["department of energy", "u s department of energy", "u s dept  of energy lanl", "u s  department of energy", "u s  department of energy", "u s department of energy", "united states department of energy", "us department energy", "us department of energy", "us doe", "usa department of energy"]
+- **Environmental Protection Agency (USEPA)**. epalist = ["environmental protection agency", "epa", "e p a"]
+- **Fish and Wildlife Service (USFWS)**. fwlist = ["u s department of the interior fish and wildlife service","u s dept of fish & wildlife","u s dept of the interior fish and wildlife","u s fish & wildlife","u s fish and wildlife","united states fish and wildlife","united states of america fish and wildlife","us department fish & wildlife","us department of fish & wildlife","us dept of interior fish and wildlife","us dept of the interior fish and wildlif","us fish & wild life","us fish & wildlife","us fish and wildlife","us interior dept fish & wildlife","usa department of interior fish and wildlife","usa dept of interior fish & wildlife","usa fish & wildlife","usa fish and wildlife","usdi fish & wildlife","usdi fish and wildlife","usdoi fish & wildlife","usfws"]
+- **Forest Service (USFS)**. usfslist = ["forest service united states","forest service usda","u s d a forest service","u s forest service","u s forest","united states forest service","us forest service","usa forest service","usda forest service","usfs"]
+- **Geological Survey (USGS)**. usgslist = ["u s geological survey","us geological survey","usa geological survey"]
+- **National Park Service (USNPS)**. usnplist = ["national park", "natl park serv", "national forest", "nat forest", "natl forest"]
 
 
 
