@@ -1,0 +1,4 @@
+WaterSourceUUID,Geometry,GNISFeatureNameCV,WaterQualityIndicatorCV,WaterSourceName,WaterSourceNativeID,WaterSourceTypeCV
+USBRag_WS1,,,Fresh,colorado river,WaDEUSBR_WS1,Surface Water
+USBRag_WS2,,,Fresh,green river,WaDEUSBR_WS2,Surface Water
+USBRag_WS3,,,Fresh,upper main stem,WaDEUSBR_WS3,Surface Water

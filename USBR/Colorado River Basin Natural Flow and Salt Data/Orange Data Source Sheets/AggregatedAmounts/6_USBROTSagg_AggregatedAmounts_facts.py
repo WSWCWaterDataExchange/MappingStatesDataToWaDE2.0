@@ -152,7 +152,7 @@ print("PowerType")  # Hardcoded
 outdf.PowerType = ""
 
 print("PrimaryUseCategory")  # Hardcoded
-outdf.PrimaryUseCategory = ""
+outdf.PrimaryUseCategory = "Unspecified"
 
 print("ReportYearCV")  # Hardcoded
 outdf['ReportYearCV'] = df_DM['ReportYearCV']
