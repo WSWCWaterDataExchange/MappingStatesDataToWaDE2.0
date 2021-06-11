@@ -3,7 +3,11 @@ This readme details the process that was applied by the staff of the [Western St
 
 
 ## Summary of Data Prep
-The WaDE **OwnerClassificationTypeCV** field was assigned by utilizing a keyword search algorithm using the state provided water right owner (e.g., **AllocationOwner** field in WaDE) information.  The keyword search starts with a generic term search, but then is overridden with a more term specific search (e.g. a water right owner listed as *AZ USBR* would at first be labeled as an Arizona type owner, but then replaced with a more specific Bureau Reclamation type owner).  Water right records can possess multiple owners.  Records within WaDE with multiple **AllocationOwner** entries were given a single best fist term for **OwnerClassificationTypeCV**, as WaDE only allows for a single entry (at this time 06/11/2021).  Terms not found in the keyword search were given the default value of 'In Review', for further review by the WSWC staff and state agencies.
+The WaDE **OwnerClassificationTypeCV** field was assigned by utilizing a keyword search algorithm using the state provided water right owner (e.g., **AllocationOwner** field in WaDE) information.  The keyword search starts with a generic term search, but then is overridden with a more term specific search (e.g. a water right owner listed as *AZ USBR* would at first be labeled as an Arizona type owner, but then replaced with a more specific Bureau Reclamation type owner).  
+
+Water right records can possess multiple owners.  Records within WaDE with multiple **AllocationOwner** entries were given a single best fist term for **OwnerClassificationTypeCV**, as WaDE only allows for a single entry (at this time 06/11/2021).  
+
+Terms not found in the keyword search were given the default value of 'In Review', for further review by the WSWC staff and state agencies.
 
 
 
