@@ -1,2 +1,0 @@
-MethodUUID,ApplicableResourceTypeCV,DataConfidenceValue,DataCoverageValue,DataQualityValueCV,MethodDescription,MethodName,MethodNEMILink,MethodTypeCV
-CO_SWSIModels,Surface Water,,,,The Surface Water Supply Index (SWSI) is used as an indicator of surface water supply conditions in Colorado. The SWSI compares the total volume of water in a basin or sub-basin against the volume available in the same month of historical years.,Surface Water Supply Index,https://data.colorado.gov/Water/DWR-Surface-Water-Supply-Index-Component-by-HUC/xbs6-xrne/data,Modeled
