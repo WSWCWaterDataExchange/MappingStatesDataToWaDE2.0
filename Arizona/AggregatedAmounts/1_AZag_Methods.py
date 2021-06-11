@@ -1,6 +1,6 @@
-#Date Created: 10/05/2020
-#Purpose: To create AZ agg methods use information and population dataframe for WaDE_QA 2.0.
-#Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
+# Date Created: 10/05/2020
+# Purpose: To create AZ agg methods use information and populate dataframe for WaDE_QA 2.0.
+# Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
 
 
 # Needed Libraries
@@ -71,10 +71,10 @@ outdf_nullMand = outdf.loc[(outdf["MethodUUID"].isnull()) | (outdf["MethodUUID"]
 ############################################################################
 print("Exporting dataframe to csv...")
 
-# save to output
+# The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/methods.csv', index=False)
 
-#Report missing values if need be to separate csv
+# Report purged values.
 if(len(outdf_nullMand.index) > 0):
     outdf_nullMand.to_csv('ProcessedInputData/methods_missing.csv', index=False)
 

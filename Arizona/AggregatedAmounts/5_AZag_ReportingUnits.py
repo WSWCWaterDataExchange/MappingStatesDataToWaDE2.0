@@ -12,7 +12,7 @@ import os
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -22,7 +22,7 @@ print("Reading input csv...")
 workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Arizona/AggregatedAmounts"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_AZagg.csv"
-df = pd.read_csv(fileInput)
+df = pd.read_csv(fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
 
 columnslist =[
     "ReportingUnitUUID",
@@ -54,7 +54,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist, index=df.index)
 
 print("EPSGCodeCV")
-outdf['EPSGCodeCV'] = 'EPSG:4326'
+outdf['EPSGCodeCV'] = "4326"
 
 print("ReportingUnitName")
 outdf['ReportingUnitName'] = df['AMA']
@@ -83,7 +83,7 @@ outdf.reset_index()
 #####################################
 # Dropping duplicate
 # filter the whole table based on a unique combination of ReportingUnitName
-outdf = outdf.drop_duplicates(subset=['ReportingUnitName', 'ReportingUnitNativeID'])
+outdf = outdf.drop_duplicates(subset=['ReportingUnitName', 'ReportingUnitNativeID', 'ReportingUnitTypeCV'])
 outdf = outdf.reset_index(drop=True)
 ######################################
 
@@ -96,6 +96,7 @@ outdf['ReportingUnitUUID'] = dftemp.apply(lambda row: assignReportingUnitID(row[
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 
@@ -130,6 +131,7 @@ outdf, dfpurge = TestErrorFunctions.StateCV_RU_Check(outdf, dfpurge)
 # Export to new csv
 ############################################################################
 print("Exporting dataframe outdf to csv...")
+
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/reportingunits.csv', index=False)
 
