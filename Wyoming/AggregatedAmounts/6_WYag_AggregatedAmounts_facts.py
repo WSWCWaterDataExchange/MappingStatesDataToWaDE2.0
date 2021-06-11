@@ -1,8 +1,8 @@
-#Date Created: 01/20/2021
-#Author: Ryan James (WSWC)
-#Purpose: To create WY agg aggregated information and populate a dataframe WaDEQA 2.0.
-#         1) Simple creation of working dataframe (df), with output dataframe (outdf).
-#         2) Drop all nulls before combining duplicate rows on NativeID.
+# Date Created: 01/20/2021
+# Author: Ryan James (WSWC)
+# Purpose: To create WY agg aggregated information and populate a dataframe WaDEQA 2.0.
+#          1) Simple creation of working dataframe (df), with output dataframe (outdf).
+#          2) Drop all nulls before combining duplicate rows on NativeID.
 
 
 # Needed Libraries
@@ -14,7 +14,7 @@ import os
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -29,7 +29,7 @@ variables_fileInput = "ProcessedInputData/variables.csv"
 watersources_fileInput = "ProcessedInputData/watersources.csv"
 reportingunits_fileInput = "ProcessedInputData/reportingunits.csv"
 
-df_DM = pd.read_csv(M_fileInput)  # The State's Master input dataframe.
+df_DM = pd.read_csv(M_fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
 df_method = pd.read_csv(method_fileInput)  # Method dataframe
 df_variables = pd.read_csv(variables_fileInput)  # Variables dataframe
 df_watersources = pd.read_csv(watersources_fileInput)  # WaterSources dataframe
@@ -121,55 +121,55 @@ print("BeneficialUseCategory")
 outdf['BeneficialUseCategory'] = df_DM['UseType']
 
 print("CommunityWaterSupplySystem")
-outdf.CommunityWaterSupplySystem = ""
+outdf['CommunityWaterSupplySystem'] = ""
 
 print("CropTypeCV")
-outdf.CropTypeCV = ""
+outdf['CropTypeCV'] = ""
 
 print("CustomerTypeCV")
-outdf.CustomerTypeCV = ""
+outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")
-outdf.DataPublicationDate = "01/21/2021"
+outdf['DataPublicationDate'] = "01/21/2021"
 
 print("DataPublicationDOI")
-outdf.DataPublicationDOI = ""
+outdf['DataPublicationDOI'] = ""
 
 print("InterbasinTransferFromID")
-outdf.InterbasinTransferFromID = ""
+outdf['InterbasinTransferFromID'] = ""
 
 print("InterbasinTransferToID")
-outdf.InterbasinTransferToID = ""
+outdf['InterbasinTransferToID'] = ""
 
 print("IrrigatedAcreage")
-outdf.IrrigatedAcreage = ""
+outdf['IrrigatedAcreage'] = ""
 
 print("IrrigationMethodCV")
-outdf.IrrigationMethodCV = ""
+outdf['IrrigationMethodCV'] = ""
 
 print("PopulationServed")
-outdf.PopulationServed = ""
+outdf['PopulationServed'] = ""
 
 print("PowerGeneratedGWh")
-outdf.PowerGeneratedGWh = ""
+outdf['PowerGeneratedGWh'] = ""
 
 print("PowerType")
-outdf.PowerType = ""
+outdf['PowerType'] = ""
 
 print("PrimaryUseCategory")
-outdf.PrimaryUseCategory = ""
+outdf['PrimaryUseCategory'] = "Unspecified"
 
 print("ReportYearCV")
 outdf['ReportYearCV'] = df_DM['ReportYear']
 
 print("SDWISIdentifierCV")
-outdf.SDWISIdentifierCV = ""
+outdf['SDWISIdentifierCV'] = ""
 
 print("TimeframeEnd")
-outdf.TimeframeEnd = ""
+outdf['TimeframeEnd'] = ""
 
 print("TimeframeStart")
-outdf.TimeframeStart = ""
+outdf['TimeframeStart'] = ""
 
 print("Resetting Index")
 outdf.reset_index()
@@ -188,6 +188,7 @@ print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to uploa
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 
@@ -270,6 +271,7 @@ outdf, dfpurge = TestErrorFunctions.TimeframeStart_AG_Check(outdf, dfpurge)
 # Export to new csv
 ############################################################################
 print("Exporting dataframe outdf100 to csv...")
+
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/aggregatedamounts.csv', index=False)
 

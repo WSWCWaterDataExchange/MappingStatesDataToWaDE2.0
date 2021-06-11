@@ -1,7 +1,7 @@
-#Date Created: 01/20/2021
-#Author: Ryan James (WSWC)
-#Purpose: To create WY agg reporting unit information and populate a dataframe for WaDEQA 2.0.
-#Notes:
+# Date Created: 01/20/2021
+# Author: Ryan James (WSWC)
+# Purpose: To create WY agg reporting unit information and populate a dataframe for WaDEQA 2.0.
+# Notes:
 
 
 # Needed Libraries
@@ -13,7 +13,7 @@ import pandas as pd
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -24,7 +24,7 @@ workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0
 os.chdir(workingDir)
 fileInput = "RawinputData/P_wyAggMaster.csv"
 fileInput_shape = "RawinputData/P_wyGeometry.csv"
-df = pd.read_csv(fileInput)
+df = pd.read_csv(fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
 dfshape = pd.read_csv(fileInput_shape)
 
 columnslist =[
@@ -55,7 +55,6 @@ def retrieveGeometry(colrowValue):
             outList = ''
     return outList
 
-
 # For creating SiteUUID
 def assignReportingUnitID(colrowValue):
     string1 = str(colrowValue)
@@ -68,8 +67,8 @@ def assignReportingUnitID(colrowValue):
 print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist, index=df.index)
 
-print("EPSGCodeCV")  # Hardcoded
-outdf['EPSGCodeCV'] = 'EPSG:4326'
+print("EPSGCodeCV")
+outdf['EPSGCodeCV'] = "4326"
 
 print("ReportingUnitName")
 outdf['ReportingUnitName'] = df['Water Use by Basin']
@@ -78,15 +77,15 @@ print("ReportingUnitNativeID")
 outdf['ReportingUnitNativeID'] = df['in_ReportingUnitNativeID']
 
 print("ReportingUnitProductVersion")
-outdf['ReportingUnitProductVersion'] = ''
+outdf['ReportingUnitProductVersion'] = ""
 
-print("ReportingUnitTypeCV")  # Hardcoded
+print("ReportingUnitTypeCV")
 outdf['ReportingUnitTypeCV'] = "Basin"
 
 print("ReportingUnitUpdateDate")
-outdf['ReportingUnitUpdateDate'] = ''
+outdf['ReportingUnitUpdateDate'] = ""
 
-print("StateCV")  # Hardcoded
+print("StateCV")
 outdf['StateCV'] = "WY"
 
 print("Geometry")
@@ -111,6 +110,7 @@ outdf['ReportingUnitUUID'] = dftemp.apply(lambda row: assignReportingUnitID(row[
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 
@@ -145,6 +145,7 @@ outdf, dfpurge = TestErrorFunctions.StateCV_RU_Check(outdf, dfpurge)
 # Export to new csv
 ############################################################################
 print("Exporting dataframe outdf to csv...")
+
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/reportingunits.csv', index=False)
 

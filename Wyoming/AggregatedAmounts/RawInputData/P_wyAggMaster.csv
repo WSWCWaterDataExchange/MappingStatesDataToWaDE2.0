@@ -4,22 +4,22 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 1226.612777,2002,Bear River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 1617.425105,2003,Bear River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 1846.693415,2004,Bear River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-2059.9912489999997,2005,Bear River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+2059.991249,2005,Bear River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 1826.625609,2006,Bear River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 1417.511879,2007,Bear River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 1863.082731,2008,Bear River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 2106.901111,2009,Bear River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-1934.9225629999999,2010,Bear River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+1934.922563,2010,Bear River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 2258.502278,2011,Bear River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 1526.792191,2012,Bear River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 1546.331897,2013,Bear River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 2196.058986,2014,Bear River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-1746.4636469999998,2015,Bear River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+1746.463647,2015,Bear River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 2270.430057,2016,Bear River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 2287.420314,2017,Bear River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-2110.1061329999998,2018,Bear River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-64817.54712999999,2000,Bear River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-72789.03502000001,2001,Bear River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+2110.106133,2018,Bear River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+64817.54713,2000,Bear River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+72789.03502,2001,Bear River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
 59587.55752,2002,Bear River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
 78572.80905,2003,Bear River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
 89710.42223,2004,Bear River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
@@ -30,30 +30,30 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 102351.0382,2009,Bear River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
 93996.50134,2010,Bear River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
 109715.6633,2011,Bear River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-74169.95751000001,2012,Bear River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+74169.95751,2012,Bear River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
 75119.17585,2013,Bear River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
 106682.2339,2014,Bear River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
 84841.3656,2015,Bear River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
 110295.1022,2016,Bear River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-111120.47099999999,2017,Bear River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+111120.471,2017,Bear River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
 102506.7348,2018,Bear River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-483.90215159999997,2000,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-477.80847930000004,2001,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+483.9021516,2000,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+477.8084793,2001,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 481.8440239,2002,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 479.4226971,2003,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-479.50340800000004,2004,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-480.35087239999996,2005,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+479.503408,2004,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+480.3508724,2005,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 485.839213,2006,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-497.17909330000003,2007,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-508.15577460000003,2008,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-532.6956184999999,2009,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+497.1790933,2007,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+508.1557746,2008,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+532.6956185,2009,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 534.169354,2010,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 527.5972905,2011,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 529.1506873,2012,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 528.0354281,2013,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 525.4066027,2014,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 523.2159149,2015,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-520.7464121999999,2016,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+520.7464122,2016,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 515.2099466,2017,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 508.4387297,2018,Bear River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 0.0,2000,Bear River Planning Basin,Domestic Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
@@ -87,8 +87,8 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 73.73143902,2009,Bear River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 78.85439113,2010,Bear River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 29.5,2011,Bear River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-32.347221000000005,2012,Bear River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-29.819370899999996,2013,Bear River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+32.347221,2012,Bear River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+29.8193709,2013,Bear River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 30.99535652,2014,Bear River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 26.22854153,2015,Bear River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
 25.75506842,2016,Bear River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
@@ -97,10 +97,10 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 ,2000,Bear River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
 310.0,2001,Bear River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
 307.9138655,2002,Bear River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-247.14514780000002,2003,Bear River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-199.99032319999998,2004,Bear River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+247.1451478,2003,Bear River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+199.9903232,2004,Bear River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
 156.5661833,2005,Bear River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-125.14766759999999,2006,Bear River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+125.1476676,2006,Bear River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
 76.60420958,2007,Bear River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
 0.0,2008,Bear River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
 0.0,2009,Bear River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
@@ -109,67 +109,67 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 5.48257983,2012,Bear River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
 5.05413066,2013,Bear River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
 5.253450257,2014,Bear River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-4.445515513999999,2015,Bear River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-4.3652658330000005,2016,Bear River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+4.445515514,2015,Bear River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+4.365265833,2016,Bear River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
 4.289555474,2017,Bear River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
 4.199431754,2018,Bear River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-40.0,2000,Bear River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-39.45841393,2001,Bear River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-39.07156673,2002,Bear River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-38.99419729,2003,Bear River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-39.30367505,2004,Bear River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-39.53578337,2005,Bear River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-40.07736944,2006,Bear River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-40.77369439,2007,Bear River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-41.47001934,2008,Bear River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-692.0,2009,Bear River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-688.7234847999999,2010,Bear River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-687.4128787999999,2011,Bear River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-690.0340909,2012,Bear River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-693.9659091,2013,Bear River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-703.7954545,2014,Bear River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-703.7954545,2015,Bear River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-707.7272727000001,2016,Bear River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-700.5189393999999,2017,Bear River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-695.2765152000001,2018,Bear River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
-1000.0,2000,Bear River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-987.4498867000001,2001,Bear River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-996.601011,2002,Bear River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-991.4589507000001,2003,Bear River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-991.2846435,2004,Bear River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-992.8534076999999,2005,Bear River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-1004.096218,2006,Bear River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-1027.8019869999998,2007,Bear River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-1050.723375,2008,Bear River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-2408.0,2009,Bear River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-2416.210424,2010,Bear River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-2384.34616,2011,Bear River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-2391.18818,2012,Bear River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-2384.541646,2013,Bear River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-2368.707258,2014,Bear River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-2357.955512,2015,Bear River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-2344.662445,2016,Bear River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-2319.640201,2017,Bear River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
-2287.971424,2018,Bear River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+40.0,2000,Bear River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+39.45841393,2001,Bear River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+39.07156673,2002,Bear River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+38.99419729,2003,Bear River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+39.30367505,2004,Bear River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+39.53578337,2005,Bear River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+40.07736944,2006,Bear River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+40.77369439,2007,Bear River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+41.47001934,2008,Bear River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+692.0,2009,Bear River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+688.7234848,2010,Bear River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+687.4128788,2011,Bear River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+690.0340909,2012,Bear River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+693.9659091,2013,Bear River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+703.7954545,2014,Bear River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+703.7954545,2015,Bear River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+707.7272727,2016,Bear River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+700.5189394,2017,Bear River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+695.2765152,2018,Bear River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU1,WaDEWY_WS1
+1000.0,2000,Bear River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+987.4498867,2001,Bear River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+996.601011,2002,Bear River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+991.4589507,2003,Bear River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+991.2846435,2004,Bear River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+992.8534077,2005,Bear River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+1004.096218,2006,Bear River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+1027.801987,2007,Bear River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+1050.723375,2008,Bear River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+2408.0,2009,Bear River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+2416.210424,2010,Bear River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+2384.34616,2011,Bear River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+2391.18818,2012,Bear River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+2384.541646,2013,Bear River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+2368.707258,2014,Bear River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+2357.955512,2015,Bear River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+2344.662445,2016,Bear River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+2319.640201,2017,Bear River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
+2287.971424,2018,Bear River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU1,WaDEWY_WS2
 2146.650264,2000,Green River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
 2409.417943,2001,Green River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
 1865.810695,2002,Green River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-2829.3143489999998,2003,Green River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+2829.314349,2003,Green River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
 3065.076946,2004,Green River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
 3260.851711,2005,Green River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
 2745.512765,2006,Green River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-2173.3168769999997,2007,Green River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-2936.0110219999997,2008,Green River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-3407.0164219999997,2009,Green River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+2173.316877,2007,Green River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+2936.011022,2008,Green River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+3407.016422,2009,Green River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
 3058.851513,2010,Green River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-3507.9228369999996,2011,Green River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+3507.922837,2011,Green River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
 2151.805889,2012,Green River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
 2465.718828,2013,Green River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-3650.2555820000002,2014,Green River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+3650.255582,2014,Green River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
 3051.02439,2015,Green River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
 3602.561511,2016,Green River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
 4003.0805,2017,Green River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-3679.0376340000003,2018,Green River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+3679.037634,2018,Green River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
 284204.3247,2000,Green River Planning  Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
 318993.2758,2001,Green River Planning  Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
 247022.7581,2002,Green River Planning  Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
@@ -197,17 +197,17 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 3041.022584,2005,Green River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
 3117.271464,2006,Green River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
 3251.403749,2007,Green River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-3331.2971399999997,2008,Green River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+3331.29714,2008,Green River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
 3460.284234,2009,Green River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-3427.8409420000003,2010,Green River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-3451.7089140000003,2011,Green River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-3522.8126030000003,2012,Green River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+3427.840942,2010,Green River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+3451.708914,2011,Green River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+3522.812603,2012,Green River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
 3527.743412,2013,Green River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
 3521.240461,2014,Green River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-3505.9478090000002,2015,Green River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+3505.947809,2015,Green River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
 3475.934191,2016,Green River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
 3423.195978,2017,Green River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-3392.3962899999997,2018,Green River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+3392.39629,2018,Green River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
 0.0,2000,Green River Planning  Basin,Domestic Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
 0.0,2001,Green River Planning  Basin,Domestic Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
 0.0,2002,Green River Planning  Basin,Domestic Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
@@ -239,7 +239,7 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 2504.423788,2009,Green River Planning  Basin,Industrial Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
 2539.312503,2010,Green River Planning  Basin,Industrial Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
 2420.761892,2011,Green River Planning  Basin,Industrial Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-2392.9778420000002,2012,Green River Planning  Basin,Industrial Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+2392.977842,2012,Green River Planning  Basin,Industrial Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
 2248.585599,2013,Green River Planning  Basin,Industrial Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
 2225.508231,2014,Green River Planning  Basin,Industrial Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
 2313.574305,2015,Green River Planning  Basin,Industrial Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
@@ -250,78 +250,78 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 66475.0,2001,Green River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
 63371.78265,2002,Green River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
 62582.02318,2003,Green River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
-64950.60397999999,2004,Green River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
+64950.60398,2004,Green River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
 56865.0,2005,Green River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
 56673.59473,2006,Green River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
 56870.98537,2007,Green River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
-57345.148089999995,2008,Green River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
+57345.14809,2008,Green River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
 54558.15609,2009,Green River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
-55846.196229999994,2010,Green River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
+55846.19623,2010,Green River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
 52429.2363,2011,Green River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
-53666.203160000005,2012,Green River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
-57312.347010000005,2013,Green River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
-53997.540420000005,2014,Green River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
-52421.196319999995,2015,Green River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
+53666.20316,2012,Green River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
+57312.34701,2013,Green River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
+53997.54042,2014,Green River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
+52421.19632,2015,Green River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
 46835.58866,2016,Green River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
 47465.66749,2017,Green River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
 42997.78506,2018,Green River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
-14400.0,2000,Green River Planning  Basin,Municipal  Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
-14523.873280000002,2001,Green River Planning  Basin,Municipal  Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
-14631.0506,2002,Green River Planning  Basin,Municipal  Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
-14771.081269999999,2003,Green River Planning  Basin,Municipal  Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
-14997.55395,2004,Green River Planning  Basin,Municipal  Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
-15300.0,2005,Green River Planning  Basin,Municipal  Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
-15470.684930000001,2006,Green River Planning  Basin,Municipal  Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
-15604.931509999999,2007,Green River Planning  Basin,Municipal  Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
-15843.56164,2008,Green River Planning  Basin,Municipal  Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
-16070.684930000001,2009,Green River Planning  Basin,Municipal  Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
-16406.57534,2010,Green River Planning  Basin,Municipal  Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
-16520.27397,2011,Green River Planning  Basin,Municipal  Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
-6409.0,2012,Green River Planning  Basin,Municipal  Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
-18424.0,2013,Green River Planning  Basin,Municipal  Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
-8887.0,2014,Green River Planning  Basin,Municipal  Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
-5908.0,2015,Green River Planning  Basin,Municipal  Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
-6553.0,2016,Green River Planning  Basin,Municipal  Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
-6093.0,2017,Green River Planning  Basin,Municipal  Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
-6093.0,2018,Green River Planning  Basin,Municipal  Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
-811.0,2000,Green River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-802.4203786,2001,Green River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-828.6108017999999,2002,Green River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-847.5762806,2003,Green River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-876.9276169,2004,Green River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-884.0,2005,Green River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-920.7603960000001,2006,Green River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-993.4059405999999,2007,Green River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-1046.79604,2008,Green River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-1104.124752,2009,Green River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-1116.815842,2010,Green River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-1112.00198,2011,Green River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-1149.2,2012,Green River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-1137.821782,2013,Green River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-1161.015842,2014,Green River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-1147.449505,2015,Green River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-1137.821782,2016,Green River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-1111.564356,2017,Green River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-1109.8138609999999,2018,Green River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
-6539.0,2000,Green River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
-6431.547751,2001,Green River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
-6511.805295,2002,Green River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
-6517.111579,2003,Green River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
-6609.639905,2004,Green River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
-6577.91,2005,Green River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
-6737.428577,2006,Green River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
-7015.085023000001,2007,Green River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
-7176.713205,2008,Green River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
-7448.365390000001,2009,Green River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
-7369.985458,2010,Green River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
-7425.971124,2011,Green River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
-7573.643459000001,2012,Green River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
-7589.059802,2013,Green River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
-7565.691872,2014,Green River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
-7535.995126999999,2015,Green River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
-7471.408766,2016,Green River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
-7361.384762000001,2017,Green River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
-7292.092359,2018,Green River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
+14400.0,2000,Green River Planning  Basin,Municipal Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
+14523.87328,2001,Green River Planning  Basin,Municipal Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
+14631.0506,2002,Green River Planning  Basin,Municipal Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
+14771.08127,2003,Green River Planning  Basin,Municipal Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
+14997.55395,2004,Green River Planning  Basin,Municipal Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
+15300.0,2005,Green River Planning  Basin,Municipal Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
+15470.68493,2006,Green River Planning  Basin,Municipal Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
+15604.93151,2007,Green River Planning  Basin,Municipal Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
+15843.56164,2008,Green River Planning  Basin,Municipal Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
+16070.68493,2009,Green River Planning  Basin,Municipal Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
+16406.57534,2010,Green River Planning  Basin,Municipal Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
+16520.27397,2011,Green River Planning  Basin,Municipal Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
+6409.0,2012,Green River Planning  Basin,Municipal Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
+18424.0,2013,Green River Planning  Basin,Municipal Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
+8887.0,2014,Green River Planning  Basin,Municipal Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
+5908.0,2015,Green River Planning  Basin,Municipal Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
+6553.0,2016,Green River Planning  Basin,Municipal Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
+6093.0,2017,Green River Planning  Basin,Municipal Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
+6093.0,2018,Green River Planning  Basin,Municipal Use,Cross Basin Diversion,WaDEWY_RU2,WaDEWY_WS3
+811.0,2000,Green River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+802.4203786,2001,Green River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+828.6108018,2002,Green River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+847.5762806,2003,Green River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+876.9276169,2004,Green River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+884.0,2005,Green River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+920.760396,2006,Green River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+993.4059406,2007,Green River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+1046.79604,2008,Green River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+1104.124752,2009,Green River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+1116.815842,2010,Green River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+1112.00198,2011,Green River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+1149.2,2012,Green River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+1137.821782,2013,Green River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+1161.015842,2014,Green River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+1147.449505,2015,Green River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+1137.821782,2016,Green River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+1111.564356,2017,Green River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+1109.813861,2018,Green River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU2,WaDEWY_WS1
+6539.0,2000,Green River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
+6431.547751,2001,Green River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
+6511.805295,2002,Green River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
+6517.111579,2003,Green River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
+6609.639905,2004,Green River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
+6577.91,2005,Green River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
+6737.428577,2006,Green River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
+7015.085023,2007,Green River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
+7176.713205,2008,Green River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
+7448.36539,2009,Green River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
+7369.985458,2010,Green River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
+7425.971124,2011,Green River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
+7573.643459,2012,Green River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
+7589.059802,2013,Green River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
+7565.691872,2014,Green River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
+7535.995127,2015,Green River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
+7471.408766,2016,Green River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
+7361.384762,2017,Green River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
+7292.092359,2018,Green River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU2,WaDEWY_WS2
 7741.7264,2000,Northeast River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
 12064.2774,2001,Northeast River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
 8925.6514,2002,Northeast River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
@@ -346,36 +346,36 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 38028.3035,2002,Northeast River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 44386.067,2003,Northeast River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 31261.439,2004,Northeast River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-49459.475999999995,2005,Northeast River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+49459.476,2005,Northeast River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 31883.4395,2006,Northeast River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 40647.1065,2007,Northeast River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 59456.70775,2008,Northeast River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-56628.484000000004,2009,Northeast River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+56628.484,2009,Northeast River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 75775.524,2010,Northeast River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 67080.0405,2011,Northeast River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-29552.677000000003,2012,Northeast River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+29552.677,2012,Northeast River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 74069.545,2013,Northeast River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 84535.71225,2014,Northeast River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 85189.0215,2015,Northeast River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-53536.570999999996,2016,Northeast River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+53536.571,2016,Northeast River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 54727.695,2017,Northeast River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 130942.2373,2018,Northeast River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 1866.299704,2000,Northeast River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-1911.7561660000001,2001,Northeast River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-1999.6386579999999,2002,Northeast River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-2027.0016660000001,2003,Northeast River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+1911.756166,2001,Northeast River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+1999.638658,2002,Northeast River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+2027.001666,2003,Northeast River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
 2050.175548,2004,Northeast River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
 2109.7146,2005,Northeast River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
 2204.014475,2006,Northeast River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-2328.7969190000003,2007,Northeast River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+2328.796919,2007,Northeast River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
 2400.368563,2008,Northeast River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-2561.7835670000004,2009,Northeast River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+2561.783567,2009,Northeast River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
 2669.185599,2010,Northeast River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
 2708.84859,2011,Northeast River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-2796.7310820000002,2012,Northeast River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+2796.731082,2012,Northeast River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
 2819.815834,2013,Northeast River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
 2836.126682,2014,Northeast River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-2906.6287629999997,2015,Northeast River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+2906.628763,2015,Northeast River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
 2878.017931,2016,Northeast River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
 2723.822483,2017,Northeast River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
 2843.524498,2018,Northeast River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
@@ -399,90 +399,90 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 0.0,2017,Northeast River Planning Basin,Domestic Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 0.0,2018,Northeast River Planning Basin,Domestic Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 33197.44527,2000,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-40589.734110000005,2001,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-35899.537019999996,2002,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-33843.179860000004,2003,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-29535.553760000003,2004,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+40589.73411,2001,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+35899.53702,2002,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+33843.17986,2003,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+29535.55376,2004,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
 23406.80615,2005,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-23175.033219999998,2006,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+23175.03322,2006,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
 16696.91791,2007,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-14254.361359999999,2008,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+14254.36136,2008,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
 10190.15646,2009,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
 7974.330405,2010,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
 5865.574466,2011,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
 4469.445533,2012,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-3668.1018590000003,2013,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-3288.7512690000003,2014,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-3083.4153920000003,2015,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+3668.101859,2013,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+3288.751269,2014,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+3083.415392,2015,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
 2212.9647,2016,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
 2290.674565,2017,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
 2072.579442,2018,Northeast River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
 381.383973,2000,Northeast River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 815.9023081,2001,Northeast River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 826.8608468,2002,Northeast River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-820.7048917999999,2003,Northeast River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+820.7048918,2003,Northeast River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 817.046785,2004,Northeast River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-815.6008042999999,2005,Northeast River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+815.6008043,2005,Northeast River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 791.4338731,2006,Northeast River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-876.5362279999999,2007,Northeast River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-870.8277178999999,2008,Northeast River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+876.536228,2007,Northeast River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+870.8277179,2008,Northeast River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 844.966787,2009,Northeast River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-831.6532662000001,2010,Northeast River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+831.6532662,2010,Northeast River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 730.7022819,2011,Northeast River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-818.3006201000001,2012,Northeast River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+818.3006201,2012,Northeast River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 797.353284,2013,Northeast River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 822.537878,2014,Northeast River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 803.1270043,2015,Northeast River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 691.9014571,2016,Northeast River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 757.8197903,2017,Northeast River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
 650.1527096,2018,Northeast River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-2213.1,2000,Northeast River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-2239.43734,2001,Northeast River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-2320.0525039999998,2002,Northeast River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-2346.542525,2003,Northeast River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-2372.803525,2004,Northeast River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-2424.333105,2005,Northeast River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-2515.1778440000003,2006,Northeast River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-2653.887837,2007,Northeast River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-2728.090431,2008,Northeast River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-2878.022422,2009,Northeast River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-2972.531487,2010,Northeast River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-3004.2126350000003,2011,Northeast River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-3078.186209,2012,Northeast River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-3103.454788,2013,Northeast River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-3118.722811,2014,Northeast River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-3186.512835,2015,Northeast River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-3164.908582,2016,Northeast River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-3013.9841699999997,2017,Northeast River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-3151.320041,2018,Northeast River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
-0.0,2000,Northeast River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-0.0,2001,Northeast River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-0.0,2002,Northeast River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-0.0,2003,Northeast River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-0.0,2004,Northeast River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-0.0,2005,Northeast River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-0.0,2006,Northeast River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-0.0,2007,Northeast River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-0.0,2008,Northeast River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-0.0,2009,Northeast River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-0.0,2010,Northeast River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-0.0,2011,Northeast River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-0.0,2012,Northeast River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-0.0,2013,Northeast River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-0.0,2014,Northeast River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-0.0,2015,Northeast River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-0.0,2016,Northeast River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-0.0,2017,Northeast River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-0.0,2018,Northeast River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
-41910.928439999996,2000,Platte River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+2213.1,2000,Northeast River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+2239.43734,2001,Northeast River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+2320.052504,2002,Northeast River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+2346.542525,2003,Northeast River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+2372.803525,2004,Northeast River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+2424.333105,2005,Northeast River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+2515.177844,2006,Northeast River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+2653.887837,2007,Northeast River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+2728.090431,2008,Northeast River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+2878.022422,2009,Northeast River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+2972.531487,2010,Northeast River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+3004.212635,2011,Northeast River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+3078.186209,2012,Northeast River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+3103.454788,2013,Northeast River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+3118.722811,2014,Northeast River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+3186.512835,2015,Northeast River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+3164.908582,2016,Northeast River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+3013.98417,2017,Northeast River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+3151.320041,2018,Northeast River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU3,WaDEWY_WS1
+0.0,2000,Northeast River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+0.0,2001,Northeast River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+0.0,2002,Northeast River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+0.0,2003,Northeast River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+0.0,2004,Northeast River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+0.0,2005,Northeast River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+0.0,2006,Northeast River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+0.0,2007,Northeast River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+0.0,2008,Northeast River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+0.0,2009,Northeast River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+0.0,2010,Northeast River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+0.0,2011,Northeast River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+0.0,2012,Northeast River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+0.0,2013,Northeast River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+0.0,2014,Northeast River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+0.0,2015,Northeast River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+0.0,2016,Northeast River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+0.0,2017,Northeast River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+0.0,2018,Northeast River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU3,WaDEWY_WS2
+41910.92844,2000,Platte River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 45504.78905,2001,Platte River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
-31943.754210000003,2002,Platte River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+31943.75421,2002,Platte River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 51612.34399,2003,Platte River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 45684.57621,2004,Platte River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 51789.99755,2005,Platte River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 38819.7816,2006,Platte River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 46757.33764,2007,Platte River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
-51219.510610000005,2008,Platte River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+51219.51061,2008,Platte River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 59681.36743,2009,Platte River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 58768.81424,2010,Platte River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 58457.68519,2011,Platte River Planning  Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
@@ -516,7 +516,7 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 11920.87687,2001,Platte River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 11993.99355,2002,Platte River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 12081.81525,2003,Platte River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
-12213.888190000001,2004,Platte River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+12213.88819,2004,Platte River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 12267.80663,2005,Platte River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 12387.28499,2006,Platte River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 12533.79065,2007,Platte River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
@@ -526,7 +526,7 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 13252.83934,2011,Platte River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 13501.25902,2012,Platte River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 11578.11507,2013,Platte River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
-11618.187890000001,2014,Platte River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+11618.18789,2014,Platte River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 11692.9943,2015,Platte River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 11649.07496,2016,Platte River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 11564.16422,2017,Platte River Planning  Basin,Domestic Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
@@ -551,15 +551,15 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 0.0,2017,Platte River Planning  Basin,Domestic Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
 0.0,2018,Platte River Planning  Basin,Domestic Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
 60876.0,2000,Platte River Planning  Basin,Industrial Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
-64644.51222999999,2001,Platte River Planning  Basin,Industrial Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
-63488.016429999996,2002,Platte River Planning  Basin,Industrial Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+64644.51223,2001,Platte River Planning  Basin,Industrial Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+63488.01643,2002,Platte River Planning  Basin,Industrial Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 59592.00781,2003,Platte River Planning  Basin,Industrial Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 63695.9887,2004,Platte River Planning  Basin,Industrial Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 66022.72314,2005,Platte River Planning  Basin,Industrial Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 69080.62716,2006,Platte River Planning  Basin,Industrial Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 73924.79869,2007,Platte River Planning  Basin,Industrial Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 74404.77159,2008,Platte River Planning  Basin,Industrial Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
-68909.47037000001,2009,Platte River Planning  Basin,Industrial Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+68909.47037,2009,Platte River Planning  Basin,Industrial Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 85259.08008,2010,Platte River Planning  Basin,Industrial Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 90861.15312,2011,Platte River Planning  Basin,Industrial Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
 94042.46519,2012,Platte River Planning  Basin,Industrial Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
@@ -584,49 +584,49 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 23760.5366,2012,Platte River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
 25828.87006,2013,Platte River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
 33148.763,2014,Platte River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
-35662.632289999994,2015,Platte River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
-34566.690669999996,2016,Platte River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
-37301.685939999996,2017,Platte River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
+35662.63229,2015,Platte River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
+34566.69067,2016,Platte River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
+37301.68594,2017,Platte River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
 38693.09689,2018,Platte River Planning  Basin,Industrial Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
-,2000,Platte River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
-,2001,Platte River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
-19933.30404,2002,Platte River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
-20084.07183,2003,Platte River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
-20309.63823,2004,Platte River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
-20404.33632,2005,Platte River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
-20604.73574,2006,Platte River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
-20843.17827,2007,Platte River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
-21183.81046,2008,Platte River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
-21591.86675,2009,Platte River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
-21842.600130000003,2010,Platte River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
-22036.44443,2011,Platte River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
-22459.3668,2012,Platte River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
-11842.39468,2013,Platte River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
-11884.812909999999,2014,Platte River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
-11960.60744,2015,Platte River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
-11911.028479999999,2016,Platte River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
-11829.651000000002,2017,Platte River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
-15360.62402,2018,Platte River Planning  Basin,Municipal  Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
-,2000,Platte River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
-,2001,Platte River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
-10709.83652,2002,Platte River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
-10798.84421,2003,Platte River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
-10921.1611,2004,Platte River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
-10972.73886,2005,Platte River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
-11082.55622,2006,Platte River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
-11215.44965,2007,Platte River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
-11405.34645,2008,Platte River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
-11632.87923,2009,Platte River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
-11753.9599,2010,Platte River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
-11872.77418,2011,Platte River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
-12110.402740000001,2012,Platte River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
-13605.30995,2013,Platte River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
-13849.818819999999,2014,Platte River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
-13899.121809999999,2015,Platte River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
-13986.38578,2016,Platte River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
-13942.02081,2017,Platte River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
-0.0,2018,Platte River Planning  Basin,Municipal  Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
-155.21471609999998,2000,Powder-Tongue River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+,2000,Platte River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+,2001,Platte River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+19933.30404,2002,Platte River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+20084.07183,2003,Platte River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+20309.63823,2004,Platte River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+20404.33632,2005,Platte River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+20604.73574,2006,Platte River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+20843.17827,2007,Platte River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+21183.81046,2008,Platte River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+21591.86675,2009,Platte River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+21842.60013,2010,Platte River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+22036.44443,2011,Platte River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+22459.3668,2012,Platte River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+11842.39468,2013,Platte River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+11884.81291,2014,Platte River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+11960.60744,2015,Platte River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+11911.02848,2016,Platte River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+11829.651,2017,Platte River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+15360.62402,2018,Platte River Planning  Basin,Municipal Use,Ground Water,WaDEWY_RU4,WaDEWY_WS1
+,2000,Platte River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
+,2001,Platte River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
+10709.83652,2002,Platte River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
+10798.84421,2003,Platte River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
+10921.1611,2004,Platte River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
+10972.73886,2005,Platte River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
+11082.55622,2006,Platte River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
+11215.44965,2007,Platte River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
+11405.34645,2008,Platte River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
+11632.87923,2009,Platte River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
+11753.9599,2010,Platte River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
+11872.77418,2011,Platte River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
+12110.40274,2012,Platte River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
+13605.30995,2013,Platte River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
+13849.81882,2014,Platte River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
+13899.12181,2015,Platte River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
+13986.38578,2016,Platte River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
+13942.02081,2017,Platte River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
+0.0,2018,Platte River Planning  Basin,Municipal Use,Surface Water,WaDEWY_RU4,WaDEWY_WS2
+155.2147161,2000,Powder-Tongue River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 118.4360696,2001,Powder-Tongue River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 140.9628609,2002,Powder-Tongue River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 182.0940901,2003,Powder-Tongue River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
@@ -635,16 +635,16 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 88.42934923,2006,Powder-Tongue River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 192.7771946,2007,Powder-Tongue River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 202.4521729,2008,Powder-Tongue River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-177.12609540000003,2009,Powder-Tongue River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+177.1260954,2009,Powder-Tongue River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 225.174523,2010,Powder-Tongue River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 236.0140746,2011,Powder-Tongue River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 119.852874,2012,Powder-Tongue River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 206.2539979,2013,Powder-Tongue River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-224.29730159999997,2014,Powder-Tongue River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+224.2973016,2014,Powder-Tongue River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 188.0191263,2015,Powder-Tongue River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 202.676467,2016,Powder-Tongue River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 276.9840675,2017,Powder-Tongue River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-304.81888660000004,2018,Powder-Tongue River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+304.8188866,2018,Powder-Tongue River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 135915.3713,2000,Powder-Tongue River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
 103709.7692,2001,Powder-Tongue River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
 123435.5869,2002,Powder-Tongue River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
@@ -667,12 +667,12 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 3348.166033,2000,Powder-Tongue River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 3354.525175,2001,Powder-Tongue River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 3390.353514,2002,Powder-Tongue River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-3408.3452340000003,2003,Powder-Tongue River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-3412.0676590000003,2004,Powder-Tongue River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-3542.5076289999997,2005,Powder-Tongue River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-3586.0910200000003,2006,Powder-Tongue River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+3408.345234,2003,Powder-Tongue River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+3412.067659,2004,Powder-Tongue River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+3542.507629,2005,Powder-Tongue River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+3586.09102,2006,Powder-Tongue River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 3659.298708,2007,Powder-Tongue River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-3749.4124090000005,2008,Powder-Tongue River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+3749.412409,2008,Powder-Tongue River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 3814.244642,2009,Powder-Tongue River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 3826.187421,2010,Powder-Tongue River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 3841.852626,2011,Powder-Tongue River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
@@ -682,7 +682,7 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 3914.595011,2015,Powder-Tongue River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 3910.407283,2016,Powder-Tongue River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 3916.456224,2017,Powder-Tongue River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-3918.6276380000004,2018,Powder-Tongue River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+3918.627638,2018,Powder-Tongue River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 0.0,2000,Powder-Tongue River Planning Basin,Domestic Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
 0.0,2001,Powder-Tongue River Planning Basin,Domestic Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
 0.0,2002,Powder-Tongue River Planning Basin,Domestic Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
@@ -702,10 +702,10 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 0.0,2016,Powder-Tongue River Planning Basin,Domestic Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
 0.0,2017,Powder-Tongue River Planning Basin,Domestic Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
 0.0,2018,Powder-Tongue River Planning Basin,Domestic Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
-21780.300890000002,2000,Powder-Tongue River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+21780.30089,2000,Powder-Tongue River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 33326.36021,2001,Powder-Tongue River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 45697.15296,2002,Powder-Tongue River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-40520.071280000004,2003,Powder-Tongue River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+40520.07128,2003,Powder-Tongue River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 41304.16111,2004,Powder-Tongue River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 49254.41805,2005,Powder-Tongue River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 63088.27503,2006,Powder-Tongue River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
@@ -718,7 +718,7 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 40178.17119,2013,Powder-Tongue River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 38206.60609,2014,Powder-Tongue River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 33235.19055,2015,Powder-Tongue River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-28430.720869999997,2016,Powder-Tongue River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+28430.72087,2016,Powder-Tongue River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 27669.93023,2017,Powder-Tongue River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 26409.08542,2018,Powder-Tongue River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
 0.0,2000,Powder-Tongue River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
@@ -740,60 +740,60 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 0.0,2016,Powder-Tongue River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
 0.0,2017,Powder-Tongue River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
 0.0,2018,Powder-Tongue River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
-315.54452799999996,2000,Powder-Tongue River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-316.4210406,2001,Powder-Tongue River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-321.6801161,2002,Powder-Tongue River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-324.30965380000004,2003,Powder-Tongue River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-325.1861664,2004,Powder-Tongue River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-327.8157041,2005,Powder-Tongue River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-331.3217544,2006,Powder-Tongue River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-341.83990539999996,2007,Powder-Tongue River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-351.4815437,2008,Powder-Tongue River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-355.8641066,2009,Powder-Tongue River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-354.987594,2010,Powder-Tongue River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-357.6171318,2011,Powder-Tongue River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-355.8641066,2012,Powder-Tongue River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-359.3701569,2013,Powder-Tongue River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-359.3701569,2014,Powder-Tongue River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-361.12318210000007,2015,Powder-Tongue River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-364.6292324,2016,Powder-Tongue River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-364.6292324,2017,Powder-Tongue River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-371.64133300000003,2018,Powder-Tongue River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
-3092.11879,2000,Powder-Tongue River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
-3098.047528,2001,Powder-Tongue River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
-3130.937903,2002,Powder-Tongue River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
-3147.594832,2003,Powder-Tongue River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
-3151.133612,2004,Powder-Tongue River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
-3271.5983309999997,2005,Powder-Tongue River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
-3311.848731,2006,Powder-Tongue River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
-3379.457943,2007,Powder-Tongue River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
-3462.6803,2008,Powder-Tongue River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
-3522.55456,2009,Powder-Tongue River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
-3533.584029,2010,Powder-Tongue River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
-3548.051255,2011,Powder-Tongue River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
-3577.988385,2012,Powder-Tongue River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
-3600.477043,2013,Powder-Tongue River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
-3608.498475,2014,Powder-Tongue River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
-3615.2307479999995,2015,Powder-Tongue River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
-3611.363272,2016,Powder-Tongue River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
-3616.9496259999996,2017,Powder-Tongue River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
-3618.9549840000004,2018,Powder-Tongue River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
-444.2979561000001,2000,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-280.69867400000004,2001,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+315.544528,2000,Powder-Tongue River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+316.4210406,2001,Powder-Tongue River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+321.6801161,2002,Powder-Tongue River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+324.3096538,2003,Powder-Tongue River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+325.1861664,2004,Powder-Tongue River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+327.8157041,2005,Powder-Tongue River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+331.3217544,2006,Powder-Tongue River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+341.8399054,2007,Powder-Tongue River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+351.4815437,2008,Powder-Tongue River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+355.8641066,2009,Powder-Tongue River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+354.987594,2010,Powder-Tongue River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+357.6171318,2011,Powder-Tongue River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+355.8641066,2012,Powder-Tongue River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+359.3701569,2013,Powder-Tongue River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+359.3701569,2014,Powder-Tongue River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+361.1231821,2015,Powder-Tongue River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+364.6292324,2016,Powder-Tongue River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+364.6292324,2017,Powder-Tongue River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+371.641333,2018,Powder-Tongue River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU5,WaDEWY_WS1
+3092.11879,2000,Powder-Tongue River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
+3098.047528,2001,Powder-Tongue River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
+3130.937903,2002,Powder-Tongue River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
+3147.594832,2003,Powder-Tongue River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
+3151.133612,2004,Powder-Tongue River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
+3271.598331,2005,Powder-Tongue River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
+3311.848731,2006,Powder-Tongue River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
+3379.457943,2007,Powder-Tongue River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
+3462.6803,2008,Powder-Tongue River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
+3522.55456,2009,Powder-Tongue River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
+3533.584029,2010,Powder-Tongue River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
+3548.051255,2011,Powder-Tongue River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
+3577.988385,2012,Powder-Tongue River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
+3600.477043,2013,Powder-Tongue River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
+3608.498475,2014,Powder-Tongue River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
+3615.230748,2015,Powder-Tongue River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
+3611.363272,2016,Powder-Tongue River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
+3616.949626,2017,Powder-Tongue River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
+3618.954984,2018,Powder-Tongue River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU5,WaDEWY_WS2
+444.2979561,2000,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+280.698674,2001,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
 466.8708949,2002,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-382.24660739999996,2003,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+382.2466074,2003,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
 591.8005399,2004,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
 549.6716574,2005,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-447.19075760000004,2006,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-386.59944060000004,2007,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+447.1907576,2006,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+386.5994406,2007,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
 506.3129556,2008,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
 586.8206806,2009,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
 487.6718035,2010,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
 582.1497907,2011,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-387.90801669999996,2012,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-477.36979529999996,2013,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+387.9080167,2012,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+477.3697953,2013,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
 489.3075237,2014,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-565.2624942000001,2015,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+565.2624942,2015,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
 539.0515925,2016,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
 463.8811619,2017,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
 509.0997381,2018,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
@@ -803,20 +803,20 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 56561.44214,2003,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
 87569.36321,2004,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
 81335.50709,2005,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
-66171.29798999999,2006,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
-57205.535560000004,2007,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
-74919.67328999999,2008,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
+66171.29799,2006,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
+57205.53556,2007,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
+74919.67329,2008,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
 86832.48807,2009,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
 72161.32195,2010,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
 86141.33146,2011,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
-57399.166979999995,2012,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
+57399.16698,2012,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
 70636.9227,2013,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
 72403.36123,2014,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
 83642.50001,2015,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
 79764.04466,2016,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
 68640.99509,2017,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
 75332.03651,2018,Salt-Snake River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
-2510.2424109999997,2000,Salt-Snake River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+2510.242411,2000,Salt-Snake River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
 2535.5672,2001,Salt-Snake River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
 2556.568243,2002,Salt-Snake River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
 2587.040346,2003,Salt-Snake River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
@@ -826,12 +826,12 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 2799.10971,2007,Salt-Snake River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
 2874.672289,2008,Salt-Snake River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
 2916.468484,2009,Salt-Snake River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-2927.1748989999996,2010,Salt-Snake River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+2927.174899,2010,Salt-Snake River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
 2942.822735,2011,Salt-Snake River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-1074.6761099999999,2012,Salt-Snake River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+1074.67611,2012,Salt-Snake River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
 1103.207993,2013,Salt-Snake River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
 1124.588282,2014,Salt-Snake River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-1132.4103380000001,2015,Salt-Snake River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+1132.410338,2015,Salt-Snake River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
 1141.275336,2016,Salt-Snake River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
 1144.702142,2017,Salt-Snake River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
 1139.26395,2018,Salt-Snake River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
@@ -892,59 +892,59 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 0.0,2016,Salt-Snake River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
 0.0,2017,Salt-Snake River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
 0.0,2018,Salt-Snake River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
-6478.175608,2000,Salt-Snake River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-6543.531218,2001,Salt-Snake River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-6597.728553,2002,Salt-Snake River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-6676.367824,2003,Salt-Snake River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-6817.705973,2004,Salt-Snake River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-6895.813898,2005,Salt-Snake River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-7046.716281999999,2006,Salt-Snake River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-7223.654641,2007,Salt-Snake River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-7418.658779,2008,Salt-Snake River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-7526.522103,2009,Salt-Snake River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-7554.152118000001,2010,Salt-Snake River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-7594.534446,2011,Salt-Snake River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-7790.0,2012,Salt-Snake River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-7996.818937999999,2013,Salt-Snake River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-8151.798142000001,2014,Salt-Snake River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-8208.497851,2015,Salt-Snake River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-8272.757521,2016,Salt-Snake River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-8297.597394,2017,Salt-Snake River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-8258.177596,2018,Salt-Snake River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
-0.0,2000,Salt-Snake River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
-0.0,2001,Salt-Snake River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
-0.0,2002,Salt-Snake River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
-0.0,2003,Salt-Snake River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
-0.0,2004,Salt-Snake River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
-0.0,2005,Salt-Snake River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
-0.0,2006,Salt-Snake River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
-0.0,2007,Salt-Snake River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
-0.0,2008,Salt-Snake River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
-0.0,2009,Salt-Snake River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
-0.0,2010,Salt-Snake River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
-0.0,2011,Salt-Snake River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
-0.0,2012,Salt-Snake River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
-0.0,2013,Salt-Snake River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
-0.0,2014,Salt-Snake River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
-0.0,2015,Salt-Snake River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
-0.0,2016,Salt-Snake River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
-0.0,2017,Salt-Snake River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
-0.0,2018,Salt-Snake River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
+6478.175608,2000,Salt-Snake River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+6543.531218,2001,Salt-Snake River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+6597.728553,2002,Salt-Snake River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+6676.367824,2003,Salt-Snake River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+6817.705973,2004,Salt-Snake River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+6895.813898,2005,Salt-Snake River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+7046.716282,2006,Salt-Snake River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+7223.654641,2007,Salt-Snake River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+7418.658779,2008,Salt-Snake River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+7526.522103,2009,Salt-Snake River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+7554.152118,2010,Salt-Snake River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+7594.534446,2011,Salt-Snake River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+7790.0,2012,Salt-Snake River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+7996.818938,2013,Salt-Snake River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+8151.798142,2014,Salt-Snake River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+8208.497851,2015,Salt-Snake River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+8272.757521,2016,Salt-Snake River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+8297.597394,2017,Salt-Snake River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+8258.177596,2018,Salt-Snake River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU6,WaDEWY_WS1
+0.0,2000,Salt-Snake River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
+0.0,2001,Salt-Snake River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
+0.0,2002,Salt-Snake River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
+0.0,2003,Salt-Snake River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
+0.0,2004,Salt-Snake River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
+0.0,2005,Salt-Snake River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
+0.0,2006,Salt-Snake River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
+0.0,2007,Salt-Snake River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
+0.0,2008,Salt-Snake River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
+0.0,2009,Salt-Snake River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
+0.0,2010,Salt-Snake River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
+0.0,2011,Salt-Snake River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
+0.0,2012,Salt-Snake River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
+0.0,2013,Salt-Snake River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
+0.0,2014,Salt-Snake River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
+0.0,2015,Salt-Snake River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
+0.0,2016,Salt-Snake River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
+0.0,2017,Salt-Snake River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
+0.0,2018,Salt-Snake River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU6,WaDEWY_WS2
 6037.330428,2000,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 6222.11288,2001,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 5364.57725,2002,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 7019.473338,2003,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 7164.86076,2004,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-7471.843484999999,2005,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+7471.843485,2005,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 6195.761936,2006,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-6778.961843000001,2007,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+6778.961843,2007,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 7115.553906,2008,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 7697.860383,2009,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-6777.332645999999,2010,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-6919.440653000001,2011,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-5895.5167280000005,2012,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+6777.332646,2010,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+6919.440653,2011,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+5895.516728,2012,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 6710.819372,2013,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-8038.709379999999,2014,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+8038.70938,2014,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 7721.583591,2015,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 8900.543988,2016,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 9144.891978,2017,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
@@ -958,13 +958,13 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 897649.6624,2006,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 982144.3872,2007,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 1030910.262,2008,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-1115275.5459999999,2009,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+1115275.546,2009,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 981908.3472,2010,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-1002497.1309999999,2011,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+1002497.131,2011,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 854149.7648,2012,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 972271.8216,2013,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-1164658.1709999999,2014,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-1118712.5929999999,2015,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+1164658.171,2014,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+1118712.593,2015,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 1289521.836,2016,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 1324923.275,2017,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 1422665.177,2018,Wind-Bighorn River Planning Basin,Agricultural Consumptive Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
@@ -973,30 +973,30 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 6981.029512,2002,Wind-Bighorn River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 6983.013766,2003,Wind-Bighorn River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 7013.061035,2004,Wind-Bighorn River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-7065.927220999999,2005,Wind-Bighorn River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+7065.927221,2005,Wind-Bighorn River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 7133.391845,2006,Wind-Bighorn River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 7244.368317,2007,Wind-Bighorn River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 7342.730605,2008,Wind-Bighorn River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-5828.870250999999,2009,Wind-Bighorn River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+5828.870251,2009,Wind-Bighorn River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 5932.589951,2010,Wind-Bighorn River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 5961.892425,2011,Wind-Bighorn River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-6019.281043999999,2012,Wind-Bighorn River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+6019.281044,2012,Wind-Bighorn River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 6045.487408,2013,Wind-Bighorn River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 6004.79567,2014,Wind-Bighorn River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 5985.113254,2015,Wind-Bighorn River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-5998.161147999999,2016,Wind-Bighorn River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-5971.5124829999995,2017,Wind-Bighorn River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-5912.6863840000005,2018,Wind-Bighorn River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+5998.161148,2016,Wind-Bighorn River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+5971.512483,2017,Wind-Bighorn River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+5912.686384,2018,Wind-Bighorn River Planning Basin,Domestic Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 ,2000,Wind-Bighorn River Planning Basin,Domestic Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 ,2001,Wind-Bighorn River Planning Basin,Domestic Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-2452.7941530000003,2002,Wind-Bighorn River Planning Basin,Domestic Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+2452.794153,2002,Wind-Bighorn River Planning Basin,Domestic Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 2453.491323,2003,Wind-Bighorn River Planning Basin,Domestic Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 2464.048472,2004,Wind-Bighorn River Planning Basin,Domestic Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 2482.623078,2005,Wind-Bighorn River Planning Basin,Domestic Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 2506.326865,2006,Wind-Bighorn River Planning Basin,Domestic Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 2545.318598,2007,Wind-Bighorn River Planning Basin,Domestic Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 2579.878321,2008,Wind-Bighorn River Planning Basin,Domestic Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-2047.9814390000001,2009,Wind-Bighorn River Planning Basin,Domestic Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+2047.981439,2009,Wind-Bighorn River Planning Basin,Domestic Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 2084.423496,2010,Wind-Bighorn River Planning Basin,Domestic Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 2094.71896,2011,Wind-Bighorn River Planning Basin,Domestic Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 2114.882529,2012,Wind-Bighorn River Planning Basin,Domestic Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
@@ -1010,7 +1010,7 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 11142.76693,2001,Wind-Bighorn River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 10719.95876,2002,Wind-Bighorn River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 10763.58423,2003,Wind-Bighorn River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-11146.111659999999,2004,Wind-Bighorn River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+11146.11166,2004,Wind-Bighorn River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 10880.62561,2005,Wind-Bighorn River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 11034.56401,2006,Wind-Bighorn River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 11205.69083,2007,Wind-Bighorn River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
@@ -1023,7 +1023,7 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 93319.23882,2014,Wind-Bighorn River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 88643.84094,2015,Wind-Bighorn River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 81334.22016,2016,Wind-Bighorn River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-80331.18277999999,2017,Wind-Bighorn River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+80331.18278,2017,Wind-Bighorn River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 78926.47683,2018,Wind-Bighorn River Planning Basin,Industrial Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
 82225.0,2000,Wind-Bighorn River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 80426.08942,2001,Wind-Bighorn River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
@@ -1033,52 +1033,52 @@ Amount,ReportYear,Water Use by Basin,UseType,Source,in_ReportingUnitNativeID,in_
 78534.00988,2005,Wind-Bighorn River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 79645.1041,2006,Wind-Bighorn River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 80880.26056,2007,Wind-Bighorn River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-77375.15152999999,2008,Wind-Bighorn River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+77375.15153,2008,Wind-Bighorn River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 982.0,2009,Wind-Bighorn River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-1032.1841539999998,2010,Wind-Bighorn River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+1032.184154,2010,Wind-Bighorn River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 1038.704767,2011,Wind-Bighorn River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 1066.753643,2012,Wind-Bighorn River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 1016.542875,2013,Wind-Bighorn River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 1004.180373,2014,Wind-Bighorn River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-953.8698175000001,2015,Wind-Bighorn River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+953.8698175,2015,Wind-Bighorn River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 875.213178,2016,Wind-Bighorn River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
 864.4197932,2017,Wind-Bighorn River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-849.3041732999999,2018,Wind-Bighorn River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-,2000,Wind-Bighorn River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-,2001,Wind-Bighorn River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-9292.713541,2002,Wind-Bighorn River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-9252.589562000001,2003,Wind-Bighorn River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-9286.293704000002,2004,Wind-Bighorn River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-9317.590408,2005,Wind-Bighorn River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-9317.590408,2006,Wind-Bighorn River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-9478.888804,2007,Wind-Bighorn River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-9555.124364,2008,Wind-Bighorn River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-5700.0,2009,Wind-Bighorn River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-5777.663088,2010,Wind-Bighorn River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-5784.252684,2011,Wind-Bighorn River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-5802.138728,2012,Wind-Bighorn River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-5832.262593,2013,Wind-Bighorn River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-5773.897605,2014,Wind-Bighorn River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-5786.606111,2015,Wind-Bighorn River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-5750.363336,2016,Wind-Bighorn River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-5701.882742,2017,Wind-Bighorn River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-5640.693642,2018,Wind-Bighorn River Planning Basin,Municipal  Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
-,2000,Wind-Bighorn River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-,2001,Wind-Bighorn River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-4373.041666,2002,Wind-Bighorn River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-4380.470324,2003,Wind-Bighorn River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-4400.202695,2004,Wind-Bighorn River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-4438.971,2005,Wind-Bighorn River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-4494.22164,2006,Wind-Bighorn River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-4561.775993,2007,Wind-Bighorn River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-4631.303583,2008,Wind-Bighorn River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-7728.0,2009,Wind-Bighorn River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-7875.122057,2010,Wind-Bighorn River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-7922.893902,2011,Wind-Bighorn River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-8014.440745,2012,Wind-Bighorn River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-8047.367156,2013,Wind-Bighorn River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-8000.927593,2014,Wind-Bighorn River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-7961.910748,2015,Wind-Bighorn River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-7999.024332999999,2016,Wind-Bighorn River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-7972.759334,2017,Wind-Bighorn River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
-7896.248251000001,2018,Wind-Bighorn River Planning Basin,Municipal  Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+849.3041733,2018,Wind-Bighorn River Planning Basin,Industrial Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+,2000,Wind-Bighorn River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+,2001,Wind-Bighorn River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+9292.713541,2002,Wind-Bighorn River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+9252.589562,2003,Wind-Bighorn River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+9286.293704,2004,Wind-Bighorn River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+9317.590408,2005,Wind-Bighorn River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+9317.590408,2006,Wind-Bighorn River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+9478.888804,2007,Wind-Bighorn River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+9555.124364,2008,Wind-Bighorn River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+5700.0,2009,Wind-Bighorn River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+5777.663088,2010,Wind-Bighorn River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+5784.252684,2011,Wind-Bighorn River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+5802.138728,2012,Wind-Bighorn River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+5832.262593,2013,Wind-Bighorn River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+5773.897605,2014,Wind-Bighorn River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+5786.606111,2015,Wind-Bighorn River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+5750.363336,2016,Wind-Bighorn River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+5701.882742,2017,Wind-Bighorn River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+5640.693642,2018,Wind-Bighorn River Planning Basin,Municipal Use,Ground Water,WaDEWY_RU7,WaDEWY_WS1
+,2000,Wind-Bighorn River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+,2001,Wind-Bighorn River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+4373.041666,2002,Wind-Bighorn River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+4380.470324,2003,Wind-Bighorn River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+4400.202695,2004,Wind-Bighorn River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+4438.971,2005,Wind-Bighorn River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+4494.22164,2006,Wind-Bighorn River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+4561.775993,2007,Wind-Bighorn River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+4631.303583,2008,Wind-Bighorn River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+7728.0,2009,Wind-Bighorn River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+7875.122057,2010,Wind-Bighorn River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+7922.893902,2011,Wind-Bighorn River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+8014.440745,2012,Wind-Bighorn River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+8047.367156,2013,Wind-Bighorn River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+8000.927593,2014,Wind-Bighorn River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+7961.910748,2015,Wind-Bighorn River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+7999.024333,2016,Wind-Bighorn River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+7972.759334,2017,Wind-Bighorn River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2
+7896.248251,2018,Wind-Bighorn River Planning Basin,Municipal Use,Surface Water,WaDEWY_RU7,WaDEWY_WS2

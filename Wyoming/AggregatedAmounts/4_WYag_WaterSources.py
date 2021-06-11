@@ -1,7 +1,7 @@
-#Date Created: 01/20/2021
-#Author: Ryan James (WSWC)
-#Purpose: To create WY agg watersource use information and populate a dataframe for WaDE_QA 2.0.
-#Notes:
+# Date Created: 01/20/2021
+# Author: Ryan James (WSWC)
+# Purpose: To create WY agg watersource use information and populate a dataframe for WaDE_QA 2.0.
+# Notes:
 
 
 # Needed Libraries
@@ -13,7 +13,7 @@ import os
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -23,7 +23,7 @@ print("Reading input csv...")
 workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Wyoming/AggregatedAmounts"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_wyAggMaster.csv"
-df = pd.read_csv(fileInput)
+df = pd.read_csv(fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
 
 #WaDE columns
 columnslist = [
@@ -61,16 +61,17 @@ def assignWaterSourceUUID(colrowValue):
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
+
 outdf = pd.DataFrame(index=df.index, columns=columnslist)  # The output dataframe for CSV.
 
 print("Geometry")
-outdf.Geometry = ""
+outdf['Geometry'] = ""
 
 print("GNISFeatureNameCV")
-outdf.GNISFeatureNameCV = ""
+outdf['GNISFeatureNameCV'] = ""
 
 print("WaterQualityIndicatorCV")
-outdf.WaterQualityIndicatorCV = "Fresh"
+outdf['WaterQualityIndicatorCV'] = "Fresh"
 
 print("WaterSourceName")
 outdf['WaterSourceName'] = "Unspecified"
@@ -97,7 +98,8 @@ outdf.reset_index()
 
 #Error Checking each Field
 ############################################################################
-print("Error checking each field.  Purging bad inputs.")  # Hardcoded
+print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 
@@ -126,6 +128,7 @@ outdf, dfpurge = TestErrorFunctions.WaterSourceTypeCV_WS_Check(outdf, dfpurge)
 # Export to new csv
 ############################################################################
 print("Exporting dataframe outdf to csv...")
+
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/watersources.csv', index=False)
 
