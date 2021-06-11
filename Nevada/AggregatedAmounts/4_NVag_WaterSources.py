@@ -1,19 +1,19 @@
-#Date Created: 05/13/2021
-#Author: Ryan James (WSWC)
-#Purpose: To create NV agg water source use information and populate a dataframe for WaDE_QA 2.0.
-#Notes:
+# Date Created: 05/13/2021
+# Author: Ryan James (WSWC)
+# Purpose: To create NV agg water source use information and populate a dataframe for WaDE_QA 2.0.
+# Notes: N/A
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -23,7 +23,7 @@ print("Reading input csv...")
 workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Nevada/AggregatedAmounts"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_nvAggMaster.csv"
-df = pd.read_csv(fileInput)
+df = pd.read_csv(fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
 
 #WaDE columns
 columnslist = [
@@ -86,7 +86,8 @@ outdf.reset_index()
 
 #Error Checking each Field
 ############################################################################
-print("Error checking each field.  Purging bad inputs.")  # Hardcoded
+print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 

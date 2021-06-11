@@ -13,7 +13,7 @@ import pandas as pd
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -24,7 +24,7 @@ workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0
 os.chdir(workingDir)
 fileInput = "RawinputData/P_nvAggMaster.csv"
 fileInput_shape = "RawinputData/P_nvGeometry.csv"
-df = pd.read_csv(fileInput)
+df = pd.read_csv(fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
 dfshape = pd.read_csv(fileInput_shape)
 
 columnslist =[
@@ -69,7 +69,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist, index=df.index)
 
 print("EPSGCodeCV")
-outdf['EPSGCodeCV'] = "EPSG:4326"
+outdf['EPSGCodeCV'] = "4326"
 
 print("ReportingUnitName")
 outdf['ReportingUnitName'] = df['in_ReportingUnitName']
@@ -111,6 +111,7 @@ outdf['ReportingUnitUUID'] = dftemp.apply(lambda row: assignReportingUnitID(row[
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 

@@ -77,7 +77,7 @@ print("Exporting dataframe to csv...")
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/organizations.csv', index=False)
 
-#Report missing values if need be to separate csv
+# Report purged values.
 if(len(outdf_nullMand.index) > 0):
     outdf_nullMand.to_csv('organizations_mandatoryFieldMissing.csv', index=False)
 
