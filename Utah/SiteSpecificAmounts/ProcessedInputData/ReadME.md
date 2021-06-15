@@ -1,0 +1,2 @@
+# Processed WaDE 2.0 Input Data
+This folder stores the resulting python script processed site specific time series water data files.  These files (tables) are used by the WSWC staff to import state water rights data into the WaDE 2.0 system.

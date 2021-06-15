@@ -1,2 +1,0 @@
-# State Agency Provided Raw Input Data
-This folder stores the raw site specific time series water data provided by the state agency, in addition to the master input file for the python scripts to import data into the WaDE 2.0 system.
