@@ -270,8 +270,8 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 
 ***
-### 7) Code File: 7_UTwr_PODSiteToPOUSiteRelationships.py
-Purpose: generate linking element between POD and POU sites that share the same water right.
+### 7) Code File: 7_UTss_PODSiteToPOUSiteRelationships.py
+Purpose: generate linking element between POD and POU sites that share the same site specific amount record.
 Note: podsitetopousiterelationships.csv output only needed if both POD and POU data is present, otherwise produces empty file.
 
 #### Inputs:
@@ -282,7 +282,7 @@ Note: podsitetopousiterelationships.csv output only needed if both POD and POU d
 - podsitetopousiterelationships.csv
 
 #### Operation and Steps:
-- Read the sites.csv & waterallocations.csv input files.
+- Read the sites.csv & sitespecificamounts.csv input files.
 - Create three temporary dataframes: one for sitespecificamounts, & two for site info that will store POD and POU data separately.
 - For the temporary POD dataframe...
     - Read in site.csv data from sites.csv with a *PODSiteUUID* field = POD only.
