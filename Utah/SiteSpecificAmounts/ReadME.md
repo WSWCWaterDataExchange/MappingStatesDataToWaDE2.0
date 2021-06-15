@@ -262,8 +262,8 @@ Purpose: generate master sheet of state agency site specific time series water d
 
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | OrganizationUUID | SiteUUID | VariableSpecificUUID  | Amount | ReportYearCV
----------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------
-UDWRi_Water Use Data | UDWRi | UTSS_S1 | UDWRi_Site Specific Withdrawal | 89.07131598 | 1979
+---------- | ---------- | ------------ | ------------ | ------------ | ------------ 
+UDWRi_Water Use Data | UDWRi | UTss_S1 | UDWRi_Site Specific Withdrawal | 89.07131598 | 1979
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - ?
