@@ -70,7 +70,7 @@ print("WaterSourceName")
 outdf['WaterSourceName'] = df.apply(lambda row: assignWaterSourceName(row['in_WaterSourceName']), axis=1)
 
 print("WaterSourceNativeID")
-outdf["WaterSourceNativeID"] = "Unspecified"
+outdf["WaterSourceNativeID"] = df['in_WaterSourceNativeID']
 
 print("WaterSourceTypeCV")
 outdf['WaterSourceTypeCV'] = df['in_WaterSourceTypeCV']

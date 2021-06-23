@@ -60,8 +60,6 @@ outdf_nullMand = outdf.loc[(outdf["OrganizationUUID"].isnull()) | (outdf["Organi
                            (outdf["State"].isnull()) | (outdf["State"] == '')]
 
 
-
-
 # Export to new csv
 ############################################################################
 print("Exporting dataframe to csv...")

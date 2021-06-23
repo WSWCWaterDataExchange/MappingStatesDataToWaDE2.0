@@ -187,15 +187,15 @@ print("AllocationSDWISIdentifierCV")
 outdf['AllocationSDWISIdentifierCV'] = ""
 
 print("AllocationTimeframeEnd")
-# outdf['AllocationTimeframeEnd'] = df_DM['in_AllocationTimeframeEnd']
-outdf['AllocationTimeframeEnd'] = '12/31'
+outdf['AllocationTimeframeEnd'] = df_DM['in_AllocationTimeframeEnd']
+#outdf['AllocationTimeframeEnd'] = '12/31'
 
 print("AllocationTimeframeStart")
-# outdf['AllocationTimeframeStart'] = df_DM['in_AllocationTimeframeStart']
-outdf['AllocationTimeframeStart'] = '01/01'
+outdf['AllocationTimeframeStart'] = df_DM['in_AllocationTimeframeStart']
+#outdf['AllocationTimeframeStart'] = '01/01'
 
 print("AllocationTypeCV")
-outdf['AllocationTypeCV'] = df_DM['in_AllocationTypeCV']
+outdf['AllocationTypeCV'] = ""
 
 print("AllocationVolume_AF")
 outdf['AllocationVolume_AF'] = df_DM['in_AllocationVolume_AF']
