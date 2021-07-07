@@ -287,4 +287,7 @@ WSWC Staff
 - Ryan James <rjames@wswc.utah.gov>
 
 Nevada DNR Staff
-- Brian McMenamy <bmcmenamy@water.nv.gov>
+- Brian McMenamy (IT Professional) <bmcmenamy@water.nv.gov>
+- Levi Kryder (Chief Hydrology Section) <lkryder@water.nv.gov>
+- Caitlan Jellema (Water Use Specialist) <cjellema@water.nv.gov>
+- Stephanie Snider (GIS Analyst)
