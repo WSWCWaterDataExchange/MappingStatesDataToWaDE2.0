@@ -4,9 +4,9 @@ This readme details the process that was applied by the staff of the [Western St
 ## Overview of Data Utilized
 The following data was used for aggregated water budget...
 
-- **StateInv_2015_BasinPumpage.csv** & **StateInv_2017_BasinPumpage.csv** files that contained aggregated water pumpage budget data and info for basins in both 2015 and 2017, and were obtained from [NDWR GIS Data site](StateInv_2017_BasinPumpage).
-- **StateInv_2015_CountyPumpage.csv** & **StateInv_2017_CountyPumpage.csv** csv files that contained aggregated water pumppage budget data and info for counties in both 2015 and 2017, and were obtained from [NDWR GIS Data site](StateInv_2017_BasinPumpage).
- - **NVBasinShapefile.shp** & **NVCountyShapefile.shp** shape files, obtained from the provided [NDWR GIS Data site](StateInv_2017_BasinPumpage).
+- **StateInv_2015_BasinPumpage.csv** & **StateInv_2017_BasinPumpage.csv** files that contained aggregated water pumpage budget data and info for basins in both 2015 and 2017, and were obtained from [NDWR GIS Data site](http://water.nv.gov/gisdata.aspx).
+- **StateInv_2015_CountyPumpage.csv** & **StateInv_2017_CountyPumpage.csv** csv files that contained aggregated water pumppage budget data and info for counties in both 2015 and 2017, and were obtained from [NDWR GIS Data site](http://water.nv.gov/gisdata.aspx).
+ - **NVBasinShapefile.shp** & **NVCountyShapefile.shp** shape files, obtained from the provided [NDWR GIS Data site](http://water.nv.gov/gisdata.aspx).
    
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share NDWR's aggregated water pumpage data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *NV_Aggregated Schema Mapping to WaDE_QAR.xlsx*.  Six executable code files were used to extract the NDWR's aggregated water budget data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(AggregatedAmounts_facts)* is dependent on the previous files.  Those six code files are as follows...
