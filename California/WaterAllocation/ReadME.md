@@ -13,12 +13,12 @@ The following data was used for water allocations...
 The following text summarizes the process used by the WSWC staff to prepare and share CSWRCB's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see **CA_Allocation Schema Mapping to WaDE_QA.xlsx**.  Six executable code files were used to extract the CSWRCB's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those six code files are as follows...
 
 - 0_PreProcessCaliforniaAllocationData.ipynb
-- 1_CA_Methods.py
-- 2_CA_Variables.py
-- 3_CA_Organizations.py
-- 4_CA_WaterSources.py
-- 5_CA_Sites.py
-- 6_CA_AllocationsAmounts_facts.py
+- 1_CAwr_Methods.py
+- 2_CAwr_Variables.py
+- 3_CAwr_Organizations.py
+- 4_CAwr_WaterSources.py
+- 5_CAwr_Sites.py
+- 6_CAwr_AllocationsAmounts_facts.py
 - 7_CAwr_PODSiteToPOUSiteRelationships.py
 
 
@@ -46,7 +46,7 @@ Purpose: Pre-process the state agency's input data files and merge them into one
 
 
 ***
-### 1) Code File: 1_CA_Methods.py
+### 1) Code File: 1_CAwr_Methods.py
 Purpose: generate legend of granular methods used on data collection.
 
 #### Inputs:
@@ -71,7 +71,7 @@ CSWRCB_Water Rights | Surface water or subsurface water | Adjudicated
 
 
 ***
-### 2) Code File: 2_CA_Variables.py
+### 2) Code File: 2_CAwr_Variables.py
 Purpose: generate legend of granular variables specific to each state.
 
 #### Inputs:
@@ -96,7 +96,7 @@ CSWRCB_Allocation | 1 | Year | AFY
 
 
 ***
-### 3) Code File: 3_CA_Organizations.py
+### 3) Code File: 3_CAwr_Organizations.py
 Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
 
 #### Inputs:
@@ -121,7 +121,7 @@ CSWRCB | California State Water Resources Control Board | Greg Gearheart | https
 
 
 ***
-### 4) Code File: 4_CA_WaterSources.py
+### 4) Code File: 4_CAwr_WaterSources.py
 Purpose: generate a list of water sources specific to a water right.
 
 #### Inputs:
@@ -155,7 +155,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 
 ***
-### 5) Code File: 5_CA_Sites.py
+### 5) Code File: 5_CAwr_Sites.py
 Purpose: generate a list of sites where water is diverted (also known as Points Of Diversion, PODs).
 
 #### Inputs:
@@ -196,7 +196,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 
 ***
-### 6) Code File: 6_CA_AllocationsAmounts_facts.py
+### 6) Code File: 6_CAwr_AllocationsAmounts_facts.py
 Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 
 #### Inputs:
