@@ -23,7 +23,7 @@ print("Reading input csv...")
 workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/California/WaterAllocation"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_CaliforniaMaster.csv"
-df = pd.read_csv(fileInput)
+df = pd.read_csv(fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
 
 
 watersources_fileInput = "ProcessedInputData/watersources.csv" # watersource inputfile
@@ -71,6 +71,7 @@ def retrieveWaterSourceUUID(colrowValue):
 
 # For creating SiteName
 def assignSiteName(colrowValue):
+    colrowValue = str(colrowValue).strip()
     if colrowValue == "" or pd.isnull(colrowValue):
         outList = "Unspecified"
     else:
@@ -82,17 +83,7 @@ def assignSiteName(colrowValue):
 
 # For creating SiteNativeID
 def assignSiteNativeID(colrowValue):
-    if colrowValue == "" or pd.isnull(colrowValue):
-        outList = "Unspecified"
-    else:
-        try:
-            outList = str(colrowValue).strip()
-        except:
-            outList = "Unspecified"
-    return outList
-
-# For creating SiteTypeCV
-def assignSiteTypeCV(colrowValue):
+    colrowValue = str(colrowValue).strip()
     if colrowValue == "" or pd.isnull(colrowValue):
         outList = "Unspecified"
     else:
@@ -140,10 +131,10 @@ print("GNISCodeCV")
 outdf['GNISCodeCV'] = ""
 
 print("HUC12")
-outdf['HUC12'] = df['HUC_12_NUMBER']
+outdf['HUC12'] = df['HUC_12']
 
 print("HUC8")
-outdf["HUC8"] = df['HUC_8_NUMBER']
+outdf["HUC8"] = df['HUC_8']
 
 print("Latitude")
 outdf['Latitude'] = df['LATITUDE']
@@ -170,7 +161,7 @@ print("SitePoint")
 outdf['SitePoint'] = ""
 
 print("SiteTypeCV")
-outdf['SiteTypeCV'] = df.apply(lambda row: assignSiteTypeCV(row['TYPE_OF_DIVERSION_FACILITY']), axis=1)
+outdf['SiteTypeCV'] = "Unspecified"
 
 print("StateCV")
 outdf['StateCV'] = "CA"

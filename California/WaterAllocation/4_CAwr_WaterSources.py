@@ -47,17 +47,6 @@ def assignWaterSourceName(colrowValue):
             outList = "Unspecified"
     return outList
 
-# For creating WaterSourceTypeCV
-def assignWaterSourceTypeCV(colrowValue):
-    if colrowValue == "" or pd.isnull(colrowValue):
-        outList = "Unspecified"
-    else:
-        try:
-            outList = str(colrowValue).strip()
-        except:
-            outList = "Unspecified"
-    return outList
-
 # For creating WaterSourceUUID
 def assignWaterSourceUUID(colrowValue):
     string1 = str(colrowValue)
@@ -87,7 +76,7 @@ print("WaterSourceNativeID")
 outdf["WaterSourceNativeID"] = df['in_WaterSourceNativeID']  # See pre-processing.
 
 print("WaterSourceTypeCV")
-outdf['WaterSourceTypeCV'] = df.apply(lambda row: assignWaterSourceTypeCV(row['SOURCE_TYPE']), axis=1)
+outdf['WaterSourceTypeCV'] = "Surface Water"
 
 ##############################
 # Dropping duplicate

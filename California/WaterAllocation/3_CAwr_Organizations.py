@@ -40,7 +40,7 @@ inpVals = [
     "California State Water Resources Control Board",
     "916-341-5892",
     "The Electronic Water Rights Information Management System (eWRIMS) is a computer database developed by the State Water Resources Control Board to track information on water rights in California.",
-    "https://www.waterboards.ca.gov/waterrights/water_issues/programs/ewrims/",
+    "https://www.waterboards.ca.gov/",
     "CA"]
 
 outdf = pd.DataFrame([inpVals], columns=columnslist)

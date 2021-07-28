@@ -159,16 +159,16 @@ print("AllocationExpirationDate")
 outdf['AllocationExpirationDate'] = ""
 
 print("AllocationFlow_CFS")
-outdf['AllocationFlow_CFS'] = df_DM['in_AllocationAmount']
+outdf['AllocationFlow_CFS'] = ""
 
 print("AllocationLegalStatusCV")
-outdf['AllocationLegalStatusCV'] = df_DM['WATER_RIGHT_STATUS']
+outdf['AllocationLegalStatusCV'] = df_DM['WR_STATUS']
 
 print("AllocationNativeID")  # Will use this with a .groupby() statement towards the ends.
-outdf['AllocationNativeID'] = df_DM['APPLICATION_NUMBER'].astype(str)
+outdf['AllocationNativeID'] = df_DM['WR_WATER_RIGHT_ID'].astype(str)
 
 print("AllocationOwner")
-outdf['AllocationOwner'] = df_DM['PRIMARY_OWNER_NAME']
+outdf['AllocationOwner'] = df_DM['in_WaDEOwner']
 
 print("AllocationSDWISIdentifierCV")
 outdf['AllocationSDWISIdentifierCV'] = ""
@@ -183,10 +183,10 @@ print("AllocationTimeframeStart")
 outdf['AllocationTimeframeStart'] = df_DM['in_AllocationTimeframeStart']
 
 print("AllocationTypeCV")
-outdf['AllocationTypeCV'] = df_DM['WATER_RIGHT_TYPE']
+outdf['AllocationTypeCV'] = df_DM['WR_TYPE']
 
 print("AllocationVolume_AF")
-outdf['AllocationVolume_AF'] = df_DM['USE_DIRECT_DIV_ANNUAL_AMOUNT']
+outdf['AllocationVolume_AF'] = df_DM['FACE_VALUE_AMOUNT']
 
 print("BeneficialUseCategory")
 outdf['BeneficialUseCategory'] = df_DM.apply(lambda row: assignBeneficialUseCategory(row['USE_CODE']), axis=1)
@@ -201,7 +201,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = "01/12/2021"
+outdf['DataPublicationDate'] = "07/21/2021"
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""
@@ -213,7 +213,7 @@ print("GeneratedPowerCapacityMW")
 outdf['GeneratedPowerCapacityMW'] = ""
 
 print("IrrigatedAcreage")
-outdf['IrrigatedAcreage'] = df_DM['USE_NET_ACREAGE']
+outdf['IrrigatedAcreage'] = ""
 
 print("IrrigationMethodCV")
 outdf['IrrigationMethodCV'] = ""

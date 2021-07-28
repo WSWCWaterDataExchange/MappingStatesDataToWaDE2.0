@@ -1,183 +1,287 @@
-# Water Rights (Allocation amounts) Data Preparation for WaDE
-This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water allocations data made available by the [California State Water Resources Control Board (CSWRCB) eWRIMS – Electronic Water Rights Information Management System](https://www.waterboards.ca.gov/waterrights/water_issues/programs/ewrims/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and cost-effective way.
+# CSWRCB Water Rights (Allocation) Data Preparation for WaDE
+This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [California State Water Resources Control Board (CSWRCB)](https://www.waterboards.ca.gov), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
-## Overview 
-The California water rights data are available through multiple sites: 
 
-- [Water rights records Search](https://ciwqs.waterboards.ca.gov/ciwqs/ewrims/EWServlet?Redirect_Page=EWWaterRightPublicSearch.jsp&Purpose=getEWAppSearchPage)
+## Overview of Data Utilized
+The following data was used for water allocations...
 
-- [Web GIS data](https://waterrightsmaps.waterboards.ca.gov/viewer/index.html?viewer=eWRIMS.eWRIMS_gvh#).  
+- **POD_Attributes** water right metadata & **Points_of_Diversion_20210701** site information, both available from the [eWRIMS POD Download](https://waterrightsmaps.waterboards.ca.gov/viewer/Resources/Images/eWRIMS/download.htm).
+- **EWRIMS MASTER FLAT FILE DATA DICTIONARY DRAFT 1-17-20** obtained from personal contact with the CSWRCB and used by the WaDE team for additional metadata.
 
-- [Tableau dashboard](https://public.tableau.com/profile/rafael.maestu#!/vizhome/WaterRightsTypesbyWatershedHUC6SENIORRIGHTS/HUC6Dashboard)  
 
-The data used in the design and coding of the WaDE2 inputs was in following spreadsheet as a preliminary dataset obtained from CSWRCB, and it is used as input for the tables below.
+## Summary of Data Prep
+The following text summarizes the process used by the WSWC staff to prepare and share CSWRCB's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see **CA_Allocation Schema Mapping to WaDE_QA.xlsx**.  Six executable code files were used to extract the CSWRCB's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those six code files are as follows...
 
-**EWRIMS MASTER FLAT FILE DATA DICTIONARY DRAFT 1-17-20.xlsx**
+- 0_PreProcessCaliforniaAllocationData.ipynb
+- 1_CA_Methods.py
+- 2_CA_Variables.py
+- 3_CA_Organizations.py
+- 4_CA_WaterSources.py
+- 5_CA_Sites.py
+- 6_CA_AllocationsAmounts_facts.py
+- 7_CAwr_PODSiteToPOUSiteRelationships.py
 
-The Python scripts described here are [Jupyter Notebooks](https://jupyter.org/) to prepare the water allocations data in csv format that can be ingested into the WaDE2 DB.  
 
-## Summary
-This document summarizes the process to prepare and share CSWRCB’s water rights data for inclusion into the WSWC’s Water Data Exchange (WaDE 2.0) project. In order to extract the CSWRCB’s water use data from the input files and publish it online through ESRI layers so that it can be ready for WaDE 2.0, three Python scripts are used to generate CSV files for water sources, sites, and water allocations input tables (Step 1), and three other CSV files are manually created (Step 2), in data tables compatible with WaDE 2.0.
-
-# Step 1: Execute Python Scripts to Generate CSV Data for water sources, sites, and water allocations.
-The following scripts use queries to extract CDWR’s water use data into views compatible with WaDE 2.0 (see list below for name of each script).  
-
-- #1. watersources_CA.ipynb
-- #2. sites_CA.ipynb
-- #3. waterallocations_CA.ipynb
-
-Note: The outputs from 'watersources_CA.ipynb' and 'sites_CA.ipynb' (water sources and sites csv files) provide inputs to the 'waterallocations_CA.ipynb', so the order in which scripts are operated is important.  
-
-All scripts can be found at the WaDE’s Github repository [MappingStatesDataToWaDE2.0 in the California folder](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/California).
-
-#### Inputs: The following spreadsheet is input file to all scripts:
-
-  EWRIMS MASTER FLAT FILE DATA DICTIONARY DRAFT 1-17-20.xlsx
-
-## 1-1. watersources_CA.ipynb
-Purpose: generate a list of water source names, source types, and quality indicators.
+***
+### 0) Code File: 0_PreProcessCaliforniaAllocationData.ipynb
+Purpose: Pre-process the state agency's input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
-- **spreadsheet listed above**
+ - POD_Attributes.csv
+ - Points_of_Diversion_20210701.csv
+ - EWRIMS MASTER FLAT FILE DATA DICTIONARY DRAFT 1-17-20.xlsx
 
-Dependency:  None
+#### Outputs:
+ - P_CaliforniaMaster.csv
 
-Supplemental Scripts Required:  None
+#### Operation and Steps:
+- Read the input files and generate temporary input dataframes.  Merge POD_Attributes & Points_of_Diversion_20210701 dataframes together using left join via **CORE_POD_ID** & **POD_ID** fields, and the EWRIMS MASTER FLAT FILE DATA DICTIONARY DRAFT 1-17-20 dataframe **WR_WATER_RIGHT_ID** field.
+- Create WaDE *pridority date* field using **PRIORITY_DATE** (or **APPLICATION_ACCEPTANCE_DATE** field if missing).  Format to %m/%d/%Y.
+- Create WaDE *TimeframeStart* field using **DIRECT_DIV_SEASON_START** field.  Format to %m/%d.
+- Create WaDE *in_AllocationTimeframeEnd* field using **DIRECT_DIV_SEASON_END** field.  Format to %m/%d.
+- Generate WaDE *Owner* field by combining **FIRST_NAME** & **LAST_NAME** fields together, Unpsecified if both blank.
+- Create custom WaDE ID for water sources using **SOURCE_NAME** field.
+- Inspect output dataframe for additional errors / datatypes.
+- Export output dataframe as new csv file, *P_CaliforniaMaster.csv*.
 
-#### Operation:
-- Read the input file and form output dataframe.
-- Generate empty **watersources.csv** file with controlled vocabulary headers.
-- Get all unique water source names from the input file and assign them to the output dataframe
-- Assign soure type if it exists.
-- Enter default values for fields with constant values or those that do not have values currently.
-- Drop duplicate rows if they exist.
-- Generate WaterSourceNativeID
-- Assign water source UUID to each (unique) row.
-- Copy results into **watersources.csv** and export.			
 
-#### Sample Data (Note: not all fields shown):
-WaterSourceUUID | WaterSourceNativeID | WaterSourceName | WaterSourceTypeCV | WaterQualityIndicatorCV
------------- | ------------ | -------- | ---------- | ---- 
-CA_2  | 2 | LAKE DOMINGO | Surface | Fresh
+***
+### 1) Code File: 1_CA_Methods.py
+Purpose: generate legend of granular methods used on data collection.
 
-Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. **watersources_mandatoryFieldMissing.csv**) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the **watersources_CA.ipynb** include the following: 
+#### Inputs:
+- None
+
+#### Outputs:
+- methods.csv
+- methods_missing.csv (error check only)
+
+#### Operation and Steps:
+- Generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE Method* specific columns.
+- Assign state agency info to the *WaDE Method* specific columns (this was hardcoded by hand for simplicity).
+- Assign method UUID identifier to each (unique) row.
+- Perform error check on output dataframe.
+- Export output dataframe *methods.csv*.
+
+#### Sample Output (WARNING: not all fields shown):
+MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
+---------- | ---------- | ------------
+CSWRCB_Water Rights | Surface water or subsurface water | Adjudicated
+
+
+***
+### 2) Code File: 2_CA_Variables.py
+Purpose: generate legend of granular variables specific to each state.
+
+#### Inputs:
+- None
+
+#### Outputs:
+- variables.csv
+- variables_missing.csv (error check only)
+
+#### Operation and Steps:
+- Generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE Variable* specific columns.
+- Assign state agency info to the *WaDE Variable* specific columns (this was hardcoded by hand for simplicity).
+- Assign variable UUID identifier to each (unique) row.
+- Perform error check on output dataframe.
+- Export output dataframe *variables.csv*.
+
+#### Sample Output (WARNING: not all fields shown):
+VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
+---------- | ---------- | ------------ | ------------
+CSWRCB_Allocation | 1 | Year | AFY
+
+
+***
+### 3) Code File: 3_CA_Organizations.py
+Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
+
+#### Inputs:
+- None
+
+#### Outputs:
+- organizations.csv
+- organizations_missing.csv (error check only)
+
+#### Operation and Steps:
+- Generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE Organizations* specific columns.
+- Assign state agency info to the *WaDE Organizations* specific columns (this was hardcoded by hand for simplicity).
+- Assign organization UUID identifier to each (unique) row.
+- Perform error check on output dataframe.
+- Export output dataframe *organizations.csv*.
+
+#### Sample Output (WARNING: not all fields shown):
+OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
+---------- | ---------- | ------------ | ------------
+CSWRCB | California State Water Resources Control Board | Greg Gearheart | https://www.waterboards.ca.gov/
+
+
+***
+### 4) Code File: 4_CA_WaterSources.py
+Purpose: generate a list of water sources specific to a water right.
+
+#### Inputs:
+- P_CaliforniaMaster.csv
+
+#### Outputs:
+- waterSources.csv
+- watersources_missing.csv (error check only)
+
+#### Operation and Steps:
+- Read the input file and generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE WaterSources* specific columns.
+- Assign agency data info to the *WaDE WaterSources* specific columns.  See **CA_Allocation Schema Mapping to WaDE_QA.xlsx** for specific details.  Items of note are as follows...
+    - *WaterSourceName* =  **SOURCE_NAME**, Unspecfield if blank.
+    - *WaterSourceNativeID* = custom WaDE ID field, see *0_PreProcessCaliforniaAllocationData* for details.
+    - *WaterSourceTypeCV* = Surface Water.
+- Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceTypeCV* fields.
+- Assign water source UUID identifier to each (unique) row.
+- Perform error check on output dataframe.
+- Export output dataframe *WaterSources.csv*.
+
+#### Sample Output (WARNING: not all fields shown):
+WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceTypeCV
+---------- | ---------- | ------------ | ------------
+CAwr_WS1 | Fresh | HOCKER GULCH | Surface Water
+
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
 - WaterSourceUUID
-- WaterSourceTypeCV
 - WaterQualityIndicatorCV
+- WaterSourceTypeCV
 
-## 1-2. sites_CA.ipynb
-Purpose: generate a list of sites where water is diverted for use (also Points OF Diversion, PODs).
 
-Dependency:  None
+***
+### 5) Code File: 5_CA_Sites.py
+Purpose: generate a list of sites where water is diverted (also known as Points Of Diversion, PODs).
 
-Supplemental Scripts Required: None
+#### Inputs:
+- P_CaliforniaMaster.csv
 
-#### Inputs: 
-- **spreadsheet listed above**
+#### Outputs:
+- sites.csv
+- sites_missing.csv (error check only)
 
-#### Operation:   
-- Generate empty sites.csv file with controlled vocabulary headers
-- Assign SiteNativeID from POD_ID
-- Specify site name from DIVERSION_SITE_NAME in input file
-- Specify site type from TYPE_OF_DIVERSION_FACILITY in the input file
-- Copy latitude and longitude values
-- Specify coordinate mathod based on LOCATION_METHOD in the input file
-- Drop duplicates if any
-- Generate SiteUUID based on SiteNativeID 
-- Drop data if missing latitude/longitude
-- copy results into **sites.csv** and export.  
+#### Operation and Steps:
+- Read the input file and generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE Site* specific columns.
+- Assign state agency info to the *WaDE Site* specific columns.  See **CA_Allocation Schema Mapping to WaDE_QA.xlsx** for specific details.  Items of note are as follows...
+    - Extract *WaterSourceUUID* from watersource.csv input file. See code for specific implementation of extraction.
+    - *CoordinateMethodCV* = **LOCATION_METHOD**.
+    - *County* = **COUNTY**.
+    - *HUC12* = **HUC_12**.
+    - *HU8* = **HUC_8**.
+    - *Latitude* = **LATITUDE**.
+    - *Longitude* = **LONGITUDE**.
+    - *SiteName* = **DIVERSION_SITE_NAME**, Unspecified if blank.
+    - *SiteNativeID* = **POD_ID**, Unspecified if blank.
+- Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *SiteNativeID*, *SiteTypeCV*, *Longitude*, and *Latitude* fields.
+- Assign site UUID identifier to each (unique) row.
+- Perform error check on output dataframe.
+- Export output dataframe *sites.csv*.
 
-#### Sample Data (Note: not all fields shown):
-SiteUUID | SiteNativeID | SiteName  | SiteTypeCV | Longitude | Latitude
------------- | ------------ | ---------- | ---- | ---- | ----
-CA_65767 | 65767 | REINHAKEL DITCH  | Gravity  | -118.4468 | 37.3685
+#### Sample Output (WARNING: not all fields shown):
+SiteUUID | WaterSourceUUID | CoordinateMethodCV | Latitude | Longitude | SiteName
+---------- | ---------- | ---------- | ------------ | ------------ | ------------
+CAwr_S1 | CAwr_WS1 | Unspecified | 40.73949452 | -123.06921044 | Unspecified
 
-Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. **sites_mandatoryFieldMissing.csv**) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the **sites_CA.ipynb** include the following: 
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
 - SiteUUID 
-- SiteName
-- CoordinateMethodCV 
+- CoordinateMethodCV
 - EPSGCodeCV
+- SiteName
 
-## 1-3. waterallocations_CA.ipynb
+
+***
+### 6) Code File: 6_CA_AllocationsAmounts_facts.py
 Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 
-Dependency: watersources.csv and sites.csv generated above.
+#### Inputs:
+- P_CaliforniaMaster.csv
+- methods.csv
+- variables.csv
+- organizations.csv
+- watersources.csv
+- sites.csv
 
-Supplemental Scripts Required: None
+#### Outputs:
+- waterallocations.csv
+- waterallocations_missing.csv (error check only)
 
-#### Inputs: 
-- **spreadsheet listed above**
+#### Operation and Steps:
+- Read the input files and generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE Water Allocations* specific columns.
+- Assign state agency info to the *WaDE Water Allocations* specific columns.  See **CA_Allocation Schema Mapping to WaDE_QA.xlsx** for specific details.  Items of note are as follows...
+    - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
+    - *AllocationLegalStatusCV* = **WR_STATUS**.
+    - *AllocationNativeID* = **WR_WATER_RIGHT_ID**.
+    - *AllocationOwner* = custom WadE owner field, see *0_PreProcessCaliforniaAllocationData.ipynb* for specifics.
+    - *AllocationPriorityDate* = custom WadE owner field, see *0_PreProcessCaliforniaAllocationData.ipynb* for specifics.
+    - *AllocationTimeframeEnd* = custom WadE owner field, see *0_PreProcessCaliforniaAllocationData.ipynb* for specifics.
+    - *AllocationTimeframeStart* = custom WadE owner field, see *0_PreProcessCaliforniaAllocationData.ipynb* for specifics.
+    - *AllocationTypeCV* = **WR_TYPE**.
+    - *AllocationVolume_AF* = **FACE_VALUE_AMOUNT**.
+    - *BeneficialUseCategory* = **USE_CODE**, Unspecified if Blank.
+- Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.
+- Perform error check on output dataframe.
+- Export output dataframe *waterallocations.csv*.
 
-#### Operation:
- - Generate empty waterAllocations.csv file with controlled vocabulary headers
- - Assign Native Allocation ID from APPLICATION_NUMBER 
- - Map Site IDs from sites.csv based on POD_ID corresanding to NativeAllocationID
- - Map Watersource IDs from watersources.csv based on SOURCE_NAME corresponding to NativeAllocationID 
- - Assign Beneficial Use from USE_CODE
- - Assign Allocation type from WATER_RIGHT_TYPE
- - Assign Legal status from WATER_RIGHT_STATUS
- - Assign Allocation owner from PRIMARY_OWNER_NAME
- - Get Allocation priority date from PRIORITY_DATE or APPLICATION_ACCEPTANCE_DATE
- - Map Allocation time frame start and time frame end from DIRECT_DIV_SEASON_START and DIRECT_DIV_SEASON_END
- - Format the datetime data above in the WaDE2 DB compatible form
- - Get Allocation amount from MAX_RATE_OF_DIVERSION and convert units from Gallons per minute to CFS
- - Get Allocation maximum from USE_DIRECT_DIV_ANNUAL_AMOUNT
- - Assign Irrigated acreage from USE_NET_ACREAGE
- - Drop rows if both Allocation amount and Allocation maximum are null
- - Drop duplicates if any
- - Copy results into **waterallocations.csv** and export  
+#### Sample Output (WARNING: not all fields shown):
+AllocationNativeID | SiteUUID | AllocationLegalStatusCV | AllocationVolume_AF | BeneficialUseCategory
+---------- | ---------- | ------------ 
+10 | CAwr_S49583, CAwr_S49584 | 28959.1 | Licensed | Power
 
-#### Sample Data (Note: not all fields shown):
-OrganizationUUID | SiteUUID | WaterSourceUUID | BeneficialUseCategory | AllocationNativeID | AllocationOwner | AllocationTypeCV | AllocationLegalStatusCV   
----------------- | ------------ | -------- | ---------- | ----------- | ---------- | ---------- | ----------- 
-CSWRCB| CA_60498| CA_2  | Dust Control | T032025 |569 EAST COUNTY BOULEVARD, LLC | Temporary Permit | Cancelled 
-
-Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. **allocations_mandatoryFieldMissing.csv**) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the **waterallocations_CA.ipynb** include the following: 
-- OrganizationUUID
-- VariableSpecificUUID
-- WaterSourceUUID
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID
+- VariableSpecificUUID
+- OrganizationUUID
+- WaterSourceUUID
+- SiteUUID
 - AllocationPriorityDate
+- BeneficialUseCategory
+- AllocationAmount or AllocationMaximum
+- DataPublicationDate
 
-# Step 2: Manually Modify Existing Files to Generate CA CSV Data Compatible with WaDE 2.0.
-The following is a quick description of three CSV files manually created to be used as inputs into WaDE 2.0.  These tables usually have single rows, so are prepared by manual inspection.
 
-
-## 2-1. variables.csv 
-Purpose: generate legend of granular variables specific to each state.
-Dependency:  None
-Supplemental Scripts Required:  None
-
-#### Inputs:
-- See the below prepared table.
-
-VariableSpecificUUID | VariableSpecificCV | VariableCV | AggregationStatisticCV| AggregationInterval | AggregationIntervalUnitCV | ReportYearStartMonth| ReportYearTypeCV | AmountUnitCV | MaximumAmountUnitCV
----------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- | --------- | -------
-CSWRCB Allocation all  | Allocation All | Allocation | Average | 1 | Year |10 | WaterYear| CFS | AFY
-
-## 2-2. methods.csv
-Purpose: generate legend of granular variables specific to each state detailing water right / allocation / etc data collection.
-Dependency:  None
-Supplemental Scripts Required:  None
+***
+### 7) Code File: 7_UTwr_PODSiteToPOUSiteRelationships.py
+Purpose: generate linking element between POD and POU sites that share the same water right.
+Note: podsitetopousiterelationships.csv output only needed if both POD and POU data is present, otherwise produces empty file.
 
 #### Inputs:
-- See the below prepared table.       
+- sites.csv
+- waterallocations.csv
 
-MethodUUID | MethodName | MethodDescription| MethodNEMLink | ApplicableResourceTypeCV | MethodTypeCV | DataCoverageValue | DataQualityValueCV	| DataConfidenceValue
----------- | ---------- | ------------ | ------------- | ------------- | ------------ | -------------| ------------ | ---------- 
-CSWRCB-Water Rights | California Water Rights | Water Rights | https://www.waterboards.ca.gov/waterrights/water_issues/programs/ewrims/ | Surface water or subsurface water | Adjudicated	|         |         |                 
+#### Outputs:
+- podsitetopousiterelationships.csv
 
-  
-## 2-3. Organizations.csv
-Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
-Dependency:  None
-Supplemental Scripts Required:  None
+#### Operation and Steps:
+- Read the sites.csv & waterallocations.csv input files.
+- Create three temporary dataframes: one for waterallocations, & two for site info that will store POD and POU data separately.
+- For the temporary POD dataframe...
+    - Read in site.csv data from sites.csv with a *PODSiteUUID* field = POD only.
+    - Create *PODSiteUUID* field = *SiteUUID*.
+- For the temporary POU dataframe
+    - Read in site.csv data from sites.csv with a *PODSiteUUID* field = POU only.
+    - Create *POUSiteUUID* field = *SiteUUID*.
+- For the temporary waterallocations dataframe, explode *SiteUUID* field to create unique rows.
+- Left-merge POD & POU dataframes to the waterallocations dataframe via *SiteUUID* field.
+- Consolidate waterallocations dataframe by grouping entries by *AllocationNativeID* filed.
+- Explode the consolidated waterallocations dataframe again using the *PODSiteUUID* field, and again for the *POUSiteUUID* field to create unique rows.
+- Perform error check on waterallocations dataframe (check for NaN values)
+- If waterallocations is not empty, export output dataframe *podsitetopousiterelationships.csv*.
 
-#### Inputs:
-- See the below prepared table.               
 
-OrganizationUUID | OrganizationName | OrganizationPurview| OrganizationWebsite | OrganizationPhoneNumber |	OrganizationContactName	| OrganizationContactEmail |	OrganizationDataMappingURL |	State 
----------------- | ------------ | -------- | ---------- | ---------- | ------------ | -------------- | ------------ | ---------
-CSWRCB |California State Water Resources Control Board | The Electronic Water Rights Information Management System (eWRIMS) is a computer database developed by the State Water Resources Control Board to track information on water rights in California. | https://www.waterboards.ca.gov/waterrights/water_issues/programs/ewrims/ | 916-341-5892 |	Greg Gearheart | Greg.Gearheart@waterboards.ca.gov | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/California	| CA
+***
+## Staff Contributions
+Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [California State Water Resources Control Board (CSWRCB)](https://www.waterboards.ca.gov).
 
+WSWC Staff
+- Adel Abdallah <adelabdallah@wswc.utah.gov>
+- Ryan James <rjames@wswc.utah.gov>
 
+CSWRCB Staff
+- asfdv

@@ -38,7 +38,7 @@ inpVals = [
     "1",
     "Year",
     "Average",
-    "CFS",
+    "AFY",
     "AFY",
     "11",
     "WaterYear",
