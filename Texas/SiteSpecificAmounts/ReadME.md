@@ -1,1 +1,1 @@
-
+'This data is considered sensitive and will not made available to the public.  It will not be available in the WaDE GitHub, but will be in the QA through a secure, protected API.  Please contact the WaDE team for more details.
