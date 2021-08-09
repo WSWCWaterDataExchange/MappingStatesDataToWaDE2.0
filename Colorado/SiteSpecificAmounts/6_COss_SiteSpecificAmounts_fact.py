@@ -9,16 +9,10 @@ import numpy as np
 import pandas as pd
 import os
 
-# Site lat and long already converted.
-# from pyproj import Transformer, transform
-# transformer = Transformer.from_crs(4269, 4326)
-# # NAD83 projection = epsg:4269.
-# # WGS84 projection used by WaDE 2.0 = epsg:4326.
-
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -32,7 +26,7 @@ variables_fileInput = "ProcessedInputData/variables.csv"
 watersources_fileInput = "ProcessedInputData/watersources.csv"
 sites_fileInput = "ProcessedInputData/sites.csv"
 
-df_DM = pd.read_csv(M_fileInput)  # The State's Master input dataframe.
+df_DM = pd.read_csv(M_fileInput)
 df_variables = pd.read_csv(variables_fileInput)  # Variable dataframe
 df_watersources = pd.read_csv(watersources_fileInput)  # WaterSources dataframe
 df_sites = pd.read_csv(sites_fileInput)  # Sites dataframe
@@ -83,7 +77,8 @@ def retrieveWaterSourceUUID(colrowValue):
     return outList
 
 # For creating SiteUUID
-SitUUIDdict = pd.Series(df_sites.SiteUUID.values, index=df_sites.SiteNativeID).to_dict()
+df_sites['WaDEKey'] = df_sites['SiteNativeID'] + df_sites['WaterSourceUUID']
+SitUUIDdict = pd.Series(df_sites.SiteUUID.values, index=df_sites.WaDEKey).to_dict()
 def retrieveSiteUUID(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = ''
@@ -105,7 +100,7 @@ print("MethodUUID")
 outdf['MethodUUID'] = "CO_Water Use Data"
 
 print("VariableSpecificUUID")
-outdf['VariableSpecificUUID'] = "CO_Site Specific"
+outdf['VariableSpecificUUID'] = "CO_Reservoirs and Gages"
 
 print("OrganizationUUID")
 outdf['OrganizationUUID'] = "CODWR"
@@ -114,7 +109,9 @@ print("WaterSourceUUID") # Using WaterSourceNativeID
 outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
 
 print("SiteUUID") # Using SiteNativeID
-outdf['SiteUUID'] = df_DM.apply(lambda row: retrieveSiteUUID(row['in_SiteNativeID']), axis=1)
+df_DM['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
+df_DM['WaDEKey'] = df_DM['in_SiteNativeID'] + df_DM['WaterSourceUUID']
+outdf['SiteUUID'] = df_DM.apply(lambda row: retrieveSiteUUID(row['WaDEKey']), axis=1)
 
 print("Amount")
 outdf['Amount'] = df_DM['dataValue'].astype(float)
@@ -186,11 +183,14 @@ print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to uploa
 
 print("Joining outdf duplicates based on AllocationNativeID...")
 outdf100 = outdf.replace(np.nan, '')  # Replaces NaN values with blank.
+outdf100 = outdf100.drop_duplicates() # Dropping duplicate enteries (if any).
+outdf100 = outdf100.reset_index(drop=True)
 
 
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 
@@ -263,11 +263,11 @@ outdf100, dfpurge = TestErrorFunctions.ReportYearCV_SS_Check(outdf100, dfpurge)
 # SDWISIdentifier
 outdf100, dfpurge = TestErrorFunctions.SDWISIdentifier_SS_Check(outdf100, dfpurge)
 
-# TimeframeEnd
-outdf100, dfpurge = TestErrorFunctions.TimeframeEnd_SS_Check(outdf100, dfpurge)
-
-# TimeframeStart
-outdf100, dfpurge = TestErrorFunctions.TimeframeStart_SS_Check(outdf100, dfpurge)
+# # TimeframeEnd
+# outdf100, dfpurge = TestErrorFunctions.TimeframeEnd_SS_Check(outdf100, dfpurge)
+#
+# # TimeframeStart
+# outdf100, dfpurge = TestErrorFunctions.TimeframeStart_SS_Check(outdf100, dfpurge)
 
 
 # Export to new csv

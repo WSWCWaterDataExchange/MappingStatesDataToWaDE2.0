@@ -12,7 +12,7 @@ import os
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -63,10 +63,10 @@ print("WaterSourceName")
 outdf['WaterSourceName'] = df['waterSource']
 
 print("WaterSourceNativeID")
-outdf['WaterSourceNativeID'] = df['in_WaterSourceNativeID']
+outdf['WaterSourceNativeID'] = df['in_WaterSourceNativeID']  # See pre-processing.
 
 print("WaterSourceTypeCV")
-outdf['WaterSourceTypeCV'] = "Unspecified"
+outdf['WaterSourceTypeCV'] = df['in_WaterSourceTypeCV']  # See pre-processing.
 
 
 ##############################

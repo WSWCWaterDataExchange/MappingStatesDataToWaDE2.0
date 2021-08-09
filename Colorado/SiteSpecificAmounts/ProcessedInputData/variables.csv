@@ -1,2 +1,2 @@
 VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
-CO_Site Specific,1,year,Cumulative,AF,AF,1,CalendarYear,Diversion,Diversion
+CO_Reservoirs and Gages,1,year,Cumulative,AF,AF,1,CalendarYear,Reservoirs and Gages,Reservoirs and Gages Diversion
