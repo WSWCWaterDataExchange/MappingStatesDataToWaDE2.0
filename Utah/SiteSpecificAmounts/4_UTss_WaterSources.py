@@ -68,7 +68,6 @@ outdf['WaterSourceNativeID'] = df['in_WaterSourceNativeID']  # see preprocessing
 print("WaterSourceTypeCV")
 outdf['WaterSourceTypeCV'] = df['in_WaterSourceTypeCV']  # see preprocessing.
 
-
 ##############################
 # Dropping duplicate
 print("Dropping duplicates")

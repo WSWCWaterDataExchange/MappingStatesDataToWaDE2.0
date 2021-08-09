@@ -1,6 +1,10 @@
-# Date Updated: 05/25/2021
+# Date Updated: 08/09/2021
 # Purpose: To extract UT site POD and POU relation information and populate dataframe for WaDEQA 2.0.
-# Notes: N/A
+# Notes:    1) data primary comes from records data.  We want the relationship based on a physical connection, temporal connection, and similar amount values.
+#           2) read in records, remove unnecessary columns.
+#           3) Attach PODorPOUSite value from sites.csv based on SiteUUID value.
+#           4) Split into two dataframes: POD and POUs
+#           5) look for matching rows / values between POD and POU dataframe.
 
 
 # Needed Libraries
@@ -13,54 +17,71 @@ import os
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Utah/SiteSpecificAmounts"  # Specific to my machine, will need to change.
+workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/California/SiteSpecificAmounts"  # Specific to my machine, will need to change.
 os.chdir(workingDir)
 
 # Sites
-siteColumns = ["SiteUUID", "PODorPOUSite"]
 sitesInput = "ProcessedInputData/sites.csv"
-dfsites = pd.read_csv(sitesInput, usecols=siteColumns)
-dfPOD = dfsites[dfsites['PODorPOUSite'] == "POD"].reset_index(drop=True)
-dfPOD['PODSiteUUID'] = dfPOD['SiteUUID']
-dfPOU = dfsites[dfsites['PODorPOUSite'] == "POU"].reset_index(drop=True)
-dfPOU['POUSiteUUID'] = dfPOU['SiteUUID']
+dfsites = pd.read_csv(sitesInput)
 
 # Sitespecificamounts
-recordColumns = ["SiteUUID", "CommunityWaterSupplySystem"]
 recordInput = "ProcessedInputData/sitespecificamounts.csv"
-dfrecord = pd.read_csv(recordInput, usecols=recordColumns)
+dfrecord = pd.read_csv(recordInput)
 
 
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
 
-# Explode allocation by SiteUUID
-dfrecord = dfrecord.assign(SiteUUID=dfrecord['SiteUUID'].str.split(',')).explode('SiteUUID').reset_index(drop=True)
+neededColumnList = ["SiteUUID", "CommunityWaterSupplySystem", "TimeframeEnd", "TimeframeStart", "Amount"]
+dfrecord_2 = pd.DataFrame(columns=neededColumnList, index=dfrecord.index)
+dfrecord_2 = dfrecord[neededColumnList].drop_duplicates().reset_index(drop=True)
+
+# Explode record data by SiteUUID
+dfrecord_2 = dfrecord_2.assign(SiteUUID=dfrecord_2['SiteUUID'].str.split(',')).explode('SiteUUID').reset_index(drop=True)
 
 # Merging dataframes into one, using left-join.
-dfrecord = pd.merge(dfrecord, dfPOD[['SiteUUID', 'PODSiteUUID', 'PODorPOUSite']], on='SiteUUID', how='left')
-dfrecord = pd.merge(dfrecord, dfPOU[['SiteUUID', 'POUSiteUUID', 'PODorPOUSite']], on='SiteUUID', how='left')
+dfrecord_2 = pd.merge(dfrecord_2, dfsites[['SiteUUID', 'PODorPOUSite']], on='SiteUUID', how='left')
 
-# group by CommunityWaterSupplySystem
-dfrecord = dfrecord.groupby(['CommunityWaterSupplySystem']).agg(lambda x: ",".join([str(elem) for elem in (list(set(x))) if elem!=""])).replace(np.nan, "").reset_index()
+# Split into two dataframes: POD & POU sites
+neededColumnList = ["SiteUUID", "CommunityWaterSupplySystem", "TimeframeEnd", "TimeframeStart", "Amount", "PODorPOUSite"]
+dfPOD = pd.DataFrame(columns=neededColumnList)
+dfPOD = dfrecord_2[dfrecord_2['PODorPOUSite'] == "POD"].reset_index(drop=True)
 
-# explode by both PODSiteUUID, then by POUSiteUUID
-dfrecord = dfrecord.assign(PODSiteUUID=dfrecord['PODSiteUUID'].str.split(',')).explode('PODSiteUUID').reset_index(drop=True)
-dfrecord = dfrecord.assign(POUSiteUUID=dfrecord['POUSiteUUID'].str.split(',')).explode('POUSiteUUID').reset_index(drop=True)
+dfPOU = pd.DataFrame(columns=neededColumnList)
+dfPOU = dfrecord_2[dfrecord_2['PODorPOUSite'] == "POU"].reset_index(drop=True)
 
-# create out DataFrame
+
+# Create output DataFrame
+# see if there are matching rows / records in dfPOD & dfPOU.
 outdf = pd.DataFrame()
-outdf['PODSiteUUID'] = dfrecord['PODSiteUUID']
-outdf['POUSiteUUID'] = dfrecord['POUSiteUUID']
+outdf = pd.merge(dfPOD, dfPOU, on=["CommunityWaterSupplySystem", "TimeframeEnd", "TimeframeStart", "Amount"], how='inner')
 
-# drops 'nan rows'
-outdf = outdf[outdf['PODSiteUUID'] != 'nan'].reset_index(drop=True)
-outdf = outdf[outdf['POUSiteUUID'] != 'nan'].reset_index(drop=True)
+def retrievePODSiteUUID(pouX, siteX, siteY):
+    # Check for POD
+    if pouX == "POD":
+        outString = siteX  # return POD SiteUUID
+    else:
+        outString = siteY  # return POU SiteUUID
+    return outString
+outdf['PODSiteUUID'] = outdf.apply(lambda row: retrievePODSiteUUID(row['PODorPOUSite_x'], row['SiteUUID_x'], row['SiteUUID_y']), axis=1)
 
-# create StartDate & EndDate values.
-outdf['StartDate'] = "01/01/2021"
-outdf['EndDate'] = "12/31/2021"
+def retrievePOUSiteUUID(pouX, siteX, siteY):
+    # Check for POD
+    if pouX == "POU":
+        outString = siteX  # return POD SiteUUID
+    else:
+        outString = siteY  # return POU SiteUUID
+    return outString
+outdf['POUSiteUUID'] = outdf.apply(lambda row: retrievePOUSiteUUID(row['PODorPOUSite_x'], row['SiteUUID_x'], row['SiteUUID_y']), axis=1)
+
+
+neededColumnList = ["PODSiteUUID", "POUSiteUUID", "StartDate", "EndDate"]
+outdf_2 = pd.DataFrame()
+outdf_2['PODSiteUUID'] = outdf['PODSiteUUID']
+outdf_2['POUSiteUUID'] = outdf['POUSiteUUID']
+outdf_2['StartDate'] = outdf['TimeframeStart']
+outdf_2['EndDate'] = outdf['TimeframeEnd']
 
 
 # Export to new csv
@@ -68,8 +89,7 @@ outdf['EndDate'] = "12/31/2021"
 print("Exporting dataframe outdf to csv...")
 
 # The working output DataFrame for WaDE 2.0 input.
-# Check if dataframe is empty, fill in 1 row if true
-if not outdf.empty:
-    outdf.to_csv('ProcessedInputData/podsitetopousiterelationships.csv', index=False)
+if not outdf_2.empty:
+    outdf_2.to_csv('ProcessedInputData/podsitetopousiterelationships.csv', index=False)
 
 print("Done.")

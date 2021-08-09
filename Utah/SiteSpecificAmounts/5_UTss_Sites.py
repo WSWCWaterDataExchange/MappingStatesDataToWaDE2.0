@@ -166,9 +166,8 @@ outdf.reset_index()
 
 #####################################
 # Dropping duplicate
-# filter the whole table based on a unique combination of SiteNativeID, SiteName, SiteTypeCV, Longitude & Latitude
-outdf = outdf.drop_duplicates(subset=['SiteNativeID', 'SiteName', 'SiteTypeCV', 'Longitude', 'Latitude'])
-outdf = outdf.reset_index(drop=True)
+# filter the whole table based on a unique combination of WaterSourceUUID, PODorPOUSite, SiteNativeID, SiteName, SiteTypeCV, Longitude & Latitude.
+outdf = outdf.drop_duplicates(subset=['WaterSourceUUID', 'PODorPOUSite', 'SiteNativeID', 'SiteName', 'SiteTypeCV', 'Longitude', 'Latitude']).reset_index(drop=True)
 ######################################
 
 print("SiteUUID") # has to be one of the last.
@@ -186,6 +185,12 @@ dfpurge = dfpurge.assign(ReasonRemoved='')
 
 # SiteUUID
 outdf, dfpurge = TestErrorFunctions.SiteUUID_S_Check(outdf, dfpurge)
+
+# RegulatoryOverlayUUIDs
+outdf, dfpurge = TestErrorFunctions.RegulatoryOverlayUUIDs_S_Check(outdf, dfpurge)
+
+# WaterSourceUUID
+outdf100, dfpurge = TestErrorFunctions.WaterSourceUUID_S_Check(outdf, dfpurge)
 
 # CoordinateAccuracy
 outdf, dfpurge = TestErrorFunctions.CoordinateAccuracy_S_Check(outdf, dfpurge)

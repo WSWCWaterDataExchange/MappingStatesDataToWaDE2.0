@@ -64,7 +64,7 @@ columnslist = [
 ############################################################################
 
 # For creating VariableSpecificUUID
-VariableSpecificUUIDdict = pd.Series(df_variables.VariableSpecificUUID.values, index = df_variables.VariableCV).to_dict()
+VariableSpecificUUIDdict = pd.Series(df_variables.VariableSpecificUUID.values, index = df_variables.VariableSpecificCV).to_dict()
 def retrieveVariableSpecificUUID(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = ''
@@ -90,7 +90,8 @@ def retrieveWaterSourceUUID(colrowValue):
     return outList
 
 # For creating SiteUUID
-SitUUIDdict = pd.Series(df_sites.SiteUUID.values, index=df_sites.SiteNativeID).to_dict()
+df_sites['WaDEKey'] = df_sites['SiteNativeID'].astype(str) + df_sites['WaterSourceUUID']
+SitUUIDdict = pd.Series(df_sites.SiteUUID.values, index=df_sites.WaDEKey).to_dict()
 def retrieveSiteUUID(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = ''
@@ -112,8 +113,7 @@ print("MethodUUID")
 outdf['MethodUUID'] = "UDWRi_Water Use Data"
 
 print("VariableSpecificUUID")
-#outdf['VariableSpecificUUID'] = "UDWRi_Site Specific"
-outdf['VariableSpecificUUID'] = df_DM.apply(lambda row: retrieveVariableSpecificUUID(row['in_VariableCV']), axis=1)
+outdf['VariableSpecificUUID'] = df_DM.apply(lambda row: retrieveVariableSpecificUUID(row['in_VariableSpecificCV']), axis=1)
 
 print("OrganizationUUID")
 outdf['OrganizationUUID'] = "UDWRi"
@@ -122,7 +122,9 @@ print("WaterSourceUUID")
 outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
 
 print("SiteUUID")
-outdf['SiteUUID'] = df_DM.apply(lambda row: retrieveSiteUUID(row['in_SiteNativeID']), axis=1)
+df_DM['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
+df_DM['WaDEKey'] = df_DM['in_SiteNativeID'].astype(str) + df_DM['WaterSourceUUID']
+outdf['SiteUUID'] = df_DM.apply(lambda row: retrieveSiteUUID(row['WaDEKey']), axis=1)
 
 print("Amount")
 outdf['Amount'] = df_DM['WaterUse']
@@ -143,7 +145,7 @@ print("CropTypeCV")
 outdf['CropTypeCV'] = ""
 
 print("CustomerTypeCV")
-outdf['CustomerTypeCV'] = df_DM['BenUse']
+outdf['CustomerTypeCV'] = df_DM['in_CustomerTypeCV']  # see preprocessing
 
 print("DataPublicationDate")
 outdf['DataPublicationDate'] = "06/14/2021"

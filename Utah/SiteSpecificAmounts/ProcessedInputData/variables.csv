@@ -1,7 +1,7 @@
 VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
-UDWRi_SS_Delivery,1,Year,Cumulative,AF,AF,1,CalendarYear,Delivery,Delivery
-UDWRi_SS_Return,1,Year,Cumulative,AF,AF,1,CalendarYear,Return,Return
-UDWRi_SS_Transfer In,1,Year,Cumulative,AF,AF,1,CalendarYear,Transfer In,Transfer In
-UDWRi_SS_Transfer Out,1,Year,Cumulative,AF,AF,1,CalendarYear,Transfer Out,Transfer Out
-UDWRi_SS_Withdrawal,1,Year,Cumulative,AF,AF,1,CalendarYear,Withdrawal,Withdrawal
-UDWRi_SS_Unspecified,1,Year,Cumulative,AF,AF,1,CalendarYear,Unspecified,Unspecified
+UTss_Water Use Delivery,1,Year,Cumulative,AF,AF,1,CalendarYear,Water Use,Water Use Delivery
+UTss_Water Use Return,1,Year,Cumulative,AF,AF,1,CalendarYear,Water Use,Water Use Return
+UTss_Water Use Transfer In,1,Year,Cumulative,AF,AF,1,CalendarYear,Water Use,Water Use Transfer In
+UTss_Water Use Transfer Out,1,Year,Cumulative,AF,AF,1,CalendarYear,Water Use,Water Use Transfer Out
+UTss_Water Use Withdrawal,1,Year,Cumulative,AF,AF,1,CalendarYear,Water Use,Water Use Withdrawal
+UTss_Water Use Unspecified,1,Year,Cumulative,AF,AF,1,CalendarYear,Water Use,Water Use Unspecified
