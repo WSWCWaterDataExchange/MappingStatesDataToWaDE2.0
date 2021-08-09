@@ -1,2 +1,3 @@
 VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
-CSWRCB_Site Specific,1,year,Cumulative,G,G,1,CalendarYear,Unspecified,Unspecified
+CSWRCB_Water Use Produced,1,Year,Cumulative,G,G,1,CalendarYear,Water Use,Water Use Produced
+CSWRCB_Water Use Delivered,1,Year,Cumulative,G,G,1,CalendarYear,Water Use,Water Use Delivered

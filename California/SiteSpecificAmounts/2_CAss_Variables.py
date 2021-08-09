@@ -35,27 +35,27 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
-outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
+# outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = "CSWRCB_Site Specific"
+outdf.VariableSpecificUUID = ["CSWRCB_Water Use Produced", "CSWRCB_Water Use Delivered"]
 
-outdf.AggregationInterval = "1"
+outdf.AggregationInterval = ["1", "1"]
 
-outdf.AggregationIntervalUnitCV = "year"
+outdf.AggregationIntervalUnitCV = ["Year", "Year"]
 
-outdf.AggregationStatisticCV = "Cumulative"
+outdf.AggregationStatisticCV = ["Cumulative", "Cumulative"]
 
-outdf.AmountUnitCV = "G"
+outdf.AmountUnitCV = ["G", "G"]
 
-outdf.MaximumAmountUnitCV = "G"
+outdf.MaximumAmountUnitCV = ["G", "G"]
 
-outdf.ReportYearStartMonth = "1"
+outdf.ReportYearStartMonth = ["1", "1"]
 
-outdf.ReportYearTypeCV = "CalendarYear"
+outdf.ReportYearTypeCV = ["CalendarYear", "CalendarYear"]
 
-outdf.VariableCV = "Unspecified"
+outdf.VariableCV = ["Water Use", "Water Use"]
 
-outdf.VariableSpecificCV = "Unspecified"
+outdf.VariableSpecificCV = ["Water Use Produced", "Water Use Delivered"]
 
 
 # Check required fields are not null

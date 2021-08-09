@@ -5,14 +5,15 @@
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
 import numpy as np
+import pandas as pd
 import os
+from datetime import datetime
 
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -38,7 +39,7 @@ columnslist = [
 # Custom Site Functions
 ############################################################################
 
-#WaterSourceUUID
+# WaterSourceUUID
 def assignWaterSourceUUID(colrowValue):
     string1 = str(colrowValue)
     outstring = "CAss_WS" + string1
@@ -51,23 +52,22 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(index=df.index, columns=columnslist)  # The output dataframe for CSV.
 
 print("Geometry")
-outdf.Geometry = ""
+outdf['Geometry'] = ""
 
 print("GNISFeatureNameCV")
-outdf.GNISFeatureNameCV = ""
+outdf['GNISFeatureNameCV'] = ""
 
 print("WaterQualityIndicatorCV")
-outdf.WaterQualityIndicatorCV = "Fresh"
+outdf['WaterQualityIndicatorCV'] = "Fresh"
 
 print("WaterSourceName")
 outdf['WaterSourceName'] = "Unspecified"
 
 print("WaterSourceNativeID")
-outdf['WaterSourceNativeID'] = "Unspecified"
+outdf['WaterSourceNativeID'] = df['in_WaterSourceNativeID']  # See pre-processing.
 
 print("WaterSourceTypeCV")
-outdf['WaterSourceTypeCV'] = df['Primary Water Source Type']
-
+outdf['WaterSourceTypeCV'] = df['in_WaterSourceTypeCV']  # See pre-processing.
 
 ##############################
 # Dropping duplicate
@@ -86,6 +86,7 @@ outdf.reset_index()
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 
