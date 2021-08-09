@@ -34,6 +34,7 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 - 7_UTss_PODSiteToPOUSiteRelationships.py
 
 
+
 ***
 ### 0) Code File: 0_PreProcessUTSiteSpecificData.ipynb
 Purpose: Pre-process the state agency input data files into one master file for simple dataframe creation and extraction.
@@ -82,6 +83,7 @@ Purpose: Pre-process the state agency input data files into one master file for 
 - Export output dataframe as new csv file, *P_MasterUTSiteSpecific.csv*.
 
 
+
 ***
 ### 1) Code File: 1_UTss_Methods.py
 Purpose: generate legend of granular methods used on data collection.
@@ -105,6 +107,7 @@ Purpose: generate legend of granular methods used on data collection.
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
 UDWRi_Water Use Data | Surface Ground Water | Measured
+
 
 
 ***
@@ -132,6 +135,7 @@ VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | Amou
 UDWRi_Site Specific | 1 | Year | AFY
 
 
+
 ***
 ### 3) Code File: 3_UTss_Organizations.py
 Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
@@ -155,6 +159,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
 ---------- | ---------- | ------------ | ------------
 UDWRi | Utah Division of Water Rights | James Greer | https://waterrights.utah.gov/
+
 
 
 ***
@@ -190,6 +195,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - WaterSourceTypeCV
 
 
+
 ***
 ### 5) Code File: 5_UTss_Sites.py
 Purpose: generate a list of polygon areas associated with the state agency specific site on aggregated water budget data.
@@ -215,7 +221,7 @@ Purpose: generate a list of polygon areas associated with the state agency speci
     - *SiteName* = *in_SiteName*, see *0_PreProcessUTSiteSpecificData.ipynb* for specifics.
     - *SiteNativeID* == *in_SiteNativeID*, see *0_PreProcessUTSiteSpecificData.ipynb* for specifics.
     - *SiteTypeCV* = *in_SiteTypeCV*, see *0_PreProcessUTSiteSpecificData.ipynb* for specifics.
-- Consolidate output dataframe into site specific information only by dropping duplicate entries, group by WaDE specific *SiteName*, *SiteNativeID*, *SiteTypeCV*, *Latitude*, and *Longitude* fields.
+- Consolidate output dataframe into site specific information only by dropping duplicate entries, group by WaDE specific *WaterSourceUUID*, *PODorPOUSite*, *SiteName*, *SiteNativeID*, *SiteTypeCV*, *Latitude*, and *Longitude* fields.
 - Assign site UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *sites.csv*.
@@ -230,6 +236,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - CoordinateMethodCV
 - EPSGCodeCV
 - SiteName
+
 
 
 ***
@@ -266,12 +273,22 @@ MethodUUID | OrganizationUUID | SiteUUID | VariableSpecificUUID  | Amount | Repo
 UDWRi_Water Use Data | UDWRi | UTss_S1 | UDWRi_Site Specific Withdrawal | 89.07131598 | 1979
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
-- ?
+- MethodUUID
+- VariableSpecificUUID
+- OrganizationUUID
+- WaterSourceUUID
+- SiteUUID
+- Amount
+- BeneficialUseCategory
+- DataPublicationDate
+- TimeframeEnd
+- TimeframeStart
+
 
 
 ***
 ### 7) Code File: 7_UTss_PODSiteToPOUSiteRelationships.py
-Purpose: generate linking element between POD and POU sites that share the same site specific amount record.
+Purpose: generate linking element between POD and POU sites that share the same water right.
 Note: podsitetopousiterelationships.csv output only needed if both POD and POU data is present, otherwise produces empty file.
 
 #### Inputs:
@@ -283,19 +300,19 @@ Note: podsitetopousiterelationships.csv output only needed if both POD and POU d
 
 #### Operation and Steps:
 - Read the sites.csv & sitespecificamounts.csv input files.
-- Create three temporary dataframes: one for sitespecificamounts, & two for site info that will store POD and POU data separately.
+- Remove unnecessary columns from needed sitespecificamounts.csv info.
+- Explode *SiteUUID* field to create unique rows.
+- Left-merge site.csv info to the sitespecificamounts dataframe via *SiteUUID* field.
+- Split into two new temporary dataframes: one POD centric, the other POU centric.
 - For the temporary POD dataframe...
-    - Read in site.csv data from sites.csv with a *PODSiteUUID* field = POD only.
-    - Create *PODSiteUUID* field = *SiteUUID*.
+    - Create *PODorPOUSite* field = POD.
 - For the temporary POU dataframe
-    - Read in site.csv data from sites.csv with a *PODSiteUUID* field = POU only.
-    - Create *POUSiteUUID* field = *SiteUUID*.
-- For the temporary sitespecificamounts dataframe, explode *SiteUUID* field to create unique rows.
-- Left-merge POD & POU dataframes to the sitespecificamounts dataframe via *SiteUUID* field.
-- Consolidate sitespecificamounts dataframe by grouping entries by *CommunityWaterSupplySystem* filed.
-- Explode the consolidated sitespecificamounts dataframe again using the *PODSiteUUID* field, and again for the *POUSiteUUID* field to create unique rows.
-- Perform error check on sitespecificamounts dataframe (check for NaN values)
-- If sitespecificamounts dataframe is not empty, export output dataframe *podsitetopousiterelationships.csv*.
+    - Create *PODorPOUSite* field = POU.
+- Merge POD & POU dataframes into single output dataframe, only using unique rows.
+- Find *SiteUUID* baesed on *PODorPOUSite* field.
+- Perform error check on waterallocations dataframe (check for NaN values)
+- If waterallocations is not empty, export output dataframe *podsitetopousiterelationships.csv*.
+
 
 
 ***

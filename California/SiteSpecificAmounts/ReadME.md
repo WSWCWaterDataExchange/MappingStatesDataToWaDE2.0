@@ -25,6 +25,7 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 - 4_CAss_WaterSources.py
 - 5_CAss_Sites.py
 - 6_CAss_SiteSpecificAmounts_fact.py
+- 7_CAss_PODSiteToPOUSiteRelationships.py
 
 
 
@@ -185,7 +186,7 @@ Purpose: generate a list of polygon areas associated with the state agency speci
     - *SiteName* = **Water System Name**.
     - *SiteNativeID* = **SABL_PWSID**.
     - *SiteTypeCV* = **BOUNDARY_T**.
-- Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *SiteNativeID*, *SiteName*, *SiteTypeCV*, *Longitude* & *Latitude* fields.
+- Consolidate output dataframe into site specific information only by dropping duplicate entries, group by WaDE specific *WaterSourceUUID*, *PODorPOUSite*, *SiteName*, *SiteNativeID*, *SiteTypeCV*, *Latitude*, and *Longitude* fields.
 - Assign site UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *sites.csv*.
@@ -251,6 +252,37 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - TimeframeStart
 
 
+
+***
+### 7) Code File: 7_CAss_PODSiteToPOUSiteRelationships.py
+Purpose: generate linking element between POD and POU sites that share the same water right.
+Note: podsitetopousiterelationships.csv output only needed if both POD and POU data is present, otherwise produces empty file.
+
+#### Inputs:
+- sites.csv
+- sitespecificamounts.csv
+
+#### Outputs:
+- podsitetopousiterelationships.csv
+
+#### Operation and Steps:
+- Read the sites.csv & sitespecificamounts.csv input files.
+- Remove unnecessary columns from needed sitespecificamounts.csv info.
+- Explode *SiteUUID* field to create unique rows.
+- Left-merge site.csv info to the sitespecificamounts dataframe via *SiteUUID* field.
+- Split into two new temporary dataframes: one POD centric, the other POU centric.
+- For the temporary POD dataframe...
+    - Create *PODorPOUSite* field = POD.
+- For the temporary POU dataframe
+    - Create *PODorPOUSite* field = POU.
+- Merge POD & POU dataframes into single output dataframe, only using unique rows.
+- Find *SiteUUID* baesed on *PODorPOUSite* field.
+- Perform error check on waterallocations dataframe (check for NaN values)
+- If waterallocations is not empty, export output dataframe *podsitetopousiterelationships.csv*.
+
+
+
+***
 ## Staff Contributions
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [California State Water Resources Control Board (CSWRCB)](https://www.waterboards.ca.gov/waterrights/water_issues/programs/ewrims/).
 
