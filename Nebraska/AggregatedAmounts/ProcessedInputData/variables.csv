@@ -1,11 +1,7 @@
-VariableSpecificUUID,VariableSpecificCV,VariableCV,AggregationStatisticCV,AggregationInterval,AggregationIntervalUnitCV,ReportYearStartMonth,ReportYearTypeCV,AmountUnitCV,MaximumAmountUnitCV
-Diversion All-CODWR,Diversion All,Withdrawal,Average,1,seconds,11,Irrigation,CFS,CFS
-1,"Consumptive Use, Irrigation",Consumptive use      ,Cumulative,1,Year,1-Oct,WaterYear,Acre feet,
-2,"Withdrawal, Irrigation",Withdrawal               ,Cumulative,1,Year,1-Oct,WaterYear,Acre feet,
-3,"Withdrawal, Public Supply",Withdrawal        ,Cumulative,1,Year,1-Oct,WaterYear,Acre feet,
-4,Allocation All,Allocation,Average,1,Day,11,Irrigation,CFS,AFY
-Allocation All-CODWR,Allocation All,Allocation,Average,1,Day,11,Irrigation,CFS,AFY
-"Consumptive Use, Irrigation","Consumptive Use, Irrigation",Consumptive use,Cumulative,1,Year,1-Oct,WaterYear,Acre feet,
-"Withdrawal, Irrigation","Withdrawal, Irrigation",Withdrawal,Cumulative,1,Year,1-Oct,WaterYear,Acre feet,
-"Withdrawal, Public Supply","Withdrawal, Public Supply",Withdrawal,Cumulative,1,Year,1-Oct,WaterYear,Acre feet,
-Allocation All,Allocation All,Allocation,Average,1,Day,11,Irrigation,CFS,AFY
+VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
+NE_Annual Groundwater Supply,1,Year,Cumulative,AFY,AFY,10,CalendarYear,Supply,Annual Groundwater Supply
+NE_Annual Surface Water Supply,1,Year,Cumulative,AFY,AFY,10,CalendarYear,Supply,Annual Surface Water Supply
+NE_Annual Groundwater Demand,1,Year,Cumulative,AFY,AFY,10,CalendarYear,Demand,Annual Groundwater Demand
+NE_Annual Surface Water Demand,1,Year,Cumulative,AFY,AFY,10,CalendarYear,Demand,Annual Surface Water Demand
+NE_Total Non-Consumptive Demand,1,Year,Cumulative,AFY,AFY,10,CalendarYear,Demand,Total Non-Consumptive Demand
+NE_Net Surface Water Loss Demand,1,Year,Cumulative,AFY,AFY,10,CalendarYear,Demand,Net Surface Water Loss Demand
