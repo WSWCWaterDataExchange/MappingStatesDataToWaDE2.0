@@ -8,17 +8,13 @@ The following data was used for aggregated water budget...
 - **INSIGHT_FinalSubBasinData_20151102** csv file containing subbasin wide aggregated water supply and demand data and info and were obtained from the provided [Insight](https://nednr.nebraska.gov/insight/about.html) services.  Data used was for the years 1988-2012.
 - **Insight Shape Files** for both basin and subbasin aggregated water supply and demand ares, obtain from obtained from the provided [Insight](https://nednr.nebraska.gov/insight/about.html) services.
 
-   
-![](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/California/AggregatedAmounts/RawInputData/Images/DAUCOvsCounty.PNG)
-**Figure 1:** Detailed Analysis Units by County (DAUCO) by CA vs County
-
 
 From the above mentioned services, 2 unique files were used as input to the Python codes that prepare WaDE 2.0 input files.  Input files used are as follows...
  - INSIGHT_FinalBasinData_20151102_input.csv
  - INSIGHT_FinalSubBasinData_20151102_input.csv
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share CDWR's aggregated water budget data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *NE_Aggregated Schema Mapping to WaDE_QA.xlsx*.  Six executable code files were used to extract the CDWR's aggregated water budget data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(AggregatedAmounts_facts)* is dependent on the previous files.  Those six code files are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share NEDNR's aggregated water budget data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *NE_Aggregated Schema Mapping to WaDE_QA.xlsx*.  Six executable code files were used to extract the NEDNR's aggregated water budget data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(AggregatedAmounts_facts)* is dependent on the previous files.  Those six code files are as follows...
 
 - 0_NEAggregatedDataPreprocess.ipynb
 - 1_NEag_Methods.py
@@ -174,7 +170,7 @@ Purpose: generate a list of water sources specific to an aggregated water budget
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
 - Assign state agency data info to the *WaDE WaterSources* specific columns.  See *NE_Aggregated Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
-    - *WaterSourceTypeCV* = Groundwater, Surface Water (see *0_NEAggregatedDataPreprocess.ipynb* for specifics).
+    - *WaterSourceTypeCV* = "Groundwater" or "Surface Water" (see *0_NEAggregatedDataPreprocess.ipynb* for specifics).
 - Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceTypeCV* field.
 - Assign water source UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
@@ -218,7 +214,7 @@ Purpose: generate a list of polygon areas associated with the state agency speci
 - Export output dataframe *sites.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-SiteUUID | ReportingUnitName | ReportingUnitTypeCV 
+ReportingUnitUUID | ReportingUnitName | ReportingUnitTypeCV 
 ---------- | ---------- | ------------ 
 NEag_RU1 | BIG BLUE | Basin
 
