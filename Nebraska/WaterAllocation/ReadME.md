@@ -12,12 +12,12 @@ The following data was used for water allocations...
 The following text summarizes the process used by the WSWC staff to prepare and share NeDNR's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *ID_Allocation Schema Mapping to WaDE_QA.xlsx*.  Six executable code files were used to extract the IDWR's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those six code files are as follows...
 
 - 0_PreProcessNebraskaAllocationData.ipynb
-- 1_NE_WR_Methods.py
-- 2_NE_WR_Variables.py
-- 3_NE_WR_Organizations.py
-- 4_NE_WR_WaterSources.py
-- 5_NE_WR_Sites.py
-- 6_NE_WR_AllocationsAmounts_facts.py
+- 1_NEwr_Methods.py
+- 2_NEwr_Variables.py
+- 3_NEwr_Organizations.py
+- 4_NEwr_WaterSources.py
+- 5_NEwr_Sites.py
+- 6_NEwr_AllocationsAmounts_facts.py
 
 
 ***
@@ -38,12 +38,12 @@ Purpose: Pre-process the Idaho input data files and merge them into one master f
 - Format **HUC12** to int datatype.
 - Generate WaDE *BeneficialUseCV* using the **SurfaceWaterWebSimpleSearch_metaData.pdf** for reference.
 - Inspect output dataframe for additional errors / datatypes.
-- Export output dataframe as new csv file, *P_IdahoMaster.csv*.
+- Export output dataframe as new csv file, *P_NebraskaMaster.csv*.
 - (optional) Export error check dataframe *DataRemoved_NeDNR.xlsx*.  Used to track WaDE problematic fields and for state review.
 
 
 ***
-### 1) Code File: 1_NE_WR_Methods.py
+### 1) Code File: 1_NEwr_Methods.py
 Purpose: generate legend of granular methods used on data collection.
 
 #### Inputs:
@@ -68,7 +68,7 @@ NEDNR_Water Rights | Surface Water | Modeled
 
 
 ***
-### 2) Code File: 2_NE_WR_Variables.py
+### 2) Code File: 2_NEwr_Variables.py
 Purpose: generate legend of granular variables specific to each state.
 
 #### Inputs:
@@ -93,7 +93,7 @@ NEDNR_Allocation All | 1 | Year | CFS
 
 
 ***
-### 3) Code File: 3_NE_WR_Organizations.py
+### 3) Code File: 3_NEwr_Organizations.py
 Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
 
 #### Inputs:
@@ -118,7 +118,7 @@ NEDNR | Nebraska Department of Natural Resources | Jennifer Schellpeper | https:
 
 
 ***
-### 4) Code File: 4_NE_WR_WaterSources.py
+### 4) Code File: 4_NEwr_WaterSources.py
 Purpose: generate a list of water sources specific to a water right.
 
 #### Inputs:
@@ -131,7 +131,7 @@ Purpose: generate a list of water sources specific to a water right.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign state agency info to the *WaDE WaterSources* specific columns.  See *ID_Allocation Schema Mapping to WaDE_QA* for specific details.  Items of note are as follows...
+- Assign state agency info to the *WaDE WaterSources* specific columns.  See *NE_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
     - *WaterSourceName* = **SourceName**, Unspecified if not given.
 - Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceName* field.
 - Assign water source UUID identifier to each (unique) row.
@@ -150,7 +150,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 
 ***
-### 5) Code File: 5_NE_WR_Sites.py
+### 5) Code File: 5_NEwr_Sites.py
 Purpose: generate a list of sites where water is diverted (also known as Points Of Diversion, PODs).
 
 #### Inputs:
@@ -163,7 +163,7 @@ Purpose: generate a list of sites where water is diverted (also known as Points 
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
-- Assign state agency info to the *WaDE Site* specific columns.  See *ID_Allocation Schema Mapping to WaDE_QA* for specific details.  Items of note are as follows...
+- Assign state agency info to the *WaDE Site* specific columns.  See *NE_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
     - *County* = **County**, Unspecified if not given.
     - *Latitude* = **Lat**.
     - *Longitude* = **Long**.
@@ -186,7 +186,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 
 ***
-### 6) Code File: 6_NE_WR_AllocationsAmounts_facts.py
+### 6) Code File: 6_NEwr_AllocationsAmounts_facts.py
 Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 
 #### Inputs:
@@ -204,7 +204,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
-- Assign **IDWR** info to the *WaDE Water Allocations* specific columns.  See *ID_Allocation Schema Mapping to WaDE_QA* for specific details.  Items of note are as follows...
+- Assign state agency info to the *WaDE Water Allocations* specific columns.  See *NE_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *AllocationAmount* = **ProGrant**.
     - *AllocationLegalStatusCV* = **RightStatus**, Unspecified if not given.

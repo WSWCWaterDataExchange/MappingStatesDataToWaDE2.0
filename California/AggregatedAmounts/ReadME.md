@@ -25,12 +25,12 @@ From the above mentioned [CDWR ft site:](ftp://mae2.sdsc.edu/published/), 5 uniq
 The following text summarizes the process used by the WSWC staff to prepare and share CDWR's aggregated water budget data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *CA_Aggregated Schema Mapping to WaDE_QAR.xlsx*.  Six executable code files were used to extract the CDWR's aggregated water budget data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(AggregatedAmounts_facts)* is dependent on the previous files.  Those six code files are as follows...
 
 - 0_CAAggregatedDataPreprocess.ipynb
-- 1_CAagg_Methods.py
-- 2_CAagg_Variables.py
-- 3_CAagg_Organizations.py
-- 4_CAagg_WaterSources.py
-- 5_CAagg_ReportingUnits.py
-- 6_CAagg_AggregatedAmounts_facts.py
+- 1_CAag_Methods.py
+- 2_CAag_Variables.py
+- 3_CAag_Organizations.py
+- 4_CAag_WaterSources.py
+- 5_CAag_ReportingUnits.py
+- 6_CAag_AggregatedAmounts_facts.py
 
 
 ***
@@ -65,7 +65,7 @@ Purpose: Pre-process the Arizona input data files into one master file for simpl
 
 
 ***
-### 1) Code File: - 1_CAagg_Methods.py
+### 1) Code File: - 1_CAag_Methods.py
 Purpose: generate legend of granular methods used on data collection.
 
 #### Inputs:
@@ -90,7 +90,7 @@ CDWR_Water Use | Unspecified | Water Use
 
 
 ***
-### 2) Code File: 2_CAagg_Variables.py
+### 2) Code File: 2_CAag_Variables.py
 Purpose: generate legend of granular variables specific to each state.
 
 #### Inputs:
@@ -115,7 +115,7 @@ CA_Consumptive Use | 1 | Year | AFY
 
 
 ***
-### 3) Code File: 3_CAagg_Organizations.py
+### 3) Code File: 3_CAag_Organizations.py
 Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
 
 #### Inputs:
@@ -140,7 +140,7 @@ CDWR | California Department of Water Resources |https://water.ca.gov/
 
 
 ***
-### 4) Code File: 4_CAagg_WaterSources.py
+### 4) Code File: 4_CAag_WaterSources.py
 Purpose: generate a list of water sources specific to an aggregated water budget data area.
 
 #### Inputs:
@@ -172,7 +172,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 
 ***
-### 5) Code File: 5_CAagg_ReportingUnits.py
+### 5) Code File: 5_CAag_ReportingUnits.py
 Purpose: generate a list of polygon areas associated with the state agency specific area on aggregated water budget data.
 
 #### Inputs:
@@ -196,7 +196,7 @@ Purpose: generate a list of polygon areas associated with the state agency speci
 - Export output dataframe *sites.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-SiteUUID | ReportingUnitName | ReportingUnitTypeCV 
+ReportingUnitUUID | ReportingUnitName | ReportingUnitTypeCV 
 ---------- | ---------- | ------------ 
 CAag_RU1| 101 | Planning Area
 
@@ -209,7 +209,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 
 ***
-### 6) Code File: 6_CAagg_AggregatedAmounts_facts.py
+### 6) Code File: 6_CAag_AggregatedAmounts_facts.py
 Purpose: generate master sheet of state agency specified area aggregated water budget information to import into WaDE 2.0.
 
 #### Inputs:
@@ -218,7 +218,7 @@ Purpose: generate master sheet of state agency specified area aggregated water b
 - variables.csv
 - organizations.csv
 - watersources.csv
-- sites.csv
+- reportingunits.csv
 
 #### Outputs:
 - aggregatedamounts.csv
@@ -228,7 +228,7 @@ Purpose: generate master sheet of state agency specified area aggregated water b
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
 - Assign state agency data info to the *WaDE Water Allocations* specific columns.  See *CA_Aggregated Schema Mapping to WaDE_QAR.xlsx* for specific details.  Items of note are as follows...
-    - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
+    - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *ReportingUnitUUID* from respective input csv files. See code for specific implementation of extraction.
     - *Amount* = inAmount, see *0_CAAggregatedDataPreprocess.ipynb* for specifics.
     - *BeneficialUseCategory* = inBenUse, see *0_CAAggregatedDataPreprocess.ipynb* for specifics.
     - *ReportYearCV* = inYear, see *0_CAAggregatedDataPreprocess.ipynb* for specifics.

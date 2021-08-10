@@ -7,7 +7,7 @@ The WaDE **OwnerClassificationTypeCV** field was assigned by utilizing a keyword
 
 Water right records can possess multiple owners.  Records within WaDE with multiple **AllocationOwner** entries were given a single best fist term for **OwnerClassificationTypeCV**, as WaDE only allows for a single entry (at this time 06/11/2021).  
 
-Terms not found in the keyword search were given the default value of 'In Review', for further review by the WSWC staff and state agencies.
+Terms not found in the keyword search were given the default value of **In Review**, for further review by the WSWC staff and state agencies.
 
 
 
