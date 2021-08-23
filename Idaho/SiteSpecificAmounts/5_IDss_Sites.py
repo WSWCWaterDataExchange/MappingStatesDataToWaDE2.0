@@ -1,26 +1,20 @@
-#Last Updated: 03/16/2021
+#Last Updated: 08/20/2021
 #Author: Ryan James (WSWC)
-#Purpose: To create IDsite specific site use information and population dataframe for WaDEQA 2.0.
-#Notes:
+#Purpose: To create ID site specific site use information and population dataframe for WaDEQA 2.0.
+#Notes:  1) Issue of using the same site for multiple datasets while keeping WaterSourceTypeCV separate.
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
 import numpy as np
+import pandas as pd
 import os
-
-# Site lat and long already converted.
-# from pyproj import Transformer, transform
-# transformer = Transformer.from_crs(4269, 4326)
-# # NAD83 projection = epsg:4269.
-# # WGS84 projection used by WaDE 2.0 = epsg:4326.
-
+from datetime import datetime
 
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -32,8 +26,13 @@ os.chdir(workingDir)
 fileInput = "RawinputData/P_idSSMaster.csv"
 df = pd.read_csv(fileInput)
 
+watersources_fileInput = "ProcessedInputData/watersources.csv" # watersource inputfile
+df_watersources = pd.read_csv(watersources_fileInput)  # watersources dataframe
+
 columnslist = [
     "SiteUUID",
+    "RegulatoryOverlayUUIDs",
+    "WaterSourceUUID",
     "CoordinateAccuracy",
     "CoordinateMethodCV",
     "County",
@@ -69,8 +68,14 @@ def assignSiteUUID(colrowValue):
 print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist, index=df.index)
 
+print("RegulatoryOverlayUUIDs")
+outdf['RegulatoryOverlayUUIDs'] = ""
+
+print("WaterSourceUUID")
+outdf['WaterSourceUUID'] = "IDss_WS1"  # no data to work with for ID ss water source.
+
 print("CoordinateAccuracy")
-outdf['CoordinateAccuracy'] = ""
+outdf['CoordinateAccuracy'] = "Unspecified"
 
 print("CoordinateMethodCV")
 outdf['CoordinateMethodCV'] = "Unspecified"
@@ -79,7 +84,7 @@ print("County")
 outdf['County'] = "Unspecified"
 
 print("EPSGCodeCV")
-outdf['EPSGCodeCV'] = "EPSG:4326"
+outdf['EPSGCodeCV'] = "4326"
 
 print("Geometry")
 outdf['Geometry'] = ""
@@ -106,19 +111,19 @@ print("NHDProductCV")
 outdf['NHDProductCV'] = ""
 
 print("PODorPOUSite")
-outdf['PODorPOUSite'] = ""
+outdf['PODorPOUSite'] = "POD"
 
 print("SiteName")
-outdf['SiteName'] = df['locationName_x'].astype(str)
+outdf['SiteName'] = df['locationName_x']  # See pre-processing.
 
 print("SiteNativeID")
-outdf['SiteNativeID'] = df['identifier'].astype(str)
+outdf['SiteNativeID'] = df['loc_uniqueId']  # See pre-processing.
 
 print("SitePoint")
 outdf['SitePoint'] = ""
 
 print("SiteTypeCV")
-outdf['SiteTypeCV'] = df['locationType']
+outdf['SiteTypeCV'] = df['locationType']  # See pre-processing.
 
 print("StateCV")
 outdf['StateCV'] = "ID"
@@ -131,9 +136,8 @@ outdf.reset_index()
 
 #####################################
 # Dropping duplicate
-# filter the whole table based on a unique combination of SiteNativeID, SiteName, SiteTypeCV, Longitude & Latitude
-outdf = outdf.drop_duplicates(subset=['SiteNativeID', 'SiteName', 'SiteTypeCV', 'Longitude', 'Latitude'])
-outdf = outdf.reset_index(drop=True)
+# filter the whole table based on a unique combination of WaterSourceUUID, PODorPOUSite, SiteNativeID, SiteName, SiteTypeCV, Longitude & Latitude.
+outdf = outdf.drop_duplicates(subset=['WaterSourceUUID', 'PODorPOUSite', 'SiteNativeID', 'SiteName', 'SiteTypeCV', 'Longitude', 'Latitude']).reset_index(drop=True)
 ######################################
 
 print("SiteUUID") # has to be one of the last.
@@ -145,11 +149,18 @@ outdf['SiteUUID'] = dftemp.apply(lambda row: assignSiteUUID(row['Count']), axis=
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 
 # SiteUUID
 outdf, dfpurge = TestErrorFunctions.SiteUUID_S_Check(outdf, dfpurge)
+
+# RegulatoryOverlayUUIDs
+outdf, dfpurge = TestErrorFunctions.RegulatoryOverlayUUIDs_S_Check(outdf, dfpurge)
+
+# WaterSourceUUID
+outdf100, dfpurge = TestErrorFunctions.WaterSourceUUID_S_Check(outdf, dfpurge)
 
 # CoordinateAccuracy
 outdf, dfpurge = TestErrorFunctions.CoordinateAccuracy_S_Check(outdf, dfpurge)
@@ -221,4 +232,3 @@ if(len(dfpurge.index) > 0):
     dfpurge.to_csv('ProcessedInputData/sites_missing.csv', index=False)
 
 print("Done.")
-

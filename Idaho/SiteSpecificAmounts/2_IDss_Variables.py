@@ -1,4 +1,4 @@
-#Last Updated: 03/16/2021
+#Last Updated: 08/20/2021
 #Author: Ryan James (WSWC)
 #Purpose: To create ID site specific variable use information and population dataframe for WaDE_QA 2.0.
 #Notes: 1) Used a list approach.  Needed to have five rows for VaribleCVs.
@@ -37,11 +37,11 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = "IDWR_Site Specific"
+outdf.VariableSpecificUUID = "IDWR_Reservoirs and Gages"
 
 outdf.AggregationInterval = "1"
 
-outdf.AggregationIntervalUnitCV = "Day"
+outdf.AggregationIntervalUnitCV = "Daily"
 
 outdf.AggregationStatisticCV = "Average"
 
@@ -53,9 +53,9 @@ outdf.ReportYearStartMonth = "1"
 
 outdf.ReportYearTypeCV = "CalendarYear"
 
-outdf.VariableCV = "Discharge"
+outdf.VariableCV = "Reservoirs and Gages"
 
-outdf.VariableSpecificCV = "Discharge"
+outdf.VariableSpecificCV = "Reservoirs and Gages Diversion"
 
 
 # Check required fields are not null

@@ -22,6 +22,7 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 - 4_IDss_WaterSources.py
 - 5_IDss_Sites.py
 - 6_IDss_SiteSpecificAmounts_fact.py
+- 7_IDss_PODSiteToPOUSiteRelationships.py
 
 
 
@@ -45,6 +46,7 @@ Purpose: Pre-process the state agency input data files into one master file for 
 - Extract year value from **timeStamp** field.
 - Review for errors.
 - Export output dataframe as new csv file, *P_idSSMaster.csv*.
+
 
 
 ***
@@ -95,7 +97,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
 ---------- | ---------- | ------------ | ------------
-IDWR_Site Specific | 1 | Average | CFS
+IDWR_Reservoirs and Gages | Daily | Average | CFS
 
 
 
@@ -173,12 +175,13 @@ Purpose: generate a list of polygon areas associated with the state agency speci
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
 - Assign state agency info to columns.  See *ID_SiteSpecificAmounts Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+    - Extract *WaterSourceUUID* respective watersourcecsv files. See code for specific implementation of extraction.
     - *Latitude* = **latitude**.
     - *Longitude* = **longitude**.
     - *SiteName* = **locationName**.
     - *SiteNativeID* = **identifier**.
     - *SiteTypeCV* = **locationType**.
-- Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *SiteNativeID*, *SiteName*, *SiteTypeCV*, *Longitude* & *Latitude* fields.
+- Consolidate output dataframe into site specific information only by dropping duplicate entries, group by WaDE specific *WaterSourceUUID*, *PODorPOUSite*, *SiteName*, *SiteNativeID*, *SiteTypeCV*, *Latitude*, and *Longitude* fields.
 - Assign site UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *sites.csv*.
@@ -242,6 +245,36 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - TimeframeStart
 
 
+***
+### 7) Code File: 7_IDss_PODSiteToPOUSiteRelationships.py
+Purpose: generate linking element between POD and POU sites that share the same water right.
+Note: podsitetopousiterelationships.csv output only needed if both POD and POU data is present, otherwise produces empty file.
+
+#### Inputs:
+- sites.csv
+- sitespecificamounts.csv
+
+#### Outputs:
+- podsitetopousiterelationships.csv
+
+#### Operation and Steps:
+- Read the sites.csv & sitespecificamounts.csv input files.
+- Remove unnecessary columns from needed sitespecificamounts.csv info.
+- Explode *SiteUUID* field to create unique rows.
+- Left-merge site.csv info to the sitespecificamounts dataframe via *SiteUUID* field.
+- Split into two new temporary dataframes: one POD centric, the other POU centric.
+- For the temporary POD dataframe...
+    - Create *PODorPOUSite* field = POD.
+- For the temporary POU dataframe
+    - Create *PODorPOUSite* field = POU.
+- Merge POD & POU dataframes into single output dataframe, only using unique rows.
+- Find *SiteUUID* baesed on *PODorPOUSite* field.
+- Perform error check on waterallocations dataframe (check for NaN values)
+- If waterallocations is not empty, export output dataframe *podsitetopousiterelationships.csv*.
+
+
+
+***
 ## Staff Contributions
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Idaho Dept. of Water Resources (IDWR)](https://idwr.idaho.gov/).
 

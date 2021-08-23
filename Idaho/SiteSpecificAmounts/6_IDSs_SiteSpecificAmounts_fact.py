@@ -1,25 +1,21 @@
-#Last Updated: 03/16/2021
+#Last Updated: 08/20/2021
 #Author: Ryan James (WSWC)
 #Purpose: To create ID site specific site amount use information and population dataframe WaDE_QA 2.0.
-#Notes:
+#Notes:  1) Because of the unique site situation with duplicate SiteNativeID's, we need a way to create a unique key for dictionary look up values.
 
 # Needed Libraries
 ############################################################################
 import numpy as np
 import pandas as pd
 import os
-
-# Site lat and long already converted.
-# from pyproj import Transformer, transform
-# transformer = Transformer.from_crs(4269, 4326)
-# # NAD83 projection = epsg:4269.
-# # WGS84 projection used by WaDE 2.0 = epsg:4326.
+from datetime import datetime
 
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
+
 
 
 # Inputs
@@ -32,7 +28,7 @@ variables_fileInput = "ProcessedInputData/variables.csv"
 watersources_fileInput = "ProcessedInputData/watersources.csv"
 sites_fileInput = "ProcessedInputData/sites.csv"
 
-df_DM = pd.read_csv(M_fileInput)  # The State's Master input dataframe.
+df_DM = pd.read_csv(M_fileInput)
 df_variables = pd.read_csv(variables_fileInput)  # Variable dataframe
 df_watersources = pd.read_csv(watersources_fileInput)  # WaterSources dataframe
 df_sites = pd.read_csv(sites_fileInput)  # Sites dataframe
@@ -69,27 +65,13 @@ columnslist = [
 # Custom Functions
 ############################################################################
 
-# For creating WaterSourceUUID
-# ID has a very simple ss watersource at this time.
-# WaterSourceUUIDdict = pd.Series(df_watersources.WaterSourceUUID.values, index=df_watersources.WaterSourceNativeID).to_dict()
-# def retrieveWaterSourceUUID(colrowValue):
-#     if colrowValue == '' or pd.isnull(colrowValue):
-#         outList = ''
-#     else:
-#         String1 = colrowValue
-#         try:
-#             outList = WaterSourceUUIDdict[String1]
-#         except:
-#             outList = ''
-#     return outList
-
 # For creating SiteUUID
 SitUUIDdict = pd.Series(df_sites.SiteUUID.values, index=df_sites.SiteNativeID).to_dict()
 def retrieveSiteUUID(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = ''
     else:
-        String1 = str(colrowValue).strip()
+        String1 = colrowValue
         try:
             outList = SitUUIDdict[String1]
         except:
@@ -106,16 +88,16 @@ print("MethodUUID")
 outdf['MethodUUID'] = "IDWR_AquaInfo"
 
 print("VariableSpecificUUID")
-outdf['VariableSpecificUUID'] = "IDWR_Site Specific"
+outdf['VariableSpecificUUID'] = "IDWR_Reservoirs and Gages"
 
 print("OrganizationUUID")
 outdf['OrganizationUUID'] = "IDWR"
 
 print("WaterSourceUUID")
-outdf['WaterSourceUUID'] = "IDss_WS1"
+outdf['WaterSourceUUID'] = "IDss_WS1"  # no data to work with for ID ss water source.
 
 print("SiteUUID") # Using SiteNativeID
-outdf['SiteUUID'] = df_DM.apply(lambda row: retrieveSiteUUID(row['identifier']), axis=1)
+outdf['SiteUUID'] = df_DM.apply(lambda row: retrieveSiteUUID(row['loc_uniqueId']), axis=1)
 
 print("Amount")
 outdf['Amount'] = df_DM['numericValue1'].astype(float)
@@ -127,7 +109,7 @@ print("AssociatedNativeAllocationIDs")
 outdf['AssociatedNativeAllocationIDs'] = ""
 
 print("CommunityWaterSupplySystem")
-outdf['CommunityWaterSupplySystem'] = ""
+outdf['CommunityWaterSupplySystem'] = df_DM['locationName_x']  # See pre-processing.
 
 print('BeneficialUseCategory')
 outdf['BeneficialUseCategory'] = "Unspecified"
@@ -139,7 +121,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = "03/16/2021"
+outdf['DataPublicationDate'] = '08/20/2021'
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""
@@ -166,7 +148,7 @@ print("PrimaryUseCategory")
 outdf['PrimaryUseCategory'] = "Unspecified"
 
 print("ReportYearCV")
-outdf['ReportYearCV'] = df_DM['in_ReportYear'].astype(int)
+outdf['ReportYearCV'] = df_DM['in_ReportYear'].astype(int)   # See pre-processing.
 
 print("SDWISIdentifier")
 outdf['SDWISIdentifier'] = ""
@@ -185,13 +167,15 @@ outdf.reset_index()
 # ############################################################################
 print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to upload data to QA here.
 
-print("Joining outdf duplicates based on AllocationNativeID...")
 outdf100 = outdf.replace(np.nan, '')  # Replaces NaN values with blank.
+outdf100 = outdf100.drop_duplicates() # Dropping duplicate enteries (if any).
+outdf100 = outdf100.reset_index(drop=True)
 
 
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
+
 dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
 dfpurge = dfpurge.assign(ReasonRemoved='')
 
@@ -264,11 +248,11 @@ outdf100, dfpurge = TestErrorFunctions.ReportYearCV_SS_Check(outdf100, dfpurge)
 # SDWISIdentifier
 outdf100, dfpurge = TestErrorFunctions.SDWISIdentifier_SS_Check(outdf100, dfpurge)
 
-# TimeframeEnd
-outdf100, dfpurge = TestErrorFunctions.TimeframeEnd_SS_Check(outdf100, dfpurge)
-
-# TimeframeStart
-outdf100, dfpurge = TestErrorFunctions.TimeframeStart_SS_Check(outdf100, dfpurge)
+# # TimeframeEnd
+# outdf100, dfpurge = TestErrorFunctions.TimeframeEnd_SS_Check(outdf100, dfpurge)
+#
+# # TimeframeStart
+# outdf100, dfpurge = TestErrorFunctions.TimeframeStart_SS_Check(outdf100, dfpurge)
 
 
 # Export to new csv

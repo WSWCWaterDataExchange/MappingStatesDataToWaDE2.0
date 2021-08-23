@@ -1,2 +1,2 @@
 VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
-IDWR_Site Specific,1,Day,Average,CFS,CFS,1,CalendarYear,Discharge,Discharge
+IDWR_Reservoirs and Gages,1,Daily,Average,CFS,CFS,1,CalendarYear,Reservoirs and Gages,Reservoirs and Gages Diversion

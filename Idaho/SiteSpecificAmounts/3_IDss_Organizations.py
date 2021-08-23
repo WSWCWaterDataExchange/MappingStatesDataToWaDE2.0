@@ -1,4 +1,4 @@
-#Last Updated: 03/16/2021
+#Last Updated: 08/20/2021
 #Author: Ryan James (WSWC)
 #Purpose: To create ID site specific organization use information and population dataframe for WaDE_QA 2.0.
 #Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
@@ -42,17 +42,17 @@ outdf.OrganizationContactEmail = "linda.davis@idwr.idaho.gov"
 
 outdf.OrganizationContactName = "Linda Davis"
 
-outdf.OrganizationDataMappingURL = "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Idaho/SiteSpecificAmounts"
+outdf.OrganizationDataMappingURL = "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Idaho"
 
-outdf.OrganizationName = "Idaho Dept. of Water Resources"
+outdf.OrganizationName = "Idaho Dept. of Water Rights"
 
 outdf.OrganizationPhoneNumber = "208-287-4800"
 
-outdf.OrganizationPurview = "Water Administration and Planning."
+outdf.OrganizationPurview = "Water Administration and Planning"
 
 outdf.OrganizationWebsite = "https://idwr.idaho.gov/"
 
-outdf.State = "ID"
+outdf.State = "UT"
 
 
 # Check required fields are not null

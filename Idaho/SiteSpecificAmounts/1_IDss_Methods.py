@@ -1,4 +1,4 @@
-#Last Updated: 03/16/2021
+#Last Updated: 08/20/2021
 #Author: Ryan James (WSWC)
 #Purpose: To create ID site specific methods use information and population dataframe for WaDE_QA 2.0.
 #Notes: 1) Used a list approach.  Needed to have two rows, one with surface water, the other with groundwater.
