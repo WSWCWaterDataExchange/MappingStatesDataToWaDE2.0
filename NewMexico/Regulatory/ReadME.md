@@ -1,127 +1,139 @@
 # NMOSE Reguloatory Overview Data Preparation for WaDE
-This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting New Mexico water rights data, made available by the [New Mexico Office of the State Engineer (NMOSE)](http://geospatialdata-ose.opendata.arcgis.com/datasets/ose-points-of-diversion), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and cost-effective way.
+This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting New Mexico regulatory overlay area data, made available by the [New Mexico Office of the State Engineer (NMOSE)](http://geospatialdata-ose.opendata.arcgis.com/datasets/ose-points-of-diversion), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and cost-effective way.
 
 
 ## Overview of Data Utilized
 The following data was used for water allocations...
-- **Interstate Stream Compact Regions**.  Areas for 
+- **Interstate Stream Compact Regions**.  Compacts are formal agreement between states concerning the use of water in rivers or streams, which flow across state boundaries. https://www.ose.state.nm.us/ISC/isc_compacts.php
+- **OSE Water Right District Boundary**.  The Water Rights Division's District Offices that administer surface water and groundwater rights within New Mexico and process water rights applications. https://ose.maps.arcgis.com/home/item.html?id=22b6dcc154224d44a20e095542dc14ec
+- **Special Conditions Water Right**.  Certain areas within New Mexico might contain restrictions that prohibit the drilling of wells within a basin in order to protect public health, water quality, existing water rights, or protect the state's water resources. https://ose.maps.arcgis.com/home/item.html?id=5617df05c3de4ac8b59594bd51cbab94.
 
+Six unique files were created to be used as input.  Input files used are as follows...
+- *InterstateStreamCompactRegions_input.csv*.  Contains regulatory data for stream compacts.
+- *NMInterstateStreamCompactRegions.shp*.  Shapefile for stream compat data.
+- *OSEWaterRightDistrictBoundary_input.csv*.  Contains regulatory data for state enginer water right districts.
+- *OSEDistrictBoundary.shp*.  Shapefile for water right districts.
+- *SpecialConditionsWaterRight_input.csv.*  Contains special interest regulatory data for state enginer water right districts.
+- *WaterRightRegulations.shp*.  Shapefile for special interest water right areas.
 
-
-
-- **Utah Points of Diversion (POD)** data files for surface and groundwater were downloaded from the Utah SGID services: https://opendata.gis.utah.gov/datasets/utahDNR::utah-points-of-diversion/explore?showTable=true
-- **Utah Plac eof Use* (POU)** data files were downloaded from the Utah SGID services: https://opendata.gis.utah.gov/datasets/utahDNR::utah-place-of-use/explore
-- **Utility Data & Information** related to POD water rights were downloaded from the PUBDUMP Database table dump Utility: https://www.waterrights.utah.gov/cgi-bin/pubdump.exe?SECURITYKEY=wrt2012access&DUMP_TYPE=DUMP_TAB&DBNAME=WRDB&DBTABLE=WATER_MASTER&Key=New+Table
-
-Seven unique files were created to be used as input.  Input files used are as follows...
-- PointsOfDiversion_input.csv.  Contains POD data.
-- Utah_Place_of_Use_input.csv.  Contains POU data.
-- WRCHEX_WATER_MASTER.csv.  Contains water right related data.
-- IRRIGATION_MASTER.csv.  Contains start and end date data for irrigation related to water rights. 
-- WTRUSE_MUNICIPAL.csv.  Contains community id related to water rights information.
-- WTRUSE_POWER.csv.  Contains power utility information related to water rights.
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share UDNR's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *[UT_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Utah/WaterAllocation/UT_Allocation%20Schema%20Mapping_WaDEQA.xlsx)*.  Seven executable code files were used to extract the UDNR's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those Seven code files are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share NMOSE's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *[NM_RegulatoryInfo Schema Mapping to WaDE_QA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/NewMexico/Regulatory/NM_RegulatoryInfo%20Schema%20Mapping%20to%20WaDE_QA.xlsx)*.  Five executable code files were used to extract the NMOSE's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those Seven code files are as follows...
 
-- 0_PreProcessUtahAllocationData.ipynb
-- 1_UTwr_Methods.py
-- 2_UTwr_Variables.py
-- 3_UTwr_Organizations.py
-- 4_UTwr_WaterSources.py
-- 5_UTwr_Sites.py
-- 6_UTwr_AllocationsAmounts_facts.py
-- 7_UTwr_PODSiteToPOUSiteRelationships.py
+- 0_NMRegulatorySourceDataPreprocess.ipynb
+- 1_NMre_Date.py
+- 2_NMre_Organizations.py
+- 3_NMre_ReportingUnits.py
+- 4_NMre_RegulatoryOverlay.py
+- 5_NMre_RegulatoryReportingUnits_fact.py
+
 
 
 ***
-### 0) Code File: 0_PreProcessUtahAllocationData.ipynb
+### 0) Code File: 0_NMRegulatorySourceDataPreprocess.ipynb
 Purpose: Pre-process the Wyoming input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
-- PointsOfDiversion_input.csv.
-- Utah_Place_of_Use_input.csv.
-- WRCHEX_WATER_MASTER.csv.
-- IRRIGATION_MASTER.csv.
-- WTRUSE_MUNICIPAL.csv.
-- WTRUSE_POWER.csv.
+- InterstateStreamCompactRegions_input.csv
+- NMInterstateStreamCompactRegions.shp
+- OSEWaterRightDistrictBoundary_input.csv
+- OSEDistrictBoundary.shp
+- SpecialConditionsWaterRight_input.csv.
+- WaterRightRegulations.shp
 
 #### Outputs:
- - P_UtahMaster.csv
+ - P_nmRegMaster.csv
+ - P_nmRegGeometry.csv
 
 #### Operation and Steps:
-- Read the input files and generate temporary input dataframes for both POD and POU water right data.  Goal will be to create two separate clean tables and concatenate to single output table.
-- POD and POU data share similar field and columns names.
-- Perform the following additional actions on the POD data...
-    - Left Merge POD data with WRCHEX_WATER_MASTER, IRRIGATION_MASTER, WTRUSE_MUNICIPAL, & WTRUSE_POWER data via **WRNUM** field.
-    - Assign WaDE *PODorPOUSite* value = POD.
-- Perform the following additional actions on the POU data...
-    - Remove empty **WRNUMS** rows, can't match those to anything.
-    - Left Merge POD data with WRCHEX_WATER_MASTER, IRRIGATION_MASTER, WTRUSE_MUNICIPAL, & WTRUSE_POWER data via **WRNUM** field.
-    - Assign WaDE *PODorPOUSite* value = POU.
-- Concatenate POD and POU data into single output dataframe.
-- Change / double check data type for **CFS**, **ACFT**, **IRRIGATION_DEPLETION**, **PRIORITY**, **DATE_FILED**, **DATE_TERMINATED** fields.
-- Create WaDE *WaterSourceTypeCV* field (see custom dictionary) using **TYPE** field.
-- Create WaDE *AllocationTimeframeStart* & *AllocationTimeframeEnd* field using **USE_BEG_DATE** & **USE_END_DATE** fields.
-- Create WaDE *SiteTypeCV* field (see custom dictionary) using **SOURCE** field (mostly cleaning input text).
-- Create WaDE *LegalStatusCV* field (see custom dictionary) using **STATUS** field (mostly cleaning input text).
-- Generate WaDE specific field *WaterSourceNativeID* from WaDE *WaterSourceTypeCV* fields.  Used to identify unique sources of water.
+- For tabular regulatory informatoin, read the input files and generate temporary input dataframes for Interstate Stream Compact Regions, OSE Water Right District Boundary, and Special Conditions Water Right Areas.
+- Perform the following additional actions on the Interstate Stream Compact Regions tabular data...
+    - *in_ReportingUnitName* = **Full_Name**
+    - *in_ReportingUnitNativeID* = **OID_**
+    - *in_ReportingUnitTypeCV* = "Interstate River Compact"
+    - *in_OversightAgency* = **States**
+    - *in_RegulatoryDescription& = **RegulatoryDescription**
+    - *in_RegulatoryName* = **Full_Name**
+    - *in_RegulatoryStatusCV* = "Active"
+    - *in_RegulatoryStatute* = (leave blank)
+    - *in_RegulatoryStatuteLink* = **URL**
+    - *in_StatutoryEffectiveDate* = **EffectiveDate**
+    - *in_RegulatoryOverlayTypeCV* = "Interstate River Compact"
+    - *in_WaterSourceTypeCV* = "Surface Water"
+- Perform the following additional actions on the OSE Water Right District Boundary tabular data...
+    - *in_ReportingUnitName* = **name**
+    - *in_ReportingUnitNativeID* = **ose_dist_i**
+    - *in_ReportingUnitTypeCV* = "Water Rights District"
+    - *in_OversightAgency* = **name** + OSE
+    - *in_RegulatoryDescription& = "District operated by a Water Master appointed by the Office of the State Engineer, who is charged with administering the state's water resources. The State Engineer has authority over the supervision, measurement, appropriation, and distribution of all surface and groundwater in New Mexico, including streams and rivers that cross state boundaries."
+    - *in_RegulatoryName* = **name** + District
+    - *in_RegulatoryStatusCV* = "Active"
+    - *in_RegulatoryStatute* = "https://nmonesource.com/nmos/nmsa/en/item/4402/index.do#!fragment/zoupio-_Toc74832537/BQCwhgziBcwMYgK4DsDWszIQewE4BUBTADwBdoAvbRABwEtsBaAfX2zgHYAWADgGYATAFY+HAJQAaZNlKEIARUSFcAT2gBydRIiEwuBIuVrN23fpABlPKQBCagEoBRADKOAagEEAcgGFHE0jAAI2hSdjExIA"
+    - *in_RegulatoryStatuteLink* = **URL**
+    - *in_StatutoryEffectiveDate* = "08/12/2021"
+    - *in_RegulatoryOverlayTypeCV* = "Water Rights District"
+    - *in_WaterSourceTypeCV* = "Surface and Groundwater"
+- Perform the following additional actions on the Special Conditions Water Right Areas tabular data...
+    - *in_ReportingUnitName* = **Name**
+    - *in_ReportingUnitNativeID* = **OID_**
+    - *in_ReportingUnitTypeCV* = ""Special Condition Water Right"
+    - *in_OversightAgency* = **jurisdicti**
+    - *in_RegulatoryDescription& = **requiremen**
+    - *in_RegulatoryName* = **Name**
+    - *in_RegulatoryStatusCV* = "Active"
+    - *in_RegulatoryStatute* = (leave blank)
+    - *in_RegulatoryStatuteLink* = (leave blank)
+    - *in_StatutoryEffectiveDate* = **effect_dat**
+    - *in_RegulatoryOverlayTypeCV* = "Special Condition Water Right"
+    - *in_WaterSourceTypeCV* = "Surface and Groundwater"
+- Concatenate Interstate Stream Compact Regions, OSE Water Right District Boundary, and Special Conditions Water Right Areas tabular dataframes into single output dataframe.
+- Generate WaDE specific field *in_RegulatoryOverlayNativeID* from WaDE *in_ReportingUnitName* fields.  Used to identify unique sources of water.
+- For shapefrile informatoin, read the input files and generate temporary input dataframes for Interstate Stream Compact Regions, OSE Water Right District Boundary, and Special Conditions Water Right Areas.
+- Perform the following additional actions on the Interstate Stream Compact Regions shapefile data...
+    - *in_ReportingUnitName* = **Full_Name**
+    - *in_ReportingUnitTypeCV* = "Interstate River Compact"
+    - *in_Geomerty* = **geometry**
+- Perform the following additional actions on the Right District Boundary shapefile data...
+    - *in_ReportingUnitName* = **name**
+    - *in_ReportingUnitTypeCV* = "Water Rights District"
+    - *in_Geomerty* = **geometry**
+- Perform the following additional actions on the Special Conditions Water Right Areas shapefile data...
+    - *in_ReportingUnitName* = **Name**
+    - *in_ReportingUnitTypeCV* = "Special Condition Water Right"
+    - *in_Geomerty* = **geometry**
+- Concatenate Interstate Stream Compact Regions, OSE Water Right District Boundary, and Special Conditions Water Right Areas shapefile dataframes into single output dataframe.
 - Inspect output dataframe for additional errors / datatypes.
-- Export output dataframe as new csv file, *P_UtahMaster.csv*.
+- Export output dataframe as new csv file, *P_nmRegMaster.csv* for tabular data and *P_nmRegGeometry.csv* for geometry data.
+
 
 
 ***
-### 1) Code File: 1_UTwr_Methods.py
+### 1) Code File: 1_NMre_Date.py
 Purpose: generate legend of granular methods used on data collection.
 
 #### Inputs:
 - None
 
 #### Outputs:
-- methods.csv
-- methods_missing.csv (error check only)
+- date.csv
+- date_missing.csv (error check only)
 
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE Method* specific columns.
-- Assign **UDNR** info to the *WaDE Method* specific columns (this was hardcoded by hand for simplicity).
-- Assign method UUID identifier to each (unique) row.
+- Populate output dataframe with *WaDE Date* specific columns.
+- Assign **NMOSE** info to the *WaDE Date* specific columns (this was hardcoded by hand for simplicity).
 - Perform error check on output dataframe.
 - Export output dataframe *methods.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
----------- | ---------- | ------------
-UT_Water Allocation | Surface Ground | Adjudicated
+Date | Year | MethodTypeCV
+---------- | ---------- 
+8/12/2021 | 2021
 
-
-***
-### 2) Code File: 2_UTwr_Variables.py
-Purpose: generate legend of granular variables specific to each state.
-
-#### Inputs:
-- None
-
-#### Outputs:
-- variables.csv
-- variables_missing.csv (error check only)
-
-#### Operation and Steps:
-- Generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE Variable* specific columns.
-- Assign **UDNR** info to the *WaDE Variable* specific columns (this was hardcoded by hand for simplicity).
-- Assign variable UUID identifier to each (unique) row.
-- Perform error check on output dataframe.
-- Export output dataframe *variables.csv*.
-
-#### Sample Output (WARNING: not all fields shown):
-VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
----------- | ---------- | ------------ | ------------
-WY_Allocation | 1 | Year | CFS
 
 
 ***
-### 3) Code File: 3_UTwr_Organizations.py
+### 2) Code File: 2_NMre_Organizations.py
 Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
 
 #### Inputs:
@@ -134,7 +146,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Organizations* specific columns.
-- Assign **UTDWRi** info to the *WaDE Organizations* specific columns (this was hardcoded by hand for simplicity).
+- Assign **NMOSE** info to the *WaDE Organizations* specific columns (this was hardcoded by hand for simplicity).
 - Assign organization UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *organizations.csv*.
@@ -142,171 +154,136 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
 ---------- | ---------- | ------------ | ------------
-UTDWRi | Utah Division of Water Rights | James Greer |"https://water.utah.gov/"
+NMOSE | New Mexico Office of the State Engineer | David Hatchner (GIS Manager) | "https://www.ose.state.nm.us/"
 
-
-***
-### 4) Code File: 4_UTwr_WaterSources.py
-Purpose: generate a list of water sources specific to a water right.
-
-#### Inputs:
-- P_UtahMaster.csv
-
-#### Outputs:
-- waterSources.csv
-- watersources_missing.csv (error check only)
-
-#### Operation and Steps:
-- Read the input file and generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign **UDNR** info to the *WaDE WaterSources* specific columns.  See *[UT_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Utah/WaterAllocation/UT_Allocation%20Schema%20Mapping_WaDEQA.xlsx)* for specific details.  Items of note are as follows...
-    - *WaterSourceName* = Unspecified.
-    - *WaterSourceNativeID* = *in_WaterSourceNativeID*, see *0_PreProcessUtahAllocationData.ipynb* for specifics.
-    - *WaterSourceTypeCV* = *in_WaterSourceTypeCV*, see *0_PreProcessUtahAllocationData.ipynb* for specifics.
-- Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceName* & *WaterSourceTypeCV* fields.
-- Assign water source UUID identifier to each (unique) row.
-- Perform error check on output dataframe.
-- Export output dataframe *WaterSources.csv*.
-
-#### Sample Output (WARNING: not all fields shown):
-WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceNativeID | WaterSourceTypeCV
----------- | ---------- | ------------ | ------------ | ------------
-UTwr_WS1 | Fresh | Unspecified | WaDEUT_WS1 | Groundwater
-
-Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
-- WaterSourceUUID
-- WaterQualityIndicatorCV
-- WaterSourceTypeCV
 
 
 ***
-### 5) Code File: 5_UTwr_Sites.py
-Purpose: generate a list of sites information.
+### 3) Code File: 5_NMre_ReportingUnits.py
+Purpose: generate a list of polygon areas associated with the state agency specific area on regulatory overlay area data.
 
 #### Inputs:
-- P_UtahMaster.csv
+- P_nmRegMaster.csv
+- P_nmRegGeometry.csv
 
 #### Outputs:
-- sites.csv
-- waterSources.csv
-- sites_missing.csv (error check only)
+- reportingunits.csv
+- reportingunits_missing.csv (error check only)
 
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE Site* specific columns.
-- Assign **UDNR** info to the *WaDE Site* specific columns.  See *[UT_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Utah/WaterAllocation/UT_Allocation%20Schema%20Mapping_WaDEQA.xlsx)* for specific details.  Items of note are as follows...
-    - Extract *WaterSourceUUID* from waterSources.csv input csv file. See code for specific implementation of extraction.
-    - *Latitude* = **Latitude**.
-    - *Longitude* = **Longitude**.
-    - *SiteName* = **SOURCE**, Unspecified if not given.
-    - *SiteNativeID* = **OBJECTID**.
-    - *SiteTypeCV* = *in_SiteTypeCV*, see *0_PreProcessUtahAllocationData.ipynb* for specifics.
-- Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *SiteNativeID*, *SiteName*, *SiteTypeCV*, *Longitude* & *Latitude* fields.
-- Assign site UUID identifier to each (unique) row.
+- Populate output dataframe with *WaDE ReportingUnits* specific columns.
+- Assign state agency data info to the *WaDE ReportingUnits* specific columns.  See *NM_RegulatoryInfo Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+    - *ReportingUnitName* = in_ReportingUnitName, see *0_NMRegulatorySourceDataPreprocess.ipynb.ipynb* for specifics.
+    - *ReportingUnitNativeID* = in_ReportingUnitNativeID, see *0_NMRegulatorySourceDataPreprocess.ipynb.ipynb* for specifics.
+    - *ReportingUnitTypeCV* = in_ReportingUnitTypeCV, see *0_NMRegulatorySourceDataPreprocess.ipynb.ipynb* for specifics.
+    - *Geometry* = WKT created **Geometry**, see *0_NMRegulatorySourceDataPreprocess.ipynb.ipynb* for specifics.
+- Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *ReportingUnitName*, *ReportingUnitNativeID* & *ReportingUnitTypeCV* fields.
+- Assign reportingunits UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *sites.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-SiteUUID | WaterSourceUUID | CoordinateMethodCV | Latitude | Longitude | SiteName
----------- | ---------- | ---------- | ------------ | ------------ | ------------
-UTwr_S1 | UTwr_WS1| Unspecified | 38.6227946 | -109.401786199999 | Non-Production Well: Test
+ReportingUnitUUID | ReportingUnitName | ReportingUnitTypeCV 
+---------- | ---------- | ------------ 
+NMre_RU1 | Costilla Creek Compact | Interstate River Compact
 
-Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
-- SiteUUID 
-- CoordinateMethodCV
-- EPSGCodeCV
-- SiteName
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *reportingunits_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the reportingunits include the following...
+- ReportingUnitUUID
+- ReportingUnitName
+- ReportingUnitNativeID
+- ReportingUnitTypeCV
+- StateCV
+
 
 
 ***
-### 6) Code File: 6_UTwr_AllocationsAmounts_facts.py
-Purpose: generate master sheet of water allocations to import into WaDE 2.0.
+### 4) Code File: 4_NMre_RegulatoryOverlay.py
+Purpose: generate master sheet of regulatory overlay area information to import into WaDE 2.0.
 
 #### Inputs:
-- P_UtahMaster.csv
-- methods.csv
-- variables.csv
-- organizations.csv
-- sites.csv
+- P_nmRegMaster.csv.csv
 
 #### Outputs:
-- waterallocations.csv
-- waterallocations_missing.csv (error check only)
+- regulatoryoverlays.csv
+- regulatoryoverlays_missing.csv (error check only)
 
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE Water Allocations* specific columns.
-- Assign **UDNR** info to the *WaDE Water Allocations* specific columns.  See *[UT_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Utah/WaterAllocation/UT_Allocation%20Schema%20Mapping_WaDEQA.xlsx)* for specific details.  Items of note are as follows...
-    - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
-    - *AllocationApplicationDate* = **DATE_FILED**.
-    - *AllocationCommunityWaterSupplySystem* = **MUNICIPALITY**.
-    - *AllocationCropDutyAmount* = **IRRIGATION_DEPLETION**.
-    - *AllocationExpirationDate* = **DATE_TERMINATED**.
-    - *AllocationFlow_CFS* = **CFS**.
-    - *AllocationLegalStatusCV* = *in_LegalStatus*, see *0_PreProcessUtahAllocationData.ipynb* for specifics. 
-    - *AllocationNativeID* = **WRNUM**.
-    - *AllocationOwner* =  **OWNER**.
-    - *AllocationPriorityDate* = **PRIORITY**.
-    - *AllocationTimeframeEnd* = *in_AllocationTimeframeEnd*, see *0_PreProcessUtahAllocationData.ipynb* for specifics.
-    - *AllocationTimeframeStart* = *in_AllocationTimeframeStart*, see *0_PreProcessUtahAllocationData.ipynb* for specifics. 
-    - *AllocationVolume_AF* = **ACFT**.
-    - *BeneficialUseCategory* = **USES**.   
-- Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.
+- Populate output dataframe with *WaDE Water Regulatory Overlays* specific columns.
+- Assign state agency data info to the *WaDE Water Regulatory Overlays* specific columns.  See *NM_RegulatoryInfo Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+    - *OversightAgency* = in_OversightAgency, see *0_NMRegulatorySourceDataPreprocess.ipynb* for specifics.
+    - *RegulatoryDescription* = in_RegulatoryDescription, see *0_NMRegulatorySourceDataPreprocess.ipynb* for specifics.
+    - *RegulatoryName* = in_RegulatoryName, see *0_NMRegulatorySourceDataPreprocess.ipynb* for specifics.
+    - *RegulatoryOverlayNativeID* = in_RegulatoryOverlayNativeID, see *0_NMRegulatorySourceDataPreprocess.ipynb* for specifics.
+    - *RegulatoryStatusCV* = in_RegulatoryStatusCV, see *0_NMRegulatorySourceDataPreprocess.ipynb* for specifics.
+    - *RegulatoryStatuteLink* = in_RegulatoryStatuteLink, see *0_NMRegulatorySourceDataPreprocess.ipynb* for specifics.
+    - *StatutoryEffectiveDate* = in_StatutoryEffectiveDate, see *0_NMRegulatorySourceDataPreprocess.ipynb* for specifics.
+    - *RegulatoryOverlayTypeCV* = in_RegulatoryOverlayTypeCV, see *0_NMRegulatorySourceDataPreprocess.ipynb* for specifics.
+    - *WaterSourceTypeCV* = in_WaterSourceTypeCV, see *0_NMRegulatorySourceDataPreprocess.ipynb* for specifics. 
 - Perform error check on output dataframe.
-- Export output dataframe *waterallocations.csv*.
+- Export output dataframe *regulatoryoverlays.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-AllocationNativeID | AllocationFlow_CFS | AllocationLegalStatusCV | BeneficialUseCategory
----------- | ---------- | ------------ | ------------
-01-1000 | 0 | Diligence Claim | Other,Stockwatering
+RegulatoryOverlayUUID | OversightAgency | RegulatoryName | RegulatoryStatusCV | StatutoryEffectiveDate
+---------- | ---------- | ------------ | ------------ | ------------
+CDWR_Water Use | CO,NM | Costilla Creek Compact | Active | 1/1/1946 
 
-Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
-- MethodUUID
-- VariableSpecificUUID
-- OrganizationUUID
-- SiteUUID
-- AllocationPriorityDate
-- BeneficialUseCategory
-- AllocationAmount or AllocationMaximum
-- DataPublicationDate
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *regulatoryoverlays_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water regulatory overlays include the following...
+- RegulatoryOverlayUUID
+- OversightAgency
+- RegulatoryDescription
+- RegulatoryName
+- RegulatoryStatusCV
+- StatutoryEffectiveDate
+
 
 
 ***
-### 7) Code File: 7_UTwr_PODSiteToPOUSiteRelationships.py
-Purpose: generate linking element between POD and POU sites that share the same water right.
-Note: podsitetopousiterelationships.csv output only needed if both POD and POU data is present, otherwise produces empty file.
+### 5_NMre_RegulatoryReportingUnits_fact.py
+Purpose: generate master sheet of regulatory overlay area information and how it algins with reporting unit area information.
 
 #### Inputs:
-- sites.csv
-- waterallocations.csv
+- P_nmRegMaster.csv
+- reportingunits.csv
+- regulatoryoverlays.csv
 
 #### Outputs:
-- podsitetopousiterelationships.csv
+- regulatoryreportingunits.csv
+- regulatoryreportingunits.csv (error check only)
 
 #### Operation and Steps:
-- Read the sites.csv & waterallocations.csv input files.
-- Create three temporary dataframes: one for waterallocations, & two for site info that will store POD and POU data separately.
-- For the temporary POD dataframe...
-    - Read in site.csv data from sites.csv with a *PODSiteUUID* field = POD only.
-    - Create *PODSiteUUID* field = *SiteUUID*.
-- For the temporary POU dataframe
-    - Read in site.csv data from sites.csv with a *PODSiteUUID* field = POU only.
-    - Create *POUSiteUUID* field = *SiteUUID*.
-- For the temporary waterallocations dataframe, explode *SiteUUID* field to create unique rows.
-- Left-merge POD & POU dataframes to the waterallocations dataframe via *SiteUUID* field.
-- Consolidate waterallocations dataframe by grouping entries by *AllocationNativeID* filed.
-- Explode the consolidated waterallocations dataframe again using the *PODSiteUUID* field, and again for the *POUSiteUUID* field to create unique rows.
-- Perform error check on waterallocations dataframe (check for NaN values)
-- If waterallocations dataframe is not empty, export output dataframe *podsitetopousiterelationships.csv*.
+- Read the input file and generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE Regulatory Reportingunits* specific columns.
+- Assign state agency data info to the *WaDE Regulatory Reportingunits* specific columns.  See *NM_RegulatoryInfo Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+    - OrganizationUUID = "NMOSE"
+    - *RegulatoryOverlayUUID* = extract from regulatoryoverlays.csv.  Match via in_RegulatoryName, see *0_NMRegulatorySourceDataPreprocess.ipynb.ipynb* for specifics.
+    - *ReportingUnitUUID* = extract from reportingunits.csv.  Match via in_ReportingUnitName, see *0_NMRegulatorySourceDataPreprocess.ipynb.ipynb* for specifics. 
+- Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *ReportingUnitName*, *ReportingUnitNativeID* & *ReportingUnitTypeCV* fields.
+- Assign reportingunits UUID identifier to each (unique) row.
+- Perform error check on output dataframe.
+- Export output dataframe *regulatoryreportingunits.csv*.
+
+#### Sample Output (WARNING: not all fields shown):
+DataPublicationDate | OrganizationUUID | RegulatoryOverlayUUID | ReportingUnitUUID 
+---------- | ---------- | ------------ | ------------ 
+8/12/2021 | NMOSE | NMre_RO1 | NMre_RU1
+
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *regulatoryreportingunits.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the regulatory reportingunits include the following...
+- DataPublicationDate
+- OrganizationUUID
+- RegulatoryOverlayUUID
+- ReportingUnitUUID
+
 
 
 ***
 ## Staff Contributions
-Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Utah Department of Natural Resources (UDNR)](https://naturalresources.utah.gov/).
+Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [New Mexico Office of the State Engineer (NMOSE)](http://geospatialdata-ose.opendata.arcgis.com/datasets/ose-points-of-diversion).
 
 WSWC Staff
 - Adel Abdallah <adelabdallah@wswc.utah.gov>
 - Ryan James <rjames@wswc.utah.gov>
 
-UDNR Staff
-- Craig Miller <craigmiller@utah.gov>
+NMOSE Staff
+- David Hatchner (GIS Manager) <ose.webmaster@state.nm.us>
