@@ -1,0 +1,4 @@
+DataPublicationDate,OrganizationUUID,RegulatoryOverlayUUID,ReportingUnitUUID,ReasonRemoved,index
+2021-08-12,NMOSE,,NMre_RU26,Bad RegulatoryOverlayUUID,25.0
+2021-08-12,NMOSE,,NMre_RU55,Bad RegulatoryOverlayUUID,51.0
+2021-08-12,NMOSE,,NMre_RU63,Bad RegulatoryOverlayUUID,58.0

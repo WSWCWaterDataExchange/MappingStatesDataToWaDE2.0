@@ -1,9 +1,0 @@
-ReportingUnitUUID,EPSGCodeCV,ReportingUnitName,ReportingUnitNativeID,ReportingUnitProductVersion,ReportingUnitTypeCV,ReportingUnitUpdateDate,StateCV,Geometry
-NMRU_1,EPSG:4326,Costilla Creek Compact,Unspecified,,Tributary,,NM,
-NMRU_2,EPSG:4326,Animas-La Plata Project Compact,Unspecified,,Tributary,,NM,
-NMRU_3,EPSG:4326,La Plata River Compact,Unspecified,,Tributary,,NM,
-NMRU_4,EPSG:4326,Upper Colorado River Basin Compact,Unspecified,,Tributary,,NM,
-NMRU_5,EPSG:4326,Pecos River Compact,Unspecified,,Tributary,,NM,
-NMRU_6,EPSG:4326,Canadian River Compact,Unspecified,,Tributary,,NM,
-NMRU_7,EPSG:4326,Rio Grande Compact,Unspecified,,Tributary,,NM,
-NMRU_8,EPSG:4326,Colorado River Basin Compact,Unspecified,,Tributary,,NM,
