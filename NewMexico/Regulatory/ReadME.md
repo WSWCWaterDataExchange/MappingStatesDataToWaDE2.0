@@ -9,16 +9,16 @@ The following data was used for water allocations...
 - **Special Conditions Water Right**.  Certain areas within New Mexico might contain restrictions that prohibit the drilling of wells within a basin in order to protect public health, water quality, existing water rights, or protect the state's water resources. https://ose.maps.arcgis.com/home/item.html?id=5617df05c3de4ac8b59594bd51cbab94.
 
 Six unique files were created to be used as input.  Input files used are as follows...
-- *InterstateStreamCompactRegions_input.csv*.  Contains regulatory data for stream compacts.
+- *InterstateStreamCompactRegions_input.csv*.  Contains tabular regulatory data for stream compacts.
 - *NMInterstateStreamCompactRegions.shp*.  Shapefile for stream compat data.
-- *OSEWaterRightDistrictBoundary_input.csv*.  Contains regulatory data for state enginer water right districts.
+- *OSEWaterRightDistrictBoundary_input.csv*.  Contains tabular regulatory data for state enginer water right districts.
 - *OSEDistrictBoundary.shp*.  Shapefile for water right districts.
-- *SpecialConditionsWaterRight_input.csv.*  Contains special interest regulatory data for state enginer water right districts.
+- *SpecialConditionsWaterRight_input.csv.*  Contains tabular special interest regulatory data for state enginer water right districts.
 - *WaterRightRegulations.shp*.  Shapefile for special interest water right areas.
 
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share NMOSE's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *[NM_RegulatoryInfo Schema Mapping to WaDE_QA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/NewMexico/Regulatory/NM_RegulatoryInfo%20Schema%20Mapping%20to%20WaDE_QA.xlsx)*.  Five executable code files were used to extract the NMOSE's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those Seven code files are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share NMOSE's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *[NM_RegulatoryInfo Schema Mapping to WaDE_QA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/NewMexico/Regulatory/NM_RegulatoryInfo%20Schema%20Mapping%20to%20WaDE_QA.xlsx)*.  Six executable code files were used to extract the NMOSE's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining four code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(RegulatoryReportingUnits_fact)_ is depended on the previous files.  Those Six code files are as follows...
 
 - 0_NMRegulatorySourceDataPreprocess.ipynb
 - 1_NMre_Date.py
@@ -31,7 +31,7 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 
 ***
 ### 0) Code File: 0_NMRegulatorySourceDataPreprocess.ipynb
-Purpose: Pre-process the Wyoming input data files and merge them into one master file for simple dataframe creation and extraction.
+Purpose: Pre-process the state agency input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
 - InterstateStreamCompactRegions_input.csv
@@ -46,7 +46,7 @@ Purpose: Pre-process the Wyoming input data files and merge them into one master
  - P_nmRegGeometry.csv
 
 #### Operation and Steps:
-- For tabular regulatory informatoin, read the input files and generate temporary input dataframes for Interstate Stream Compact Regions, OSE Water Right District Boundary, and Special Conditions Water Right Areas.
+- For tabular regulatory information, read the input files and generate temporary input dataframes for Interstate Stream Compact Regions, OSE Water Right District Boundary, and Special Conditions Water Right Areas.
 - Perform the following additional actions on the Interstate Stream Compact Regions tabular data...
     - *in_ReportingUnitName* = **Full_Name**
     - *in_ReportingUnitNativeID* = **OID_**
@@ -76,7 +76,7 @@ Purpose: Pre-process the Wyoming input data files and merge them into one master
 - Perform the following additional actions on the Special Conditions Water Right Areas tabular data...
     - *in_ReportingUnitName* = **Name**
     - *in_ReportingUnitNativeID* = **OID_**
-    - *in_ReportingUnitTypeCV* = ""Special Condition Water Right"
+    - *in_ReportingUnitTypeCV* = "Special Condition Water Right"
     - *in_OversightAgency* = **jurisdicti**
     - *in_RegulatoryDescription& = **requiremen**
     - *in_RegulatoryName* = **Name**
@@ -87,8 +87,8 @@ Purpose: Pre-process the Wyoming input data files and merge them into one master
     - *in_RegulatoryOverlayTypeCV* = "Special Condition Water Right"
     - *in_WaterSourceTypeCV* = "Surface and Groundwater"
 - Concatenate Interstate Stream Compact Regions, OSE Water Right District Boundary, and Special Conditions Water Right Areas tabular dataframes into single output dataframe.
-- Generate WaDE specific field *in_RegulatoryOverlayNativeID* from WaDE *in_ReportingUnitName* fields.  Used to identify unique sources of water.
-- For shapefrile informatoin, read the input files and generate temporary input dataframes for Interstate Stream Compact Regions, OSE Water Right District Boundary, and Special Conditions Water Right Areas.
+- Generate WaDE specific field *in_RegulatoryOverlayNativeID* from WaDE *in_ReportingUnitName* fields.  Used to identify unique regulatory ovlary reporting areas.
+- For shapefile information, read the input files and generate temporary input dataframes for Interstate Stream Compact Regions, OSE Water Right District Boundary, and Special Conditions Water Right Areas.
 - Perform the following additional actions on the Interstate Stream Compact Regions shapefile data...
     - *in_ReportingUnitName* = **Full_Name**
     - *in_ReportingUnitTypeCV* = "Interstate River Compact"
@@ -126,7 +126,7 @@ Purpose: generate legend of granular methods used on data collection.
 - Export output dataframe *methods.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-Date | Year | MethodTypeCV
+Date | Year 
 ---------- | ---------- 
 8/12/2021 | 2021
 
@@ -154,13 +154,13 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
 ---------- | ---------- | ------------ | ------------
-NMOSE | New Mexico Office of the State Engineer | David Hatchner (GIS Manager) | "https://www.ose.state.nm.us/"
+NMOSE | New Mexico Office of the State Engineer | David Hatchner (GIS Manager) | https://www.ose.state.nm.us/
 
 
 
 ***
-### 3) Code File: 5_NMre_ReportingUnits.py
-Purpose: generate a list of polygon areas associated with the state agency specific area on regulatory overlay area data.
+### 3) Code File: 3_NMre_ReportingUnits.py
+Purpose: generate a list of polygon areas associated with the state agency regulatory overlay area data.
 
 #### Inputs:
 - P_nmRegMaster.csv
@@ -250,7 +250,7 @@ Purpose: generate master sheet of regulatory overlay area information and how it
 
 #### Outputs:
 - regulatoryreportingunits.csv
-- regulatoryreportingunits.csv (error check only)
+- regulatoryreportingunits_missing.csv (error check only)
 
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
@@ -269,7 +269,7 @@ DataPublicationDate | OrganizationUUID | RegulatoryOverlayUUID | ReportingUnitUU
 ---------- | ---------- | ------------ | ------------ 
 8/12/2021 | NMOSE | NMre_RO1 | NMre_RU1
 
-Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *regulatoryreportingunits.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the regulatory reportingunits include the following...
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *regulatoryreportingunits_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the regulatory reportingunits include the following...
 - DataPublicationDate
 - OrganizationUUID
 - RegulatoryOverlayUUID
