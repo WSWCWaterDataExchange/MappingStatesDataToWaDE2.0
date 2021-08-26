@@ -174,7 +174,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 
 ***
-### 5_NEre_RegulatoryReportingUnits_fact.py
+### 5) Code File: 5_NEre_RegulatoryReportingUnits_fact.py
 Purpose: generate master sheet of regulatory overlay area information and how it algins with reporting unit area information.
 
 #### Inputs:
@@ -212,7 +212,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 
 ***
-### 6_NEre_RegulatoryOverlayBridge_sites_fact.py
+### 6) Code File: 6_NEre_RegulatoryOverlayBridge_sites_fact.py
 Purpose: generate master sheet of regulatory overlay area information and how it algins with reporting unit area information.
 
 #### Inputs:
