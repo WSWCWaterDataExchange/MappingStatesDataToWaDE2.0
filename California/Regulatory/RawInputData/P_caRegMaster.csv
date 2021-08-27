@@ -1,0 +1,516 @@
+index,Basin_Subbasin_Number,Basin_Subbasin_Name,Priority,in_OversightAgency
+0,1-001,Smith River Plain,Very Low,Northern Region Office
+1,1-002.01,Klamath River Valley - Tulelake,Medium,Northern Region Office
+2,1-002.02,Klamath River Valley - Lower Klamath,Very Low,Northern Region Office
+3,1-003,Butte Valley,Medium,Northern Region Office
+4,1-004,Shasta Valley - Shasta Valley,Medium,Northern Region Office
+5,1-005,Scott River Valley,Medium,Northern Region Office
+6,1-006,Hayfork Valley,Very Low,Northern Region Office
+7,1-007,Hoopa Valley,Very Low,Northern Region Office
+8,1-008.01,Mad River Valley - Mad River Lowland,Very Low,Northern Region Office
+9,1-008.02,Mad River Valley - Dows Prairie School Area,Very Low,Northern Region Office
+10,1-009,Eureka Plain,Very Low,Northern Region Office
+11,1-010,Eel River Valley,Medium,Northern Region Office
+12,1-011,Covelo Round Valley,Very Low,Northern Region Office
+13,1-012,Laytonville Valley,Very Low,Northern Region Office
+14,1-013,Little Lake Valley,Very Low,Northern Region Office
+15,1-014,Lower Klamath River Valley,Very Low,Northern Region Office
+16,1-015,Happy Camp Town Area,Very Low,Northern Region Office
+17,1-016,Seiad Valley,Very Low,Northern Region Office
+18,1-017,Bray Town Area,Very Low,Northern Region Office
+19,1-018,Red Rock Valley,Low,Northern Region Office
+20,1-019,Anderson Valley,Very Low,North Central Region Office
+21,1-020,Garcia River Valley,Very Low,North Central Region Office
+22,1-021,Fort Bragg Terrace Area,Very Low,North Central Region Office
+23,1-022,Fairchild Swamp Valley,Very Low,Northern Region Office
+24,1-025,Prairie Creek Area,Very Low,Northern Region Office
+25,1-026,Redwood Creek Area,Very Low,Northern Region Office
+26,1-027,Big Lagoon Area,Very Low,Northern Region Office
+27,1-028,Mattole River Valley,Very Low,Northern Region Office
+28,1-029,Honeydew Town Area,Very Low,Northern Region Office
+29,1-030,Pepperwood Town Area,Very Low,Northern Region Office
+30,1-031,Weott Town Area,Very Low,Northern Region Office
+31,1-032,Garberville Town Area,Very Low,Northern Region Office
+32,1-033,Larabee Valley,Very Low,Northern Region Office
+33,1-034,Dinsmores Town Area,Very Low,Northern Region Office
+34,1-035,Hyampom Valley,Very Low,Northern Region Office
+35,1-036,Hettenshaw Valley,Very Low,Northern Region Office
+36,1-037,Cottoneva Creek Valley,Very Low,North Central Region Office
+37,1-038,Lower Laytonville Valley,Very Low,Northern Region Office
+38,1-039,Branscomb Town Area,Very Low,Northern Region Office
+39,1-040,Ten Mile River Valley,Very Low,North Central Region Office
+40,1-041,Little Valley,Very Low,North Central Region Office
+41,1-042,Sherwood Valley,Very Low,Northern Region Office
+42,1-043,Williams Valley,Very Low,Northern Region Office
+43,1-044,Eden Valley,Very Low,Northern Region Office
+44,1-045,Big River Valley,Very Low,North Central Region Office
+45,1-046,Navarro River Valley,Very Low,North Central Region Office
+46,1-048,Gravelly Valley,Very Low,Northern Region Office
+47,1-049,Annapolis Ohlson Ranch Fm Highlands,Very Low,North Central Region Office
+48,1-050,Knights Valley,Very Low,North Central Region Office
+49,1-051,Potter Valley,Very Low,North Central Region Office
+50,1-052,Ukiah Valley,Medium,North Central Region Office
+51,1-053,Sanel Valley,Very Low,North Central Region Office
+52,1-054.01,Alexander Valley - Alexander Area,Very Low,North Central Region Office
+53,1-054.02,Alexander Valley - Cloverdale Area,Very Low,North Central Region Office
+54,1-055.01,Santa Rosa Valley - Santa Rosa Plain,Medium,North Central Region Office
+55,1-055.02,Santa Rosa Valley - Healdsburg Area,Very Low,North Central Region Office
+56,1-055.03,Santa Rosa Valley - Rincon Valley,Very Low,North Central Region Office
+57,1-056,Mcdowell Valley,Very Low,North Central Region Office
+58,1-057,Bodega Bay Area,Very Low,North Central Region Office
+59,1-059,Wilson Grove Formation Highlands,Very Low,North Central Region Office
+60,1-060,Lower Russian River Valley,Very Low,North Central Region Office
+61,1-061,Fort Ross Terrace Deposits,Very Low,North Central Region Office
+62,1-062,Wilson Point Area,Very Low,Northern Region Office
+63,2-001,Petaluma Valley,Medium,North Central Region Office
+64,2-002.01,Napa-Sonoma Valley - Napa Valley,High,Unspecified
+65,2-002.02,Napa-Sonoma Valley - Sonoma Valley,High,North Central Region Office
+66,2-002.03,Napa-Sonoma Valley - Napa-Sonoma Lowlands,Very Low,North Central Region Office
+67,2-003,Suisun-Fairfield Valley,Low,North Central Region Office
+68,2-004,Pittsburg Plain,Very Low,North Central Region Office
+69,2-005,Clayton Valley,Very Low,North Central Region Office
+70,2-006,Ygnacio Valley,Very Low,North Central Region Office
+71,2-007,San Ramon Valley,Very Low,North Central Region Office
+72,2-008,Castro Valley,Very Low,North Central Region Office
+73,2-009.01,Santa Clara Valley - Niles Cone,Medium,North Central Region Office
+74,2-009.02,Santa Clara Valley - Santa Clara,High,North Central Region Office
+75,2-009.03,Santa Clara Valley - San Mateo Plain,Very Low,North Central Region Office
+76,2-009.04,Santa Clara Valley - East Bay Plain,Medium,North Central Region Office
+77,2-010,Livermore Valley,Medium,North Central Region Office
+78,2-011,Sunol Valley,Very Low,North Central Region Office
+79,2-019,Kenwood Valley,Very Low,North Central Region Office
+80,2-022,Half Moon Bay Terrace,Very Low,North Central Region Office
+81,2-024,San Gregorio Valley,Very Low,North Central Region Office
+82,2-026,Pescadero Valley,Very Low,North Central Region Office
+83,2-027,Sand Point Area,Very Low,North Central Region Office
+84,2-028,Ross Valley,Very Low,North Central Region Office
+85,2-029,San Rafael Valley,Very Low,North Central Region Office
+86,2-030,Novato Valley,Low,North Central Region Office
+87,2-031,Arroyo Del Hambre Valley,Very Low,North Central Region Office
+88,2-032,Visitacion Valley,Very Low,North Central Region Office
+89,2-033,Islais Valley,Very Low,North Central Region Office
+90,2-035,Westside,Very Low,North Central Region Office
+91,2-036,San Pedro Valley,Very Low,North Central Region Office
+92,2-037,South San Francisco,Very Low,North Central Region Office
+93,2-038,Lobos,Very Low,North Central Region Office
+94,2-039,Marina,Very Low,North Central Region Office
+95,2-040,Downtown,Very Low,North Central Region Office
+96,3-001,Santa Cruz Mid-County,High,South Central Region Office
+97,3-002.01,Corralitos - Pajaro Valley,High,South Central Region Office
+98,3-002.02,Corralitos - Purisima Highlands,Very Low,South Central Region Office
+99,3-003.01,Gilroy-Hollister Valley - Llagas Area,High,South Central Region Office
+100,3-003.05,Gilroy-Hollister Valley - North San Benito,Medium,South Central Region Office
+101,3-004.01,Salinas Valley - 180/400 Foot Aquifer,High,South Central Region Office
+102,3-004.02,Salinas Valley - East Side Aquifer,High,South Central Region Office
+103,3-004.04,Salinas Valley - Forebay Aquifer,Medium,South Central Region Office
+104,3-004.05,Salinas Valley - Upper Valley Aquifer,Medium,South Central Region Office
+105,3-004.06,Salinas Valley - Paso Robles Area,High,South Central Region Office
+106,3-004.08,Salinas Valley - Seaside Area,Very Low,South Central Region Office
+107,3-004.09,Salinas Valley - Langley Area,High,South Central Region Office
+108,3-004.10,Salinas Valley - Corral De Tierra Area,Medium,South Central Region Office
+109,3-004.11,Salinas Valley - Atascadero Area,Very Low,South Central Region Office
+110,3-005,Cholame Valley,Very Low,South Central Region Office
+111,3-006,Lockwood Valley,Very Low,South Central Region Office
+112,3-007,Carmel Valley,Medium,South Central Region Office
+113,3-008.01,Los Osos Valley - Los Osos Area,Very Low,South Central Region Office
+114,3-008.02,Los Osos Valley - Warden Creek,Very Low,South Central Region Office
+115,3-009,San Luis Obispo Valley,High,South Central Region Office
+116,3-012.01,Santa Maria - Santa Maria,Very Low,Southern Region Office
+117,3-012.02,Santa Maria - Arroyo Grande,Very Low,Southern Region Office
+118,3-013,Cuyama Valley,High,Southern Region Office
+119,3-014,San Antonio Creek Valley,Medium,Southern Region Office
+120,3-015,Santa Ynez River Valley,Medium,Southern Region Office
+121,3-016,Goleta,Very Low,Southern Region Office
+122,3-017,Santa Barbara,Very Low,Southern Region Office
+123,3-018,Carpinteria,High,Southern Region Office
+124,3-019,Carrizo Plain,Very Low,South Central Region Office
+125,3-020,Ano Nuevo Area,Very Low,South Central Region Office
+126,3-022,Santa Ana Valley,Very Low,South Central Region Office
+127,3-023,Upper Santa Ana Valley,Very Low,South Central Region Office
+128,3-024,Quien Sabe Valley,Very Low,South Central Region Office
+129,3-026,West Santa Cruz Terrace,Very Low,South Central Region Office
+130,3-027,Santa Margarita,Medium,South Central Region Office
+131,3-028,San Benito River Valley,Very Low,South Central Region Office
+132,3-029,Dry Lake Valley,Very Low,South Central Region Office
+133,3-030,Bitter Water Valley,Very Low,South Central Region Office
+134,3-031,Hernandez Valley,Very Low,South Central Region Office
+135,3-032,Peach Tree Valley,Very Low,South Central Region Office
+136,3-033,San Carpoforo Valley,Very Low,South Central Region Office
+137,3-034,Arroyo De La Cruz Valley,Very Low,South Central Region Office
+138,3-035,San Simeon Valley,Very Low,South Central Region Office
+139,3-036,Santa Rosa Valley,Very Low,South Central Region Office
+140,3-037,Villa Valley,Very Low,South Central Region Office
+141,3-038,Cayucos Valley,Very Low,South Central Region Office
+142,3-039,Old Valley,Very Low,South Central Region Office
+143,3-040,Toro Valley,Very Low,South Central Region Office
+144,3-041,Morro Valley,Very Low,South Central Region Office
+145,3-042,Chorro Valley,Very Low,South Central Region Office
+146,3-043,Rinconada Valley,Very Low,South Central Region Office
+147,3-044,Pozo Valley,Very Low,South Central Region Office
+148,3-045,Huasna Valley,Very Low,South Central Region Office
+149,3-046,Rafael Valley,Very Low,South Central Region Office
+150,3-047,Big Spring Area,Very Low,South Central Region Office
+151,3-049,Montecito,Medium,Southern Region Office
+152,3-051,Majors Creek,Very Low,South Central Region Office
+153,3-052,Needle Rock Point,Very Low,South Central Region Office
+154,3-053,Foothill,Very Low,Southern Region Office
+155,4-001,Upper Ojai Valley,Very Low,Southern Region Office
+156,4-002,Ojai Valley,High,Southern Region Office
+157,4-003.01,Ventura River Valley - Upper Ventura River,Medium,Southern Region Office
+158,4-003.02,Ventura River Valley - Lower Ventura River,Very Low,Southern Region Office
+159,4-004.02,Santa Clara River Valley - Oxnard,High,Southern Region Office
+160,4-004.03,Santa Clara River Valley - Mound,High,Southern Region Office
+161,4-004.04,Santa Clara River Valley - Santa Paula,Very Low,Southern Region Office
+162,4-004.05,Santa Clara River Valley - Fillmore,High,Southern Region Office
+163,4-004.06,Santa Clara River Valley - Piru,High,Southern Region Office
+164,4-004.07,Santa Clara River Valley - East,High,Southern Region Office
+165,4-005,Acton Valley,Very Low,Southern Region Office
+166,4-006,Pleasant Valley,High,Southern Region Office
+167,4-007,Arroyo Santa Rosa Valley,Very Low,Southern Region Office
+168,4-008,Las Posas Valley,High,Southern Region Office
+169,4-009,Simi Valley,Very Low,Southern Region Office
+170,4-010,Conejo,Very Low,Southern Region Office
+171,4-011.01,Coastal Plain Of Los Angeles - Santa Monica,Medium,Southern Region Office
+172,4-011.02,Coastal Plain Of Los Angeles - Hollywood,Very Low,Southern Region Office
+173,4-011.03,Coastal Plain Of Los Angeles - West Coast,Very Low,Southern Region Office
+174,4-011.04,Coastal Plain Of Los Angeles - Central,Very Low,Southern Region Office
+175,4-012,San Fernando Valley,Very Low,Southern Region Office
+176,4-013,San Gabriel Valley,Very Low,Southern Region Office
+177,4-015,Tierra Rejada,Very Low,Southern Region Office
+178,4-016,Hidden Valley,Very Low,Southern Region Office
+179,4-017,Lockwood Valley,Very Low,Southern Region Office
+180,4-018,Hungry Valley,Very Low,Southern Region Office
+181,4-019,Thousand Oaks Area,Very Low,Southern Region Office
+182,4-020,Russell Valley,Very Low,Southern Region Office
+183,4-022,Malibu Valley,Very Low,Southern Region Office
+184,4-023,Raymond,Very Low,Southern Region Office
+185,5-001.01,Goose Lake - Goose Valley,Very Low,Northern Region Office
+186,5-001.02,Goose Lake - Fandango Valley,Very Low,Northern Region Office
+187,5-002.01,Alturas Area - South Fork Pitt River,Low,Northern Region Office
+188,5-002.02,Alturas Area - Warm Springs Valley,Very Low,Northern Region Office
+189,5-003,Jess Valley,Very Low,Northern Region Office
+190,5-004,Big Valley,Medium,Northern Region Office
+191,5-005,Fall River Valley,Low,Northern Region Office
+192,5-006.01,Redding Area - Bowman,Very Low,Northern Region Office
+193,5-006.03,Redding Area - Anderson,Medium,Northern Region Office
+194,5-006.04,Redding Area - Enterprise,Medium,Northern Region Office
+195,5-006.05,Redding Area - Millville,Very Low,Northern Region Office
+196,5-006.06,Redding Area - South Battle Creek,Very Low,Northern Region Office
+197,5-007,Lake Almanor Valley,Very Low,Northern Region Office
+198,5-008,Mountain Meadows Valley,Very Low,Northern Region Office
+199,5-009,Indian Valley,Very Low,Northern Region Office
+200,5-010,American Valley,Very Low,Northern Region Office
+201,5-011,Mohawk Valley,Very Low,Northern Region Office
+202,5-012.01,Sierra Valley - Sierra Valley,Medium,Northern Region Office
+203,5-012.02,Sierra Valley - Chilcoot,Very Low,Northern Region Office
+204,5-013,Upper Lake Valley,Very Low,Northern Region Office
+205,5-014,Scotts Valley,Very Low,Northern Region Office
+206,5-015,Big Valley,Medium,Northern Region Office
+207,5-016,High Valley,Very Low,Northern Region Office
+208,5-017,Burns Valley,Very Low,Northern Region Office
+209,5-018,Coyote Valley,Very Low,North Central Region Office
+210,5-019,Collayomi Valley,Very Low,North Central Region Office
+211,5-020,Berryessa Valley,Very Low,North Central Region Office
+212,5-021.50,Sacramento Valley - Red Bluff,Medium,Northern Region Office
+213,5-021.51,Sacramento Valley - Corning,High,Northern Region Office
+214,5-021.52,Sacramento Valley - Colusa,High,Northern Region Office
+215,5-021.53,Sacramento Valley - Bend,Very Low,Northern Region Office
+216,5-021.54,Sacramento Valley - Antelope,High,Northern Region Office
+217,5-021.56,Sacramento Valley - Los Molinos,Medium,Northern Region Office
+218,5-021.57,Sacramento Valley - Vina,High,Northern Region Office
+219,5-021.60,Sacramento Valley - North Yuba,Medium,North Central Region Office
+220,5-021.61,Sacramento Valley - South Yuba,High,North Central Region Office
+221,5-021.62,Sacramento Valley - Sutter,Medium,North Central Region Office
+222,5-021.64,Sacramento Valley - North American,High,North Central Region Office
+223,5-021.65,Sacramento Valley - South American,High,North Central Region Office
+224,5-021.66,Sacramento Valley - Solano,Medium,North Central Region Office
+225,5-021.67,Sacramento Valley - Yolo,High,North Central Region Office
+226,5-021.69,Sacramento Valley - Wyandotte Creek,Medium,Northern Region Office
+227,5-021.70,Sacramento Valley - Butte,Medium,Northern Region Office
+228,5-022.01,San Joaquin Valley - Eastern San Joaquin,High,North Central Region Office
+229,5-022.02,San Joaquin Valley - Modesto,High,South Central Region Office
+230,5-022.03,San Joaquin Valley - Turlock,High,South Central Region Office
+231,5-022.04,San Joaquin Valley - Merced,High,South Central Region Office
+232,5-022.05,San Joaquin Valley - Chowchilla,High,South Central Region Office
+233,5-022.06,San Joaquin Valley - Madera,High,South Central Region Office
+234,5-022.07,San Joaquin Valley - Delta-Mendota,High,South Central Region Office
+235,5-022.08,San Joaquin Valley - Kings,High,South Central Region Office
+236,5-022.09,San Joaquin Valley - Westside,High,South Central Region Office
+237,5-022.10,San Joaquin Valley - Pleasant Valley,Medium,South Central Region Office
+238,5-022.11,San Joaquin Valley - Kaweah,High,South Central Region Office
+239,5-022.12,San Joaquin Valley - Tulare Lake,High,South Central Region Office
+240,5-022.13,San Joaquin Valley - Tule,High,South Central Region Office
+241,5-022.14,San Joaquin Valley - Kern County,High,South Central Region Office
+242,5-022.15,San Joaquin Valley - Tracy,Medium,North Central Region Office
+243,5-022.16,San Joaquin Valley - Cosumnes,Medium,North Central Region Office
+244,5-022.17,San Joaquin Valley - Kettleman Plain,Low,South Central Region Office
+245,5-022.18,San Joaquin Valley - White Wolf,Medium,South Central Region Office
+246,5-022.19,San Joaquin Valley - East Contra Costa,Medium,North Central Region Office
+247,5-023,Panoche Valley,Very Low,South Central Region Office
+248,5-025,Kern River Valley,Very Low,South Central Region Office
+249,5-026,Walker Basin Creek Valley,Very Low,South Central Region Office
+250,5-027,Cummings Valley,Very Low,South Central Region Office
+251,5-028,Tehachapi Valley West,Very Low,South Central Region Office
+252,5-029,Castac Lake Valley,Very Low,South Central Region Office
+253,5-030,Lower Lake Valley,Very Low,Northern Region Office
+254,5-031,Long Valley,Very Low,Northern Region Office
+255,5-035,Mccloud Area,Very Low,Northern Region Office
+256,5-036,Round Valley,Very Low,Northern Region Office
+257,5-037,Toad Well Area,Very Low,Northern Region Office
+258,5-038,Pondosa Town Area,Very Low,Northern Region Office
+259,5-040,Hot Springs Valley,Very Low,Northern Region Office
+260,5-041,Egg Lake Valley,Very Low,Northern Region Office
+261,5-043,Rock Prairie Valley,Very Low,Northern Region Office
+262,5-044,Long Valley,Very Low,Northern Region Office
+263,5-045,Cayton Valley,Very Low,Northern Region Office
+264,5-046,Lake Britton Area,Very Low,Northern Region Office
+265,5-047,Goose Valley,Very Low,Northern Region Office
+266,5-048,Burney Creek Valley,Very Low,Northern Region Office
+267,5-049,Dry Burney Creek Valley,Very Low,Northern Region Office
+268,5-050,North Fork Battle Creek,Very Low,Northern Region Office
+269,5-051,Butte Creek Valley,Very Low,Northern Region Office
+270,5-052,Grays Valley,Very Low,Northern Region Office
+271,5-053,Dixie Valley,Very Low,Northern Region Office
+272,5-054,Ash Valley,Very Low,Northern Region Office
+273,5-056,Yellow Creek Valley,Very Low,Northern Region Office
+274,5-057,Last Chance Creek Valley,Very Low,Northern Region Office
+275,5-058,Clover Valley,Very Low,Northern Region Office
+276,5-059,Grizzly Valley,Very Low,Northern Region Office
+277,5-060,Humbug Valley,Very Low,Northern Region Office
+278,5-061,Chrome Town Area,Very Low,Northern Region Office
+279,5-062,Elk Creek Area,Very Low,Northern Region Office
+280,5-063,Stonyford Town Area,Very Low,Northern Region Office
+281,5-064,Bear Valley,Very Low,Northern Region Office
+282,5-065,Little Indian Valley,Very Low,Northern Region Office
+283,5-066,Clear Lake Cache Formation,Very Low,Northern Region Office
+284,5-068,Pope Valley,Very Low,North Central Region Office
+285,5-069,Yosemite Valley,Very Low,South Central Region Office
+286,5-070,Los Banos Creek Valley,Very Low,South Central Region Office
+287,5-071,Vallecitos Creek Valley,Very Low,South Central Region Office
+288,5-080,Brite Valley,Very Low,South Central Region Office
+289,5-082,Cuddy Canyon Valley,Very Low,South Central Region Office
+290,5-083,Cuddy Ranch Area,Very Low,Southern Region Office
+291,5-084,Cuddy Valley,Very Low,South Central Region Office
+292,5-085,Mil Potrero Area,Very Low,South Central Region Office
+293,5-086,Joseph Creek,Very Low,Northern Region Office
+294,5-087,Middle Fork Feather River,Very Low,Northern Region Office
+295,5-088,Stony Gorge Reservoir,Very Low,Northern Region Office
+296,5-089,Squaw Flat,Very Low,Northern Region Office
+297,5-090,Funks Creek,Very Low,Northern Region Office
+298,5-091,Antelope Creek,Very Low,Northern Region Office
+299,5-092,Blanchard Valley,Very Low,Northern Region Office
+300,5-094,Middle Creek,Very Low,Northern Region Office
+301,5-095,Meadow Valley,Very Low,Northern Region Office
+302,6-001,Surprise Valley,Very Low,Northern Region Office
+303,6-002,Madeline Plains,Very Low,Northern Region Office
+304,6-003,Willow Creek Valley,Very Low,Northern Region Office
+305,6-004,Honey Lake Valley,Low,Northern Region Office
+306,6-005.01,Tahoe Valley - Tahoe South,Medium,North Central Region Office
+307,6-005.02,Tahoe Valley - Tahoe West,Very Low,North Central Region Office
+308,6-005.03,Tahoe Valley - Tahoe North,Very Low,North Central Region Office
+309,6-006,Carson Valley,Very Low,North Central Region Office
+310,6-007,Antelope Valley,Very Low,North Central Region Office
+311,6-008,Bridgeport Valley,Very Low,North Central Region Office
+312,6-009,Mono Valley,Very Low,Southern Region Office
+313,6-010,Adobe Lake Valley,Very Low,Southern Region Office
+314,6-011,Long Valley,Very Low,Southern Region Office
+315,6-012.01,Owens Valley - Owens Valley,Low,Southern Region Office
+316,6-012.02,Owens Valley - Fish Slough,Very Low,Southern Region Office
+317,6-013,Black Springs Valley,Very Low,Southern Region Office
+318,6-014,Fish Lake Valley,Low,Southern Region Office
+319,6-015,Deep Springs Valley,Very Low,Southern Region Office
+320,6-016,Eureka Valley,Very Low,Southern Region Office
+321,6-017,Saline Valley,Very Low,Southern Region Office
+322,6-018,Death Valley,Very Low,Southern Region Office
+323,6-019,Wingate Valley,Very Low,Southern Region Office
+324,6-020,Middle Amargosa Valley,Very Low,Southern Region Office
+325,6-021,Lower Kingston Valley,Very Low,Southern Region Office
+326,6-022,Upper Kingston Valley,Very Low,Southern Region Office
+327,6-023,Riggs Valley,Very Low,Southern Region Office
+328,6-024,Red Pass Valley,Very Low,Southern Region Office
+329,6-025,Bicycle Valley,Very Low,Southern Region Office
+330,6-026,Avawatz Valley,Very Low,Southern Region Office
+331,6-027,Leach Valley,Very Low,Southern Region Office
+332,6-028,Pahrump Valley,Very Low,Southern Region Office
+333,6-029,Mesquite Valley,Very Low,Southern Region Office
+334,6-030,Ivanpah Valley,Very Low,Southern Region Office
+335,6-031,Kelso Valley,Very Low,Southern Region Office
+336,6-032,Broadwell Valley,Very Low,Southern Region Office
+337,6-033,Soda Lake Valley,Very Low,Southern Region Office
+338,6-034,Silver Lake Valley,Very Low,Southern Region Office
+339,6-035,Cronise Valley,Very Low,Southern Region Office
+340,6-036.01,Langford Valley - Langford Well Lake,Very Low,Southern Region Office
+341,6-036.02,Langford Valley - Irwin,Very Low,Southern Region Office
+342,6-037,Coyote Lake Valley,Very Low,Southern Region Office
+343,6-038,Caves Canyon Valley,Very Low,Southern Region Office
+344,6-040,Lower Mojave River Valley,Very Low,Southern Region Office
+345,6-041,Middle Mojave River Valley,Very Low,Southern Region Office
+346,6-042,Upper Mojave River Valley,Very Low,Southern Region Office
+347,6-043,El Mirage Valley,Very Low,Southern Region Office
+348,6-044,Antelope Valley,Very Low,Southern Region Office
+349,6-045,Tehachapi Valley East,Very Low,Southern Region Office
+350,6-046,Fremont Valley,Low,Southern Region Office
+351,6-047,Harper Valley,Very Low,Southern Region Office
+352,6-048,Goldstone Valley,Very Low,Southern Region Office
+353,6-049,Superior Valley,Very Low,Southern Region Office
+354,6-050,Cuddeback Valley,Very Low,Southern Region Office
+355,6-051,Pilot Knob Valley,Very Low,Southern Region Office
+356,6-052,Searles Valley,Very Low,Southern Region Office
+357,6-053,Salt Wells Valley,Very Low,Southern Region Office
+358,6-054,Indian Wells Valley,High,Southern Region Office
+359,6-055,Coso Valley,Very Low,Southern Region Office
+360,6-056,Rose Valley,Very Low,Southern Region Office
+361,6-057,Darwin Valley,Very Low,Southern Region Office
+362,6-058,Panamint Valley,Very Low,Southern Region Office
+363,6-061,Cameo Area,Very Low,Southern Region Office
+364,6-062,Race Track Valley,Very Low,Southern Region Office
+365,6-063,Hidden Valley,Very Low,Southern Region Office
+366,6-064,Marble Canyon Area,Very Low,Southern Region Office
+367,6-065,Cottonwood Spring Area,Very Low,Southern Region Office
+368,6-066,Lee Flat,Very Low,Southern Region Office
+369,6-067,Martis Valley,Very Low,North Central Region Office
+370,6-068,Santa Rosa Flat,Very Low,Southern Region Office
+371,6-069,Kelso Lander Valley,Very Low,Southern Region Office
+372,6-070,Cactus Flat,Very Low,Southern Region Office
+373,6-071,Lost Lake Valley,Very Low,Southern Region Office
+374,6-072,Coles Flat,Very Low,Southern Region Office
+375,6-073,Wild Horse Mesa Area,Very Low,Southern Region Office
+376,6-074,Harrisburg Flats,Very Low,Southern Region Office
+377,6-075,Wildrose Canyon,Very Low,Southern Region Office
+378,6-076,Brown Mountain Valley,Very Low,Southern Region Office
+379,6-077,Grass Valley,Very Low,Southern Region Office
+380,6-078,Denning Spring Valley,Very Low,Southern Region Office
+381,6-079,California Valley,Very Low,Southern Region Office
+382,6-080,Middle Park Canyon,Very Low,Southern Region Office
+383,6-081,Butte Valley,Very Low,Southern Region Office
+384,6-082,Spring Canyon Valley,Very Low,Southern Region Office
+385,6-084,Greenwater Valley,Very Low,Southern Region Office
+386,6-085,Gold Valley,Very Low,Southern Region Office
+387,6-086,Rhodes Hill Area,Very Low,Southern Region Office
+388,6-088,Owl Lake Valley,Very Low,Southern Region Office
+389,6-089,Kane Wash Area,Very Low,Southern Region Office
+390,6-090,Cady Fault Area,Very Low,Southern Region Office
+391,6-091,Cow Head Lake Valley,Very Low,Northern Region Office
+392,6-092,Pine Creek Valley,Very Low,Northern Region Office
+393,6-093,Harvey Valley,Very Low,Northern Region Office
+394,6-094,Grasshopper Valley,Very Low,Northern Region Office
+395,6-095,Dry Valley,Very Low,Northern Region Office
+396,6-096,Eagle Lake Area,Very Low,Northern Region Office
+397,6-097,Horse Lake Valley,Very Low,Northern Region Office
+398,6-098,Tuledad Canyon Valley,Very Low,Northern Region Office
+399,6-099,Painters Flat,Very Low,Northern Region Office
+400,6-100,Secret Valley,Very Low,Northern Region Office
+401,6-101,Bull Flat,Very Low,Northern Region Office
+402,6-104,Long Valley,Very Low,Northern Region Office
+403,6-105,Slinkard Valley,Very Low,North Central Region Office
+404,6-106,Little Antelope Valley,Very Low,North Central Region Office
+405,6-107,Sweetwater Flat,Very Low,North Central Region Office
+406,6-108,Olympic Valley,Very Low,North Central Region Office
+407,7-001,Lanfair Valley,Very Low,Southern Region Office
+408,7-002,Fenner Valley,Very Low,Southern Region Office
+409,7-003,Ward Valley,Very Low,Southern Region Office
+410,7-004,Rice Valley,Very Low,Southern Region Office
+411,7-005,Chuckwalla Valley,Very Low,Southern Region Office
+412,7-006,Pinto Valley,Very Low,Southern Region Office
+413,7-007,Cadiz Valley,Very Low,Southern Region Office
+414,7-008,Bristol Valley,Very Low,Southern Region Office
+415,7-009,Dale Valley,Very Low,Southern Region Office
+416,7-010,Twentynine Palms Valley,Very Low,Southern Region Office
+417,7-011,Copper Mountain Valley,Very Low,Southern Region Office
+418,7-012,Warren Valley,Very Low,Southern Region Office
+419,7-013.01,Deadman Valley - Deadman Lake,Very Low,Southern Region Office
+420,7-013.02,Deadman Valley - Surprise Spring,Very Low,Southern Region Office
+421,7-014,Lavic Valley,Very Low,Southern Region Office
+422,7-015,Bessemer Valley,Very Low,Southern Region Office
+423,7-016,Ames Valley,Very Low,Southern Region Office
+424,7-017,Means Valley,Very Low,Southern Region Office
+425,7-018.01,Johnson Valley - Soggy Lake,Very Low,Southern Region Office
+426,7-018.02,Johnson Valley - Upper Johnson Valley,Very Low,Southern Region Office
+427,7-019,Lucerne Valley,Very Low,Southern Region Office
+428,7-020,Morongo Valley,Very Low,Southern Region Office
+429,7-021.01,Coachella Valley - Indio,Medium,Southern Region Office
+430,7-021.02,Coachella Valley - Mission Creek,Medium,Southern Region Office
+431,7-021.03,Coachella Valley - Desert Hot Springs,Very Low,Southern Region Office
+432,7-021.04,Coachella Valley - San Gorgonio Pass,Medium,Southern Region Office
+433,7-022,West Salton Sea,Very Low,Southern Region Office
+434,7-024.01,Borrego Valley - Borrego Springs,High,Southern Region Office
+435,7-024.02,Borrego Valley - Ocotillo Wells,Very Low,Southern Region Office
+436,7-025,Ocotillo-Clark Valley,Very Low,Southern Region Office
+437,7-026,Terwilliger Valley,Very Low,Southern Region Office
+438,7-027,San Felipe Valley,Very Low,Southern Region Office
+439,7-028,Vallecito-Carrizo Valley,Very Low,Southern Region Office
+440,7-029,Coyote Wells Valley,Very Low,Southern Region Office
+441,7-030,Imperial Valley,Very Low,Southern Region Office
+442,7-031,Orocopia Valley,Very Low,Southern Region Office
+443,7-032,Chocolate Valley,Very Low,Southern Region Office
+444,7-033,East Salton Sea,Very Low,Southern Region Office
+445,7-034,Amos Valley,Very Low,Southern Region Office
+446,7-035,Ogilby Valley,Very Low,Southern Region Office
+447,7-036,Yuma Valley,Very Low,Southern Region Office
+448,7-037,Arroyo Seco Valley,Very Low,Southern Region Office
+449,7-038,Palo Verde Valley,Very Low,Southern Region Office
+450,7-039,Palo Verde Mesa,Very Low,Southern Region Office
+451,7-040,Quien Sabe Point Valley,Very Low,Southern Region Office
+452,7-041,Calzona Valley,Very Low,Southern Region Office
+453,7-042,Vidal Valley,Very Low,Southern Region Office
+454,7-043,Chemehuevi Valley,Very Low,Southern Region Office
+455,7-044,Needles Valley,Very Low,Southern Region Office
+456,7-045,Piute Valley,Very Low,Southern Region Office
+457,7-046,Canebrake Valley,Very Low,Southern Region Office
+458,7-047,Jacumba Valley,Very Low,Southern Region Office
+459,7-048,Helendale Fault Valley,Very Low,Southern Region Office
+460,7-049,Pipes Canyon Fault Valley,Very Low,Southern Region Office
+461,7-050,Iron Ridge Area,Very Low,Southern Region Office
+462,7-051,Lost Horse Valley,Very Low,Southern Region Office
+463,7-052,Pleasant Valley,Very Low,Southern Region Office
+464,7-053,Hexie Mountain Area,Very Low,Southern Region Office
+465,7-054,Buck Ridge Fault Valley,Very Low,Southern Region Office
+466,7-055,Collins Valley,Very Low,Southern Region Office
+467,7-056,Yaqui Well Area,Very Low,Southern Region Office
+468,7-059,Mason Valley,Very Low,Southern Region Office
+469,7-061,Davies Valley,Very Low,Southern Region Office
+470,7-062,Joshua Tree,Very Low,Southern Region Office
+471,7-063,Vandeventer Flat,Very Low,Southern Region Office
+472,8-001,Coastal Plain Of Orange County,Medium,Southern Region Office
+473,8-002.01,Upper Santa Ana Valley - Chino,Very Low,Southern Region Office
+474,8-002.02,Upper Santa Ana Valley - Cucamonga,Very Low,Southern Region Office
+475,8-002.03,Upper Santa Ana Valley - Riverside-Arlington,Very Low,Southern Region Office
+476,8-002.04,Upper Santa Ana Valley - Rialto-Colton,Very Low,Southern Region Office
+477,8-002.05,Upper Santa Ana Valley - Cajon,Very Low,Southern Region Office
+478,8-002.06,Upper Santa Ana Valley - San Bernardino,Very Low,Southern Region Office
+479,8-002.07,Upper Santa Ana Valley - Yucaipa,High,Southern Region Office
+480,8-002.08,Upper Santa Ana Valley - San Timoteo,Very Low,Southern Region Office
+481,8-002.09,Upper Santa Ana Valley - Temescal,Medium,Southern Region Office
+482,8-004.01,Elsinore - Elsinore Valley,Medium,Southern Region Office
+483,8-004.02,Elsinore - Bedford-Coldwater,Very Low,Southern Region Office
+484,8-005,San Jacinto,High,Southern Region Office
+485,8-006,Hemet Lake Valley,Very Low,Southern Region Office
+486,8-007,Big Meadows Valley,Very Low,Southern Region Office
+487,8-008,Seven Oaks Valley,Very Low,Southern Region Office
+488,8-009,Bear Valley,Very Low,Southern Region Office
+489,9-001,San Juan Valley,Very Low,Southern Region Office
+490,9-002,San Mateo Valley,Very Low,Southern Region Office
+491,9-003,San Onofre Valley,Very Low,Southern Region Office
+492,9-004,Santa Margarita Valley,Very Low,Southern Region Office
+493,9-005,Temecula Valley,Very Low,Southern Region Office
+494,9-006,Cahuilla Valley,Very Low,Southern Region Office
+495,9-007.01,San Luis Rey Valley - Upper San Luis Rey Valley,Medium,Southern Region Office
+496,9-007.02,San Luis Rey Valley - Lower San Luis Rey Valley,Very Low,Southern Region Office
+497,9-008,Warner Valley,Very Low,Southern Region Office
+498,9-009,Escondido Valley,Very Low,Southern Region Office
+499,9-010,San Pasqual Valley,Medium,Southern Region Office
+500,9-011,Santa Maria Valley,Very Low,Southern Region Office
+501,9-012,San Dieguito Creek,Very Low,Southern Region Office
+502,9-013,Poway Valley,Very Low,Southern Region Office
+503,9-014,Mission Valley,Very Low,Southern Region Office
+504,9-015,San Diego River Valley,Very Low,Southern Region Office
+505,9-016,El Cajon Valley,Very Low,Southern Region Office
+506,9-022,Batiquitos Lagoon Valley,Very Low,Southern Region Office
+507,9-023,San Elijo Valley,Very Low,Southern Region Office
+508,9-024,Pamo Valley,Very Low,Southern Region Office
+509,9-025,Ranchita Town Area,Very Low,Southern Region Office
+510,9-027,Cottonwood Valley,Very Low,Southern Region Office
+511,9-028,Campo Valley,Very Low,Southern Region Office
+512,9-029,Potrero Valley,Very Low,Southern Region Office
+513,9-032,San Marcos Area,Very Low,Southern Region Office
+514,9-033,Coastal Plain Of San Diego,Low,Southern Region Office
