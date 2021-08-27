@@ -3,7 +3,7 @@ This readme details the process that was applied by the staff of the [Western St
 
 
 ## Overview of Data Utilized
-The following data was used for water allocations...
+The following data was used for regulatory overlay area data...
 - **Natural Resrouce Distsrict (NRD) Boundaries**.  River based districts for enviormental and groundwater regulation. https://www.nebraskamap.gov/datasets/natural-resource-district-nrd-boundaries/explore
 
 
@@ -212,40 +212,38 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 
 ***
-### 6) Code File: 6_NEre_RegulatoryOverlayBridge_sites_fact.py
+### 6) Code File: 6_CAre_RegulatoryOverlayBridge_sites_fact.py
 Purpose: generate master sheet of regulatory overlay area information and how it algins with reporting unit area information.
 
 #### Inputs:
-- P_NEReg_input.csv
-- reportingunits.csv
 - regulatoryoverlays.csv
+- sites.csv (from water rights data)
+- CA_Sites_RegulatoryOverlay_Bridge_input.csv (generated via spatial joining water right sites to regulatory reporting units.)
 
 #### Outputs:
 - regulatoryreportingunits.csv
 - regulatoryreportingunits_missing.csv (error check only)
 
 #### Operation and Steps:
-- Read the input file and generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE Regulatory Reportingunits* specific columns.
-- Assign state agency data info to the *WaDE Regulatory Reportingunits* specific columns.  See *NE_RegulatoryInfo Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
-    - OrganizationUUID = "NARD"
-    - *RegulatoryOverlayUUID* = extract from regulatoryoverlays.csv.  Match via in_RegulatoryName, see *0_NERegulatorySourceDataPreprocess.ipynb.ipynb* for specifics.
-    - *ReportingUnitUUID* = extract from reportingunits.csv.  Match via in_ReportingUnitName, see *0_NERegulatorySourceDataPreprocess.ipynb.ipynb* for specifics. 
-- Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *ReportingUnitName*, *ReportingUnitNativeID* & *ReportingUnitTypeCV* fields.
-- Assign reportingunits UUID identifier to each (unique) row.
-- Perform error check on output dataframe.
-- Export output dataframe *regulatoryreportingunits.csv*.
+- Read the input file and generate single output dataframe *df_regToSite*.
+- Populate output dataframe with *WaDE Regulatory Overlay Bridge to Site* specific columns.
+- Assign state agency data info to the *WaDE Regulatory Reportingunits* specific columns.  See *CA_RegulatoryInfo Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+    - *RegulatoryOverlayUUID* = extract from regulatoryoverlays.csv.  Match via in_RegulatoryNativeID.
+    - *SiteUUID* = extract from CA_Sites_RegulatoryOverlay_Bridge_input.csv.  Match via in_ReportingUnitNativeID.
+- Update *RegulatoryOverlayUUID* field in water right *sites.csv* field using the newly completed *WaDE Regulatory Overlay Bridge to Site* table.
+- Export updated sites dataframe as *sites_withReg.csv* to perserve source info / allow error check on updated sites table.
 
 #### Sample Output (WARNING: not all fields shown):
-DataPublicationDate | OrganizationUUID | RegulatoryOverlayUUID | ReportingUnitUUID 
----------- | ---------- | ------------ | ------------ 
-8/12/2021 | NARD | NEre_RO1 | NEre_RU1
+RegulatoryOverlayUUID | SiteUUID 
+---------- | ---------- 
+NEre_RO3 | NEwr_S1
 
-Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *regulatoryreportingunits_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the regulatory reportingunits include the following...
-- DataPublicationDate
-- OrganizationUUID
-- RegulatoryOverlayUUID
-- ReportingUnitUUID
+and 
+
+#### Sample Output (WARNING: not all fields shown):
+SiteUUID | RegulatoryOverlayUUID | WaterSourceUUID | Latitude | Longitude | SiteName
+---------- | ---------- | ---------- | ------------ | ------------ | ------------
+NEwr_S1 | NEre_RO3  | NEwr_WS1 | 40.01104072 | -97.5223804 | Unspecified
 
 
 
