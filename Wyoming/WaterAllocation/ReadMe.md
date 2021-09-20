@@ -53,7 +53,7 @@ Purpose: Pre-process the Wyoming input data files and merge them into one master
         - *AllocationOwner* =  **Company**, **FirstName**, and **LastName** fields, see pre-process code for specifics.
         - *AllocationPriorityDate* = **PriorityDate**.  Format **PriorityDate** field to %m/%d/%Y format.
         - *AllocationTypeCV* = **SummaryWRStatus**, ensure string datatype.
-        - *BeneficialUseCategory* = **Uses**, ensure string datatype.  Use provided WWDO terminology code and **Uses** field, see see pre-process code for specifics.
+        - *BeneficialUseCategory* = **Uses**, ensure string datatype.  Use provided WWDO terminology code and **Uses** field, see see pre-process code for specifics.  In addition, include all records that have a "Z" in the **Survey_Type_Survey_Number_Survey_Suffix** for "Wild and Scenic River" benefical uses.
     - Perform the following additional actions on the surface water data...
         - *WaterSourceTypeCV* == Surface Water.
         - *WaterSourceName* == **Stream_Source**, ensure string datatype.
@@ -66,12 +66,12 @@ Purpose: Pre-process the Wyoming input data files and merge them into one master
         - *AllocationOwner* =  **Company**, **FirstName**, and **LastName** fields, see pre-process code for specifics.
         - *AllocationPriorityDate* = **PriorityDate**.  Format **PriorityDate** field to %m/%d/%Y format.
         - *AllocationTypeCV* = **SummaryWRStatus**, ensure string datatype.
-        - *BeneficialUseCategory* = **Uses**, ensure string datatype.  Use provided WWDO terminology code and **Uses** field, see see pre-process code for specifics.
+        - *BeneficialUseCategory* = **Uses**, ensure string datatype.  Use provided WWDO terminology code and **Uses** field, see see pre-process code for specifics.    In addition, include all records that have a "Z" in the **Survey_Type_Survey_Number_Survey_Suffix** for "Wild and Scenic River" benefical uses.
     - Concatenate groundwater and surface water dataframes together to create single long output table.
     - Create WaDE POD centric temporary dataframe.  Extract POD relevant data (see preprocessing code).
 - For POU data...
     - *AllocationPriorityDate* = **PriorityDate**.  Format **PriorityDate** field to %m/%d/%Y format.
-    - *BeneficialUseCategory* = **Uses**, ensure string datatype.  Use provided WWDO terminology code and **Uses** field, see see pre-process code for specifics.
+    - *BeneficialUseCategory* = **Uses**, ensure string datatype.  Use provided WWDO terminology code and **Uses** field, see see pre-process code for specifics.  In addition, include all records that have a "Z" in the **Survey** for "Wild and Scenic River" benefical uses.
     - Create WaDE POU centric temporary dataframe.  Extract POU relevant data (see preprocessing code).
 - Concatenate temporary POD & POU dataframes together into single long output dataframe.
 - Generate WaDE specific field *SiteNativeID* from *Latitude*, *Longitude*, *SiteType* and *SiteName* fields.  Used to identify unique sites.

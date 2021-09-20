@@ -5,12 +5,9 @@
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
-# from pyproj import Transformer, transform
-# transformer = Transformer.from_proj(4326, 4326)  # A trick to drastically optimize the Transformer of pyproj.
-# MT projection = EPSG:4326, same as WGS84 projection used by WaDE 2.0 = epsg:4326.
+import numpy as np
+import pandas as pd
 
 # Custom Libraries
 ############################################################################
