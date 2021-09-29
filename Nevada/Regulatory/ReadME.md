@@ -8,7 +8,7 @@ The following data was used for regulatory overlay area data...
 
 The folllowing unique files were created to be used as input.  Input files used are as follows...
 - *SE_GroundwaterBasins_DesigOrders_input.csv*.  Contains NVDWR tabular data
-- *SE_GroundwaterBasins_DesigOrders.shp*  Contains shapefile boundary information for the NVDWR areas.
+- *SE_GroundwaterBasins_DesigOrders.shp.*  Contains shapefile boundary information for the NVDWR areas.
 
 
 ## Summary of Data Prep
@@ -154,15 +154,15 @@ Purpose: generate master sheet of regulatory overlay area information to import 
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Regulatory Overlays* specific columns.
 - Assign state agency data info to the *WaDE Water Regulatory Overlays* specific columns.  See *NV_RegulatoryInfo Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
-    - *OversightAgency* = in_OversightAgency, see *0_NVRegulatorySourceDataPreprocess.ipynb* for specifics.
-    - *RegulatoryDescription* = **TYPE_DEF**.
-    - *RegulatoryName* = **TYPE_DEF**
-    - *RegulatoryOverlayNativeID* = **TYPE**
-    - *RegulatoryStatusCV* = "Final"
-    - *RegulatoryStatute* = **TYPE_DEF**
+    - *OversightAgency* = "Office of the Nevada State Engineer"
+    - *RegulatoryDescription* = *in_RegulatoryDescription*, see *0_NVRegulatorySourceDataPreprocess.ipynb* for specifics.
+    - *RegulatoryName* = **BasinName**
+    - *RegulatoryOverlayNativeID* = **BasinID**
+    - *RegulatoryStatusCV* = *in_RegulatoryStatusCV*, see *0_NVRegulatorySourceDataPreprocess.ipynb* for specifics.
+    - *RegulatoryStatute* = "NRS 534.120"
     - *StatutoryEffectiveDate* = "07/01/1981"
-    - *RegulatoryOverlayTypeCV* = "Special Provision Watersheds"
-    - *WaterSourceTypeCV* = "Surface Water"
+    - *RegulatoryOverlayTypeCV* = "Groundwater Basin Designations"
+    - *WaterSourceTypeCV* = "groundwater"
 - Perform error check on output dataframe.
 - Export output dataframe *regulatoryoverlays.csv*.
 
@@ -199,8 +199,8 @@ Purpose: generate master sheet of regulatory overlay area information and how it
 - Populate output dataframe with *WaDE Regulatory Reportingunits* specific columns.
 - Assign state agency data info to the *WaDE Regulatory Reportingunits* specific columns.  See *NV_RegulatoryInfo Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
     - OrganizationUUID = "NVDWR"
-    - *RegulatoryOverlayUUID* = extract from regulatoryoverlays.csv.  Match via in_RegulatoryName, see *0_NVRegulatorySourceDataPreprocess.ipynb.ipynb* for specifics.
-    - *ReportingUnitUUID* = extract from reportingunits.csv.  Match via in_ReportingUnitName, see *0_NVRegulatorySourceDataPreprocess.ipynb.ipynb* for specifics. 
+    - *RegulatoryOverlayUUID* = extract from regulatoryoverlays.csv.  Match via RegulatoryOverlayNativeID, see *0_NVRegulatorySourceDataPreprocess.ipynb.ipynb* for specifics.
+    - *ReportingUnitUUID* = extract from reportingunits.csv.  Match via ReportingUniNativeID, see *0_NVRegulatorySourceDataPreprocess.ipynb.ipynb* for specifics. 
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *ReportingUnitName*, *ReportingUnitNativeID* & *ReportingUnitTypeCV* fields.
 - Assign reportingunits UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
@@ -236,8 +236,8 @@ Purpose: generate master sheet of regulatory overlay area information and how it
 - Read the input file and generate single output dataframe *df_regToSite*.
 - Populate output dataframe with *WaDE Regulatory Overlay Bridge to Site* specific columns.
 - Assign state agency data info to the *WaDE Regulatory Reportingunits* specific columns.  See *NV_RegulatoryInfo Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
-    - *RegulatoryOverlayUUID* = extract from regulatoryoverlays.csv.  Match via in_RegulatoryNativeID.
-    - *SiteUUID* = extract from OK_Sites_RegulatoryOverlay_Bridge_input.csv.  Match via in_ReportingUnitNativeID.
+    - *RegulatoryOverlayUUID* = extract from regulatoryoverlays.csv.  Match via RegulatoryNativeID.
+    - *SiteUUID* = extract from OK_Sites_RegulatoryOverlay_Bridge_input.csv.  Match via ReportingUnitNativeID.
 - Update *RegulatoryOverlayUUID* field in water right *sites.csv* field using the newly completed *WaDE Regulatory Overlay Bridge to Site* table.
 - Export updated sites dataframe as *sites_withReg.csv* to perserve source info / allow error check on updated sites table.
 
