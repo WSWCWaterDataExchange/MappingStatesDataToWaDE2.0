@@ -32,18 +32,27 @@ columns = [
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-inpVals = [
-    "NVDWR",
-    "bmcmenamy@nv.water.gov",
-    "Brian McMenamy",
-    "https://ndwr.maps.arcgis.com/home/item.html?id=0d050f7b79724404b80bf29589f67363",
-    "Nevada Division of Water Resources",
-    "(775) 684-2800",
-    "The Nevada Division of Water Resources manages Nevada's water resources for the state.",
-    "http://water.nv.gov/index.aspx",
-    "NV"]
 
-outdf = pd.DataFrame([inpVals], columns=columns)
+outdf = pd.DataFrame(columns=columnslist)
+outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
+
+outdf.OrganizationUUID = "NVDWR"
+
+outdf.OrganizationContactEmail = "bmcmenamy@water.nv.gov"
+
+outdf.OrganizationContactName = "Brian McMenamy"
+
+outdf.OrganizationDataMappingURL = "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Oklahoma"
+
+outdf.OrganizationName = "Nevada Division of Water Resources"
+
+outdf.OrganizationPhoneNumber = "775-684-2800"
+
+outdf.OrganizationPurview = "Manager of Nevada's water resources"
+
+outdf.OrganizationWebsite = "http://water.nv.gov/index.aspx"
+
+outdf.State = "NV"
 
 
 # Check required fields are not null
