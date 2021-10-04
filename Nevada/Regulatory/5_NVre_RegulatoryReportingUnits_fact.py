@@ -82,10 +82,10 @@ print("OrganizationUUID")  # Hard Coded
 outdf['OrganizationUUID'] = "NVDWR"
 
 print("RegulatoryOverlayUUID")  # Using RegulatoryOverlayNativeID to identify ID
-outdf['RegulatoryOverlayUUID'] = df_DM.apply(lambda row: retrieveRegulatoryOverlayUUID(row['BasinID']), axis=1)
+outdf['RegulatoryOverlayUUID'] = df_DM.apply(lambda row: retrieveRegulatoryOverlayUUID(row['OID_']), axis=1)
 
 print("ReportingUnitUUID")  # Using RegulatoryOverlayNativeID to identify ID
-outdf['ReportingUnitUUID'] = df_DM.apply(lambda row: retrieveReportingUnitsUUID(row['BasinID']), axis=1)
+outdf['ReportingUnitUUID'] = df_DM.apply(lambda row: retrieveReportingUnitsUUID(row['OID_']), axis=1)
 
 print("Resetting Index")
 outdf = outdf.drop_duplicates().reset_index(drop=True)

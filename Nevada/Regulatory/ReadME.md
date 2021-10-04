@@ -43,7 +43,8 @@ Purpose: Pre-process the state agency input data files and merge them into one m
     - Create *in_RegulatoryStatusCV* using **Designated** field as either "Designated" or "Not Designated" entries.
     - Create *in_RegulatoryDescription* using **DesigStatu** field and entries found here [link](https://www.nyecountywaterdistrict.net/161/Designated-Basins-in-Nye-County).
 - For NVDWR shapefile data...
-    - Export **BasinID**, **BasinName**, & **geometry** fields to export dataframe.
+    - Use index as **OID_** field.
+    - Export **OID_**, **BasinName**, & **geometry** fields to export dataframe.
 - Inspect output dataframe for additional errors / datatypes.
 - Export output dataframe as new csv file (P_nvRegMaster.csv & P_nvRegGeometry.csv respectively).
 
@@ -117,7 +118,7 @@ Purpose: generate a list of polygon areas associated with the state agency regul
 - Populate output dataframe with *WaDE ReportingUnits* specific columns.
 - Assign state agency data info to the *WaDE ReportingUnits* specific columns.  See *NV_RegulatoryInfo Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
     - *ReportingUnitName* = **BasinName**
-    - *ReportingUnitNativeID* =**BasinID**
+    - *ReportingUnitNativeID* =**OID_**
     - *ReportingUnitTypeCV* = "Groundwater Basin Designations"
     - *Geometry* = **geometry** from P_nvRegGeometry.csv file.
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *ReportingUnitName*, *ReportingUnitNativeID* & *ReportingUnitTypeCV* fields.
@@ -157,7 +158,7 @@ Purpose: generate master sheet of regulatory overlay area information to import 
     - *OversightAgency* = "Office of the Nevada State Engineer"
     - *RegulatoryDescription* = *in_RegulatoryDescription*, see *0_NVRegulatorySourceDataPreprocess.ipynb* for specifics.
     - *RegulatoryName* = **BasinName**
-    - *RegulatoryOverlayNativeID* = **BasinID**
+    - *RegulatoryOverlayNativeID* = **OID_**
     - *RegulatoryStatusCV* = *in_RegulatoryStatusCV*, see *0_NVRegulatorySourceDataPreprocess.ipynb* for specifics.
     - *RegulatoryStatute* = "NRS 534.120"
     - *StatutoryEffectiveDate* = "07/01/1981"

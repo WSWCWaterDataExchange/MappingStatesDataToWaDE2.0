@@ -43,7 +43,7 @@ columnslist =[
 ############################################################################
 
 # For Creating Geometry
-Geometrydict = pd.Series(dfshape.geometry.values, index = dfshape.BasinID).to_dict()
+Geometrydict = pd.Series(dfshape.geometry.values, index = dfshape.OID_).to_dict()
 def retrieveGeometry(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = ''
@@ -71,10 +71,10 @@ print("EPSGCodeCV")
 outdf['EPSGCodeCV'] = "4326"
 
 print("ReportingUnitName")
-outdf['ReportingUnitName'] = df['BasinName']
+outdf['ReportingUnitName'] = df['in_BasinName']
 
 print("ReportingUnitNativeID")
-outdf['ReportingUnitNativeID'] = df['BasinID']
+outdf['ReportingUnitNativeID'] = df['OID_']
 
 print("ReportingUnitProductVersion")
 outdf['ReportingUnitProductVersion'] = ""
@@ -89,7 +89,7 @@ print("StateCV")
 outdf['StateCV'] = "NV"
 
 print("Geometry")
-outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['BasinID']), axis=1)
+outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['OID_']), axis=1)
 
 print("Resetting Index")
 outdf.reset_index()

@@ -63,10 +63,10 @@ print("RegulatoryDescription")
 outdf['RegulatoryDescription'] = df_DM['in_RegulatoryDescription']  # see pre-processing
 
 print("RegulatoryName")
-outdf['RegulatoryName'] = df_DM['BasinName']
+outdf['RegulatoryName'] = df_DM['in_BasinName']
 
 print("RegulatoryOverlayNativeID")
-outdf['RegulatoryOverlayNativeID'] = df_DM['BasinID']
+outdf['RegulatoryOverlayNativeID'] = df_DM['OID_']
 
 print("RegulatoryStatusCV")
 outdf['RegulatoryStatusCV'] = df_DM['in_RegulatoryStatusCV']
