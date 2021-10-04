@@ -97,7 +97,7 @@ print("Error checking each field.  Purging bad inputs.")
 print("Exporting WaterAllocation Sites...")
 # WaterAllocation Sites
 # The working sites DataFrame for WaDE 2.0 input.
-df_sites.to_csv('ProcessedInputData/.sites_withRegcsv', index=False)
+df_sites.to_csv('ProcessedInputData/sites_withReg.csv', index=False)
 
 
 

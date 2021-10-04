@@ -51,7 +51,7 @@ Purpose: Pre-process the state agency input data files and merge them into one m
 
 ***
 ### 1) Code File: 1_CAre_Date.py
-Purpose: generate legend of granular methods used on data collection.
+Purpose: generate legend of granular date used on data collection.
 
 #### Inputs:
 - None
@@ -65,7 +65,7 @@ Purpose: generate legend of granular methods used on data collection.
 - Populate output dataframe with *WaDE Date* specific columns.
 - Assign **CDWR** info to the *WaDE Date* specific columns (this was hardcoded by hand for simplicity).
 - Perform error check on output dataframe.
-- Export output dataframe *methods.csv*.
+- Export output dataframe *date.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
 Date | Year 
@@ -123,7 +123,7 @@ Purpose: generate a list of polygon areas associated with the state agency regul
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *ReportingUnitName*, *ReportingUnitNativeID* & *ReportingUnitTypeCV* fields.
 - Assign reportingunits UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
-- Export output dataframe *sites.csv*.
+- Export output dataframe *reportingunits.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
 ReportingUnitUUID | ReportingUnitName | ReportingUnitTypeCV 
