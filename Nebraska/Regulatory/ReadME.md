@@ -8,7 +8,8 @@ The following data was used for regulatory overlay area data...
 
 
 The folllowing unique files were created to be used as input.  Input files used are as follows...
-- *P_NEReg_with Notes.xlsx*.  Contains tabular and geometry regulatory data for natural resource districts.
+- *BND_NaturalResourceDistricts_DNR_input.csv*.  Contains tabular regulatory data for natural resource districts.
+- *BND_NaturalResourceDistricts_DNR.shp*.  Shapefile of geometry of regulatory data for natural resource districts.
 
 
 ## Summary of Data Prep
@@ -29,22 +30,28 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 Purpose: Pre-process the state agency input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
-- P_NEReg_with Notes.xlsx
+- BND_NaturalResourceDistricts_DNR_input.csv
+- BND_NaturalResourceDistricts_DNR.shp
 
 #### Outputs:
- - P_NEReg_input.csv
+ - P_neRegMaster.csv
+ - P_neRegGeometry.csv
 
 #### Operation and Steps:
 - Read the input files and generate temporary input dataframe.
-- Check datatype of **NRD_Name** and **NRD_Num**.
-- Inspect output dataframe for additional errors / datatypes.
-- Export output dataframe as new csv file, *P_NEReg_input.csv*.
+- For Tabular Data...
+    - Check datatype of **NRD_Name_A** and **NRD_Num**.
+    - Create WaDE specific *RegulatoryStatuteLink* using url info found here: https://www.nrdnet.org/
+- For shapefile data...
+    - Export **OBJECTID**, **NRD_Name**, & **geometry** fields to export dataframe.
+- Inspect output dataframes for additional errors / datatypes.
+- Export output dataframe as new csv file, *P_neRegMaster.csv* & *P_neRegGeometry.csv*.
 
 
 
 ***
 ### 1) Code File: 1_NEre_Date.py
-Purpose: generate legend of granular methods used on data collection.
+Purpose: generate legend of granular date used on data collection.
 
 #### Inputs:
 - None
@@ -58,7 +65,7 @@ Purpose: generate legend of granular methods used on data collection.
 - Populate output dataframe with *WaDE Date* specific columns.
 - Assign **NARD** info to the *WaDE Date* specific columns (this was hardcoded by hand for simplicity).
 - Perform error check on output dataframe.
-- Export output dataframe *methods.csv*.
+- Export output dataframe *date.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
 Date | Year 
@@ -98,7 +105,8 @@ NARD | Nebraska Association of Resources Districts | Office | https://www.nrdnet
 Purpose: generate a list of polygon areas associated with the state agency regulatory overlay area data.
 
 #### Inputs:
-- P_NEReg_input.csv
+- P_neRegMaster.csv
+- P_neRegGeometry.csv
 
 #### Outputs:
 - reportingunits.csv
@@ -108,14 +116,14 @@ Purpose: generate a list of polygon areas associated with the state agency regul
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE ReportingUnits* specific columns.
 - Assign state agency data info to the *WaDE ReportingUnits* specific columns.  See *NE_RegulatoryInfo Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
-    - *ReportingUnitName* = **NRD_Name**
+    - *ReportingUnitName* = **NRD_Name_A**
     - *ReportingUnitNativeID* =**NRD_Num**
     - *ReportingUnitTypeCV* = "Natural Resources Districts"
-    - *Geometry* = **geometry**
+    - *Geometry* = exract from *P_neRegGeometry.csv* file using **OBJECTID** field.
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *ReportingUnitName*, *ReportingUnitNativeID* & *ReportingUnitTypeCV* fields.
 - Assign reportingunits UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
-- Export output dataframe *sites.csv*.
+- Export output dataframe *reportingunits.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
 ReportingUnitUUID | ReportingUnitName | ReportingUnitTypeCV 
@@ -136,7 +144,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 Purpose: generate master sheet of regulatory overlay area information to import into WaDE 2.0.
 
 #### Inputs:
-- P_NEReg_input.csv.csv
+- P_neRegMaster.csv.csv
 
 #### Outputs:
 - regulatoryoverlays.csv
@@ -146,12 +154,13 @@ Purpose: generate master sheet of regulatory overlay area information to import 
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Regulatory Overlays* specific columns.
 - Assign state agency data info to the *WaDE Water Regulatory Overlays* specific columns.  See *NE_RegulatoryInfo Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
-    - *OversightAgency* = **NRD_Name** + "NRD"
+    - *OversightAgency* = **NRD_Name_A** + "NRD"
     - *RegulatoryDescription* = "Natural Resources Districts were created to solve flood control, soil erosion, irrigation run-off, and groundwater quantity and quality issues. Nebraska's NRDs are involved in a wide variety of projects and programs to conserve and protect the state's natural resources. NRDs are charged under state law with 12 areas of responsibility including flood control, soil erosion, groundwater management and many others."
-    - *RegulatoryName* = **'NRD_Name**
+    - *RegulatoryName* = **'NRD_Name_A**
     - *RegulatoryOverlayNativeID* = **NRD_Num**
     - *RegulatoryStatusCV* = "Active"
-    - *RegulatoryStatuteLink* = **URL**
+    - *RegulatoryStatute* = "Unspecified"
+    - *RegulatoryStatuteLink* = *in_RegulatoryStatuteLink*, see pre-processing in *0_NERegulatorySourceDataPreprocess.ipynb* for details.
     - *StatutoryEffectiveDate* = "01/01/1972"
     - *RegulatoryOverlayTypeCV* = "Natural Resources Districts"
     - *WaterSourceTypeCV* = "Groundwater"
@@ -178,7 +187,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 Purpose: generate master sheet of regulatory overlay area information and how it algins with reporting unit area information.
 
 #### Inputs:
-- P_NEReg_input.csv
+- P_neRegMaster.csv
 - reportingunits.csv
 - regulatoryoverlays.csv
 

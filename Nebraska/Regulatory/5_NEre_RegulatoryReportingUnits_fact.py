@@ -22,7 +22,7 @@ import TestErrorFunctions
 print("Reading input csv...")
 workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Nebraska/Regulatory"
 os.chdir(workingDir)
-M_fileInput = "RawinputData/P_NEReg_input.csv"
+M_fileInput = "RawinputData/P_neRegMaster.csv"
 reportingunits_fileInput = "ProcessedInputData/reportingunits.csv"
 regulatoryoverlays_fileInput = "ProcessedInputData/regulatoryoverlays.csv"
 
@@ -82,10 +82,10 @@ print("OrganizationUUID")  # Hard Coded
 outdf['OrganizationUUID'] = "NARD"
 
 print("RegulatoryOverlayUUID")  # Using RegulatoryName to identify ID
-outdf['RegulatoryOverlayUUID'] = df_DM.apply(lambda row: retrieveRegulatoryOverlayUUID(row['NRD_Name']), axis=1)
+outdf['RegulatoryOverlayUUID'] = df_DM.apply(lambda row: retrieveRegulatoryOverlayUUID(row['NRD_Name_A']), axis=1)
 
 print("ReportingUnitUUID")  # Using ReportingUnitName to identify ID
-outdf['ReportingUnitUUID'] = df_DM.apply(lambda row: retrieveReportingUnitsUUID(row['NRD_Name']), axis=1)
+outdf['ReportingUnitUUID'] = df_DM.apply(lambda row: retrieveReportingUnitsUUID(row['NRD_Name_A']), axis=1)
 
 print("Resetting Index")
 outdf = outdf.drop_duplicates().reset_index(drop=True)

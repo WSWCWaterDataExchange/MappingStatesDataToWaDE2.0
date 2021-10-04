@@ -22,8 +22,10 @@ import TestErrorFunctions
 print("Reading input csv...")
 workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Nebraska/Regulatory"
 os.chdir(workingDir)
-fileInput = "RawinputData/P_NEReg_input.csv"
+fileInput = "RawinputData/P_neRegMaster.csv"
+fileInput_shape = "RawinputData/P_neRegGeometry.csv"
 df = pd.read_csv(fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
+dfshape = pd.read_csv(fileInput_shape)
 
 columnslist =[
     "ReportingUnitUUID",
@@ -39,6 +41,19 @@ columnslist =[
 
 # Custom Functions
 ############################################################################
+
+# For Creating Geometry
+Geometrydict = pd.Series(dfshape.geometry.values, index=dfshape.OBJECTID).to_dict()
+def retrieveGeometry(colrowValue):
+    if colrowValue == '' or pd.isnull(colrowValue):
+        outList = ''
+    else:
+        String1 = colrowValue
+        try:
+            outList = Geometrydict[String1]
+        except:
+            outList = ''
+    return outList
 
 # For creating SiteUUID
 def assignReportingUnitID(colrowValue):
@@ -56,7 +71,7 @@ print("EPSGCodeCV")
 outdf['EPSGCodeCV'] = "4326"
 
 print("ReportingUnitName")
-outdf['ReportingUnitName'] = df['NRD_Name']
+outdf['ReportingUnitName'] = df['NRD_Name_A']
 
 print("ReportingUnitNativeID")
 outdf['ReportingUnitNativeID'] = df['NRD_Num']
@@ -74,7 +89,7 @@ print("StateCV")
 outdf['StateCV'] = "NE"
 
 print("Geometry")
-outdf['Geometry'] = df['geometry']
+outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['OBJECTID']), axis=1)
 
 print("Resetting Index")
 outdf.reset_index()

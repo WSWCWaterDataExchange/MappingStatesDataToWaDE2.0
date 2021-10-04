@@ -22,7 +22,7 @@ import TestErrorFunctions
 print("Reading input csv...")
 workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Nebraska/Regulatory"
 os.chdir(workingDir)
-M_fileInput = "RawinputData/P_NEReg_input.csv"
+M_fileInput = "RawinputData/P_neRegMaster.csv"
 df_DM = pd.read_csv(M_fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
 
 #WaDE dataframe columns
@@ -57,13 +57,13 @@ print("Populating dataframe outdf...")
 outdf = pd.DataFrame(index=df_DM.index, columns=columnslist)  # The output dataframe
 
 print("OversightAgency")
-outdf['OversightAgency'] = df_DM['NRD_Name'] + " NRD"
+outdf['OversightAgency'] = df_DM['NRD_Name_A'] + " NRD"
 
 print("RegulatoryDescription")
 outdf['RegulatoryDescription'] = "Natural Resources Districts were created to solve flood control, soil erosion, irrigation run-off, and groundwater quantity and quality issues. Nebraska's NRDs are involved in a wide variety of projects and programs to conserve and protect the state's natural resources. NRDs are charged under state law with 12 areas of responsibility including flood control, soil erosion, groundwater management and many others."
 
 print("RegulatoryName")
-outdf['RegulatoryName'] = df_DM['NRD_Name']
+outdf['RegulatoryName'] = df_DM['NRD_Name_A']
 
 print("RegulatoryOverlayNativeID")
 outdf['RegulatoryOverlayNativeID'] = df_DM['NRD_Num']
@@ -72,10 +72,10 @@ print("RegulatoryStatusCV")
 outdf['RegulatoryStatusCV'] = "Active"
 
 print("RegulatoryStatute")
-outdf['RegulatoryStatute'] = ""
+outdf['RegulatoryStatute'] = "Unspecified"
 
 print("RegulatoryStatuteLink")
-outdf['RegulatoryStatuteLink'] = df_DM['URL']
+outdf['RegulatoryStatuteLink'] = df_DM['in_RegulatoryStatuteLink']
 
 print("StatutoryEffectiveDate")
 outdf['StatutoryEffectiveDate'] = "01/01/1972"

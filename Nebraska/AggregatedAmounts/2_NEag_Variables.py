@@ -58,8 +58,8 @@ outdf.VariableSpecificCV = ["Annual Groundwater Supply",
                             "Total Non-Consumptive Demand",
                             "Net Surface Water Loss Demand"]
 
-outdf.VariableCV = ["Supply",
-                    "Supply",
+outdf.VariableCV = ["Available Water Supply",
+                    "Available Water Supply",
                     "Demand",
                     "Demand",
                     "Demand",
