@@ -1,4 +1,4 @@
-index,Basin_Subbasin_Number,Basin_Subbasin_Name,Priority,in_OversightAgency
+index,Basin_Subbasin_Number,Basin_Subbasin_Name,in_RegulatoryStatute,in_OversightAgency
 0,1-001,Smith River Plain,Very Low,Northern Region Office
 1,1-002.01,Klamath River Valley - Tulelake,Medium,Northern Region Office
 2,1-002.02,Klamath River Valley - Lower Klamath,Very Low,Northern Region Office

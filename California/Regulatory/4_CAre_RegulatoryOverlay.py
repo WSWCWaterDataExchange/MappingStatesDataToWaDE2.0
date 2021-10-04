@@ -72,7 +72,7 @@ print("RegulatoryStatusCV")
 outdf['RegulatoryStatusCV'] = "Final"
 
 print("RegulatoryStatute")
-outdf['RegulatoryStatute'] = df_DM['Priority']
+outdf['RegulatoryStatute'] = df_DM['in_RegulatoryStatute']
 
 print("RegulatoryStatuteLink")
 outdf['RegulatoryStatuteLink'] = "https://water.ca.gov/Programs/Groundwater-Management/Basin-Prioritization"
