@@ -72,7 +72,7 @@ print("RegulatoryStatusCV")
 outdf['RegulatoryStatusCV'] = df_DM['in_RegulatoryStatusCV']  # See pre-processing.
 
 print("RegulatoryStatute")
-outdf['RegulatoryStatute'] = ""
+outdf['RegulatoryStatute'] = "Unspecified"
 
 print("RegulatoryStatuteLink")
 outdf['RegulatoryStatuteLink'] = df_DM['in_RegulatoryStatuteLink']  # See pre-processing.

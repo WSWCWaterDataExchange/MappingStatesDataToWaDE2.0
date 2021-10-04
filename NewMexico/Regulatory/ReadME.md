@@ -3,7 +3,7 @@ This readme details the process that was applied by the staff of the [Western St
 
 
 ## Overview of Data Utilized
-The following data was used for water allocations...
+The following data was used for regulatory overlay area data...
 - **Interstate Stream Compact Regions**.  Compacts are formal agreement between states concerning the use of water in rivers or streams, which flow across state boundaries. https://www.ose.state.nm.us/ISC/isc_compacts.php
 - **OSE Water Right District Boundary**.  The Water Rights Division's District Offices that administer surface water and groundwater rights within New Mexico and process water rights applications. https://ose.maps.arcgis.com/home/item.html?id=22b6dcc154224d44a20e095542dc14ec
 - **Special Conditions Water Right**.  Certain areas within New Mexico might contain restrictions that prohibit the drilling of wells within a basin in order to protect public health, water quality, existing water rights, or protect the state's water resources. https://ose.maps.arcgis.com/home/item.html?id=5617df05c3de4ac8b59594bd51cbab94.
@@ -55,7 +55,7 @@ Purpose: Pre-process the state agency input data files and merge them into one m
     - *in_RegulatoryDescription& = **RegulatoryDescription**
     - *in_RegulatoryName* = **Full_Name**
     - *in_RegulatoryStatusCV* = "Active"
-    - *in_RegulatoryStatute* = (leave blank)
+    - *in_RegulatoryStatute* = "Unspecified"
     - *in_RegulatoryStatuteLink* = **URL**
     - *in_StatutoryEffectiveDate* = **EffectiveDate**
     - *in_RegulatoryOverlayTypeCV* = "Interstate River Compact"
@@ -81,7 +81,7 @@ Purpose: Pre-process the state agency input data files and merge them into one m
     - *in_RegulatoryDescription& = **requiremen**
     - *in_RegulatoryName* = **Name**
     - *in_RegulatoryStatusCV* = "Active"
-    - *in_RegulatoryStatute* = (leave blank)
+    - *in_RegulatoryStatute* = "Unspecified"
     - *in_RegulatoryStatuteLink* = (leave blank)
     - *in_StatutoryEffectiveDate* = **effect_dat**
     - *in_RegulatoryOverlayTypeCV* = "Special Condition Water Right"
@@ -217,6 +217,7 @@ Purpose: generate master sheet of regulatory overlay area information to import 
     - *RegulatoryName* = in_RegulatoryName, see *0_NMRegulatorySourceDataPreprocess.ipynb* for specifics.
     - *RegulatoryOverlayNativeID* = in_RegulatoryOverlayNativeID, see *0_NMRegulatorySourceDataPreprocess.ipynb* for specifics.
     - *RegulatoryStatusCV* = in_RegulatoryStatusCV, see *0_NMRegulatorySourceDataPreprocess.ipynb* for specifics.
+    - *RegulatoryStatue* = "Unspecified".
     - *RegulatoryStatuteLink* = in_RegulatoryStatuteLink, see *0_NMRegulatorySourceDataPreprocess.ipynb* for specifics.
     - *StatutoryEffectiveDate* = in_StatutoryEffectiveDate, see *0_NMRegulatorySourceDataPreprocess.ipynb* for specifics.
     - *RegulatoryOverlayTypeCV* = in_RegulatoryOverlayTypeCV, see *0_NMRegulatorySourceDataPreprocess.ipynb* for specifics.
