@@ -5,9 +5,9 @@ This readme details the process that was applied by the staff of the [Western St
 ## Overview of Data Utilized
 The following data was used for water allocations...
 
-- **Point of diversion (POD)** data was obtained from a temporary NVDWR google drive for WaDE purposes only.  Contact NVDWR for more information.
-- **Place of Use (POU)** data was obtained from a temporary NVDWR google drive for WaDE purposes only.  Contact NVDWR for more information.
-- **Permit** data related to water rights was obtained from a temporary NVDWR google drive for WaDE purposes only.  Contact NVDWR for more information.
+- **Point of diversion (POD)** data was obtained from a [NVDWR arcgis server](https://arcgis.shpo.nv.gov/arcgis/rest/services/Water_Resources_Public_Data/WaterRights_POD_POU/FeatureServer).
+- **Place of Use (POU)** data was obtained from a [NVDWR arcgis server](https://arcgis.shpo.nv.gov/arcgis/rest/services/Water_Resources_Public_Data/WaterRights_POD_POU/FeatureServer).
+- **Permit** data related to water rights was obtained from a [NVDWR arcgis server](https://arcgis.shpo.nv.gov/arcgis/rest/services/Water_Resources_Public_Data/WaterRights_POD_POU/FeatureServer).
 
 Three unique files were created as input.  Input files used are as follows...
  - POD AllApps_2_input.csv
