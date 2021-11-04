@@ -231,8 +231,9 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 
 #### Sample Output (WARNING: not all fields shown):
 AllocationNativeID | SiteUUID | AllocationLegalStatusCV | AllocationVolume_AF | BeneficialUseCategory
----------- | ---------- | ------------ 
+---------- | ---------- | ------------ | ---------- | ----------
 10 | CAwr_S49583, CAwr_S49584 | 28959.1 | Licensed | Power
+
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID
