@@ -92,7 +92,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
 ---------- | ---------- | ------------ | ------------
-CSWRCB_Allocation | 1 | Year | AFY
+CSWRCB_Allocation | 1 | Year | AFY |
 
 
 ***
