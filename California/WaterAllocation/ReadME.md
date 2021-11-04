@@ -285,4 +285,5 @@ WSWC Staff
 - Ryan James <rjames@wswc.utah.gov>
 
 CSWRCB Staff
-- asfdv
+- Greg Gearheart. Deputy Director, Office of Information Management and Analysis, California Water Boards
+- Rafael Maestu. Economist/Chief Data Scientist, California Water Boards
