@@ -1,0 +1,3 @@
+﻿VariableSpecificID,VariableSpecificCV,VariableCV,AggregationStatisticCV,AggregationInterval ,AggregationIntervalUnitCV ,ReportYearStartMonth ,ReportYearTypeCV ,AmountUnitCV,MaximumAmountUnitCV,VariableSpecificUUID
+77,Water Use Delivered,Water Use,Cumulative,1.0,Year,1,CalendarYear,G,G,CSWRCB_Water Use Delivered
+83,Water Use Unspecified,Water Use,Cumulative,1.0,Year,1,CalendarYear,AF,AF,UTss_Water Use Unspecified
