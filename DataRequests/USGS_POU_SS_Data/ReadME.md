@@ -1,5 +1,4 @@
 ## USGS POU Site Specific Data
-This folder holds the custom data request for CA and UT Point of Use site specific data available in WaDE 2.0.
 
 ## Data structure
 
