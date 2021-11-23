@@ -90,7 +90,7 @@ def retrieveWaterSourceUUID(colrowValue):
     return outList
 
 # For creating SiteUUID
-df_sites['WaDEKey'] = df_sites['SiteNativeID'].astype(str) + df_sites['WaterSourceUUID']
+df_sites['WaDEKey'] = df_sites['SiteNativeID'].astype(str) + df_sites['Latitude'].astype(str)
 SitUUIDdict = pd.Series(df_sites.SiteUUID.values, index=df_sites.WaDEKey).to_dict()
 def retrieveSiteUUID(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
@@ -122,8 +122,7 @@ print("WaterSourceUUID")
 outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
 
 print("SiteUUID")
-df_DM['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
-df_DM['WaDEKey'] = df_DM['in_SiteNativeID'].astype(str) + df_DM['WaterSourceUUID']
+df_DM['WaDEKey'] = df_DM['in_SiteNativeID'].astype(str) + df_DM['in_Latitude'].astype(str)
 outdf['SiteUUID'] = df_DM.apply(lambda row: retrieveSiteUUID(row['WaDEKey']), axis=1)
 
 print("Amount")
@@ -196,8 +195,7 @@ print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to uploa
 
 # Dropping duplicate
 # filter the whole table based on a unique combination of SiteNativeID, SiteName, SiteTypeCV, Longitude & Latitude
-outdf = outdf.drop_duplicates()
-outdf = outdf.reset_index(drop=True)
+outdf = outdf.drop_duplicates().reset_index(drop=True)
 outdf100 = outdf.replace(np.nan, '')  # Replaces NaN values with blank.
 
 

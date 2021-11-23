@@ -36,12 +36,11 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 # outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = ["UTss_Water Use Delivery",
-                              "UTss_Water Use Return",
-                              "UTss_Water Use Transfer In",
-                              "UTss_Water Use Transfer Out",
-                              "UTss_Water Use Withdrawal",
-                              "UTss_Water Use Unspecified"]
+outdf.VariableSpecificUUID = ["UTss_Withdrawal Commercial",
+                              "UTss_Withdrawal Domestic",
+                              "UTss_Withdrawal Industrial",
+                              "UTss_Withdrawal Institutional",
+                              "UTss_Withdrawal Total (DCII)"]
 
 outdf.AggregationInterval = "1"
 
@@ -57,9 +56,9 @@ outdf.ReportYearStartMonth = "1"
 
 outdf.ReportYearTypeCV = "CalendarYear"
 
-outdf.VariableCV = ["Water Use", "Water Use", "Water Use", "Water Use", "Water Use", "Water Use"]
+outdf.VariableCV = ["Withdrawal", "Withdrawal", "Withdrawal", "Withdrawal", "Withdrawal"]
 
-outdf.VariableSpecificCV = ["Water Use Delivery", "Water Use Return", "Water Use Transfer In", "Water Use Transfer Out", "Water Use Withdrawal", "Water Use Unspecified"]
+outdf.VariableSpecificCV = ["Commercial", "Domestic", "Industrial", "Institutional", "Total (DCII)"]
 
 
 

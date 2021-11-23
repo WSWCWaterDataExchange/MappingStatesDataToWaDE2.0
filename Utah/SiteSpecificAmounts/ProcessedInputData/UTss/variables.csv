@@ -1,7 +1,6 @@
 VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
-UTss_Water Use Delivery,1,Year,Cumulative,AF,AF,1,CalendarYear,Water Use,Water Use Delivery
-UTss_Water Use Return,1,Year,Cumulative,AF,AF,1,CalendarYear,Water Use,Water Use Return
-UTss_Water Use Transfer In,1,Year,Cumulative,AF,AF,1,CalendarYear,Water Use,Water Use Transfer In
-UTss_Water Use Transfer Out,1,Year,Cumulative,AF,AF,1,CalendarYear,Water Use,Water Use Transfer Out
-UTss_Water Use Withdrawal,1,Year,Cumulative,AF,AF,1,CalendarYear,Water Use,Water Use Withdrawal
-UTss_Water Use Unspecified,1,Year,Cumulative,AF,AF,1,CalendarYear,Water Use,Water Use Unspecified
+UTss_Withdrawal Commercial,1,Year,Cumulative,AF,AF,1,CalendarYear,Withdrawal,Commercial
+UTss_Withdrawal Domestic,1,Year,Cumulative,AF,AF,1,CalendarYear,Withdrawal,Domestic
+UTss_Withdrawal Industrial,1,Year,Cumulative,AF,AF,1,CalendarYear,Withdrawal,Industrial
+UTss_Withdrawal Institutional,1,Year,Cumulative,AF,AF,1,CalendarYear,Withdrawal,Institutional
+UTss_Withdrawal Total (DCII),1,Year,Cumulative,AF,AF,1,CalendarYear,Withdrawal,Total (DCII)
