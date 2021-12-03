@@ -1,0 +1,1511 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20213.21.1018.0949                               -->
+<workbook original-version='18.1' source-build='2021.3.3 (20213.21.1018.0949)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <style>
+    <_.fcp.MarkAnimation.true...style-rule element='animation'>
+      <format attr='animation-on' value='ao-off' />
+    </_.fcp.MarkAnimation.true...style-rule>
+  </style>
+  <datasources>
+    <datasource caption='ut_co_wy_surfacewater_waterrights' inline='true' name='federated.1ve1sk806howbk1ad6x9k036jyd9' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='ut_co_wy_surfacewater_waterrights' name='textscan.1azi4830gzfg3b1dmk6iw1kpx8gq'>
+            <connection class='textscan' directory='C:/Users/rjame/Documents/WSWC Documents/WaDE Side Projects/Data Request/20211203 UTCOWYwrpdws' filename='ut_co_wy_surfacewater_waterrights.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1azi4830gzfg3b1dmk6iw1kpx8gq' name='ut_co_wy_surfacewater_waterrights.csv' table='[ut_co_wy_surfacewater_waterrights#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='State' ordinal='0' />
+            <column datatype='string' name='OrganizationName' ordinal='1' />
+            <column datatype='date' name='Priority_Date' ordinal='2' />
+            <column datatype='string' name='WaterSourceTypeCV' ordinal='3' />
+            <column datatype='string' name='SiteUUID' ordinal='4' />
+            <column datatype='string' name='PODorPOUSite' ordinal='5' />
+            <column datatype='string' name='WaDENameBenUse' ordinal='6' />
+            <column datatype='integer' name='AllocationAmountID' ordinal='7' />
+            <column datatype='integer' name='OrganizationID' ordinal='8' />
+            <column datatype='integer' name='VariableSpecificID' ordinal='9' />
+            <column datatype='integer' name='MethodID' ordinal='10' />
+            <column datatype='string' name='PrimaryUseCategoryCV' ordinal='11' />
+            <column datatype='integer' name='DataPublicationDateID' ordinal='12' />
+            <column datatype='string' name='DataPublicationDOI' ordinal='13' />
+            <column datatype='string' name='AllocationNativeID' ordinal='14' />
+            <column datatype='integer' name='AllocationApplicationDateID' ordinal='15' />
+            <column datatype='integer' name='AllocationPriorityDateID' ordinal='16' />
+            <column datatype='string' name='AllocationExpirationDateID' ordinal='17' />
+            <column datatype='string' name='AllocationOwner' ordinal='18' />
+            <column datatype='string' name='AllocationBasisCV' ordinal='19' />
+            <column datatype='string' name='AllocationLegalStatusCV' ordinal='20' />
+            <column datatype='string' name='AllocationTypeCV' ordinal='21' />
+            <column datatype='string' name='AllocationCropDutyAmount' ordinal='22' />
+            <column datatype='real' name='AllocationFlow_CFS' ordinal='23' />
+            <column datatype='real' name='AllocationVolume_AF' ordinal='24' />
+            <column datatype='string' name='PopulationServed' ordinal='25' />
+            <column datatype='string' name='GeneratedPowerCapacityMW' ordinal='26' />
+            <column datatype='string' name='IrrigatedAcreage' ordinal='27' />
+            <column datatype='string' name='AllocationCommunityWaterSupplySystem' ordinal='28' />
+            <column datatype='string' name='SDWISIdentifierCV' ordinal='29' />
+            <column datatype='string' name='AllocationAssociatedWithdrawalSiteIDs' ordinal='30' />
+            <column datatype='string' name='AllocationAssociatedConsumptiveUseSiteIDs' ordinal='31' />
+            <column datatype='string' name='AllocationChangeApplicationIndicator' ordinal='32' />
+            <column datatype='string' name='LegacyAllocationIDs' ordinal='33' />
+            <column datatype='string' name='WaterAllocationNativeURL' ordinal='34' />
+            <column datatype='string' name='CropTypeCV' ordinal='35' />
+            <column datatype='string' name='IrrigationMethodCV' ordinal='36' />
+            <column datatype='string' name='CustomerTypeCV' ordinal='37' />
+            <column datatype='string' name='CommunityWaterSupplySystem' ordinal='38' />
+            <column datatype='string' name='PowerType' ordinal='39' />
+            <column datatype='string' name='AllocationTimeframeStart' ordinal='40' />
+            <column datatype='string' name='AllocationTimeframeEnd' ordinal='41' />
+            <column datatype='integer' name='ExemptOfVolumeFlowPriority' ordinal='42' />
+            <column datatype='string' name='OwnerClassificationCV' ordinal='43' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.1azi4830gzfg3b1dmk6iw1kpx8gq' name='ut_co_wy_surfacewater_waterrights.csv' table='[ut_co_wy_surfacewater_waterrights#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='State' ordinal='0' />
+            <column datatype='string' name='OrganizationName' ordinal='1' />
+            <column datatype='date' name='Priority_Date' ordinal='2' />
+            <column datatype='string' name='WaterSourceTypeCV' ordinal='3' />
+            <column datatype='string' name='SiteUUID' ordinal='4' />
+            <column datatype='string' name='PODorPOUSite' ordinal='5' />
+            <column datatype='string' name='WaDENameBenUse' ordinal='6' />
+            <column datatype='integer' name='AllocationAmountID' ordinal='7' />
+            <column datatype='integer' name='OrganizationID' ordinal='8' />
+            <column datatype='integer' name='VariableSpecificID' ordinal='9' />
+            <column datatype='integer' name='MethodID' ordinal='10' />
+            <column datatype='string' name='PrimaryUseCategoryCV' ordinal='11' />
+            <column datatype='integer' name='DataPublicationDateID' ordinal='12' />
+            <column datatype='string' name='DataPublicationDOI' ordinal='13' />
+            <column datatype='string' name='AllocationNativeID' ordinal='14' />
+            <column datatype='integer' name='AllocationApplicationDateID' ordinal='15' />
+            <column datatype='integer' name='AllocationPriorityDateID' ordinal='16' />
+            <column datatype='string' name='AllocationExpirationDateID' ordinal='17' />
+            <column datatype='string' name='AllocationOwner' ordinal='18' />
+            <column datatype='string' name='AllocationBasisCV' ordinal='19' />
+            <column datatype='string' name='AllocationLegalStatusCV' ordinal='20' />
+            <column datatype='string' name='AllocationTypeCV' ordinal='21' />
+            <column datatype='string' name='AllocationCropDutyAmount' ordinal='22' />
+            <column datatype='real' name='AllocationFlow_CFS' ordinal='23' />
+            <column datatype='real' name='AllocationVolume_AF' ordinal='24' />
+            <column datatype='string' name='PopulationServed' ordinal='25' />
+            <column datatype='string' name='GeneratedPowerCapacityMW' ordinal='26' />
+            <column datatype='string' name='IrrigatedAcreage' ordinal='27' />
+            <column datatype='string' name='AllocationCommunityWaterSupplySystem' ordinal='28' />
+            <column datatype='string' name='SDWISIdentifierCV' ordinal='29' />
+            <column datatype='string' name='AllocationAssociatedWithdrawalSiteIDs' ordinal='30' />
+            <column datatype='string' name='AllocationAssociatedConsumptiveUseSiteIDs' ordinal='31' />
+            <column datatype='string' name='AllocationChangeApplicationIndicator' ordinal='32' />
+            <column datatype='string' name='LegacyAllocationIDs' ordinal='33' />
+            <column datatype='string' name='WaterAllocationNativeURL' ordinal='34' />
+            <column datatype='string' name='CropTypeCV' ordinal='35' />
+            <column datatype='string' name='IrrigationMethodCV' ordinal='36' />
+            <column datatype='string' name='CustomerTypeCV' ordinal='37' />
+            <column datatype='string' name='CommunityWaterSupplySystem' ordinal='38' />
+            <column datatype='string' name='PowerType' ordinal='39' />
+            <column datatype='string' name='AllocationTimeframeStart' ordinal='40' />
+            <column datatype='string' name='AllocationTimeframeEnd' ordinal='41' />
+            <column datatype='integer' name='ExemptOfVolumeFlowPriority' ordinal='42' />
+            <column datatype='string' name='OwnerClassificationCV' ordinal='43' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>State</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[State]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>State</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OrganizationName</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[OrganizationName]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>OrganizationName</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Priority_Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Priority_Date]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>Priority_Date</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WaterSourceTypeCV</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[WaterSourceTypeCV]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>WaterSourceTypeCV</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SiteUUID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[SiteUUID]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>SiteUUID</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PODorPOUSite</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[PODorPOUSite]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>PODorPOUSite</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WaDENameBenUse</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[WaDENameBenUse]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>WaDENameBenUse</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AllocationAmountID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[AllocationAmountID]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>AllocationAmountID</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OrganizationID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[OrganizationID]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>OrganizationID</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>VariableSpecificID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[VariableSpecificID]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>VariableSpecificID</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MethodID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MethodID]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>MethodID</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PrimaryUseCategoryCV</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[PrimaryUseCategoryCV]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>PrimaryUseCategoryCV</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DataPublicationDateID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DataPublicationDateID]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>DataPublicationDateID</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DataPublicationDOI</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DataPublicationDOI]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>DataPublicationDOI</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AllocationNativeID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AllocationNativeID]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>AllocationNativeID</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AllocationApplicationDateID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[AllocationApplicationDateID]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>AllocationApplicationDateID</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AllocationPriorityDateID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[AllocationPriorityDateID]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>AllocationPriorityDateID</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AllocationExpirationDateID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AllocationExpirationDateID]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>AllocationExpirationDateID</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AllocationOwner</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AllocationOwner]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>AllocationOwner</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AllocationBasisCV</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AllocationBasisCV]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>AllocationBasisCV</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AllocationLegalStatusCV</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AllocationLegalStatusCV]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>AllocationLegalStatusCV</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AllocationTypeCV</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AllocationTypeCV]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>AllocationTypeCV</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AllocationCropDutyAmount</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AllocationCropDutyAmount]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>AllocationCropDutyAmount</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AllocationFlow_CFS</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AllocationFlow_CFS]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>AllocationFlow_CFS</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AllocationVolume_AF</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AllocationVolume_AF]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>AllocationVolume_AF</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PopulationServed</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[PopulationServed]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>PopulationServed</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GeneratedPowerCapacityMW</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[GeneratedPowerCapacityMW]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>GeneratedPowerCapacityMW</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>IrrigatedAcreage</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[IrrigatedAcreage]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>IrrigatedAcreage</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AllocationCommunityWaterSupplySystem</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AllocationCommunityWaterSupplySystem]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>AllocationCommunityWaterSupplySystem</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SDWISIdentifierCV</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[SDWISIdentifierCV]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>SDWISIdentifierCV</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AllocationAssociatedWithdrawalSiteIDs</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AllocationAssociatedWithdrawalSiteIDs]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>AllocationAssociatedWithdrawalSiteIDs</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AllocationAssociatedConsumptiveUseSiteIDs</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AllocationAssociatedConsumptiveUseSiteIDs]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>AllocationAssociatedConsumptiveUseSiteIDs</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AllocationChangeApplicationIndicator</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AllocationChangeApplicationIndicator]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>AllocationChangeApplicationIndicator</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LegacyAllocationIDs</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[LegacyAllocationIDs]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>LegacyAllocationIDs</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WaterAllocationNativeURL</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[WaterAllocationNativeURL]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>WaterAllocationNativeURL</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CropTypeCV</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CropTypeCV]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>CropTypeCV</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>IrrigationMethodCV</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[IrrigationMethodCV]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>IrrigationMethodCV</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CustomerTypeCV</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CustomerTypeCV]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>CustomerTypeCV</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CommunityWaterSupplySystem</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CommunityWaterSupplySystem]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>CommunityWaterSupplySystem</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PowerType</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[PowerType]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>PowerType</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AllocationTimeframeStart</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AllocationTimeframeStart]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>AllocationTimeframeStart</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AllocationTimeframeEnd</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AllocationTimeframeEnd]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>AllocationTimeframeEnd</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ExemptOfVolumeFlowPriority</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ExemptOfVolumeFlowPriority]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>ExemptOfVolumeFlowPriority</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OwnerClassificationCV</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[OwnerClassificationCV]</local-name>
+            <parent-name>[ut_co_wy_surfacewater_waterrights.csv]</parent-name>
+            <remote-alias>OwnerClassificationCV</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Allocation Amount ID' datatype='integer' name='[AllocationAmountID]' role='dimension' type='ordinal' />
+      <column caption='Allocation Application Date ID' datatype='integer' name='[AllocationApplicationDateID]' role='dimension' type='ordinal' />
+      <column caption='Allocation Associated Consumptive Use Site I Ds' datatype='string' name='[AllocationAssociatedConsumptiveUseSiteIDs]' role='dimension' type='nominal' />
+      <column caption='Allocation Associated Withdrawal Site I Ds' datatype='string' name='[AllocationAssociatedWithdrawalSiteIDs]' role='dimension' type='nominal' />
+      <column caption='Allocation Basis CV' datatype='string' name='[AllocationBasisCV]' role='dimension' type='nominal' />
+      <column caption='Allocation Change Application Indicator' datatype='string' name='[AllocationChangeApplicationIndicator]' role='dimension' type='nominal' />
+      <column caption='Allocation Community Water Supply System' datatype='string' name='[AllocationCommunityWaterSupplySystem]' role='dimension' type='nominal' />
+      <column caption='Allocation Crop Duty Amount' datatype='string' name='[AllocationCropDutyAmount]' role='dimension' type='nominal' />
+      <column caption='Allocation Expiration Date ID' datatype='string' name='[AllocationExpirationDateID]' role='dimension' type='nominal' />
+      <column caption='AllocationFlow CFS' datatype='real' name='[AllocationFlow_CFS]' role='measure' type='quantitative' />
+      <column caption='Allocation Legal Status CV' datatype='string' name='[AllocationLegalStatusCV]' role='dimension' type='nominal' />
+      <column caption='Allocation Native ID' datatype='string' name='[AllocationNativeID]' role='dimension' type='nominal' />
+      <column caption='Allocation Owner' datatype='string' name='[AllocationOwner]' role='dimension' type='nominal' />
+      <column caption='Allocation Priority Date ID' datatype='integer' name='[AllocationPriorityDateID]' role='dimension' type='ordinal' />
+      <column caption='Allocation Timeframe End' datatype='string' name='[AllocationTimeframeEnd]' role='dimension' type='nominal' />
+      <column caption='Allocation Timeframe Start' datatype='string' name='[AllocationTimeframeStart]' role='dimension' type='nominal' />
+      <column caption='Allocation Type CV' datatype='string' name='[AllocationTypeCV]' role='dimension' type='nominal' />
+      <column caption='AllocationVolume AF' datatype='real' name='[AllocationVolume_AF]' role='measure' type='quantitative' />
+      <column caption='Community Water Supply System' datatype='string' name='[CommunityWaterSupplySystem]' role='dimension' type='nominal' />
+      <column caption='Crop Type CV' datatype='string' name='[CropTypeCV]' role='dimension' type='nominal' />
+      <column caption='Customer Type CV' datatype='string' name='[CustomerTypeCV]' role='dimension' type='nominal' />
+      <column caption='Data Publication DOI' datatype='string' name='[DataPublicationDOI]' role='dimension' type='nominal' />
+      <column caption='Data Publication Date ID' datatype='integer' name='[DataPublicationDateID]' role='dimension' type='ordinal' />
+      <column caption='Exempt Of Volume Flow Priority' datatype='integer' name='[ExemptOfVolumeFlowPriority]' role='measure' type='quantitative' />
+      <column caption='Generated Power Capacity MW' datatype='string' name='[GeneratedPowerCapacityMW]' role='dimension' type='nominal' />
+      <column caption='Irrigated Acreage' datatype='string' name='[IrrigatedAcreage]' role='dimension' type='nominal' />
+      <column caption='Irrigation Method CV' datatype='string' name='[IrrigationMethodCV]' role='dimension' type='nominal' />
+      <column caption='Legacy Allocation I Ds' datatype='string' name='[LegacyAllocationIDs]' role='dimension' type='nominal' />
+      <column caption='Method ID' datatype='integer' name='[MethodID]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Organization ID' datatype='integer' name='[OrganizationID]' role='dimension' type='ordinal' />
+      <column caption='Organization Name' datatype='string' name='[OrganizationName]' role='dimension' type='nominal' />
+      <column caption='Owner Classification CV' datatype='string' name='[OwnerClassificationCV]' role='dimension' type='nominal' />
+      <column caption='PO Dor POU Site' datatype='string' name='[PODorPOUSite]' role='dimension' type='nominal' />
+      <column caption='Population Served' datatype='string' name='[PopulationServed]' role='dimension' type='nominal' />
+      <column caption='Power Type' datatype='string' name='[PowerType]' role='dimension' type='nominal' />
+      <column caption='Primary Use Category CV' datatype='string' name='[PrimaryUseCategoryCV]' role='dimension' type='nominal' />
+      <column caption='Priority Date' datatype='date' name='[Priority_Date]' role='dimension' type='ordinal' />
+      <column caption='SDWIS Identifier CV' datatype='string' name='[SDWISIdentifierCV]' role='dimension' type='nominal' />
+      <column aggregation='CountD' caption='Num of SiteUUID' datatype='string' default-role='measure' default-type='quantitative' name='[Site UUID (copy)_935904343187243008]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[SiteUUID]' />
+      </column>
+      <column aggregation='None' datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Variable Specific ID' datatype='integer' name='[VariableSpecificID]' role='dimension' type='ordinal' />
+      <column caption='WaDE Name Ben Use' datatype='string' name='[WaDENameBenUse]' role='dimension' type='nominal' />
+      <column caption='Water Allocation Native URL' datatype='string' name='[WaterAllocationNativeURL]' role='dimension' type='nominal' />
+      <column caption='Water Source Type CV' datatype='string' name='[WaterSourceTypeCV]' role='dimension' type='nominal' />
+      <_.fcp.ObjectModelTableType.true...column caption='Migrated Data' datatype='table' name='[__tableau_internal_object_id__].[Migrated Data]' role='measure' type='quantitative' />
+      <column-instance column='[WaDENameBenUse]' derivation='None' name='[none:WaDENameBenUse:nk]' pivot='key' type='nominal' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' rowDisplayCount='10000' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:WaDENameBenUse:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Livestock&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Agricultural&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Fire&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Power&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Mining&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Fish&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Wildlife&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Commercial&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Storage&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Industrial&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Recharge&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Recreation&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Unspecified&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Municipal&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Instream Flow&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Domestic&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Snow Making&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Other&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Environmental&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Migrated Data' id='Migrated Data'>
+            <properties context=''>
+              <relation connection='textscan.1azi4830gzfg3b1dmk6iw1kpx8gq' name='ut_co_wy_surfacewater_waterrights.csv' table='[ut_co_wy_surfacewater_waterrights#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='State' ordinal='0' />
+                  <column datatype='string' name='OrganizationName' ordinal='1' />
+                  <column datatype='date' name='Priority_Date' ordinal='2' />
+                  <column datatype='string' name='WaterSourceTypeCV' ordinal='3' />
+                  <column datatype='string' name='SiteUUID' ordinal='4' />
+                  <column datatype='string' name='PODorPOUSite' ordinal='5' />
+                  <column datatype='string' name='WaDENameBenUse' ordinal='6' />
+                  <column datatype='integer' name='AllocationAmountID' ordinal='7' />
+                  <column datatype='integer' name='OrganizationID' ordinal='8' />
+                  <column datatype='integer' name='VariableSpecificID' ordinal='9' />
+                  <column datatype='integer' name='MethodID' ordinal='10' />
+                  <column datatype='string' name='PrimaryUseCategoryCV' ordinal='11' />
+                  <column datatype='integer' name='DataPublicationDateID' ordinal='12' />
+                  <column datatype='string' name='DataPublicationDOI' ordinal='13' />
+                  <column datatype='string' name='AllocationNativeID' ordinal='14' />
+                  <column datatype='integer' name='AllocationApplicationDateID' ordinal='15' />
+                  <column datatype='integer' name='AllocationPriorityDateID' ordinal='16' />
+                  <column datatype='string' name='AllocationExpirationDateID' ordinal='17' />
+                  <column datatype='string' name='AllocationOwner' ordinal='18' />
+                  <column datatype='string' name='AllocationBasisCV' ordinal='19' />
+                  <column datatype='string' name='AllocationLegalStatusCV' ordinal='20' />
+                  <column datatype='string' name='AllocationTypeCV' ordinal='21' />
+                  <column datatype='string' name='AllocationCropDutyAmount' ordinal='22' />
+                  <column datatype='real' name='AllocationFlow_CFS' ordinal='23' />
+                  <column datatype='real' name='AllocationVolume_AF' ordinal='24' />
+                  <column datatype='string' name='PopulationServed' ordinal='25' />
+                  <column datatype='string' name='GeneratedPowerCapacityMW' ordinal='26' />
+                  <column datatype='string' name='IrrigatedAcreage' ordinal='27' />
+                  <column datatype='string' name='AllocationCommunityWaterSupplySystem' ordinal='28' />
+                  <column datatype='string' name='SDWISIdentifierCV' ordinal='29' />
+                  <column datatype='string' name='AllocationAssociatedWithdrawalSiteIDs' ordinal='30' />
+                  <column datatype='string' name='AllocationAssociatedConsumptiveUseSiteIDs' ordinal='31' />
+                  <column datatype='string' name='AllocationChangeApplicationIndicator' ordinal='32' />
+                  <column datatype='string' name='LegacyAllocationIDs' ordinal='33' />
+                  <column datatype='string' name='WaterAllocationNativeURL' ordinal='34' />
+                  <column datatype='string' name='CropTypeCV' ordinal='35' />
+                  <column datatype='string' name='IrrigationMethodCV' ordinal='36' />
+                  <column datatype='string' name='CustomerTypeCV' ordinal='37' />
+                  <column datatype='string' name='CommunityWaterSupplySystem' ordinal='38' />
+                  <column datatype='string' name='PowerType' ordinal='39' />
+                  <column datatype='string' name='AllocationTimeframeStart' ordinal='40' />
+                  <column datatype='string' name='AllocationTimeframeEnd' ordinal='41' />
+                  <column datatype='integer' name='ExemptOfVolumeFlowPriority' ordinal='42' />
+                  <column datatype='string' name='OwnerClassificationCV' ordinal='43' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Flow by BenUse per State'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1'>Surface Water Flow by Benefical Use per State</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ut_co_wy_surfacewater_waterrights' name='federated.1ve1sk806howbk1ad6x9k036jyd9' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ve1sk806howbk1ad6x9k036jyd9'>
+            <column caption='AllocationFlow CFS' datatype='real' name='[AllocationFlow_CFS]' role='measure' type='quantitative' />
+            <column aggregation='None' datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column caption='WaDE Name Ben Use' datatype='string' name='[WaDENameBenUse]' role='dimension' type='nominal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[WaDENameBenUse]' derivation='None' name='[none:WaDENameBenUse:nk]' pivot='key' type='nominal' />
+            <column-instance column='[AllocationFlow_CFS]' derivation='Sum' name='[sum:AllocationFlow_CFS:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1ve1sk806howbk1ad6x9k036jyd9].[none:WaDENameBenUse:nk]' value='92' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1ve1sk806howbk1ad6x9k036jyd9].[none:WaDENameBenUse:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.1ve1sk806howbk1ad6x9k036jyd9].[none:State:nk] * [federated.1ve1sk806howbk1ad6x9k036jyd9].[sum:AllocationFlow_CFS:qk])</rows>
+        <cols>[federated.1ve1sk806howbk1ad6x9k036jyd9].[none:WaDENameBenUse:nk]</cols>
+      </table>
+      <simple-id uuid='{A5485B7F-AB29-4583-86C8-12E379D995A2}' />
+    </worksheet>
+    <worksheet name='Number of Sites by BenUse per State'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1'>Number of Surface Water Sites by Benefical Use per State</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ut_co_wy_surfacewater_waterrights' name='federated.1ve1sk806howbk1ad6x9k036jyd9' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ve1sk806howbk1ad6x9k036jyd9'>
+            <column aggregation='CountD' caption='Num of SiteUUID' datatype='string' default-role='measure' default-type='quantitative' name='[Site UUID (copy)_935904343187243008]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[SiteUUID]' />
+            </column>
+            <column datatype='string' name='[SiteUUID]' role='dimension' type='nominal' />
+            <column aggregation='None' datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column caption='WaDE Name Ben Use' datatype='string' name='[WaDENameBenUse]' role='dimension' type='nominal' />
+            <column-instance column='[Site UUID (copy)_935904343187243008]' derivation='CountD' name='[ctd:Site UUID (copy)_935904343187243008:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[WaDENameBenUse]' derivation='None' name='[none:WaDENameBenUse:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1ve1sk806howbk1ad6x9k036jyd9].[none:WaDENameBenUse:nk]' value='90' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1ve1sk806howbk1ad6x9k036jyd9].[none:WaDENameBenUse:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.1ve1sk806howbk1ad6x9k036jyd9].[none:State:nk] * [federated.1ve1sk806howbk1ad6x9k036jyd9].[ctd:Site UUID (copy)_935904343187243008:qk])</rows>
+        <cols>[federated.1ve1sk806howbk1ad6x9k036jyd9].[none:WaDENameBenUse:nk]</cols>
+      </table>
+      <simple-id uuid='{04BBC15D-BC90-4E37-85ED-C7E0C58C5B18}' />
+    </worksheet>
+    <worksheet name='Volume by BenUse per State'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1'>Surface Water Volume by Benefical Use per State</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ut_co_wy_surfacewater_waterrights' name='federated.1ve1sk806howbk1ad6x9k036jyd9' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ve1sk806howbk1ad6x9k036jyd9'>
+            <column caption='AllocationVolume AF' datatype='real' name='[AllocationVolume_AF]' role='measure' type='quantitative' />
+            <column aggregation='None' datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column caption='WaDE Name Ben Use' datatype='string' name='[WaDENameBenUse]' role='dimension' type='nominal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[WaDENameBenUse]' derivation='None' name='[none:WaDENameBenUse:nk]' pivot='key' type='nominal' />
+            <column-instance column='[AllocationVolume_AF]' derivation='Sum' name='[sum:AllocationVolume_AF:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1ve1sk806howbk1ad6x9k036jyd9].[none:WaDENameBenUse:nk]' value='89' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1ve1sk806howbk1ad6x9k036jyd9].[none:WaDENameBenUse:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.1ve1sk806howbk1ad6x9k036jyd9].[none:State:nk] * [federated.1ve1sk806howbk1ad6x9k036jyd9].[sum:AllocationVolume_AF:qk])</rows>
+        <cols>[federated.1ve1sk806howbk1ad6x9k036jyd9].[none:WaDENameBenUse:nk]</cols>
+      </table>
+      <simple-id uuid='{645E234B-3652-4D63-9BAA-EA84B661AB67}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' name='Flow by BenUse per State'>
+      <cards>
+        <edge name='left'>
+          <strip size='116'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='150'>
+            <card pane-specification-id='0' param='[federated.1ve1sk806howbk1ad6x9k036jyd9].[none:WaDENameBenUse:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1ve1sk806howbk1ad6x9k036jyd9].[none:State:nk]</field>
+            <field>[federated.1ve1sk806howbk1ad6x9k036jyd9].[none:WaDENameBenUse:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{D5E95233-E524-40D7-A959-178971EB8D84}' />
+    </window>
+    <window class='worksheet' name='Volume by BenUse per State'>
+      <cards>
+        <edge name='left'>
+          <strip size='100'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1ve1sk806howbk1ad6x9k036jyd9].[none:WaDENameBenUse:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1ve1sk806howbk1ad6x9k036jyd9].[none:State:nk]</field>
+            <field>[federated.1ve1sk806howbk1ad6x9k036jyd9].[none:WaDENameBenUse:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{6E5C46BF-74AE-48CF-89C6-F5A3FA5927FD}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Number of Sites by BenUse per State'>
+      <cards>
+        <edge name='left'>
+          <strip size='100'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1ve1sk806howbk1ad6x9k036jyd9].[none:WaDENameBenUse:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1ve1sk806howbk1ad6x9k036jyd9].[none:State:nk]</field>
+            <field>[federated.1ve1sk806howbk1ad6x9k036jyd9].[none:WaDENameBenUse:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{D6877F9A-CA89-46E3-BBB8-B8CA73FB03F9}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Flow by BenUse per State' width='192'>
+      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
+      3jd2zwAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='Number of Sites by BenUse per State' width='192'>
+      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
+      AAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Volume by BenUse per State' width='192'>
+      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
+      ob4HbM3RSQAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
