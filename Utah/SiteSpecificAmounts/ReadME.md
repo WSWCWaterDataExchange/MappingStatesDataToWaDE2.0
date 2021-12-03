@@ -6,7 +6,9 @@ This readme details the process that was applied by the staff of the [Western St
 The following data was used for aggregated water budget...
 
 - **Water Use Data Portal**, also known as M&I data, and broken up into **System** and **Source** data.  Obtained from the UDWRi website at:  https://waterrights.utah.gov/asp_apps/waterUseData/setFilters.asp
-- **Utah Culinary Water Service Areas**, which was used to tie in UDWRi data to location data.  Location information used for WaDE 2.0 purposes reflect the centroid of the water use areas (polygons).  Data was obtained from the Utah Division of Water Resources (UDWRe) website at: https://opendata.gis.utah.gov/datasets/1d2535e8c31247b9aaff664f6ac9c45d_0?geometry=-131.898%2C36.940%2C-91.216%2C42.682.
+- **Utah Culinary Water Suppliers**, which was used to tie in UDWRi data to location data.  Location information used for WaDE 2.0 purposes reflect the centroid of the water use areas (polygons).  Data was obtained from the Utah Division of Water Resources (UDWRe) website at: https://utahdnr.maps.arcgis.com/apps/webappviewer/index.html?id=050cace4aa4a43f5a38dbea00fb7f894
+
+
 
 Please note that the UDWRe has this webpage for Municipal and Industrial Water Use Data.  The page has helpful notes at the bottom that explain the context of the data.  We didn’t use this data because the Division of Water Rights data source above compiles all the years data together which is easier for WaDE use.
 https://dwre-utahdnr.opendata.arcgis.com/pages/municipal-and-industrial-data
