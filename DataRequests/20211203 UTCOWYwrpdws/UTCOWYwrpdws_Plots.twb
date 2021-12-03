@@ -1,16 +1,21 @@
 <?xml version='1.0' encoding='utf-8' ?>
 
 <!-- build 20213.21.1018.0949                               -->
-<workbook original-version='18.1' source-build='2021.3.3 (20213.21.1018.0949)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+<workbook original-version='18.1' source-build='2021.3.3 (20213.21.1018.0949)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
   <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
     <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
     <_.fcp.MarkAnimation.true...MarkAnimation />
     <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelExtractV2.true...ObjectModelExtractV2 />
     <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
     <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
     <SheetIdentifierTracking />
     <WindowsPersistSimpleIdentifiers />
   </document-format-change-manifest>
+  <repository-location id='UTCOWYwrpdws_Plots' path='/workbooks' revision='1.0' />
   <preferences>
     <preference name='ui.encoding.shelf.height' value='24' />
     <preference name='ui.shelf.height' value='26' />
@@ -25,7 +30,7 @@
       <connection class='federated'>
         <named-connections>
           <named-connection caption='ut_co_wy_surfacewater_waterrights' name='textscan.1azi4830gzfg3b1dmk6iw1kpx8gq'>
-            <connection class='textscan' directory='C:/Users/rjame/Documents/WSWC Documents/WaDE Side Projects/Data Request/20211203 UTCOWYwrpdws' filename='ut_co_wy_surfacewater_waterrights.csv' password='' server='' />
+            <connection class='textscan' directory='C:/Users/rjame/Documents/WSWC Documents/WaDE Side Projects/Data Request/20211203 UTCOWYwrpdws' filename='ut_co_wy_surfacewater_waterrights.csv' password='' server='' workgroup-auth-mode='as-is' />
           </named-connection>
         </named-connections>
         <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1azi4830gzfg3b1dmk6iw1kpx8gq' name='ut_co_wy_surfacewater_waterrights.csv' table='[ut_co_wy_surfacewater_waterrights#csv]' type='table'>
@@ -842,6 +847,666 @@
       <column caption='Water Source Type CV' datatype='string' name='[WaterSourceTypeCV]' role='dimension' type='nominal' />
       <_.fcp.ObjectModelTableType.true...column caption='Migrated Data' datatype='table' name='[__tableau_internal_object_id__].[Migrated Data]' role='measure' type='quantitative' />
       <column-instance column='[WaDENameBenUse]' derivation='None' name='[none:WaDENameBenUse:nk]' pivot='key' type='nominal' />
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/rjame/Documents/My Tableau Repository/Datasources/ut_co_wy_surfacewater_waterrights_extract.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='12/03/2021 06:18:10 PM' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='ut_co_wy_surfacewater_waterrights' increment-value='%null%' refresh-type='create' rows-inserted='112843' timestamp-start='2021-12-03 18:18:07.934' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>State</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[State]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>State</remote-alias>
+              <ordinal>0</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>OrganizationName</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[OrganizationName]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>OrganizationName</remote-alias>
+              <ordinal>1</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Priority_Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Priority_Date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Priority_Date</remote-alias>
+              <ordinal>2</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>6197</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>WaterSourceTypeCV</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[WaterSourceTypeCV]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>WaterSourceTypeCV</remote-alias>
+              <ordinal>3</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SiteUUID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[SiteUUID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>SiteUUID</remote-alias>
+              <ordinal>4</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>16979</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PODorPOUSite</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PODorPOUSite]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PODorPOUSite</remote-alias>
+              <ordinal>5</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>WaDENameBenUse</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[WaDENameBenUse]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>WaDENameBenUse</remote-alias>
+              <ordinal>6</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>17</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AllocationAmountID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[AllocationAmountID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>AllocationAmountID</remote-alias>
+              <ordinal>7</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>43306</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>OrganizationID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[OrganizationID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>OrganizationID</remote-alias>
+              <ordinal>8</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>VariableSpecificID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[VariableSpecificID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>VariableSpecificID</remote-alias>
+              <ordinal>9</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MethodID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[MethodID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MethodID</remote-alias>
+              <ordinal>10</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PrimaryUseCategoryCV</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PrimaryUseCategoryCV]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PrimaryUseCategoryCV</remote-alias>
+              <ordinal>11</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DataPublicationDateID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[DataPublicationDateID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DataPublicationDateID</remote-alias>
+              <ordinal>12</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DataPublicationDOI</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DataPublicationDOI]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DataPublicationDOI</remote-alias>
+              <ordinal>13</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AllocationNativeID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[AllocationNativeID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>AllocationNativeID</remote-alias>
+              <ordinal>14</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>43306</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AllocationApplicationDateID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[AllocationApplicationDateID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>AllocationApplicationDateID</remote-alias>
+              <ordinal>15</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6357</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AllocationPriorityDateID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[AllocationPriorityDateID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>AllocationPriorityDateID</remote-alias>
+              <ordinal>16</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6197</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AllocationExpirationDateID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[AllocationExpirationDateID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>AllocationExpirationDateID</remote-alias>
+              <ordinal>17</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AllocationOwner</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[AllocationOwner]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>AllocationOwner</remote-alias>
+              <ordinal>18</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3405</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AllocationBasisCV</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[AllocationBasisCV]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>AllocationBasisCV</remote-alias>
+              <ordinal>19</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AllocationLegalStatusCV</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[AllocationLegalStatusCV]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>AllocationLegalStatusCV</remote-alias>
+              <ordinal>20</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>42</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AllocationTypeCV</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[AllocationTypeCV]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>AllocationTypeCV</remote-alias>
+              <ordinal>21</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AllocationCropDutyAmount</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[AllocationCropDutyAmount]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>AllocationCropDutyAmount</remote-alias>
+              <ordinal>22</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8037</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AllocationFlow_CFS</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[AllocationFlow_CFS]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>AllocationFlow_CFS</remote-alias>
+              <ordinal>23</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3148</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AllocationVolume_AF</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[AllocationVolume_AF]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>AllocationVolume_AF</remote-alias>
+              <ordinal>24</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4058</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PopulationServed</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PopulationServed]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PopulationServed</remote-alias>
+              <ordinal>25</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>GeneratedPowerCapacityMW</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[GeneratedPowerCapacityMW]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>GeneratedPowerCapacityMW</remote-alias>
+              <ordinal>26</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>IrrigatedAcreage</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[IrrigatedAcreage]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>IrrigatedAcreage</remote-alias>
+              <ordinal>27</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AllocationCommunityWaterSupplySystem</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[AllocationCommunityWaterSupplySystem]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>AllocationCommunityWaterSupplySystem</remote-alias>
+              <ordinal>28</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>44</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SDWISIdentifierCV</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[SDWISIdentifierCV]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>SDWISIdentifierCV</remote-alias>
+              <ordinal>29</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AllocationAssociatedWithdrawalSiteIDs</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[AllocationAssociatedWithdrawalSiteIDs]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>AllocationAssociatedWithdrawalSiteIDs</remote-alias>
+              <ordinal>30</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AllocationAssociatedConsumptiveUseSiteIDs</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[AllocationAssociatedConsumptiveUseSiteIDs]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>AllocationAssociatedConsumptiveUseSiteIDs</remote-alias>
+              <ordinal>31</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AllocationChangeApplicationIndicator</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[AllocationChangeApplicationIndicator]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>AllocationChangeApplicationIndicator</remote-alias>
+              <ordinal>32</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>LegacyAllocationIDs</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[LegacyAllocationIDs]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>LegacyAllocationIDs</remote-alias>
+              <ordinal>33</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>WaterAllocationNativeURL</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[WaterAllocationNativeURL]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>WaterAllocationNativeURL</remote-alias>
+              <ordinal>34</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CropTypeCV</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[CropTypeCV]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CropTypeCV</remote-alias>
+              <ordinal>35</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>IrrigationMethodCV</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[IrrigationMethodCV]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>IrrigationMethodCV</remote-alias>
+              <ordinal>36</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CustomerTypeCV</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[CustomerTypeCV]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CustomerTypeCV</remote-alias>
+              <ordinal>37</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CommunityWaterSupplySystem</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[CommunityWaterSupplySystem]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CommunityWaterSupplySystem</remote-alias>
+              <ordinal>38</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PowerType</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PowerType]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PowerType</remote-alias>
+              <ordinal>39</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AllocationTimeframeStart</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[AllocationTimeframeStart]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>AllocationTimeframeStart</remote-alias>
+              <ordinal>40</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>28</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AllocationTimeframeEnd</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[AllocationTimeframeEnd]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>AllocationTimeframeEnd</remote-alias>
+              <ordinal>41</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>26</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ExemptOfVolumeFlowPriority</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[ExemptOfVolumeFlowPriority]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>ExemptOfVolumeFlowPriority</remote-alias>
+              <ordinal>42</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>OwnerClassificationCV</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[OwnerClassificationCV]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>OwnerClassificationCV</remote-alias>
+              <ordinal>43</ordinal>
+              <family>ut_co_wy_surfacewater_waterrights.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Migrated Data]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
       <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' rowDisplayCount='10000' show-structure='true' />
       <style>
         <style-rule element='mark'>
@@ -962,6 +1627,9 @@
                 </columns>
               </relation>
             </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
           </object>
         </objects>
       </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
@@ -972,7 +1640,9 @@
       <layout-options>
         <title>
           <formatted-text>
-            <run bold='true' fontalignment='1'>Surface Water Flow by Benefical Use per State</run>
+            <run bold='true' fontalignment='1'>Surface Water </run>
+            <run bold='true' fontalignment='1' fontcolor='#4e79a7'>Flow</run>
+            <run bold='true' fontalignment='1'> by Benefical Use per State</run>
           </formatted-text>
         </title>
       </layout-options>
@@ -1022,7 +1692,8 @@
       <layout-options>
         <title>
           <formatted-text>
-            <run bold='true' fontalignment='1'>Number of Surface Water Sites by Benefical Use per State</run>
+            <run bold='true' fontalignment='1' fontcolor='#f28e2b'>Number of</run>
+            <run bold='true' fontalignment='1'> Surface Water Sites by Benefical Use per State</run>
           </formatted-text>
         </title>
       </layout-options>
@@ -1075,7 +1746,9 @@
       <layout-options>
         <title>
           <formatted-text>
-            <run bold='true' fontalignment='1'>Surface Water Volume by Benefical Use per State</run>
+            <run bold='true' fontalignment='1'>Surface Water </run>
+            <run bold='true' fontalignment='1' fontcolor='#59a14f'>Volume</run>
+            <run bold='true' fontalignment='1'> by Benefical Use per State</run>
           </formatted-text>
         </title>
       </layout-options>
@@ -1122,6 +1795,113 @@
       <simple-id uuid='{645E234B-3652-4D63-9BAA-EA84B661AB67}' />
     </worksheet>
   </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='UT, CO, WY Surrface Water Rights by Benefical Use Pre Oct 1922'>
+      <style />
+      <size maxheight='1800' maxwidth='2060' minheight='1800' minwidth='2060' preset-index='17' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='99112' id='19' layout-strategy-id='distribute-evenly' param='vert' type-v2='layout-flow' w='99224' x='388' y='444'>
+            <zone h='99112' id='17' param='vert' type-v2='layout-flow' w='99224' x='388' y='444'>
+              <zone h='99112' id='15' type-v2='layout-basic' w='99224' x='388' y='444'>
+                <zone h='32887' id='7' param='horz' type-v2='layout-flow' w='99224' x='388' y='444'>
+                  <zone h='32553' id='5' type-v2='layout-basic' w='98932' x='534' y='611'>
+                    <zone h='32553' id='3' name='Flow by BenUse per State' w='98932' x='534' y='611'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                        <format attr='background-color' value='#e6ecf050' />
+                      </zone-style>
+                    </zone>
+                  </zone>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='3' />
+                    <format attr='background-color' value='#e6ecf0' />
+                  </zone-style>
+                </zone>
+                <zone h='33445' id='9' name='Volume by BenUse per State' w='99224' x='388' y='33331'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='3' />
+                    <format attr='margin' value='4' />
+                    <format attr='background-color' value='#e8edda' />
+                  </zone-style>
+                </zone>
+                <zone h='32780' id='10' name='Number of Sites by BenUse per State' w='99224' x='388' y='66776'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='3' />
+                    <format attr='margin' value='4' />
+                    <format attr='background-color' value='#f5ead7' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='900' minheight='900' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='31' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='99112' id='30' param='vert' type-v2='layout-flow' w='99224' x='388' y='444'>
+                <zone fixed-size='280' h='32553' id='3' is-fixed='true' name='Flow by BenUse per State' w='98932' x='534' y='611'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#e6ecf050' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='33445' id='9' is-fixed='true' name='Volume by BenUse per State' w='99224' x='388' y='33331'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='3' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#e8edda' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='32780' id='10' is-fixed='true' name='Number of Sites by BenUse per State' w='99224' x='388' y='66776'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='3' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#f5ead7' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{3395B3D2-89FE-4091-B80E-7CCC271A89D6}' />
+    </dashboard>
+  </dashboards>
   <windows saved-dpi-scale-factor='1.25' source-height='37'>
     <window class='worksheet' name='Flow by BenUse per State'>
       <cards>
@@ -1144,7 +1924,7 @@
           </strip>
         </edge>
         <edge name='right'>
-          <strip size='150'>
+          <strip size='149'>
             <card pane-specification-id='0' param='[federated.1ve1sk806howbk1ad6x9k036jyd9].[none:WaDENameBenUse:nk]' type='color' />
           </strip>
         </edge>
@@ -1195,7 +1975,7 @@
       </viewpoint>
       <simple-id uuid='{6E5C46BF-74AE-48CF-89C6-F5A3FA5927FD}' />
     </window>
-    <window class='worksheet' maximized='true' name='Number of Sites by BenUse per State'>
+    <window class='worksheet' name='Number of Sites by BenUse per State'>
       <cards>
         <edge name='left'>
           <strip size='100'>
@@ -1231,176 +2011,317 @@
       </viewpoint>
       <simple-id uuid='{D6877F9A-CA89-46E3-BBB8-B8CA73FB03F9}' />
     </window>
+    <window class='dashboard' maximized='true' name='UT, CO, WY Surrface Water Rights by Benefical Use Pre Oct 1922'>
+      <viewpoints>
+        <viewpoint name='Flow by BenUse per State'>
+          <zoom type='entire-view' />
+          <highlight field='[federated.1ve1sk806howbk1ad6x9k036jyd9].[none:WaDENameBenUse:nk]'>
+            <bucket-selection />
+          </highlight>
+        </viewpoint>
+        <viewpoint name='Number of Sites by BenUse per State'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Volume by BenUse per State'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{D9E1CB12-D722-466D-9A90-38ACF35AAD25}' />
+    </window>
   </windows>
   <thumbnails>
     <thumbnail height='192' name='Flow by BenUse per State' width='192'>
       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
-      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
-      3jd2zwAAAABJRU5ErkJggg==
+      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
+      RK5CYII=
     </thumbnail>
     <thumbnail height='192' name='Number of Sites by BenUse per State' width='192'>
       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
-      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
-      AAAASUVORK5CYII=
+      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
+      x/8BMJmpjntdlcEAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='UT, CO, WY Surrface Water Rights by Benefical Use Pre Oct 1922' width='192'>
+      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
+      elZWdRDt4f8DtGefZu+qXB4AAAAASUVORK5CYII=
     </thumbnail>
     <thumbnail height='192' name='Volume by BenUse per State' width='192'>
       iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABJ0AAASdAHeZh94
