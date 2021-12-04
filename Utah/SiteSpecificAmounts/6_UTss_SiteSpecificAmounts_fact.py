@@ -110,13 +110,13 @@ print("Populating dataframe outdf...")
 outdf = pd.DataFrame(index=df_DM.index, columns=columnslist)  # The output dataframe
 
 print("MethodUUID")
-outdf['MethodUUID'] = "UDWRi_Water Use Data"
+outdf['MethodUUID'] = "UTss_M1"
 
 print("VariableSpecificUUID")
 outdf['VariableSpecificUUID'] = df_DM.apply(lambda row: retrieveVariableSpecificUUID(row['in_VariableSpecificCV']), axis=1)
 
 print("OrganizationUUID")
-outdf['OrganizationUUID'] = "UDWRi"
+outdf['OrganizationUUID'] = "UTss_O1"
 
 print("WaterSourceUUID")
 outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
@@ -126,7 +126,7 @@ df_DM['WaDEKey'] = df_DM['in_SiteNativeID'].astype(str) + df_DM['in_Latitude'].a
 outdf['SiteUUID'] = df_DM.apply(lambda row: retrieveSiteUUID(row['WaDEKey']), axis=1)
 
 print("Amount")
-outdf['Amount'] = df_DM['WaterUse']
+outdf['Amount'] = df_DM['in_Amount']
 
 print('AllocationCropDutyAmount')
 outdf['AllocationCropDutyAmount'] = ""
@@ -135,10 +135,10 @@ print("AssociatedNativeAllocationIDs")
 outdf['AssociatedNativeAllocationIDs'] = ""
 
 print("CommunityWaterSupplySystem")
-outdf['CommunityWaterSupplySystem'] = df_DM['System Name']
+outdf['CommunityWaterSupplySystem'] = df_DM['in_CommunityWaterSupplySystem']
 
 print('BeneficialUseCategory')
-outdf['BeneficialUseCategory'] = df_DM['BenUse']
+outdf['BeneficialUseCategory'] = df_DM['in_BenUse']
 
 print("CropTypeCV")
 outdf['CropTypeCV'] = ""
@@ -147,7 +147,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = df_DM['in_CustomerTypeCV']  # see preprocessing
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = "06/14/2021"
+outdf['DataPublicationDate'] = "12/03/2021"
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""
@@ -162,7 +162,7 @@ print("IrrigationMethodCV")
 outdf['IrrigationMethodCV'] = ""
 
 print("PopulationServed")
-outdf['PopulationServed'] = df_DM['Population']
+outdf['PopulationServed'] = df_DM['in_PopulationServed']
 
 print("PowerGeneratedGWh")
 outdf['PowerGeneratedGWh'] = ""
@@ -174,7 +174,7 @@ print("PrimaryUseCategory")
 outdf['PrimaryUseCategory'] = "Unspecified"
 
 print("ReportYearCV")
-outdf['ReportYearCV'] = df_DM['History Year']
+outdf['ReportYearCV'] = df_DM['in_ReportYearCV']
 
 print("SDWISIdentifier")
 outdf['SDWISIdentifier'] = ""

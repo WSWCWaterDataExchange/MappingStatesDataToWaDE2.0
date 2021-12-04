@@ -1,6 +1,8 @@
 VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
-UTss_Withdrawal Commercial,1,Year,Cumulative,AF,AF,1,CalendarYear,Withdrawal,Commercial
-UTss_Withdrawal Domestic,1,Year,Cumulative,AF,AF,1,CalendarYear,Withdrawal,Domestic
-UTss_Withdrawal Industrial,1,Year,Cumulative,AF,AF,1,CalendarYear,Withdrawal,Industrial
-UTss_Withdrawal Institutional,1,Year,Cumulative,AF,AF,1,CalendarYear,Withdrawal,Institutional
-UTss_Withdrawal Total (DCII),1,Year,Cumulative,AF,AF,1,CalendarYear,Withdrawal,Total (DCII)
+UTss_V1,1,Year,Cumulative,G,G,1,CalendarYear,Delivered Water Use,Delivered Water Use - Annual - DCII
+UTss_V2,1,Year,Cumulative,G,G,1,CalendarYear,Delivered Water Use,Delivered Water Use - Annual - Domestic
+UTss_V3,1,Year,Cumulative,G,G,1,CalendarYear,Delivered Water Use,Delivered Water Use - Annual - Commercial
+UTss_V4,1,Year,Cumulative,G,G,1,CalendarYear,Delivered Water Use,Delivered Water Use - Annual - Industrial
+UTss_V5,1,Year,Cumulative,G,G,1,CalendarYear,Delivered Water Use,Delivered Water Use - Annual - Institutional
+UTss_V6,1,Year,Cumulative,G,G,1,CalendarYear,Withdrawal,Withdrawal - Annual - DCII
+UTss_V7,1,Year,Cumulative,G,G,1,CalendarYear,Withdrawal,Withdrawal - Monthly - DCII

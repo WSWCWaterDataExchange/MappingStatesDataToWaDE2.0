@@ -111,10 +111,10 @@ print("CoordinateMethodCV")
 outdf['CoordinateMethodCV'] = df['in_CoordinateMethodCV']  # see preprocessing.
 
 print("County")
-outdf['County'] = df['County']
+outdf['County'] = ""
 
 print("EPSGCodeCV")
-outdf['EPSGCodeCV'] = '4326'
+outdf['EPSGCodeCV'] = "4326"
 
 print("Geometry")
 outdf['Geometry'] = ""

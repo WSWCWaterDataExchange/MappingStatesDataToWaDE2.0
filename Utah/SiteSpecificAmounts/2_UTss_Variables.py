@@ -36,11 +36,13 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 # outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = ["UTss_Withdrawal Commercial",
-                              "UTss_Withdrawal Domestic",
-                              "UTss_Withdrawal Industrial",
-                              "UTss_Withdrawal Institutional",
-                              "UTss_Withdrawal Total (DCII)"]
+outdf.VariableSpecificUUID = ["UTss_V1",
+                              "UTss_V2",
+                              "UTss_V3",
+                              "UTss_V4",
+                              "UTss_V5",
+                              "UTss_V6",
+                              "UTss_V7"]
 
 outdf.AggregationInterval = "1"
 
@@ -48,20 +50,30 @@ outdf.AggregationIntervalUnitCV = "Year"
 
 outdf.AggregationStatisticCV = "Cumulative"
 
-outdf.AmountUnitCV = "AF"
+outdf.AmountUnitCV = "G"
 
-outdf.MaximumAmountUnitCV = "AF"
+outdf.MaximumAmountUnitCV = "G"
 
 outdf.ReportYearStartMonth = "1"
 
 outdf.ReportYearTypeCV = "CalendarYear"
 
-outdf.VariableCV = ["Withdrawal", "Withdrawal", "Withdrawal", "Withdrawal", "Withdrawal"]
+outdf.VariableCV = ["Delivered Water Use",
+                    "Delivered Water Use",
+                    "Delivered Water Use",
+                    "Delivered Water Use",
+                    "Delivered Water Use",
+                    "Withdrawal",
+                    "Withdrawal"]
 
-outdf.VariableSpecificCV = ["Commercial", "Domestic", "Industrial", "Institutional", "Total (DCII)"]
 
-
-
+outdf.VariableSpecificCV = ["Delivered Water Use - Annual - DCII",
+                            "Delivered Water Use - Annual - Domestic",
+                            "Delivered Water Use - Annual - Commercial",
+                            "Delivered Water Use - Annual - Industrial",
+                            "Delivered Water Use - Annual - Institutional",
+                            "Withdrawal - Annual - DCII",
+                            "Withdrawal - Monthly - DCII"]
 
 
 # Check required fields are not null

@@ -35,7 +35,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.MethodUUID = "UDWRi_Water Use Data"
+outdf.MethodUUID = "UTss_M1"
 
 outdf.ApplicableResourceTypeCV = "Surface Ground Water"
 
