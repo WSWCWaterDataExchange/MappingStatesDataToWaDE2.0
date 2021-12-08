@@ -3,7 +3,7 @@ This readme details the process that was applied by the staff of the [Western St
 
 
 ## Overview of Data Utilized
-The following data was used for aggregated water budget...
+The following data source was used to get time series diversions
 
 - [Aqua Info](https://research.idwr.idaho.gov/apps/hydrologic/aquainfo/) time series data, retrieved via API.
 
