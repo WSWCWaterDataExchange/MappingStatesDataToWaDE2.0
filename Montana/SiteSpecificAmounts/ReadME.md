@@ -44,9 +44,7 @@ Purpose: Pre-process the state agency input data files into one master file for 
 - Create unique dataframes for each inpute file: MGS_datasets, MGS_locations, & MGS_timeseries.
 - For MGS_dataset dataframe... 
         - We are only interested in the following information at this time...
-            - **ParameterLabel** == "Discharge"
-            - **ComputationMethod** == "Mean"
-            - **ComputationPeriod** == "Daily"
+            - **SensorLabel** = discharge or stage.
         - Remove uncesseary columns.
     - Left-join merge reduced MGS_dataset dataframe with MGS_locations dataframe via **LocationCode** field.
 - For MGS_timeseries dataframe...
@@ -83,7 +81,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
-MDNRC_Streamgage | Surface Water | Measured
+MTss_M1 | Surface Water | Measured
 
 
 
@@ -109,7 +107,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
 ---------- | ---------- | ------------ | ------------
-MDNRC_Reservoirs and Gages| Daily | Average | CFS
+MTss_V1 | Daily | Average | CFS
 
 
 
@@ -135,7 +133,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
 ---------- | ---------- | ------------ | ------------
-MDNRC | The Montana Department of Natural Resources and Conservation | Chris Kuntz | http://dnrc.mt.gov/
+MTss_O1 | The Montana Department of Natural Resources and Conservation | Chris Kuntz | http://dnrc.mt.gov/
 
 
 
