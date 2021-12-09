@@ -25,9 +25,11 @@ workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0
 os.chdir(workingDir)
 M_fileInput = "RawinputData/P_mtSSMaster.csv"
 sites_fileInput = "ProcessedInputData/sites.csv"
+variables_fileInput = "ProcessedInputData/variables.csv"
 
 df_DM = pd.read_csv(M_fileInput)
 df_sites = pd.read_csv(sites_fileInput)  # Sites dataframe
+df_variables = pd.read_csv(variables_fileInput)  # Sites dataframe
 
 #WaDE dataframe columns
 columnslist = [
@@ -75,19 +77,33 @@ def retrieveSiteUUID(colrowValue):
     return outList
 
 
+# For creating VariableSpecificUUID
+VariableUUIDdict = pd.Series(df_variables.VariableSpecificUUID.values, index=df_variables.VariableSpecificCV).to_dict()
+def retrieveVariableSpecificUUID(colrowValue):
+    if colrowValue == '' or pd.isnull(colrowValue):
+        outList = ''
+    else:
+        String1 = colrowValue
+        try:
+            outList = VariableUUIDdict[String1]
+        except:
+            outList = ''
+    return outList
+
+
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe outdf...")
 outdf = pd.DataFrame(index=df_DM.index, columns=columnslist)  # The output dataframe
 
 print("MethodUUID")
-outdf['MethodUUID'] = "MDNRC_Streamgage"
+outdf['MethodUUID'] = "MTss_M1"
 
 print("VariableSpecificUUID")
-outdf['VariableSpecificUUID'] = "MDNRC_Reservoirs and Gages"
+outdf['VariableSpecificUUID'] = df_DM.apply(lambda row: retrieveVariableSpecificUUID(row['in_VariableSpecificCV']), axis=1)
 
 print("OrganizationUUID")
-outdf['OrganizationUUID'] = "MDNRC"
+outdf['OrganizationUUID'] = "MTss_O1"
 
 print("WaterSourceUUID")
 outdf['WaterSourceUUID'] = "MTss_WS1"  # no data to work with for ID ss water source.

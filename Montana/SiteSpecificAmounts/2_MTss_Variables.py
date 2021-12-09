@@ -35,27 +35,28 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
-outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
+# outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = "MDNRC_Reservoirs and Gages"
+outdf.VariableSpecificUUID = ["MTss_V1", "MTss_v2"]
 
-outdf.AggregationInterval = "1"
+outdf.AggregationInterval = ["1", "1"]
 
-outdf.AggregationIntervalUnitCV = "Daily"
+outdf.AggregationIntervalUnitCV = ["Daily", "Daily"]
 
-outdf.AggregationStatisticCV = "Average"
+outdf.AggregationStatisticCV = ["Average", 'Average']
 
-outdf.AmountUnitCV = "CFS"
+outdf.AmountUnitCV = ["CFS", "FT"]
 
-outdf.MaximumAmountUnitCV = "CFS"
+outdf.MaximumAmountUnitCV = ["CFS", "FT"]
 
-outdf.ReportYearStartMonth = "1"
+outdf.ReportYearStartMonth = ["1", "1"]
 
-outdf.ReportYearTypeCV = "CalendarYear"
+outdf.ReportYearTypeCV = ["CalendarYear", "CalendarYear"]
 
-outdf.VariableCV = "Reservoirs and Gages"
+outdf.VariableCV = ["Reservoirs and Gages", "Reservoirs and Gages"]
 
-outdf.VariableSpecificCV = "Discharge"
+outdf.VariableSpecificCV = ["Reservoirs and Gages - Daily - Discharge",
+                            "Reservoirs and Gages - Daily - Stage"]
 
 
 # Check required fields are not null
