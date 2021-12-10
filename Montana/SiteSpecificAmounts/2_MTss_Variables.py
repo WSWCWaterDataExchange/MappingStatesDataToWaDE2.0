@@ -37,7 +37,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 # outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = ["MTss_V1", "MTss_v2"]
+outdf.VariableSpecificUUID = ["MTss_V1", "MTss_V2"]
 
 outdf.AggregationInterval = ["1", "1"]
 

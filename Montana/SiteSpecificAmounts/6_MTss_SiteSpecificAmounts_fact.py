@@ -130,7 +130,7 @@ print("CropTypeCV")
 outdf['CropTypeCV'] = ""
 
 print("CustomerTypeCV")
-outdf['CustomerTypeCV'] = ""
+outdf['CustomerTypeCV'] = "Unspecified"
 
 print("DataPublicationDate")
 outdf['DataPublicationDate'] = '09/16/2021'
@@ -180,7 +180,7 @@ outdf.reset_index()
 print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to upload data to QA here.
 
 outdf100 = outdf.replace(np.nan, '')  # Replaces NaN values with blank.
-outdf100 = outdf100.drop_duplicates() # Dropping duplicate enteries (if any).
+outdf100 = outdf100.drop_duplicates() # Dropping duplicate entries (if any).
 outdf100 = outdf100.reset_index(drop=True)
 
 
