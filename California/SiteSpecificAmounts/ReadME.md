@@ -44,12 +44,56 @@ Purpose: Pre-process the state agency input data files into one master file for 
 #### Operation and Steps:
 - Read in input csv data, place into temporary dataframes.
 - Left join dataframes together.  Join *deliveredPWS_2013_2016.csv* -to- *PWS Facility Information.csv* via **PWSID** and **Water System No** respectively, and *CADWS_AreaBoundaries.csv* with **SABL_PWSID**.
-- Trim down joined dataframe to columns of interest.
-- Format column names to remove formatting issues.
-- Format water amount column to remove string values, format to numeric.
-- Format population value column to integer value.
+- For Delivered Data, there are eight different timeseries of interest.  For each of eight data sets...
+    - WaDE *VariableCV* field = "Delivered".
+    - WaDE *WaterSourceTypeCV* field = "Unspecified".
+    - WaDE *CoordinateMethodCV* field = "Centroid of Area.
+    - WaDE *County* field = **COUNTY** input.
+    - WaDE *Latitude* field = **Lat** created from centroid of area using shapefile.
+    - WaDE *Longitude* field = **Long** created from centroid of area using shapefile.
+    - WaDE *PODorPOUSite* field = "POU".
+    - WaDE *SiteName* field = **Water System Name** input.
+    - WaDE *SiteNativeID* field = **SABL_PWSID** input.
+    - WaDE *SiteTypeCV* field = **BOUNDARY_T** input.
+    - *WaterUnits* = blank, nothing used here.  Needed to align with Produced data.
+    - WaDE *Amount* field = **WATER DELIVERIES TO Single.family.Residential**, **WATER DELIVERIES TO Multi.family.Residential**, **WATER DELIVERIES TO Commercial.Institutional**, **WATER DELIVERIES TO Industrial**, **WATER DELIVERIES TO Landscape.Irrigation**, **WATER DELIVERIES TO Other**, **WATER DELIVERIES TO Agricultural**, & **WATER DELIVERIES TO Other.PWS** inputs respectively.
+    - WaDE *BenUse* field = "Single Family Residential", "Multi Family Residential", "Commercial Institutional", "Industrial", "Landscape Irrigation", "Other", "Agricultural" &  "Other PWS" respectively.
+    - WaDE *CommunityWaterSupplySystem* field = **Water.System.Name** input.
+    - WaDE *CustomerTypeCV* field = **State Water System Type** input.
+    - WaDE *PopulationServed* field = **Population Of Service Area** input.
+    - *Year* = **Year** input.
+    - *Month* = **Month** input.
+    - *Days.In.Month* = **Days.In.Month** input.
+    - Concatenate the eight different timeseries into a single long Delivered Data dataframe.
+    - Format WaDE *Amount* field, check for errors.
+- For Produced Data, there are three different timeseries of interest.  For each of three data sets...
+    - WaDE *VariableCV* = "Produced".
+    - WaDE *WaterSourceTypeCV* field = "Groundwater", "Surface Water", & "Purchased" respectively.
+    - WaDE *CoordinateMethodCV* field = "Centroid of Area".
+    - WaDE *County* field = **COUNTY** input.
+    - WaDE *Latitude* field = **Lat** created from centroid of area using shapefile.
+    - WaDE *Longitude* field = **Long** created from centroid of area using shapefile.
+    - WaDE *PODorPOUSite* field = "POU".
+    - WaDE *SiteName* field = **Water System Name** input.
+    - WaDE *SiteNativeID* field = **SABL_PWSID** input.
+    - WaDE *SiteTypeCV* field = **BOUNDARY_T** input.
+    - *WaterUnits* = **WATER PRODUCED Water.Units REVIEWED BY OFFICE OF INFORMATION MANAGEMENT AND ANALYSIS** input.
+    - WaDE *Amount* field = **WATER PRODUCED FROM GROUNDWATER**, **WATER PRODUCED FROM SURFACE WATER**, & **FINSIHIED WATER PURCHASED OR RECEIVED FROM ANOTHER PUBLIC WATER SYSTEM** inputs respectively.
+    - WaDE *BenUse* = "Unspecified".
+    - WaDE *CommunityWaterSupplySystem* field = **Water.System.Name** input.
+    - WaDE *CustomerTypeCV* field = **State Water System Type** input.
+    - WaDE *PopulationServed* field = **Population Of Service Area** input.
+    - *Year* = **Year** input.
+    - *Month* = **Month** input.
+    - *Days.In.Month* = **Days.In.Month** input.
+    - Concatenate the three different timeseries into a single long Produced Data dataframe.
+    - Convert WaDE *Amount* field using *WaterUnits* to convert to Gallons, check for errors.
+- Concatenate Delivered Data dataframe with Produced Data dataframe.
+- Create WaDE *TimeframeStart* field using *Year* and *Month* values.  Assume starting day is always "01".  Format to YYYY-MM_DD format.
+- Create WaDE *TimeframeEnd* field using *Year*, *Month* & *Days.In.Month* values.  Format to YYYY-MM_DD format.
 - Generate WaDE specific *TimeframeStart* & *TimeframeEnd* fields. Assume start date is 01/ + **Month** & **Year**,  and end date is 31/ + + **Month** & **Year**.
 - Review for errors.
+- Create WaDE Specific *WaterSourceNativeID* field using created *WaterSourceTypeCV* field, helps cut down on searching.
 - Export output dataframe as new csv file, *P_caSSMaster.csv*.
 
 
@@ -76,7 +120,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
-CSWRCB_Public Drinking Water | Surface Ground Storage | Modeled
+CAss_M1 | Surface Ground Storage | Self Reported
 
 
 
@@ -102,7 +146,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
 ---------- | ---------- | ------------ | ------------
-CSWRCB_Site Specific | 1 | Cumulative | G
+CAss_V1 | 1 | Unspecified | G
 
 
 
@@ -128,7 +172,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
 ---------- | ---------- | ------------ | ------------
-CSWRCB | California State Water Resources Control Board | Greg Gearheart | https://www.waterboards.ca.gov/waterrights/water_issues/programs/ewrims/
+CAss_O1 | California State Water Resources Control Board | Greg Gearheart | https://www.waterboards.ca.gov/waterrights/water_issues/programs/ewrims/
 
 
 
@@ -147,6 +191,7 @@ Purpose: generate a list of water sources specific to the site specific time ser
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
 - Assign state agency info to columns.  See *CA_SiteSpecificAmounts Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+    - *WaterSourceNativeID* = see *0_PreProcessCASiteSpecificData.ipynb* for specific on generation.
     - *WaterSourceTypeCV* = **Primary Water Source Type**.
 - Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceName*, *WaterSourceNativeID* & *WaterSourceTypeCV* fields.
 - Assign water source UUID identifier to each (unique) row.
@@ -226,7 +271,9 @@ Purpose: generate master sheet of state agency site specific time series water d
 - Assign state agency data info to columns.  See *CA_SiteSpecificAmounts Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *Amount* = *in_Amount*, see *0_PreProcessCASiteSpecificData.ipynb* for specific on generation.
+    - *BeneficialUseCategory* =  see *0_PreProcessCASiteSpecificData.ipynb* for specific on generation.
     - *CommunityWaterSupplySystem* = **Water System Name**.
+    - *CustomerTypeCV* = **State Water System Type**.
     - *PopulationServed* = **Population Of Service Area**.
     - *ReportYearCV* = **Year**.
     - *TimeframeStart* = *in_TimeframeStart*, see *0_PreProcessCASiteSpecificData.ipynb* for specific on generation.

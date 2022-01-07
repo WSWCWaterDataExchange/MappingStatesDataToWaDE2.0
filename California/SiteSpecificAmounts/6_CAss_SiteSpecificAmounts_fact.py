@@ -1,4 +1,4 @@
-#Last Updated: 02/26/2021
+#Last Updated: 01/06/2022
 #Author: Ryan James (WSWC)
 #Purpose: To create CA site specific site amount use information and population dataframe WaDE_QA 2.0.
 #Notes:  1) Because of the unique site situation with duplicate SiteNativeID's, we need a way to create a unique key for dictionary look up values.
@@ -112,13 +112,13 @@ print("Populating dataframe outdf...")
 outdf = pd.DataFrame(index=df_DM.index, columns=columnslist)  # The output dataframe
 
 print("MethodUUID")
-outdf['MethodUUID'] = "CSWRCB_Public Drinking Water"
+outdf['MethodUUID'] = "CAss_M1"
 
 print("VariableSpecificUUID")
 outdf['VariableSpecificUUID'] = df_DM.apply(lambda row: retrieveVariableSpecificUUID(row['in_VariableSpecificCV']), axis=1)
 
 print("OrganizationUUID")
-outdf['OrganizationUUID'] = "CSWRCB"
+outdf['OrganizationUUID'] = "CAss_O1"
 
 print("WaterSourceUUID") # Using WaterSourceType
 outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
@@ -137,20 +137,20 @@ outdf['AllocationCropDutyAmount'] = ""
 print("AssociatedNativeAllocationIDs")
 outdf['AssociatedNativeAllocationIDs'] = ""
 
+print('BeneficialUseCategory')
+outdf['BeneficialUseCategory'] = df_DM['in_BenUse']  # See pre-processing.
+
 print("CommunityWaterSupplySystem")
 outdf['CommunityWaterSupplySystem'] = df_DM['in_CommunityWaterSupplySystem']  # See pre-processing.
-
-print('BeneficialUseCategory')
-outdf['BeneficialUseCategory'] = "Unspecified"
 
 print("CropTypeCV")
 outdf['CropTypeCV'] = ""
 
 print("CustomerTypeCV")
-outdf['CustomerTypeCV'] = ""
+outdf['CustomerTypeCV'] = df_DM['in_CustomerTypeCV']
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = '03/01/2021'
+outdf['DataPublicationDate'] = '01/06/2022'
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""
@@ -196,11 +196,8 @@ outdf.reset_index()
 # ############################################################################
 print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to upload data to QA here.
 
-print("Joining outdf duplicates based on AllocationNativeID...")
 outdf100 = outdf.replace(np.nan, '')  # Replaces NaN values with blank.
-
-print("Dropping duplicates")
-outdf100 = outdf100.drop_duplicates()
+outdf100 = outdf100.drop_duplicates() # Dropping duplicate enteries (if any).
 outdf100 = outdf100.reset_index(drop=True)
 
 

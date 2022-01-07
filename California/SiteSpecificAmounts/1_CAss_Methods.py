@@ -1,4 +1,4 @@
-#Last Updated: 02/26/2021
+#Last Updated: 01/06/2022
 #Author: Ryan James (WSWC)
 #Purpose: To create CA site specific methods use information and population dataframe for WaDE_QA 2.0.
 #Notes: 1) Used a list approach.  Needed to have two rows, one with surface water, the other with groundwater.
@@ -36,7 +36,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.MethodUUID = "CSWRCB_Public Drinking Water"
+outdf.MethodUUID = "CAss_M1"
 
 outdf.ApplicableResourceTypeCV = "Surface Ground Storage"
 
@@ -48,11 +48,11 @@ outdf.DataCoverageValue = ""
 
 outdf.MethodDescription = "Public drinking water records."
 
-outdf.MethodName = "Site Specific"
+outdf.MethodName = "Self Reported"
 
 outdf.MethodNEMILink = ""
 
-outdf.MethodTypeCV = "Modeled"
+outdf.MethodTypeCV = "Self Reported"
 
 
 # Check required fields are not null

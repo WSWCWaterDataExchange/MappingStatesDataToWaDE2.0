@@ -1,4 +1,4 @@
-#Last Updated: 02/26/2021
+#Last Updated: 01/06/2022
 #Author: Ryan James (WSWC)
 #Purpose: To create CA site specific site use information and population dataframe for WaDEQA 2.0.
 #Notes:  1) Issue of using the same site for multiple datasets while keeping WaterSourceTypeCV separate.
@@ -245,4 +245,3 @@ if(len(dfpurge.index) > 0):
     dfpurge.to_csv('ProcessedInputData/sites_missing.csv', index=False)
 
 print("Done.")
-

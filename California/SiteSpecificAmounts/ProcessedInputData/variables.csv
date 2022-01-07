@@ -1,3 +1,12 @@
 VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
-CSWRCB_Water Use Produced,1,Year,Cumulative,G,G,1,CalendarYear,Water Use,Water Use Produced
-CSWRCB_Water Use Delivered,1,Year,Cumulative,G,G,1,CalendarYear,Water Use,Water Use Delivered
+CAss_V1,1,Monthly,Unspecified,G,G,1,CalendarYear,Delivered,Cumulative Delivered_Monthly_Single Family Residential_Unspecified
+CAss_V2,1,Monthly,Unspecified,G,G,1,CalendarYear,Delivered,Cumulative Delivered_Monthly_Multi Family Residential_Unspecified
+CAss_V3,1,Monthly,Unspecified,G,G,1,CalendarYear,Delivered,Cumulative Delivered_Monthly_Commercial Institutional_Unspecified
+CAss_V4,1,Monthly,Unspecified,G,G,1,CalendarYear,Delivered,Cumulative Delivered_Monthly_Industrial_Unspecified
+CAss_V5,1,Monthly,Unspecified,G,G,1,CalendarYear,Delivered,Cumulative Delivered_Monthly_Landscape Irrigation_Unspecified
+CAss_V6,1,Monthly,Unspecified,G,G,1,CalendarYear,Delivered,Cumulative Delivered_Monthly_Other_Unspecified
+CAss_V7,1,Monthly,Unspecified,G,G,1,CalendarYear,Delivered,Cumulative Delivered_Monthly_Agricultural_Unspecified
+CAss_V8,1,Monthly,Unspecified,G,G,1,CalendarYear,Delivered,Cumulative Delivered_Monthly_Other PWS_Unspecified
+CAss_V9,1,Monthly,Unspecified,G,G,1,CalendarYear,Produced,Cumulative Produced_Monthly_Total_Groundwater
+CAss_V10,1,Monthly,Unspecified,G,G,1,CalendarYear,Produced,Cumulative Produced_Monthly_Total_Surface Water
+CAss_V11,1,Monthly,Unspecified,G,G,1,CalendarYear,Produced,Cumulative Produced_Monthly_Total_Purchased

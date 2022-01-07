@@ -1,4 +1,4 @@
-#Last Updated: 02/26/2021
+#Last Updated: 01/06/2022
 #Author: Ryan James (WSWC)
 #Purpose: To create CA site specific variable use information and population dataframe for WaDE_QA 2.0.
 #Notes: 1) Used a list approach.  Needed to have five rows for VaribleCVs.
@@ -37,25 +37,35 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 # outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = ["CSWRCB_Water Use Produced", "CSWRCB_Water Use Delivered"]
+outdf.VariableSpecificUUID = ["CAss_V1", "CAss_V2", "CAss_V3", "CAss_V4", "CAss_V5", "CAss_V6", "CAss_V7", "CAss_V8", "CAss_V9", "CAss_V10", "CAss_V11"]
 
-outdf.AggregationInterval = ["1", "1"]
+outdf.AggregationInterval = ["1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"]
 
-outdf.AggregationIntervalUnitCV = ["Year", "Year"]
+outdf.AggregationIntervalUnitCV = ["Monthly", "Monthly", "Monthly", "Monthly", "Monthly", "Monthly", "Monthly", "Monthly", "Monthly", "Monthly", "Monthly"]
 
-outdf.AggregationStatisticCV = ["Cumulative", "Cumulative"]
+outdf.AggregationStatisticCV = ["Unspecified", "Unspecified", "Unspecified", "Unspecified", "Unspecified", "Unspecified", "Unspecified", "Unspecified", "Unspecified", "Unspecified", "Unspecified"]
 
-outdf.AmountUnitCV = ["G", "G"]
+outdf.AmountUnitCV = ["G",	"G",	"G",	"G",	"G",	"G",	"G",	"G",	"G",	"G",	"G"]
 
-outdf.MaximumAmountUnitCV = ["G", "G"]
+outdf.MaximumAmountUnitCV = ["G",	"G",	"G",	"G",	"G",	"G",	"G",	"G",	"G",	"G",	"G"]
 
-outdf.ReportYearStartMonth = ["1", "1"]
+outdf.ReportYearStartMonth = ["1",	"1",	"1",	"1",	"1",	"1",	"1",	"1",	"1",	"1",	"1"]
 
-outdf.ReportYearTypeCV = ["CalendarYear", "CalendarYear"]
+outdf.ReportYearTypeCV = ["CalendarYear", "CalendarYear", "CalendarYear", "CalendarYear", "CalendarYear", "CalendarYear", "CalendarYear", "CalendarYear", "CalendarYear", "CalendarYear", "CalendarYear"]
 
-outdf.VariableCV = ["Water Use", "Water Use"]
+outdf.VariableCV = ["Delivered", "Delivered", "Delivered", "Delivered", "Delivered", "Delivered", "Delivered", "Delivered", "Produced", "Produced", "Produced"]
 
-outdf.VariableSpecificCV = ["Water Use Produced", "Water Use Delivered"]
+outdf.VariableSpecificCV = ["Cumulative Delivered_Monthly_Single Family Residential_Unspecified",
+                            "Cumulative Delivered_Monthly_Multi Family Residential_Unspecified",
+                            "Cumulative Delivered_Monthly_Commercial Institutional_Unspecified",
+                            "Cumulative Delivered_Monthly_Industrial_Unspecified",
+                            "Cumulative Delivered_Monthly_Landscape Irrigation_Unspecified",
+                            "Cumulative Delivered_Monthly_Other_Unspecified",
+                            "Cumulative Delivered_Monthly_Agricultural_Unspecified",
+                            "Cumulative Delivered_Monthly_Other PWS_Unspecified",
+                            "Cumulative Produced_Monthly_Total_Groundwater",
+                            "Cumulative Produced_Monthly_Total_Surface Water",
+                            "Cumulative Produced_Monthly_Total_Purchased"]
 
 
 # Check required fields are not null
