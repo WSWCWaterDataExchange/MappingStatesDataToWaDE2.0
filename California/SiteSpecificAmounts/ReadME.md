@@ -3,11 +3,11 @@ This readme details the process that was applied by the staff of the [Western St
 
 
 ## Overview of Data Utilized
-The following data was used for aggregated water budget...
+The following data was used for timeseries site specific water data...
 
 - [Delivered Water - Public System](https://data.ca.gov/dataset/drinking-water-public-water-system-annually-reported-water-production-and-delivery-information) time series data 2013-2016.
 - [Public Water system Facilities](https://data.ca.gov/dataset/drinking-water-public-water-system-information) data.
-- [California Drinking Water System Area Boundaries](https://gis.data.ca.gov/datasets/fbba842bf134497c9d611ad506ec48cc_0/data?geometry=-160.357%2C31.280%2C-76.729%2C43.454) data.
+- [California Drinking Water System Area Boundaries](https://gispublic.waterboards.ca.gov/portal/home/item.html?id=fbba842bf134497c9d611ad506ec48cc) data.
 
 
 Unique files were created, one used by the WSWC staff to understand the available data (*"_with Notes"*), the second resulting files to be used as input to the Python codes that prepare WaDE2 input files.  Input files used are as follows...
@@ -31,7 +31,7 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 
 ***
 ### 0) Code File: 0_PreProcessCASiteSpecificData.ipynb
-Purpose: Pre-process the state agency input data files into one master file for simple dataframe creation and extraction.
+Purpose: Pre-process the state agency input data files into one master file for simple DataFrames creation and extraction.
 
 #### Inputs: 
  - deliveredPWS_2013_2016.csv
@@ -44,7 +44,11 @@ Purpose: Pre-process the state agency input data files into one master file for 
 #### Operation and Steps:
 - Read in input csv data, place into temporary dataframes.
 - Left join dataframes together.  Join *deliveredPWS_2013_2016.csv* -to- *PWS Facility Information.csv* via **PWSID** and **Water System No** respectively, and *CADWS_AreaBoundaries.csv* with **SABL_PWSID**.
-- For Delivered Data, there are eight different timeseries of interest.  For each of eight data sets...
+- As a whole, there are 11 different timeseries that will be incorporated into the WaDE 2.0 architecture.  These timeseries differ by variable type, beneficial use, and water source type…
+    - for variable: Delivered or Produced
+    - for beneficial use: Single Family Residential, Multi-Family Residential, Commercial Institutional, Industrial, Landscape Irrigation, Other, Agriculture, Other PWS, or Total Use
+    - for water source type: Groundwater, Surface Water, or Unspecified
+- For Delivered data, there are eight different timeseries of interest.  For each of eight data sets...
     - WaDE *VariableCV* field = "Delivered".
     - WaDE *WaterSourceTypeCV* field = "Unspecified".
     - WaDE *CoordinateMethodCV* field = "Centroid of Area.
@@ -64,9 +68,9 @@ Purpose: Pre-process the state agency input data files into one master file for 
     - *Year* = **Year** input.
     - *Month* = **Month** input.
     - *Days.In.Month* = **Days.In.Month** input.
-    - Concatenate the eight different timeseries into a single long Delivered Data dataframe.
+    - Concatenate the eight different timeseries into a single long Delivered Data DataFrames.
     - Format WaDE *Amount* field, check for errors.
-- For Produced Data, there are three different timeseries of interest.  For each of three data sets...
+- For Produced data, there are three different timeseries of interest.  For each of three data sets...
     - WaDE *VariableCV* = "Produced".
     - WaDE *WaterSourceTypeCV* field = "Groundwater", "Surface Water", & "Purchased" respectively.
     - WaDE *CoordinateMethodCV* field = "Centroid of Area".
@@ -86,15 +90,15 @@ Purpose: Pre-process the state agency input data files into one master file for 
     - *Year* = **Year** input.
     - *Month* = **Month** input.
     - *Days.In.Month* = **Days.In.Month** input.
-    - Concatenate the three different timeseries into a single long Produced Data dataframe.
+    - Concatenate the three different timeseries into a single long Produced Data DataFrames.
     - Convert WaDE *Amount* field using *WaterUnits* to convert to Gallons, check for errors.
-- Concatenate Delivered Data dataframe with Produced Data dataframe.
+- Concatenate Delivered Data DataFrames with Produced Data DataFrames.
 - Create WaDE *TimeframeStart* field using *Year* and *Month* values.  Assume starting day is always "01".  Format to YYYY-MM_DD format.
 - Create WaDE *TimeframeEnd* field using *Year*, *Month* & *Days.In.Month* values.  Format to YYYY-MM_DD format.
 - Generate WaDE specific *TimeframeStart* & *TimeframeEnd* fields. Assume start date is 01/ + **Month** & **Year**,  and end date is 31/ + + **Month** & **Year**.
 - Review for errors.
 - Create WaDE Specific *WaterSourceNativeID* field using created *WaterSourceTypeCV* field, helps cut down on searching.
-- Export output dataframe as new csv file, *P_caSSMaster.csv*.
+- Export output DataFrames as new csv file, *P_caSSMaster.csv*.
 
 
 
@@ -110,12 +114,12 @@ Purpose: generate legend of granular methods used on data collection.
 - methods_missing.csv (error check only)
 
 #### Operation and Steps:
-- Generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE Method* specific columns.
+- Generate single output DataFrames *outdf*.
+- Populate output DataFrames with *WaDE Method* specific columns.
 - Assign state agency data info to the *WaDE Method* specific columns (this was hardcoded by hand for simplicity).
 - Assign method UUID identifier to each (unique) row.
-- Perform error check on output dataframe.
-- Export output dataframe *methods.csv*.
+- Perform error check on output DataFrames.
+- Export output DataFrames *methods.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
@@ -136,12 +140,12 @@ Purpose: generate legend of granular variables specific to each state.
 - variables_missing.csv (error check only)
 
 #### Operation and Steps:
-- Generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE Variable* specific columns.
+- Generate single output DataFrames *outdf*.
+- Populate output DataFrames with *WaDE Variable* specific columns.
 - Assign state agency data info to the *WaDE Variable* specific columns (this was hardcoded by hand for simplicity).
 - Assign variable UUID identifier to each (unique) row.
-- Perform error check on output dataframe.
-- Export output dataframe *variables.csv*.
+- Perform error check on output DataFrames.
+- Export output DataFrames *variables.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
 VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
@@ -162,12 +166,12 @@ Purpose: generate organization directory, including names, email addresses, and 
 - organizations_missing.csv (error check only)
 
 #### Operation and Steps:
-- Generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE Organizations* specific columns.
+- Generate single output DataFrames *outdf*.
+- Populate output DataFrames with *WaDE Organizations* specific columns.
 - Assign state agency data info to the *WaDE Organizations* specific columns (this was hardcoded by hand for simplicity).
 - Assign organization UUID identifier to each (unique) row.
-- Perform error check on output dataframe.
-- Export output dataframe *organizations.csv*.
+- Perform error check on output DataFrames.
+- Export output DataFrames *organizations.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
@@ -188,15 +192,15 @@ Purpose: generate a list of water sources specific to the site specific time ser
 - watersources_missing.csv (error check only)
 
 #### Operation and Steps:
-- Read the input file and generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE WaterSources* specific columns.
+- Read the input file and generate single output DataFrames *outdf*.
+- Populate output DataFrames with *WaDE WaterSources* specific columns.
 - Assign state agency info to columns.  See *CA_SiteSpecificAmounts Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
     - *WaterSourceNativeID* = see *0_PreProcessCASiteSpecificData.ipynb* for specific on generation.
     - *WaterSourceTypeCV* = **Primary Water Source Type**.
-- Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceName*, *WaterSourceNativeID* & *WaterSourceTypeCV* fields.
+- Consolidate output DataFrames into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceName*, *WaterSourceNativeID* & *WaterSourceTypeCV* fields.
 - Assign water source UUID identifier to each (unique) row.
-- Perform error check on output dataframe.
-- Export output dataframe *WaterSources.csv*.
+- Perform error check on output DataFrames.
+- Export output DataFrames *WaterSources.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
 WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceNativeID | WaterSourceTypeCV
@@ -212,7 +216,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 ***
 ### 5) Code File: 5_CAss_Sites.py
-Purpose: generate a list of polygon areas associated with the state agency specific site on aggregated water budget data.
+Purpose: generate a list of sites specific to the site specific time series water data.
 
 #### Inputs:
 - P_caSSMaster.csv
@@ -222,8 +226,8 @@ Purpose: generate a list of polygon areas associated with the state agency speci
 - sites_missing.csv (error check only)
 
 #### Operation and Steps:
-- Read the input file and generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE Site* specific columns.
+- Read the input file and generate single output DataFrames *outdf*.
+- Populate output DataFrames with *WaDE Site* specific columns.
 - Assign state agency info to columns.  See *CA_SiteSpecificAmounts Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
     - *County* = **COUNTY**.
     - *Latitude* = **Lat**.
@@ -231,10 +235,10 @@ Purpose: generate a list of polygon areas associated with the state agency speci
     - *SiteName* = **Water System Name**.
     - *SiteNativeID* = **SABL_PWSID**.
     - *SiteTypeCV* = **BOUNDARY_T**.
-- Consolidate output dataframe into site specific information only by dropping duplicate entries, group by WaDE specific *WaterSourceUUID*, *PODorPOUSite*, *SiteName*, *SiteNativeID*, *SiteTypeCV*, *Latitude*, and *Longitude* fields.
+- Consolidate output DataFrames into site specific information only by dropping duplicate entries, group by WaDE specific *WaterSourceUUID*, *PODorPOUSite*, *SiteName*, *SiteNativeID*, *SiteTypeCV*, *Latitude*, and *Longitude* fields.
 - Assign site UUID identifier to each (unique) row.
-- Perform error check on output dataframe.
-- Export output dataframe *sites.csv*.
+- Perform error check on output DataFrames.
+- Export output DataFrames *sites.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
 SiteUUID | CoordinateMethodCV | Latitude | Longitude | SiteName | SiteNativeID |SiteTypeCV
@@ -251,7 +255,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 ***
 ### 6) Code File: 6_CAss_SiteSpecificAmounts_fact.py
-Purpose: generate master sheet of state agency site specific time series water data to import into WaDE 2.0.
+Purpose: generate master sheet of state agency site specific timeseries water data to import into WaDE 2.0.
 
 #### Inputs:
 - P_caSSMaster.csv
@@ -266,8 +270,8 @@ Purpose: generate master sheet of state agency site specific time series water d
 - sitespecificamounts_missing.csv (error check only)
 
 #### Operation and Steps:
-- Read the input files and generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE Water Site Specific Amounts* data columns.
+- Read the input files and generate single output DataFrames *outdf*.
+- Populate output DataFrames with *WaDE Water Site Specific Amounts* data columns.
 - Assign state agency data info to columns.  See *CA_SiteSpecificAmounts Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *Amount* = *in_Amount*, see *0_PreProcessCASiteSpecificData.ipynb* for specific on generation.
@@ -278,8 +282,8 @@ Purpose: generate master sheet of state agency site specific time series water d
     - *ReportYearCV* = **Year**.
     - *TimeframeStart* = *in_TimeframeStart*, see *0_PreProcessCASiteSpecificData.ipynb* for specific on generation.
     - *TimeframeEnd* = *in_TimeframeEnd*, see *0_PreProcessCASiteSpecificData.ipynb* for specific on generation.
-- Perform error check on output dataframe.
-- Export output dataframe *waterallocations.csv*.
+- Perform error check on output DataFrames.
+- Export output DataFrames *waterallocations.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | OrganizationUUID | SiteUUID | VariableSpecificUUID | WaterSourceUUID | Amount | BeneficialUseCategory | TimeframeStart | TimeframeEnd 
@@ -316,16 +320,16 @@ Note: podsitetopousiterelationships.csv output only needed if both POD and POU d
 - Read the sites.csv & sitespecificamounts.csv input files.
 - Remove unnecessary columns from needed sitespecificamounts.csv info.
 - Explode *SiteUUID* field to create unique rows.
-- Left-merge site.csv info to the sitespecificamounts dataframe via *SiteUUID* field.
+- Left-merge site.csv info to the sitespecificamounts DataFrames via *SiteUUID* field.
 - Split into two new temporary dataframes: one POD centric, the other POU centric.
-- For the temporary POD dataframe...
+- For the temporary POD DataFrames...
     - Create *PODorPOUSite* field = POD.
-- For the temporary POU dataframe
+- For the temporary POU DataFrames
     - Create *PODorPOUSite* field = POU.
-- Merge POD & POU dataframes into single output dataframe, only using unique rows.
+- Merge POD & POU dataframes into single output DataFrames, only using unique rows.
 - Find *SiteUUID* baesed on *PODorPOUSite* field.
-- Perform error check on waterallocations dataframe (check for NaN values)
-- If waterallocations is not empty, export output dataframe *podsitetopousiterelationships.csv*.
+- Perform error check on waterallocations DataFrames (check for NaN values)
+- If waterallocations is not empty, export output DataFrames *podsitetopousiterelationships.csv*.
 
 
 
