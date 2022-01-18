@@ -1,0 +1,4 @@
+SiteUUID,RegulatoryOverlayUUIDs,WaterSourceUUID,CoordinateAccuracy,CoordinateMethodCV,County,EPSGCodeCV,Geometry,GNISCodeCV,HUC12,HUC8,Latitude,Longitude,NHDNetworkStatusCV,NHDProductCV,PODorPOUSite,SiteName,SiteNativeID,SitePoint,SiteTypeCV,StateCV,USGSSiteID,ReasonRemoved,index
+TXss_S88,,TXss_WS592,,Unspecified,HALL,4326,,,,,,,,,POU,Unspecified,,,Public Water Systems,TX,,Incomplete Latitude,87.0
+TXss_S89,,TXss_WS510,,Unspecified,DONLEY,4326,,,,,,,,,POU,Unspecified,,,Public Water Systems,TX,,Incomplete Latitude,88.0
+TXss_S96,,TXss_WS600,,Unspecified,OLDHAM,4326,,,,,,,,,POU,Unspecified,,,Public Water Systems,TX,,Incomplete Latitude,95.0

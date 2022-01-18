@@ -1,0 +1,7 @@
+VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
+TXss_V1,1,Annual,Unspecified,G,G,1,CalendarYear,Intake,Intake_Annual_MI_Groundwater
+TXss_V2,1,Annual,Unspecified,G,G,1,CalendarYear,Intake,Intake_Annual_MI_Surface Water
+TXss_V3,1,Annual,Unspecified,G,G,1,CalendarYear,Intake,Intake_Annual_MI_Reuse
+TXss_V4,1,Monthly,Unspecified,G,G,1,CalendarYear,Intake,Intake_Monthly_MI_Groundwater
+TXss_V5,1,Monthly,Unspecified,G,G,1,CalendarYear,Intake,Intake_Monthly_MI_Surface Water
+TXss_V6,1,Monthly,Unspecified,G,G,1,CalendarYear,Intake,Intake_Monthly_MI_Reuse
