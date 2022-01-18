@@ -6,7 +6,7 @@ The following data was used for timeseries site specific water data...
 
 - [Public Water Systems - Historical](https://www.twdb.texas.gov/waterplanning/waterusesurvey/estimates/index.asp) time series data.  Had to download each region area individualy and combine into one workable file.
 - [Water Service Boundaries](https://www3.twdb.texas.gov/apps/waterserviceboundaries) shapefile for Public Water Systems site information.
-- [20220106 PWS-SurveyNO bridge table for Adel]() csv file, provided by personal corespondance between WSWC and TWDB to join Public Water Systems - Historical timeseries data with the Public Water Systems boundary information.
+- [20220106 PWS-SurveyNO bridge table]() csv file, provided by personal corespondance between WSWC and TWDB to join Public Water Systems - Historical timeseries data with the Public Water Systems boundary information.
 
 Unique files were created, one used by the WSWC staff to understand the available data (*"_with Notes"*), the second resulting files to be used as input to the Python codes that prepare WaDE2 input files.  Input files used are as follows...
  - HistoricalMunicipal_A.csv -to- HistoricalMunicipal_P.csv
@@ -184,7 +184,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 ***
 ### 5) Code File: 5_TXss_Sites.py
-Purpose: generate a list of polygon areas associated with the state agency specific site on aggregated water budget data.
+Purpose: generate a list of sites specific to the site specific time series water data.
 
 #### Inputs:
 - P_txSSMaster.csv
@@ -226,7 +226,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 ***
 ### 6) Code File: 6_TXss_SiteSpecificAmounts_fact.py
-Purpose: generate master sheet of state agency site specific time series water data to import into WaDE 2.0.
+Purpose: generate master sheet of state agency site specific timeseries water data to import into WaDE 2.0.
 
 #### Inputs:
 - P_txSSMaster.csv
@@ -256,7 +256,7 @@ Purpose: generate master sheet of state agency site specific time series water d
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | OrganizationUUID | SiteUUID | VariableSpecificUUID | WaterSourceUUID | Amount | BeneficialUseCategory | TimeframeStart | TimeframeEnd 
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------
-TXss_M1 | TXss_O1 | TXss_S1 | TXss_V4 | TXss_WS510 | 1486000000 | Municipal | 2021 | 1/1/2021 | 1/31/2021
+TXss_M1 | TXss_O1 | TXss_S1 | TXss_V4 | TXss_WS510 | 1486000000 | Municipal | 2021 | 01/01/2021 | 01/31/2021
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID
