@@ -288,7 +288,7 @@ Purpose: generate master sheet of state agency site specific timeseries water da
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | OrganizationUUID | SiteUUID | VariableSpecificUUID | WaterSourceUUID | Amount | BeneficialUseCategory | TimeframeStart | TimeframeEnd 
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------
-CSWRCB_Public Drinking Water | CSWRCB | CAss_S2 | CSWRCB_Site Specific | CAss_WS1 | 105995 | Unspecified | 2015 | 1/1/2015 | 12/31/2015 
+CAss_M1 | CAss_O1 | CAss_S2 | CAss_V1 | CAss_WS1 | 105995 | Single Family Residential | 2015 | 01/01/2015 | 12/31/2015 
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID
