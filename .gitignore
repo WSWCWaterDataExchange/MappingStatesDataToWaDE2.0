@@ -105,3 +105,31 @@ venv.bak/
 .idea/dictionaries/rjame.xml
 .idea/misc.xml
 .idea/misc.xml
+Arizona/AggregatedAmounts/RawInputData/P_AZagg.csv
+Arizona/WaterAllocation/RawInputData/Surface_Water/ADWR_Surface_Watersheds_POD_input.csv
+Texas/SiteSpecificAmounts/old_GW Withdrawal/0_PreProcessTexasSiteSpecificData.ipynb
+Texas/SiteSpecificAmounts/old_GW Withdrawal/1_TXss_Methods.py
+Texas/SiteSpecificAmounts/old_GW Withdrawal/2_TXss_Variables.py
+Texas/SiteSpecificAmounts/old_GW Withdrawal/3_TXss_Organizations.py
+Texas/SiteSpecificAmounts/old_GW Withdrawal/4_TXss_WaterSources.py
+Texas/SiteSpecificAmounts/old_GW Withdrawal/5_TXss_Sites.py
+Texas/SiteSpecificAmounts/old_GW Withdrawal/6_TXss_SiteSpecificAmounts_fact.py
+Texas/SiteSpecificAmounts/old_GW Withdrawal/7_TXss_PODSiteToPOUSiteRelationships.py
+Texas/SiteSpecificAmounts/old_GW Withdrawal/ProcessedInputData/methods.csv
+Texas/SiteSpecificAmounts/old_GW Withdrawal/ProcessedInputData/organizations.csv
+Texas/SiteSpecificAmounts/old_GW Withdrawal/ProcessedInputData/sites.csv
+Texas/SiteSpecificAmounts/old_GW Withdrawal/ProcessedInputData/sites_missing.csv
+Texas/SiteSpecificAmounts/old_GW Withdrawal/ProcessedInputData/sitespecificamounts.csv
+Texas/SiteSpecificAmounts/old_GW Withdrawal/ProcessedInputData/sitespecificamounts_missing.csv
+Texas/SiteSpecificAmounts/old_GW Withdrawal/ProcessedInputData/TXss/methods.csv
+Texas/SiteSpecificAmounts/old_GW Withdrawal/ProcessedInputData/TXss/organizations.csv
+Texas/SiteSpecificAmounts/old_GW Withdrawal/ProcessedInputData/TXss/sites.csv
+Texas/SiteSpecificAmounts/old_GW Withdrawal/ProcessedInputData/TXss/sitespecificamounts.csv
+Texas/SiteSpecificAmounts/old_GW Withdrawal/ProcessedInputData/TXss/variables.csv
+Texas/SiteSpecificAmounts/old_GW Withdrawal/ProcessedInputData/TXss/watersources.csv
+Texas/SiteSpecificAmounts/old_GW Withdrawal/ProcessedInputData/variables.csv
+Texas/SiteSpecificAmounts/old_GW Withdrawal/ProcessedInputData/watersources.csv
+Texas/SiteSpecificAmounts/old_GW Withdrawal/RawInputData/P_MasterTXSiteSpecific.csv
+Texas/SiteSpecificAmounts/old_GW Withdrawal/RawInputData/TWDB_GW_Withdrawals_2000to2018_20200827_input.csv
+Texas/SiteSpecificAmounts/old_GW Withdrawal/RawInputData/TWDB_GW_Withdrawals_2000to2018_20200827_with Notes.xlsx
+Texas/SiteSpecificAmounts/old_GW Withdrawal/TX_SiteSpecificAmounts Schema Mapping to WaDE_QA.xlsx
