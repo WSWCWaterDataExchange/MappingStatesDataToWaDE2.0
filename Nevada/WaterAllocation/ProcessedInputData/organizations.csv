@@ -1,2 +1,2 @@
 OrganizationUUID,OrganizationContactEmail,OrganizationContactName,OrganizationDataMappingURL,OrganizationName,OrganizationPhoneNumber,OrganizationPurview,OrganizationWebsite,State
-NVDWR,bmcmenamy@nv.water.gov,Brian McMenamy,https://ndwr.maps.arcgis.com/home/item.html?id=0d050f7b79724404b80bf29589f67363,Nevada Division of Water Resources,(775) 684-2800,The Nevada Division of Water Resources manages Nevada's water resources for the state.,http://water.nv.gov/index.aspx,NV
+NVDWR,bmcmenamy@water.nv.gov,Brian McMenamy,https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Oklahoma,Nevada Division of Water Resources,775-684-2800,Manager of Nevada's water resources,http://water.nv.gov/index.aspx,NV

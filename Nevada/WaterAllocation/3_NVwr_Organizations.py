@@ -17,7 +17,7 @@ workingDir="C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/N
 os.chdir(workingDir)
 
 # Needed WaDE columns
-columns = [
+columnslist = [
     "OrganizationUUID",
     "OrganizationContactEmail",
     "OrganizationContactName",

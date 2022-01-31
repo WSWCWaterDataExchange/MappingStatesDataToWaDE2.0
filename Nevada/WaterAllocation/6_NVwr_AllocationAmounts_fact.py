@@ -256,7 +256,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = "08/03/2020"
+outdf['DataPublicationDate'] = "01/31/2022"
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""
@@ -363,7 +363,7 @@ outdf100, dfpurge = TestErrorFunctions.AllocationCropDutyAmount_AA_Check(outdf10
 # AllocationExpirationDate
 outdf100, dfpurge = TestErrorFunctions.AllocationExpirationDate_AA_Check(outdf100, dfpurge)
 
-# # AllocationFlow_CFS_float_Yes & AllocationVolume_AF_float_Yes
+# AllocationFlow_CFS_float_Yes & AllocationVolume_AF_float_Yes
 outdf100, dfpurge = TestErrorFunctions.AllocationFlowVolume_CFSAF_float_Yes_AA_Check(outdf100, dfpurge)
 
 # AllocationLegalStatusCV
