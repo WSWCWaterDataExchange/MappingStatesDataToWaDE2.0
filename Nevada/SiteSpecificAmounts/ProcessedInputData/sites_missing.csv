@@ -1,0 +1,2 @@
+SiteUUID,RegulatoryOverlayUUIDs,WaterSourceUUID,CoordinateAccuracy,CoordinateMethodCV,County,EPSGCodeCV,Geometry,GNISCodeCV,HUC12,HUC8,Latitude,Longitude,NHDNetworkStatusCV,NHDProductCV,PODorPOUSite,SiteName,SiteNativeID,SitePoint,SiteTypeCV,StateCV,USGSSiteID,ReasonRemoved,index
+NVss_S86,,,,Unspecified,,4326,,,,,,,,,Gage,,,,Unspecified,NV,,Incomplete Latitude,85.0
