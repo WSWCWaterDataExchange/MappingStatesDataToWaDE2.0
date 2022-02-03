@@ -3,4 +3,5 @@ The following is a set notes that the Water Data Exchange (WaDE) staff has assem
 
 
 ## Status
-In progress.
+- See **NV ss Data Assessment Report 2022-02-03.doc** for notes.
+- See **Incomplete Records.xlsx** for a complete list of records that could not be uploaded into WaDE.
