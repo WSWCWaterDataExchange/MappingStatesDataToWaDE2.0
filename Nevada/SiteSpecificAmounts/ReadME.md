@@ -2,6 +2,10 @@
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting site specific time series water data made available by the [Nevada Division of Water Resources (NDWR)](http://water.nv.gov/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 
+## Data Assessment Review
+See [Data Assessment (link)](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Nevada/SiteSpecificAmounts/Data%20Assessment) for notes and queries that the WaDE staff has assembled after reviewing the Nevada Division of Water Resources (NDWR) site specific time series gage data.  These questions relate to unidentifiable elements, irregular entries, and general questions the Water Data Exchange (WaDE) staff has in order to best fit the provided set into the WaDE cloud computing program.
+
+
 ## Overview of Data Utilized
 The following data was used for aggregated water budget...
 
@@ -47,7 +51,7 @@ Purpose: Pre-process the state agency input data files into one master file for 
     - Extract WadE specific *ReportyYearCV* value from **Measure_date** input field in the form of YYYY.
     - Convert **Measure_date** to %mm/%dd/%YYYY format.
     - Remove NULL values from **Site_Name** and replace with "Unspecified".
-    - Determine WaDE specific *WaterSourceTypeCV* field using **Site_Name** input field.  Inputs of "wells", "well", "flowing well" & "spring" will be considred Groundwater, while everthing else is Surface Water.
+    - Determine WaDE specific *WaterSourceTypeCV* field using **Source_Des** input field.  Inputs of "wells", "well", "flowing well" & "spring" will be considered  Groundwater, while everything else is Surface Water.
     - Create WaDe Specific *WaterSourceNativeID* field using **Source_Nam** input field.
 - Review for errors.
 - Export output dataframe as new csv file, *P_nvSSMaster.csv*.
