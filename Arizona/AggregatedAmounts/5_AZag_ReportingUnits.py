@@ -1,13 +1,13 @@
-#Date Created: 10/05/2020
+# Date Created: 02/07/2022
 #Purpose: To extract AZ agg reporting unit information and populate a dataframe for WaDEQA 2.0.
 #Notes:
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 # Custom Libraries
 ############################################################################

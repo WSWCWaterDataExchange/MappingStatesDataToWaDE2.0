@@ -1,13 +1,13 @@
-#Date Created: 10/05/2020
+# Date Created: 02/07/2022
 #Purpose: To create AZ agg organization use information and populate a dataframe for WaDE_QA 2.0.
 #Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
@@ -36,7 +36,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.OrganizationUUID = "ADWR_AMA"
+outdf.OrganizationUUID = "AZag_O1"
 
 outdf.OrganizationContactEmail = "lmwilliams@azwater.gov"
 

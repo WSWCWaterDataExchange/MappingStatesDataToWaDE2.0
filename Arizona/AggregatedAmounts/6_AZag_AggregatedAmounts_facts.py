@@ -1,4 +1,4 @@
-# Date Created: 10/15/2020
+# Date Created: 02/07/2022
 # Author: Ryan James
 # Purpose: To extract AZ agg aggregated information and populate a dataframe WaDEQA 2.0.
 #          1) Simple creation of working dataframe (df), with output dataframe (outdf).
@@ -7,9 +7,9 @@
 
 # Needed Libraries
 ############################################################################
+import os
 import numpy as np
 import pandas as pd
-import os
 
 # Custom Libraries
 ############################################################################
@@ -81,7 +81,7 @@ def retrieveReportingUnits(colrowValue):
     return outString
 
 # For creating VariableSpecificUUID
-VariableSpecificUUIDdict = pd.Series(df_variables.VariableSpecificUUID.values, index = df_variables.VariableCV).to_dict()
+VariableSpecificUUIDdict = pd.Series(df_variables.VariableSpecificUUID.values, index = df_variables.VariableSpecificCV).to_dict()
 def retrieveVariableSpecificUUID(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outString = ''
@@ -121,16 +121,16 @@ print("Populating dataframe outdf...")
 outdf = pd.DataFrame(index=df_DM.index, columns=columnslist)  # The output dataframe
 
 print("MethodUUID")
-outdf['MethodUUID'] = "AZ_AMAModels"
+outdf['MethodUUID'] = "AZag_M1"
 
 print("OrganizationUUID")
-outdf['OrganizationUUID'] = "ADWR_AMA"
+outdf['OrganizationUUID'] = "AZag_O1"
 
 print("ReportingUnitUUID")
 outdf['ReportingUnitUUID'] = df_DM.apply(lambda row: retrieveReportingUnits(row['in_ReportingUnitNativeID']), axis=1)
 
 print("VariableSpecificUUID")
-outdf['VariableSpecificUUID'] = df_DM.apply(lambda row: retrieveVariableSpecificUUID(row['CATEGORY']), axis=1)
+outdf['VariableSpecificUUID'] = df_DM.apply(lambda row: retrieveVariableSpecificUUID(row['in_VariableSpecificCV']), axis=1)
 
 print("WaterSourceUUID")
 outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
@@ -151,7 +151,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = "10/28/2020"
+outdf['DataPublicationDate'] = "02/07/2022"
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""

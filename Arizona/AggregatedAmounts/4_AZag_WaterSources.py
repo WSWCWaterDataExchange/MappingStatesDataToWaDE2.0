@@ -1,13 +1,13 @@
-#Date Created: 10/28/2020
+# Date Created: 02/07/2022
 #Purpose: To extract AZ agg water source use information and populate a dataframe for WaDE_QA 2.0.
 #Notes:
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 # Custom Libraries
 ############################################################################

@@ -1,4 +1,4 @@
-# Date Created: 10/28/2020
+# Date Created: 02/07/2022
 # Purpose: To create AZ agg variable use information and populate a dataframe for WaDE_QA 2.0.
 # Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
 #        2) Special case of VariableCV and VariableSpecificCV.
@@ -7,9 +7,9 @@
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
@@ -31,38 +31,65 @@ columnslist = [
     "VariableCV",
     "VariableSpecificCV"]
 
-# Custom Functions
-############################################################################
-
-# N/A
-
 
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-
 outdf = pd.DataFrame(columns=columnslist)
+# outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
+outdf.VariableSpecificUUID = ["AZag_V1", "AZag_V2", "AZag_V3", "AZag_V4", "AZag_V5", "AZag_V6", "AZag_V7", "AZag_V8", "AZag_V9", "AZag_V10",
+                              "AZag_V11", "AZag_V12", "AZag_V13", "AZag_V14", "AZag_V15", "AZag_V16", "AZag_V17", "AZag_V18", "AZag_V19", "AZag_V20"]
 
-outdf.VariableSpecificCV = ["Demand", "Supply"]
+outdf.AggregationInterval = ["1", "1", "1", "1", "1", "1", "1", "1", "1", "1",
+                             "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"]
 
-outdf.VariableCV = ["Demand", "Supply"]
+outdf.AggregationIntervalUnitCV = ["Annual", "Annual", "Annual", "Annual", "Annual", "Annual", "Annual", "Annual", "Annual", "Annual",
+                                   "Annual", "Annual", "Annual", "Annual", "Annual", "Annual", "Annual", "Annual", "Annual", "Annual"]
 
-outdf.VariableSpecificUUID = ["AZ_Demand", "AZ_Supply"]
+outdf.AggregationStatisticCV = ["Cumulative", "Cumulative", "Cumulative", "Cumulative", "Cumulative",
+                                "Cumulative", "Cumulative", "Cumulative", "Cumulative", "Cumulative",
+                                "Cumulative", "Cumulative",  "Cumulative", "Cumulative", "Cumulative",
+                                "Cumulative", "Cumulative", "Cumulative", "Cumulative", "Cumulative"]
 
-outdf.AggregationInterval = "1"
+outdf.AmountUnitCV = ["CFS", "CFS", "CFS", "CFS", "CFS", "CFS", "CFS", "CFS", "CFS", "CFS",
+                      "CFS", "CFS", "CFS", "CFS", "CFS", "CFS", "CFS", "CFS", "CFS", "CFS"]
 
-outdf.AggregationIntervalUnitCV = "Year"
+outdf.MaximumAmountUnitCV = ["AFY", "AFY", "AFY", "AFY", "AFY", "AFY", "AFY", "AFY", "AFY", "AFY",
+                             "AFY", "AFY", "AFY", "AFY", "AFY", "AFY", "AFY", "AFY", "AFY", "AFY"]
 
-outdf.AggregationStatisticCV = "Cumulative"
+outdf.ReportYearStartMonth = ["1", "1", "1", "1", "1", "1", "1", "1", "1", "1",
+                              "1", "1", "1", "1", "1", "1", "1", "1", "1", "1",]
 
-outdf.AmountUnitCV = "AFY"
+outdf.ReportYearTypeCV = ["CalendarYear", "CalendarYear", "CalendarYear", "CalendarYear", "CalendarYear",
+                          "CalendarYear", "CalendarYear", "CalendarYear", "CalendarYear", "CalendarYear",
+                          "CalendarYear", "CalendarYear", "CalendarYear", "CalendarYear", "CalendarYear",
+                          "CalendarYear", "CalendarYear", "CalendarYear", "CalendarYear", "CalendarYear"]
 
-outdf.MaximumAmountUnitCV = "AFY"
+outdf.VariableCV = ["Demand", "Demand", "Demand", "Demand",
+                    "Supply", "Supply", "Supply", "Supply", "Supply", "Supply", "Supply", "Supply",
+                    "Supply", "Supply", "Supply", "Supply", "Supply", "Supply", "Supply", "Supply"]
 
-outdf.ReportYearStartMonth = "1"
-
-outdf.ReportYearTypeCV = "CalendarYear"
+outdf.VariableSpecificCV = ["Demand_Annual_Agricultural_Unspecified",
+                            "Demand_Annual_Indian_Unspecified",
+                            "Demand_Annual_Industrial_Unspecified",
+                            "Demand_Annual_Municipal_Unspecified",
+                            "Supply_Annual_Agricultural_Effluent",
+                            "Supply_Annual_Agricultural_Groundwater",
+                            "Supply_Annual_Agricultural_Surface Water",
+                            "Supply_Annual_Agricultural_Unspecified",
+                            "Supply_Annual_Indian_Effluent",
+                            "Supply_Annual_Indian_Groundwater",
+                            "Supply_Annual_Indian_Surface Water",
+                            "Supply_Annual_Indian_Unspecified",
+                            "Supply_Annual_Industrial_Effluent",
+                            "Supply_Annual_Industrial_Groundwater",
+                            "Supply_Annual_Industrial_Surface Water",
+                            "Supply_Annual_Industrial_Unspecified",
+                            "Supply_Annual_Municipal_Effluent",
+                            "Supply_Annual_Municipal_Groundwater",
+                            "Supply_Annual_Municipal_Surface Water",
+                            "Supply_Annual_Municipal_Unspecified"]
 
 
 # Check required fields are not null
@@ -89,7 +116,7 @@ print("Exporting dataframe to csv...")
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/variables.csv', index=False)
 
-# Report purged values.
+#Report missing values if need be to separate csv
 if(len(outdf_nullMand.index) > 0):
     outdf_nullMand.to_csv('ProcessedInputData/variables_missing.csv', index=False)
 
