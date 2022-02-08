@@ -1,4 +1,4 @@
-# Date Created: 01/20/2021
+# Date Updated: 02/08/2022
 # Author: Ryan James (WSWC)
 # Purpose: To create WY agg variable use information and populate a dataframe for WaDE_QA 2.0.
 # Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
@@ -6,9 +6,9 @@
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
@@ -31,38 +31,49 @@ columnslist = [
     "VariableSpecificCV"]
 
 
-# Custom Functions
-############################################################################
-
-# N/A
-
-
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-
 outdf = pd.DataFrame(columns=columnslist)
-outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
+# outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = 'WY_Consumptive Use'
+outdf.VariableSpecificUUID = ["WYag_V1", "WYag_V2", "WYag_V3", "WYag_V4",
+                              "WYag_V5", "WYag_V6", "WYag_V7", "WYag_V8",
+                              "WYag_V9"]
 
-outdf.VariableSpecificCV = 'Consumptive Use'
+outdf.AggregationInterval = ["1", "1", "1", "1", "1", "1", "1", "1", "1"]
 
-outdf.VariableCV = 'Consumptive Use'
+outdf.AggregationIntervalUnitCV = ["Annual", "Annual", "Annual", "Annual",
+                                   "Annual", "Annual", "Annual", "Annual",
+                                   "Annual"]
 
-outdf.AggregationInterval = "1"
+outdf.AggregationStatisticCV = ["Cumulative", "Cumulative", "Cumulative", "Cumulative",
+                                "Cumulative", "Cumulative", "Cumulative", "Cumulative",
+                                "Cumulative"]
 
-outdf.AggregationIntervalUnitCV = "Year"
+outdf.AmountUnitCV = ["AFY", "AFY", "AFY", "AFY", "AFY", "AFY", "AFY", "AFY", "AFY"]
 
-outdf.AggregationStatisticCV = "Cumulative"
+outdf.MaximumAmountUnitCV = ["AFY", "AFY", "AFY", "AFY", "AFY", "AFY", "AFY", "AFY", "AFY"]
 
-outdf.AmountUnitCV = "AFY"
+outdf.ReportYearStartMonth = ["1", "1", "1", "1", "1", "1", "1", "1", "1"]
 
-outdf.MaximumAmountUnitCV = "AFY"
+outdf.ReportYearTypeCV = ["WaterYear", "WaterYear", "WaterYear", "WaterYear",
+                          "WaterYear", "WaterYear", "WaterYear", "WaterYear",
+                          "WaterYear"]
 
-outdf.ReportYearStartMonth = "10"
+outdf.VariableCV = ["Reservoirs and Gages", "Reservoirs and Gages", "Reservoirs and Gages", "Reservoirs and Gages",
+                    "Reservoirs and Gages", "Reservoirs and Gages", "Reservoirs and Gages", "Reservoirs and Gages",
+                    "Reservoirs and Gages"]
 
-outdf.ReportYearTypeCV = "CalendarYear"
+outdf.VariableSpecificCV = ["Consumptive Use_Annual_Agricultural Consumptive Use_Groundwater",
+                            "Consumptive Use_Annual_Agricultural Consumptive Use_Surface Water",
+                            "Consumptive Use_Annual_Domestic Use_Groundwater",
+                            "Consumptive Use_Annual_Domestic Use_Surface Water",
+                            "Consumptive Use_Annual_Industrial Use_Groundwater",
+                            "Consumptive Use_Annual_Industrial Use_Surface Water",
+                            "Consumptive Use_Annual_Municipal Use_Cross Basin Diversion",
+                            "Consumptive Use_Annual_Municipal Use_Groundwater",
+                            "Consumptive Use_Annual_Municipal Use_Surface Water"]
 
 
 # Check required fields are not null
@@ -89,8 +100,9 @@ print("Exporting dataframe to csv...")
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/variables.csv', index=False)
 
-# Report purged values.
+#Report missing values if need be to separate csv
 if(len(outdf_nullMand.index) > 0):
     outdf_nullMand.to_csv('ProcessedInputData/variables_missing.csv', index=False)
 
 print("Done.")
+

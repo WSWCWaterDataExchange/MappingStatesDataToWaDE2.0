@@ -1,4 +1,4 @@
-# Date Created: 01/20/2021
+# Date Updated: 02/08/2022
 # Author: Ryan James (WSWC)
 # Purpose: To create WY agg watersource use information and populate a dataframe for WaDE_QA 2.0.
 # Notes:
@@ -6,9 +6,9 @@
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 # Custom Libraries
 ############################################################################

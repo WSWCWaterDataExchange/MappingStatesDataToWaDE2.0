@@ -1,4 +1,4 @@
-# Date Created: 01/20/2021
+# Date Updated: 02/08/2022
 # Author: Ryan James (WSWC)
 # Purpose: To create WY agg aggregated information and populate a dataframe WaDEQA 2.0.
 #          1) Simple creation of working dataframe (df), with output dataframe (outdf).
@@ -7,9 +7,9 @@
 
 # Needed Libraries
 ############################################################################
+import os
 import numpy as np
 import pandas as pd
-import os
 
 # Custom Libraries
 ############################################################################
@@ -67,6 +67,20 @@ columnslist = [
 # Custom Functions
 ############################################################################
 
+# For creating VariableSpecificUUID
+VariableSpecificUUIDdict = pd.Series(df_variables.VariableSpecificUUID.values, index = df_variables.VariableSpecificCV).to_dict()
+def retrieveVariableSpecificUUID(colrowValue):
+    if colrowValue == '' or pd.isnull(colrowValue):
+        outString = ''
+    else:
+        String1 = colrowValue
+        try:
+            outString = VariableSpecificUUIDdict[String1]
+        except:
+            outString = colrowValue
+    return outString
+
+
 # For Creating ReportingunitUUID
 ReportingUnitUUIDdict = pd.Series(df_reportingunits.ReportingUnitUUID.values, index = df_reportingunits.ReportingUnitNativeID).to_dict()
 def retrieveReportingUnits(colrowValue):
@@ -100,16 +114,16 @@ print("Populating dataframe outdf...")
 outdf = pd.DataFrame(index=df_DM.index, columns=columnslist)  # The output dataframe
 
 print("MethodUUID")
-outdf['MethodUUID'] = "WWDO_Water Use"
+outdf['MethodUUID'] = "WYag_M1"
 
 print("OrganizationUUID")
-outdf['OrganizationUUID'] = "WWDO"
+outdf['OrganizationUUID'] = "WYag_O1"
 
-print("ReportingUnitUUID")  # Using SiteNativeID to identify ID
+print("ReportingUnitUUID")
 outdf['ReportingUnitUUID'] = df_DM.apply(lambda row: retrieveReportingUnits(row['in_ReportingUnitNativeID']), axis=1)
 
 print("VariableSpecificUUID")
-outdf['VariableSpecificUUID'] = "WY_Consumptive Use"
+outdf['VariableSpecificUUID'] = df_DM.apply(lambda row: retrieveVariableSpecificUUID(row['in_VariableSpecificCV']), axis=1)
 
 print("WaterSourceUUID")
 outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
@@ -130,7 +144,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = "01/21/2021"
+outdf['DataPublicationDate'] = "02/08/2022"
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""
