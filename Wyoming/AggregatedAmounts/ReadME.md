@@ -66,7 +66,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
-WWDO_Water Use| Unspecified | Water Use
+WYag_M1 | Unspecified | Water Use
 
 
 ***
@@ -89,9 +89,9 @@ Purpose: generate legend of granular variables specific to each state.
 - Export output dataframe *variables.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
----------- | ---------- | ------------ | ------------
-WY_Consumptive Use | 1 | Year | AFY
+VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV | VariableCV | VariableSpecificCV
+---------- | ---------- | ------------ | ------------ | ------------ | ------------
+WYag_V1 | 1 | Year | AFY | Consumptive Use | Consumptive Use_Annual_Agricultural Consumptive Use_Groundwater
 
 
 ***
@@ -116,7 +116,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName  | OrganizationWebsite
 ---------- | ---------- | ------------
-WWDO | Mabel Jones | https://wwdc.state.wy.us/
+WYag_O1 | Mabel Jones | https://wwdc.state.wy.us/
 
 
 ***
@@ -177,7 +177,7 @@ Purpose: generate a list of polygon areas associated with the state agency speci
 - Export output dataframe *sites.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-SiteUUID | ReportingUnitName | ReportingUnitTypeCV 
+ReportingUnitUUID | ReportingUnitName | ReportingUnitTypeCV 
 ---------- | ---------- | ------------ 
 WYag_RU1 | Bear River Planning Basin | Basin
 
@@ -214,12 +214,12 @@ Purpose: generate master sheet of state agency specified area aggregated water b
     - *BeneficialUseCategory* = **UseType**.
     - *ReportYearCV* = **ReportYearCV**.
 - Perform error check on output dataframe.
-- Export output dataframe *waterallocations.csv*.
+- Export output dataframe *aggregatedamounts.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | OrganizationUUID | ReportingUnitUUID | VariableSpecificUUID | WaterSourceUUID | Amount | BeneficialUseCategory | ReportYearCV
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | -----------
-WWDO_Water Use | WWDO | WYag_RU1 | WY_Consumptive Use | CAag_WS1 | 1334.272368 | Agricultural Consumptive Use | 2000
+WYag_M1 | WYag_O1 | WYag_RU1 | WYag_V1 | WYag_WS1| 1334.272368 | Agricultural Consumptive Use | 2000
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID
@@ -237,5 +237,5 @@ WSWC Staff
 - Adel Abdallah <adelabdallah@wswc.utah.gov>
 - Ryan James <rjames@wswc.utah.gov>
 
-Wyoming DNRC Staff
+WWDO DNRC Staff
 - Mabel Jones <mabel.jones1@wyo.gov>
