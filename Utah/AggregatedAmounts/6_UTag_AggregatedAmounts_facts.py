@@ -1,4 +1,4 @@
-# Date Created: 11/12/2020
+# Date Created: 02/09/2022
 # Author: Ryan James (WSWC)
 # Purpose: To create UT agg aggregated information and populate a dataframe WaDEQA 2.0.
 # Notes: 1) Simple creation of working dataframe (df), with output dataframe (outdf).
@@ -24,13 +24,11 @@ print("Reading input csv...")
 workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Utah/AggregatedAmounts"
 os.chdir(workingDir)
 M_fileInput = "RawinputData/P_utAggMaster.csv"
-method_fileInput = "ProcessedInputData/methods.csv"
 variables_fileInput = "ProcessedInputData/variables.csv"
 watersources_fileInput = "ProcessedInputData/watersources.csv"
 reportingunits_fileInput = "ProcessedInputData/reportingunits.csv"
 
 df_DM = pd.read_csv(M_fileInput).replace(np.nan, "")  # The State's Master input dataframe.
-df_method = pd.read_csv(method_fileInput)  # Method dataframe
 df_variables = pd.read_csv(variables_fileInput)  # Variables dataframe
 df_watersources = pd.read_csv(watersources_fileInput)  # WaterSources dataframe
 df_reportingunits = pd.read_csv(reportingunits_fileInput)  # ReportingUnits dataframe
@@ -67,19 +65,8 @@ columnslist = [
 # Custom Functions
 ############################################################################
 
-# For creating MethodUUID
-def retrieveMethodUUID(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outList = ''
-    else:
-        String1 = colrowValue
-        try:
-            outList = MethodUUIDdict[String1]
-        except:
-            outList = ''
-    return outList
-
 # For creating ReportingUnitsUUID
+ReportingUnitUUIDdict = pd.Series(df_reportingunits.ReportingUnitUUID.values, index = df_reportingunits.ReportingUnitNativeID).to_dict()
 def retrieveReportingUnits(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = ''
@@ -92,6 +79,7 @@ def retrieveReportingUnits(colrowValue):
     return outList
 
 # For creating VariableSpecificUUID
+VariableSpecificUUIDdict = pd.Series(df_variables.VariableSpecificUUID.values, index = df_variables.VariableSpecificCV).to_dict()
 def retrieveVariableSpecificUUID(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = ''
@@ -104,6 +92,7 @@ def retrieveVariableSpecificUUID(colrowValue):
     return outList
 
 # For creating WaterSourceUUID
+WaterSourceUUIDUUIDdict = pd.Series(df_watersources.WaterSourceUUID.values, index = df_watersources.WaterSourceNativeID).to_dict()
 def retrieveWaterSourceUUID(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = ''
@@ -122,23 +111,19 @@ print("Populating dataframe outdf...")
 outdf = pd.DataFrame(index=df_DM.index, columns=columnslist)  # The output dataframe
 
 print("MethodUUID")
-MethodUUIDdict = pd.Series(df_method.MethodUUID.values, index = df_method.MethodName).to_dict()
-outdf['MethodUUID'] = df_DM.apply(lambda row: retrieveMethodUUID(row['MethodUUID']), axis=1)
+outdf['MethodUUID'] = "UTag_M1"
 
 print("OrganizationUUID")
-outdf.OrganizationUUID = "UDWRe"
+outdf['OrganizationUUID'] = "UTag_O1"
 
 print("ReportingUnitUUID")  # Using SiteNativeID to identify ID
-ReportingUnitUUIDdict = pd.Series(df_reportingunits.ReportingUnitUUID.values, index = df_reportingunits.ReportingUnitNativeID).to_dict()
 outdf['ReportingUnitUUID'] = df_DM.apply(lambda row: retrieveReportingUnits(row['ReportingUnitNativeID']), axis=1)
 
 print("VariableSpecificUUID")
-VariableSpecificUUIDdict = pd.Series(df_variables.VariableSpecificUUID.values, index = df_variables.VariableSpecificCV).to_dict()
-outdf['VariableSpecificUUID'] = df_DM.apply(lambda row: retrieveVariableSpecificUUID(row['UT_VariableSpecificCV']), axis=1)
+outdf['VariableSpecificUUID'] = df_DM.apply(lambda row: retrieveVariableSpecificUUID(row['in_VariableSpecificCV']), axis=1)
 
 print("WaterSourceUUID")
-WaterSourceUUIDUUIDdict = pd.Series(df_watersources.WaterSourceUUID.values, index = df_watersources.WaterSourceTypeCV).to_dict()
-outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceTypeCV']), axis=1)
+outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
 
 print("Amount")
 outdf['Amount'] = df_DM['Amount']
@@ -156,7 +141,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = "11/03/2020"
+outdf['DataPublicationDate'] = "02/09/2022"
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""
@@ -183,7 +168,7 @@ print("PowerType")
 outdf['PowerType'] = ""
 
 print("PrimaryUseCategory")
-outdf["PrimaryUseCategory"] =  df_DM['USGSCategoryCV']
+outdf["PrimaryUseCategory"] = "Unspecified"
 
 print("ReportYearCV")
 outdf['ReportYearCV'] = df_DM['ReportYearCV']

@@ -1,4 +1,7 @@
 VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
-UT_Consumptive Use,1,Year,Average,AFY,AFY,10,WaterYear,Consumptive Use,Consumptive Use Irrigation
-UT_Withdrawal Irrigation,1,Year,Average,AFY,AFY,10,WaterYear,Withdrawal,Withdrawal Irrigation
-UT_Withdrawal Public Supply,1,Year,Average,AFY,AFY,10,WaterYear,Withdrawal,Withdrawal Public Supply
+UTag_V1,1,Annual,Average,AFY,AFY,10,WaterYear,Consumptive Use,Consumptive Use_Annual_Agriculture_Surface and Groundwater
+UTag_V2,1,Annual,Average,AFY,AFY,10,WaterYear,Consumptive Use,Consumptive Use_Annual_Agriculture_Surface Water
+UTag_V3,1,Annual,Average,AFY,AFY,10,WaterYear,Withdrawal,Withdrawal_Annual_Agriculture_Groundwater
+UTag_V4,1,Annual,Average,AFY,AFY,10,WaterYear,Withdrawal,Withdrawal_Annual_Agriculture_Surface Water
+UTag_V5,1,Annual,Average,AFY,AFY,10,WaterYear,Withdrawal,Withdrawal_Annual_Municipal/Industrial_Groundwater
+UTag_V6,1,Annual,Average,AFY,AFY,10,WaterYear,Withdrawal,Withdrawal_Annual_Municipal/Industrial_Surface Water

@@ -1,4 +1,4 @@
-# Date Created: 11/12/2020
+# Date Created: 02/09/2022
 # Author: Ryan James (WSWC)
 # Purpose: To create UT agg water source use information and populate a dataframe for WaDE_QA 2.0.
 # Notes: N/A
@@ -49,7 +49,6 @@ def assignWaterSourceUUID(colrowValue):
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-
 outdf = pd.DataFrame(index=df.index, columns=columnslist)  # The output dataframe for CSV.
 
 print("Geometry")
@@ -65,10 +64,10 @@ print("WaterSourceName")
 outdf['WaterSourceName'] = "Unspecified"
 
 print("WaterSourceNativeID")
-outdf['WaterSourceNativeID'] = "Unspecified"
+outdf['WaterSourceNativeID'] = df['in_WaterSourceNativeID']  # see preprocessing code.
 
 print("WaterSourceTypeCV")
-outdf['WaterSourceTypeCV'] = df['in_WaterSourceTypeCV']  # see preprocessing code.
+outdf['WaterSourceTypeCV'] = df['WaterSourceID']
 
 ##############################
 # Dropping duplicate

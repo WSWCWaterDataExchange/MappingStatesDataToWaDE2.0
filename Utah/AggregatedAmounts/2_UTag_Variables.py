@@ -1,4 +1,4 @@
-# Date Created: 11/12/2020
+# Date Created: 02/09/2022
 # Author: Ryan James (WSWC)
 # Purpose: To create UT agg variable use information and populate a dataframe for WaDE_QA 2.0.
 # Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
@@ -6,9 +6,9 @@
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
@@ -40,28 +40,32 @@ columnslist = [
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-
 outdf = pd.DataFrame(columns=columnslist)
 
-outdf.VariableSpecificUUID = ["UT_Consumptive Use", "UT_Withdrawal Irrigation", "UT_Withdrawal Public Supply"]
+outdf.VariableSpecificUUID = ["UTag_V1", "UTag_V2", "UTag_V3", "UTag_V4", "UTag_V5", "UTag_V6"]
 
-outdf.AggregationInterval = ["1", "1", "1"]
+outdf.AggregationInterval = ["1", "1", "1", "1", "1", "1"]
 
-outdf.AggregationIntervalUnitCV = ["Year", "Year", "Year"]
+outdf.AggregationIntervalUnitCV = ["Annual", "Annual", "Annual", "Annual", "Annual", "Annual"]
 
-outdf.AggregationStatisticCV = ["Average", "Average", "Average"]
+outdf.AggregationStatisticCV = ["Average", "Average", "Average", "Average", "Average", "Average"]
 
-outdf.AmountUnitCV = ["AFY", "AFY", "AFY"]
+outdf.AmountUnitCV = ["AFY", "AFY", "AFY", "AFY", "AFY", "AFY"]
 
-outdf.MaximumAmountUnitCV = ["AFY", "AFY", "AFY"]
+outdf.MaximumAmountUnitCV = ["AFY", "AFY", "AFY", "AFY", "AFY", "AFY"]
 
-outdf.ReportYearStartMonth = ["10", "10", "10"]
+outdf.ReportYearStartMonth = ["10", "10", "10", "10", "10", "10"]
 
-outdf.ReportYearTypeCV = ["WaterYear", "WaterYear", "WaterYear"]
+outdf.ReportYearTypeCV = ["WaterYear", "WaterYear", "WaterYear", "WaterYear", "WaterYear", "WaterYear"]
 
-outdf.VariableCV = ["Consumptive Use", "Withdrawal", "Withdrawal"]
+outdf.VariableCV = ["Consumptive Use", "Consumptive Use", "Withdrawal", "Withdrawal", "Withdrawal", "Withdrawal"]
 
-outdf.VariableSpecificCV = ["Consumptive Use Irrigation", "Withdrawal Irrigation", "Withdrawal Public Supply"]
+outdf.VariableSpecificCV = ["Consumptive Use_Annual_Agriculture_Surface and Groundwater",
+                            "Consumptive Use_Annual_Agriculture_Surface Water",
+                            "Withdrawal_Annual_Agriculture_Groundwater",
+                            "Withdrawal_Annual_Agriculture_Surface Water",
+                            "Withdrawal_Annual_Municipal/Industrial_Groundwater",
+                            "Withdrawal_Annual_Municipal/Industrial_Surface Water"]
 
 
 # Check required fields are not null

@@ -1,4 +1,4 @@
-# Date Created: 11/12/2020
+# Date Created: 02/09/2022
 # Author: Ryan James (WSWC)
 # Purpose: To create UT agg organization use information and populate a dataframe for WaDE_QA 2.0.
 # Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
@@ -6,9 +6,9 @@
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
@@ -33,11 +33,10 @@ columnslist = [
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-
 outdf = pd.DataFrame(columns=columnslist)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.OrganizationUUID = "UDWRe"
+outdf.OrganizationUUID = "UTag_O1"
 
 outdf.OrganizationContactEmail = "craigmiller@utah.gov"
 

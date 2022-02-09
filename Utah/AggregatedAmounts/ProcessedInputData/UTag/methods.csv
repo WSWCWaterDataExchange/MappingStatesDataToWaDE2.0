@@ -1,3 +1,2 @@
 MethodUUID,ApplicableResourceTypeCV,DataConfidenceValue,DataCoverageValue,DataQualityValueCV,MethodDescription,MethodName,MethodNEMILink,MethodTypeCV
-UT_Consumptive Use Estimate,Surface Ground,,,,Consumptive Use Estimate,Consumptive Use Estimate,,Estimate
-UT_Withdrawal Estimate,Surface Ground,,,,Withdrawal Volume Estimate,Withdrawal Volume Estimate,,Estimate
+UTag_M1,Surface Ground Water,,,,Estimate of groundwater & surface water consumptive use and withdrawl water use in a given area.,Estimate,,Estimate
