@@ -1,3 +1,13 @@
 VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
-CA_Applied Water Use,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Applied Water Use,Applied Water Use
-CA_Depletion,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Depletion,Depletion
+CAag_V1,1,Annual,Cumulative,AFY,AFY,1,CalendarYear,Applied Water Use,Applied Water Use_Annual_Agriculture_Surface Ground Water
+CAag_V2,1,Annual,Cumulative,AFY,AFY,1,CalendarYear,Applied Water Use,Applied Water Use_Annual_Instream Flow Requirements_Surface Ground Water
+CAag_V3,1,Annual,Cumulative,AFY,AFY,1,CalendarYear,Applied Water Use,Applied Water Use_Annual_Managed Wetlands_Surface Ground Water
+CAag_V4,1,Annual,Cumulative,AFY,AFY,1,CalendarYear,Applied Water Use,Applied Water Use_Annual_Required Delta Outflow_Surface Ground Water
+CAag_V5,1,Annual,Cumulative,AFY,AFY,1,CalendarYear,Applied Water Use,Applied Water Use_Annual_Urban_Surface Ground Water
+CAag_V6,1,Annual,Cumulative,AFY,AFY,1,CalendarYear,Applied Water Use,Applied Water Use_Annual_Wild and Scenic River_Surface Ground Water
+CAag_V7,1,Annual,Cumulative,AFY,AFY,1,CalendarYear,Depletion,Depletion_Annual_Agriculture_Surface Ground Water
+CAag_V8,1,Annual,Cumulative,AFY,AFY,1,CalendarYear,Depletion,Depletion_Annual_Instream Flow Requirements_Surface Ground Water
+CAag_V9,1,Annual,Cumulative,AFY,AFY,1,CalendarYear,Depletion,Depletion_Annual_Managed Wetlands_Surface Ground Water
+CAag_V10,1,Annual,Cumulative,AFY,AFY,1,CalendarYear,Depletion,Depletion_Annual_Required Delta Outflow_Surface Ground Water
+CAag_V11,1,Annual,Cumulative,AFY,AFY,1,CalendarYear,Depletion,Depletion_Annual_Urban_Surface Ground Water
+CAag_V12,1,Annual,Cumulative,AFY,AFY,1,CalendarYear,Depletion,Depletion_Annual_Wild and Scenic River_Surface Ground Water

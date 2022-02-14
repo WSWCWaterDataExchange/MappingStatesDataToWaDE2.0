@@ -1,4 +1,4 @@
-# Date Created: 11/04/2020
+# Date Created: 02/11/2022
 # Author: Ryan James (WSWC)
 # Purpose: To create CA agg variable use information and populate a dataframe for WaDE_QA 2.0.
 # Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
@@ -6,9 +6,9 @@
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
@@ -41,26 +41,128 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
+# outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = ["CA_Applied Water Use", "CA_Depletion"]
+outdf.VariableSpecificUUID = ["CAag_V1", "CAag_V2", "CAag_V3", "CAag_V4",
+                              "CAag_V5", "CAag_V6", "CAag_V7", "CAag_V8",
+                              "CAag_V9", "CAag_V10", "CAag_V11", "CAag_V12"]
 
-outdf.VariableSpecificCV = ["Applied Water Use", "Depletion"]
+outdf.AggregationInterval = ["1",
+"1",
+"1",
+"1",
+"1",
+"1",
+"1",
+"1",
+"1",
+"1",
+"1",
+"1"]
 
-outdf.VariableCV = ["Applied Water Use", "Depletion"]
+outdf.AggregationIntervalUnitCV = ["Annual",
+"Annual",
+"Annual",
+"Annual",
+"Annual",
+"Annual",
+"Annual",
+"Annual",
+"Annual",
+"Annual",
+"Annual",
+"Annual"]
 
-outdf.AggregationInterval = ["1", "1"]
+outdf.AggregationStatisticCV = ["Cumulative",
+"Cumulative",
+"Cumulative",
+"Cumulative",
+"Cumulative",
+"Cumulative",
+"Cumulative",
+"Cumulative",
+"Cumulative",
+"Cumulative",
+"Cumulative",
+"Cumulative"]
 
-outdf.AggregationIntervalUnitCV = ["Year", "Year"]
+outdf.AmountUnitCV = ["AFY",
+"AFY",
+"AFY",
+"AFY",
+"AFY",
+"AFY",
+"AFY",
+"AFY",
+"AFY",
+"AFY",
+"AFY",
+"AFY"]
 
-outdf.AggregationStatisticCV = ["Cumulative", "Cumulative"]
+outdf.MaximumAmountUnitCV = ["AFY",
+"AFY",
+"AFY",
+"AFY",
+"AFY",
+"AFY",
+"AFY",
+"AFY",
+"AFY",
+"AFY",
+"AFY",
+"AFY"]
 
-outdf.AmountUnitCV = ["AFY", "AFY"]
+outdf.ReportYearStartMonth = ["1",
+"1",
+"1",
+"1",
+"1",
+"1",
+"1",
+"1",
+"1",
+"1",
+"1",
+"1"]
 
-outdf.MaximumAmountUnitCV = ["AFY", "AFY"]
+outdf.ReportYearTypeCV = ["CalendarYear",
+"CalendarYear",
+"CalendarYear",
+"CalendarYear",
+"CalendarYear",
+"CalendarYear",
+"CalendarYear",
+"CalendarYear",
+"CalendarYear",
+"CalendarYear",
+"CalendarYear",
+"CalendarYear"]
 
-outdf.ReportYearStartMonth = ["1", "1"]
+outdf.VariableCV = ["Applied Water Use",
+"Applied Water Use",
+"Applied Water Use",
+"Applied Water Use",
+"Applied Water Use",
+"Applied Water Use",
+"Depletion",
+"Depletion",
+"Depletion",
+"Depletion",
+"Depletion",
+"Depletion"]
 
-outdf.ReportYearTypeCV = ["CalendarYear", "CalendarYear"]
+outdf.VariableSpecificCV = ["Applied Water Use_Annual_Agriculture_Surface Ground Water",
+                            "Applied Water Use_Annual_Instream Flow Requirements_Surface Ground Water",
+                            "Applied Water Use_Annual_Managed Wetlands_Surface Ground Water",
+                            "Applied Water Use_Annual_Required Delta Outflow_Surface Ground Water",
+                            "Applied Water Use_Annual_Urban_Surface Ground Water",
+                            "Applied Water Use_Annual_Wild and Scenic River_Surface Ground Water",
+                            "Depletion_Annual_Agriculture_Surface Ground Water",
+                            "Depletion_Annual_Instream Flow Requirements_Surface Ground Water",
+                            "Depletion_Annual_Managed Wetlands_Surface Ground Water",
+                            "Depletion_Annual_Required Delta Outflow_Surface Ground Water",
+                            "Depletion_Annual_Urban_Surface Ground Water",
+                            "Depletion_Annual_Wild and Scenic River_Surface Ground Water"]
 
 
 # Check required fields are not null

@@ -1,4 +1,4 @@
-# Date Created: 11/04/2020
+# Date Created: 02/11/2022
 # Author: Ryan James (WSWC)
 # Purpose: To create CA agg aggregated information and populate a dataframe WaDEQA 2.0.
 #          1) Simple creation of working dataframe (df), with output dataframe (outdf).
@@ -7,9 +7,9 @@
 
 # Needed Libraries
 ############################################################################
+import os
 import numpy as np
 import pandas as pd
-import os
 
 # Custom Libraries
 ############################################################################
@@ -24,13 +24,11 @@ print("Reading input csv...")
 workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/California/AggregatedAmounts"
 os.chdir(workingDir)
 M_fileInput = "RawinputData/P_caAggMaster.csv"
-method_fileInput = "ProcessedInputData/methods.csv"
 variables_fileInput = "ProcessedInputData/variables.csv"
 watersources_fileInput = "ProcessedInputData/watersources.csv"
 reportingunits_fileInput = "ProcessedInputData/reportingunits.csv"
 
 df_DM = pd.read_csv(M_fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
-df_method = pd.read_csv(method_fileInput)  # Method dataframe
 df_variables = pd.read_csv(variables_fileInput)  # Variables dataframe
 df_watersources = pd.read_csv(watersources_fileInput)  # WaterSources dataframe
 df_reportingunits = pd.read_csv(reportingunits_fileInput)  # ReportingUnits dataframe
@@ -68,6 +66,7 @@ columnslist = [
 ############################################################################
 
 # For creating ReportingUnitsUUID
+ReportingUnitUUIDdict = pd.Series(df_reportingunits.ReportingUnitUUID.values, index = df_reportingunits.ReportingUnitNativeID).to_dict()
 def retrieveReportingUnits(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = ''
@@ -80,6 +79,7 @@ def retrieveReportingUnits(colrowValue):
     return outList
 
 # For creating VariableSpecificUUID
+VariableSpecificUUIDdict = pd.Series(df_variables.VariableSpecificUUID.values, index = df_variables.VariableSpecificCV).to_dict()
 def retrieveVariableSpecific(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = ''
@@ -99,27 +99,25 @@ print("Populating dataframe outdf...")
 outdf = pd.DataFrame(index=df_DM.index, columns=columnslist)  # The output dataframe
 
 print("MethodUUID")
-outdf['MethodUUID'] = "CDWR_Water Use"
+outdf['MethodUUID'] = "CAag_M1"
 
 print("OrganizationUUID")
-outdf['OrganizationUUID'] = "CDWR"
+outdf['OrganizationUUID'] = "CAag_O1"
 
 print("ReportingUnitUUID")  # Using SiteNativeID to identify ID
-ReportingUnitUUIDdict = pd.Series(df_reportingunits.ReportingUnitUUID.values, index = df_reportingunits.ReportingUnitNativeID).to_dict()
-outdf['ReportingUnitUUID'] = df_DM.apply(lambda row: retrieveReportingUnits(row['inReportingUnitNativeID']), axis=1)
+outdf['ReportingUnitUUID'] = df_DM.apply(lambda row: retrieveReportingUnits(row['in_ReportingUnitNativeID']), axis=1)
 
 print("VariableSpecificUUID")
-VariableSpecificUUIDdict = pd.Series(df_variables.VariableSpecificUUID.values, index = df_variables.VariableCV).to_dict()
-outdf['VariableSpecificUUID'] = df_DM.apply(lambda row: retrieveVariableSpecific(row['inVariable']), axis=1)
+outdf['VariableSpecificUUID'] = df_DM.apply(lambda row: retrieveVariableSpecific(row['in_VariableSpecificCV']), axis=1)
 
 print("WaterSourceUUID")
 outdf['WaterSourceUUID'] = 'CAag_WS1'
 
 print("Amount")
-outdf['Amount'] = df_DM['inAmount']
+outdf['Amount'] = df_DM['in_Amount']
 
 print("BeneficialUseCategory")
-outdf['BeneficialUseCategory'] = df_DM['inBenUse']
+outdf['BeneficialUseCategory'] = df_DM['in_BenUse']
 
 print("CommunityWaterSupplySystem")
 outdf['CommunityWaterSupplySystem'] = ""
@@ -131,7 +129,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = "11/03/2020"
+outdf['DataPublicationDate'] = "02/11/2022"
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""
@@ -161,16 +159,16 @@ print("PrimaryUseCategory")
 outdf['PrimaryUseCategory'] = "Unspecified"
 
 print("ReportYearCV")
-outdf['ReportYearCV'] = df_DM['inYear']
+outdf['ReportYearCV'] = df_DM['in_ReportYearCV']
 
 print("SDWISIdentifierCV")
 outdf['SDWISIdentifierCV'] = ""
 
 print("TimeframeEnd")
-outdf['TimeframeEnd'] = df_DM['inTimeframeEnd']
+outdf['TimeframeEnd'] = df_DM['in_TimeframeEnd']
 
 print("TimeframeStart")
-outdf['TimeframeStart'] = df_DM['inTimeframeStart']
+outdf['TimeframeStart'] = df_DM['in_TimeframeStart']
 
 print("Resetting Index")
 outdf.reset_index()

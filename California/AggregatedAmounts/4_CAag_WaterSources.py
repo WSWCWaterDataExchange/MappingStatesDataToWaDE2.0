@@ -1,4 +1,4 @@
-#Date Created: 11/04/2020
+# Date Created: 02/11/2022
 #Author: Ryan James (WSWC)
 #Purpose: To create CA agg water source use information and populate a dataframe for WaDE_QA 2.0.
 #Notes: N/A
@@ -6,9 +6,9 @@
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 # Custom Libraries
 ############################################################################
@@ -64,7 +64,7 @@ print("WaterSourceName")
 outdf['WaterSourceName'] = "Unspecified"
 
 print("WaterSourceNativeID")
-outdf['WaterSourceNativeID'] = "Unspecified"
+outdf['WaterSourceNativeID'] = "WaDECA_WS1"
 
 print("WaterSourceTypeCV")
 outdf['WaterSourceTypeCV'] = 'Surface and Groundwater'

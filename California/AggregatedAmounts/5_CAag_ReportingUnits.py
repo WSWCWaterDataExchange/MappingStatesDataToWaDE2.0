@@ -1,4 +1,4 @@
-# Date Created: 11/04/2020
+# Date Created: 02/11/2022
 # Author: Ryan James (WSWC)
 # Purpose: To create CA agg reporting unit information and populate a dataframe for WaDEQA 2.0.
 # Notes: N/A
@@ -72,16 +72,16 @@ print("EPSGCodeCV")
 outdf['EPSGCodeCV'] = "4326"
 
 print("ReportingUnitName")
-outdf['ReportingUnitName'] = df['inReportingUnitName']
+outdf['ReportingUnitName'] = df['in_ReportingUnitName']
 
 print("ReportingUnitNativeID")
-outdf['ReportingUnitNativeID'] = df['inReportingUnitNativeID']
+outdf['ReportingUnitNativeID'] = df['in_ReportingUnitNativeID']
 
 print("ReportingUnitProductVersion")
 outdf['ReportingUnitProductVersion'] = ""
 
 print("ReportingUnitTypeCV")
-outdf['ReportingUnitTypeCV'] = df['inReportingUnitTypeCV']
+outdf['ReportingUnitTypeCV'] = df['in_ReportingUnitTypeCV']
 
 print("ReportingUnitUpdateDate")
 outdf['ReportingUnitUpdateDate'] = ""
@@ -90,7 +90,7 @@ print("StateCV")
 outdf['StateCV'] = "CA"
 
 print("Geometry")
-outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['inReportingUnitNativeID']), axis=1)
+outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['in_ReportingUnitNativeID']), axis=1)
 
 print("Resetting Index")
 outdf.reset_index()
