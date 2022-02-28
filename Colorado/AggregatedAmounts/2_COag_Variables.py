@@ -51,7 +51,7 @@ outdf = pd.DataFrame(columns=columnslist)
 
 outdf.VariableSpecificCV = ["ReservoirStorage", "ForecastedRunoff", "PrevMoStreamflow"]
 
-outdf.VariableCV = "Supply"
+outdf.VariableCV = "Available Water Supply"
 
 outdf.AggregationInterval = "1"
 

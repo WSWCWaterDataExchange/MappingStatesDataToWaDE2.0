@@ -179,9 +179,8 @@ outdf['SiteUUID'] = dftemp.apply(lambda row: assignSiteUUID(row['Count']), axis=
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-
-dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
-dfpurge = dfpurge.assign(ReasonRemoved='')
+purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # SiteUUID
 outdf, dfpurge = TestErrorFunctions.SiteUUID_S_Check(outdf, dfpurge)
@@ -259,6 +258,6 @@ outdf.to_csv('ProcessedInputData/sites.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
-    dfpurge.to_csv('ProcessedInputData/sites_missing.csv', index=False)
+    dfpurge.to_excel('ProcessedInputData/sites_missing.xlsx', index=False)
 
 print("Done.")

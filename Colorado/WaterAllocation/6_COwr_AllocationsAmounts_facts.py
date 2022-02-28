@@ -1,4 +1,4 @@
-#Date Created: 02/10/2021
+#Date Created: 02/28/2022
 #Author: Ryan James, WSWC
 #Purpose: To extract CO allocation use information and populate DataFrame WaDEQA 2.0.
 #         1) Simple creation of working DataFrame (df), with output DataFrame (outdf).
@@ -115,7 +115,7 @@ print("VariableSpecificUUID")
 outdf['VariableSpecificUUID'] = "CODWR_Allocation"
 
 print("AllocationApplicationDate")
-outdf['AllocationApplicationDate'] = df_M['Appropriation Date']
+outdf['AllocationApplicationDate'] = ""
 
 print("AllocationAssociatedConsumptiveUseSiteIDs")
 outdf['AllocationAssociatedConsumptiveUseSiteIDs'] = ""
@@ -246,9 +246,10 @@ outdf100['OwnerClassificationCV']  = outdf100.apply(lambda row: tempfixOCSV(row[
 #Error checking each field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
+
 # Purge DataFrame to hold removed elements
-dfpurge = pd.DataFrame(columns=columnslist)
-dfpurge = dfpurge.assign(ReasonRemoved='')
+purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+dfpurge = pd.DataFrame(columns=purgecolumnslist)
 
 # MethodUUID
 outdf100, dfpurge = TestErrorFunctions.MethodUUID_AA_Check(outdf100, dfpurge)
@@ -371,6 +372,6 @@ outdf100.to_csv('ProcessedInputData/waterallocations.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
-    dfpurge.to_csv('ProcessedInputData/waterallocations_missing.csv', index=False)
+    dfpurge.to_excel('ProcessedInputData/waterallocations_missing.xlsx', index=False)
 
 print("Done.")

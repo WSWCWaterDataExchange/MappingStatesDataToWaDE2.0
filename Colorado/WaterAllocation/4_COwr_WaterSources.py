@@ -86,8 +86,8 @@ outdf.reset_index()
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
-dfpurge = dfpurge.assign(ReasonRemoved='')
+purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # WaterSourceUUID
 outdf, dfpurge = TestErrorFunctions.WaterSourceUUID_WS_Check(outdf, dfpurge)
@@ -120,6 +120,6 @@ outdf.to_csv('ProcessedInputData/watersources.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
-    dfpurge.to_csv('ProcessedInputData/watersources_missing.csv', index=False)
+    dfpurge.to_excel('ProcessedInputData/watersources_missing.xlsx', index=False)
 
 print("Done.")
