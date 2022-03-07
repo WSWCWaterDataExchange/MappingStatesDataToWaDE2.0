@@ -1,2 +1,3 @@
 MethodUUID,ApplicableResourceTypeCV,DataConfidenceValue,DataCoverageValue,DataQualityValueCV,MethodDescription,MethodName,MethodNEMILink,MethodTypeCV
 TXss_M1,Surface Ground Water,,,,"Water use intake report for all surveyed public water systems by water planning region, including geographic information, monthly intake volumes and water source (groundwater, surface water or reuse).",Historical Municipal Water Intake Report,,Estimate
+TXss_M2,Surface Ground Water,,,,"Annual retail water use volumes and connections by use category (single-family, multi-family, commercial, institutional, industrial, agricultural, reuse and unmetered) for all surveyed public water systems.",Historical Categorical Connections and Volumes,,Estimate

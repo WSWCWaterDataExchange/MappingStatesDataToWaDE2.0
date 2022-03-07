@@ -4,7 +4,8 @@ This readme details the process that was applied by the staff of the [Western St
 ## Overview of Data Utilized
 The following data was used for timeseries site specific water data...
 
-- [Public Water Systems - Historical](https://www.twdb.texas.gov/waterplanning/waterusesurvey/estimates/index.asp) time series data.  Had to download each region area individualy and combine into one workable file.
+- [Public Water Systems - Historical](https://www.twdb.texas.gov/waterplanning/waterusesurvey/estimates/index.asp) time series data.  Had to download each region area (A-P) individualy and combine into one workable file.
+- [Historical Categorical Connections and Volumes by Public Water System](https://www.twdb.texas.gov/waterplanning/waterusesurvey/estimates/index.asp) annual retail wate ruse volumes 2019-2016.
 - [Water Service Boundaries](https://www3.twdb.texas.gov/apps/waterserviceboundaries) shapefile for Public Water Systems site information.
 - [20220106 PWS-SurveyNO bridge table]() csv file, provided by personal corespondance between WSWC and TWDB to join Public Water Systems - Historical timeseries data with the Public Water Systems boundary information.
 
@@ -56,6 +57,7 @@ Purpose: Pre-process the state agency input data files into one master file for 
     - WaDE *SiteName* field = **pwsName_y** input.
     - WaDE *SiteNativeID* field = **PWSId** input.
     - WaDE *Amount* field = timeseries specific of **Jan**, **Feb**, **Mar**, **Apr**, **May**, **Jun**, **Jul**, **Aug**, **Sep**, **Oct**, **Nov**, **Dec**, or **Total_Intake__Gallons_** inputs respectively, depending on timeseries of interest.
+    - WaDE *Beneficial Use* = dependent on timeseries of interest.
     - WaDE *CommunityWaterSupplySystem* field = **pwsName_y** input.
     - WaDE *PopulationServed* field = **Population_Served** input.
     - WaDE *ReportYearCV* field = **Year** input.

@@ -1,13 +1,13 @@
-# Last Updated: 01/10/2022
+# Last Updated: 03/04/2022
 # Purpose: To create TX site specific methods use information and populate dataframe for WaDE_QA 2.0.
 # Notes: 1) Used a list approach.  Needed to have two rows, one with surface water, the other with groundwater.
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
@@ -33,25 +33,28 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
-outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
+# outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.MethodUUID = "TXss_M1"
+outdf.MethodUUID = ["TXss_M1", "TXss_M2"]
 
-outdf.ApplicableResourceTypeCV = "Surface Ground Water"
+outdf.ApplicableResourceTypeCV = ["Surface Ground Water",
+                                  "Surface Ground Water"]
 
-outdf.DataConfidenceValue = ""
+outdf.DataConfidenceValue = ["", ""]
 
-outdf.DataQualityValueCV = ""
+outdf.DataQualityValueCV = ["", ""]
 
-outdf.DataCoverageValue = ""
+outdf.DataCoverageValue = ["", ""]
 
-outdf.MethodDescription = "Water use intake report for all surveyed public water systems by water planning region, including geographic information, monthly intake volumes and water source (groundwater, surface water or reuse)."
+outdf.MethodDescription = ["Water use intake report for all surveyed public water systems by water planning region, including geographic information, monthly intake volumes and water source (groundwater, surface water or reuse).",
+                           "Annual retail water use volumes and connections by use category (single-family, multi-family, commercial, institutional, industrial, agricultural, reuse and unmetered) for all surveyed public water systems."]
 
-outdf.MethodName = "Historical Municipal Water Intake Report"
+outdf.MethodName = ["Historical Municipal Water Intake Report",
+                    "Historical Categorical Connections and Volumes"]
 
-outdf.MethodNEMILink = ""
+outdf.MethodNEMILink = ["", ""]
 
-outdf.MethodTypeCV = "Estimate"
+outdf.MethodTypeCV = ["Estimate", "Estimate"]
 
 
 # Check required fields are not null
