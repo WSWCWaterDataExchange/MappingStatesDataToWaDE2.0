@@ -1,4 +1,4 @@
-#Last Updated: 03/09/2021
+#Last Updated: 03/09/2022
 #Author: Ryan James (WSWC)
 #Purpose: To create CO site specific variable use information and population dataframe for WaDE_QA 2.0.
 #Notes: 1) Used a list approach.  Needed to have five rows for VaribleCVs.
@@ -6,9 +6,9 @@
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
@@ -35,27 +35,27 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
-outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
+#outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = "CO_Reservoirs and Gages"
+outdf.VariableSpecificUUID = ["COss_V1", "COss_V2"]
 
-outdf.AggregationInterval = "1"
+outdf.AggregationInterval = ["1", "1"]
 
-outdf.AggregationIntervalUnitCV = "year"
+outdf.AggregationIntervalUnitCV = ["Annual", "Annual"]
 
-outdf.AggregationStatisticCV = "Cumulative"
+outdf.AggregationStatisticCV = ["Cumulative", "Cumulative"]
 
-outdf.AmountUnitCV = "AF"
+outdf.AmountUnitCV = ["AF", "AF"]
 
-outdf.MaximumAmountUnitCV = "AF"
+outdf.MaximumAmountUnitCV = ["AF", "AF"]
 
-outdf.ReportYearStartMonth = "1"
+outdf.ReportYearStartMonth = ["1", "1"]
 
-outdf.ReportYearTypeCV = "CalendarYear"
+outdf.ReportYearTypeCV = ["CalendarYear", "CalendarYear"]
 
-outdf.VariableCV = "Reservoirs and Gages"
+outdf.VariableCV = ["Reservoirs and Gages", "Reservoirs and Gages"]
 
-outdf.VariableSpecificCV = "Reservoirs and Gages Diversion"
+outdf.VariableSpecificCV = ["ReservoirsGages_Annual_DivTotal_Surface Water", "ReservoirsGages_Annual_DivTotal_Groundwater"]
 
 
 # Check required fields are not null

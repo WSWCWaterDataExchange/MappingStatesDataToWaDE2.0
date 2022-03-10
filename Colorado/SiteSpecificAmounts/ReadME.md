@@ -40,7 +40,7 @@ Purpose: Pre-process the state agency input data files into one master file for 
 #### Operation and Steps:
 - Use Colorado CDSS REST [**Division Data**](https://dwr.state.co.us/Rest/GET/Help/Api/GET-api-v2-structures-divrec-waterclasses) web services to acquire Division Records searching waterclasses data for division 1-7. Save data and generate temporary input **Division** dataframe per division.
 - For Division data 1-7 ...
-    - Reduce **Division** dataframe down to those with the following values: **divrectype** = **WaterClass**, **availableTimesteps** = **Year**,** and **ciuCode** = **A** (for active) values only.
+    - Reduce **Division** dataframe down to those with the following values: **divrectype** = **DivTotal**, **availableTimesteps** = **Year**,** and **ciuCode** = **A** (for active) values only.
     - Fix formatting issue of ***wdid** field to include 7 chars (required for CDSS Rest Services).
     - Drop duplicate rows from reduced **Division** dataframe.
     - Produce **wdid** list from reduced **Division** dataframe.
@@ -52,6 +52,7 @@ Purpose: Pre-process the state agency input data files into one master file for 
 - Generate WaDE specific field *WaterSourceNativeID* from **waterSource** field.  Used to identify unique sources of water.
 - Generate WaDE specific field *SiteNativeID* from **latdecdeg**, **longdecdeg**, **structureType** and **structureName** fields.  Used to identify unique sites.
 - Generate WaDE specific *TimeframeStart* & *TimeframeEnd* fields. Assume start date is 01/01/ + **dataMeasDate** and end date is 12/31/ + **dataMeasDate**.
+- Generate WaDE specific *VariableSpecificCV* from **waterSource** field.  Helps seperate out time series.
 - Export output dataframe as new csv file, *P_coSSMaster.csv*.
 
 

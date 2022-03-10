@@ -1,13 +1,13 @@
-#Last Updated: 03/09/2021
+#Last Updated: 03/09/2022
 #Author: Ryan James (WSWC)
 #Purpose: To create CO site specific site amount use information and population dataframe WaDE_QA 2.0.
 #Notes:
 
 # Needed Libraries
 ############################################################################
+import os
 import numpy as np
 import pandas as pd
-import os
 
 # Custom Libraries
 ############################################################################
@@ -63,6 +63,20 @@ columnslist = [
 # Custom Functions
 ############################################################################
 
+# For creating VariableSpecificUUID
+VariableSpecificUUIDdict = pd.Series(df_variables.VariableSpecificUUID.values, index = df_variables.VariableSpecificCV).to_dict()
+def retrieveVariableSpecificUUID(colrowValue):
+    if colrowValue == '' or pd.isnull(colrowValue):
+        outList = ''
+    else:
+        String1 = colrowValue
+        try:
+            outList = VariableSpecificUUIDdict[String1]
+        except:
+            outList = ''
+    return outList
+
+
 # For creating WaterSourceUUID
 WaterSourceUUIDdict = pd.Series(df_watersources.WaterSourceUUID.values, index=df_watersources.WaterSourceNativeID).to_dict()
 def retrieveWaterSourceUUID(colrowValue):
@@ -77,15 +91,14 @@ def retrieveWaterSourceUUID(colrowValue):
     return outList
 
 # For creating SiteUUID
-df_sites['WaDEKey'] = df_sites['SiteNativeID'] + df_sites['WaterSourceUUID']
-SitUUIDdict = pd.Series(df_sites.SiteUUID.values, index=df_sites.WaDEKey).to_dict()
+SiteUUIDdict = pd.Series(df_sites.SiteUUID.values, index = df_sites.SiteNativeID).to_dict()
 def retrieveSiteUUID(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = ''
     else:
         String1 = colrowValue
         try:
-            outList = SitUUIDdict[String1]
+            outList = SiteUUIDdict[String1]
         except:
             outList = ''
     return outList
@@ -97,21 +110,19 @@ print("Populating dataframe outdf...")
 outdf = pd.DataFrame(index=df_DM.index, columns=columnslist)  # The output dataframe
 
 print("MethodUUID")
-outdf['MethodUUID'] = "CO_Water Use Data"
+outdf['MethodUUID'] = "COss_M1"
 
 print("VariableSpecificUUID")
-outdf['VariableSpecificUUID'] = "CO_Reservoirs and Gages"
+outdf['VariableSpecificUUID'] = df_DM.apply(lambda row: retrieveVariableSpecificUUID(row['in_VariableSpecificCV']), axis=1)
 
 print("OrganizationUUID")
-outdf['OrganizationUUID'] = "CODWR"
+outdf['OrganizationUUID'] = "COss_O1"
 
 print("WaterSourceUUID") # Using WaterSourceNativeID
 outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
 
-print("SiteUUID") # Using SiteNativeID
-df_DM['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
-df_DM['WaDEKey'] = df_DM['in_SiteNativeID'] + df_DM['WaterSourceUUID']
-outdf['SiteUUID'] = df_DM.apply(lambda row: retrieveSiteUUID(row['WaDEKey']), axis=1)
+print("SiteUUID")
+outdf['SiteUUID'] = df_DM.apply(lambda row: retrieveSiteUUID(row['in_SiteNativeID']), axis=1)
 
 print("Amount")
 outdf['Amount'] = df_DM['dataValue'].astype(float)
@@ -135,7 +146,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = '03/09/2021'
+outdf['DataPublicationDate'] = '03/09/2022'
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""
@@ -181,104 +192,99 @@ outdf.reset_index()
 # ############################################################################
 print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to upload data to QA here.
 
-print("Joining outdf duplicates based on AllocationNativeID...")
-outdf100 = outdf.replace(np.nan, '')  # Replaces NaN values with blank.
-outdf100 = outdf100.drop_duplicates() # Dropping duplicate enteries (if any).
-outdf100 = outdf100.reset_index(drop=True)
-
+outdf = outdf.replace(np.nan, "").drop_duplicates().reset_index(drop=True)
 
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-
-dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
-dfpurge = dfpurge.assign(ReasonRemoved='')
+purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # MethodUUID
-outdf100, dfpurge = TestErrorFunctions.MethodUUID_SS_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.MethodUUID_SS_Check(outdf, dfpurge)
 
 # VariableSpecificUUID
-outdf100, dfpurge = TestErrorFunctions.VariableSpecificUUID_SS_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.VariableSpecificUUID_SS_Check(outdf, dfpurge)
 
 # WaterSourceUUID
-outdf100, dfpurge = TestErrorFunctions.WaterSourceUUID_SS_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.WaterSourceUUID_SS_Check(outdf, dfpurge)
 
 # OrganizationUUID
-outdf100, dfpurge = TestErrorFunctions.OrganizationUUID_SS_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.OrganizationUUID_SS_Check(outdf, dfpurge)
 
 # SiteUUID
-outdf100, dfpurge = TestErrorFunctions.SiteUUID_SS_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.SiteUUID_SS_Check(outdf, dfpurge)
 
 # Amount
-outdf100, dfpurge = TestErrorFunctions.Amount_SS_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.Amount_SS_Check(outdf, dfpurge)
 
 # AllocationCropDutyAmount
-outdf100, dfpurge = TestErrorFunctions.AllocationCropDutyAmount_SS_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.AllocationCropDutyAmount_SS_Check(outdf, dfpurge)
 
 # AssociatedNativeAllocationIDs
-outdf100, dfpurge = TestErrorFunctions.AssociatedNativeAllocationIDs_SS_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.AssociatedNativeAllocationIDs_SS_Check(outdf, dfpurge)
 
 # BeneficialUseCategory
-outdf100, dfpurge = TestErrorFunctions.BeneficialUseCategory_SS_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.BeneficialUseCategory_SS_Check(outdf, dfpurge)
 
 # CommunityWaterSupplySystem
-outdf100, dfpurge = TestErrorFunctions.CommunityWaterSupplySystem_SS_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.CommunityWaterSupplySystem_SS_Check(outdf, dfpurge)
 
 # CropTypeCV
-outdf100, dfpurge = TestErrorFunctions.CropTypeCV_SS_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.CropTypeCV_SS_Check(outdf, dfpurge)
 
 # CustomerTypeCV
-outdf100, dfpurge = TestErrorFunctions.CustomerTypeCV_SS_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.CustomerTypeCV_SS_Check(outdf, dfpurge)
 
 # DataPublicationDate_
-outdf100, dfpurge = TestErrorFunctions.DataPublicationDate_SS_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.DataPublicationDate_SS_Check(outdf, dfpurge)
 
 # DataPublicationDOI
-outdf100, dfpurge = TestErrorFunctions.DataPublicationDOI_SS_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.DataPublicationDOI_SS_Check(outdf, dfpurge)
 
 # Geometry
 # ???? How to check for geometry datatype
 
 # IrrigatedAcreage
-outdf100, dfpurge = TestErrorFunctions.IrrigatedAcreage_SS_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.IrrigatedAcreage_SS_Check(outdf, dfpurge)
 
 # IrrigationMethodCV
-outdf100, dfpurge = TestErrorFunctions.IrrigationMethodCV_SS_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.IrrigationMethodCV_SS_Check(outdf, dfpurge)
 
 # PopulationServed
-outdf100, dfpurge = TestErrorFunctions.PopulationServed_SS_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.PopulationServed_SS_Check(outdf, dfpurge)
 
 # PowerGeneratedGWh
-outdf100, dfpurge = TestErrorFunctions.PowerGeneratedGWh_SS_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.PowerGeneratedGWh_SS_Check(outdf, dfpurge)
 
 # PowerType
-outdf100, dfpurge = TestErrorFunctions.PowerType_SS_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.PowerType_SS_Check(outdf, dfpurge)
 
 # PrimaryUseCategory_
-outdf100, dfpurge = TestErrorFunctions.PrimaryUseCategory_SS_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.PrimaryUseCategory_SS_Check(outdf, dfpurge)
 
 # ReportYearCV_
-outdf100, dfpurge = TestErrorFunctions.ReportYearCV_SS_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.ReportYearCV_SS_Check(outdf, dfpurge)
 
 # SDWISIdentifier
-outdf100, dfpurge = TestErrorFunctions.SDWISIdentifier_SS_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.SDWISIdentifier_SS_Check(outdf, dfpurge)
 
 # # TimeframeEnd
-# outdf100, dfpurge = TestErrorFunctions.TimeframeEnd_SS_Check(outdf100, dfpurge)
+# outdf, dfpurge = TestErrorFunctions.TimeframeEnd_SS_Check(outdf, dfpurge)
 #
 # # TimeframeStart
-# outdf100, dfpurge = TestErrorFunctions.TimeframeStart_SS_Check(outdf100, dfpurge)
+# outdf, dfpurge = TestErrorFunctions.TimeframeStart_SS_Check(outdf, dfpurge)
 
 
 # Export to new csv
 ############################################################################
-print("Exporting dataframe outdf100 to csv...")
+print("Exporting outdf and dfpurge dataframes...")
 
 # The working output DataFrame for WaDE 2.0 input.
-outdf100.to_csv('ProcessedInputData/sitespecificamounts.csv', index=False)
+outdf.to_csv('ProcessedInputData/sitespecificamounts.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
-    dfpurge.to_csv('ProcessedInputData/sitespecificamounts_missing.csv', index=False)
+    dfpurge.to_excel('ProcessedInputData/sitespecificamounts_missing.xlsx', index=False)
 
 print("Done.")
