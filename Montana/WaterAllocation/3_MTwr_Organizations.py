@@ -1,13 +1,13 @@
-#Date Created: 11/23/2020
+#Date Created: 03/11/2022
 #Purpose: To extract MT organization information and populate dataframe for WaDE_QA 2.0.
 #Notes: N/A
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
@@ -33,7 +33,7 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "MDNRC",
+    "MTwr_O1",
     "CKuntz@mt.gov",
     "Chris Kuntz",
     "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Montana",

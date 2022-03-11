@@ -1,13 +1,13 @@
-#Date Created: 11/23/2020
+#Date Created: 03/11/2022
 #Purpose: To extract MT methods use information and populate dataframe for WaDE_QA 2.0.
 #Notes:  asdf
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
@@ -35,7 +35,7 @@ print("Populating dataframe...")
 
 outdf = pd.DataFrame(columns=columnslist)
 
-outdf.MethodUUID = ["MT_Water Allocation Adj", "MT_Water Allocation App"]
+outdf.MethodUUID = ["MTwr_M1", "MTwr_M2"]
 
 outdf.ApplicableResourceTypeCV = ["Surface Ground Water", "Surface Ground Water"]
 
