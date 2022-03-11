@@ -1,4 +1,4 @@
-#Date Created: 02/10/2021
+#Date Created: 03/11/2022
 #Author: Ryan James, WSWC
 #Purpose: To create CO organization use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
@@ -6,9 +6,9 @@
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
@@ -34,7 +34,7 @@ columns = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "CODWR",
+    "COwr_O1",
     "doug.stenzel@state.co.us",
     "Doug Stenzel",
     "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Colorado",

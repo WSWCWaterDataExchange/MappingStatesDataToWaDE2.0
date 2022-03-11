@@ -1,4 +1,4 @@
-#Date Created: 02/10/2021
+#Date Created: 03/11/2022
 #Author: Ryan James, WSWC
 #Purpose: To extract CO site use information and populate DataFrame for local WaDEQA 2.0.
 #Notes: N/A
@@ -6,9 +6,9 @@
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 # Custom Libraries
 ############################################################################
@@ -31,7 +31,7 @@ df_watersources = pd.read_csv(watersources_fileInput)  # watersources dataframe
 columnslist = [
     "SiteUUID",
     "RegulatoryOverlayUUIDs",
-    "WaterSourceUUID",
+    "WaterSourceUUIDs",
     "CoordinateAccuracy",
     "CoordinateMethodCV",
     "County",
@@ -100,8 +100,8 @@ print("Populating dataframe...")
 
 outdf = pd.DataFrame(columns=columnslist, index=df.index)
 
-print("WaterSourceUUID")
-outdf['WaterSourceUUID'] = df.apply(lambda row: retrieveWaterSourceUUID(row['input_WaterSourceName'], row['GNIS ID'], row['input_WaterSourceTypeCV'], df_watersources), axis=1)
+print("WaterSourceUUIDs")
+outdf['WaterSourceUUIDs'] = df.apply(lambda row: retrieveWaterSourceUUID(row['input_WaterSourceName'], row['GNIS ID'], row['input_WaterSourceTypeCV'], df_watersources), axis=1)
 
 print("RegulatoryOverlayUUIDs")
 outdf['RegulatoryOverlayUUIDs'] = ""
@@ -163,17 +163,11 @@ outdf['StateCV'] = "CO"
 print("USGSSiteID")
 outdf['USGSSiteID'] = ""
 
-#####################################
-# Dropping duplicate
-# filter the whole table based on a unique combination of SiteNativeID, SiteName, SiteTypeCV
-outdf = outdf.drop_duplicates(subset=['SiteNativeID', 'SiteName', 'SiteTypeCV', 'Longitude', 'Latitude'])
-outdf = outdf.reset_index(drop=True)
-######################################
-
-print("SiteUUID") # has to be one of the last.
-dftemp = pd.DataFrame(index=outdf.index)
-dftemp["Count"] = range(1, len(dftemp.index) + 1)
-outdf['SiteUUID'] = dftemp.apply(lambda row: assignSiteUUID(row['Count']), axis=1)
+print("Joining outdf duplicates based on key fields...")
+outdf = outdf.replace(np.nan, "")  # Replaces NaN values with blank.
+groupbyList = ['PODorPOUSite', 'SiteNativeID', 'SiteName', 'SiteTypeCV', 'Longitude', 'Latitude']
+outdf = outdf.groupby(groupbyList).agg(lambda x: ','.join([str(elem) for elem in (list(set(x))) if elem!=''])).replace(np.nan, "").reset_index()
+outdf = outdf[columnslist]  # reorder the dataframe's columns based on columnslist
 
 
 #Error Checking each Field
@@ -182,14 +176,11 @@ print("Error checking each field.  Purging bad inputs.")
 purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
 dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
-# SiteUUID
-outdf, dfpurge = TestErrorFunctions.SiteUUID_S_Check(outdf, dfpurge)
-
 # RegulatoryOverlayUUIDs
 outdf, dfpurge = TestErrorFunctions.RegulatoryOverlayUUIDs_S_Check(outdf, dfpurge)
 
-# WaterSourceUUID
-outdf100, dfpurge = TestErrorFunctions.WaterSourceUUID_S_Check(outdf, dfpurge)
+# WaterSourceUUIDs
+outdf100, dfpurge = TestErrorFunctions.WaterSourceUUIDs_S_Check(outdf, dfpurge)
 
 # CoordinateAccuracy
 outdf, dfpurge = TestErrorFunctions.CoordinateAccuracy_S_Check(outdf, dfpurge)
@@ -249,9 +240,20 @@ outdf, dfpurge = TestErrorFunctions.StateCV_S_Check(outdf, dfpurge)
 outdf, dfpurge = TestErrorFunctions.USGSSiteID_S_Check(outdf, dfpurge)
 
 
+############################################################################
+print("Assign SiteUUID") # has to be one of the last.
+outdf = outdf.reset_index(drop=True)
+dftemp = pd.DataFrame(index=outdf.index)
+dftemp["Count"] = range(1, len(dftemp.index) + 1)
+outdf['SiteUUID'] = dftemp.apply(lambda row: assignSiteUUID(row['Count']), axis=1)
+
+# Error check SiteUUID
+outdf, dfpurge = TestErrorFunctions.SiteUUID_S_Check(outdf, dfpurge)
+
+
 # Export to new csv
 ############################################################################
-print("Exporting dataframe outdf to csv...")
+print("Exporting outdf and dfpurge dataframes...")
 
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/sites.csv', index=False)

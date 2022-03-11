@@ -1,4 +1,4 @@
-#Date Created: 02/09/2020
+#Date Created: 03/11/2022
 #Author: Ryan James, WSWC
 #Purpose: To extract CO methods use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) Two different data sets, groundwater vs surface water.
@@ -6,9 +6,11 @@
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
+
+
 
 
 # Inputs
@@ -34,7 +36,7 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "CODWR_Diversion Tracking",
+    "COwr_M1",
     "Surface Ground Water",
     "",
     "",

@@ -1,4 +1,4 @@
-#Date Created: 02/10/2021
+#Date Created: 03/11/2022
 #Author: Ryan James, WSWC
 #Purpose: To extract CO variable information and populate dataframe for WaDE_QA 2.0.
 #Notes: asdf
@@ -6,9 +6,9 @@
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
@@ -35,7 +35,7 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "CODWR_Allocation",
+    "COwr_V1",
     "1",
     "Day",
     "Average",

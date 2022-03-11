@@ -1,4 +1,4 @@
-#Date Created: 02/10/2021
+#Date Created: 03/11/2022
 #Author: Ryan James, WSWC
 #Purpose: To extract CO water source use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) For 'WaterSourceTypeCV', easier to label everything that is not a surface water first.
@@ -6,9 +6,9 @@
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 # Custom Libraries
 ############################################################################

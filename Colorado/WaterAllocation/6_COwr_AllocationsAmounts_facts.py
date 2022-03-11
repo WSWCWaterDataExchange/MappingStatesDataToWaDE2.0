@@ -1,4 +1,4 @@
-#Date Created: 02/28/2022
+#Date Created: 03/11/2022
 #Author: Ryan James, WSWC
 #Purpose: To extract CO allocation use information and populate DataFrame WaDEQA 2.0.
 #         1) Simple creation of working DataFrame (df), with output DataFrame (outdf).
@@ -7,10 +7,9 @@
 
 # Needed Libraries
 ############################################################################
+import os
 import numpy as np
 import pandas as pd
-import os
-from datetime import datetime
 
 # Custom Libraries
 ############################################################################
@@ -103,16 +102,16 @@ print("Populating dataframe oudf...")
 outdf = pd.DataFrame(index=df_M.index, columns=columnslist)  # The output dataframe
 
 print("MethodUUID")
-outdf['MethodUUID'] = "CODWR_Diversion Tracking"
+outdf['MethodUUID'] = "COwr_M1"
 
 print("OrganizationUUID")
-outdf['OrganizationUUID'] = "CODWR"
+outdf['OrganizationUUID'] = "COwr_O1"
 
 print("SiteUUID")
 outdf['SiteUUID'] = df_M.apply(lambda row: retrieveSiteUUID(row['WDID']), axis=1)
 
 print("VariableSpecificUUID")
-outdf['VariableSpecificUUID'] = "CODWR_Allocation"
+outdf['VariableSpecificUUID'] = "COwr_V1"
 
 print("AllocationApplicationDate")
 outdf['AllocationApplicationDate'] = ""
@@ -178,7 +177,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = "02/10/2021"
+outdf['DataPublicationDate'] = "03/11/2022"
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""
@@ -225,10 +224,11 @@ outdf['WaterAllocationNativeURL'] = ""
 print("Resetting Index")
 outdf.reset_index()
 
-print("Joining outdf duplicates based on AllocationNativeID...")
-outdf = outdf.replace(np.nan, '')  # Replaces NaN values with blank.
-outdf100 = pd.DataFrame(columns=columnslist)  # The output dataframe for CSV.
-outdf100 = outdf.groupby(['AllocationNativeID']).agg(lambda x: ','.join([str(elem) for elem in (list(set(x))) if elem!=''])).replace(np.nan, "").reset_index()
+print("Joining outdf duplicates based on key fields...")
+outdf = outdf.replace(np.nan, "")  # Replaces NaN values with blank.
+groupbyList = ['AllocationNativeID', 'AllocationFlow_CFS', 'AllocationVolume_AF']
+outdf = outdf.groupby(groupbyList).agg(lambda x: ','.join([str(elem) for elem in (list(set(x))) if elem!=''])).replace(np.nan, "").reset_index()
+outdf = outdf[columnslist]  # reorder the dataframe's columns based on columnslist
 
 
 # Solving WaDE 2.0 Upload Issues
@@ -240,135 +240,133 @@ print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to uploa
 def tempfixOCSV(colrowValueA):
     result = colrowValueA.split(",", 1)[0]  # pass in text, split on "," & return first value.
     return result
-outdf100['OwnerClassificationCV']  = outdf100.apply(lambda row: tempfixOCSV(row['OwnerClassificationCV']), axis=1)
+outdf['OwnerClassificationCV']  = outdf.apply(lambda row: tempfixOCSV(row['OwnerClassificationCV']), axis=1)
 
 
 #Error checking each field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-
-# Purge DataFrame to hold removed elements
 purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
-dfpurge = pd.DataFrame(columns=purgecolumnslist)
+dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # MethodUUID
-outdf100, dfpurge = TestErrorFunctions.MethodUUID_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.MethodUUID_AA_Check(outdf, dfpurge)
 
 # OrganizationUUID
-outdf100, dfpurge = TestErrorFunctions.OrganizationUUID_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.OrganizationUUID_AA_Check(outdf, dfpurge)
 
 # SiteUUID
-outdf100, dfpurge = TestErrorFunctions.SiteUUID_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.SiteUUID_AA_Check(outdf, dfpurge)
 
 # VariableSpecificUUID
-outdf100, dfpurge = TestErrorFunctions.VariableSpecificUUID_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.VariableSpecificUUID_AA_Check(outdf, dfpurge)
 
 # AllocationApplicationDateID
-outdf100, dfpurge = TestErrorFunctions.AllocationApplicationDate_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.AllocationApplicationDate_AA_Check(outdf, dfpurge)
 
 # AllocationAssociatedConsumptiveUseSiteIDs
-outdf100, dfpurge = TestErrorFunctions.AllocationAssociatedConsumptiveUseSiteIDs_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.AllocationAssociatedConsumptiveUseSiteIDs_AA_Check(outdf, dfpurge)
 
 # AllocationAssociatedWithdrawalSiteIDs
-outdf100, dfpurge = TestErrorFunctions.AllocationAssociatedWithdrawalSiteIDs_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.AllocationAssociatedWithdrawalSiteIDs_AA_Check(outdf, dfpurge)
 
 # AllocationBasisCV
-outdf100, dfpurge = TestErrorFunctions.AllocationBasisCV_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.AllocationBasisCV_AA_Check(outdf, dfpurge)
 
 # AllocationChangeApplicationIndicator
-outdf100, dfpurge = TestErrorFunctions.AllocationChangeApplicationIndicator_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.AllocationChangeApplicationIndicator_AA_Check(outdf, dfpurge)
 
 # AllocationCommunityWaterSupplySystem
-outdf100, dfpurge = TestErrorFunctions.AllocationCommunityWaterSupplySystem_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.AllocationCommunityWaterSupplySystem_AA_Check(outdf, dfpurge)
 
 # AllocationCropDutyAmount
-outdf100, dfpurge = TestErrorFunctions.AllocationCropDutyAmount_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.AllocationCropDutyAmount_AA_Check(outdf, dfpurge)
 
 # AllocationExpirationDate
-outdf100, dfpurge = TestErrorFunctions.AllocationExpirationDate_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.AllocationExpirationDate_AA_Check(outdf, dfpurge)
 
 # # AllocationFlow_CFS_float_Yes & AllocationVolume_AF_float_Yes
-outdf100, dfpurge = TestErrorFunctions.AllocationFlowVolume_CFSAF_float_Yes_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.AllocationFlowVolume_CFSAF_float_Yes_AA_Check(outdf, dfpurge)
 
 # AllocationLegalStatusCV
-outdf100, dfpurge = TestErrorFunctions.AllocationLegalStatusCV_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.AllocationLegalStatusCV_AA_Check(outdf, dfpurge)
 
 # AllocationNativeID
-outdf100, dfpurge = TestErrorFunctions.AllocationNativeID_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.AllocationNativeID_AA_Check(outdf, dfpurge)
 
 # AllocationOwner
-outdf100, dfpurge = TestErrorFunctions.AllocationOwner_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.AllocationOwner_AA_Check(outdf, dfpurge)
 
 # AllocationPriorityDate
-outdf100, dfpurge = TestErrorFunctions.AllocationPriorityDate_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.AllocationPriorityDate_AA_Check(outdf, dfpurge)
 
 # AllocationSDWISIdentifierCV
-outdf100, dfpurge = TestErrorFunctions.AllocationSDWISIdentifierCV_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.AllocationSDWISIdentifierCV_AA_Check(outdf, dfpurge)
 
 # AllocationTimeframeEnd
-outdf100, dfpurge = TestErrorFunctions.AllocationTimeframeEnd_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.AllocationTimeframeEnd_AA_Check(outdf, dfpurge)
 
 # AllocationTimeframeStart
-outdf100, dfpurge = TestErrorFunctions.AllocationTimeframeStart_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.AllocationTimeframeStart_AA_Check(outdf, dfpurge)
 
 # AllocationTypeCV
-outdf100, dfpurge = TestErrorFunctions.AllocationTypeCV_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.AllocationTypeCV_AA_Check(outdf, dfpurge)
 
 # BeneficialUseCategory
-outdf100, dfpurge = TestErrorFunctions.BeneficialUseCategory_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.BeneficialUseCategory_AA_Check(outdf, dfpurge)
 
 # CommunityWaterSupplySystem
-outdf100, dfpurge = TestErrorFunctions.CommunityWaterSupplySystem_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.CommunityWaterSupplySystem_AA_Check(outdf, dfpurge)
 
 # CropTypeCV
-outdf100, dfpurge = TestErrorFunctions.CropTypeCV_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.CropTypeCV_AA_Check(outdf, dfpurge)
 
 # CustomerTypeCV
-outdf100, dfpurge = TestErrorFunctions.CustomerTypeCV_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.CustomerTypeCV_AA_Check(outdf, dfpurge)
 
 # DataPublicationDate
-outdf100, dfpurge = TestErrorFunctions.DataPublicationDate_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.DataPublicationDate_AA_Check(outdf, dfpurge)
 
 # DataPublicationDOI
-outdf100, dfpurge = TestErrorFunctions.DataPublicationDOI_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.DataPublicationDOI_AA_Check(outdf, dfpurge)
 
 # # ExemptOfVolumeFlowPriority
-# outdf100, dfpurge = TestErrorFunctions.ExemptOfVolumeFlowPriority_AA_Check(outdf100, dfpurge)
+# outdf, dfpurge = TestErrorFunctions.ExemptOfVolumeFlowPriority_AA_Check(outdf, dfpurge)
 
 # GeneratedPowerCapacityMW
-outdf100, dfpurge = TestErrorFunctions.GeneratedPowerCapacityMW_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.GeneratedPowerCapacityMW_AA_Check(outdf, dfpurge)
 
 # IrrigatedAcreage
-outdf100, dfpurge = TestErrorFunctions.IrrigatedAcreage_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.IrrigatedAcreage_AA_Check(outdf, dfpurge)
 
 # IrrigationMethodCV
-outdf100, dfpurge = TestErrorFunctions.IrrigationMethodCV_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.IrrigationMethodCV_AA_Check(outdf, dfpurge)
 
 # LegacyAllocationIDs
-outdf100, dfpurge = TestErrorFunctions.LegacyAllocationIDs_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.LegacyAllocationIDs_AA_Check(outdf, dfpurge)
 
 # OwnerClassificationCV
-outdf100, dfpurge = TestErrorFunctions.OwnerClassificationCV_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.OwnerClassificationCV_AA_Check(outdf, dfpurge)
 
 # PopulationServed
-outdf100, dfpurge = TestErrorFunctions.PopulationServed_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.PopulationServed_AA_Check(outdf, dfpurge)
 
 # PowerType
-outdf100, dfpurge = TestErrorFunctions.PowerType_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.PowerType_AA_Check(outdf, dfpurge)
 
 # PrimaryUseCategory
-outdf100, dfpurge = TestErrorFunctions.PrimaryUseCategory_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.PrimaryUseCategory_AA_Check(outdf, dfpurge)
 
 # WaterAllocationNativeURL
-outdf100, dfpurge = TestErrorFunctions.WaterAllocationNativeURL_AA_Check(outdf100, dfpurge)
+outdf, dfpurge = TestErrorFunctions.WaterAllocationNativeURL_AA_Check(outdf, dfpurge)
 
 
 # Export to new csv
 ############################################################################
-print("Exporting dataframe outdf100 to csv...")
+print("Exporting outdf and dfpurge dataframes...")
 
 # The working output DataFrame for WaDE 2.0 input.
-outdf100.to_csv('ProcessedInputData/waterallocations.csv', index=False)
+outdf.to_csv('ProcessedInputData/waterallocations.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
