@@ -1,13 +1,13 @@
-#Date Created: 07/17/2020
+#Date Created: 03/14/2022
 #Purpose: To extract NV variable use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) Single row of entries, inpVals, for Variable Table.
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
@@ -34,7 +34,7 @@ columns = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "NVDWR_Allocation",
+    "NVwr_V1",
     "1",
     "Year",
     "Average",
