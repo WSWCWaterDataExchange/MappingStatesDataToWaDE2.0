@@ -298,11 +298,11 @@ Note: podsitetopousiterelationships.csv output only needed if both POD and POU d
 
 ***
 ## Staff Contributions
-Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Utah Department of Natural Resources (UDNR)](https://naturalresources.utah.gov/).
+Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Utah Division of Water Rights (DWRi)](https://www.waterrights.utah.gov/).
 
 WSWC Staff
 - Adel Abdallah <adelabdallah@wswc.utah.gov>
 - Ryan James <rjames@wswc.utah.gov>
 
-UDNR Staff
+DWRi Staff
 - James Greer <jamesgreer@utah.gov>
