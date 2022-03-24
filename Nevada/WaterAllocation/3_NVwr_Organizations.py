@@ -1,4 +1,4 @@
-#Date Created: 03/14/2022
+#Date Created: 03/24/2022
 #Purpose: To extract NV organization use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
 

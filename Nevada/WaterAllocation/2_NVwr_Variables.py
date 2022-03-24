@@ -1,4 +1,4 @@
-#Date Created: 03/14/2022
+#Date Created: 03/24/2022
 #Purpose: To extract NV variable use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) Single row of entries, inpVals, for Variable Table.
 

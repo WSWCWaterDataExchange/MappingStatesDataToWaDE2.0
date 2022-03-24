@@ -1,4 +1,4 @@
-#Date Created: 03/14/2022
+#Date Created: 03/24/2022
 #Author(s): Joseph Brewer, Ryan James
 #Purpose: To extract NV allocation use information and populate dataframe WaDEQA 2.0.
 #         1) Simple creation of working dataframe (df), with output dataframe (outdf).

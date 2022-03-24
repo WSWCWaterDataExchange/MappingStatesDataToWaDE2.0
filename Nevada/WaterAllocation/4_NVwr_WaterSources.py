@@ -1,4 +1,4 @@
-#Date Created: 03/14/2022
+#Date Created: 03/24/2022
 #Purpose: To extract NV water source use information and population dataframe for WaDE_QA 2.0.
 #Notes: 1) Little water source info available at this time.
 
@@ -82,8 +82,6 @@ outdf['WaterSourceNativeID'] = df['in_WaterSourceNativeID']  # See preprocessing
 print("Dropping duplicates")
 outdf = outdf.drop_duplicates(subset=['WaterSourceTypeCV', 'WaterSourceName', 'WaterSourceNativeID']).reset_index(drop=True)
 ##############################
-
-
 
 
 #Error Checking each Field
