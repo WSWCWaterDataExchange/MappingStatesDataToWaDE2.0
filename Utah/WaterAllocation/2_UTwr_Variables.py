@@ -1,13 +1,13 @@
-# Date Updated: 05/17/2021
+# Date Updated: 03/24/2022
 # Purpose: To extract UT variable use information and population dataframe for WaDE_QA 2.0.
 # Notes: 1) Single row of entries, inpVals, for Variable Table.
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
@@ -34,7 +34,7 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "UT_Allocation",
+    "UTwr_V1",
     "1",
     "Year",
     "Average",

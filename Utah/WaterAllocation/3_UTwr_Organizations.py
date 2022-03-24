@@ -1,13 +1,13 @@
-# Date Updated: 05/17/2021
+# Date Updated: 03/24/2022
 # Purpose: To extract UT organization use information and population dataframe for WaDE_QA 2.0.
 # Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
@@ -33,7 +33,7 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "UTDWRi",
+    "UTwr_O1",
     "jamesgreer@utah.gov",
     "James Greer",
     "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Utah",
@@ -58,8 +58,6 @@ outdf_nullMand = outdf.loc[(outdf["OrganizationUUID"].isnull()) | (outdf["Organi
                            (outdf["OrganizationPhoneNumber"].isnull()) | (outdf["OrganizationPhoneNumber"] == '') |
                            (outdf["OrganizationWebsite"].isnull()) | (outdf["OrganizationWebsite"] == '') |
                            (outdf["State"].isnull()) | (outdf["State"] == '')]
-
-
 
 
 # Export to new csv
