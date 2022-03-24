@@ -82,7 +82,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
-IDWR_Diversion Tracking | Surface Ground Water | Water Use
+IDwr_M1 | Surface Ground Water | Water Use
 
 
 ***
@@ -107,7 +107,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
 ---------- | ---------- | ------------ | ------------
-IDWR_Allocation All | 1 | Year | CFS
+IDwr_V1 | 1 | Year | CFS
 
 
 ***
@@ -132,7 +132,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
 ---------- | ---------- | ------------ | ------------
-IDWR | Idaho Dept. of Water Rights | Linda Davis | https://idwr.idaho.gov/
+IDwr_O1 | Idaho Dept. of Water Rights | Linda Davis | https://idwr.idaho.gov/
 
 
 ***

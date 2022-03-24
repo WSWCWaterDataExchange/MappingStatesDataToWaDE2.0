@@ -1,4 +1,4 @@
-#Date Created: 10/22/2020
+#Date Created: 03/24/2022
 #Author: Ryan James
 #Purpose: To extract ID allocation use information and populate dataframe WaDEQA 2.0.
 #         1) Simple creation of working dataframe (df), with output dataframe (outdf).
@@ -7,9 +7,9 @@
 
 # Needed Libraries
 ############################################################################
-import numpy as np
-import pandas as pd
 import os
+import pandas as pd
+import numpy as np
 
 # Custom Libraries
 ############################################################################
@@ -122,16 +122,16 @@ print("Populating dataframe oudf...")
 outdf = pd.DataFrame(index=df_M.index, columns=columnslist)  # The output dataframe
 
 print("MethodUUID")  
-outdf['MethodUUID'] = "IDWR_Diversion Tracking"
+outdf['MethodUUID'] = "IDwr_M1"
 
 print("OrganizationUUID")  
-outdf['OrganizationUUID'] = "IDWR"
+outdf['OrganizationUUID'] = "IDwr_O1"
 
 print("SiteUUID")
 outdf['SiteUUID'] = df_M.apply(lambda row: retrieveSiteUUID(row['in_SiteNativeID']), axis=1)
 
 print("VariableSpecificUUID")  
-outdf['VariableSpecificUUID'] = "IDWR_Allocation"
+outdf['VariableSpecificUUID'] = "IDwr_V1"
 
 print("AllocationApplicationDate")
 outdf['AllocationApplicationDate'] = ""

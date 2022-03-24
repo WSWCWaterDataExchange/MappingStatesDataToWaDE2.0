@@ -1,13 +1,13 @@
-#Date Created: 10/22/2020
+#Date Created: 03/24/2022
 #Purpose: To extract ID variable use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) Single row of entries, inpVals, for Variable Table.
 
 
 # Needed Libraries
 ############################################################################
+import os
 import pandas as pd
 import numpy as np
-import os
 
 
 # Inputs
@@ -34,7 +34,7 @@ columns = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "IDWR_Allocation",
+    "IDwr_V1",
     "1",
     "Year",
     "Average",

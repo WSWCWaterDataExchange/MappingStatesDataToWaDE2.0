@@ -1,13 +1,13 @@
-#Date Created: 10/22/2020
+#Date Created: 03/24/2022
 #Purpose: To extract ID methods use information and populate dataframe for WaDE_QA 2.0.
 #Notes:   1) Single row of entries, inpVals, for Methods Table.
 
 
 # Needed Libraries
 ############################################################################
+import os
 import pandas as pd
 import numpy as np
-import os
 
 
 # Inputs
@@ -33,7 +33,7 @@ columns = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "IDWR_Diversion Tracking",
+    "IDwr_M1",
     "Surface Ground Water",
     "",
     "",

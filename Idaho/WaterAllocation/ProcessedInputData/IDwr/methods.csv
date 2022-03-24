@@ -1,2 +1,2 @@
 MethodUUID,ApplicableResourceTypeCV,DataConfidenceValue,DataCoverageValue,DataQualityValueCV,MethodDescription,MethodName,MethodNEMILink,MethodTypeCV
-IDWR_Diversion Tracking,Surface Ground Water,,,,Methodology used for tracking diversions in the state of Idaho.,Idaho Water Rights Method,,Water Use
+IDwr_M1,Surface Ground Water,,,,Methodology used for tracking diversions in the state of Idaho.,Idaho Water Rights Method,,Water Use
