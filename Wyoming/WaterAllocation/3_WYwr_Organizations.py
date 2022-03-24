@@ -1,4 +1,4 @@
-#Date Created: 03/24/2022
+#Date Created: 12/11/2020
 #Purpose: To extract WY organization information and populate dataframe for WaDE_QA 2.0.
 #Notes: asdf
 
@@ -33,7 +33,7 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "WYwr_O1",
+    "WWDO",
     "mabel.jones1@wyo.gov",
     "Mabel Jones",
     "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Wyoming",
