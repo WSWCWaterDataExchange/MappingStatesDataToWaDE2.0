@@ -1,4 +1,4 @@
-#Date Created: 12/11/2020
+#Date Created: 03/24/2022
 #Purpose: To extract WY variable information and populate dataframe for WaDE_QA 2.0.
 #Notes: asdf
 
@@ -34,7 +34,7 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "WY_Consumptive Use",
+    "WYwr_V1",
     "1",
     "Year",
     "Average",

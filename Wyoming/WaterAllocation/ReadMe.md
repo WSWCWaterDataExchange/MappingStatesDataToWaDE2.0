@@ -102,7 +102,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
-WY_Water Allocation | Surface Ground Water | Adjudicated
+WYwr_M1 | Surface Ground Water | Adjudicated
 
 
 ***
@@ -127,7 +127,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
 ---------- | ---------- | ------------ | ------------
-WY_Allocation All | 1 | Year | CFS
+WYwr_V1 | 1 | Year | CFS
 
 
 ***
@@ -152,7 +152,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
 ---------- | ---------- | ------------ | ------------
-WWDO | Wyoming Water Development Office | Mabel Jones | https://wwdc.state.wy.us/
+WYwr_O1 | Wyoming Water Development Office | Mabel Jones | https://wwdc.state.wy.us/
 
 
 ***
