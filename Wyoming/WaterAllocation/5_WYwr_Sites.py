@@ -106,8 +106,8 @@ outdf = pd.DataFrame(columns=columnslist, index=df.index)
 print("RegulatoryOverlayUUIDs")
 outdf['RegulatoryOverlayUUIDs'] = ""
 
-print("WaterSourceUUID")  # see preprocessing
-outdf['WaterSourceUUID'] = df.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
+print("WaterSourceUUIDs")  # see preprocessing
+outdf['WaterSourceUUIDs'] = df.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
 
 print("CoordinateAccuracy")
 outdf['CoordinateAccuracy'] = "Unspecified"
