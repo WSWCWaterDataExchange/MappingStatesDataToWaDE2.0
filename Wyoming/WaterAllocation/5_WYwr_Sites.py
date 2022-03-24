@@ -1,4 +1,4 @@
-#Date Created: 12/11/2020
+#Date Created: 03/24/2022
 #Purpose: To extract WY site information and populate dataframe for WaDE_QA 2.0.
 #Notes: asdf
 
@@ -28,10 +28,9 @@ watersources_fileInput = "ProcessedInputData/watersources.csv" # watersource inp
 df_watersources = pd.read_csv(watersources_fileInput)  # watersources dataframe
 
 columnslist = [
-
     "SiteUUID",
     "RegulatoryOverlayUUIDs",
-    "WaterSourceUUID",
+    "WaterSourceUUIDs",
     "CoordinateAccuracy",
     "CoordinateMethodCV",
     "County",
@@ -107,8 +106,8 @@ outdf = pd.DataFrame(columns=columnslist, index=df.index)
 print("RegulatoryOverlayUUIDs")
 outdf['RegulatoryOverlayUUIDs'] = ""
 
-print("WaterSourceUUID")  # see preprocessing
-outdf['WaterSourceUUID'] = df.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
+print("WaterSourceUUIDs")  # see preprocessing
+outdf['WaterSourceUUIDs'] = df.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
 
 print("CoordinateAccuracy")
 outdf['CoordinateAccuracy'] = "Unspecified"
@@ -167,37 +166,24 @@ outdf['StateCV'] = "WY"
 print("USGSSiteID")
 outdf['USGSSiteID'] = ""
 
-print("Resetting Index")
-outdf.reset_index()
-
-#####################################
-# Dropping duplicate
-# filter the whole table based on a unique combination of SiteNativeID, SiteName, SiteTypeCV
-outdf = outdf.drop_duplicates(subset=['SiteNativeID', 'SiteName', 'SiteTypeCV', 'Longitude', 'Latitude'])
-outdf = outdf.reset_index(drop=True)
-######################################
-
-print("SiteUUID") # has to be one of the last.
-dftemp = pd.DataFrame(index=outdf.index)
-dftemp["Count"] = range(1, len(dftemp.index) + 1)
-outdf['SiteUUID'] = dftemp.apply(lambda row: assignSiteUUID(row['Count']), axis=1)
+print("Joining outdf duplicates based on key fields...")
+outdf = outdf.replace(np.nan, "")  # Replaces NaN values with blank.
+groupbyList = ['PODorPOUSite', 'SiteNativeID', 'SiteName', 'SiteTypeCV', 'Longitude', 'Latitude']
+outdf = outdf.groupby(groupbyList).agg(lambda x: ','.join([str(elem) for elem in (list(set(x))) if elem!=''])).replace(np.nan, "").reset_index()
+outdf = outdf[columnslist]  # reorder the dataframe's columns based on columnslist
 
 
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-
-dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
-dfpurge = dfpurge.assign(ReasonRemoved='')
-
-# SiteUUID
-outdf, dfpurge = TestErrorFunctions.SiteUUID_S_Check(outdf, dfpurge)
+purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # RegulatoryOverlayUUIDs
 outdf, dfpurge = TestErrorFunctions.RegulatoryOverlayUUIDs_S_Check(outdf, dfpurge)
 
-# WaterSourceUUID
-outdf100, dfpurge = TestErrorFunctions.WaterSourceUUID_S_Check(outdf, dfpurge)
+# WaterSourceUUIDs
+outdf100, dfpurge = TestErrorFunctions.WaterSourceUUIDs_S_Check(outdf, dfpurge)
 
 # CoordinateAccuracy
 outdf, dfpurge = TestErrorFunctions.CoordinateAccuracy_S_Check(outdf, dfpurge)
@@ -257,15 +243,26 @@ outdf, dfpurge = TestErrorFunctions.StateCV_S_Check(outdf, dfpurge)
 outdf, dfpurge = TestErrorFunctions.USGSSiteID_S_Check(outdf, dfpurge)
 
 
+############################################################################
+print("Assign SiteUUID") # has to be one of the last.
+outdf = outdf.reset_index(drop=True)
+dftemp = pd.DataFrame(index=outdf.index)
+dftemp["Count"] = range(1, len(dftemp.index) + 1)
+outdf['SiteUUID'] = dftemp.apply(lambda row: assignSiteUUID(row['Count']), axis=1)
+
+# Error check SiteUUID
+outdf, dfpurge = TestErrorFunctions.SiteUUID_S_Check(outdf, dfpurge)
+
+
 # Export to new csv
 ############################################################################
-print("Exporting dataframe outdf to csv...")
+print("Exporting outdf and dfpurge dataframes...")
 
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/sites.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
-    dfpurge.to_csv('ProcessedInputData/sites_missing.csv', index=False)
+    dfpurge.to_excel('ProcessedInputData/sites_missing.xlsx', index=False)
 
 print("Done.")

@@ -1,4 +1,4 @@
-#Date Created: 12/01/2020
+#Date Created: 03/24/2022
 #Purpose: To extract WY methods use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) Two different data sets, groundwater vs surface water.
 
@@ -33,7 +33,7 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "WY_Water Allocation",
+    "WYwr_M1",
     "Surface Ground Water",
     "",
     "",
