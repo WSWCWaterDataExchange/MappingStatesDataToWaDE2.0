@@ -116,7 +116,7 @@ print("VariableSpecificUUID")
 outdf['VariableSpecificUUID'] = df_DM.apply(lambda row: retrieveVariableSpecificUUID(row['in_VariableSpecificCV']), axis=1)
 
 print("OrganizationUUID")
-outdf['OrganizationUUID'] = "COss_O1"
+outdf['OrganizationUUID'] = "COos_O1"
 
 print("WaterSourceUUID") # Using WaterSourceNativeID
 outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
