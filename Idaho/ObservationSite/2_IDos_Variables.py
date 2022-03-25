@@ -1,20 +1,20 @@
-#Last Updated: 08/20/2021
+#Last Updated: 03/25/2022
 #Author: Ryan James (WSWC)
-#Purpose: To create ID site specific variable use information and population dataframe for WaDE_QA 2.0.
+#Purpose: To create ID observation site variable use information and population dataframe for WaDE_QA 2.0.
 #Notes: 1) Used a list approach.  Needed to have five rows for VaribleCVs.
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Idaho/SiteSpecificAmounts"
+workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Idaho/ObservationSite"
 os.chdir(workingDir)
 
 #WaDE columns
@@ -37,7 +37,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = "IDWR_Reservoirs and Gages"
+outdf.VariableSpecificUUID = "IDos_V1"
 
 outdf.AggregationInterval = "1"
 
@@ -53,9 +53,9 @@ outdf.ReportYearStartMonth = "1"
 
 outdf.ReportYearTypeCV = "CalendarYear"
 
-outdf.VariableCV = "Reservoirs and Gages"
+outdf.VariableCV = "Stream Gage"
 
-outdf.VariableSpecificCV = "Reservoirs and Gages Diversion"
+outdf.VariableSpecificCV = "Stream Gage_Daily_Stage_Surface Water"
 
 
 # Check required fields are not null
