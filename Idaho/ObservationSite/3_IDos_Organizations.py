@@ -52,7 +52,7 @@ outdf.OrganizationPurview = "Water Administration and Planning"
 
 outdf.OrganizationWebsite = "https://idwr.idaho.gov/"
 
-outdf.State = "UT"
+outdf.State = "ID"
 
 
 # Check required fields are not null
