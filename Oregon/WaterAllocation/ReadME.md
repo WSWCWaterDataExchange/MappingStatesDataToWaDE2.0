@@ -83,7 +83,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
-OWRD_Water Rights | Surface Ground Storage | Adjudicated
+ORwr_M1 | Surface Ground Storage | Adjudicated
 
 
 ***
@@ -108,7 +108,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
 ---------- | ---------- | ------------ | ------------
-OWRD_Allocation All | 1 | Year | CFS
+ORwr_V1 | 1 | Year | CFS
 
 
 ***
@@ -133,7 +133,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
 ---------- | ---------- | ------------ | ------------
-OWRD | Oregon Water Resources Department | Tom Byler | https://www.oregon.gov/OWRD/
+ORwr_O1 | Oregon Water Resources Department | Tom Byler | https://www.oregon.gov/OWRD/
 
 
 ***
@@ -162,7 +162,7 @@ Purpose: generate a list of water sources specific to a water right.
 #### Sample Output (WARNING: not all fields shown):
 WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceNativeID | WaterSourceTypeCV
 ---------- | ---------- | ------------ | ------------ | ------------
-OR_1 | Fresh | FORMOSA 1 ADIT | Unspecified | groundwater
+ORwr_WS1 | Fresh | FORMOSA 1 ADIT | Unspecified | groundwater
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
 - WaterSourceUUID

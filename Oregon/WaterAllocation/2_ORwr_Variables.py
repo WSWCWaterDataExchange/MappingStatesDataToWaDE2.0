@@ -1,13 +1,13 @@
-#Date Created: 04/03/2020
+#Date Created: 03/29/2022
 #Purpose: To extract OR variable use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) Single row of entries, inpVals, for Variable Table.
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
@@ -37,7 +37,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = "OWRD_Allocation"
+outdf.VariableSpecificUUID = "ORwr_V1"
 
 outdf.AggregationInterval = "1"
 
