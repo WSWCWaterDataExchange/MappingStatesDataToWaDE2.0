@@ -85,7 +85,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
-WSDE_Water Rights | Surface Ground | Adjudicated
+WAwr_M1 | Surface Ground | Adjudicated
 
 
 ***
@@ -110,7 +110,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
 ---------- | ---------- | ------------ | ------------
-WSDE_Allocation All | 1 | Year | CFS
+WAwr_V1 | 1 | Year | CFS
 
 
 ***
@@ -135,7 +135,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
 ---------- | ---------- | ------------ | ------------
-WSDE | Washington State Department of Ecology | Riddle, H. Nicholas | HRID461@ECY.WA.GOV
+WAwr_O1 | Washington State Department of Ecology | Riddle, H. Nicholas | HRID461@ECY.WA.GOV
 
 
 ***

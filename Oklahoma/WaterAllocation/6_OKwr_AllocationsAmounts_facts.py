@@ -1,4 +1,4 @@
-# Date Updated: 05/17/2021
+# Date Updated: 03/20/2022
 # Author: Ryan James
 # Purpose: To extract OK allocation use information and population dataframe WaDEQA 2.0.
 #         1) Simple creation of working dataframe (df), with output dataframe (outdf).
@@ -7,9 +7,9 @@
 
 # Needed Libraries
 ############################################################################
+import os
 import numpy as np
 import pandas as pd
-import os
 
 # Custom Libraries
 ############################################################################
@@ -97,16 +97,16 @@ print("Populating dataframe outdf...")
 outdf = pd.DataFrame(index=df_DM.index, columns=columnslist)  # The output dataframe
 
 print("MethodUUID")
-outdf['MethodUUID'] = "OWRB_Water Rights"
+outdf['MethodUUID'] = "OKwr_M1"
 
 print("OrganizationUUID")
-outdf['OrganizationUUID'] = "OWRB"
+outdf['OrganizationUUID'] = "OKwr_O1"
 
 print("SiteUUID")
 outdf['SiteUUID'] = df_DM.apply(lambda row: retrieveSiteUUID(row['in_SiteNativeID']), axis=1)
 
 print("VariableSpecificUUID")
-outdf['VariableSpecificUUID'] = "OWRB_Allocation"
+outdf['VariableSpecificUUID'] = "OKwr_V1"
 
 print("AllocationApplicationDate")
 outdf['AllocationApplicationDate'] = df_DM['DATE_FILED']

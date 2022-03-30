@@ -1,3 +1,0 @@
-SiteUUID,RegulatoryOverlayUUIDs,WaterSourceUUID,CoordinateAccuracy,CoordinateMethodCV,County,EPSGCodeCV,Geometry,GNISCodeCV,HUC12,HUC8,Latitude,Longitude,NHDNetworkStatusCV,NHDProductCV,PODorPOUSite,SiteName,SiteNativeID,SitePoint,SiteTypeCV,StateCV,USGSSiteID,ReasonRemoved,index
-WAwr_S154542,,WAwr_WS2,,Unspecified,,4326,,,,,,,,,POD,Unspecified,nan,,Unspecified,WA,,Bad Latitude,154541.0
-WAwr_S154803,,WAwr_WS1,unchecked and All-right,Unspecified,,4326,,,,,,,,,POD,Unspecified,305229.0,,Unspecified,WA,,Bad Latitude,154802.0

@@ -1,4 +1,4 @@
-# Date Updated: 05/17/2021
+# Date Updated: 03/20/2022
 # Author: Ryan James
 # Purpose: To create OK variable use information and populate dataframe for WaDE_QA 2.0.
 # Notes: 1) Single row of entries, inpVals, for Variable Table.
@@ -6,9 +6,9 @@
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
@@ -38,7 +38,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = "OWRB_Allocation"
+outdf.VariableSpecificUUID = "OKwr_V1"
 
 outdf.AggregationInterval = "1"
 
