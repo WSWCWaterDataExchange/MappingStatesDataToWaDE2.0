@@ -75,10 +75,6 @@ print("Dropping duplicates")
 outdf = outdf.drop_duplicates(subset=['WaterSourceName', 'WaterSourceNativeID', 'WaterSourceTypeCV']).reset_index(drop=True)
 ##############################
 
-print("WaterSourceUUID")
-df["Count"] = range(1, len(df.index) + 1)
-outdf['WaterSourceUUID'] = df.apply(lambda row: assignWaterSourceUUID(row['Count']), axis=1)
-
 print("Resetting Index")
 outdf.reset_index()
 
