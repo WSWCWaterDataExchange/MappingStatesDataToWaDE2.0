@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="en">
+	<dataIdInfo>
+		<idCitation>
+			<resTitle>Water Right POUs</resTitle>
+			<date>
+				<createDate>2018-06-28T00:00:00</createDate>
+				<pubDate>2018-06-28T00:00:00</pubDate>
+				<reviseDate>2018-06-28T00:00:00</reviseDate>
+			</date>
+			<presForm>
+				<PresFormCd value="005"/>
+			</presForm>
+			<citRespParty>
+				<rpIndName>Geospatial Technology Section</rpIndName>
+				<rpOrgName>Idaho Department of Water Resources</rpOrgName>
+				<rpPosName>GIS</rpPosName>
+				<role>
+					<RoleCd value="006"/>
+				</role>
+				<rpCntInfo>
+					<cntAddress addressType="both">
+						<eMailAdd>gisinfo@idwr.idaho.gov</eMailAdd>
+						<delPoint>322 East Front Street</delPoint>
+						<city>Boise</city>
+						<adminArea>Idaho</adminArea>
+						<postCode>83720</postCode>
+					</cntAddress>
+					<cntPhone>
+						<voiceNum>(208) 287-4800</voiceNum>
+						<faxNum>(208) 287-6700</faxNum>
+					</cntPhone>
+					<cntHours>8:00 AM - 5:00 PM</cntHours>
+				</rpCntInfo>
+			</citRespParty>
+		</idCitation>
+		<idAbs>&lt;div style='text-align:Left;'&gt;&lt;p&gt;&lt;span&gt;GIS layer showing locations for Places of Use (POUs) for active water rights in Idaho. POUs represent areas where water can be used from a live flow, either surface water or ground water (springs, stream or well), and put to beneficial use under a water right. A water right must have at least one use, and may have many uses. Uses may be consumptive, such as irrigation or domestic, or non-consumptive, such as power or instream flow. Polygons depicting POUs were initially developed from the PLSS descriptions on the water right documents, such as quarter quarters and government lots. Some POUs have been digitized using aerial imagery. POU locations are continuously being updated as better locational information becomes available. A water right can be in one or more of six process or stages: (1) Application for a new water right or transfer; (2) Permit for applicant to develop the water use; (3) License through which the Idaho Department of Water Resources has approved final configuration and amounts; (4) Claim for a water right or beneficial use which has been claimed in an adjudication; (5) Recommendation, the determination of final configuration and amount of a Claim that, when approved by the court, is decreed and supersedes its License, if one previously existed; (6) Transfer of a portion of the WR or claim, generally through a change of ownership splitting the right, or change in one or more elements of the water right or claim. This layer represents process or stage (4): Claim for a water right or beneficial use which has been claimed in an adjudication.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;a href='https://research.idwr.idaho.gov/gis/spatial/WaterRights/WaterRightPOUs.zip' target='_blank'&gt;Download Files&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;&lt;/div&gt;</idAbs>
+		<idPurp>GIS layer showing locations of Places of Use for Active Water Rights in Idaho.  This data is currently updated as requested and is current as of 10/21/2019.</idPurp>
+		<idCredit>Idaho Department of Water Resources (IDWR)</idCredit>
+		<envirDesc>Esri ArcGIS 10.4.1.5686</envirDesc>
+		<dataLang>
+			<languageCode value="eng"/>
+			<countryCode value="USA" Sync="TRUE"></countryCode></dataLang>
+		<dataChar>
+			<CharSetCd value="004"/>
+		</dataChar>
+		<idStatus>
+			<ProgCd value="004"/>
+		</idStatus>
+		<spatRpType>
+			<SpatRepTypCd value="001"/>
+		</spatRpType>
+		<dataScale>
+			<equScale>
+				<rfDenom>5000</rfDenom>
+			</equScale>
+		</dataScale>
+		<tpCat>
+			<TopicCatCd value="001"/>
+		</tpCat>
+		<tpCat>
+			<TopicCatCd value="007"/>
+		</tpCat>
+		<tpCat>
+			<TopicCatCd value="008"/>
+		</tpCat>
+		<tpCat>
+			<TopicCatCd value="012"/>
+		</tpCat>
+		<tpCat>
+			<TopicCatCd value="013"/>
+		</tpCat>
+		<searchKeys>
+			<keyword>IDWR</keyword>
+			<keyword>Idaho</keyword>
+			<keyword>ID</keyword>
+			<keyword>Places of Use</keyword>
+			<keyword>POUs</keyword>
+			<keyword>Water</keyword>
+			<keyword>Water Management</keyword>
+			<keyword>Water Resources</keyword>
+			<keyword>Water rights</keyword>
+			<keyword>Water Use</keyword>
+			<keyword>Water Use Regulations</keyword>
+		</searchKeys>
+		<themeKeys>
+			<keyword>IDWR</keyword>
+			<keyword>Places of Use</keyword>
+			<keyword>POUs</keyword>
+			<keyword>Water</keyword>
+			<keyword>Water Management</keyword>
+			<keyword>Water Resources</keyword>
+			<keyword>Water Rights</keyword>
+			<keyword>Water Use</keyword>
+			<keyword>Water Use Regulations</keyword>
+		</themeKeys>
+		<placeKeys>
+			<keyword>Idaho</keyword>
+			<keyword>ID</keyword>
+		</placeKeys>
+		<dataExt>
+			<geoEle>
+				<GeoBndBox>
+					<exTypeCode>1</exTypeCode>
+					<westBL>-117.522635</westBL>
+					<eastBL>-110.663805</eastBL>
+					<southBL>41.811037</southBL>
+					<northBL>49.030098</northBL>
+				</GeoBndBox>
+			</geoEle>
+		</dataExt>
+		<idPoC>
+			<rpIndName>Geospatial Technology Section</rpIndName>
+			<rpOrgName>Idaho Department of Water Resources</rpOrgName>
+			<rpPosName>GIS</rpPosName>
+			<role>
+				<RoleCd value="006"/>
+			</role>
+			<rpCntInfo>
+				<cntAddress addressType="both">
+					<eMailAdd>gisinfo@idwr.idaho.gov</eMailAdd>
+					<delPoint>322 East Front Street</delPoint>
+					<city>Boise</city>
+					<adminArea>Idaho</adminArea>
+					<postCode>83720</postCode>
+				</cntAddress>
+				<cntPhone>
+					<voiceNum>(208) 287-4800</voiceNum>
+					<faxNum>(208) 287-6700</faxNum>
+				</cntPhone>
+				<cntHours>8:00 AM - 5:00 PM</cntHours>
+			</rpCntInfo>
+		</idPoC>
+		<resMaint>
+			<maintFreq>
+				<MaintFreqCd value="012"/>
+			</maintFreq>
+		</resMaint>
+		<resConst>
+			<Consts>
+				<useLimit>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The Idaho Department of Water Resources (IDWR) maintains this data as a public service. IDWR strives to ensure that all technical data and other information made available to the public is accurate, complete, and in conformance with the Idaho Public Records Act. Neither IDWR nor the State of Idaho, however, assumes any legal responsibility for the accuracy or completeness of the information contained in this download. Persons using the information from this dataset for official purposes, or other purposes, for which accuracy and completeness are required, are hereby notified that they should first verify the information with other primary sources from which the information was obtained.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</useLimit>
+			</Consts>
+		</resConst>
+	</dataIdInfo>
+	<dqInfo>
+		<dataLineage>
+			<statement>Locations of POUsare described on documents related to a claim, recommendation, application, permit and water rights. Those described locations have been mapped using maps depicting the public land survey system (PLSS), aerial photography as well as locations measured using global positioning systems (GPS).</statement>
+		</dataLineage>
+		<report type="DQQuanAttAcc">
+			<measDesc>Attributes are entered into the dataset using workflow software and processes inside IDWR. Attributes are being corrected as errors are being identified, for example when water rights are moved through the water right process, being transferred or when an ownership change occurs</measDesc>
+		</report>
+		<report type="DQConcConsis">
+			<measDesc>The data layer consists of normal polygon features created by water rights agents based on information provided in water right claims, permits, licenses and other documentation in conjunction with PLSS, Aerial Imagery and/or GPS information.</measDesc>
+		</report>
+		<report type="DQCompOm">
+			<measDesc>Places of Use for most claims, recommendations, applications, permits and water rights are included in the respective data layers. However some places of use exist but have never been mapped. Those polygons have been omitted from this data layer. IDWR continuously runs tests comparing spatial GIS data to tabular non-GIS data in our water right databases to identify POUs missing from this GIS layer. Once identified, water rights agents at IDWR strive to reserch this data and add that information to this data layer.</measDesc>
+		</report>
+		<report type="DQAbsExtPosAcc" dimension="horizontal">
+			<measDesc>Absolute positional accuracy of a Place of Use depends on the method used to determine the location of a POU. Locartions determined by GPS are considered the most accurate and are generally within 15-20 feet from its true location. Polygons digitized from imagery are generally also within 15-20 feet depending on the imagery used. Polygons determined solely on the PLSS QQ, QQQ or Government Lots have been drawn to match the boundaries of those QQ, QQQs or Government Lots. The positional accuracy of the PLSS layer varies accross the state, ranging from 0 to a couple hundred feet.</measDesc>
+		</report>
+	</dqInfo>
+	<distInfo>
+		<distTranOps>
+			<onLineSrc>
+				<linkage>https://maps.idwr.idaho.gov/arcgis/rest/services/BP/_WaterRights/FeatureServer/9</linkage>
+			</onLineSrc>
+			<transSize>246.225</transSize>
+		</distTranOps>
+		<distFormat>
+			<formatName>Shapefile</formatName>
+		</distFormat>
+		<distributor>
+			<distorCont>
+				<rpIndName>Geospatial Technology Section</rpIndName>
+				<rpOrgName>Idaho Department of Water Resources</rpOrgName>
+				<rpPosName>GIS</rpPosName>
+				<role>
+					<RoleCd value="001"/>
+				</role>
+				<rpCntInfo>
+					<cntAddress addressType="both">
+						<eMailAdd>gisinfo@idwr.idaho.gov</eMailAdd>
+						<delPoint>322 East Front Street</delPoint>
+						<city>Boise</city>
+						<adminArea>Idaho</adminArea>
+						<postCode>83720</postCode>
+					</cntAddress>
+					<cntPhone>
+						<voiceNum>(208) 287-4800</voiceNum>
+						<faxNum>(208) 287-6700</faxNum>
+					</cntPhone>
+					<cntHours>8:00 AM - 5:00 PM</cntHours>
+				</rpCntInfo>
+			</distorCont>
+			<distorOrdPrc>
+				<resFees>No Fee</resFees>
+				<planAvTmPd>
+					<tmBegin>1850-01-01T00:00:00</tmBegin>
+					<tmEnd>2018-06-27T00:00:00</tmEnd>
+				</planAvTmPd>
+			</distorOrdPrc>
+		</distributor>
+	</distInfo>
+	<spatRepInfo>
+		<VectSpatRep><geometObjs Name="ID_PoU"><geoObjTyp><GeoObjTypCd value="002" Sync="TRUE"></GeoObjTypCd></geoObjTyp><geoObjCnt Sync="TRUE">0</geoObjCnt></geometObjs><topLvl><TopoLevCd value="001" Sync="TRUE"></TopoLevCd></topLvl></VectSpatRep></spatRepInfo>
+	<eainfo>
+		<detailed Name="ID_PoU">
+			<enttyp>
+				<enttypl>Attribute Information</enttypl>
+				<enttypt>Feature Class</enttypt>
+				<enttypc>10711</enttypc>
+			</enttyp>
+			<attr>
+				<attrlabl>FID</attrlabl>
+				<attalias>FID</attalias>
+				<attrdef>Internal feature number.</attrdef>
+				<attrdefs>Esri</attrdefs>
+				<attrtype>OID</attrtype>
+				<attwidth>4</attwidth>
+				<atprecis>0</atprecis>
+				<attscale>0</attscale>
+				<attrdomv>
+					<udom>Sequential unique whole numbers that are automatically generated.</udom>
+				</attrdomv>
+			</attr>
+			<attr>
+				<attrlabl>Shape</attrlabl>
+				<attalias>Shape</attalias>
+				<attrdef>Feature geometry.</attrdef>
+				<attrdefs>Esri</attrdefs>
+				<attrtype>Geometry</attrtype>
+				<attwidth>0</attwidth>
+				<atprecis>0</atprecis>
+				<attscale>0</attscale>
+				<attrdomv>
+					<udom>Coordinates defining the features.</udom>
+				</attrdomv>
+			</attr>
+			<attr><attrlabl Sync="TRUE">WaterRight</attrlabl><attalias Sync="TRUE">WaterRight</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">63</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">BasinNumbe</attrlabl><attalias Sync="TRUE">BasinNumbe</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">10</attwidth><atprecis Sync="TRUE">10</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">SequenceNu</attrlabl><attalias Sync="TRUE">SequenceNu</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">10</attwidth><atprecis Sync="TRUE">10</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">SplitSuffi</attrlabl><attalias Sync="TRUE">SplitSuffi</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">2</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr>
+				<attrlabl>Source</attrlabl>
+				<attalias>Source</attalias>
+				<attrdef>Source of water. Diversion from live flow (ie Ground Water or Surface Water)</attrdef>
+				<attrdefs>IDWR</attrdefs>
+				<attrtype>String</attrtype>
+				<attwidth>80</attwidth>
+				<atprecis>0</atprecis>
+				<attscale>0</attscale>
+			</attr>
+			<attr><attrlabl Sync="TRUE">PriorityDa</attrlabl><attalias Sync="TRUE">PriorityDa</attalias><attrtype Sync="TRUE">Date</attrtype><attwidth Sync="TRUE">8</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">DecreedDat</attrlabl><attalias Sync="TRUE">DecreedDat</attalias><attrtype Sync="TRUE">Date</attrtype><attwidth Sync="TRUE">8</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr>
+				<attrlabl>RightID</attrlabl>
+				<attalias>RightID</attalias>
+				<attrdef>Unique computer-generated ID for each water right within each statge or process.</attrdef>
+				<attrdefs>IDWR</attrdefs>
+				<attrtype>Integer</attrtype>
+				<attwidth>10</attwidth>
+				<atprecis>10</atprecis>
+				<attscale>0</attscale>
+			</attr>
+			<attr>
+				<attrlabl>Status</attrlabl>
+				<attalias>Status</attalias>
+				<attrdef>Current status of the water right. An active status provides the most reliable information</attrdef>
+				<attrdefs>IDWR</attrdefs>
+				<attrtype>String</attrtype>
+				<attwidth>80</attwidth>
+				<atprecis>0</atprecis>
+				<attscale>0</attscale>
+			</attr>
+			<attr><attrlabl Sync="TRUE">WaterUseCo</attrlabl><attalias Sync="TRUE">WaterUseCo</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">2</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr>
+				<attrlabl>Owner</attrlabl>
+				<attalias>Owner</attalias>
+				<attrdef>Current owner of the water right. Note that only one owner name is listed in this field, even if a water right has more than one owner</attrdef>
+				<attrdefs>IDWR</attrdefs>
+				<attrtype>String</attrtype>
+				<attwidth>96</attwidth>
+				<atprecis>0</atprecis>
+				<attscale>0</attscale>
+			</attr>
+			<attr>
+				<attrlabl>WRReport</attrlabl>
+				<attalias>Water Right Report</attalias>
+				<attrdef>A URL ("Hot Link") to the Water Right Report on IDWR's public website</attrdef>
+				<attrdefs>IDWR</attrdefs>
+				<attrtype>String</attrtype>
+				<attwidth>137</attwidth>
+				<atprecis>0</atprecis>
+				<attscale>0</attscale>
+			</attr>
+			<attr>
+				<attrlabl>WaterUse</attrlabl>
+				<attalias>WaterUse</attalias>
+				<attrdef>Water Use, e.g. irrigation, domestic, stock water, etc.</attrdef>
+				<attrdefs>IDWR</attrdefs>
+				<attrtype>String</attrtype>
+				<attwidth>80</attwidth>
+				<atprecis>0</atprecis>
+				<attscale>0</attscale>
+			</attr>
+			<attr><attrlabl Sync="TRUE">SourceQual</attrlabl><attalias Sync="TRUE">SourceQual</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">100</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">TributaryO</attrlabl><attalias Sync="TRUE">TributaryO</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">100</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">Tributar_1</attrlabl><attalias Sync="TRUE">Tributar_1</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">100</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">WaterDistr</attrlabl><attalias Sync="TRUE">WaterDistr</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">3</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr>
+				<attrlabl>TotalAcres</attrlabl>
+				<attalias>Total Acres</attalias>
+				<attrdef>For irrigation use only: total acres allowed to be irrigated under the right. If AcreLimit is greater than 0, AcreLimit is the actual amount of irrigation allowed under the WR.</attrdef>
+				<attrdefs>IDWR</attrdefs>
+				<attrtype>Double</attrtype>
+				<attwidth>19</attwidth>
+				<atprecis>0</atprecis>
+				<attscale>0</attscale>
+			</attr>
+			<attr>
+				<attrlabl>AcreLimit</attrlabl>
+				<attalias>AcreLimit</attalias>
+				<attrdef>For irrigation use only: right may be limited to irrigating this amount within a total acreage. Used primarily with rights which have combined use with other rights for a property.</attrdef>
+				<attrdefs>IDWR</attrdefs>
+				<attrtype>Double</attrtype>
+				<attwidth>19</attwidth>
+				<atprecis>0</atprecis>
+				<attscale>0</attscale>
+			</attr>
+			<attr><attrlabl Sync="TRUE">PlaceOfUse</attrlabl><attalias Sync="TRUE">PlaceOfUse</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">10</attwidth><atprecis Sync="TRUE">10</atprecis><attscale Sync="TRUE">0</attscale></attr><attr>
+				<attrlabl>WRDocs</attrlabl>
+				<attalias>WRDocs</attalias>
+				<attrdef>A URL ("Hot Link") to the a page with further links to documents pertaining to a given claim, recommendation, application, permit or water right</attrdef>
+				<attrdefs>IDWR</attrdefs>
+				<attrtype>String</attrtype>
+				<attwidth>94</attwidth>
+				<atprecis>0</atprecis>
+				<attscale>0</attscale>
+			</attr>
+			<attr>
+				<attrlabl>WRMap</attrlabl>
+				<attalias>Water Right Map</attalias>
+				<attrdef>A link to a URL ("Hot Link") that displays a map showing the current POD</attrdef>
+				<attrdefs>IDWR</attrdefs>
+				<attrtype>String</attrtype>
+				<attwidth>100</attwidth>
+				<atprecis>0</atprecis>
+				<attscale>0</attscale>
+			</attr>
+			<attr>
+				<attrlabl>LargePOU</attrlabl>
+				<attalias>Large POU</attalias>
+				<attrdef>Statement about whether POU is a Large POU or belongs to an irrigation or municipal provider.</attrdef>
+				<attrdefs>IDWR</attrdefs>
+				<attrdomv>
+					<edom>
+						<edomv>0</edomv>
+						<edomvd>This is not a Large Place of Use, nor is it an irrigation or municipal provider</edomvd>
+						<edomvds>IDWR</edomvds>
+					</edom>
+				</attrdomv>
+				<attrdomv>
+					<edom>
+						<edomv>1</edomv>
+						<edomvd>This POU belongs to a Large Place of Use Organization. The boundary encompassing the place of use for water right(s) of Large Place of Use Organizations are described with a digital boundary as defined by I.C. Section 42-202B(2) and authorized pursuant to I.C. Section 42-1411(2)(h). The delivery of water to the acreage authorized for the water right(s) within the boundary is controlled by the Large Place of Use Organization.</edomvd>
+						<edomvds>IDWR</edomvds>
+					</edom>
+				</attrdomv>
+				<attrdomv>
+					<edom>
+						<edomv>2</edomv>
+						<edomvd>Municipal or Irrigation provider (which may or may not be a Large POU)</edomvd>
+						<edomvds>IDWR</edomvds>
+					</edom>
+				</attrdomv>
+				<attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">5</attwidth><atprecis Sync="TRUE">5</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr><attrlabl Sync="TRUE">SHAPE_STAr</attrlabl><attalias Sync="TRUE">SHAPE_STAr</attalias><attrtype Sync="TRUE">Double</attrtype><attwidth Sync="TRUE">19</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">SHAPE_STLe</attrlabl><attalias Sync="TRUE">SHAPE_STLe</attalias><attrtype Sync="TRUE">Double</attrtype><attwidth Sync="TRUE">19</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">Longitude</attrlabl><attalias Sync="TRUE">Longitude</attalias><attrtype Sync="TRUE">Double</attrtype><attwidth Sync="TRUE">19</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">Latitude</attrlabl><attalias Sync="TRUE">Latitude</attalias><attrtype Sync="TRUE">Double</attrtype><attwidth Sync="TRUE">19</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr></detailed>
+	</eainfo>
+	<refSysInfo>
+		<RefSystem>
+			<refSysID>
+				<identCode code="102605"/>
+				<idCodeSpace>Esri</idCodeSpace>
+				<idVersion>9.0.0</idVersion>
+			</refSysID>
+		</RefSystem>
+	</refSysInfo>
+	<Esri>
+		<ArcGISstyle>FGDC CSDGM Metadata</ArcGISstyle>
+		<scaleRange>
+			<maxScale>5000</maxScale>
+			<minScale>150000000</minScale>
+		</scaleRange>
+		<CreaDate>2018-05-22</CreaDate>
+		<CreaTime>14460900</CreaTime>
+		<ModDate>20220324</ModDate>
+		<ModTime>12502800</ModTime>
+		<SyncOnce>FALSE</SyncOnce>
+		<SyncDate>20220324</SyncDate>
+		<SyncTime>12502800</SyncTime>
+		<ArcGISFormat>1.0</ArcGISFormat>
+		<ArcGISProfile>FGDC</ArcGISProfile>
+		<PublishStatus>editor:esri.dijit.metadata.editor</PublishStatus>
+		<DataProperties>
+			<itemProps>
+				<imsContentType export="False">001</imsContentType>
+				<itemName>Water_Right_POUs</itemName>
+				<itemSize>246.225</itemSize>
+				<nativeExtBox>
+					<westBL>2242245.713359</westBL>
+					<eastBL>2744087.400795</eastBL>
+					<southBL>1183675.582203</southBL>
+					<northBL>1981025.379418</northBL>
+					<exTypeCode>1</exTypeCode>
+				</nativeExtBox>
+				<itemLocation><linkage Sync="TRUE">file://\\RJWSWCWLT\C$\Users\rjame\Documents\WSWC Documents\MappingStatesDataToWaDE2.0\Idaho\WaterAllocation\RawInputData\shapefile\ID_PoU.shp</linkage><protocol Sync="TRUE">Local Area Network</protocol></itemLocation></itemProps>
+			<coordRef>
+				<type>Projected</type>
+				<geogcsn>GCS_North_American_1983</geogcsn>
+				<csUnits>Linear Unit: Meter (1.000000)</csUnits>
+				<peXml>&lt;ProjectedCoordinateSystem xsi:type='typens:ProjectedCoordinateSystem' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/10.4'&gt;&lt;WKT&gt;PROJCS[&amp;quot;NAD_1983_Idaho_TM&amp;quot;,GEOGCS[&amp;quot;GCS_North_American_1983&amp;quot;,DATUM[&amp;quot;D_North_American_1983&amp;quot;,SPHEROID[&amp;quot;GRS_1980&amp;quot;,6378137.0,298.257222101]],PRIMEM[&amp;quot;Greenwich&amp;quot;,0.0],UNIT[&amp;quot;Degree&amp;quot;,0.0174532925199433]],PROJECTION[&amp;quot;Transverse_Mercator&amp;quot;],PARAMETER[&amp;quot;False_Easting&amp;quot;,2500000.0],PARAMETER[&amp;quot;False_Northing&amp;quot;,1200000.0],PARAMETER[&amp;quot;Central_Meridian&amp;quot;,-114.0],PARAMETER[&amp;quot;Scale_Factor&amp;quot;,0.9996],PARAMETER[&amp;quot;Latitude_Of_Origin&amp;quot;,42.0],UNIT[&amp;quot;Meter&amp;quot;,1.0],AUTHORITY[&amp;quot;Esri&amp;quot;,102605]]&lt;/WKT&gt;&lt;XOrigin&gt;-3120900&lt;/XOrigin&gt;&lt;YOrigin&gt;-13447900&lt;/YOrigin&gt;&lt;XYScale&gt;450445547.3910538&lt;/XYScale&gt;&lt;ZOrigin&gt;-100000&lt;/ZOrigin&gt;&lt;ZScale&gt;10000&lt;/ZScale&gt;&lt;MOrigin&gt;-100000&lt;/MOrigin&gt;&lt;MScale&gt;10000&lt;/MScale&gt;&lt;XYTolerance&gt;0.001&lt;/XYTolerance&gt;&lt;ZTolerance&gt;0.001&lt;/ZTolerance&gt;&lt;MTolerance&gt;0.001&lt;/MTolerance&gt;&lt;HighPrecision&gt;true&lt;/HighPrecision&gt;&lt;WKID&gt;102605&lt;/WKID&gt;&lt;LatestWKID&gt;102605&lt;/LatestWKID&gt;&lt;/ProjectedCoordinateSystem&gt;</peXml>
+			</coordRef>
+			<lineage><Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\Toolboxes\Data Management Tools.tbx\UpdateSchema" Date="20210402" Time="113938">UpdateSchema "CIMDATA=&lt;CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/2.7.0'&gt;&lt;WorkspaceConnectionString&gt;DATABASE=C:\Users\rjame\Documents\WSWC Documents\State Mapping Notes and Files\ID\PoUs&lt;/WorkspaceConnectionString&gt;&lt;WorkspaceFactory&gt;Shapefile&lt;/WorkspaceFactory&gt;&lt;Dataset&gt;WaterRightPOUs.shp&lt;/Dataset&gt;&lt;DatasetType&gt;esriDTFeatureClass&lt;/DatasetType&gt;&lt;/CIMStandardDataConnection&gt;" &lt;operationSequence&gt;&lt;workflow&gt;&lt;AlterField&gt;&lt;field_name&gt;PriorityDa&lt;/field_name&gt;&lt;field_is_nullable&gt;False&lt;/field_is_nullable&gt;&lt;clear_field_alias&gt;False&lt;/clear_field_alias&gt;&lt;/AlterField&gt;&lt;/workflow&gt;&lt;workflow&gt;&lt;AlterField&gt;&lt;field_name&gt;DecreedDat&lt;/field_name&gt;&lt;field_is_nullable&gt;False&lt;/field_is_nullable&gt;&lt;clear_field_alias&gt;False&lt;/clear_field_alias&gt;&lt;/AlterField&gt;&lt;/workflow&gt;&lt;workflow&gt;&lt;AddField&gt;&lt;field_name&gt;Longitude&lt;/field_name&gt;&lt;field_type&gt;DOUBLE&lt;/field_type&gt;&lt;field_is_nullable&gt;False&lt;/field_is_nullable&gt;&lt;field_is_required&gt;False&lt;/field_is_required&gt;&lt;/AddField&gt;&lt;/workflow&gt;&lt;workflow&gt;&lt;AddField&gt;&lt;field_name&gt;Latitude&lt;/field_name&gt;&lt;field_type&gt;DOUBLE&lt;/field_type&gt;&lt;field_is_nullable&gt;False&lt;/field_is_nullable&gt;&lt;field_is_required&gt;False&lt;/field_is_required&gt;&lt;/AddField&gt;&lt;/workflow&gt;&lt;/operationSequence&gt;</Process><Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\Toolboxes\Data Management Tools.tbx\UpdateSchema" Date="20210402" Time="113952">UpdateSchema "CIMDATA=&lt;CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/2.7.0'&gt;&lt;WorkspaceConnectionString&gt;DATABASE=C:\Users\rjame\Documents\WSWC Documents\State Mapping Notes and Files\ID\PoUs&lt;/WorkspaceConnectionString&gt;&lt;WorkspaceFactory&gt;Shapefile&lt;/WorkspaceFactory&gt;&lt;Dataset&gt;WaterRightPOUs.shp&lt;/Dataset&gt;&lt;DatasetType&gt;esriDTFeatureClass&lt;/DatasetType&gt;&lt;/CIMStandardDataConnection&gt;" &lt;operationSequence&gt;&lt;workflow&gt;&lt;AlterField&gt;&lt;field_name&gt;PriorityDa&lt;/field_name&gt;&lt;field_is_nullable&gt;False&lt;/field_is_nullable&gt;&lt;clear_field_alias&gt;False&lt;/clear_field_alias&gt;&lt;/AlterField&gt;&lt;/workflow&gt;&lt;workflow&gt;&lt;AlterField&gt;&lt;field_name&gt;DecreedDat&lt;/field_name&gt;&lt;field_is_nullable&gt;False&lt;/field_is_nullable&gt;&lt;clear_field_alias&gt;False&lt;/clear_field_alias&gt;&lt;/AlterField&gt;&lt;/workflow&gt;&lt;/operationSequence&gt;</Process><Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\Toolboxes\Data Management Tools.tbx\UpdateSchema" Date="20210402" Time="113958">UpdateSchema "CIMDATA=&lt;CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/2.7.0'&gt;&lt;WorkspaceConnectionString&gt;DATABASE=C:\Users\rjame\Documents\WSWC Documents\State Mapping Notes and Files\ID\PoUs&lt;/WorkspaceConnectionString&gt;&lt;WorkspaceFactory&gt;Shapefile&lt;/WorkspaceFactory&gt;&lt;Dataset&gt;WaterRightPOUs.shp&lt;/Dataset&gt;&lt;DatasetType&gt;esriDTFeatureClass&lt;/DatasetType&gt;&lt;/CIMStandardDataConnection&gt;" &lt;operationSequence&gt;&lt;workflow&gt;&lt;AlterField&gt;&lt;field_name&gt;PriorityDa&lt;/field_name&gt;&lt;field_is_nullable&gt;False&lt;/field_is_nullable&gt;&lt;clear_field_alias&gt;False&lt;/clear_field_alias&gt;&lt;/AlterField&gt;&lt;/workflow&gt;&lt;workflow&gt;&lt;AlterField&gt;&lt;field_name&gt;DecreedDat&lt;/field_name&gt;&lt;field_is_nullable&gt;False&lt;/field_is_nullable&gt;&lt;clear_field_alias&gt;False&lt;/clear_field_alias&gt;&lt;/AlterField&gt;&lt;/workflow&gt;&lt;/operationSequence&gt;</Process><Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\CalculateGeometryAttributes" Date="20210402" Time="114829">CalculateGeometryAttributes ID_PoU "Latitude CENTROID_Y;Longitude CENTROID_X" # # GEOGCS['GCS_WGS_1984',DATUM['D_WGS_1984',SPHEROID['WGS_1984',6378137.0,298.257223563]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]] "Same as input"</Process><Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Conversion Tools.tbx\FeatureClassToFeatureClass" Date="20220324" Time="125133">FeatureClassToFeatureClass ID_PoU "C:\Users\rjame\Documents\WSWC Documents\MappingStatesDataToWaDE2.0\Idaho\WaterAllocation\RawInputData\shapefile" ID_PoU.shp # "WaterRight "WaterRight" true true false 63 Text 0 0,First,#,ID_PoU,WaterRight,0,63;BasinNumbe "BasinNumbe" true true false 10 Long 0 10,First,#,ID_PoU,BasinNumbe,-1,-1;SequenceNu "SequenceNu" true true false 10 Long 0 10,First,#,ID_PoU,SequenceNu,-1,-1;SplitSuffi "SplitSuffi" true true false 2 Text 0 0,First,#,ID_PoU,SplitSuffi,0,2;Status "Status" true true false 100 Text 0 0,First,#,ID_PoU,Status,0,100;PriorityDa "PriorityDa" true true false 8 Date 0 0,First,#,ID_PoU,PriorityDa,-1,-1;DecreedDat "DecreedDat" true true false 8 Date 0 0,First,#,ID_PoU,DecreedDat,-1,-1;Owner "Owner" true true false 150 Text 0 0,First,#,ID_PoU,Owner,0,150;WaterUse "WaterUse" true true false 254 Text 0 0,First,#,ID_PoU,WaterUse,0,254;WaterUseCo "WaterUseCo" true true false 2 Text 0 0,First,#,ID_PoU,WaterUseCo,0,2;TotalAcres "TotalAcres" true true false 19 Double 8 18,First,#,ID_PoU,TotalAcres,-1,-1;AcreLimit "AcreLimit" true true false 19 Double 8 18,First,#,ID_PoU,AcreLimit,-1,-1;Source "Source" true true false 100 Text 0 0,First,#,ID_PoU,Source,0,100;SourceQual "SourceQual" true true false 100 Text 0 0,First,#,ID_PoU,SourceQual,0,100;TributaryO "TributaryO" true true false 100 Text 0 0,First,#,ID_PoU,TributaryO,0,100;Tributar_1 "Tributar_1" true true false 100 Text 0 0,First,#,ID_PoU,Tributar_1,0,100;WaterDistr "WaterDistr" true true false 3 Text 0 0,First,#,ID_PoU,WaterDistr,0,3;LargePOU "LargePOU" true true false 5 Long 0 5,First,#,ID_PoU,LargePOU,-1,-1;RightID "RightID" true true false 10 Long 0 10,First,#,ID_PoU,RightID,-1,-1;PlaceOfUse "PlaceOfUse" true true false 10 Long 0 10,First,#,ID_PoU,PlaceOfUse,-1,-1;WRReport "WRReport" true true false 254 Text 0 0,First,#,ID_PoU,WRReport,0,254;WRDocs "WRDocs" true true false 254 Text 0 0,First,#,ID_PoU,WRDocs,0,254;WRMap "WRMap" true true false 254 Text 0 0,First,#,ID_PoU,WRMap,0,254;SHAPE_STAr "SHAPE_STAr" true true false 19 Double 0 0,First,#,ID_PoU,SHAPE_STAr,-1,-1;SHAPE_STLe "SHAPE_STLe" true true false 19 Double 0 0,First,#,ID_PoU,SHAPE_STLe,-1,-1;Longitude "Longitdue" true true false 19 Double 0 0,First,#,ID_PoU,Longitude,-1,-1;Latitude "Latitude" true true false 19 Double 0 0,First,#,ID_PoU,Latitude,-1,-1" #</Process></lineage></DataProperties>
+	</Esri>
+	<mdHrLv>
+		<ScopeCd value="005"/>
+	</mdHrLv>
+	<mdHrLvName>dataset</mdHrLvName>
+	<mdDateSt>2018-09-20</mdDateSt>
+	<mdFileID>06b2764cd3374c6b8663f01e58d8d4d4</mdFileID>
+	<mdLang>
+		<languageCode value="eng"/>
+		<countryCode value="USA" Sync="TRUE"></countryCode></mdLang>
+	<mdChar>
+		<CharSetCd value="004"/>
+	</mdChar>
+	<mdContact>
+		<rpIndName>Geospatial Technology Section</rpIndName>
+		<rpOrgName>Idaho Department of Water Resources</rpOrgName>
+		<rpPosName>GIS</rpPosName>
+		<role>
+			<RoleCd value="006"/>
+		</role>
+		<rpCntInfo>
+			<cntAddress addressType="both">
+				<eMailAdd>gisinfo@idwr.idaho.gov</eMailAdd>
+				<delPoint>322 East Front Street</delPoint>
+				<city>Boise</city>
+				<adminArea>Idaho</adminArea>
+				<postCode>83720</postCode>
+			</cntAddress>
+			<cntPhone>
+				<voiceNum>(208) 287-4800</voiceNum>
+				<faxNum>(208) 287-6700</faxNum>
+			</cntPhone>
+			<cntHours>8:00 AM - 5:00 PM</cntHours>
+		</rpCntInfo>
+	</mdContact>
+	<Binary>
+		<Thumbnail>
+			<Data EsriPropertyType="PictureX">/9j/4AAQSkZJRgABAQEAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCACFAMgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigBCwBA6k+lZ1lr2m6hctbW9zunVmUxlSrAr14Ipl3qbRa5a6eq/K0bTSEDcSoBAGAOOcHPfGK5nSIbjVfFM2tWEyJbC5KSR8biu3BJGehxx35NAHd0UUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQB5n46vLq08SCSF2jzbeWG29Qc7hk9ev4ZrU8F6ZeaYbe4CCW3vEYSMoCmIqflPJ+YHnt+lZXi8NN40iS4likgXaRGWC7UABYEkYyecdevvXQv4v0w7GtmkGFDKXUpGwyQQM98bvrgdelAHWUUyGVJ4UljYMjjKkdxT6ACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA858XaReX/AIkl8i1lcmJXTy8YbGBk+h7c9QPwqrp+saza3V7HdeRNMiqk0V2hAUBwBjbwfmc9vQ1H4su7q18R3c8UyqfMUJh2JUqo7Hjvn2PStnwxfWZuYmkuInuGtNjStMRKctkg7jj5cE8c4I96AOn0q9B32kljJZGKTZGHUKsnU5XHB6McDOK1Kynuo7ifbE80nB2hG24OCMEZB7Z5x1GOtW7RpI7WFLg/PsUFj3YjkUAWqKRWDKGGcEZGRiloAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAPIfGdrHa+JroRzeaZR5jhxgox5xn6Yx9cVgwTyW8gkjYq3Ocen+civTPGPhVdS36pDJsmiiPmJtzvA5B+uOPy9K8502xfUtQgs4yFaZwm9ui+/5A/WgD0Hw7ftf2lvbtdrJOMeYyuR8igAKASO2CT35HPOOrjgiLpImGdCQzsMnpyAe3OPbjGK81/si+8PXSJJco0hV1t0i6u5IGBgg55HPOMHtXodgd8hMs0ckqqFKRvuEeO2euT79ce1AGjRSFlUqCwBY4AJ6nr/AEpaACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiimu6xxtI7BUUEsT0AFAHOeONRisvD0kDsRJdHYgHcDk59scfjXmmm3b20sK2255i4IRgNocH5Svv/AFq34p1pNd1d7iIusEahIlfv6nHbP9BUPhpJW8RWRhQOyShuWwAAeST6UAepxwwz37udhuYiI1aWPcA2CTjnng5GTxk/QN1S2nS3M6Xc9vGg2tFDJ94FhjBIOD16DJzjiqumXSXN5c2cd5JKbSJfMdIVYI5BDbCRnJPOCGHGB6VoX0c0yXQhRZGaMPHFgRkuDkFmJyeQOwFAHB634gvY9VFzE+TGSzR+aSig8BTtbBIyTkHv2INei6ZfR6lptveRHKSpnpjnoePrmvGdSd5b6VJXSa4LnzJVJO98nge3IHTtW34P8S2+gm5hvEnKzMmCpyEwTng/X9KAPVqKRWDqGUgqRkEdxS0AFFQNeWyXiWjTItw67kjJwWHt69KnoAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACsnxNb3t34eu4LDJu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</Data>
+		</Thumbnail>
+	</Binary>
+	<spdoinfo>
+		<ptvctinf><esriterm Name="ID_PoU"><efeatyp Sync="TRUE">Simple</efeatyp><efeageom code="4" Sync="TRUE"></efeageom><esritopo Sync="TRUE">FALSE</esritopo><efeacnt Sync="TRUE">0</efeacnt><spindex Sync="TRUE">FALSE</spindex><linrefer Sync="TRUE">FALSE</linrefer></esriterm></ptvctinf></spdoinfo>
+</metadata>
