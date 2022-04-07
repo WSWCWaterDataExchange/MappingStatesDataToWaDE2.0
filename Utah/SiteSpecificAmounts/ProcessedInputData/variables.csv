@@ -1,8 +1,12 @@
 VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
-UTss_V1,1,Year,Cumulative,G,G,1,CalendarYear,Delivered Water Use,Delivered Water Use - Annual - DCII
-UTss_V2,1,Year,Cumulative,G,G,1,CalendarYear,Delivered Water Use,Delivered Water Use - Annual - Domestic
-UTss_V3,1,Year,Cumulative,G,G,1,CalendarYear,Delivered Water Use,Delivered Water Use - Annual - Commercial
-UTss_V4,1,Year,Cumulative,G,G,1,CalendarYear,Delivered Water Use,Delivered Water Use - Annual - Industrial
-UTss_V5,1,Year,Cumulative,G,G,1,CalendarYear,Delivered Water Use,Delivered Water Use - Annual - Institutional
-UTss_V6,1,Year,Cumulative,G,G,1,CalendarYear,Withdrawal,Withdrawal - Annual - DCII
-UTss_V7,1,Year,Cumulative,G,G,1,CalendarYear,Withdrawal,Withdrawal - Monthly - DCII
+UTss_V1,1,Year,Cumulative,G,G,1,CalendarYear,Delivered Water Use,Delivered Water Use_Annual_Domestic_Unspecified
+UTss_V2,1,Year,Cumulative,G,G,1,CalendarYear,Delivered Water Use,Delivered Water Use_Annual_Commercial_Unspecified
+UTss_V3,1,Year,Cumulative,G,G,1,CalendarYear,Delivered Water Use,Delivered Water Use_Annual_Industrial_Unspecified
+UTss_V4,1,Year,Cumulative,G,G,1,CalendarYear,Delivered Water Use,Delivered Water Use_Annual_Institutional_Unspecified
+UTss_V5,1,Year,Cumulative,G,G,1,CalendarYear,Delivered Water Use,Delivered Water Use_Annual_DCII_Unspecified
+UTss_V6,1,Year,Cumulative,G,G,1,CalendarYear,Withdrawal,Withdrawal_Annual_DCII_Surface Water
+UTss_V7,1,Year,Cumulative,G,G,1,CalendarYear,Withdrawal,Withdrawal_Annual_DCII_Groundwater
+UTss_V8,1,Year,Cumulative,G,G,1,CalendarYear,Withdrawal,Withdrawal_Annual_DCII_Unspecified
+UTss_V9,1,Year,Cumulative,G,G,1,CalendarYear,Withdrawal,Withdrawal_Monthly_DCII_Surface Water
+UTss_V10,1,Year,Cumulative,G,G,1,CalendarYear,Withdrawal,Withdrawal_Monthly_DCII_Groundwater
+UTss_V11,1,Year,Cumulative,G,G,1,CalendarYear,Withdrawal,Withdrawal_Monthly_DCII_Unspecified

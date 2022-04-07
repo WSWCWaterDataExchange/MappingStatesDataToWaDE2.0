@@ -1,4 +1,4 @@
-# Date Updated: 08/09/2021
+# Last Updated: 04/05/2022
 # Purpose: To extract UT site POD and POU relation information and populate dataframe for WaDEQA 2.0.
 # Notes:    1) data primary comes from records data.  We want the relationship based on a physical connection, temporal connection, and similar amount values.
 #           2) read in records, remove unnecessary columns.

@@ -1,13 +1,13 @@
-# Last Updated: 12/16/2020
+# Last Updated: 04/05/2022
 # Purpose: To create UT site specific variable use information and populate dataframe for WaDE_QA 2.0.
 # Notes: 1) Used a list approach.  Needed to have five rows for VaribleCVs.
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
@@ -42,7 +42,11 @@ outdf.VariableSpecificUUID = ["UTss_V1",
                               "UTss_V4",
                               "UTss_V5",
                               "UTss_V6",
-                              "UTss_V7"]
+                              "UTss_V7",
+                              "UTss_V8",
+                              "UTss_V9",
+                              "UTss_V10",
+                              "UTss_V11"]
 
 outdf.AggregationInterval = "1"
 
@@ -64,16 +68,24 @@ outdf.VariableCV = ["Delivered Water Use",
                     "Delivered Water Use",
                     "Delivered Water Use",
                     "Withdrawal",
+                    "Withdrawal",
+                    "Withdrawal",
+                    "Withdrawal",
+                    "Withdrawal",
                     "Withdrawal"]
 
 
-outdf.VariableSpecificCV = ["Delivered Water Use - Annual - DCII",
-                            "Delivered Water Use - Annual - Domestic",
-                            "Delivered Water Use - Annual - Commercial",
-                            "Delivered Water Use - Annual - Industrial",
-                            "Delivered Water Use - Annual - Institutional",
-                            "Withdrawal - Annual - DCII",
-                            "Withdrawal - Monthly - DCII"]
+outdf.VariableSpecificCV = ["Delivered Water Use_Annual_Domestic_Unspecified",
+"Delivered Water Use_Annual_Commercial_Unspecified",
+"Delivered Water Use_Annual_Industrial_Unspecified",
+"Delivered Water Use_Annual_Institutional_Unspecified",
+"Delivered Water Use_Annual_DCII_Unspecified",
+"Withdrawal_Annual_DCII_Surface Water",
+"Withdrawal_Annual_DCII_Groundwater",
+"Withdrawal_Annual_DCII_Unspecified",
+"Withdrawal_Monthly_DCII_Surface Water",
+"Withdrawal_Monthly_DCII_Groundwater",
+"Withdrawal_Monthly_DCII_Unspecified"]
 
 
 # Check required fields are not null
