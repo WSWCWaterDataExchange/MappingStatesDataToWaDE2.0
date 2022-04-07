@@ -1,4 +1,4 @@
-#Last Updated: 01/06/2022
+#Last Updated: 04/05/2022
 #Author: Ryan James (WSWC)
 #Purpose: To create CA site specific site use information and population dataframe for WaDEQA 2.0.
 #Notes:  1) Issue of using the same site for multiple datasets while keeping WaterSourceTypeCV separate.
@@ -6,10 +6,9 @@
 
 # Needed Libraries
 ############################################################################
+import os
 import numpy as np
 import pandas as pd
-import os
-from datetime import datetime
 
 # Custom Libraries
 ############################################################################
@@ -25,6 +24,8 @@ workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0
 os.chdir(workingDir)
 fileInput = "RawinputData/P_caSSMaster.csv"
 df = pd.read_csv(fileInput)
+fileInput_shape = "RawinputData/P_caGeometry.csv"
+dfshape = pd.read_csv(fileInput_shape)
 
 watersources_fileInput = "ProcessedInputData/watersources.csv" # watersource inputfile
 df_watersources = pd.read_csv(watersources_fileInput)  # watersources dataframe
@@ -32,7 +33,7 @@ df_watersources = pd.read_csv(watersources_fileInput)  # watersources dataframe
 columnslist = [
     "SiteUUID",
     "RegulatoryOverlayUUIDs",
-    "WaterSourceUUID",
+    "WaterSourceUUIDs",
     "CoordinateAccuracy",
     "CoordinateMethodCV",
     "County",
@@ -69,6 +70,19 @@ def retrieveWaterSourceUUID(colrowValue):
             outList = ''
     return outList
 
+# For Creating Geometry
+Geometrydict = pd.Series(dfshape.geometry.values, index = dfshape.in_SiteNativeID).to_dict()
+def retrieveGeometry(colrowValue):
+    if colrowValue == '' or pd.isnull(colrowValue):
+        outList = ''
+    else:
+        String1 = colrowValue
+        try:
+            outList = Geometrydict[String1]
+        except:
+            outList = ''
+    return outList
+
 # For creating SiteUUID
 def assignSiteUUID(colrowValue):
     string1 = str(colrowValue)
@@ -84,8 +98,8 @@ outdf = pd.DataFrame(columns=columnslist, index=df.index)
 print("RegulatoryOverlayUUIDs")
 outdf['RegulatoryOverlayUUIDs'] = ""
 
-print("WaterSourceUUID")
-outdf['WaterSourceUUID'] = df.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
+print("WaterSourceUUIDs")
+outdf['WaterSourceUUIDs'] = df.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
 
 print("CoordinateAccuracy")
 outdf['CoordinateAccuracy'] = "Unspecified"
@@ -100,7 +114,7 @@ print("EPSGCodeCV")
 outdf['EPSGCodeCV'] = "4326"
 
 print("Geometry")
-outdf['Geometry'] = ""
+outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['in_SiteNativeID']), axis=1)
 
 print("GNISCodeCV")
 outdf['GNISCodeCV'] = ""
@@ -144,36 +158,25 @@ outdf['StateCV'] = "CA"
 print("USGSSiteID")
 outdf['USGSSiteID'] = ""
 
-print("Resetting Index")
-outdf.reset_index()
+print("Joining outdf duplicates based on key fields...")
+outdf = outdf.replace(np.nan, "")  # Replaces NaN values with blank.
+groupbyList = ['PODorPOUSite', 'SiteNativeID', 'SiteName', 'SiteTypeCV', 'Longitude', 'Latitude']
+outdf = outdf.groupby(groupbyList).agg(lambda x: ','.join([str(elem) for elem in (list(set(x))) if elem!=''])).replace(np.nan, "").reset_index()
+outdf = outdf[columnslist]  # reorder the dataframe's columns based on columnslist
 
-#####################################
-# Dropping duplicate
-# filter the whole table based on a unique combination of WaterSourceUUID, PODorPOUSite, SiteNativeID, SiteName, SiteTypeCV, Longitude & Latitude.
-outdf = outdf.drop_duplicates(subset=['WaterSourceUUID', 'PODorPOUSite', 'SiteNativeID', 'SiteName', 'SiteTypeCV', 'Longitude', 'Latitude']).reset_index(drop=True)
-######################################
-
-print("SiteUUID") # has to be one of the last.
-dftemp = pd.DataFrame(index=outdf.index)
-dftemp["Count"] = range(1, len(dftemp.index) + 1)
-outdf['SiteUUID'] = dftemp.apply(lambda row: assignSiteUUID(row['Count']), axis=1)
 
 
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-
-dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
-dfpurge = dfpurge.assign(ReasonRemoved='')
-
-# SiteUUID
-outdf, dfpurge = TestErrorFunctions.SiteUUID_S_Check(outdf, dfpurge)
+purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # RegulatoryOverlayUUIDs
 outdf, dfpurge = TestErrorFunctions.RegulatoryOverlayUUIDs_S_Check(outdf, dfpurge)
 
-# WaterSourceUUID
-outdf100, dfpurge = TestErrorFunctions.WaterSourceUUID_S_Check(outdf, dfpurge)
+# WaterSourceUUIDs
+outdf100, dfpurge = TestErrorFunctions.WaterSourceUUIDs_S_Check(outdf, dfpurge)
 
 # CoordinateAccuracy
 outdf, dfpurge = TestErrorFunctions.CoordinateAccuracy_S_Check(outdf, dfpurge)
@@ -233,15 +236,26 @@ outdf, dfpurge = TestErrorFunctions.StateCV_S_Check(outdf, dfpurge)
 outdf, dfpurge = TestErrorFunctions.USGSSiteID_S_Check(outdf, dfpurge)
 
 
+############################################################################
+print("Assign SiteUUID") # has to be one of the last.
+outdf = outdf.reset_index(drop=True)
+dftemp = pd.DataFrame(index=outdf.index)
+dftemp["Count"] = range(1, len(dftemp.index) + 1)
+outdf['SiteUUID'] = dftemp.apply(lambda row: assignSiteUUID(row['Count']), axis=1)
+
+# Error check SiteUUID
+outdf, dfpurge = TestErrorFunctions.SiteUUID_S_Check(outdf, dfpurge)
+
+
 # Export to new csv
 ############################################################################
-print("Exporting dataframe outdf to csv...")
+print("Exporting outdf and dfpurge dataframes...")
 
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/sites.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
-    dfpurge.to_csv('ProcessedInputData/sites_missing.csv', index=False)
+    dfpurge.to_excel('ProcessedInputData/sites_missing.xlsx', index=False)
 
 print("Done.")

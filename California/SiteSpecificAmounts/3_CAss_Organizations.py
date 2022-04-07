@@ -1,4 +1,4 @@
-#Last Updated: 01/06/2022
+#Last Updated: 04/05/2022
 #Author: Ryan James (WSWC)
 #Purpose: To create CA site specific organization use information and population dataframe for WaDE_QA 2.0.
 #Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
@@ -6,9 +6,9 @@
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
