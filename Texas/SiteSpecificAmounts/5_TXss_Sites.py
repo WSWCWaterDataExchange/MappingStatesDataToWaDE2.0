@@ -24,12 +24,12 @@ workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0
 os.chdir(workingDir)
 fileInput = "RawinputData/P_MasterTXSiteSpecific.csv"
 df = pd.read_csv(fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
+fileInput_shape = "RawinputData/P_txSSGeometry.csv"
+dfshape = pd.read_csv(fileInput_shape)
 
 watersources_fileInput = "ProcessedInputData/watersources.csv" # watersource input file
 df_watersources = pd.read_csv(watersources_fileInput)  # watersources dataframe
 
-fileInput_shape = "RawinputData/shapeGeometery.csv" # geometry input file
-dfshape = pd.read_csv(fileInput_shape)  # geometry dataframe
 
 columnslist = [
     "SiteUUID",
@@ -72,6 +72,19 @@ def retrieveWaterSourceUUID(colrowValue):
             outList = ''
     return outList
 
+# For Creating Geometry
+Geometrydict = pd.Series(dfshape.geometry.values, index = dfshape.in_SiteNativeID).to_dict()
+def retrieveGeometry(colrowValue):
+    if colrowValue == '' or pd.isnull(colrowValue):
+        outList = ''
+    else:
+        String1 = colrowValue
+        try:
+            outList = Geometrydict[String1]
+        except:
+            outList = ''
+    return outList
+
 # For creating CoordinateMethodCV
 def assignCoordinateMethodCV(colrowValue):
     colrowValue = str(colrowValue).strip()
@@ -95,19 +108,6 @@ def assignSiteUUID(colrowValue):
     string1 = str(colrowValue)
     outstring = "TXss_S" + string1
     return outstring
-
-# For Creating Geometry
-Geometrydict = pd.Series(dfshape.geometry.values, index = dfshape.PWSId).to_dict()
-def retrieveGeometry(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outList = ''
-    else:
-        String1 = colrowValue.strip()
-        try:
-            outList = Geometrydict[String1]
-        except:
-            outList = ''
-    return outList
 
 
 # Creating output dataframe (outdf)
@@ -134,7 +134,7 @@ print("EPSGCodeCV")
 outdf['EPSGCodeCV'] = "4326"
 
 print("Geometry")
-# outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['in_SiteNativeID']), axis=1)
+outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['in_SiteNativeID']), axis=1)
 
 print("GNISCodeCV")
 outdf['GNISCodeCV'] = ""
