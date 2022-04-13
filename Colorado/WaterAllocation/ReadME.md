@@ -48,9 +48,9 @@ Purpose: Pre-process the input data files and merge them into one master file fo
     - If **Decreed Units** is equal to "C" and **Net Conditional** does not equal to 0, then return **Net Conditional** as allocation flow.
     - If neither is true, return a value of "0" for allocation flow.
 - Two separate fields were provided for allocation volume.  Use the following rules to determine appropriate value...
-    - If **Decreed Units** is equal to "A" and **Net Absolute** does not equal to 0, then return **Net Absolute** as allocation flow.
-    - If **Decreed Units** is equal to "A" and **Net Conditional** does not equal to 0, then return **Net Conditional** as allocation flow.
-    - If neither is true, return a value of "0" for allocation flow.
+    - If **Decreed Units** is equal to "A" and **Net Absolute** does not equal to 0, then return **Net Absolute** as allocation volume.
+    - If **Decreed Units** is equal to "A" and **Net Conditional** does not equal to 0, then return **Net Conditional** as allocation volume.
+    - If neither is true, return a value of "0" for allocation volume.
 - Determine legal status depending on if either **Net Absolute** or **Net Conditional** were used.
 - Combine **Admin No**, **Order No**, **Decreed Units**, & **WDID** into single string entry for a unique water right identifier.
 - Inspect output dataframe for additional errors / datatypes.

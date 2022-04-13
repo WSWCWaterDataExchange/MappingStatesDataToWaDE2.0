@@ -1,5 +1,5 @@
-# DWRi Water Rights (Allocation) Data Preparation for WaDE
-This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [Utah Division of Water Rights (DWRi)](https://waterrights.utah.gov/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
+# UDWRi Water Rights (Allocation) Data Preparation for WaDE
+This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [Utah Division of Water Rights (UDWRi)](https://waterrights.utah.gov/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 
 ## Overview of Data Utilized
@@ -18,7 +18,7 @@ Seven unique files were created to be used as input.  Input files used are as fo
 - WTRUSE_POWER.csv.  Contains power utility information related to water rights.
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share UDNR's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *[UT_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Utah/WaterAllocation/UT_Allocation%20Schema%20Mapping_WaDEQA.xlsx)*.  Seven executable code files were used to extract the UDNR's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those Seven code files are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share UDWRi's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *[UT_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Utah/WaterAllocation/UT_Allocation%20Schema%20Mapping_WaDEQA.xlsx)*.  Seven executable code files were used to extract the UDWRi's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those Seven code files are as follows...
 
 - 0_PreProcessUtahAllocationData.ipynb
 - 1_UTwr_Methods.py
@@ -80,7 +80,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Method* specific columns.
-- Assign **UDNR** info to the *WaDE Method* specific columns (this was hardcoded by hand for simplicity).
+- Assign agency info to the *WaDE Method* specific columns (this was hardcoded by hand for simplicity).
 - Assign method UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *methods.csv*.
@@ -105,7 +105,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Variable* specific columns.
-- Assign **UDNR** info to the *WaDE Variable* specific columns (this was hardcoded by hand for simplicity).
+- Assign agency info to the *WaDE Variable* specific columns (this was hardcoded by hand for simplicity).
 - Assign variable UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *variables.csv*.
@@ -130,7 +130,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Organizations* specific columns.
-- Assign **UTDWRi** info to the *WaDE Organizations* specific columns (this was hardcoded by hand for simplicity).
+- Assign agency info to the *WaDE Organizations* specific columns (this was hardcoded by hand for simplicity).
 - Assign organization UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *organizations.csv*.
@@ -138,7 +138,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
 ---------- | ---------- | ------------ | ------------
-UTwr_O1 | Utah Division of Water Rights | James Greer |"https://water.utah.gov/"
+UTwr_O1 | Utah Division of Water Rights | Craig Miller |"https://water.utah.gov/"
 
 
 ***
@@ -155,7 +155,7 @@ Purpose: generate a list of water sources specific to a water right.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign **UDNR** info to the *WaDE WaterSources* specific columns.  See *[UT_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Utah/WaterAllocation/UT_Allocation%20Schema%20Mapping_WaDEQA.xlsx)* for specific details.  Items of note are as follows...
+- Assign agency info to the *WaDE WaterSources* specific columns.  See *[UT_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Utah/WaterAllocation/UT_Allocation%20Schema%20Mapping_WaDEQA.xlsx)* for specific details.  Items of note are as follows...
     - *WaterSourceName* = Unspecified.
     - *WaterSourceNativeID* = *in_WaterSourceNativeID*, see *0_PreProcessUtahAllocationData.ipynb* for specifics.
     - *WaterSourceTypeCV* = *in_WaterSourceTypeCV*, see *0_PreProcessUtahAllocationData.ipynb* for specifics.
@@ -190,7 +190,7 @@ Purpose: generate a list of sites information.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
-- Assign **UDNR** info to the *WaDE Site* specific columns.  See *[UT_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Utah/WaterAllocation/UT_Allocation%20Schema%20Mapping_WaDEQA.xlsx)* for specific details.  Items of note are as follows...
+- Assign agency info to the *WaDE Site* specific columns.  See *[UT_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Utah/WaterAllocation/UT_Allocation%20Schema%20Mapping_WaDEQA.xlsx)* for specific details.  Items of note are as follows...
     - Extract *WaterSourceUUID* from waterSources.csv input csv file. See code for specific implementation of extraction.
     - *Latitude* = **Latitude**.
     - *Longitude* = **Longitude**.
@@ -232,7 +232,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
-- Assign **UDNR** info to the *WaDE Water Allocations* specific columns.  See *[UT_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Utah/WaterAllocation/UT_Allocation%20Schema%20Mapping_WaDEQA.xlsx)* for specific details.  Items of note are as follows...
+- Assign agency info to the *WaDE Water Allocations* specific columns.  See *[UT_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Utah/WaterAllocation/UT_Allocation%20Schema%20Mapping_WaDEQA.xlsx)* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *AllocationApplicationDate* = **DATE_FILED**.
     - *AllocationCommunityWaterSupplySystem* = **MUNICIPALITY**.
@@ -298,11 +298,11 @@ Note: podsitetopousiterelationships.csv output only needed if both POD and POU d
 
 ***
 ## Staff Contributions
-Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Utah Division of Water Rights (DWRi)](https://waterrights.utah.gov//).
+Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Utah Division of Water Rights (UDWRi)](https://waterrights.utah.gov//).
 
 WSWC Staff
 - Adel Abdallah <adelabdallah@wswc.utah.gov>
 - Ryan James <rjames@wswc.utah.gov>
 
-DWRi Staff
-- Jim Reese <jreese@utah.gov>
+UDWRi Staff
+- Craig Miller <craigmiller@utah.gov>
