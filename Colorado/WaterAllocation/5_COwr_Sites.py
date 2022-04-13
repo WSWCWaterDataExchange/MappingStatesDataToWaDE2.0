@@ -57,19 +57,17 @@ columnslist = [
 ############################################################################
 
 # For creating WaterSourceUUID
-def retrieveWaterSourceUUID(colrowValueA, colrowValueB, colrowValueC, df_watersources):
-    if (colrowValueA == '' and colrowValueB == '' and colrowValueC == '') or \
-            (pd.isnull(colrowValueA) and pd.isnull(colrowValueB) and pd.isnull(colrowValueC)):
-        outString = ''
+WaterSourceUUIDdict = pd.Series(df_watersources.WaterSourceUUID.values, index = df_watersources.WaterSourceNativeID).to_dict()
+def retrieveWaterSourceUUID(colrowValue):
+    if colrowValue == '' or pd.isnull(colrowValue):
+        outList = ''
     else:
-        ml = df_watersources.loc[((df_watersources['WaterSourceName'] == colrowValueA) &
-                                  (df_watersources['WaterSourceNativeID'] == colrowValueB) &
-                                  (df_watersources['WaterSourceTypeCV'] == colrowValueC)), 'WaterSourceUUID']
-        if not(ml.empty):  # check if the series is empty
-            outString = ml.iloc[0]
-        else:
-            outString = ''
-    return outString
+        String1 = colrowValue
+        try:
+            outList = WaterSourceUUIDdict[String1]
+        except:
+            outList = ''
+    return outList
 
 # For creating SiteTypeCV
 def assignCoordinateMethodCV(colrowValue):
@@ -97,11 +95,10 @@ def assignSiteUUID(colrowValue):
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-
 outdf = pd.DataFrame(columns=columnslist, index=df.index)
 
 print("WaterSourceUUIDs")
-outdf['WaterSourceUUIDs'] = df.apply(lambda row: retrieveWaterSourceUUID(row['input_WaterSourceName'], row['GNIS ID'], row['input_WaterSourceTypeCV'], df_watersources), axis=1)
+outdf['WaterSourceUUIDs'] = df.apply(lambda row: retrieveWaterSourceUUID(row['GNIS ID']), axis=1)
 
 print("RegulatoryOverlayUUIDs")
 outdf['RegulatoryOverlayUUIDs'] = ""

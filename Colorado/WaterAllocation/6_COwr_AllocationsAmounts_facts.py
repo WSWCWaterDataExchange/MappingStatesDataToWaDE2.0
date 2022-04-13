@@ -129,7 +129,7 @@ print("AllocationChangeApplicationIndicator")
 outdf['AllocationChangeApplicationIndicator'] = ""
 
 print("AllocationCommunityWaterSupplySystem")
-outdf['AllocationCommunityWaterSupplySystem'] = ''
+outdf['AllocationCommunityWaterSupplySystem'] = ""
 
 print("AllocationCropDutyAmount")
 outdf['AllocationCropDutyAmount'] = ""
@@ -138,13 +138,13 @@ print("AllocationExpirationDate")
 outdf['AllocationExpirationDate'] = ""
 
 print("AllocationFlow_CFS")
-outdf['AllocationFlow_CFS'] = df_M['input_AllocationFlow_CFS']
+outdf['AllocationFlow_CFS'] = df_M['in_AllocationFlow_CFS']
 
 print("AllocationLegalStatusCV")
-outdf['AllocationLegalStatusCV'] = df_M['input_AllocationLegalStatusCV']
+outdf['AllocationLegalStatusCV'] = df_M['in_AllocationLegalStatusCV']
 
 print("AllocationNativeID")  # Will use this with a .groupby() statement towards the ends.
-outdf['AllocationNativeID'] = df_M.apply(lambda row: assignAllocationNativeID(row['Admin No'], row['Order No'], row['Decreed Units'], row['WDID']), axis=1)
+outdf['AllocationNativeID'] = df_M['in_AllocationNativeID']
 
 print("AllocationOwner")
 outdf['AllocationOwner'] = 'Unspecified'
@@ -159,13 +159,13 @@ print("AllocationTimeframeStart")
 outdf['AllocationTimeframeStart'] = "01/01"
 
 print("AllocationTypeCV")
-outdf['AllocationTypeCV'] = ''
+outdf['AllocationTypeCV'] = ""
 
 print("AllocationVolume_AF")
-outdf['AllocationVolume_AF'] = df_M['input_AllocationVolume_AF']
+outdf['AllocationVolume_AF'] = df_M['in_AllocationVolume_AF']
 
 print("BeneficialUseCategory")
-outdf['BeneficialUseCategory'] = df_M['input_WaDEBenUse']
+outdf['BeneficialUseCategory'] = df_M['in_WaDEBenUse']
 
 print("CommunityWaterSupplySystem")
 outdf['CommunityWaterSupplySystem'] = ""
@@ -177,7 +177,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = "03/11/2022"
+outdf['DataPublicationDate'] = "04/13/2022"
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""

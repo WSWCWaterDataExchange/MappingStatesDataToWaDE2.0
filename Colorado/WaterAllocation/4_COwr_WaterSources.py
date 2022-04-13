@@ -61,13 +61,13 @@ print("WaterQualityIndicatorCV")
 outdf['WaterQualityIndicatorCV'] = "Unspecified"
 
 print("WaterSourceName")
-outdf['WaterSourceName'] = df['input_WaterSourceName']
+outdf['WaterSourceName'] = df['in_WaterSourceName']
 
 print("WaterSourceNativeID")
 outdf['WaterSourceNativeID'] = df['GNIS ID']
 
 print("WaterSourceTypeCV")
-outdf['WaterSourceTypeCV'] = df['input_WaterSourceTypeCV']
+outdf['WaterSourceTypeCV'] = df['in_WaterSourceTypeCV']
 
 ##############################
 # Dropping duplicate

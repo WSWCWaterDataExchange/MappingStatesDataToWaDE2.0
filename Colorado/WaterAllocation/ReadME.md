@@ -8,6 +8,7 @@ This readme details the process that was applied by the staff of the [Western St
 The following data was used for water allocations...
 
 - [**DWR Water Right - Net Amounts**](https://data.colorado.gov/Water/DWR-Water-Right-Net-Amounts/acsg-f33s/data) data files for surface and groundwater.
+    - Metadata available [**here**](https://data.colorado.gov/Water/DWR-Water-Right-Net-Amounts/acsg-f33s?category=Water&view_name=DWR-Water-Right-Net-Amounts).
 
 One unique files was created to be used as input.  Input files used are as follows...
 - DWR_Water_Right_-_Net_Amounts_input.csv.
@@ -70,7 +71,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Method* specific columns.
-- Assign **CDWR** info to the *WaDE Method* specific columns (this was hardcoded by hand for simplicity).
+- Assign agency info to the *WaDE Method* specific columns (this was hardcoded by hand for simplicity).
 - Assign method UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *methods.csv*.
@@ -95,7 +96,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Variable* specific columns.
-- Assign **CDWR** info to the *WaDE Variable* specific columns (this was hardcoded by hand for simplicity).
+- Assign agency info to the *WaDE Variable* specific columns (this was hardcoded by hand for simplicity).
 - Assign variable UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *variables.csv*.
@@ -120,7 +121,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Organizations* specific columns.
-- Assign **UTDWRi** info to the *WaDE Organizations* specific columns (this was hardcoded by hand for simplicity).
+- Assign agency info to the *WaDE Organizations* specific columns (this was hardcoded by hand for simplicity).
 - Assign organization UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *organizations.csv*.
@@ -145,7 +146,7 @@ Purpose: generate a list of water sources specific to a water right.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign **CDWR** info to the *WaDE WaterSources* specific columns.  See *CO_Allocation Schema Mapping_WaDEQA.xlsx* for specific details.  Items of note are as follows...
+- Assign agency info to the *WaDE WaterSources* specific columns.  See *CO_Allocation Schema Mapping_WaDEQA.xlsx* for specific details.  Items of note are as follows...
     - WaDE *WaterSourceName* = *input_WaterSourceName*, see *0_PreProcessColoradoAllocationData.ipynb* for specifics.
     - WaDE *WaterSourceNativeID* = **GNIS ID** input field.
     - WaDE *WaterSourceTypeCV* = *input_WaterSourceTypeCV*, see *0_PreProcessColoradoAllocationData.ipynb* for specifics.
@@ -180,7 +181,7 @@ Purpose: generate a list of sites information.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
-- Assign **CDWR** info to the *WaDE Site* specific columns.  See *CO_Allocation Schema Mapping_WaDEQA.xlsx* for specific details.  Items of note are as follows...
+- Assign agency info to the *WaDE Site* specific columns.  See *CO_Allocation Schema Mapping_WaDEQA.xlsx* for specific details.  Items of note are as follows...
     - Extract *WaterSourceUUID* from waterSources.csv input csv file. See code for specific implementation of extraction.
     - WaDE *CoordinateMethodCV* = **Location Accuracy** input field.
     - WaDE *County* = **County** input field.
@@ -224,7 +225,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
-- Assign **CDWR** info to the *WaDE Water Allocations* specific columns.  See *CO_Allocation Schema Mapping_WaDEQA.xlsx* for specific details.  Items of note are as follows...
+- Assign agency info to the *WaDE Water Allocations* specific columns.  See *CO_Allocation Schema Mapping_WaDEQA.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - WaDE *AllocationFlow_CFS* = *in_AllocationFlow_CFS*, see *0_PreProcessColoradoAllocationData.ipynb* for specifics.
     - WaDE *AllocationNativeID* = *in_AllocationNativeID*, see *0_PreProcessColoradoAllocationData.ipynb* for specifics.
