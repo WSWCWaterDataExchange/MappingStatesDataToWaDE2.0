@@ -18,8 +18,8 @@ Seven unique files were created to be used as input.  Input files used are as fo
 - WTRUSE_POWER.csv.  Contains power utility information related to water rights.
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
-The raw input data shared by the state / state agency / data provdier (excel, csv, shapefiles,PDF, etc), & the processed input data into CSV files ready to load into WaDE database can be found within the WaDE spondered Google Drive.  Please contact WaDE staff if unavailable or if you have any questions
-- Utah Data: https://drive.google.com/drive/folders/1Gt4YtZ0Cl_SSEaoqCnoma1cJjwVAzc7A?usp=sharing
+The 1) raw input data shared by the state / state agency / data provdier (excel, csv, shapefiles,PDF, etc), & the 2) processed input data into CSV files ready to load into WaDE database, can both be found within the WaDE spondered Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+- Utah Allocation Data: https://drive.google.com/drive/folders/1-7c1zFWiz_KISKEOFEaiq1DRaJ5BuAn0?usp=sharing
 
 
 ## Summary of Data Prep
