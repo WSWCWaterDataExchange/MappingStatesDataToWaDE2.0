@@ -1,8 +1,8 @@
 # Date Updated: 03/24/2022
 # Purpose: To extract UT site use information and population dataframe for WaDEQA 2.0.
 # Notes: 1) Have to convert from epsg:26912 - to - epsg:4326 in order for lat and long to work in WaDE 2.0.
-#       2) Transformer from pyproj is incredibly inefficient.  Did discover trick of preloading necessary coord systems.
-#       3) Large files, better to use the '.apply() lambda row' method with a few custom functions, rather than a 'for' loop.
+#        2) Transformer from pyproj is incredibly inefficient.  Did discover trick of preloading necessary coord systems.
+#        3) Large files, better to use the '.apply() lambda row' method with a few custom functions, rather than a 'for' loop.
 
 
 # Needed Libraries
@@ -21,10 +21,12 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Utah/WaterAllocation"
+workingDir = "G:/Shared drives/WaDE Data/Utah/WaterAllocation"  # Specific to my machine, will need to change.
 os.chdir(workingDir)
 fileInput = "RawinputData/P_UtahMaster.csv"
 watersources_fileInput = "ProcessedInputData/watersources.csv"
+fileInput_shape = "RawinputData/P_utGeometry.csv"
+dfshape = pd.read_csv(fileInput_shape)
 
 df = pd.read_csv(fileInput)
 df_watersources = pd.read_csv(watersources_fileInput)  # WaterSources dataframe
@@ -55,6 +57,19 @@ columnslist = [
 
 # Custom Functions
 ############################################################################
+
+# For Creating Geometry
+Geometrydict = pd.Series(dfshape.geometry.values, index = dfshape.in_SiteNativeID).to_dict()
+def retrieveGeometry(colrowValue):
+    if colrowValue == '' or pd.isnull(colrowValue):
+        outList = ''
+    else:
+        String1 = colrowValue
+        try:
+            outList = Geometrydict[String1]
+        except:
+            outList = ''
+    return outList
 
 # For creating SiteName
 def assignSiteName(colrowValue):
@@ -109,7 +124,7 @@ print("EPSGCodeCV")
 outdf['EPSGCodeCV'] = "4326"
 
 print("Geometry")
-outdf['Geometry'] = ""
+outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['in_SiteNativeID']), axis=1)
 
 print("GNISCodeCV")
 outdf['GNISCodeCV'] = ""
@@ -121,10 +136,10 @@ print("HUC8")
 outdf['HUC8'] = ""
 
 print("Latitude")
-outdf['Latitude'] = df['Latitude']
+outdf['Latitude'] = df['in_Latitude']  # See preprocessing
 
 print("Longitude")
-outdf['Longitude'] = df['Longitude']
+outdf['Longitude'] = df['in_Longitude']  # See preprocessing
 
 print("NHDNetworkStatusCV")
 outdf['NHDNetworkStatusCV'] = ""
@@ -136,10 +151,10 @@ print("PODorPOUSite")
 outdf['PODorPOUSite'] = df['in_PODorPOUSite']  # See preprocessing
 
 print("SiteName")
-outdf['SiteName'] = df.apply(lambda row: assignSiteName(row['SOURCE']), axis=1)
+outdf['SiteName'] = df.apply(lambda row: assignSiteName(row['in_SiteName']), axis=1)  # See preprocessing
 
 print("SiteNativeID")
-outdf['SiteNativeID'] = df['OBJECTID'].astype(int)
+outdf['SiteNativeID'] = df['in_SiteNativeID']  # See preprocessing
 
 print("SitePoint")
 outdf['SitePoint'] = ""

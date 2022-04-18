@@ -19,7 +19,7 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Utah/WaterAllocation"
+workingDir = "G:/Shared drives/WaDE Data/Utah/WaterAllocation"  # Specific to my machine, will need to change.
 os.chdir(workingDir)
 fileInput = "RawinputData/P_UtahMaster.csv"
 df = pd.read_csv(fileInput)
@@ -74,10 +74,6 @@ outdf['WaterSourceTypeCV'] = df['in_WaterSourceTypeCV']  # See preprocessing
 print("Dropping duplicates")
 outdf = outdf.drop_duplicates(subset=['WaterSourceName', 'WaterSourceNativeID', 'WaterSourceTypeCV']).reset_index(drop=True)
 ##############################
-
-print("WaterSourceUUID")
-df["Count"] = range(1, len(df.index) + 1)
-outdf['WaterSourceUUID'] = df.apply(lambda row: assignWaterSourceUUID(row['Count']), axis=1)
 
 print("Resetting Index")
 outdf.reset_index()

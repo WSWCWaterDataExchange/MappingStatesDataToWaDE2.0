@@ -17,6 +17,11 @@ Seven unique files were created to be used as input.  Input files used are as fo
 - WTRUSE_MUNICIPAL.csv.  Contains community id related to water rights information.
 - WTRUSE_POWER.csv.  Contains power utility information related to water rights.
 
+## Storage for WaDE 2.0 Source and Processed Water Data
+The raw input data shared by the state / state agency / data provdier (excel, csv, shapefiles,PDF, etc), & the processed input data into CSV files ready to load into WaDE database can be found within the WaDE spondered Google Drive.  Please contact WaDE staff if unavailable or if you have any questions
+- Utah Data: https://drive.google.com/drive/folders/1Gt4YtZ0Cl_SSEaoqCnoma1cJjwVAzc7A?usp=sharing
+
+
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share UDWRi's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *[UT_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Utah/WaterAllocation/UT_Allocation%20Schema%20Mapping_WaDEQA.xlsx)*.  Seven executable code files were used to extract the UDWRi's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those Seven code files are as follows...
 

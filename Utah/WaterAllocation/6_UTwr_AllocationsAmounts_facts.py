@@ -1,4 +1,4 @@
-# Date Updated: 03/24/2022
+# Date Updated: 04/18/2022
 # Author: Ryan James
 # Purpose: To extract UT allocation use information and population dataframe WaDEQA 2.0.
 #         1) Simple creation of working dataframe (df), with output dataframe (outdf).
@@ -20,7 +20,7 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Utah/WaterAllocation"  # Specific to my machine, will need to change.
+workingDir = "G:/Shared drives/WaDE Data/Utah/WaterAllocation"  # Specific to my machine, will need to change.
 os.chdir(workingDir)
 DM_fileInput = "RawinputData/P_UtahMaster.csv"
 method_fileInput = "ProcessedInputData/methods.csv"
@@ -83,7 +83,7 @@ def retrieveSiteUUID(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = ''
     else:
-        String1 = int(colrowValue)
+        String1 = str(colrowValue).strip()
         try:
             outList = SitUUIDdict[String1]
         except:
@@ -137,13 +137,13 @@ print("OrganizationUUID")
 outdf['OrganizationUUID'] = "UTwr_O1"
 
 print("SiteUUID")
-outdf['SiteUUID'] = df_DM.apply(lambda row: retrieveSiteUUID(row['OBJECTID']), axis=1)
+outdf['SiteUUID'] = df_DM.apply(lambda row: retrieveSiteUUID(row['in_SiteNativeID']), axis=1)
 
 print("VariableSpecificUUID")
 outdf['VariableSpecificUUID'] = "UTwr_V1"
 
 print("AllocationApplicationDate")
-outdf['AllocationApplicationDate'] = df_DM['DATE_FILED']
+outdf['AllocationApplicationDate'] = df_DM['in_AllocationApplicationDate']  # See preprocessing
 
 print("AllocationAssociatedConsumptiveUseSiteIDs")
 outdf['AllocationAssociatedConsumptiveUseSiteIDs'] = ""
@@ -158,46 +158,46 @@ print("AllocationChangeApplicationIndicator")
 outdf['AllocationChangeApplicationIndicator'] = ""
 
 print("AllocationCommunityWaterSupplySystem")
-outdf['AllocationCommunityWaterSupplySystem'] = df_DM['MUNICIPALITY']
+outdf['AllocationCommunityWaterSupplySystem'] = df_DM['in_AllocationCommunityWaterSupplySystem']  # See preprocessing
 
 print("AllocationCropDutyAmount")
-outdf['AllocationCropDutyAmount'] = df_DM['IRRIGATION_DEPLETION']
+outdf['AllocationCropDutyAmount'] = df_DM['in_AllocationCropDutyAmount']  # See preprocessing
 
 print("AllocationExpirationDate")
-outdf['AllocationExpirationDate'] = df_DM['DATE_TERMINATED']
+outdf['AllocationExpirationDate'] = df_DM['in_AllocationExpirationDate']  # See preprocessing
 
 print("AllocationFlow_CFS")
-outdf['AllocationFlow_CFS'] = df_DM['CFS']
+outdf['AllocationFlow_CFS'] = df_DM['in_AllocationFlow_CFS']  # See preprocessing
 
 print("AllocationLegalStatusCV")
-outdf['AllocationLegalStatusCV'] = df_DM['in_LegalStatus']
+outdf['AllocationLegalStatusCV'] = df_DM['in_AllocationLegalStatusCV']  # See preprocessing
 
 print("AllocationNativeID")  # Will use this with a .groupby() statement towards the ends.
-outdf['AllocationNativeID'] = df_DM['WRNUM']
+outdf['AllocationNativeID'] = df_DM['in_AllocationNativeID']
 
 print("AllocationOwner")
-outdf['AllocationOwner'] = df_DM.apply(lambda row: assignAllocationOwner(row['OWNER']), axis=1)
+outdf['AllocationOwner'] = df_DM.apply(lambda row: assignAllocationOwner(row['in_AllocationOwner']), axis=1)  # See preprocessing
 
 print("AllocationSDWISIdentifierCV")
 outdf['AllocationSDWISIdentifierCV'] = ""
 
 print("AllocationPriorityDate")
-outdf['AllocationPriorityDate'] = df_DM['PRIORITY']
+outdf['AllocationPriorityDate'] = df_DM['in_AllocationPriorityDate']  # See preprocessing
 
 print("AllocationTimeframeEnd")
-outdf['AllocationTimeframeEnd'] = df_DM['in_AllocationTimeframeEnd']
+outdf['AllocationTimeframeEnd'] = df_DM['in_AllocationTimeframeEnd']  # See preprocessing
 
 print("AllocationTimeframeStart")
-outdf['AllocationTimeframeStart'] = df_DM['in_AllocationTimeframeStart']
+outdf['AllocationTimeframeStart'] = df_DM['in_AllocationTimeframeStart']  # See preprocessing
 
 print("AllocationTypeCV")
 outdf['AllocationTypeCV'] = "Unspecified"
 
 print("AllocationVolume_AF")
-outdf['AllocationVolume_AF'] = df_DM['ACFT']
+outdf['AllocationVolume_AF'] = df_DM['in_AllocationVolume_AF']  # See preprocessing
 
 print("BeneficialUseCategory")
-outdf['BeneficialUseCategory'] = df_DM.apply(lambda row: assignBenUseCategory(row['USES']), axis=1)
+outdf['BeneficialUseCategory'] = df_DM.apply(lambda row: assignBenUseCategory(row['in_BeneficialUseCategory']), axis=1)  # See preprocessing
 
 print("CommunityWaterSupplySystem")
 outdf['CommunityWaterSupplySystem'] = ""
@@ -209,7 +209,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = "05/19/2021"
+outdf['DataPublicationDate'] = "04/18/2022"
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""
@@ -218,7 +218,6 @@ print("ExemptOfVolumeFlowPriority")
 outdf['ExemptOfVolumeFlowPriority'] = "0"
 
 print("GeneratedPowerCapacityMW")
-# outdf['GeneratedPowerCapacityMW'] = df_DM.apply(lambda row: assignGeneratedPowerCapacityMW(row['POWER_CAPACITY']), axis=1)
 outdf['GeneratedPowerCapacityMW'] = ""
 
 print("IrrigatedAcreage")

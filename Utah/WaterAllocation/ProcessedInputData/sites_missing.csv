@@ -1,9 +1,0 @@
-SiteUUID,RegulatoryOverlayUUIDs,WaterSourceUUID,CoordinateAccuracy,CoordinateMethodCV,County,EPSGCodeCV,Geometry,GNISCodeCV,HUC12,HUC8,Latitude,Longitude,NHDNetworkStatusCV,NHDProductCV,PODorPOUSite,SiteName,SiteNativeID,SitePoint,SiteTypeCV,StateCV,USGSSiteID,ReasonRemoved,index
-UTwr_S463847,,UTwr_WS3,Unspecified,Unspecified,,4326,,,,,0.0,0.0,,,POU,Unspecified,7083116,,Unspecified,UT,,Bad Latitude,463846.0
-UTwr_S464873,,UTwr_WS3,Unspecified,Unspecified,,4326,,,,,0.0,0.0,,,POU,Unspecified,7084142,,Unspecified,UT,,Bad Latitude,464872.0
-UTwr_S464991,,UTwr_WS3,Unspecified,Unspecified,,4326,,,,,0.0,0.0,,,POU,Unspecified,7084260,,Unspecified,UT,,Bad Latitude,464990.0
-UTwr_S464992,,UTwr_WS3,Unspecified,Unspecified,,4326,,,,,0.0,0.0,,,POU,Unspecified,7084261,,Unspecified,UT,,Bad Latitude,464991.0
-UTwr_S465002,,UTwr_WS3,Unspecified,Unspecified,,4326,,,,,0.0,0.0,,,POU,Unspecified,7084271,,Unspecified,UT,,Bad Latitude,465001.0
-UTwr_S465107,,UTwr_WS3,Unspecified,Unspecified,,4326,,,,,0.0,0.0,,,POU,Unspecified,7084376,,Unspecified,UT,,Bad Latitude,465106.0
-UTwr_S465319,,UTwr_WS3,Unspecified,Unspecified,,4326,,,,,0.0,0.0,,,POU,Unspecified,7084588,,Unspecified,UT,,Bad Latitude,465318.0
-UTwr_S465816,,UTwr_WS3,Unspecified,Unspecified,,4326,,,,,0.0,0.0,,,POU,Unspecified,7087518,,Unspecified,UT,,Bad Latitude,465815.0
