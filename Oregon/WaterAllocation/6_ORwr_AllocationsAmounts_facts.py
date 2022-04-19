@@ -19,7 +19,7 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Oregon/WaterAllocation"  # Change this to fit state
+workingDir = "G:/Shared drives/WaDE Data/Oregon/WaterAllocation"  # Specific to my machine, will need to change.
 os.chdir(workingDir)
 M_fileInput = "RawinputData/P_OregonMaster.csv"  # Change this to fit state
 method_fileInput = "ProcessedInputData/methods.csv"
@@ -164,14 +164,14 @@ outdf['AllocationFlow_CFS'] = df_DM["in_AllocationFlow_CFS"]  # See preprocessin
 print("AllocationLegalStatusCV")
 outdf['AllocationLegalStatusCV'] = ""
 
-print("AllocationNativeID")  # Will use this with a .groupby() statement towards the ends.
-outdf['AllocationNativeID'] = df_DM['snp_id'].astype(str) # Native dbtype is float. Need to return this value as a string
+print("AllocationNativeID")
+outdf['AllocationNativeID'] = df_DM['in_AllocationNativeID'].astype(str)  # See preprocessing
 
 print("AllocationOwner")
 outdf['AllocationOwner'] = df_DM['in_AllocationOwner']  # See preprocessing
 
 print("AllocationPriorityDate")
-outdf['AllocationPriorityDate'] = df_DM['priority_date']
+outdf['AllocationPriorityDate'] = df_DM['in_AllocationPriorityDate']
 
 print("AllocationSDWISIdentifierCV")
 outdf['AllocationSDWISIdentifierCV'] = ""
@@ -183,13 +183,13 @@ print("AllocationTimeframeStart")
 outdf['AllocationTimeframeStart'] = df_DM['in_AllocationTimeframeStart']  # See preprocessing
 
 print("AllocationTypeCV")
-outdf['AllocationTypeCV'] = df_DM.apply(lambda row: assignAllocationTypeCV(row['claim_char']), axis=1)
+outdf['AllocationTypeCV'] = df_DM.apply(lambda row: assignAllocationTypeCV(row['in_AllocationTypeCV']), axis=1)
 
 print("AllocationVolume_AF")
 outdf['AllocationVolume_AF'] = df_DM["in_AllocationVolume_AF"]  # See preprocessing
 
 print("BeneficialUseCategory")
-outdf['BeneficialUseCategory'] = df_DM.apply(lambda row: assignBenUseCategory(row['use_code_description']), axis=1)
+outdf['BeneficialUseCategory'] = df_DM.apply(lambda row: assignBenUseCategory(row['in_BeneficialUseCategory']), axis=1)
 
 print("CommunityWaterSupplySystem")
 outdf['CommunityWaterSupplySystem'] = ""

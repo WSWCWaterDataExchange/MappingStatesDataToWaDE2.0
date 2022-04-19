@@ -1,7 +1,7 @@
 # OWRD Water Rights (Allocation amounts) Data Preparation for WaDE
 This read me details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [Oregon Water Resources Department (OWRD)](https://www.oregon.gov/OWRD/access_Data/Pages/Data.aspx), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined way that allows regional analysis to inform planning purposes.  WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
-## Overview of Data Utilized
+## Overview of Source Data Utilized
 The following data was used for water rights...
 
 - [**Oregon Access Data Maps.**](https://www.oregon.gov/OWRD/access_Data/Pages/Data.aspx)  The data used here were downloaded from the **"Statewide Water Right Spatial Data with Metadata"**, which contained spatial data for Points of Diversions (PODs) and Points of Use (POUs) in a shapefile format.  Data was imported into [ArcGIS PRO](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview), then exported table into csv file format.
@@ -10,6 +10,10 @@ The following data was used for water rights...
 
 From the available state agency data, the following input files were created, which were used as input to the Python codes that prepares WaDE 2.0 input files.  Input files used are as follows...
  - ORwr_v_pod_public_input.csv
+
+ ## Storage for WaDE 2.0 Source and Processed Water Data
+The 1) raw input data shared by the state / state agency / data provdier (excel, csv, shapefiles,PDF, etc), & the 2) processed input data into CSV files ready to load into WaDE database, can both be found within the WaDE spondered Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+- Oregon Allocation Data: https://drive.google.com/drive/folders/16L4vA4qCP52wM8LbxAioJFhVUCl8WHME?usp=sharing
 
 
 ## Summary of Data Prep
