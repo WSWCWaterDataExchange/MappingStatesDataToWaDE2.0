@@ -14,7 +14,7 @@ import pandas as pd
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir="C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Colorado/WaterAllocation"
+workingDir = "G:/Shared drives/WaDE Data/Colorado/WaterAllocation"  # Specific to my machine, will need to change.
 os.chdir(workingDir)
 
 #WaDE columns

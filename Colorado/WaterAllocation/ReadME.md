@@ -4,7 +4,7 @@
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [Colorado Division of Water Resources (CDWR)](https://dwr.colorado.gov/about-us/contact-us/denver-office), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 
-## Overview of Data Utilized
+## Overview of Source Data Utilized
 The following data was used for water allocations...
 
 - [**DWR Water Right - Net Amounts**](https://data.colorado.gov/Water/DWR-Water-Right-Net-Amounts/acsg-f33s/data) data files for surface and groundwater.
@@ -12,6 +12,12 @@ The following data was used for water allocations...
 
 One unique files was created to be used as input.  Input files used are as follows...
 - DWR_Water_Right_-_Net_Amounts_input.csv.
+
+
+ ## Storage for WaDE 2.0 Source and Processed Water Data
+The 1) raw input data shared by the state / state agency / data provdier (excel, csv, shapefiles,PDF, etc), & the 2) processed input data into CSV files ready to load into WaDE database, can both be found within the WaDE spondered Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+- Colorado Allocation Data: https://drive.google.com/drive/folders/1-4_iFyn5rrz6_paiUyZ8UXKSVRb0jkse?usp=sharing
+
 
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share CDWR's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *[CO_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Colorado/WaterAllocation/CO_Allocation%20Schema%20Mapping_WaDEQA.xlsx)*.  Seven executable code files were used to extract the CDWR's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those Seven code files are as follows...
