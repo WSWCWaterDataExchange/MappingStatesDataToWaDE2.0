@@ -2,14 +2,14 @@
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [Utah Division of Water Rights (UDWRi)](https://waterrights.utah.gov/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 
-## Overview of Data Utilized
+## Overview of Source Data Utilized
 The following data was used for water allocations...
 
 - **Utah Points of Diversion (POD)** data files for surface and groundwater were downloaded from the Utah SGID services: https://opendata.gis.utah.gov/datasets/utahDNR::utah-points-of-diversion/explore?showTable=true
-- **Utah Plac eof Use* (POU)** data files were downloaded from the Utah SGID services: https://opendata.gis.utah.gov/datasets/utahDNR::utah-place-of-use/explore
+- **Utah Place of Use* (POU)** data files were downloaded from the Utah SGID services: https://opendata.gis.utah.gov/datasets/utahDNR::utah-place-of-use/explore
 - **Utility Data & Information** related to POD water rights were downloaded from the PUBDUMP Database table dump Utility: https://www.waterrights.utah.gov/cgi-bin/pubdump.exe?SECURITYKEY=wrt2012access&DUMP_TYPE=DUMP_TAB&DBNAME=WRDB&DBTABLE=WATER_MASTER&Key=New+Table
 
-Seven unique files were created to be used as input.  Input files used are as follows...
+Six unique files were created to be used as input.  Input files used are as follows...
 - PointsOfDiversion_input.csv.  Contains POD data.
 - Utah_Place_of_Use_input.csv.  Contains POU data.
 - WRCHEX_WATER_MASTER.csv.  Contains water right related data.
@@ -18,12 +18,12 @@ Seven unique files were created to be used as input.  Input files used are as fo
 - WTRUSE_POWER.csv.  Contains power utility information related to water rights.
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
-The 1) raw input data shared by the state / state agency / data provdier (excel, csv, shapefiles,PDF, etc), & the 2) processed input data into CSV files ready to load into WaDE database, can both be found within the WaDE spondered Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
 - Utah Allocation Data: https://drive.google.com/drive/folders/1-7c1zFWiz_KISKEOFEaiq1DRaJ5BuAn0?usp=sharing
 
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share UDWRi's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *[UT_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Utah/WaterAllocation/UT_Allocation%20Schema%20Mapping_WaDEQA.xlsx)*.  Seven executable code files were used to extract the UDWRi's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those Seven code files are as follows...
+The following text summarizes the process used by the WaDE staff to prepare and share UDWRi's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *[UT_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Utah/WaterAllocation/UT_Allocation%20Schema%20Mapping_WaDEQA.xlsx)*.  Eight executable code files were used to extract the UDWRi's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(AllocationAmounts_facts)* is depended on the previous files.
 
 - 0_PreProcessUtahAllocationData.ipynb
 - 1_UTwr_Methods.py
@@ -155,7 +155,7 @@ Purpose: generate a list of water sources specific to a water right.
 
 #### Outputs:
 - waterSources.csv
-- watersources_missing.csv (error check only)
+- watersources_missing.xlsx (error check only)
 
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
@@ -190,7 +190,7 @@ Purpose: generate a list of sites information.
 #### Outputs:
 - sites.csv
 - waterSources.csv
-- sites_missing.csv (error check only)
+- sites_missing.xlsx (error check only)
 
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
@@ -232,7 +232,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 
 #### Outputs:
 - waterallocations.csv
-- waterallocations_missing.csv (error check only)
+- waterallocations_missing.xlsx (error check only)
 
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
