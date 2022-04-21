@@ -1,8 +1,7 @@
 # Date Updated: 04/18/2022
 # Author: Ryan James
 # Purpose: To extract UT allocation use information and population dataframe WaDEQA 2.0.
-#         1) Simple creation of working dataframe (df), with output dataframe (outdf).
-#         2) Drop all nulls before combining duplicate rows on NativeID.
+
 
 # Needed Libraries
 ############################################################################
@@ -90,37 +89,12 @@ def retrieveSiteUUID(colrowValue):
             outList = ''
     return outList
 
-# For creating BeneficialUseCategory
-benUseDict = {
-    "I" : "Irrigation",
-    "S" : "Stockwatering",
-    "D" : "Domestic",
-    "M" : "Municipal",
-    "X" : "Mining",
-    "P" : "Power",
-    "O" : "Other"}
-def assignBenUseCategory(colrowValue):
-    if colrowValue == "" or pd.isnull(colrowValue):
-        outList = "Unspecified"
-    else:
-        outList = ",".join(benUseDict[inx] for inx in list(str(colrowValue)))
-    return outList
-
 # For creating AllocationOwner
 def assignAllocationOwner(colrowValue):
     if colrowValue == "" or pd.isnull(colrowValue):
         outList = "Unspecified"
     else:
         outList = colrowValue.strip()
-    return outList
-
-# For creating GeneratedPowerCapacityMW
-def assignGeneratedPowerCapacityMW(colrowValue):
-    if colrowValue == "" or pd.isnull(colrowValue):
-        outList = ""
-    else:
-        val = float(colrowValue)/1000
-        outList = float(val)
     return outList
 
 
@@ -197,7 +171,7 @@ print("AllocationVolume_AF")
 outdf['AllocationVolume_AF'] = df_DM['in_AllocationVolume_AF']  # See preprocessing
 
 print("BeneficialUseCategory")
-outdf['BeneficialUseCategory'] = df_DM.apply(lambda row: assignBenUseCategory(row['in_BeneficialUseCategory']), axis=1)  # See preprocessing
+outdf['BeneficialUseCategory'] = df_DM['in_BeneficialUseCategory']  # See preprocessing
 
 print("CommunityWaterSupplySystem")
 outdf['CommunityWaterSupplySystem'] = ""

@@ -1,8 +1,6 @@
 # Date Updated: 03/24/2022
 # Purpose: To extract UT site use information and population dataframe for WaDEQA 2.0.
-# Notes: 1) Have to convert from epsg:26912 - to - epsg:4326 in order for lat and long to work in WaDE 2.0.
-#        2) Transformer from pyproj is incredibly inefficient.  Did discover trick of preloading necessary coord systems.
-#        3) Large files, better to use the '.apply() lambda row' method with a few custom functions, rather than a 'for' loop.
+# Notes: N/A
 
 
 # Needed Libraries

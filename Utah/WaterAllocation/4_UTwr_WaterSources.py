@@ -1,6 +1,6 @@
 # Date Updated: 03/24/2022
 # Purpose: To extract UT water source use information and population dataframe for WaDE_QA 2.0.
-# Notes: 1) Used dictionary for 'WaterSourceTypeCV'.
+# Notes: N/A
 
 
 # Needed Libraries

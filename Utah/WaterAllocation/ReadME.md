@@ -6,12 +6,12 @@ This readme details the process that was applied by the staff of the [Western St
 The following data was used for water allocations...
 
 - **Utah Points of Diversion (POD)** data files for surface and groundwater were downloaded from the Utah SGID services: https://opendata.gis.utah.gov/datasets/utahDNR::utah-points-of-diversion/explore?showTable=true
-- **Utah Place of Use* (POU)** data files were downloaded from the Utah SGID services: https://opendata.gis.utah.gov/datasets/utahDNR::utah-place-of-use/explore
+- **PlaceOfUseService** data files were downloaded from the Utah SGID services: https://opendata.gis.utah.gov/datasets/utahDNR::placeofuseservice/about
 - **Utility Data & Information** related to POD water rights were downloaded from the PUBDUMP Database table dump Utility: https://www.waterrights.utah.gov/cgi-bin/pubdump.exe?SECURITYKEY=wrt2012access&DUMP_TYPE=DUMP_TAB&DBNAME=WRDB&DBTABLE=WATER_MASTER&Key=New+Table
 
 Six unique files were created to be used as input.  Input files used are as follows...
 - PointsOfDiversion_input.csv.  Contains POD data.
-- Utah_Place_of_Use_input.csv.  Contains POU data.
+- PlaceOfUseService_input.csv.  Contains POU data.
 - WRCHEX_WATER_MASTER.csv.  Contains water right related data.
 - IRRIGATION_MASTER.csv.  Contains start and end date data for irrigation related to water rights. 
 - WTRUSE_MUNICIPAL.csv.  Contains community id related to water rights information.
@@ -200,7 +200,7 @@ Purpose: generate a list of sites information.
     - *Latitude* = **Latitude**.
     - *Longitude* = **Longitude**.
     - *SiteName* = **SOURCE**, Unspecified if not given.
-    - *SiteNativeID* = **OBJECTID**.
+    - *SiteNativeID* = **OBJECTID** for POD data, and **RECORD_ID** for POU data.
     - *SiteTypeCV* = *in_SiteTypeCV*, see *0_PreProcessUtahAllocationData.ipynb* for specifics.
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *SiteNativeID*, *SiteName*, *SiteTypeCV*, *Longitude* & *Latitude* fields.
 - Assign site UUID identifier to each (unique) row.
