@@ -14,13 +14,13 @@ One unique files was created to be used as input.  Input files used are as follo
 - DWR_Water_Right_-_Net_Amounts_input.csv.
 
 
- ## Storage for WaDE 2.0 Source and Processed Water Data
-The 1) raw input data shared by the state / state agency / data provdier (excel, csv, shapefiles,PDF, etc), & the 2) processed input data into CSV files ready to load into WaDE database, can both be found within the WaDE spondered Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+## Storage for WaDE 2.0 Source and Processed Water Data
+The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
 - Colorado Allocation Data: https://drive.google.com/drive/folders/1-4_iFyn5rrz6_paiUyZ8UXKSVRb0jkse?usp=sharing
 
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share CDWR's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *[CO_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Colorado/WaterAllocation/CO_Allocation%20Schema%20Mapping_WaDEQA.xlsx)*.  Seven executable code files were used to extract the CDWR's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those Seven code files are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share CDWR's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *[CO_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Colorado/WaterAllocation/CO_Allocation%20Schema%20Mapping_WaDEQA.xlsx)*.  Eight executable code files were used to extract the CDWR's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.
 
 - 0_PreProcessColoradoAllocationData.ipynb
 - 1_COwr_Methods.py
@@ -37,7 +37,7 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 Purpose: Pre-process the input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
-- DWR_Water_Right_-_Net_Amounts_input.csv.
+- DWR_Water_Right_-_Net_Amounts_input.csv
 
 #### Outputs:
  - P_ColoradoMaster.csv
@@ -147,12 +147,12 @@ Purpose: generate a list of water sources specific to a water right.
 
 #### Outputs:
 - waterSources.csv
-- watersources_missing.csv (error check only)
+- watersources_missing.xlsx (error check only)
 
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign agency info to the *WaDE WaterSources* specific columns.  See *CO_Allocation Schema Mapping_WaDEQA.xlsx* for specific details.  Items of note are as follows...
+- Assign agency info to the *WaDE WaterSources* specific columns.  See *[CO_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Colorado/WaterAllocation/CO_Allocation%20Schema%20Mapping_WaDEQA.xlsx)* for specific details.  Items of note are as follows...
     - WaDE *WaterSourceName* = *input_WaterSourceName*, see *0_PreProcessColoradoAllocationData.ipynb* for specifics.
     - WaDE *WaterSourceNativeID* = **GNIS ID** input field.
     - WaDE *WaterSourceTypeCV* = *input_WaterSourceTypeCV*, see *0_PreProcessColoradoAllocationData.ipynb* for specifics.
@@ -182,12 +182,12 @@ Purpose: generate a list of sites information.
 #### Outputs:
 - sites.csv
 - waterSources.csv
-- sites_missing.csv (error check only)
+- sites_missing.xlsx (error check only)
 
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
-- Assign agency info to the *WaDE Site* specific columns.  See *CO_Allocation Schema Mapping_WaDEQA.xlsx* for specific details.  Items of note are as follows...
+- Assign agency info to the *WaDE Site* specific columns.  See *[CO_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Colorado/WaterAllocation/CO_Allocation%20Schema%20Mapping_WaDEQA.xlsx)* for specific details.  Items of note are as follows...
     - Extract *WaterSourceUUID* from waterSources.csv input csv file. See code for specific implementation of extraction.
     - WaDE *CoordinateMethodCV* = **Location Accuracy** input field.
     - WaDE *County* = **County** input field.
@@ -219,19 +219,18 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 
 #### Inputs:
 - P_ColoradoMaster.csv
-- methods.csv
 - variables.csv
 - organizations.csv
 - sites.csv
 
 #### Outputs:
 - waterallocations.csv
-- waterallocations_missing.csv (error check only)
+- waterallocations_missing.xlsx (error check only)
 
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
-- Assign agency info to the *WaDE Water Allocations* specific columns.  See *CO_Allocation Schema Mapping_WaDEQA.xlsx* for specific details.  Items of note are as follows...
+- Assign agency info to the *WaDE Water Allocations* specific columns.  See *[CO_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Colorado/WaterAllocation/CO_Allocation%20Schema%20Mapping_WaDEQA.xlsx)* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - WaDE *AllocationFlow_CFS* = *in_AllocationFlow_CFS*, see *0_PreProcessColoradoAllocationData.ipynb* for specifics.
     - WaDE *AllocationNativeID* = *in_AllocationNativeID*, see *0_PreProcessColoradoAllocationData.ipynb* for specifics.
