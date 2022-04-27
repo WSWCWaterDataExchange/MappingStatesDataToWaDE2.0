@@ -1,7 +1,8 @@
 # TWDB Site Specific Data Preparation for WaDE
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting site specific time series water data made available by the [Texas Water Development Board (TWDB)](https://www.twdb.texas.gov/index.asp), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
-## Overview of Data Utilized
+
+## Overview of Source Data Utilized
 The following data was used for timeseries site specific water data...
 
 - [Public Water Systems - Historical](https://www.twdb.texas.gov/waterplanning/waterusesurvey/estimates/index.asp) time series data.  Had to download each region area (A-P) individualy and combine into one workable file.
@@ -14,6 +15,11 @@ Unique files were created, one used by the WSWC staff to understand the availabl
  - PWS_Export.shp
  - 20220106 PWS-SurveyNO bridge table.csv
 
+## Storage for WaDE 2.0 Source and Processed Water Data
+The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+- Texas Site Specific Data: https://drive.google.com/drive/folders/1Fg2_9rkYnplhUw64oNwrZDWMo3mDAI9f?usp=sharing
+
+
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share TWDB's site specific time series water data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *TX_SiteSpecificAmounts Schema Mapping to WaDE_QA.xlsx*.  Six executable code files were used to extract the state agency's site specific time series data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(SiteSpecificAmounts)* is dependent on the previous files.  Those six code files are as follows...
 
@@ -25,7 +31,6 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 - 5_TXss_Sites.py
 - 6_TXss_SiteSpecificAmounts_fact.py
 - 7_TXss_PODSiteToPOUSiteRelationships.py
-
 
 
 ***

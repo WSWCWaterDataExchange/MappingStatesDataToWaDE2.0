@@ -19,7 +19,7 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Texas/SiteSpecificAmounts"
+workingDir = "G:/Shared drives/WaDE Data/Texas/SiteSpecificAmounts"
 os.chdir(workingDir)
 M_fileInput = "RawinputData/P_MasterTXSiteSpecific.csv"
 variables_fileInput = "ProcessedInputData/variables.csv"

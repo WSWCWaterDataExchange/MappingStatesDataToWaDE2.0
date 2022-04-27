@@ -20,11 +20,11 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Texas/SiteSpecificAmounts"
+workingDir = "G:/Shared drives/WaDE Data/Texas/SiteSpecificAmounts"
 os.chdir(workingDir)
-fileInput = "RawinputData/P_MasterTXSiteSpecific.csv"
+fileInput = "RawInputData/P_MasterTXSiteSpecific.csv"
 df = pd.read_csv(fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
-fileInput_shape = "RawinputData/P_txSSGeometry.csv"
+fileInput_shape = "RawInputData/P_txSSGeometry.csv"
 dfshape = pd.read_csv(fileInput_shape)
 
 watersources_fileInput = "ProcessedInputData/watersources.csv" # watersource input file

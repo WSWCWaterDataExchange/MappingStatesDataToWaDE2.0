@@ -19,9 +19,9 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Texas/SiteSpecificAmounts"
+workingDir = "G:/Shared drives/WaDE Data/Texas/SiteSpecificAmounts"
 os.chdir(workingDir)
-fileInput = "RawinputData/P_MasterTXSiteSpecific.csv"
+fileInput = "RawInputData/P_MasterTXSiteSpecific.csv"
 df = pd.read_csv(fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
 
 #WaDE columns
