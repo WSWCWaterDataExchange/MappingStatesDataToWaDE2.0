@@ -1,6 +1,6 @@
-# Date Created: 08/10/2021
+# Date Created: 05/02/2022
 # Author: Ryan James (WSWC)
-# Purpose: To create NE agg reporting unit information and populate a dataframe for WaDEQA 2.0.
+# Purpose: To create NE ag reporting unit information and populate a dataframe for WaDEQA 2.0.
 # Notes:
 
 
@@ -20,11 +20,11 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Nebraska/AggregatedAmounts"
+workingDir = "G:/Shared drives/WaDE Data/Nebraska/AggregatedAmounts"
 os.chdir(workingDir)
-fileInput = "RawinputData/P_neAggMaster.csv"
-fileInput_shape = "RawinputData/P_neAggGeometry.csv"
+fileInput = "RawinputData/P_neAgMaster.csv"
 df = pd.read_csv(fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
+fileInput_shape = "RawinputData/P_neAgGeometry.csv"
 dfshape = pd.read_csv(fileInput_shape)
 
 columnslist =[
@@ -43,7 +43,7 @@ columnslist =[
 ############################################################################
 
 # For Creating Geometry
-Geometrydict = pd.Series(dfshape.in_Geomerty.values, index = dfshape.in_ReportingUnitName).to_dict()
+Geometrydict = pd.Series(dfshape.in_Geomerty.values, index = dfshape.in_ReportingUnitNativeID).to_dict()
 def retrieveGeometry(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = ''
@@ -89,10 +89,7 @@ print("StateCV")
 outdf['StateCV'] = "NE"
 
 print("Geometry")
-outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['in_ReportingUnitName']), axis=1)  # See pre-processing.
-
-print("Resetting Index")
-outdf.reset_index()
+outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['in_ReportingUnitNativeID']), axis=1)  # See pre-processing.
 
 #####################################
 # Dropping duplicate
@@ -101,21 +98,15 @@ outdf = outdf.drop_duplicates(subset=['ReportingUnitName', 'ReportingUnitNativeI
 outdf = outdf.reset_index(drop=True)
 ######################################
 
-print("ReportingUnitUUID") # has to be one of the last.
-dftemp = pd.DataFrame(index=outdf.index)
-dftemp["Count"] = range(1, len(dftemp.index) + 1)
-outdf['ReportingUnitUUID'] = dftemp.apply(lambda row: assignReportingUnitID(row['Count']), axis=1)
+print("Resetting Index")
+outdf.reset_index()
 
 
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-
-dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
-dfpurge = dfpurge.assign(ReasonRemoved='')
-
-# ReportingUnitUUID
-outdf, dfpurge = TestErrorFunctions.ReportingUnitUUID_RU_Check(outdf, dfpurge)
+purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # EPSGCodeCV
 outdf, dfpurge = TestErrorFunctions.EPSGCodeCV_RU_Check(outdf, dfpurge)
@@ -142,15 +133,26 @@ outdf, dfpurge = TestErrorFunctions.StateCV_RU_Check(outdf, dfpurge)
 # ???? How to check for geometry datatype
 
 
+############################################################################
+print("Assign ReportingUnitUUID") # has to be one of the last.
+outdf = outdf.reset_index(drop=True)
+dftemp = pd.DataFrame(index=outdf.index)
+dftemp["Count"] = range(1, len(dftemp.index) + 1)
+outdf['ReportingUnitUUID'] = dftemp.apply(lambda row: assignReportingUnitID(row['Count']), axis=1)
+
+# Error Check ReportingUnitUUID
+outdf, dfpurge = TestErrorFunctions.ReportingUnitUUID_RU_Check(outdf, dfpurge)
+
+
 # Export to new csv
 ############################################################################
-print("Exporting dataframe outdf to csv...")
+print("Exporting outdf and dfpurge dataframes...")
 
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/reportingunits.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
-    dfpurge.to_csv('ProcessedInputData/reportingunits_missing.csv', index=False)
+    dfpurge.to_excel('ProcessedInputData/reportingunits_missing.xlsx', index=False)
 
 print("Done.")

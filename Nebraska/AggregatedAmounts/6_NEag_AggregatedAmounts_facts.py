@@ -1,6 +1,6 @@
-# Date Created: 08/10/2021
+# Date Created: 05/02/2022
 # Author: Ryan James (WSWC)
-# Purpose: To create NE agg aggregated information and populate a dataframe WaDEQA 2.0.
+# Purpose: To create NE ag aggregated information and populate a dataframe WaDEQA 2.0.
 #          1) Simple creation of working dataframe (df), with output dataframe (outdf).
 #          2) Drop all nulls before combining duplicate rows on NativeID.
 
@@ -21,9 +21,9 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Nebraska/AggregatedAmounts"
+workingDir = "G:/Shared drives/WaDE Data/Nebraska/AggregatedAmounts"
 os.chdir(workingDir)
-M_fileInput = "RawinputData/P_neAggMaster.csv"
+M_fileInput = "RawinputData/P_neAgMaster.csv"
 method_fileInput = "ProcessedInputData/methods.csv"
 variables_fileInput = "ProcessedInputData/variables.csv"
 watersources_fileInput = "ProcessedInputData/watersources.csv"
@@ -67,19 +67,6 @@ columnslist = [
 # Custom Functions
 ############################################################################
 
-# For Creating MethodUUID
-MethodUUIDdict = pd.Series(df_method.MethodUUID.values, index = df_method.MethodTypeCV).to_dict()
-def retrieveMethodUUID(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outList = ''
-    else:
-        String1 = colrowValue
-        try:
-            outList = MethodUUIDdict[String1]
-        except:
-            outList = ''
-    return outList
-
 # For Creating VariableSpecificUUID
 VariableSpecificUUIDdict = pd.Series(df_variables.VariableSpecificUUID.values, index = df_variables.VariableSpecificCV).to_dict()
 def retrieveVariableSpecificUUID(colrowValue):
@@ -93,7 +80,7 @@ def retrieveVariableSpecificUUID(colrowValue):
             outList = ''
     return outList
 
-# For Creating ReportingunitUUID
+# For Creating ReportingUnitUUID
 ReportingUnitUUIDdict = pd.Series(df_reportingunits.ReportingUnitUUID.values, index = df_reportingunits.ReportingUnitNativeID).to_dict()
 def retrieveReportingUnits(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
@@ -126,10 +113,10 @@ print("Populating dataframe outdf...")
 outdf = pd.DataFrame(index=df_DM.index, columns=columnslist)  # The output dataframe
 
 print("MethodUUID")
-outdf['MethodUUID'] = df_DM.apply(lambda row: retrieveMethodUUID(row['in_MethodTypeCV']), axis=1)
+outdf['MethodUUID'] = "NEag_M1"
 
 print("OrganizationUUID")
-outdf['OrganizationUUID'] = "NEDNR"
+outdf['OrganizationUUID'] = "NEag_O1"
 
 print("ReportingUnitUUID")  # Using SiteNativeID to identify ID
 outdf['ReportingUnitUUID'] = df_DM.apply(lambda row: retrieveReportingUnits(row['in_ReportingUnitNativeID']), axis=1)
@@ -144,7 +131,7 @@ print("Amount")
 outdf['Amount'] = df_DM['in_Amount']
 
 print("BeneficialUseCategory")
-outdf['BeneficialUseCategory'] = "Combined"
+outdf['BeneficialUseCategory'] = df_DM['in_BeneficialUseCategory']
 
 print("CommunityWaterSupplySystem")
 outdf['CommunityWaterSupplySystem'] = ""
@@ -156,7 +143,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = "07/26/2021"
+outdf['DataPublicationDate'] = "05/02/2022"
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""
@@ -208,15 +195,14 @@ outdf = outdf.replace(np.nan, '')  # Replaces NaN values with blank.
 # ############################################################################
 print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to upload data to QA here.
 
-outdf = outdf.drop_duplicates().reset_index(drop=True) # Dropping duplicate entries (if any).
+outdf = outdf.replace(np.nan, "").drop_duplicates().reset_index(drop=True)
 
 
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-
-dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
-dfpurge = dfpurge.assign(ReasonRemoved='')
+purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # MethodUUID
 outdf, dfpurge = TestErrorFunctions.MethodUUID_AG_Check(outdf, dfpurge)
@@ -296,13 +282,13 @@ outdf, dfpurge = TestErrorFunctions.TimeframeStart_AG_Check(outdf, dfpurge)
 
 # Export to new csv
 ############################################################################
-print("Exporting dataframe outdf100 to csv...")
+print("Exporting outdf and dfpurge dataframes...")
 
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/aggregatedamounts.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
-    dfpurge.to_csv('ProcessedInputData/aggregatedamounts_missing.csv', index=False)
+    dfpurge.to_excel('ProcessedInputData/aggregatedamounts_missing.xlsx', index=False)
 
 print("Done.")

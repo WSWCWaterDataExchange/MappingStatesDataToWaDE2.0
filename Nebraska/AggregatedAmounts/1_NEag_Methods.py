@@ -1,6 +1,6 @@
-# Date Created: 08/10/2021
+# Date Created: 05/02/2022
 # Author: Ryan James (WSWC)
-# Purpose: To create NE agg methods use information and populate dataframe for WaDE_QA 2.0.
+# Purpose: To create NE ag methods use information and populate dataframe for WaDE_QA 2.0.
 # Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
 
 
@@ -13,8 +13,8 @@ import pandas as pd
 
 # Inputs
 ############################################################################
-print("Reading inputs...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Nebraska/AggregatedAmounts"
+# Working Directory
+workingDir = "G:/Shared drives/WaDE Data/Nebraska/AggregatedAmounts"
 os.chdir(workingDir)
 
 #WaDE columns
@@ -34,11 +34,11 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
-#outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
+outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.MethodUUID = ["NEDNR_Aggregate Modeled", "NEDNR_Aggregate Estimated"]
+outdf.MethodUUID = "NEag_M1"
 
-outdf.ApplicableResourceTypeCV = ["Surface Ground Water", "Surface Ground Water"]
+outdf.ApplicableResourceTypeCV = "Surface Ground Water"
 
 outdf.DataConfidenceValue = ""
 
@@ -46,14 +46,13 @@ outdf.DataQualityValueCV = ""
 
 outdf.DataCoverageValue = ""
 
-outdf.MethodDescription = ["Surface and groundwater water conditions.",
-                           "Surface and groundwater water conditions."]
+outdf.MethodDescription = "Surface and groundwater water conditions."
 
-outdf.MethodName = ["Insight", "Insight"]
+outdf.MethodName = "Insight"
 
-outdf.MethodNEMILink = ["https://nednr.nebraska.gov/insight/about.html", "https://nednr.nebraska.gov/insight/about.html"]
+outdf.MethodNEMILink = "https://nednr.nebraska.gov/insight/about.html"
 
-outdf.MethodTypeCV = ['Modeled', 'Estimated']
+outdf.MethodTypeCV = "Modeled"
 
 
 # Check required fields are not null

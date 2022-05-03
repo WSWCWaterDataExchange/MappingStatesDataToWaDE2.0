@@ -1,6 +1,6 @@
-# Date Created: 08/10/2021
+# Date Created: 05/02/2022
 # Author: Ryan James (WSWC)
-# Purpose: To create NE agg variable use information and populate a dataframe for WaDE_QA 2.0.
+# Purpose: To create NE ag variable use information and populate a dataframe for WaDE_QA 2.0.
 # Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
 
 
@@ -14,7 +14,7 @@ import pandas as pd
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Nebraska/AggregatedAmounts"
+workingDir = "G:/Shared drives/WaDE Data/Nebraska/AggregatedAmounts"
 os.chdir(workingDir)
 
 #WaDE columns
@@ -44,30 +44,33 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 # outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = ["NE_Annual Groundwater Supply",
-                              "NE_Annual Surface Water Supply",
-                              "NE_Annual Groundwater Demand",
-                              "NE_Annual Surface Water Demand",
-                              "NE_Total Non-Consumptive Demand",
-                              "NE_Net Surface Water Loss Demand"]
+outdf.VariableSpecificUUID = ["NEag_V1",
+                              "NEag_V2",
+                              "NEag_V3",
+                              "NEag_V4",
+                              "NEag_V5",
+                              "NEag_V6",
+                              "NEag_V7"]
 
-outdf.VariableSpecificCV = ["Annual Groundwater Supply",
-                            "Annual Surface Water Supply",
-                            "Annual Groundwater Demand",
-                            "Annual Surface Water Demand",
-                            "Total Non-Consumptive Demand",
-                            "Net Surface Water Loss Demand"]
-
-outdf.VariableCV = ["Available Water Supply",
-                    "Available Water Supply",
-                    "Demand",
-                    "Demand",
-                    "Demand",
+outdf.VariableCV = ["Depletion",
+                    "Depletion",
+                    "Consumptive Use",
+                    "Consumptive Use",
+                    "Consumptive Use",
+                    "Consumptive Use",
                     "Demand"]
+
+outdf.VariableSpecificCV = ["Depletion_Annual_Total_Surface Water",
+                            "Depletion_Annual_Total_Groundwater",
+                            "Consumptive Use_Annual_Total_Groundwater",
+                            "Consumptive Use_Annual_Irrigation_Groundwater",
+                            "Consumptive Use_Annual_Municipal_Groundwater",
+                            "Consumptive Use_Annual_Industrial_Groundwater",
+                            "Demand_Annual_Total_Surface Water"]
 
 outdf.AggregationInterval = "1"
 
-outdf.AggregationIntervalUnitCV = "Year"
+outdf.AggregationIntervalUnitCV = "Annual"
 
 outdf.AggregationStatisticCV = "Cumulative"
 

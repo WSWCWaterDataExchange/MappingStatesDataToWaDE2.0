@@ -8,10 +8,14 @@ The following data was used for aggregated water budget...
 - **INSIGHT_FinalSubBasinData_20151102** csv file containing subbasin wide aggregated water supply and demand data and info and were obtained from the provided [Insight](https://nednr.nebraska.gov/insight/about.html) services.  Data used was for the years 1988-2012.
 - **Insight Shape Files** for both basin and subbasin aggregated water supply and demand ares, obtain from obtained from the provided [Insight](https://nednr.nebraska.gov/insight/about.html) services.
 
-
 From the above mentioned services, 2 unique files were used as input to the Python codes that prepare WaDE 2.0 input files.  Input files used are as follows...
  - INSIGHT_FinalBasinData_20151102_input.csv
  - INSIGHT_FinalSubBasinData_20151102_input.csv
+
+ ## Storage for WaDE 2.0 Source and Processed Water Data
+The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+- Nebraska Aggregated Time Series Data: https://drive.google.com/drive/folders/1Me_kk6HmZ4t4eU67j2ISXOnGbk_SQzGY?usp=sharing
+
 
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share NEDNR's aggregated water budget data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *NE_Aggregated Schema Mapping to WaDE_QA.xlsx*.  Six executable code files were used to extract the NEDNR's aggregated water budget data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(AggregatedAmounts_facts)* is dependent on the previous files.  Those six code files are as follows...
@@ -36,44 +40,44 @@ Purpose: Pre-process the Arizona input data files into one master file for simpl
 
 
 #### Outputs:
- - P_neAggMaster.csv
- - P_neAggGeometry.csv
+ - P_neAgMaster.csv
+ - P_neAgGeometry.csv
 
 #### Operation and Steps:
 - Read the basin, subbasin, and shape file input files and generate output dataframes for each.
 - For basin data...
-    - Split into 5 different temp dataframes for specific water source (see WaterSourceTypeCV), model (see MethodTypeCV) and variable (see VariableSpecificCV) types.
-    - *MethodTypeCV* = "Modeled" or "Estimated"
-    - *VariableSpecificCV* = "Annual Groundwater Supply", "Annual Surface Water Supply", "Annual Groundwater Demand", "Annual Surface Water Demand", "Total Non-Consumptive Demand", & "Net Surace Water Loss Demand".
-    - *WaterSourceTypeCV* = "Groundwater"
+    - Want to split the data into 7 different times frames based on water source (see WaterSourceTypeCV), variable (see VariableSpecificCV), and beneficial use (see BeneficialUseCategory) type.
+    - *VariableSpecificCV* = "Depletion_Annual_Total_Surface Water", "Depletion_Annual_Total_Groundwater", "Consumptive Use_Annual_Total_Groundwater", "Consumptive Use_Annual_Irrigation_Groundwater", "Consumptive Use_Annual_Municipal_Groundwater", "Consumptive Use_Annual_Industrial_Groundwater", "Demand_Annual_Total_Surface Water"
+    - *WaterSourceTypeCV* = "Groundwater" or *Surface Water* depending on *VariableSpecificCV*.
     - *ReportingUnitName* = **Basin**
     - *ReportingUnitNativeID* = **BasinID**
     - *ReportingUnitTypeCV* = "Basin"
     - *ReportYearCV* = **Year**
-    - *Amount* = **GWDP_Annual**, **SWDTotal_Annual**, **GWCTotal_Annual**, **SWDemandTotal_Annual**, **TotalNonConsumptiveUse_Annual**, & **NetSurfaceWaterLoss_Annual** depending on variable type.
+    - *BeneficialUseCategory* = "Total", "Irrigation", "Industrial", & "Municipal" depending on *VariableSpecificCV*.
+    - *Amount* = **SWDTotal_Annual**, **GWDP_Annual**, **GWCTotal_Annual**, **GWCIrrigation_Annual**, **GWCMunicipal_Annual**, **GWCIndustrial_Annual**, **SWDemandTotal_Annual** depending on *VariableSpecificCV*.
     - Concatenate each temp dataframe into one long basin out dataframe, *df_BasinOUT*.
 - For subbasin data...
-    - Split into 5 different temp dataframes for specific water source (see WaterSourceTypeCV), model (see MethodTypeCV) and variable (see VariableSpecificCV) types.
-    - *MethodTypeCV* = "Modeled" or "Estimated"
-    - *VariableSpecificCV* = "Annual Groundwater Supply", "Annual Surface Water Supply", "Annual Groundwater Demand", "Annual Surface Water Demand", "Total Non-Consumptive Demand", & "Net Surace Water Loss Demand".
-    - *WaterSourceTypeCV* = "Groundwater"
+    - Want to split the data into 7 different times frames based on water source (see WaterSourceTypeCV), variable (see VariableSpecificCV), and beneficial use (see BeneficialUseCategory) type.
+        - *VariableSpecificCV* = "Depletion_Annual_Total_Surface Water", "Depletion_Annual_Total_Groundwater", "Consumptive Use_Annual_Total_Groundwater", "Consumptive Use_Annual_Irrigation_Groundwater", "Consumptive Use_Annual_Municipal_Groundwater", "Consumptive Use_Annual_Industrial_Groundwater", "Demand_Annual_Total_Surface Water"
+    - *WaterSourceTypeCV* = "Groundwater" or *Surface Water* depending on *VariableSpecificCV*.
     - *ReportingUnitName* = **Basin**
     - *ReportingUnitNativeID* = **BasinID**
     - *ReportingUnitTypeCV* = "Subbasin"
     - *ReportYearCV* = **Year**
-    - *Amount* = **GWDP_Annual**, **SWDTotal_Annual**, **GWCTotal_Annual**, **SWDemandTotal_Annual**, **TotalNonConsumptiveUse_Annual**, & **NetSurfaceWaterLoss_Annual** depending on variable type.
+    - *BeneficialUseCategory* = "Total", "Irrigation", "Industrial", & "Municipal" depending on *VariableSpecificCV*.
+    - *Amount* = **SWDTotal_Annual**, **GWDP_Annual**, **GWCTotal_Annual**, **GWCIrrigation_Annual**, **GWCMunicipal_Annual**, **GWCIndustrial_Annual**, **SWDemandTotal_Annual** depending on *VariableSpecificCV*.
     - Concatenate each temp dataframe into one long basin out dataframe, *df_SubbasinOUT*.
 - Concatenate *df_BasinOUT* & *df_SubbasinOUT* together to create one long output dataframe, *df_out*.
 - Generate WaDE specific field *WaterSourceTypeCV* fields.  Used to identify unique sources of water.
 - For Shapefile data...
     - Split into 2 different temp dataframes for specific for basin and subbasin types.
-    - *ReportingUnitName* = **Basin**
-    - *ReportingUnitNativeID* = **BID**
+    - *ReportingUnitName* = **Basin** & **Subbasin**
+    - *ReportingUnitNativeID* = **BID** & **SubID**
     - *ReportingUnitTypeCV* = "Basin" or "Subbasin"
     - *Geomerty* = **geometry**
     - Concatenate each basin and subbasin shapefile dataframe into one long out dataframe, *df_shape_out*.
 - Perform error check on output dataframes.
-- Export output dataframes *P_neAggMaster.csv* & *P_neAggGeometry.csv*.
+- Export output dataframes *P_neAgMaster.csv* & *P_neAgGeometry.csv*.
 
 
 
@@ -99,7 +103,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
-NEDNR_Aggregate Modeled | Surface Ground Water | Modeled
+NEag_M1 | Surface Ground Water | Modeled
 
 
 
@@ -125,7 +129,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV | VariableCV | VariableSpecificCV
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------
-NE_Annual Groundwater Supply | 1 | Year | AFY | Supply | Annual Groundwater Supply
+NEag_V1 | 1 | Annual | AFY | Depletion | Depletion_Annual_Total_Surface Water
 
 
 
@@ -151,7 +155,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName  | OrganizationWebsite
 ---------- | ---------- | ------------
-NEDNR | Nebraska Department of Natural Resources | https://dnr.nebraska.gov/contact
+NEag_O1 | Nebraska Department of Natural Resources | https://dnr.nebraska.gov/contact
 
 
 
@@ -160,7 +164,7 @@ NEDNR | Nebraska Department of Natural Resources | https://dnr.nebraska.gov/cont
 Purpose: generate a list of water sources specific to an aggregated water budget data area.
 
 #### Inputs:
-- P_neAggMaster.csv
+- P_neAgMaster.csv
 
 #### Outputs:
 - waterSources.csv
@@ -193,8 +197,8 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 Purpose: generate a list of polygon areas associated with the state agency specific area on aggregated water budget data.
 
 #### Inputs:
-- P_neAggMaster.csv
-- P_neAggGeometry.csv
+- P_neAgMaster.csv
+- P_neAgGeometry.csv
 
 #### Outputs:
 - reportingunits.csv
@@ -232,7 +236,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 Purpose: generate master sheet of state agency specified area aggregated water budget information to import into WaDE 2.0.
 
 #### Inputs:
-- P_neAggMaster.csv
+- P_neAgMaster.csv
 - methods.csv
 - variables.csv
 - organizations.csv
@@ -257,7 +261,7 @@ Purpose: generate master sheet of state agency specified area aggregated water b
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | OrganizationUUID | ReportingUnitUUID | VariableSpecificUUID | WaterSourceUUID | Amount | BeneficialUseCategory | ReportYearCV
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | -----------
-NEDNR_Aggregate Modeled | NEDNR | NEag_RU1 | NE_Annual Groundwater Supply | NEag_WS1 | 195533 | Combined | 1988
+NEag_M1 | NEag_O1 | NEag_RU1 | NEag_V1 | NEag_WS1 | 195533 | Total | 1988
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *aggregatedamounts_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID
