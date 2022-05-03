@@ -65,7 +65,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
-CO_SWSIModels | Surface Water | Modeled
+COag_M1 | Surface Water | Modeled
 
 
 ***
@@ -90,7 +90,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
 ---------- | ---------- | ------------ | ------------
-CO_Supply_1 | 1 | Year | AFY
+COag_V1 | 1 | Year | AFY
 
 
 ***
@@ -115,7 +115,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName  | OrganizationWebsite
 ---------- | ---------- | ------------
-CODWR | Colorado Division of Water Resources | https://dwr.colorado.gov/about-us/contact-us/denver-office
+COag_O1 | Colorado Division of Water Resources | https://dwr.colorado.gov/about-us/contact-us/denver-office
 
 
 ***

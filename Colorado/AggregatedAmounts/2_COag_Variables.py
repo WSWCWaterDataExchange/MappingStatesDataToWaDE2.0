@@ -1,4 +1,4 @@
-# Date Created: 10/07/2020
+# Date Created: 04/15/2022
 # Purpose: To create CO agg variable use information and populate a dataframe for WaDE_QA 2.0.
 # Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
 #        2) Special case of VariableCV and VariableSpecificCV.
@@ -7,9 +7,9 @@
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
@@ -38,7 +38,7 @@ columnslist = [
 # For creating VariableSpecificUUID
 def assignVariableSpecificUUID(colrowValue):
     string1 = str(colrowValue)
-    outstring = "CO_Supply_" + string1
+    outstring = "COag_V" + string1
     return outstring
 
 
@@ -49,9 +49,11 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 # outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificCV = ["ReservoirStorage", "ForecastedRunoff", "PrevMoStreamflow"]
+outdf.VariableSpecificCV = ["ReservoirStorage_Monthly_Unspecified_Surface Water",
+                            "ForecastedRunoff_Monthly_Unspecified_Surface Water",
+                            "PrevMoStreamflow_Monthly_Unspecified_Surface Water"]
 
-outdf.VariableCV = "Available Water Supply"
+outdf.VariableCV = ["ReservoirStorage", "ForecastedRunoff", "PrevMoStreamflow"]
 
 outdf.AggregationInterval = "1"
 

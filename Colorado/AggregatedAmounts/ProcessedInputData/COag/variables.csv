@@ -1,4 +1,4 @@
 VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
-CO_Supply_1,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Supply,ReservoirStorage
-CO_Supply_2,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Supply,ForecastedRunoff
-CO_Supply_3,1,Year,Cumulative,AFY,AFY,1,CalendarYear,Supply,PrevMoStreamflow
+COag_V1,1,Year,Cumulative,AFY,AFY,1,CalendarYear,ReservoirStorage,ReservoirStorage_Monthly_Unspecified_Surface Water
+COag_V2,1,Year,Cumulative,AFY,AFY,1,CalendarYear,ForecastedRunoff,ForecastedRunoff_Monthly_Unspecified_Surface Water
+COag_V3,1,Year,Cumulative,AFY,AFY,1,CalendarYear,PrevMoStreamflow,PrevMoStreamflow_Monthly_Unspecified_Surface Water
