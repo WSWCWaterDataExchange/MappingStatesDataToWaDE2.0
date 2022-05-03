@@ -1,13 +1,13 @@
-# Date Created: 06/25/2020
+# Date Updated: 05/03/2022
 # Purpose: To extract NM agg reporting unit information and population dataframe for WaDEQA 2.0.
 # Notes: N/A
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 # Custom Libraries
 ############################################################################
@@ -19,10 +19,12 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/NewMexico/AggregatedAmounts"
+workingDir = "G:/Shared drives/WaDE Data/NewMexico/AggregatedAmounts"
 os.chdir(workingDir)
-fileInput = "RawinputData/P_NMagg.csv"
+fileInput = "RawinputData/P_nmAgMaster.csv"
 df = pd.read_csv(fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
+fileInput_shape = "RawinputData/P_nmAgGeometry.csv"
+dfshape = pd.read_csv(fileInput_shape)
 
 columnslist =[
     "ReportingUnitUUID",
@@ -39,113 +41,72 @@ columnslist =[
 # Custom Functions
 ############################################################################
 
+# For Creating Geometry
+# using reporting unit name instead of native ID for NM
+Geometrydict = pd.Series(dfshape.in_Geomerty.values, index = dfshape.in_ReportingUnitName).to_dict()
+def retrieveGeometry(colrowValue):
+    if colrowValue == '' or pd.isnull(colrowValue):
+        outList = ''
+    else:
+        String1 = colrowValue.strip()
+        try:
+            outList = Geometrydict[String1]
+        except:
+            outList = ''
+    return outList
+
 # For creating SiteUUID
 def assignReportingUnitID(colrowValue):
     string1 = str(colrowValue)
     outstring = "NMag_RU" + string1
     return outstring
 
-# For creating ReportingUnitNativeID
-nameGEOIDDict = {
-"Bernalillo" : "35001",
-"Catron" : "35003",
-"Chaves" : "35005",
-"Cibola" : "35006",
-"Colfax" : "35007",
-"Curry" : "35009",
-"De Baca" : "35011",
-"Dona Ana" : "35013",
-"Eddy" : "35015",
-"Grant" : "35017",
-"Guadalupe" : "35019",
-"Harding" : "35021",
-"Hidalgo" : "35023",
-"Lea" : "35025",
-"Lincoln" : "35027",
-"Los Alamos" : "35028",
-"Luna" : "35029",
-"McKinley" : "35031",
-"Mora" : "35033",
-"Otero" : "35035",
-"Quay" : "35037",
-"Rio Arriba" : "35039",
-"Roosevelt" : "35041",
-"San Juan" : "35045",
-"San Miguel" : "35047",
-"Sandoval" : "35043",
-"Santa Fe" : "35049",
-"Sierra" : "35051",
-"Socorro" : "35053",
-"Taos" : "35055",
-"Torrance" : "35057",
-"Union" : "35059",
-"Valencia" : "35061"}
-def retrieveGEOID(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outList = colrowValue
-    else:
-        String1 = colrowValue
-        try:
-            outList = nameGEOIDDict[String1]
-        except:
-            outList = colrowValue
-    return outList
-
 
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-
 outdf = pd.DataFrame(columns=columnslist, index=df.index)
 
 print("EPSGCodeCV")
 outdf['EPSGCodeCV'] = "4326"
 
-print("Geometry")
-outdf['Geometry'] = df['Geometry']
-
 print("ReportingUnitName")
-outdf['ReportingUnitName'] = df['COUNTY']
+outdf['ReportingUnitName'] = df['in_ReportingUnitName']  # See pre-processing.
 
 print("ReportingUnitNativeID")
-outdf['ReportingUnitNativeID'] = outdf.apply(lambda row: retrieveGEOID(row['ReportingUnitName']), axis=1)
+outdf['ReportingUnitNativeID'] = df['in_ReportingUnitNativeID']  # See pre-processing.
 
 print("ReportingUnitProductVersion")
-outdf['ReportingUnitProductVersion'] = ''
+outdf['ReportingUnitProductVersion'] = ""
 
 print("ReportingUnitTypeCV")
-outdf['ReportingUnitTypeCV'] = "County"
+outdf['ReportingUnitTypeCV'] = df['in_ReportingUnitTypeCV']  # See pre-processing.
 
 print("ReportingUnitUpdateDate")
-outdf['ReportingUnitUpdateDate'] = ''
+outdf['ReportingUnitUpdateDate'] = ""
 
 print("StateCV")
 outdf['StateCV'] = "NM"
 
-print("Resetting Index")
-outdf.reset_index()
+print("Geometry")
+outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['in_ReportingUnitName']), axis=1)  # See pre-processing.
 
 #####################################
 # Dropping duplicate
-# filter the whole table based on a unique combination of ReportingUnitName
+# filter the whole table based on a unique combination of ReportingUnitName, ReportingUnitNativeID & ReportingUnitTypeCV
 outdf = outdf.drop_duplicates(subset=['ReportingUnitName', 'ReportingUnitNativeID', 'ReportingUnitTypeCV'])
 outdf = outdf.reset_index(drop=True)
 ######################################
 
-print("ReportingUnitUUID") # has to be one of the last.
-dftemp = pd.DataFrame(index=outdf.index)
-dftemp["Count"] = range(1, len(dftemp.index) + 1)
-outdf['ReportingUnitUUID'] = dftemp.apply(lambda row: assignReportingUnitID(row['Count']), axis=1)
+print("Resetting Index")
+outdf.reset_index()
 
 
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
-dfpurge = dfpurge.assign(ReasonRemoved='')
-
-# ReportingUnitUUID
-outdf, dfpurge = TestErrorFunctions.ReportingUnitUUID_RU_Check(outdf, dfpurge)
+purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # EPSGCodeCV
 outdf, dfpurge = TestErrorFunctions.EPSGCodeCV_RU_Check(outdf, dfpurge)
@@ -172,14 +133,26 @@ outdf, dfpurge = TestErrorFunctions.StateCV_RU_Check(outdf, dfpurge)
 # ???? How to check for geometry datatype
 
 
+############################################################################
+print("Assign ReportingUnitUUID") # has to be one of the last.
+outdf = outdf.reset_index(drop=True)
+dftemp = pd.DataFrame(index=outdf.index)
+dftemp["Count"] = range(1, len(dftemp.index) + 1)
+outdf['ReportingUnitUUID'] = dftemp.apply(lambda row: assignReportingUnitID(row['Count']), axis=1)
+
+# Error Check ReportingUnitUUID
+outdf, dfpurge = TestErrorFunctions.ReportingUnitUUID_RU_Check(outdf, dfpurge)
+
+
 # Export to new csv
 ############################################################################
-print("Exporting dataframe outdf to csv...")
+print("Exporting outdf and dfpurge dataframes...")
+
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/reportingunits.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
-    dfpurge.to_csv('ProcessedInputData/reportingunits_missing.csv', index=False)
+    dfpurge.to_excel('ProcessedInputData/reportingunits_missing.xlsx', index=False)
 
 print("Done.")

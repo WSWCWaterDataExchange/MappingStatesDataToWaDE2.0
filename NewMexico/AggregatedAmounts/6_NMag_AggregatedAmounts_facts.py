@@ -1,4 +1,4 @@
-# Date Created: 06/25/2020
+# Date Updated: 05/03/2022
 # Author: Ryan James
 # Purpose: To extract NM agg aggregated information and population dataframe WaDEQA 2.0.
 #         1) Simple creation of working dataframe (df), with output dataframe (outdf).
@@ -6,9 +6,9 @@
 
 # Needed Libraries
 ############################################################################
+import os
 import numpy as np
 import pandas as pd
-import os
 
 # Custom Libraries
 ############################################################################
@@ -20,16 +20,14 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/NewMexico/AggregatedAmounts"
+workingDir = "G:/Shared drives/WaDE Data/NewMexico/AggregatedAmounts"
 os.chdir(workingDir)
-M_fileInput = "RawinputData/P_NMagg.csv"
-method_fileInput = "ProcessedInputData/methods.csv"
+M_fileInput = "RawinputData/P_nmAgMaster.csv"
 variables_fileInput = "ProcessedInputData/variables.csv"
 watersources_fileInput = "ProcessedInputData/watersources.csv"
 reportingunits_fileInput = "ProcessedInputData/reportingunits.csv"
 
 df_DM = pd.read_csv(M_fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
-df_method = pd.read_csv(method_fileInput)  # Method dataframe
 df_variables = pd.read_csv(variables_fileInput)  # Variables dataframe
 df_watersources = pd.read_csv(watersources_fileInput)  # WaterSources dataframe
 df_reportingunits = pd.read_csv(reportingunits_fileInput)  # ReportingUnits dataframe
@@ -67,27 +65,42 @@ columnslist = [
 ############################################################################
 
 # For creating ReportingUnits
+ReportingUnitUUIDdict = pd.Series(df_reportingunits.ReportingUnitUUID.values, index = df_reportingunits.ReportingUnitNativeID).to_dict()
 def retrieveReportingUnits(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = ''
     else:
-        String1 = colrowValue.strip()
+        String1 = colrowValue
         try:
             outList = ReportingUnitUUIDdict[String1]
         except:
             outList = colrowValue
     return outList
 
+# For Creating VariableSpecificUUID
+VariableSpecificUUIDdict = pd.Series(df_variables.VariableSpecificUUID.values, index = df_variables.VariableSpecificCV).to_dict()
+def retrieveVariableSpecificUUID(colrowValue):
+    if colrowValue == '' or pd.isnull(colrowValue):
+        outList = ''
+    else:
+        String1 = colrowValue
+        try:
+            outList = VariableSpecificUUIDdict[String1]
+        except:
+            outList = ''
+    return outList
+
 # For creating WaterSourceUUID
+WaterSourceUUIDdict = pd.Series(df_watersources.WaterSourceUUID.values, index = df_watersources.WaterSourceNativeID).to_dict()
 def retrieveWaterSourceUUID(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = ''
     else:
         String1 = colrowValue.strip()
         try:
-            outList = waterSourceDict[String1]
+            outList = WaterSourceUUIDdict[String1]
         except:
-            outList = colrowValue
+            outList = ''
     return outList
 
 # For creating BeneficialUseCategory
@@ -108,27 +121,25 @@ print("Populating dataframe outdf...")
 outdf = pd.DataFrame(index=df_DM.index, columns=columnslist)  # The output dataframe
 
 print("MethodUUID")
-outdf['MethodUUID'] = "NMOSE_Water Uses"
+outdf['MethodUUID'] = "NMag_M1"
 
 print("OrganizationUUID")
-outdf['OrganizationUUID'] = "NMOSE"
+outdf['OrganizationUUID'] = "NMag_O1"
 
-print("ReportingUnitUUID")  # Using SiteNativeID to identify ID
-ReportingUnitUUIDdict = pd.Series(df_reportingunits.ReportingUnitUUID.values, index = df_reportingunits.ReportingUnitName).to_dict()
-outdf['ReportingUnitUUID'] = df_DM.apply(lambda row: retrieveReportingUnits(row['COUNTY']), axis=1)
+print("ReportingUnitUUID")
+outdf['ReportingUnitUUID'] = df_DM.apply(lambda row: retrieveReportingUnits(row['in_ReportingUnitNativeID']), axis=1)
 
 print("VariableSpecificUUID")
-outdf['VariableSpecificUUID'] = "NMOSE_Withdrawal"
+outdf['VariableSpecificUUID'] = df_DM.apply(lambda row: retrieveVariableSpecificUUID(row['in_VariableSpecificCV']), axis=1)
 
-print("WaterSourceUUID")  # Using WaterSourceTypeCV to identify ID
-waterSourceDict = pd.Series(df_watersources.WaterSourceUUID.values, index = df_watersources.WaterSourceTypeCV).to_dict()
-outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['WaterSourceTypeCV']), axis=1)
+print("WaterSourceUUID")
+outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
 
 print("Amount")
-outdf['Amount'] = df_DM['Amount']
+outdf['Amount'] = df_DM['in_Amount']
 
 print("BeneficialUseCategory")
-outdf['BeneficialUseCategory'] = df_DM.apply(lambda row: retrieveBeneficialUseCategory(row['CAT']), axis=1)
+outdf['BeneficialUseCategory'] = df_DM.apply(lambda row: retrieveBeneficialUseCategory(row['in_BeneficialUseCategory']), axis=1)
 
 print("CommunityWaterSupplySystem")
 outdf['CommunityWaterSupplySystem'] = ""
@@ -140,7 +151,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = "06/25/2020"
+outdf['DataPublicationDate'] = "05/03/2022"
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""
@@ -170,7 +181,7 @@ print("PrimaryUseCategory")
 outdf['PrimaryUseCategory'] = "Unspecified"
 
 print("ReportYearCV")
-outdf['ReportYearCV'] = df_DM['ReportYearCV']
+outdf['ReportYearCV'] = df_DM['in_ReportYearCV']
 
 print("SDWISIdentifierCV")
 outdf['SDWISIdentifierCV'] = ""
@@ -181,26 +192,19 @@ outdf['TimeframeEnd'] = df_DM['in_TimeframeStart']
 print("TimeframeStart")
 outdf['TimeframeStart'] = df_DM['in_TimeframeEnd']
 
-print("Resetting Index")
-outdf.reset_index()
-
-print("out df updates...")
-outdf = outdf.replace(np.nan, '')  # Replaces NaN values with blank.
-outdf100 = outdf
-
 
 # Solving WaDE 2.0 Upload Issues
 # ############################################################################
 print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to upload data to QA here.
 
-# N/A
+outdf = outdf.replace(np.nan, "").drop_duplicates().reset_index(drop=True)
 
 
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
-dfpurge = dfpurge.assign(ReasonRemoved='')
+purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # MethodUUID
 outdf, dfpurge = TestErrorFunctions.MethodUUID_AG_Check(outdf, dfpurge)
@@ -280,13 +284,13 @@ outdf, dfpurge = TestErrorFunctions.TimeframeStart_AG_Check(outdf, dfpurge)
 
 # Export to new csv
 ############################################################################
-print("Exporting dataframe outdf100 to csv...")
+print("Exporting outdf and dfpurge dataframes...")
 
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/aggregatedamounts.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
-    dfpurge.to_csv('ProcessedInputData/aggregatedamounts_missing.csv', index=False)
+    dfpurge.to_excel('ProcessedInputData/aggregatedamounts_missing.xlsx', index=False)
 
 print("Done.")

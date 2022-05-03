@@ -1,4 +1,4 @@
-# Date Created: 06/25/2020
+# Date Updated: 05/03/2022
 # Purpose: To extract NM agg water source use information and populate dataframe for WaDE_QA 2.0.
 # Notes:   1) Two types for NM: ground and surface.
 #          2) Easier just to hardcode it here.
@@ -6,9 +6,9 @@
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 # Custom Libraries
 ############################################################################
@@ -20,9 +20,9 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/NewMexico/AggregatedAmounts"
+workingDir = "G:/Shared drives/WaDE Data/NewMexico/AggregatedAmounts"
 os.chdir(workingDir)
-fileInput = "RawinputData/P_NMagg.csv"
+fileInput = "RawinputData/P_nmAgMaster.csv"
 df = pd.read_csv(fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
 
 #WaDE columns
@@ -36,10 +36,10 @@ columnslist = [
     "WaterSourceTypeCV"]
 
 
-# Custom Site Functions
+# Custom Functions
 ############################################################################
 
-# For creating WaDESiteUUID
+# For creating WaterSourceUUID
 def assignWaterSourceUUID(colrowValue):
     string1 = str(colrowValue)
     outstring = "NMag_WS" + string1
@@ -49,11 +49,7 @@ def assignWaterSourceUUID(colrowValue):
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-
-outdf = pd.DataFrame(columns = columnslist)  # The output dataframe for CSV.
-
-print("WaterSourceTypeCV")
-outdf['WaterSourceTypeCV'] = ['Groundwater', 'Surface Water']
+outdf = pd.DataFrame(index=df.index, columns=columnslist)  # The output dataframe for CSV.
 
 print("Geometry")
 outdf['Geometry'] = ""
@@ -67,18 +63,17 @@ outdf['WaterQualityIndicatorCV'] = "Fresh"
 print("WaterSourceName")
 outdf['WaterSourceName'] = "Unspecified"
 
-print("WaterSourceNativeID")  # has to be one of the last, need length of created outdf
-outdf['WaterSourceNativeID'] = "Unspecified"
+print("WaterSourceNativeID")
+outdf["WaterSourceNativeID"] = df['in_WaterSourceNativeID']  # See pre-processing.
+
+print("WaterSourceTypeCV")
+outdf['WaterSourceTypeCV'] = df['in_WaterSourceTypeCV']  # See pre-processing.
 
 ##############################
 # Dropping duplicate
 print("Dropping duplicates")
-outdf = outdf.drop_duplicates(subset=['WaterSourceTypeCV', 'WaterSourceName', 'WaterSourceNativeID']).reset_index(drop=True)
+outdf = outdf.drop_duplicates(subset=['WaterSourceName', 'WaterSourceNativeID', 'WaterSourceTypeCV']).reset_index(drop=True)
 ##############################
-
-print("WaterSourceUUID")
-df["Count"] = range(1, len(df.index) + 1)
-outdf['WaterSourceUUID'] = df.apply(lambda row: assignWaterSourceUUID(row['Count']), axis=1)
 
 print("Resetting Index")
 outdf.reset_index()
@@ -86,12 +81,9 @@ outdf.reset_index()
 
 #Error Checking each Field
 ############################################################################
-print("Error checking each field.  Purging bad inputs.")  # Hardcoded
-dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
-dfpurge = dfpurge.assign(ReasonRemoved='')
-
-# WaterSourceUUID
-outdf, dfpurge = TestErrorFunctions.WaterSourceUUID_WS_Check(outdf, dfpurge)
+print("Error checking each field.  Purging bad inputs.")
+purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # Geometry
 # ???? How to check for geometry datatype
@@ -112,15 +104,26 @@ outdf, dfpurge = TestErrorFunctions.WaterSourceNativeID_WS_Check(outdf, dfpurge)
 outdf, dfpurge = TestErrorFunctions.WaterSourceTypeCV_WS_Check(outdf, dfpurge)
 
 
+############################################################################
+print("Assign WaterSourceUUID") # has to be one of the last.
+outdf = outdf.reset_index(drop=True)
+dftemp = pd.DataFrame(index=outdf.index)
+dftemp["Count"] = range(1, len(dftemp.index) + 1)
+outdf['WaterSourceUUID'] = dftemp.apply(lambda row: assignWaterSourceUUID(row['Count']), axis=1)
+
+# Error check WaterSourceUUID
+outdf, dfpurge = TestErrorFunctions.WaterSourceUUID_WS_Check(outdf, dfpurge)
+
+
 # Export to new csv
 ############################################################################
-print("Exporting dataframe outdf to csv...")
+print("Exporting outdf and dfpurge dataframes...")
 
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/watersources.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
-    dfpurge.to_csv('ProcessedInputData/watersources_missing.csv', index=False)
+    dfpurge.to_excel('ProcessedInputData/watersources_missing.xlsx', index=False)
 
 print("Done.")
