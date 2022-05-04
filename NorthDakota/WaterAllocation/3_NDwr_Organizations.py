@@ -5,15 +5,15 @@
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/NorthDakota/WaterAllocation"
+workingDir = "G:/Shared drives/WaDE Data/NorthDakota/WaterAllocation"
 os.chdir(workingDir)
 
 # Needed WaDE columns
@@ -36,7 +36,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.OrganizationUUID = "NDSWC"
+outdf.OrganizationUUID = "NDwr_O1"
 
 outdf.OrganizationContactEmail = "cbader@nd.gov"
 

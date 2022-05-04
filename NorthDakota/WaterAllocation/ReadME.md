@@ -1,11 +1,14 @@
 # NDSWC Water Rights (Allocation) Data Preparation for WaDE
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [North Dakota State Water Commission (NDSWC)](https://www.swc.nd.gov/theswc/water_appropriations.html), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
-
-## Overview of Data Utilized
+## Overview of Source Data Utilized
 The following data was used for water allocations...
 
 - Point of diversion (POD) data was obtained from NDSWC Maps and GIS Data Hub at: https://mapservice.swc.nd.gov/.  Downloaded “Water permits” layer displayed by “Use type”. Open the shapefile in QGIS and export layer to csv file: Permits.csv, which was used as the primary input for data.
+
+## Storage for WaDE 2.0 Source and Processed Water Data
+The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+- North Dakota Allocation Data: https://drive.google.com/drive/folders/1eO5wEDHNppt62tqG-Mm98aCqZBEVu2fk?usp=sharing
 
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share NDSWC's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *ND_Allocation Schema Mapping to WaDE_QA.xlsx*.  Six executable code files were used to extract the NDSWC's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(AllocationAmounts_facts)* is depended on the previous files.  Those six code files are as follows...
@@ -61,7 +64,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
-NDSWC_Water Rights | Surface Ground | Adjudicated
+NDwr_M1 | Surface Ground | Adjudicated
 
 
 ***
@@ -86,7 +89,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
 ---------- | ---------- | ------------ | ------------
-NDSWC_Allocation All | 1 | Year | CFS
+NDwr_V1 | 1 | Year | CFS
 
 
 ***
@@ -111,7 +114,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
 ---------- | ---------- | ------------ | ------------
-NDSWC | North Dakota State Water Commission | Chris Bader | https://swc.nd.gov/theswc/water_appropriations.html
+NDwr_O1 | North Dakota State Water Commission | Chris Bader | https://swc.nd.gov/theswc/water_appropriations.html
 
 
 ***
@@ -162,6 +165,7 @@ Purpose: generate a list of sites information.
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
 - Assign **NDSWC** info to the *WaDE Site* specific columns.  See *ND_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+    - *CoordinateMethodCV* = "Centroid of Area".
     - *County* = **county**.
     - *Latitude* = **latitude**.
     - *Longitude* = **longitude**.
@@ -213,8 +217,6 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
     - *AllocationNativeID* = **permit_num**.
     - *AllocationOwner* = **permit_hol**.
     - *AllocationPriorityDate* = **priority_d**.
-    - *AllocationTimeframeEnd* = **period_end**.
-    - *AllocationTimeframeStart* = **period_sta**.
     - *AllocationVolume_AF* = **req_acft**.
     - *BeneficialUseCategory* = **use_type**.
 - Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.

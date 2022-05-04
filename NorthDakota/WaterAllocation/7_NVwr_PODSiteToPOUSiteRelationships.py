@@ -5,15 +5,15 @@
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
 ############################################################################
-print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/NorthDakota/WaterAllocation"  # Specific to my machine, will need to change.
+print("Reading inputs...")
+workingDir = "G:/Shared drives/WaDE Data/NorthDakota/WaterAllocation"
 os.chdir(workingDir)
 
 # Sites
