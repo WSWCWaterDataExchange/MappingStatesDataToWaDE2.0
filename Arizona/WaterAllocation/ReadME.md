@@ -2,13 +2,18 @@
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [Arizona Department of Water Resources(ADWR)](http://gisdata-azwater.opendata.arcgis.com/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 
-## Overview of Data Utilized
+## Overview of Source Data Utilized
 The following data was used for water allocations...
 
 - [SW QUERY BY SURFACE WATERSHEDS](http://www.azwater.gov/querycenter/query.aspx?qrysessionid=ABBBE0BF2A68326CE040000A16005CA1) for surface water point of diversion data (SW QUERY BY SURFACE WATERSHEDS).
 - [Surface Water Data](https://new.azwater.gov/gis) for surface water point of diversion and place of use data (SWR_fillings).
 - [Wells 55 Registry](https://new.azwater.gov/gis) point of diversion groundwater data (WELLS_wellRegistry).
 - [Groundwater Site Inventory](https://new.azwater.gov/gis) for location information for groundwater data (GWSI_SITES).
+
+
+## Storage for WaDE 2.0 Source and Processed Water Data
+The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+- Arizona Allocation Data: https://drive.google.com/drive/folders/1qxIpa1mGkvChepI4PA7xzIEbs7xuPSJZ?usp=sharing
 
 
 ## Summary of Data Prep
@@ -79,8 +84,8 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
-ADWR_Water Rights GW | Groundwater | Adjudicated
-ADWR_Water Rights SW | Surface Water | Adjudicated
+AZwr_M1 | Groundwater | Adjudicated
+AZwr_M2 | Surface Water | Adjudicated
 
 
 ***
@@ -105,7 +110,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
 ---------- | ---------- | ------------ | ------------
-ADWR_Allocation All | 1 | Year | CFS
+AZwr_V1 | 1 | Year | CFS
 
 
 ***
@@ -130,7 +135,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
 ---------- | ---------- | ------------ | ------------
-ADWR | Arizona Department of Water Resources| Lisa Williams | http://gisdata-azwater.opendata.arcgis.com/
+AZwr_O1 | Arizona Department of Water Resources| Lisa Williams | http://gisdata-azwater.opendata.arcgis.com/
 
 
 ***

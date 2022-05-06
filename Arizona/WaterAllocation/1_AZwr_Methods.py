@@ -1,19 +1,19 @@
-# Date Created: 12/01/2020
+# Date Update: 05/06/2022
 # Purpose: To extract AZ methods use information and populate dataframe for WaDE_QA 2.0.
 # Notes: N/A
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Arizona/WaterAllocation"
+workingDir = "G:/Shared drives/WaDE Data/Arizona/WaterAllocation"
 os.chdir(workingDir)
 
 #WaDE columns
@@ -35,7 +35,7 @@ print("Populating dataframe...")
 
 outdf = pd.DataFrame(columns=columnslist)
 
-outdf.MethodUUID = ["ADWR_Water Rights GW", "ADWR_Water Rights SW"]
+outdf.MethodUUID = ["ADwr_M1", "ADwr_M2"]
 
 outdf.ApplicableResourceTypeCV = ["Groundwater", "Surface Water"]
 

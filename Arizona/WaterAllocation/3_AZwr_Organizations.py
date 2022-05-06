@@ -1,19 +1,19 @@
-#Date Created: 12/01/2020
+# Date Update: 05/06/2022
 #Purpose: To extract AZ organization information and populate dataframe for WaDE_QA 2.0.
 #Notes: N/A
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Arizona/WaterAllocation"
+workingDir = "G:/Shared drives/WaDE Data/Arizona/WaterAllocation"
 os.chdir(workingDir)
 
 # Needed WaDE columns
@@ -33,7 +33,7 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "ADWR",
+    "AZwr_O1",
     "lmwilliams@azwater.gov",
     "Lisa Williams",
     "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Arizona",
