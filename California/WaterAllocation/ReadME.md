@@ -2,12 +2,11 @@
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [California State Water Resources Control Board (CSWRCB)](https://www.waterboards.ca.gov), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 
-## Overview of Data Utilized
+## Overview of Source Data Utilized
 The following data was used for water allocations...
 
 - **POD_Attributes** water right metadata & **Points_of_Diversion_20210701** site information, both available from the [eWRIMS POD Download](https://waterrightsmaps.waterboards.ca.gov/viewer/Resources/Images/eWRIMS/download.htm).
 - **EWRIMS MASTER FLAT FILE DATA DICTIONARY DRAFT 1-17-20** obtained from personal contact with the CSWRCB and used by the WaDE team for additional metadata.
-
 
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share CSWRCB's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see **CA_Allocation Schema Mapping to WaDE_QA.xlsx**.  Six executable code files were used to extract the CSWRCB's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those six code files are as follows...
@@ -20,6 +19,10 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 - 5_CAwr_Sites.py
 - 6_CAwr_AllocationsAmounts_facts.py
 - 7_CAwr_PODSiteToPOUSiteRelationships.py
+
+## Storage for WaDE 2.0 Source and Processed Water Data
+The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+- California Allocation Data: https://drive.google.com/drive/folders/139TPw55eS7cCHLMg9E6qZ1Ew9-P-0og_?usp=sharing
 
 
 ***
@@ -67,7 +70,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
-CSWRCB_Water Rights | Surface water or subsurface water | Adjudicated
+CAwr_M1 | Surface water or subsurface water | Adjudicated
 
 
 ***
@@ -92,7 +95,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
 ---------- | ---------- | ------------ | ------------
-CSWRCB_Allocation | 1 | Year | AFY |
+CAwr_V1 | 1 | Year | AFY |
 
 
 ***
@@ -117,7 +120,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
 ---------- | ---------- | ------------ | ------------
-CSWRCB | California State Water Resources Control Board | Greg Gearheart | https://www.waterboards.ca.gov/
+CAwr_O1 | California State Water Resources Control Board | Greg Gearheart | https://www.waterboards.ca.gov/
 
 
 ***

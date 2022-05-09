@@ -1,19 +1,19 @@
-#Date Created: 01/12/2021
+#Date Updated: 05/09/2022
 #Purpose: To extract CA variable information and populate dataframe for WaDE_QA 2.0.
 #Notes: asdf
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/California/WaterAllocation"
+workingDir = "G:/Shared drives/WaDE Data/California/WaterAllocation"
 os.chdir(workingDir)
 
 #WaDE columns
@@ -34,7 +34,7 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "CSWRCB_Allocation",
+    "CAwr_V1",
     "1",
     "Year",
     "Average",
