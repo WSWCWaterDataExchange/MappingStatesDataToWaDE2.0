@@ -242,6 +242,12 @@ def tempfixOCSV(colrowValueA):
     return result
 outdf['OwnerClassificationCV']  = outdf.apply(lambda row: tempfixOCSV(row['OwnerClassificationCV']), axis=1)
 
+# Temp solution to populate PrimaryUseCategory field.
+# Use Custom import file
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/AssignPrimaryUserCategory")
+import AssignPrimaryUserCategory
+outdf['PrimaryUseCategory'] = outdf.apply(lambda row: AssignPrimaryUserCategory.retrievePrimaryUseCategory(row['BeneficialUseCategory']), axis=1)
+
 
 #Error checking each field
 ############################################################################
