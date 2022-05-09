@@ -88,14 +88,6 @@ def retrieveSiteUUID(colrowValue):
     return outList
 
 # For creating AllocationLegalStatusCV
-def assignAllocationLegalStatusCV(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outList = ""
-    else:
-        outList = colrowValue.strip()
-    return outList
-
-# For creating AllocationLegalStatusCV
 def assignAllocationTypeCV(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = ""
@@ -157,7 +149,7 @@ print("AllocationFlow_CFS")
 outdf['AllocationFlow_CFS'] = df_M['in_AllocationFlow_CFS']
 
 print("AllocationLegalStatusCV")
-outdf['AllocationLegalStatusCV'] = df_M.apply(lambda row: assignAllocationLegalStatusCV(row['in_AllocationLegalStatusCV']), axis=1)
+outdf['AllocationLegalStatusCV'] = ""
 
 print("AllocationNativeID")  # Will use this with a .groupby() statement towards the ends.
 def assignNativeID(colrowValue):
@@ -182,7 +174,7 @@ print("AllocationTypeCV")
 outdf['AllocationTypeCV'] = df_M.apply(lambda row: assignAllocationTypeCV(row['in_AllocationTypeCV']), axis=1)
 
 print("AllocationVolume_AF")
-outdf['AllocationVolume_AF'] = ""
+outdf['AllocationVolume_AF'] = df_M['in_AllocationVolume_AF']
 
 print("BeneficialUseCategory")
 outdf['BeneficialUseCategory'] = df_M.apply(lambda row: assignBeneficialUse(row['in_BeneficialUseCategory']), axis=1)
@@ -197,7 +189,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")  
-outdf['DataPublicationDate'] = "10/21/2020"
+outdf['DataPublicationDate'] = "05/09/2022"
 
 print("DataPublicationDOI")  
 outdf['DataPublicationDOI'] = ""
