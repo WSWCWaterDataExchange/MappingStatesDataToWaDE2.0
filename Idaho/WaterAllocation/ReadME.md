@@ -1,8 +1,7 @@
 # IDWR Water Rights (Allocation) Data Preparation for WaDE
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [Idaho Department of Water Resources (IDWR)](https://idwr.idaho.gov/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
-
-## Overview of Data Utilized
+## Overview of Source Data Utilized
 The following data was used for water allocations...
 
 - Point of diversion (POD) data was obtained from IDWR Maps and GIS Data Hub at: https://data-idwr.opendata.arcgis.com/datasets/water-right-pods
@@ -13,6 +12,10 @@ Two unique files were created, one used by the WSWC staff to understand the avai
  - ID_Water_Right_PODs_input.xlsx
  - ID_Water_Right_PoUs_input.xlsx
  - IdwrExtendedContactNamesWithFieldNames_input.xlsx
+
+## Storage for WaDE 2.0 Source and Processed Water Data
+The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+- Idaho Allocation Data: https://drive.google.com/drive/folders/1HYjr3B-CPqZ9ncEi_BClax2ADO1rhy5k?usp=sharing
 
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share IDWR's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *ID_Allocation Schema Mapping to WaDE_QA.xlsx*.  Seven executable code files were used to extract the IDWR's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining six code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those seven code files are as follows...

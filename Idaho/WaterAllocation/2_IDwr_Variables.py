@@ -13,7 +13,7 @@ import numpy as np
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir="C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Idaho/WaterAllocation"
+workingDir = "G:/Shared drives/WaDE Data/Idaho/WaterAllocation"
 os.chdir(workingDir)
 
 #WaDE columns

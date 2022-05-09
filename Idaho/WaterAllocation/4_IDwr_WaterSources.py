@@ -19,7 +19,7 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Idaho/WaterAllocation"
+workingDir = "G:/Shared drives/WaDE Data/Idaho/WaterAllocation"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_IdahoMaster.csv"
 df = pd.read_csv(fileInput)
