@@ -4,8 +4,9 @@
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
 import re
+import pandas as pd
+
 
 
 # Owner Type Lists
