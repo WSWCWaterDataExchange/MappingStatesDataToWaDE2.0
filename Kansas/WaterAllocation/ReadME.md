@@ -2,15 +2,18 @@
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [Kansas Department of Agriculture's Division of Water Resources (KDADWR)](https://agriculture.ks.gov/divisions-programs/dwr), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 
-## Overview of Data Utilized
+## Overview of Source Data Utilized
 The following data was used for water allocations...
 
 - Point of diversion water quantity (qty) and location (wimas) data obtained from the Water Information Management and Analysis System (WIMAS): https://geoportal.kgs.ku.edu/geohydro/wimas/index.cfm?CFID=70602&CFTOKEN=1c898e89c26f094b-815CA8A9-FFF0-E432-AE5700215117F981
 
-
 Two unique files were created, one used by the WSWC staff to understand the available data (*"_with Notes"*), the second resulting files to be used as input to the Python codes that prepare WaDE2 input files.  Input files used are as follows...
  - qty_input.csv
  - wimas_input.csv
+
+## Storage for WaDE 2.0 Source and Processed Water Data
+The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+- Kansas Allocation Data: https://drive.google.com/drive/folders/1NvoOu-rbhKr5iGf63A3VOOiNO3Vpf4gc?usp=sharing
 
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share KDADWR's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *KS_Allocation Schema Mapping to WaDE_QA.xlsx*.  Six executable code files were used to extract the KDADWR's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those six code files are as follows...
@@ -72,7 +75,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
-KDADWR_Water Rights | Surface Ground Water | Modeled
+KSwr_M1 | Surface Ground Water | Modeled
 
 
 ***
@@ -97,7 +100,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
 ---------- | ---------- | ------------ | ------------
-KDADWR_Allocation All | 1 | Year | AF
+KSwr_V1 | 1 | Year | AF
 
 
 ***
@@ -122,7 +125,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
 ---------- | ---------- | ------------ | ------------
-KDADWR | The Kansas Department of Agriculture, Division of Water Resources | Ginger Pugh | https://agriculture.ks.gov/home
+KSwr_O1 | The Kansas Department of Agriculture, Division of Water Resources | Ginger Pugh | https://agriculture.ks.gov/home
 
 
 ***

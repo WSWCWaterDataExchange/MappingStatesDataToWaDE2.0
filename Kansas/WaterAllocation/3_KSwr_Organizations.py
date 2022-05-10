@@ -1,19 +1,19 @@
-#Date Created: 01/06/2021
+#Date Created: 05/10/2022
 #Purpose: To extract KS organization information and populate dataframe for WaDE_QA 2.0.
 #Notes:
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Kansas/WaterAllocation"
+workingDir = "G:/Shared drives/WaDE Data/Kansas/WaterAllocation"
 os.chdir(workingDir)
 
 # Needed WaDE columns
@@ -33,7 +33,7 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "KDADWR",
+    "KSwr_O1",
     "Ginger.Pugh@ks.gov",
     "Ginger Pugh",
     "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Kansas",

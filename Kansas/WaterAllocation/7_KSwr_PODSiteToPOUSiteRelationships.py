@@ -1,19 +1,19 @@
-# Date Updated: 05/25/2021
+# Date Created: 05/10/2022
 # Purpose: To extract KS site POD and POU relation information and populate dataframe for WaDEQA 2.0.
 # Notes: N/A
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Kansas/WaterAllocation"  # Specific to my machine, will need to change.
+workingDir = "G:/Shared drives/WaDE Data/Kansas/WaterAllocation"
 os.chdir(workingDir)
 
 # Sites
