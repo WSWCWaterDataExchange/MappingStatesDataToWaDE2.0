@@ -23,6 +23,8 @@ The 1) raw input data shared by the state / state agency / data provider (excel,
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share TWDB's site specific time series water data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *TX_SiteSpecificAmounts Schema Mapping to WaDE_QA.xlsx*.  Six executable code files were used to extract the state agency's site specific time series data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(SiteSpecificAmounts)* is dependent on the previous files.  Those six code files are as follows...
 
+- <font color='red'>There are unexplained duplicate water amount values in the provided source data.  Temp fix of keeping the last entry and removing the duplicate ones.  WaDE staff to follow up with TWDB to review provided data and possible solution.</font> 
+
 - 0_PreProcessCASiteSpecificData.ipynb
 - 1_TXss_Methods.py
 - 2_TXss_Variables.py
