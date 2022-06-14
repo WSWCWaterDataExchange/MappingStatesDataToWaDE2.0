@@ -1,14 +1,18 @@
 # NDWR Aggregated Data Preparation for WaDE
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting aggregated water budget data made available by the [Nevada Division of Water Resources (NDWR)](http://water.nv.gov/), for inclusion into the Water Data Exchange (WaDE) project.   WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
-## Overview of Data Utilized
+## Overview of Source Data Utilized
 The following data was used for aggregated water budget...
 
-- **StateInv_2015_BasinPumpage.csv** & **StateInv_2017_BasinPumpage.csv** files that contained aggregated water pumpage budget data and info for basins in both 2015 and 2017, and were obtained from [NDWR GIS Data site](http://water.nv.gov/gisdata.aspx).
-- **StateInv_2015_CountyPumpage.csv** & **StateInv_2017_CountyPumpage.csv** csv files that contained aggregated water pumppage budget data and info for counties in both 2015 and 2017, and were obtained from [NDWR GIS Data site](http://water.nv.gov/gisdata.aspx).
+- **StateInv_2015_BasinPumpage.csv** & **StateInv_2017_BasinPumpage.csv** files that contained aggregated water pump budget data and info for basins in both 2015 and 2017, and were obtained from [NDWR GIS Data site](http://water.nv.gov/gisdata.aspx).
+- **StateInv_2015_CountyPumpage.csv** & **StateInv_2017_CountyPumpage.csv** csv files that contained aggregated water pump budget data and info for counties in both 2015 and 2017, and were obtained from [NDWR GIS Data site](http://water.nv.gov/gisdata.aspx).
  - **NVBasinShapefile.shp** & **NVCountyShapefile.shp** shape files, obtained from the provided [NDWR GIS Data site](http://water.nv.gov/gisdata.aspx). 
  - The data is also available here https://ndwr.maps.arcgis.com/apps/webappviewer/index.html?id=a5c7956f02f84d53bb8746672e63fe31
-   
+
+## Storage for WaDE 2.0 Source and Processed Water Data
+The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+- Nevada Aggregated Time Series Data: https://drive.google.com/drive/folders/1t5fteCxs5TAOz6_yTYiNyi39Qyh8kqBO?usp=sharing
+
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share NDWR's aggregated water pumpage data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *NV_Aggregated Schema Mapping to WaDE_QAR.xlsx*.  Six executable code files were used to extract the NDWR's aggregated water budget data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(AggregatedAmounts_facts)* is dependent on the previous files.  Those six code files are as follows...
 
@@ -74,7 +78,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
-NVDWR_Water Use | Unspecified | Water Use
+NVag_M1 | Unspecified | Water Use
 
 
 ***
@@ -97,9 +101,9 @@ Purpose: generate legend of granular variables used on data collection specific 
 - Export output dataframe *variables.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
----------- | ---------- | ------------ | ------------
-NVDWR_Withdrawal | 1 | Year | AFY
+VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV | VariableCV | VariableSpecificCV
+---------- | ---------- | ------------ | ------------ | ------------ | ------------
+NVag_V1 | 1 | Year | AFY | Withdrawal | Withdrawal_Annual_Commercial_Groundwater
 
 
 ***
@@ -124,7 +128,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName  | OrganizationWebsite
 ---------- | ---------- | ------------
-NVDWR | Nevada Division of Water Resources | http://water.nv.gov/index.aspx
+NVag_O1 | Nevada Division of Water Resources | http://water.nv.gov/index.aspx
 
 
 ***

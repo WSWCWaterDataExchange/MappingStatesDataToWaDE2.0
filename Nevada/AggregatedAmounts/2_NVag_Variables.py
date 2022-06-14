@@ -1,4 +1,4 @@
-# Date Created: 05/13/2021
+# Date Created: 06/14/2022
 # Author: Ryan James (WSWC)
 # Purpose: To create NV agg variable use information and populate a dataframe for WaDE_QA 2.0.
 # Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
@@ -6,15 +6,15 @@
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Nevada/AggregatedAmounts"
+workingDir = "G:/Shared drives/WaDE Data/Nevada/AggregatedAmounts"
 os.chdir(workingDir)
 
 #WaDE columns
@@ -40,19 +40,44 @@ columnslist = [
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-
 outdf = pd.DataFrame(columns=columnslist)
-outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
+#outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = "NVDWR_Withdrawal"
+outdf.VariableSpecificUUID = ["NVag_V1",
+"NVag_V2",
+"NVag_V3",
+"NVag_V4",
+"NVag_V5",
+"NVag_V6",
+"NVag_V7",
+"NVag_V8",
+"NVag_V9",
+"NVag_V10",
+"NVag_V11",
+"NVag_V12",
+"NVag_V13",
+"NVag_V14"]
 
-outdf.VariableSpecificCV = "Withdrawal"
+outdf.VariableSpecificCV = ["Withdrawal_Annual_Commercial_Groundwater",
+"Withdrawal_Annual_Construction_Groundwater",
+"Withdrawal_Annual_Domestic_Groundwater",
+"Withdrawal_Annual_Environmental_Groundwater",
+"Withdrawal_Annual_Industrial_Groundwater",
+"Withdrawal_Annual_Irrigation_Groundwater",
+"Withdrawal_Annual_Mining and Milling_Groundwater",
+"Withdrawal_Annual_Municipal_Groundwater",
+"Withdrawal_Annual_Power_Groundwater",
+"Withdrawal_Annual_Quasi-Municipal_Groundwater",
+"Withdrawal_Annual_Recreational_Groundwater",
+"Withdrawal_Annual_Stockwater_Groundwater",
+"Withdrawal_Annual_Unspecified_Groundwater",
+"Withdrawal_Annual_Wildlife_Groundwater"]
 
 outdf.VariableCV = "Withdrawal"
 
 outdf.AggregationInterval = "1"
 
-outdf.AggregationIntervalUnitCV = "Year"
+outdf.AggregationIntervalUnitCV = "Annual"
 
 outdf.AggregationStatisticCV = "Cumulative"
 

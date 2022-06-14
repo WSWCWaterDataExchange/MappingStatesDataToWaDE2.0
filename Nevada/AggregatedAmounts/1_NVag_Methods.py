@@ -1,4 +1,4 @@
-# Date Created: 05/13/2021
+# Date Created: 06/14/2022
 # Author: Ryan James (WSWC)
 # Purpose: To create NV agg methods use information and populate dataframe for WaDE_QA 2.0.
 # Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
@@ -6,15 +6,15 @@
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Nevada/AggregatedAmounts"
+workingDir = "G:/Shared drives/WaDE Data/Nevada/AggregatedAmounts"
 
 os.chdir(workingDir)
 
@@ -38,7 +38,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.MethodUUID = "NVDWR_Water Use"
+outdf.MethodUUID = "NVag_M1"
 
 outdf.ApplicableResourceTypeCV = "Unspecified"
 
