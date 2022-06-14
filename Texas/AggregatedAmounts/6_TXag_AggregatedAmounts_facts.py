@@ -1,4 +1,4 @@
-# Date Created: 02/19/2021
+# Date Created: 06/14/2022
 # Author: Ryan James (WSWC)
 # Purpose: To create TX agg aggregated information and populate a dataframe WaDEQA 2.0.
 #          1) Simple creation of working dataframe (df), with output dataframe (outdf).
@@ -7,9 +7,9 @@
 
 # Needed Libraries
 ############################################################################
+import os
 import numpy as np
 import pandas as pd
-import os
 
 # Custom Libraries
 ############################################################################
@@ -21,16 +21,14 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Texas/AggregatedAmounts"
+workingDir = "G:/Shared drives/WaDE Data/Texas/AggregatedAmounts"
 os.chdir(workingDir)
 M_fileInput = "RawinputData/P_txAggMaster.csv"
-method_fileInput = "ProcessedInputData/methods.csv"
 variables_fileInput = "ProcessedInputData/variables.csv"
 watersources_fileInput = "ProcessedInputData/watersources.csv"
 reportingunits_fileInput = "ProcessedInputData/reportingunits.csv"
 
 df_DM = pd.read_csv(M_fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
-df_method = pd.read_csv(method_fileInput)  # Method dataframe
 df_variables = pd.read_csv(variables_fileInput)  # Variables dataframe
 df_watersources = pd.read_csv(watersources_fileInput)  # WaterSources dataframe
 df_reportingunits = pd.read_csv(reportingunits_fileInput)  # ReportingUnits dataframe
@@ -80,6 +78,19 @@ def retrieveReportingUnitUUID(colrowValue):
             outList = ''
     return outList
 
+# For creating VariableSpecificUUID
+VariableSpecificUUIDdict = pd.Series(df_variables.VariableSpecificUUID.values, index=df_variables.VariableSpecificCV).to_dict()
+def retrieveVariableSpecific(colrowValue):
+    if colrowValue == "" or pd.isnull(colrowValue):
+        outList = ""
+    else:
+        String1 = colrowValue
+        try:
+            outList = VariableSpecificUUIDdict[String1]
+        except:
+            outList = ""
+    return outList
+
 # For creating WaterSourceUUID
 WaterSourceUUIDdict = pd.Series(df_watersources.WaterSourceUUID.values, index = df_watersources.WaterSourceNativeID).to_dict()
 def retrieveWaterSourceUUID(colrowValue):
@@ -100,16 +111,16 @@ print("Populating dataframe outdf...")
 outdf = pd.DataFrame(index=df_DM.index, columns=columnslist)  # The output dataframe
 
 print("MethodUUID")
-outdf['MethodUUID'] = "TWDB_Water Uses"
+outdf['MethodUUID'] = "TXag_M1"
 
 print("OrganizationUUID")
-outdf['OrganizationUUID'] = "TWDB"
+outdf['OrganizationUUID'] = "TXag_O1"
 
 print("ReportingUnitUUID")
 outdf['ReportingUnitUUID'] = df_DM.apply(lambda row: retrieveReportingUnitUUID(row['in_ReportingUnitNativeID']), axis=1)
 
 print("VariableSpecificUUID")
-outdf['VariableSpecificUUID'] = "TWDB_Consumptive Use"
+outdf['VariableSpecificUUID'] = df_DM.apply(lambda row: retrieveVariableSpecific(row['in_VariableSpecificCV']), axis=1)
 
 print("WaterSourceUUID")
 outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
@@ -130,7 +141,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = "02/19/2021"
+outdf['DataPublicationDate'] = "06/14/2022"
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""
@@ -174,24 +185,19 @@ outdf['TimeframeStart'] = df_DM['inTimeframeStart']
 print("Resetting Index")
 outdf.reset_index()
 
-print("out df updates...")
-outdf = outdf.replace(np.nan, '')  # Replaces NaN values with blank.
-outdf100 = outdf
-
 
 # Solving WaDE 2.0 Upload Issues
 # ############################################################################
 print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to upload data to QA here.
 
-# None at the moment
+outdf = outdf.replace(np.nan, "").drop_duplicates().reset_index(drop=True)
 
 
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-
-dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
-dfpurge = dfpurge.assign(ReasonRemoved='')
+purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # MethodUUID
 outdf, dfpurge = TestErrorFunctions.MethodUUID_AG_Check(outdf, dfpurge)
@@ -271,13 +277,13 @@ outdf, dfpurge = TestErrorFunctions.TimeframeStart_AG_Check(outdf, dfpurge)
 
 # Export to new csv
 ############################################################################
-print("Exporting dataframe outdf100 to csv...")
+print("Exporting outdf and dfpurge dataframes...")
 
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/aggregatedamounts.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
-    dfpurge.to_csv('ProcessedInputData/aggregatedamounts_missing.csv', index=False)
+    dfpurge.to_excel('ProcessedInputData/aggregatedamounts_missing.xlsx', index=False)
 
 print("Done.")

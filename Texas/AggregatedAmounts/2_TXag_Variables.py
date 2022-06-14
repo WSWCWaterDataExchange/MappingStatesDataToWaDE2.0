@@ -1,4 +1,4 @@
-# Date Created: 02/19/2021
+# Date Created: 06/14/2022
 # Author: Ryan James (WSWC)
 # Purpose: To create TX agg variable use information and populate a dataframe for WaDE_QA 2.0.
 # Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
@@ -6,15 +6,15 @@
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Texas/AggregatedAmounts"
+workingDir = "G:/Shared drives/WaDE Data/Texas/AggregatedAmounts"
 os.chdir(workingDir)
 
 #WaDE columns
@@ -40,19 +40,52 @@ columnslist = [
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-
 outdf = pd.DataFrame(columns=columnslist)
-outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
+#outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = "TWDB_Consumptive Use"
+outdf.VariableSpecificUUID = ["TXag_V1",
+"TXag_V2",
+"TXag_V3",
+"TXag_V4",
+"TXag_V5",
+"TXag_V6",
+"TXag_V7",
+"TXag_V8",
+"TXag_V9",
+"TXag_V10",
+"TXag_V11",
+"TXag_V12",
+"TXag_V13",
+"TXag_V14",
+"TXag_V15",
+"TXag_V16",
+"TXag_V17",
+"TXag_V18"]
 
-outdf.VariableSpecificCV = "Consumptive Use"
+outdf.VariableSpecificCV = ["Consumptive Use_Annual_Irrigation_Groundwater",
+"Consumptive Use_Annual_Irrigation_Reuse",
+"Consumptive Use_Annual_Irrigation_Surface Water",
+"Consumptive Use_Annual_Livestock_Groundwater",
+"Consumptive Use_Annual_Livestock_Reuse",
+"Consumptive Use_Annual_Livestock_Surface Water",
+"Consumptive Use_Annual_Manufacturing_Groundwater",
+"Consumptive Use_Annual_Manufacturing_Reuse",
+"Consumptive Use_Annual_Manufacturing_Surface Water",
+"Consumptive Use_Annual_Mining_Groundwater",
+"Consumptive Use_Annual_Mining_Reuse",
+"Consumptive Use_Annual_Mining_Surface Water",
+"Consumptive Use_Annual_Municipal_Groundwater",
+"Consumptive Use_Annual_Municipal_Reuse",
+"Consumptive Use_Annual_Municipal_Surface Water",
+"Consumptive Use_Annual_Power_Groundwater",
+"Consumptive Use_Annual_Power_Reuse",
+"Consumptive Use_Annual_Power_Surface Water"]
 
 outdf.VariableCV = "Consumptive Use"
 
 outdf.AggregationInterval = "1"
 
-outdf.AggregationIntervalUnitCV = "Year"
+outdf.AggregationIntervalUnitCV = "Annual"
 
 outdf.AggregationStatisticCV = "Cumulative"
 

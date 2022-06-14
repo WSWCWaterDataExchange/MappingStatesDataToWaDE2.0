@@ -1,4 +1,4 @@
-# Date Created: 02/19/2021
+# Date Created: 06/14/2022
 # Author: Ryan James (WSWC)
 # Purpose: To create TX agg reporting unit information and populate a dataframe for WaDEQA 2.0.
 # Notes:
@@ -20,7 +20,7 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Texas/AggregatedAmounts"
+workingDir = "G:/Shared drives/WaDE Data/Texas/AggregatedAmounts"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_txAggMaster.csv"
 fileInput_shape = "RawinputData/P_txGeometry.csv"
@@ -91,30 +91,20 @@ outdf['StateCV'] = "TX"
 print("Geometry")
 outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['in_ReportingUnitNativeID']), axis=1)
 
-print("Resetting Index")
-outdf.reset_index()
-
-#####################################
 # Dropping duplicate
 # filter the whole table based on a unique combination of ReportingUnitName, ReportingUnitNativeID & ReportingUnitTypeCV
 outdf = outdf.drop_duplicates(subset=['ReportingUnitName', 'ReportingUnitNativeID', 'ReportingUnitTypeCV'])
 outdf = outdf.reset_index(drop=True)
-######################################
 
-print("ReportingUnitUUID") # has to be one of the last.
-dftemp = pd.DataFrame(index=outdf.index)
-dftemp["Count"] = range(1, len(dftemp.index) + 1)
-outdf['ReportingUnitUUID'] = dftemp.apply(lambda row: assignReportingUnitID(row['Count']), axis=1)
+print("Resetting Index")
+outdf.reset_index()
 
 
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
-dfpurge = dfpurge.assign(ReasonRemoved='')
-
-# ReportingUnitUUID
-outdf, dfpurge = TestErrorFunctions.ReportingUnitUUID_RU_Check(outdf, dfpurge)
+purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # EPSGCodeCV
 outdf, dfpurge = TestErrorFunctions.EPSGCodeCV_RU_Check(outdf, dfpurge)
@@ -141,15 +131,26 @@ outdf, dfpurge = TestErrorFunctions.StateCV_RU_Check(outdf, dfpurge)
 # ???? How to check for geometry datatype
 
 
+############################################################################
+print("Assign ReportingUnitUUID") # has to be one of the last.
+outdf = outdf.reset_index(drop=True)
+dftemp = pd.DataFrame(index=outdf.index)
+dftemp["Count"] = range(1, len(dftemp.index) + 1)
+outdf['ReportingUnitUUID'] = dftemp.apply(lambda row: assignReportingUnitID(row['Count']), axis=1)
+
+# Error Check ReportingUnitUUID
+outdf, dfpurge = TestErrorFunctions.ReportingUnitUUID_RU_Check(outdf, dfpurge)
+
+
 # Export to new csv
 ############################################################################
-print("Exporting dataframe outdf to csv...")
+print("Exporting outdf and dfpurge dataframes...")
 
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/reportingunits.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
-    dfpurge.to_csv('ProcessedInputData/reportingunits_missing.csv', index=False)
+    dfpurge.to_excel('ProcessedInputData/reportingunits_missing.xlsx', index=False)
 
 print("Done.")
