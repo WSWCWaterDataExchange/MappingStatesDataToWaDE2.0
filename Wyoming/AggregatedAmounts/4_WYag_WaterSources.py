@@ -20,7 +20,7 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Wyoming/AggregatedAmounts"
+workingDir = "G:/Shared drives/WaDE Data/Wyoming/AggregatedAmounts"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_wyAggMaster.csv"
 df = pd.read_csv(fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.

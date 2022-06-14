@@ -21,7 +21,7 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Wyoming/AggregatedAmounts"
+workingDir = "G:/Shared drives/WaDE Data/Wyoming/AggregatedAmounts"
 os.chdir(workingDir)
 M_fileInput = "RawinputData/P_wyAggMaster.csv"
 method_fileInput = "ProcessedInputData/methods.csv"

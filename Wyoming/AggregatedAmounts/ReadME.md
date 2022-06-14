@@ -10,6 +10,11 @@ Input files used are as follows...
  - WYAggData_input.csv
  - WYBasinShapefile.shp
 
+## Storage for WaDE2 2.0 Source and Processed Water Data
+The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE2 database, can both be found within the WaDE2 sponsored Google Drive.  Please contact WaDE2 staff if unavailable or if you have any questions about the data.
+- Wyoming Aggregated Area Timeseries Data: https://drive.google.com/drive/folders/1qWkwWXuIIY0f1_uG2FGNwQVB-6BZMRGh?usp=sharing
+
+
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share WWDO's aggregated water budget data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *WY_Aggregated Schema Mapping to WaDE_QA.xlsx*.  Six executable code files were used to extract the WWDO's aggregated water budget data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(AggregatedAmounts_facts)* is dependent on the previous files.  Those six code files are as follows...
 
