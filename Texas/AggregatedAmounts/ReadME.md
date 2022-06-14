@@ -1,11 +1,16 @@
 # TWDB Aggregated Data Preparation for WaDE
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting aggregated water budget data made available by the [Texas Water Development Board (TWDB) ](http://www.twdb.texas.gov/index.asp), for inclusion into the Water Data Exchange (WaDE) project.   WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
-## Overview of Data Utilized
+## Overview of Source Data Utilized
 The following data was used for aggregated water budget...
 
 - **2000-2016 Historical Water Use Estimates** csv files contained aggregated water budget data and info and were obtained from the provided [TWDB Historical Water Use Estimates](http://www.twdb.texas.gov/waterplanning/waterusesurvey/estimates/index.asp).  Each year is separated out into two different area types: Basin and County.  Information for each area type can be found in the **SumFinal_BasinReport.xlsx** and **SumFinal_CountyReport.xlsx** per year respectively.
 - Texas County and Basin shapefiles data retrieved from personal correspondence via email from between the TWDB and the WSWC.
+
+## Storage for WaDE 2.0 Source and Processed Water Data
+The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+- Texas Aggregated Time Series Data: https://drive.google.com/drive/folders/103lh1q-bRVS-_vncKSiVSxNieKByEDkL?usp=sharing
+
 
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share TWDB's aggregated water budget data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *[TX_Aggregated Schema Mapping to WaDE_QA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Texas/AggregatedAmounts/TX_Aggregated%20Schema%20Mapping%20to%20WaDE_QA.xlsx)*.  Six executable code files were used to extract the TWDB's aggregated water budget data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(AggregatedAmounts_facts)* is dependent on the previous files.  Those six code files are as follows...
@@ -77,7 +82,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
-TWDB_Water Uses | Unspecified | Water Use
+TXag_M1 | Unspecified | Water Use
 
 
 ***
@@ -100,9 +105,9 @@ Purpose: generate legend of granular variables specific to each state.
 - Export output dataframe *variables.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
----------- | ---------- | ------------ | ------------
-TWDB_Consumptive Use | 1 | Cumulative | AFY
+VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV | VariableCV | VariableSpecificCV
+---------- | ---------- | ------------ | ------------ | ------------ | ------------
+TXag_V1 | 1 | Cumulative | AFY | Consumptive Use | Consumptive Use_Annual_Irrigation_Groundwater
 
 
 ***
@@ -127,7 +132,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName  | OrganizationWebsite
 ---------- | ---------- | ------------
-TWDB | Texas Water Development Board | http://www.twdb.texas.gov/waterplanning/waterusesurvey/estimates/index.asp
+TXag_O1 | Texas Water Development Board | http://www.twdb.texas.gov/waterplanning/waterusesurvey/estimates/index.asp
 
 
 ***
@@ -234,7 +239,7 @@ Purpose: generate master sheet of state agency specified area aggregated water b
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | OrganizationUUID | ReportingUnitUUID | VariableSpecificUUID | WaterSourceUUID | Amount | BeneficialUseCategory | ReportYearCV
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | -----------
-TWDB_Water Uses | TWDB | TXag_RU1 | TWDB_Consumptive Use | TXag_WS1 | 15820 | Irrigation | 2015
+TXag_M1 | TXag_O1 | TXag_RU1 | TXag_V1 | TXag_WS1 | 15820 | Irrigation | 2015
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID
