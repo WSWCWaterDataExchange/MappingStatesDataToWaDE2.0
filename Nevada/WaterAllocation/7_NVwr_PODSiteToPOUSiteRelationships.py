@@ -1,4 +1,4 @@
-#Date Created: 03/24/2022
+#Date Created: 06/21/2022
 # Purpose: To extract NV site POD and POU relation information and populate dataframe for WaDEQA 2.0.
 # Notes: N/A
 
@@ -13,7 +13,7 @@ import pandas as pd
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Nevada/WaterAllocation"  # Specific to my machine, will need to change.
+workingDir = "G:/Shared drives/WaDE Data/Nevada/WaterAllocation"
 os.chdir(workingDir)
 
 # Sites

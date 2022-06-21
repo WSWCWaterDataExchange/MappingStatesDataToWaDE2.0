@@ -1,4 +1,4 @@
-#Date Created: 03/24/2022
+#Date Created: 06/21/2022
 #Purpose: To extract NV site use information and populate dataframe for WaDEQA 2.0.
 #Notes:
 
@@ -12,14 +12,14 @@ import pandas as pd
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir="C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Nevada/WaterAllocation"
+workingDir = "G:/Shared drives/WaDE Data/Nevada/WaterAllocation"
 os.chdir(workingDir)
 fileInput="RawInputData/P_MastersNV.csv"
 fileInput_shape = "RawinputData/P_nvGeometry.csv"

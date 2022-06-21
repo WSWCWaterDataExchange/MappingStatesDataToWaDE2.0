@@ -2,7 +2,7 @@
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [Nevada Division of Water Resources (NVDWR)](http://water.nv.gov/index.aspx), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 
-## Overview of Data Utilized
+## Overview of Source Data Utilized
 The following data was used for water allocations...
 
 - **Point of diversion (POD)** data was obtained from a [NVDWR arcgis server](https://arcgis.shpo.nv.gov/arcgis/rest/services/Water_Resources_Public_Data/WaterRights_POD_POU/FeatureServer).
@@ -13,6 +13,10 @@ Three unique files were created as input.  Input files used are as follows...
  - POD AllApps_2_input.csv
  - PoU AllApps_3_input.cs
  - Permit_Owners_5temp.csv
+
+## Storage for WaDE 2.0 Source and Processed Water Data
+The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+- Nevada Allocation Data: https://drive.google.com/drive/folders/15oclBZ9uLOneLzr9mR_2C2hM_VTqAgly?usp=sharing
 
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share NVDWR's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *NV_POD_Allocation Schema Mapping to WaDE_QA.xlsx* & *NV_POU_Allocation Schema Mapping to WaDE_QA.xlsx*.  Seven executable code files were used to extract the NVDWR's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (preprocess) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining six code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those seven code files are as follows...
@@ -77,7 +81,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
-NVDWR_Diversion Tracking | Surface Ground | Estimated
+NVwr_M1 | Surface Ground | Estimated
 
 
 ***
@@ -102,7 +106,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
 ---------- | ---------- | ------------ | ------------
-NVDWR_Allocation | 1 | Year | CFS
+NVwr_V1 | 1 | Year | CFS
 
 
 ***
@@ -127,7 +131,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
 ---------- | ---------- | ------------ | ------------
-NVDWR | Nevada Division of Water Resources | Brian McMenamy | http://water.nv.gov/index.aspx
+NVwr_O1 | Nevada Division of Water Resources | Brian McMenamy | http://water.nv.gov/index.aspx
 
 
 ***

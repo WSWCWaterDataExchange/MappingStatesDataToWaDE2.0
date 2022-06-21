@@ -1,4 +1,4 @@
-#Date Created: 03/24/2022
+#Date Created: 06/21/2022
 #Purpose: To extract NV water source use information and population dataframe for WaDE_QA 2.0.
 #Notes: 1) Little water source info available at this time.
 
@@ -12,14 +12,14 @@ import pandas as pd
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir="C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Nevada/WaterAllocation"
+workingDir = "G:/Shared drives/WaDE Data/Nevada/WaterAllocation"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_MastersNV.csv"
 df = pd.read_csv(fileInput)
@@ -82,6 +82,9 @@ outdf['WaterSourceNativeID'] = df['in_WaterSourceNativeID']  # See preprocessing
 print("Dropping duplicates")
 outdf = outdf.drop_duplicates(subset=['WaterSourceTypeCV', 'WaterSourceName', 'WaterSourceNativeID']).reset_index(drop=True)
 ##############################
+
+print("Resetting Index")
+outdf.reset_index()
 
 
 #Error Checking each Field
