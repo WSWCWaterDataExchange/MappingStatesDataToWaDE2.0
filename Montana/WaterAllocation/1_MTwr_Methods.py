@@ -1,4 +1,4 @@
-#Date Created: 03/11/2022
+#Date Created: 05/11/2022
 #Purpose: To extract MT methods use information and populate dataframe for WaDE_QA 2.0.
 #Notes:  asdf
 
@@ -13,7 +13,7 @@ import pandas as pd
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Montana/WaterAllocation"
+workingDir = "G:/Shared drives/WaDE Data/Montana/WaterAllocation"
 os.chdir(workingDir)
 
 #WaDE columns

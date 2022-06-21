@@ -1,4 +1,4 @@
-#Date Created: 03/11/2022
+#Date Created: 05/11/2022
 #Purpose: To extract MT site information and populate dataframe for WaDE_QA 2.0.
 #Notes: asdf
 
@@ -14,17 +14,17 @@ import pandas as pd
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Montana/WaterAllocation"
+workingDir = "G:/Shared drives/WaDE Data/Montana/WaterAllocation"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_MontanaMaster.csv"
-fileInput_shape = "RawinputData/P_MontanaGeometry.csv"
 df = pd.read_csv(fileInput)
+fileInput_shape = "RawinputData/P_MontanaGeometry.csv"
 dfshape = pd.read_csv(fileInput_shape)
 
 watersources_fileInput = "ProcessedInputData/watersources.csv" # watersource inputfile
