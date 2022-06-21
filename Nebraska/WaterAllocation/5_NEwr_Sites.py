@@ -1,4 +1,4 @@
-#Date Created: 01/04/2020
+#Date Created: 06/21/2022
 #Author: Ryan James
 #Purpose: To extract NE site information and populate dataframe for WaDEQA 2.0.
 #Notes: 1) Lat / Long already converted
@@ -6,21 +6,21 @@
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Nebraska/WaterAllocation"
+workingDir = "G:/Shared drives/WaDE Data/Nebraska/WaterAllocation"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_NebraskaMaster.csv"
 df = pd.read_csv(fileInput)
@@ -31,7 +31,7 @@ df_watersources = pd.read_csv(watersources_fileInput)  # watersources dataframe
 columnslist = [
     "SiteUUID",
     "RegulatoryOverlayUUIDs",
-    "WaterSourceUUID",
+    "WaterSourceUUIDs",
     "CoordinateAccuracy",
     "CoordinateMethodCV",
     "County",
@@ -99,9 +99,9 @@ outdf = pd.DataFrame(columns=columnslist, index=df.index)
 print("RegulatoryOverlayUUIDs")
 outdf['RegulatoryOverlayUUIDs'] = ""
 
-print("WaterSourceUUID")
+print("WaterSourceUUIDs")
 df['WaterSourceName'] = df.apply(lambda row: assignWaterSourceName(row['SourceName']), axis=1)
-outdf['WaterSourceUUID'] = df.apply(lambda row: retrieveWaterSourceUUID(row['WaterSourceName']), axis=1)
+outdf['WaterSourceUUIDs'] = df.apply(lambda row: retrieveWaterSourceUUID(row['WaterSourceName']), axis=1)
 
 print("CoordinateAccuracy")
 outdf['CoordinateAccuracy'] = ''
@@ -163,33 +163,24 @@ outdf['USGSSiteID'] = ""
 print("Resetting Index")
 outdf.reset_index()
 
-#####################################
-# Dropping duplicate
-# filter the whole table based on a unique combination of SiteNativeID, SiteName, SiteTypeCV
-outdf = outdf.drop_duplicates(subset=['SiteNativeID', 'SiteName', 'SiteTypeCV', 'Longitude', 'Latitude'])
-outdf = outdf.reset_index(drop=True)
-######################################
-
-print("SiteUUID") # has to be one of the last.
-dftemp = pd.DataFrame(index=outdf.index)
-dftemp["Count"] = range(1, len(dftemp.index) + 1)
-outdf['SiteUUID'] = dftemp.apply(lambda row: assignSiteUUID(row['Count']), axis=1)
+print("Joining outdf duplicates based on key fields...")
+outdf = outdf.replace(np.nan, "")  # Replaces NaN values with blank.
+groupbyList = ['PODorPOUSite', 'SiteNativeID', 'SiteName', 'SiteTypeCV', 'Longitude', 'Latitude']
+outdf = outdf.groupby(groupbyList).agg(lambda x: ','.join([str(elem) for elem in (list(set(x))) if elem!=''])).replace(np.nan, "").reset_index()
+outdf = outdf[columnslist]  # reorder the dataframe's columns based on columnslist
 
 
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
-dfpurge = dfpurge.assign(ReasonRemoved='')
-
-# SiteUUID
-outdf, dfpurge = TestErrorFunctions.SiteUUID_S_Check(outdf, dfpurge)
+purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # RegulatoryOverlayUUIDs
 outdf, dfpurge = TestErrorFunctions.RegulatoryOverlayUUIDs_S_Check(outdf, dfpurge)
 
-# WaterSourceUUID
-outdf100, dfpurge = TestErrorFunctions.WaterSourceUUID_S_Check(outdf, dfpurge)
+# WaterSourceUUIDs
+outdf100, dfpurge = TestErrorFunctions.WaterSourceUUIDs_S_Check(outdf, dfpurge)
 
 # CoordinateAccuracy
 outdf, dfpurge = TestErrorFunctions.CoordinateAccuracy_S_Check(outdf, dfpurge)
@@ -249,15 +240,26 @@ outdf, dfpurge = TestErrorFunctions.StateCV_S_Check(outdf, dfpurge)
 outdf, dfpurge = TestErrorFunctions.USGSSiteID_S_Check(outdf, dfpurge)
 
 
+############################################################################
+print("Assign SiteUUID") # has to be one of the last.
+outdf = outdf.reset_index(drop=True)
+dftemp = pd.DataFrame(index=outdf.index)
+dftemp["Count"] = range(1, len(dftemp.index) + 1)
+outdf['SiteUUID'] = dftemp.apply(lambda row: assignSiteUUID(row['Count']), axis=1)
+
+# Error check SiteUUID
+outdf, dfpurge = TestErrorFunctions.SiteUUID_S_Check(outdf, dfpurge)
+
+
 # Export to new csv
 ############################################################################
-print("Exporting dataframe outdf to csv...")
+print("Exporting outdf and dfpurge dataframes...")
 
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/sites.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
-    dfpurge.to_csv('ProcessedInputData/sites_missing.csv', index=False)
+    dfpurge.to_excel('ProcessedInputData/sites_missing.xlsx', index=False)
 
 print("Done.")
