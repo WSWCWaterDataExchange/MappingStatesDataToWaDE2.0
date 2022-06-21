@@ -386,7 +386,7 @@ def retrievePrimaryUseCategory(val):
     # Clean val & create list.
     val = str(val).strip()
     valList = val.split(",")
-    valList = sorted(valList)
+    # valList = sorted(valList)
 
     # Temp converting native benuse to WaDE terminology benuse
     # Using get() to retrieve items from dictionary for list
@@ -403,5 +403,6 @@ def retrievePrimaryUseCategory(val):
             outString = wbuList[0]
     else:
         outString = wbuList[0]
+        outString = str(outString).strip()
 
     return outString

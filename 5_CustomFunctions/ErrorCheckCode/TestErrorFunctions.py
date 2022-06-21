@@ -314,10 +314,10 @@ def HUC8_S_Check(dfx, dfy):
 
 
 # Latitude_float_-
-# (dfx["Latitude"] < 20.0)
 def Latitude_S_Check(dfx, dfy):
     mask = dfx.loc[(dfx["Latitude"].isnull()) |
-                   (dfx["Latitude"] == "")].assign(ReasonRemoved='Incomplete Latitude').reset_index()
+                   (dfx["Latitude"].astype(str) == "") |
+                   (dfx["Latitude"] == 0)].assign(ReasonRemoved='Incomplete Latitude').reset_index()
     if len(mask.index) > 0:
         outmaskColumn = ["ReasonRemoved", "RowIndex", "UUID", "IncompleteField_1"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
@@ -328,14 +328,14 @@ def Latitude_S_Check(dfx, dfy):
         dfy = dfy.append(outmaskdf)
 
         dropIndex = dfx.loc[(dfx["Latitude"].isnull()) |
-                            (dfx["Latitude"] == "")].index
+                            (dfx["Latitude"].astype(str) == "") |
+                            (dfx["Latitude"] == 0)].index
         dfx = dfx.drop(dropIndex)
         dfx = dfx.reset_index(drop=True)
     return (dfx, dfy)
 
 
 # Longitude_float_-
-# (dfx["Longitude"] > -80)
 def Longitude_S_Check(dfx, dfy):
     mask = dfx.loc[(dfx["Longitude"].isnull()) |
                    (dfx["Longitude"] == "")].assign(ReasonRemoved='Incomplete Longitude').reset_index()
@@ -674,6 +674,27 @@ def StateCV_RU_Check(dfx, dfy):
 # AllocationsAmounts_facts
 ########################################################################################################################
 ########################################################################################################################
+
+# AllocationUUID_nvarchar(250)_-
+def AllocationUUID_AA_Check(dfx, dfy):
+    mask = dfx.loc[(dfx["AllocationUUID"].isnull()) |
+                   (dfx["AllocationUUID"] == '') |
+                   (dfx['AllocationUUID'].str.len() > 250)].assign(ReasonRemoved='Incomplete AllocationUUID').reset_index()
+    if len(mask.index) > 0:
+        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+        outmaskdf = pd.DataFrame(columns=outmaskColumn)
+        outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['RowIndex'] = mask['index']
+        outmaskdf['IncompleteField_1'] = mask['AllocationUUID']
+        dfy = dfy.append(outmaskdf)
+
+        dropIndex = dfx.loc[(dfx["AllocationUUID"].isnull()) |
+                            (dfx["AllocationUUID"] == '') |
+                            (dfx['AllocationUUID'].str.len() > 250)].index
+        dfx = dfx.drop(dropIndex)
+        dfx = dfx.reset_index(drop=True)
+    return (dfx, dfy)
+
 
 # MethodUUID_nvarchar(200)_-
 def MethodUUID_AA_Check(dfx, dfy):
@@ -1135,7 +1156,7 @@ def AllocationTypeCV_AA_Check(dfx, dfy):
 # We are ignoring nvarchar length in the check at this time
 def BeneficialUseCategory_AA_Check(dfx, dfy):
     mask = dfx.loc[(dfx["BeneficialUseCategory"].isnull()) |
-                   (dfx["BeneficialUseCategory"] == '')].assign(
+                   (dfx["BeneficialUseCategory"] == '') ].assign(
         ReasonRemoved='Incomplete BeneficialUseCategory').reset_index()
     if len(mask.index) > 0:
         outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
@@ -1405,19 +1426,19 @@ def PowerType_AA_Check(dfx, dfy):
     return (dfx, dfy)
 
 
-# PrimaryUseCategory_Nvarchar(100)_Yes
-def PrimaryUseCategory_AA_Check(dfx, dfy):
-    mask = dfx.loc[dfx["PrimaryUseCategory"].str.len() > 100].assign(
-        ReasonRemoved='Incomplete PrimaryUseCategory').reset_index()
+# PrimaryBeneficialUseCategory_Nvarchar(150)_Yes
+def PrimaryBeneficialUseCategory_AA_Check(dfx, dfy):
+    mask = dfx.loc[dfx["PrimaryBeneficialUseCategory"].str.len() > 100].assign(
+        ReasonRemoved='Incomplete PrimaryBeneficialUseCategory').reset_index()
     if len(mask.index) > 0:
         outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
         outmaskdf['RowIndex'] = mask['index']
-        outmaskdf['IncompleteField_1'] = mask['PrimaryUseCategory']
+        outmaskdf['IncompleteField_1'] = mask['PrimaryBeneficialUseCategory']
         dfy = dfy.append(outmaskdf)
 
-        dropIndex = dfx.loc[dfx["PrimaryUseCategory"].str.len() > 100].index
+        dropIndex = dfx.loc[dfx["PrimaryBeneficialUseCategory"].str.len() > 100].index
         dfx = dfx.drop(dropIndex)
         dfx = dfx.reset_index(drop=True)
     return (dfx, dfy)
@@ -2066,7 +2087,7 @@ def DataPublicationDOI_SS_Check(dfx, dfy):
 
 # IrrigatedAcreage_float_Yes
 def IrrigatedAcreage_SS_Check(dfx, dfy):
-    mask = dfx.loc[dfx["IrrigatedAcreage"].str.contains(',')].assign(
+    mask = dfx.loc[dfx["IrrigatedAcreage"].astype(str).str.contains(',')].assign(
         ReasonRemoved='Incomplete IrrigatedAcreage').reset_index()
     if len(mask.index) > 0:
         outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
@@ -2076,7 +2097,7 @@ def IrrigatedAcreage_SS_Check(dfx, dfy):
         outmaskdf['IncompleteField_1'] = mask['IrrigatedAcreage']
         dfy = dfy.append(outmaskdf)
 
-        dropIndex = dfx.loc[dfx["IrrigatedAcreage"].str.contains(',')].index
+        dropIndex = dfx.loc[dfx["IrrigatedAcreage"].astype(str).str.contains(',')].index
         dfx = dfx.drop(dropIndex)
         dfx = dfx.reset_index(drop=True)
     return (dfx, dfy)
@@ -2178,7 +2199,10 @@ def PrimaryUseCategory_SS_Check(dfx, dfy):
 
 # ReportYearCV_nchar(4)_Yes
 def ReportYearCV_SS_Check(dfx, dfy):
-    mask = dfx.loc[dfx["ReportYearCV"].astype(str).str.len() > 4].assign(
+    mask = dfx.loc[(dfx["ReportYearCV"].astype(str).str.len() > 4) |
+                   (dfx["ReportYearCV"].isnull()) |
+                   (dfx["ReportYearCV"] == '') |
+                   (dfx["ReportYearCV"] == 0)].assign(
         ReasonRemoved='Incomplete ReportYearCV').reset_index()
     if len(mask.index) > 0:
         outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
@@ -2188,7 +2212,10 @@ def ReportYearCV_SS_Check(dfx, dfy):
         outmaskdf['IncompleteField_1'] = mask['ReportYearCV']
         dfy = dfy.append(outmaskdf)
 
-        dropIndex = dfx.loc[dfx["ReportYearCV"].astype(str).str.len() > 4].index
+        dropIndex = dfx.loc[(dfx["ReportYearCV"].astype(str).str.len() > 4) |
+                            (dfx["ReportYearCV"].isnull()) |
+                            (dfx["ReportYearCV"] == '') |
+                            (dfx["ReportYearCV"] == 0)].index
         dfx = dfx.drop(dropIndex)
         dfx = dfx.reset_index(drop=True)
     return (dfx, dfy)
