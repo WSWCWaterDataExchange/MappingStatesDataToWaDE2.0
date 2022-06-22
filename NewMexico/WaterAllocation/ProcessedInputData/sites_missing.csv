@@ -1,2 +1,0 @@
-SiteUUID,RegulatoryOverlayUUIDs,WaterSourceUUID,CoordinateAccuracy,CoordinateMethodCV,County,EPSGCodeCV,Geometry,GNISCodeCV,HUC12,HUC8,Latitude,Longitude,NHDNetworkStatusCV,NHDProductCV,PODorPOUSite,SiteName,SiteNativeID,SitePoint,SiteTypeCV,StateCV,USGSSiteID,ReasonRemoved,level_0,index
-NMwr_S119281,,NMwr_WS2,,Unspecified,RA,4326,,,,,0.0,-109.48874388438705,,,POD,Unspecified,WaDENM_S119281,,Unspecified,NM,,Bad Latitude,119280.0,144887.0

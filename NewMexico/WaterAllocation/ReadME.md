@@ -1,170 +1,295 @@
-# Water Rights (Allocations) Data Preparation for WaDE
-This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting New Mexico water rights data, made available by the [New Mexico Office of the State Engineer (NMOSE)](http://geospatialdata-ose.opendata.arcgis.com/datasets/ose-points-of-diversion), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and cost-effective way.
-
-## Overview 
-The NMOSE hosts its water rights data using ArcGIS online at: https://geospatialdata-ose.opendata.arcgis.com/datasets/ose-pods
-
-The metadata for the water rights data is available at: https://geospatialdata-ose.opendata.arcgis.com/documents/5cc5f222d5454797822964c14526a70d/explore
-
-Python scripts described here for inclusion into WaDE are operated using [Jupyter Notebooks](https://jupyter.org/).
-
-## Summary
-This document summarizes the process to prepare and share NMOSE’s Water Rights data for inclusion into the WSWC’s Water Data Exchange (WaDE 2.0) project.  Input files are taken directly from the [NMOSE](http://geospatialdata-ose.opendata.arcgis.com/datasets/ose-points-of-diversion) website.  In order to extract the NMOSE water rights data from the input files and publish it online through ESRI layers so that it can be ready for WaDE 2.0, eight separate Python scripts to generate CSV specific data need to be executed so that the data will be compatible with WaDE 2.0.
- 
-The following Python scripts use queries to extract NMOSE’s water rights data into WaDE 2.0 (see below list for names of each script).  Those Python scripts are further divided into two categories: scripts that prepare CSV files **(6)** which need to be ran in the provide order, and dependency scripts **(2)** which hold useful information but do not need to be operated.  The NMOSE extraction scripts are as follows
-
-**Scripts to prepare the CSV files (must run these)**
--	**#1. sites_NM.ipynb**
--	**#2. watersources_NM.ipynb**
--	**#3. variables_NM.ipynb**
--	**#4. methods_NM.ipynb**
--	**#5. organizations_NM.ipynb**
--	**#6. waterallocations_NM.ipynb**
-
-**Dependency Scripts**
- - **beneficialuseDictionary.py**
- - **utilityFunctions.py**
-
-The order in which scripts are operated is important as the **waterallocations_NM.ipynb** script is dependet on inputs from the others.  The **beneficialuseDictionary.py** dependency script holds Python specific dictionaries that are required for mapping different codes to their respective names (e.g. codes for the legal status of allocations).  The **utilityFunctions.py** dependency script holds Python functions that are required for three of the scripts (e.g. **watersources_NM.ipynb**, **sites_NM.ipynb**, and **waterallocations_NM.ipynb**) to prepare the CSV files.
-
-All scripts can be found in the WaDE’s Github repository [MappingStatesDataToWaDE2.0 in the New Mexico folder]( https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/NewMexico). 
+# NMOSE Water Rights (Allocation) Data Preparation for WaDE
+This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [New Mexico Office of the State Engineer (NMOSE)](https://www.ose.state.nm.us/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 
+## Overview of Source Data Utilized
+The following data was used for water allocations...
 
-# Python Script Information
-The following is a quick description of the six Python scripts that prepare the CSV files, their purpose, their dependencies, how they relate to the dependency scripts, an example of their input tables, and mandatory fields required for creation. 
+- **OSE PODs**:  Point of diversion water right sites.
 
-## 1. sites_NM.ipynb
-Purpose: generate a list of sites where water is allocated.
+The following unique files were created as input.  Input files used are as follows...
+ - OSE_PODst.csv
 
-Dependency: the output **sites.csv** file is an input to the **waterallocations_NM.ipnb**.
+## Storage for WaDE 2.0 Source and Processed Water Data
+The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+- New Mexico Allocation Data: https://drive.google.com/drive/folders/171lNosVUaf6yXxUL3d7lrRAYZSYaw22s?usp=sharing
 
-Supplemental Scripts Required:
-- **utilityFunctions.py**
-  - generate empty sites.csv file with controlled vocabulary headers
-  - assign SiteNativeID from OBJECTID
-  - generate WaDESiteUUID
-  - Project UTM coordinates to latitude and longitude 
-  - drop data if missing latitude/longitude
-  - copy results into **sites.csv** and export
+## Summary of Data Prep
+The following text summarizes the process used by the WSWC staff to prepare and share NMOSE's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *NV_POD_Allocation Schema Mapping to WaDE_QA.xlsx* & *NM_Allocation Schema Mapping to WaDE_QA.xlsx*.  Seven executable code files were used to extract the NMOSE's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (preprocess) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining six code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those seven code files are as follows...
 
-Input: **OSE_Points_of_Diversion.csv** (Points of diversions table containing New Mexico Water Rights data together with site information for water sources).
-
-#### Sample Data (Note: not all fields shown):
-WaDESiteUUID | SiteNativeID | SiteTypeCV | Long | Lat
------------- | ------------ | ---------- | ---- | ----
-NM_1 | 928 |Groundwater | -107.8822397 |35.16272037
-
-Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. **sites_mandatoryFieldMissing.csv**) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the **sites_NM.ipynb** include the following: 
-- SiteUUID 
-- SiteName
-- CoordinateMethodCV 
-- EPSGCodeCV
+- 0_NM_PreProcessNewMexicoAllocationData.ipynb
+- 1_NMwr_Methods.py
+- 2_NMwr_Variables.py
+- 3_NMwr_Organizations.py
+- 4_NMwr_WaterSources.py
+- 5_NMwr_Sites.py
+- 6_NMwr_AllocationsAmounts_facts.py
+- 7_NMwr_PODSiteToPOUSiteRelationships.py
 
 
-## 2. watersources_NM.ipynb
-Purpose: generate list of water sources from which water is allocated from.
+***
+### 0) Code File: 0_NM_PreProcessNewMexicoAllocationData.ipynb
+Purpose: preprocess the Montana input data files and merge them into one master file for simple dataframe creation and extraction.
 
-Dependency: the output **waterSources.csv** is an input to the **waterallocations_NM.ipnb**.
+#### Inputs: 
+ -  OSE_PODst.csv
 
-Supplemental Scripts Required:
-- **beneficialuseDictionary.py**
-   - Includes the following code dictionaries for New Mexico: Beneficial Use, Allocation Legal Status, Groundwater source type, Coordinate method type, and Coordinate method accuracy.
-- **utilityFunctions.py**
-  - generate empty waterSources.csv file with controlled vocabulary headers  
-  - assign defined Water Source Types 
-  - generate WaterSourceNativeID 
-  - generate WaterSourceUUID 
-  - drop data if missing WaterSourceUUID, WaterSourceTypeCV, and WaterQualityIndicatorCV
-  - copy results into **watersources.csv** and export
+#### Outputs:
+ - P_NewMexicoMaster.csv
 
-Input:  **OSE_Points_of_Diversion.csv** (Points of diversions table containing New Mexico Water Rights data together with site information for water sources).    
+#### Operation and Steps:
+- Read in the input files & create temporary dataframes.
+- Create longitude & latitude values from the existing **easting** & **northing** inputs using projection of init="epsg:26913", proj="utm", zone=13.
+- If **ditch_name**  input is blank, replace with "Unspecified".
+- Assign "Groundwater" text to **grnd_wtr_s** if not blank, & "Surface Water" text to **surface_co** input if value is not blank & > 0.  For water source type...
+  - if both values are are not blank, assign "Surface and Groundwater" text.
+  - if groundwater is not blank, assign "Groundwater" text.
+  - if groundwater is blank but surface water is not, assign "Surface Water" text.
+  - if both values are blank, assign "Unspecified" text.
+- Translate **surface_co** input from number code to name using provided dictionary.
+- Format **finish_dat_fix** field to %m/%d/%Y format.
+- Concatenate **own_fname** & **own_lname** fields together to create an owner name.
+- Translate **use_** input from abbreviation to descriptive text of the beneficial using provided dictionary.
+- Translate **status** input from abbreviation to descriptive text of the legal status using provided dictionary.
+- Generate WaDE specific field *WaterSourceNativeID* from WaDE *WaterSourceName* & *WaterSourceTypeCV* fields.  Used to identify unique sources of water.
+- Generate WaDE specific field *SiteNativeID* from WaDE *Latitude*, *Longitude*, & *SiteName* fields.  Used to identify unique sites.
+- Inspect output dataframe for additional errors / datatypes.
+- Export output dataframe as new csv file, *P_NewMexicoMaster.csv*.
 
-#### Sample Data (Note: not all fields shown):
-WaterSourceUUID | WaterSourceNativeID | WaterSourceName | WaterSourceTypeCV | WaterQualityIndicatorCV
------------- | ------------ | -------- | ---------- | ---- 
-NM_1 | 1 | Unspecified | Unknown | Fresh
 
-Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. **watersources_mandatoryFieldMissing.csv**) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the **watersource_NM.ipynb** include the following: 
+***
+### 1) Code File: 1_NMwr_Methods.py
+Purpose: generate legend of granular methods used on data collection.
+
+#### Inputs:
+- None
+
+#### Outputs:
+- methods.csv
+- methods_missing.csv (error check only)
+
+#### Operation and Steps:
+- Generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE Method* specific columns.
+- Assign **NMOSE** info to the *WaDE Method* specific columns (this was hardcoded by hand for simplicity).
+- Assign method UUID identifier to each (unique) row.
+- Perform error check on output dataframe.
+- Export output dataframe *methods.csv*.
+
+#### Sample Output (WARNING: not all fields shown):
+MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
+---------- | ---------- | ------------
+NMwr_M1 | Surface Ground | Adjudicated
+
+
+***
+### 2) Code File: 2_NMwr_Variables.py
+Purpose: generate legend of granular variables specific to each state.
+
+#### Inputs:
+- None
+
+#### Outputs:
+- variables.csv
+- variables_missing.csv (error check only)
+
+#### Operation and Steps:
+- Generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE Variable* specific columns.
+- Assign **NMOSE** info to the *WaDE Variable* specific columns (this was hardcoded by hand for simplicity).
+- Assign variable UUID identifier to each (unique) row.
+- Perform error check on output dataframe.
+- Export output dataframe *variables.csv*.
+
+#### Sample Output (WARNING: not all fields shown):
+VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
+---------- | ---------- | ------------ | ------------
+NMwr_V1 | 1 | Year | CFS
+
+
+***
+### 3) Code File: 3_MTwr_Organizations.py
+Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
+
+#### Inputs:
+- None
+
+#### Outputs:
+- organizations.csv
+- organizations_missing.csv (error check only)
+
+#### Operation and Steps:
+- Generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE Organizations* specific columns.
+- Assign **NMOSE** info to the *WaDE Organizations* specific columns (this was hardcoded by hand for simplicity).
+- Assign organization UUID identifier to each (unique) row.
+- Perform error check on output dataframe.
+- Export output dataframe *organizations.csv*.
+
+#### Sample Output (WARNING: not all fields shown):
+OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
+---------- | ---------- | ------------ | ------------
+NMwr_O1 | New Mexico Office of the State Engineer | David Hatchner (GIS Manager) | https://www.ose.state.nm.us/
+
+
+***
+### 4) Code File: 4_NMwr_WaterSources.py
+Purpose: generate a list of water sources specific to a water right.
+
+#### Inputs:
+- P_NewMexicoMaster.csv
+
+#### Outputs:
+- waterSources.csv
+- watersources_missing.csv (error check only)
+
+#### Operation and Steps:
+- Read the input file and generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE WaterSources* specific columns.
+- Assign **NMOSE** info to the *WaDE WaterSources* specific columns.  See *NV_POD_Allocation Schema Mapping to WaDE_QA.xlsx* & *NM_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+    - *WaterSourceName* = translated from **surface_co**, see *0_NM_PreProcessNewMexicoAllocationData.ipynb* for specifics. 
+    - *WaterSourceTypeCV* = generated list of sources from **SOURCE_TYPE**, see *0_NM_PreProcessNewMexicoAllocationData.ipynb* for specifics.
+    - *WaterSourceNativeID* = see *0_NM_PreProcessNewMexicoAllocationData.ipynb* for specifics.
+- Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceName* & *WaterSourceTypeCV* fields.
+- Assign water source UUID identifier to each (unique) row.
+- Perform error check on output dataframe.
+- Export output dataframe *WaterSources.csv*.
+
+#### Sample Output (WARNING: not all fields shown):
+WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceNativeID | WaterSourceTypeCV
+---------- | ---------- | ------------ | ------------ | ------------
+NMwr_WS1 | Unspecified | Unspecified | WaDENM_WS1 | Groundwater
+
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
 - WaterSourceUUID
-- WaterSourceTypeCV
 - WaterQualityIndicatorCV
+- WaterSourceTypeCV
 
 
-## 3. variables_NM.ipynb
-Purpose: generate legend of granular variables specific to each state
+***
+### 5) Code File: 5_NMwr_Sites.py
+Purpose: generate a list of sites information.
 
-Dependency: None
+#### Inputs:
+- P_NewMexicoMaster.csv
+- watersources.csv
 
-Supplemental Scripts Required: None
+#### Outputs:
+- sites.csv
+- sites_missing.csv (error check only)
 
-All values for the **variables_NM.ipynb** are hard-coded according to state.
+#### Operation and Steps:
+- Read the input file and generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE Site* specific columns.
+- Assign **NMOSE** info to the *WaDE Site* specific columns.  See *NV_POD_Allocation Schema Mapping to WaDE_QA.xlsx* & *NM_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+    - Extract *WaterSourceUUID* from waterSources.csv input csv file. See code for specific implementation of extraction.
+    - *County* = **county** input.
+    - *Latitude* = created from **easting** & **northing** inputs, see *0_NM_PreProcessNewMexicoAllocationData.ipynb* for specifics.
+    - *Longitude* = created from **easting** & **northing** inputs, see *0_NM_PreProcessNewMexicoAllocationData.ipynb* for specifics.
+    - *SiteName* = **ditch_name** inputs, see *0_NM_PreProcessNewMexicoAllocationData.ipynb* for specifics.
+    - *SiteNativeID* = *in_SiteNativeID*, see *0_NM_PreProcessNewMexicoAllocationData.ipynb* for specifics.
+    - *SiteTypeCV* = "Unspecified".
+- Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *SiteNativeID*, *SiteName*, *SiteTypeCV*, *Longitude* & *Latitude* fields.
+- Assign site UUID identifier to each (unique) row.
+- Perform error check on output dataframe.
+- Export output dataframe *sites.csv*.
 
-#### Sample Data (Note: not all fields shown):
-VariableSpecificCV | VariableCV | AggregationStatisticCV| AggregationInterval | AggregationIntervalUnitCV | ReportYearStartMonth| ReportYearTypeCV | AmountUnitCV | MaximumAmountUnitCV
----------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- | --------- |----|
-Allocation All | Allocation | Average| 1 | Year |10| WaterYear| CFS|AF| 
+#### Sample Output (WARNING: not all fields shown):
+SiteUUID | WaterSourceUUID | CoordinateMethodCV | Latitude | Longitude | SiteName
+---------- | ---------- | ---------- | ------------ | ------------ | ------------
+NMwr_S1 | NMwr_WS1 | Unspecified | 35.3044225068985 | -108.145455321569 | Unspecified
 
-
-## 4. methods_NM.ipynb
-Purpose: generate legend of granular variables specific to each state detailing water right/allocation/etc data collection.
-
-Dependency: None
-
-Supplemental Scripts Required: None
-
-All values for the **methods _NM.ipynb** are hard-coded according to state.
-       
-#### Sample Data (Note: not all fields shown):
-MethodUUID | MethodName | MethodDescription| MethodNEMLink | 
----------------- | ------------ | -------- | ---------- |
-NM_WaterAllocation| Water Allocation | Water Rights| http://geospatialdata-ose.opendata.arcgis.com/search?groupIds=fabf18d6e0634ae38c86475c9ada6498 | 
- 
-
-### 5. Organizations_NM.ipynb
-Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source
-
-Dependency: None
-
-Supplemental Scripts Required: None
-
-All values for the **Organizations_NM.ipynb** are hard-coded according to state.
-        
-#### Sample Data (Note: not all fields shown):
-OrganizationUUID | OrganizationName | OrganizationPurview| OrganizationWebsite |
----------------- | ------------ | -------- | ---------- | 
-NMOSE | 	New Mexico Office of the State Engineer | The New Mexico Office of the State Engineer (OSE) provides this geographic data and any associated metadata “as is” without warranty of any kind | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/NewMexico |
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
+- SiteUUID 
+- CoordinateMethodCV
+- EPSGCodeCV
+- SiteName
 
 
-## 6. waterallocations_NM.ipynb
+***
+### 6) Code File: 6_NMwr_AllocationsAmounts_facts.py
 Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 
-Dependency: None
+#### Inputs:
+- P_NewMexicoMaster.csv
+- methods.csv
+- variables.csv
+- organizations.csv
+- sites.csv
 
-Supplemental Scripts Required:
-- **beneficialuseDictionary.py**
-  - Includes the following code dictionaries for New Mexico: Beneficial Use, Allocation Legal Status, Groundwater source type, Coordinate method type, and Coordinate method accuracy.
-- **utilityFunctions.py**
-  - generate empty waterAllocations.csv file with controlled vocabulary headers
-  - call functions from utilityFunctions.py referencing the respective dictionaries to assign defined Beneficial Use, Allocation
-  - Legal Status, Groundwater source type, Coordinate method type, and Coordinate method accuracy to water right
-  - reference waterSources.csv and assign WaDE prepared water sources to water right
-  - reference sites.csv to map the respective sites (points of diversion) to water right
-  - assign AllocationOwner based on Company OR FirstName/LastName
-  - drop data if AllocationAmount and Allocation Maximum are null
-  - copy results into **waterallocations.csv** and export
+#### Outputs:
+- waterallocations.csv
+- waterallocations_missing.csv (error check only)
 
-Input: **OSE_Points_of_Diversion.csv** (Points of diversions table containing New Mexico Water Rights data together with site information for water sources).    
+#### Operation and Steps:
+- Read the input files and generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE Water Allocations* specific columns.
+- Assign **NMOSE** info to the *WaDE Water Allocations* specific columns.  See *NV_POD_Allocation Schema Mapping to WaDE_QA.xlsx* & *NM_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+    - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
+    - *AllocationFlow_CFS* = empty.
+    - *AllocationLegalStatusCV* = **status** input, see *0_NM_PreProcessNewMexicoAllocationData.ipynb* for specifics.
+    - *AllocationNativeID* = **nbr** input as string.
+    - *AllocationOwner* = **own_fname** & **own_lname** inputs, see *0_NM_PreProcessNewMexicoAllocationData.ipynb* for specifics.
+    - *AllocationPriorityDate* = **finish_dat_fix** input, , see *0_NM_PreProcessNewMexicoAllocationData.ipynb* for specifics.
+    - *AllocationVolume_AF* == **restrict_** input, as float.
+    - *BeneficialUseCategory* = **use_** input, , see *0_NM_PreProcessNewMexicoAllocationData.ipynb* for specifics.
+    - *IrrigatedAcreage* = **total_div** input.
+- Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.
+- Perform error check on output dataframe.
+- Export output dataframe *waterallocations.csv*.
 
-#### Sample Data (Note: not all fields shown):
-OrganizationUUID | SiteUUID | WaterSourceUUID | BeneficialUseCategory | AllocationNativeID | AllocationOwner | AllocationLegalStatusCV   
----------------- | ------------ | -------- | ---------- | ----------- | ---------- | ----------- 
-NMOSE| NM_32| NM_1   | 72-12-1 livestock watering | 43 |MHEALY, EDMUND | Permit |
+#### Sample Output (WARNING: not all fields shown):
+AllocationNativeID | AllocationVolume_AF | AllocationLegalStatusCV | BeneficialUseCategory
+---------- | ---------- | ------------ | ------------
+NMwr_WR1 | 1 | Permit | Unspecified
 
-Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. **allocations_mandatoryFieldMissing.csv**) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the **waterallocations _NM.ipynb** include the following: 
-- OrganizationUUID
-- VariableSpecificUUID
-- WaterSourceUUID
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID
+- VariableSpecificUUID
+- OrganizationUUID
+- SiteUUID
 - AllocationPriorityDate
+- BeneficialUseCategory
+- AllocationAmount or AllocationMaximum
+- DataPublicationDate
 
+
+***
+### 7) Code File: 7_NMwr_PODSiteToPOUSiteRelationships.py
+Purpose: generate linking element between POD and POU sites that share the same water right.
+Note: podsitetopousiterelationships.csv output only needed if both POD and POU data is present, otherwise produces empty file.
+
+#### Inputs:
+- sites.csv
+- waterallocations.csv
+
+#### Outputs:
+- podsitetopousiterelationships.csv
+
+#### Operation and Steps:
+- Read the sites.csv & waterallocations.csv input files.
+- Create three temporary dataframes: one for waterallocations, & two for site info that will store POD and POU data separately.
+- For the temporary POD dataframe...
+    - Read in site.csv data from sites.csv with a *PODSiteUUID* field = POD only.
+    - Create *PODSiteUUID* field = *SiteUUID*.
+- For the temporary POU dataframe
+    - Read in site.csv data from sites.csv with a *PODSiteUUID* field = POU only.
+    - Create *POUSiteUUID* field = *SiteUUID*.
+- For the temporary waterallocations dataframe, explode *SiteUUID* field to create unique rows.
+- Left-merge POD & POU dataframes to the waterallocations dataframe via *SiteUUID* field.
+- Consolidate waterallocations dataframe by grouping entries by *AllocationNativeID* filed.
+- Explode the consolidated waterallocations dataframe again using the *PODSiteUUID* field, and again for the *POUSiteUUID* field to create unique rows.
+- Perform error check on waterallocations dataframe (check for NaN values)
+- If waterallocations is not empty, export output dataframe *podsitetopousiterelationships.csv*.
+
+
+***
+## Staff Contributions
+Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Nevada Division of Water Resources [New Mexico Office of the State Engineer (NMOSE)](https://www.ose.state.nm.us/).
+
+WSWC Staff
+- Adel Abdallah <adelabdallah@wswc.utah.gov>
+- Ryan James <rjames@wswc.utah.gov>
+
+NMOSE Staff
+- David Hatchner (GIS Manager)<ose.webmaster@state.nm.us>
