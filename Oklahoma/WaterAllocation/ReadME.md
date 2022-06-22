@@ -2,21 +2,24 @@
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [Oklahoma Water Resources Board (OWRB)](https://www.owrb.ok.gov/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 
-## Overview of Data Utilized
+## Overview of Source Data Utilized
 The following data was used for water allocations...
 
 - Permitted Surface Water Diversion Points: http://home-owrb.opendata.arcgis.com/datasets/permitted-surface-water-diversion-points?geometry=-119.379%2C31.373%2C-77.565%2C37.701
 - Permitted Groundwater Wells (Point coverage): https://home-owrb.opendata.arcgis.com/datasets/permitted-groundwater-wells
 - Area of Use data: https://home-owrb.opendata.arcgis.com/datasets/areas-of-use?geometry=-109.718%2C33.749%2C-87.404%2C36.886
 
-
 These datasets were saved to a local csv file copy to be used as input to the Python codes that prepare WaDE2 input files.  Files can be found in the [RawInputData Folder](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Oklahoma/WaterAllocation/RawInputData)/ Input files used are as follows...
  - Permitted_Groundwater_Wells.csv
  - Permitted_Surface_Water_Diversion_Points.csv
  - OK_AreasofUse.csv
 
+## Storage for WaDE 2.0 Source and Processed Water Data
+The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+- Oklahoma Allocation Data: https://drive.google.com/drive/folders/183InFU3MOyzxPx4r2e2FI6rU8-bIayOG?usp=sharing
+
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share OWRB's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *OK_Allocation Schema Mapping to WaDE_QA.xlsx*.  Seven executable code files were used to extract the OWRB's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining six code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those Seven code files are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share OWRB's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *OK_Allocation Schema Mapping to WaDE_QA.xlsx*.  Eight executable code files were used to extract the OWRB's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining seven code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The code file *(AllocationsAmounts_facts.py)* is depended on the previous files.  Those Seven code files are as follows...
 
 - 0_PreProcessOklahomaAllocationData.ipynb
 - 1_OKwr_Methods.py
@@ -30,7 +33,7 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 
 ***
 ### 0) Code File: 0_PreProcessOklahomaAllocationData.ipynb
-Purpose: Pre-process the Oklahoma input data files and merge them into one master file for simple dataframe creation and extraction.
+Purpose: Pre-process the input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
  - Permitted_Groundwater_Wells.csv
