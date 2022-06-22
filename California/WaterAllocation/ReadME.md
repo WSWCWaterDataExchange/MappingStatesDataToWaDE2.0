@@ -221,10 +221,10 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *AllocationLegalStatusCV* = **WR_STATUS**.
     - *AllocationNativeID* = **WR_WATER_RIGHT_ID**.
-    - *AllocationOwner* = custom WadE owner field, see *0_PreProcessCaliforniaAllocationData.ipynb* for specifics.
-    - *AllocationPriorityDate* = custom WadE owner field, see *0_PreProcessCaliforniaAllocationData.ipynb* for specifics.
-    - *AllocationTimeframeEnd* = custom WadE owner field, see *0_PreProcessCaliforniaAllocationData.ipynb* for specifics.
-    - *AllocationTimeframeStart* = custom WadE owner field, see *0_PreProcessCaliforniaAllocationData.ipynb* for specifics.
+    - *AllocationOwner* = **FIRST_NAME** & **LAST_NAME** inputs, see *0_PreProcessCaliforniaAllocationData.ipynb* for specifics.
+    - *AllocationPriorityDate* = **PRIORITY_DATE**, if emtpy use **APPLICATION_ACCEPTANCE_DATE** input.  See *0_PreProcessCaliforniaAllocationData.ipynb* for specifics.
+    - *AllocationTimeframeEnd* = **DIRECT_DIV_SEASON_END**, see *0_PreProcessCaliforniaAllocationData.ipynb* for specifics.
+    - *AllocationTimeframeStart* = **DIRECT_DIV_SEASON_START**, see *0_PreProcessCaliforniaAllocationData.ipynb* for specifics.
     - *AllocationTypeCV* = **WR_TYPE**.
     - *AllocationVolume_AF* = **FACE_VALUE_AMOUNT**.
     - *BeneficialUseCategory* = **USE_CODE**, Unspecified if Blank.
