@@ -12,14 +12,14 @@ import pandas as pd
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Wyoming/WaterAllocation"
+workingDir = "G:/Shared drives/WaDE Data/Wyoming/WaterAllocation"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_WyomingMaster.csv"
 df = pd.read_csv(fileInput)  # The State's Master input dataframe. Remove any nulls.

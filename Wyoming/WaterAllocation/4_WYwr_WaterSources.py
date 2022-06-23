@@ -11,13 +11,13 @@ import pandas as pd
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Wyoming/WaterAllocation"
+workingDir = "G:/Shared drives/WaDE Data/Wyoming/WaterAllocation"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_WyomingMaster.csv"
 df = pd.read_csv(fileInput)
@@ -83,10 +83,6 @@ outdf['WaterSourceTypeCV'] = df['in_WaterSourceTypeCV']
 print("Dropping duplicates")
 outdf = outdf.drop_duplicates(subset=['WaterSourceName', 'WaterSourceNativeID', 'WaterSourceTypeCV']).reset_index(drop=True)
 ##############################
-
-print("WaterSourceUUID")
-df["Count"] = range(1, len(df.index) + 1)
-outdf['WaterSourceUUID'] = df.apply(lambda row: assignWaterSourceUUID(row['Count']), axis=1)
 
 print("Resetting Index")
 outdf.reset_index()
