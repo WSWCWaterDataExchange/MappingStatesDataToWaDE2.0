@@ -1,19 +1,19 @@
-#Date Created: 06/08/2020
-#Purpose: To extract ID organization use information and populate dataframe for WaDE_QA 2.0.
+#Date Created: 06/23/2022
+#Purpose: To extract TX wr organization use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir="C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Texas/WaterAllocation"
+workingDir = "G:/Shared drives/WaDE Data/Texas/WaterAllocation"
 os.chdir(workingDir)
 
 # Needed WaDE columns
@@ -33,7 +33,7 @@ columns = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "TCEQ",
+    "TXwr_O1",
     "jkathy.alexander@tceq.texas.gov",
     "Kathy Alexander",
     "https://www.tceq.texas.gov/permitting/water_rights/wr-permitting/wrwud",

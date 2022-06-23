@@ -1,29 +1,26 @@
-#Date Created: 12/22/2020
-#Purpose: To extract ID site use information and populate dataframe for WaDEQA 2.0.
+#Date Created: 06/23/2022
+#Purpose: To extract TX wr site use information and populate dataframe for WaDEQA 2.0.
 #Notes: 1) For 'SiteTypeCV', easier to label everything that is not a surface water first.
 #       2) For 'CoordinateMethodCV', list out all Idaho specific CV values (should already be in WaDE Vocab).
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
-from pyproj import Transformer, transform
-transformer = Transformer.from_proj(4269, 4326)  # A trick to drastically optimize the Transformer of pyproj.
-# Tx projection = EPSG:4269.  WGS84 projection used by WaDE 2.0 = epsg:4326.
+import numpy as np
+import pandas as pd
 
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Texas/WaterAllocation"
+workingDir = "G:/Shared drives/WaDE Data/Texas/WaterAllocation"
 os.chdir(workingDir)
 fileInput = "RawInputData/P_TexasWRP.csv"
 df = pd.read_csv(fileInput)
@@ -34,7 +31,7 @@ df_watersources = pd.read_csv(watersources_fileInput)  # watersources dataframe
 columnslist = [
     "SiteUUID",
     "RegulatoryOverlayUUIDs",
-    "WaterSourceUUID",
+    "WaterSourceUUIDs",
     "CoordinateAccuracy",
     "CoordinateMethodCV",
     "County",
@@ -65,16 +62,6 @@ def assignSiteUUID(colrowValue):
     outstring = "TXwr_S" + string1
     return outstring
 
-# For converting projection latitude.
-def assignLat(colrowValueLat, colrowValueLong):
-    lat, long = transformer.transform(colrowValueLat, colrowValueLong)
-    return lat
-
-# For converting projection longitude.
-def assignLong(colrowValueLat, colrowValueLong):
-    lat, long = transformer.transform(colrowValueLat, colrowValueLong)
-    return long
-
 
 # Creating output dataframe (outdf)
 ############################################################################
@@ -87,8 +74,8 @@ outdf["CoordinateAccuracy"] = "Unspecified"
 print("RegulatoryOverlayUUIDs")
 outdf['RegulatoryOverlayUUIDs'] = ""
 
-print("WaterSourceUUID")
-outdf['WaterSourceUUID'] = "TXwr_WS1"
+print("WaterSourceUUIDs")
+outdf['WaterSourceUUIDs'] = "TXwr_WS1"
 
 print("CoordinateMethodCV")
 outdf['CoordinateMethodCV'] = "Digitized"
@@ -112,10 +99,10 @@ print("HUC8")
 outdf['HUC8'] = ""
 
 print("Latitude")
-outdf['Latitude'] = df.apply(lambda row: assignLat(row['LAT_DD'], row['LONG_DD']), axis=1)
+outdf['Latitude'] = df['in_Latitude']
 
 print("Longitude")
-outdf['Longitude'] = df.apply(lambda row: assignLong(row['LAT_DD'], row['LONG_DD']), axis=1)
+outdf['Longitude'] = df['in_Longitude']
 
 print("NHDNetworkStatusCV")
 outdf['NHDNetworkStatusCV'] = ""
@@ -144,34 +131,27 @@ outdf['StateCV'] = "TX"
 print("USGSSiteID")
 outdf['USGSSiteID'] = ""
 
-#####################################
-# Dropping duplicate
-# filter the whole table based on a unique combination of SiteNativeID, SiteName, SiteTypeCV
-outdf = outdf.drop_duplicates(subset=['SiteName', 'SiteNativeID', 'SiteTypeCV',  'Latitude', 'Longitude'])
-outdf = outdf.reset_index(drop=True)
-######################################
+print("Resetting Index")
+outdf.reset_index()
 
-print("SiteUUID") # has to be one of the last.
-dftemp = pd.DataFrame(index=outdf.index)
-dftemp["Count"] = range(1, len(dftemp.index) + 1)
-outdf['SiteUUID'] = dftemp.apply(lambda row: assignSiteUUID(row['Count']), axis=1)
+print("Joining outdf duplicates based on key fields...")
+outdf = outdf.replace(np.nan, "")  # Replaces NaN values with blank.
+groupbyList = ['PODorPOUSite', 'SiteNativeID', 'SiteName', 'SiteTypeCV', 'Longitude', 'Latitude']
+outdf = outdf.groupby(groupbyList).agg(lambda x: ','.join([str(elem) for elem in (list(set(x))) if elem!=''])).replace(np.nan, "").reset_index()
+outdf = outdf[columnslist]  # reorder the dataframe's columns based on columnslist
 
 
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-
-dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
-dfpurge = dfpurge.assign(ReasonRemoved='')
-
-# SiteUUID
-outdf, dfpurge = TestErrorFunctions.SiteUUID_S_Check(outdf, dfpurge)
+purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # RegulatoryOverlayUUIDs
 outdf, dfpurge = TestErrorFunctions.RegulatoryOverlayUUIDs_S_Check(outdf, dfpurge)
 
-# WaterSourceUUID
-outdf100, dfpurge = TestErrorFunctions.WaterSourceUUID_S_Check(outdf, dfpurge)
+# WaterSourceUUIDs
+outdf100, dfpurge = TestErrorFunctions.WaterSourceUUIDs_S_Check(outdf, dfpurge)
 
 # CoordinateAccuracy
 outdf, dfpurge = TestErrorFunctions.CoordinateAccuracy_S_Check(outdf, dfpurge)
@@ -231,15 +211,26 @@ outdf, dfpurge = TestErrorFunctions.StateCV_S_Check(outdf, dfpurge)
 outdf, dfpurge = TestErrorFunctions.USGSSiteID_S_Check(outdf, dfpurge)
 
 
+############################################################################
+print("Assign SiteUUID") # has to be one of the last.
+outdf = outdf.reset_index(drop=True)
+dftemp = pd.DataFrame(index=outdf.index)
+dftemp["Count"] = range(1, len(dftemp.index) + 1)
+outdf['SiteUUID'] = dftemp.apply(lambda row: assignSiteUUID(row['Count']), axis=1)
+
+# Error check SiteUUID
+outdf, dfpurge = TestErrorFunctions.SiteUUID_S_Check(outdf, dfpurge)
+
+
 # Export to new csv
 ############################################################################
-print("Exporting dataframe outdf to csv...")
+print("Exporting outdf and dfpurge dataframes...")
 
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/sites.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
-    dfpurge.to_csv('ProcessedInputData/sites_missing.csv', index=False)
+    dfpurge.to_excel('ProcessedInputData/sites_missing.xlsx', index=False)
 
 print("Done.")

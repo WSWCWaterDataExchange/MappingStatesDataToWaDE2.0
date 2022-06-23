@@ -1,19 +1,19 @@
-#Date Created: 06/08/2020
-#Purpose: To extract TX variable use information and populate dataframe for WaDE_QA 2.0.
+#Date Created: 06/23/2022
+#Purpose: To extract TX wr variable use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) Single row of entries, inpVals, for Variable Table.
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir="C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Texas/WaterAllocation"
+workingDir = "G:/Shared drives/WaDE Data/Texas/WaterAllocation"
 os.chdir(workingDir)
 
 #WaDE columns
@@ -34,7 +34,7 @@ columns = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "TCEQ_Allocation",
+    "TXwr_V1",
     "1",
     "Year",
     "Average",
