@@ -1,19 +1,19 @@
-# Date Updated: 05/25/2021
-# Purpose: To extract SD site POD and POU relation information and populate dataframe for WaDEQA 2.0.
+#Date Created: 06/23/2022
+# Purpose: To extract SD wr site POD and POU relation information and populate dataframe for WaDEQA 2.0.
 # Notes: N/A
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/SouthDakota/WaterAllocation"  # Specific to my machine, will need to change.
+workingDir = "G:/Shared drives/WaDE Data/SouthDakota/WaterAllocation"
 os.chdir(workingDir)
 
 # Sites

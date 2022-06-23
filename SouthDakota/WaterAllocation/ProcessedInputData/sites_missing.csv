@@ -1,5 +1,0 @@
-SiteUUID,RegulatoryOverlayUUIDs,WaterSourceUUID,CoordinateAccuracy,CoordinateMethodCV,County,EPSGCodeCV,Geometry,GNISCodeCV,HUC12,HUC8,Latitude,Longitude,NHDNetworkStatusCV,NHDProductCV,PODorPOUSite,SiteName,SiteNativeID,SitePoint,SiteTypeCV,StateCV,USGSSiteID,ReasonRemoved,index
-SDwr_S10541,,SDwr_WS1108,Unspecified,Unspecified,CU,4326,,,, ,0.0,0.0,,,POD,Unspecified,WaDESD_S10541,,Unspecified,SD,,Bad Latitude,10540.0
-SDwr_S10398,,SDwr_WS27,Unspecified,Unspecified,BH,4326,,,,10170101,42.926829999999995,97.74358000000001,,,POD,Unspecified,WaDESD_S10398,,Unspecified,SD,,Bad Longitude,10397.0
-SDwr_S16286,,SDwr_WS5,Unspecified,Unspecified,MA,4326,,,,10170203,43.57998,0.78088,,,POD,Unspecified,WaDESD_S16286,,Unspecified,SD,,Bad Longitude,16284.0
-SDwr_S16470,,SDwr_WS27,Unspecified,Unspecified,SP,4326,,,,10160009,44.74223,98.59898000000001,,,POD,Unspecified,WaDESD_S16470,,Unspecified,SD,,Bad Longitude,16468.0

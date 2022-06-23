@@ -1,19 +1,19 @@
-#Date Created: 01/19/2021
-#Purpose: To extract SD variable information and populate dataframe for WaDE_QA 2.0.
+#Date Created: 06/23/2022
+#Purpose: To extract SD wr variable information and populate dataframe for WaDE_QA 2.0.
 #Notes: asdf
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/SouthDakota/WaterAllocation"
+workingDir = "G:/Shared drives/WaDE Data/SouthDakota/WaterAllocation"
 os.chdir(workingDir)
 
 #WaDE columns
@@ -34,7 +34,7 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "SD_Consumptive Use",
+    "SDwr_V1",
     "1",
     "Year",
     "Average",

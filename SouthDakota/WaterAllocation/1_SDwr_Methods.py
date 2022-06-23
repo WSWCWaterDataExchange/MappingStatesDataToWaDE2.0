@@ -1,19 +1,19 @@
-#Date Created: 01/19/2021
-#Purpose: To extract SD methods use information and populate dataframe for WaDE_QA 2.0.
+#Date Created: 06/23/2022
+#Purpose: To extract SD wr methods use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) Two different data sets, groundwater vs surface water.
 
 
 # Needed Libraries
 ############################################################################
-import pandas as pd
-import numpy as np
 import os
+import numpy as np
+import pandas as pd
 
 
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/SouthDakota/WaterAllocation"
+workingDir = "G:/Shared drives/WaDE Data/SouthDakota/WaterAllocation"
 os.chdir(workingDir)
 
 #WaDE columns
@@ -33,7 +33,7 @@ columnslist = [
 ############################################################################
 print("Populating dataframe...")
 inpVals = [
-    "SD_Water Allocation",
+    "SDwr_M1",
     "Surface Ground Water",
     "",
     "",

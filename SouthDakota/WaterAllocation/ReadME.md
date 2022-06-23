@@ -2,13 +2,17 @@
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [South Dakota Department of Environment and Natural Resources (SDDENR)](https://denr.sd.gov/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 
-## Overview of Data Utilized
+## Overview of Source Data Utilized
 The following data was used for water allocations...
 
 - Point of diversion (POD) surface and groundwater data files were made temporary available to the WSWC staff by the SDDENR via email correspondence and shared through Google Drive.  Links no longer available, contact SDDENR for further instructions.
 
 Two unique files were created, one used by the WSWC staff to understand the available data (*"_with Notes"*), the second resulting files to be used as input to the Python codes that prepare WaDE2 input files.  Input files used are as follows...
  - waterights_input
+
+## Storage for WaDE 2.0 Source and Processed Water Data
+The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+- South Dakota Allocation Data: https://drive.google.com/drive/folders/1AQH7axW_PjUZKd7JQqOiBuE3fMBG3Q7a?usp=sharing
 
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share SDDENR's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *WY_Allocation Schema Mapping to WaDE_QA.xlsx*.  Six executable code files were used to extract the SDDENR's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those six code files are as follows...
@@ -68,7 +72,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
-SD_Water Allocation | Surface Ground Water | Water Use
+SDwr_M1| Surface Ground Water | Water Use
 
 
 ***
@@ -93,7 +97,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
 ---------- | ---------- | ------------ | ------------
-SD_Allocation All | 1 | Year | CFS
+SDwr_V1 | 1 | Year | CFS
 
 
 ***
@@ -118,7 +122,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
 ---------- | ---------- | ------------ | ------------
-SDDENR | South Dakota Water Development Office | Ron Duvall | https://denr.sd.gov/
+SDwr_O1 | South Dakota Water Development Office | Ron Duvall | https://denr.sd.gov/
 
 
 ***
