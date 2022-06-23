@@ -1,4 +1,4 @@
-#Date Created: 03/29/2022
+#Date Created: 06/33/2022
 #Author: Ryan James
 #Purpose: To extract OR allocation use information and populate dataframe WaDEQA 2.0.
 #Notes:  N/A
@@ -12,27 +12,24 @@ import pandas as pd
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "G:/Shared drives/WaDE Data/Oregon/WaterAllocation"  # Specific to my machine, will need to change.
+workingDir = "G:/Shared drives/WaDE Data/Oregon/WaterAllocation"
 os.chdir(workingDir)
 M_fileInput = "RawinputData/P_OregonMaster.csv"  # Change this to fit state
-method_fileInput = "ProcessedInputData/methods.csv"
-variables_fileInput = "ProcessedInputData/variables.csv"
 sites_fileInput = "ProcessedInputData/sites.csv"
 
 df_DM = pd.read_csv(M_fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
-df_method = pd.read_csv(method_fileInput)  # Method dataframe
-df_variables = pd.read_csv(variables_fileInput)  # Variables dataframe
 df_sites = pd.read_csv(sites_fileInput)  # Sites dataframe
 
 #WaDE dataframe columns
 columnslist = [
+    "AllocationUUID",
     "MethodUUID",
     "OrganizationUUID",
     "SiteUUID",
@@ -69,7 +66,7 @@ columnslist = [
     "OwnerClassificationCV",
     "PopulationServed",
     "PowerType",
-    "PrimaryUseCategory",
+    "PrimaryBeneficialUseCategory",
     "WaterAllocationNativeURL"]
 
 
@@ -116,6 +113,13 @@ def assignBenUseCategory(colrowValue):
     else:
         outList = colrowValue.strip()
     return outList
+
+# For creating AllocationUUID
+def assignAllocationUUID(colrowValue):
+    string1 = str(colrowValue)
+    outstring = "ORwr_WR" + string1
+    return outstring
+
 
 # Creating output dataframe (outdf)
 ############################################################################
@@ -225,7 +229,7 @@ outdf['LegacyAllocationIDs'] = ""
 print("OwnerClassificationCV")
 # Temp solution to populate OwnerClassificationCV field.
 # Use Custom import file
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/OwnerClassification")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/OwnerClassification")
 import OwnerClassificationField
 outdf['OwnerClassificationCV'] = outdf.apply(lambda row: OwnerClassificationField.CreateOwnerClassification(row['AllocationOwner']), axis=1)
 #####################################
@@ -236,8 +240,8 @@ outdf['PopulationServed'] = ""
 print("PowerType")
 outdf['PowerType'] = ""
 
-print("PrimaryUseCategory")
-outdf['PrimaryUseCategory'] = "Unspecified"
+print("PrimaryBeneficialUseCategory")
+outdf['PrimaryBeneficialUseCategory'] = "Unspecified"
 
 print("WaterAllocationNativeURL")
 outdf['WaterAllocationNativeURL'] = df_DM['wris_link']
@@ -262,6 +266,12 @@ def tempfixOCSV(colrowValueA):
     result = colrowValueA.split(",", 1)[0]  # pass in text, split on "," & return first value.
     return result
 outdf['OwnerClassificationCV']  = outdf.apply(lambda row: tempfixOCSV(row['OwnerClassificationCV']), axis=1)
+
+# Temp solution to populate PrimaryBeneficialUseCategory field.
+# Use Custom import file
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/AssignPrimaryUseCategory")
+import AssignPrimaryUseCategory
+outdf['PrimaryBeneficialUseCategory'] = outdf.apply(lambda row: AssignPrimaryUseCategory.retrievePrimaryUseCategory(row['BeneficialUseCategory']), axis=1)
 
 
 #Error Checking Each Field
@@ -375,11 +385,22 @@ outdf, dfpurge = TestErrorFunctions.PopulationServed_AA_Check(outdf, dfpurge)
 # PowerType
 outdf, dfpurge = TestErrorFunctions.PowerType_AA_Check(outdf, dfpurge)
 
-# PrimaryUseCategory
-outdf, dfpurge = TestErrorFunctions.PrimaryUseCategory_AA_Check(outdf, dfpurge)
+# PrimaryBeneficialUseCategory
+outdf, dfpurge = TestErrorFunctions.PrimaryBeneficialUseCategory_AA_Check(outdf, dfpurge)
 
 # WaterAllocationNativeURL
 outdf, dfpurge = TestErrorFunctions.WaterAllocationNativeURL_AA_Check(outdf, dfpurge)
+
+
+############################################################################
+print("Assign AllocationUUID") # has to be one of the last.
+outdf = outdf.reset_index(drop=True)
+dftemp = pd.DataFrame(index=outdf.index)
+dftemp["Count"] = range(1, len(dftemp.index) + 1)
+outdf['AllocationUUID'] = dftemp.apply(lambda row: assignAllocationUUID(row['Count']), axis=1)
+
+# Error check AllocationUUID
+outdf, dfpurge = TestErrorFunctions.AllocationUUID_AA_Check(outdf, dfpurge)
 
 
 # Export to new csv

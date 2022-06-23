@@ -8,22 +8,18 @@
 import os
 import numpy as np
 import pandas as pd
-from pyproj import Transformer, transform
-transformer = Transformer.from_proj(2992, 4326)
-# Oregon projection = EPSG:2992.
-# WGS84 projection used by WaDE 2.0 = epsg:4326.
 
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "G:/Shared drives/WaDE Data/Oregon/WaterAllocation"  # Specific to my machine, will need to change.
+workingDir = "G:/Shared drives/WaDE Data/Oregon/WaterAllocation"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_OregonMaster.csv"
 df = pd.read_csv(fileInput)
