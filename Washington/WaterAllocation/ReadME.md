@@ -2,7 +2,7 @@
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [Washington State Department of Ecology (WSDE)](https://ecology.wa.gov/Water-Shorelines/Water-supply/Water-rights), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 
-## Overview of Data Utilized
+## Overview of Source Data Utilized
 The following data was used for water allocations...
 
 - [WA GWIS_Data download](https://fortress.wa.gov/ecy/gispublic/DataDownload/wr/GWIS_Data/). Data made available can be found within the **GWIS_SDEexport.zip** option.
@@ -12,6 +12,9 @@ The following data was used for water allocations...
 - Person_Plus_EXTRACT_FromWRTSnotGWIS.csv, obtained from above GWIS_SDEexport.zip.
 - [GWIS_Data_Dictionary](https://fortress.wa.gov/ecy/gispublic/DataDownload/wr/GWIS_Data/GWIS_Data_Dictionary/).  Used to interpret and understand the WA data.
 
+## Storage for WaDE 2.0 Source and Processed Water Data
+The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+- Washington Allocation Data: https://drive.google.com/drive/folders/1Bv21_uF9kGk1FOIRZnmdxNYP2f0POUIN?usp=sharing
 
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share WSDE's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *WA_Allocation Schema Mapping_WaDEQA.xlsx*.  Seven executable code files were used to extract the WSDE's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining six code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those seven code files are as follows...
