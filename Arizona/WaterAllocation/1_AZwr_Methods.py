@@ -35,7 +35,7 @@ print("Populating dataframe...")
 
 outdf = pd.DataFrame(columns=columnslist)
 
-outdf.MethodUUID = ["ADwr_M1", "ADwr_M2"]
+outdf.MethodUUID = ["AZwr_M1", "AZwr_M2"]
 
 outdf.ApplicableResourceTypeCV = ["Groundwater", "Surface Water"]
 

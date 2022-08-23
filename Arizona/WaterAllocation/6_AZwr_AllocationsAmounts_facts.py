@@ -1,4 +1,4 @@
-# Date Update: 05/06/2022
+#Date Updated: 08/01/2022
 #Purpose: To extract AZ water right information and populate dataframe for WaDE_QA 2.0.
 #         1) Simple creation of working dataframe (df), with output dataframe (outdf).
 #         2) Drop all nulls before combining duplicate rows on NativeID.
@@ -13,7 +13,7 @@ import pandas as pd
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -34,6 +34,8 @@ df_sites = pd.read_csv(sites_fileInput)  # Sites dataframe
 
 #WaDE dataframe columns
 columnslist = [
+    "WaDEUUID",
+    "AllocationUUID",
     "MethodUUID",
     "OrganizationUUID",
     "SiteUUID",
@@ -70,7 +72,7 @@ columnslist = [
     "OwnerClassificationCV",
     "PopulationServed",
     "PowerType",
-    "PrimaryUseCategory",
+    "PrimaryBeneficialUseCategory",
     "WaterAllocationNativeURL"]
 
 # Custom Functions
@@ -123,6 +125,13 @@ def assignBeneficialUseCategory(colrowValue):
         strVal = str(colrowValue)
         outList = strVal.strip()
     return outList
+
+# For creating AllocationUUID
+def assignAllocationUUID(colrowValue):
+    string1 = str(colrowValue)
+    outstring = "AZwr_WR" + string1
+    return outstring
+
 
 
 # Creating output dataframe (outdf)
@@ -234,7 +243,7 @@ outdf['LegacyAllocationIDs'] = ""
 print("OwnerClassificationCV")
 # Temp solution to populate OwnerClassificationCV field.
 # Use Custom import file
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/OwnerClassification")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/OwnerClassification")
 import OwnerClassificationField
 outdf['OwnerClassificationCV'] = outdf.apply(lambda row: OwnerClassificationField.CreateOwnerClassification(row['AllocationOwner']), axis=1)
 #####################################
@@ -245,11 +254,14 @@ outdf['PopulationServed'] = ""
 print("PowerType")
 outdf['PowerType'] = ""
 
-print("PrimaryUseCategory")
-outdf['PrimaryUseCategory'] = ""
+print("PrimaryBeneficialUseCategory")
+outdf['PrimaryBeneficialUseCategory'] = ""
 
 print("WaterAllocationNativeURL")
 outdf['WaterAllocationNativeURL'] = ""
+
+print("Adding Data Assessment UUID")
+outdf['WaDEUUID'] = ""
 
 print("Resetting Index")
 outdf.reset_index()
@@ -266,22 +278,27 @@ outdf = outdf[columnslist]  # reorder the dataframe's columns based on columnsli
 print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to upload data to QA here.
 
 # Note: OwnerClassificationCV can only accept 1 entry at this time. Error due to above merge / we don't allow multiple OwnerClassificationCV.
-def tempfixOCSV(colrowValueA):
-    result = colrowValueA.split(",", 1)[0]  # pass in text, split on "," & return first value.
+def tempfixOCSV(val):
+    valList = val.split(",") # convert string to list
+    valList.sort() # sort list alphabetically
+    if ("In Review" in valList):
+        valList.remove("In Review") # check if "In Review"  If true, remove.
+        valList.append("In Review") # Append back in "In Review" to end of list.
+    result = valList[0] # return only first value in list.
     return result
 outdf['OwnerClassificationCV']  = outdf.apply(lambda row: tempfixOCSV(row['OwnerClassificationCV']), axis=1)
 
-# Temp solution to populate PrimaryUseCategory field.
+# Temp solution to populate PrimaryBeneficialUseCategory field.
 # Use Custom import file
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/AssignPrimaryUserCategory")
-import AssignPrimaryUserCategory
-outdf['PrimaryUseCategory'] = outdf.apply(lambda row: AssignPrimaryUserCategory.retrievePrimaryUseCategory(row['BeneficialUseCategory']), axis=1)
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/AssignPrimaryUseCategory")
+import AssignPrimaryUseCategory
+outdf['PrimaryBeneficialUseCategory'] = outdf.apply(lambda row: AssignPrimaryUseCategory.retrievePrimaryUseCategory(row['BeneficialUseCategory']), axis=1)
 
 
 #Error Checking Each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+purgecolumnslist = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
 dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # MethodUUID
@@ -389,11 +406,28 @@ outdf, dfpurge = TestErrorFunctions.PopulationServed_AA_Check(outdf, dfpurge)
 # PowerType
 outdf, dfpurge = TestErrorFunctions.PowerType_AA_Check(outdf, dfpurge)
 
-# PrimaryUseCategory
-outdf, dfpurge = TestErrorFunctions.PrimaryUseCategory_AA_Check(outdf, dfpurge)
+# PrimaryBeneficialUseCategory
+outdf, dfpurge = TestErrorFunctions.PrimaryBeneficialUseCategory_AA_Check(outdf, dfpurge)
 
 # WaterAllocationNativeURL
 outdf, dfpurge = TestErrorFunctions.WaterAllocationNativeURL_AA_Check(outdf, dfpurge)
+
+
+############################################################################
+print("Assign AllocationUUID") # has to be one of the last.
+outdf = outdf.reset_index(drop=True)
+dftemp = pd.DataFrame(index=outdf.index)
+dftemp["Count"] = range(1, len(dftemp.index) + 1)
+outdf['AllocationUUID'] = dftemp.apply(lambda row: assignAllocationUUID(row['Count']), axis=1)
+
+# Error check AllocationUUID
+outdf, dfpurge = TestErrorFunctions.AllocationUUID_AA_Check(outdf, dfpurge)
+
+
+# Remove WaDEUUID field from import file (only needed for purge info).
+############################################################################
+print("Drop Assessment WaDEUUID")
+outdf = outdf.drop(['WaDEUUID'], axis=1)
 
 
 # Export to new csv
