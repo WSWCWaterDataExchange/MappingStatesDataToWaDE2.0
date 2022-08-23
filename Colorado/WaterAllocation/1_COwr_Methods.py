@@ -1,4 +1,4 @@
-#Date Created: 03/11/2022
+#Date Created: 05/09/2022
 #Author: Ryan James, WSWC
 #Purpose: To extract CO methods use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) Two different data sets, groundwater vs surface water.
@@ -11,12 +11,10 @@ import numpy as np
 import pandas as pd
 
 
-
-
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "G:/Shared drives/WaDE Data/Colorado/WaterAllocation"  # Specific to my machine, will need to change.
+workingDir = "G:/Shared drives/WaDE Data/Colorado/WaterAllocation"
 os.chdir(workingDir)
 
 #WaDE columns

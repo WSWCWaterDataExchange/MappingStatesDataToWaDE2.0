@@ -1,4 +1,4 @@
-#Date Created: 03/11/2022
+#Date Created: 05/09/2022
 #Author: Ryan James, WSWC
 #Purpose: To extract CO water source use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) For 'WaterSourceTypeCV', easier to label everything that is not a surface water first.
@@ -20,7 +20,7 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "G:/Shared drives/WaDE Data/Colorado/WaterAllocation"  # Specific to my machine, will need to change.
+workingDir = "G:/Shared drives/WaDE Data/Colorado/WaterAllocation"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_ColoradoMaster.csv"
 df = pd.read_csv(fileInput)

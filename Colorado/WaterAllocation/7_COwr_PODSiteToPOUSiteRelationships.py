@@ -1,4 +1,4 @@
-#Date Created: 03/11/2022
+#Date Created: 05/09/2022
 # Purpose: To extract CO site POD and POU relation information and populate dataframe for WaDEQA 2.0.
 # Notes: N/A
 
@@ -13,7 +13,7 @@ import pandas as pd
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "G:/Shared drives/WaDE Data/Colorado/WaterAllocation"  # Specific to my machine, will need to change.
+workingDir = "G:/Shared drives/WaDE Data/Colorado/WaterAllocation"
 os.chdir(workingDir)
 
 # Sites

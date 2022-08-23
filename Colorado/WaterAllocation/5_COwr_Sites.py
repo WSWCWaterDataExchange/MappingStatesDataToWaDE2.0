@@ -1,4 +1,4 @@
-#Date Created: 03/11/2022
+#Date Created: 05/09/2022
 #Author: Ryan James, WSWC
 #Purpose: To extract CO site use information and populate DataFrame for local WaDEQA 2.0.
 #Notes: N/A
@@ -20,7 +20,7 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "G:/Shared drives/WaDE Data/Colorado/WaterAllocation"  # Specific to my machine, will need to change.
+workingDir = "G:/Shared drives/WaDE Data/Colorado/WaterAllocation"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_ColoradoMaster.csv"
 df = pd.read_csv(fileInput)
@@ -113,7 +113,7 @@ print("County")
 outdf['County'] = df['County']
 
 print("EPSGCodeCV")
-outdf['EPSGCodeCV'] = '4326'
+outdf['EPSGCodeCV'] = "4326"
 
 print("Geometry")
 outdf['Geometry'] = ""
