@@ -1,5 +1,4 @@
-# Last Update: 12/09/2020
-# Dependents: AllocationsAmounts_fact.py
+# Last Update: 08/05/2022
 # Purpose: To have a single function file to error check datatypes.
 # Index:
 #       WaterSources
@@ -29,10 +28,12 @@ def WaterSourceUUID_WS_Check(dfx, dfy):
                    (dfx['WaterSourceUUID'].str.len() > 250)].assign(
         ReasonRemoved='Incomplete WaterSourceUUID').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
+
         outmaskdf['IncompleteField_1'] = mask['WaterSourceUUID']
         dfy = dfy.append(outmaskdf)
 
@@ -52,10 +53,12 @@ def GNISFeatureNameCV_WS_Check(dfx, dfy):
     mask = dfx.loc[dfx["GNISFeatureNameCV"].str.len() > 250].assign(
         ReasonRemoved='Incomplete GNISFeatureNameCV').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
+
         outmaskdf['IncompleteField_1'] = mask['GNISFeatureNameCV']
         dfy = dfy.append(outmaskdf)
 
@@ -72,10 +75,12 @@ def WaterQualityIndicatorCV_WS_Check(dfx, dfy):
                    (dfx['WaterQualityIndicatorCV'].str.len() > 250)].assign(
         ReasonRemoved='Incomplete WaterQualityIndicatorCV').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
+
         outmaskdf['IncompleteField_1'] = mask['WaterQualityIndicatorCV']
         dfy = dfy.append(outmaskdf)
 
@@ -92,10 +97,12 @@ def WaterSourceName_WS_Check(dfx, dfy):
     mask = dfx.loc[dfx["WaterSourceName"].astype(str).str.len() > 250].assign(
         ReasonRemoved='Incomplete WaterSourceName').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
+
         outmaskdf['IncompleteField_1'] = mask['WaterSourceName']
         dfy = dfy.append(outmaskdf)
 
@@ -110,10 +117,12 @@ def WaterSourceNativeID_WS_Check(dfx, dfy):
     mask = dfx.loc[dfx["WaterSourceNativeID"].astype(str).str.len() > 250].assign(
         ReasonRemoved='Incomplete WaterSourceNativeID').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
+
         outmaskdf['IncompleteField_1'] = mask['WaterSourceNativeID']
         dfy = dfy.append(outmaskdf)
 
@@ -130,10 +139,12 @@ def WaterSourceTypeCV_WS_Check(dfx, dfy):
                    (dfx['WaterSourceTypeCV'].str.len() > 100)].assign(
         ReasonRemoved='Incomplete WaterSourceTypeCV').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
+
         outmaskdf['IncompleteField_1'] = mask['WaterSourceTypeCV']
         dfy = dfy.append(outmaskdf)
 

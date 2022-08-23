@@ -381,6 +381,20 @@ BUtoWBUDict = {
 "wildlife refuge" : "Other",
 "wildlife storage" : "Other",
 "wildlife/waterfowl" : "Other",
+"diversion out of basin" : "Other",
+"poultry and egg operation" : "Commercial/Industrial",
+"stacked water right" : "Unspecified",
+"cathodic protection well" : "Unspecified",
+"augmentation well" : "Unspecified",
+"meat packing plant" : "Commercial/Industrial",
+"petroleum processing plant" : "Commercial/Industrial",
+"strategic water reserve" : "Reservoir Storage",
+"brine production well" : "Commercial/Industrial",
+"undefined" : "Undefined",
+"ice cutting" : "Other",
+"monitor" : "Aquifer Recharge",
+"transportation" : "Commercial/Industrial",
+"coal bed natural gas" : "Mining",
 "" : "Unspecified"}
 
 

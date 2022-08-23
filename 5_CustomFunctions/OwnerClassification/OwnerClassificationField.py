@@ -93,24 +93,18 @@ listDictionary["Geological Survey (USGS)"] = usgslist
 ########################################################################################################################
 
 def CreateOwnerClassification(val):
+    val = str(val).strip()
     if val == '' or pd.isnull(val):
         outString = "Unspecified"
     else:
         outString = "In Review"  # Default Value
 
         # Cleaning text / simple search format
-        val = val.replace(",", " ")
-        val = val.replace(".", " ")
-        val = val.replace(";", " ")
-        val = val.replace("-", " ")
-        val = val.replace("/", " ")
-        val = val.replace("(", " ")
-        val = val.replace(")", " ")
+        val = re.sub("[$@&.;,/\)(-]", "", val).strip()
         val = val.lower().strip()
         val = " " + val + " "
 
         for x in listDictionary:
-            labelString = x
             valueList = listDictionary[x]
             for words in valueList:
                 if re.search(" " + words + " ", val): outString = x
