@@ -82,14 +82,14 @@ print("WaterSourceName")
 outdf['WaterSourceName'] = "Unspecified"
 
 print("WaterSourceNativeID")
-outdf['WaterSourceNativeID'] = df.apply(lambda row: assignWaterSourceNativeID(row['STREAM_SYSTEM']), axis=1)
+outdf['WaterSourceNativeID'] = df.apply(lambda row: assignWaterSourceNativeID(row['in_WaterSourceNativeID']), axis=1)
 
 print("WaterSourceTypeCV")
 outdf['WaterSourceTypeCV'] = df.apply(lambda row: assignWaterSourceTypeCV(row['WATER']), axis=1)
 
 # Dropping duplicate
 print("Dropping duplicates")
-outdf = outdf.drop_duplicates(subset=['WaterSourceNativeID', 'WaterSourceTypeCV']).reset_index(drop=True)
+outdf = outdf.drop_duplicates(subset=['WaterSourceName', 'WaterSourceNativeID', 'WaterSourceTypeCV']).reset_index(drop=True)
 
 print("Resetting Index")
 outdf.reset_index()

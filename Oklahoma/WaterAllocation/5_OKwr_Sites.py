@@ -29,6 +29,7 @@ watersources_fileInput = "ProcessedInputData/watersources.csv" # watersource inp
 df_watersources = pd.read_csv(watersources_fileInput)  # watersources dataframe
 
 columnslist = [
+    "WaDEUUID",
     "SiteUUID",
     "RegulatoryOverlayUUIDs",
     "WaterSourceUUIDs",
@@ -107,7 +108,7 @@ print("RegulatoryOverlayUUIDs")
 outdf['RegulatoryOverlayUUIDs'] = ""
 
 print("WaterSourceUUIDs")
-outdf['WaterSourceUUIDs'] = df.apply(lambda row: retrieveWaterSourceUUID(row['STREAM_SYSTEM']), axis=1)
+outdf['WaterSourceUUIDs'] = df.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
 
 print("CoordinateAccuracy")
 outdf['CoordinateAccuracy'] = ""
@@ -166,6 +167,12 @@ outdf['StateCV'] = "OK"
 print("USGSSiteID")
 outdf['USGSSiteID'] = ""
 
+print("Adding Data Assessment UUID")
+outdf['WaDEUUID'] = ""
+
+print("Resetting Index")
+outdf.reset_index()
+
 print("Joining outdf duplicates based on key fields...")
 outdf = outdf.replace(np.nan, "")  # Replaces NaN values with blank.
 groupbyList = ['PODorPOUSite', 'SiteNativeID', 'SiteName', 'SiteTypeCV', 'Longitude', 'Latitude']
@@ -176,7 +183,7 @@ outdf = outdf[columnslist]  # reorder the dataframe's columns based on columnsli
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+purgecolumnslist = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
 dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # RegulatoryOverlayUUIDs
@@ -252,6 +259,12 @@ outdf['SiteUUID'] = dftemp.apply(lambda row: assignSiteUUID(row['Count']), axis=
 
 # Error check SiteUUID
 outdf, dfpurge = TestErrorFunctions.SiteUUID_S_Check(outdf, dfpurge)
+
+
+# Remove WaDEUUID field from import file (only needed for purge info).
+############################################################################
+print("Drop Assessment WaDEUUID")
+outdf = outdf.drop(['WaDEUUID'], axis=1)
 
 
 # Export to new csv
