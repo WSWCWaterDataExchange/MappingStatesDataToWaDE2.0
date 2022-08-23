@@ -1,4 +1,4 @@
-#Date Created: 06/23/2022
+#Date Updated: 08/08/2022
 #Purpose: To extract TX wr site use information and populate dataframe for WaDEQA 2.0.
 #Notes: 1) For 'SiteTypeCV', easier to label everything that is not a surface water first.
 #       2) For 'CoordinateMethodCV', list out all Idaho specific CV values (should already be in WaDE Vocab).
@@ -29,6 +29,7 @@ watersources_fileInput = "ProcessedInputData/watersources.csv" # watersource inp
 df_watersources = pd.read_csv(watersources_fileInput)  # watersources dataframe
 
 columnslist = [
+    "WaDEUUID",
     "SiteUUID",
     "RegulatoryOverlayUUIDs",
     "WaterSourceUUIDs",
@@ -131,6 +132,9 @@ outdf['StateCV'] = "TX"
 print("USGSSiteID")
 outdf['USGSSiteID'] = ""
 
+print("Adding Data Assessment UUID")
+outdf['WaDEUUID'] = df['WaDEUUID']
+
 print("Resetting Index")
 outdf.reset_index()
 
@@ -144,7 +148,7 @@ outdf = outdf[columnslist]  # reorder the dataframe's columns based on columnsli
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+purgecolumnslist = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
 dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # RegulatoryOverlayUUIDs
@@ -220,6 +224,12 @@ outdf['SiteUUID'] = dftemp.apply(lambda row: assignSiteUUID(row['Count']), axis=
 
 # Error check SiteUUID
 outdf, dfpurge = TestErrorFunctions.SiteUUID_S_Check(outdf, dfpurge)
+
+
+# Remove WaDEUUID field from import file (only needed for purge info).
+############################################################################
+print("Drop Assessment WaDEUUID")
+outdf = outdf.drop(['WaDEUUID'], axis=1)
 
 
 # Export to new csv

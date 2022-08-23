@@ -1,4 +1,4 @@
-#Date Created: 06/23/2022
+#Date Updated: 08/08/2022
 #Purpose: To extract TX wr water source use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) For 'WaterSourceTypeCV', easier to label everything that is not a surface water first.
 #       2) Currently using dummy row until more data made available from TX
@@ -26,6 +26,7 @@ df = pd.read_csv(fileInput)
 
 #WaDE columns
 columnslist = [
+    "WaDEUUID",
     "WaterSourceUUID",
     "Geometry",
     "GNISFeatureNameCV",
@@ -69,6 +70,9 @@ outdf["WaterSourceNativeID"] = "Unspecified"
 print("WaterSourceTypeCV")
 outdf['WaterSourceTypeCV'] = "Unspecified"
 
+print("Adding Data Assessment UUID")
+outdf['WaDEUUID'] = ""
+
 ##############################
 # Dropping duplicate
 print("Dropping duplicates")
@@ -82,7 +86,7 @@ outdf.reset_index()
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+purgecolumnslist = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
 dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # Geometry
@@ -113,6 +117,12 @@ outdf['WaterSourceUUID'] = dftemp.apply(lambda row: assignWaterSourceUUID(row['C
 
 # Error check WaterSourceUUID
 outdf, dfpurge = TestErrorFunctions.WaterSourceUUID_WS_Check(outdf, dfpurge)
+
+
+# Remove WaDEUUID field from import file (only needed for purge info).
+############################################################################
+print("Drop Assessment WaDEUUID")
+outdf = outdf.drop(['WaDEUUID'], axis=1)
 
 
 # Export to new csv
