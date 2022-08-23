@@ -1,4 +1,4 @@
-#Date Created: 06/21/2022
+#Date Updated: 08/08/2022
 #Author(s): Joseph Brewer, Ryan James
 #Purpose: To extract NV allocation use information and populate dataframe WaDEQA 2.0.
 #         1) Simple creation of working dataframe (df), with output dataframe (outdf).
@@ -32,6 +32,7 @@ df_sites = pd.read_csv(sites_fileInput)  # Sites dataframe
 
 #WaDE dataframe columns
 columnslist = [
+    "WaDEUUID",
     "AllocationUUID",
     "MethodUUID",
     "OrganizationUUID",
@@ -303,6 +304,9 @@ outdf['AllocationSDWISIdentifierCV'] = ""
 print("WaterAllocationNativeURL")
 outdf["WaterAllocationNativeURL"] = df_NVM['permit_info']
 
+print("Adding Data Assessment UUID")
+outdf['WaDEUUID'] = df_NVM['WaDEUUID']
+
 print("Resetting Index")
 outdf.reset_index()
 
@@ -316,10 +320,14 @@ outdf = outdf[columnslist]  # reorder the dataframe's columns based on columnsli
 # Solving WaDE 2.0 Upload Issues
 ############################################################################
 
-# Date Noted: 05/25/2021
 # Note: OwnerClassificationCV can only accept 1 entry at this time. Error due to above merge / we don't allow multiple OwnerClassificationCV.
-def tempfixOCSV(colrowValueA):
-    result = colrowValueA.split(",", 1)[0]  # pass in text, split on "," & return first value.
+def tempfixOCSV(val):
+    valList = val.split(",") # convert string to list
+    valList.sort() # sort list alphabetically
+    if ("In Review" in valList):
+        valList.remove("In Review") # check if "In Review"  If true, remove.
+        valList.append("In Review") # Append back in "In Review" to end of list.
+    result = valList[0] # return only first value in list.
     return result
 outdf['OwnerClassificationCV']  = outdf.apply(lambda row: tempfixOCSV(row['OwnerClassificationCV']), axis=1)
 
@@ -333,7 +341,7 @@ outdf['PrimaryBeneficialUseCategory'] = outdf.apply(lambda row: AssignPrimaryUse
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+purgecolumnslist = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
 dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # MethodUUID
@@ -457,6 +465,12 @@ outdf['AllocationUUID'] = dftemp.apply(lambda row: assignAllocationUUID(row['Cou
 
 # Error check AllocationUUID
 outdf, dfpurge = TestErrorFunctions.AllocationUUID_AA_Check(outdf, dfpurge)
+
+
+# Remove WaDEUUID field from import file (only needed for purge info).
+############################################################################
+print("Drop Assessment WaDEUUID")
+outdf = outdf.drop(['WaDEUUID'], axis=1)
 
 
 # Export to new csv
