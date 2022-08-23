@@ -1,4 +1,4 @@
-#Date Created: 06/33/2022
+#Date Updated: 08/01/2022
 #Author: Ryan James
 #Purpose: To extract OR allocation use information and populate dataframe WaDEQA 2.0.
 #Notes:  N/A
@@ -29,6 +29,7 @@ df_sites = pd.read_csv(sites_fileInput)  # Sites dataframe
 
 #WaDE dataframe columns
 columnslist = [
+    "WaDEUUID",
     "AllocationUUID",
     "MethodUUID",
     "OrganizationUUID",
@@ -79,7 +80,6 @@ def retrieveSiteUUID(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = ""
     else:
-        # String1 = str(colrowValue).strip()
         String1 = colrowValue
         try:
             outList = SitUUIDdict[String1]
@@ -246,6 +246,9 @@ outdf['PrimaryBeneficialUseCategory'] = "Unspecified"
 print("WaterAllocationNativeURL")
 outdf['WaterAllocationNativeURL'] = df_DM['wris_link']
 
+print("Adding Data Assessment UUID")
+outdf['WaDEUUID'] = ""
+
 print("Resetting Index")
 outdf.reset_index()
 
@@ -260,10 +263,14 @@ outdf = outdf[columnslist]  # reorder the dataframe's columns based on columnsli
 # ############################################################################
 print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to upload data to QA here.
 
-# Date Noted: 05/25/2021
-# Note: OwnerClassificationCV can only accept 1 entry at this time. Error due to above m`erge / we don't allow multiple OwnerClassificationCV.
-def tempfixOCSV(colrowValueA):
-    result = colrowValueA.split(",", 1)[0]  # pass in text, split on "," & return first value.
+# Note: OwnerClassificationCV can only accept 1 entry at this time. Error due to above merge / we don't allow multiple OwnerClassificationCV.
+def tempfixOCSV(val):
+    valList = val.split(",") # convert string to list
+    valList.sort() # sort list alphabetically
+    if ("In Review" in valList):
+        valList.remove("In Review") # check if "In Review"  If true, remove.
+        valList.append("In Review") # Append back in "In Review" to end of list.
+    result = valList[0] # return only first value in list.
     return result
 outdf['OwnerClassificationCV']  = outdf.apply(lambda row: tempfixOCSV(row['OwnerClassificationCV']), axis=1)
 
@@ -277,7 +284,7 @@ outdf['PrimaryBeneficialUseCategory'] = outdf.apply(lambda row: AssignPrimaryUse
 #Error Checking Each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+purgecolumnslist = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
 dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # MethodUUID
@@ -401,6 +408,12 @@ outdf['AllocationUUID'] = dftemp.apply(lambda row: assignAllocationUUID(row['Cou
 
 # Error check AllocationUUID
 outdf, dfpurge = TestErrorFunctions.AllocationUUID_AA_Check(outdf, dfpurge)
+
+
+# Remove WaDEUUID field from import file (only needed for purge info).
+############################################################################
+print("Drop Assessment WaDEUUID")
+outdf = outdf.drop(['WaDEUUID'], axis=1)
 
 
 # Export to new csv
