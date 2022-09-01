@@ -5,7 +5,7 @@ This readme details the process that was applied by the staff of the [Western St
 ## Overview of Source Data Utilized
 The following data was used for water allocations...
 
-- Point of diversion (POD) water rights data were made available via the [Texas Water Rights Viewer](https://tceq.maps.arcgis.com/home/webmap/viewer.html?webmap=796b001513b9407a9818897b4dc1ec4d), and downloaded with [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview).  
+- Point of diversion (POD) water rights data were made available via the [Texas Water Rights Viewer](https://tceq.maps.arcgis.com/home/item.html?id=44adc80d90b749cb85cf39e04027dbdc), and downloaded with [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview).  
 
 Input files used are as follows...
 
