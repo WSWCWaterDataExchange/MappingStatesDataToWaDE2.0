@@ -1910,9 +1910,10 @@ def MethodUUID_SS_Check(dfx, dfy):
                    (dfx["MethodUUID"] == '') |
                    (dfx['MethodUUID'].str.len() > 200)].assign(ReasonRemoved='Incomplete MethodUUID').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
         outmaskdf['IncompleteField_1'] = mask['MethodUUID']
         dfy = dfy.append(outmaskdf)
@@ -1932,9 +1933,10 @@ def VariableSpecificUUID_SS_Check(dfx, dfy):
                    (dfx['VariableSpecificUUID'].str.len() > 200)].assign(
         ReasonRemoved='Incomplete VariableSpecificUUID').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
         outmaskdf['IncompleteField_1'] = mask['VariableSpecificUUID']
         dfy = dfy.append(outmaskdf)
@@ -1955,9 +1957,10 @@ def WaterSourceUUID_SS_Check(dfx, dfy):
                    (dfx["WaterSourceUUID"].str.contains(','))].assign(
         ReasonRemoved='Incomplete WaterSourceUUID').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
         outmaskdf['IncompleteField_1'] = mask['WaterSourceUUID']
         dfy = dfy.append(outmaskdf)
@@ -1978,9 +1981,10 @@ def OrganizationUUID_SS_Check(dfx, dfy):
                    (dfx['OrganizationUUID'].str.len() > 200)].assign(
         ReasonRemoved='Incomplete OrganizationUUID').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
         outmaskdf['IncompleteField_1'] = mask['OrganizationUUID']
         dfy = dfy.append(outmaskdf)
@@ -1999,9 +2003,10 @@ def SiteUUID_SS_Check(dfx, dfy):
                    (dfx["SiteUUID"] == '') |
                    (dfx['SiteUUID'].str.len() > 200)].assign(ReasonRemoved='Incomplete SiteUUID').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
         outmaskdf['IncompleteField_1'] = mask['SiteUUID']
         dfy = dfy.append(outmaskdf)
@@ -2019,9 +2024,10 @@ def Amount_SS_Check(dfx, dfy):
     mask = dfx.loc[(dfx["Amount"].isnull()) |
                    (dfx["Amount"] == '')].assign(ReasonRemoved='Incomplete Amount').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
         outmaskdf['IncompleteField_1'] = mask['Amount']
         dfy = dfy.append(outmaskdf)
@@ -2038,9 +2044,10 @@ def AllocationCropDutyAmount_SS_Check(dfx, dfy):
     mask = dfx.loc[dfx["AllocationCropDutyAmount"].str.contains(',')].assign(
         ReasonRemoved='Incomplete AllocationCropDutyAmount').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
         outmaskdf['IncompleteField_1'] = mask['AllocationCropDutyAmount']
         dfy = dfy.append(outmaskdf)
@@ -2056,9 +2063,10 @@ def AssociatedNativeAllocationIDs_SS_Check(dfx, dfy):
     mask = dfx.loc[dfx["AssociatedNativeAllocationIDs"].str.len() > 500].assign(
         ReasonRemoved='Incomplete AssociatedNativeAllocationIDs').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
         outmaskdf['IncompleteField_1'] = mask['AssociatedNativeAllocationIDs']
         dfy = dfy.append(outmaskdf)
@@ -2074,9 +2082,10 @@ def BeneficialUseCategory_SS_Check(dfx, dfy):
     mask = dfx.loc[(dfx["BeneficialUseCategory"].str.len() > 250)].assign(
         ReasonRemoved='Incomplete BeneficialUseCategory').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
         outmaskdf['IncompleteField_1'] = mask['BeneficialUseCategory']
         dfy = dfy.append(outmaskdf)
@@ -2092,9 +2101,10 @@ def CommunityWaterSupplySystem_SS_Check(dfx, dfy):
     mask = dfx.loc[dfx["CommunityWaterSupplySystem"].str.len() > 250].assign(
         ReasonRemoved='Incomplete CommunityWaterSupplySystem').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
         outmaskdf['IncompleteField_1'] = mask['CommunityWaterSupplySystem']
         dfy = dfy.append(outmaskdf)
@@ -2109,9 +2119,10 @@ def CommunityWaterSupplySystem_SS_Check(dfx, dfy):
 def CropTypeCV_SS_Check(dfx, dfy):
     mask = dfx.loc[dfx["CropTypeCV"].str.len() > 100].assign(ReasonRemoved='Incomplete CropTypeCV').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
         outmaskdf['IncompleteField_1'] = mask['CropTypeCV']
         dfy = dfy.append(outmaskdf)
@@ -2127,9 +2138,10 @@ def CustomerTypeCV_SS_Check(dfx, dfy):
     mask = dfx.loc[dfx["CustomerTypeCV"].str.len() > 100].assign(
         ReasonRemoved='Incomplete CustomerTypeCV').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
         outmaskdf['IncompleteField_1'] = mask['CustomerTypeCV']
         dfy = dfy.append(outmaskdf)
@@ -2145,9 +2157,10 @@ def DataPublicationDate_SS_Check(dfx, dfy):
     mask = dfx.loc[dfx["DataPublicationDate"].str.contains(',')].assign(
         ReasonRemoved='Incomplete DataPublicationDate').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
         outmaskdf['IncompleteField_1'] = mask['DataPublicationDate']
         dfy = dfy.append(outmaskdf)
@@ -2163,9 +2176,10 @@ def DataPublicationDOI_SS_Check(dfx, dfy):
     mask = dfx.loc[dfx["DataPublicationDOI"].str.len() > 100].assign(
         ReasonRemoved='Incomplete DataPublicationDOI').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
         outmaskdf['IncompleteField_1'] = mask['DataPublicationDOI']
         dfy = dfy.append(outmaskdf)
@@ -2184,9 +2198,10 @@ def IrrigatedAcreage_SS_Check(dfx, dfy):
     mask = dfx.loc[dfx["IrrigatedAcreage"].astype(str).str.contains(',')].assign(
         ReasonRemoved='Incomplete IrrigatedAcreage').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
         outmaskdf['IncompleteField_1'] = mask['IrrigatedAcreage']
         dfy = dfy.append(outmaskdf)
@@ -2202,9 +2217,10 @@ def IrrigationMethodCV_SS_Check(dfx, dfy):
     mask = dfx.loc[dfx["IrrigationMethodCV"].astype(str).str.len() > 100].assign(
         ReasonRemoved='Incomplete IrrigationMethodCV').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
         outmaskdf['IncompleteField_1'] = mask['IrrigationMethodCV']
         dfy = dfy.append(outmaskdf)
@@ -2220,9 +2236,10 @@ def PopulationServed_SS_Check(dfx, dfy):
     mask = dfx.loc[dfx["PopulationServed"].astype(str).str.contains(',')].assign(
         ReasonRemoved='Incomplete PopulationServed').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
         outmaskdf['IncompleteField_1'] = mask['PopulationServed']
         dfy = dfy.append(outmaskdf)
@@ -2238,9 +2255,10 @@ def PowerGeneratedGWh_SS_Check(dfx, dfy):
     mask = dfx.loc[dfx["PowerGeneratedGWh"].astype(str).str.contains(',')].assign(
         ReasonRemoved='Incomplete PowerGeneratedGWh').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
         outmaskdf['IncompleteField_1'] = mask['PowerGeneratedGWh']
         dfy = dfy.append(outmaskdf)
@@ -2255,9 +2273,10 @@ def PowerGeneratedGWh_SS_Check(dfx, dfy):
 def PowerType_SS_Check(dfx, dfy):
     mask = dfx.loc[dfx["PowerType"].str.len() > 50].assign(ReasonRemoved='Incomplete PowerType').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
         outmaskdf['IncompleteField_1'] = mask['PowerType']
         dfy = dfy.append(outmaskdf)
@@ -2276,9 +2295,10 @@ def PrimaryUseCategory_SS_Check(dfx, dfy):
                    (dfx["PrimaryUseCategory"] == '')].assign(
         ReasonRemoved='Incomplete PrimaryUseCategory').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
         outmaskdf['IncompleteField_1'] = mask['PrimaryUseCategory']
         dfy = dfy.append(outmaskdf)
@@ -2299,9 +2319,10 @@ def ReportYearCV_SS_Check(dfx, dfy):
                    (dfx["ReportYearCV"] == 0)].assign(
         ReasonRemoved='Incomplete ReportYearCV').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
         outmaskdf['IncompleteField_1'] = mask['ReportYearCV']
         dfy = dfy.append(outmaskdf)
@@ -2320,9 +2341,10 @@ def SDWISIdentifier_SS_Check(dfx, dfy):
     mask = dfx.loc[dfx["SDWISIdentifier"].str.len() > 100].assign(
         ReasonRemoved='Incomplete SDWISIdentifier').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
         outmaskdf['IncompleteField_1'] = mask['SDWISIdentifier']
         dfy = dfy.append(outmaskdf)
@@ -2340,9 +2362,10 @@ def TimeframeEnd_SS_Check(dfx, dfy):
                    (dfx["TimeframeEnd"].str.contains(','))].assign(
         ReasonRemoved='Incomplete TimeframeEnd').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
         outmaskdf['IncompleteField_1'] = mask['TimeframeEnd']
         dfy = dfy.append(outmaskdf)
@@ -2362,9 +2385,10 @@ def TimeframeStart_SS_Check(dfx, dfy):
                    (dfx["TimeframeStart"].str.contains(','))].assign(
         ReasonRemoved='Incomplete TimeframeStart').reset_index()
     if len(mask.index) > 0:
-        outmaskColumn = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+        outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
         outmaskdf['ReasonRemoved'] = mask['ReasonRemoved']
+        outmaskdf['WaDEUUID'] = mask['WaDEUUID']
         outmaskdf['RowIndex'] = mask['index']
         outmaskdf['IncompleteField_1'] = mask['TimeframeStart']
         dfy = dfy.append(outmaskdf)
