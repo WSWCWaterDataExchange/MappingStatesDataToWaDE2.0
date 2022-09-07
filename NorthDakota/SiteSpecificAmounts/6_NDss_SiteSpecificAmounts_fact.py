@@ -1,6 +1,6 @@
-# Last Updated: 06/01/2022
-# Purpose: To create ND site specific site amount use information and populate dataframe WaDE_QA 2.0.
-# Notes: N/A
+#Date Updated: 09/07/2022
+#Purpose: To create ND site specific site amount use information and populate dataframe WaDE_QA 2.0.
+#Notes: N/A
 
 # Needed Libraries
 ############################################################################
@@ -11,7 +11,7 @@ import pandas as pd
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -32,6 +32,7 @@ df_sites = pd.read_csv(sites_fileInput)  # Sites dataframe
 
 #WaDE dataframe columns
 columnslist = [
+    "WaDEUUID",
     "MethodUUID",
     "OrganizationUUID",
     "SiteUUID",
@@ -182,6 +183,9 @@ outdf['TimeframeEnd'] = df['in_TimeframeEnd']
 print("TimeframeStart")
 outdf['TimeframeStart'] = df['in_TimeframeStart']
 
+print("Adding Data Assessment UUID")
+outdf['WaDEUUID'] = ""
+
 print("Resetting Index")
 outdf.reset_index()
 
@@ -196,7 +200,7 @@ outdf = outdf.replace(np.nan, "").drop_duplicates().reset_index(drop=True)
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+purgecolumnslist = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
 dfpurge = pd.DataFrame(columns=purgecolumnslist)  # Purge DataFrame to hold removed elements
 
 # MethodUUID
@@ -273,6 +277,12 @@ outdf, dfpurge = TestErrorFunctions.SDWISIdentifier_SS_Check(outdf, dfpurge)
 #
 # # TimeframeStart
 # outdf, dfpurge = TestErrorFunctions.TimeframeStart_SS_Check(outdf, dfpurge)
+
+
+# Remove WaDEUUID field from import file (only needed for purge info).
+############################################################################
+print("Drop Assessment WaDEUUID")
+outdf = outdf.drop(['WaDEUUID'], axis=1)
 
 
 # Export to new csv

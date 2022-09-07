@@ -1,6 +1,6 @@
-# Last Updated: 06/01/2022
-# Purpose: To create ND site specific water source use information and populate dataframe for WaDE_QA 2.0.
-# Notes: N/A
+#Date Updated: 09/07/2022
+#Purpose: To create ND site specific water source use information and populate dataframe for WaDE_QA 2.0.
+#Notes: N/A
 
 
 # Needed Libraries
@@ -12,7 +12,7 @@ import pandas as pd
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -26,6 +26,7 @@ df = pd.read_csv(fileInput).replace(np.nan, "")  # The State's Master input data
 
 #WaDE columns
 columnslist = [
+    "WaDEUUID",
     "WaterSourceUUID",
     "Geometry",
     "GNISFeatureNameCV",
@@ -74,6 +75,9 @@ print("Dropping duplicates")
 outdf = outdf.drop_duplicates(subset=['WaterSourceName', 'WaterSourceNativeID', 'WaterSourceTypeCV']).reset_index(drop=True)
 ##############################
 
+print("Adding Data Assessment UUID")
+outdf['WaDEUUID'] = ""
+
 print("Resetting Index")
 outdf.reset_index()
 
@@ -81,7 +85,7 @@ outdf.reset_index()
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+purgecolumnslist = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
 dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # Geometry
@@ -112,6 +116,12 @@ outdf['WaterSourceUUID'] = dftemp.apply(lambda row: assignWaterSourceUUID(row['C
 
 # Error check WaterSourceUUID
 outdf, dfpurge = TestErrorFunctions.WaterSourceUUID_WS_Check(outdf, dfpurge)
+
+
+# Remove WaDEUUID field from import file (only needed for purge info).
+############################################################################
+print("Drop Assessment WaDEUUID")
+outdf = outdf.drop(['WaDEUUID'], axis=1)
 
 
 # Export to new csv
