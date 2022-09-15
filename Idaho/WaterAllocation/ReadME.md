@@ -25,12 +25,12 @@ The 1) raw input data shared by the state / state agency / data provider (excel,
 The following text summarizes the process used by the WSWC staff to prepare and share IDWR's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project. For a complete mapping outline, see _ID_Allocation Schema Mapping to WaDE_QA.xlsx_. Seven executable code files were used to extract the IDWR's water rights data from the above mentioned input files. Each code file is numbered for order of operation. The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining six code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files. Those seven code files are as follows...
 
 - 0_PreProcessIdahoAllocationData.ipynb
-- 1_ID_Methods
-- 2_ID_Variables
-- 3_ID_Organizations
-- 4_ID_WaterSources
-- 5_ID_Sites
-- 6_ID_AllocationsAmounts_facts
+- 1_IDwr_Methods.py
+- 2_IDwr_Variables.py
+- 3_IDwr_Organizations.py
+- 4_IDwr_WaterSources.py
+- 5_IDwr_Sites.py
+- 6_IDwr_AllocationsAmounts_facts.py
 - 7_IDwr_PODSiteToPOUSiteRelationships.py
 
 ---
@@ -51,7 +51,7 @@ Purpose: Pre-process the Idaho input data files and merge them into one master f
 #### Operation and Steps:
 
 - Read the input files and generate temporary input dataframes. Goal will be to create separate POD and POU centric dataframes, then join together into single output dataframe.
-  - For POD data...
+- For POD data...
   - Left Join POU data to the POD data via matching **RightsID** for use and acreage info.
   - Convert given EPSG 8826 project to WaDE friendly EPSGS 4326.
   - Assign irrigate acreage using **AcreLimit** if > 0, else use **TotalAcres**.
@@ -74,7 +74,7 @@ Purpose: Pre-process the Idaho input data files and merge them into one master f
 
 ---
 
-### 1) Code File: 1_ID_Methods.py
+### 1) Code File: 1_IDwr_Methods.py.py
 
 Purpose: generate legend of granular methods used on data collection.
 
@@ -104,7 +104,7 @@ Purpose: generate legend of granular methods used on data collection.
 
 ---
 
-### 2) Code File: 2_ID_Variables.py
+### 2) Code File: 2_IDwr_Variables.py.py
 
 Purpose: generate legend of granular variables specific to each state.
 
@@ -134,7 +134,7 @@ Purpose: generate legend of granular variables specific to each state.
 
 ---
 
-### 3) Code File: 3_ID_Organizations.py
+### 3) Code File: 3_IDwr_Organizations.py.py
 
 Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
 
@@ -164,7 +164,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 
 ---
 
-### 4) Code File: 4_ID_WaterSources.py
+### 4) Code File: 4_IDwr_WaterSources.py.py
 
 Purpose: generate a list of water sources specific to a water right.
 
@@ -203,7 +203,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 ---
 
-### 5) Code File: 5_ID_Sites.py
+### 5) Code File: 5_IDwr_Sites.py.py
 
 Purpose: generate a list of sites where water is diverted (also known as Points Of Diversion, PODs).
 
@@ -249,7 +249,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 ---
 
-### 6) Code File: 6_ID_AllocationsAmounts_facts.py
+### 6) Code File: 6_IDwr_AllocationsAmounts_facts.py.py
 
 Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 
