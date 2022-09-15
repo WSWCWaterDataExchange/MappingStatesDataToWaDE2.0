@@ -68,13 +68,13 @@ Purpose: Pre-process the Idaho input data files and merge them into one master f
   - Format **PriorityDate** field to %m/%d/%Y format.
   - Generate WaDE Specific Field _WaterSourceType_ from IDWR **Source** field (see pre-process code for specific dictionary used to determine water type).
   - Generate WaDE specific field _WaterSourceNativeID_ from WaDE **Source** field. Used to identify unique sources of water.
-- Extract geometry info from POU shapefile.
+- Extract geometry info from POU shapefile, export as *P_idGeometry.csv*.
 - Inspect output dataframe for additional errors / datatypes.
 - Export output dataframe as new csv file, _P_IdahoMaster.csv_.
 
 ---
 
-### 1) Code File: 1_IDwr_Methods.py.py
+### 1) Code File: 1_IDwr_Methods.py
 
 Purpose: generate legend of granular methods used on data collection.
 
@@ -104,7 +104,7 @@ Purpose: generate legend of granular methods used on data collection.
 
 ---
 
-### 2) Code File: 2_IDwr_Variables.py.py
+### 2) Code File: 2_IDwr_Variables.py
 
 Purpose: generate legend of granular variables specific to each state.
 
@@ -134,7 +134,7 @@ Purpose: generate legend of granular variables specific to each state.
 
 ---
 
-### 3) Code File: 3_IDwr_Organizations.py.py
+### 3) Code File: 3_IDwr_Organizations.py
 
 Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
 
@@ -164,7 +164,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 
 ---
 
-### 4) Code File: 4_IDwr_WaterSources.py.py
+### 4) Code File: 4_IDwr_WaterSources.py
 
 Purpose: generate a list of water sources specific to a water right.
 
@@ -203,13 +203,14 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 ---
 
-### 5) Code File: 5_IDwr_Sites.py.py
+### 5) Code File: 5_IDwr_Sites.py
 
 Purpose: generate a list of sites where water is diverted (also known as Points Of Diversion, PODs).
 
 #### Inputs:
 
 - P_IdahoMaster.csv
+- P_idGeometry.csv
 - waterSources.csv
 
 #### Outputs:
@@ -249,7 +250,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 ---
 
-### 6) Code File: 6_IDwr_AllocationsAmounts_facts.py.py
+### 6) Code File: 6_IDwr_AllocationsAmounts_facts.py
 
 Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 
