@@ -139,7 +139,7 @@ print("AllocationAssociatedWithdrawalSiteIDs")
 outdf['AllocationAssociatedWithdrawalSiteIDs'] = ""
 
 print("AllocationBasisCV")
-outdf['AllocationBasisCV'] = ""
+outdf['AllocationBasisCV'] = df_M['in_AllocationBasisCV']
 
 print("AllocationChangeApplicationIndicator")  
 outdf['AllocationChangeApplicationIndicator'] = ""
@@ -157,7 +157,7 @@ print("AllocationFlow_CFS")
 outdf['AllocationFlow_CFS'] = df_M['in_AllocationFlow_CFS']
 
 print("AllocationLegalStatusCV")
-outdf['AllocationLegalStatusCV'] = ""
+outdf['AllocationLegalStatusCV'] = df_M['in_AllocationLegalStatusCV']
 
 print("AllocationNativeID")  # Will use this with a .groupby() statement towards the ends.
 def assignNativeID(colrowValue):
@@ -179,10 +179,10 @@ print("AllocationTimeframeStart")
 outdf['AllocationTimeframeStart'] = ""
 
 print("AllocationTypeCV")  
-outdf['AllocationTypeCV'] = df_M.apply(lambda row: assignAllocationTypeCV(row['in_AllocationTypeCV']), axis=1)
+outdf['AllocationTypeCV'] = ""
 
 print("AllocationVolume_AF")
-outdf['AllocationVolume_AF'] = df_M['in_AllocationVolume_AF']
+outdf['AllocationVolume_AF'] = ""
 
 print("BeneficialUseCategory")
 outdf['BeneficialUseCategory'] = df_M.apply(lambda row: assignBeneficialUse(row['in_BeneficialUseCategory']), axis=1)
@@ -197,7 +197,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")  
-outdf['DataPublicationDate'] = "05/09/2022"
+outdf['DataPublicationDate'] = "09/13/2022"
 
 print("DataPublicationDOI")  
 outdf['DataPublicationDOI'] = ""
@@ -209,7 +209,7 @@ print("GeneratedPowerCapacityMW")
 outdf['GeneratedPowerCapacityMW'] = ""
 
 print("IrrigatedAcreage") 
-outdf['IrrigatedAcreage'] = ""
+outdf['IrrigatedAcreage'] = df_M['in_IrrigatedAcreage']
 
 print("IrrigationMethodCV") 
 outdf['IrrigationMethodCV'] = ""

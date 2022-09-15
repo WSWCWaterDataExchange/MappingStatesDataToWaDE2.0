@@ -9,11 +9,6 @@
 import os
 import pandas as pd
 import numpy as np
-from pyproj import Transformer, transform
-
-# Idaho projection = EPSG:8826.  WGS84 projection used by WaDE 2.0 = epsg:4326.
-transformer = Transformer.from_proj(8826, 4326)  # A trick to drastically optimize the Transformer of pyproj.
-
 
 # Custom Libraries
 ############################################################################
@@ -98,16 +93,6 @@ def assignCoordinateMethodCV(colrowValue):
         outList = String1
     return outList
 
-# For converting projection latitude.
-def assignLat(colrowValueLat, colrowValueLong):
-    lat, long = transformer.transform(colrowValueLat, colrowValueLong)
-    return lat
-
-# For converting projection longitude.
-def assignLong(colrowValueLat, colrowValueLong):
-    lat, long = transformer.transform(colrowValueLat, colrowValueLong)
-    return long
-
 # For creating SiteName
 def assignSiteName(colrowValue):
     colrowValue = str(colrowValue)
@@ -161,10 +146,10 @@ print("HUC8")
 outdf['HUC8'] = ""
 
 print("Latitude")
-outdf['Latitude'] = df.apply(lambda row: assignLat(row['in_Longitude'], row['in_Latitude']), axis=1)
+outdf['Latitude'] = df['in_Latitude']
 
 print("Longitude")
-outdf['Longitude'] = df.apply(lambda row: assignLong(row['in_Longitude'], row['in_Latitude']), axis=1)
+outdf['Longitude'] = df['in_Longitude']
 
 print("NHDNetworkStatusCV")
 outdf['NHDNetworkStatusCV'] = ""
