@@ -5,8 +5,8 @@ This readme details the process that was applied by the staff of the [Western St
 ## Overview of Source Data Utilized
 The following data was used for water allocations...
 
-- **Utah Points of Diversion (POD)** data files for surface and groundwater were downloaded from the Utah SGID services: https://opendata.gis.utah.gov/datasets/utahDNR::utah-points-of-diversion/explore?showTable=true
-- **PlaceOfUseService** data files were downloaded from the Utah SGID services: https://opendata.gis.utah.gov/datasets/utahDNR::placeofuseservice/about
+- **Utah Points of Diversion** file for POD data for surface and groundwater sites were downloaded from the Utah SGID services: Utah Points of Diversion
+- **Utah_Place_of_Use_Irrigation_input** file for POU data was downloaded from the Utah SGID services: https://opendata.gis.utah.gov/datasets/utahDNR::utah-place-of-use-irrigation/explore?location=39.471338%2C-111.581749%2C-1.00
 - **Utility Data & Information** related to POD water rights were downloaded from the PUBDUMP Database table dump Utility: https://www.waterrights.utah.gov/cgi-bin/pubdump.exe?SECURITYKEY=wrt2012access&DUMP_TYPE=DUMP_TAB&DBNAME=WRDB&DBTABLE=WATER_MASTER&Key=New+Table
 
 Six unique files were created to be used as input.  Input files used are as follows...
@@ -41,7 +41,7 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 
 #### Inputs: 
 - PointsOfDiversion_input.csv.
-- Utah_Place_of_Use_input.csv.
+- Utah_Place_of_Use_Irrigation_input.csv.
 - WRCHEX_WATER_MASTER.csv.
 - IRRIGATION_MASTER.csv.
 - WTRUSE_MUNICIPAL.csv.
@@ -49,26 +49,31 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 
 #### Outputs:
  - P_UtahMaster.csv
+ - P_utGeometry.csv
+
 
 #### Operation and Steps:
 - Read the input files and generate temporary input dataframes for both POD and POU water right data.  Goal will be to create two separate clean tables and concatenate to single output table.
 - POD and POU data share similar field and columns names.
 - Perform the following additional actions on the POD data...
     - Left Merge POD data with WRCHEX_WATER_MASTER, IRRIGATION_MASTER, WTRUSE_MUNICIPAL, & WTRUSE_POWER data via **WRNUM** field.
-    - Assign WaDE *PODorPOUSite* value = POD.
+    - remove white space from **WRNUM** field.
+    - Translate abbreviated **USES** field to full terminology using provided list.
 - Perform the following additional actions on the POU data...
-    - Remove empty **WRNUMS** rows, can't match those to anything.
+    - Split and explode data on **WRNUMS** field, need info to be broken out into water right information.
     - Left Merge POD data with WRCHEX_WATER_MASTER, IRRIGATION_MASTER, WTRUSE_MUNICIPAL, & WTRUSE_POWER data via **WRNUM** field.
-    - Assign WaDE *PODorPOUSite* value = POU.
+    - remove white space from **WRNUM** field.
 - Concatenate POD and POU data into single output dataframe.
+- Remove special characters from owner field.
 - Change / double check data type for **CFS**, **ACFT**, **IRRIGATION_DEPLETION**, **PRIORITY**, **DATE_FILED**, **DATE_TERMINATED** fields.
 - Create WaDE *WaterSourceTypeCV* field (see custom dictionary) using **TYPE** field.
 - Create WaDE *AllocationTimeframeStart* & *AllocationTimeframeEnd* field using **USE_BEG_DATE** & **USE_END_DATE** fields.
 - Create WaDE *SiteTypeCV* field (see custom dictionary) using **SOURCE** field (mostly cleaning input text).
 - Create WaDE *LegalStatusCV* field (see custom dictionary) using **STATUS** field (mostly cleaning input text).
 - Generate WaDE specific field *WaterSourceNativeID* from WaDE *WaterSourceTypeCV* fields.  Used to identify unique sources of water.
+- Extract geometry values POU shapefile, merge to records using **RECORD_ID** field.
 - Inspect output dataframe for additional errors / datatypes.
-- Export output dataframe as new csv file, *P_UtahMaster.csv*.
+- Export output dataframe(s) as new csv file, *P_UtahMaster.csv*, *P_utGeometry.csv*.
 
 
 ***
@@ -186,6 +191,7 @@ Purpose: generate a list of sites information.
 
 #### Inputs:
 - P_UtahMaster.csv
+- P_utGeometry.csv
 
 #### Outputs:
 - sites.csv
@@ -197,6 +203,7 @@ Purpose: generate a list of sites information.
 - Populate output dataframe with *WaDE Site* specific columns.
 - Assign agency info to the *WaDE Site* specific columns.  See *[UT_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Utah/WaterAllocation/UT_Allocation%20Schema%20Mapping_WaDEQA.xlsx)* for specific details.  Items of note are as follows...
     - Extract *WaterSourceUUID* from waterSources.csv input csv file. See code for specific implementation of extraction.
+    - *Geometry* = extracted from POU shapefile, see *0_PreProcessUtahAllocationData.ipynb* for specifics.
     - *Latitude* = **Latitude**.
     - *Longitude* = **Longitude**.
     - *SiteName* = **SOURCE**, Unspecified if not given.
@@ -259,7 +266,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 #### Sample Output (WARNING: not all fields shown):
 AllocationNativeID | AllocationFlow_CFS | AllocationLegalStatusCV | BeneficialUseCategory
 ---------- | ---------- | ------------ | ------------
-01-1000 | 0 | Diligence Claim | Other,Stockwatering
+01-1000 | 0 | Diligence Claim | Other, Stockwatering
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID

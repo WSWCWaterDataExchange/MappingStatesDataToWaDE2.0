@@ -171,7 +171,7 @@ print("AllocationTypeCV")
 outdf['AllocationTypeCV'] = "Unspecified"
 
 print("AllocationVolume_AF")
-outdf['AllocationVolume_AF'] = df_DM['in_AllocationVolume_AF']  # See preprocessing
+outdf['AllocationVolume_AF'] = ""
 
 print("BeneficialUseCategory")
 outdf['BeneficialUseCategory'] = df_DM['in_BeneficialUseCategory']  # See preprocessing
@@ -186,7 +186,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = "04/18/2022"
+outdf['DataPublicationDate'] = "09/15/2022"
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""
@@ -198,7 +198,7 @@ print("GeneratedPowerCapacityMW")
 outdf['GeneratedPowerCapacityMW'] = ""
 
 print("IrrigatedAcreage")
-outdf['IrrigatedAcreage'] = ""
+outdf['IrrigatedAcreage'] = df_DM['in_IrrigatedAcreage']
 
 print("IrrigationMethodCV")
 outdf['IrrigationMethodCV'] = ""

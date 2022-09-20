@@ -72,6 +72,7 @@ def retrieveGeometry(colrowValue):
 
 # For creating SiteName
 def assignSiteName(colrowValue):
+    colrowValue = str(colrowValue).strip()
     if colrowValue == "" or pd.isnull(colrowValue):
         outList = "Unspecified"
     else:
