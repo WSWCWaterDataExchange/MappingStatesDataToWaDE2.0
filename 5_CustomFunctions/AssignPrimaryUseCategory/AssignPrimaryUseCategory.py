@@ -368,6 +368,7 @@ BUtoWBUDict = {
 "water quality" : "Other",
 "water quality improvement" : "Other",
 "water quality improvement storage" : "Other",
+"water quality improvement from storage" : "Other",
 "waterfowl" : "Other",
 "wetland" : "Other",
 "wetland mitigation credit" : "Other",

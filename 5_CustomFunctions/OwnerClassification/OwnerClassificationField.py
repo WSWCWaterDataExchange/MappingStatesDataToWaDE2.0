@@ -1,5 +1,5 @@
-# Last Update: 05/24/2021
-# Purpose: To have a single function file to create OwnerClassificaitonCV field.
+# Last Update: 09/21/2022
+# Purpose: To have a single function file to create OwnerClassificationCV field.
 
 
 # Needed Libraries
@@ -15,7 +15,7 @@ import pandas as pd
 # Generic
 # ---------------------------------------------------------------------
 unList = ["unspecified", "unknown"]
-nalist = ["apace tribe","apache nation","arapaho tribes","arapahoe tribes","blackfeet tribe","cheyenne tribe","indian reservation","kalispel tribe","kootenai tribe","kootenai tribes","muckleshoot indian tribe","navajo nation","navajo tribe","otoe missouria tribe","paiute tribe","peoria tribe","puyallup tribe","quapaw tribe","quileute tribe","quinault indian nation","seneca cayuga tribe","shawnee tribe","shoshone paiute tribes","shoshone tri","shoshone tribe","shoshone tribes","sioux tribe","spirit lake tribe","spokane tribe","stillaquamish indian tribe","ute indian tribe","ute mountain ute tribe","wyandotte tribe","yomba shoshone tribe","yurok tribe","zuni indian tribe","zuni tribe","apache indians","quechan tribe","navajo & hopi indian","pautte tribe","cocopah indain tribe"]
+nalist = ["tribe", "tribes", "nation", "nations", "indians"]
 
 # Government
 # ---------------------------------------------------------------------
@@ -23,15 +23,11 @@ bialist = ["bureau of indian aff", "indian affairs", "usbia"]
 ushudlist = ["housing and urban development", "housing & urban development", "ushud"]
 usfaalist = ["usfaa", "federal aviation administration"]
 usgsalist = ["usgsa", "general services administration"]
+usoalist = ["united states of america", "united states america", "usa"]
 
 # Military
 # ---------------------------------------------------------------------
-usaalist = ["us army", "u s army", "usarmy", "usa army", "national guard", "corps of engineer", "corps of engineers", "army corp", "army corps", "army corp of", "usa department of the army"]
-uscbplist = ["uscbp", "border patrol", "border protection", "customs service ", "customs office"]
-usdodlist = ["department of defense", "dept of defense"]
-usdhslist = ["dhs", "homeland security"]
-usmarinelist = ["marine corps"]
-usaflist = [ "usaf", "usafb", "afb", "air force", "airforce", "aire force", "air national guard"]
+millist = ["us army", "u s army", "usarmy", "usa army", "national guard", "corps of engineer", "corps of engineers", "army corp", "army corps", "army corp of", "usa department of the army", "uscbp", "border patrol", "border protection", "customs service ", "customs office", "department of defense", "dept of defense", "dhs", "homeland security", "marine corps",  "usaf", "usafb", "afb", "air force", "airforce", "aire force", "air national guard"]
 
 # Natural Resources
 # ---------------------------------------------------------------------
@@ -63,15 +59,11 @@ listDictionary["Bureau of Indian Affairs (USBIA)"] = bialist
 listDictionary["Department of Housing and Urban Development (USHUD)"] = ushudlist
 listDictionary["Federal Aviation Administration (USFAA)"] = usfaalist
 listDictionary["General Services Administration (USGSA)"] = usgsalist
+listDictionary["United States of America"] = usoalist
 
 # Military List
 # ---------------------------------------------------------------------
-listDictionary["Army (USA)"] = usaalist
-listDictionary["Customs and Border Patrol (USCBP)"] = uscbplist
-listDictionary["Department of Defense (USDOD)"] = usdodlist
-listDictionary["Department of Homeland Security (USDHS)"] = usdhslist
-listDictionary["Marine Corps (USMC)"] = usmarinelist
-listDictionary["United States Air Force (USAF)"] = usaflist
+listDictionary["Military"] = millist
 
 # Natural Resources List
 # ---------------------------------------------------------------------
