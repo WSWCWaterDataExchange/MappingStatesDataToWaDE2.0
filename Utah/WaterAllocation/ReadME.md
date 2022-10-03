@@ -5,9 +5,12 @@ This readme details the process that was applied by the staff of the [Western St
 ## Overview of Source Data Utilized
 The following data was used for water allocations...
 
-- **Utah Points of Diversion** file for POD data for surface and groundwater sites were downloaded from the Utah SGID services: https://opendata.gis.utah.gov/datasets/utahDNR::utah-points-of-diversion/explore?location=39.485303%2C-111.591274%2C-1.00
-- **Utah_Place_of_Use_Irrigation_input** file for POU data was downloaded from the Utah SGID services: https://opendata.gis.utah.gov/datasets/utahDNR::utah-place-of-use-irrigation/explore?location=39.471338%2C-111.581749%2C-1.00
-- **Utility Data & Information** related to POD water rights were downloaded from the PUBDUMP Database table dump Utility: https://www.waterrights.utah.gov/cgi-bin/pubdump.exe?SECURITYKEY=wrt2012access&DUMP_TYPE=DUMP_TAB&DBNAME=WRDB&DBTABLE=WATER_MASTER&Key=New+Table
+Name | Description | Link Download | Metadata Glossary Link
+---------- | ---------- | ------------ | ------------
+**Utah Points of Diversion** | File for POD data for surface and groundwater sites were downloaded from the Utah SGID services. | [link](https://opendata.gis.utah.gov/datasets/utahDNR::utah-points-of-diversion/explore?location=39.485303%2C-111.591274%2C-1.00) | [link])https://www.arcgis.com/sharing/rest/content/items/5d530e62e6ca42528dd13e0a453a3b73/info/metadata/metadata.xml?format=default&output=html)
+**Utah_Place_of_Use_Irrigation_input** | File for POU data was downloaded from the Utah SGID services, | [link](https://opendata.gis.utah.gov/datasets/utahDNR::utah-place-of-use-irrigation/explore?location=39.471338%2C-111.581749%2C-1.00) | [link](https://www.arcgis.com/sharing/rest/content/items/03919b7306544f8aa69fe09c42fbf76f/info/metadata/metadata.xml?format=default&output=html)
+**Utility Data & Information** | Related to POD water rights were downloaded from the PUBDUMP Database table dump Utility. | [link](https://www.waterrights.utah.gov/cgi-bin/pubdump.exe?SECURITYKEY=wrt2012access&DUMP_TYPE=DUMP_TAB&DBNAME=WRDB&DBTABLE=WATER_MASTER&Key=New+Table) | -
+
 
 Six unique files were created to be used as input.  Input files used are as follows...
 - PointsOfDiversion_input.csv.  Contains POD data.
