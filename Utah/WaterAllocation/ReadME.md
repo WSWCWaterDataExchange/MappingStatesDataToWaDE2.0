@@ -9,16 +9,11 @@ Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
 **Utah Points of Diversion** | POD site data for surface and groundwater sites. | [link](https://opendata.gis.utah.gov/datasets/utahDNR::utah-points-of-diversion/explore?location=39.485303%2C-111.591274%2C-1.00) | [link](https://www.arcgis.com/sharing/rest/content/items/5d530e62e6ca42528dd13e0a453a3b73/info/metadata/metadata.xml?format=default&output=html)
 **Utah Place of Use Irrigation** | POU area data. | [link](https://opendata.gis.utah.gov/datasets/utahDNR::utah-place-of-use-irrigation/explore?location=39.471338%2C-111.581749%2C-1.00) | [link](https://www.arcgis.com/sharing/rest/content/items/03919b7306544f8aa69fe09c42fbf76f/info/metadata/metadata.xml?format=default&output=html)
-**Utility Data & Information** | Utility information related to POD water right sites. | [link](https://www.waterrights.utah.gov/cgi-bin/pubdump.exe?SECURITYKEY=wrt2012access&DUMP_TYPE=DUMP_TAB&DBNAME=WRDB&DBTABLE=WATER_MASTER&Key=New+Table) | -
 
 
 Six unique files were created to be used as input.  Input files used are as follows...
 - PointsOfDiversion_input.csv.  Contains POD data.
 - PlaceOfUseService_input.csv.  Contains POU data.
-- WRCHEX_WATER_MASTER.csv.  Contains water right related data.
-- IRRIGATION_MASTER.csv.  Contains start and end date data for irrigation related to water rights. 
-- WTRUSE_MUNICIPAL.csv.  Contains community id related to water rights information.
-- WTRUSE_POWER.csv.  Contains power utility information related to water rights.
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
 The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
@@ -59,18 +54,15 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 - Read the input files and generate temporary input dataframes for both POD and POU water right data.  Goal will be to create two separate clean tables and concatenate to single output table.
 - POD and POU data share similar field and columns names.
 - Perform the following additional actions on the POD data...
-    - Left Merge POD data with WRCHEX_WATER_MASTER, IRRIGATION_MASTER, WTRUSE_MUNICIPAL, & WTRUSE_POWER data via **WRNUM** field.
     - remove white space from **WRNUM** field.
     - Translate abbreviated **USES** field to full terminology using provided list.
 - Perform the following additional actions on the POU data...
     - Split and explode data on **WRNUMS** field, need info to be broken out into water right information.
-    - Left Merge POD data with WRCHEX_WATER_MASTER, IRRIGATION_MASTER, WTRUSE_MUNICIPAL, & WTRUSE_POWER data via **WRNUM** field.
     - remove white space from **WRNUM** field.
 - Concatenate POD and POU data into single output dataframe.
 - Remove special characters from owner field.
-- Change / double check data type for **CFS**, **ACFT**, **IRRIGATION_DEPLETION**, **PRIORITY**, **DATE_FILED**, **DATE_TERMINATED** fields.
+- Change / double check data type for **CFS**, **ACFT**, **ACRES**, **PRIORITY** fields.
 - Create WaDE *WaterSourceTypeCV* field (see custom dictionary) using **TYPE** field.
-- Create WaDE *AllocationTimeframeStart* & *AllocationTimeframeEnd* field using **USE_BEG_DATE** & **USE_END_DATE** fields.
 - Create WaDE *SiteTypeCV* field (see custom dictionary) using **SOURCE** field (mostly cleaning input text).
 - Create WaDE *LegalStatusCV* field (see custom dictionary) using **STATUS** field (mostly cleaning input text).
 - Generate WaDE specific field *WaterSourceNativeID* from WaDE *WaterSourceTypeCV* fields.  Used to identify unique sources of water.
@@ -249,18 +241,13 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
 - Assign agency info to the *WaDE Water Allocations* specific columns.  See *[UT_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Utah/WaterAllocation/UT_Allocation%20Schema%20Mapping_WaDEQA.xlsx)* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
-    - *AllocationApplicationDate* = **DATE_FILED**.
-    - *AllocationCommunityWaterSupplySystem* = **MUNICIPALITY**.
-    - *AllocationCropDutyAmount* = **IRRIGATION_DEPLETION**.
-    - *AllocationExpirationDate* = **DATE_TERMINATED**.
     - *AllocationFlow_CFS* = **CFS**.
+    - *AllocationVolume_AF* = **ACFT**.
     - *AllocationLegalStatusCV* = *in_LegalStatus*, see *0_PreProcessUtahAllocationData.ipynb* for specifics. 
     - *AllocationNativeID* = **WRNUM**.
     - *AllocationOwner* =  **OWNER**.
     - *AllocationPriorityDate* = **PRIORITY**.
-    - *AllocationTimeframeEnd* = *in_AllocationTimeframeEnd*, see *0_PreProcessUtahAllocationData.ipynb* for specifics.
-    - *AllocationTimeframeStart* = *in_AllocationTimeframeStart*, see *0_PreProcessUtahAllocationData.ipynb* for specifics. 
-    - *AllocationVolume_AF* = **ACFT**.
+    - *IrrigatedAcreage* = **ACRES**.
     - *BeneficialUseCategory* = **USES**.   
 - Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.
 - Perform error check on output dataframe.

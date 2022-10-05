@@ -74,6 +74,15 @@ columnslist = [
 # Custom Functions
 ############################################################################
 
+# For filling in Unspecified when null
+def assignBlankUnspecified(val):
+    val = str(val).strip()
+    if val == "" or pd.isnull(val):
+        outString = "Unspecified"
+    else:
+        outString = val
+    return outString
+
 # For creating SiteUUID
 SitUUIDdict = pd.Series(df_sites.SiteUUID.values, index = df_sites.SiteNativeID).to_dict()
 def retrieveSiteUUID(colrowValue):
@@ -85,14 +94,6 @@ def retrieveSiteUUID(colrowValue):
             outList = SitUUIDdict[String1]
         except:
             outList = ''
-    return outList
-
-# For creating AllocationOwner
-def assignAllocationOwner(colrowValue):
-    if colrowValue == "" or pd.isnull(colrowValue):
-        outList = "Unspecified"
-    else:
-        outList = colrowValue.strip()
     return outList
 
 # For creating AllocationUUID
@@ -120,7 +121,7 @@ print("VariableSpecificUUID")
 outdf['VariableSpecificUUID'] = "UTwr_V1"
 
 print("AllocationApplicationDate")
-outdf['AllocationApplicationDate'] = df_DM['in_AllocationApplicationDate']  # See preprocessing
+outdf['AllocationApplicationDate'] = ""
 
 print("AllocationAssociatedConsumptiveUseSiteIDs")
 outdf['AllocationAssociatedConsumptiveUseSiteIDs'] = ""
@@ -129,31 +130,31 @@ print("AllocationAssociatedWithdrawalSiteIDs")
 outdf['AllocationAssociatedWithdrawalSiteIDs'] = ""
 
 print("AllocationBasisCV")
-outdf['AllocationBasisCV'] = "Unspecified"
+outdf['AllocationBasisCV'] = ""
 
 print("AllocationChangeApplicationIndicator")
 outdf['AllocationChangeApplicationIndicator'] = ""
 
 print("AllocationCommunityWaterSupplySystem")
-outdf['AllocationCommunityWaterSupplySystem'] = df_DM['in_AllocationCommunityWaterSupplySystem']  # See preprocessing
+outdf['AllocationCommunityWaterSupplySystem'] = ""
 
 print("AllocationCropDutyAmount")
-outdf['AllocationCropDutyAmount'] = df_DM['in_AllocationCropDutyAmount']  # See preprocessing
+outdf['AllocationCropDutyAmount'] = ""
 
 print("AllocationExpirationDate")
-outdf['AllocationExpirationDate'] = df_DM['in_AllocationExpirationDate']  # See preprocessing
+outdf['AllocationExpirationDate'] = ""
 
 print("AllocationFlow_CFS")
 outdf['AllocationFlow_CFS'] = df_DM['in_AllocationFlow_CFS']  # See preprocessing
 
 print("AllocationLegalStatusCV")
-outdf['AllocationLegalStatusCV'] = df_DM['in_AllocationLegalStatusCV']  # See preprocessing
+outdf['AllocationLegalStatusCV'] = df_DM.apply(lambda row: assignBlankUnspecified(row['in_AllocationLegalStatusCV']), axis=1)
 
 print("AllocationNativeID")  # Will use this with a .groupby() statement towards the ends.
 outdf['AllocationNativeID'] = df_DM['in_AllocationNativeID']
 
 print("AllocationOwner")
-outdf['AllocationOwner'] = df_DM.apply(lambda row: assignAllocationOwner(row['in_AllocationOwner']), axis=1)  # See preprocessing
+outdf['AllocationOwner'] = df_DM.apply(lambda row: assignBlankUnspecified(row['in_AllocationOwner']), axis=1)
 
 print("AllocationSDWISIdentifierCV")
 outdf['AllocationSDWISIdentifierCV'] = ""
@@ -162,16 +163,16 @@ print("AllocationPriorityDate")
 outdf['AllocationPriorityDate'] = df_DM['in_AllocationPriorityDate']  # See preprocessing
 
 print("AllocationTimeframeEnd")
-outdf['AllocationTimeframeEnd'] = df_DM['in_AllocationTimeframeEnd']  # See preprocessing
+outdf['AllocationTimeframeEnd'] = ""
 
 print("AllocationTimeframeStart")
-outdf['AllocationTimeframeStart'] = df_DM['in_AllocationTimeframeStart']  # See preprocessing
+outdf['AllocationTimeframeStart'] = ""
 
 print("AllocationTypeCV")
 outdf['AllocationTypeCV'] = "Unspecified"
 
 print("AllocationVolume_AF")
-outdf['AllocationVolume_AF'] = ""
+outdf['AllocationVolume_AF'] = df_DM['in_AllocationVolume_AF']  # See preprocessing
 
 print("BeneficialUseCategory")
 outdf['BeneficialUseCategory'] = df_DM['in_BeneficialUseCategory']  # See preprocessing
@@ -186,7 +187,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = "09/15/2022"
+outdf['DataPublicationDate'] = "10/04/2022"
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""
