@@ -1,5 +1,5 @@
-# Last Updated: 05/17/2022
-# Purpose: To create NJ site specific organization use information and populate dataframe for WaDE_QA 2.0.
+# Last Updated: 10/12/2022
+# Purpose: To create NJ site specific public supply organization use information and populate dataframe for WaDE_QA 2.0.
 # Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
 
 
@@ -13,7 +13,7 @@ import pandas as pd
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "G:/Shared drives/WaDE Data/NewJersey/SiteSpecificAmounts"
+workingDir = "G:/Shared drives/WaDE Data/NewJersey/SS_PublicSupplyWaterUse"
 os.chdir(workingDir)
 
 # Needed WaDE columns
@@ -36,7 +36,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.OrganizationUUID = "NJss_O1"
+outdf.OrganizationUUID = "NJssps_O1"
 
 outdf.OrganizationContactEmail = "Steven.Domber@dep.nj.gov, Kent.Barr@dep.nj.gov"
 

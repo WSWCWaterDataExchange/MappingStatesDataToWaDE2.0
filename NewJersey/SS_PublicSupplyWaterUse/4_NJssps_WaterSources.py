@@ -1,5 +1,5 @@
-# Last Updated: 05/17/2022
-# Purpose: To create NJ site specific water source use information and populate dataframe for WaDE_QA 2.0.
+# Last Updated: 10/12/2022
+# Purpose: To create NJ site specific public supply water source use information and populate dataframe for WaDE_QA 2.0.
 # Notes: N/A
 
 
@@ -12,14 +12,14 @@ import pandas as pd
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "G:/Shared drives/WaDE Data/NewJersey/SiteSpecificAmounts"
+workingDir = "G:/Shared drives/WaDE Data/NewJersey/SS_PublicSupplyWaterUse"
 os.chdir(workingDir)
 fileInput = "RawInputData/P_njSSMaster.csv"
 df = pd.read_csv(fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
@@ -41,7 +41,7 @@ columnslist = [
 #WaterSourceUUID
 def assignWaterSourceUUID(colrowValue):
     string1 = str(colrowValue)
-    outstring = "NJss_WS" + string1
+    outstring = "NJssps_WS" + string1
     return outstring
 
 

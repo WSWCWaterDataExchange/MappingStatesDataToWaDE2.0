@@ -1,5 +1,5 @@
-# Last Updated: 05/17/2022
-# Purpose: To create NJ site POD and POU relation information and populate dataframe for WaDEQA 2.0.
+# Last Updated: 10/12/2022
+# Purpose: To create NJ site specific public supply site POD and POU relation information and populate dataframe for WaDEQA 2.0.
 # Notes:    1) data primary comes from records data.  We want the relationship based on a physical connection, temporal connection, and similar amount values.
 #           2) read in records, remove unnecessary columns.
 #           3) Attach PODorPOUSite value from sites.csv based on SiteUUID value.
@@ -17,7 +17,7 @@ import pandas as pd
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "G:/Shared drives/WaDE Data/NewJersey/SiteSpecificAmounts"
+workingDir = "G:/Shared drives/WaDE Data/NewJersey/5_SiteSpecificAmounts"
 os.chdir(workingDir)
 
 # Sites
@@ -25,7 +25,7 @@ sitesInput = "ProcessedInputData/sites.csv"
 dfsites = pd.read_csv(sitesInput)
 
 # Sitespecificamounts
-recordInput = "ProcessedInputData/sitespecificamounts.csv"
+recordInput = "ProcessedInputData/SS_PublicSupplyWaterUse.csv"
 dfrecord = pd.read_csv(recordInput)
 
 

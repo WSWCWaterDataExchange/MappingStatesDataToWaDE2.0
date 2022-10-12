@@ -1,5 +1,5 @@
-# Last Updated: 05/17/2022
-# Purpose: To create NJ site specific variable use information and populate dataframe for WaDE_QA 2.0.
+# Last Updated: 10/12/2022
+# Purpose: To create NJ site specific public supply variable use information and populate dataframe for WaDE_QA 2.0.
 # Notes: 1) Used a list approach.  Needed to have five rows for VaribleCVs.
 
 
@@ -13,7 +13,7 @@ import pandas as pd
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "G:/Shared drives/WaDE Data/NewJersey/SiteSpecificAmounts"
+workingDir = "G:/Shared drives/WaDE Data/NewJersey/SS_PublicSupplyWaterUse"
 os.chdir(workingDir)
 
 #WaDE columns
@@ -36,36 +36,36 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 # outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = ["NJss_V1",
-"NJss_V2",
-"NJss_V3",
-"NJss_V4",
-"NJss_V5",
-"NJss_V6",
-"NJss_V7",
-"NJss_V8",
-"NJss_V9",
-"NJss_V10",
-"NJss_V11",
-"NJss_V12",
-"NJss_V13",
-"NJss_V14",
-"NJss_V15",
-"NJss_V16",
-"NJss_V17",
-"NJss_V18",
-"NJss_V19",
-"NJss_V20",
-"NJss_V21",
-"NJss_V22",
-"NJss_V23",
-"NJss_V24",
-"NJss_V25",
-"NJss_V26",
-"NJss_V27",
-"NJss_V28",
-"NJss_V29",
-"NJss_V30"]
+outdf.VariableSpecificUUID = ["NJssps_V1",
+"NJssps_V2",
+"NJssps_V3",
+"NJssps_V4",
+"NJssps_V5",
+"NJssps_V6",
+"NJssps_V7",
+"NJssps_V8",
+"NJssps_V9",
+"NJssps_V10",
+"NJssps_V11",
+"NJssps_V12",
+"NJssps_V13",
+"NJssps_V14",
+"NJssps_V15",
+"NJssps_V16",
+"NJssps_V17",
+"NJssps_V18",
+"NJssps_V19",
+"NJssps_V20",
+"NJssps_V21",
+"NJssps_V22",
+"NJssps_V23",
+"NJssps_V24",
+"NJssps_V25",
+"NJssps_V26",
+"NJssps_V27",
+"NJssps_V28",
+"NJssps_V29",
+"NJssps_V30"]
 
 outdf.AggregationInterval = "1"
 

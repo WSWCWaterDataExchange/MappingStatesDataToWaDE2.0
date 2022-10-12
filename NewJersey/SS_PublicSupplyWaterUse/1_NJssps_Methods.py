@@ -1,5 +1,5 @@
-# Last Updated: 05/17/2022
-# Purpose: To create NJ site specific methods use information and populate dataframe for WaDE_QA 2.0.
+# Last Updated: 10/12/2022
+# Purpose: To create NJ site specific public supply methods use information and populate dataframe for WaDE_QA 2.0.
 # Notes: 1) Used a list approach.  Needed to have two rows, one with surface water, the other with groundwater.
 
 
@@ -13,7 +13,7 @@ import pandas as pd
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "G:/Shared drives/WaDE Data/NewJersey/SiteSpecificAmounts"
+workingDir = "G:/Shared drives/WaDE Data/NewJersey/SS_PublicSupplyWaterUse"
 os.chdir(workingDir)
 
 #WaDE columns
@@ -35,7 +35,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.MethodUUID = "NJss_M1"
+outdf.MethodUUID = "NJssps_M1"
 
 outdf.ApplicableResourceTypeCV = "Surface Ground Water"
 
