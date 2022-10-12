@@ -13,14 +13,14 @@ import pandas as pd
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "G:/Shared drives/WaDE Data/Texas/SiteSpecificAmounts"
+workingDir = "G:/Shared drives/WaDE Data/Texas/SS_PublicSupplyWaterUse"
 os.chdir(workingDir)
 fileInput = "RawInputData/P_MasterTXSiteSpecific.csv"
 df = pd.read_csv(fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
@@ -32,6 +32,7 @@ df_watersources = pd.read_csv(watersources_fileInput)  # watersources dataframe
 
 
 columnslist = [
+    "WaDEUUID",
     "SiteUUID",
     "RegulatoryOverlayUUIDs",
     "WaterSourceUUIDs",
@@ -106,7 +107,7 @@ def assignSiteName(colrowValue):
 # For creating SiteUUID
 def assignSiteUUID(colrowValue):
     string1 = str(colrowValue)
-    outstring = "TXss_S" + string1
+    outstring = "TXssps_S" + string1
     return outstring
 
 
@@ -178,6 +179,12 @@ outdf['StateCV'] = "TX"
 print("USGSSiteID")
 outdf['USGSSiteID'] = ""
 
+print("Adding Data Assessment UUID")
+outdf['WaDEUUID'] = ""
+
+print("Resetting Index")
+outdf.reset_index()
+
 print("Joining outdf duplicates based on key fields...")
 outdf = outdf.replace(np.nan, "")  # Replaces NaN values with blank.
 groupbyList = ['PODorPOUSite', 'SiteNativeID', 'SiteName', 'SiteTypeCV', 'Longitude', 'Latitude']
@@ -188,7 +195,7 @@ outdf = outdf[columnslist]  # reorder the dataframe's columns based on columnsli
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+purgecolumnslist = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
 dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # RegulatoryOverlayUUIDs
@@ -264,6 +271,12 @@ outdf['SiteUUID'] = dftemp.apply(lambda row: assignSiteUUID(row['Count']), axis=
 
 # Error check SiteUUID
 outdf, dfpurge = TestErrorFunctions.SiteUUID_S_Check(outdf, dfpurge)
+
+
+# Remove WaDEUUID field from import file (only needed for purge info).
+############################################################################
+print("Drop Assessment WaDEUUID")
+outdf = outdf.drop(['WaDEUUID'], axis=1)
 
 
 # Export to new csv

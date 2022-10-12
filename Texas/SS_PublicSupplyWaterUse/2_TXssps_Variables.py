@@ -13,7 +13,7 @@ import pandas as pd
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "G:/Shared drives/WaDE Data/Texas/SiteSpecificAmounts"
+workingDir = "G:/Shared drives/WaDE Data/Texas/SS_PublicSupplyWaterUse"
 os.chdir(workingDir)
 
 #WaDE columns
@@ -36,8 +36,8 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 #outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = ["TXss_V1", "TXss_V2", "TXss_V3", "TXss_V4", "TXss_V5", "TXss_V6",
-                              "TXss_V7", "TXss_V8", "TXss_V9", "TXss_V10", "TXss_V11", "TXss_V12", "TXss_V13", "TXss_V14", "TXss_V15"]
+outdf.VariableSpecificUUID = ["TXssps_V1", "TXssps_V2", "TXssps_V3", "TXssps_V4", "TXssps_V5", "TXssps_V6",
+                              "TXssps_V7", "TXssps_V8", "TXssps_V9", "TXssps_V10", "TXssps_V11", "TXssps_V12", "TXssps_V13", "TXssps_V14", "TXssps_V15"]
 
 outdf.AggregationInterval = [1,	1, 1, 1, 1, 1,
                              1, 1, 1, 1, 1, 1, 1, 1, 1]

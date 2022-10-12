@@ -1,4 +1,4 @@
-# TWDB Site Specific Data Preparation for WaDE
+# TWDB Site Specific Public Supply Data Preparation for WaDE
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting site specific time series water data made available by the [Texas Water Development Board (TWDB)](https://www.twdb.texas.gov/index.asp), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 
@@ -17,28 +17,28 @@ Unique files were created, one used by the WSWC staff to understand the availabl
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
 The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
-- Texas Site Specific Data: https://drive.google.com/drive/folders/1Fg2_9rkYnplhUw64oNwrZDWMo3mDAI9f?usp=sharing
+- Texas Site Specific Public Supply Data: https://drive.google.com/drive/folders/1Fg2_9rkYnplhUw64oNwrZDWMo3mDAI9f?usp=sharing
 
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share TWDB's site specific time series water data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *TX_SiteSpecificAmounts Schema Mapping to WaDE_QA.xlsx*.  Six executable code files were used to extract the state agency's site specific time series data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(SiteSpecificAmounts)* is dependent on the previous files.  Those six code files are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share TWDB's site specific time series water data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *TX_SS_PublicSupplyWaterUse Schema Mapping to WaDE.xlsx*.  Six executable code files were used to extract the state agency's site specific time series data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(SiteSpecificAmounts)* is dependent on the previous files.  Those six code files are as follows...
 
 ```diff
 - There are unexplained duplicate water amount values in the provided source data.  Temp fix of keeping the last entry and removing the duplicate ones.  WaDE staff to follow up with TWDB to review provided data and possible solution.
 ```
 
-- 0_PreProcessCASiteSpecificData.ipynb
-- 1_TXss_Methods.py
-- 2_TXss_Variables.py
-- 3_TXss_Organizations.py
-- 4_TXss_WaterSources.py
-- 5_TXss_Sites.py
-- 6_TXss_SiteSpecificAmounts_fact.py
-- 7_TXss_PODSiteToPOUSiteRelationships.py
+- 0_PreProcessTXSSPublicSupplyWaterUseData.ipynb
+- 1_TXssps_Methods.py
+- 2_TXssps_Variables.py
+- 3_TXssps_Organizations.py
+- 4_TXssps_WaterSources.py
+- 5_TXssps_Sites.py
+- 6_TXssps_SiteSpecificAmounts_fact.pyy
+- 7_TXssps_PODSiteToPOUSiteRelationships.py
 
 
 ***
-### 0) Code File: 0_PreProcessCASiteSpecificData.ipynb
+### 0) Code File: 0_PreProcessTXSSPublicSupplyWaterUseData.ipynb
 Purpose: Pre-process the state agency input data files into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
@@ -81,7 +81,7 @@ Purpose: Pre-process the state agency input data files into one master file for 
 
 
 ***
-### 1) Code File: 1_TXss_Methods.py
+### 1) Code File: 1_TXssps_Methods.py
 Purpose: generate legend of granular methods used on data collection.
 
 #### Inputs:
@@ -102,12 +102,12 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
-TXss_M1 | Surface Ground Storage | Estimate
+TXssps_M1 | Surface Ground Storage | Estimate
 
 
 
 ***
-### 2) Code File: 2_TXss_Variables.py
+### 2) Code File: 2_TXssps_Variables.py
 Purpose: generate legend of granular variables specific to each state.
 
 #### Inputs:
@@ -128,12 +128,12 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV | VariableCV | VariableSpecificCV
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------
-TXss_V1 | 1 | Annual | G | Intake | Intake_Annual_MI_Groundwater
+TXssps_V1 | 1 | Annual | G | Intake | Intake_Annual_MI_Groundwater
 
 
 
 ***
-### 3) Code File: 3_TXss_Organizations.py
+### 3) Code File: 3_TXssps_Organizations.py
 Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
 
 #### Inputs:
@@ -154,12 +154,12 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
 ---------- | ---------- | ------------ | ------------
-TXss_O1 | Texas Water Development Board | Natalie Houston | https://www.twdb.texas.gov/index.asp
+TXssps_O1 | Texas Water Development Board | Natalie Houston | https://www.twdb.texas.gov/index.asp
 
 
 
 ***
-### 4) Code File: 4_TXss_WaterSources.py
+### 4) Code File: 4_TXssps_WaterSources.py
 Purpose: generate a list of water sources specific to the site specific time series water data.
 
 #### Inputs:
@@ -172,9 +172,9 @@ Purpose: generate a list of water sources specific to the site specific time ser
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign state agency info to columns.  See *TX_SiteSpecificAmounts Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
-    - *WaterSourceName* = see *0_PreProcessCASiteSpecificData.ipynb* for specific on generation.
-    - *WaterSourceNativeID* = see *0_PreProcessCASiteSpecificData.ipynb* for specific on generation.
+- Assign state agency info to columns.  See *TX_SS_PublicSupplyWaterUse Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+    - *WaterSourceName* = see *0_PreProcessTXSSPublicSupplyWaterUseData.ipynb* for specific on generation.
+    - *WaterSourceNativeID* = see *0_PreProcessTXSSPublicSupplyWaterUseData.ipynb* for specific on generation.
     - *WaterSourceTypeCV* = **Water_Type**.
 - Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceName*, *WaterSourceNativeID* & *WaterSourceTypeCV* fields.
 - Assign water source UUID identifier to each (unique) row.
@@ -184,7 +184,7 @@ Purpose: generate a list of water sources specific to the site specific time ser
 #### Sample Output (WARNING: not all fields shown):
 WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceNativeID | WaterSourceTypeCV
 ---------- | ---------- | ------------ | ------------ | ------------
-TXss_WS1 | Fresh | OGALLALA AQUIFER | WaDETX_WS1 | Ground Water
+TXssps_WS1 | Fresh | OGALLALA AQUIFER | WaDETX_WS1 | Ground Water
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
 - WaterSourceUUID
@@ -194,7 +194,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 
 ***
-### 5) Code File: 5_TXss_Sites.py
+### 5) Code File: 5_TXssps_Sites.py
 Purpose: generate a list of sites specific to the site specific time series water data.
 
 #### Inputs:
@@ -207,7 +207,7 @@ Purpose: generate a list of sites specific to the site specific time series wate
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
-- Assign state agency info to columns.  See *TX_SiteSpecificAmounts Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+- Assign state agency info to columns.  See *TX_SS_PublicSupplyWaterUse Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *WaterSourceUUID* from watersource.csv input file. See code for specific implementation of extraction.
     - *CoordinateMethodCV* = **Source**.
     - *County* = **County_Used**.
@@ -225,7 +225,7 @@ Purpose: generate a list of sites specific to the site specific time series wate
 #### Sample Output (WARNING: not all fields shown):
 SiteUUID | CoordinateMethodCV | Latitude | Longitude | SiteName | SiteNativeID |SiteTypeCV
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------
-TXss_S1 | System | 36.4451440719 | -100.323255749 | DARROUZETT MUNICIPAL WATER SYSTEM | TX1480002 | Public Water Systems
+TXssps_S1 | System | 36.4451440719 | -100.323255749 | DARROUZETT MUNICIPAL WATER SYSTEM | TX1480002 | Public Water Systems
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
 - SiteUUID 
@@ -236,7 +236,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 
 ***
-### 6) Code File: 6_TXss_SiteSpecificAmounts_fact.py
+### 6) Code File: 6_TXssps_SiteSpecificAmounts_fact.pyy
 Purpose: generate master sheet of state agency site specific timeseries water data to import into WaDE 2.0.
 
 #### Inputs:
@@ -251,23 +251,23 @@ Purpose: generate master sheet of state agency site specific timeseries water da
 
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE Water Site Specific Amounts* data columns.
-- Assign state agency data info to columns.  See *TX_SiteSpecificAmounts Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+- Populate output dataframe with *WaDE Water Site Specific Public Supply Amounts* data columns.
+- Assign state agency data info to columns.  See *TX_SS_PublicSupplyWaterUse Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
-    - *Amount* = see *0_PreProcessCASiteSpecificData.ipynb* for specific on generation.
+    - *Amount* = see *0_PreProcessTXSSPublicSupplyWaterUseData.ipynb* for specific on generation.
     - *BeneficialUseCategory* =  "Municipal".
     - *CommunityWaterSupplySystem* = **pwsName_y**.
     - *CustomerTypeCV* = "Municipal".
     - *ReportYearCV* = **Year**.
-    - *TimeframeStart* = see *0_PreProcessCASiteSpecificData.ipynb* for specific on generation.
-    - *TimeframeEnd* = see *0_PreProcessCASiteSpecificData.ipynb* for specific on generation.
+    - *TimeframeStart* = see *0_PreProcessTXSSPublicSupplyWaterUseData.ipynb* for specific on generation.
+    - *TimeframeEnd* = see *0_PreProcessTXSSPublicSupplyWaterUseData.ipynb* for specific on generation.
 - Perform error check on output dataframe.
 - Export output dataframe *waterallocations.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | OrganizationUUID | SiteUUID | VariableSpecificUUID | WaterSourceUUID | Amount | BeneficialUseCategory | TimeframeStart | TimeframeEnd 
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------
-TXss_M1 | TXss_O1 | TXss_S1 | TXss_V4 | TXss_WS510 | 1486000000 | Municipal | 2021 | 01/01/2021 | 01/31/2021
+TXssps_M1 | TXssps_O1 | TXssps_S1 | TXss_V4 | TXss_WS510 | 1486000000 | Municipal | 2021 | 01/01/2021 | 01/31/2021
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID
@@ -284,7 +284,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 
 ***
-### 7) Code File: 7_TXss_PODSiteToPOUSiteRelationships.py
+### 7) Code File: 7_TXssps_PODSiteToPOUSiteRelationships.py
 Purpose: generate linking element between POD and POU sites that share the same water right.
 Note: podsitetopousiterelationships.csv output only needed if both POD and POU data is present, otherwise produces empty file.
 

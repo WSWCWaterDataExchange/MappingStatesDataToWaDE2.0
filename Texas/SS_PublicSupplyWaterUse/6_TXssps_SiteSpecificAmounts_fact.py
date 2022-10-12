@@ -12,14 +12,14 @@ import pandas as pd
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "G:/Shared drives/WaDE Data/Texas/SiteSpecificAmounts"
+workingDir = "G:/Shared drives/WaDE Data/Texas/SS_PublicSupplyWaterUse"
 os.chdir(workingDir)
 M_fileInput = "RawinputData/P_MasterTXSiteSpecific.csv"
 variables_fileInput = "ProcessedInputData/variables.csv"
@@ -33,6 +33,7 @@ df_sites = pd.read_csv(sites_fileInput)  # Sites dataframe
 
 #WaDE dataframe columns
 columnslist = [
+    "WaDEUUID",
     "MethodUUID",
     "OrganizationUUID",
     "SiteUUID",
@@ -115,7 +116,7 @@ print("VariableSpecificUUID")
 outdf['VariableSpecificUUID'] = df.apply(lambda row: retrieveVariableSpecificUUID(row['in_VariableSpecificCV']), axis=1)
 
 print("OrganizationUUID")
-outdf['OrganizationUUID'] = "TXss_O1"
+outdf['OrganizationUUID'] = "TXssps_O1"
 
 print("WaterSourceUUID")
 outdf['WaterSourceUUID'] = df.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
@@ -145,7 +146,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = "Municipal"
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = "03/04/2022"
+outdf['DataPublicationDate'] = "10/12/2022"
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""
@@ -183,6 +184,9 @@ outdf['TimeframeEnd'] = df['in_TimeframeEnd']  # see preprocessing.
 print("TimeframeStart")
 outdf['TimeframeStart'] = df['in_TimeframeStart']  # see preprocessing.
 
+print("Adding Data Assessment UUID")
+outdf['WaDEUUID'] = ""
+
 print("Resetting Index")
 outdf.reset_index()
 
@@ -197,7 +201,7 @@ outdf = outdf.replace(np.nan, "").drop_duplicates().reset_index(drop=True)
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+purgecolumnslist = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
 dfpurge = pd.DataFrame(columns=purgecolumnslist)  # Purge DataFrame to hold removed elements
 
 # MethodUUID
@@ -274,6 +278,12 @@ outdf, dfpurge = TestErrorFunctions.SDWISIdentifier_SS_Check(outdf, dfpurge)
 #
 # # TimeframeStart
 # outdf, dfpurge = TestErrorFunctions.TimeframeStart_SS_Check(outdf, dfpurge)
+
+
+# Remove WaDEUUID field from import file (only needed for purge info).
+############################################################################
+print("Drop Assessment WaDEUUID")
+outdf = outdf.drop(['WaDEUUID'], axis=1)
 
 
 # Export to new csv

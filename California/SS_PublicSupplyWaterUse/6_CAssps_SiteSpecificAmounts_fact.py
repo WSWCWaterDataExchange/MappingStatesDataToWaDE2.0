@@ -201,7 +201,7 @@ outdf = outdf.replace(np.nan, "").drop_duplicates().reset_index(drop=True)
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+purgecolumnslist = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
 dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # MethodUUID

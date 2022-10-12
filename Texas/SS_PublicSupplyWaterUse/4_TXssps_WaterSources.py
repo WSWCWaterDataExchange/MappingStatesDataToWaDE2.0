@@ -12,14 +12,14 @@ import pandas as pd
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "G:/Shared drives/WaDE Data/Texas/SiteSpecificAmounts"
+workingDir = "G:/Shared drives/WaDE Data/Texas/SS_PublicSupplyWaterUse"
 os.chdir(workingDir)
 fileInput = "RawInputData/P_MasterTXSiteSpecific.csv"
 df = pd.read_csv(fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
@@ -41,7 +41,7 @@ columnslist = [
 #WaterSourceUUID
 def assignWaterSourceUUID(colrowValue):
     string1 = str(colrowValue)
-    outstring = "TXss_WS" + string1
+    outstring = "TXssps_WS" + string1
     return outstring
 
 
