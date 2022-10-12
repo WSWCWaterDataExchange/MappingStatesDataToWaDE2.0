@@ -19,7 +19,7 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "G:/Shared drives/WaDE Data/NorthDakota/SiteSpecificAmounts"
+workingDir = "G:/Shared drives/WaDE Data/NorthDakota/SS_DiversionsWithdrawalsWaterUse"
 os.chdir(workingDir)
 fileInput = "RawInputData/P_ndSSMaster.csv"
 df = pd.read_csv(fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
@@ -73,7 +73,7 @@ def retrieveWaterSourceUUID(colrowValue):
 # For creating SiteUUID
 def assignSiteUUID(colrowValue):
     string1 = str(colrowValue)
-    outstring = "NDss_S" + string1
+    outstring = "NDssdw_S" + string1
     return outstring
 
 

@@ -13,7 +13,7 @@ import pandas as pd
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "G:/Shared drives/WaDE Data/NorthDakota/SiteSpecificAmounts"
+workingDir = "G:/Shared drives/WaDE Data/NorthDakota/SS_DiversionsWithdrawalsWaterUse"
 os.chdir(workingDir)
 
 #WaDE columns
@@ -35,9 +35,9 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.MethodUUID = "NDss_M1"
+outdf.MethodUUID = "NDssdw_M1"
 
-outdf.ApplicableResourceTypeCV = "Surface Ground Water"
+outdf.ApplicableResourceTypeCV = "Surface Water & Groundwater"
 
 outdf.DataConfidenceValue = ""
 

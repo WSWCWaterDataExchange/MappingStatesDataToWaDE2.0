@@ -17,7 +17,7 @@ import pandas as pd
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "G:/Shared drives/WaDE Data/NorthDakota/SiteSpecificAmounts"
+workingDir = "G:/Shared drives/WaDE Data/NorthDakota/SS_DiversionsWithdrawalsWaterUse"
 os.chdir(workingDir)
 
 # Sites

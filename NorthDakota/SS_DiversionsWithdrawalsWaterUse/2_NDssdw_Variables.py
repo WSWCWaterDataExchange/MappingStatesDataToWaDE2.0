@@ -13,7 +13,7 @@ import pandas as pd
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "G:/Shared drives/WaDE Data/NorthDakota/SiteSpecificAmounts"
+workingDir = "G:/Shared drives/WaDE Data/NorthDakota/SS_DiversionsWithdrawalsWaterUse"
 os.chdir(workingDir)
 
 #WaDE columns
@@ -36,39 +36,40 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 # outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = ["NDss_V1",
-"NDss_V2",
-"NDss_V3",
-"NDss_V4",
-"NDss_V5",
-"NDss_V6",
-"NDss_V7",
-"NDss_V8",
-"NDss_V9",
-"NDss_V10",
-"NDss_V11",
-"NDss_V12",
-"NDss_V13",
-"NDss_V14",
-"NDss_V15",
-"NDss_V16",
-"NDss_V17",
-"NDss_V18",
-"NDss_V19",
-"NDss_V20",
-"NDss_V21",
-"NDss_V22",
-"NDss_V23",
-"NDss_V24",
-"NDss_V25",
-"NDss_V26",
-"NDss_V27",
-"NDss_V28",
-"NDss_V29",
-"NDss_V30",
-"NDss_V31",
-"NDss_V32",
-"NDss_V33"]
+outdf.VariableSpecificUUID = [
+"NDssdw_V1",
+"NDssdw_V2",
+"NDssdw_V3",
+"NDssdw_V4",
+"NDssdw_V5",
+"NDssdw_V6",
+"NDssdw_V7",
+"NDssdw_V8",
+"NDssdw_V9",
+"NDssdw_V10",
+"NDssdw_V11",
+"NDssdw_V12",
+"NDssdw_V13",
+"NDssdw_V14",
+"NDssdw_V15",
+"NDssdw_V16",
+"NDssdw_V17",
+"NDssdw_V18",
+"NDssdw_V19",
+"NDssdw_V20",
+"NDssdw_V21",
+"NDssdw_V22",
+"NDssdw_V23",
+"NDssdw_V24",
+"NDssdw_V25",
+"NDssdw_V26",
+"NDssdw_V27",
+"NDssdw_V28",
+"NDssdw_V29",
+"NDssdw_V30",
+"NDssdw_V31",
+"NDssdw_V32",
+"NDssdw_V33"]
 
 outdf.AggregationInterval = "1"
 
@@ -86,7 +87,8 @@ outdf.ReportYearTypeCV = "CalendarYear"
 
 outdf.VariableCV = "Withdrawal"
 
-outdf.VariableSpecificCV = ["Withdrawal_Annual_Commercial_Groundwater",
+outdf.VariableSpecificCV = [
+"Withdrawal_Annual_Commercial_Groundwater",
 "Withdrawal_Annual_Commercial_Surface Water",
 "Withdrawal_Annual_Domestic_Groundwater",
 "Withdrawal_Annual_Domestic_Surface Water",

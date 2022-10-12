@@ -18,7 +18,7 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "G:/Shared drives/WaDE Data/NorthDakota/SiteSpecificAmounts"
+workingDir = "G:/Shared drives/WaDE Data/NorthDakota/SS_DiversionsWithdrawalsWaterUse"
 os.chdir(workingDir)
 M_fileInput = "RawinputData/P_ndSSMaster.csv"
 variables_fileInput = "ProcessedInputData/variables.csv"
@@ -109,13 +109,13 @@ print("Populating dataframe outdf...")
 outdf = pd.DataFrame(index=df.index, columns=columnslist)  # The output dataframe
 
 print("MethodUUID")
-outdf['MethodUUID'] = "NDss_M1"
+outdf['MethodUUID'] = "NDssdw_M1"
 
 print("VariableSpecificUUID")
 outdf['VariableSpecificUUID'] = df.apply(lambda row: retrieveVariableSpecificUUID(row['in_VariableSpecificCV']), axis=1)
 
 print("OrganizationUUID")
-outdf['OrganizationUUID'] = "NDss_O1"
+outdf['OrganizationUUID'] = "NDssdw_O1"
 
 print("WaterSourceUUID")
 outdf['WaterSourceUUID'] = df.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
@@ -145,7 +145,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = "Unspecified"
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = "06/01/2022"
+outdf['DataPublicationDate'] = "10/05/2022"
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""
