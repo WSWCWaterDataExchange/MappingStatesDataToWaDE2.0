@@ -361,6 +361,7 @@ def HUC8_S_Check(dfx, dfy):
 def Latitude_S_Check(dfx, dfy):
     mask = dfx.loc[(dfx["Latitude"].isnull()) |
                    (dfx["Latitude"].astype(str) == "") |
+                   (dfx["Latitude"].astype(str).str.contains(",")) |
                    (dfx["Latitude"] == 0)].assign(ReasonRemoved='Incomplete Latitude').reset_index()
     if len(mask.index) > 0:
         outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
@@ -374,6 +375,7 @@ def Latitude_S_Check(dfx, dfy):
 
         dropIndex = dfx.loc[(dfx["Latitude"].isnull()) |
                             (dfx["Latitude"].astype(str) == "") |
+                            (dfx["Latitude"].astype(str).str.contains(",")) |
                             (dfx["Latitude"] == 0)].index
         dfx = dfx.drop(dropIndex)
         dfx = dfx.reset_index(drop=True)
@@ -383,6 +385,8 @@ def Latitude_S_Check(dfx, dfy):
 # Longitude_float_-
 def Longitude_S_Check(dfx, dfy):
     mask = dfx.loc[(dfx["Longitude"].isnull()) |
+                   (dfx["Longitude"].astype(str) == "") |
+                   (dfx["Longitude"].astype(str).str.contains(",")) |
                    (dfx["Longitude"] == "")].assign(ReasonRemoved='Incomplete Longitude').reset_index()
     if len(mask.index) > 0:
         outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
@@ -395,6 +399,8 @@ def Longitude_S_Check(dfx, dfy):
         dfy = dfy.append(outmaskdf)
 
         dropIndex = dfx.loc[(dfx["Longitude"].isnull()) |
+                            (dfx["Longitude"].astype(str) == "") |
+                            (dfx["Longitude"].astype(str).str.contains(",")) |
                             (dfx["Longitude"] == "")].index
         dfx = dfx.drop(dropIndex)
         dfx = dfx.reset_index(drop=True)

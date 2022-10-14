@@ -1,3 +1,0 @@
-﻿MethodID,MethodUUID,MethodName,MethodDescription,MethodNEMILink,ApplicableResourceTypeCV,MethodTypeCV,DataCoverageValue,DataQualityValueCV,DataConfidenceValue
-30,UDWRi_Water Use Data,Water Use Data,Water use gauge station data.,NULL,Surface Ground Water,Measured,NULL,NULL,NULL
-46,CSWRCB_Public Drinking Water,Site Specific,Public drinking water records.,NULL,Surface Ground Storage,Modeled,NULL,NULL,NULL
