@@ -270,5 +270,5 @@ WSWC Staff
 - Ryan James <rjames@wswc.utah.gov>
 
 CDWR Staff
-- Doug Stenzel <doug.stenzel@state.co.us>
+- Brian Macpherson <brian.macpherson@state.co.us>
 
