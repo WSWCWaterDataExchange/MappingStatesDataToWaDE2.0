@@ -14,7 +14,7 @@ Unique files were created to be used as input to the Python codes that prepare W
 
 ## Storage for WaDE2 2.0 Source and Processed Water Data
 The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE2 database, can both be found within the WaDE2 sponsored Google Drive.  Please contact WaDE2 staff if unavailable or if you have any questions about the data.
-- Oregon Site Specific Reservoir and Gage Data: https://drive.google.com/drive/folders/1UDoVZrfC9sJzgwqwI4tuFDte4HMgg3X_
+- Oregon Site Specific Reservoir and Gage Data: https://drive.google.com/drive/folders/1UDoVZrfC9sJzgwqwI4tuFDte4HMgg3X_?usp=sharing
 
 
 
