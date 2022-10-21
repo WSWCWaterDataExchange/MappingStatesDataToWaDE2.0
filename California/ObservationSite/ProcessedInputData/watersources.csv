@@ -1,6 +1,0 @@
-WaterSourceUUID,Geometry,GNISFeatureNameCV,WaterQualityIndicatorCV,WaterSourceName,WaterSourceNativeID,WaterSourceTypeCV
-CAos_WS1,,,Fresh,Unspecified,WaDECA_WS1,Artificial Path
-CAos_WS2,,,Fresh,Unspecified,WaDECA_WS2,Stream/River - Perennial
-CAos_WS3,,,Fresh,Unspecified,WaDECA_WS3,Stream/River - Intermittent
-CAos_WS4,,,Fresh,Unspecified,WaDECA_WS4,Canal/Ditch
-CAos_WS5,,,Fresh,Unspecified,WaDECA_WS5,Surface Water

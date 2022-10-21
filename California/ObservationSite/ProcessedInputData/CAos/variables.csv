@@ -1,3 +1,0 @@
-VariableSpecificUUID,AggregationInterval,AggregationIntervalUnitCV,AggregationStatisticCV,AmountUnitCV,MaximumAmountUnitCV,ReportYearStartMonth,ReportYearTypeCV,VariableCV,VariableSpecificCV
-CAos_V1,1,Monthly,Unspecified,AF,AF,1,CalendarYear,Stream Gage,Stream Gage_Monthly_Stage_Surface Water
-CAos_V2,1,Monthly,Unspecified,AF,AF,1,CalendarYear,Reservoir Level,Reservoir Level_Monthly_Storage_Surface Water
