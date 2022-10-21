@@ -49,7 +49,7 @@ Purpose: Pre-process the state agency input data files into one master file for 
     - Fix **wdid** values that are less then 7 chars long.  Insert a "0" value.
     - Concatenate all sites into single stie dataframe.
 - For timeseries data...
-  - Using **wdid** list as input into [**Annual WDID Time Series Data**](https://dwr.state.co.us/Rest/GET/Help/Api/GETCOos_M1-api-v2-structures-divrec-divrecyear) web service to retrieve time series info for each wdid of interest. Export results to save on future query time.
+  - Using **wdid** list as input into [**Annual WDID Time Series Data**](https://dwr.state.co.us/Rest/GET/Help/Api/GET-api-v2-structures-divrec-divrecyear) web service to retrieve time series info for each wdid of interest. Export results to save on future query time.
   - We only want **measInterval** = "annual" for annual records.
 - Merge site with timeseries dataframe using unique key value generated from **wdid** and **waterClassNum**.
 - Assign data to WaDE specific fields.
