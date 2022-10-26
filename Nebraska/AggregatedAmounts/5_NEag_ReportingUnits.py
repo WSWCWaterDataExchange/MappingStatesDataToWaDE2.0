@@ -13,7 +13,7 @@ import pandas as pd
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
@@ -48,7 +48,7 @@ def retrieveGeometry(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = ''
     else:
-        String1 = colrowValue.strip()
+        String1 = colrowValue
         try:
             outList = Geometrydict[String1]
         except:

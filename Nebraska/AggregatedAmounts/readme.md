@@ -1,7 +1,7 @@
 # NEDNR Aggregated Data Preparation for WaDE
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting aggregated water budget data made available by the [Nebraska Department of Natural Resources (NEDNR)](https://dnr.nebraska.gov/contact)), for inclusion into the Water Data Exchange (WaDE) project.   WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
-## Overview of Data Utilized
+## Overview of Source Data Utilized
 The following data was used for aggregated water budget...
 
 - **INSIGHT_FinalBasinData_20151102** csv file containing basin wide aggregated water supply and demand data and info and were obtained from the provided [Insight](https://nednr.nebraska.gov/insight/about.html) services.  Data used was for the years 1988-2012.

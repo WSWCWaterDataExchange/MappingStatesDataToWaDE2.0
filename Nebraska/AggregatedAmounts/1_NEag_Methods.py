@@ -38,7 +38,7 @@ outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires
 
 outdf.MethodUUID = "NEag_M1"
 
-outdf.ApplicableResourceTypeCV = "Surface Ground Water"
+outdf.ApplicableResourceTypeCV = "Surface Water & Groundwater"
 
 outdf.DataConfidenceValue = ""
 
