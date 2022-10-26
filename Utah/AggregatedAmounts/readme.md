@@ -1,13 +1,18 @@
 # UDWRE Aggregated Data Preparation for WaDE
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting aggregated water budget data made available by the [Utah Division of Water Resources (UDWRE)](https://water.utah.gov/), for inclusion into the Water Data Exchange (WaDE) project.   WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
-## Overview of Data Utilized
+## Overview of Source Data Utilized
 The following data was used for...
 
  - [UT Water Budget Data 11102020.csv](https://services.arcgis.com/ZzrwjTRez6FJiOq4/arcgis/rest/services/Water_Budget_WaDE_Compatible_Table/FeatureServer) timeseries water use for Utah.
  - UT_Subarea.shp shapefile geometry data used for custom location information for the timeseries water use data.
  - UT_HUC8.shp shapefile geometry data used for HUC8 location information for the timeseries water use data.
  - UT_Counties.shp shapefile geometry data used for county location information for the timeseries water use data.
+
+  ## Storage for WaDE 2.0 Source and Processed Water Data
+The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+- Utah Aggregated Water Budget Data: https://drive.google.com/drive/folders/1-9uX9PHE_hHbqfR3DEWPDuVurJLlyJm1?usp=sharing
+
 
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share UDWRE's aggregated water budget data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *UT_Aggregated Schema Mapping to WaDE_QA.xlsx*.  Six executable code files were used to extract the UDWRE's aggregated water budget data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(AggregatedAmounts_facts)* is dependent on the previous files.  Those six code files are as follows...
