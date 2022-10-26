@@ -13,7 +13,7 @@ import pandas as pd
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Arizona/AggregatedAmounts"
+workingDir = "G:/Shared drives/WaDE Data/Arizona/AggregatedAmounts"
 
 os.chdir(workingDir)
 
@@ -38,7 +38,7 @@ outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires
 
 outdf.MethodUUID = "AZag_M1"
 
-outdf.ApplicableResourceTypeCV = "Surface Ground Water"
+outdf.ApplicableResourceTypeCV = "Surface Water & Groundwater"
 
 outdf.DataConfidenceValue = ""
 

@@ -12,17 +12,19 @@ import pandas as pd
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Arizona/AggregatedAmounts"
+workingDir = "G:/Shared drives/WaDE Data/Arizona/AggregatedAmounts"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_AZagg.csv"
-df = pd.read_csv(fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
+df = pd.read_csv(fileInput).replace(np.nan, "")
+fileInput_shape = "RawinputData/P_agGeometry.csv"
+dfshape = pd.read_csv(fileInput_shape)
 
 columnslist =[
     "ReportingUnitUUID",
@@ -39,7 +41,18 @@ columnslist =[
 # Custom Functions
 ############################################################################
 
-# For Creating CoordinateAccuracy
+# For Creating Geometry
+Geometrydict = pd.Series(dfshape.geometry.values, index = dfshape.in_ReportingUnitNativeID).to_dict()
+def retrieveGeometry(colrowValue):
+    if colrowValue == '' or pd.isnull(colrowValue):
+        outList = ''
+    else:
+        String1 = colrowValue.strip()
+        try:
+            outList = Geometrydict[String1]
+        except:
+            outList = ''
+    return outList
 
 # For creating SiteUUID
 def assignReportingUnitID(colrowValue):
@@ -75,7 +88,7 @@ print("StateCV")
 outdf['StateCV']= "AZ"
 
 print("Geometry")
-outdf['Geometry'] = df['Geometry']
+outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['in_ReportingUnitNativeID']), axis=1)
 
 #####################################
 # Dropping duplicate

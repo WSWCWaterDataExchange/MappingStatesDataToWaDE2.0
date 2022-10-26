@@ -1,7 +1,7 @@
 # ADWR Aggregated Data Preparation for WaDE
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting aggregated water budget data made available by the [Arizona Department of Water Resources (ADWR)](https://new.azwater.gov/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
-## Overview of Data Utilized
+## Overview of Source Data Utilized
 The following data was used for aggregated water budget...
 
 - **AMA Demand Supply from DW**, and was obtained from the ADWR website at:  http://www.azwater.gov/querycenter/query.aspx?qrysessionid=8CF17C8B1CB88E14E0534C64850A39FA
@@ -12,6 +12,11 @@ Two unique files were created, one used by the WSWC staff to understand the avai
  - AMA Demand Supply from DW_use as input.xlsx
  - AMA_and_INA.shp
  - AMA WaterSourceType Dictionary.xlsx
+
+ ## Storage for WaDE 2.0 Source and Processed Water Data
+The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+- Arizona Aggregated Water Budget Data: https://drive.google.com/drive/folders/1aGpDOmXBYEsOJkwWgJzpA4JOP3wvO_Cp?usp=sharing
+
 
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share ADWR's aggregated water budget data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *AZ_Aggregated Schema Mapping to WaDE_QA.xlsx*.  Six executable code files were used to extract the ADWR's aggregated water budget data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(AggregatedAmounts_facts)* is dependent on the previous files.  Those six code files are as follows...
