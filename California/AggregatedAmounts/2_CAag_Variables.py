@@ -14,7 +14,7 @@ import pandas as pd
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/California/AggregatedAmounts"
+workingDir = "G:/Shared drives/WaDE Data/California/AggregatedAmounts"
 os.chdir(workingDir)
 
 #WaDE columns

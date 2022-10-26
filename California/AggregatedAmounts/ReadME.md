@@ -1,7 +1,7 @@
 # CDWR Aggregated Data Preparation for WaDE
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting aggregated water budget data made available by the [California Department of Water Resources (CDWR)](https://data.ca.gov/dataset/water-plan-water-balance-data), for inclusion into the Water Data Exchange (WaDE) project.   WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
-## Overview of Data Utilized
+## Overview of Source Data Utilized
 The following data was used for aggregated water budget...
 
 - [**Water Plan Water Balance Data**](https://data.cnra.ca.gov/dataset/water-plan-water-balance-data) aggregrated time series water budget files csv for HR, PA, and DAU regions.  Data used was for the years 2002-2016.  In total there are 45 separate csv files (15 HR, 15 PA, & 15 DAU).
@@ -19,6 +19,11 @@ From the above mentioned provided data links, the following input files were use
  - Hydrologic_Regions shapefile.
  - Water_Plan_Planning_Areas shapefile.
  - DAUCO shapefile.
+
+  ## Storage for WaDE 2.0 Source and Processed Water Data
+The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+- California Aggregated Water Budget Data: https://drive.google.com/drive/folders/1bSCO5A2Rl82aQB0QsjIRsAepafs2jNDY?usp=sharing
+
 
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share CDWR's aggregated water budget data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *CA_Aggregated Schema Mapping to WaDE_QAR.xlsx*.  Six executable code files were used to extract the CDWR's aggregated water budget data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(AggregatedAmounts_facts)* is dependent on the previous files.  Those six code files are as follows...
