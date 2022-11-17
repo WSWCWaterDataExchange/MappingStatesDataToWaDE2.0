@@ -20,7 +20,7 @@ Adam Clark summarized:
  - UDWRi_SourceData_Annual_no0Null_input.csv
  - UDWRi_SystemData_PerUse_input.csv
  - UDWRi_SystemData_Total_no0Null_input
- - UDWRe_CulinaryWaterServiceAreas_input.csv
+ - CulinaryWaterServiceAreas.shp
 
  Some records were removed under advisement from the UDWRi.  These records either had misssing, NULL, or unverifiable records.  For those removed records, see the following files...
   - removed records.xlsx
@@ -98,7 +98,7 @@ Purpose: Pre-process the state agency input data files into one master file for 
         - WaDE *VariableCV* field = unique variable type entry noted from **Diversion Type** input.
         - WaDE *VariableSpecificCV* field = "Delivered Water Use_Annual_" + entry of the unique beneficial use input.
         - WaDE *PopulationServed* field = "".
-        - WADE *BeneficialUse* field = values from unique beneficial use list.
+        - WaDE *BeneficialUse* field = values from unique beneficial use list.
         - WaDE *ReportYearCV* field = **Year** input.
         - WaDE *CoordinateMethodCV* field = **Representation Node** input.
         - WaDE *Latitude* field = **Lat NAD83** input.
@@ -110,11 +110,11 @@ Purpose: Pre-process the state agency input data files into one master file for 
         - WaDE *Amount* field = amount data out per unique beneficial use input.
         - WaDE *TimeframeStart* = Unique start data for that month taken from list + **Year** input, for monthly data.
         - WaDE *TimeframeEnd* = Unique end data for that month taken from list + **Year** input, for monthly data.
-        - WADE *WaterSourceTypeCV* field = **Source Type** input.
+        - WaDE *WaterSourceTypeCV* field = **Source Type** input.
         - Note down common linking element between records and a record's site, known as *linkKey*.  Use **System ID** input.
 - For UDWRi Source annual data...
     - Similar elements as those noted above for the UDWRi Source per month data.  With the following exceptions...
-    - WADE *BeneficialUse* field = "Total"
+    - WaDE *BeneficialUse* field = "Total"
     - WaDE *Amount* field = **Total** input, for annual data.
     - WaDE *TimeframeStart* = '01/01/' + **Year** input, for annual data.
     - WaDE *TimeframeEnd* = '12/31/' + **Year** input, for annual data.
@@ -247,6 +247,7 @@ Purpose: generate a list of polygon areas associated with the state agency speci
 
 #### Inputs:
 - P_MasterUTSiteSpecific.csv
+- P_utSSGeometry.csv
 
 #### Outputs:
 - sites.csv
@@ -260,6 +261,7 @@ Purpose: generate a list of polygon areas associated with the state agency speci
     - Extract *WaterSourceUUID* from waterSources.csv input csv file. See code for specific implementation of extraction.
     - *CoordinateMethodCV* = *in_CoordinateMethodCV*, see *0_PreProcessUTSSPublicSupplyWaterUseData.ipynb* for specifics.
     - *County* = *in_County*, see *0_PreProcessUTSSPublicSupplyWaterUseData.ipynb* for specifics.
+    - *geometry* = extract geometry input from P_utSSGeometry.csv using *SiteNativeID*.
     - *Latitude* = *in_Latitude*, see *0_PreProcessUTSSPublicSupplyWaterUseData.ipynb* for specifics.
     - *Longitude* = *in_Longitude*, see *0_PreProcessUTSSPublicSupplyWaterUseData.ipynb* for specifics.
     - *PODorPOUSite* = *in_PODorPOUSite*, see *0_PreProcessUTSSPublicSupplyWaterUseData.ipynb* for specifics.
@@ -365,12 +367,12 @@ WSWC Staff
 - Ryan James <rjames@wswc.utah.gov>
 - Adel Abdallah <adelabdallah@wswc.utah.gov>
 
+UDWRi Staff
+- Jim Reese <jreese@utah.gov>
+
 UDWRe Staff
 - Jessie Pierson <jpierson@utah.gov>
 - Tom Moore <tmoore@utah.gov>
 - Aaron Austin <aaronaustin@utah.gov>
 - Craig Miller <craigmiller@utah.gov>
 - Leila Ahmadi <lahmadi@utah.gov>
-
-UDWRi Staff
-- Jim Reese <jreese@utah.gov>
