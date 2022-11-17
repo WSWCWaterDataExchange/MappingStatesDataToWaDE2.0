@@ -1,4 +1,4 @@
-# Last Updated: 10/12/2022
+# Last Updated: 11/15/2022
 # Purpose: To create UT site specific public supply organization use information and populate dataframe for WaDE_QA 2.0.
 # Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
 

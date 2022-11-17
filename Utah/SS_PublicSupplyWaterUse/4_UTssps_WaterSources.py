@@ -1,4 +1,4 @@
-# Last Updated: 10/12/2022
+# Last Updated: 11/15/2022
 # Purpose: To create UT site specific public supply water source use information and populate dataframe for WaDE_QA 2.0.
 # Notes: N/A
 
@@ -26,6 +26,7 @@ df = pd.read_csv(fileInput).replace(np.nan, "")  # The State's Master input data
 
 #WaDE columns
 columnslist = [
+    "WaDEUUID",
     "WaterSourceUUID",
     "Geometry",
     "GNISFeatureNameCV",
@@ -68,11 +69,15 @@ outdf['WaterSourceNativeID'] = df['in_WaterSourceNativeID']  # see preprocessing
 print("WaterSourceTypeCV")
 outdf['WaterSourceTypeCV'] = df['in_WaterSourceTypeCV']  # see preprocessing.
 
+print("Adding Data Assessment UUID")
+outdf['WaDEUUID'] = ""
+
 ##############################
 # Dropping duplicate
 print("Dropping duplicates")
 outdf = outdf.drop_duplicates(subset=['WaterSourceName', 'WaterSourceNativeID', 'WaterSourceTypeCV']).reset_index(drop=True)
 ##############################
+
 
 print("Resetting Index")
 outdf.reset_index()
@@ -81,7 +86,7 @@ outdf.reset_index()
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+purgecolumnslist = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
 dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # Geometry
@@ -101,6 +106,12 @@ outdf, dfpurge = TestErrorFunctions.WaterSourceNativeID_WS_Check(outdf, dfpurge)
 
 # WaterSourceTypeCV
 outdf, dfpurge = TestErrorFunctions.WaterSourceTypeCV_WS_Check(outdf, dfpurge)
+
+
+# Remove WaDEUUID field from import file (only needed for purge info).
+############################################################################
+print("Drop Assessment WaDEUUID")
+outdf = outdf.drop(['WaDEUUID'], axis=1)
 
 
 ############################################################################

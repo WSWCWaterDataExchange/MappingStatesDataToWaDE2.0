@@ -1,4 +1,4 @@
-# Last Updated: 10/12/2022
+# Last Updated: 11/15/2022
 # Purpose: To create UT site specific public supply amount use information and populate dataframe WaDE_QA 2.0.
 # Notes: N/A
 
@@ -133,7 +133,7 @@ print("AssociatedNativeAllocationIDs")
 outdf['AssociatedNativeAllocationIDs'] = ""
 
 print("CommunityWaterSupplySystem")
-outdf['CommunityWaterSupplySystem'] = df_DM['in_CommunityWaterSupplySystem']
+outdf['CommunityWaterSupplySystem'] = ""
 
 print('BeneficialUseCategory')
 outdf['BeneficialUseCategory'] = df_DM['in_BenUse']
@@ -142,10 +142,10 @@ print("CropTypeCV")
 outdf['CropTypeCV'] = ""
 
 print("CustomerTypeCV")
-outdf['CustomerTypeCV'] = df_DM['in_CustomerTypeCV']  # see preprocessing
+outdf['CustomerTypeCV'] = "Public"
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = "12/03/2021"
+outdf['DataPublicationDate'] = "11/15/2022"
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""

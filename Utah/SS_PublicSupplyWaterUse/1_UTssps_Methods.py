@@ -1,4 +1,4 @@
-# Last Updated: 10/12/2022
+# Last Updated: 11/15/2022
 # Purpose: To create UT site specific public supply methods use information and populate dataframe for WaDE_QA 2.0.
 # Notes: 1) Used a list approach.  Needed to have two rows, one with surface water, the other with groundwater.
 
@@ -37,7 +37,7 @@ outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires
 
 outdf.MethodUUID = "UTssps_M1"
 
-outdf.ApplicableResourceTypeCV = "Surface Ground Water"
+outdf.ApplicableResourceTypeCV = "Surface Water & Groundwater"
 
 outdf.DataConfidenceValue = ""
 
@@ -45,13 +45,13 @@ outdf.DataQualityValueCV = ""
 
 outdf.DataCoverageValue = ""
 
-outdf.MethodDescription = "Water use gauge station data."
+outdf.MethodDescription = "Unspecified"
 
-outdf.MethodName = "Water Use Data"
+outdf.MethodName = "Unspecified"
 
 outdf.MethodNEMILink = ""
 
-outdf.MethodTypeCV = "Measured"
+outdf.MethodTypeCV = "Estimated"
 
 
 # Check required fields are not null

@@ -1,4 +1,4 @@
-# Last Updated: 10/12/2022
+# Last Updated: 11/15/2022
 # Purpose: To create UT site specific public supply use information and populate dataframe for WaDEQA 2.0.
 # Notes: N/A
 
@@ -71,24 +71,6 @@ def retrieveWaterSourceUUID(colrowValue):
             outList = ''
     return outList
 
-# For creating Latitude
-def retrieveLatitude(colrowValue):
-    colrowValue = str(colrowValue).strip()
-    if colrowValue == "" or pd.isnull(colrowValue):
-        outValue = 0
-    else:
-        outValue = float(colrowValue)
-    return outValue
-
-# For creating Longitude
-def retrieveLongitude(colrowValue):
-    colrowValue = str(colrowValue).strip()
-    if colrowValue == "" or pd.isnull(colrowValue):
-        outValue = 0
-    else:
-        outValue = float(colrowValue)
-    return outValue
-
 # For Creating Geometry
 Geometrydict = pd.Series(dfshape.geometry.values, index = dfshape.in_SiteNativeID).to_dict()
 def retrieveGeometry(colrowValue):
@@ -145,10 +127,10 @@ print("HUC8")
 outdf['HUC8'] = ""
 
 print("Latitude")
-outdf['Latitude'] = df.apply(lambda row: retrieveLatitude(row['in_Latitude']), axis=1)
+outdf['Latitude'] = df['in_Latitude']
 
 print("Longitude")
-outdf['Longitude'] = df.apply(lambda row: retrieveLongitude(row['in_Longitude']), axis=1)
+outdf['Longitude'] = df['in_Longitude']
 
 print("NHDNetworkStatusCV")
 outdf['NHDNetworkStatusCV'] = ""
