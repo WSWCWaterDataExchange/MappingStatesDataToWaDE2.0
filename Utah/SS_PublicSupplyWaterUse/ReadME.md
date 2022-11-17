@@ -1,5 +1,5 @@
 # UT Site Specific Public Supply Data Preparation for WaDE
-This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting site specific time series water data made available by the [Utah Division of Water Rights (UDWRi)](https://www.waterrights.utah.gov/contact.asp), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
+This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting site specific time series water data made available by the [Utah Division of Water Rights (UDWRi)](https://waterrights.utah.gov/) and the [Utah Division of Water Resources (UDWRe)](https://water.utah.gov/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 
 ## Overview of Source Data Utilized
@@ -15,7 +15,7 @@ Adam Clark summarized:
 
 ![](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Utah/SS_PublicSupplyWaterUse/Utah_data_flow.png)
 
-**System** and **Source** data files were further split to highlight Monthly versus Annual water use for **Source** data, and per individual benefical use versus a single total use for **System** data.   Unique files were created, one used by the WSWC staff to understand the available data (*"_with Notes"*), the second resulting files to be used as input to the Python codes that prepare WaDE2 input files.  Input files used are as follows...
+**System** and **Source** data files were further split to highlight Monthly versus Annual water use for **Source** data, and per individual beneficial use versus a single total use for **System** data.   Unique files were created, one used by the WSWC staff to understand the available data (*"_with Notes"*), the second resulting files to be used as input to the Python codes that prepare WaDE2 input files.  Input files used are as follows...
  - UDWRi_SourceData_Monthly_input.csv
  - UDWRi_SourceData_Annual_no0Null_input.csv
  - UDWRi_SystemData_PerUse_input.csv
@@ -31,7 +31,7 @@ The 1) raw input data shared by the state / state agency / data provider (excel,
 
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share UDWR's site specific time series water data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *UT_SS_PublicSupplyWaterUse Schema Mapping to WaDE.xlsx*.  Several executable code files were used to extract the state agencies site specific time series data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/).  Those code files are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share UDWRi's site specific time series water data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *UT_SS_PublicSupplyWaterUse Schema Mapping to WaDE.xlsx*.  Several executable code files were used to extract the state agencies site specific time series data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/).  Those code files are as follows...
 
 - 0_PreProcessUTSSPublicSupplyWaterUseData.ipynb
 - 1_UTssps_Methods.py
@@ -359,7 +359,7 @@ Note: podsitetopousiterelationships.csv output only needed if both POD and POU d
 
 ***
 ## Staff Contributions
-Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Utah Division of Water Resources (UDWRe)](https://water.utah.gov/).
+Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Utah Division of Water Rights (UDWRi)](https://waterrights.utah.gov/) and the [Utah Division of Water Resources (UDWRe)](https://water.utah.gov/)
 
 WSWC Staff
 - Ryan James <rjames@wswc.utah.gov>
