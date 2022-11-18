@@ -1,4 +1,4 @@
-#Last Updated: 10/11/2022
+##Last Updated: 11/17/2022
 #Author: Ryan James (WSWC)
 #Purpose: To create NM site specific public supply water use use information and population dataframe for WaDEQA 2.0.
 #Notes:  1) Issue of using the same site for multiple datasets while keeping WaterSourceTypeCV separate.

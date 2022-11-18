@@ -1,4 +1,4 @@
-#Last Updated: 10/11/2022
+#Last Updated: 11/17/2022
 #Author: Ryan James (WSWC)
 #Purpose: To create NM site specific public supply water use site specific site amount use information and population dataframe WaDE_QA 2.0.
 #Notes:  1) Because of the unique site situation with duplicate SiteNativeID's, we need a way to create a unique key for dictionary look up values.
@@ -137,7 +137,7 @@ print('BeneficialUseCategory')
 outdf['BeneficialUseCategory'] = df_DM['in_BeneficialUseCategory']  # See pre-processing.
 
 print("CommunityWaterSupplySystem")
-outdf['CommunityWaterSupplySystem'] = df_DM['in_CommunityWaterSupplySystem']  # See pre-processing.
+outdf['CommunityWaterSupplySystem'] = ""
 
 print("CropTypeCV")
 outdf['CropTypeCV'] = ""
@@ -146,7 +146,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = '10/11/2022'
+outdf['DataPublicationDate'] = '11/17/2022'
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""

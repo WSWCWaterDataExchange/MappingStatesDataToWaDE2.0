@@ -61,11 +61,11 @@ Purpose: Pre-process the state agency input data files into one master file for 
     - *SiteNativeID* field = **ID** input.
     - *Amount* field = **F2010_GW_AFY**, **F2015_GW_AFY**, **F2010_SW_AFY**, **F2015_SW_AFY** inputs repetitively per dataset.
     - *Beneficial Use Category* = Unspecified.
-    - *CommunityWaterSupplySystem* field = **Public_Water_System_Name_2019** input.
     - *PopulationServed* field = **F2010_Population** or **F2015_Population** inputs repetitively per dataset. Format to numeric.
     - *ReportYearCV* field = 2010 or 2015 repetitively per dataset.
     - *TimeframeStart* field = "01/01/" + 2010 or 2015 repetitively per dataset.
     - *TimeframeEnd* field = "12/31/" + 2010 or 2015 repetitively per dataset.
+    - Note down common linking element between records and a record's site, known as *linkKey*.  Use **Public_Water_System_Name_2019** input.
     - Concatenate all timeseries withdrawal POD dataframes into single POD dataframe.
 - For place of use data...
     - left-join input timeseries withdrawal POD data by left_on=**Wt_S_ID** & right_on=**WaterSystem_ID** to extract a few values
@@ -74,7 +74,7 @@ Purpose: Pre-process the state agency input data files into one master file for 
     - *PODorPOUSite* field = POU.
     - *SiteName* field = **PblcSyN** input.
     - *SiteNativeID* field = **Wt_S_ID** input.
-    - *CommunityWaterSupplySystem* field = **PblcSyN** input.
+    - Note down common linking element between records and a record's site, known as *linkKey*.  Use **PblcSyN** input.
 - Concatenate both POD and POU dataframes into single output dataframe.
 - Create WaDE2 field *VariableSpecificCV* by concatenating the words "Withdrawal_Annual_Unspecified" respectively with the water source type of each timeseries.
 - Create WaDE2 field *WaterSourceNativeID* field using created *WaterSourceTypeCV* field, which helps to create a unique ID.
@@ -265,7 +265,6 @@ Purpose: generate master sheet of state agency site specific timeseries water da
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *Amount* = see *0_PreProcessNMSSPublicSupplyWaterUseData.ipynb* for specifics on generation.
     - *BeneficialUseCategory* =  see *0_PreProcessNMSSPublicSupplyWaterUseData.ipynb* for specifics on generation.
-    - *CommunityWaterSupplySystem* = see *0_PreProcessNMSSPublicSupplyWaterUseData.ipynb* for specifics on generation.
     - *PopulationServed* = see *0_PreProcessNMSSPublicSupplyWaterUseData.ipynb* for specifics on generation.
     - *ReportYearCV* = see *0_PreProcessNMSSPublicSupplyWaterUseData.ipynb* for specifics on generation.
     - *TimeframeStart* = see *0_PreProcessNMSSPublicSupplyWaterUseData.ipynb* for specifics on generation.
@@ -293,11 +292,12 @@ Any data fields that are missing required values and dropped from the WaDE2-read
 
 
 ***
-### 7) Code File: 7_NMssps_PODSiteToPOUSiteRelationships.py
+### 7) Code File: 7_UTssps_PODSiteToPOUSiteRelationships.ipynb
 Purpose: generate linking element between POD and POU sites that share the same water right.
 Note: podsitetopousiterelationships.csv output only needed if both POD and POU data is present, otherwise produces empty file.
 
 #### Inputs:
+- P_MasterUTSiteSpecific.csv
 - sites.csv
 - sitespecificamounts.csv
 
@@ -305,19 +305,16 @@ Note: podsitetopousiterelationships.csv output only needed if both POD and POU d
 - podsitetopousiterelationships.csv
 
 #### Operation and Steps:
-- Read the sites.csv & sitespecificamounts.csv input files.
-- Remove unnecessary columns from needed sitespecificamounts.csv info.
-- Explode *SiteUUID* field to create unique rows.
-- Left-merge site.csv info to the sitespecificamounts DataFrames via *SiteUUID* field.
-- Split into two new temporary dataframes: one POD centric, the other POU centric.
-- For the temporary POD DataFrames...
-    - Create *PODorPOUSite* field = POD.
-- For the temporary POU DataFrames
-    - Create *PODorPOUSite* field = POU.
-- Merge POD & POU dataframes into single output DataFrames, only using unique rows.
-- Find *SiteUUID* baesed on *PODorPOUSite* field.
-- Perform error check on waterallocations DataFrames (check for NaN values)
-- If waterallocations is not empty, export output DataFrames *podsitetopousiterelationships.csv*.
+- Read the P_MasterUTSiteSpecific.csv, sites.csv & sitespecificamounts.csv input files.
+- Extract *in_SiteNativeID* & *linkKey* from P_MasterUTSiteSpecific.csv.
+- Create a POU site specific dataframe by extracting *SiteUUID*, *SiteNativeID* & *PODorPOUSite*, where *PODorPOUSite* = "POU".
+- Create a POD site specific dataframe by extracting *SiteUUID*, *SiteNativeID* & *PODorPOUSite*, where *PODorPOUSite* = "POD".
+- Extract *SiteUUID*, *TimeframeStart*, & *TimeframeEnd* from sitespecificamounts.csv.
+- Left-join POU sites with extracted sitespecificamounts via *SiteUUID*, and left-join P_MasterUTSiteSpecific via *SiteNativeID*.
+- Left-join POD sites with extracted sitespecificamounts via *SiteUUID*, and left-join P_MasterUTSiteSpecific via *SiteNativeID*.
+- Left-join POD site dataframe with POU site dataframe via *linkKey* field.
+- Check and remove duplicates.  Remove NaN rows.
+- If table is not empty, export output dataframe *podsitetopousiterelationships.csv*.
 
 
 

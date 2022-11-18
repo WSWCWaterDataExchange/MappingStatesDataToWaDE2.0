@@ -1,4 +1,4 @@
-#La#Last Updated: 10/11/2022
+#Last Updated: 11/17/2022
 #Author: Ryan James (WSWC)
 #Purpose: To create NM site specific public supply water use organization use information and population dataframe for WaDE_QA 2.0.
 #Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
