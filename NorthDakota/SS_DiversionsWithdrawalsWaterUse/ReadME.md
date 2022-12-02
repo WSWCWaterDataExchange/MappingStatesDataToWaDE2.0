@@ -1,10 +1,10 @@
-# NDDWR Site Specific Diversions Withdrawal Diversions Withdrawal Diversions Withdrawal Data Preparation for WaDE2
-This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting Site Specific Diversions Withdrawal Diversions Withdrawal time series water data made available by the [North Dakota Department of Water Resources (NDDWR)](https://www.swc.nd.gov/), for inclusion into the Water Data Exchange (WaDE2) project.  WaDE2 enables states to share data with each other and the public in a more streamlined and consistent way. WaDE2 is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
+# NDDWR Site Specific Diversions Withdrawal Data Preparation for WaDE2
+This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting Site Specific Diversions Withdrawal time series water data made available by the [North Dakota Department of Water Resources (NDDWR)](https://www.swc.nd.gov/), for inclusion into the Water Data Exchange (WaDE2) project.  WaDE2 enables states to share data with each other and the public in a more streamlined and consistent way. WaDE2 is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 
 
 ## Overview of Source Data Utilized
-The following data was used for timeseries Site Specific Diversions Withdrawal Diversions Withdrawal water data...
+The following data was used for timeseries Site Specific Diversions Withdrawal water data...
 - Time series water use permit data was made available temporary to the WaDE2 staff through personal correspondence.  Contact NDDWR or WaDE2 staff for more information.
 
 Unique files were created to be used as input to the Python codes that prepare WaDE2 input files.  Input files used are as follows...
@@ -14,12 +14,12 @@ Unique files were created to be used as input to the Python codes that prepare W
 
 ## Storage for WaDE2 2.0 Source and Processed Water Data
 The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE2 database, can both be found within the WaDE2 sponsored Google Drive.  Please contact WaDE2 staff if unavailable or if you have any questions about the data.
-- North Dakota Site Specific Diversions Withdrawal Diversions Withdrawal Data: https://drive.google.com/drive/folders/1DG8PYG9ZU296XYCJaEJTl77fMh0NfYqD?usp=sharing
+- North Dakota Site Specific Diversions Withdrawal Data: https://drive.google.com/drive/folders/1DG8PYG9ZU296XYCJaEJTl77fMh0NfYqD?usp=sharing
 
 
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share NDDWR's Site Specific Diversions Withdrawal Diversions Withdrawal time series water data for inclusion into the Water Data Exchange (WaDE2 2.0) project.  For a complete mapping outline, see *ND_SS_DiversionsWithdrawalsWaterUse Schema Mapping to WaDE.xlsx*.  Eight executable code files were used to extract the state agency's Site Specific Diversions Withdrawal Diversions Withdrawal time series data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(SiteSpecificAmounts)* is dependent on the previous files.  Those code files are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share NDDWR's Site Specific Diversions Withdrawal time series water data for inclusion into the Water Data Exchange (WaDE2 2.0) project.  For a complete mapping outline, see *ND_SS_DiversionsWithdrawalsWaterUse Schema Mapping to WaDE.xlsx*.  Eight executable code files were used to extract the state agency's Site Specific Diversions Withdrawal time series data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(SiteSpecificAmounts)* is dependent on the previous files.  Those code files are as follows...
 
 - 0_PreProcessNDDiversionsWithdrawalsWaterUseData.ipynb
 - 1_NDssdw_Methods.py
@@ -153,7 +153,7 @@ NDssdw_O1 | North Dakota Department of Water Resource | Chris Bader | https://ww
 
 ***
 ### 4) Code File: 4_NDssdw_WaterSources.py
-Purpose: generate a list of water sources specific to the Site Specific Diversions Withdrawal Diversions Withdrawal time series water data.
+Purpose: generate a list of water sources specific to the Site Specific Diversions Withdrawal time series water data.
 
 #### Inputs:
 - P_ndSSMaster.csv
@@ -188,7 +188,7 @@ Any data fields that are missing required values and dropped from the WaDE2-read
 
 ***
 ### 5) Code File: 5_NDssdw_Sites.py
-Purpose: generate a list of sites specific to the Site Specific Diversions Withdrawal Diversions Withdrawal time series water data.
+Purpose: generate a list of sites specific to the Site Specific Diversions Withdrawal time series water data.
 
 #### Inputs:
 - P_ndSSMaster.csv
@@ -211,7 +211,7 @@ Purpose: generate a list of sites specific to the Site Specific Diversions Withd
     - *SiteName* = "Unspecified".
     - *SiteNativeID* = **POD**, see *0_PreProcessNDDiversionsWithdrawalsWaterUseData.ipynb* for specifics on generation.
     - *SiteTypeCV* = Unspecified".
-- Consolidate output dataframe into Site Specific Diversions Withdrawal Diversions Withdrawal information only by dropping duplicate entries, group by WaDE2 specific *WaterSourceUUID*, *PODorPOUSite*, *SiteName*, *SiteNativeID*, *SiteTypeCV*, *Latitude*, and *Longitude* fields.
+- Consolidate output dataframe into Site Specific Diversions Withdrawal information only by dropping duplicate entries, group by WaDE2 specific *WaterSourceUUID*, *PODorPOUSite*, *SiteName*, *SiteNativeID*, *SiteTypeCV*, *Latitude*, and *Longitude* fields.
 - Assign site UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *sites.csv*.
@@ -231,7 +231,7 @@ Any data fields that are missing required values and dropped from the WaDE2-read
 
 ***
 ### 6) Code File: 6_NDssdw_SiteSpecificAmounts_fact.py
-Purpose: generate master sheet of state agency Site Specific Diversions Withdrawal Diversions Withdrawal timeseries water data to import into WaDE2 2.0.
+Purpose: generate master sheet of state agency Site Specific Diversions Withdrawal timeseries water data to import into WaDE2 2.0.
 
 #### Inputs:
 - P_ndSSMaster.csv
@@ -245,7 +245,7 @@ Purpose: generate master sheet of state agency Site Specific Diversions Withdraw
 
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE2 Water Site Specific Diversions Withdrawal Diversions Withdrawal Amounts* data columns.
+- Populate output dataframe with *WaDE2 Water Site Specific Diversions Withdrawal Amounts* data columns.
 - Assign state agency data info to columns.  See *ND_SS_DiversionsWithdrawalsWaterUse Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *Amount* = **Reported_AcFt**, converted from AcFT to MG.  See *0_PreProcessNDDiversionsWithdrawalsWaterUseData.ipynb* for specifics on generation. 
