@@ -18,7 +18,7 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "G:/Shared drives/WaDE Data/Idaho/SS_ReservoirsGages"
+workingDir = "G:/Shared drives/WaDE Data/Idaho/SS_ReservoirsObservationSites"
 os.chdir(workingDir)
 M_fileInput = "RawinputData/P_idOSMaster.csv"
 variables_fileInput = "ProcessedInputData/variables.csv"
@@ -83,16 +83,16 @@ print("Populating dataframe outdf...")
 outdf = pd.DataFrame(index=df_DM.index, columns=columnslist)  # The output dataframe
 
 print("MethodUUID")
-outdf['MethodUUID'] = "IDssrg_M1"
+outdf['MethodUUID'] = "IDssro_M1"
 
 print("VariableSpecificUUID")
-outdf['VariableSpecificUUID'] = "IDssrg_V1"
+outdf['VariableSpecificUUID'] = "IDssro_V1"
 
 print("OrganizationUUID")
-outdf['OrganizationUUID'] = "IDssrg_O1"
+outdf['OrganizationUUID'] = "IDssro_O1"
 
 print("WaterSourceUUID")
-outdf['WaterSourceUUID'] = "IDssrg_WS1"
+outdf['WaterSourceUUID'] = "IDssro_WS1"
 
 print("SiteUUID") # Using SiteNativeID
 outdf['SiteUUID'] = df_DM.apply(lambda row: retrieveSiteUUID(row['loc_uniqueId']), axis=1)

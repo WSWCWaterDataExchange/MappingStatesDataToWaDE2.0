@@ -20,7 +20,7 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "G:/Shared drives/WaDE Data/Idaho/SS_ReservoirsGages"
+workingDir = "G:/Shared drives/WaDE Data/Idaho/SS_ReservoirsObservationSites"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_idOSMaster.csv"
 df = pd.read_csv(fileInput)
@@ -59,7 +59,7 @@ columnslist = [
 # For creating SiteUUID
 def assignSiteUUID(colrowValue):
     string1 = str(colrowValue)
-    outstring = "IDssrg_S" + string1
+    outstring = "IDssro_S" + string1
     return outstring
 
 
@@ -72,7 +72,7 @@ print("RegulatoryOverlayUUIDs")
 outdf['RegulatoryOverlayUUIDs'] = ""
 
 print("WaterSourceUUIDs")
-outdf['WaterSourceUUIDs'] = "IDssrg_WS1"  # no data to work with for ID ss water source.
+outdf['WaterSourceUUIDs'] = "IDssro_WS1"  # no data to work with for ID ss water source.
 
 print("CoordinateAccuracy")
 outdf['CoordinateAccuracy'] = "Unspecified"
@@ -111,7 +111,7 @@ print("NHDProductCV")
 outdf['NHDProductCV'] = ""
 
 print("PODorPOUSite")
-outdf['PODorPOUSite'] = "Gage"
+outdf['PODorPOUSite'] = "Observation Site"
 
 print("SiteName")
 outdf['SiteName'] = df['locationName_x']  # See pre-processing.
