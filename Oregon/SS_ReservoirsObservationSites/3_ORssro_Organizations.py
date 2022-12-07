@@ -1,6 +1,6 @@
 #Last Updated: 10/19/2022
 #Author: Ryan James (WSWC)
-#Purpose: To create OR site specific resvoir and gage organization use information and population dataframe for WaDE_QA 2.0.
+#Purpose: To create OR site specific resvoir and observation site  organization use information and population dataframe for WaDE_QA 2.0.
 #Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
 
 
@@ -14,7 +14,7 @@ import pandas as pd
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "G:/Shared drives/WaDE Data/Oregon/SS_ReservoirsGages"
+workingDir = "G:/Shared drives/WaDE Data/Oregon/SS_ReservoirsObservationSites"
 os.chdir(workingDir)
 
 # Needed WaDE columns
@@ -36,7 +36,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.OrganizationUUID = "ORssrg_O1"
+outdf.OrganizationUUID = "ORssro_O1"
 
 outdf.OrganizationContactEmail = "wrd_dl_Director@oregon.gov"
 

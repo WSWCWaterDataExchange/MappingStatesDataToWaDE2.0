@@ -1,6 +1,6 @@
 #Last Updated: 10/19/2022
 #Author: Ryan James (WSWC)
-#Purpose: To create OR site specific resvoir and gage methods use information and population dataframe for WaDE_QA 2.0.
+#Purpose: To create OR site specific resvoir and observation site methods use information and population dataframe for WaDE_QA 2.0.
 #Notes: 1) Used a list approach.  Needed to have two rows, one with surface water, the other with groundwater.
 
 
@@ -14,7 +14,7 @@ import pandas as pd
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "G:/Shared drives/WaDE Data/Oregon/SS_ReservoirsGages"
+workingDir = "G:/Shared drives/WaDE Data/Oregon/SS_ReservoirsObservationSites"
 
 os.chdir(workingDir)
 
@@ -37,7 +37,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.MethodUUID = "ORssrg_M1"
+outdf.MethodUUID = "ORssro_M1"
 
 outdf.ApplicableResourceTypeCV = "Surface Water"
 

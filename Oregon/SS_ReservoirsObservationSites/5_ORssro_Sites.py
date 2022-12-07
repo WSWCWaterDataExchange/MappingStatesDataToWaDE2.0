@@ -1,6 +1,6 @@
 #Last Updated: 10/19/2022
 #Author: Ryan James (WSWC)
-#Purpose: To create OR site specific resvoir and gage use information and population dataframe for WaDEQA 2.0.
+#Purpose: To create OR site specific resvoir and observation site  use information and population dataframe for WaDEQA 2.0.
 
 
 # Needed Libraries
@@ -19,7 +19,7 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "G:/Shared drives/WaDE Data/Oregon/SS_ReservoirsGages"
+workingDir = "G:/Shared drives/WaDE Data/Oregon/SS_ReservoirsObservationSites"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_orSSRGMain.csv"
 df = pd.read_csv(fileInput)
@@ -71,7 +71,7 @@ def retrieveWaterSourceUUID(colrowValue):
 # For creating SiteUUID
 def assignSiteUUID(colrowValue):
     string1 = str(colrowValue)
-    outstring = "ORssrg_S" + string1
+    outstring = "ORssro_S" + string1
     return outstring
 
 
@@ -123,7 +123,7 @@ print("NHDProductCV")
 outdf['NHDProductCV'] = ""
 
 print("PODorPOUSite")
-outdf['PODorPOUSite'] = "Gage"
+outdf['PODorPOUSite'] = "Observation Site"
 
 print("SiteName")
 outdf['SiteName'] = df['in_SiteName']  # See pre-processing.

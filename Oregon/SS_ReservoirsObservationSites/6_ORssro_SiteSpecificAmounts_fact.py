@@ -1,6 +1,6 @@
 #Last Updated: 10/19/2022
 #Author: Ryan James (WSWC)
-#Purpose: To create OR site specific resvoir and gage site amount use information and population dataframe WaDE_QA 2.0.
+#Purpose: To create OR site specific resvoir and observation site site amount use information and population dataframe WaDE_QA 2.0.
 #Notes:  1) Because of the unique site situation with duplicate SiteNativeID's, we need a way to create a unique key for dictionary look up values.
 
 # Needed Libraries
@@ -19,7 +19,7 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "G:/Shared drives/WaDE Data/Oregon/SS_ReservoirsGages"
+workingDir = "G:/Shared drives/WaDE Data/Oregon/SS_ReservoirsObservationSites"
 os.chdir(workingDir)
 M_fileInput = "RawinputData/P_orSSRGMain.csv"
 df_DM = pd.read_csv(M_fileInput)
@@ -96,13 +96,13 @@ print("Populating dataframe outdf...")
 outdf = pd.DataFrame(index=df_DM.index, columns=columnslist)  # The output dataframe
 
 print("MethodUUID")
-outdf['MethodUUID'] = "ORssrg_M1"
+outdf['MethodUUID'] = "ORssro_M1"
 
 print("VariableSpecificUUID")
-outdf['VariableSpecificUUID'] = "ORssrg_V1"
+outdf['VariableSpecificUUID'] = "ORssro_V1"
 
 print("OrganizationUUID")
-outdf['OrganizationUUID'] = "ORssrg_O1"
+outdf['OrganizationUUID'] = "ORssro_O1"
 
 print("WaterSourceUUID")
 outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
