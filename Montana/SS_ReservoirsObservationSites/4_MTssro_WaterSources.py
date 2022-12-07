@@ -19,7 +19,7 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "G:/Shared drives/WaDE Data/Montana/SS_ReservoirsGages"
+workingDir = "G:/Shared drives/WaDE Data/Montana/SS_ReservoirsObservationSites"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_mtOSMaster.csv"
 df = pd.read_csv(fileInput)
@@ -41,7 +41,7 @@ columnslist = [
 # WaterSourceUUID
 def assignWaterSourceUUID(colrowValue):
     string1 = str(colrowValue)
-    outstring = "MTssrg_WS" + string1
+    outstring = "MTssro_WS" + string1
     return outstring
 
 
