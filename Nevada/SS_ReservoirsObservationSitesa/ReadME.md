@@ -1,5 +1,5 @@
-# NDWR Site Specific Reservoir and Gage Data Preparation for WaDE
-This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting Site Specific Reservoir and Gage stream gage time series water data made available by the [Nevada Division of Water Resources (NDWR)](http://water.nv.gov/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
+# NDWR Site Specific Reservoir and Observation Site Data Preparation for WaDE
+This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting Site Specific Reservoir and Observation Site stream gage time series water data made available by the [Nevada Division of Water Resources (NDWR)](http://water.nv.gov/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 
 ## Data Assessment Review
@@ -18,25 +18,25 @@ Unique files were created to be used as input to the Python codes that prepare W
 
 ## Storage for WaDE2 2.0 Source and Processed Water Data
 The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE2 database, can both be found within the WaDE2 sponsored Google Drive.  Please contact WaDE2 staff if unavailable or if you have any questions about the data.
-- Nevada Site Specific Reservoir and Gage Data: https://drive.google.com/drive/folders/1_4iKnGa1OtPzYO_MQwDzTL1w-1zCxEYu?usp=sharing
+- Nevada Site Specific Reservoir and Observation Site Data: https://drive.google.com/drive/folders/1_4iKnGa1OtPzYO_MQwDzTL1w-1zCxEYu?usp=sharing
 
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share NDWR's site specific time series water data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *NV_ObservationSiteAmounts Schema Mapping to WaDE_QA.xlsx*.  Six executable code files were used to extract the state agency's site specific time series data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(SiteSpecificAmounts)* is dependent on the previous files.  Those six code files are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share NDWR's site specific time series water data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *NV_SS_ReservoirsObservationSitesSchema Mapping to WaDE.xlsx*.  Six executable code files were used to extract the state agency's site specific time series data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(SiteSpecificAmounts)* is dependent on the previous files.  Those six code files are as follows...
 
-- 0_PreProcessNVReservoirGages.ipynb
-- 1_NVssrg_Methods.py
-- 2_NVssrg_Variables.py
-- 3_NVssrg_Organizations.py
-- 4_NVssrg_WaterSources.py
-- 5_NVssrg_Sites.py
-- 6_NVssrg_SiteSpecificAmounts_fact.py
-- 7_NVssrg_PODSiteToPOUSiteRelationships.py
+- 0_PreProcessNVReservoirObservationSites.ipynb
+- 1_NVssro_Methods.py
+- 2_NVssro_Variables.py
+- 3_NVssro_Organizations.py
+- 4_NVssro_WaterSources.py
+- 5_NVssro_Sites.py
+- 6_NVssro_SiteSpecificAmounts_fact.py
+- 7_NVssro_PODSiteToPOUSiteRelationships.py
 
 
 
 ***
-### 0) Code File: 0_PreProcessNVReservoirGages.ipynb
+### 0) Code File: 0_PreProcessNVReservoirObservationSites.ipynb
 Purpose: Pre-process the state agency input data files into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
@@ -63,7 +63,7 @@ Purpose: Pre-process the state agency input data files into one master file for 
 
 
 ***
-### 1) Code File: 1_NVssrg_Methods.py
+### 1) Code File: 1_NVssro_Methods.py
 Purpose: generate legend of granular methods used on data collection.
 
 #### Inputs:
@@ -84,12 +84,12 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
-NVssrg_M1 | Surface Water | Measured
+NVssro_M1 | Surface Water | Measured
 
 
 
 ***
-### 2) Code File: 2_NVssrg_Variables.py
+### 2) Code File: 2_NVssro_Variables.py
 Purpose: generate legend of granular variables specific to each state.
 
 #### Inputs:
@@ -110,12 +110,12 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
 ---------- | ---------- | ------------ | ------------
-NVssrg_V1 | Daily | Average | CFS
+NVssro_V1 | Daily | Average | CFS
 
 
 
 ***
-### 3) Code File: 3_NVssrg_Organizations.py
+### 3) Code File: 3_NVssro_Organizations.py
 Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
 
 #### Inputs:
@@ -136,12 +136,12 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
 ---------- | ---------- | ------------ | ------------
-NVssrg_O1 | Nevada Division of Water Resources | Brian McMenamy | http://water.nv.gov
+NVssro_O1 | Nevada Division of Water Resources | Brian McMenamy | http://water.nv.gov
 
 
 
 ***
-### 4) Code File: 4_NVssrg_WaterSources.py
+### 4) Code File: 4_NVssro_WaterSources.py
 Purpose: generate a list of water sources specific to the site specific time series water data.
 
 #### Inputs:
@@ -154,10 +154,10 @@ Purpose: generate a list of water sources specific to the site specific time ser
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign state agency info to columns.  See *NV_ObservationSiteAmounts Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+- Assign state agency info to columns.  See *NV_SS_ReservoirsObservationSitesSchema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - *WaterSourceName* = **Source_Nam**.
-    - *WaterSourceNativeID* = custom, see *0_PreProcessNVReservoirGages.ipynb* for specifics.
-    - *WaterSourceTypeCV* = custom, see *0_PreProcessNVReservoirGages.ipynb* for specifics.
+    - *WaterSourceNativeID* = custom, see *0_PreProcessNVReservoirObservationSites.ipynb* for specifics.
+    - *WaterSourceTypeCV* = custom, see *0_PreProcessNVReservoirObservationSites.ipynb* for specifics.
 - Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceName*, *WaterSourceNativeID* & *WaterSourceTypeCV* fields.
 - Assign water source UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
@@ -166,7 +166,7 @@ Purpose: generate a list of water sources specific to the site specific time ser
 #### Sample Output (WARNING: not all fields shown):
 WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceNativeID | WaterSourceTypeCV
 ---------- | ---------- | ------------ | ------------ | ------------
-NVssrg_WS1 | Fresh | BARTLETT CREEK | WaDENV_WS1 | Surface Water
+NVssro_WS1 | Fresh | BARTLETT CREEK | WaDENV_WS1 | Surface Water
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
 - WaterSourceUUID
@@ -176,7 +176,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 
 ***
-### 5) Code File: 5_NVssrg_Sites.py
+### 5) Code File: 5_NVssro_Sites.py
 Purpose: generate a list of polygon areas associated with the state agency specific site on aggregated water budget data.
 
 #### Inputs:
@@ -189,7 +189,7 @@ Purpose: generate a list of polygon areas associated with the state agency speci
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
-- Assign state agency info to columns.  See *NV_ObservationSiteAmounts Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+- Assign state agency info to columns.  See *NV_SS_ReservoirsObservationSitesSchema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *WaterSourceUUID* respective watersourcecsv files. See code for specific implementation of extraction.
     - *CoordinateMethodCV* = "Unspecified".
     - *County* = **County**.
@@ -207,7 +207,7 @@ Purpose: generate a list of polygon areas associated with the state agency speci
 #### Sample Output (WARNING: not all fields shown):
 SiteUUID | CoordinateMethodCV | Latitude | Longitude | SiteName | SiteNativeID | SiteTypeCV
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------
-NVssrg_S1 | Unspecified | 41.47777 | -118.78836 | 028  N41 E28 17AADD1 | 28 | STREAM
+NVssro_S1 | Unspecified | 41.47777 | -118.78836 | 028  N41 E28 17AADD1 | 28 | STREAM
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
 - SiteUUID 
@@ -218,7 +218,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 
 ***
-### 6) Code File: 6_NVssrg_SiteSpecificAmounts_fact.py
+### 6) Code File: 6_NVssro_SiteSpecificAmounts_fact.py
 Purpose: generate master sheet of state agency site specific time series water data to import into WaDE 2.0.
 
 #### Inputs:
@@ -232,7 +232,7 @@ Purpose: generate master sheet of state agency site specific time series water d
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Site Specific Amounts* data columns.
-- Assign state agency data info to columns.  See *NV_ObservationSiteAmounts Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+- Assign state agency data info to columns.  See *NV_SS_ReservoirsObservationSitesSchema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *Amount* = **Discharge** as a float in CFS.
     - *ReportYearCV* = year value extracted from **Measure_date**.
@@ -244,7 +244,7 @@ Purpose: generate master sheet of state agency site specific time series water d
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | OrganizationUUID | SiteUUID | VariableSpecificUUID | WaterSourceUUID | Amount | BeneficialUseCategory | TimeframeStart | TimeframeEnd 
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------
-NVssrg_M1 | NVssrg_O1 | NVssrg_S1 | NVssrg_V1 | NVssrg_WS1 | 0.91 | Discharge | 1939 | 05/27/1939 | 05/27/1939
+NVssro_M1 | NVssro_O1 | NVssro_S1 | NVssro_V1 | NVssro_WS1 | 0.91 | Discharge | 1939 | 05/27/1939 | 05/27/1939
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID

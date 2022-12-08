@@ -14,7 +14,8 @@ import pandas as pd
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "G:/Shared drives/WaDE Data/Nevada/SS_ReservoirsGages"
+workingDir = "G:/Shared drives/WaDE Data/Nevada/SS_ReservoirsObservationSites"
+
 os.chdir(workingDir)
 
 #WaDE columns
@@ -36,7 +37,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.MethodUUID = "NVssrg_M1"
+outdf.MethodUUID = "NVssro_M1"
 
 outdf.ApplicableResourceTypeCV = "Surface Water"
 

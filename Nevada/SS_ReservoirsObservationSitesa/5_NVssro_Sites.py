@@ -20,7 +20,7 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "G:/Shared drives/WaDE Data/Nevada/SS_ReservoirsGages"
+workingDir = "G:/Shared drives/WaDE Data/Nevada/SS_ReservoirsObservationSites"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_nvOSMaster.csv"
 df = pd.read_csv(fileInput)
@@ -72,7 +72,7 @@ def retrieveWaterSourceUUID(colrowValue):
 # For creating SiteUUID
 def assignSiteUUID(colrowValue):
     string1 = str(colrowValue)
-    outstring = "NVssrg_S" + string1
+    outstring = "NVssro_S" + string1
     return outstring
 
 
@@ -124,7 +124,7 @@ print("NHDProductCV")
 outdf['NHDProductCV'] = ""
 
 print("PODorPOUSite")
-outdf['PODorPOUSite'] = "Gage"
+outdf['PODorPOUSite'] = "Observation Site"
 
 print("SiteName")
 outdf['SiteName'] = df['in_SiteName']  # See pre-processing.

@@ -19,7 +19,7 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "G:/Shared drives/WaDE Data/Nevada/SS_ReservoirsGages"
+workingDir = "G:/Shared drives/WaDE Data/Nevada/SS_ReservoirsObservationSites"
 os.chdir(workingDir)
 M_fileInput = "RawinputData/P_nvOSMaster.csv"
 watersources_fileInput = "ProcessedInputData/watersources.csv"
@@ -95,13 +95,13 @@ print("Populating dataframe outdf...")
 outdf = pd.DataFrame(index=df_DM.index, columns=columnslist)  # The output dataframe
 
 print("MethodUUID")
-outdf['MethodUUID'] = "NVssrg_M1"
+outdf['MethodUUID'] = "NVssro_M1"
 
 print("VariableSpecificUUID")
-outdf['VariableSpecificUUID'] = "NVssrg_V1"
+outdf['VariableSpecificUUID'] = "NVssro_V1"
 
 print("OrganizationUUID")
-outdf['OrganizationUUID'] = "NVssrg_O1"
+outdf['OrganizationUUID'] = "NVssro_O1"
 
 print("WaterSourceUUID")  # Using WaterSourceNativeID
 outdf['WaterSourceUUID'] = df_DM.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
