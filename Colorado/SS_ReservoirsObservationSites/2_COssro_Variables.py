@@ -14,7 +14,7 @@ import pandas as pd
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "G:/Shared drives/WaDE Data/Colorado/SS_ReservoirsGages"
+workingDir = "G:/Shared drives/WaDE Data/Colorado/SS_ReservoirsObservationSites"
 os.chdir(workingDir)
 
 #WaDE columns
@@ -37,7 +37,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 #outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = ["COssrg_V1", "COssrg_V2"]
+outdf.VariableSpecificUUID = ["COssro_V1", "COssro_V2"]
 
 outdf.AggregationInterval = ["1", "1"]
 
@@ -53,9 +53,9 @@ outdf.ReportYearStartMonth = ["1", "1"]
 
 outdf.ReportYearTypeCV = ["CalendarYear", "CalendarYear"]
 
-outdf.VariableCV = ["Stream Gage", "Stream Gage"]
+outdf.VariableCV = ["Discharge Flow", "Discharge Flow"]
 
-outdf.VariableSpecificCV = ["Stream Gage_Annual_DivTotal_Surface Water", "Stream Gage_Annual_DivTotal_Groundwater"]
+outdf.VariableSpecificCV = ["Discharge Flow_Annual_DivTotal_Surface Water", "Discharge Flow_Annual_DivTotal_Groundwater"]
 
 
 # Check required fields are not null
