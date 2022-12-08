@@ -14,7 +14,7 @@ import pandas as pd
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "G:/Shared drives/WaDE Data/Nebraska/SS_ReservoirsGages"
+workingDir = "G:/Shared drives/WaDE Data/Nebraska/SS_ReservoirsObservationSites"
 os.chdir(workingDir)
 
 # Needed WaDE columns
@@ -36,7 +36,7 @@ print("Populating dataframe...")
 outdf = pd.DataFrame(columns=columnslist)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.OrganizationUUID = "NEssrg_O1"
+outdf.OrganizationUUID = "NEssro_O1"
 
 outdf.OrganizationContactEmail = "jennifer.schellpeper@nebraska.gov"
 

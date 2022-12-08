@@ -19,7 +19,7 @@ import TestErrorFunctions
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "G:/Shared drives/WaDE Data/Nebraska/SS_ReservoirsGages"
+workingDir = "G:/Shared drives/WaDE Data/Nebraska/SS_ReservoirsObservationSites"
 os.chdir(workingDir)
 M_fileInput = "RawinputData/P_neSSRGMain.csv"
 sites_fileInput = "ProcessedInputData/sites.csv"
@@ -80,16 +80,16 @@ print("Populating dataframe outdf...")
 outdf = pd.DataFrame(index=df_DM.index, columns=columnslist)  # The output dataframe
 
 print("MethodUUID")
-outdf['MethodUUID'] = "NEssrg_M1"
+outdf['MethodUUID'] = "NEssro_M1"
 
 print("VariableSpecificUUID")
-outdf['VariableSpecificUUID'] = "NEssrg_V1"
+outdf['VariableSpecificUUID'] = "NEssro_V1"
 
 print("OrganizationUUID")
-outdf['OrganizationUUID'] = "NEssrg_O1"
+outdf['OrganizationUUID'] = "NEssro_O1"
 
 print("WaterSourceUUID")
-outdf['WaterSourceUUID'] = "NEssrg_WS1"
+outdf['WaterSourceUUID'] = "NEssro_WS1"
 
 print("SiteUUID") # Using SiteNativeID
 outdf['SiteUUID'] = df_DM.apply(lambda row: retrieveSiteUUID(row['in_SiteNativeID']), axis=1)
@@ -116,7 +116,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = "10/19/2022"
+outdf['DataPublicationDate'] = "12/08/2022"
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""

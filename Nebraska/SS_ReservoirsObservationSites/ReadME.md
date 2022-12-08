@@ -1,6 +1,6 @@
-# Nebraska NDNR Site Specific Reservoir and Gage Data Preparation for WaDE2
+# Nebraska NDNR Site Specific Reservoir and Observation Site Data Preparation for WaDE2
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting site specific time series water data made available by the [Nebraska Department of Natural Resources (NDNR)](https://dnr.nebraska.gov/contact), for inclusion into the Water Data Exchange (WaDE2) project.  WaDE2 enables states to share data with each other and the public in a more streamlined and consistent way. WaDE2 is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
-NE_SiteSpecificReservoirGageSchema Mapping to WaDE.xlsx
+NE_SS_ReservoirsObservationSitesSchema Mapping to WaDE.xlsx
 
 
 ## Overview of Source Data Utilized
@@ -14,26 +14,26 @@ Unique files were created to be used as input to the Python codes that prepare W
 
 ## Storage for WaDE2 2.0 Source and Processed Water Data
 The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE2 database, can both be found within the WaDE2 sponsored Google Drive.  Please contact WaDE2 staff if unavailable or if you have any questions about the data.
-- Nebraska Site Specific Reservoir and Gage Data: https://drive.google.com/drive/folders/1OWSAnPH3li_we58VwWVHqonsDLB2FqvJ
+- Nebraska Site Specific Reservoir and Observation Site Data: https://drive.google.com/drive/folders/1OWSAnPH3li_we58VwWVHqonsDLB2FqvJ
 
 
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share DWSG's site specific time series water data for inclusion into the Water Data Exchange (WaDE2 2.0) project.  For a complete mapping outline, see *NE_SiteSpecificReservoirGageSchema Mapping to WaDE.xlsx*.  Eight executable code files were used to extract the state agency's site specific time series data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(SiteSpecificAmounts)* is dependent on the previous files.  Those code files are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share DWSG's site specific time series water data for inclusion into the Water Data Exchange (WaDE2 2.0) project.  For a complete mapping outline, see *NE_SS_ReservoirsObservationSitesSchema Mapping to WaDE.xlsx*.  Eight executable code files were used to extract the state agency's site specific time series data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(SiteSpecificAmounts)* is dependent on the previous files.  Those code files are as follows...
 
-- 0_PreProcessNebraskaReservoirGages.ipynb
-- 1_NEssrg_Methods.py
-- 2_NEssrg_Variables.py
-- 3_NEssrg_Organizations.py
-- 4_NEssrg_WaterSources.py
-- 5_NEssrg_Sites.py
-- 6_NEssrg_SiteSpecificAmounts_fact.py
-- 7_NEssrg_PODSiteToPOUSiteRelationships.py
+- 0_PreProcessNEReservoirObservationSites.ipynb
+- 1_NEssro_Methods.py
+- 2_NEssro_Variables.py
+- 3_NEssro_Organizations.py
+- 4_NEssro_WaterSources.py
+- 5_NEssro_Sites.py
+- 6_NEssro_SiteSpecificAmounts_fact.py
+- 7_NEssro_PODSiteToPOUSiteRelationships.py
 
 
 
 ***
-### 0) Code File: 0_PreProcessNebraskaReservoirGages.ipynb
+### 0) Code File: 0_PreProcessNEReservoirObservationSites.ipynb
 Purpose: Pre-process the state agency input data files into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
@@ -55,7 +55,7 @@ Purpose: Pre-process the state agency input data files into one master file for 
 
 
 ***
-### 1) Code File: 1_NEssrg_Methods.py
+### 1) Code File: 1_NEssro_Methods.py
 Purpose: generate legend of granular methods used on data collection.
 
 #### Inputs:
@@ -76,15 +76,15 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
-NEssrg_M1 | Surface Water | Unspecified
+NEssro_M1 | Surface Water | Unspecified
 
 
 
 ***
-### 2) Code File: 2_NEssrg_Variables.py
+### 2) Code File: 2_NEssro_Variables.py
 Purpose: generate legend of granular variables specific to each state.
 
-#### Inputs:NEssrg_O1
+#### Inputs:NEssro_O1
 - None
 
 #### Outputs:
@@ -102,12 +102,12 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV | VariableCV | VariableSpecificCV
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------
-NEssrg_V1 | 1 | Daily | CFS | Stream Gage | Stream Gage_Daily_Unspecified_Surface Water
+NEssro_V1 | 1 | Daily | CFS | Stream Gage | Stream Gage_Daily_Unspecified_Surface Water
 
 
 
 ***
-### 3) Code File: 3_NEssrg_Organizations.py
+### 3) Code File: 3_NEssro_Organizations.py
 Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
 
 #### Inputs:
@@ -128,12 +128,12 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
 ---------- | ---------- | ------------ | ------------
-NEssrg_O1 | Nebraska Department of Natural Resources | Jennifer Schellpeper | https://dnr.nebraska.gov/contact
+NEssro_O1 | Nebraska Department of Natural Resources | Jennifer Schellpeper | https://dnr.nebraska.gov/contact
 
 
 
 ***
-### 4) Code File: 4_NEssrg_WaterSources.py
+### 4) Code File: 4_NEssro_WaterSources.py
 Purpose: generate a list of water sources specific to the site specific time series water data.
 
 #### Inputs:
@@ -146,7 +146,7 @@ Purpose: generate a list of water sources specific to the site specific time ser
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE2 WaterSources* specific columns.
-- Assign state agency info to columns.  See *NE_SiteSpecificReservoirGageSchema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign state agency info to columns.  See *NE_SS_ReservoirsObservationSitesSchema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - *WaterSourceName* = "Unspecified".
     - *WaterSourceNativeID* = "WaDENE_WS1"
     - *WaterSourceTypeCV* = "Surface Water"
@@ -158,7 +158,7 @@ Purpose: generate a list of water sources specific to the site specific time ser
 #### Sample Output (WARNING: not all fields shown):
 WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceNativeID | WaterSourceTypeCV
 ---------- | ---------- | ------------ | ------------ | ------------
-NEssrg_WS1 | Fresh | Unspecified | WaDENE_WS1 | Surface Water
+NEssro_WS1 | Fresh | Unspecified | WaDENE_WS1 | Surface Water
 
 Any data fields that are missing required values and dropped from the WaDE2-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
 - WaterSourceUUID
@@ -168,12 +168,11 @@ Any data fields that are missing required values and dropped from the WaDE2-read
 
 
 ***
-### 5) Code File: 5_NEssrg_Sites.py
+### 5) Code File: 5_NEssro_Sites.py
 Purpose: generate a list of sites specific to the site specific time series water data.
 
 #### Inputs:
 - P_neSSRGMain.csv
-- P_nmSSPWGeometry.csv
 
 #### Outputs:
 - sites.csv
@@ -182,10 +181,10 @@ Purpose: generate a list of sites specific to the site specific time series wate
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE2 Site* specific columns.
-- Assign state agency info to columns.  See *NE_SiteSpecificReservoirGageSchema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign state agency info to columns.  See *NE_SS_ReservoirsObservationSitesSchema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *WaterSourceUUID* from watersources.csv input file. See code for specific implementation of extraction.
-    - *Latitude* =  see *0_PreProcessNebraskaReservoirGages.ipynb* for specifics on generation.
-    - *Longitude* = see *0_PreProcessNebraskaReservoirGages.ipynb* for specifics on generation.
+    - *Latitude* =  see *0_PreProcessNEReservoirObservationSites.ipynb* for specifics on generation.
+    - *Longitude* = see *0_PreProcessNEReservoirObservationSites.ipynb* for specifics on generation.
     - *PODorPOUSite* = "Gage".
     - *SiteName* = **StationName** field.
     - *SiteNativeID* = **StationNumber** field.
@@ -198,7 +197,7 @@ Purpose: generate a list of sites specific to the site specific time series wate
 #### Sample Output (WARNING: not all fields shown):
 SiteUUID | CoordinateMethodCV | Latitude | Longitude | SiteName | SiteNativeID | SiteTypeCV
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------
-NEssrg_S1 | Unspecified | 42.6351 | -100.8721 | Ainsworth Canal from Merritt Reservoir | 1000 | Canal/Pump
+NEssro_S1 | Unspecified | 42.6351 | -100.8721 | Ainsworth Canal from Merritt Reservoir | 1000 | Canal/Pump
 
 Any data fields that are missing required values and dropped from the WaDE2-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
 - SiteUUID 
@@ -209,7 +208,7 @@ Any data fields that are missing required values and dropped from the WaDE2-read
 
 
 ***
-### 6) Code File: 6_NEssrg_SiteSpecificAmounts_fact.py
+### 6) Code File: 6_NEssro_SiteSpecificAmounts_fact.py
 Purpose: generate master sheet of state agency site specific timeseries water data to import into WaDE2 2.0.
 
 #### Inputs:
@@ -224,8 +223,8 @@ Purpose: generate master sheet of state agency site specific timeseries water da
 
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE2 Water Site Specific Reservoir and Gage Amounts* data columns.
-- Assign state agency data info to columns.  See *NE_SiteSpecificReservoirGageSchema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+- Populate output dataframe with *WaDE2 Water Site Specific Reservoir and Observation Site Amounts* data columns.
+- Assign state agency data info to columns.  See *NE_SS_ReservoirsObservationSitesSchema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *Amount* = **Value** field.
     - *BeneficialUseCategory* =  "Unspecified".
@@ -238,7 +237,7 @@ Purpose: generate master sheet of state agency site specific timeseries water da
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | OrganizationUUID | SiteUUID | VariableSpecificUUID | WaterSourceUUID | Amount | BeneficialUseCategory | TimeframeStart | TimeframeEnd 
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------
-NEssrg_M1 | NEssrg_O1 | NEssrg_S1 | NMssps_V1 | NMssps_WS1 | 15.0 | Unspecified | 1/1/2022| 1/1/2022
+NEssro_M1 | NEssro_O1 | NEssro_S1 | NMssps_V1 | NMssps_WS1 | 15.0 | Unspecified | 1/1/2022| 1/1/2022
 
 Any data fields that are missing required values and dropped from the WaDE2-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID
