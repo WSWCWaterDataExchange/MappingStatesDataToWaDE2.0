@@ -7,7 +7,7 @@ The following data was used for timeseries observation site water data...
 
 - [California Stream Gages](https://gispublic.waterboards.ca.gov/portal/home/item.html?id=32dfb85bd2744487affe6e3475190093) site data, available for ArcGIS.  Non-federal sites of interest where chosen.
 - [Reserovir](https://cdec.water.ca.gov/misc/monthly_res.html) site data, copied from a table and pasted into a csv file.
-- Stream gage and reservoir level time series data was aquired using a CDWR API, using specific SensorNums (see *0_PreProcessCAReservoirGages.ipynb* below for specifics).  Non-federal sites of interest where chosen.
+- Stream gage and reservoir level time series data was aquired using a CDWR API, using specific SensorNums (see *0_PreProcessCAReservoirObservationSites.ipynb* below for specifics).  Non-federal sites of interest where chosen.
 
 Unique files were created to be used as input to the Python codes that prepare WaDE2 input files.  Input files used are as follows...
  - StreamGages_caOnly.csv
@@ -20,19 +20,19 @@ The 1) raw input data shared by the state / state agency / data provider (excel,
 
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share CSWRCB's site specific time series water data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *CA_SS_ReservoirGageSchema Mapping to WaDE.xlsx*.  Six executable code files were used to extract the state agency's site specific time series data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(SiteSpecificAmounts)* is dependent on the previous files.  Those six code files are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share CSWRCB's site specific time series water data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *CA_SS_ReservoirsObservationSitesSchema Mapping to WaDE.xlsx*.  Six executable code files were used to extract the state agency's site specific time series data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(SiteSpecificAmounts)* is dependent on the previous files.  Those six code files are as follows...
 
-- 0_PreProcessCAReservoirGages.ipynb
-- 1_CAssrg_Methods.py
-- 2_CAssrg_Variables.py
-- 3_CAssrg_Organizations.py
-- 4_CAssrg_WaterSources.py
-- 5_CAssrg_Sites.py
-- 6_CAssrg_SiteSpecificAmounts_fact.py
+- 0_PreProcessCAReservoirObservationSites.ipynb
+- 1_CAssro_Methods.py
+- 2_CAssro_Variables.py
+- 3_CAssro_Organizations.py
+- 4_CAssro_WaterSources.py
+- 5_CAssro_Sites.py
+- 6_CAssro_SiteSpecificAmounts_fact.py
 
 
 ***
-### 0) Code File: 0_PreProcessCAReservoirGages.ipynb
+### 0) Code File: 0_PreProcessCAReservoirObservationSites.ipynb
 Purpose: Pre-process the state agency input data files into one master file for simple DataFrames creation and extraction.
 
 #### Inputs: 
@@ -84,7 +84,7 @@ Purpose: Pre-process the state agency input data files into one master file for 
 
 
 ***
-### 1) Code File: 1_CAssrg_Methods.py
+### 1) Code File: 1_CAssro_Methods.py
 Purpose: generate legend of granular methods used on data collection.
 
 #### Inputs:
@@ -105,12 +105,12 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
-CAssrg_M1 | Surface Water | Unspecified
+CAssro_M1 | Surface Water | Unspecified
 
 
 
 ***
-### 2) Code File: 2_CAssrg_Variables.py
+### 2) Code File: 2_CAssro_Variables.py
 Purpose: generate legend of granular variables specific to each state.
 
 #### Inputs:
@@ -131,12 +131,12 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
 ---------- | ---------- | ------------ | ------------
-CAssrg_V1 | 1 | Monthly | AF
+CAssro_V1 | 1 | Monthly | AF
 
 
 
 ***
-### 3) Code File: 3_CAssrg_Organizations.py
+### 3) Code File: 3_CAssro_Organizations.py
 Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
 
 #### Inputs:
@@ -157,12 +157,12 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
 ---------- | ---------- | ------------ | ------------
-CAssrg_O1 | California Department of Water Resources | Jennifer Stricklin | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/California
+CAssro_O1 | California Department of Water Resources | Jennifer Stricklin | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/California
 
 
 
 ***
-### 4) Code File: 4_CAssrg_WaterSources.py
+### 4) Code File: 4_CAssro_WaterSources.py
 Purpose: generate a list of water sources specific to the site specific time series water data.
 
 #### Inputs:
@@ -175,9 +175,9 @@ Purpose: generate a list of water sources specific to the site specific time ser
 #### Operation and Steps:
 - Read the input file and generate single output DataFrames *outdf*.
 - Populate output DataFrames with *WaDE WaterSources* specific columns.
-- Assign state agency info to columns.  See *CA_SS_ReservoirGageSchema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
-    - *WaterSourceNativeID* = see *0_PreProcessCAReservoirGages.ipynb* for specific on generation.
-    - *WaterSourceTypeCV* = see *0_PreProcessCAReservoirGages.ipynb* for specific on generation.
+- Assign state agency info to columns.  See *CA_SS_ReservoirsObservationSitesSchema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+    - *WaterSourceNativeID* = see *0_PreProcessCAReservoirObservationSites.ipynb* for specific on generation.
+    - *WaterSourceTypeCV* = see *0_PreProcessCAReservoirObservationSites.ipynb* for specific on generation.
 - Consolidate output DataFrames into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceName*, *WaterSourceNativeID* & *WaterSourceTypeCV* fields.
 - Assign water source UUID identifier to each (unique) row.
 - Perform error check on output DataFrames.
@@ -186,7 +186,7 @@ Purpose: generate a list of water sources specific to the site specific time ser
 #### Sample Output (WARNING: not all fields shown):
 WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceNativeID | WaterSourceTypeCV
 ---------- | ---------- | ------------ | ------------ | ------------
-CAssrg_WS1 | Fresh | Unspecified | WaDECA_WS1 | Artificial Path
+CAssro_WS1 | Fresh | Unspecified | WaDECA_WS1 | Artificial Path
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
 - WaterSourceUUID
@@ -196,7 +196,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 
 ***
-### 5) Code File: 5_CAssrg_Sites.py
+### 5) Code File: 5_CAssro_Sites.py
 Purpose: generate a list of sites specific to the site specific time series water data.
 
 #### Inputs:
@@ -209,13 +209,13 @@ Purpose: generate a list of sites specific to the site specific time series wate
 #### Operation and Steps:
 - Read the input file and generate single output DataFrames *outdf*.
 - Populate output DataFrames with *WaDE Site* specific columns.
-- Assign state agency info to columns.  See *CA_SS_ReservoirGageSchema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign state agency info to columns.  See *CA_SS_ReservoirsObservationSitesSchema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - *County* = **COUNTY**.
     - *Latitude* = **Latitude**.
     - *Longitude* = **Longitude**.
-    - *SiteName* = see *0_PreProcessCAReservoirGages.ipynb* for specific on generation.
-    - *SiteNativeID* = see *0_PreProcessCAReservoirGages.ipynb* for specific on generation.
-    - *SiteTypeCV* = see *0_PreProcessCAReservoirGages.ipynb* for specific on generation.
+    - *SiteName* = see *0_PreProcessCAReservoirObservationSites.ipynb* for specific on generation.
+    - *SiteNativeID* = see *0_PreProcessCAReservoirObservationSites.ipynb* for specific on generation.
+    - *SiteTypeCV* = see *0_PreProcessCAReservoirObservationSites.ipynb* for specific on generation.
 - Consolidate output DataFrames into site specific information only by dropping duplicate entries, group by WaDE specific *WaterSourceUUID*, *PODorPOUSite*, *SiteName*, *SiteNativeID*, *SiteTypeCV*, *Latitude*, and *Longitude* fields.
 - Assign site UUID identifier to each (unique) row.
 - Perform error check on output DataFrames.
@@ -224,7 +224,7 @@ Purpose: generate a list of sites specific to the site specific time series wate
 #### Sample Output (WARNING: not all fields shown):
 SiteUUID | CoordinateMethodCV | Latitude | Longitude | SiteName | SiteNativeID |SiteTypeCV
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------
-CAssrg_S1 | Unspecified | 40.218 | -121.172999999999 | LAKE ALMANOR | ALM | Reservoir Gage
+CAssro_S1 | Unspecified | 40.218 | -121.172999999999 | LAKE ALMANOR | ALM | Reservoir Gage
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
 - SiteUUID 
@@ -235,7 +235,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 
 ***
-### 6) Code File: 6_CAssrg_SiteSpecificAmounts_fact.py
+### 6) Code File: 6_CAssro_SiteSpecificAmounts_fact.py
 Purpose: generate master sheet of state agency site specific timeseries water data to import into WaDE 2.0.
 
 #### Inputs:
@@ -253,21 +253,21 @@ Purpose: generate master sheet of state agency site specific timeseries water da
 #### Operation and Steps:
 - Read the input files and generate single output DataFrames *outdf*.
 - Populate output DataFrames with *WaDE Water Site Specific Amounts* data columns.
-- Assign state agency data info to columns.  See *CA_SS_ReservoirGageSchema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign state agency data info to columns.  See *CA_SS_ReservoirsObservationSitesSchema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
-    - *Amount* = *in_Amount*, see *0_PreProcessCAReservoirGages.ipynb* for specific on generation.
-    - *BeneficialUseCategory* =  see *0_PreProcessCAReservoirGages.ipynb* for specific on generation.
-    - *CommunityWaterSupplySystem* = see *0_PreProcessCAReservoirGages.ipynb* for specific on generation.
-    - *ReportYearCV* = see *0_PreProcessCAReservoirGages.ipynb* for specific on generation.
-    - *TimeframeStart* = *in_TimeframeStart*, see *0_PreProcessCAReservoirGages.ipynb* for specific on generation.
-    - *TimeframeEnd* = *in_TimeframeEnd*, see *0_PreProcessCAReservoirGages.ipynb* for specific on generation.
+    - *Amount* = *in_Amount*, see *0_PreProcessCAReservoirObservationSites.ipynb* for specific on generation.
+    - *BeneficialUseCategory* =  see *0_PreProcessCAReservoirObservationSites.ipynb* for specific on generation.
+    - *CommunityWaterSupplySystem* = see *0_PreProcessCAReservoirObservationSites.ipynb* for specific on generation.
+    - *ReportYearCV* = see *0_PreProcessCAReservoirObservationSites.ipynb* for specific on generation.
+    - *TimeframeStart* = *in_TimeframeStart*, see *0_PreProcessCAReservoirObservationSites.ipynb* for specific on generation.
+    - *TimeframeEnd* = *in_TimeframeEnd*, see *0_PreProcessCAReservoirObservationSites.ipynb* for specific on generation.
 - Perform error check on output DataFrames.
 - Export output DataFrames *waterallocations.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | OrganizationUUID | SiteUUID | VariableSpecificUUID | WaterSourceUUID | Amount | BeneficialUseCategory | TimeframeStart | TimeframeEnd 
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------
-CAssrg_M1 | CAssrg_O1 | CAos_S2 | CAssrg_V1 | CAssrg_WS1 | 522700 | Stage | 1950 | 04/01/1950 | 04/01/1950 
+CAssro_M1 | CAssro_O1 | CAos_S2 | CAssro_V1 | CAssro_WS1 | 522700 | Stage | 1950 | 04/01/1950 | 04/01/1950 
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID
