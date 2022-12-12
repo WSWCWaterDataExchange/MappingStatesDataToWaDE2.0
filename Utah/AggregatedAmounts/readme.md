@@ -2,9 +2,8 @@
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting aggregated water budget data made available by the [Utah Division of Water Resources (UDWRE)](https://water.utah.gov/), for inclusion into the Water Data Exchange (WaDE) project.   WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 ## Overview of Source Data Utilized
-The following data was used for...
-
- - [UT Water Budget Data 11102020.csv](https://services.arcgis.com/ZzrwjTRez6FJiOq4/arcgis/rest/services/Water_Budget_WaDE_Compatible_Table/FeatureServer) timeseries water use for Utah.
+ All data retrieved from the provided arcgis service provided by UT (https://services.arcgis.com/ZzrwjTRez6FJiOq4/arcgis/rest/services/Water_Budget_WaDE_Compatible_Table/FeatureServer)
+ - [Water_Budget_WaDE_Compatible_Table.xlsx] timeseries water use for Utah.
  - UT_Subarea.shp shapefile geometry data used for custom location information for the timeseries water use data.
  - UT_HUC8.shp shapefile geometry data used for HUC8 location information for the timeseries water use data.
  - UT_Counties.shp shapefile geometry data used for county location information for the timeseries water use data.
@@ -31,7 +30,7 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 Purpose: Pre-process the state agency input data files into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
- - UT Water Budget Data 11102020.csv
+ - Water_Budget_WaDE_Compatible_Table.xlsx
  - UT_Subarea.shp
  - UT_HUC8.shp
  - UT_Counties.shp

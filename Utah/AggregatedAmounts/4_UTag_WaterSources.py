@@ -13,14 +13,14 @@ import pandas as pd
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Utah/AggregatedAmounts"
+workingDir  = "G:/Shared drives/WaDE Data/Utah/AggregatedAmounts"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_utAggMaster.csv"
 df = pd.read_csv(fileInput).replace(np.nan, "")
