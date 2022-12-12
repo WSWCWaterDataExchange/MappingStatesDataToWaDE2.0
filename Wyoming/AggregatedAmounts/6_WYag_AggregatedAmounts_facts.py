@@ -180,31 +180,27 @@ print("SDWISIdentifierCV")
 outdf['SDWISIdentifierCV'] = ""
 
 print("TimeframeEnd")
-outdf['TimeframeEnd'] = ""
+outdf['TimeframeEnd'] = df_DM['in_TimeframeEnd']
 
 print("TimeframeStart")
-outdf['TimeframeStart'] = ""
+outdf['TimeframeStart'] = df_DM['in_TimeframeStart']
 
 print("Resetting Index")
 outdf.reset_index()
-
-print("out df updates...")
-outdf = outdf.replace(np.nan, '')  # Replaces NaN values with blank.
 
 
 # Solving WaDE 2.0 Upload Issues
 # ############################################################################
 print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to upload data to QA here.
 
-# None at the moment
+outdf = outdf.replace(np.nan, "").drop_duplicates().reset_index(drop=True)
 
 
 #Error Checking each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-
-dfpurge = pd.DataFrame(columns=columnslist)  # purge DataFrame
-dfpurge = dfpurge.assign(ReasonRemoved='')
+purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # MethodUUID
 outdf, dfpurge = TestErrorFunctions.MethodUUID_AG_Check(outdf, dfpurge)
@@ -284,13 +280,13 @@ outdf, dfpurge = TestErrorFunctions.TimeframeStart_AG_Check(outdf, dfpurge)
 
 # Export to new csv
 ############################################################################
-print("Exporting dataframe outdf100 to csv...")
+print("Exporting outdf and dfpurge dataframes...")
 
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/aggregatedamounts.csv', index=False)
 
 # Report purged values.
 if(len(dfpurge.index) > 0):
-    dfpurge.to_csv('ProcessedInputData/aggregatedamounts_missing.csv', index=False)
+    dfpurge.to_excel('ProcessedInputData/aggregatedamounts_missing.xlsx', index=False)
 
 print("Done.")

@@ -41,30 +41,6 @@ outdf.VariableSpecificUUID = ["WYag_V1", "WYag_V2", "WYag_V3", "WYag_V4",
                               "WYag_V5", "WYag_V6", "WYag_V7", "WYag_V8",
                               "WYag_V9"]
 
-outdf.AggregationInterval = ["1", "1", "1", "1", "1", "1", "1", "1", "1"]
-
-outdf.AggregationIntervalUnitCV = ["Annual", "Annual", "Annual", "Annual",
-                                   "Annual", "Annual", "Annual", "Annual",
-                                   "Annual"]
-
-outdf.AggregationStatisticCV = ["Cumulative", "Cumulative", "Cumulative", "Cumulative",
-                                "Cumulative", "Cumulative", "Cumulative", "Cumulative",
-                                "Cumulative"]
-
-outdf.AmountUnitCV = ["AFY", "AFY", "AFY", "AFY", "AFY", "AFY", "AFY", "AFY", "AFY"]
-
-outdf.MaximumAmountUnitCV = ["AFY", "AFY", "AFY", "AFY", "AFY", "AFY", "AFY", "AFY", "AFY"]
-
-outdf.ReportYearStartMonth = ["1", "1", "1", "1", "1", "1", "1", "1", "1"]
-
-outdf.ReportYearTypeCV = ["WaterYear", "WaterYear", "WaterYear", "WaterYear",
-                          "WaterYear", "WaterYear", "WaterYear", "WaterYear",
-                          "WaterYear"]
-
-outdf.VariableCV = ["Reservoirs and Gages", "Reservoirs and Gages", "Reservoirs and Gages", "Reservoirs and Gages",
-                    "Reservoirs and Gages", "Reservoirs and Gages", "Reservoirs and Gages", "Reservoirs and Gages",
-                    "Reservoirs and Gages"]
-
 outdf.VariableSpecificCV = ["Consumptive Use_Annual_Agricultural Consumptive Use_Groundwater",
                             "Consumptive Use_Annual_Agricultural Consumptive Use_Surface Water",
                             "Consumptive Use_Annual_Domestic Use_Groundwater",
@@ -74,6 +50,23 @@ outdf.VariableSpecificCV = ["Consumptive Use_Annual_Agricultural Consumptive Use
                             "Consumptive Use_Annual_Municipal Use_Cross Basin Diversion",
                             "Consumptive Use_Annual_Municipal Use_Groundwater",
                             "Consumptive Use_Annual_Municipal Use_Surface Water"]
+
+outdf.AggregationInterval = "1"
+
+outdf.AggregationIntervalUnitCV = "Annual"
+
+outdf.AggregationStatisticCV = "Cumulative"
+
+outdf.AmountUnitCV = "AFY"
+
+outdf.MaximumAmountUnitCV = "AFY"
+
+outdf.ReportYearStartMonth = "1"
+
+outdf.ReportYearTypeCV = "WaterYear"
+
+outdf.VariableCV = "Consumptive Use"
+
 
 
 # Check required fields are not null
