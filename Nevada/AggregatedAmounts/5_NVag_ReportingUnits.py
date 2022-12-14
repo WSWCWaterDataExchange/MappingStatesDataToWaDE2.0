@@ -43,7 +43,7 @@ columnslist =[
 ############################################################################
 
 # For Creating Geometry
-Geometrydict = pd.Series(dfshape.geometry.values, index = dfshape.RU_Name).to_dict()
+Geometrydict = pd.Series(dfshape.geometry.values, index = dfshape.in_ReportingUnitNativeID).to_dict()
 def retrieveGeometry(colrowValue):
     if colrowValue == "" or pd.isnull(colrowValue):
         outList = ""
@@ -89,7 +89,7 @@ print("StateCV")
 outdf['StateCV'] = "NV"
 
 print("Geometry")
-outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['in_ReportingUnitName']), axis=1)
+outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['in_ReportingUnitNativeID']), axis=1)
 
 # Dropping duplicate
 # filter the whole table based on a unique combination of ReportingUnitName, ReportingUnitNativeID & ReportingUnitTypeCV

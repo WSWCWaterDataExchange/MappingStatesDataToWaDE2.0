@@ -90,7 +90,6 @@ def retrieveVariableSpecific(colrowValue):
     return outList
 
 
-
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe outdf...")

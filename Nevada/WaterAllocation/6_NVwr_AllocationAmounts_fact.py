@@ -242,7 +242,7 @@ print("AllocationTimeframeStart")
 outdf['AllocationTimeframeStart'] = "01/01"
 
 print("AllocationTypeCV")
-outdf['AllocationTypeCV'] = ""
+outdf['AllocationTypeCV'] = "Unspecified"
 
 print("AllocationVolume_AF")
 outdf['AllocationVolume_AF'] = df_NVM['duty_balance']
