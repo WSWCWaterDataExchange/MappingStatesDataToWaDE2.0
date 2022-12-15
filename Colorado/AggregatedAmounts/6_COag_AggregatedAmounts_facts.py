@@ -1,6 +1,5 @@
-# Date Created: 04/15/2022
-# Author: Ryan James
-# Purpose: To extract CO agg aggregated information and populate a dataframe WaDEQA 2.0.
+# Date Created: 06/17/2022
+# Purpose: To create CO ag aggregated information and populate a dataframe WaDEQA 2.0.
 #          1) Simple creation of working dataframe (df), with output dataframe (outdf).
 #          2) Drop all nulls before combining duplicate rows on NativeID.
 
@@ -14,14 +13,14 @@ import pandas as pd
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Colorado/AggregatedAmounts"
+workingDir = "G:/Shared drives/WaDE Data/Colorado/AggregatedAmounts"
 os.chdir(workingDir)
 M_fileInput = "RawinputData/P_coAggMaster.csv"
 variables_fileInput = "ProcessedInputData/variables.csv"
@@ -79,16 +78,11 @@ def retrieveReportingUnits(colrowValue):
     return outString
 
 # For creating VariableSpecificUUID
-VariableSpecificUUIDdict = pd.Series(df_variables.VariableSpecificUUID.values, index = df_variables.VariableSpecificCV).to_dict()
+# using VariableCV instead of VariableSpecificCV
+VariableSpecificUUIDdict = pd.Series(df_variables.VariableSpecificUUID.values, index = df_variables.VariableCV).to_dict()
 def retrieveVariableSpecificUUID(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outString = ''
-    else:
-        String1 = colrowValue
-        try:
-            outString = VariableSpecificUUIDdict[String1]
-        except:
-            outString = colrowValue
+    colrowValue = str(colrowValue).strip()
+    outString = VariableSpecificUUIDdict[colrowValue]
     return outString
 
 # For creating WaterSourceUUID
@@ -142,7 +136,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = "04/15/2022"
+outdf['DataPublicationDate'] = "12/15/2022"
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""
@@ -185,6 +179,7 @@ outdf['TimeframeStart'] = df_DM['in_TimeframeStart']
 
 print("Resetting Index")
 outdf.reset_index()
+
 
 # Solving WaDE 2.0 Upload Issues
 # ############################################################################

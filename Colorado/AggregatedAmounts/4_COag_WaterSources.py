@@ -1,5 +1,5 @@
-# Date Created: 04/15/2022
-# Purpose: To extract CO agg water source use information and populate a dataframe for WaDE_QA 2.0.
+# Date Created: 06/17/2022
+# Purpose: To create CO ag water source use information and populate a dataframe for WaDE_QA 2.0.
 # Notes: N/A
 
 
@@ -12,14 +12,14 @@ import pandas as pd
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
 import TestErrorFunctions
 
 
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Colorado/AggregatedAmounts"
+workingDir = "G:/Shared drives/WaDE Data/Colorado/AggregatedAmounts"
 os.chdir(workingDir)
 fileInput = "RawinputData/P_coAggMaster.csv"
 df = pd.read_csv(fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.

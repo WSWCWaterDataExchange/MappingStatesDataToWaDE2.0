@@ -1,5 +1,5 @@
-# Date Created: 04/15/2022
-# Purpose: To create CO agg organization use information and populate a dataframe for WaDE_QA 2.0.
+# Date Created: 06/17/2022
+# Purpose: To create CO ag organization use information and populate a dataframe for WaDE_QA 2.0.
 # Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
 
 
@@ -13,7 +13,7 @@ import pandas as pd
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/Colorado/AggregatedAmounts"
+workingDir = "G:/Shared drives/WaDE Data/Colorado/AggregatedAmounts"
 os.chdir(workingDir)
 
 # Needed WaDE columns
