@@ -48,7 +48,7 @@ Purpose: Pre-process the state's input data files into one master file for simpl
     - Add *Year* value and include 2015 and 2017 respectively.
     - Add *ReportingUnitTypeCV* value and include Basin or County respectively.
     - *ReportingUnitName* = **BasinName** & **County**, respectively.
-    - *ReportingUnitNativeID* = **BasinID** for basin data, create custom WaDE ID for county data.
+    - *ReportingUnitNativeID* = **BasinID** for basin data, create custom WaDE ID for county data using county name.
     - Based on independent beneficial use columns from source data, transpose data by beneficial use and water amount values, fit to *Year*, *ReportingUnitTypeCV*, *ReportingUnitName* and *ReportingUnitNativeID* columns.
 - Concatenate temporary basin and county dataframes together for single output dataframe.
 - Create WaDE specific *TimeframeStart* & *TimeframeEnd* values by combining *01/01* & *12/31* with *Year* value, respectively.
