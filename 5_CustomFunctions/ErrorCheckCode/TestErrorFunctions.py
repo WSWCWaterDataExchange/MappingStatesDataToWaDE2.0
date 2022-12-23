@@ -362,7 +362,8 @@ def Latitude_S_Check(dfx, dfy):
     mask = dfx.loc[(dfx["Latitude"].isnull()) |
                    (dfx["Latitude"].astype(str) == "") |
                    (dfx["Latitude"].astype(str).str.contains(",")) |
-                   (dfx["Latitude"] == 0)].assign(ReasonRemoved='Incomplete Latitude').reset_index()
+                   (dfx["Latitude"] == 0) |
+                   (dfx["Latitude"].astype(float) < 1)].assign(ReasonRemoved='Incomplete Latitude').reset_index()
     if len(mask.index) > 0:
         outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
@@ -376,7 +377,8 @@ def Latitude_S_Check(dfx, dfy):
         dropIndex = dfx.loc[(dfx["Latitude"].isnull()) |
                             (dfx["Latitude"].astype(str) == "") |
                             (dfx["Latitude"].astype(str).str.contains(",")) |
-                            (dfx["Latitude"] == 0)].index
+                            (dfx["Latitude"] == 0) |
+                            (dfx["Latitude"].astype(float) < 1)].index
         dfx = dfx.drop(dropIndex)
         dfx = dfx.reset_index(drop=True)
     return (dfx, dfy)
@@ -387,7 +389,7 @@ def Longitude_S_Check(dfx, dfy):
     mask = dfx.loc[(dfx["Longitude"].isnull()) |
                    (dfx["Longitude"].astype(str) == "") |
                    (dfx["Longitude"].astype(str).str.contains(",")) |
-                   (dfx["Longitude"] == "")].assign(ReasonRemoved='Incomplete Longitude').reset_index()
+                   (dfx["Longitude"] == 0)].assign(ReasonRemoved='Incomplete Longitude').reset_index()
     if len(mask.index) > 0:
         outmaskColumn = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
         outmaskdf = pd.DataFrame(columns=outmaskColumn)
@@ -401,7 +403,7 @@ def Longitude_S_Check(dfx, dfy):
         dropIndex = dfx.loc[(dfx["Longitude"].isnull()) |
                             (dfx["Longitude"].astype(str) == "") |
                             (dfx["Longitude"].astype(str).str.contains(",")) |
-                            (dfx["Longitude"] == "")].index
+                            (dfx["Longitude"] == 0)].index
         dfx = dfx.drop(dropIndex)
         dfx = dfx.reset_index(drop=True)
     return (dfx, dfy)
