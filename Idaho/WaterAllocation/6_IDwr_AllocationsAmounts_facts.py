@@ -1,4 +1,4 @@
-#Date Created: 05/09/2022
+#Date Created: 12/23/2022
 #Author: Ryan James
 #Purpose: To extract ID allocation use information and populate dataframe WaDEQA 2.0.
 #         1) Simple creation of working dataframe (df), with output dataframe (outdf).
@@ -23,7 +23,7 @@ import TestErrorFunctions
 print("Reading input csv...")
 workingDir = "G:/Shared drives/WaDE Data/Idaho/WaterAllocation"
 os.chdir(workingDir)
-M_fileInput = "RawinputData/P_IdahoMaster.csv"
+M_fileInput = "RawinputData/P_IdahoMain.csv"
 sites_fileInput = "ProcessedInputData/sites.csv"
 
 df_M = pd.read_csv(M_fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
@@ -76,6 +76,15 @@ columnslist = [
 # Custom Site Functions
 ############################################################################
 
+# For filling in Unspecified when null
+def assignBlankUnspecified(val):
+    val = str(val).strip()
+    if val == "" or pd.isnull(val):
+        outString = "Unspecified"
+    else:
+        outString = val
+    return outString
+
 # For Creating SiteUUID
 SitUUIDdict = pd.Series(df_sites.SiteUUID.values, index = df_sites.SiteNativeID).to_dict()
 def retrieveSiteUUID(colrowValue):
@@ -87,22 +96,6 @@ def retrieveSiteUUID(colrowValue):
             outList = SitUUIDdict[String1]
         except:
             outList = ''
-    return outList
-
-# For creating AllocationLegalStatusCV
-def assignAllocationTypeCV(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outList = ""
-    else:
-        outList = colrowValue.strip()
-    return outList
-
-# For creating AllocationLegalStatusCV
-def assignBeneficialUse(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outList = "Unspecified"
-    else:
-        outList = colrowValue.strip()
     return outList
 
 # For creating AllocationUUID
@@ -157,14 +150,10 @@ print("AllocationFlow_CFS")
 outdf['AllocationFlow_CFS'] = df_M['in_AllocationFlow_CFS']
 
 print("AllocationLegalStatusCV")
-outdf['AllocationLegalStatusCV'] = df_M['in_AllocationLegalStatusCV']
+outdf['AllocationLegalStatusCV'] = df_M.apply(lambda row: assignBlankUnspecified(row['in_AllocationLegalStatusCV']), axis=1)
 
 print("AllocationNativeID")  # Will use this with a .groupby() statement towards the ends.
-def assignNativeID(colrowValue):
-    outList = str(colrowValue)
-    outList = outList.strip()
-    return outList
-outdf['AllocationNativeID'] = df_M.apply(lambda row: assignNativeID(row['in_AllocationNativeID']), axis=1)
+outdf['AllocationNativeID'] = df_M['in_AllocationNativeID']
 
 print("AllocationOwner")
 outdf['AllocationOwner'] = df_M['in_AllocationOwner']
@@ -179,13 +168,13 @@ print("AllocationTimeframeStart")
 outdf['AllocationTimeframeStart'] = ""
 
 print("AllocationTypeCV")  
-outdf['AllocationTypeCV'] = ""
+outdf['AllocationTypeCV'] = "Unspecified"
 
 print("AllocationVolume_AF")
 outdf['AllocationVolume_AF'] = ""
 
 print("BeneficialUseCategory")
-outdf['BeneficialUseCategory'] = df_M.apply(lambda row: assignBeneficialUse(row['in_BeneficialUseCategory']), axis=1)
+outdf['BeneficialUseCategory'] = df_M.apply(lambda row: assignBlankUnspecified(row['in_BeneficialUseCategory']), axis=1)
 
 print("CommunityWaterSupplySystem")  
 outdf['CommunityWaterSupplySystem'] = ""
@@ -197,7 +186,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")  
-outdf['DataPublicationDate'] = "09/13/2022"
+outdf['DataPublicationDate'] = "12/23/2022"
 
 print("DataPublicationDOI")  
 outdf['DataPublicationDOI'] = ""
@@ -249,7 +238,8 @@ outdf.reset_index()
 
 print("Joining outdf duplicates based on key fields...")
 outdf = outdf.replace(np.nan, "")  # Replaces NaN values with blank.
-groupbyList = ['AllocationNativeID', 'AllocationFlow_CFS', 'AllocationVolume_AF']
+# groupbyList = ['AllocationNativeID', 'AllocationFlow_CFS', 'AllocationVolume_AF'] # this might be wrong and out of date
+groupbyList = ['AllocationNativeID']
 outdf = outdf.groupby(groupbyList).agg(lambda x: ','.join([str(elem) for elem in (list(set(x))) if elem!=''])).replace(np.nan, "").reset_index()
 outdf = outdf[columnslist]  # reorder the dataframe's columns based on columnslist
 

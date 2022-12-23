@@ -1,4 +1,4 @@
-#Date Created: 03/24/2022
+#Date Created: 12/23/2022
 #Purpose: To extract ID water source use information and populate dataframe for WaDE_QA 2.0.
 #Notes: 1) For 'WaterSourceTypeCV', easier to label everything that is not a surface water first.
 
@@ -21,7 +21,7 @@ import TestErrorFunctions
 print("Reading input csv...")
 workingDir = "G:/Shared drives/WaDE Data/Idaho/WaterAllocation"
 os.chdir(workingDir)
-fileInput = "RawinputData/P_IdahoMaster.csv"
+fileInput = "RawinputData/P_IdahoMain.csv"
 df = pd.read_csv(fileInput)
 
 #WaDE columns

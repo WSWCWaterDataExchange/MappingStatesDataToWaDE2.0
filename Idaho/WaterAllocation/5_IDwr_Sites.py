@@ -1,8 +1,7 @@
-#Date Created: 03/24/2022
+#Date Created: 12/23/2022
 #Purpose: To extract ID site use information and populate dataframe for WaDEQA 2.0.
 #Notes: 1) For 'SiteTypeCV', easier to label everything that is not a surface water first.
 #       2) For 'CoordinateMethodCV', list out all Idaho specific CV values (should already be in WaDE Vocab).
-#       3) Have to convert from epsg:8826 - to - epsg:4326 in order for lat and long to work in WaDE 2.0.
 
 # Needed Libraries
 ############################################################################
@@ -22,7 +21,7 @@ import TestErrorFunctions
 print("Reading input csv...")
 workingDir = "G:/Shared drives/WaDE Data/Idaho/WaterAllocation"
 os.chdir(workingDir)
-fileInput = "RawinputData/P_IdahoMaster.csv"
+fileInput = "RawinputData/P_IdahoMain.csv"
 df = pd.read_csv(fileInput)
 fileInput_shape = "RawinputData/P_idGeometry.csv"
 dfshape = pd.read_csv(fileInput_shape)

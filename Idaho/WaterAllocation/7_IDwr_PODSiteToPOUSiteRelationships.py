@@ -1,4 +1,4 @@
-#Date Created: 03/24/2022
+#Date Created: 12/23/2022
 # Purpose: To extract ID site POD and POU relation information and populate dataframe for WaDEQA 2.0.
 # Notes: N/A
 
@@ -20,10 +20,6 @@ os.chdir(workingDir)
 siteColumns = ["SiteUUID", "PODorPOUSite"]
 sitesInput = "ProcessedInputData/sites.csv"
 dfsites = pd.read_csv(sitesInput, usecols=siteColumns)
-dfPOD = dfsites[dfsites['PODorPOUSite'] == "POD"].reset_index(drop=True)
-dfPOD['PODSiteUUID'] = dfPOD['SiteUUID']
-dfPOU = dfsites[dfsites['PODorPOUSite'] == "POU"].reset_index(drop=True)
-dfPOU['POUSiteUUID'] = dfPOU['SiteUUID']
 
 # AllocationAmounts_facts
 alocationColumns = ["SiteUUID", "AllocationNativeID"]
@@ -34,6 +30,15 @@ dfallo = pd.read_csv(allocationInput, usecols=alocationColumns)
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
+
+print("Create POD and POU sites dataframes...")
+dfPOD = dfsites.copy()
+dfPOD = dfPOD[dfPOD['PODorPOUSite'] == "POD"].reset_index(drop=True)
+dfPOD['PODSiteUUID'] = dfPOD['SiteUUID']
+
+dfPOU = dfsites.copy()
+dfPOU = dfPOU[dfPOU['PODorPOUSite'] == "POU"].reset_index(drop=True)
+dfPOU['POUSiteUUID'] = dfPOU['SiteUUID']
 
 print("Explode allocation by SiteUUID...")
 dfallo = dfallo.assign(SiteUUID=dfallo['SiteUUID'].str.split(',')).explode('SiteUUID').reset_index(drop=True)
@@ -59,8 +64,8 @@ outdf = outdf[outdf['PODSiteUUID'] != 'nan'].reset_index(drop=True)
 outdf = outdf[outdf['POUSiteUUID'] != 'nan'].reset_index(drop=True)
 
 print("create dummy StartDate & EndDate values...")
-outdf['StartDate'] = "01/01/2021"
-outdf['EndDate'] = "12/31/2021"
+outdf['StartDate'] = "01/01/2022"
+outdf['EndDate'] = "12/31/2022"
 
 
 # Export to new csv
