@@ -6,13 +6,13 @@ This readme details the process that was applied by the staff of the [Western St
 
 The following data was used for water allocations...
 
-- Point of diversion (POD) data was obtained from IDWR Maps and GIS Data Hub at: https://data-idwr.hub.arcgis.com/datasets/IDWR::water-right-pods/about
-- Point of use (PoU) data was obtained from a zipped file from IDWR Maps and GIS Data Hub at: https://idwr.maps.arcgis.com/home/item.html?id=dcadb8412de74f468ce802d61361ca0a
+- Point of diversion (POD) data was obtained from IDWR Maps and GIS Data Hub at: https://data-idwr.hub.arcgis.com/datasets/water-right-pods/explore?location=45.432773%2C-114.096317%2C6.10
+- Point of use (PoU) data was obtained from a zipped file from IDWR Maps and GIS Data Hub at: https://data-idwr.hub.arcgis.com/documents/IDWR::place-of-use-water-right/about
 
 Unique files were created from the above links to be used as input to the Python codes that prepare WaDE2 input files. Input files used are as follows...
 
-- ID_Water_Right_PODs_input.xlsx
-- ID_Water_Right_PoUs_input.xlsx
+- Water_Right_PODs.shp
+- WaterRightPOUs.shp
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
 
@@ -41,36 +41,33 @@ Purpose: Pre-process the Idaho input data files and merge them into one master f
 
 #### Inputs:
 
-- ID_Water_Right_PODs_input.xlsx
-- ID_Water_Right_PoUs_input.xlsx
+- Water_Right_PODs.shp
+- WaterRightPOUs.shp
 
 #### Outputs:
 
-- P_IdahoMaster.csv
+- P_IdahoMain.csv
 
 #### Operation and Steps:
 
 - Read the input files and generate temporary input dataframes. Goal will be to create separate POD and POU centric dataframes, then join together into single output dataframe.
 - For POD data...
-  - Left Join POU data to the POD data via matching **RightsID** for use and acreage info.
+  - Read in shp file information.
   - Convert given EPSG 8826 project to WaDE friendly EPSGS 4326.
-  - Assign irrigate acreage using **AcreLimit** if > 0, else use **TotalAcres**.
   - Create WaDE POD centric temporary dataframe. Extract ID POD relevant data (see preprocessing code).
 - For POU data...
-  - Left Join POD data to the POU data via matching **RightsID** for owner, CFS, legal status & basis info.
-  - Assign irrigate acreage using **AcreLimit** if > 0, else use **TotalAcres**.
-  - Generate WaDE Specific Field _WaterSourceType_ from IDWR **Source** field (see pre-process code for specific dictionary used to determine water type).
-  - Extract correct owner name from Extended Contact Name data, generate _Owner_Update_ for input.
-  - Create WaDE POU centric temporary dataframe. Extract ID POU relevant data (see preprocessing code).
+  - Read in shp file information.
+  - Convert given EPSG 8826 project to WaDE friendly EPSGS 4326.
+  - Create WaDE POU centric temporary dataframe. Extract ID POD relevant data (see preprocessing code).
 - Concatenate temporary POD & POU dataframes together into single long output dataframe.
-  - Clean text used for water right native ID.
   - Remove special characters from water right owner info.
-  - Format **PriorityDate** field to %m/%d/%Y format.
   - Generate WaDE Specific Field _WaterSourceType_ from IDWR **Source** field (see pre-process code for specific dictionary used to determine water type).
+  - Format **PriorityDate** field to %m/%d/%Y format.
   - Generate WaDE specific field _WaterSourceNativeID_ from WaDE **Source** field. Used to identify unique sources of water.
+  - Convert converted *Latitude* & *Longitude* values to numeric values.
 - Extract geometry info from POU shapefile, export as *P_idGeometry.csv*.
 - Inspect output dataframe for additional errors / datatypes.
-- Export output dataframe as new csv file, _P_IdahoMaster.csv_.
+- Export output dataframe as new csv file,*P_IdahoMain.csv*.
 
 ---
 
@@ -130,7 +127,7 @@ Purpose: generate legend of granular variables specific to each state.
 
 | VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV |
 | -------------------- | ------------------------- | ---------------------- | ------------ |
-| IDwr_V1              | 1                         | Year                   | CFS          |
+| IDwr_V1              | 1                         | Annual                 | CFS          |
 
 ---
 
@@ -170,7 +167,7 @@ Purpose: generate a list of water sources specific to a water right.
 
 #### Inputs:
 
-- P_IdahoMaster.csv
+- P_IdahoMain.csv
 
 #### Outputs:
 
@@ -184,6 +181,7 @@ Purpose: generate a list of water sources specific to a water right.
 - Assign **IDWR** info to the _WaDE WaterSources_ specific columns. See _ID_Allocation Schema Mapping to WaDE_QA_ for specific details. Items of note are as follows...
   - _WaterSourceTypeCV_ = generated list of sources from **Source**, see _0_PreProcessIdahoAllocationData.ipynb_ for specifics.
   - _WaterSourceName_ = **Source**, Unspecified if not given.
+  - *WaterSourceNativeID* = use custom values for now, temp fix.
 - Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific _WaterSourceName_ & _WaterSourceTypeCV_ fields.
 - Assign water source UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
@@ -193,7 +191,7 @@ Purpose: generate a list of water sources specific to a water right.
 
 | WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceNativeID | WaterSourceTypeCV |
 | --------------- | ----------------------- | --------------- | ------------------- | ----------------- |
-| ID_WS3          | Fresh                   | DEEP CREEK      | Unspecified         | Surface Water     |
+| IDwrS3          | Fresh                | COEUR D ALENE LAKE | WaDEID_WS3       | Surface Water     |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. _watersources_missing.csv_) for review. This allows for future inspection and ease of inspection on missing items. Mandatory fields for the water sources include the following...
 
@@ -209,7 +207,7 @@ Purpose: generate a list of sites where water is diverted (also known as Points 
 
 #### Inputs:
 
-- P_IdahoMaster.csv
+- P_IdahoMain.csv
 - P_idGeometry.csv
 - waterSources.csv
 
@@ -224,12 +222,12 @@ Purpose: generate a list of sites where water is diverted (also known as Points 
 - Populate output dataframe with _WaDE Site_ specific columns.
 - Assign **IDWR** info to the _WaDE Site_ specific columns. See _ID_Allocation Schema Mapping to WaDE_QA_ for specific details. Items of note are as follows...
   - Extract _WaterSourceUUID_ from waterSources.csv input csv file. See code for specific implementation of extraction.
-  - _CoordinateMethodCV_ = **DataSource**, Unspecified if not given. Centroid if POU data.
+  - _CoordinateMethodCV_ = **DataSource** for POD, Unspecified if not given. "Centroid" if POU data.
   - _Latitude_ = converted **X** projection from IDWR EPSG:8826 -to- WaDE EPSG:4326. Centroid of polygon for POU data.
   - _Longitude_ = converted **Y** projection from IDWR EPSG:8826 -to- WaDE EPSG:4326. Centroid of polygon for POU data.
-  - _SiteName_ = **DiversionName**, Unspecified if not given.
-  - _SiteNativeID_ = **PointOfDiversionID**, Unspecified if not given.
-  - _SiteTypeCV_ = Unspecified.
+  - _SiteName_ = **DiversionN** for POD, Unspecified if not given or for POU.
+  - _SiteNativeID_ = **PointOfDiv** for POD, **PlaceOfUse** for POU, Unspecified if not given.
+  - _SiteTypeCV_ = "Unspecified".
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific _SiteNativeID_, _SiteName_ & _SiteTypeCV_ fields.
 - Assign site UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
@@ -256,7 +254,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 
 #### Inputs:
 
-- P_IdahoMaster.csv
+- P_IdahoMain.csv
 
 #### Outputs:
 
@@ -269,15 +267,15 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 - Populate output dataframe with _WaDE Water Allocations_ specific columns.
 - Assign **IDWR** info to the _WaDE Water Allocations_ specific columns. See _ID_Allocation Schema Mapping to WaDE_QA_ for specific details. Items of note are as follows...
   - Extract _MethodUUID_, _VariableSpecificUUID_, _OrganizationUUID_, & _SiteUUID_ from respective input csv files. See code for specific implementation of extraction.
-  - _AllocationBasisCV_ = **Basis**.
-  - _AllocationFlow_CFS_ = **OverallMaxDiversionRate**.
+  - _AllocationBasisCV_ = **Basis** from POD data
+  - _AllocationFlow_CFS_ = **OverallMax**.
   - _AllocationLegalStatusCV_ = **Status**.
-  - _AllocationNativeID_ = **WaterRightNumber**.
+  - _AllocationNativeID_ = **WaterRight**.
   - _AllocationOwner_ = **Owner**.
-  - _AllocationPriorityDate_ = **PriorityDate**.
-  - _BeneficialUseCategory_ = **WaterUse**, Unspecified if not given.
-  - _IrrigatedAcreage_ = 'If **AcreLimit** > 0, = **AcreLimit**, else use **TotalAcre**.
-  - _WaterAllocationNativeURL_ = **WRDocs**.
+  - _AllocationPriorityDate_ = **PriorityDa**.
+  - _BeneficialUseCategory_ = **Uses*** for POD data, **WaterUse** for POU data, Unspecified if not given.
+  - _IrrigatedAcreage_ = **AcreLimit** from POU data.
+  - _WaterAllocationNativeURL_ = **WRReport**.
 - Consolidate output dataframe into water allocations specific information only by grouping entries by _AllocationNativeID_ filed.
 - Perform error check on output dataframe.
 - Export output dataframe _waterallocations.csv_.
