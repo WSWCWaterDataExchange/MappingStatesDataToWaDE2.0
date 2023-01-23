@@ -218,11 +218,12 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
 - Assign **SDDENR** info to the *WaDE Water Allocations* specific columns.  See *WY_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
+    - *AllocationLegalStatusCV* = **STATUS**
     - *AllocationFlow_CFS* = **LIC_CFS**.
     - *AllocationLegalStatusCV* = *input_Status*, see *0_PreProcessSouthDakotaAllocationData.ipynb* for specifics.
     - *AllocationNativeID* = **PERMIT_NO**.
     - *AllocationOwner* =  *WaDEOwner*, see *0_PreProcessSouthDakotaAllocationData.ipynb* for specifics.
-    - *AllocationPriorityDate* = **PERMIT_NO**.
+    - *AllocationPriorityDate* = **PRIORDATE**.
     - *AllocationTypeCV* = "Unspecified.
     - *BeneficialUseCategory* = *input_Benuse*, see *0_PreProcessSouthDakotaAllocationData.ipynb* for specifics.
 - Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.
