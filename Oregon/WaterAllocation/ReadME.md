@@ -233,14 +233,14 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
 - Assign stage agency info to the *WaDE Water Allocations* specific columns.  See *Oregon_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
-    - *AllocationFlow_CFS* = **in_AllocationFlow_CFS**.
+    - *AllocationFlow_CFS* = **rate_cfs**.
     - *AllocationNativeID* = **snp_id**.
     - *AllocationOwner* = *in_AllocationOwner*, see preprocessing code for specifics.
     - *AllocationPriorityDate* = **priority_date**.
     - *AllocationTimeframeEnd* = *in_AllocationTimeframeEnd*, see preprocessing code for specifics.
     - *AllocationTimeframeStart* = *in_AllocationTimeframeStart*, see preprocessing code for specifics.
     - *AllocationTypeCV* = **claim_char**, Unspecified if not given.
-    - *AllocationVolume_AF* = *in_AllocationVolume_AF*, see preprocessing code for specifics.
+    - *AllocationVolume_AF* = **acre_feet**, see preprocessing code for specifics.
     - *BeneficialUseCategory* = **use_code_description**, Unspecified if not given.
     - *IrrigatedAcreage* = *in_IrrigatedAcreage*, see preprocessing code for specifics.
     - *WaterAllocationNativeURL* = **wris_link**.
