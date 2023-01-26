@@ -17,6 +17,9 @@ The 1) raw input data shared by the state / state agency / data provider (excel,
 - Oregon Site Specific Reservoir and Observation Site Data: https://drive.google.com/drive/folders/1UDoVZrfC9sJzgwqwI4tuFDte4HMgg3X_?usp=sharing
 
 
+ ## Unique Data Notes
+ OWRD was not confident in the accuracy of records with a start date before 1950.  All records pre-1950 were removed from the timeseries before uploaded to the WaDE 2.0 cloud database.
+
 
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share DWSG's site specific time series water data for inclusion into the Water Data Exchange (WaDE2 2.0) project.  For a complete mapping outline, see *OR_SS_ReservoirsObservationSitesSchema Mapping to WaDE.xlsx*.  Eight executable code files were used to extract the state agency's site specific time series data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(SiteSpecificAmounts)* is dependent on the previous files.  Those code files are as follows...
