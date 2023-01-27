@@ -5,7 +5,7 @@ This readme details the process that was applied by the staff of the [Western St
 ## Overview of Source Data Utilized
 The following data was used for water allocations...
 
-- **OSE PODs**:  Point of diversion water right sites.
+- [**OSE PODs**](https://geospatialdata-ose.opendata.arcgis.com/datasets/OSE::ose-pods/about):  Point of diversion water right sites.
 
 The following unique files were created as input.  Input files used are as follows...
  - OSE_PODst.csv
