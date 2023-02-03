@@ -37,11 +37,12 @@ inpVals = [
     "Surface Ground Water",
     "",
     "",
-    "",
+    """The Idaho Department of Water Resources is making this data available as a public service. The Idaho Department of Water Resources strives to ensure that all technical data and other information made available to the public is accurate, complete and in conformance with the Idaho Public Records Act. Neither the Department of Water Resources nor the State of Idaho, however, assumes any legal responsibility for the accuracy or completeness of the information contained on this site. Persons using information from this site for official purposes, or other purposes, for which accuracy and completeness are required, are hereby notified that they should first verify the information with the public records or other primary sources from which the information was obtained."""
+    ,
     "Methodology used for tracking diversions in the state of Idaho.",
     "Idaho Water Rights Method",
-    "",
-    "Water Use"]
+    "https://idwr.idaho.gov/water-rights/overview/",
+    "Legal Processes"]
 
 outdf = pd.DataFrame([inpVals], columns=columns)
 

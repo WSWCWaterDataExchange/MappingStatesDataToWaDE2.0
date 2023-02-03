@@ -45,13 +45,13 @@ outdf.DataQualityValueCV = ""
 
 outdf.DataCoverageValue = ""
 
-outdf.MethodDescription = "Water Rights"
+outdf.MethodDescription = """This data is provided by the ND Department of Water Resources for your convenience. This data is provisional. This service is provided "AS IS" and without warranty of any kind, either express or implied. No warranty, either expressed or implied, is made regarding the accuracy or utility of the data or information presented at this site. The ND Department of Water Resources is not responsible for any errors or damages that may occur resulting from the use or mis-use of the data that is provided at this site. If you have any questions regarding the data, generation methods, or errors, please direct any these comments to Chris Bader at ND Department of Water Resources. Phone: (701) 328-4771 E-Mail: cbader@nd.gov"""
 
-outdf.MethodName = "North Dakota Water Rights"
+outdf.MethodName = "North Dakota Water Rights Method"
 
-outdf.MethodNEMILink = "https://mapservice.swc.nd.gov/"
+outdf.MethodNEMILink = "https://www.swc.nd.gov/reg_approp/waterpermits/"
 
-outdf.MethodTypeCV = "Adjudicated"
+outdf.MethodTypeCV =  "Legal Processes"
 
 
 # Check required fields are not null

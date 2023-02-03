@@ -78,6 +78,15 @@ columnslist = [
 # Custom Functions
 ############################################################################
 
+# For filling in Unspecified when null
+def assignBlankUnspecified(val):
+    val = str(val).strip()
+    if val == "" or pd.isnull(val):
+        outString = "Unspecified"
+    else:
+        outString = val
+    return outString
+
 # For Creating SiteUUID
 SitUUIDdict = pd.Series(df_sites.SiteUUID.values, index = df_sites.SiteNativeID).to_dict()
 def retrieveSiteUUID(colrowValue):
@@ -89,14 +98,6 @@ def retrieveSiteUUID(colrowValue):
             outList = SitUUIDdict[String1]
         except:
             outList = ''
-    return outList
-
-# For creating AllocationOwner
-def assignAllocationOwner(colrowValue):
-    if colrowValue == "" or pd.isnull(colrowValue):
-        outList = "Unspecified"
-    else:
-        outList = colrowValue.strip()
     return outList
 
 # For creating AllocationUUID
@@ -151,13 +152,13 @@ print("AllocationFlow_CFS")
 outdf['AllocationFlow_CFS'] = df_DM['req_rate']
 
 print("AllocationLegalStatusCV")
-outdf['AllocationLegalStatusCV'] = df_DM['status'].astype(str)
+outdf['AllocationLegalStatusCV'] = df_DM.apply(lambda row: assignBlankUnspecified(row['pod_status']), axis=1)
 
 print("AllocationNativeID")  # Will use this with a .groupby() statement towards the ends.
 outdf['AllocationNativeID'] = df_DM['permit_num'].astype(str) # Native dbtype is float. Need to return this value as a string
 
 print("AllocationOwner")
-outdf['AllocationOwner'] = df_DM.apply(lambda row: assignAllocationOwner(row['in_AllocationOwner']), axis=1)
+outdf['AllocationOwner'] = df_DM.apply(lambda row: assignBlankUnspecified(row['in_AllocationOwner']), axis=1)
 
 print("AllocationPriorityDate")
 outdf['AllocationPriorityDate'] = df_DM['priority_d']
@@ -172,7 +173,7 @@ print("AllocationTimeframeStart")
 # outdf['AllocationTimeframeStart'] = df_DM['period_sta']
 
 print("AllocationTypeCV")
-outdf['AllocationTypeCV']= ""
+outdf['AllocationTypeCV'] = "Unspecified"
 
 print("AllocationVolume_AF")
 outdf['AllocationVolume_AF'] = df_DM['req_acft'].astype(float)
@@ -229,14 +230,13 @@ print("PrimaryBeneficialUseCategory")
 outdf['PrimaryBeneficialUseCategory'] = "Unspecified"
 
 print("WaterAllocationNativeURL")
-outdf['WaterAllocationNativeURL'] = ""
+outdf['WaterAllocationNativeURL'] = df_DM['in_WaterAllocationNativeURL']
 
 print("Adding Data Assessment UUID")
 outdf['WaDEUUID'] = ""
 
 print("Resetting Index")
 outdf.reset_index()
-
 
 print("Joining outdf duplicates based on key fields...")
 outdf = outdf.replace(np.nan, "")  # Replaces NaN values with blank.

@@ -84,19 +84,6 @@ def assignBlankUnspecified(val):
         outString = val
     return outString
 
-# For creating MethodUUID
-MethodUUIDdict = pd.Series(df_method.MethodUUID.values, index = df_method.MethodTypeCV).to_dict()
-def retrieveMethodUUID(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outList = ''
-    else:
-        String1 = colrowValue
-        try:
-            outList = MethodUUIDdict[String1]
-        except:
-            outList = ''
-    return outList
-
 # For creating SiteUUID
 SiteUUIDDdict = pd.Series(df_sites.SiteUUID.values, index = df_sites.SiteNativeID).to_dict()
 def retrieveSiteUUID(colrowValue):
@@ -124,7 +111,7 @@ print("Populating dataframe outdf...")
 outdf = pd.DataFrame(index=df_DM.index, columns=columnslist)  # The output dataframe
 
 print("MethodUUID")
-outdf['MethodUUID'] = df_DM.apply(lambda row: retrieveMethodUUID(row['in_MethodTypeCV']), axis=1)
+outdf['MethodUUID'] = "MTwr_M1"
 
 print("OrganizationUUID")
 outdf['OrganizationUUID'] = "MTwr_O1"

@@ -32,12 +32,12 @@ columnslist = [
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-
 outdf = pd.DataFrame(columns=columnslist)
+outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.MethodUUID = ["MTwr_M1", "MTwr_M2"]
+outdf.MethodUUID = "MTwr_M1"
 
-outdf.ApplicableResourceTypeCV = ["Surface Ground Water", "Surface Ground Water"]
+outdf.ApplicableResourceTypeCV = "Surface Ground Water"
 
 outdf.DataConfidenceValue = ""
 
@@ -45,14 +45,13 @@ outdf.DataQualityValueCV = ""
 
 outdf.DataCoverageValue = ""
 
-outdf.MethodDescription = ["Water rights that were established prior to July 1,1973 are administered by the Adjudication Bureau. Water rights that were established from July 1, 1973 through the present are administered by the New Appropriations Program.",
-                           "Water rights that were established prior to July 1,1973 are administered by the Adjudication Bureau. Water rights that were established from July 1, 1973 through the present are administered by the New Appropriations Program."]
+outdf.MethodDescription = """The Montana Department of Natural Resources and Conservation (DNRC) provides this product for informational purposes only. Data contained herein may not be suitable for legal, engineering or survey purposes. DNRC makes no representations or warranties of any kind with respect to the accuracy or completeness of this data and assumes no responsibility of suitable use for any particular purpose. By any user’s reliance on, dissemination of or reference to this data in whole or in part (use), the user has accepted all limitations of this product, including user’s acknowledgement that all spatial data products are dynamic and may change without prior notice and any use is subject to that understanding. User acknowledges that Montana Department of Natural Resources and Conservation is not liable for any damages incurred as a result of errors in this data and user acknowledges use at user’s own risk and discretion"""
 
-outdf.MethodName = ["Adjudication", "Appropriations"]
+outdf.MethodName = "Montana Water Rights Method"
 
-outdf.MethodNEMILink = ["http://dnrc.mt.gov/divisions/water/water-rights", "http://dnrc.mt.gov/divisions/water/water-rights"]
+outdf.MethodNEMILink = "https://dnrc.mt.gov/Water-Resources/Water-Rights/Understanding-Water-Rights/"
 
-outdf.MethodTypeCV = ["Adjudication", "Appropriations"]
+outdf.MethodTypeCV = "Legal Processes"
 
 # Check required fields are not null
 ############################################################################

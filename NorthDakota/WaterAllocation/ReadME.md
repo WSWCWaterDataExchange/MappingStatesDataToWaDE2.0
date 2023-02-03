@@ -219,6 +219,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
     - *AllocationPriorityDate* = **priority_d**.
     - *AllocationVolume_AF* = **req_acft**.
     - *BeneficialUseCategory* = **use_type**.
+    - *WaterAllocationNativeURL* = *https://www.swc.nd.gov/info_edu/map_data_resources/waterpermits/single.php?id=* + Use **permid_ind**
 - Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.
 - Perform error check on output dataframe.
 - Export output dataframe *waterallocations.csv*.
