@@ -39,10 +39,11 @@ inpVals = [
     "",
     "",
     "",
-    "Methodology used for tracking diversions in the state of Colorado.",
-    "DiversionTracking",
-    "",
-    "Water Withdrawals"]
+    """A Water Right is a property right that is either conditional or absolute and conveys the right to use a particular amount of water, with a specified priority date as confirmed by the water court. The Net Amounts List contains the current status of a water right based on all of its court decreed actions."""
+    ,
+    "Colorado Water Rights Method",
+    "'https://drive.google.com/file/d/14r6HBwqebBwSE60yuiUu1smmtDONJbu2/view",
+    "Legal Processes"]
 
 outdf = pd.DataFrame([inpVals], columns=columnslist)
 

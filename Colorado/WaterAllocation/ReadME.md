@@ -233,9 +233,10 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
     - WaDE *AllocationFlow_CFS* = *in_AllocationFlow_CFS*, see *0_PreProcessColoradoAllocationData.ipynb* for specifics.
     - WaDE *AllocationNativeID* = *in_AllocationNativeID*, see *0_PreProcessColoradoAllocationData.ipynb* for specifics.
     - WaDE *AllocationLegalStatusCV* = *in_AllocationLegalStatusCV*, see *0_PreProcessColoradoAllocationData.ipynb* for specifics. 
-    - WaDE *AllocationPriorityDate* = **Appropriation Date** inp0ut field.
+    - WaDE *AllocationPriorityDate* = **Appropriation Date** input field.
     - WaDE *AllocationVolume_AF* = *in_AllocationVolume_AF*, see *0_PreProcessColoradoAllocationData.ipynb* for specifics.
     - WaDE *BeneficialUseCategory* = *in_WaDEBenUse*, see *0_PreProcessColoradoAllocationData.ipynb* for specifics. 
+    - WaDE *WaterAllocationNativeURL* = **More Information** input field.
 - Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.
 - Perform error check on output dataframe.
 - Export output dataframe *waterallocations.csv*.

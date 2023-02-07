@@ -1,4 +1,4 @@
-#Date Created: 06/21/2022
+#Date Updated: 08/01/2022
 #Author: Ryan James
 #Purpose: To extract NE allocation use information and populate dataframe WaDEQA 2.0.
 #Notes: N/A
@@ -29,6 +29,7 @@ df_sites = pd.read_csv(sites_fileInput)  # Sites dataframe
 
 #WaDE dataframe columns
 columnslist = [
+    "WaDEUUID",
     "AllocationUUID",
     "MethodUUID",
     "OrganizationUUID",
@@ -73,6 +74,15 @@ columnslist = [
 # Custom Functions
 ############################################################################
 
+# For filling in Unspecified when null
+def assignBlankUnspecified(val):
+    val = str(val).strip()
+    if val == "" or pd.isnull(val):
+        outString = "Unspecified"
+    else:
+        outString = val
+    return outString
+
 # For creating SiteUUID
 SitUUIDdict = pd.Series(df_sites.SiteUUID.values, index = df_sites.SiteNativeID).to_dict()
 def retrieveSiteUUID(colrowValue):
@@ -94,14 +104,6 @@ def assignAllocationAmount(colrowValue):
         outList = 0
     else:
         outList = colrowValue
-    return outList
-
-# For creating AllocationLegalStatusCV
-def assignAllocationLegalStatusCV(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outList = "Unspecified"
-    else:
-        outList = colrowValue.strip()
     return outList
 
 # For creating AllocationUUID
@@ -157,7 +159,7 @@ print("AllocationFlow_CFS")
 outdf['AllocationFlow_CFS'] = df_M['AllocationFlow_CFS']
 
 print("AllocationLegalStatusCV")
-outdf['AllocationLegalStatusCV'] = df_M.apply(lambda row: assignAllocationLegalStatusCV(row['RightStatus']), axis=1)
+outdf['AllocationLegalStatusCV'] = df_M.apply(lambda row: assignBlankUnspecified(row['RightStatus']), axis=1)
 
 print("AllocationNativeID")  # Will use this with a .groupby() statement towards the ends.
 outdf['AllocationNativeID'] = df_M['ApplicationNumber'].astype(str)
@@ -175,7 +177,7 @@ print("AllocationTimeframeStart")
 outdf['AllocationTimeframeStart'] = "04/01"
 
 print("AllocationTypeCV")
-outdf['AllocationTypeCV'] = ""
+outdf['AllocationTypeCV'] = "Unspecified"
 
 print("AllocationVolume_AF")
 outdf['AllocationVolume_AF'] = df_M['AllocationVolume_AF']
@@ -235,7 +237,10 @@ print("AllocationSDWISIdentifierCV")
 outdf['AllocationSDWISIdentifierCV'] = ""
 
 print("WaterAllocationNativeURL")
-outdf['WaterAllocationNativeURL'] = ""
+outdf['WaterAllocationNativeURL'] = df_M['WaterAllocationNativeURL']
+
+print("Adding Data Assessment UUID")
+outdf['WaDEUUID'] = ""
 
 print("Resetting Index")
 outdf.reset_index()
@@ -251,10 +256,14 @@ outdf = outdf[columnslist]  # reorder the dataframe's columns based on columnsli
 # ############################################################################
 print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to upload data to QA here.
 
-# Date Noted: 05/25/2021
 # Note: OwnerClassificationCV can only accept 1 entry at this time. Error due to above merge / we don't allow multiple OwnerClassificationCV.
-def tempfixOCSV(colrowValueA):
-    result = colrowValueA.split(",", 1)[0]  # pass in text, split on "," & return first value.
+def tempfixOCSV(val):
+    valList = val.split(",") # convert string to list
+    valList.sort() # sort list alphabetically
+    if ("In Review" in valList):
+        valList.remove("In Review") # check if "In Review"  If true, remove.
+        valList.append("In Review") # Append back in "In Review" to end of list.
+    result = valList[0] # return only first value in list.
     return result
 outdf['OwnerClassificationCV']  = outdf.apply(lambda row: tempfixOCSV(row['OwnerClassificationCV']), axis=1)
 
@@ -268,7 +277,7 @@ outdf['PrimaryBeneficialUseCategory'] = outdf.apply(lambda row: AssignPrimaryUse
 #Error Checking Each Field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+purgecolumnslist = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
 dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # MethodUUID
@@ -392,6 +401,12 @@ outdf['AllocationUUID'] = dftemp.apply(lambda row: assignAllocationUUID(row['Cou
 
 # Error check AllocationUUID
 outdf, dfpurge = TestErrorFunctions.AllocationUUID_AA_Check(outdf, dfpurge)
+
+
+# Remove WaDEUUID field from import file (only needed for purge info).
+############################################################################
+print("Drop Assessment WaDEUUID")
+outdf = outdf.drop(['WaDEUUID'], axis=1)
 
 
 # Export to new csv

@@ -48,6 +48,7 @@ Purpose: Pre-process the state agency's input data files and merge them into one
     - Left join *WELLS_wellRegistry.csv* & *GWSI_SITES.csv* together, use **REG_ID** & **REGISTRY_I** fields.
     - Assign groundwater data to WaDE appropriate fields.
     - Remove duplicate rows.
+    - For native water right URL combine "https://www.azwater.gov/gwsi/Detail.aspx?SiteID=" with **SITE_ID**.
 - For surface water data...
     - Read in SW QUERY BY SURFACE WATERSHEDS csv files, concatenate into one long dataframe.
     - Create beneficial use field with **Reg. NO** field.
@@ -57,6 +58,7 @@ Purpose: Pre-process the state agency's input data files and merge them into one
     - For volume data, separate value and unit info out from the **QUANTITY** field.  Volume data will include all values with a **Acre-Feet Per Annum**, **Acre-Feet**, **Acre-Feet Total**, **ACRES**, **CFT - Cubic Feet Total**, **Feet**, **Gallons**, **Gallons Per Annum**, **Miners Inches Per Annum**, and **MIT - Miners Inches Total** unit.  Gallon and Miner's Inches volume data will need to be converted to AF.
     - Assign surface water data to WaDE appropriate fields.
     - Remove duplicate rows.
+    - No useable native water right URL.
 - Concatenate groundwater and surface water data into single output dataframe.
 - Inspect output dataframe for additional errors / datatypes.
 - Export output dataframe as new csv file, *P_ArizonaMaster.csv*.

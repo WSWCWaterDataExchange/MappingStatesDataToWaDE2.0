@@ -45,13 +45,13 @@ outdf.DataQualityValueCV = ""
 
 outdf.DataCoverageValue = ""
 
-outdf.MethodDescription = "Water Rights"
+outdf.MethodDescription = """'The Department of Ecology's Water Resources Program maintains for the State of Washington various documents and records related to existing or requested water rights and water claims. Existing water rights include Certificates and Permits; a Certificate is a water right that has been perfected where as a Permit is an authorization from the State for water use that has not been perfected as yet. An Application is a request for water use that has not as yet been given authorization and Claims are documents submitted to the State during past Claims Registries authorized by the legislature. Pertinent information contained within these documents has been put into the Water Right Tracking System (WRTS) database. The spatial components (place of water use and the source location) of these documents have been put into the Geographic Water right Information System (GWIS) database. Please read the following section describing the legalities concerning the use of this information."""
 
-outdf.MethodName = "Washington Water Rights"
+outdf.MethodName = "Washington Water Rights Method"
 
 outdf.MethodNEMILink = "https://ecology.wa.gov/Water-Shorelines/Water-supply/Water-rights"
 
-outdf.MethodTypeCV = "Adjudicated"
+outdf.MethodTypeCV = "Legal Processes"
 
 # Check required fields are not null
 ############################################################################

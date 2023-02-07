@@ -47,13 +47,13 @@ outdf.DataQualityValueCV = ""
 
 outdf.DataCoverageValue = ""
 
-outdf.MethodDescription = "Water rights for Nebraska."
+outdf.MethodDescription = """To the fullest extent permissible by applicable law, in no event shall DNR be liable to the user or any other third party for any costs of procurement of substitute goods or services, personal injury, property damage, lost profits, lost revenue, lost data, or any form of indirect, special, incidental, consequential or punitive damages from any causes of action arising out of or related to this agreement and the information, whether arising in tort, contract, strict liability or otherwise, whether even if DNR has been advised of the possibility of such damages.  Nebraska department of natural resources digitized surface water rights may be a geo-referenced interpretation of an approved paper project map and may"""
 
-outdf.MethodName = "Nebraska Water Rights"
+outdf.MethodName = "Nebraska Water Rights Method"
 
-outdf.MethodNEMILink = ""
+outdf.MethodNEMILink = "https://dnr.nebraska.gov/surface-water/ownership-preview-groundwater-wells-and-surface-water-rights"
 
-outdf.MethodTypeCV = "Modeled"
+outdf.MethodTypeCV = "Legal Processes"
 
 # Check required fields are not null
 ############################################################################

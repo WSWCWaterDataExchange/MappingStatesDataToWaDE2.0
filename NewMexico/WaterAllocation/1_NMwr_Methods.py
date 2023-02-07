@@ -45,13 +45,13 @@ outdf.DataQualityValueCV = ""
 
 outdf.DataCoverageValue = ""
 
-outdf.MethodDescription = "Water Allocation"
+outdf.MethodDescription = """This data represents the locations of points of diversion within the State of New Mexico administered by the NM OSE as of December 2022. This dataset has a data dictionary that can be downloaded here.  The NM Office of the State Engineer (OSE) "Point of Diversions" (POD) layer includes well locations, surface declarations, or surface permits. These data were extracted from the OSE W.A.T.E.R.S. (Water Administration Technical Engineering Resource System) database and geo-located (mapped). These data have varying degrees of accuracy and have not been validated. This message is to alert users of this data to various changes regarding how this POD data is generated and maintained by the NM Office of the State Engineer. In addition, all attribute fields are fully described in the metadata, including descriptions of field codes. Please read the metadata accompanying this GIS data layer for further information. Any questions regarding this GIS data should be directed NM OSE Information Technology Systems Bureau GIS at the contact information given below. Stephen N. Hayes NMOSE ITSB GIS Data Manager(505) 827-6321 PO Box 25102 Santa Fe, NM 87504 stephen.hayes@state.nm.us"""
 
-outdf.MethodName = "Water Allocation"
+outdf.MethodName = "New Mexico Water Rights Method"
 
-outdf.MethodNEMILink = "http://geospatialdata-ose.opendata.arcgis.com/search?groupIds=fabf18d6e0634ae38c86475c9ad a6498"
+outdf.MethodNEMILink = "https://www.ose.state.nm.us/WR/WRindex.php"
 
-outdf.MethodTypeCV = "Adjudicated"
+outdf.MethodTypeCV = "Legal Processes"
 
 
 # Check required fields are not null

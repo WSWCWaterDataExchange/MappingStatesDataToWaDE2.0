@@ -77,6 +77,15 @@ columnslist = [
 # Custom Functions
 ############################################################################
 
+# For filling in Unspecified when null
+def assignBlankUnspecified(val):
+    val = str(val).strip()
+    if val == "" or pd.isnull(val):
+        outString = "Unspecified"
+    else:
+        outString = val
+    return outString
+
 # For retrieving SiteUUID
 SitUUIDdict = pd.Series(df_sites.SiteUUID.values, index = df_sites.SiteNativeID).to_dict()
 def retrieveSiteUUID(colrowValue):
@@ -126,7 +135,7 @@ print("AllocationAssociatedWithdrawalSiteIDs")
 outdf['AllocationAssociatedWithdrawalSiteIDs'] = ""
 
 print("AllocationBasisCV")
-outdf['AllocationBasisCV'] = "Unspecified"
+outdf['AllocationBasisCV'] = ""
 
 print("AllocationChangeApplicationIndicator")
 outdf['AllocationChangeApplicationIndicator'] = ""
@@ -144,13 +153,13 @@ print("AllocationFlow_CFS")
 outdf['AllocationFlow_CFS'] = ""
 
 print("AllocationLegalStatusCV")
-outdf['AllocationLegalStatusCV'] = df_DM['STATUS']
+outdf['AllocationLegalStatusCV'] = df_DM.apply(lambda row: assignBlankUnspecified(row['STATUS']), axis=1)
 
 print("AllocationNativeID")  # Will use this with a .groupby() statement towards the ends.
 outdf['AllocationNativeID'] = df_DM['PERMIT_NUMBER'].astype(str) # Native dbtype is float. Need to return this value as a string
 
 print("AllocationOwner")
-outdf['AllocationOwner'] = df_DM['in_AllocationOwner']
+outdf['AllocationOwner'] = df_DM.apply(lambda row: assignBlankUnspecified(row['in_AllocationOwner']), axis=1)
 
 print("AllocationPriorityDate")
 outdf['AllocationPriorityDate'] = df_DM['DATE_ISSUED']
@@ -165,13 +174,13 @@ print("AllocationTimeframeStart")
 outdf['AllocationTimeframeStart'] = "01/01"
 
 print("AllocationTypeCV")  # temp fix
-outdf['AllocationTypeCV'] = df_DM['PERMIT_TYPE']
+outdf['AllocationTypeCV'] = df_DM.apply(lambda row: assignBlankUnspecified(row['PERMIT_TYPE']), axis=1)
 
 print("AllocationVolume_AF")
 outdf['AllocationVolume_AF'] = df_DM['TOTAL_PERMITTED_ACRE_FEET']
 
 print("BeneficialUseCategory")
-outdf['BeneficialUseCategory'] = df_DM['PRIMARY_PURPOSE']
+outdf['BeneficialUseCategory'] = df_DM.apply(lambda row: assignBlankUnspecified(row['PRIMARY_PURPOSE']), axis=1)
 
 print("CommunityWaterSupplySystem")
 outdf['CommunityWaterSupplySystem'] = ""

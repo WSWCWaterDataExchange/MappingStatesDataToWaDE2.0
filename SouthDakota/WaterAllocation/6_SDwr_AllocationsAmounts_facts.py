@@ -1,4 +1,4 @@
-#Date Created: 06/23/2022
+#Date Updated: 08/01/2022
 #Purpose: To extract SD wr water right information and populate dataframe for WaDE_QA 2.0.
 #         1) Simple creation of working dataframe (df), with output dataframe (outdf).
 #         2) Drop all nulls before combining duplicate rows on NativeID.
@@ -31,6 +31,7 @@ df_sites = pd.read_csv(sites_fileInput)  # Sites dataframe
 
 #WaDE dataframe columns
 columnslist = [
+    "WaDEUUID",
     "AllocationUUID",
     "MethodUUID",
     "OrganizationUUID",
@@ -74,6 +75,15 @@ columnslist = [
 # Custom Functions
 ############################################################################
 
+# For filling in Unspecified when null
+def assignBlankUnspecified(val):
+    val = str(val).strip()
+    if val == "" or pd.isnull(val):
+        outString = "Unspecified"
+    else:
+        outString = val
+    return outString
+
 # For Creating SiteUUID
 SitUUIDdict = pd.Series(df_sites.SiteUUID.values, index = df_sites.SiteNativeID).to_dict()
 def retrieveSiteUUID(colrowValue):
@@ -85,18 +95,6 @@ def retrieveSiteUUID(colrowValue):
             outList = SitUUIDdict[String1]
         except:
             outList = ''
-    return outList
-
-# For creating BeneficialUseCategory
-def assignBeneficialUseCategory(colrowValue):
-    colrowValue = str(colrowValue).strip()
-    if colrowValue == "" or pd.isnull(colrowValue):
-        outList = "Unspecified"
-    else:
-        try:
-            outList = str(colrowValue).strip()
-        except:
-            outList = "Unspecified"
     return outList
 
 # For creating AllocationUUID
@@ -151,7 +149,7 @@ print("AllocationFlow_CFS")
 outdf['AllocationFlow_CFS'] = df_DM['LIC_CFS']
 
 print("AllocationLegalStatusCV")
-outdf['AllocationLegalStatusCV'] = df_DM['input_Status']
+outdf['AllocationLegalStatusCV'] = df_DM.apply(lambda row: assignBlankUnspecified(row['input_Status']), axis=1)
 
 print("AllocationNativeID")  # Will use this with a .groupby() statement towards the ends.
 outdf['AllocationNativeID'] = df_DM['PERMIT_NO'].astype(str)
@@ -178,7 +176,7 @@ print("AllocationVolume_AF")
 outdf['AllocationVolume_AF'] = ""
 
 print("BeneficialUseCategory")
-outdf['BeneficialUseCategory'] = df_DM.apply(lambda row: assignBeneficialUseCategory(row['input_Benuse']), axis=1)
+outdf['BeneficialUseCategory'] = df_DM.apply(lambda row: assignBlankUnspecified(row['input_Benuse']), axis=1)
 
 print("CommunityWaterSupplySystem")
 outdf['CommunityWaterSupplySystem'] = ""
@@ -231,6 +229,9 @@ outdf['PrimaryBeneficialUseCategory'] = "Unspecified"
 print("WaterAllocationNativeURL")
 outdf['WaterAllocationNativeURL'] = ""
 
+print("Adding Data Assessment UUID")
+outdf['WaDEUUID'] = ""
+
 print("Resetting Index")
 outdf.reset_index()
 
@@ -245,10 +246,14 @@ outdf = outdf[columnslist]  # reorder the dataframe's columns based on columnsli
 # ############################################################################
 print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to upload data to QA here.
 
-# Date Noted: 05/25/2021
 # Note: OwnerClassificationCV can only accept 1 entry at this time. Error due to above merge / we don't allow multiple OwnerClassificationCV.
-def tempfixOCSV(colrowValueA):
-    result = colrowValueA.split(",", 1)[0]  # pass in text, split on "," & return first value.
+def tempfixOCSV(val):
+    valList = val.split(",") # convert string to list
+    valList.sort() # sort list alphabetically
+    if ("In Review" in valList):
+        valList.remove("In Review") # check if "In Review"  If true, remove.
+        valList.append("In Review") # Append back in "In Review" to end of list.
+    result = valList[0] # return only first value in list.
     return result
 outdf['OwnerClassificationCV']  = outdf.apply(lambda row: tempfixOCSV(row['OwnerClassificationCV']), axis=1)
 
@@ -262,7 +267,7 @@ outdf['PrimaryBeneficialUseCategory'] = outdf.apply(lambda row: AssignPrimaryUse
 #Error checking each field
 ############################################################################
 print("Error checking each field.  Purging bad inputs.")
-purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
+purgecolumnslist = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
 dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
 
 # MethodUUID
@@ -386,6 +391,12 @@ outdf['AllocationUUID'] = dftemp.apply(lambda row: assignAllocationUUID(row['Cou
 
 # Error check AllocationUUID
 outdf, dfpurge = TestErrorFunctions.AllocationUUID_AA_Check(outdf, dfpurge)
+
+
+# Remove WaDEUUID field from import file (only needed for purge info).
+############################################################################
+print("Drop Assessment WaDEUUID")
+outdf = outdf.drop(['WaDEUUID'], axis=1)
 
 
 # Export to new csv

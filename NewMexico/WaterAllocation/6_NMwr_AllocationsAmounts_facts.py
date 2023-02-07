@@ -229,7 +229,7 @@ print("PrimaryBeneficialUseCategory")
 outdf['PrimaryBeneficialUseCategory'] = "Unspecified"
 
 print("WaterAllocationNativeURL")
-outdf['WaterAllocationNativeURL'] = ""
+outdf['WaterAllocationNativeURL'] = df_M['nmwrrs_wrs']
 
 print("Adding Data Assessment UUID")
 outdf['WaDEUUID'] = ""

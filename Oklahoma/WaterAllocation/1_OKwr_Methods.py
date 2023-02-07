@@ -46,13 +46,13 @@ outdf.DataQualityValueCV = ""
 
 outdf.DataCoverageValue = ""
 
-outdf.MethodDescription = "The OWRB appropriates stream and groundwater supplies to various water users in the state. Permits are issued for the use of both surface and groundwaters in Oklahoma (domestic uses are exempt) and all waters must be used beneficially without waste."
+outdf.MethodDescription = """The map layers displayed in this map service or viewer were produced from various sources at varying degrees of accuracy and precision. Therefore these maps should only be used for general reference information. Metadata documents are provided for each geographic layer. These documents describe the layer’s purpose and limitations. The data represent the results of data collection and/or processing for the specific Oklahoma Water Resources Board (OWRB) activity or purpose described above. As such, the data are valid only for their use, content, time, and accuracy specifications determined or intended by, or acceptable to, the OWRB. These data are not guaranteed to be useable, timely, accurate, or complete. The user is responsible for any use of these data other than their use by the OWRB, and for the results of any application of the data for other than the purpose intended by the OWRB. Although these data have been processed successfully on a computer system at the OWRB, NEITHER THE STATE OF OKLAHOMA NOR THE OWRB NOR ANY OTHER AGENCY THEREOF, NOR ANY OF THEIR EMPLOYEES, CONTRACTORS, OR SUBCONTRACTORS, MAKE ANY WARRANTY, EXPRESS OR IMPLIED, NOR ASSUME ANY LEGAL LIABILITY OR RESPONSIBILITY FOR OR AS TO THE ACCURACY, COMPLETENESS, USEFULNESS OR MERCHANTABILITY OF ANY DATUM, SOFTWARE, INFORMATION, APPARATUS, PRODUCT, OR PROCESS DISCLOSED, NOR REPRESENT THAT ITS USE WOULD NOT INFRINGE ON PRIVATELY OWNED RIGHTS. NOR SHALL THE ACT OF DISTRIBUTION CONSTITUTE ANY SUCH WARRANTY. THIS DISCLAIMER APPLIES BOTH TO INDIVIDUAL USE OF THE DATA AND AGGREGATE USE WITH OTHER DATA. Conclusions drawn from, or actions undertaken on the basis of, such data and information are the sole responsibility of the user. Users are cautioned to consider carefully the provisional nature of these data and information before using them for decisions that concern personal or public safety or the conduct of business that involves substantial monetary or operational consequences."""
 
-outdf.MethodName = "Oklahoma Water Rights"
+outdf.MethodName = "Oklahoma Water Rights Method"
 
-outdf.MethodNEMILink = "https://owrb.maps.arcgis.com/apps/webappviewer/index.html?id=db6e61cfdbc74a4d8b919b2eceef8d43"
+outdf.MethodNEMILink = "https://www.owrb.ok.gov/wateruse/index.php"
 
-outdf.MethodTypeCV = "Water Allocation"
+outdf.MethodTypeCV = "Legal Processes"
 
 
 # Check required fields are not null

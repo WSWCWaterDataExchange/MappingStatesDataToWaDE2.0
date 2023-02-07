@@ -45,13 +45,13 @@ outdf.DataQualityValueCV = ""
 
 outdf.DataCoverageValue = ""
 
-outdf.MethodDescription = "Water Rights"
+outdf.MethodDescription = """This product is for informational purposes and may not have been prepared for, or be suitable for legal, engineering, or surveying purposes. Users of this information should review or consult the primary data and information sources to ascertain the usability of the information."""
 
-outdf.MethodName = "Oregon Water Rights"
+outdf.MethodName = "Oregon Water Rights Method"
 
-outdf.MethodNEMILink = "https://www.oregon.gov/OWRD/access_Data/Pages/Data.aspx"
+outdf.MethodNEMILink = "https://arcgis.wrd.state.or.us/data/OWRD_WR_GIS_procedures.pdf"
 
-outdf.MethodTypeCV = "Adjudicated"
+outdf.MethodTypeCV = "Legal Processes"
 
 # Check required fields are not null
 ############################################################################

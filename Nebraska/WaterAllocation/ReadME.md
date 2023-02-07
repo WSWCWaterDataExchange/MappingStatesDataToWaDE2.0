@@ -222,6 +222,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
     - *AllocationPriorityDate* = **PriorityDate**.
     - *AllocationTypeCV* = **Status**, Unknown if not given.
     - *BeneficialUseCategory* = **RightUse**, Unknown if not given.  See *0_PreProcessNebraskaAllocationData.ipynb* for specifics on generation.
+    - *WaterAllocationNativeURL* = **RightID** with https://nednr.nebraska.gov/dynamic/WaterRights/WaterRights/SWRDetailPageForPublic?RightId=
 - Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.
 - Perform error check on output dataframe.
 - Export output dataframe *waterallocations.csv*.

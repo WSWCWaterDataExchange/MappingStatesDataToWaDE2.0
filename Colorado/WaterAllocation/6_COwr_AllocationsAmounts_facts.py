@@ -76,6 +76,15 @@ columnslist = [
 # Custom Functions
 ############################################################################
 
+# For filling in Unspecified when null
+def assignBlankUnspecified(val):
+    val = str(val).strip()
+    if val == "" or pd.isnull(val):
+        outString = "Unspecified"
+    else:
+        outString = val
+    return outString
+
 # For creating SiteUUID
 SitUUIDdict = pd.Series(df_sites.SiteUUID.values, index = df_sites.SiteNativeID).to_dict()
 def retrieveSiteUUID(colrowValue):
@@ -145,13 +154,13 @@ print("AllocationFlow_CFS")
 outdf['AllocationFlow_CFS'] = df_M['in_AllocationFlow_CFS']
 
 print("AllocationLegalStatusCV")
-outdf['AllocationLegalStatusCV'] = df_M['in_AllocationLegalStatusCV']
+outdf['AllocationLegalStatusCV'] = df_M.apply(lambda row: assignBlankUnspecified(row['in_AllocationLegalStatusCV']), axis=1)
 
 print("AllocationNativeID")  # Will use this with a .groupby() statement towards the ends.
 outdf['AllocationNativeID'] = df_M['in_AllocationNativeID']
 
 print("AllocationOwner")
-outdf['AllocationOwner'] = 'Unspecified'
+outdf['AllocationOwner'] = "Unspecified"
 
 print("AllocationPriorityDate")
 outdf['AllocationPriorityDate'] = df_M['Appropriation Date']
@@ -163,7 +172,7 @@ print("AllocationTimeframeStart")
 outdf['AllocationTimeframeStart'] = "01/01"
 
 print("AllocationTypeCV")
-outdf['AllocationTypeCV'] = ""
+outdf['AllocationTypeCV'] = "Unspecified"
 
 print("AllocationVolume_AF")
 outdf['AllocationVolume_AF'] = df_M['in_AllocationVolume_AF']
@@ -223,7 +232,7 @@ print("AllocationSDWISIdentifierCV")
 outdf['AllocationSDWISIdentifierCV'] = ""
 
 print("WaterAllocationNativeURL")
-outdf['WaterAllocationNativeURL'] = ""
+outdf['WaterAllocationNativeURL'] = df_M['in_WaterAllocationNativeURL']
 
 print("Adding Data Assessment UUID")
 outdf['WaDEUUID'] = ""

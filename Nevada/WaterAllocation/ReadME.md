@@ -233,6 +233,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
     - *AllocationOwner* = **owner_name**.
     - *AllocationPriorityDate* = **prior_dt**.
     - *BeneficialUseCategory* = **mou**.
+    - *WaterAllocationNativeURL* = **permit_info**
 - Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.
 - Perform error check on output dataframe.
 - Export output dataframe *waterallocations.csv*.

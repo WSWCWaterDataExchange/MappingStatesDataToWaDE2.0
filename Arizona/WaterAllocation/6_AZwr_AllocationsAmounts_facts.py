@@ -78,18 +78,14 @@ columnslist = [
 # Custom Functions
 ############################################################################
 
-# For creating MethodUUID
-MethodUUIDdict = pd.Series(df_method.MethodUUID.values, index = df_method.ApplicableResourceTypeCV).to_dict()
-def retrieveMethodUUID(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outList = ''
+# For filling in Unspecified when null
+def assignBlankUnspecified(val):
+    val = str(val).strip()
+    if val == "" or pd.isnull(val):
+        outString = "Unspecified"
     else:
-        String1 = colrowValue
-        try:
-            outList = MethodUUIDdict[String1]
-        except:
-            outList = ''
-    return outList
+        outString = val
+    return outString
 
 # For creating SiteUUID
 SiteUUIDDdict = pd.Series(df_sites.SiteUUID.values, index = df_sites.SiteNativeID).to_dict()
@@ -117,21 +113,11 @@ def fixAllocationOwner(colrowValue):
         outList = strVal
     return outList
 
-# For creating BeneficialUseCategory
-def assignBeneficialUseCategory(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outList = "Unspecified"
-    else:
-        strVal = str(colrowValue)
-        outList = strVal.strip()
-    return outList
-
 # For creating AllocationUUID
 def assignAllocationUUID(colrowValue):
     string1 = str(colrowValue)
     outstring = "AZwr_WR" + string1
     return outstring
-
 
 
 # Creating output dataframe (outdf)
@@ -141,7 +127,7 @@ print("Populating dataframe outdf...")
 outdf = pd.DataFrame(index=df_DM.index, columns=columnslist)  # The output dataframe
 
 print("MethodUUID")
-outdf['MethodUUID'] = df_DM.apply(lambda row: retrieveMethodUUID(row['in_ApplicableResourceTypeCV']), axis=1)
+outdf['MethodUUID'] = df_DM['in_MethodUUID']
 
 print("OrganizationUUID")
 outdf['OrganizationUUID'] = "AZwr_O1"
@@ -180,7 +166,7 @@ print("AllocationFlow_CFS")
 outdf['AllocationFlow_CFS'] = df_DM['in_AllocationFlow_CFS']
 
 print("AllocationLegalStatusCV")
-outdf['AllocationLegalStatusCV'] = df_DM['in_AllocationLegalStatusCV']
+outdf['AllocationLegalStatusCV'] = df_DM.apply(lambda row: assignBlankUnspecified(row['in_AllocationLegalStatusCV']), axis=1)
 
 print("AllocationNativeID")  # Will use this with a .groupby() statement towards the ends.
 outdf['AllocationNativeID'] = df_DM['in_AllocationNativeID'].astype(str)
@@ -201,13 +187,13 @@ print("AllocationTimeframeStart")
 outdf['AllocationTimeframeStart'] = df_DM['in_AllocationTimeframeStart']
 
 print("AllocationTypeCV")
-outdf['AllocationTypeCV'] = ""
+outdf['AllocationTypeCV'] = "Unspecified"
 
 print("AllocationVolume_AF")
 outdf['AllocationVolume_AF'] = df_DM['in_AllocationVolume_AF']
 
 print("BeneficialUseCategory")
-outdf['BeneficialUseCategory'] = df_DM.apply(lambda row: assignBeneficialUseCategory(row['in_BeneficialUseCategory']), axis=1)
+outdf['BeneficialUseCategory'] = df_DM.apply(lambda row: assignBlankUnspecified(row['in_BeneficialUseCategory']), axis=1)
 
 print("CommunityWaterSupplySystem")
 outdf['CommunityWaterSupplySystem'] = ""
@@ -258,7 +244,7 @@ print("PrimaryBeneficialUseCategory")
 outdf['PrimaryBeneficialUseCategory'] = ""
 
 print("WaterAllocationNativeURL")
-outdf['WaterAllocationNativeURL'] = ""
+outdf['WaterAllocationNativeURL'] = df_DM['in_WaterAllocationNativeURL']
 
 print("Adding Data Assessment UUID")
 outdf['WaDEUUID'] = ""

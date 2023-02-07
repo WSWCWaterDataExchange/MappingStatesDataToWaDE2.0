@@ -164,7 +164,7 @@ print("AllocationFlow_CFS")
 outdf['AllocationFlow_CFS'] = ""
 
 print("AllocationLegalStatusCV")
-outdf['AllocationLegalStatusCV'] = ""
+outdf['AllocationLegalStatusCV'] = "Unspecified"
 
 print("AllocationNativeID")  # Will use this with a .groupby() statement towards the ends.
 outdf['AllocationNativeID'] = df_DM['WR_ID']
@@ -173,7 +173,7 @@ print("AllocationOwner")
 outdf['AllocationOwner'] = df_DM['in_AllocationOwner']
 
 print("AllocationPriorityDate")
-outdf['AllocationPriorityDate'] = "06/24/2020"
+outdf['AllocationPriorityDate'] = ""
 
 print("AllocationSDWISIdentifierCV")
 outdf['AllocationSDWISIdentifierCV'] = ""
@@ -185,7 +185,7 @@ print("AllocationTimeframeStart")
 outdf['AllocationTimeframeStart'] = ""
 
 print("AllocationTypeCV")
-outdf['AllocationTypeCV'] = ''
+outdf['AllocationTypeCV'] = "Unspecified"
 
 print("AllocationVolume_AF")
 outdf['AllocationVolume_AF'] = ""

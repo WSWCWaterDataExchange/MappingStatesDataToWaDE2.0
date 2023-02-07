@@ -234,6 +234,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
     - *AllocationVolume_AF* == **restrict_** input, as float.
     - *BeneficialUseCategory* = **use_** input, , see *0_NM_PreProcessNewMexicoAllocationData.ipynb* for specifics.
     - *IrrigatedAcreage* = **total_div** input.
+    - *WaterAllocationNativeURL* = **nmwrrs_wrs**
 - Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.
 - Perform error check on output dataframe.
 - Export output dataframe *waterallocations.csv*.

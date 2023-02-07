@@ -73,6 +73,15 @@ columnslist = [
 # Custom Functions
 ############################################################################
 
+# For filling in Unspecified when null
+def assignBlankUnspecified(val):
+    val = str(val).strip()
+    if val == "" or pd.isnull(val):
+        outString = "Unspecified"
+    else:
+        outString = val
+    return outString
+
 # For creating SiteUUID
 SitUUIDdict = pd.Series(df_sites.SiteUUID.values, index = df_sites.SiteNativeID).to_dict()
 def retrieveSiteUUID(colrowValue):
@@ -127,7 +136,6 @@ benUseDict = {
     "TW-P":"Trust water, Permanent",
     "TW-T":"Trust water, Temporary",
     "WL":"Wildlife refuge"}
-
 def assignBenUseCategory(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = "Unspecified"
@@ -198,7 +206,7 @@ print("AllocationAssociatedWithdrawalSiteIDs")
 outdf['AllocationAssociatedWithdrawalSiteIDs'] = ""
 
 print("AllocationBasisCV")
-outdf['AllocationBasisCV'] = "Unspecified"
+outdf['AllocationBasisCV'] = ""
 
 print("AllocationChangeApplicationIndicator")
 outdf['AllocationChangeApplicationIndicator'] = ""

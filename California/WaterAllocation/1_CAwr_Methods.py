@@ -38,10 +38,11 @@ inpVals = [
     "",
     "",
     "",
-    "Water Rights.",
-    "California Water Rights",
-    "https://www.waterboards.ca.gov/waterrights/water_issues/programs/ewrims/",
-    "Adjudicated"]
+    """A Water Right is a property right that is either conditional or absolute and conveys the right to use a particular amount of water, with a specified priority date as confirmed by the water court. The Net Amounts List contains the current status of a water right based on all of its court decreed actions."""
+    ,
+    "California Water Rights Method",
+    "https://www.waterboards.ca.gov/waterrights/board_info/faqs.html#toc178761079",
+    "Legal Processes"]
 
 outdf = pd.DataFrame([inpVals], columns=columnslist)
 

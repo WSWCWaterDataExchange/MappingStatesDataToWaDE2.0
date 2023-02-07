@@ -74,6 +74,15 @@ columnslist = [
 # Custom Functions
 ############################################################################
 
+# For filling in Unspecified when null
+def assignBlankUnspecified(val):
+    val = str(val).strip()
+    if val == "" or pd.isnull(val):
+        outString = "Unspecified"
+    else:
+        outString = val
+    return outString
+
 # For Creating SiteUUID
 SitUUIDdict = pd.Series(df_sites.SiteUUID.values, index = df_sites.SiteNativeID).to_dict()
 def retrieveSiteUUID(colrowValue):
@@ -85,18 +94,6 @@ def retrieveSiteUUID(colrowValue):
             outList = SitUUIDdict[String1]
         except:
             outList = ''
-    return outList
-
-# For creating BeneficialUseCategory
-def assignBeneficialUseCategory(colrowValue):
-    colrowValue = str(colrowValue).strip()
-    if colrowValue == "" or pd.isnull(colrowValue):
-        outList = "Unspecified"
-    else:
-        try:
-            outList = str(colrowValue).strip()
-        except:
-            outList = "Unspecified"
     return outList
 
 # For creating AllocationUUID
@@ -165,7 +162,7 @@ print("AllocationFlow_CFS")
 outdf['AllocationFlow_CFS'] = ""
 
 print("AllocationLegalStatusCV")
-outdf['AllocationLegalStatusCV'] = df_DM['WR_STATUS']
+outdf['AllocationLegalStatusCV'] = df_DM.apply(lambda row: assignBlankUnspecified(row['WR_STATUS']), axis=1)
 
 print("AllocationNativeID")  # Will use this with a .groupby() statement towards the ends.
 outdf['AllocationNativeID'] = df_DM['WR_WATER_RIGHT_ID'].astype(str)
@@ -186,13 +183,13 @@ print("AllocationTimeframeStart")
 outdf['AllocationTimeframeStart'] = df_DM['in_AllocationTimeframeStart']
 
 print("AllocationTypeCV")
-outdf['AllocationTypeCV'] = df_DM['WR_TYPE']
+outdf['AllocationTypeCV'] = df_DM.apply(lambda row: assignBlankUnspecified(row['WR_TYPE']), axis=1)
 
 print("AllocationVolume_AF")
 outdf['AllocationVolume_AF'] = df_DM['FACE_VALUE_AMOUNT']
 
 print("BeneficialUseCategory")
-outdf['BeneficialUseCategory'] = df_DM.apply(lambda row: assignBeneficialUseCategory(row['USE_CODE']), axis=1)
+outdf['BeneficialUseCategory'] = df_DM.apply(lambda row: assignBlankUnspecified(row['USE_CODE']), axis=1)
 
 print("CommunityWaterSupplySystem")
 outdf['CommunityWaterSupplySystem'] = ""
