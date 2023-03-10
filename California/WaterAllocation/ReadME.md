@@ -52,6 +52,7 @@ Purpose: generate legend of granular methods used on data collection.
 
 #### Inputs:
 $${\color{red}Create  \space by  \space hand}$$
+$${\color{green}Greenish}$$
 
 #### Outputs:
 - methods.csv
