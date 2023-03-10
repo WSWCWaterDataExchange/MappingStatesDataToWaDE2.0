@@ -1,6 +1,6 @@
-# Date Update: 05/06/2022
-#Purpose: To extract AZ variable information and populate dataframe for WaDE_QA 2.0.
-#Notes: N/A
+# Date Update: 03/02/2023
+# Purpose: To extract AZ variable information and populate dataframe for WaDE_QA 2.0.
+# Notes: N/A
 
 
 # Needed Libraries
@@ -10,42 +10,48 @@ import numpy as np
 import pandas as pd
 
 
+# Custom Libraries
+############################################################################
+import sys
+# columns
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/MappingFunctions")
+import GetColumnsFile
+
+
 # Inputs
 ############################################################################
 print("Reading inputs...")
 workingDir = "G:/Shared drives/WaDE Data/Arizona/WaterAllocation"
 os.chdir(workingDir)
 
-#WaDE columns
-columnslist = [
-    "VariableSpecificUUID",
-    "AggregationInterval",
-    "AggregationIntervalUnitCV",
-    "AggregationStatisticCV",
-    "AmountUnitCV",
-    "MaximumAmountUnitCV",
-    "ReportYearStartMonth",
-    "ReportYearTypeCV",
-    "VariableCV",
-    "VariableSpecificCV"]
+# WaDE columns
+VariablesColumnsList = GetColumnsFile.GetVariablesColumnsFunction()
 
 
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-inpVals = [
-    "AZwr_V1",
-    "1",
-    "Year",
-    "Average",
-    "CFS",
-    "AFY",
-    "10",
-    "WaterYear",
-    "Consumptive Use",
-    "Consumptive Use"]
+outdf = pd.DataFrame(columns=VariablesColumnsList)
 
-outdf = pd.DataFrame([inpVals], columns=columnslist)
+outdf.VariableSpecificUUID = ['AZwr_V1', 'AZwr_V2']
+
+outdf.AggregationInterval = "1"
+
+outdf.AggregationIntervalUnitCV = "Year"
+
+outdf.AggregationStatisticCV = "Average"
+
+outdf.AmountUnitCV = ['CFS', 'AFY']
+
+outdf.MaximumAmountUnitCV = ['CFS', 'AFY']
+
+outdf.ReportYearStartMonth = "11"
+
+outdf.ReportYearTypeCV = "WaterYear"
+
+outdf.VariableCV = "Allocation"
+
+outdf.VariableSpecificCV = "Allocation"
 
 
 # Check required fields are not null

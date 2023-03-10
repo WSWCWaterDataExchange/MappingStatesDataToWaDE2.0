@@ -1,6 +1,7 @@
-# Date Update: 05/06/2022
-#Purpose: To extract AZ site information and populate dataframe for WaDE_QA 2.0.
-#Notes: N/A
+# Date Update: 03/02/2023
+# Purpose: To extract AZ site information and populate dataframe for WaDE_QA 2.0.
+# Notes: N/A
+
 
 # Needed Libraries
 ############################################################################
@@ -12,8 +13,13 @@ import pandas as pd
 # Custom Libraries
 ############################################################################
 import sys
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/CustomFunctions/ErrorCheckCode")
-import TestErrorFunctions
+# columns
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/MappingFunctions")
+import GetColumnsFile
+
+# Test WaDE Data for any Errors
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
+import TestErrorFunctionsFile
 
 
 # Inputs
@@ -21,35 +27,15 @@ import TestErrorFunctions
 print("Reading input csv...")
 workingDir = "G:/Shared drives/WaDE Data/Arizona/WaterAllocation"
 os.chdir(workingDir)
-fileInput = "RawinputData/P_ArizonaMaster.csv"
+fileInput = "RawinputData/Pwr_AZMain.csv"
 df = pd.read_csv(fileInput)
 
 watersources_fileInput = "ProcessedInputData/watersources.csv"
 df_watersources = pd.read_csv(watersources_fileInput)  # WaterSources dataframe
 
-columnslist = [
-    "SiteUUID",
-    "RegulatoryOverlayUUIDs",
-    "WaterSourceUUIDs",
-    "CoordinateAccuracy",
-    "CoordinateMethodCV",
-    "County",
-    "EPSGCodeCV",
-    "Geometry",
-    "GNISCodeCV",
-    "HUC12",
-    "HUC8",
-    "Latitude",
-    "Longitude",
-    "NHDNetworkStatusCV",
-    "NHDProductCV",
-    "PODorPOUSite",
-    "SiteName",
-    "SiteNativeID",
-    "SitePoint",
-    "SiteTypeCV",
-    "StateCV",
-    "USGSSiteID"]
+# WaDE columns
+SitesColumnsList = GetColumnsFile.GetSitesColumnsFunction()
+
 
 # Custom Functions
 ############################################################################
@@ -64,25 +50,6 @@ def retrieveWaterSourceUUID(colrowValue):
         outList = WaterSourceUUIDdict[strVal]
     return outList
 
-# For creating SiteNativeID
-def assignSiteNativeID(colrowValue):
-    strVal = str(colrowValue)
-    strVal = strVal.strip()
-    if strVal == '' or pd.isnull(strVal):
-        outList = "Unspecified"
-    else:
-        outList = strVal
-    return outList
-
-# For creating SiteTypeCV
-def assignSiteTypeCV(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outList = "Unspecified"
-    else:
-        strVal = str(colrowValue)
-        outList = strVal.strip()
-    return outList
-
 # For creating SiteUUID
 def assignSiteUUID(colrowValue):
     string1 = str(colrowValue)
@@ -93,7 +60,7 @@ def assignSiteUUID(colrowValue):
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-outdf = pd.DataFrame(columns=columnslist, index=df.index)
+outdf = pd.DataFrame(index=df.index, columns=SitesColumnsList)  # The output dataframe for CSV.
 
 print("WaterSourceUUIDs")
 outdf['WaterSourceUUIDs'] = df.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
@@ -102,10 +69,10 @@ print("RegulatoryOverlayUUIDs")
 outdf['RegulatoryOverlayUUIDs'] = ""
 
 print("CoordinateAccuracy")
-outdf['CoordinateAccuracy'] = "Unspecified"
+outdf['CoordinateAccuracy'] = "WaDE_Unspecified"
 
 print("CoordinateMethodCV")
-outdf['CoordinateMethodCV'] = "Unspecified"
+outdf['CoordinateMethodCV'] = "WaDE_Unspecified"
 
 print("County")
 outdf['County'] = df['in_County']
@@ -144,19 +111,22 @@ print("SiteName")
 outdf['SiteName'] = df['in_SiteName']
 
 print("SiteNativeID")
-outdf['SiteNativeID'] = df.apply(lambda row: assignSiteNativeID(row['in_SiteNativeID']), axis=1)
+outdf['SiteNativeID'] = df['in_SiteNativeID']
 
 print("SitePoint")
 outdf['SitePoint'] = ""
 
 print("SiteTypeCV")
-outdf['SiteTypeCV'] = df.apply(lambda row: assignSiteTypeCV(row['in_SiteTypeCV']), axis=1)
+outdf['SiteTypeCV'] = df['in_SiteTypeCV']
 
 print("StateCV")
 outdf['StateCV'] = "AZ"
 
 print("USGSSiteID")
 outdf['USGSSiteID'] = ""
+
+print("Adding Data Assessment UUID")
+outdf['WaDEUUID'] = df['WaDEUUID']
 
 print("Resetting Index")
 outdf.reset_index()
@@ -165,77 +135,18 @@ print("Joining outdf duplicates based on key fields...")
 outdf = outdf.replace(np.nan, "")  # Replaces NaN values with blank.
 groupbyList = ['PODorPOUSite', 'SiteNativeID', 'SiteName', 'SiteTypeCV', 'Longitude', 'Latitude']
 outdf = outdf.groupby(groupbyList).agg(lambda x: ','.join([str(elem) for elem in (list(set(x))) if elem!=''])).replace(np.nan, "").reset_index()
-outdf = outdf[columnslist]  # reorder the dataframe's columns based on columnslist
+outdf = outdf[SitesColumnsList]  # reorder the dataframe's columns based on columnslist
 
 
 #Error Checking each Field
 ############################################################################
-print("Error checking each field.  Purging bad inputs.")
-purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
-dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
-
-# RegulatoryOverlayUUIDs
-outdf, dfpurge = TestErrorFunctions.RegulatoryOverlayUUIDs_S_Check(outdf, dfpurge)
-
-# WaterSourceUUIDs
-outdf100, dfpurge = TestErrorFunctions.WaterSourceUUIDs_S_Check(outdf, dfpurge)
-
-# CoordinateAccuracy
-outdf, dfpurge = TestErrorFunctions.CoordinateAccuracy_S_Check(outdf, dfpurge)
-
-# CoordinateMethodCV
-outdf, dfpurge = TestErrorFunctions.CoordinateMethodCV_S_Check(outdf, dfpurge)
-
-# County
-outdf, dfpurge = TestErrorFunctions.County_S_Check(outdf, dfpurge)
-
-# EPSGCodeCV
-outdf, dfpurge = TestErrorFunctions.EPSGCodeCV_S_Check(outdf, dfpurge)
-
-# Geometry
-# ???? How to check for geometry datatype
-
-# GNISCodeCV
-outdf, dfpurge = TestErrorFunctions.GNISCodeCV_S_Check(outdf, dfpurge)
-
-# HUC12
-outdf, dfpurge = TestErrorFunctions.HUC12_S_Check(outdf, dfpurge)
-
-# HUC8
-outdf, dfpurge = TestErrorFunctions.HUC8_S_Check(outdf, dfpurge)
-
-# Latitude
-outdf, dfpurge = TestErrorFunctions.Latitude_S_Check(outdf, dfpurge)
-
-# Longitude
-outdf, dfpurge = TestErrorFunctions.Longitude_S_Check(outdf, dfpurge)
-
-# NHDNetworkStatusCV
-outdf, dfpurge = TestErrorFunctions.NHDNetworkStatusCV_S_Check(outdf, dfpurge)
-
-# NHDProductCV
-outdf, dfpurge = TestErrorFunctions.NHDProductCV_S_Check(outdf, dfpurge)
-
-# PODorPOUSite
-outdf, dfpurge = TestErrorFunctions.PODorPOUSite_S_Check(outdf, dfpurge)
-
-# # SiteName
-outdf, dfpurge = TestErrorFunctions.SiteName_S_Check(outdf, dfpurge)
-
-# SiteNativeID
-outdf, dfpurge = TestErrorFunctions.SiteNativeID_S_Check(outdf, dfpurge)
-
-# SitePoint
-# ???? How to check for geometry datatype
-
-# SiteTypeCV
-outdf, dfpurge = TestErrorFunctions.SiteTypeCV_S_Check(outdf, dfpurge)
-
-# StateCV
-outdf, dfpurge = TestErrorFunctions.StateCV_S_Check(outdf, dfpurge)
-
-# USGSSiteID
-outdf, dfpurge = TestErrorFunctions.USGSSiteID_S_Check(outdf, dfpurge)
+print("Error checking each field. Purging bad inputs.")
+dfpurge = pd.DataFrame(columns=SitesColumnsList) # Purge DataFrame to hold removed elements
+dfpurge['ReasonRemoved'] = ""
+dfpurge['IncompleteField'] = ""
+outdf, dfpurge = TestErrorFunctionsFile.SiteTestErrorFunctions(outdf, dfpurge)
+print(f'Length of outdf DataFrame: ', len(outdf))
+print(f'Length of dfpurge DataFrame: ', len(dfpurge))
 
 
 ############################################################################
@@ -246,18 +157,19 @@ dftemp["Count"] = range(1, len(dftemp.index) + 1)
 outdf['SiteUUID'] = dftemp.apply(lambda row: assignSiteUUID(row['Count']), axis=1)
 
 # Error check SiteUUID
-outdf, dfpurge = TestErrorFunctions.SiteUUID_S_Check(outdf, dfpurge)
+outdf, dfpurge = TestErrorFunctionsFile.SiteUUID_S_Check(outdf, dfpurge)
 
 
 # Export to new csv
 ############################################################################
-print("Exporting outdf and dfpurge dataframes...")
+print("Exporting dataframe...")
 
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/sites.csv', index=False)
 
 # Report purged values.
-if(len(dfpurge.index) > 0):
-    dfpurge.to_excel('ProcessedInputData/sites_missing.xlsx', index=False)
+if(len(dfpurge.index) > 0): print(f'...', len(dfpurge),  ' records removed.')
+dfpurge.insert(0, 'ReasonRemoved', dfpurge.pop('ReasonRemoved'))
+dfpurge.to_excel('ProcessedInputData/sites_missing.xlsx', index=False, freeze_panes=(1,1))
 
-print("Done.")
+print("Done")

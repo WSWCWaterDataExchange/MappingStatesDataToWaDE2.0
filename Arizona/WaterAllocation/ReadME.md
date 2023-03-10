@@ -5,21 +5,19 @@ This readme details the process that was applied by the staff of the [Western St
 ## Overview of Source Data Utilized
 The following data was used for water allocations...
 
-- [SW QUERY BY SURFACE WATERSHEDS](http://www.azwater.gov/querycenter/query.aspx?qrysessionid=ABBBE0BF2A68326CE040000A16005CA1) for surface water point of diversion data (SW QUERY BY SURFACE WATERSHEDS).
-- [Surface Water Data](https://new.azwater.gov/gis) for surface water point of diversion and place of use data (SWR_fillings).
-- [Wells 55 Registry](https://new.azwater.gov/gis) point of diversion groundwater data (WELLS_wellRegistry).
-- [Groundwater Site Inventory](https://new.azwater.gov/gis) for location information for groundwater data (GWSI_SITES).
+- [SW QUERY BY SURFACE WATERSHEDS](https://www.azwater.gov/querycenter/query.aspx?qrysessionid=ABBBE0BF2A68326CE040000A16005CA1) for surface water right data (SW QUERY BY SURFACE WATERSHEDS).  Downloaded used all washed under the 'ACTIVE' status.
+- [Fillings.shp] for location information related to the SW QUERY BY SURFACE WATERSHEDS data. Provided by personal correspondence with ADWR via email.
+- [Well Registry](https://gisdata2016-11-18t150447874z-azwater.opendata.arcgis.com/datasets/34c92af536ec4047aeaf9d93053dc317_0/explore?location=34.103087%2C-111.970052%2C7.92) for groundwater water right data.  Contains use and location info. 
 
 
-## Storage for WaDE 2.0 Source and Processed Water Data
-The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+## Storage for input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
 - Arizona Allocation Data: https://drive.google.com/drive/folders/1qxIpa1mGkvChepI4PA7xzIEbs7xuPSJZ?usp=sharing
 
 
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share ADWR's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see **AZ_SW_Allocation Schema Mapping to WaDE_QA.xlsx** and **AZ_GW_Allocation Schema Mapping to WaDE_QA.xlsx**.  Six executable code files were used to extract the ADWR's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those six code files are as follows...
 
-- 0_PreProcessArizonaAllocationData.ipynb
+- 0_AZwr_PreProcessAllocationData.ipynb
 - 1_AZ_Methods.py
 - 2_AZ_Variables.py
 - 3_AZ_Organizations.py
@@ -30,38 +28,31 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 
 
 ***
-### 0) Code File: 0_PreProcessArizonaAllocationData.ipynb
+### 0) Code File: 0_AZwr_PreProcessAllocationData.ipynb
 Purpose: Pre-process the state agency's input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
- - WELLS_wellRegistry.csv
- - GWSI_SITES.csv
- - SWR_fillings.csv
- - SW QUERY BY SURFACE WATERSHEDS csv files
+ - SW QUERY BY SURFACE WATERSHEDS
+ - Fillings.shp
+ - Well Registry
 
 #### Outputs:
- - P_ArizonaMaster.csv
+ - Pwr_AZMain.csv
 
 #### Operation and Steps:
-- Read the input files and generate temporary input dataframes for groundwater and surface water.  Processes outline consits of combning the two datasets into one workable dataframe. 
-- For groundwater data...
-    - Left join *WELLS_wellRegistry.csv* & *GWSI_SITES.csv* together, use **REG_ID** & **REGISTRY_I** fields.
-    - Assign groundwater data to WaDE appropriate fields.
-    - Remove duplicate rows.
-    - For native water right URL combine "https://www.azwater.gov/gwsi/Detail.aspx?SiteID=" with **SITE_ID**.
-- For surface water data...
+- Read the input files and generate temporary input dataframes for groundwater and surface water.  Processes outline consist of combining the two datasets into one workable dataframe. 
+- Specific for surface water data...
     - Read in SW QUERY BY SURFACE WATERSHEDS csv files, concatenate into one long dataframe.
-    - Create beneficial use field with **Reg. NO** field.
-    - Left join *SWR_fillings.csv* & SW QUERY BY SURFACE WATERSHEDS csv files together, use **FILE_NO** & **REG. NO** fields.
-    - Create WaDE *latitude* and *longitude* fields by converting **UTM_X_METE** & **UTM_Y_METE** to utm & dWGS84 projection.
-    - For flow data, separate value and unit info out from the **QUANTITY** field.  CFS data will include all values with a **Cubic Feet Per Second** unit.
-    - For volume data, separate value and unit info out from the **QUANTITY** field.  Volume data will include all values with a **Acre-Feet Per Annum**, **Acre-Feet**, **Acre-Feet Total**, **ACRES**, **CFT - Cubic Feet Total**, **Feet**, **Gallons**, **Gallons Per Annum**, **Miners Inches Per Annum**, and **MIT - Miners Inches Total** unit.  Gallon and Miner's Inches volume data will need to be converted to AF.
-    - Assign surface water data to WaDE appropriate fields.
-    - Remove duplicate rows.
-    - No useable native water right URL.
+    - Clean **REG. NO'** field by removing excess 0 markers.  Used to match with **FILENO** in Fillings.shp input.
+    - For amount data, separate value and unit info out from the **QUANTITY** field.
+    - TEMP FIX: Drop the following unknown measurement of units for the following terms: 'ACRES', 'Amount Required for Maintenance', 'Feet', 'MIT - Miners Inches Total', 'Miners Inches Per Annum',  'XX - Unknown Code at Load time', 'None',  '',  " ".
+    - Note unique unit of amounts as either CSF or AF.
+    - Units with CFS include 'Cubic Feet Per Second', Acre-Feet Per Annum (converted to CFS by / 723.968), 'Gallons Per Annum' (converted to CFS by / 235905662.34).
+    - Units with AF include 'Acre-Feet', 'Acre-Feet Total', 'CFT - Cubic Feet Total' (converted to AF by / 43559.9), 'Gallons' (converted to AF by / 325850.943).
+    - Convert **X_UTMNAD83** and **Y_UTMNAD83** input fields to match WGS84 projection and create *latitude* and *longitude* values.
 - Concatenate groundwater and surface water data into single output dataframe.
 - Inspect output dataframe for additional errors / datatypes.
-- Export output dataframe as new csv file, *P_ArizonaMaster.csv*.
+- Export output dataframe as new csv file, *Pwr_AZMain.csv*.
 
 
 ***
@@ -113,6 +104,7 @@ Purpose: generate legend of granular variables specific to each state.
 VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
 ---------- | ---------- | ------------ | ------------
 AZwr_V1 | 1 | Year | CFS
+AZwr_V2 | 1 | Year | AF
 
 
 ***
@@ -145,7 +137,7 @@ AZwr_O1 | Arizona Department of Water Resources| Lisa Williams | http://gisdata-
 Purpose: generate a list of water sources specific to a water right.
 
 #### Inputs:
-- P_ArizonaMaster.csv
+- Pwr_AZMain.csv
 
 #### Outputs:
 - waterSources.csv
@@ -178,7 +170,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 Purpose: generate a list of sites where water is diverted (also known as Points Of Diversion, PODs).
 
 #### Inputs:
-- P_ArizonaMaster.csv
+- Pwr_AZMain.csv
 
 #### Outputs:
 - sites.csv
@@ -190,8 +182,8 @@ Purpose: generate a list of sites where water is diverted (also known as Points 
 - Assign state agency info to the *WaDE Site* specific columns.  See **AZ_SW_Allocation Schema Mapping to WaDE_QA.xlsx** and **AZ_GW_Allocation Schema Mapping to WaDE_QA.xlsx** for specific details.  Items of note are as follows...
     - Extract *WaterSourceUUID* from watersource.csv input file. See code for specific implementation of extraction.
     - *County* = **COUNTY** for both gw and sw data.
-    - *Latitude* = converted **UTM_Y_METE** projection from ADWR EPSG:2927 -to- WaDE EPSG:4326, see *0_PreProcessArizonaAllocationData.ipynb* for details.
-    - *Longitude* = converted **UTM_Y_METE**  to utm & dWGS84 projection, see *0_PreProcessArizonaAllocationData.ipynb* for details.
+    - *Latitude* = converted **UTM_Y_METE** projection from ADWR EPSG:2927 -to- WaDE EPSG:4326, see *0_AZwr_PreProcessAllocationData.ipynb* for details.
+    - *Longitude* = converted **UTM_Y_METE**  to utm & dWGS84 projection, see *0_AZwr_PreProcessAllocationData.ipynb* for details.
     - *SiteNativeID* = **REGISTRY_I** for gw & **CADASTRAL** for sw, Unspecified if blank.
     - *SiteTypeCV* = **WELL_TYPE_** for gw & Unspecified for sw, Unspecified if blank.
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *SiteNativeID*, *SiteTypeCV*, *Longitude*, and *Latitude* fields.
@@ -216,7 +208,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 
 #### Inputs:
-- P_ArizonaMaster.csv
+- Pwr_AZMain.csv
 - methods.csv
 - variables.csv
 - organizations.csv
@@ -232,13 +224,13 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
 - Assign state agency info to the *WaDE Water Allocations* specific columns.  See **AZ_SW_Allocation Schema Mapping to WaDE_QA.xlsx** and **AZ_GW_Allocation Schema Mapping to WaDE_QA.xlsx** for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
-    - *AllocationFlow_CFS* =**QUANTITY**, see *0_PreProcessArizonaAllocationData.ipynb* for specifics.
+    - *AllocationFlow_CFS* =**QUANTITY**, see *0_AZwr_PreProcessAllocationData.ipynb* for specifics.
     - *AllocationLegalStatusCV* = **STATUS_x** for sw.
     - *AllocationNativeID* = **REGISTRY_I** for gw & **FILE_NO** for sw.
     - *AllocationOwner* = **OWNER_NAME** for gw & **HLDRNAME** for sw.
     - *AllocationPriorityDate* = **PRIOR_DATE** for sw.
     - *AllocationLegalStatus* = **WELL_TYPE_** for gw.
-    - *BeneficialUseCategory* = **WATER_USE** for gw & **REG. NO** for sw, see *0_PreProcessArizonaAllocationData.ipynb* for specifics.
+    - *BeneficialUseCategory* = **WATER_USE** for gw & **REG. NO** for sw, see *0_AZwr_PreProcessAllocationData.ipynb* for specifics.
     - *IrrigatedAcreage* - **IrrigatedAreaQuantity**.
 - Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.
 - Perform error check on output dataframe.
@@ -262,7 +254,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 
 ***
-### 7) Code File: 7_UTwr_PODSiteToPOUSiteRelationships.py
+### 7) Code File: 7_AZwr_PODSiteToPOUSiteRelationships.py
 Purpose: generate linking element between POD and POU sites that share the same water right.
 Note: podsitetopousiterelationships.csv output only needed if both POD and POU data is present, otherwise produces empty file.
 
@@ -288,6 +280,11 @@ Note: podsitetopousiterelationships.csv output only needed if both POD and POU d
 - Explode the consolidated waterallocations dataframe again using the *PODSiteUUID* field, and again for the *POUSiteUUID* field to create unique rows.
 - Perform error check on waterallocations dataframe (check for NaN values)
 - If waterallocations is not empty, export output dataframe *podsitetopousiterelationships.csv*.
+
+
+***
+### 8) Code File: 8_AZwr_WaDEDataAssessmentScript.py
+Purpose: generate visuals and analytics used by the WaDE staff to inspect the processed data.
 
 
 ***

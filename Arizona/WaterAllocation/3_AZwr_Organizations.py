@@ -1,6 +1,6 @@
-# Date Update: 05/06/2022
-#Purpose: To extract AZ organization information and populate dataframe for WaDE_QA 2.0.
-#Notes: N/A
+# Date Update: 03/02/2023
+# Purpose: To extract AZ organization information and populate dataframe for WaDE_QA 2.0.
+# Notes: N/A
 
 
 # Needed Libraries
@@ -10,40 +10,47 @@ import numpy as np
 import pandas as pd
 
 
+# Custom Libraries
+############################################################################
+import sys
+# columns
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/MappingFunctions")
+import GetColumnsFile
+
+
 # Inputs
 ############################################################################
 print("Reading inputs...")
 workingDir = "G:/Shared drives/WaDE Data/Arizona/WaterAllocation"
 os.chdir(workingDir)
 
-# Needed WaDE columns
-columnslist = [
-    "OrganizationUUID",
-    "OrganizationContactEmail",
-    "OrganizationContactName",
-    "OrganizationDataMappingURL",
-    "OrganizationName",
-    "OrganizationPhoneNumber",
-    "OrganizationPurview",
-    "OrganizationWebsite",
-    "State"]
+# WaDE columns
+OrganizationsColumnsList = GetColumnsFile.GetOrganizationsColumnsFunction()
 
 
 # Creating output dataframe (outdf)
 ############################################################################
-print("Populating dataframe...")
-inpVals = [
-    "AZwr_O1",
-    "lmwilliams@azwater.gov",
-    "Lisa Williams",
-    "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Arizona",
-    "Arizona Department of Water Resources",
-    "602-771-8500",
-    "The Arizona Department of Water Resources is the steward of Arizonas water future and ensures long term reliable water supplies to support the continued economic prosperity of the State.",
-    "http://gisdata-azwater.opendata.arcgis.com/",
-    "AZ"]
+print("Populating DataFrame...")
+outdf = pd.DataFrame(columns=OrganizationsColumnsList)
+outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf = pd.DataFrame([inpVals], columns=columnslist)
+outdf.OrganizationUUID = "AZwr_O1"
+
+outdf.OrganizationContactEmail = "lmwilliams@azwater.gov"
+
+outdf.OrganizationContactName = "Lisa Williams"
+
+outdf.OrganizationDataMappingURL = "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Arizona"
+
+outdf.OrganizationName = "Arizona Department of Water Resources"
+
+outdf.OrganizationPhoneNumber = "602-771-8500"
+
+outdf.OrganizationPurview = "The Arizona Department of Water Resources is the steward of Arizona’s water future and ensures long-term, reliable water supplies to support the continued economic prosperity of the State."
+
+outdf.OrganizationWebsite = "http://gisdata-azwater.opendata.arcgis.com/"
+
+outdf.State = "AZ"
 
 
 # Check required fields are not null

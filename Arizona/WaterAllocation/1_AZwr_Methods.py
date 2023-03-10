@@ -1,4 +1,4 @@
-# Date Update: 05/06/2022
+# Date Update: 03/02/2023
 # Purpose: To extract AZ methods use information and populate dataframe for WaDE_QA 2.0.
 # Notes: N/A
 
@@ -10,30 +10,28 @@ import numpy as np
 import pandas as pd
 
 
+# Custom Libraries
+############################################################################
+import sys
+# columns
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/MappingFunctions")
+import GetColumnsFile
+
+
 # Inputs
 ############################################################################
 print("Reading inputs...")
 workingDir = "G:/Shared drives/WaDE Data/Arizona/WaterAllocation"
 os.chdir(workingDir)
 
-#WaDE columns
-columnslist = [
-    "MethodUUID",
-    "ApplicableResourceTypeCV",
-    "DataConfidenceValue",
-    "DataCoverageValue",
-    "DataQualityValueCV",
-    "MethodDescription",
-    "MethodName",
-    "MethodNEMILink",
-    "MethodTypeCV"]
+# WaDE columns
+MethodsColumnsList = GetColumnsFile.GetMethodsColumnsFunction()
 
 
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-
-outdf = pd.DataFrame(columns=columnslist)
+outdf = pd.DataFrame(columns=MethodsColumnsList)
 
 outdf.MethodUUID = ["AZwr_M1", "AZwr_M2"]
 

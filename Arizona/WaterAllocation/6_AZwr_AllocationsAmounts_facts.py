@@ -1,7 +1,9 @@
-#Date Updated: 08/01/2022
-#Purpose: To extract AZ water right information and populate dataframe for WaDE_QA 2.0.
+# Date Update: 03/02/2023
+# Purpose: To extract AZ water right information and populate dataframe for WaDE_QA 2.0.
 #         1) Simple creation of working dataframe (df), with output dataframe (outdf).
 #         2) Drop all nulls before combining duplicate rows on NativeID.
+#         3) Remove unused sites and watersource records.
+#         4) Remove WaDEUUID field (for purge files only).
 
 
 # Needed Libraries
@@ -13,8 +15,21 @@ import pandas as pd
 # Custom Libraries
 ############################################################################
 import sys
+# columns
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/MappingFunctions")
+import GetColumnsFile
+
+# Owner Classification Fix
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/OwnerClassification")
+import OwnerClassificationField
+
+# Assign Primary Use Category fix
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/AssignPrimaryUseCategory")
+import AssignPrimaryUseCategory
+
+# Test WaDE Data for any Errors
 sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
-import TestErrorFunctions
+import TestErrorFunctionsFile
 
 
 # Inputs
@@ -22,73 +37,28 @@ import TestErrorFunctions
 print("Reading input csv...")
 workingDir = "G:/Shared drives/WaDE Data/Arizona/WaterAllocation"
 os.chdir(workingDir)
-DM_fileInput = "RawinputData/P_ArizonaMaster.csv"
-method_fileInput = "ProcessedInputData/methods.csv"
-variables_fileInput = "ProcessedInputData/variables.csv"
-sites_fileInput = "ProcessedInputData/sites.csv"
-
+DM_fileInput = "RawinputData/Pwr_AZMain.csv"
 df_DM = pd.read_csv(DM_fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
-df_method = pd.read_csv(method_fileInput)  # Method dataframe
-df_variables = pd.read_csv(variables_fileInput)  # Variables dataframe
-df_sites = pd.read_csv(sites_fileInput)  # Sites dataframe
 
-#WaDE dataframe columns
-columnslist = [
-    "WaDEUUID",
-    "AllocationUUID",
-    "MethodUUID",
-    "OrganizationUUID",
-    "SiteUUID",
-    "VariableSpecificUUID",
-    "AllocationApplicationDate",
-    "AllocationAssociatedConsumptiveUseSiteIDs",
-    "AllocationAssociatedWithdrawalSiteIDs",
-    "AllocationBasisCV",
-    "AllocationChangeApplicationIndicator",
-    "AllocationCommunityWaterSupplySystem",
-    "AllocationCropDutyAmount",
-    "AllocationExpirationDate",
-    "AllocationFlow_CFS",
-    "AllocationLegalStatusCV",
-    "AllocationNativeID",
-    "AllocationOwner",
-    "AllocationPriorityDate",
-    "AllocationSDWISIdentifierCV",
-    "AllocationTimeframeEnd",
-    "AllocationTimeframeStart",
-    "AllocationTypeCV",
-    "AllocationVolume_AF",
-    "BeneficialUseCategory",
-    "CommunityWaterSupplySystem",
-    "CropTypeCV",
-    "CustomerTypeCV",
-    "DataPublicationDate",
-    "DataPublicationDOI",
-    "ExemptOfVolumeFlowPriority",
-    "GeneratedPowerCapacityMW",
-    "IrrigatedAcreage",
-    "IrrigationMethodCV",
-    "LegacyAllocationIDs",
-    "OwnerClassificationCV",
-    "PopulationServed",
-    "PowerType",
-    "PrimaryBeneficialUseCategory",
-    "WaterAllocationNativeURL"]
+# method_fileInput = "ProcessedInputData/methods.csv"
+# variables_fileInput = "ProcessedInputData/variables.csv"
+# df_method = pd.read_csv(method_fileInput)  # Method dataframe
+# df_variables = pd.read_csv(variables_fileInput)  # Variables dataframe
+
+# Input Data - 'WaDE Input' files & 'missing.xlsx' files.
+dfws = pd.read_csv("ProcessedInputData/watersources.csv").replace(np.nan, "")
+dfwspurge = pd.read_excel("ProcessedInputData/watersources_missing.xlsx").replace(np.nan, "")
+dfs = pd.read_csv("ProcessedInputData/sites.csv" ).replace(np.nan, "")
+dfspurge = pd.read_excel("ProcessedInputData/sites_missing.xlsx").replace(np.nan, "")
+
+# WaDE columns
+AllocationAmountsColumnsList = GetColumnsFile.GetAllocationAmountsColumnsFunction()
 
 # Custom Functions
 ############################################################################
 
-# For filling in Unspecified when null
-def assignBlankUnspecified(val):
-    val = str(val).strip()
-    if val == "" or pd.isnull(val):
-        outString = "Unspecified"
-    else:
-        outString = val
-    return outString
-
 # For creating SiteUUID
-SiteUUIDDdict = pd.Series(df_sites.SiteUUID.values, index = df_sites.SiteNativeID).to_dict()
+SiteUUIDDdict = pd.Series(dfs.SiteUUID.values, index = dfs.SiteNativeID).to_dict()
 def retrieveSiteUUID(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = ''
@@ -102,17 +72,6 @@ def retrieveSiteUUID(colrowValue):
             outList = ''
     return outList
 
-# For fixing AllocationOwner
-def fixAllocationOwner(colrowValue):
-    if colrowValue == '' or pd.isnull(colrowValue):
-        outList = ''
-    else:
-        strVal = str(colrowValue)
-        strVal = strVal.replace(",", " ")
-        strVal = strVal.strip()
-        outList = strVal
-    return outList
-
 # For creating AllocationUUID
 def assignAllocationUUID(colrowValue):
     string1 = str(colrowValue)
@@ -123,8 +82,7 @@ def assignAllocationUUID(colrowValue):
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe outdf...")
-
-outdf = pd.DataFrame(index=df_DM.index, columns=columnslist)  # The output dataframe
+outdf = pd.DataFrame(columns=AllocationAmountsColumnsList, index=df_DM.index)  # The output dataframe
 
 print("MethodUUID")
 outdf['MethodUUID'] = df_DM['in_MethodUUID']
@@ -136,7 +94,7 @@ print("SiteUUID")
 outdf['SiteUUID'] = df_DM.apply(lambda row: retrieveSiteUUID(row['in_SiteNativeID']), axis=1)
 
 print("VariableSpecificUUID")
-outdf['VariableSpecificUUID'] = "AZwr_V1"
+outdf['VariableSpecificUUID'] = df_DM['in_VariableSpecificUUID']
 
 print("AllocationApplicationDate")
 outdf['AllocationApplicationDate'] = ""
@@ -166,13 +124,13 @@ print("AllocationFlow_CFS")
 outdf['AllocationFlow_CFS'] = df_DM['in_AllocationFlow_CFS']
 
 print("AllocationLegalStatusCV")
-outdf['AllocationLegalStatusCV'] = df_DM.apply(lambda row: assignBlankUnspecified(row['in_AllocationLegalStatusCV']), axis=1)
+outdf['AllocationLegalStatusCV'] = df_DM['in_AllocationLegalStatusCV']
 
 print("AllocationNativeID")  # Will use this with a .groupby() statement towards the ends.
 outdf['AllocationNativeID'] = df_DM['in_AllocationNativeID'].astype(str)
 
 print("AllocationOwner")
-outdf['AllocationOwner'] = df_DM.apply(lambda row: fixAllocationOwner(row['in_AllocationOwner']), axis=1)
+outdf['AllocationOwner'] =  df_DM['in_AllocationOwner']
 
 print("AllocationPriorityDate")
 outdf['AllocationPriorityDate'] = df_DM['in_AllocationPriorityDate']
@@ -187,16 +145,16 @@ print("AllocationTimeframeStart")
 outdf['AllocationTimeframeStart'] = df_DM['in_AllocationTimeframeStart']
 
 print("AllocationTypeCV")
-outdf['AllocationTypeCV'] = "Unspecified"
+outdf['AllocationTypeCV'] = df_DM['in_AllocationTypeCV']
 
 print("AllocationVolume_AF")
 outdf['AllocationVolume_AF'] = df_DM['in_AllocationVolume_AF']
 
 print("BeneficialUseCategory")
-outdf['BeneficialUseCategory'] = df_DM.apply(lambda row: assignBlankUnspecified(row['in_BeneficialUseCategory']), axis=1)
+outdf['BeneficialUseCategory'] = df_DM['in_BeneficialUseCategory']
 
 print("CommunityWaterSupplySystem")
-outdf['CommunityWaterSupplySystem'] = ""
+outdf['CommunityWaterSupplySystem'] =  df_DM['in_CommunityWaterSupplySystem']
 
 print("CropTypeCV")
 outdf['CropTypeCV'] = ""
@@ -205,7 +163,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = "05/06/2022"
+outdf['DataPublicationDate'] = "03/02/2023"
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""
@@ -228,9 +186,6 @@ outdf['LegacyAllocationIDs'] = ""
 #####################################
 print("OwnerClassificationCV")
 # Temp solution to populate OwnerClassificationCV field.
-# Use Custom import file
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/OwnerClassification")
-import OwnerClassificationField
 outdf['OwnerClassificationCV'] = outdf.apply(lambda row: OwnerClassificationField.CreateOwnerClassification(row['AllocationOwner']), axis=1)
 #####################################
 
@@ -247,7 +202,7 @@ print("WaterAllocationNativeURL")
 outdf['WaterAllocationNativeURL'] = df_DM['in_WaterAllocationNativeURL']
 
 print("Adding Data Assessment UUID")
-outdf['WaDEUUID'] = ""
+outdf['WaDEUUID'] = df_DM['WaDEUUID']
 
 print("Resetting Index")
 outdf.reset_index()
@@ -256,7 +211,7 @@ print("Joining outdf duplicates based on key fields...")
 outdf = outdf.replace(np.nan, "")  # Replaces NaN values with blank.
 groupbyList = ['AllocationNativeID', 'AllocationFlow_CFS', 'AllocationVolume_AF']
 outdf = outdf.groupby(groupbyList).agg(lambda x: ','.join([str(elem) for elem in (list(set(x))) if elem!=''])).replace(np.nan, "").reset_index()
-outdf = outdf[columnslist]  # reorder the dataframe's columns based on columnslist
+outdf = outdf[AllocationAmountsColumnsList]  # reorder the dataframe's columns based on columnslist
 
 
 # Solving WaDE 2.0 Upload Issues
@@ -276,129 +231,21 @@ outdf['OwnerClassificationCV']  = outdf.apply(lambda row: tempfixOCSV(row['Owner
 
 # Temp solution to populate PrimaryBeneficialUseCategory field.
 # Use Custom import file
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/AssignPrimaryUseCategory")
-import AssignPrimaryUseCategory
 outdf['PrimaryBeneficialUseCategory'] = outdf.apply(lambda row: AssignPrimaryUseCategory.retrievePrimaryUseCategory(row['BeneficialUseCategory']), axis=1)
 
 
 #Error Checking Each Field
 ############################################################################
-print("Error checking each field.  Purging bad inputs.")
-purgecolumnslist = ["ReasonRemoved", "WaDEUUID", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
-dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
-
-# MethodUUID
-outdf, dfpurge = TestErrorFunctions.MethodUUID_AA_Check(outdf, dfpurge)
-
-# OrganizationUUID
-outdf, dfpurge = TestErrorFunctions.OrganizationUUID_AA_Check(outdf, dfpurge)
-
-# SiteUUID
-outdf, dfpurge = TestErrorFunctions.SiteUUID_AA_Check(outdf, dfpurge)
-
-# VariableSpecificUUID
-outdf, dfpurge = TestErrorFunctions.VariableSpecificUUID_AA_Check(outdf, dfpurge)
-
-# AllocationApplicationDateID
-outdf, dfpurge = TestErrorFunctions.AllocationApplicationDate_AA_Check(outdf, dfpurge)
-
-# AllocationAssociatedConsumptiveUseSiteIDs
-outdf, dfpurge = TestErrorFunctions.AllocationAssociatedConsumptiveUseSiteIDs_AA_Check(outdf, dfpurge)
-
-# AllocationAssociatedWithdrawalSiteIDs
-outdf, dfpurge = TestErrorFunctions.AllocationAssociatedWithdrawalSiteIDs_AA_Check(outdf, dfpurge)
-
-# AllocationBasisCV
-outdf, dfpurge = TestErrorFunctions.AllocationBasisCV_AA_Check(outdf, dfpurge)
-
-# AllocationChangeApplicationIndicator
-outdf, dfpurge = TestErrorFunctions.AllocationChangeApplicationIndicator_AA_Check(outdf, dfpurge)
-
-# AllocationCommunityWaterSupplySystem
-outdf, dfpurge = TestErrorFunctions.AllocationCommunityWaterSupplySystem_AA_Check(outdf, dfpurge)
-
-# AllocationCropDutyAmount
-outdf, dfpurge = TestErrorFunctions.AllocationCropDutyAmount_AA_Check(outdf, dfpurge)
-
-# AllocationExpirationDate
-outdf, dfpurge = TestErrorFunctions.AllocationExpirationDate_AA_Check(outdf, dfpurge)
-
-# # AllocationFlow_CFS_float_Yes & AllocationVolume_AF_float_Yes
-outdf, dfpurge = TestErrorFunctions.AllocationFlowVolume_CFSAF_float_Yes_AA_Check(outdf, dfpurge)
-
-# AllocationLegalStatusCV
-outdf, dfpurge = TestErrorFunctions.AllocationLegalStatusCV_AA_Check(outdf, dfpurge)
-
-# AllocationNativeID
-outdf, dfpurge = TestErrorFunctions.AllocationNativeID_AA_Check(outdf, dfpurge)
-
-# AllocationOwner
-outdf, dfpurge = TestErrorFunctions.AllocationOwner_AA_Check(outdf, dfpurge)
-
-# AllocationPriorityDate
-outdf, dfpurge = TestErrorFunctions.AllocationPriorityDate_AA_Check(outdf, dfpurge)
-
-# AllocationSDWISIdentifierCV
-outdf, dfpurge = TestErrorFunctions.AllocationSDWISIdentifierCV_AA_Check(outdf, dfpurge)
-
-# AllocationTimeframeEnd
-outdf, dfpurge = TestErrorFunctions.AllocationTimeframeEnd_AA_Check(outdf, dfpurge)
-
-# AllocationTimeframeStart
-outdf, dfpurge = TestErrorFunctions.AllocationTimeframeStart_AA_Check(outdf, dfpurge)
-
-# AllocationTypeCV
-outdf, dfpurge = TestErrorFunctions.AllocationTypeCV_AA_Check(outdf, dfpurge)
-
-# BeneficialUseCategory
-outdf, dfpurge = TestErrorFunctions.BeneficialUseCategory_AA_Check(outdf, dfpurge)
-
-# CommunityWaterSupplySystem
-outdf, dfpurge = TestErrorFunctions.CommunityWaterSupplySystem_AA_Check(outdf, dfpurge)
-
-# CropTypeCV
-outdf, dfpurge = TestErrorFunctions.CropTypeCV_AA_Check(outdf, dfpurge)
-
-# CustomerTypeCV
-outdf, dfpurge = TestErrorFunctions.CustomerTypeCV_AA_Check(outdf, dfpurge)
-
-# DataPublicationDate
-outdf, dfpurge = TestErrorFunctions.DataPublicationDate_AA_Check(outdf, dfpurge)
-
-# DataPublicationDOI
-outdf, dfpurge = TestErrorFunctions.DataPublicationDOI_AA_Check(outdf, dfpurge)
-
-# # ExemptOfVolumeFlowPriority
-# outdf, dfpurge = TestErrorFunctions.ExemptOfVolumeFlowPriority_AA_Check(outdf, dfpurge)
-
-# GeneratedPowerCapacityMW
-outdf, dfpurge = TestErrorFunctions.GeneratedPowerCapacityMW_AA_Check(outdf, dfpurge)
-
-# IrrigatedAcreage
-outdf, dfpurge = TestErrorFunctions.IrrigatedAcreage_AA_Check(outdf, dfpurge)
-
-# IrrigationMethodCV
-outdf, dfpurge = TestErrorFunctions.IrrigationMethodCV_AA_Check(outdf, dfpurge)
-
-# LegacyAllocationIDs
-outdf, dfpurge = TestErrorFunctions.LegacyAllocationIDs_AA_Check(outdf, dfpurge)
-
-# OwnerClassificationCV
-outdf, dfpurge = TestErrorFunctions.OwnerClassificationCV_AA_Check(outdf, dfpurge)
-
-# PopulationServed
-outdf, dfpurge = TestErrorFunctions.PopulationServed_AA_Check(outdf, dfpurge)
-
-# PowerType
-outdf, dfpurge = TestErrorFunctions.PowerType_AA_Check(outdf, dfpurge)
-
-# PrimaryBeneficialUseCategory
-outdf, dfpurge = TestErrorFunctions.PrimaryBeneficialUseCategory_AA_Check(outdf, dfpurge)
-
-# WaterAllocationNativeURL
-outdf, dfpurge = TestErrorFunctions.WaterAllocationNativeURL_AA_Check(outdf, dfpurge)
+print("Error checking each field. Purging bad inputs.")
+dfpurge = pd.DataFrame(columns=AllocationAmountsColumnsList) # Purge DataFrame to hold removed elements
+dfpurge['ReasonRemoved'] = ""
+dfpurge['IncompleteField'] = ""
+outdf, dfpurge = TestErrorFunctionsFile.AllocationAmountTestErrorFunctions(outdf, dfpurge)
+print(f'Length of outdf DataFrame: ', len(outdf))
+print(f'Length of dfpurge DataFrame: ', len(dfpurge))
 
 
+# Assign AllocationUUID value
 ############################################################################
 print("Assign AllocationUUID") # has to be one of the last.
 outdf = outdf.reset_index(drop=True)
@@ -407,24 +254,82 @@ dftemp["Count"] = range(1, len(dftemp.index) + 1)
 outdf['AllocationUUID'] = dftemp.apply(lambda row: assignAllocationUUID(row['Count']), axis=1)
 
 # Error check AllocationUUID
-outdf, dfpurge = TestErrorFunctions.AllocationUUID_AA_Check(outdf, dfpurge)
+outdf, dfpurge = TestErrorFunctionsFile.AllocationUUID_AA_Check(outdf, dfpurge)
 
 
-# Remove WaDEUUID field from import file (only needed for purge info).
+# Remove unused sites from sites.csv based on waterallocations.csv information
 ############################################################################
-print("Drop Assessment WaDEUUID")
-outdf = outdf.drop(['WaDEUUID'], axis=1)
+print(f'Length of dfs before removing sites: ', len(dfs))
+# explode copy of waterallocations.csv on SiteUUID
+dfaaTemp = outdf.copy()
+dfaaTemp = dfaaTemp.assign(SiteUUID=dfaaTemp['SiteUUID'].str.split(',')).explode('SiteUUID').reset_index(drop=True)
+
+# create list of & SiteUUIDs from copy of waterallocations.csv
+dfaaSiteUUID_List = dfaaTemp['SiteUUID'].drop_duplicates().to_list()
+dfaaSiteUUID_List.sort()
+
+# use lit to add unused records to purge dataframe
+dftemp = dfs[~dfs['SiteUUID'].isin(dfaaSiteUUID_List)].reset_index(drop=True).assign(ReasonRemoved='Unused Site Record').reset_index()
+frames = [dfspurge, dftemp] # add dataframes here
+dfspurge = pd.concat(frames).reset_index(drop=True)
+
+# use list to only save used SiteUUID records in site.csv
+dfs = dfs[dfs['SiteUUID'].isin(dfaaSiteUUID_List)].reset_index(drop=True)
+
+print(f'Length of dfs after removing sites: ', len(dfs))
+
+
+# Remove unused water source records from sites.csv information
+############################################################################
+print(f'Length of dfws before removing water sources: ', len(dfws))
+# explode copy of sites.csv on WaterSourceUUID
+dfsTemp = dfs.copy()
+dfsTemp = dfsTemp.assign(WaterSourceUUIDs=dfsTemp['WaterSourceUUIDs'].str.split(',')).explode('WaterSourceUUIDs').reset_index(drop=True)
+
+# create list of & WaterSourceUUID from copy of sites.csv
+dfsWaterSourceUUID_List = dfsTemp['WaterSourceUUIDs'].drop_duplicates().to_list()
+dfsWaterSourceUUID_List.sort()
+
+# use lit to add unused records to purge dataframe
+dftemp = dfws[~dfws['WaterSourceUUID'].isin(dfsWaterSourceUUID_List)].reset_index(drop=True).assign(ReasonRemoved='Unused WaterSource Record').reset_index()
+frames = [dfwspurge, dftemp] # add dataframes here
+dfwspurge = pd.concat(frames).reset_index(drop=True)
+
+# use list to only save used SiteUUID records in site.csv
+dfws = dfws[dfws['WaterSourceUUID'].isin(dfsWaterSourceUUID_List)].reset_index(drop=True)
+
+print(f'Length of dfws after removing water sources: ', len(dfws))
+
+
+# Remove WaDEUUID field WaDE input file (only needed for purge info).
+############################################################################
+try: dfws = dfws.drop(['WaDEUUID'], axis=1)
+except: print('no ws WaDEUUID')
+
+try: dfs = dfs.drop(['WaDEUUID'], axis=1)
+except: print('no s WaDEUUID')
+
+try: outdf = outdf.drop(['WaDEUUID'], axis=1)
+except: print('no aa WaDEUUID')
 
 
 # Export to new csv
 ############################################################################
-print("Exporting outdf and dfpurge dataframes...")
+print("Export Files - watersource.csv, watersource_missing.xlsx, sites.csv, sites_missing.xlsx, waterallocations.csv, waterallocations_missing.xlsx")
 
-# The working output DataFrame for WaDE 2.0 input.
+# watersources info
+dfws.to_csv('ProcessedInputData/watersources.csv', index=False)
+dfwspurge.to_excel('ProcessedInputData/watersources_missing.xlsx', index=False, freeze_panes=(1,1))
+
+# sites info
+dfs.to_csv('ProcessedInputData/sites.csv', index=False)
+dfspurge.to_excel('ProcessedInputData/sites_missing.xlsx', index=False, freeze_panes=(1,1))
+
+# waterallocations info
 outdf.to_csv('ProcessedInputData/waterallocations.csv', index=False)
-
 # Report purged values.
-if(len(dfpurge.index) > 0):
-    dfpurge.to_excel('ProcessedInputData/waterallocations_missing.xlsx', index=False)
+if(len(dfpurge.index) > 0): print(f'...', len(dfpurge),  ' records removed.')
+dfpurge.insert(0, 'ReasonRemoved', dfpurge.pop('ReasonRemoved'))
+dfpurge.to_excel('ProcessedInputData/waterallocations_missing.xlsx', index=False, freeze_panes=(1,1))
 
-print("Done.")
+print("Done")
