@@ -51,7 +51,9 @@ Purpose: Pre-process the state agency's input data files and merge them into one
 Purpose: generate legend of granular methods used on data collection.
 
 #### Inputs:
+```diff
 - Create by hand.
+```
 
 #### Outputs:
 - methods.csv
@@ -76,7 +78,9 @@ CAwr_M1 | Surface water or subsurface water | Adjudicated
 Purpose: generate legend of granular variables specific to each state.
 
 #### Inputs:
+```diff
 - Create by hand.
+```
 
 #### Outputs:
 - variables.csv
@@ -101,7 +105,9 @@ CAwr_V1 | 1 | Year | AFY |
 Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
 
 #### Inputs:
+```diff
 - Create by hand.
+```
 
 #### Outputs:
 - organizations.csv
