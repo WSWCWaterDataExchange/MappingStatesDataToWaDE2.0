@@ -51,8 +51,7 @@ Purpose: Pre-process the state agency's input data files and merge them into one
 Purpose: generate legend of granular methods used on data collection.
 
 #### Inputs:
-$${\color{red} Create  \space by  \space hand}$$
-$${\color{green}Greenish}$$
+- ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
 
 #### Outputs:
 - methods.csv
