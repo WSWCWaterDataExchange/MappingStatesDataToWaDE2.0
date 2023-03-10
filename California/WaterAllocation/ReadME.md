@@ -5,20 +5,18 @@ This readme details the process that was applied by the staff of the [Western St
 ## Overview of Source Data Utilized
 The following data was used for water allocations...
 
-- **POD_Attributes** water right metadata & **Points_of_Diversion_20210701** site information, both available from the [eWRIMS POD Download](https://waterrightsmaps.waterboards.ca.gov/viewer/Resources/Images/eWRIMS/download.htm).
-- **EWRIMS MASTER FLAT FILE DATA DICTIONARY DRAFT 1-17-20** obtained from personal contact with the CSWRCB and used by the WaDE team for additional metadata.
+- [**California Water Rights LIST (Detail Summary List)**](https://data.ca.gov/dataset/water-rights):  detail information about every water rights record in the State Water Resources Control Board's "Electronic Water Rights Information Management System" (EWRIMS) database. The unique identifier for the dataset is "Application ID". The dataset provides one record per Application ID and all the existing associated data to that record. Riparian rights, anything with water right type = "Statement of Div and Use" make exempt.  We want to include these records.
+
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share CSWRCB's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see **CA_Allocation Schema Mapping to WaDE_QA.xlsx**.  Six executable code files were used to extract the CSWRCB's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those six code files are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share CSWRCB's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see **CAwr_Allocation Schema Mapping to WaDE.xlsx**.  The following executable code files were used to extract the CSWRCB's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  Some information is considered simple enough to work and can be completed by hand (e.g., method.csv, variable.csv, organization.csv).  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining  code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those code files used for this project are as follows...
 
-- 0_PreProcessCaliforniaAllocationData.ipynb
-- 1_CAwr_Methods.py
-- 2_CAwr_Variables.py
-- 3_CAwr_Organizations.py
+- 0_CAwr_PreProcessAllocationData.ipynb
 - 4_CAwr_WaterSources.py
 - 5_CAwr_Sites.py
 - 6_CAwr_AllocationsAmounts_facts.py
 - 7_CAwr_PODSiteToPOUSiteRelationships.py
+- 8_CAwr_WaDEDataAssessmentScript.py
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
 The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
@@ -26,26 +24,26 @@ The 1) raw input data shared by the state / state agency / data provider (excel,
 
 
 ***
-### 0) Code File: 0_PreProcessCaliforniaAllocationData.ipynb
+### 0) Code File: 0_CAwr_PreProcessAllocationData.ipynb
 Purpose: Pre-process the state agency's input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
- - POD_Attributes.csv
- - Points_of_Diversion_20210701.csv
- - EWRIMS MASTER FLAT FILE DATA DICTIONARY DRAFT 1-17-20.xlsx
+ - California Water Rights LIST
 
 #### Outputs:
- - P_CaliforniaMaster.csv
+ - Pwr_CAMain.csv
 
 #### Operation and Steps:
-- Read the input files and generate temporary input dataframes.  Merge POD_Attributes & Points_of_Diversion_20210701 dataframes together using left join via **CORE_POD_ID** & **POD_ID** fields, and the EWRIMS MASTER FLAT FILE DATA DICTIONARY DRAFT 1-17-20 dataframe **WR_WATER_RIGHT_ID** field.
-- Create WaDE *pridority date* field using **PRIORITY_DATE** (or **APPLICATION_ACCEPTANCE_DATE** field if missing).  Format to %m/%d/%Y.
-- Create WaDE *TimeframeStart* field using **DIRECT_DIV_SEASON_START** field.  Format to %m/%d.
-- Create WaDE *in_AllocationTimeframeEnd* field using **DIRECT_DIV_SEASON_END** field.  Format to %m/%d.
-- Generate WaDE *Owner* field by combining **FIRST_NAME** & **LAST_NAME** fields together, Unpsecified if both blank.
-- Create custom WaDE ID for water sources using **SOURCE_NAME** field.
+- Read the input files and generate temporary input dataframes.
+- Create WaDE *in_VariableSpecificUUID* based on unit given in the **use_direct_div_rate_units** field.  Separate by either a recognized CFS value or AF value (see below).
+- Generate a CFS and a AF value from **use_direct_diversion_rate** input field using the  **use_direct_div_rate_units** input field...
+    - CFS values include: Cubic Feet per Second, Gallons per Day (converted to CFS by / 646316.883), Acre-feet per Year (converted to CFS by / 723.968), Gallons per Minute (converted to CFS by / 448.83117).
+    - AF values include: Acre-feet, Gallons (converted to AF by / 325850.943).
+- Remove trialing '_' and ',' values from  **water_right_type** and **sub_type** input fields.
+- Any record with a 'RIPERIAN', 'PRE1914' or 'Statement of Div and Use' are considered Riparian rights and we want to include into WaDE.  Will allow for exceptions.
+- Any Record with a blank or nan value, replace with a 0 if numeric, or "WaDE_Unspecified" if string or object.
 - Inspect output dataframe for additional errors / datatypes.
-- Export output dataframe as new csv file, *P_CaliforniaMaster.csv*.
+- Export output dataframe as new csv file, *Pwr_CAMain.csv*.
 
 
 ***
@@ -53,7 +51,7 @@ Purpose: Pre-process the state agency's input data files and merge them into one
 Purpose: generate legend of granular methods used on data collection.
 
 #### Inputs:
-- None
+- Create by hand.
 
 #### Outputs:
 - methods.csv
@@ -78,7 +76,7 @@ CAwr_M1 | Surface water or subsurface water | Adjudicated
 Purpose: generate legend of granular variables specific to each state.
 
 #### Inputs:
-- None
+- Create by hand.
 
 #### Outputs:
 - variables.csv
@@ -103,7 +101,7 @@ CAwr_V1 | 1 | Year | AFY |
 Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
 
 #### Inputs:
-- None
+- Create by hand.
 
 #### Outputs:
 - organizations.csv
@@ -128,7 +126,7 @@ CAwr_O1 | California State Water Resources Control Board | Greg Gearheart | http
 Purpose: generate a list of water sources specific to a water right.
 
 #### Inputs:
-- P_CaliforniaMaster.csv
+- Pwr_CAMain.csv
 
 #### Outputs:
 - waterSources.csv
@@ -137,10 +135,10 @@ Purpose: generate a list of water sources specific to a water right.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign agency data info to the *WaDE WaterSources* specific columns.  See **CA_Allocation Schema Mapping to WaDE_QA.xlsx** for specific details.  Items of note are as follows...
-    - *WaterSourceName* =  **SOURCE_NAME**, Unspecfield if blank.
+- Assign agency data info to the *WaDE WaterSources* specific columns.  See **CAwr_Allocation Schema Mapping to WaDE.xlsx** for specific details.  Items of note are as follows...
+    - *WaterSourceName* =  **source_name**, "WaDE_Unspecfield" if blank.
     - *WaterSourceNativeID* = custom WaDE ID field, see *0_PreProcessCaliforniaAllocationData* for details.
-    - *WaterSourceTypeCV* = Surface Water.
+    - *WaterSourceTypeCV* = **source_type**, "WaDE_Unspecfield" if blank.
 - Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceTypeCV* fields.
 - Assign water source UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
@@ -162,7 +160,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 Purpose: generate a list of sites where water is diverted (also known as Points Of Diversion, PODs).
 
 #### Inputs:
-- P_CaliforniaMaster.csv
+- Pwr_CAMain.csv
 
 #### Outputs:
 - sites.csv
@@ -171,16 +169,16 @@ Purpose: generate a list of sites where water is diverted (also known as Points 
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
-- Assign state agency info to the *WaDE Site* specific columns.  See **CA_Allocation Schema Mapping to WaDE_QA.xlsx** for specific details.  Items of note are as follows...
+- Assign state agency info to the *WaDE Site* specific columns.  See **CAwr_Allocation Schema Mapping to WaDE.xlsx** for specific details.  Items of note are as follows...
     - Extract *WaterSourceUUID* from watersource.csv input file. See code for specific implementation of extraction.
-    - *CoordinateMethodCV* = **LOCATION_METHOD**.
-    - *County* = **COUNTY**.
-    - *HUC12* = **HUC_12**.
-    - *HU8* = **HUC_8**.
-    - *Latitude* = **LATITUDE**.
-    - *Longitude* = **LONGITUDE**.
-    - *SiteName* = **DIVERSION_SITE_NAME**, Unspecified if blank.
-    - *SiteNativeID* = **POD_ID**, Unspecified if blank.
+    - *CoordinateMethodCV* = **location_method**.
+    - *County* = **county**.
+    - *HUC12* = **huc_12_number**.
+    - *HU8* = **huc_8_number**.
+    - *Latitude* = **latitude**.
+    - *Longitude* = **longitude**.
+    - *SiteName* = **pod_name**, "WaDE_Unspecified" if blank.
+    - *SiteNativeID* = **pod_id**, "WaDE_Unspecified" if blank.
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *SiteNativeID*, *SiteTypeCV*, *Longitude*, and *Latitude* fields.
 - Assign site UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
@@ -203,7 +201,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 
 #### Inputs:
-- P_CaliforniaMaster.csv
+- Pwr_CAMain.csv
 - methods.csv
 - variables.csv
 - organizations.csv
@@ -217,26 +215,28 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
-- Assign state agency info to the *WaDE Water Allocations* specific columns.  See **CA_Allocation Schema Mapping to WaDE_QA.xlsx** for specific details.  Items of note are as follows...
+- Assign state agency info to the *WaDE Water Allocations* specific columns.  See **CAwr_Allocation Schema Mapping to WaDE.xlsx** for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
-    - *AllocationLegalStatusCV* = **WR_STATUS**.
-    - *AllocationNativeID* = **WR_WATER_RIGHT_ID**.
-    - *AllocationOwner* = **FIRST_NAME** & **LAST_NAME** inputs, see *0_PreProcessCaliforniaAllocationData.ipynb* for specifics.
-    - *AllocationPriorityDate* = **PRIORITY_DATE**, if emtpy use **APPLICATION_ACCEPTANCE_DATE** input.  See *0_PreProcessCaliforniaAllocationData.ipynb* for specifics.
-    - *AllocationTimeframeEnd* = **DIRECT_DIV_SEASON_END**, see *0_PreProcessCaliforniaAllocationData.ipynb* for specifics.
-    - *AllocationTimeframeStart* = **DIRECT_DIV_SEASON_START**, see *0_PreProcessCaliforniaAllocationData.ipynb* for specifics.
-    - *AllocationTypeCV* = **WR_TYPE**.
-    - *AllocationVolume_AF* = **FACE_VALUE_AMOUNT**.
-    - *BeneficialUseCategory* = **USE_CODE**, Unspecified if Blank.
-- Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.
+    - *AllocationApplicationDateID* = **application_recd_date**, format to %m/%d/%Y.
+    - *AllocationFlow_CFS* = **use_direct_diversion_rate**inputs, see *0_CAwr_PreProcessAllocationData.ipynb* for specifics.
+    - *AllocationLegalStatusCV* = **water_right_status**, "WaDE_Unspecified" if blank.
+    - *AllocationNativeID* = **application_number**.
+    - *AllocationOwner* = **primary_owner_name**,
+    - *AllocationPriorityDate* = **priority_date**, format to %m/%d/%Y.
+    - *AllocationTimeframeEnd* = **direct_div_season_end**.
+    - *AllocationTimeframeStart* = **direct_div_season_start**.
+    - *AllocationTypeCV* = **water_right_type + sub_type**.
+    - *AllocationVolume_AF* = **use_direct_diversion_rate**inputs, see *0_CAwr_PreProcessAllocationData.ipynb* for specifics.
+    - *BeneficialUseCategory* = **use_code**, "WaDE_Unspecified" if blank.
+- Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* , *AllocationFlow_CFS*, & *AllocationVolume_AF* fileds.
+- Assign site UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *waterallocations.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-AllocationNativeID | SiteUUID | AllocationLegalStatusCV | AllocationVolume_AF | BeneficialUseCategory
+AllocationUUID | SiteUUID | AllocationLegalStatusCV | AllocationFlow_CFS | BeneficialUseCategory
 ---------- | ---------- | ------------ | ---------- | ----------
-10 | CAwr_S49583, CAwr_S49584 | 28959.1 | Licensed | Power
-
+CAwr_WR1 | CAwr_S17128| Licensed | 2.5 | Irrigation
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID
@@ -252,31 +252,12 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 ***
 ### 7) Code File: 7_UTwr_PODSiteToPOUSiteRelationships.py
-Purpose: generate linking element between POD and POU sites that share the same water right.
-Note: podsitetopousiterelationships.csv output only needed if both POD and POU data is present, otherwise produces empty file.
+Not used for this project...
 
-#### Inputs:
-- sites.csv
-- waterallocations.csv
 
-#### Outputs:
-- podsitetopousiterelationships.csv
-
-#### Operation and Steps:
-- Read the sites.csv & waterallocations.csv input files.
-- Create three temporary dataframes: one for waterallocations, & two for site info that will store POD and POU data separately.
-- For the temporary POD dataframe...
-    - Read in site.csv data from sites.csv with a *PODSiteUUID* field = POD only.
-    - Create *PODSiteUUID* field = *SiteUUID*.
-- For the temporary POU dataframe
-    - Read in site.csv data from sites.csv with a *PODSiteUUID* field = POU only.
-    - Create *POUSiteUUID* field = *SiteUUID*.
-- For the temporary waterallocations dataframe, explode *SiteUUID* field to create unique rows.
-- Left-merge POD & POU dataframes to the waterallocations dataframe via *SiteUUID* field.
-- Consolidate waterallocations dataframe by grouping entries by *AllocationNativeID* filed.
-- Explode the consolidated waterallocations dataframe again using the *PODSiteUUID* field, and again for the *POUSiteUUID* field to create unique rows.
-- Perform error check on waterallocations dataframe (check for NaN values)
-- If waterallocations is not empty, export output dataframe *podsitetopousiterelationships.csv*.
+***
+### 8) Code File: 8_CAwr_WaDEDataAssessmentScript.py
+Purpose: generate visuals and analytics used by the WaDE staff to inspect the processed data.
 
 
 ***
