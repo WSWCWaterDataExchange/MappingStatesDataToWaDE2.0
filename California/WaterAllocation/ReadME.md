@@ -51,7 +51,7 @@ Purpose: Pre-process the state agency's input data files and merge them into one
 Purpose: generate legend of granular methods used on data collection.
 
 #### Inputs:
-$${\color{red}Create  \space by  \space hand}$$
+$${\color{red} Create  \space by  \space hand}$$
 $${\color{green}Greenish}$$
 
 #### Outputs:
