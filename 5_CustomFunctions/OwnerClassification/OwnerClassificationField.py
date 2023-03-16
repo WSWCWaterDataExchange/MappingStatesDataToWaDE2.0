@@ -14,7 +14,7 @@ import pandas as pd
 ########################################################################################################################
 # Generic
 # ---------------------------------------------------------------------
-unList = ["unspecified", "unknown"]
+unList = ["unspecified", "wade_unspecified", "unknown"]
 nalist = ["tribe", "tribes", "nation", "nations", "indians"]
 
 # Government
@@ -50,7 +50,7 @@ listDictionary = {}
 
 # Generic List
 # ---------------------------------------------------------------------
-listDictionary["Unspecified"] = unList
+listDictionary["WaDE Unspecified"] = unList
 listDictionary["Native American"] = nalist
 
 # Government List
