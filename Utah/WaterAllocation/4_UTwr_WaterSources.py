@@ -1,5 +1,5 @@
-# Date Updated: 03/24/2022
-# Purpose: To extract UT water source use information and population dataframe for WaDE_QA 2.0.
+# Date Update: 03/10/2023
+# Purpose: To extract UT water source information and populate dataframe for WaDE_QA 2.0.
 # Notes: N/A
 
 
@@ -9,30 +9,29 @@ import os
 import numpy as np
 import pandas as pd
 
+
 # Custom Libraries
 ############################################################################
 import sys
+# columns
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/MappingFunctions")
+import GetColumnsFile
+
+# Test WaDE Data for any Errors
 sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
-import TestErrorFunctions
+import TestErrorFunctionsFile
 
 
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "G:/Shared drives/WaDE Data/Utah/WaterAllocation"  # Specific to my machine, will need to change.
+workingDir = "G:/Shared drives/WaDE Data/Utah/WaterAllocation"
 os.chdir(workingDir)
-fileInput = "RawinputData/P_UtahMaster.csv"
+fileInput = "RawinputData/Pwr_UtahMain.csv"
 df = pd.read_csv(fileInput)
 
-#WaDE columns
-columnslist = [
-    "WaterSourceUUID",
-    "Geometry",
-    "GNISFeatureNameCV",
-    "WaterQualityIndicatorCV",
-    "WaterSourceName",
-    "WaterSourceNativeID",
-    "WaterSourceTypeCV"]
+# WaDE columns
+WaterSourcseColumnsList = GetColumnsFile.GetWaterSourcesColumnsFunction()
 
 
 # Custom Site Functions
@@ -48,8 +47,7 @@ def assignWaterSourceUUID(colrowValue):
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-
-outdf = pd.DataFrame(index=df.index, columns=columnslist)  # The output dataframe for CSV.
+outdf = pd.DataFrame(index=df.index, columns=WaterSourcseColumnsList)  # The output dataframe for CSV.
 
 print("Geometry")
 outdf['Geometry'] = ""
@@ -61,13 +59,13 @@ print("WaterQualityIndicatorCV")
 outdf['WaterQualityIndicatorCV'] = "Fresh"
 
 print("WaterSourceName")
-outdf['WaterSourceName'] = "Unspecified"
+outdf['WaterSourceName'] = df['in_WaterSourceName']
 
-print("WaterSourceNativeID")  # has to be one of the last, need length of created outdf
-outdf['WaterSourceNativeID'] = df['in_WaterSourceNativeID']  # See preprocessing
+print("WaterSourceNativeID")
+outdf["WaterSourceNativeID"] = df['in_WaterSourceNativeID']
 
 print("WaterSourceTypeCV")
-outdf['WaterSourceTypeCV'] = df['in_WaterSourceTypeCV']  # See preprocessing
+outdf['WaterSourceTypeCV'] = df['in_WaterSourceTypeCV']
 
 ##############################
 # Dropping duplicate
@@ -75,33 +73,22 @@ print("Dropping duplicates")
 outdf = outdf.drop_duplicates(subset=['WaterSourceName', 'WaterSourceNativeID', 'WaterSourceTypeCV']).reset_index(drop=True)
 ##############################
 
+print("Adding Data Assessment UUID")
+outdf['WaDEUUID'] = df['WaDEUUID']
+
 print("Resetting Index")
 outdf.reset_index()
 
 
 #Error Checking each Field
 ############################################################################
-print("Error checking each field.  Purging bad inputs.")
-purgecolumnslist = ["ReasonRemoved", "RowIndex", "IncompleteField_1", "IncompleteField_2"]
-dfpurge = pd.DataFrame(columns=purgecolumnslist) # Purge DataFrame to hold removed elements
-
-# Geometry
-# ???? How to check for geometry datatype
-
-# GNISFeatureNameCV
-outdf, dfpurge = TestErrorFunctions.GNISFeatureNameCV_WS_Check(outdf, dfpurge)
-
-# WaterQualityIndicatorCV
-outdf, dfpurge = TestErrorFunctions.WaterQualityIndicatorCV_WS_Check(outdf, dfpurge)
-
-# WaterSourceName
-outdf, dfpurge = TestErrorFunctions.WaterSourceName_WS_Check(outdf, dfpurge)
-
-# WaterSourceNativeID
-outdf, dfpurge = TestErrorFunctions.WaterSourceNativeID_WS_Check(outdf, dfpurge)
-
-# WaterSourceTypeCV
-outdf, dfpurge = TestErrorFunctions.WaterSourceTypeCV_WS_Check(outdf, dfpurge)
+print("Error checking each field. Purging bad inputs.")
+dfpurge = pd.DataFrame(columns=WaterSourcseColumnsList) # Purge DataFrame to hold removed elements
+dfpurge['ReasonRemoved'] = ""
+dfpurge['IncompleteField'] = ""
+outdf, dfpurge = TestErrorFunctionsFile.WaterSourceTestErrorFunctions(outdf, dfpurge)
+print(f'Length of outdf DataFrame: ', len(outdf))
+print(f'Length of dfpurge DataFrame: ', len(dfpurge))
 
 
 ############################################################################
@@ -110,20 +97,22 @@ outdf = outdf.reset_index(drop=True)
 dftemp = pd.DataFrame(index=outdf.index)
 dftemp["Count"] = range(1, len(dftemp.index) + 1)
 outdf['WaterSourceUUID'] = dftemp.apply(lambda row: assignWaterSourceUUID(row['Count']), axis=1)
+#outdf['WaterSourceUUID'] = outdf.apply(lambda row: assignWaterSourceUUID(row['WaterSourceNativeID']), axis=1)
 
 # Error check WaterSourceUUID
-outdf, dfpurge = TestErrorFunctions.WaterSourceUUID_WS_Check(outdf, dfpurge)
+outdf, dfpurge = TestErrorFunctionsFile.WaterSourceUUID_WS_Check(outdf, dfpurge)
 
 
 # Export to new csv
 ############################################################################
-print("Exporting outdf and dfpurge dataframes...")
+print("Exporting dataframe...")
 
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/watersources.csv', index=False)
 
 # Report purged values.
-if(len(dfpurge.index) > 0):
-    dfpurge.to_excel('ProcessedInputData/watersources_missing.xlsx', index=False)
+if(len(dfpurge.index) > 0): print(f'...', len(dfpurge),  ' records removed.')
+dfpurge.insert(0, 'ReasonRemoved', dfpurge.pop('ReasonRemoved'))
+dfpurge.to_csv('ProcessedInputData/watersources_missing.csv', index=False)
 
-print("Done.")
+print("Done")

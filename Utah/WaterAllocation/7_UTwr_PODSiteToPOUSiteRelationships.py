@@ -1,4 +1,4 @@
-# Date Updated: 03/24/2022
+# Date Update: 03/10/2023
 # Purpose: To extract UT site POD and POU relation information and populate dataframe for WaDEQA 2.0.
 # Notes: N/A
 
@@ -13,7 +13,7 @@ import pandas as pd
 # Inputs
 ############################################################################
 print("Reading input csv...")
-workingDir = "G:/Shared drives/WaDE Data/Utah/WaterAllocation"  # Specific to my machine, will need to change.
+workingDir = "G:/Shared drives/WaDE Data/Utah/WaterAllocation"
 os.chdir(workingDir)
 
 # Sites
@@ -35,30 +35,30 @@ dfallo = pd.read_csv(allocationInput, usecols=alocationColumns)
 ############################################################################
 print("Populating dataframe...")
 
-print("Explode allocation by SiteUUID...")
+# Explode allocation by SiteUUID
 dfallo = dfallo.assign(SiteUUID=dfallo['SiteUUID'].str.split(',')).explode('SiteUUID').reset_index(drop=True)
 
-print("Merging dataframes into one, using left-join...")
+# Merging dataframes into one, using left-join.
 dfallo = pd.merge(dfallo, dfPOD[['SiteUUID', 'PODSiteUUID', 'PODorPOUSite']], on='SiteUUID', how='left')
 dfallo = pd.merge(dfallo, dfPOU[['SiteUUID', 'POUSiteUUID', 'PODorPOUSite']], on='SiteUUID', how='left')
 
-print("group by AllocationNativeID...")
+# group by AllocationNativeID
 dfallo = dfallo.groupby(['AllocationNativeID']).agg(lambda x: ",".join([str(elem) for elem in (list(set(x))) if elem!=""])).replace(np.nan, "").reset_index()
 
-print("explode by both PODSiteUUID, then by POUSiteUUID...")
+# explode by both PODSiteUUID, then by POUSiteUUID
 dfallo = dfallo.assign(PODSiteUUID=dfallo['PODSiteUUID'].str.split(',')).explode('PODSiteUUID').reset_index(drop=True)
 dfallo = dfallo.assign(POUSiteUUID=dfallo['POUSiteUUID'].str.split(',')).explode('POUSiteUUID').reset_index(drop=True)
 
-print("create output DataFrame...")
+# create out DataFrame
 outdf = pd.DataFrame()
 outdf['PODSiteUUID'] = dfallo['PODSiteUUID']
 outdf['POUSiteUUID'] = dfallo['POUSiteUUID']
 
-print("drops 'nan rows...")
+# drops 'nan rows'
 outdf = outdf[outdf['PODSiteUUID'] != 'nan'].reset_index(drop=True)
 outdf = outdf[outdf['POUSiteUUID'] != 'nan'].reset_index(drop=True)
 
-print("create dummy StartDate & EndDate values...")
+# create StartDate & EndDate values.
 outdf['StartDate'] = "01/01/2021"
 outdf['EndDate'] = "12/31/2021"
 
@@ -68,7 +68,7 @@ outdf['EndDate'] = "12/31/2021"
 print("Exporting dataframe outdf to csv...")
 
 # The working output DataFrame for WaDE 2.0 input.
-# Check if dataframe is empty, fill in 1 row if true
+# Check if dataframe is empty, print if false.
 if not outdf.empty:
     outdf.to_csv('ProcessedInputData/podsitetopousiterelationships.csv', index=False)
 

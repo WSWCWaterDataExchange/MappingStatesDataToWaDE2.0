@@ -1,6 +1,6 @@
-# Date Updated: 03/24/2022
-# Purpose: To extract UT organization use information and population dataframe for WaDE_QA 2.0.
-# Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
+# Date Update: 03/10/2023
+# Purpose: To extract UT organization information and populate dataframe for WaDE_QA 2.0.
+# Notes: N/A
 
 
 # Needed Libraries
@@ -10,40 +10,47 @@ import numpy as np
 import pandas as pd
 
 
+# Custom Libraries
+############################################################################
+import sys
+# columns
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/MappingFunctions")
+import GetColumnsFile
+
+
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "G:/Shared drives/WaDE Data/Utah/WaterAllocation"  # Specific to my machine, will need to change.
+workingDir = "G:/Shared drives/WaDE Data/Utah/WaterAllocation"
 os.chdir(workingDir)
 
-# Needed WaDE columns
-columnslist = [
-    "OrganizationUUID",
-    "OrganizationContactEmail",
-    "OrganizationContactName",
-    "OrganizationDataMappingURL",
-    "OrganizationName",
-    "OrganizationPhoneNumber",
-    "OrganizationPurview",
-    "OrganizationWebsite",
-    "State"]
+# WaDE columns
+OrganizationsColumnsList = GetColumnsFile.GetOrganizationsColumnsFunction()
 
 
 # Creating output dataframe (outdf)
 ############################################################################
-print("Populating dataframe...")
-inpVals = [
-    "UTwr_O1",
-    "jamesgreer@utah.gov",
-    "James Greer",
-    "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Utah",
-    "Utah Division of Water Rights",
-    "801-538-7280",
-    "Water Planning",
-    "https://water.utah.gov/",
-    "UT"]
+print("Populating DataFrame...")
+outdf = pd.DataFrame(columns=OrganizationsColumnsList)
+outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf = pd.DataFrame([inpVals], columns=columnslist)
+outdf.OrganizationUUID = "UTwr_O1"
+
+outdf.OrganizationContactEmail = "jamesgreer@utah.gov"
+
+outdf.OrganizationContactName = "James Greer"
+
+outdf.OrganizationDataMappingURL = "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Utah"
+
+outdf.OrganizationName = "Utah Division of Water Rights"
+
+outdf.OrganizationPhoneNumber = "801-538-7280"
+
+outdf.OrganizationPurview = "Water Planning"
+
+outdf.OrganizationWebsite = "https://water.utah.gov/"
+
+outdf.State = "UT"
 
 
 # Check required fields are not null
