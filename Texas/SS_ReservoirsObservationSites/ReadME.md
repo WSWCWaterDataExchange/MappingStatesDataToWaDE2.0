@@ -20,19 +20,20 @@ The 1) raw input data shared by the state / state agency / data provider (excel,
 
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share CSWRCB's site specific time series water data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *TX_SS_ReservoirsObservationSitesSchema Mapping to WaDE.xlsx*.  Seven executable code files were used to extract the state agency's site specific time series data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(SiteSpecificAmounts)* is dependent on the previous files.  Those six code files are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share CSWRCB's site specific time series water data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *TX_SS_ReservoirsObservationSitesSchema Mapping to WaDE.xlsx*.  The following executable code files were used to extract the state agency's site specific time series data from the above mentioned input files.  Each code file is numbered for order of operation.  Some code files (ipynb) were built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The *(SiteSpecificAmounts.py)* code file is dependent on the previous files.  Those code files are as follows...
 
-- 0_PreProcessTXReservoirObservationSites.ipynb
+- 0_TXssro_PreProcessAllocationData.ipynb
 - 1_TXssro_Methods.py
 - 2_TXssro_Variables.py
 - 3_TXssro_Organizations.py
 - 4_TXssro_WaterSources.py
 - 5_TXssro_Sites.py
 - 6_TXssro_SiteSpecificAmounts_fact.py
+- 7_TXssro_WaDEDataAssessmentScript.ipynb
 
 
 ***
-### 0) Code File: 0_PreProcessTXReservoirObservationSites.ipynb
+### 0) Code File: 0_TXssro_PreProcessAllocationData.ipynb
 Purpose: Pre-process the state agency input data files into one master file for simple DataFrames creation and extraction.
 
 #### Inputs: 
@@ -44,7 +45,7 @@ Purpose: Pre-process the state agency input data files into one master file for 
 
 #### Operation and Steps:
 - Read in input csv data, place into temporary dataframes for stream site data.
-- Create temporary *apiSiteName* field from provided **short_name** field by removing speical characters.
+- Create temporary *apiSiteName* field from provided **short_name** field by removing special characters.
 - Create list of *apiSiteName* values.  This will be used as part of the url timeseries service to gather data for each site.
 - To gather time series data...
     - Use generated *apiSiteName* list to gather data from url service, use format of "https://www.waterdatafortexas.org/reservoirs/individual/" + str(apiSiteNameList[i]) + ".csv" as input.
@@ -266,6 +267,11 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - DataPublicationDate
 - TimeframeEnd
 - TimeframeStart
+
+
+***
+### 7) Code File: 7_TXssro_WaDEDataAssessmentScript.py
+Purpose: generate visuals and analytics used by the WaDE staff to inspect the processed data.
 
 
 ***

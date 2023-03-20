@@ -1,7 +1,6 @@
-#Last Updated: 12/20/2022
-#Author: Ryan James (WSWC)
-#Purpose: To create TX site specific reservoir and observation site methods use information and population dataframe for WaDE_QA 2.0.
-#Notes: 1) Used a list approach.  Needed to have two rows, one with surface water, the other with groundwater.
+# Date Update: 03/17/2023
+# Purpose: To create TX site specific reservoir and observation site methods use information and population dataframe for WaDE_QA 2.0.
+# Notes: N/A
 
 
 # Needed Libraries
@@ -11,29 +10,27 @@ import numpy as np
 import pandas as pd
 
 
+# Custom Libraries
+############################################################################
+import sys
+# columns
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/MappingFunctions")
+import GetColumnsFile
+
 # Inputs
 ############################################################################
 print("Reading inputs...")
 workingDir = "G:/Shared drives/WaDE Data/Texas/SS_ReservoirsObservationSites"
 os.chdir(workingDir)
 
-#WaDE columns
-columnslist = [
-    "MethodUUID",
-    "ApplicableResourceTypeCV",
-    "DataConfidenceValue",
-    "DataCoverageValue",
-    "DataQualityValueCV",
-    "MethodDescription",
-    "MethodName",
-    "MethodNEMILink",
-    "MethodTypeCV"]
+# WaDE columns
+MethodsColumnsList = GetColumnsFile.GetMethodsColumnsFunction()
 
 
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-outdf = pd.DataFrame(columns=columnslist)
+outdf = pd.DataFrame(columns=MethodsColumnsList)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
 outdf.MethodUUID = "TXssro_M1"
@@ -50,7 +47,7 @@ outdf.MethodDescription = "The reservoir data contained in this file are best es
 
 outdf.MethodName = "Reservoir Data"
 
-outdf.MethodNEMILink = ""
+outdf.MethodNEMILink = "https://www.waterdatafortexas.org/reservoirs/download"
 
 outdf.MethodTypeCV = "Measured"
 
