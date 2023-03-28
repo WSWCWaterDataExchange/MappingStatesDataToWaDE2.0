@@ -1,6 +1,6 @@
-#Date Created: 06/23/2022
-#Purpose: To extract TX wr organization use information and populate dataframe for WaDE_QA 2.0.
-#Notes: 1) No input csv to read, all values are more easily hardcoded into a list here and then exported to CSV.
+# Date Update: 03/28/2023
+# Purpose: To extract NM organization information and populate dataframe for WaDE_QA 2.0.
+# Notes: N/A
 
 
 # Needed Libraries
@@ -10,40 +10,47 @@ import numpy as np
 import pandas as pd
 
 
+# Custom Libraries
+############################################################################
+import sys
+# columns
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/MappingFunctions")
+import GetColumnsFile
+
+
 # Inputs
 ############################################################################
 print("Reading inputs...")
 workingDir = "G:/Shared drives/WaDE Data/Texas/WaterAllocation"
 os.chdir(workingDir)
 
-# Needed WaDE columns
-columns = [
-    "OrganizationUUID",
-    "OrganizationContactEmail",
-    "OrganizationContactName",
-    "OrganizationDataMappingURL",
-    "OrganizationName",
-    "OrganizationPhoneNumber",
-    "OrganizationPurview",
-    "OrganizationWebsite",
-    "State"]
+# WaDE columns
+OrganizationsColumnsList = GetColumnsFile.GetOrganizationsColumnsFunction()
 
 
 # Creating output dataframe (outdf)
 ############################################################################
-print("Populating dataframe...")
-inpVals = [
-    "TXwr_O1",
-    "jkathy.alexander@tceq.texas.gov",
-    "Kathy Alexander",
-    "https://www.tceq.texas.gov/permitting/water_rights/wr-permitting/wrwud",
-    "Texas Commission on Environmental Quality",
-    "512-239-1000",
-    "The Texas Commission on Environmental Quality is the environmental agency for the state.",
-    "https://www.tceq.texas.gov/",
-    "TX"]
+print("Populating DataFrame...")
+outdf = pd.DataFrame(columns=OrganizationsColumnsList)
+outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf = pd.DataFrame([inpVals], columns=columns)
+outdf.OrganizationUUID = "TXwr_O1"
+
+outdf.OrganizationContactEmail = "kathy.alexander@tceq.texas.gov"
+
+outdf.OrganizationContactName = "Kathy Alexander"
+
+outdf.OrganizationDataMappingURL = "https://www.tceq.texas.gov/permitting/water_rights/wr-permitting/wrwud"
+
+outdf.OrganizationName = "Texas Commission on Environmental Quality"
+
+outdf.OrganizationPhoneNumber = "512-239-1000"
+
+outdf.OrganizationPurview = "The Texas Commission on Environmental Quality is the environmental agency for the state."
+
+outdf.OrganizationWebsite = "https://www.tceq.texas.gov/"
+
+outdf.State = "TX"
 
 
 # Check required fields are not null

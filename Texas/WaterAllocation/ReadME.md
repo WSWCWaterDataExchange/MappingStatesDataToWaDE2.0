@@ -5,10 +5,12 @@ This readme details the process that was applied by the staff of the [Western St
 ## Overview of Source Data Utilized
 The following data was used for water allocations...
 
-- Point of diversion (POD) water rights data were made available via the [Texas Water Rights Viewer](https://tceq.maps.arcgis.com/home/item.html?id=44adc80d90b749cb85cf39e04027dbdc), and downloaded with [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview).  
+Name | Description | Download Link | Metadata Glossary Link
+---------- | ---------- | ------------ | ------------
+**TX POD data** | Point of diversion (POD) water rights data were made available via the [Texas Water Rights Viewer](https://tceq.maps.arcgis.com/home/item.html?id=44adc80d90b749cb85cf39e04027dbdc). | [link](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview) | not given
+
 
 Input files used are as follows...
-
  - WaterRightPoint.csv
  
 ## Storage for WaDE 2.0 Source and Processed Water Data
@@ -16,9 +18,9 @@ The 1) raw input data shared by the state / state agency / data provider (excel,
 - Texas Allocation Data: https://drive.google.com/drive/folders/1AyU66r1y4FNkwMBcN0J4knPNhGqZGuRh?usp=sharing
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share TCEQ's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *[TX_Allocation Schema Mapping to WaDE_QA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Texas/WaterAllocation/TX_Allocation%20Schema%20Mapping%20to%20WaDE_QA.xlsx)*.  Six executable code files were used to extract the TCEQ's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those six code files are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share TCEQ's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *TXwr_Allocation Schema Mapping to WaDE.xlsx*.  Six executable code files were used to extract the TCEQ's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those six code files are as follows...
 
-- 0_PreProcessTexasAllocationData.ipynb
+- 0_TXwr_PreProcessAllocationData.ipynb
 - 1_TXwr_Methods.py
 - 2_TXwr_Variables.py
 - 3_TXwr_Organizations.py
@@ -28,20 +30,20 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 
 
 ***
-### 0) Code File: 0_PreProcessTexasAllocationData.ipynb
+### 0) Code File: 0_TXwr_PreProcessAllocationData.ipynb
 Purpose: Pre-process the state agency's input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
 - WaterRightPoint.csv
 
 #### Outputs:
- - P_TexasWRP.csv
+ - P_TexasWRP.zip
 
 #### Operation and Steps:
 - Read the input files and generate temporary input dataframe.
 - Repair string data.
 - Inspect output dataframe for additional errors / datatypes.
-- Export output dataframe as new csv file, *P_TexasWRP.csv*.
+- Export output dataframe as new csv file, *P_TexasWRP.zip*.
 
 
 ***
@@ -66,7 +68,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
-TXwr_M1 | Surface Ground | Estimated
+TXwr_M1 | Surface Water and Groundwater | Estimated
 
 
 ***
@@ -91,7 +93,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
 ---------- | ---------- | ------------ | ------------
-TXwr_V1 | 1 | Year | CFS
+TXwr_V1 | 1 | Year | WaDE Unspecified
 
 
 ***
@@ -124,7 +126,7 @@ TXwr_O1 | Texas Commission on Environmental Quality | John-Cody Stalsby | https:
 Purpose: generate a list of water sources specific to a water right.
 
 #### Inputs:
-- P_TexasWRP.csv
+- P_TexasWRP.zip
 
 #### Outputs:
 - waterSources.csv
@@ -133,7 +135,7 @@ Purpose: generate a list of water sources specific to a water right.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign **TCEQ** info to the *WaDE WaterSources* specific columns.  See *[TX_Allocation Schema Mapping to WaDE_QA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Texas/WaterAllocation/TX_Allocation%20Schema%20Mapping%20to%20WaDE_QA.xlsx)* for specific details.
+- Assign **TCEQ** info to the *WaDE WaterSources* specific columns.  See *TXwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.
 - Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceName* & *WaterSourceTypeCV* fields.
 - Assign water source UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
@@ -142,7 +144,7 @@ Purpose: generate a list of water sources specific to a water right.
 #### Sample Output (WARNING: not all fields shown):
 WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceNativeID | WaterSourceTypeCV
 ---------- | ---------- | ------------ | ------------ | ------------
-TXwr_WS1 | Fresh | Unspecified | Unspecified | Unspecified
+TXwr_WS1 | Fresh | WaDE Unspecified | WaDE Unspecified | WaDE Unspecified
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
 - WaterSourceUUID
@@ -155,7 +157,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 Purpose: generate a list of sites information.
 
 #### Inputs:
-- P_TexasWRP.csv
+- P_TexasWRP.zip
 
 #### Outputs:
 - sites.csv
@@ -164,7 +166,7 @@ Purpose: generate a list of sites information.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
-- Assign **TCEQ** info to the *WaDE Site* specific columns.  See *[TX_Allocation Schema Mapping to WaDE_QA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Texas/WaterAllocation/TX_Allocation%20Schema%20Mapping%20to%20WaDE_QA.xlsx)* for specific details.  Items of note are as follows...
+- Assign **TCEQ** info to the *WaDE Site* specific columns.  See *TXwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - *Latitude* = **LAT_DD**, will need to convert from EPSG:4269 -to- EPSG:4326. 
     - *Longitude* = **LONG_DD**, will need to convert from EPSG:4269 -to- EPSG:4326.
     - *SiteNativeID* = **TCEQ_ID**.
@@ -177,7 +179,7 @@ Purpose: generate a list of sites information.
 #### Sample Output (WARNING: not all fields shown):
 SiteUUID | CoordinateMethodCV | Latitude | Longitude | SiteName
 ---------- | ---------- | ------------ | ------------ | ------------
-TXwr_S1 | Unspecified | 29.651976 | -96.275803 | Unspecified
+TXwr_S1 | WaDE Unspecified | 29.651976 | -96.275803 | WaDE Unspecified
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
 - SiteUUID 
@@ -191,7 +193,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 
 #### Inputs:
-- P_TexasWRP.csv
+- P_TexasWRP.zip
 - WaterRightOwner.csv
 - WaterUse.csv
 - methods.csv
@@ -207,7 +209,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
-- Assign **TCEQ** info to the *WaDE Water Allocations* specific columns.  See *[TX_Allocation Schema Mapping to WaDE_QA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Texas/WaterAllocation/TX_Allocation%20Schema%20Mapping%20to%20WaDE_QA.xlsx)* for specific details.  Items of note are as follows...
+- Assign **TCEQ** info to the *WaDE Water Allocations* specific columns.  See *TXwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *AllocationNativeID* = **WR_ID**.
     - *AllocationOwner* = **owners**.

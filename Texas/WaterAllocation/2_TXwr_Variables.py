@@ -1,6 +1,6 @@
-#Date Created: 06/23/2022
-#Purpose: To extract TX wr variable use information and populate dataframe for WaDE_QA 2.0.
-#Notes: 1) Single row of entries, inpVals, for Variable Table.
+# Date Update: 03/28/2023
+# Purpose: To extract NM variable information and populate dataframe for WaDE_QA 2.0.
+# Notes: N/A
 
 
 # Needed Libraries
@@ -10,42 +10,49 @@ import numpy as np
 import pandas as pd
 
 
+# Custom Libraries
+############################################################################
+import sys
+# columns
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/MappingFunctions")
+import GetColumnsFile
+
+
 # Inputs
 ############################################################################
 print("Reading inputs...")
 workingDir = "G:/Shared drives/WaDE Data/Texas/WaterAllocation"
 os.chdir(workingDir)
 
-#WaDE columns
-columns = [
-    "VariableSpecificUUID",
-    "AggregationInterval",
-    "AggregationIntervalUnitCV",
-    "AggregationStatisticCV",
-    "AmountUnitCV",
-    "MaximumAmountUnitCV",
-    "ReportYearStartMonth",
-    "ReportYearTypeCV",
-    "VariableCV",
-    "VariableSpecificCV"]
+# WaDE columns
+VariablesColumnsList = GetColumnsFile.GetVariablesColumnsFunction()
 
 
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-inpVals = [
-    "TXwr_V1",
-    "1",
-    "Year",
-    "Average",
-    "CFS",
-    "AFY",
-    "10",
-    "WaterYear",
-    "Allocation",
-    "Allocation"]
+outdf = pd.DataFrame(columns=VariablesColumnsList)
+outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf = pd.DataFrame([inpVals], columns=columns)
+outdf.VariableSpecificUUID = "TXwr_V1"
+
+outdf.AggregationInterval = "1"
+
+outdf.AggregationIntervalUnitCV = "Year"
+
+outdf.AggregationStatisticCV = "Average"
+
+outdf.AmountUnitCV = 'WaDE Unspecified'
+
+outdf.MaximumAmountUnitCV = 'WaDE Unspecified'
+
+outdf.ReportYearStartMonth = "10"
+
+outdf.ReportYearTypeCV = "WaterYear"
+
+outdf.VariableCV = "Allocation"
+
+outdf.VariableSpecificCV = "Allocation"
 
 
 # Check required fields are not null

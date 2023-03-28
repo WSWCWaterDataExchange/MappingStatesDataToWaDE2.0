@@ -1,6 +1,6 @@
-#Date Created: 06/23/2022
-#Purpose: To extract TX wr methods use information and populate dataframe for WaDE_QA 2.0.
-#Notes:   1) Single row of entries, inpVals, for Methods Table.
+# Date Update: 03/28/2023
+# Purpose: To extract NM methods use information and populate dataframe for WaDE_QA 2.0.
+# Notes: N/A
 
 
 # Needed Libraries
@@ -10,34 +10,33 @@ import numpy as np
 import pandas as pd
 
 
+# Custom Libraries
+############################################################################
+import sys
+# columns
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/MappingFunctions")
+import GetColumnsFile
+
+
 # Inputs
 ############################################################################
 print("Reading inputs...")
 workingDir = "G:/Shared drives/WaDE Data/Texas/WaterAllocation"
 os.chdir(workingDir)
 
-#WaDE columns
-columnslist = [
-    "MethodUUID",
-    "ApplicableResourceTypeCV",
-    "DataConfidenceValue",
-    "DataCoverageValue",
-    "DataQualityValueCV",
-    "MethodDescription",
-    "MethodName",
-    "MethodNEMILink",
-    "MethodTypeCV"]
+# WaDE columns
+MethodsColumnsList = GetColumnsFile.GetMethodsColumnsFunction()
 
 
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-outdf = pd.DataFrame(columns=columnslist)
+outdf = pd.DataFrame(columns=MethodsColumnsList)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
 outdf.MethodUUID = "TXwr_M1"
 
-outdf.ApplicableResourceTypeCV = "Surface Ground"
+outdf.ApplicableResourceTypeCV = "Surface Water and Groundwater"
 
 outdf.DataConfidenceValue = ""
 
@@ -74,6 +73,6 @@ outdf.to_csv('ProcessedInputData/methods.csv', index=False)
 
 # Report purged values.
 if(len(outdf_nullMand.index) > 0):
-    outdf_nullMand.to_csv('ProcessedInputData/methods_missing.csv', index=False)
+    outdf_nullMand.to_csv('ProcessedInputData/methods_mandatoryFieldMissing.csv', index=False)
 
 print("Done.")
