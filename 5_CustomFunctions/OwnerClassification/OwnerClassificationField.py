@@ -1,4 +1,4 @@
-# Last Update: 09/21/2022
+# Last Update: 03/23/2023
 # Purpose: To have a single function file to create OwnerClassificationCV field.
 
 
@@ -14,7 +14,7 @@ import pandas as pd
 ########################################################################################################################
 # Generic
 # ---------------------------------------------------------------------
-unList = ["unspecified", "wade_unspecified", "unknown"]
+unList = ["unspecified", "wade unspecified", "unknown"]
 nalist = ["tribe", "tribes", "nation", "nations", "indians"]
 
 # Government

@@ -23,8 +23,9 @@ This listed provided below are used to determine WaDE **OwnerClassificationTypeC
 
 ***
 ### Generic Keywords
-- **Unspecified**. unList = ["unspecified", "unknown"]
+- **Unspecified**. unList = ["unspecified", "wade unspecified", "unknown"]
 - **Native American**. nalist = ["tribe", "tribes", "nation", "nations", "indians"]
+
 
 
 ***
@@ -36,6 +37,7 @@ This listed provided below are used to determine WaDE **OwnerClassificationTypeC
 - **United States of America**. usoalist = ["united states of america", "united states america", "usa"]
 
 
+
 ***
 ### Military Keywords
 - **Military**. millist = ["us army", "u s army", "usarmy", "usa army", "national guard", "corps of engineer", "corps of engineers", "army corp", "army corps", "army corp of", "usa department of the army", "uscbp", "border patrol", "border protection", "customs service ", "customs office", "department of defense", "dept of defense", "dhs", "homeland security", "marine corps",  "usaf", "usafb", "afb", "air force", "airforce", "aire force", "air national guard"]
@@ -43,12 +45,13 @@ This listed provided below are used to determine WaDE **OwnerClassificationTypeC
 
 ***
 ### Natural Resources Keywords
-- **National Park Service (USNPS)**. usblmlist = ["usblm", "blm", "bureau of land mgmt", "bureau of land management", "bureau of land mgmnt", "bureau of land mgt", "bureau of land managment", "bureau of land managenemt"]
-- **Bureau of Land Management (USBLM)**. usbrlist = ["usbr", "bureau of reclam", "bureau of reclamation", "bureau reclamation"]
-- **Bureau Reclamation (USBR)**. usdalist = ["u s  dept of agriculture", "u s agriculture", "us agriculture dept", "us department agriculture", "us dept of agriculture", "usa  department of agriculture", "usa  dept of agriculture", "usda"]
-- **Department of Agriculture (USDA)**. usdoelist = ["department of energy", "u s department of energy", "u s dept  of energy lanl", "u s  department of energy", "u s  department of energy", "u s department of energy", "united states department of energy", "us department energy", "us department of energy", "us doe", "usa department of energy"]
-- **Department of Energy (USDOE)**. epalist = ["environmental protection agency", "epa", "e p a"]
-- **Environmental Protection Agency (USEPA)**. fwlist = ["u s department of the interior fish and wildlife service","u s dept of fish & wildlife","u s dept of the interior fish and wildlife","u s fish & wildlife","u s fish and wildlife","united states fish and wildlife","united states of america fish and wildlife","us department fish & wildlife","us department of fish & wildlife","us dept of interior fish and wildlife","us dept of the interior fish and wildlif","us fish & wild life","us fish & wildlife","us fish and wildlife","us interior dept fish & wildlife","usa department of interior fish and wildlife","usa dept of interior fish & wildlife","usa fish & wildlife","usa fish and wildlife","usdi fish & wildlife","usdi fish and wildlife","usdoi fish & wildlife","usfws"]
-- **Fish and Wildlife Service (USFWS)**. usfslist = ["forest service united states","forest service usda","u s d a forest service","u s forest service","u s forest","united states forest service","us forest service","usa forest service","usda forest service","usfs"]
-- **Forest Service (USFS)**. usgslist = ["u s geological survey","us geological survey","usa geological survey"]
-- **Geological Survey (USGS)**. usnplist = ["national park", "natl park serv", "national forest", "nat forest", "natl forest"]
+- **Bureau of Land Management (USBLM)**. usblmlist = ["usblm", "blm", "bureau of land mgmt", "bureau of land management", "bureau of land mgmnt", "bureau of land mgt", "bureau of land managment", "bureau of land managenemt"]
+- **Bureau Reclamation (USBR)**. usbrlist = ["usbr", "bureau of reclam", "bureau of reclamation", "bureau reclamation"]
+- **Department of Agriculture (USDA)**. usdalist = ["u s  dept of agriculture", "u s agriculture", "us agriculture dept", "us department agriculture", "us dept of agriculture", "usa  department of agriculture", "usa  dept of agriculture", "usda"]
+- **Department of Energy (USDOE)**. usdoelist = ["department of energy", "u s department of energy", "u s dept  of energy lanl", "u s  department of energy", "u s  department of energy", "u s department of energy", "united states department of energy", "us department energy", "us department of energy", "us doe", "usa department of energy"]
+-**Environmental Protection Agency (USEPA)**. epalist = ["environmental protection agency", "epa", "e p a"]
+- **Fish and Wildlife Service (USFWS)**. fwlist = ["u s department of the interior fish and wildlife service","u s dept of fish & wildlife","u s dept of the interior fish and wildlife","u s fish & wildlife","u s fish and wildlife","united states fish and wildlife","united states of america fish and wildlife","us department fish & wildlife","us department of fish & wildlife","us dept of interior fish and wildlife","us dept of the interior fish and wildlif","us fish & wild life","us fish & wildlife","us fish and wildlife","us interior dept fish & wildlife","usa department of interior fish and wildlife","usa dept of interior fish & wildlife","usa fish & wildlife","usa fish and wildlife","usdi fish & wildlife","usdi fish and wildlife","usdoi fish & wildlife","usfws"]
+- **Forest Service (USFS)**. usfslist = ["forest service united states","forest service usda","u s d a forest service","u s forest service","u s forest","united states forest service","us forest service","usa forest service","usda forest service","usfs"]
+- **Geological Survey (USGS)**. usgslist = ["u s geological survey","us geological survey","usa geological survey"]
+- **National Park Service (USNPS)**. usnplist = ["national park", "natl park serv", "national forest", "nat forest", "natl forest"]
+
