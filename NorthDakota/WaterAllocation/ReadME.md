@@ -183,7 +183,7 @@ Purpose: generate a list of sites information.
 #### Sample Output (WARNING: not all fields shown):
 SiteUUID | CoordinateMethodCV | Latitude | Longitude | SiteTypeCV
 ---------- | ---------- | ------------ | ------------ | ------------
-NDwr_S1 | WaDE Unspecified | 46.1113 | -99.78988 | Ground Water
+NDwr_S1 | WaDE Unspecified | 46.1113 | -99.78988 | WaDE Unspecified
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
 - SiteUUID 
