@@ -1,6 +1,6 @@
-#Date Created: 04/08/2020
-#Purpose: To create ND variable use information and populate dataframe for WaDE_QA 2.0.
-#Notes: 1) Single row of entries, inpVals, for Variable Table.
+# Date Update: 03/28/2023
+# Purpose: To extract ND information and populate dataframe for WaDE_QA 2.0.
+# Notes: N/A
 
 
 # Needed Libraries
@@ -10,31 +10,28 @@ import numpy as np
 import pandas as pd
 
 
+# Custom Libraries
+############################################################################
+import sys
+# columns
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/MappingFunctions")
+import GetColumnsFile
+
+
 # Inputs
 ############################################################################
 print("Reading inputs...")
 workingDir = "G:/Shared drives/WaDE Data/NorthDakota/WaterAllocation"
 os.chdir(workingDir)
 
-#WaDE columns
-columnslist = [
-    "VariableSpecificUUID",
-    "AggregationInterval",
-    "AggregationIntervalUnitCV",
-    "AggregationStatisticCV",
-    "AmountUnitCV",
-    "MaximumAmountUnitCV",
-    "ReportYearStartMonth",
-    "ReportYearTypeCV",
-    "VariableCV",
-    "VariableSpecificCV"]
+# WaDE columns
+VariablesColumnsList = GetColumnsFile.GetVariablesColumnsFunction()
 
 
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-
-outdf = pd.DataFrame(columns=columnslist)
+outdf = pd.DataFrame(columns=VariablesColumnsList)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
 outdf.VariableSpecificUUID = "NDwr_V1"
@@ -45,9 +42,9 @@ outdf.AggregationIntervalUnitCV = "Year"
 
 outdf.AggregationStatisticCV = "Average"
 
-outdf.AmountUnitCV = "CFS"
+outdf.AmountUnitCV = 'CFS'
 
-outdf.MaximumAmountUnitCV = "AFY"
+outdf.MaximumAmountUnitCV = 'AF'
 
 outdf.ReportYearStartMonth = "10"
 
@@ -84,6 +81,6 @@ outdf.to_csv('ProcessedInputData/variables.csv', index=False)
 
 # Report purged values.
 if(len(outdf_nullMand.index) > 0):
-    outdf_nullMand.to_csv('ProcessedInputData/variables_missing.csv', index=False)
+    outdf_nullMand.to_csv('ProcessedInputData/variables_mandatoryFieldMissing.csv', index=False)
 
 print("Done.")

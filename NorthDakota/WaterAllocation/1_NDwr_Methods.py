@@ -1,6 +1,6 @@
-#Date Created: 04/08/2020
-#Purpose: To create ND methods use information and populate dataframe for WaDE_QA 2.0.
-#Notes:
+# Date Update: 03/28/2023
+# Purpose: To extract ND methods use information and populate dataframe for WaDE_QA 2.0.
+# Notes: N/A
 
 
 # Needed Libraries
@@ -10,34 +10,33 @@ import numpy as np
 import pandas as pd
 
 
+# Custom Libraries
+############################################################################
+import sys
+# columns
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/MappingFunctions")
+import GetColumnsFile
+
+
 # Inputs
 ############################################################################
 print("Reading inputs...")
 workingDir = "G:/Shared drives/WaDE Data/NorthDakota/WaterAllocation"
 os.chdir(workingDir)
 
-#WaDE columns
-columnslist = [
-    "MethodUUID",
-    "ApplicableResourceTypeCV",
-    "DataConfidenceValue",
-    "DataCoverageValue",
-    "DataQualityValueCV",
-    "MethodDescription",
-    "MethodName",
-    "MethodNEMILink",
-    "MethodTypeCV"]
+# WaDE columns
+MethodsColumnsList = GetColumnsFile.GetMethodsColumnsFunction()
 
 
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-outdf = pd.DataFrame(columns=columnslist)
+outdf = pd.DataFrame(columns=MethodsColumnsList)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
 outdf.MethodUUID = "NDwr_M1"
 
-outdf.ApplicableResourceTypeCV = "Surface Ground"
+outdf.ApplicableResourceTypeCV = "Surface Water and Groundwater"
 
 outdf.DataConfidenceValue = ""
 
@@ -51,8 +50,7 @@ outdf.MethodName = "North Dakota Water Rights Method"
 
 outdf.MethodNEMILink = "https://www.swc.nd.gov/reg_approp/waterpermits/"
 
-outdf.MethodTypeCV =  "Legal Processes"
-
+outdf.MethodTypeCV = "Legal Processes"
 
 # Check required fields are not null
 ############################################################################
@@ -75,6 +73,6 @@ outdf.to_csv('ProcessedInputData/methods.csv', index=False)
 
 # Report purged values.
 if(len(outdf_nullMand.index) > 0):
-    outdf_nullMand.to_csv('ProcessedInputData/methods_missing.csv', index=False)
+    outdf_nullMand.to_csv('ProcessedInputData/methods_mandatoryFieldMissing.csv', index=False)
 
 print("Done.")
