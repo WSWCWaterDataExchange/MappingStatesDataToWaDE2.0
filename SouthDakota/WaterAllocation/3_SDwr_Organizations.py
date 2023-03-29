@@ -1,6 +1,6 @@
-#Date Created: 06/23/2022
-#Purpose: To extract SD wr organization information and populate dataframe for WaDE_QA 2.0.
-#Notes: asdf
+# Date Update: 03/29/2023
+# Purpose: To extract SD organization information and populate dataframe for WaDE_QA 2.0.
+# Notes: N/A
 
 
 # Needed Libraries
@@ -10,40 +10,47 @@ import numpy as np
 import pandas as pd
 
 
+# Custom Libraries
+############################################################################
+import sys
+# columns
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/MappingFunctions")
+import GetColumnsFile
+
+
 # Inputs
 ############################################################################
 print("Reading inputs...")
 workingDir = "G:/Shared drives/WaDE Data/SouthDakota/WaterAllocation"
 os.chdir(workingDir)
 
-# Needed WaDE columns
-columnslist = [
-    "OrganizationUUID",
-    "OrganizationContactEmail",
-    "OrganizationContactName",
-    "OrganizationDataMappingURL",
-    "OrganizationName",
-    "OrganizationPhoneNumber",
-    "OrganizationPurview",
-    "OrganizationWebsite",
-    "State"]
+# WaDE columns
+OrganizationsColumnsList = GetColumnsFile.GetOrganizationsColumnsFunction()
 
 
 # Creating output dataframe (outdf)
 ############################################################################
-print("Populating dataframe...")
-inpVals = [
-    "SDwr_O1",
-    "Ron.Duvall@state.sd.us",
-    "Ron Duvall",
-    "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/SouthDakota",
-    "South Dakota Department of Environment and Natural Resources",
-    "605-773-3352",
-    "The mission of DENR is to protect public health and the environment by providing environmental monitoring and natural resource assessment, technical and financial assistance for environmental projects, and environmental regulatory services.",
-    "https://denr.sd.gov/",
-    "SD"]
+print("Populating DataFrame...")
+outdf = pd.DataFrame(columns=OrganizationsColumnsList)
+outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf = pd.DataFrame([inpVals], columns=columnslist)
+outdf.OrganizationUUID = "SDwr_O1"
+
+outdf.OrganizationContactEmail = "Ron.Duvall@state.sd.us"
+
+outdf.OrganizationContactName = "Ron Duvall"
+
+outdf.OrganizationDataMappingURL = "https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/SouthDakota"
+
+outdf.OrganizationName = "South Dakota Department of Environment and Natural Resources"
+
+outdf.OrganizationPhoneNumber = "605-773-3352"
+
+outdf.OrganizationPurview = "The mission of DENR is to protect public health and the environment by providing environmental monitoring and natural resource assessment, technical and financial assistance for environmental projects, and environmental regulatory services."
+
+outdf.OrganizationWebsite = "https://denr.sd.gov/"
+
+outdf.State = "SD"
 
 
 # Check required fields are not null

@@ -5,7 +5,11 @@ This readme details the process that was applied by the staff of the [Western St
 ## Overview of Source Data Utilized
 The following data was used for water allocations...
 
-- Point of diversion (POD) surface and groundwater data files were made temporary available to the WSWC staff by the SDDENR via email correspondence and shared through Google Drive.  Links no longer available, contact SDDENR for further instructions.
+Name | Description | Download Link | Metadata Glossary Link
+---------- | ---------- | ------------ | ------------
+**Water Right Data** | Point of diversion (POD) surface and groundwater data files were made temporary available to the WSWC staff by the SDDENR via email correspondence and shared through Google Drive.  Links no longer available, contact SDDENR for further instructions. | not given | not given
+
+
 
 Two unique files were created, one used by the WSWC staff to understand the available data (*"_with Notes"*), the second resulting files to be used as input to the Python codes that prepare WaDE2 input files.  Input files used are as follows...
  - waterights_input
@@ -15,9 +19,9 @@ The 1) raw input data shared by the state / state agency / data provider (excel,
 - South Dakota Allocation Data: https://drive.google.com/drive/folders/1AQH7axW_PjUZKd7JQqOiBuE3fMBG3Q7a?usp=sharing
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share SDDENR's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *WY_Allocation Schema Mapping to WaDE_QA.xlsx*.  Six executable code files were used to extract the SDDENR's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those six code files are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share SDDENR's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *SD_Allocation Schema Mapping to WaDE.xlsx*.  Several executable code files were used to extract the NDSWC's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  Some code files were built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(AllocationAmounts_facts)* is dependent on the previous files.  Those code files are as follows...
 
-- 0_PreProcessSouthDakotaAllocationData.ipynb
+- 0_SDwr_PreProcessAllocationData.ipynb
 - 1_SDwr_Methods.py
 - 2_SDwr_Variables.py
 - 3_SDwr_Organizations.py
@@ -27,7 +31,7 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 
 
 ***
-### 0) Code File: 0_PreProcessSouthDakotaAllocationData.ipynb
+### 0) Code File: 0_SDwr_PreProcessAllocationData.ipynb
 Purpose: Pre-process the South Dakota input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
@@ -139,10 +143,10 @@ Purpose: generate a list of water sources specific to a water right.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign **SDDENR** info to the *WaDE WaterSources* specific columns.  See *WY_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
-    - *WaterSourceName* = *in_WaterSourceName*, Unspecified if not given, see *0_PreProcessSouthDakotaAllocationData.ipynb* for specifics.
-    - *WaterSourceNativeID* = *in_WaterSourceNativeID*, see *0_PreProcessSouthDakotaAllocationData.ipynb* for specifics.
-    - *WaterSourceTypeCV* = Unspecified.
+- Assign **SDDENR** info to the *WaDE WaterSources* specific columns.  See *SD_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+    - *WaterSourceName* = **DIVERSION1**.
+    - *WaterSourceNativeID* = create custom ID.
+    - *WaterSourceTypeCV* =  **SOURCE**
 - Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceName* & *WaterSourceTypeCV* fields.
 - Assign water source UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
@@ -151,7 +155,7 @@ Purpose: generate a list of water sources specific to a water right.
 #### Sample Output (WARNING: not all fields shown):
 WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceNativeID | WaterSourceTypeCV
 ---------- | ---------- | ------------ | ------------ | ------------
-SDwr_WS1 | Fresh | JR | WaDEWY_WS1 | Unspecified
+SDwr_WS1 | Fresh | WOLF CREEK | WaDESD_WS1 | Surface Water
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
 - WaterSourceUUID
@@ -173,13 +177,12 @@ Purpose: generate a list of sites information.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
-- Assign **SDDENR** info to the *WaDE Site* specific columns.  See *WY_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
-    - *HUC8* = **HYDROUNIT1**.
+- Assign info to the *WaDE Site* specific columns.  See *SD_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - *Latitude* = **LATITUDE**.
     - *Longitude* = **LONGITUDE**.
-    - *SiteName* = **FacilityName**, Unspecified if not given.
-    - *SiteNativeID* = **DIVERSION1**, see *0_PreProcessSouthDakotaAllocationData.ipynb* for specifics.
-    - *SiteTypeCV* = **Facility_type**, see *0_PreProcessSouthDakotaAllocationData.ipynb* for specifics.
+    - *SiteName* = WaDE Unspecified
+    - *SiteNativeID* = # create custom ID.
+    - *SiteTypeCV* =  WaDE Unspecified
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *SiteNativeID*, *SiteName*, *SiteTypeCV*, *Longitude* & *Latitude* fields.
 - Assign site UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
@@ -188,7 +191,7 @@ Purpose: generate a list of sites information.
 #### Sample Output (WARNING: not all fields shown):
 SiteUUID | CoordinateMethodCV | Latitude | Longitude | SiteName
 ---------- | ---------- | ------------ | ------------ | ------------
-SDwr_S1 | Unspecified | 43.71384 | -97.6078 | WOLF CREEK
+SDwr_S1 | WaDE Unspecified | 43.71384 | -97.6078 | WaDE Unspecified
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
 - SiteUUID 
@@ -216,16 +219,16 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
-- Assign **SDDENR** info to the *WaDE Water Allocations* specific columns.  See *WY_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+- Assign **SDDENR** info to the *WaDE Water Allocations* specific columns.  See *SD_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *AllocationLegalStatusCV* = **STATUS**
-    - *AllocationFlow_CFS* = **LIC_CFS**.
-    - *AllocationLegalStatusCV* = *input_Status*, see *0_PreProcessSouthDakotaAllocationData.ipynb* for specifics.
+    - *AllocationFlow_CFS* = **PER_CFS**.
+    - *AllocationVolume_AF* = **PER_ACRES**.
+    - *AllocationLegalStatusCV* = *input_Status*, see *0_SDwr_PreProcessAllocationData.ipynb* for specifics.
     - *AllocationNativeID* = **PERMIT_NO**.
-    - *AllocationOwner* =  *WaDEOwner*, see *0_PreProcessSouthDakotaAllocationData.ipynb* for specifics.
+    - *AllocationOwner* =  *WaDEOwner*, see *0_SDwr_PreProcessAllocationData.ipynb* for specifics.
     - *AllocationPriorityDate* = **PRIORDATE**.
-    - *AllocationTypeCV* = "Unspecified.
-    - *BeneficialUseCategory* = *input_Benuse*, see *0_PreProcessSouthDakotaAllocationData.ipynb* for specifics.
+    - *BeneficialUseCategory* = *input_Benuse*, see *0_SDwr_PreProcessAllocationData.ipynb* for specifics.
 - Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.
 - Perform error check on output dataframe.
 - Export output dataframe *waterallocations.csv*.
