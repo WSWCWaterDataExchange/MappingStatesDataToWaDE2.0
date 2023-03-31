@@ -1,4 +1,4 @@
-# Date Update: 03/02/2023
+# Date Update: 03/30/2023
 # Purpose: To extract CA water right information and populate dataframe for WaDE_QA 2.0.
 #         1) Simple creation of working dataframe (df), with output dataframe (outdf).
 #         2) Drop all nulls before combining duplicate rows on NativeID.
@@ -11,6 +11,8 @@
 import os
 import numpy as np
 import pandas as pd
+import re
+from datetime import date
 
 # Custom Libraries
 ############################################################################
@@ -37,19 +39,15 @@ import TestErrorFunctionsFile
 print("Reading input csv...")
 workingDir = "G:/Shared drives/WaDE Data/California/WaterAllocation"
 os.chdir(workingDir)
-DM_fileInput = "RawinputData/Pwr_CAMain.csv"
-df_DM = pd.read_csv(DM_fileInput).replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
-
-# method_fileInput = "ProcessedInputData/methods.csv"
-# variables_fileInput = "ProcessedInputData/variables.csv"
-# df_method = pd.read_csv(method_fileInput)  # Method dataframe
-# df_variables = pd.read_csv(variables_fileInput)  # Variables dataframe
+DM_fileInput = "RawinputData/Pwr_CAMain.zip"
+df_DM = pd.read_csv(DM_fileInput, compression='zip').replace(np.nan, "")  # The State's Master input dataframe. Remove any nulls.
 
 # Input Data - 'WaDE Input' files & 'missing.xlsx' files.
+dfv = pd.read_csv("ProcessedInputData/variables.csv").replace(np.nan, "")
 dfws = pd.read_csv("ProcessedInputData/watersources.csv").replace(np.nan, "")
-dfwspurge = pd.read_excel("ProcessedInputData/watersources_missing.xlsx").replace(np.nan, "")
-dfs = pd.read_csv("ProcessedInputData/sites.csv" ).replace(np.nan, "")
-dfspurge = pd.read_excel("ProcessedInputData/sites_missing.xlsx").replace(np.nan, "")
+dfwspurge = pd.read_csv("ProcessedInputData/watersources_missing.csv").replace(np.nan, "")
+dfs = pd.read_csv("ProcessedInputData/sites.csv").replace(np.nan, "")
+dfspurge = pd.read_csv("ProcessedInputData/sites_missing.csv").replace(np.nan, "")
 
 # WaDE columns
 AllocationAmountsColumnsList = GetColumnsFile.GetAllocationAmountsColumnsFunction()
@@ -58,23 +56,24 @@ AllocationAmountsColumnsList = GetColumnsFile.GetAllocationAmountsColumnsFunctio
 ############################################################################
 
 # For creating SiteUUID
-SitUUIDdict = pd.Series(dfs.SiteUUID.values, index=dfs.SiteNativeID).to_dict()
+SiteUUIDDdict = pd.Series(dfs.SiteUUID.values, index=dfs.SiteNativeID.astype(str)).to_dict()
 def retrieveSiteUUID(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = ''
     else:
-        String1 = colrowValue
+        strVal = str(colrowValue).strip()
         try:
-            outList = SitUUIDdict[String1]
+            outList = SiteUUIDDdict[strVal]
         except:
             outList = ''
     return outList
 
 # For creating AllocationUUID
-def assignAllocationUUID(colrowValue):
-    string1 = str(colrowValue)
-    outstring = "CAwr_WR" + string1
-    return outstring
+def assignUUID(Val):
+    Val = str(Val)
+    Val = re.sub("[$@&.;,/\)(-]", "", Val).strip()
+    Val = "CAwr_WR" + Val
+    return Val
 
 
 # Creating output dataframe (outdf)
@@ -92,7 +91,7 @@ print("SiteUUID")
 outdf['SiteUUID'] = df_DM.apply(lambda row: retrieveSiteUUID(row['in_SiteNativeID']), axis=1)
 
 print("VariableSpecificUUID")
-outdf['VariableSpecificUUID'] = df_DM['in_VariableSpecificUUID']
+outdf['VariableSpecificUUID'] =df_DM['in_VariableSpecificUUID']
 
 print("AllocationApplicationDate")
 outdf['AllocationApplicationDate'] = df_DM['in_AllocationApplicationDate']
@@ -116,10 +115,10 @@ print("AllocationCropDutyAmount")
 outdf['AllocationCropDutyAmount'] = ""
 
 print("AllocationExpirationDate")
-outdf['AllocationExpirationDate'] = ""
+outdf['AllocationExpirationDate'] = df_DM['in_AllocationExpirationDate']
 
 print("AllocationFlow_CFS")
-outdf['AllocationFlow_CFS'] = df_DM['in_AllocationFlow_CFS'].astype(float)
+outdf['AllocationFlow_CFS'] = df_DM['in_AllocationFlow_CFS']
 
 print("AllocationLegalStatusCV")
 outdf['AllocationLegalStatusCV'] = df_DM['in_AllocationLegalStatusCV']
@@ -128,7 +127,7 @@ print("AllocationNativeID")  # Will use this with a .groupby() statement towards
 outdf['AllocationNativeID'] = df_DM['in_AllocationNativeID'].astype(str)
 
 print("AllocationOwner")
-outdf['AllocationOwner'] =  df_DM['in_AllocationOwner']
+outdf['AllocationOwner'] = df_DM['in_AllocationOwner']
 
 print("AllocationPriorityDate")
 outdf['AllocationPriorityDate'] = df_DM['in_AllocationPriorityDate']
@@ -146,13 +145,13 @@ print("AllocationTypeCV")
 outdf['AllocationTypeCV'] = df_DM['in_AllocationTypeCV']
 
 print("AllocationVolume_AF")
-outdf['AllocationVolume_AF'] = df_DM['in_AllocationVolume_AF'].astype(float)
+outdf['AllocationVolume_AF'] = df_DM['in_AllocationVolume_AF']
 
 print("BeneficialUseCategory")
 outdf['BeneficialUseCategory'] = df_DM['in_BeneficialUseCategory']
 
 print("CommunityWaterSupplySystem")
-outdf['CommunityWaterSupplySystem'] = ""
+outdf['CommunityWaterSupplySystem'] = df_DM['in_CommunityWaterSupplySystem']
 
 print("CropTypeCV")
 outdf['CropTypeCV'] = ""
@@ -161,7 +160,7 @@ print("CustomerTypeCV")
 outdf['CustomerTypeCV'] = ""
 
 print("DataPublicationDate")
-outdf['DataPublicationDate'] = "03/02/2023"
+outdf['DataPublicationDate'] = date.today().strftime('%m/%d/%Y')
 
 print("DataPublicationDOI")
 outdf['DataPublicationDOI'] = ""
@@ -173,10 +172,10 @@ print("GeneratedPowerCapacityMW")
 outdf['GeneratedPowerCapacityMW'] = ""
 
 print("IrrigatedAcreage")
-outdf['IrrigatedAcreage'] = ""
+outdf['IrrigatedAcreage'] = df_DM['in_IrrigatedAcreage']
 
 print("IrrigationMethodCV")
-outdf['IrrigationMethodCV'] = ""
+outdf['IrrigationMethodCV'] = df_DM['in_IrrigationMethodCV']
 
 print("LegacyAllocationIDs")
 outdf['LegacyAllocationIDs'] = ""
@@ -197,7 +196,7 @@ print("PrimaryBeneficialUseCategory")
 outdf['PrimaryBeneficialUseCategory'] = ""
 
 print("WaterAllocationNativeURL")
-#outdf['WaterAllocationNativeURL'] = df_DM['in_WaterAllocationNativeURL']  #too long of entry
+outdf['WaterAllocationNativeURL'] = df_DM['in_WaterAllocationNativeURL']
 
 print("Adding Data Assessment UUID")
 outdf['WaDEUUID'] = df_DM['WaDEUUID']
@@ -232,7 +231,7 @@ outdf['OwnerClassificationCV']  = outdf.apply(lambda row: tempfixOCSV(row['Owner
 outdf['PrimaryBeneficialUseCategory'] = outdf.apply(lambda row: AssignPrimaryUseCategory.retrievePrimaryUseCategory(row['BeneficialUseCategory']), axis=1)
 
 
-#Error Checking Each Field
+# Error Checking Each Field
 ############################################################################
 print("Error checking each field. Purging bad inputs.")
 dfpurge = pd.DataFrame(columns=AllocationAmountsColumnsList) # Purge DataFrame to hold removed elements
@@ -247,10 +246,13 @@ print(f'Length of dfpurge DataFrame: ', len(dfpurge))
 ############################################################################
 print("Assign AllocationUUID") # has to be one of the last.
 outdf = outdf.reset_index(drop=True)
-dftemp = pd.DataFrame(index=outdf.index)
-dftemp["Count"] = range(1, len(dftemp.index) + 1)
-outdf['AllocationUUID'] = dftemp.apply(lambda row: assignAllocationUUID(row['Count']), axis=1)
+outdf['AllocationUUID'] = outdf.apply(lambda row: assignUUID(row['AllocationNativeID']), axis=1) # assign based on native ID
 
+print("error here?")
+outdf['AllocationUUID'] = np.where(outdf['AllocationUUID'].duplicated(keep=False),
+                                   outdf['AllocationUUID'].astype(str).str.cat(outdf.groupby('AllocationUUID').cumcount().add(1).astype(str), sep='_'),
+                                   outdf['AllocationUUID'])
+print("or here?")
 # Error check AllocationUUID
 outdf, dfpurge = TestErrorFunctionsFile.AllocationUUID_AA_Check(outdf, dfpurge)
 
@@ -259,11 +261,11 @@ outdf, dfpurge = TestErrorFunctionsFile.AllocationUUID_AA_Check(outdf, dfpurge)
 ############################################################################
 print(f'Length of dfs before removing sites: ', len(dfs))
 # explode copy of waterallocations.csv on SiteUUID
-dfaaTemp = outdf.copy()
-dfaaTemp = dfaaTemp.assign(SiteUUID=dfaaTemp['SiteUUID'].str.split(',')).explode('SiteUUID').reset_index(drop=True)
+outdfTemp = outdf.copy()
+outdfTemp = outdfTemp.assign(SiteUUID=outdfTemp['SiteUUID'].str.split(',')).explode('SiteUUID').reset_index(drop=True)
 
 # create list of & SiteUUIDs from copy of waterallocations.csv
-dfaaSiteUUID_List = dfaaTemp['SiteUUID'].drop_duplicates().to_list()
+dfaaSiteUUID_List = outdfTemp['SiteUUID'].drop_duplicates().to_list()
 dfaaSiteUUID_List.sort()
 
 # use lit to add unused records to purge dataframe
@@ -313,21 +315,25 @@ except: print('no aa WaDEUUID')
 
 # Export to new csv
 ############################################################################
-print("Export Files - watersource.csv, watersource_missing.xlsx, sites.csv, sites_missing.xlsx, waterallocations.csv, waterallocations_missing.xlsx")
+print("Export Files - watersource.csv, watersource_missing.csv, sites.csv, sites_missing.csv, waterallocations.csv, waterallocations_missing.csv")
 
 # watersources info
 dfws.to_csv('ProcessedInputData/watersources.csv', index=False)
-dfwspurge.to_excel('ProcessedInputData/watersources_missing.xlsx', index=False, freeze_panes=(1,1))
+dfwspurge.to_csv('ProcessedInputData/watersources_missing.csv', index=False)
 
 # sites info
 dfs.to_csv('ProcessedInputData/sites.csv', index=False)
-dfspurge.to_excel('ProcessedInputData/sites_missing.xlsx', index=False, freeze_panes=(1,1))
+dfspurge.to_csv('ProcessedInputData/sites_missing.csv', index=False)
 
 # waterallocations info
 outdf.to_csv('ProcessedInputData/waterallocations.csv', index=False)
+
 # Report purged values.
 if(len(dfpurge.index) > 0): print(f'...', len(dfpurge),  ' records removed.')
 dfpurge.insert(0, 'ReasonRemoved', dfpurge.pop('ReasonRemoved'))
-dfpurge.to_excel('ProcessedInputData/waterallocations_missing.xlsx', index=False, freeze_panes=(1,1))
+dfpurge.to_csv('ProcessedInputData/waterallocations_missing.csv', index=False)
 
+# outdf.to_excel('ProcessedInputData/Excelwaterallocations.xlsx', index=False)
+# dfpurge.to_excel('ProcessedInputData/Excelwaterallocations_missing.xlsx', index=False)
 print("Done")
+

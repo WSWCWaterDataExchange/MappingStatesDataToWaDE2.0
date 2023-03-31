@@ -1,4 +1,4 @@
-# Date Update: 03/02/2023
+# Date Update: 03/30/2023
 # Purpose: To extract CA water source information and populate dataframe for WaDE_QA 2.0.
 # Notes: N/A
 
@@ -8,6 +8,7 @@
 import os
 import numpy as np
 import pandas as pd
+import re
 
 
 # Custom Libraries
@@ -27,8 +28,8 @@ import TestErrorFunctionsFile
 print("Reading input csv...")
 workingDir = "G:/Shared drives/WaDE Data/California/WaterAllocation"
 os.chdir(workingDir)
-fileInput = "RawinputData/Pwr_CAMain.csv"
-df = pd.read_csv(fileInput)
+fileInput = "RawinputData/Pwr_CAMain.zip"
+df = pd.read_csv(fileInput, compression='zip')
 
 # WaDE columns
 WaterSourcseColumnsList = GetColumnsFile.GetWaterSourcesColumnsFunction()
@@ -37,11 +38,12 @@ WaterSourcseColumnsList = GetColumnsFile.GetWaterSourcesColumnsFunction()
 # Custom Site Functions
 ############################################################################
 
-# For creating WaDESiteUUID
-def assignWaterSourceUUID(colrowValue):
-    string1 = str(colrowValue)
-    outstring = "CAwr_WS" + string1
-    return outstring
+# For creating WaterSourceUUID
+def assignUUID(Val):
+    Val = str(Val)
+    Val = re.sub("[$@&.;,/\)(-]", "", Val).strip()
+    Val = "CAwr_WS" + Val
+    return Val
 
 
 # Creating output dataframe (outdf)
@@ -94,9 +96,10 @@ print(f'Length of dfpurge DataFrame: ', len(dfpurge))
 ############################################################################
 print("Assign WaterSourceUUID") # has to be one of the last.
 outdf = outdf.reset_index(drop=True)
-dftemp = pd.DataFrame(index=outdf.index)
-dftemp["Count"] = range(1, len(dftemp.index) + 1)
-outdf['WaterSourceUUID'] = dftemp.apply(lambda row: assignWaterSourceUUID(row['Count']), axis=1)
+outdf['WaterSourceUUID'] = outdf.apply(lambda row: assignUUID(row['WaterSourceNativeID']), axis=1) # assign based on native ID
+outdf['WaterSourceUUID'] = np.where(outdf['WaterSourceUUID'].duplicated(keep=False),
+                                    outdf['WaterSourceUUID'].astype(str).str.cat(outdf.groupby('WaterSourceUUID').cumcount().add(1).astype(str), sep='_'),
+                                    outdf['WaterSourceUUID'])
 
 # Error check WaterSourceUUID
 outdf, dfpurge = TestErrorFunctionsFile.WaterSourceUUID_WS_Check(outdf, dfpurge)
@@ -112,6 +115,6 @@ outdf.to_csv('ProcessedInputData/watersources.csv', index=False)
 # Report purged values.
 if(len(dfpurge.index) > 0): print(f'...', len(dfpurge),  ' records removed.')
 dfpurge.insert(0, 'ReasonRemoved', dfpurge.pop('ReasonRemoved'))
-dfpurge.to_excel('ProcessedInputData/watersources_missing.xlsx', index=False, freeze_panes=(1,1))
+dfpurge.to_csv('ProcessedInputData/watersources_missing.csv', index=False)
 
 print("Done")

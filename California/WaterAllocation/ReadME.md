@@ -5,11 +5,14 @@ This readme details the process that was applied by the staff of the [Western St
 ## Overview of Source Data Utilized
 The following data was used for water allocations...
 
-- [**California Water Rights LIST (Detail Summary List)**](https://data.ca.gov/dataset/water-rights):  detail information about every water rights record in the State Water Resources Control Board's "Electronic Water Rights Information Management System" (EWRIMS) database. The unique identifier for the dataset is "Application ID". The dataset provides one record per Application ID and all the existing associated data to that record. Riparian rights, anything with water right type = "Statement of Div and Use" make exempt.  We want to include these records.
+Name | Description | Download Link | Metadata Glossary Link
+---------- | ---------- | ------------ | ------------
+**California Water Rights Points of Diversion LIST (Detail Summary List)** | This list includes detail information about every Point of Diversion water rights record in the State Water Resources Control Board's "Electronic Water Rights Information Management System" (EWRIMS) database. | [link](https://data.ca.gov/dataset/california-water-rights-points-of-diversion) | [link](https://data.ca.gov/dataset/1c2117f4-e4be-47f7-9eb5-81b086aefe34/resource/2902511b-6b50-4084-82f0-d1a508a80067/download/ewrims-points-of-diversion-data-dictionary-final.xlsx)
+
 
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share CSWRCB's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see **CAwr_Allocation Schema Mapping to WaDE.xlsx**.  The following executable code files were used to extract the CSWRCB's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  Some information is considered simple enough to work and can be completed by hand (e.g., method.csv, variable.csv, organization.csv).  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining  code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The code file _(AllocationAmounts_facts)_ is depended on the previous files.  Those code files used for this project are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share NDSWC's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *Awr_Allocation Schema Mapping to WaDE.xlsx*.  Several executable code files were used to extract the NDSWC's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  Some code files were built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(AllocationAmounts_facts)* is dependent on the previous files.  Those code files are as follows...
 
 - 0_CAwr_PreProcessAllocationData.ipynb
 - 4_CAwr_WaterSources.py
@@ -22,7 +25,6 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
 - California Allocation Data: https://drive.google.com/drive/folders/139TPw55eS7cCHLMg9E6qZ1Ew9-P-0og_?usp=sharing
 
-
 ***
 ### 0) Code File: 0_CAwr_PreProcessAllocationData.ipynb
 Purpose: Pre-process the state agency's input data files and merge them into one master file for simple dataframe creation and extraction.
@@ -31,7 +33,7 @@ Purpose: Pre-process the state agency's input data files and merge them into one
  - California Water Rights LIST
 
 #### Outputs:
- - Pwr_CAMain.csv
+ - Pwr_CAMain.zip
 
 #### Operation and Steps:
 - Read the input files and generate temporary input dataframes.
@@ -43,7 +45,7 @@ Purpose: Pre-process the state agency's input data files and merge them into one
 - Any record with a 'RIPERIAN', 'PRE1914' or 'Statement of Div and Use' are considered Riparian rights and we want to include into WaDE.  Will allow for exceptions.
 - Any Record with a blank or nan value, replace with a 0 if numeric, or "WaDE_Unspecified" if string or object.
 - Inspect output dataframe for additional errors / datatypes.
-- Export output dataframe as new csv file, *Pwr_CAMain.csv*.
+- Export output dataframe as new csv file, *Pwr_CAMain.zip*.
 
 
 ***
@@ -126,7 +128,7 @@ CAwr_O1 | California State Water Resources Control Board | Greg Gearheart | http
 Purpose: generate a list of water sources specific to a water right.
 
 #### Inputs:
-- Pwr_CAMain.csv
+- Pwr_CAMain.zip
 
 #### Outputs:
 - waterSources.csv
@@ -160,7 +162,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 Purpose: generate a list of sites where water is diverted (also known as Points Of Diversion, PODs).
 
 #### Inputs:
-- Pwr_CAMain.csv
+- Pwr_CAMain.zip
 
 #### Outputs:
 - sites.csv
@@ -201,7 +203,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 
 #### Inputs:
-- Pwr_CAMain.csv
+- Pwr_CAMain.zip
 - methods.csv
 - variables.csv
 - organizations.csv

@@ -1,4 +1,4 @@
-# Date Update: 03/02/2023
+# Date Update: 03/30/2023
 # Purpose: To extract CA site information and populate dataframe for WaDE_QA 2.0.
 # Notes: N/A
 
@@ -8,6 +8,7 @@
 import os
 import numpy as np
 import pandas as pd
+import re
 
 
 # Custom Libraries
@@ -27,11 +28,18 @@ import TestErrorFunctionsFile
 print("Reading input csv...")
 workingDir = "G:/Shared drives/WaDE Data/California/WaterAllocation"
 os.chdir(workingDir)
-fileInput = "RawinputData/Pwr_CAMain.csv"
-df = pd.read_csv(fileInput)
+fileInput = "RawinputData/Pwr_CAMain.zip"
+df = pd.read_csv(fileInput, compression='zip')
 
 watersources_fileInput = "ProcessedInputData/watersources.csv"
 df_watersources = pd.read_csv(watersources_fileInput)  # WaterSources dataframe
+
+try:
+    fileInput_shape = "RawinputData/P_utGeometry.csv"
+    dfshape = pd.read_csv(fileInput_shape)
+    Geometrydict = pd.Series(dfshape.geometry.values, index=dfshape.in_SiteNativeID).to_dict()
+except:
+    print("no geometry data to worry about.")
 
 # WaDE columns
 SitesColumnsList = GetColumnsFile.GetSitesColumnsFunction()
@@ -41,7 +49,7 @@ SitesColumnsList = GetColumnsFile.GetSitesColumnsFunction()
 ############################################################################
 
 # For creating WaterSourceUUID
-WaterSourceUUIDdict = pd.Series(df_watersources.WaterSourceUUID.values, index = df_watersources.WaterSourceNativeID).to_dict()
+WaterSourceUUIDdict = pd.Series(df_watersources.WaterSourceUUID.values, index=df_watersources.WaterSourceNativeID).to_dict()
 def retrieveWaterSourceUUID(colrowValue):
     if colrowValue == '' or pd.isnull(colrowValue):
         outList = ''
@@ -50,11 +58,24 @@ def retrieveWaterSourceUUID(colrowValue):
         outList = WaterSourceUUIDdict[strVal]
     return outList
 
+# For Creating Geometry
+def retrieveGeometry(colrowValue):
+    if colrowValue == '' or pd.isnull(colrowValue):
+        outList = ''
+    else:
+        String1 = colrowValue
+        try:
+            outList = Geometrydict[String1]
+        except:
+            outList = ''
+    return outList
+
 # For creating SiteUUID
-def assignSiteUUID(colrowValue):
-    string1 = str(colrowValue)
-    outstring = "CAwr_S" + string1
-    return outstring
+def assignUUID(Val):
+    Val = str(Val)
+    Val = re.sub("[$@&.;,/\)(-]", "", Val).strip()
+    Val = "CAwr_S" + Val
+    return Val
 
 
 # Creating output dataframe (outdf)
@@ -69,7 +90,7 @@ print("RegulatoryOverlayUUIDs")
 outdf['RegulatoryOverlayUUIDs'] = ""
 
 print("CoordinateAccuracy")
-outdf['CoordinateAccuracy'] = "WaDE_Unspecified"
+outdf['CoordinateAccuracy'] = df['in_CoordinateAccuracy']
 
 print("CoordinateMethodCV")
 outdf['CoordinateMethodCV'] = df['in_CoordinateMethodCV']
@@ -81,7 +102,11 @@ print("EPSGCodeCV")
 outdf['EPSGCodeCV'] = "4326"
 
 print("Geometry")
-outdf['Geometry'] = ""
+try:
+    outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['in_SiteNativeID']), axis=1)
+except:
+    print("...no geometry data.")
+    outdf['Geometry'] = ""
 
 print("GNISCodeCV")
 outdf['GNISCodeCV'] = ""
@@ -152,9 +177,10 @@ print(f'Length of dfpurge DataFrame: ', len(dfpurge))
 ############################################################################
 print("Assign SiteUUID") # has to be one of the last.
 outdf = outdf.reset_index(drop=True)
-dftemp = pd.DataFrame(index=outdf.index)
-dftemp["Count"] = range(1, len(dftemp.index) + 1)
-outdf['SiteUUID'] = dftemp.apply(lambda row: assignSiteUUID(row['Count']), axis=1)
+outdf['SiteUUID'] = outdf.apply(lambda row: assignUUID(row['SiteNativeID']), axis=1) # assign based on native ID
+outdf['SiteUUID'] = np.where(outdf['SiteUUID'].duplicated(keep=False),
+                             outdf['SiteUUID'].astype(str).str.cat(outdf.groupby('SiteUUID').cumcount().add(1).astype(str), sep='_'),
+                             outdf['SiteUUID'])
 
 # Error check SiteUUID
 outdf, dfpurge = TestErrorFunctionsFile.SiteUUID_S_Check(outdf, dfpurge)
@@ -170,6 +196,6 @@ outdf.to_csv('ProcessedInputData/sites.csv', index=False)
 # Report purged values.
 if(len(dfpurge.index) > 0): print(f'...', len(dfpurge),  ' records removed.')
 dfpurge.insert(0, 'ReasonRemoved', dfpurge.pop('ReasonRemoved'))
-dfpurge.to_excel('ProcessedInputData/sites_missing.xlsx', index=False, freeze_panes=(1,1))
+dfpurge.to_csv('ProcessedInputData/sites_missing.csv', index=False)
 
 print("Done")
