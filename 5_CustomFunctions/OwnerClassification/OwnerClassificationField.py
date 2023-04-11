@@ -87,12 +87,12 @@ listDictionary["Geological Survey (USGS)"] = usgslist
 def CreateOwnerClassification(val):
     val = str(val).strip()
     if val == '' or pd.isnull(val):
-        outString = "Unspecified"
+        outString = "WaDE Unspecified"
     else:
-        outString = "In Review"  # Default Value
+        outString = "WaDE Unspecified "  # Default Value
 
         # Cleaning text / simple search format
-        val = re.sub("[$@&.;,/\)(-]", "", val).strip()
+        val = re.sub("[$@&.`;',/\)(-]", "", val).strip()
         val = val.lower().strip()
         val = " " + val + " "
 
