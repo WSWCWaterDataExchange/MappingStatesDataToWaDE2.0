@@ -102,6 +102,34 @@ def AllocationAmountTestErrorFunctions(outdf, dfpurge):
     outdf, dfpurge = WaterAllocationNativeURL_AA_Check(outdf, dfpurge)
     return(outdf, dfpurge)
 
+def SiteSpecificAmountsTestErrorFunctions(outdf, dfpurge):
+    outdf, dfpurge = MethodUUID_SS_Check(outdf, dfpurge)
+    outdf, dfpurge = VariableSpecificUUID_SS_Check(outdf, dfpurge)
+    outdf, dfpurge = WaterSourceUUID_SS_Check(outdf, dfpurge)
+    outdf, dfpurge = OrganizationUUID_SS_Check(outdf, dfpurge)
+    outdf, dfpurge = SiteUUID_SS_Check(outdf, dfpurge)
+    outdf, dfpurge = Amount_SS_Check(outdf, dfpurge)
+    outdf, dfpurge = AllocationCropDutyAmount_SS_Check(outdf, dfpurge)
+    outdf, dfpurge = AssociatedNativeAllocationIDs_SS_Check(outdf, dfpurge)
+    outdf, dfpurge = BeneficialUseCategory_SS_Check(outdf, dfpurge)
+    outdf, dfpurge = CommunityWaterSupplySystem_SS_Check(outdf, dfpurge)
+    outdf, dfpurge = CropTypeCV_SS_Check(outdf, dfpurge)
+    outdf, dfpurge = CustomerTypeCV_SS_Check(outdf, dfpurge)
+    outdf, dfpurge = DataPublicationDate_SS_Check(outdf, dfpurge)
+    outdf, dfpurge = DataPublicationDOI_SS_Check(outdf, dfpurge)
+    # Geometry ???? How to check for geometry datatype
+    outdf, dfpurge = IrrigatedAcreage_SS_Check(outdf, dfpurge)
+    outdf, dfpurge = IrrigationMethodCV_SS_Check(outdf, dfpurge)
+    outdf, dfpurge = PopulationServed_SS_Check(outdf, dfpurge)
+    outdf, dfpurge = PowerGeneratedGWh_SS_Check(outdf, dfpurge)
+    outdf, dfpurge = PowerType_SS_Check(outdf, dfpurge)
+    outdf, dfpurge = PrimaryUseCategory_SS_Check(outdf, dfpurge)
+    outdf, dfpurge = ReportYearCV_SS_Check(outdf, dfpurge)
+    outdf, dfpurge = SDWISIdentifier_SS_Check(outdf, dfpurge)
+    # outdf, dfpurge = TimeframeEnd_SS_Check(outdf, dfpurge)
+    # outdf, dfpurge = TimeframeStart_SS_Check(outdf, dfpurge)
+    return(outdf, dfpurge)
+
 
 # WaterSources
 ########################################################################################################################
@@ -270,7 +298,7 @@ def HUC8_S_Check(dfx, dfy):
 
 # Latitude_float_-
 def Latitude_S_Check(dfx, dfy):
-    selectionVar = (dfx["Latitude"].isnull()) | (dfx["Latitude"].astype(str) == "") | (dfx["Latitude"].astype(str).str.contains(",")) | (dfx["Latitude"] == 0) | (dfx["Latitude"].astype(float) < 1)
+    selectionVar = (dfx["Latitude"].isnull()) | (dfx["Latitude"].astype(str) == "") | (dfx["Latitude"].astype(str).str.contains(",")) | (dfx["Latitude"] == 0) | (dfx["Latitude"].astype(float) < 1.0)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Latitude').reset_index()
     mask['IncompleteField'] = mask['Latitude']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -279,7 +307,7 @@ def Latitude_S_Check(dfx, dfy):
 
 # Longitude_float_-
 def Longitude_S_Check(dfx, dfy):
-    selectionVar = (dfx["Longitude"].isnull()) | (dfx["Longitude"].astype(str) == "") | (dfx["Longitude"].astype(str).str.contains(",")) | (dfx["Longitude"] == 0)
+    selectionVar = (dfx["Longitude"].isnull()) | (dfx["Longitude"].astype(str) == "") | (dfx["Longitude"].astype(str).str.contains(",")) | (dfx["Longitude"] == 0) | (dfx["Longitude"].astype(float) > 1.0)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Longitude').reset_index()
     mask['IncompleteField'] = mask['Longitude']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -345,7 +373,7 @@ def SiteNativeID_S_Check(dfx, dfy):
 
 # SiteTypeCV_nvarchar(100)_Yes
 def SiteTypeCV_S_Check(dfx, dfy):
-    selectionVar = (dfx["SiteTypeCV"].str.len() > 100)
+    selectionVar = (dfx["SiteTypeCV"].str.len() > 100) | (dfx["SiteTypeCV"].str.contains(','))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for SiteTypeCV').reset_index()
     mask['IncompleteField'] = mask['SiteTypeCV']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -642,10 +670,12 @@ def AllocationExpirationDate_AA_Check(dfx, dfy):
 def AllocationFlowVolume_CFSAF_float_Yes_AA_Check(dfx, dfy):
     selectionVar = ((dfx['ExemptOfVolumeFlowPriority'] == "0") & (((dfx["AllocationFlow_CFS"].isnull()) |
                                                                    (dfx["AllocationFlow_CFS"] == "") |
-                                                                   (dfx['AllocationFlow_CFS'].astype(str).str.contains(','))) &
+                                                                   (dfx['AllocationFlow_CFS'].astype(str).str.contains(',')) |
+                                                                   (dfx["AllocationFlow_CFS"].astype(float) < 0.0)) &
                                                                   ((dfx["AllocationVolume_AF"].isnull()) |
                                                                    (dfx["AllocationVolume_AF"] == "") |
-                                                                   (dfx['AllocationVolume_AF'].astype(str).str.contains(',')))))
+                                                                   (dfx['AllocationVolume_AF'].astype(str).str.contains(',')) |
+                                                                   (dfx["AllocationVolume_AF"].astype(float) < 0.0))))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Flow or Volume').reset_index()
     mask['IncompleteField'] = str(mask['AllocationExpirationDate']) + ", " + str(mask['AllocationVolume_AF'])
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -711,8 +741,7 @@ def AllocationTimeframeStart_AA_Check(dfx, dfy):
 
 # AllocationTypeCV_nvarchar(250)_Yes
 def AllocationTypeCV_AA_Check(dfx, dfy):
-    # selectionVar = ((dfx["AllocationTypeCV"].str.len() > 250) | (dfx["AllocationTypeCV"].str.contains(',')))
-    selectionVar = (dfx["AllocationTypeCV"].str.len() > 250)
+    selectionVar = ((dfx["AllocationTypeCV"].str.len() > 250) | (dfx["AllocationTypeCV"].str.contains(',')))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for AllocationTypeCV').reset_index()
     mask['IncompleteField'] = mask['AllocationTypeCV']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
