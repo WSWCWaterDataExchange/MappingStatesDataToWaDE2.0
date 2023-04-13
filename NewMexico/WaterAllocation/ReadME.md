@@ -68,7 +68,7 @@ Purpose: generate WaDE csv input files (methods.csv, variables.csv, organization
 - waterallocations.csv
 
 
-### 1) Method Information
+## 1) Method Information
 Purpose: generate legend of granular methods used on data collection.
 
 #### Operation and Steps:
@@ -85,7 +85,7 @@ MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 NMwr_M1 | Surface Water and Groundwater | Allocation
 
 
-### 2) Variables Information
+## 2) Variables Information
 Purpose: generate legend of granular variables specific to each state.
 
 #### Operation and Steps:
@@ -102,7 +102,7 @@ VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | Amou
 NMwr_V1 | 1 | Year | AF
 
 
-### 3) Organization  Information
+## 3) Organization  Information
 Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
 
 #### Operation and Steps:
@@ -119,7 +119,7 @@ OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebs
 NMwr_O1 | New Mexico Office of the State Engineer | David Hatchner (GIS Manager) | https://www.ose.state.nm.us/
 
 
-### 4) Water Source Information
+## 4) Water Source Information
 Purpose: generate a list of water sources information.
 
 #### Operation and Steps:
@@ -145,7 +145,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - WaterSourceTypeCV
 
 
-### 5) Site Information
+## 5) Site Information
 Purpose: generate a list of sites information.
 
 #### Operation and Steps:
@@ -176,7 +176,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - SiteName
 
 
-### 6) AllocationsAmounts Information
+## 6) AllocationsAmounts Information
 Purpose: generate sheet of water allocations records to import into WaDE 2.0.
 
 #### Operation and Steps:
