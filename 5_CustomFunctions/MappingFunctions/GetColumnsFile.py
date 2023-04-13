@@ -122,3 +122,33 @@ def GetAllocationAmountsColumnsFunction():
         "PrimaryBeneficialUseCategory",
         "WaterAllocationNativeURL"]
     return (columnslist)
+
+def GetSiteSpecificAmountsColumnsFunction():
+    columnslist = [
+        "WaDEUUID",
+        "MethodUUID",
+        "OrganizationUUID",
+        "SiteUUID",
+        "VariableSpecificUUID",
+        "WaterSourceUUID",
+        "Amount",
+        'AllocationCropDutyAmount',
+        "AssociatedNativeAllocationIDs",
+        'BeneficialUseCategory',
+        "CommunityWaterSupplySystem",
+        "CropTypeCV",
+        "CustomerTypeCV",
+        "DataPublicationDate",
+        "DataPublicationDOI",
+        "Geometry",
+        "IrrigatedAcreage",
+        "IrrigationMethodCV",
+        "PopulationServed",
+        "PowerGeneratedGWh",
+        'PowerType',
+        "PrimaryUseCategory",
+        "ReportYearCV",
+        "SDWISIdentifier",
+        "TimeframeEnd",
+        "TimeframeStart"]
+    return (columnslist)
