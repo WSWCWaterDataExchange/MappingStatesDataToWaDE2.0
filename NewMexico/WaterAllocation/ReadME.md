@@ -12,16 +12,19 @@ Name | Description | Download Link | Metadata Glossary Link
 The following unique files were created as input.  Input files used are as follows...
  - OSE_PODst.zip
 
+
 ## Storage for WaDE 2.0 Source and Processed Water Data
 The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), 2) WaDE input csv processed data files ready to load into the WaDE database, & 3) data assessment figures and reports overviewing the native state data and which records could not be used, can all be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
 - [WaDE New Mexico Allocation Data (link)](https://drive.google.com/drive/folders/171lNosVUaf6yXxUL3d7lrRAYZSYaw22s?usp=sharing)
 
+
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share NMOSE's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *NMwr_Allocation Schema Mapping to WaDE.xlsx* & *NM_Allocation Schema Mapping to WaDE_QA.xlsx*.  Several WaDE csv input files will be created in order to extract the NMOSE's water rights data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
+The following text summarizes the process used by the WSWC staff to prepare and share NMOSE's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *NMwr_Allocation Schema Mapping to WaDE.xlsx* & *NMwr_Allocation Schema Mapping to WaDE.xlsx*.  Several WaDE csv input files will be created in order to extract the NMOSE's water rights data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
 
 - **1_NMwr_PreProcessAllocationData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
 - **2_NMwr_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv.
 - **3_NMwr_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
+
 
 ***
 ## Code File: 1_NMwr_PreProcessAllocationData.ipynb
@@ -125,7 +128,7 @@ Purpose: generate a list of water sources information.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign **NMOSE** info to the *WaDE WaterSources* specific columns.  See *NMwr_Allocation Schema Mapping to WaDE.xlsx* & *NM_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+- Assign **NMOSE** info to the *WaDE WaterSources* specific columns.  See *NMwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - *WaterSourceName* = translated from **surface_co**, see *1_NMwr_PreProcessAllocationData.ipynb* for specifics. 
     - *WaterSourceTypeCV* = generated list of sources from **SOURCE_TYPE**, see *1_NMwr_PreProcessAllocationData.ipynb* for specifics.
     - *WaterSourceNativeID* = see *1_NMwr_PreProcessAllocationData.ipynb* for specifics.
@@ -151,7 +154,7 @@ Purpose: generate a list of sites information.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
-- Assign **NMOSE** info to the *WaDE Site* specific columns.  See *NMwr_Allocation Schema Mapping to WaDE.xlsx* & *NM_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+- Assign **NMOSE** info to the *WaDE Site* specific columns.  See *NMwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *WaterSourceUUID* from waterSources.csv input csv file. See code for specific implementation of extraction.
     - *County* = **county** input.
     - *Latitude* = created from **easting** & **northing** inputs, see *1_NMwr_PreProcessAllocationData.ipynb* for specifics.
@@ -182,7 +185,7 @@ Purpose: generate sheet of water allocations records to import into WaDE 2.0.
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
-- Assign **NMOSE** info to the *WaDE Water Allocations* specific columns.  See *NMwr_Allocation Schema Mapping to WaDE.xlsx* & *NM_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+- Assign **NMOSE** info to the *WaDE Water Allocations* specific columns.  See *NMwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *AllocationFlow_CFS* = empty.
     - *AllocationLegalStatusCV* = **status** input, see *1_NMwr_PreProcessAllocationData.ipynb* for specifics.
@@ -211,6 +214,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - BeneficialUseCategory
 - AllocationAmount or AllocationMaximum
 - DataPublicationDate
+
 
 
 ***
