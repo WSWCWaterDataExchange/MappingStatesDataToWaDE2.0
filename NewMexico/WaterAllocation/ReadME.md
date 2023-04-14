@@ -189,7 +189,7 @@ Purpose: generate sheet of water allocations records to import into WaDE 2.0.
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *AllocationFlow_CFS* = empty.
     - *AllocationLegalStatusCV* = **status** input, see *1_NMwr_PreProcessAllocationData.ipynb* for specifics.
-    - *AllocationNativeID* = **nbr** input as string.
+    - *AllocationNativeID* = **pod_basin** + **pod_nbr** + **pod_suffix** inputs as string.
     - *AllocationOwner* = **own_fname** & **own_lname** inputs, see *1_NMwr_PreProcessAllocationData.ipynb* for specifics.
     - *AllocationPriorityDate* = leave blank, not provided.
     - *AllocationVolume_AF* == **restrict_** input, as float.
