@@ -39,10 +39,9 @@ inpVals = [
     "",
     "",
     "",
-    """A Water Right is a property right that is either conditional or absolute and conveys the right to use a particular amount of water, with a specified priority date as confirmed by the water court. The Net Amounts List contains the current status of a water right based on all of its court decreed actions."""
-    ,
+    """A Water Right is a property right that is either conditional or absolute and conveys the right to use a particular amount of water, with a specified priority date as confirmed by the water court. The Net Amounts List contains the current status of a water right based on all of its court decreed actions. Important: to find out more about the water right in Colorado, the decree number would be the primary reference. "Priority Date" is not the terminology used in Colorado. Make sure to understand the Appropriation Date, Adjudication Date, and Priority Admin No. provided in Colorado’s water rights data. Colorado does not have a machine-readable water right owner name. See this data dictionary https://dwr.state.co.us/Tools/WaterRights/TransactionsDataDictionary/GetDataDictionary""",
     "Colorado Water Rights Method",
-    "'https://drive.google.com/file/d/14r6HBwqebBwSE60yuiUu1smmtDONJbu2/view",
+    "https://drive.google.com/file/d/14r6HBwqebBwSE60yuiUu1smmtDONJbu2/view",
     "Legal Processes"]
 
 outdf = pd.DataFrame([inpVals], columns=columnslist)
