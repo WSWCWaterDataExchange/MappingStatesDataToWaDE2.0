@@ -79,6 +79,20 @@ def GetSitesColumnsFunction():
         "USGSSiteID"]
     return (columnslist)
 
+def GetReportingUnitColumnsFunction():
+    columnslist = [
+        "WaDEUUID",
+        "ReportingUnitUUID",
+        "EPSGCodeCV",
+        "ReportingUnitName",
+        "ReportingUnitNativeID",
+        "ReportingUnitProductVersion",
+        "ReportingUnitTypeCV",
+        "ReportingUnitUpdateDate",
+        "StateCV",
+        "Geometry"]
+    return (columnslist)
+
 def GetAllocationAmountsColumnsFunction():
     columnslist = [
         "WaDEUUID",

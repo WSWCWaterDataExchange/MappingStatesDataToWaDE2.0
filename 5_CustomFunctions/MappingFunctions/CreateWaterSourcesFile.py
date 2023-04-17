@@ -25,12 +25,12 @@ import TestErrorFunctionsFile
 
 # Create File Function
 ############################################################################
-def CreateWaterSourcesInputFunction(varST, varSTName, mainInputFile):
+def CreateWaterSourcesInputFunction(varST, varSTName, varUUIDType, varWaDEDataType, mainInputFile):
 
     # Inputs
     ############################################################################
     print("Reading input csv...")
-    workingDir = "G:/Shared drives/WaDE Data/" + varSTName + "/WaterAllocation"
+    workingDir = "G:/Shared drives/WaDE Data/" + varSTName + "/" + varWaDEDataType
     os.chdir(workingDir)
     fileInput = "RawinputData/" + mainInputFile
     df = pd.read_csv(fileInput, compression='zip')
@@ -46,7 +46,7 @@ def CreateWaterSourcesInputFunction(varST, varSTName, mainInputFile):
     def assignUUID(Val):
         Val = str(Val)
         Val = re.sub("[$@&.;,/\)(-]", "", Val).strip()
-        Val = varST + "wr_WS" + Val
+        Val = varST + varUUIDType + "_WS" + Val
         return Val
 
 

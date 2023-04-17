@@ -33,12 +33,12 @@ import TestErrorFunctionsFile
 
 # Create File Function
 ############################################################################
-def CreateAllocationsAmounts_factsInputFunction(varST, varSTName, mainInputFile):
+def CreateAllocationsAmounts_factsInputFunction(varST, varSTName, varUUIDType, varWaDEDataType, mainInputFile):
 
     # Inputs
     ############################################################################
     print("Reading input csv...")
-    workingDir = "G:/Shared drives/WaDE Data/" + varSTName + "/WaterAllocation"
+    workingDir = "G:/Shared drives/WaDE Data/" + varSTName + "/" + varWaDEDataType
     os.chdir(workingDir)
     fileInput = "RawinputData/" + mainInputFile
     df = pd.read_csv(fileInput, compression='zip')
@@ -70,7 +70,7 @@ def CreateAllocationsAmounts_factsInputFunction(varST, varSTName, mainInputFile)
     def assignUUID(Val):
         Val = str(Val)
         Val = re.sub("[$@&.;,/\)(-]", "", Val).strip()
-        Val = varST + "wr_WR" + Val
+        Val = varST + varUUIDType + "_WR" + Val
         return Val
 
 

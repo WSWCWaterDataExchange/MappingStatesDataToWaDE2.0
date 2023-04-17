@@ -62,6 +62,20 @@ def SiteTestErrorFunctions(outdf, dfpurge):
     outdf, dfpurge = USGSSiteID_S_Check(outdf, dfpurge)
     return(outdf, dfpurge)
 
+
+def ReportingUnitTestErrorFunctions(outdf, dfpurge):
+    outdf, dfpurge = ReportingUnitUUID_RU_Check(outdf, dfpurge)
+    outdf, dfpurge = EPSGCodeCV_RU_Check(outdf, dfpurge)
+    # Geometry ???? How to check for geometry datatype
+    outdf, dfpurge = ReportingUnitName_RU_Check(outdf, dfpurge)
+    outdf, dfpurge = ReportingUnitNativeID_RU_Check(outdf, dfpurge)
+    outdf, dfpurge = ReportingUnitProductVersion_RU_Check(outdf, dfpurge)
+    outdf, dfpurge = ReportingUnitTypeCV_RU_Check(outdf, dfpurge)
+    outdf, dfpurge = ReportingUnitUpdateDate_RU_Check(outdf, dfpurge)
+    outdf, dfpurge = StateCV_RU_Check(outdf, dfpurge)
+    return(outdf, dfpurge)
+
+
 def AllocationAmountTestErrorFunctions(outdf, dfpurge):
     outdf, dfpurge = MethodUUID_AA_Check(outdf, dfpurge)
     outdf, dfpurge = OrganizationUUID_AA_Check(outdf, dfpurge)
@@ -101,6 +115,7 @@ def AllocationAmountTestErrorFunctions(outdf, dfpurge):
     outdf, dfpurge = PrimaryBeneficialUseCategory_AA_Check(outdf, dfpurge)
     outdf, dfpurge = WaterAllocationNativeURL_AA_Check(outdf, dfpurge)
     return(outdf, dfpurge)
+
 
 def SiteSpecificAmountsTestErrorFunctions(outdf, dfpurge):
     outdf, dfpurge = MethodUUID_SS_Check(outdf, dfpurge)

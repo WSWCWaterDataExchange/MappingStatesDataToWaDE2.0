@@ -1,5 +1,5 @@
 # Date Update: 04/12/2023
-# Purpose: To extract site information and populate dataframe for WaDE_QA 2.0.
+# Purpose: To extract site information and populate dataframe for WaDE
 
 
 # Needed Libraries
@@ -24,11 +24,11 @@ import TestErrorFunctionsFile
 
 # Create File Function
 ############################################################################
-def CreateSitesInputFunction(varST, varSTName, mainInputFile):
+def CreateSitesInputFunction(varST, varSTName, varUUIDType, varWaDEDataType, mainInputFile):
     # Inputs
     ############################################################################
     print("Reading input csv...")
-    workingDir = "G:/Shared drives/WaDE Data/" + varSTName + "/WaterAllocation"
+    workingDir = "G:/Shared drives/WaDE Data/" + varSTName + "/" + varWaDEDataType
     os.chdir(workingDir)
     fileInput = "RawinputData/" + mainInputFile
     df = pd.read_csv(fileInput, compression='zip')
@@ -76,7 +76,7 @@ def CreateSitesInputFunction(varST, varSTName, mainInputFile):
     def assignUUID(Val):
         Val = str(Val)
         Val = re.sub("[$@&.;,/\)(-]", "", Val).strip()
-        Val = varST + "wr_S" + Val
+        Val = varST + varUUIDType + "_S" + Val
         return Val
 
 
