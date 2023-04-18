@@ -11,11 +11,11 @@ import pandas as pd
 
 # Create File Function
 ############################################################################
-def RemoveUnusedRecordsFileFunction(varSTName):
+def RemoveUnusedRecordsFileFunction(varSTName, varWaDEDataType):
     # Inputs
     ############################################################################
     print("Reading input csv...")
-    workingDir = "G:/Shared drives/WaDE Data/" + varSTName + "/WaterAllocation"
+    workingDir = "G:/Shared drives/WaDE Data/" + varSTName + "/" + varWaDEDataType
     os.chdir(workingDir)
 
     # Input Data - 'WaDE Input' files & 'missing.xlsx' files.

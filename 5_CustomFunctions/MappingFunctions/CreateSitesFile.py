@@ -51,13 +51,13 @@ def CreateSitesInputFunction(varST, varSTName, varUUIDType, varWaDEDataType, mai
     ############################################################################
 
     # For creating WaterSourceUUID
-    WaterSourceUUIDdict = pd.Series(df_watersources.WaterSourceUUID.values, index=df_watersources.WaterSourceNativeID).to_dict()
+    WaterSourceUUIDdict = pd.Series(df_watersources.WaterSourceUUID.values, index=df_watersources.WaterSourceNativeID.astype(str)).to_dict()
     def retrieveWaterSourceUUID(colrowValue):
         if colrowValue == '' or pd.isnull(colrowValue):
             outList = ''
         else:
-            strVal = str(colrowValue).strip()
-            outList = WaterSourceUUIDdict[strVal]
+            colrowValue = str(colrowValue).strip()
+            outList = WaterSourceUUIDdict[colrowValue]
         return outList
 
     # For Creating Geometry
