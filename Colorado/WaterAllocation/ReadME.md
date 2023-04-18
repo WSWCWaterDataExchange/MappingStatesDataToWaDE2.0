@@ -6,8 +6,10 @@ This readme details the process that was applied by the staff of the [Western St
 ## Overview of Source Data Utilized
 The following data was used for water allocations...
 
-- [**DWR Water Right - Net Amounts**](https://data.colorado.gov/Water/DWR-Water-Right-Net-Amounts/acsg-f33s/data) data files for surface and groundwater.
-    - Metadata available [**here**](https://data.colorado.gov/Water/DWR-Water-Right-Net-Amounts/acsg-f33s?category=Water&view_name=DWR-Water-Right-Net-Amounts).
+Name | Description | Download Link | Metadata Glossary Link
+---------- | ---------- | ------------ | ------------
+**DWR Water Right - Net Amounts** | data files for surface and groundwater. | [link](https://data.colorado.gov/Water/DWR-Water-Right-Net-Amounts/acsg-f33s/data) | [link](https://data.colorado.gov/Water/DWR-Water-Right-Net-Amounts/acsg-f33s?category=Water&view_name=DWR-Water-Right-Net-Amounts)
+
 
 One unique files was created to be used as input.  Input files used are as follows...
 - DWR_Water_Right_-_Net_Amounts_input.csv.
@@ -18,27 +20,22 @@ The 1) raw input data shared by the state / state agency / data provider (excel,
 
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share CDWR's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *[CO_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Colorado/WaterAllocation/CO_Allocation%20Schema%20Mapping_WaDEQA.xlsx)*.  Eight executable code files were used to extract the CDWR's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files.
+The following text summarizes the process used by the WSWC staff to prepare and share NMOSE's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *NMwr_Allocation Schema Mapping to WaDE.xlsx* & *COwr_Allocation Schema Mapping to WaDE.xlsx*.  Several WaDE csv input files will be created in order to extract the NMOSE's water rights data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
 
-- 0_PreProcessColoradoAllocationData.ipynb
-- 1_COwr_Methods.py
-- 2_COwr_Variables.py
-- 3_COwr_Organizations.py
-- 4_COwr_WaterSources.py
-- 5_COwr_Sites.py
-- 6_COwr_AllocationsAmounts_facts.py
-- 7_COwr_PODSiteToPOUSiteRelationships.py
+- **1_COwr_PreProcessAllocationData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
+- **2_COwr_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv.
+- **3_COwr_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
 
 
 ***
-### 0) Code File: 0_PreProcessColoradoAllocationData.ipynb
+### 0) Code File: 1_COwr_PreProcessAllocationData.ipynb
 Purpose: Pre-process the input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
 - DWR_Water_Right_-_Net_Amounts_input.csv
 
 #### Outputs:
- - P_ColoradoMaster.csv
+ - Pwr_coMain.zip
 
 #### Operation and Steps:
 - Read the input file and generate temporary input dataframe.
@@ -58,19 +55,28 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 - Determine legal status depending on if either **Net Absolute** or **Net Conditional** were used.
 - Combine **Admin No**, **Order No**, **Decreed Units**, & **WDID** into single string entry for a unique water right identifier.
 - Inspect output dataframe for additional errors / datatypes.
-- Export output dataframe as new csv file, *P_ColoradoMaster.csv*.
+- Export output dataframe as new csv file, *Pwr_coMain.zip*.
+
 
 
 ***
-### 1) Code File: 1_COwr_Methods.py
-Purpose: generate legend of granular methods used on data collection.
+## Code File: 2_COwr_CreateWaDEInputFiles.ipynb
+Purpose: generate WaDE csv input files (methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv).
 
 #### Inputs:
-- None
+- Pwr_NMMain.zip
 
 #### Outputs:
-- methods.csv
-- methods_missing.csv (error check only)
+- methods.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
+- variables.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
+- organizations.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
+- watersources.csv
+- sites.csv
+- waterallocations.csv
+
+
+## 1) Method Information
+Purpose: generate legend of granular methods used on data collection.
 
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
@@ -86,16 +92,8 @@ MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 COwr_M1 | Surface Ground Water | Water Withdrawals
 
 
-***
-### 2) Code File: 2_COwr_Variables.py
+## 2) Variables Information
 Purpose: generate legend of granular variables specific to each state.
-
-#### Inputs:
-- None
-
-#### Outputs:
-- variables.csv
-- variables_missing.csv (error check only)
 
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
@@ -111,16 +109,8 @@ VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | Amou
 COwr_V1 | 1 | Average | CFS
 
 
-***
-### 3) Code File: 3_COwr_Organizations.py
+## 3) Organization  Information
 Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
-
-#### Inputs:
-- None
-
-#### Outputs:
-- organizations.csv
-- organizations_missing.csv (error check only)
 
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
@@ -136,16 +126,8 @@ OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebs
 COwr_O1 | Colorado Division of Water Rights | Doug Stenzel | https://dwr.colorado.gov
 
 
-***
-### 4) Code File: 4_COwr_WaterSources.py
+## 4) Water Source Information
 Purpose: generate a list of water sources specific to a water right.
-
-#### Inputs:
-- P_ColoradoMaster.csv
-
-#### Outputs:
-- waterSources.csv
-- watersources_missing.xlsx (error check only)
 
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
@@ -170,17 +152,8 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - WaterSourceTypeCV
 
 
-***
-### 5) Code File: 5_COwr_Sites.py
+## 5) Site Information
 Purpose: generate a list of sites information.
-
-#### Inputs:
-- P_ColoradoMaster.csv
-
-#### Outputs:
-- sites.csv
-- waterSources.csv
-- sites_missing.xlsx (error check only)
 
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
@@ -211,19 +184,8 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - SiteName
 
 
-***
-### 6) Code File: 6_COwr_AllocationsAmounts_facts.py
+## 6) AllocationsAmounts Information
 Purpose: generate master sheet of water allocations to import into WaDE 2.0.
-
-#### Inputs:
-- P_ColoradoMaster.csv
-- variables.csv
-- organizations.csv
-- sites.csv
-
-#### Outputs:
-- waterallocations.csv
-- waterallocations_missing.xlsx (error check only)
 
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
