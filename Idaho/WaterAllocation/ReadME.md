@@ -6,8 +6,10 @@ This readme details the process that was applied by the staff of the [Western St
 
 The following data was used for water allocations...
 
-- Point of diversion (POD) data was obtained from IDWR Maps and GIS Data Hub at: https://data-idwr.hub.arcgis.com/datasets/water-right-pods/explore?location=45.432773%2C-114.096317%2C6.10
-- Point of use (PoU) data was obtained from a zipped file from IDWR Maps and GIS Data Hub at: https://data-idwr.hub.arcgis.com/documents/IDWR::place-of-use-water-right/about
+Name | Description | Download Link | Metadata Glossary Link
+---------- | ---------- | ------------ | ------------
+**Point of diversion (POD)** | Point of diversion water right sites. | [link](https://data-idwr.hub.arcgis.com/datasets/water-right-pods/explore?location=45.432773%2C-114.096317%2C6.10) | not given
+**Place of use (PoU)** | Place of use water right polygons. | [link](https://data-idwr.hub.arcgis.com/documents/IDWR::place-of-use-water-right/about) | not given
 
 Unique files were created from the above links to be used as input to the Python codes that prepare WaDE2 input files. Input files used are as follows...
 
@@ -20,23 +22,17 @@ The 1) raw input data shared by the state / state agency / data provider (excel,
 
 - Idaho Allocation Data: https://drive.google.com/drive/folders/1HYjr3B-CPqZ9ncEi_BClax2ADO1rhy5k?usp=sharing
 
+
 ## Summary of Data Prep
+The following text summarizes the process used by the WSWC staff to prepare and share NMOSE's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *NMwr_Allocation Schema Mapping to WaDE.xlsx* & *NMwr_Allocation Schema Mapping to WaDE.xlsx*.  Several WaDE csv input files will be created in order to extract the NMOSE's water rights data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
 
-The following text summarizes the process used by the WSWC staff to prepare and share IDWR's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project. For a complete mapping outline, see _ID_Allocation Schema Mapping to WaDE_QA.xlsx_. Seven executable code files were used to extract the IDWR's water rights data from the above mentioned input files. Each code file is numbered for order of operation. The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining six code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(AllocationAmounts_facts)_ is depended on the previous files. Those seven code files are as follows...
+- **1_NMwr_PreProcessAllocationData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
+- **2_NMwr_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv.
+- **3_NMwr_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
 
-- 0_PreProcessIdahoAllocationData.ipynb
-- 1_IDwr_Methods.py
-- 2_IDwr_Variables.py
-- 3_IDwr_Organizations.py
-- 4_IDwr_WaterSources.py
-- 5_IDwr_Sites.py
-- 6_IDwr_AllocationsAmounts_facts.py
-- 7_IDwr_PODSiteToPOUSiteRelationships.py
 
----
-
-### 0) Code File: 0_PreProcessIdahoAllocationData.ipynb
-
+***
+## Code File: 1_NMwr_PreProcessAllocationData.ipynb
 Purpose: Pre-process the Idaho input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs:
@@ -45,11 +41,10 @@ Purpose: Pre-process the Idaho input data files and merge them into one master f
 - WaterRightPOUs.shp
 
 #### Outputs:
-
-- P_IdahoMain.csv
+- Pwr_idMain.zip
+- P_Geometry.zip
 
 #### Operation and Steps:
-
 - Read the input files and generate temporary input dataframes. Goal will be to create separate POD and POU centric dataframes, then join together into single output dataframe.
 - For POD data...
   - Read in shp file information.
@@ -67,25 +62,30 @@ Purpose: Pre-process the Idaho input data files and merge them into one master f
   - Convert converted *Latitude* & *Longitude* values to numeric values.
 - Extract geometry info from POU shapefile, export as *P_idGeometry.csv*.
 - Inspect output dataframe for additional errors / datatypes.
-- Export output dataframe as new csv file,*P_IdahoMain.csv*.
+- Export output dataframe as new csv file,*Pwr_idMain.zip*.
 
----
 
-### 1) Code File: 1_IDwr_Methods.py
-
-Purpose: generate legend of granular methods used on data collection.
+***
+## Code File: 2_NMwr_CreateWaDEInputFiles.ipynb
+Purpose: generate WaDE csv input files (methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv).
 
 #### Inputs:
-
-- None
+- Pwr_NMMain.zip
 
 #### Outputs:
+- methods.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
+- variables.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
+- organizations.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
+- watersources.csv
+- sites.csv
+- waterallocations.csv
+- podsitetopousiterelationships.csv
 
-- methods.csv
-- methods_missing.csv (error check only)
+
+## 1) Method Information
+Purpose: generate legend of granular methods used on data collection.
 
 #### Operation and Steps:
-
 - Generate single output dataframe _outdf_.
 - Populate output dataframe with _WaDE Method_ specific columns.
 - Assign **IDWR** info to the _WaDE Method_ specific columns (this was hardcoded by hand for simplicity).
@@ -99,23 +99,12 @@ Purpose: generate legend of granular methods used on data collection.
 | ---------- | ------------------------ | ------------ |
 | IDwr_M1    | Surface Ground Water     | Water Use    |
 
----
 
-### 2) Code File: 2_IDwr_Variables.py
 
+## 2) Variables Information
 Purpose: generate legend of granular variables specific to each state.
 
-#### Inputs:
-
-- None
-
-#### Outputs:
-
-- variables.csv
-- variables_missing.csv (error check only)
-
 #### Operation and Steps:
-
 - Generate single output dataframe _outdf_.
 - Populate output dataframe with _WaDE Variable_ specific columns.
 - Assign **IDWR** info to the _WaDE Variable_ specific columns (this was hardcoded by hand for simplicity).
@@ -129,23 +118,12 @@ Purpose: generate legend of granular variables specific to each state.
 | -------------------- | ------------------------- | ---------------------- | ------------ |
 | IDwr_V1              | 1                         | Annual                 | CFS          |
 
----
 
-### 3) Code File: 3_IDwr_Organizations.py
 
+## 3) Organization  Information
 Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
 
-#### Inputs:
-
-- None
-
-#### Outputs:
-
-- organizations.csv
-- organizations_missing.csv (error check only)
-
 #### Operation and Steps:
-
 - Generate single output dataframe _outdf_.
 - Populate output dataframe with _WaDE Organizations_ specific columns.
 - Assign **IDWR** info to the _WaDE Organizations_ specific columns (this was hardcoded by hand for simplicity).
@@ -159,23 +137,12 @@ Purpose: generate organization directory, including names, email addresses, and 
 | ---------------- | --------------------------- | ----------------------- | ----------------------- |
 | IDwr_O1          | Idaho Dept. of Water Rights | Linda Davis             | https://idwr.idaho.gov/ |
 
----
 
-### 4) Code File: 4_IDwr_WaterSources.py
 
+## 4) Water Source Information
 Purpose: generate a list of water sources specific to a water right.
 
-#### Inputs:
-
-- P_IdahoMain.csv
-
-#### Outputs:
-
-- waterSources.csv
-- watersources_missing.csv (error check only)
-
 #### Operation and Steps:
-
 - Read the input file and generate single output dataframe _outdf_.
 - Populate output dataframe with _WaDE WaterSources_ specific columns.
 - Assign **IDWR** info to the _WaDE WaterSources_ specific columns. See _ID_Allocation Schema Mapping to WaDE_QA_ for specific details. Items of note are as follows...
@@ -199,25 +166,12 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - WaterQualityIndicatorCV
 - WaterSourceTypeCV
 
----
 
-### 5) Code File: 5_IDwr_Sites.py
 
+## 5) Site Information
 Purpose: generate a list of sites where water is diverted (also known as Points Of Diversion, PODs).
 
-#### Inputs:
-
-- P_IdahoMain.csv
-- P_idGeometry.csv
-- waterSources.csv
-
-#### Outputs:
-
-- sites.csv
-- sites_missing.csv (error check only)
-
 #### Operation and Steps:
-
 - Read the input file and generate single output dataframe _outdf_.
 - Populate output dataframe with _WaDE Site_ specific columns.
 - Assign **IDWR** info to the _WaDE Site_ specific columns. See _ID_Allocation Schema Mapping to WaDE_QA_ for specific details. Items of note are as follows...
@@ -237,7 +191,7 @@ Purpose: generate a list of sites where water is diverted (also known as Points 
 
 | SiteUUID | WaterSourceUUID | CoordinateMethodCV | Latitude         | Longitude         | SiteName                 |
 | -------- | --------------- | ------------------ | ---------------- | ----------------- | ------------------------ |
-| ID_S9    | IDwr_WS1        | Digitized          | 43.6997001071638 | -116.354766990569 | EAGLE ELEMENTARY WELL #1 |
+| IDwr_S9    | IDwr_WS1        | Digitized          | 43.6997001071638 | -116.354766990569 | EAGLE ELEMENTARY WELL #1 |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. _sites_missing.csv_) for review. This allows for future inspection and ease of inspection on missing items. Mandatory fields for the sites include the following...
 
@@ -246,23 +200,12 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - EPSGCodeCV
 - SiteName
 
----
 
-### 6) Code File: 6_IDwr_AllocationsAmounts_facts.py
 
+## 6) AllocationsAmounts Information
 Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 
-#### Inputs:
-
-- P_IdahoMain.csv
-
-#### Outputs:
-
-- waterallocations.csv
-- waterallocations_missing.csv (error check only)
-
 #### Operation and Steps:
-
 - Read the input files and generate single output dataframe _outdf_.
 - Populate output dataframe with _WaDE Water Allocations_ specific columns.
 - Assign **IDWR** info to the _WaDE Water Allocations_ specific columns. See _ID_Allocation Schema Mapping to WaDE_QA_ for specific details. Items of note are as follows...
@@ -297,23 +240,12 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - AllocationAmount or AllocationMaximum
 - DataPublicationDate
 
----
 
-### 7) Code File: 7_IDwr_PODSiteToPOUSiteRelationships.py
-
+### 7) POD Site -To- POU Polygon Relationships
 Purpose: generate linking element between POD and POU sites that share the same water right.
-Note: podsitetopousiterelationships.csv output only needed if both POD and POU data is present, otherwise produces empty file.
-
-#### Inputs:
-
-- sites.csv
-
-#### Outputs:
-
-- podsitetopousiterelationships.csv
+Note: podsitetopousiterelationships.csv output only needed if both POD and POU data is present, **otherwise produces empty file**.
 
 #### Operation and Steps:
-
 - Read the sites.csv & waterallocations.csv input files.
 - Create three temporary dataframes: one for waterallocations, & two for site info that will store POD and POU data separately.
 - For the temporary POD dataframe...
@@ -329,10 +261,9 @@ Note: podsitetopousiterelationships.csv output only needed if both POD and POU d
 - Perform error check on waterallocations dataframe (check for NaN values)
 - If waterallocations is not empty, export output dataframe _podsitetopousiterelationships.csv_.
 
----
 
+***
 ## Staff Contributions
-
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Idaho Department of Water Resources (IDWR)](https://idwr.idaho.gov/).
 
 WSWC Staff
