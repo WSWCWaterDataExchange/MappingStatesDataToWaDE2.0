@@ -56,7 +56,7 @@ Purpose: pre-process the native input data files and merge them into one main in
 
 
 ***
-## Code File: 2_NMwr_CreateWaDEInputFiles
+## Code File: 2_NMwr_CreateWaDEInputFiles.ipynb
 Purpose: generate WaDE csv input files (methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv).
 
 #### Inputs:
