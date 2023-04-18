@@ -13,16 +13,13 @@ Name | Description | Download Link | Metadata Glossary Link
 The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
 - North Dakota Allocation Data: https://drive.google.com/drive/folders/1eO5wEDHNppt62tqG-Mm98aCqZBEVu2fk?usp=sharing
 
-## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share NDSWC's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *ND_Allocation Schema Mapping to WaDE.xlsx*.  Several executable code files were used to extract the NDSWC's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  Some code files were built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(AllocationAmounts_facts)* is dependent on the previous files.  Those code files are as follows...
 
-- 0_NDwr_PreProcessAllocationData.ipynb
-- 1_NDwr_Methods.py
-- 2_NDwr_Variables.py
-- 3_NDwr_Organizations.pys
-- 4_NDwr_WaterSources.py
-- 5_NDwr_Sites.py
-- 6_NDwr_AllocationsAmounts_facts.py
+## Summary of Data Prep
+The following text summarizes the process used by the WSWC staff to prepare and share NMOSE's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *NDwr_Allocation Schema Mapping to WaDE.xlsx*.  Several WaDE csv input files will be created in order to extract the NMOSE's water rights data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
+
+- **1_NDwr_PreProcessAllocationData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
+- **2_NDwr_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, podsitetopousiterelationships.csv.
+- **3_NDwr_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
 
 
 ***
@@ -33,7 +30,7 @@ Purpose: Pre-process the state agency input data files and merge them into one m
  - Permits.csv
 
 #### Outputs:
- - P_NorthDakotaMaster.csv
+ - Pwr_ndMain.zip
 
 #### Operation and Steps:
 - Read the input files and generate temporary input dataframes.
@@ -42,19 +39,28 @@ Purpose: Pre-process the state agency input data files and merge them into one m
 - Format **source_nam**, **source**, **permit_hol** to title text format.
 - Remove excess white space in **source_nam**, **source**, **permit_hol**, **county**, **aquifer**, **pod**, **status**, **use_type**, & **permit_num**.
 - Inspect output dataframe for additional errors / datatypes.
-- Export output dataframe as new csv file, *P_NorthDakotaMaster.csv*.
+- Export output dataframe as new csv file, *Pwr_ndMain.zip*.
 
 
 ***
-### 1) Code File: 1_NDwr_Methods.py
-Purpose: generate legend of granular methods used on data collection.
+## Code File: 2_NDwr_CreateWaDEInputFiles.ipynb
+Purpose: generate WaDE csv input files (methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, podsitetopousiterelationships.csv).
 
 #### Inputs:
-- None
+- Pwr_NMMain.zip
 
 #### Outputs:
-- methods.csv
-- methods_missing.csv (error check only)
+- methods.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
+- variables.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
+- organizations.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
+- watersources.csv
+- sites.csv
+- waterallocations.csv
+- podsitetopousiterelationships.csv
+
+
+## 1) Method Information
+Purpose: generate legend of granular methods used on data collection.
 
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
@@ -70,16 +76,8 @@ MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 NDwr_M1 | Surface Water and Groundwater | Legal Processes
 
 
-***
-### 2) Code File: 2_NDwr_Variables.py
+## 2) Variables Information
 Purpose: generate legend of granular variables specific to each state.
-
-#### Inputs:
-- None
-
-#### Outputs:
-- variables.csv
-- variables_missing.csv (error check only)
 
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
@@ -95,16 +93,8 @@ VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | Amou
 NDwr_V1 | 1 | Year | CFS
 
 
-***
-### 3) Code File: 3_NDwr_Organizations.py
+## 3) Organization  Information
 Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
-
-#### Inputs:
-- None
-
-#### Outputs:
-- organizations.csv
-- organizations_missing.csv (error check only)
 
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
@@ -120,16 +110,8 @@ OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebs
 NDwr_O1 | North Dakota State Water Commission | Chris Bader | https://swc.nd.gov/theswc/water_appropriations.html
 
 
-***
-### 4) Code File: 4_NDwr_WaterSources.py
+## 4) Water Source Information
 Purpose: generate a list of water sources specific to a water right.
-
-#### Inputs:
-- P_NorthDakotaMaster.csv
-
-#### Outputs:
-- waterSources.csv
-- watersources_missing.csv (error check only)
 
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
@@ -145,7 +127,7 @@ Purpose: generate a list of water sources specific to a water right.
 #### Sample Output (WARNING: not all fields shown):
 WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceNativeID | WaterSourceTypeCV
 ---------- | ---------- | ------------ | ------------ | ------------
-NDwr_WS1 | Fresh | WaDE Unspecified | WaDE Unspecified | Ground Water
+NDwr_WSwadeID1 | Fresh | WaDE Unspecified | wadeID1 | Ground Water
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
 - WaterSourceUUID
@@ -153,16 +135,8 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - WaterSourceTypeCV
 
 
-***
-### 5) Code File: 5_NDwr_Sites.py
+## 5) Site Information
 Purpose: generate a list of sites information.
-
-#### Inputs:
-- P_NorthDakotaMaster.csv
-
-#### Outputs:
-- sites.csv
-- sites_missing.csv (error check only)
 
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
@@ -183,7 +157,7 @@ Purpose: generate a list of sites information.
 #### Sample Output (WARNING: not all fields shown):
 SiteUUID | CoordinateMethodCV | Latitude | Longitude | SiteTypeCV
 ---------- | ---------- | ------------ | ------------ | ------------
-NDwr_S1 | WaDE Unspecified | 46.1113 | -99.78988 | WaDE Unspecified
+NDwr_SPOD0 | WaDE Unspecified | 48.142 | -100.50504 | WaDE Unspecified
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
 - SiteUUID 
@@ -192,21 +166,8 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - SiteName
 
 
-***
-### 6) Code File: 6_NDwr_AllocationsAmounts_facts.py
+## 6) AllocationsAmounts Information
 Purpose: generate master sheet of water allocations to import into WaDE 2.0.
-
-#### Inputs:
-- P_NorthDakotaMaster.csv
-- methods.csv
-- variables.csv
-- organizations.csv
-- watersources.csv
-- sites.csv
-
-#### Outputs:
-- waterallocations.csv
-- waterallocations_missing.csv (error check only)
 
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
@@ -230,7 +191,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 #### Sample Output (WARNING: not all fields shown):
 AllocationNativeID | AllocationFlow_CFS | AllocationLegalStatusCV | BeneficialUseCategory
 ---------- | ---------- | ------------ | ------------
-1000 | 314.1 | Perfected | Industrial
+NDwr_WR00799A_1 | 134.0 | Cancelled | Irrigation
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID
@@ -242,6 +203,27 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - BeneficialUseCategory
 - AllocationAmount or AllocationMaximum
 - DataPublicationDate
+
+
+### 7) POD Site -To- POU Polygon Relationships
+Purpose: generate linking element between POD and POU sites that share the same water right.
+Note: podsitetopousiterelationships.csv output only needed if both POD and POU data is present, ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `otherwise produces empty file.`
+
+#### Operation and Steps:
+- Read the sites.csv & waterallocations.csv input files.
+- Create three temporary dataframes: one for waterallocations, & two for site info that will store POD and POU data separately.
+- For the temporary POD dataframe...
+  - Read in site.csv data from sites.csv with a _PODSiteUUID_ field = POD only.
+  - Create _PODSiteUUID_ field = _SiteUUID_.
+- For the temporary POU dataframe
+  - Read in site.csv data from sites.csv with a _PODSiteUUID_ field = POU only.
+  - Create _POUSiteUUID_ field = _SiteUUID_.
+- For the temporary waterallocations dataframe, explode _SiteUUID_ field to create unique rows.
+- Left-merge POD & POU dataframes to the waterallocations dataframe via _SiteUUID_ field.
+- Consolidate waterallocations dataframe by grouping entries by _AllocationNativeID_ filed.
+- Explode the consolidated waterallocations dataframe again using the _PODSiteUUID_ field, and again for the _POUSiteUUID_ field to create unique rows.
+- Perform error check on waterallocations dataframe (check for NaN values)
+- If waterallocations is not empty, export output dataframe _podsitetopousiterelationships.csv_.
 
 
 ## Staff Contributions
