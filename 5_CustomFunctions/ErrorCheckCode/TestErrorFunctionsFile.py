@@ -367,7 +367,7 @@ def RegulatoryOverlayUUIDs_S_Check(dfx, dfy):
 
 # SiteName_nvarchar(500)_
 def SiteName_S_Check(dfx, dfy):
-    selectionVar = (dfx["SiteName"].isnull()) | (dfx["SiteName"] == '') | (dfx['SiteName'].str.len() > 500)
+    selectionVar = (dfx["SiteName"].isnull()) | (dfx["SiteName"] == '') | (dfx['SiteName'].str.len() > 500) | (dfx["SiteName"].str.contains(','))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for SiteName').reset_index()
     mask['IncompleteField'] = mask['SiteName']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
