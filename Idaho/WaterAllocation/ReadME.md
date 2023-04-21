@@ -211,6 +211,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
   - Extract _MethodUUID_, _VariableSpecificUUID_, _OrganizationUUID_, & _SiteUUID_ from respective input csv files. See code for specific implementation of extraction.
   - _AllocationBasisCV_ = **Basis** from POD data
   - _AllocationFlow_CFS_ = **OverallMax**.
+  - _AllocationVolume_AF_ = **OverallM_1**.
   - _AllocationLegalStatusCV_ = **Status**.
   - _AllocationNativeID_ = **WaterRight**.
   - _AllocationOwner_ = **Owner**.
