@@ -176,13 +176,14 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *AllocationApplicationDate* = **date_issue**.
     - *AllocationExpirationDate* = **date_cance**.
-    - *AllocationFlow_CFS* = **req_rate**.
+    - *AllocationFlow_CFS* = **app_rate**.
     - *AllocationLegalStatusCV* = **status**.
     - *AllocationNativeID* = **permit_num**.
     - *AllocationOwner* = **permit_hol**.
     - *AllocationPriorityDate* = **priority_d**.
-    - *AllocationVolume_AF* = **req_acft**.
+    - *AllocationVolume_AF* = **app_acft**.
     - *BeneficialUseCategory* = **use_type**.
+    - *in_IrrigatedAcreage* = **app_acre**.
     - *WaterAllocationNativeURL* = *https://www.swc.nd.gov/info_edu/map_data_resources/waterpermits/single.php?id=* + Use **permid_ind**
 - Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.
 - Perform error check on output dataframe.
