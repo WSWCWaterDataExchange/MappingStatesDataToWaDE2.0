@@ -558,7 +558,7 @@ def AllocationPriorityDate_AA_Check(dfx, dfy):
     selectionVar = ((dfx['ExemptOfVolumeFlowPriority'] == "0") & ((dfx["AllocationPriorityDate"].isnull()) |
                     (dfx["AllocationPriorityDate"] == "") |
                     (dfx["AllocationPriorityDate"] == " ") |
-                    (dfx["AllocationPriorityDate"].str.contains(','))))
+                    (dfx["AllocationPriorityDate"].astype(str).str.contains(','))))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete AllocationPriorityDate').reset_index()
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
@@ -566,7 +566,7 @@ def AllocationPriorityDate_AA_Check(dfx, dfy):
 
 # AllocationTimeframeEnd_nvarchar(5)_Yes
 def AllocationTimeframeEnd_AA_Check(dfx, dfy):
-    selectionVar = ((dfx["AllocationTimeframeEnd"].str.len() > 5))
+    selectionVar = ((dfx["AllocationTimeframeEnd"].astype(str).str.len() > 5))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete AllocationTimeframeEnd').reset_index()
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
@@ -574,7 +574,7 @@ def AllocationTimeframeEnd_AA_Check(dfx, dfy):
 
 # AllocationTimeframeStart_nvarchar(5)_Yes
 def AllocationTimeframeStart_AA_Check(dfx, dfy):
-    selectionVar = (dfx["AllocationTimeframeStart"].str.len() > 5)
+    selectionVar = (dfx["AllocationTimeframeStart"].astype(str).str.len() > 5)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete AllocationTimeframeStart').reset_index()
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)

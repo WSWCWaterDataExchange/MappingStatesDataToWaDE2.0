@@ -42,19 +42,18 @@ def GetOrganizationsColumnsFunction():
 
 def GetWaterSourcesColumnsFunction():
     columnslist = [
-        "WaDEUUID",
         "WaterSourceUUID",
         "Geometry",
         "GNISFeatureNameCV",
         "WaterQualityIndicatorCV",
         "WaterSourceName",
         "WaterSourceNativeID",
-        "WaterSourceTypeCV"]
+        "WaterSourceTypeCV",
+        "WaDEUUID"]
     return (columnslist)
 
 def GetSitesColumnsFunction():
     columnslist = [
-        "WaDEUUID",
         "SiteUUID",
         "RegulatoryOverlayUUIDs",
         "WaterSourceUUIDs",
@@ -76,12 +75,12 @@ def GetSitesColumnsFunction():
         "SitePoint",
         "SiteTypeCV",
         "StateCV",
-        "USGSSiteID"]
+        "USGSSiteID",
+        "WaDEUUID"]
     return (columnslist)
 
 def GetReportingUnitColumnsFunction():
     columnslist = [
-        "WaDEUUID",
         "ReportingUnitUUID",
         "EPSGCodeCV",
         "ReportingUnitName",
@@ -90,12 +89,12 @@ def GetReportingUnitColumnsFunction():
         "ReportingUnitTypeCV",
         "ReportingUnitUpdateDate",
         "StateCV",
-        "Geometry"]
+        "Geometry",
+        "WaDEUUID"]
     return (columnslist)
 
 def GetAllocationAmountsColumnsFunction():
     columnslist = [
-        "WaDEUUID",
         "AllocationUUID",
         "MethodUUID",
         "OrganizationUUID",
@@ -134,12 +133,12 @@ def GetAllocationAmountsColumnsFunction():
         "PopulationServed",
         "PowerType",
         "PrimaryBeneficialUseCategory",
-        "WaterAllocationNativeURL"]
+        "WaterAllocationNativeURL",
+        "WaDEUUID"]
     return (columnslist)
 
 def GetSiteSpecificAmountsColumnsFunction():
     columnslist = [
-        "WaDEUUID",
         "MethodUUID",
         "OrganizationUUID",
         "SiteUUID",
@@ -164,5 +163,32 @@ def GetSiteSpecificAmountsColumnsFunction():
         "ReportYearCV",
         "SDWISIdentifier",
         "TimeframeEnd",
-        "TimeframeStart"]
+        "TimeframeStart",
+        "WaDEUUID"]
     return (columnslist)
+
+def GetRegulatoryOverlaysColumnsFunction():
+    columnslist = [
+        "RegulatoryOverlayUUID",
+        "OversightAgency",
+        "RegulatoryDescription",
+        "RegulatoryName",
+        "RegulatoryOverlayNativeID",
+        "RegulatoryStatusCV",
+        "RegulatoryStatute",
+        "RegulatoryStatuteLink",
+        "StatutoryEffectiveDate",
+        "StatutoryEndDate",
+        "RegulatoryOverlayTypeCV",
+        "WaterSourceTypeCV",
+        "WaDEUUID"]
+    return (columnslist)
+
+def GetRegulatoryReportingUnitsColumnsFunction():
+    columnslist = [
+        "DataPublicationDate",
+        "OrganizationUUID",
+        "RegulatoryOverlayUUID",
+        "ReportingUnitUUID"]
+    return (columnslist)
+

@@ -19,7 +19,11 @@ import GetColumnsFile
 
 # Test WaDE Data for any Errors
 sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
-import TestErrorFunctionsFile
+import ErrorCheckCodeFunctionsFile
+
+# Clean data and data types
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/CleanDataCode")
+import CleanDataCodeFunctionsFile
 
 
 # Create File Function
@@ -33,9 +37,8 @@ def CreateSitesInputFunction(varST, varSTName, varUUIDType, varWaDEDataType, mai
     fileInput = "RawinputData/" + mainInputFile
     df = pd.read_csv(fileInput, compression='zip')
 
-    watersources_fileInput = "ProcessedInputData/watersources.csv"
-    df_watersources = pd.read_csv(watersources_fileInput)  # WaterSources dataframe
-
+    # Input Data - 'WaDE Input' files.
+    dfws = pd.read_csv("ProcessedInputData/watersources.csv").replace(np.nan, "")  # WaterSources dataframe
     try:
         fileInput_shape = "RawinputData/P_Geometry.zip"
         dfshape = pd.read_csv(fileInput_shape, compression='zip')
@@ -51,13 +54,16 @@ def CreateSitesInputFunction(varST, varSTName, varUUIDType, varWaDEDataType, mai
     ############################################################################
 
     # For creating WaterSourceUUID
-    WaterSourceUUIDdict = pd.Series(df_watersources.WaterSourceUUID.values, index=df_watersources.WaterSourceNativeID.astype(str)).to_dict()
+    WaterSourceUUIDdict = pd.Series(dfws.WaterSourceUUID.values, index=dfws.WaterSourceNativeID.astype(str)).to_dict()
     def retrieveWaterSourceUUID(colrowValue):
         if colrowValue == '' or pd.isnull(colrowValue):
             outList = ''
         else:
             colrowValue = str(colrowValue).strip()
-            outList = WaterSourceUUIDdict[colrowValue]
+            try:
+                outList = WaterSourceUUIDdict[colrowValue]
+            except:
+                outList = ''
         return outList
 
     # For Creating Geometry
@@ -72,7 +78,7 @@ def CreateSitesInputFunction(varST, varSTName, varUUIDType, varWaDEDataType, mai
                 outList = ''
         return outList
 
-    # For creating SiteUUID
+    # For creating UUID
     def assignUUID(Val):
         Val = str(Val)
         Val = re.sub("[$@&.;,/\)(-]", "", Val).strip()
@@ -156,12 +162,10 @@ def CreateSitesInputFunction(varST, varSTName, varUUIDType, varWaDEDataType, mai
     outdf['WaDEUUID'] = df['WaDEUUID']
 
     print("Resetting Index")
-    outdf.reset_index()
+    outdf = outdf.drop_duplicates().reset_index(drop=True).replace(np.nan, "")
 
-    print("Joining outdf duplicates based on key fields...")
-    outdf = outdf.replace(np.nan, "")  # Replaces NaN values with blank.
-    groupbyList = ['PODorPOUSite', 'SiteNativeID', 'SiteName', 'SiteTypeCV', 'Longitude', 'Latitude']
-    outdf = outdf.groupby(groupbyList).agg(lambda x: ','.join([str(elem) for elem in (list(set(x))) if elem!=''])).replace(np.nan, "").reset_index()
+    print("GroupBy outdf duplicates based on key fields...")
+    outdf = outdf.groupby('SiteNativeID').agg(lambda x: ','.join([str(elem) for elem in (list(set(x))) if elem!=''])).replace(np.nan, "").reset_index()
     outdf = outdf[SitesColumnsList]  # reorder the dataframe's columns based on columnslist
 
 
@@ -171,7 +175,7 @@ def CreateSitesInputFunction(varST, varSTName, varUUIDType, varWaDEDataType, mai
     dfpurge = pd.DataFrame(columns=SitesColumnsList) # Purge DataFrame to hold removed elements
     dfpurge['ReasonRemoved'] = ""
     dfpurge['IncompleteField'] = ""
-    outdf, dfpurge = TestErrorFunctionsFile.SiteTestErrorFunctions(outdf, dfpurge)
+    outdf, dfpurge = ErrorCheckCodeFunctionsFile.SiteTestErrorFunctions(outdf, dfpurge)
     print(f'Length of outdf DataFrame: ', len(outdf))
     print(f'Length of dfpurge DataFrame: ', len(dfpurge))
 
@@ -186,7 +190,13 @@ def CreateSitesInputFunction(varST, varSTName, varUUIDType, varWaDEDataType, mai
                                  outdf['SiteUUID'])
 
     # Error check SiteUUID
-    outdf, dfpurge = TestErrorFunctionsFile.SiteUUID_S_Check(outdf, dfpurge)
+    outdf, dfpurge = ErrorCheckCodeFunctionsFile.SiteUUID_S_Check(outdf, dfpurge)
+
+
+    # Clean data & check data types before export
+    ############################################################################
+    print("Cleaning export for correct data types...")
+    outdf = CleanDataCodeFunctionsFile.FixSiteInfoFunctions(outdf)
 
 
     # Export to new csv

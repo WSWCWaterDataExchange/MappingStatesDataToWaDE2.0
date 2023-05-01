@@ -64,7 +64,6 @@ def SiteTestErrorFunctions(outdf, dfpurge):
 
 
 def ReportingUnitTestErrorFunctions(outdf, dfpurge):
-    outdf, dfpurge = ReportingUnitUUID_RU_Check(outdf, dfpurge)
     outdf, dfpurge = EPSGCodeCV_RU_Check(outdf, dfpurge)
     # Geometry ???? How to check for geometry datatype
     outdf, dfpurge = ReportingUnitName_RU_Check(outdf, dfpurge)
@@ -89,7 +88,9 @@ def AllocationAmountTestErrorFunctions(outdf, dfpurge):
     outdf, dfpurge = AllocationCommunityWaterSupplySystem_AA_Check(outdf, dfpurge)
     outdf, dfpurge = AllocationCropDutyAmount_AA_Check(outdf, dfpurge)
     outdf, dfpurge = AllocationExpirationDate_AA_Check(outdf, dfpurge)
-    outdf, dfpurge = AllocationFlowVolume_CFSAF_float_Yes_AA_Check(outdf, dfpurge)
+    # outdf, dfpurge = AllocationFlowVolume_CFSAF_float_Yes_AA_Check(outdf, dfpurge) # tring to check Flow and Vol separately.
+    outdf, dfpurge = AllocationFlow_CFS_AA_Check(outdf, dfpurge)
+    outdf, dfpurge = AllocationVolume_AF_AA_Check(outdf, dfpurge)
     outdf, dfpurge = AllocationLegalStatusCV_AA_Check(outdf, dfpurge)
     outdf, dfpurge = AllocationNativeID_AA_Check(outdf, dfpurge)
     outdf, dfpurge = AllocationOwner_AA_Check(outdf, dfpurge)
@@ -98,7 +99,7 @@ def AllocationAmountTestErrorFunctions(outdf, dfpurge):
     outdf, dfpurge = AllocationTimeframeEnd_AA_Check(outdf, dfpurge)
     outdf, dfpurge = AllocationTimeframeStart_AA_Check(outdf, dfpurge)
     outdf, dfpurge = AllocationTypeCV_AA_Check(outdf, dfpurge)
-    outdf, dfpurge = BeneficialUseCategory_AA_Check(outdf, dfpurge)
+    # outdf, dfpurge = BeneficialUseCategory_AA_Check(outdf, dfpurge)
     outdf, dfpurge = CommunityWaterSupplySystem_AA_Check(outdf, dfpurge)
     outdf, dfpurge = CropTypeCV_AA_Check(outdf, dfpurge)
     outdf, dfpurge = CustomerTypeCV_AA_Check(outdf, dfpurge)
@@ -143,6 +144,29 @@ def SiteSpecificAmountsTestErrorFunctions(outdf, dfpurge):
     outdf, dfpurge = SDWISIdentifier_SS_Check(outdf, dfpurge)
     # outdf, dfpurge = TimeframeEnd_SS_Check(outdf, dfpurge)
     # outdf, dfpurge = TimeframeStart_SS_Check(outdf, dfpurge)
+    return(outdf, dfpurge)
+
+
+def RegulatoryOverlaysTestErrorFunctions(outdf, dfpurge):
+    outdf, dfpurge = OversightAgency_RE_Check(outdf, dfpurge)
+    outdf, dfpurge = RegulatoryDescription_RE_Check(outdf, dfpurge)
+    outdf, dfpurge = RegulatoryName_RE_Check(outdf, dfpurge)
+    outdf, dfpurge = RegulatoryOverlayNativeID_RE_Check(outdf, dfpurge)
+    outdf, dfpurge = RegulatoryStatusCV_RE_Check(outdf, dfpurge)
+    outdf, dfpurge = RegulatoryStatute_RE_Check(outdf, dfpurge)
+    outdf, dfpurge = RegulatoryStatuteLink_RE_Check(outdf, dfpurge)
+    outdf, dfpurge = StatutoryEffectiveDate_RE_Check(outdf, dfpurge)
+    outdf, dfpurge = StatutoryEndDate_RE_Check(outdf, dfpurge)
+    outdf, dfpurge = RegulatoryOverlayTypeCV_RE_Check(outdf, dfpurge)
+    outdf, dfpurge = WaterSourceTypeCV_RE_Check(outdf, dfpurge)
+    return(outdf, dfpurge)
+
+
+def RegulatoryReportingUnitsErrorFunctions(outdf, dfpurge):
+    # DataPublicationDate
+    outdf, dfpurge = OrganizationUUID_SS_Check(outdf, dfpurge)
+    outdf, dfpurge = ReportingUnitUUID_RU_Check(outdf, dfpurge)
+    outdf, dfpurge = RegulatoryOverlayUUID_RE_Check(outdf, dfpurge)
     return(outdf, dfpurge)
 
 
@@ -222,7 +246,7 @@ def SiteUUID_S_Check(dfx, dfy):
 
 # CoordinateAccuracy_nvarchar(255)_Yes
 def CoordinateAccuracy_S_Check(dfx, dfy):
-    selectionVar = (dfx["CoordinateAccuracy"].str.len() > 255)
+    selectionVar = (dfx["CoordinateAccuracy"].astype(str).str.len() > 255)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for CoordinateAccuracy').reset_index()
     mask['IncompleteField'] = mask['CoordinateAccuracy']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -231,7 +255,7 @@ def CoordinateAccuracy_S_Check(dfx, dfy):
 
 # CoordinateMethodCV_nvarchar(100)_-
 def CoordinateMethodCV_S_Check(dfx, dfy):
-    selectionVar= (dfx["CoordinateMethodCV"].isnull()) | (dfx["CoordinateMethodCV"] == '') | (dfx['CoordinateMethodCV'].str.len() > 100)
+    selectionVar = (dfx['CoordinateMethodCV'].astype(str).str.len() > 100)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for CoordinateMethodCV').reset_index()
     mask['IncompleteField'] = mask['CoordinateMethodCV']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -240,7 +264,7 @@ def CoordinateMethodCV_S_Check(dfx, dfy):
 
 # County_nvarchar(20)_Yes
 def County_S_Check(dfx, dfy):
-    selectionVar= ((dfx["County"].str.len() > 20) | (dfx["County"].str.contains(',') == True))
+    selectionVar= ((dfx["County"].astype(str).str.len() > 20) | (dfx["County"].astype(str).str.contains(',') == True))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for County').reset_index()
     mask['IncompleteField'] = mask['County']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -313,7 +337,7 @@ def HUC8_S_Check(dfx, dfy):
 
 # Latitude_float_-
 def Latitude_S_Check(dfx, dfy):
-    selectionVar = (dfx["Latitude"].isnull()) | (dfx["Latitude"].astype(str) == "") | (dfx["Latitude"].astype(str).str.contains(",")) | (dfx["Latitude"] == 0) | (dfx["Latitude"].astype(float) < 1.0)
+    selectionVar = (dfx["Latitude"].isnull()) | (dfx["Latitude"].astype(str) == "") | (dfx["Latitude"].astype(str).str.contains(",")) | (dfx["Latitude"] == 0) | (dfx["Latitude"].replace("", 0).fillna(0).astype(float) < 1.0)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Latitude').reset_index()
     mask['IncompleteField'] = mask['Latitude']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -322,7 +346,7 @@ def Latitude_S_Check(dfx, dfy):
 
 # Longitude_float_-
 def Longitude_S_Check(dfx, dfy):
-    selectionVar = (dfx["Longitude"].isnull()) | (dfx["Longitude"].astype(str) == "") | (dfx["Longitude"].astype(str).str.contains(",")) | (dfx["Longitude"] == 0) | (dfx["Longitude"].astype(float) > 1.0)
+    selectionVar = (dfx["Longitude"].isnull()) | (dfx["Longitude"].astype(str) == "") | (dfx["Longitude"].astype(str).str.contains(",")) | (dfx["Longitude"] == 0) | (dfx["Longitude"].replace("", 0).fillna(0).astype(float) > 1.0)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Longitude').reset_index()
     mask['IncompleteField'] = mask['Longitude']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -349,7 +373,7 @@ def NHDProductCV_S_Check(dfx, dfy):
 
 # PODorPOUSite_nvarchar(50)_Yes
 def PODorPOUSite_S_Check(dfx, dfy):
-    selectionVar = dfx["PODorPOUSite"].str.len() > 50
+    selectionVar = (dfx["PODorPOUSite"].str.len() > 50)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for PODorPOUSite').reset_index()
     mask['IncompleteField'] = mask['PODorPOUSite']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -367,7 +391,7 @@ def RegulatoryOverlayUUIDs_S_Check(dfx, dfy):
 
 # SiteName_nvarchar(500)_
 def SiteName_S_Check(dfx, dfy):
-    selectionVar = (dfx["SiteName"].isnull()) | (dfx["SiteName"] == '') | (dfx['SiteName'].str.len() > 500) | (dfx["SiteName"].str.contains(','))
+    selectionVar = (dfx['SiteName'].str.len() > 500) | (dfx["SiteName"].str.contains(','))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for SiteName').reset_index()
     mask['IncompleteField'] = mask['SiteName']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -476,7 +500,7 @@ def ReportingUnitProductVersion_RU_Check(dfx, dfy):
 
 # ReportingUnitTypeCV_nvarchar(20)_
 def ReportingUnitTypeCV_RU_Check(dfx, dfy):
-    selectionVar = (dfx["ReportingUnitTypeCV"].isnull()) | (dfx["ReportingUnitTypeCV"] == '') | (dfx['ReportingUnitTypeCV'].str.len() > 50)
+    selectionVar = (dfx['ReportingUnitTypeCV'].str.len() > 50) | (dfx["ReportingUnitTypeCV"].str.contains(','))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for ReportingUnitTypeCV').reset_index()
     mask['IncompleteField'] = mask['ReportingUnitTypeCV']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -680,19 +704,37 @@ def AllocationExpirationDate_AA_Check(dfx, dfy):
 #     return (dfx, dfy)
 
 
-# AllocationFlow_CFS_float_Yes & AllocationVolume_AF_float_Yes
-# We have to have either a flow or a volume
-def AllocationFlowVolume_CFSAF_float_Yes_AA_Check(dfx, dfy):
-    selectionVar = ((dfx['ExemptOfVolumeFlowPriority'] == "0") & (((dfx["AllocationFlow_CFS"].isnull()) |
-                                                                   (dfx["AllocationFlow_CFS"] == "") |
-                                                                   (dfx['AllocationFlow_CFS'].astype(str).str.contains(',')) |
-                                                                   (dfx["AllocationFlow_CFS"].astype(float) < 0.0)) &
-                                                                  ((dfx["AllocationVolume_AF"].isnull()) |
-                                                                   (dfx["AllocationVolume_AF"] == "") |
-                                                                   (dfx['AllocationVolume_AF'].astype(str).str.contains(',')) |
-                                                                   (dfx["AllocationVolume_AF"].astype(float) < 0.0))))
-    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Flow or Volume').reset_index()
-    mask['IncompleteField'] = str(mask['AllocationExpirationDate']) + ", " + str(mask['AllocationVolume_AF'])
+# # AllocationFlow_CFS_float_Yes & AllocationVolume_AF_float_Yes
+# # We have to have either a flow or a volume
+# def AllocationFlowVolume_CFSAF_float_Yes_AA_Check(dfx, dfy):
+#     selectionVar = ((dfx['ExemptOfVolumeFlowPriority'] == "0") & (((dfx["AllocationFlow_CFS"].isnull()) |
+#                                                                    (dfx["AllocationFlow_CFS"] == "") |
+#                                                                    (dfx['AllocationFlow_CFS'].astype(str).str.contains(',')) |
+#                                                                    (dfx["AllocationFlow_CFS"].replace("", 0).fillna(0).astype(float) < 0.0)) &
+#                                                                   ((dfx["AllocationVolume_AF"].isnull()) |
+#                                                                    (dfx["AllocationVolume_AF"] == "") |
+#                                                                    (dfx['AllocationVolume_AF'].astype(str).str.contains(',')) |
+#                                                                    (dfx["AllocationVolume_AF"].replace("", 0).fillna(0).astype(float) < 0.0))))
+#     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Flow or Volume').reset_index()
+#     mask['IncompleteField'] = str(mask['AllocationExpirationDate']) + ", " + str(mask['AllocationVolume_AF'])
+#     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
+#     return (dfx, dfy)
+
+
+# AllocationFlow_CFS_float_Yes
+def AllocationFlow_CFS_AA_Check(dfx, dfy):
+    selectionVar = ((dfx['ExemptOfVolumeFlowPriority'] == "0") & (dfx['AllocationFlow_CFS'].astype(str).str.contains(',')))
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Flow').reset_index()
+    mask['IncompleteField'] = mask['AllocationFlow_CFS']
+    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
+    return (dfx, dfy)
+
+
+# AllocationVolume_AF_float_Yes
+def AllocationVolume_AF_AA_Check(dfx, dfy):
+    selectionVar = ((dfx['ExemptOfVolumeFlowPriority'] == "0") & (dfx['AllocationVolume_AF'].astype(str).str.contains(',')))
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Volume').reset_index()
+    mask['IncompleteField'] = mask['AllocationVolume_AF']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
 
@@ -729,7 +771,7 @@ def AllocationPriorityDate_AA_Check(dfx, dfy):
     selectionVar = ((dfx['ExemptOfVolumeFlowPriority'] == "0") & ((dfx["AllocationPriorityDate"].isnull()) |
                                                                   (dfx["AllocationPriorityDate"] == "") |
                                                                   (dfx["AllocationPriorityDate"] == " ") |
-                                                                  (dfx["AllocationPriorityDate"].str.contains(','))))
+                                                                  (dfx["AllocationPriorityDate"].astype(str).str.contains(','))))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for AllocationPriorityDate').reset_index()
     mask['IncompleteField'] = mask['AllocationPriorityDate']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -738,7 +780,7 @@ def AllocationPriorityDate_AA_Check(dfx, dfy):
 
 # AllocationTimeframeEnd_Yes
 def AllocationTimeframeEnd_AA_Check(dfx, dfy):
-    selectionVar = ((dfx["AllocationTimeframeEnd"].str.len() > 6))
+    selectionVar = ((dfx["AllocationTimeframeEnd"].astype(str).str.len() > 6))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for AllocationTimeframeEnd').reset_index()
     mask['IncompleteField'] = mask['AllocationTimeframeEnd']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -747,7 +789,7 @@ def AllocationTimeframeEnd_AA_Check(dfx, dfy):
 
 # AllocationTimeframeStart_Yes
 def AllocationTimeframeStart_AA_Check(dfx, dfy):
-    selectionVar = (dfx["AllocationTimeframeStart"].str.len() > 6)
+    selectionVar = (dfx["AllocationTimeframeStart"].astype(str).str.len() > 6)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for AllocationTimeframeStart').reset_index()
     mask['IncompleteField'] = mask['AllocationTimeframeStart']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -763,14 +805,15 @@ def AllocationTypeCV_AA_Check(dfx, dfy):
     return (dfx, dfy)
 
 
-# BeneficialUseCategory_nvarchar(100)_-
-# We are ignoring nvarchar length in the check at this time
-def BeneficialUseCategory_AA_Check(dfx, dfy):
-    selectionVar = ((dfx["BeneficialUseCategory"].isnull()) | (dfx["BeneficialUseCategory"] == ''))
-    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for BeneficialUseCategory').reset_index()
-    mask['IncompleteField'] = mask['BeneficialUseCategory']
-    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
-    return (dfx, dfy)
+# # BeneficialUseCategory_nvarchar(100)_-
+# # We are ignoring nvarchar length in the check at this time
+# # we are solving these issues with clean code files
+# def BeneficialUseCategory_AA_Check(dfx, dfy):
+#     selectionVar = (dfx["BeneficialUseCategory"].isnull()) | (dfx["BeneficialUseCategory"] == ''))
+#     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for BeneficialUseCategory').reset_index()
+#     mask['IncompleteField'] = mask['BeneficialUseCategory']
+#     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
+#     return (dfx, dfy)
 
 
 # # CommunityWaterSupplySystem_nvarchar(250)_Yes
@@ -837,27 +880,8 @@ def GeneratedPowerCapacityMW_AA_Check(dfx, dfy):
 
 
 # IrrigatedAcreage_float_Yes
-# We are summing multiple entries into one
 def IrrigatedAcreage_AA_Check(dfx, dfy):
-    # check if Acres is a csv list. If true, sum values.
-    for index, row in dfx.iterrows():
-        AcresNumbers = row['IrrigatedAcreage'].split(",")
-
-        # Acres
-        AcresTotal = 0
-        for x in AcresNumbers:
-            if x == "" or "," in x:
-                AcresTotal = x
-            else:
-                try:
-                    x = float(x)
-                    AcresTotal += x
-                except:
-                    AcresTotal = x
-
-        row['IrrigatedAcreage'] = AcresTotal
-
-    selectionVar = (dfx["IrrigatedAcreage"].astype(str).str.contains(',') == True)
+    selectionVar = (dfx['IrrigatedAcreage'].astype(str).str.contains(','))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for IrrigatedAcreage').reset_index()
     mask['IncompleteField'] = mask['IrrigatedAcreage']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -893,7 +917,7 @@ def OwnerClassificationCV_AA_Check(dfx, dfy):
 
 # PopulationServed_bigint_Yes
 def PopulationServed_AA_Check(dfx, dfy):
-    selectionVar = (dfx["PopulationServed"].str.contains(',') == True)
+    selectionVar = (dfx["PopulationServed"].astype(str).str.contains(',') == True)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for PopulationServed').reset_index()
     mask['IncompleteField'] = mask['PopulationServed']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -997,7 +1021,7 @@ def AllocationCropDutyAmount_AG_Check(dfx, dfy):
 
 # Amount_float_-
 def Amount_AG_Check(dfx, dfy):
-    selectionVar = (dfx["Amount"].isnull()) | (dfx["Amount"] == "") | (dfx['Amount'].astype(str).str.contains(','))
+    selectionVar = (dfx['Amount'].astype(str).str.contains(','))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Amount').reset_index()
     mask['IncompleteField'] = mask['Amount']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -1217,7 +1241,7 @@ def SiteUUID_SS_Check(dfx, dfy):
 
 # Amount_float_-
 def Amount_SS_Check(dfx, dfy):
-    selectionVar = (dfx["Amount"].isnull()) | (dfx["Amount"] == '')
+    selectionVar = (dfx["Amount"].str.contains(','))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Amount').reset_index()
     mask['IncompleteField'] = mask['Amount']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
