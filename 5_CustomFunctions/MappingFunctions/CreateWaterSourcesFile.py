@@ -20,7 +20,11 @@ import GetColumnsFile
 
 # Test WaDE Data for any Errors
 sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
-import TestErrorFunctionsFile
+import ErrorCheckCodeFunctionsFile
+
+# Clean data and data types
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/CleanDataCode")
+import CleanDataCodeFunctionsFile
 
 
 # Create File Function
@@ -73,17 +77,15 @@ def CreateWaterSourcesInputFunction(varST, varSTName, varUUIDType, varWaDEDataTy
     print("WaterSourceTypeCV")
     outdf['WaterSourceTypeCV'] = df['in_WaterSourceTypeCV']
 
-    ##############################
-    # Dropping duplicate
-    print("Dropping duplicates")
-    outdf = outdf.drop_duplicates(subset=['WaterSourceName', 'WaterSourceNativeID', 'WaterSourceTypeCV']).reset_index(drop=True)
-    ##############################
-
     print("Adding Data Assessment UUID")
     outdf['WaDEUUID'] = df['WaDEUUID']
 
     print("Resetting Index")
-    outdf.reset_index()
+    outdf = outdf.drop_duplicates().reset_index(drop=True).replace(np.nan, "")
+
+    print("GroupBy outdf duplicates based on key fields...")
+    outdf = outdf.groupby('WaterSourceNativeID').agg(lambda x: ','.join([str(elem) for elem in (list(set(x))) if elem != ""])).replace(np.nan, "").reset_index()
+    outdf = outdf[WaterSourcseColumnsList]  # reorder the dataframe's columns based on ColumnsList
 
 
     #Error Checking each Field
@@ -92,7 +94,7 @@ def CreateWaterSourcesInputFunction(varST, varSTName, varUUIDType, varWaDEDataTy
     dfpurge = pd.DataFrame(columns=WaterSourcseColumnsList) # Purge DataFrame to hold removed elements
     dfpurge['ReasonRemoved'] = ""
     dfpurge['IncompleteField'] = ""
-    outdf, dfpurge = TestErrorFunctionsFile.WaterSourceTestErrorFunctions(outdf, dfpurge)
+    outdf, dfpurge = ErrorCheckCodeFunctionsFile.WaterSourceTestErrorFunctions(outdf, dfpurge)
     print(f'Length of outdf DataFrame: ', len(outdf))
     print(f'Length of dfpurge DataFrame: ', len(dfpurge))
 
@@ -106,7 +108,13 @@ def CreateWaterSourcesInputFunction(varST, varSTName, varUUIDType, varWaDEDataTy
                                         outdf['WaterSourceUUID'])
 
     # Error check WaterSourceUUID
-    outdf, dfpurge = TestErrorFunctionsFile.WaterSourceUUID_WS_Check(outdf, dfpurge)
+    outdf, dfpurge = ErrorCheckCodeFunctionsFile.WaterSourceUUID_WS_Check(outdf, dfpurge)
+
+
+    # Clean data & check data types before export
+    ############################################################################
+    print("Cleaning export for correct data types...")
+    outdf = CleanDataCodeFunctionsFile.FixWaterSourceInfoFunctions(outdf)
 
 
     # Export to new csv

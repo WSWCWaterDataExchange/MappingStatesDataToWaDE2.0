@@ -34,7 +34,7 @@ def CreateReportingUnitInputFunction(varST, varSTName, varUUIDType, varWaDEDataT
     # geomertry data mandatory for reporting unit information
     fileInput_shape = "RawinputData/P_Geometry.zip"
     dfshape = pd.read_csv(fileInput_shape, compression='zip')
-    Geometrydict = pd.Series(dfshape.geometry.values, index=dfshape.in_SiteNativeID.astype(str)).to_dict()
+    Geometrydict = pd.Series(dfshape.geometry.values, index=dfshape.in_ReportingUnitNativeID.astype(str)).to_dict()
 
     # WaDE columns
     ReportingUnitColumnsList = GetColumnsFile.GetReportingUnitColumnsFunction()
@@ -89,7 +89,7 @@ def CreateReportingUnitInputFunction(varST, varSTName, varUUIDType, varWaDEDataT
     outdf['StateCV'] = df['in_StateCV']
 
     print("Geometry")
-    outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['in_ReportingUnitName']), axis=1)  # See pre-processing.
+    outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['in_ReportingUnitNativeID']), axis=1)  # See pre-processing.
 
     print("Adding Data Assessment UUID")
     outdf['WaDEUUID'] = df['WaDEUUID']

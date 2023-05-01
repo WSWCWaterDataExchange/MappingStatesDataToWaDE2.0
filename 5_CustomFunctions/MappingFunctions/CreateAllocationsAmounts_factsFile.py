@@ -28,7 +28,11 @@ import AssignPrimaryUseCategory
 
 # Test WaDE Data for any Errors
 sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
-import TestErrorFunctionsFile
+import ErrorCheckCodeFunctionsFile
+
+# Clean data and data types
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/CleanDataCode")
+import CleanDataCodeFunctionsFile
 
 
 # Create File Function
@@ -43,7 +47,7 @@ def CreateAllocationsAmounts_factsInputFunction(varST, varSTName, varUUIDType, v
     fileInput = "RawinputData/" + mainInputFile
     df = pd.read_csv(fileInput, compression='zip')
 
-    # Input Data - 'WaDE Input' files & 'missing.xlsx' files.
+    # Input Data - 'WaDE Input' files.
     dfv = pd.read_csv("ProcessedInputData/variables.csv").replace(np.nan, "")
     dfs = pd.read_csv("ProcessedInputData/sites.csv").replace(np.nan, "")
 
@@ -66,7 +70,7 @@ def CreateAllocationsAmounts_factsInputFunction(varST, varSTName, varUUIDType, v
                 outList = ''
         return outList
 
-    # For creating AllocationUUID
+    # For creating UUID
     def assignUUID(Val):
         Val = str(Val)
         Val = re.sub("[$@&.;,/\)(-]", "", Val).strip()
@@ -200,18 +204,16 @@ def CreateAllocationsAmounts_factsInputFunction(varST, varSTName, varUUIDType, v
     outdf['WaDEUUID'] = df['WaDEUUID']
 
     print("Resetting Index")
-    outdf.reset_index()
+    outdf = outdf.drop_duplicates().reset_index(drop=True).replace(np.nan, "")
 
-    print("Joining outdf duplicates based on key fields...")
-    outdf = outdf.replace(np.nan, "")  # Replaces NaN values with blank.
-    groupbyList = ['AllocationNativeID', 'AllocationFlow_CFS', 'AllocationVolume_AF']
-    outdf = outdf.groupby(groupbyList).agg(lambda x: ','.join([str(elem) for elem in (list(set(x))) if elem!=''])).replace(np.nan, "").reset_index()
+    print("GroupBy outdf duplicates based on key fields...")
+    outdf = outdf.groupby('AllocationNativeID').agg(lambda x: ','.join([str(elem) for elem in (list(set(x))) if elem != ""])).replace(np.nan, "").reset_index()
     outdf = outdf[AllocationAmountsColumnsList]  # reorder the dataframe's columns based on columnslist
 
 
     # Solving WaDE 2.0 Upload Issues
     ############################################################################
-    print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to upload data to QA here.
+    print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to upload data to WaDE here.
     # Note: OwnerClassificationCV can only accept 1 entry at this time. Error due to above merge / we don't allow multiple OwnerClassificationCV.
     def tempfixOCSV(val):
         valList = val.split(",") # convert string to list
@@ -234,7 +236,7 @@ def CreateAllocationsAmounts_factsInputFunction(varST, varSTName, varUUIDType, v
     dfpurge = pd.DataFrame(columns=AllocationAmountsColumnsList)  # Purge DataFrame to hold removed elements
     dfpurge['ReasonRemoved'] = ""
     dfpurge['IncompleteField'] = ""
-    outdf, dfpurge = TestErrorFunctionsFile.AllocationAmountTestErrorFunctions(outdf, dfpurge)
+    outdf, dfpurge = ErrorCheckCodeFunctionsFile.AllocationAmountTestErrorFunctions(outdf, dfpurge)
     print(f'Length of outdf DataFrame: ', len(outdf))
     print(f'Length of dfpurge DataFrame: ', len(dfpurge))
 
@@ -249,7 +251,13 @@ def CreateAllocationsAmounts_factsInputFunction(varST, varSTName, varUUIDType, v
                                        outdf['AllocationUUID'])
 
     # Error check AllocationUUID
-    outdf, dfpurge = TestErrorFunctionsFile.AllocationUUID_AA_Check(outdf, dfpurge)
+    outdf, dfpurge = ErrorCheckCodeFunctionsFile.AllocationUUID_AA_Check(outdf, dfpurge)
+
+
+    # Clean data & check data types before export
+    ############################################################################
+    print("Cleaning export for correct data types...")
+    outdf = CleanDataCodeFunctionsFile.FixAllocationAmountInfoFunctions(outdf)
 
 
     # Export to new csv
