@@ -7,7 +7,7 @@ The following data was used for water allocations...
 
 Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
-**OSE PODs** | Point of diversion water right sites. | [link](https://geospatialdata-ose.opendata.arcgis.com/datasets/OSE::ose-pods/about) | not given
+**OSE PODs** | Point of diversion water right sites. | [link](https://geospatialdata-ose.opendata.arcgis.com/datasets/OSE::ose-pods/about) | [link](https://geospatialdata-ose.opendata.arcgis.com/documents/5cc5f222d5454797822964c14526a70d/explore)
 
 The following unique files were created as input.  Input files used are as follows...
  - OSE_PODst.zip
@@ -19,7 +19,7 @@ The 1) raw input data shared by the state / state agency / data provider (excel,
 
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share NMOSE's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *NMwr_Allocation Schema Mapping to WaDE.xlsx*.  Several WaDE csv input files will be created in order to extract the NMOSE's water rights data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
+The following text summarizes the process used by the WSWC staff to prepare and share water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *NMwr_Allocation Schema Mapping to WaDE.xlsx*.  Several WaDE csv input files will be created in order to extract the water rights data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
 
 - **1_NMwr_PreProcessAllocationData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
 - **2_NMwr_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, podsitetopousiterelationships.csv.
@@ -106,7 +106,7 @@ VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | Amou
 NMwr_V1 | 1 | Year | AF
 
 
-## 3) Organization  Information
+## 3) Organization Information
 Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
 
 #### Operation and Steps:
@@ -161,7 +161,7 @@ Purpose: generate a list of sites information.
     - *Latitude* = created from **easting** & **northing** inputs, see *1_NMwr_PreProcessAllocationData.ipynb* for specifics.
     - *Longitude* = created from **easting** & **northing** inputs, see *1_NMwr_PreProcessAllocationData.ipynb* for specifics.
     - *SiteName* = **ditch_name** inputs, see *1_NMwr_PreProcessAllocationData.ipynb* for specifics.
-    - *SiteNativeID* = *in_SiteNativeID*, see *1_NMwr_PreProcessAllocationData.ipynb* for specifics.
+    - *SiteNativeID* = **pod_file** input.
     - *SiteTypeCV* = "Unspecified".
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *SiteNativeID*, *SiteName*, *SiteTypeCV*, *Longitude* & *Latitude* fields.
 - Assign site UUID identifier to each (unique) row.
@@ -190,12 +190,11 @@ Purpose: generate sheet of water allocations records to import into WaDE 2.0.
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *AllocationFlow_CFS* = empty.
     - *AllocationLegalStatusCV* = **status** input, see *1_NMwr_PreProcessAllocationData.ipynb* for specifics.
-    - *AllocationNativeID* = **pod_basin** + **pod_nbr** + **pod_suffix** inputs as string.
+    - *AllocationNativeID* = **db_file** input.
     - *AllocationOwner* = **own_fname** & **own_lname** inputs, see *1_NMwr_PreProcessAllocationData.ipynb* for specifics.
     - *AllocationPriorityDate* = leave blank, not provided.
-    - *AllocationVolume_AF* == **restrict_** input, as float.
+    - *AllocationVolume_AF* == **total_div** input, as float.
     - *BeneficialUseCategory* = **use_** input, , see *1_NMwr_PreProcessAllocationData.ipynb* for specifics.
-    - *IrrigatedAcreage* = **total_div** input.
     - *WaterAllocationNativeURL* = **nmwrrs_wrs**
 - Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.
 - Perform error check on output dataframe.
