@@ -1,4 +1,4 @@
-# Last Update: 03/23/2023
+# Last Update: 05/03/2023
 # Purpose: To have a single function file to create OwnerClassificationCV field.
 
 
@@ -19,11 +19,11 @@ nalist = ["tribe", "tribes", "nation", "nations", "indians"]
 
 # Government
 # ---------------------------------------------------------------------
-bialist = ["bureau of indian aff", "indian affairs", "usbia"]
+usoalist = ["united states of america", "united states america", "usa"]
 ushudlist = ["housing and urban development", "housing & urban development", "ushud"]
 usfaalist = ["usfaa", "federal aviation administration"]
 usgsalist = ["usgsa", "general services administration"]
-usoalist = ["united states of america", "united states america", "usa"]
+bialist = ["bureau of indian aff", "bureau of indian", "indian affairs", "usbia"]
 
 # Military
 # ---------------------------------------------------------------------
@@ -36,17 +36,21 @@ usbrlist = ["usbr", "bureau of reclam", "bureau of reclamation", "bureau reclama
 usdalist = ["u s  dept of agriculture", "u s agriculture", "us agriculture dept", "us department agriculture", "us dept of agriculture", "usa  department of agriculture", "usa  dept of agriculture", "usda"]
 usdoelist = ["department of energy", "u s department of energy", "u s dept  of energy lanl", "u s  department of energy", "u s  department of energy", "u s department of energy", "united states department of energy", "us department energy", "us department of energy", "us doe", "usa department of energy"]
 epalist = ["environmental protection agency", "epa", "e p a"]
-fwlist = ["u s department of the interior fish and wildlife service","u s dept of fish & wildlife","u s dept of the interior fish and wildlife","u s fish & wildlife","u s fish and wildlife","united states fish and wildlife","united states of america fish and wildlife","us department fish & wildlife","us department of fish & wildlife","us dept of interior fish and wildlife","us dept of the interior fish and wildlif","us fish & wild life","us fish & wildlife","us fish and wildlife","us interior dept fish & wildlife","usa department of interior fish and wildlife","usa dept of interior fish & wildlife","usa fish & wildlife","usa fish and wildlife","usdi fish & wildlife","usdi fish and wildlife","usdoi fish & wildlife","usfws"]
-usfslist = ["forest service united states","forest service usda","u s d a forest service","u s forest service","u s forest","united states forest service","us forest service","usa forest service","usda forest service","usfs"]
+fwlist = ["u s department of the interior fish and wildlife service","u s dept of fish & wildlife","u s dept of the interior fish and wildlife","u s fish & wildlife","u s fish and wildlife","united states fish and wildlife","united states of america fish and wildlife","us department fish & wildlife","us department of fish & wildlife","us dept of interior fish and wildlife","us dept of the interior fish and wildlif","us fish & wild life","us fish & wildlife","us fish and wildlife","us interior dept fish & wildlife","usa department of interior fish and wildlife","usa dept of interior fish & wildlife","usa fish & wildlife","usa fish and wildlife","usdi fish & wildlife","usdi fish and wildlife","usdoi fish & wildlife","fish and wildlife","usfws"]
+usfslist = ["forest service united states","forest service usda","u s d a forest service","u s forest service","u s forest","united states forest service","us forest service","usa forest service","usda forest service","forest service","usfs"]
 usgslist = ["u s geological survey","us geological survey","usa geological survey"]
 usnplist = ["national park", "natl park serv", "national forest", "nat forest", "natl forest"]
+
+# Non-Federal List
+# ---------------------------------------------------------------------
+priList = ["corporation", "company", "commission", "co", "inc", "llc", "limited", "ltd"]
 
 
 # Making the dictionary
 ########################################################################################################################
 ########################################################################################################################
 
-listDictionary = {}
+listDictionary = {} # create list dictioarny.
 
 # Generic List
 # ---------------------------------------------------------------------
@@ -55,11 +59,11 @@ listDictionary["Native American"] = nalist
 
 # Government List
 # ---------------------------------------------------------------------
-listDictionary["Bureau of Indian Affairs (USBIA)"] = bialist
+listDictionary["United States of America"] = usoalist
 listDictionary["Department of Housing and Urban Development (USHUD)"] = ushudlist
 listDictionary["Federal Aviation Administration (USFAA)"] = usfaalist
 listDictionary["General Services Administration (USGSA)"] = usgsalist
-listDictionary["United States of America"] = usoalist
+listDictionary["Bureau of Indian Affairs (USBIA)"] = bialist
 
 # Military List
 # ---------------------------------------------------------------------
@@ -76,6 +80,10 @@ listDictionary["Environmental Protection Agency (USEPA)"] = epalist
 listDictionary["Fish and Wildlife Service (USFWS)"] = fwlist
 listDictionary["Forest Service (USFS)"] = usfslist
 listDictionary["Geological Survey (USGS)"] = usgslist
+
+# Non-Federal List
+# ---------------------------------------------------------------------
+listDictionary["Private"] = priList
 
 
 # Assign OwnerClassification value.
