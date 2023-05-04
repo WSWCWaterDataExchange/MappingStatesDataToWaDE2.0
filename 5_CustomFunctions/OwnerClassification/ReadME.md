@@ -30,11 +30,12 @@ This listed provided below are used to determine WaDE **OwnerClassificationTypeC
 
 ***
 ### Government Keywords
-- **Bureau of Indian Affairs (USBIA)**. bialist = ["bureau of indian aff", "indian affairs", "usbia"]
-- **Department of Housing and Urban Development (USHUD)**. ushudlist = ["housing and urban development", "housing & urban development", "ushud"]
+- **United States of America**. usoalist = ["united states of america", "united states america", "usa"]
+- **Bureau of Indian Affairs (USBIA)**. bialist = ["bureau of indian aff", "bureau of indian", "indian affairs", "usbia"]
 - **Federal Aviation Administration (USFAA)**. usfaalist = ["usfaa", "federal aviation administration"]
 - **General Services Administration (USGSA)**. usgsalist = ["usgsa", "general services administration"]
-- **United States of America**. usoalist = ["united states of america", "united states america", "usa"]
+- **Department of Housing and Urban Development (USHUD)**. ushudlist = ["housing and urban development", "housing & urban development", "ushud"]
+
 
 
 
@@ -50,8 +51,14 @@ This listed provided below are used to determine WaDE **OwnerClassificationTypeC
 - **Department of Agriculture (USDA)**. usdalist = ["u s  dept of agriculture", "u s agriculture", "us agriculture dept", "us department agriculture", "us dept of agriculture", "usa  department of agriculture", "usa  dept of agriculture", "usda"]
 - **Department of Energy (USDOE)**. usdoelist = ["department of energy", "u s department of energy", "u s dept  of energy lanl", "u s  department of energy", "u s  department of energy", "u s department of energy", "united states department of energy", "us department energy", "us department of energy", "us doe", "usa department of energy"]
 -**Environmental Protection Agency (USEPA)**. epalist = ["environmental protection agency", "epa", "e p a"]
-- **Fish and Wildlife Service (USFWS)**. fwlist = ["u s department of the interior fish and wildlife service","u s dept of fish & wildlife","u s dept of the interior fish and wildlife","u s fish & wildlife","u s fish and wildlife","united states fish and wildlife","united states of america fish and wildlife","us department fish & wildlife","us department of fish & wildlife","us dept of interior fish and wildlife","us dept of the interior fish and wildlif","us fish & wild life","us fish & wildlife","us fish and wildlife","us interior dept fish & wildlife","usa department of interior fish and wildlife","usa dept of interior fish & wildlife","usa fish & wildlife","usa fish and wildlife","usdi fish & wildlife","usdi fish and wildlife","usdoi fish & wildlife","usfws"]
-- **Forest Service (USFS)**. usfslist = ["forest service united states","forest service usda","u s d a forest service","u s forest service","u s forest","united states forest service","us forest service","usa forest service","usda forest service","usfs"]
+- **Fish and Wildlife Service (USFWS)**. fwlist = ["u s department of the interior fish and wildlife service","u s dept of fish & wildlife","u s dept of the interior fish and wildlife","u s fish & wildlife","u s fish and wildlife","united states fish and wildlife","united states of america fish and wildlife","us department fish & wildlife","us department of fish & wildlife","us dept of interior fish and wildlife","us dept of the interior fish and wildlif","us fish & wild life","us fish & wildlife","us fish and wildlife","us interior dept fish & wildlife","usa department of interior fish and wildlife","usa dept of interior fish & wildlife","usa fish & wildlife","usa fish and wildlife","usdi fish & wildlife","usdi fish and wildlife","usdoi fish & wildlife","fish and wildlife","usfws"]
+- **Forest Service (USFS)**. usfslist = ["forest service united states","forest service usda","u s d a forest service","u s forest service","u s forest","united states forest service","us forest service","usa forest service","usda forest service","forest service","usfs"]
 - **Geological Survey (USGS)**. usgslist = ["u s geological survey","us geological survey","usa geological survey"]
 - **National Park Service (USNPS)**. usnplist = ["national park", "natl park serv", "national forest", "nat forest", "natl forest"]
+
+
+***
+### Non-Federal List
+- **Private** priList = ["corporation", "company", "commission", "co", "inc", "llc", "limited", "ltd", "llp"]
+
 
