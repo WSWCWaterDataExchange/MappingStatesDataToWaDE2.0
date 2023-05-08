@@ -45,6 +45,7 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 - Read the input files and generate temporary input dataframes for both POD and POU water right data.  Goal will be to create two separate clean tables and concatenate to single output table.
 - POD and POU data share similar field and columns names.
 - Perform the following additional actions on the POD data...
+    - remove all **CHEXUM** rows & related data.  These indicate the wr is undergoing to change order and is in review.
     - remove white space from **WRNUM** field.
     - Translate abbreviated **USES** field to full terminology using provided list.
 - Perform the following additional actions on the POU data...
