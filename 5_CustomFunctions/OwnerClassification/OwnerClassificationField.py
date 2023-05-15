@@ -36,14 +36,14 @@ usbrlist = ["usbr", "bureau of reclam", "bureau of reclamation", "bureau reclama
 usdalist = ["u s  dept of agriculture", "u s agriculture", "us agriculture dept", "us department agriculture", "us dept of agriculture", "usa  department of agriculture", "usa  dept of agriculture", "usda"]
 usdoelist = ["department of energy", "u s department of energy", "u s dept  of energy lanl", "u s  department of energy", "u s  department of energy", "u s department of energy", "united states department of energy", "us department energy", "us department of energy", "us doe", "usa department of energy"]
 epalist = ["environmental protection agency", "epa", "e p a"]
-fwlist = ["u s department of the interior fish and wildlife service","u s dept of fish & wildlife","u s dept of the interior fish and wildlife","u s fish & wildlife","u s fish and wildlife","united states fish and wildlife","united states of america fish and wildlife","us department fish & wildlife","us department of fish & wildlife","us dept of interior fish and wildlife","us dept of the interior fish and wildlif","us fish & wild life","us fish & wildlife","us fish and wildlife","us interior dept fish & wildlife","usa department of interior fish and wildlife","usa dept of interior fish & wildlife","usa fish & wildlife","usa fish and wildlife","usdi fish & wildlife","usdi fish and wildlife","usdoi fish & wildlife","fish and wildlife","usfws"]
+fwlist = ["u s department of the interior fish and wildlife service","u s dept of fish & wildlife","u s dept of the interior fish and wildlife","u s fish & wildlife","u s fish and wildlife","united states fish and wildlife","united states of america fish and wildlife","us department fish & wildlife","us department of fish & wildlife","us dept of interior fish and wildlife","us dept of the interior fish and wildlif","us fish & wild life","us fish & wildlife","us fish and wildlife","us interior dept fish & wildlife","usa department of interior fish and wildlife","usa dept of interior fish & wildlife","usa fish & wildlife","usa fish and wildlife","usdi fish & wildlife","usdi fish and wildlife","usdoi fish & wildlife","fish and wildlife", "fish wildlife", "fish & wildlife", "usfish and wildlife", "usfws"]
 usfslist = ["forest service united states","forest service usda","u s d a forest service","u s forest service","u s forest","united states forest service","us forest service","usa forest service","usda forest service","forest service","usfs"]
 usgslist = ["u s geological survey","us geological survey","usa geological survey"]
 usnplist = ["national park", "natl park serv", "national forest", "nat forest", "natl forest"]
 
 # Non-Federal List
 # ---------------------------------------------------------------------
-priList = ["corporation", "company", "commission", "co", "inc", "llc", "limited", "ltd"]
+priList = ["corporation", "company", "commission", "co", "coop", "inc", "llc", "limited", "ltd", "lp", "farm", "farms"]
 
 
 # Making the dictionary
