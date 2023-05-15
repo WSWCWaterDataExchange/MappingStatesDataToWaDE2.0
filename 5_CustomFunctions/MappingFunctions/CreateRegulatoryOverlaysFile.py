@@ -20,7 +20,7 @@ import GetColumnsFile
 
 # Test WaDE Data for any Errors
 sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
-import TestErrorFunctionsFile
+import ErrorCheckCodeFunctionsFile
 
 
 # Create File Function
@@ -43,7 +43,7 @@ def CreateRegulatoryOverlaysInputFunction(varST, varSTName, varUUIDType, varWaDE
     # For creating UUID
     def assignUUID(Val):
         Val = str(Val)
-        Val = re.sub("[$@&.;,/\)(-]", "", Val).strip()
+        Val = re.sub("[$@&.;,/\)(-]", "", Val).strip().replace(" ", "")
         Val = varST + varUUIDType + "_RO" + Val
         return Val
 
@@ -112,7 +112,7 @@ def CreateRegulatoryOverlaysInputFunction(varST, varSTName, varUUIDType, varWaDE
     dfpurge = pd.DataFrame(columns=RegulatoryOverlaysColumnsList)  # Purge DataFrame to hold removed elements
     dfpurge['ReasonRemoved'] = ""
     dfpurge['IncompleteField'] = ""
-    outdf, dfpurge = TestErrorFunctionsFile.RegulatoryOverlaysTestErrorFunctions(outdf, dfpurge)
+    outdf, dfpurge = ErrorCheckCodeFunctionsFile.RegulatoryOverlaysTestErrorFunctions(outdf, dfpurge)
     print(f'Length of outdf DataFrame: ', len(outdf))
     print(f'Length of dfpurge DataFrame: ', len(dfpurge))
 
@@ -127,7 +127,7 @@ def CreateRegulatoryOverlaysInputFunction(varST, varSTName, varUUIDType, varWaDE
                                               outdf['RegulatoryOverlayUUID'])
 
     # Error check RegulatoryOverlayUUID
-    outdf, dfpurge = TestErrorFunctionsFile.RegulatoryOverlayUUID_RE_Check(outdf, dfpurge)
+    outdf, dfpurge = ErrorCheckCodeFunctionsFile.RegulatoryOverlayUUID_RE_Check(outdf, dfpurge)
 
 
     # Export to new csv

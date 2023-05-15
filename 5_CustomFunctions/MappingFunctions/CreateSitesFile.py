@@ -81,7 +81,7 @@ def CreateSitesInputFunction(varST, varSTName, varUUIDType, varWaDEDataType, mai
     # For creating UUID
     def assignUUID(Val):
         Val = str(Val)
-        Val = re.sub("[$@&.;,/\)(-]", "", Val).strip()
+        Val = re.sub("[$@&.;,/\)(-]", "", Val).strip().replace(" ", "")
         Val = varST + varUUIDType + "_S" + Val
         return Val
 
@@ -166,7 +166,7 @@ def CreateSitesInputFunction(varST, varSTName, varUUIDType, varWaDEDataType, mai
 
     print("GroupBy outdf duplicates based on key fields...")
     outdf = outdf.groupby('SiteNativeID').agg(lambda x: ','.join([str(elem) for elem in (list(set(x))) if elem!=''])).replace(np.nan, "").reset_index()
-    outdf = outdf[SitesColumnsList]  # reorder the dataframe's columns based on columnslist
+    outdf = outdf[SitesColumnsList]  # reorder the dataframe's columns based on ColumnsList
 
 
     # Error Checking each Field

@@ -19,7 +19,7 @@ import GetColumnsFile
 
 # Test WaDE Data for any Errors
 sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
-import TestErrorFunctionsFile
+import ErrorCheckCodeFunctionsFile
 
 
 def CreateReportingUnitInputFunction(varST, varSTName, varUUIDType, varWaDEDataType, mainInputFile):
@@ -31,7 +31,7 @@ def CreateReportingUnitInputFunction(varST, varSTName, varUUIDType, varWaDEDataT
     fileInput = "RawinputData/" + mainInputFile
     df = pd.read_csv(fileInput, compression='zip')
 
-    # geomertry data mandatory for reporting unit information
+    # geometry data mandatory for reporting unit information
     fileInput_shape = "RawinputData/P_Geometry.zip"
     dfshape = pd.read_csv(fileInput_shape, compression='zip')
     Geometrydict = pd.Series(dfshape.geometry.values, index=dfshape.in_ReportingUnitNativeID.astype(str)).to_dict()
@@ -41,23 +41,29 @@ def CreateReportingUnitInputFunction(varST, varSTName, varUUIDType, varWaDEDataT
 
     # Custom Functions
     ############################################################################
+    # # For Creating Geometry
+    # def retrieveGeometry(colrowValue):
+    #     if colrowValue == '' or pd.isnull(colrowValue):
+    #         outList = ''
+    #     else:
+    #         String1 = colrowValue
+    #         try:
+    #             outList = Geometrydict[String1]
+    #         except:
+    #             outList = ''
+    #     return outList
+
     # For Creating Geometry
     def retrieveGeometry(colrowValue):
-        if colrowValue == '' or pd.isnull(colrowValue):
-            outList = ''
-        else:
-            String1 = colrowValue
-            try:
-                outList = Geometrydict[String1]
-            except:
-                outList = ''
+        String1 = colrowValue
+        outList = Geometrydict[String1]
         return outList
 
 
     # For creating UUID
     def assignUUID(Val):
         Val = str(Val)
-        Val = re.sub("[$@&.;,/\)(-]", "", Val).strip()
+        Val = re.sub("[$@&.;,/\)(-]", "", Val).strip().replace(" ", "")
         Val = varST + varUUIDType + "_RU" + Val
         return Val
 
@@ -95,13 +101,11 @@ def CreateReportingUnitInputFunction(varST, varSTName, varUUIDType, varWaDEDataT
     outdf['WaDEUUID'] = df['WaDEUUID']
 
     print("Resetting Index")
-    outdf.reset_index()
+    outdf = outdf.drop_duplicates().reset_index(drop=True).replace(np.nan, "")
 
-    print("Joining outdf duplicates based on key fields...")
-    outdf = outdf.replace(np.nan, "")  # Replaces NaN values with blank.
-    groupbyList = ['ReportingUnitName', 'ReportingUnitNativeID', 'ReportingUnitTypeCV']
-    outdf = outdf.groupby(groupbyList).agg(lambda x: ','.join([str(elem) for elem in (list(set(x))) if elem!=''])).replace(np.nan, "").reset_index()
-    outdf = outdf[ReportingUnitColumnsList]  # reorder the dataframe's columns based on columnslist
+    print("GroupBy outdf duplicates based on key fields...")
+    outdf = outdf.groupby('ReportingUnitNativeID').agg(lambda x: ','.join([str(elem) for elem in (list(set(x))) if elem != ""])).replace(np.nan, "").reset_index()
+    outdf = outdf[ReportingUnitColumnsList]  # reorder the dataframe's columns based on Columnslist
 
 
     # Error Checking each Field
@@ -110,7 +114,7 @@ def CreateReportingUnitInputFunction(varST, varSTName, varUUIDType, varWaDEDataT
     dfpurge = pd.DataFrame(columns=ReportingUnitColumnsList) # Purge DataFrame to hold removed elements
     dfpurge['ReasonRemoved'] = ""
     dfpurge['IncompleteField'] = ""
-    outdf, dfpurge = TestErrorFunctionsFile.ReportingUnitTestErrorFunctions(outdf, dfpurge)
+    outdf, dfpurge = ErrorCheckCodeFunctionsFile.ReportingUnitTestErrorFunctions(outdf, dfpurge)
     print(f'Length of outdf DataFrame: ', len(outdf))
     print(f'Length of dfpurge DataFrame: ', len(dfpurge))
 
@@ -125,7 +129,7 @@ def CreateReportingUnitInputFunction(varST, varSTName, varUUIDType, varWaDEDataT
                                           outdf['ReportingUnitUUID'])
 
     # Error check SiteUUID
-    outdf, dfpurge = TestErrorFunctionsFile.ReportingUnitUUID_RU_Check(outdf, dfpurge)
+    outdf, dfpurge = ErrorCheckCodeFunctionsFile.ReportingUnitUUID_RU_Check(outdf, dfpurge)
 
 
     # Export to new csv

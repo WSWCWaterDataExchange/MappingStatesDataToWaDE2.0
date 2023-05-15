@@ -20,7 +20,7 @@ import GetColumnsFile
 
 # Test WaDE Data for any Errors
 sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
-import TestErrorFunctionsFile
+import ErrorCheckCodeFunctionsFile
 
 
 # Create File Function
@@ -108,7 +108,7 @@ def CreateRegulatoryReportingUnitsInputFunction(varST, varSTName, varUUIDType, v
     dfpurge = pd.DataFrame(columns=RegulatoryReportingUnitsColumnsList)  # Purge DataFrame to hold removed elements
     dfpurge['ReasonRemoved'] = ""
     dfpurge['IncompleteField'] = ""
-    outdf, dfpurge = TestErrorFunctionsFile.RegulatoryReportingUnitsErrorFunctions(outdf, dfpurge)
+    outdf, dfpurge = ErrorCheckCodeFunctionsFile.RegulatoryReportingUnitsErrorFunctions(outdf, dfpurge)
     print(f'Length of outdf DataFrame: ', len(outdf))
     print(f'Length of dfpurge DataFrame: ', len(dfpurge))
 

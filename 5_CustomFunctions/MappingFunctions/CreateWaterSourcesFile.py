@@ -49,7 +49,7 @@ def CreateWaterSourcesInputFunction(varST, varSTName, varUUIDType, varWaDEDataTy
     # For creating WaterSourceUUID
     def assignUUID(Val):
         Val = str(Val)
-        Val = re.sub("[$@&.;,/\)(-]", "", Val).strip()
+        Val = re.sub("[$@&.;,/\)(-]", "", Val).strip().replace(" ", "")
         Val = varST + varUUIDType + "_WS" + Val
         return Val
 

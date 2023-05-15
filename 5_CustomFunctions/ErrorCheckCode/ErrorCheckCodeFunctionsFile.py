@@ -40,7 +40,7 @@ def WaterSourceTestErrorFunctions(outdf, dfpurge):
 
 def SiteTestErrorFunctions(outdf, dfpurge):
     outdf, dfpurge = RegulatoryOverlayUUIDs_S_Check(outdf, dfpurge)
-    outdf100, dfpurge = WaterSourceUUIDs_S_Check(outdf, dfpurge)
+    # outdf100, dfpurge = WaterSourceUUIDs_S_Check(outdf, dfpurge)  # temp solution, lets hide this for now
     outdf, dfpurge = CoordinateAccuracy_S_Check(outdf, dfpurge)
     outdf, dfpurge = CoordinateMethodCV_S_Check(outdf, dfpurge)
     outdf, dfpurge = County_S_Check(outdf, dfpurge)
@@ -224,7 +224,7 @@ def WaterSourceNativeID_WS_Check(dfx, dfy):
 
 # WaterSourceTypeCV_nvarchar(100)_-
 def WaterSourceTypeCV_WS_Check(dfx, dfy):
-    selectionVar = (dfx["WaterSourceTypeCV"].isnull()) | (dfx["WaterSourceTypeCV"] == '') | (dfx['WaterSourceTypeCV'].str.len() > 100)
+    selectionVar = (dfx['WaterSourceTypeCV'].str.len() > 100) | (dfx["WaterSourceTypeCV"].str.contains(','))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for WaterSourceTypeCV').reset_index()
     mask['IncompleteField'] = mask['WaterSourceTypeCV']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -337,7 +337,7 @@ def HUC8_S_Check(dfx, dfy):
 
 # Latitude_float_-
 def Latitude_S_Check(dfx, dfy):
-    selectionVar = (dfx["Latitude"].isnull()) | (dfx["Latitude"].astype(str) == "") | (dfx["Latitude"].astype(str).str.contains(",")) | (dfx["Latitude"] == 0) | (dfx["Latitude"].replace("", 0).fillna(0).astype(float) < 1.0)
+    selectionVar = (dfx["Latitude"].isnull()) | (dfx["Latitude"].astype(str) == "") | (dfx["Latitude"].astype(str).str.contains(",")) | (dfx["Latitude"] == 0)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Latitude').reset_index()
     mask['IncompleteField'] = mask['Latitude']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -346,7 +346,7 @@ def Latitude_S_Check(dfx, dfy):
 
 # Longitude_float_-
 def Longitude_S_Check(dfx, dfy):
-    selectionVar = (dfx["Longitude"].isnull()) | (dfx["Longitude"].astype(str) == "") | (dfx["Longitude"].astype(str).str.contains(",")) | (dfx["Longitude"] == 0) | (dfx["Longitude"].replace("", 0).fillna(0).astype(float) > 1.0)
+    selectionVar = (dfx["Longitude"].isnull()) | (dfx["Longitude"].astype(str) == "") | (dfx["Longitude"].astype(str).str.contains(",")) | (dfx["Longitude"] == 0)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Longitude').reset_index()
     mask['IncompleteField'] = mask['Longitude']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -373,7 +373,7 @@ def NHDProductCV_S_Check(dfx, dfy):
 
 # PODorPOUSite_nvarchar(50)_Yes
 def PODorPOUSite_S_Check(dfx, dfy):
-    selectionVar = (dfx["PODorPOUSite"].str.len() > 50)
+    selectionVar = (dfx["PODorPOUSite"].str.len() > 50) | (dfx["PODorPOUSite"].astype(str).str.contains(","))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for PODorPOUSite').reset_index()
     mask['IncompleteField'] = mask['PODorPOUSite']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -437,13 +437,13 @@ def USGSSiteID_S_Check(dfx, dfy):
     return (dfx, dfy)
 
 
-# WaterSourceUUIDs_nvarchar(200)_-
-def WaterSourceUUIDs_S_Check(dfx, dfy):
-    selectionVar = (dfx['WaterSourceUUIDs'].str.len() > 200)
-    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for WaterSourceUUIDs').reset_index()
-    mask['IncompleteField'] = mask['WaterSourceUUIDs']
-    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
-    return (dfx, dfy)
+# # WaterSourceUUIDs_nvarchar(200)_-
+# def WaterSourceUUIDs_S_Check(dfx, dfy):
+#     selectionVar = (dfx['WaterSourceUUIDs'].str.len() > 200)
+#     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for WaterSourceUUIDs').reset_index()
+#     mask['IncompleteField'] = mask['WaterSourceUUIDs']
+#     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
+#     return (dfx, dfy)
 
 
 # ReportingUnits
