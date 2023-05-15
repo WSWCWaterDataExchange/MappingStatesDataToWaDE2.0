@@ -73,7 +73,7 @@ def CreateAllocationsAmounts_factsInputFunction(varST, varSTName, varUUIDType, v
     # For creating UUID
     def assignUUID(Val):
         Val = str(Val)
-        Val = re.sub("[$@&.;,/\)(-]", "", Val).strip()
+        Val = re.sub("[$@&.;,/\)(-]", "", Val).strip().replace(" ", "")
         Val = varST + varUUIDType + "_WR" + Val
         return Val
 
@@ -208,7 +208,7 @@ def CreateAllocationsAmounts_factsInputFunction(varST, varSTName, varUUIDType, v
 
     print("GroupBy outdf duplicates based on key fields...")
     outdf = outdf.groupby('AllocationNativeID').agg(lambda x: ','.join([str(elem) for elem in (list(set(x))) if elem != ""])).replace(np.nan, "").reset_index()
-    outdf = outdf[AllocationAmountsColumnsList]  # reorder the dataframe's columns based on columnslist
+    outdf = outdf[AllocationAmountsColumnsList]  # reorder the dataframe's columns based on ColumnsList
 
 
     # Solving WaDE 2.0 Upload Issues

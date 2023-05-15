@@ -56,7 +56,7 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 - Change / double check data type for **CFS**, **ACFT**, **ACRES**, **PRIORITY** fields.
 - Create WaDE *WaterSourceTypeCV* field (see custom dictionary) using **TYPE** field.
 - Create WaDE *SiteTypeCV* field (see custom dictionary) using **SOURCE** field (mostly cleaning input text).
-- Create WaDE *LegalStatusCV* field (see custom dictionary) using **STATUS** field (mostly cleaning input text).
+- Create WaDE *LegalStatusCV* field (see custom dictionary) using **STATUS** field (mostly cleaning input text).  For UT, we don't want water rights that are considered: Rejected, Disallowed, Withdrawn, Temp Applications, Unapproved, Forfeited, Lapsed, Expired, Terminated
 - Generate WaDE specific field *WaterSourceNativeID* from WaDE *WaterSourceTypeCV* fields.  Used to identify unique sources of water.
 - Extract geometry values POU shapefile, merge to records using **RECORD_ID** field.
 - Inspect output dataframe for additional errors / datatypes.

@@ -26,7 +26,8 @@ import pandas as pd
 
 
 def fixEmptyString(val):
-    if val == "" or val == " " or val == "nan" or pd.isnull(val):
+    val = str(val).strip()
+    if val == "" or val == " " or val == "nan" or val == "nan,nan" or pd.isnull(val):
         outString = "WaDE Unspecified"
     else:
         outString = val
