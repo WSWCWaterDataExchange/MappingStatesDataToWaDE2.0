@@ -1,7 +1,6 @@
-#Last Updated: 03/24/2022
-#Author: Ryan James (WSWC)
-#Purpose: To create CA site specific variable use information and population dataframe for WaDE_QA 2.0.
-#Notes: 1) Used a list approach.  Needed to have five rows for VaribleCVs.
+# Date Update: 03/22/2023
+# Purpose: To create UT site specific reservoir and observation site variable use information and population dataframe for WaDE_QA 2.0.
+# Notes: N/A
 
 
 # Needed Libraries
@@ -9,61 +8,63 @@
 import os
 import numpy as np
 import pandas as pd
+######################################################
+import sys
 
+# columns
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/MappingFunctions")
+import GetColumnsFile
 
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "G:/Shared drives/WaDE Data/California/SS_ReservoirsObservationSites"
+workingDir = "G:/Shared drives/WaDE Data/Utah/SS_ReservoirsObservationSites"
 os.chdir(workingDir)
 
-#WaDE columns
-columnslist = [
-    "VariableSpecificUUID",
-    "AggregationInterval",
-    "AggregationIntervalUnitCV",
-    "AggregationStatisticCV",
-    "AmountUnitCV",
-    "MaximumAmountUnitCV",
-    "ReportYearStartMonth",
-    "ReportYearTypeCV",
-    "VariableCV",
-    "VariableSpecificCV"]
-
+# WaDE columns
+VariablesColumnsList = GetColumnsFile.GetVariablesColumnsFunction()
 
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-outdf = pd.DataFrame(columns=columnslist)
+outdf = pd.DataFrame(columns=VariablesColumnsList)
 # outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.VariableSpecificUUID = ["CAssro_V1", "CAssro_V2"]
+outdf.VariableSpecificUUID = ["UTssro_V1", "UTssro_V2", "UTssro_V3", "UTssro_V4", "UTssro_V5",  "UTssro_V6"]
 
-outdf.AggregationInterval = ["1", "1"]
+outdf.AggregationInterval = "1"
 
-outdf.AggregationIntervalUnitCV = ["Monthly", "Monthly"]
+outdf.AggregationIntervalUnitCV = "Daily"
 
-outdf.AggregationStatisticCV = ["Unspecified", "Unspecified"]
+outdf.AggregationStatisticCV = "WaDE Unspecified"
 
-outdf.AmountUnitCV = ["AF",	"AF"]
+outdf.AmountUnitCV = ["AF", "CFS", "CFS", "CFS", "FT", "AF"]
 
-outdf.MaximumAmountUnitCV = ["AF",	"AF"]
+outdf.MaximumAmountUnitCV = ["AF", "CFS", "CFS", "CFS", "FT", "AF"]
 
-outdf.ReportYearStartMonth = ["1",	"1"]
+outdf.ReportYearStartMonth = "1"
 
-outdf.ReportYearTypeCV = ["CalendarYear", "CalendarYear"]
+outdf.ReportYearTypeCV = "CalendarYear"
 
-outdf.VariableCV = ["Discharge Flow", "Reservoir Level"]
+outdf.VariableCV = ["Discharge AF",
+                    "Discharge",
+                    "Diversion",
+                    "Evaporation",
+                    "Stage",
+                    "Storage"]
 
-outdf.VariableSpecificCV = ["Discharge Flow_Monthly_Stage_Surface Water",
-                            "Reservoir Level_Monthly_Storage_Surface Water"]
-
+outdf.VariableSpecificCV = ["Discharge AF_Daily_Discharge_Surface Water",
+                            "Discharge_Daily_Discharge_Surface Water",
+                            "Diversion_Daily_Diversion_Surface Water",
+                            "Evaporation_Daily_Evaporation_Surface Water",
+                            "Stage_Daily_Stage_Surface Water",
+                            "Storage_Daily_Storage_Surface Water"]
 
 # Check required fields are not null
 ############################################################################
 print("Check required is not null...")
 # #Check all 'required' (not NA) columns have value (not empty). Replace blank strings by NaN, if there are any
-outdf = outdf.replace('', np.nan) #replace blank strings by NaN, if there are any
+outdf = outdf.replace('', np.nan)  # replace blank strings by NaN, if there are any
 outdf_nullMand = outdf.loc[(outdf["VariableSpecificUUID"].isnull()) | (outdf["VariableSpecificUUID"] == '') |
                            (outdf["AggregationInterval"].isnull()) | (outdf["AggregationInterval"] == '') |
                            (outdf["AggregationIntervalUnitCV"].isnull()) | (outdf["AggregationIntervalUnitCV"] == '') |
@@ -71,10 +72,8 @@ outdf_nullMand = outdf.loc[(outdf["VariableSpecificUUID"].isnull()) | (outdf["Va
                            (outdf["AmountUnitCV"].isnull()) | (outdf["AmountUnitCV"] == '') |
                            (outdf["MaximumAmountUnitCV"].isnull()) | (outdf["MaximumAmountUnitCV"] == '') |
                            (outdf["ReportYearStartMonth"].isnull()) | (outdf["ReportYearStartMonth"] == '') |
-                           (outdf["ReportYearTypeCV"].isnull()) | (outdf["ReportYearTypeCV"] == '') |
                            (outdf["VariableCV"].isnull()) | (outdf["VariableCV"] == '') |
                            (outdf["VariableSpecificCV"].isnull()) | (outdf["VariableSpecificCV"] == '')]
-
 
 # Export to new csv
 ############################################################################
@@ -83,8 +82,8 @@ print("Exporting dataframe to csv...")
 # The working output DataFrame for WaDE 2.0 input.
 outdf.to_csv('ProcessedInputData/variables.csv', index=False)
 
-#Report missing values if need be to separate csv
-if(len(outdf_nullMand.index) > 0):
-    outdf_nullMand.to_csv('ProcessedInputData/variables_missing.csv', index=False)
+# Report purged values.
+if (len(outdf_nullMand.index) > 0):
+    outdf_nullMand.to_csv('ProcessedInputData/variables_mandatoryFieldMissing.csv', index=False)
 
 print("Done.")

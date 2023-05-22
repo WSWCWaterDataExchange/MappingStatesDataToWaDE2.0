@@ -1,7 +1,6 @@
-#Last Updated: 03/24/2022
-#Author: Ryan James (WSWC)
-#Purpose: To create CA site specific methods use information and population dataframe for WaDE_QA 2.0.
-#Notes: 1) Used a list approach.  Needed to have two rows, one with surface water, the other with groundwater.
+# Date Update: 03/22/2023
+# Purpose: To create UT site specific reservoir and observation site methods use information and population dataframe for WaDE_QA 2.0.
+# Notes: N/A
 
 
 # Needed Libraries
@@ -11,32 +10,30 @@ import numpy as np
 import pandas as pd
 
 
+# Custom Libraries
+############################################################################
+import sys
+# columns
+sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/MappingFunctions")
+import GetColumnsFile
+
 # Inputs
 ############################################################################
 print("Reading inputs...")
-workingDir = "G:/Shared drives/WaDE Data/California/SS_ReservoirsObservationSites"
+workingDir = "G:/Shared drives/WaDE Data/Utah/SS_ReservoirsObservationSites"
 os.chdir(workingDir)
 
-#WaDE columns
-columnslist = [
-    "MethodUUID",
-    "ApplicableResourceTypeCV",
-    "DataConfidenceValue",
-    "DataCoverageValue",
-    "DataQualityValueCV",
-    "MethodDescription",
-    "MethodName",
-    "MethodNEMILink",
-    "MethodTypeCV"]
+# WaDE columns
+MethodsColumnsList = GetColumnsFile.GetMethodsColumnsFunction()
 
 
 # Creating output dataframe (outdf)
 ############################################################################
 print("Populating dataframe...")
-outdf = pd.DataFrame(columns=columnslist)
+outdf = pd.DataFrame(columns=MethodsColumnsList)
 outdf = outdf.append(pd.Series(), ignore_index = True)  # This approach requires a blank row to be appended into the outbound dataframe.
 
-outdf.MethodUUID = "CAssro_M1"
+outdf.MethodUUID = "UTssro_M1"
 
 outdf.ApplicableResourceTypeCV = "Surface Water"
 
@@ -46,13 +43,13 @@ outdf.DataQualityValueCV = ""
 
 outdf.DataCoverageValue = ""
 
-outdf.MethodDescription = "Stream gage and Reservoir level data."
+outdf.MethodDescription = "Utah Division of Water Rights Water Flow Method"
 
-outdf.MethodName = "Unspecified"
+outdf.MethodName = "WaDE Unspecified"
 
-outdf.MethodNEMILink = ""
+outdf.MethodNEMILink = "WaDE Unspecified"
 
-outdf.MethodTypeCV = "Unspecified"
+outdf.MethodTypeCV = "WaDE Unspecified"
 
 
 # Check required fields are not null
