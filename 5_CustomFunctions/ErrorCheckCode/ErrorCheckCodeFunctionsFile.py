@@ -60,6 +60,8 @@ def SiteTestErrorFunctions(outdf, dfpurge):
     outdf, dfpurge = SiteTypeCV_S_Check(outdf, dfpurge)
     outdf, dfpurge = StateCV_S_Check(outdf, dfpurge)
     outdf, dfpurge = USGSSiteID_S_Check(outdf, dfpurge)
+    outdf, dfpurge = Latitude_S_FloatValueCheck(outdf, dfpurge)
+    outdf, dfpurge = Longitude_S_FloatValueCheck(outdf, dfpurge)
     return(outdf, dfpurge)
 
 
@@ -444,6 +446,25 @@ def USGSSiteID_S_Check(dfx, dfy):
 #     mask['IncompleteField'] = mask['WaterSourceUUIDs']
 #     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
 #     return (dfx, dfy)
+
+
+# Latitude_float_-
+def Latitude_S_FloatValueCheck(dfx, dfy):
+    selectionVar = (dfx["Latitude"].astype(float) < 1.1)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Wrong value entry for Latitude').reset_index()
+    mask['IncompleteField'] = mask['Latitude']
+    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
+    return (dfx, dfy)
+
+
+# Longitude_float_-
+def Longitude_S_FloatValueCheck(dfx, dfy):
+    selectionVar = (dfx["Longitude"].astype(float) > -1.1)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Wrong value entry for Longitude').reset_index()
+    mask['IncompleteField'] = mask['Longitude']
+    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
+    return (dfx, dfy)
+
 
 
 # ReportingUnits
