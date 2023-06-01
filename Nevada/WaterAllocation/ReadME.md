@@ -44,6 +44,7 @@ Purpose: preprocess the Montana input data files and merge them into one master 
 
 #### Operation and Steps:
 - Read in the input files.  Create temporary POD and POU dataframes.  POD and POU data share similar fields.
+- For NV, we don't want water rights that are considered: Abandoned, Abrogated, Application, Canceled, Denied, Expired, Forfeited, Ready For Action, Ready for Action (Protested), Rejected, Revoked, Supersceded, Withdrawn
 - For POD AllApps_2_input.csv, set WaDE field *PODorPOUSite* = POD.
 - For PoU AllApps_3_input.csv, set WaDE field *PODorPOUSite* = POU.
 - Concatenate temporary POD & POU dataframes together into single long output dataframe.
