@@ -19,7 +19,7 @@ The 1) raw input data shared by the state / state agency / data provider (excel,
 
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share NMOSE's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *SDwr_Allocation Schema Mapping to WaDE.xlsx*.  Several WaDE csv input files will be created in order to extract the NMOSE's water rights data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
+The following text summarizes the process used by the WSWC staff to prepare and share SDDENR's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *SDwr_Allocation Schema Mapping to WaDE.xlsx*.  Several WaDE csv input files will be created in order to extract the SDDENR's water rights data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
 
 - **1_SDwr_PreProcessAllocationData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
 - **2_SDwr_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, podsitetopousiterelationships.csv.
@@ -72,7 +72,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Method* specific columns.
-- Assign **SDDENR** info to the *WaDE Method* specific columns (this was hardcoded by hand for simplicity).
+- Assign state info to the *WaDE Method* specific columns (this was hardcoded by hand for simplicity).
 - Assign method UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *methods.csv*.
@@ -89,7 +89,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Variable* specific columns.
-- Assign **SDDENR** info to the *WaDE Variable* specific columns (this was hardcoded by hand for simplicity).
+- Assign state info to the *WaDE Variable* specific columns (this was hardcoded by hand for simplicity).
 - Assign variable UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *variables.csv*.
@@ -106,7 +106,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Organizations* specific columns.
-- Assign **SDDENR** info to the *WaDE Organizations* specific columns (this was hardcoded by hand for simplicity).
+- Assign state info to the *WaDE Organizations* specific columns (this was hardcoded by hand for simplicity).
 - Assign organization UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *organizations.csv*.
@@ -123,7 +123,7 @@ Purpose: generate a list of water sources specific to a water right.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign **SDDENR** info to the *WaDE WaterSources* specific columns.  See *SD_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign state info to the *WaDE WaterSources* specific columns.  See *SDwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - *WaterSourceName* = **DIVERSION1**.
     - *WaterSourceNativeID* = create custom ID.
     - *WaterSourceTypeCV* =  **SOURCE**
@@ -149,7 +149,7 @@ Purpose: generate a list of sites information.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
-- Assign info to the *WaDE Site* specific columns.  See *SD_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign info to the *WaDE Site* specific columns.  See *SDwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - *Latitude* = **LATITUDE**.
     - *Longitude* = **LONGITUDE**.
     - *SiteName* = WaDE Unspecified
@@ -178,7 +178,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
-- Assign **SDDENR** info to the *WaDE Water Allocations* specific columns.  See *SD_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign state info to the *WaDE Water Allocations* specific columns.  See *SDwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *AllocationLegalStatusCV* = **STATUS**
     - *AllocationFlow_CFS* = **PER_CFS**.
@@ -231,6 +231,7 @@ Note: podsitetopousiterelationships.csv output only needed if both POD and POU d
 - If waterallocations is not empty, export output dataframe _podsitetopousiterelationships.csv_.
 
 
+***
 ## Staff Contributions
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [South Dakota Department of Environment and Natural Resources (SDDENR)](https://denr.sd.gov/).
 
