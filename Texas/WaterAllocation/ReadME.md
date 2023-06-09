@@ -7,10 +7,14 @@ The following data was used for water allocations...
 
 Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
-**TX POD data** | Point of diversion (POD) water rights data were made available via the [Texas Water Rights Viewer](https://tceq.maps.arcgis.com/home/item.html?id=44adc80d90b749cb85cf39e04027dbdc). | [link](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview) | not given
+**Water Rights As Single Points** | Point of diversion (POD) water rights data. Made available through ArcGis map services. | [link](https://gisweb.tceq.texas.gov/arcgis/rest/services/WaterRights/WaterRightsViewer/MapServer/3) | not provided
+**Water Right Owner** | Owner information related to water right data. Made available through ArcGis map services. | [link](https://gisweb.tceq.texas.gov/arcgis/rest/services/WaterRights/WaterRightsViewer/MapServer/14) | not provided
+**Water Use** | Water right beneficial use information. Made available through ArcGis map services. | [link](https://gisweb.tceq.texas.gov/arcgis/rest/services/WaterRights/WaterRightsViewer/MapServer/13) | not provided
 
 Input files used are as follows...
- - WaterRightPoint.csv
+- Water_Rights_As_Single_Points.zip
+- WaterRightOwner.zip
+- WaterUse.zip
  
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
@@ -31,14 +35,16 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 Purpose: Pre-process the state agency's input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
-- WaterRightPoint.csv
+- Water_Rights_As_Single_Points.zip
+- WaterRightOwner.zip
+- WaterUse.zip
 
 #### Outputs:
  - Pwr_txMain.zip
 
 #### Operation and Steps:
-- Read the input files and generate temporary input dataframe.
-- Repair string data.
+- Read in owner and water use file information.  Clean up any errors & remove any special characters.  Group by information by **WR_ID**.
+- Read in water right as single points information.  Left-join owner and water use information via **WR_ID** input.
 - Inspect output dataframe for additional errors / datatypes.
 - Export output dataframe as new csv file, *Pwr_txMain.zip*.
 
@@ -66,7 +72,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Method* specific columns.
-- Assign **TCEQ** info to the *WaDE Method* specific columns (this was hardcoded by hand for simplicity).
+- Assign state info to the *WaDE Method* specific columns (this was hardcoded by hand for simplicity).
 - Assign method UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *methods.csv*.
@@ -74,7 +80,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
-TXwr_M1 | Surface Water and Groundwater | Estimated
+TXwr_M1 | Surface Water and Groundwater | Legal Processes
 
 
 ## 2) Variables Information
@@ -83,7 +89,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Variable* specific columns.
-- Assign **TCEQ** info to the *WaDE Variable* specific columns (this was hardcoded by hand for simplicity).
+- Assign state info to the *WaDE Variable* specific columns (this was hardcoded by hand for simplicity).
 - Assign variable UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *variables.csv*.
@@ -91,7 +97,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
 ---------- | ---------- | ------------ | ------------
-TXwr_V1 | 1 | Year | WaDE Unspecified
+TXwr_V1 | 1 | Year | WaDE Blank
 
 
 ## 3) Organization  Information
@@ -100,7 +106,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Organizations* specific columns.
-- Assign **TCEQ** info to the *WaDE Organizations* specific columns (this was hardcoded by hand for simplicity).
+- Assign state info to the *WaDE Organizations* specific columns (this was hardcoded by hand for simplicity).
 - Assign organization UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *organizations.csv*.
@@ -117,8 +123,9 @@ Purpose: generate a list of water sources specific to a water right.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign **TCEQ** info to the *WaDE WaterSources* specific columns.  See *TXwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.
+- Assign state info to the *WaDE WaterSources* specific columns.  See *TXwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.
 - Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceName* & *WaterSourceTypeCV* fields.
+  - no useable water source information was provided at this time.
 - Assign water source UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *WaterSources.csv*.
@@ -126,7 +133,7 @@ Purpose: generate a list of water sources specific to a water right.
 #### Sample Output (WARNING: not all fields shown):
 WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceNativeID | WaterSourceTypeCV
 ---------- | ---------- | ------------ | ------------ | ------------
-TXwr_WS1 | Fresh | WaDE Unspecified | WaDE Unspecified | WaDE Unspecified
+TXwr_WS1 | Fresh | WaDE Blank | WaDE Blank | WaDE Blank
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
 - WaterSourceUUID
@@ -140,20 +147,21 @@ Purpose: generate a list of sites information.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
-- Assign **TCEQ** info to the *WaDE Site* specific columns.  See *TXwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
-    - *Latitude* = **LAT_DD**, will need to convert from EPSG:4269 -to- EPSG:4326. 
-    - *Longitude* = **LONG_DD**, will need to convert from EPSG:4269 -to- EPSG:4326.
-    - *SiteNativeID* = **TCEQ_ID**.
-    - *SiteTypeCV* = **TYPE**.
+- Assign state info to the *WaDE Site* specific columns.  See *TXwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+    - *Latitude* = **Latitude**, will need to convert from EPSG:4269 -to- EPSG:4326. Do this in ArcGis.
+    - *Longitude* = **Longitude**, will need to convert from EPSG:4269 -to- EPSG:4326. Do this in ArcGis.
+    - *SiteNativeID* = not provided, create custom wade ID as temp fix.
+    - *SiteTypeCV* = **TYPE**, clean up any errors.
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *SiteNativeID*, *SiteName*, *SiteTypeCV*, *Longitude* & *Latitude* fields.
 - Assign site UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *sites.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-SiteUUID | CoordinateMethodCV | Latitude | Longitude | SiteName
----------- | ---------- | ------------ | ------------ | ------------
-TXwr_S1 | WaDE Unspecified | 29.651976 | -96.275803 | WaDE Unspecified
+SiteUUID | WaterSourceUUID | Latitude | Longitude | PODorPOUSite | SiteName | SiteTypeCV
+---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------
+TXwr_SPODwade1 | TXwr_WSwadeID1  | 32.795443708 | -95.2061029179999 | POD | WaDE Blank | Diversion Point
+
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
 - SiteUUID 
@@ -168,20 +176,21 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
-- Assign **TCEQ** info to the *WaDE Water Allocations* specific columns.  See *TXwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign state info to the *WaDE Water Allocations* specific columns.  See *TXwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *AllocationNativeID* = **WR_ID**.
-    - *AllocationOwner* = **owners**.
-    - *BeneficialUseCategory* = **Uses**.
+    - *AllocationOwner* = **Owners** from owner input data.
+    - *BeneficialUseCategory* = **USE_NAME** from water use input data.
     - *WaterAllocationNativeURL* = "https://gisweb.tceq.texas.gov/WRRetrieveRights/?ID=" + **WR_TYPE_NO**.
+    - *AllocationFlow_CF*, *AllocationVolume_AF*, & *AllocationPriorityDate* not provided.  Will make this data ExemptOfVolumeFlowPriority = **True** as temp fix.
 - Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.
 - Perform error check on output dataframe.
 - Export output dataframe *waterallocations.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-AllocationNativeID | AllocationFlow_CFS | AllocationLegalStatusCV | BeneficialUseCategory
----------- | ---------- | ------------ | ------------
-C1000 | - | ACTIVE | -
+AllocationUUID | MethodUUID | OrganizationUUID | SiteUUID | VariableSpecificUUID | AllocationFlow_CFS | AllocationLegalStatusCV | AllocationNativeID | AllocationPriorityDate | BeneficialUseCategory
+---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ----------
+TXwr_WRC1000 | TXwr_M1 | TXwr_O1 | TXwr_SPODwade6485 | TXwr_V1 | - | WaDE Blank | C1000 | - | Agriculture
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID
