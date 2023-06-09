@@ -14,7 +14,7 @@ import pandas as pd
 ########################################################################################################################
 # Generic
 # ---------------------------------------------------------------------
-unList = ["unspecified", "wade unspecified", "unknown"]
+unList = ["unspecified", "wade blank", "unknown"]
 nalist = ["tribe", "tribes", "nation", "nations", "indians"]
 
 # Government
@@ -43,7 +43,7 @@ usnplist = ["national park", "natl park serv", "national forest", "nat forest", 
 
 # Non-Federal List
 # ---------------------------------------------------------------------
-priList = ["corporation", "company", "commission", "co", "coop", "inc", "llc", "limited", "ltd", "lp", "farm", "farms"]
+priList = ["corporation", "company", "commission", "co", "coop", "corp", "inc", "llc", "limited", "ltd", "lp", "farm", "farms"]
 
 
 # Making the dictionary
@@ -54,7 +54,7 @@ listDictionary = {} # create list dictioarny.
 
 # Generic List
 # ---------------------------------------------------------------------
-listDictionary["WaDE Unspecified"] = unList
+listDictionary["Unspecified"] = unList
 listDictionary["Native American"] = nalist
 
 # Government List
@@ -95,9 +95,9 @@ listDictionary["Private"] = priList
 def CreateOwnerClassification(val):
     val = str(val).strip()
     if val == '' or pd.isnull(val):
-        outString = "WaDE Unspecified"
+        outString = "WaDE Blank"
     else:
-        outString = "WaDE Unspecified "  # Default Value
+        outString = "WaDE Blank "  # Default Value
 
         # Cleaning text / simple search format
         val = re.sub("[$@&.`;',/\)(-]", "", val).strip()

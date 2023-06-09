@@ -218,9 +218,9 @@ def CreateAllocationsAmounts_factsInputFunction(varST, varSTName, varUUIDType, v
     def tempfixOCSV(val):
         valList = val.split(",") # convert string to list
         valList.sort() # sort list alphabetically
-        if ("WaDE Unspecified" in valList):
-            valList.remove("WaDE Unspecified") # check if "In Review"  If true, remove.
-            valList.append("WaDE Unspecified") # Append back in "In Review" to end of list.
+        if ("WaDE Blank" in valList):
+            valList.remove("WaDE Blank") # check if "In Review"  If true, remove.
+            valList.append("WaDE Blank") # Append back in "In Review" to end of list.
         result = valList[0] # return only first value in list.
         return result
     outdf['OwnerClassificationCV'] = outdf.apply(lambda row: tempfixOCSV(row['OwnerClassificationCV']), axis=1)

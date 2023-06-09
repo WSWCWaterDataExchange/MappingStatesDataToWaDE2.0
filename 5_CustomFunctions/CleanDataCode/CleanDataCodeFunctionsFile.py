@@ -1,7 +1,7 @@
 # Last Update: 04/27/2023
 # Purpose: To clean the data and ensure proper data types are being used for WaDE inputs.
 #
-# review cv terminology and assign 'WaDE TBD' values to comma separated values. Temp fix for some CV terms.
+# review cv terminology and assign 'WaDE Blank' values to comma separated values. Temp fix for some CV terms.
 
 
 # Needed Libraries
@@ -18,7 +18,7 @@ import pandas as pd
 # def reviewCVTerminologyFunc(val):
 #     val = str(val).strip()
 #     if "," in val:
-#         outString = 'WaDE TBD'
+#         outString = 'WaDE Blank'
 #     else:
 #         outString = val
 # 
@@ -28,7 +28,7 @@ import pandas as pd
 def fixEmptyString(val):
     val = str(val).strip()
     if val == "" or val == " " or val == "nan" or val == "nan,nan" or pd.isnull(val):
-        outString = "WaDE Unspecified"
+        outString = "WaDE Blank"
     else:
         outString = val
     return outString
