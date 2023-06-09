@@ -40,6 +40,7 @@ Purpose: Pre-process the state agency's input data files and merge them into one
     - AF values include: Acre-feet, Gallons (converted to AF by / 325850.943).
 - Remove trialing '_' and ',' values from  **water_right_type** and **sub_type** input fields.
 - Any record with a 'RIPERIAN', 'PRE1914' or 'Statement of Div and Use' are considered Riparian rights and we want to include into WaDE.  Will allow for exceptions.
+- At this time, CA does not track priority date.  Any water right missing a priority date value we will also make exempt at this time as a temp fix. 
 - Any Record with a blank or nan value, replace with a 0 if numeric, or "WaDE_Unspecified" if string or object.
 - Inspect output dataframe for additional errors / datatypes.
 - Export output dataframe as new csv file, *Pwr_CAMain.zip*.
@@ -161,9 +162,9 @@ Purpose: generate a list of sites where water is diverted (also known as Points 
 - Export output dataframe *sites.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-SiteUUID | WaterSourceUUID | CoordinateMethodCV | Latitude | Longitude | SiteName
----------- | ---------- | ---------- | ------------ | ------------ | ------------
-CAwr_S1 | CAwr_WS1 | Unspecified | 40.73949452 | -123.06921044 | Unspecified
+SiteUUID | WaterSourceUUID | Latitude | Longitude | PODorPOUSite | SiteName | SiteTypeCV
+---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------
+CAwr_S1 | CAwr_WSwadeID49  | 40.9631 | -124.1 | POD | WaDE Blank | Point Of Direct Diversion
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
 - SiteUUID 
@@ -191,15 +192,16 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
     - *AllocationTypeCV* = **water_right_type + sub_type**.
     - *AllocationVolume_AF* = **use_direct_diversion_rate**inputs, see *0_CAwr_PreProcessAllocationData.ipynb* for specifics.
     - *BeneficialUseCategory* = **use_code**, "WaDE_Unspecified" if blank.
+    - *AllocationPriorityDate* not always provided.  Will make this data ExemptOfVolumeFlowPriority = **True** as temp fix.
 - Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* , *AllocationFlow_CFS*, & *AllocationVolume_AF* fileds.
 - Assign site UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *waterallocations.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-AllocationUUID | SiteUUID | AllocationLegalStatusCV | AllocationFlow_CFS | BeneficialUseCategory
----------- | ---------- | ------------ | ---------- | ----------
-CAwr_WR1 | CAwr_S17128| Licensed | 2.5 | Irrigation
+AllocationUUID | MethodUUID | OrganizationUUID | SiteUUID | VariableSpecificUUID | AllocationFlow_CFS | AllocationLegalStatusCV | AllocationNativeID | AllocationPriorityDate | BeneficialUseCategory
+---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ----------
+CAwr_WRA000016 | CAwr_M1 | CAwr_O1 | CAwr_S404, CAwr_S34881, CAwr_S17603, CAwr_S29028 | CAwr_V1 | 0 | Licensed | A000016 | - | Domestic
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID
