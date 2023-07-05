@@ -29,12 +29,12 @@ import CleanDataCodeFunctionsFile
 
 # Create File Function
 ############################################################################
-def CreateWaterSourcesInputFunction(varST, varSTName, varUUIDType, varWaDEDataType, mainInputFile):
+def CreateWaterSourcesInputFunction(workingDirString, varST, varUUIDType, mainInputFile):
 
     # Inputs
     ############################################################################
     print("Reading input csv...")
-    workingDir = "G:/Shared drives/WaDE Data/" + varSTName + "/" + varWaDEDataType
+    workingDir = workingDirString
     os.chdir(workingDir)
     fileInput = "RawinputData/" + mainInputFile
     df = pd.read_csv(fileInput, compression='zip')
@@ -99,6 +99,7 @@ def CreateWaterSourcesInputFunction(varST, varSTName, varUUIDType, varWaDEDataTy
     print(f'Length of dfpurge DataFrame: ', len(dfpurge))
 
 
+    # Assign UUID Value
     ############################################################################
     print("Assign WaterSourceUUID") # has to be one of the last.
     outdf = outdf.reset_index(drop=True)
