@@ -1,5 +1,5 @@
-# "{state / organization name}" Water Rights (Allocation) Data Preparation for WaDE
-This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the ["{state / organization name}"]("{http web link address to state / organization name}"), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
+# AKDNR Water Rights (Allocation) Data Preparation for WaDE
+This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [Alaska Department of Natural Resources (AKDNR)](https://dnr.alaska.gov/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 
 ## Overview of Source Data Utilized
@@ -272,5 +272,7 @@ WSWC Staff
 - Adel Abdallah (Project Manager) <adelabdallah@wswc.utah.gov>
 - Ryan James (Data Analysis) <rjames@wswc.utah.gov>
 
-"{state / organization name}" Staff
-- "{name of staff member that is our point of contact for this data}" <"{point of contacts email"}>
+
+Alaska DNR Staff
+- asdf
+
