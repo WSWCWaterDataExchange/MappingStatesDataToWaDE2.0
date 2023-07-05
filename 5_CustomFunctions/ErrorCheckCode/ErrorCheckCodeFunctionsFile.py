@@ -172,6 +172,35 @@ def RegulatoryReportingUnitsErrorFunctions(outdf, dfpurge):
     return(outdf, dfpurge)
 
 
+def AggregatedAmountsErrorFunctions(outdf, dfpurge):
+    outdf, dfpurge = MethodUUID_AG_Check(outdf, dfpurge)
+    outdf, dfpurge = OrganizationUUID_AG_Check(outdf, dfpurge)
+    outdf, dfpurge = ReportingUnitUUID_AG_Check(outdf, dfpurge)
+    outdf, dfpurge = VariableSpecificUUID_AG_Check(outdf, dfpurge)
+    outdf, dfpurge = WaterSourceUUID_AG_Check(outdf, dfpurge)
+    outdf, dfpurge = AllocationCropDutyAmount_AG_Check(outdf, dfpurge)
+    outdf, dfpurge = Amount_AG_Check(outdf, dfpurge)
+    outdf, dfpurge = BeneficialUseCategory_AG_Check(outdf, dfpurge)
+    outdf, dfpurge = CommunityWaterSupplySystem_AG_Check(outdf, dfpurge)
+    outdf, dfpurge = CropTypeCV_AG_Check(outdf, dfpurge)
+    outdf, dfpurge = CustomerTypeCV_AG_Check(outdf, dfpurge)
+    outdf, dfpurge = DataPublicationDate_AG_Check(outdf, dfpurge)
+    outdf, dfpurge = DataPublicationDOI_AG_Check(outdf, dfpurge)
+    outdf, dfpurge = InterbasinTransferFromID_AG_Check(outdf, dfpurge)
+    outdf, dfpurge = InterbasinTransferToID_AG_Check(outdf, dfpurge)
+    outdf, dfpurge = IrrigatedAcreage_AG_Check(outdf, dfpurge)
+    outdf, dfpurge = IrrigationMethodCV_AG_Check(outdf, dfpurge)
+    outdf, dfpurge = PopulationServed_AG_Check(outdf, dfpurge)
+    outdf, dfpurge = PowerGeneratedGWh_AG_Check(outdf, dfpurge)
+    outdf, dfpurge = PowerType_AG_Check(outdf, dfpurge)
+    outdf, dfpurge = PrimaryUseCategory_AG_Check(outdf, dfpurge)
+    outdf, dfpurge = ReportYearCV_AG_Check(outdf, dfpurge)
+    outdf, dfpurge = SDWISIdentifierCV_AG_Check(outdf, dfpurge)
+    outdf, dfpurge = TimeframeEnd_AG_Check(outdf, dfpurge)
+    outdf, dfpurge = TimeframeStart_AG_Check(outdf, dfpurge)
+    return (outdf, dfpurge)
+
+
 # WaterSources
 ########################################################################################################################
 ########################################################################################################################
@@ -1262,7 +1291,7 @@ def SiteUUID_SS_Check(dfx, dfy):
 
 # Amount_float_-
 def Amount_SS_Check(dfx, dfy):
-    selectionVar = (dfx["Amount"].str.contains(','))
+    selectionVar = (dfx["Amount"].astype(str).str.contains(','))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Amount').reset_index()
     mask['IncompleteField'] = mask['Amount']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -1271,7 +1300,7 @@ def Amount_SS_Check(dfx, dfy):
 
 # AllocationCropDutyAmount_float_Yes
 def AllocationCropDutyAmount_SS_Check(dfx, dfy):
-    selectionVar = dfx["AllocationCropDutyAmount"].str.contains(',')
+    selectionVar = dfx["AllocationCropDutyAmount"].astype(str).str.contains(',')
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for AllocationCropDutyAmount').reset_index()
     mask['IncompleteField'] = mask['AllocationCropDutyAmount']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -1325,7 +1354,7 @@ def CustomerTypeCV_SS_Check(dfx, dfy):
 
 # DataPublicationDate_date_Yes
 def DataPublicationDate_SS_Check(dfx, dfy):
-    selectionVar = (dfx["DataPublicationDate"].str.contains(','))
+    selectionVar = (dfx["DataPublicationDate"].astype(str).str.contains(','))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for DataPublicationDate').reset_index()
     mask['IncompleteField'] = mask['DataPublicationDate']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -1334,7 +1363,7 @@ def DataPublicationDate_SS_Check(dfx, dfy):
 
 # DataPublicationDOI_nvarchar(100)_Yes
 def DataPublicationDOI_SS_Check(dfx, dfy):
-    selectionVar = (dfx["DataPublicationDOI"].str.len() > 100)
+    selectionVar = (dfx["DataPublicationDOI"].astype(str).str.len() > 100)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for DataPublicationDOI').reset_index()
     mask['IncompleteField'] = mask['DataPublicationDOI']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)

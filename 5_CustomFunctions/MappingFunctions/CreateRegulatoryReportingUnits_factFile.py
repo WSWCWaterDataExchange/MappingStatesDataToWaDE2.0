@@ -35,8 +35,8 @@ def CreateRegulatoryReportingUnitsInputFunction(varST, varSTName, varUUIDType, v
     df = pd.read_csv(fileInput, compression='zip')
 
     # Input Data - 'WaDE Input' files.
-    dfro = pd.read_csv("ProcessedInputData/regulatoryoverlays.csv").replace(np.nan, "")
-    dfru = pd.read_csv("ProcessedInputData/reportingunits.csv").replace(np.nan, "")
+    dfro = pd.read_csv("ProcessedInputData/regulatoryoverlays.csv").replace(np.nan, "")  # RegulatoryOverlays dataframe
+    dfru = pd.read_csv("ProcessedInputData/reportingunits.csv").replace(np.nan, "")  # ReportingUnit dataframe
 
     # WaDE columns
     # no WaDEUUID column

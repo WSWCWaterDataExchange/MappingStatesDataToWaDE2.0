@@ -13,11 +13,11 @@ import re
 
 # Creating output dataframe (outdf)
 ############################################################################
-def CreatePODSiteToPOUSiteRelationshipsFunction(varSTName, varWaDEDataType):
+def CreatePODSiteToPOUSiteRelationshipsFunction(workingDirString):
     # Inputs
     ############################################################################
     print("Reading input csv...")
-    workingDir = "G:/Shared drives/WaDE Data/" + varSTName + "/" + varWaDEDataType
+    workingDir = workingDirString
     os.chdir(workingDir)
 
     # Sites

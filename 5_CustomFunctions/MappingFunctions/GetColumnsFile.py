@@ -192,3 +192,31 @@ def GetRegulatoryReportingUnitsColumnsFunction():
         "ReportingUnitUUID"]
     return (columnslist)
 
+def GetAggregatedAmountsColumnsFunction():
+    columnslist = [
+        "MethodUUID",
+        "OrganizationUUID",
+        "ReportingUnitUUID",
+        "VariableSpecificUUID",
+        "WaterSourceUUID",
+        "AllocationCropDutyAmount",
+        "Amount",
+        "BeneficialUseCategory",
+        "CommunityWaterSupplySystem",
+        "CropTypeCV",
+        "CustomerTypeCV",
+        "DataPublicationDate",
+        "DataPublicationDOI",
+        "InterbasinTransferFromID",
+        "InterbasinTransferToID",
+        "IrrigatedAcreage",
+        "IrrigationMethodCV",
+        "PopulationServed",
+        "PowerGeneratedGWh",
+        "PowerType",
+        "PrimaryUseCategoryCV",
+        "ReportYearCV",
+        "SDWISIdentifierCV",
+        "TimeframeEnd",
+        "TimeframeStart"]
+    return (columnslist)

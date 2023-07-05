@@ -28,11 +28,11 @@ import CleanDataCodeFunctionsFile
 
 # Create File Function
 ############################################################################
-def CreateSitesInputFunction(varST, varSTName, varUUIDType, varWaDEDataType, mainInputFile):
+def CreateSitesInputFunction(workingDirString, varST, varUUIDType, mainInputFile):
     # Inputs
     ############################################################################
     print("Reading input csv...")
-    workingDir = "G:/Shared drives/WaDE Data/" + varSTName + "/" + varWaDEDataType
+    workingDir = workingDirString
     os.chdir(workingDir)
     fileInput = "RawinputData/" + mainInputFile
     df = pd.read_csv(fileInput, compression='zip')
