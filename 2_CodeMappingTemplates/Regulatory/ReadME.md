@@ -13,6 +13,11 @@ Name | Description | Download Link | Metadata Glossary Link
 - "{name of data file}.data file type"
 
 
+## Storage for WaDE 2.0 Source and Processed Water Data
+The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+- "{state / organization name}" Regulatory Data: "{https web link address to the WaDE google doc where we are storing the data}"
+
+
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share NMOSE's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *XXre_RegulatoryInfo Schema Mapping to WaDE.xlsx*. Several WaDE csv input files will be created in order to extract the water rights data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
 
@@ -157,7 +162,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - StatutoryEffectiveDate
 
 
-### Regulatory Reporting Units Information 
+### 5) Regulatory Reporting Units Information 
 Purpose: generate master sheet of regulatory overlay area information and how it algins with reporting unit area information.
 
 #### Operation and Steps:

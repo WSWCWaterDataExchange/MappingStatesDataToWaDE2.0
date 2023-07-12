@@ -17,21 +17,23 @@ Six unique files were created to be used as input.  Input files used are as foll
 - *WaterRightRegulations.shp*.  Shapefile for special interest water right areas.
 
 
+## Storage for WaDE 2.0 Source and Processed Water Data
+The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+- New Mexico Regulatory Data: https://drive.google.com/drive/folders/1wp_jw4HsV59q1f4Pd-p5v7xr2kTbs-tQ?usp=drive_link
+
+
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share NMOSE's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *[NM_RegulatoryInfo Schema Mapping to WaDE_QA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/NewMexico/Regulatory/NM_RegulatoryInfo%20Schema%20Mapping%20to%20WaDE_QA.xlsx)*.  Six executable code files were used to extract the NMOSE's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining four code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(RegulatoryReportingUnits_fact)_ is depended on the previous files.  Those Six code files are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share NMOSE's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *NMre_RegulatoryInfo Schema Mapping to WaDE.xlsx*. Several WaDE csv input files will be created in order to extract the water rights data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
 
-- 0_NMRegulatorySourceDataPreprocess.ipynb
-- 1_NMre_Date.py
-- 2_NMre_Organizations.py
-- 3_NMre_ReportingUnits.py
-- 4_NMre_RegulatoryOverlay.py
-- 5_NMre_RegulatoryReportingUnits_fact.py
-
+- **1_XXre_PreProcessRegulatoryData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
+- **2_XXre_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: date.csv, organization.csv, reportingunits.csv, regulatoryoverlays.csv, regulatoryreportingunits.csv, etc.
+- **3_XXre_WRSiteRegulatoryID.ipynb**: used to pair regulatory overlay information to water allocation information using an overlay on water allocation site information within the boundaries of the regulation.
+- **4_XXwr_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
 
 
 ***
-### 0) Code File: 0_NMRegulatorySourceDataPreprocess.ipynb
-Purpose: Pre-process the state agency input data files and merge them into one master file for simple dataframe creation and extraction.
+## Code File: 1_XXre_PreProcessRegulatoryData.ipynb
+Purpose: Pre-process the input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
 - InterstateStreamCompactRegions_input.csv
@@ -42,8 +44,8 @@ Purpose: Pre-process the state agency input data files and merge them into one m
 - WaterRightRegulations.shp
 
 #### Outputs:
- - P_nmRegMaster.csv
- - P_nmRegGeometry.csv
+ - Pwr_xxMain.zip
+ - P_Geometry.zip
 
 #### Operation and Steps:
 - For tabular regulatory information, read the input files and generate temporary input dataframes for Interstate Stream Compact Regions, OSE Water Right District Boundary, and Special Conditions Water Right Areas.
@@ -106,22 +108,29 @@ Purpose: Pre-process the state agency input data files and merge them into one m
 - Export output dataframe as new csv file, *P_nmRegMaster.csv* for tabular data and *P_nmRegGeometry.csv* for geometry data.
 
 
-
 ***
-### 1) Code File: 1_NMre_Date.py
-Purpose: generate legend of granular methods used on data collection.
+## Code File: 2_UTwr_CreateWaDEInputFiles.ipynb
+Purpose: generate WaDE csv input files (methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, podsitetopousiterelationships.csv).
 
 #### Inputs:
-- None
+- Pwr_xxMain.zip
+- P_Geometry.zip
 
 #### Outputs:
-- date.csv
-- date_missing.csv (error check only)
+- date.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
+- organizations.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
+- reportingunits.csv
+- regulatoryoverlays.csv 
+- regulatoryreportingunits.csv
+
+
+## 1) Date Information
+Purpose: generate legend of granular date used on data collection.
 
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Date* specific columns.
-- Assign **NMOSE** info to the *WaDE Date* specific columns (this was hardcoded by hand for simplicity).
+- Assign agency info to the *WaDE Date* specific columns (this was hardcoded by hand for simplicity).
 - Perform error check on output dataframe.
 - Export output dataframe *methods.csv*.
 
@@ -131,22 +140,13 @@ Date | Year
 8/12/2021 | 2021
 
 
-
-***
-### 2) Code File: 2_NMre_Organizations.py
+## 2) Organization Information
 Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
-
-#### Inputs:
-- None
-
-#### Outputs:
-- organizations.csv
-- organizations_missing.csv (error check only)
 
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Organizations* specific columns.
-- Assign **NMOSE** info to the *WaDE Organizations* specific columns (this was hardcoded by hand for simplicity).
+- Assign agency info to the *WaDE Organizations* specific columns (this was hardcoded by hand for simplicity).
 - Assign organization UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *organizations.csv*.
@@ -157,18 +157,8 @@ OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebs
 NMOSE | New Mexico Office of the State Engineer | David Hatchner (GIS Manager) | https://www.ose.state.nm.us/
 
 
-
-***
-### 3) Code File: 3_NMre_ReportingUnits.py
+### 3) Reporting Unit Information
 Purpose: generate a list of polygon areas associated with the state agency regulatory overlay area data.
-
-#### Inputs:
-- P_nmRegMaster.csv
-- P_nmRegGeometry.csv
-
-#### Outputs:
-- reportingunits.csv
-- reportingunits_missing.csv (error check only)
 
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
@@ -196,17 +186,8 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - StateCV
 
 
-
-***
-### 4) Code File: 4_NMre_RegulatoryOverlay.py
+### 4) Regulatory Overlays Information
 Purpose: generate master sheet of regulatory overlay area information to import into WaDE 2.0.
-
-#### Inputs:
-- P_nmRegMaster.csv.csv
-
-#### Outputs:
-- regulatoryoverlays.csv
-- regulatoryoverlays_missing.csv (error check only)
 
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
@@ -239,19 +220,8 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - StatutoryEffectiveDate
 
 
-
-***
-### 5_NMre_RegulatoryReportingUnits_fact.py
+### 5) Regulatory Reporting Units Information 
 Purpose: generate master sheet of regulatory overlay area information and how it algins with reporting unit area information.
-
-#### Inputs:
-- P_nmRegMaster.csv
-- reportingunits.csv
-- regulatoryoverlays.csv
-
-#### Outputs:
-- regulatoryreportingunits.csv
-- regulatoryreportingunits_missing.csv (error check only)
 
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
