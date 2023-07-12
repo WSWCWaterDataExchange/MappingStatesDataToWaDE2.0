@@ -25,11 +25,11 @@ import ErrorCheckCodeFunctionsFile
 
 # Create File Function
 ############################################################################
-def CreateRegulatoryReportingUnitsInputFunction(varST, varSTName, varUUIDType, varWaDEDataType, mainInputFile):
+def CreateRegulatoryReportingUnitsInputFunction(workingDirString, mainInputFile):
     # Inputs
     ############################################################################
     print("Reading input csv...")
-    workingDir = "G:/Shared drives/WaDE Data/" + varSTName + "/" + varWaDEDataType
+    workingDir = workingDirString
     os.chdir(workingDir)
     fileInput = "RawinputData/" + mainInputFile
     df = pd.read_csv(fileInput, compression='zip')
