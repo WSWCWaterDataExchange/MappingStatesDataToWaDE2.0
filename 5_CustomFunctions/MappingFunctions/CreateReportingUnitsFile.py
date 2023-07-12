@@ -22,13 +22,13 @@ sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE
 import ErrorCheckCodeFunctionsFile
 
 
-def CreateReportingUnitInputFunction(varST, varSTName, varUUIDType, varWaDEDataType, mainInputFile):
+def CreateReportingUnitInputFunction(workingDirString, varST, varUUIDType, mainInputFile):
     # Inputs
     ############################################################################
     print("Reading input csv...")
-    workingDir = "G:/Shared drives/WaDE Data/" + varSTName + "/" + varWaDEDataType
+    workingDir = workingDirString
     os.chdir(workingDir)
-    fileInput = "RawinputData/" + mainInputFile
+    fileInput = "RawInputData/" + mainInputFile
     df = pd.read_csv(fileInput, compression='zip')
 
     # geometry data mandatory for reporting unit information
