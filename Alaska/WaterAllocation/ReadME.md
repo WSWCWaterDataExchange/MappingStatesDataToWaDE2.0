@@ -1,5 +1,5 @@
-# AKDNR Water Rights (Allocation) Data Preparation for WaDE
-This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [Alaska Department of Natural Resources (AKDNR)](https://dnr.alaska.gov/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
+# Alaska Department of Natural Resources Water Rights (Allocation) Data Preparation for WaDE
+This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [Alaska Department of Natural Resources ](https://gis.data.alaska.gov/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 
 ## Overview of Source Data Utilized
@@ -7,46 +7,67 @@ The following data was used for water allocations...
 
 Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
-**"{name of data}"** | description of data | [link]("{https web link address to where data can be downloaded from}") | [link]("{https web link address to meta-data}")
+**Subsurface Water Right - Point** | Place of Diversion, Subsurface Water| [link](https://gis.data.alaska.gov/datasets/SOA-DNR::subsurface-water-right-point/explore?location=60.130422%2C-153.914058%2C5.83) | [link](https://www.arcgis.com/sharing/rest/content/items/6a06bce7ad1e450c9e398238a70296b1/info/metadata/metadata.xml?format=default&output=html)
+**Subsurface Water Right - Polygon** | Place of Use, Subsurface Water| [link](https://gis.data.alaska.gov/datasets/SOA-DNR::subsurface-water-right-polygon/explore?location=60.130422%2C-153.914058%2C5.83) | 
+**Surface Water Right - Point** | Place of Diversion, Surface Water | [link](https://gis.data.alaska.gov/datasets/SOA-DNR::surface-water-right-point/explore?location=60.152552%2C-152.999983%2C5.79) | [link](https://www.arcgis.com/sharing/rest/content/items/12721d35a01449f9af801a4cf5720f93/info/metadata/metadata.xml?format=default&output=html)
+**Surface Water Right - Polygon** | Place of Use, Surface Water| [link](https://gis.data.alaska.gov/datasets/SOA-DNR::subsurface-water-right-polygon/explore?location=60.130422%2C-153.914058%2C5.83) | 
 
-Six unique files were created to be used as input.  Input files used are as follows...
-- "{name of data file}.data file type"
+Four unique files were created to be used as input.  Input files used are as follows...
+- Surface_Water_Right.csv
+- Surface_Water_Right.csv
+- Subsurface_Water_Right.csv
+- Subsurface_Water_Right.csv
 
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
 The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
-- "{state / organization name}" Allocation Data: "{https web link address to the WaDE google doc where we are storing the data}"
+- "Alaska Department of Natural Resources" Allocation Data: https://drive.google.com/drive/folders/1kTDdRkGZw68tbe5YraSJTYhfcvtMGOAM
 
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *UTwr_Allocation Schema Mapping to WaDE.xlsx*.  Several WaDE csv input files will be created in order to extract the water rights data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
+The following text summarizes the process used by the WSWC staff to prepare and share water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *AKwr_Allocation Schema Mapping to WaDE.xlsx*.  Several WaDE csv input files will be created in order to extract the water rights data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
 
-- **1_XXwr_PreProcessAllocationData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
-- **2_XXwr_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, podsitetopousiterelationships.csv.
-- **3_XXwr_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
+- **1_AKwr_PreProcessAllocationData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
+- **2_AKwr_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, podsitetopousiterelationships.csv.
+- **3_AKwr_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
 
 
 ***
-## Code File: 1_XXwr_PreProcessAllocationData.ipynb
+## Code File: 1_AKwr_PreProcessAllocationData.ipynb
 Purpose: Pre-process the input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
-- "{name of data file}.data file type"
+- Surface_Water_Right.csv
+- Surface_Water_Right.csv
+- Subsurface_Water_Right.csv
+- Subsurface_Water_Right.csv
 
 #### Outputs:
- - Pwr_xxMain.zip
+ - Pwr_AKMain.zip
  - P_Geometry.zip
 
 #### Operation and Steps:
-- "{describe how the data was pre-processed}"
+Using Jupyter Notebook in Python(which is what this is written in and with) is a simple way to run this operation.
+- Read in the input files. Create temporary POD and POU dataframes. POD and POU data share similar fields.
+- For POD CombinedPOD_Points.csv, set WaDE field PODorPOUSite = POD.
+- For PoU CombinedPOU_Polygon, set WaDE field PODorPOUSite = POU.
+- Concatenate temporary POD & POU dataframes together into single long output dataframe.
+- Generate WaDE specific field WaterSourceTypeC from NVDWR source field (see preprocess code for specific dictionary used).
+- Generate WaDE specific field SiteName from NVDWR site_name field (see preprocess code for specific dictionary used).
+- Generate WaDE specific field SiteTypeCV from NVDWR source field (see preprocess code for specific dictionary used).
+- Generate WaDE specific field SiteNativeID from WaDE Latitude, Longitude, SiteTypeCV & SiteName fields. Used to identify unique sites.
+- Generate WaDE specific field WaterSourceNativeID from WaDE WaterSourceName & WaterSourceTypeCV fields. Used to identify unique sources of water.
+- Format prior_dt field to %m/%d/%Y format.
+- Inspect output dataframe for additional errors / datatypes.
+- Export output dataframe as new csv file, P_Geometry.zip.
 
 
 ***
-## Code File: 2_UTwr_CreateWaDEInputFiles.ipynb
+## Code File: 2_AKwr_CreateWaDEInputFiles.ipynb
 Purpose: generate WaDE csv input files (methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, podsitetopousiterelationships.csv).
 
 #### Inputs:
-- Pwr_NMMain.zip
+- Pwr_AKMain.zip
 
 #### Outputs:
 - methods.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
@@ -72,7 +93,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodName | MethodNEMILink | MethodTypeCV
 ---------- | ---------- | ------------ | ------------ | ------------
-xx | xx | xx | xx | xx
+AKwr_M1 | Surface, Subsurface | Alaska Water Rights Method | https://statewide-geoportal-1-soa-dnr.hub.arcgis.com/ | Legal Proccesses
 
 
 ## 2) Variables Information
@@ -89,7 +110,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 VariableSpecificUUID | AggregationInterval | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV | VariableCV | VariableSpecificCV 
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------
-xx | xx | xx | xx | xx | xx | xx
+AKwr_V1 | WaDE Unspecified | WaDE Unspecified | WaDE Unspecified | WaDE Unspecified | WaDE Unspecified | WaDE Unspecified
 
 
 ## 3) Organization Information
@@ -106,7 +127,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite | State
 ---------- | ---------- | ------------ | ------------ | ------------
-xx | xx | xx | xx | xx 
+Akwr_O1 | Alaska Division of Water Recources | Information Resource Manager | https://dnr.alaska.gov/mlw/water/ | AK 
 
 
 ## 4) Water Source Information
@@ -115,12 +136,12 @@ Purpose: generate a list of water sources specific to a water right.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign agency info to the *WaDE WaterSources* specific columns.  See *XXwr_Allocation Schema Mapping_WaDE.xlsx* for specific details.  Items of note are as follows...
-    - *WaterSourceUUID* = ""
+- Assign agency info to the *WaDE WaterSources* specific columns.  See *AKwr_Allocation Schema Mapping_WaDE.xlsx* for specific details.  Items of note are as follows...
+    - *WaterSourceUUID* = ""AKwr_WS" + counter stating at 1"
     - *WaterQualityIndicatorCV* = ""
     - *WaterSourceName* = ""
-    - *WaterSourceNativeID* = ""
-    - *WaterSourceTypeCV* = ""
+    - *WaterSourceNativeID* = "GLOBALID"
+    - *WaterSourceTypeCV* = "Surface Water & Groundwater"
 - Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceName* & *WaterSourceTypeCV* fields.
 - Assign water source UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
@@ -129,7 +150,7 @@ Purpose: generate a list of water sources specific to a water right.
 #### Sample Output (WARNING: not all fields shown):
 WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceNativeID | WaterSourceTypeCV
 ---------- | ---------- | ------------ | ------------ | ------------
-xx | xx | xx| xx | xx
+AKwr_WSwadeID1 | WaDE Blank | WaDE Blank | wadeID1 | SUBSURFACE
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
 - WaterSourceUUID
@@ -143,26 +164,26 @@ Purpose: generate a list of sites information.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
-- Assign agency info to the *WaDE Site* specific columns.  See *XXwr_Allocation Schema Mapping_WaDE.xlsx* for specific details.  Items of note are as follows...
-    - *SiteUUID* = ""
+- Assign agency info to the *WaDE Site* specific columns.  See *AKwr_Allocation Schema Mapping_WaDE.xlsx* for specific details.  Items of note are as follows...
+    - *SiteUUID* = ""AKwr_S" + counter starting at 1"
     - *WaterSourceUUIDs* = Extract *WaterSourceUUID* from waterSources.csv input csv file. See code for specific implementation of extraction.
     - *CoordinateAccuracy* = ""
-    - *CoordinateMethodCV* = ""
-    - *Country* = ""
-    - *EPSGCodeCV* = ""
-    - *Geometry* = ""
+    - *CoordinateMethodCV* = "Digitized"
+    - *County* = ""
+    - *EPSGCodeCV* = "4326"
+    - *Geometry* = "geometry"
     - *GNISCodeCV* = ""
     - *HUC12* = ""
     - *HUC8* = ""
-    - *Latitude* = ""
+    - *Latitude* = "latitude, center_lat"
     - *Longitude* = ""
-    - *NHDNetworkStatusCV* = ""
+    - *NHDNetworkStatusCV* = "longitude, center_lon"
     - *NHDProductCV* = ""
-    - *PODorPOUSite* = ""
+    - *PODorPOUSite* = "POD, POU"
     - *SiteName* = ""
-    - *SiteNativeID* = ""
-    - *SiteTypeCV* = ""
-    - *StateCV* = ""																			
+    - *SiteNativeID* = "CASE_ID"
+    - *SiteTypeCV* = "WaDE Blank"
+    - *StateCV* = "AK"																			
     - *USGSSiteID* = ""
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *SiteNativeID*, *SiteName*, *SiteTypeCV*, *Longitude* & *Latitude* fields.
 - Assign site UUID identifier to each (unique) row.
@@ -172,7 +193,7 @@ Purpose: generate a list of sites information.
 #### Sample Output (WARNING: not all fields shown):
 SiteUUID | WaterSourceUUID | CoordinateMethodCV | County | Latitude | Longitude | PODorPOUSite| SiteName | SiteNativeID | SiteTypeCV
 ---------- | ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------
-xx | xx | xx | xx | xx | xx | xx | xx | xx | xx
+AKwr_SPODADL100002 | AKwr_WSwadeID1 | Digitized | WaDE Blank | 58.38291789 | -134.6442081 | POD | WaDE Blank | PODADL 100002 | SUBSURFACE
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
 - SiteUUID 
@@ -187,7 +208,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
-- Assign agency info to the *WaDE Water Allocations* specific columns.  See *XXwr_Allocation Schema Mapping_WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign agency info to the *WaDE Water Allocations* specific columns.  See *AKwr_Allocation Schema Mapping_WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *AllocationApplicationDate* = ""
     - *AllocationAssociatedConsumptiveUseSiteIDs* = ""
@@ -198,22 +219,22 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
     - *AllocationCropDutyAmount* = ""
     - *AllocationExpirationDate* = ""
     - *AllocationFlow_CFS* = ""
-    - *AllocationLegalStatusCV* = ""
-    - *AllocationNativeID* = ""
-    - *AllocationOwner* =  ""
+    - *AllocationLegalStatusCV* = CS_LABEL"
+    - *AllocationNativeID* = "MV_OID"
+    - *AllocationOwner* =  "CSTMRNM"
     - *AllocationPriorityDate* = ""
     - *AllocationSDWISIdentifierCV* = ""
     - *AllocationTimeframeEnd* = ""
     - *AllocationTimeframeStart* = ""
-    - *AllocationTypeCV* = ""
+    - *AllocationTypeCV* = "SPCLCDDSCR"
     - *AllocationVolume_AF* = ""
     - *BeneficialUseCategory* = ""
     - *CommunityWaterSupplySystem* = ""
     - *CropTypeCV* = ""
     - *CustomerTypeCV* = ""
-    - *DataPublicationDate* = "{use today's date}"
+    - *DataPublicationDate* = "2023/7/18"
     - *DataPublicationDOI* = ""
-    - *ExemptOfVolumeFlowPriority* = ""
+    - *ExemptOfVolumeFlowPriority* = "1"
     - *GeneratedPowerCapacityMW* = ""
     - *IrrigatedAcreage* = ""
     - *IrrigationMethodCV* = ""
@@ -222,7 +243,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
     - *PopulationServed* = ""
     - *PowerType* = ""
     - *PrimaryBeneficialUseCategory* = ""
-    - *WaterAllocationNativeURL* = ""																							
+    - *WaterAllocationNativeURL* = "https://dnr.alaska.gov/mlw/water/rights/"																							
 - Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.
 - Perform error check on output dataframe.
 - Export output dataframe *waterallocations.csv*.
@@ -230,7 +251,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 #### Sample Output (WARNING: not all fields shown):
 AllocationUUID | MethodUUID | OrganizationUUID | SiteUUID | VariableSpecificUUID | AllocationFlow_CFS | AllocationLegalStatusCV | AllocationNativeID | AllocationPriorityDate | BeneficialUseCategory
 ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ----------
-xx | xx | xx | xx | xx | xx | xx | xx | xx | xx
+AKwr_WR1100000 | AKwr_M1 | Akwr_O1 | AKwr_SPODLAS9092 | AKwr_V1 | WaDE Blank | CERT ISSUED | 1100000 | WaDE Blank | WaDE Blank
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID
@@ -266,11 +287,12 @@ Note: podsitetopousiterelationships.csv output only needed if both POD and POU d
 
 ***
 ## Staff Contributions
-Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the ["{state / organization name}"]("{http web link address to state / organization name}").
+Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Alaska Department of Natural Resources](https://gis.data.alaska.gov/).
 
 WSWC Staff
 - Adel Abdallah (Project Manager) <adelabdallah@wswc.utah.gov>
 - Ryan James (Data Analysis) <rjames@wswc.utah.gov>
 
-Alaska DNR Staff
-- asdf
+Alaska Department of Natural Resources Staff
+- Kevin Petrone (Alaska Hydrologic Survey, Alaska Department of Natural Resources (AKDNR)) <kevin.petrone@alaska.gov>
+ 
