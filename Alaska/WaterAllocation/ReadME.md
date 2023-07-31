@@ -1,5 +1,9 @@
-# Alaska Department of Natural Resources Water Rights (Allocation) Data Preparation for WaDE
-This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [Alaska Department of Natural Resources ](https://gis.data.alaska.gov/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
+# AKDNR Water Rights (Allocation) Data Preparation for WaDE
+This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [Alaska Department of Natural Resources (AKDNR)](https://dnr.alaska.gov/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
+
+## Useful Resources
+The Status of Alaska Water Export Laws and Water Transfers 
+https://www.adfg.alaska.gov/static/lands/planning_management/pdfs/WaterExport.pdf
 
 
 ## Overview of Source Data Utilized
@@ -295,4 +299,3 @@ WSWC Staff
 
 Alaska Department of Natural Resources Staff
 - Kevin Petrone (Alaska Hydrologic Survey, Alaska Department of Natural Resources (AKDNR)) <kevin.petrone@alaska.gov>
- 
