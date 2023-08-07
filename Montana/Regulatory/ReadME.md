@@ -1,4 +1,4 @@
-# "Montana Department of Natural Resources" Regulatory Overview Data Preparation for WaDE
+# Montana Department of Natural Resources Regulatory Overview Data Preparation for WaDE
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting Texas regulatory overlay area data, made available by the ["Montana Department of Natural Resources"]("https://opendata-mtdnrc.hub.arcgis.com/datasets/MTDNRC::conservation-districts/explore?location=47.204471%2C-109.325843%2C6.61"), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and cost-effective way.
 
 
@@ -7,10 +7,10 @@ The following data was used for regulatory overlays...
 
 Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
-**"Groundwater Conservation Districts"** | description of data | [link]("https://opendata-mtdnrc.hub.arcgis.com/datasets/MTDNRC::conservation-districts/explore?location=47.204471%2C-109.325843%2C6.61") | Not Provided
+**Groundwater Conservation Districts** | description of data | [link]("https://opendata-mtdnrc.hub.arcgis.com/datasets/MTDNRC::conservation-districts/explore?location=47.204471%2C-109.325843%2C6.61") | Not Provided
 
 Input files used are as follows...
-- "Groundwater_Conservation_Districts.csv", "Shapefile"
+- Groundwater_Conservation_Districts.shp
 
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
@@ -28,7 +28,7 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 
 
 ***
-## Code File: 1_XXre_PreProcessRegulatoryData.ipynb
+## Code File: 1_MTre_PreProcessRegulatoryData.ipynb
 Purpose: Pre-process the input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
@@ -45,7 +45,7 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 
 
 ***
-## Code File: 2_UTwr_CreateWaDEInputFiles.ipynb
+## Code File: 2_MTre_CreateWaDEInputFiles.ipynb
 Purpose: generate WaDE csv input files (methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, podsitetopousiterelationships.csv).
 
 #### Inputs:
