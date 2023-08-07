@@ -15,7 +15,7 @@ Input files used are as follows...
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
 The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
-- "Texas Commission on Environmental Quality" Regulatory Data: "https://drive.google.com/drive/u/0/folders/1x-6rxbY5jpPzKZBYtlMx7zdVt1DmEMx7"
+- "Montana Regulatory Data: "https://drive.google.com/drive/u/0/folders/1HWY-AZZYO7zJfQoRnVPYy6N_pYJOyqGJ"
 
 
 ## Summary of Data Prep
@@ -35,12 +35,13 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 - "Conservation_Districts.shp"
 
 #### Outputs:
- - Pwr_xxMain.zip
+ - Pre_mtMain.zip
  - P_Geometry.zip
 
 #### Operation and Steps:
-- "{describe how the data was pre-processed}"
-- Export output dataframe as new csv file, *P_nmRegMaster.csv* for tabular data and *P_nmRegGeometry.csv* for geometry data.
+- Read in shapefile info.
+- Extract native ID, type, geometry fields.
+- Export output dataframe as new csv file, *Pre_mtMain.zip* for tabular data and *P_Geometry.csv* for geometry data.
 
 
 ***
@@ -48,7 +49,7 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 Purpose: generate WaDE csv input files (methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, podsitetopousiterelationships.csv).
 
 #### Inputs:
-- Pwr_xxMain.zip
+- Pre_mtMain.zip
 - P_Geometry.zip
 
 #### Outputs:
