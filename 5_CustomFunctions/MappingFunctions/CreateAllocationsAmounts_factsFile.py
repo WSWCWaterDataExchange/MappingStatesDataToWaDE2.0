@@ -5,6 +5,7 @@
 # Needed Libraries
 ############################################################################
 import os
+import sys
 import numpy as np
 import pandas as pd
 import re
@@ -13,25 +14,25 @@ from datetime import date
 
 # Custom Libraries
 ############################################################################
-import sys
+
 # columns
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/MappingFunctions")
+sys.path.append("../../5_CustomFunctions/MappingFunctions")
 import GetColumnsFile
 
 # Owner Classification Fix
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/OwnerClassification")
+sys.path.append("../../5_CustomFunctions/OwnerClassification")
 import OwnerClassificationField
 
 # Assign Primary Use Category fix
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/AssignPrimaryUseCategory")
+sys.path.append("../../5_CustomFunctions/AssignPrimaryUseCategory")
 import AssignPrimaryUseCategory
 
 # Test WaDE Data for any Errors
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
+sys.path.append("../../5_CustomFunctions/ErrorCheckCode")
 import ErrorCheckCodeFunctionsFile
 
 # Clean data and data types
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/CleanDataCode")
+sys.path.append("../../5_CustomFunctions/CleanDataCode")
 import CleanDataCodeFunctionsFile
 
 
