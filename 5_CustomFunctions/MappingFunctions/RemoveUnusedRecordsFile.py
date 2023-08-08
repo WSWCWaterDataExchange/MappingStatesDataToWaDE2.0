@@ -9,9 +9,8 @@ import numpy as np
 import pandas as pd
 
 
-# Removed Unused records in AllocationsAmount
-##################################################################################
-##################################################################################
+# Removed Unused records in AllocationsAmount Function
+############################################################################
 def RemoveUnusedAllocationsAmountRecordsFileFunction(workingDirString):
     # Inputs
     #---------------------------------------------------------------------------------
@@ -96,7 +95,7 @@ def RemoveUnusedAllocationsAmountRecordsFileFunction(workingDirString):
 
     # Export to new csv
     #---------------------------------------------------------------------------------
-    print("Export Files - watersource.csv, watersource_missing.csv, sites.csv, sites_missing.csv, waterallocations.csv, waterallocations_missing.csv")
+    print("Export Files - watersource.csv, watersource_missing.csv, sites.csv, sites_missing.csv, waterallocations.csv")
 
     # watersources info
     dfws.to_csv('ProcessedInputData/watersources.csv', index=False)
@@ -115,7 +114,6 @@ def RemoveUnusedAllocationsAmountRecordsFileFunction(workingDirString):
 
 
 # Removed Unused records in Aggregated Amounts
-##################################################################################
 ##################################################################################
 def RemoveUnusedAggregatedAmountRecordsFileFunction(workingDirString):
     # Inputs
@@ -197,7 +195,7 @@ def RemoveUnusedAggregatedAmountRecordsFileFunction(workingDirString):
     # Export to new csv
     # ---------------------------------------------------------------------------------
     print(
-        "Export Files - watersource.csv, watersource_missing.csv, reportingunits.csv, reportingunits_missing.csv, aggregatedamounts.csv, aggregatedamounts_missing.csv")
+        "Export Files - watersource.csv, watersource_missing.csv, reportingunits.csv, reportingunits_missing.csv, aggregatedamounts.csv")
 
     # watersources info
     dfws.to_csv('ProcessedInputData/watersources.csv', index=False)
@@ -216,7 +214,6 @@ def RemoveUnusedAggregatedAmountRecordsFileFunction(workingDirString):
 
 
 # Removed Unused records in SiteSpecificAmounts
-##################################################################################
 ##################################################################################
 def RemoveUnusedSiteSpecificAmountsRecordsFileFunction(workingDirString):
     # Inputs
@@ -302,7 +299,7 @@ def RemoveUnusedSiteSpecificAmountsRecordsFileFunction(workingDirString):
 
     # Export to new csv
     #---------------------------------------------------------------------------------
-    print("Export Files - watersource.csv, watersource_missing.csv, sites.csv, sites_missing.csv, sitespecificamounts.csv, sitespecificamounts_missing.csv")
+    print("Export Files - watersource.csv, watersource_missing.csv, sites.csv, sites_missing.csv, sitespecificamounts.csv")
 
     # watersources info
     dfws.to_csv('ProcessedInputData/watersources.csv', index=False)
@@ -314,5 +311,99 @@ def RemoveUnusedSiteSpecificAmountsRecordsFileFunction(workingDirString):
 
     # sitespecificamounts info
     dfsa.to_csv('ProcessedInputData/sitespecificamounts.csv', index=False)
+
+    print("Done")
+
+
+
+# Removed Unused records in RegulatoryOverlays
+##################################################################################
+def RemoveUnusedRegulatoryOverlaysRecordsFileFunction(workingDirString):
+    # Inputs
+    # ---------------------------------------------------------------------------------
+    print("Reading input csv...")
+    workingDir = workingDirString
+    os.chdir(workingDir)
+
+    # Input Data - 'WaDE Input' files & 'missing.xlsx' files.
+    dfru = pd.read_csv("ProcessedInputData/reportingunits.csv").replace(np.nan, "")
+    dfrupurge = pd.read_csv("ProcessedInputData/reportingunits_missing.csv").replace(np.nan, "")
+    dfrru = pd.read_csv("ProcessedInputData/regulatoryreportingunits.csv").replace(np.nan, "")
+    dfrrupurge = pd.read_csv("ProcessedInputData/regulatoryreportingunits_missing.csv").replace(np.nan, "")
+    dfro = pd.read_csv("ProcessedInputData/regulatoryoverlays.csv").replace(np.nan, "")
+
+
+    # check length of dfro
+    # ---------------------------------------------------------------------------------
+    if len(dfro) == 0:
+        print("!!!dfro IS EMPTY, STOPPING SCRIPT!!!")
+        exit()
+
+
+    # Remove unused reporting units from reportingunits.csv based on regulatoryoverlays.csv information
+    # ---------------------------------------------------------------------------------
+    print(f'Length of dfru before removing reporting units: ', len(dfru))
+    # explode copy of aggregatedamounts.csv on ReportingUnitUUID
+    dfroTemp = dfro.copy()
+    dfroTemp = pd.merge(dfroTemp, dfrru[['RegulatoryOverlayUUID', 'ReportingUnitUUID']], left_on='RegulatoryOverlayUUID', right_on='RegulatoryOverlayUUID', how='left')
+    dfroTemp = dfroTemp.assign(ReportingUnitUUID=dfroTemp['ReportingUnitUUID'].str.split(',')).explode('ReportingUnitUUID').reset_index(drop=True)
+
+    # create list of & ReportingUnitUUIDs from copy of aggregatedamounts.csv
+    dfroReportingUnitUUID_List = dfroTemp['ReportingUnitUUID'].drop_duplicates().to_list()
+    dfroReportingUnitUUID_List.sort()
+
+    # use list to add unused records to purge dataframe
+    dftemp = dfru[~dfru['ReportingUnitUUID'].isin(dfroReportingUnitUUID_List)].reset_index(drop=True).assign(ReasonRemoved='Unused Reporting Unit Record').reset_index()
+    frames = [dfrupurge, dftemp]  # add dataframes here
+    dfrupurge = pd.concat(frames).reset_index(drop=True)
+
+    # use list to only save used ReportingUnitUUID records in reportingunits.csv
+    dfru = dfru[dfru['ReportingUnitUUID'].isin(dfroReportingUnitUUID_List)].reset_index(drop=True)
+    print(f'Length of dfru after removing reporting units: ', len(dfru))
+
+
+    # Remove unused regulatory reporting units from regulatoryreportingunits.csv based on regulatoryoverlays.csv information
+    # ---------------------------------------------------------------------------------
+    print(f'Length of dfrru before removing reporting units: ', len(dfrru))
+    # use same list created above for unused reporting units in regulatoryoverlays
+    # N/A
+
+    # use list to add unused records to purge dataframe
+    dftemp = dfrru[~dfrru['ReportingUnitUUID'].isin(dfroReportingUnitUUID_List)].reset_index(drop=True).assign(ReasonRemoved='Unused Reporting Unit Record').reset_index()
+    frames = [dfrrupurge, dftemp]  # add dataframes here
+    dfrrupurge = pd.concat(frames).reset_index(drop=True)
+
+    # use list to only save used ReportingUnitUUID records in regulatoryreportingunits.csv
+    dfrru = dfrru[dfrru['ReportingUnitUUID'].isin(dfroReportingUnitUUID_List)].reset_index(drop=True)
+    print(f'Length of dfrru after removing reporting units: ', len(dfrru))
+
+
+    # Remove WaDEUUID field WaDE input file (only needed for purge info).
+    # ---------------------------------------------------------------------------------
+    try:
+        dfru = dfru.drop(['WaDEUUID'], axis=1)
+    except:
+        print('no ru WaDEUUID')
+
+    try:
+        dfro = dfro.drop(['WaDEUUID'], axis=1)
+    except:
+        print('no ro WaDEUUID')
+
+
+    # Export to new csv
+    # ---------------------------------------------------------------------------------
+    print("Export Files - reportingunits.csv, reportingunits_missing.csv, regulatoryreportingunits.csv, regulatoryreportingunits_missing.csv, regulatoryoverlays.csv")
+
+    # reportingunits info
+    dfru.to_csv('ProcessedInputData/reportingunits.csv', index=False)
+    dfrupurge.to_csv('ProcessedInputData/reportingunits_missing.csv', index=False)
+
+    # regulatoryreportingunits info
+    dfrru.to_csv('ProcessedInputData/regulatoryreportingunits.csv', index=False)
+    dfrrupurge.to_csv('ProcessedInputData/regulatoryreportingunits_missing.csv', index=False)
+
+    # regulatoryoverlays info
+    dfro.to_csv('ProcessedInputData/regulatoryoverlays.csv', index=False)
 
     print("Done")

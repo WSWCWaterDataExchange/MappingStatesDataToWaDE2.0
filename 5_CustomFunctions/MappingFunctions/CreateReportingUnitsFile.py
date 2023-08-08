@@ -5,6 +5,7 @@
 # Needed Libraries
 ############################################################################
 import os
+import sys
 import numpy as np
 import pandas as pd
 import re
@@ -12,16 +13,18 @@ import re
 
 # Custom Libraries
 ############################################################################
-import sys
+
 # columns
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/MappingFunctions")
+sys.path.append("../../5_CustomFunctions/MappingFunctions")
 import GetColumnsFile
 
 # Test WaDE Data for any Errors
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
+sys.path.append("../../5_CustomFunctions/ErrorCheckCode")
 import ErrorCheckCodeFunctionsFile
 
 
+# Create File Function
+############################################################################
 def CreateReportingUnitInputFunction(workingDirString, varST, varUUIDType, mainInputFile):
     # Inputs
     ############################################################################
@@ -41,18 +44,6 @@ def CreateReportingUnitInputFunction(workingDirString, varST, varUUIDType, mainI
 
     # Custom Functions
     ############################################################################
-    # # For Creating Geometry
-    # def retrieveGeometry(colrowValue):
-    #     if colrowValue == '' or pd.isnull(colrowValue):
-    #         outList = ''
-    #     else:
-    #         String1 = colrowValue
-    #         try:
-    #             outList = Geometrydict[String1]
-    #         except:
-    #             outList = ''
-    #     return outList
-
     # For Creating Geometry
     def retrieveGeometry(colrowValue):
         String1 = colrowValue
