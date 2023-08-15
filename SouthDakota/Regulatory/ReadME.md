@@ -1,4 +1,4 @@
-# "South Dakot Association of Rural Water Systems" Regulatory Overview Data Preparation for WaDE
+# South Dakot Association of Rural Water Systems Regulatory Overview Data Preparation for WaDE
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting Texas regulatory overlay area data, made available by the ["South Dakota Association of Rural Water Systems"]("https://opendata2017-09-18t192802468z-sdbit.opendata.arcgis.com/datasets/4a057946640c487d824eaee7ec5e6107_0/explore?location=44.285558%2C-100.253400%2C8.61"), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and cost-effective way.
 
 
@@ -7,9 +7,9 @@ The following data was used for regulatory overlays...
 
 Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
-**"Groundwater Conservation Districts"** | description of data | [link]("https://opendata2017-09-18t192802468z-sdbit.opendata.arcgis.com/datasets/4a057946640c487d824eaee7ec5e6107_0/explore?location=44.285558%2C-100.253400%2C8.61"") | [link]("{https web link address to meta-data}")
+**Groundwater Conservation Districts** | description of data | [link]("https://opendata2017-09-18t192802468z-sdbit.opendata.arcgis.com/datasets/4a057946640c487d824eaee7ec5e6107_0/explore?location=44.285558%2C-100.253400%2C8.61"") | [link]("{https web link address to meta-data}")
 
-"two" unique files were created to be used as input.  Input files used are as follows...
+Input files used are as follows...
 - "South_Dakota_Water_Development_Districts", "Shapefile"
 
 
