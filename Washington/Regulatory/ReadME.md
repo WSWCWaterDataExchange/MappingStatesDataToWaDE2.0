@@ -1,24 +1,12 @@
-# WaDE Preparation
+# Overview
 This repository stores code and data for the state of Washington regulatory data. For more information on WaDE, please visit http://wade.westernstateswater.org/
 
-### Overview 
-The WaDE 2 organizes data into four specific groups: 
+**1. Regulatory_WDNR**
+- Contains the processed used to map regulatory info for the Washington Department of Natural Resources.
 
-**1. AggregatedAmounts**
+**2. Regulatory_WDOE**
+- Contains the processed used to map regulatory info for the Washington Department of Ecology.
 
-**2. Regulatory**
-- Washington Department of Ecology
-- Washington Department of Natural Resources
-
-**3. SiteSpecificAmounts**
-
-**4. WaterAllocation**
-
-The data and code for preparation of each group of inputs to WaDE are put into these four directories. 
-
-# Structure
-Each folder is for a unique data type that the state shares into WaDE 2.0. It contains 
-1) the raw input data shared by the state (excel, csv, shapefiles,PDF, etc)
-2) the processed input data into CSV files ready to load into WaDE database
-3) the python scripts that process the raw input files and prepare the CSV files   
+**3. 1_CombineStateFilesTogetherScript.ipynb**
+- Python script to merge completed ProcessedInputData csv files from both WDNR & WDOE into a single WaDE 2.0 input project.
 
