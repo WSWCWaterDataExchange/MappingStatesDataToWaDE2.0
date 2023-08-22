@@ -1,5 +1,5 @@
 # WaDE Preparation
-This repository stores code and data for the state of Washington. For more information on WaDE, please visit http://wade.westernstateswater.org/
+This repository stores code and data for the state of Washington regulatory data. For more information on WaDE, please visit http://wade.westernstateswater.org/
 
 ### Overview 
 The WaDE 2 organizes data into four specific groups: 
