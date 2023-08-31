@@ -1,192 +1,134 @@
-# NMOSE Reguloatory Overview Data Preparation for WaDE
-This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting New Mexico regulatory overlay area data, made available by the [New Mexico Office of the State Engineer (NMOSE)](http://geospatialdata-ose.opendata.arcgis.com/datasets/ose-points-of-diversion), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and cost-effective way.
+# Idaho Department of Water Resources (IDWR) Regulatory Overview Data Preparation for WaDE
+This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting regulatory overlay area data, made available by the [Idaho Department of Water Resources (IDWR)](https://idwr.idaho.gov/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and cost-effective way.
 
 
-## Overview of Data Utilized
-The following data was used for regulatory overlay area data...
-- **Interstate Stream Compact Regions**.  Compacts are formal agreement between states concerning the use of water in rivers or streams, which flow across state boundaries. https://www.ose.state.nm.us/ISC/isc_compacts.php
-- **OSE Water Right District Boundary**.  The Water Rights Division's District Offices that administer surface water and groundwater rights within New Mexico and process water rights applications. https://ose.maps.arcgis.com/home/item.html?id=22b6dcc154224d44a20e095542dc14ec
-- **Special Conditions Water Right**.  Certain areas within New Mexico might contain restrictions that prohibit the drilling of wells within a basin in order to protect public health, water quality, existing water rights, or protect the state's water resources. https://ose.maps.arcgis.com/home/item.html?id=5617df05c3de4ac8b59594bd51cbab94.
+## Overview of Source Data Utilized
+The following data was used for water allocations...
 
-Six unique files were created to be used as input.  Input files used are as follows...
-- *InterstateStreamCompactRegions_input.csv*.  Contains tabular regulatory data for stream compacts.
-- *NMInterstateStreamCompactRegions.shp*.  Shapefile for stream compat data.
-- *OSEWaterRightDistrictBoundary_input.csv*.  Contains tabular regulatory data for state enginer water right districts.
-- *OSEDistrictBoundary.shp*.  Shapefile for water right districts.
-- *SpecialConditionsWaterRight_input.csv.*  Contains tabular special interest regulatory data for state enginer water right districts.
-- *WaterRightRegulations.shp*.  Shapefile for special interest water right areas.
+Name | Description | Download Link | Metadata Glossary Link
+---------- | ---------- | ------------ | ------------
+**Rathdrum Comprehensive Aquifer Management Plan** | Rathdrum Comprehensive Aquifer Management Area based on the boundary of the Spokane Valley-Rathdrum Prairie Aquifer within Idaho. | [link](https://data-idwr.hub.arcgis.com/datasets/rathdrum-comprehensive-aquifer-management-plan/explore?location=47.653070%2C-116.087083%2C7.73) | [link](https://idwr.idaho.gov/iwrb/water-planning/camps/)
+**Treasure Valley Comprehensive Aquifer Management Plan** | To delineate the TVHP study area boundary. | [link](https://data-idwr.hub.arcgis.com/datasets/IDWR::treasure-valley-comprehensive-aquifer-management-plan/explore?location=43.138851%2C-115.877224%2C7.65) | [link](https://idwr.idaho.gov/iwrb/water-planning/camps/)
+**Eastern Snake Comprehensive Aquifer Management Plan** | The Eastern Snake Comprehensive Aquifer Management Plan boundary is equivalent to Area of Common Ground Water Supply (ACGWS). The ACGWS is defined in Section 37.03.11 administrative rules. | [link](https://data-idwr.hub.arcgis.com/datasets/eastern-snake-comprehensive-aquifer-management-plan/explore?location=43.322127%2C-114.298158%2C6.00) | [link](https://idwr.idaho.gov/iwrb/water-planning/camps/)
+
+Unique files were created to be used as input.  Input files used are as follows...
+- Rathdrum_Comprehensive_Aquifer_Management_Plan.shp
+- Treasure_Valley_Comprehensive_Aquifer_Management_Plan.shp
+- Eastern_Snake_Comprehensive_Aquifer_Management_Plan.shp
+
+
+## Storage for WaDE 2.0 Source and Processed Water Data
+The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+- Idaho Department of Water Resources (IDWR) Regulatory Data: https://drive.google.com/drive/folders/12-5MRIg-a-ovWx-NV24VirEI1iC8L1K8
 
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share NMOSE's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *[NM_RegulatoryInfo Schema Mapping to WaDE_QA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/NewMexico/Regulatory/NM_RegulatoryInfo%20Schema%20Mapping%20to%20WaDE_QA.xlsx)*.  Six executable code files were used to extract the NMOSE's water rights data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining four code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file _(RegulatoryReportingUnits_fact)_ is depended on the previous files.  Those Six code files are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share NMOSE's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *IDre_RegulatoryInfo Schema Mapping to WaDE.xlsx*. Several WaDE csv input files will be created in order to extract the water rights data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
 
-- 0_NMRegulatorySourceDataPreprocess.ipynb
-- 1_NMre_Date.py
-- 2_NMre_Organizations.py
-- 3_NMre_ReportingUnits.py
-- 4_NMre_RegulatoryOverlay.py
-- 5_NMre_RegulatoryReportingUnits_fact.py
-
+- **1_IDre_PreProcessRegulatoryData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
+- **2_IDre_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: date.csv, organization.csv, reportingunits.csv, regulatoryoverlays.csv, regulatoryreportingunits.csv, sites.csv, etc.
+- **3_IDre_WRSiteRegulatoryID.ipynb**: used to pair regulatory overlay information to water allocation information using an overlay on water allocation site information within the boundaries of the regulation.
+- **4_IDwr_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
 
 
 ***
-### 0) Code File: 0_NMRegulatorySourceDataPreprocess.ipynb
-Purpose: Pre-process the state agency input data files and merge them into one master file for simple dataframe creation and extraction.
+## Code File: 1_IDre_PreProcessRegulatoryData.ipynb
+Purpose: Pre-process the input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
-- InterstateStreamCompactRegions_input.csv
-- NMInterstateStreamCompactRegions.shp
-- OSEWaterRightDistrictBoundary_input.csv
-- OSEDistrictBoundary.shp
-- SpecialConditionsWaterRight_input.csv.
-- WaterRightRegulations.shp
+- Rathdrum_Comprehensive_Aquifer_Management_Plan.shp
+- Treasure_Valley_Comprehensive_Aquifer_Management_Plan.shp
+- Eastern_Snake_Comprehensive_Aquifer_Management_Plan.shp
 
 #### Outputs:
- - P_nmRegMaster.csv
- - P_nmRegGeometry.csv
+ - Pre_idMain.zip
+ - P_Geometry.zip
 
 #### Operation and Steps:
-- For tabular regulatory information, read the input files and generate temporary input dataframes for Interstate Stream Compact Regions, OSE Water Right District Boundary, and Special Conditions Water Right Areas.
-- Perform the following additional actions on the Interstate Stream Compact Regions tabular data...
-    - *in_ReportingUnitName* = **Full_Name**
-    - *in_ReportingUnitNativeID* = **OID_**
-    - *in_ReportingUnitTypeCV* = "Interstate River Compact"
-    - *in_OversightAgency* = **States**
-    - *in_RegulatoryDescription& = **RegulatoryDescription**
-    - *in_RegulatoryName* = **Full_Name**
-    - *in_RegulatoryStatusCV* = "Active"
-    - *in_RegulatoryStatute* = "Unspecified"
-    - *in_RegulatoryStatuteLink* = **URL**
-    - *in_StatutoryEffectiveDate* = **EffectiveDate**
-    - *in_RegulatoryOverlayTypeCV* = "Interstate River Compact"
-    - *in_WaterSourceTypeCV* = "Surface Water"
-- Perform the following additional actions on the OSE Water Right District Boundary tabular data...
-    - *in_ReportingUnitName* = **name**
-    - *in_ReportingUnitNativeID* = **ose_dist_i**
-    - *in_ReportingUnitTypeCV* = "Water Rights District"
-    - *in_OversightAgency* = **name** + OSE
-    - *in_RegulatoryDescription& = "District operated by a Water Master appointed by the Office of the State Engineer, who is charged with administering the state's water resources. The State Engineer has authority over the supervision, measurement, appropriation, and distribution of all surface and groundwater in New Mexico, including streams and rivers that cross state boundaries."
-    - *in_RegulatoryName* = **name** + District
-    - *in_RegulatoryStatusCV* = "Active"
-    - *in_RegulatoryStatute* = "https://nmonesource.com/nmos/nmsa/en/item/4402/index.do#!fragment/zoupio-_Toc74832537/BQCwhgziBcwMYgK4DsDWszIQewE4BUBTADwBdoAvbRABwEtsBaAfX2zgHYAWADgGYATAFY+HAJQAaZNlKEIARUSFcAT2gBydRIiEwuBIuVrN23fpABlPKQBCagEoBRADKOAagEEAcgGFHE0jAAI2hSdjExIA"
-    - *in_RegulatoryStatuteLink* = **URL**
-    - *in_StatutoryEffectiveDate* = "08/12/2021"
-    - *in_RegulatoryOverlayTypeCV* = "Water Rights District"
-    - *in_WaterSourceTypeCV* = "Surface and Groundwater"
-- Perform the following additional actions on the Special Conditions Water Right Areas tabular data...
-    - *in_ReportingUnitName* = **Name**
-    - *in_ReportingUnitNativeID* = **OID_**
-    - *in_ReportingUnitTypeCV* = "Special Condition Water Right"
-    - *in_OversightAgency* = **jurisdicti**
-    - *in_RegulatoryDescription& = **requiremen**
-    - *in_RegulatoryName* = **Name**
-    - *in_RegulatoryStatusCV* = "Active"
-    - *in_RegulatoryStatute* = "Unspecified"
-    - *in_RegulatoryStatuteLink* = (leave blank)
-    - *in_StatutoryEffectiveDate* = **effect_dat**
-    - *in_RegulatoryOverlayTypeCV* = "Special Condition Water Right"
-    - *in_WaterSourceTypeCV* = "Surface and Groundwater"
-- Concatenate Interstate Stream Compact Regions, OSE Water Right District Boundary, and Special Conditions Water Right Areas tabular dataframes into single output dataframe.
-- Generate WaDE specific field *in_RegulatoryOverlayNativeID* from WaDE *in_ReportingUnitName* fields.  Used to identify unique regulatory ovlary reporting areas.
-- For shapefile information, read the input files and generate temporary input dataframes for Interstate Stream Compact Regions, OSE Water Right District Boundary, and Special Conditions Water Right Areas.
-- Perform the following additional actions on the Interstate Stream Compact Regions shapefile data...
-    - *in_ReportingUnitName* = **Full_Name**
-    - *in_ReportingUnitTypeCV* = "Interstate River Compact"
-    - *in_Geomerty* = **geometry**
-- Perform the following additional actions on the Right District Boundary shapefile data...
-    - *in_ReportingUnitName* = **name**
-    - *in_ReportingUnitTypeCV* = "Water Rights District"
-    - *in_Geomerty* = **geometry**
-- Perform the following additional actions on the Special Conditions Water Right Areas shapefile data...
-    - *in_ReportingUnitName* = **Name**
-    - *in_ReportingUnitTypeCV* = "Special Condition Water Right"
-    - *in_Geomerty* = **geometry**
-- Concatenate Interstate Stream Compact Regions, OSE Water Right District Boundary, and Special Conditions Water Right Areas shapefile dataframes into single output dataframe.
-- Inspect output dataframe for additional errors / datatypes.
-- Export output dataframe as new csv file, *P_nmRegMaster.csv* for tabular data and *P_nmRegGeometry.csv* for geometry data.
-
+- Read in input data per shapefile, store in temp dataframes per input.
+- Add information unique to each shapefile to the dataframe.
+- Combine individual dataframes into single output dataframe.
+- Review data for errors, check data data types.
+- Extract geometry value from shp file, store in separate file *P_Geometry.zip*.
+- Export output dataframe as new csv file, *Pre_idMain.csv* for tabular data and *P_Geometry.csv* for geometry data.
 
 
 ***
-### 1) Code File: 1_NMre_Date.py
-Purpose: generate legend of granular methods used on data collection.
+## Code File: 2_UTwr_CreateWaDEInputFiles.ipynb
+Purpose: generate WaDE csv input files (date.csv, organizations.csv, reportingunits.csv, regulatoryoverlays.csv, regulatoryreportingunits.csv, sites.csv).
 
 #### Inputs:
-- None
+- Pre_idMain.zip
+- P_Geometry.zip
 
 #### Outputs:
-- date.csv
-- date_missing.csv (error check only)
+- date.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
+- organizations.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
+- reportingunits.csv
+- regulatoryoverlays.csv 
+- regulatoryreportingunits.csv
+
+
+
+## 1) Date Information
+Purpose: generate legend of granular date used on data collection.
 
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Date* specific columns.
-- Assign **NMOSE** info to the *WaDE Date* specific columns (this was hardcoded by hand for simplicity).
+- Assign agency info to the *WaDE Date* specific columns (this was hardcoded by hand for simplicity).
 - Perform error check on output dataframe.
 - Export output dataframe *methods.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
 Date | Year 
 ---------- | ---------- 
-8/12/2021 | 2021
+05/10/2023 | 2023
 
 
-
-***
-### 2) Code File: 2_NMre_Organizations.py
+## 2) Organization Information
 Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
-
-#### Inputs:
-- None
-
-#### Outputs:
-- organizations.csv
-- organizations_missing.csv (error check only)
 
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Organizations* specific columns.
-- Assign **NMOSE** info to the *WaDE Organizations* specific columns (this was hardcoded by hand for simplicity).
+- Assign agency info to the *WaDE Organizations* specific columns (this was hardcoded by hand for simplicity).
 - Assign organization UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *organizations.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
----------- | ---------- | ------------ | ------------
-NMOSE | New Mexico Office of the State Engineer | David Hatchner (GIS Manager) | https://www.ose.state.nm.us/
+OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite | State
+---------- | ---------- | ------------ | ------------ | ------------
+IDre_O1 | Idaho Department of Water Resources | Linda Davis | https://idwr.idaho.gov/ | ID 
 
 
-
-***
-### 3) Code File: 3_NMre_ReportingUnits.py
+### 3) Reporting Unit Information
 Purpose: generate a list of polygon areas associated with the state agency regulatory overlay area data.
-
-#### Inputs:
-- P_nmRegMaster.csv
-- P_nmRegGeometry.csv
-
-#### Outputs:
-- reportingunits.csv
-- reportingunits_missing.csv (error check only)
 
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE ReportingUnits* specific columns.
-- Assign state agency data info to the *WaDE ReportingUnits* specific columns.  See *NM_RegulatoryInfo Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
-    - *ReportingUnitName* = in_ReportingUnitName, see *0_NMRegulatorySourceDataPreprocess.ipynb.ipynb* for specifics.
-    - *ReportingUnitNativeID* = in_ReportingUnitNativeID, see *0_NMRegulatorySourceDataPreprocess.ipynb.ipynb* for specifics.
-    - *ReportingUnitTypeCV* = in_ReportingUnitTypeCV, see *0_NMRegulatorySourceDataPreprocess.ipynb.ipynb* for specifics.
-    - *Geometry* = WKT created **Geometry**, see *0_NMRegulatorySourceDataPreprocess.ipynb.ipynb* for specifics.
+- Assign state agency data info to the *WaDE ReportingUnits* specific columns.  See *IDre_RegulatoryInfo Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+    - *ReportingUnitUUID* = "IDre_RU" + counter
+    - *EPSGCodeCV* = 4326.
+    - *ReportingUnitName* = "Eastern Snake", "Rathdrum Prairie", & "Treasure Valley" per input.
+    - *ReportingUnitNativeID* = ""
+    - *ReportingUnitProductVersion* = ""
+    - *ReportingUnitTypeCV* = "Comprehensive Aquifer Management Plan"
+    - *ReportingUnitUpdateDate* = ""
+    - *StateCV* = "ID"
+    - *Geometry* = extract geometry from shp file.
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *ReportingUnitName*, *ReportingUnitNativeID* & *ReportingUnitTypeCV* fields.
 - Assign reportingunits UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *sites.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-ReportingUnitUUID | ReportingUnitName | ReportingUnitTypeCV 
----------- | ---------- | ------------ 
-NMre_RU1 | Costilla Creek Compact | Interstate River Compact
+ReportingUnitUUID | EPSGCodeCV | ReportingUnitName | ReportingUnitNativeID | ReportingUnitProductVersion | ReportingUnitTypeCV | ReportingUnitUpdateDate | StateCV | Geometry 
+---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------  
+IDre_RUwade1 | 4326 | Eastern Snake | wade1	 | - | Comprehensive Aquifer Management Plan | - | ID | - | 
+
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *reportingunits_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the reportingunits include the following...
 - ReportingUnitUUID
@@ -196,39 +138,32 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - StateCV
 
 
-
-***
-### 4) Code File: 4_NMre_RegulatoryOverlay.py
+### 4) Regulatory Overlays Information
 Purpose: generate master sheet of regulatory overlay area information to import into WaDE 2.0.
-
-#### Inputs:
-- P_nmRegMaster.csv.csv
-
-#### Outputs:
-- regulatoryoverlays.csv
-- regulatoryoverlays_missing.csv (error check only)
 
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Regulatory Overlays* specific columns.
-- Assign state agency data info to the *WaDE Water Regulatory Overlays* specific columns.  See *NM_RegulatoryInfo Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
-    - *OversightAgency* = in_OversightAgency, see *0_NMRegulatorySourceDataPreprocess.ipynb* for specifics.
-    - *RegulatoryDescription* = in_RegulatoryDescription, see *0_NMRegulatorySourceDataPreprocess.ipynb* for specifics.
-    - *RegulatoryName* = in_RegulatoryName, see *0_NMRegulatorySourceDataPreprocess.ipynb* for specifics.
-    - *RegulatoryOverlayNativeID* = in_RegulatoryOverlayNativeID, see *0_NMRegulatorySourceDataPreprocess.ipynb* for specifics.
-    - *RegulatoryStatusCV* = in_RegulatoryStatusCV, see *0_NMRegulatorySourceDataPreprocess.ipynb* for specifics.
-    - *RegulatoryStatue* = "Unspecified".
-    - *RegulatoryStatuteLink* = in_RegulatoryStatuteLink, see *0_NMRegulatorySourceDataPreprocess.ipynb* for specifics.
-    - *StatutoryEffectiveDate* = in_StatutoryEffectiveDate, see *0_NMRegulatorySourceDataPreprocess.ipynb* for specifics.
-    - *RegulatoryOverlayTypeCV* = in_RegulatoryOverlayTypeCV, see *0_NMRegulatorySourceDataPreprocess.ipynb* for specifics.
-    - *WaterSourceTypeCV* = in_WaterSourceTypeCV, see *0_NMRegulatorySourceDataPreprocess.ipynb* for specifics. 
+- Assign state agency data info to the *WaDE Water Regulatory Overlays* specific columns.  See *IDre_RegulatoryInfo Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+    - *RegulatoryOverlayUUID* = "IDre_RO" + counter
+    - *OversightAgency* = "Idaho Department of Water Resources"
+    - *RegulatoryDescription* = ""
+    - *RegulatoryName* = "Eastern Snake", "Rathdrum Prairie", & "Treasure Valley" per input.
+    - *RegulatoryOverlayNativeID* = ""
+    - *RegulatoryStatusCV* = "Active"
+    - *RegulatoryStatue* = ""
+    - *RegulatoryStatuteLink* = "https://idwr.idaho.gov/iwrb/water-planning/camps/espa/", "https://idwr.idaho.gov/IWRB/water-planning/CAMPs/rathdrum-prairie/", "https://idwr.idaho.gov/iwrb/water-planning/camps/treasure-valley/"
+    - *StatutoryEffectiveDate* = "01/01/2009"
+    - *RegulatoryOverlayTypeCV* = "Comprehensive Aquifer Management Plan"
+    - *WaterSourceTypeCV* = ""
 - Perform error check on output dataframe.
 - Export output dataframe *regulatoryoverlays.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-RegulatoryOverlayUUID | OversightAgency | RegulatoryName | RegulatoryStatusCV | StatutoryEffectiveDate
----------- | ---------- | ------------ | ------------ | ------------
-CDWR_Water Use | CO,NM | Costilla Creek Compact | Active | 1/1/1946 
+RegulatoryOverlayUUID| OversightAgency | RegulatoryDescription | RegulatoryName | RegulatoryOverlayNativeID | RegulatoryStatusCV | RegulatoryStatute | RegulatoryStatuteLink | StatutoryEffectiveDate | StatutoryEndDate | RegulatoryOverlayTypeCV | WaterSourceTypeCV 
+---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ 
+IDre_ROwade1 | Idaho Department of Water Resources | Eastern Snake CAMP | wade1 | - | Active | - | https://idwr.idaho.gov/iwrb/water-planning/camps/espa/ | 1/1/2009 | - | Comprehensive Aquifer Management Plan | Groundwater
+
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *regulatoryoverlays_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water regulatory overlays include the following...
 - RegulatoryOverlayUUID
@@ -239,27 +174,17 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - StatutoryEffectiveDate
 
 
-
-***
-### 5_NMre_RegulatoryReportingUnits_fact.py
+### 5) Regulatory Reporting Units Information 
 Purpose: generate master sheet of regulatory overlay area information and how it algins with reporting unit area information.
-
-#### Inputs:
-- P_nmRegMaster.csv
-- reportingunits.csv
-- regulatoryoverlays.csv
-
-#### Outputs:
-- regulatoryreportingunits.csv
-- regulatoryreportingunits_missing.csv (error check only)
 
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Regulatory Reportingunits* specific columns.
-- Assign state agency data info to the *WaDE Regulatory Reportingunits* specific columns.  See *NM_RegulatoryInfo Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
-    - OrganizationUUID = "NMOSE"
-    - *RegulatoryOverlayUUID* = extract from regulatoryoverlays.csv.  Match via in_RegulatoryName, see *0_NMRegulatorySourceDataPreprocess.ipynb.ipynb* for specifics.
-    - *ReportingUnitUUID* = extract from reportingunits.csv.  Match via in_ReportingUnitName, see *0_NMRegulatorySourceDataPreprocess.ipynb.ipynb* for specifics. 
+- Assign state agency data info to the *WaDE Regulatory Reportingunits* specific columns.  See *IDre_RegulatoryInfo Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+    -*DataPublicationDate* = ""
+    - *OrganizationUUID* = ""
+    - *RegulatoryOverlayUUID* = ""
+    - *ReportingUnitUUID* = ""
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *ReportingUnitName*, *ReportingUnitNativeID* & *ReportingUnitTypeCV* fields.
 - Assign reportingunits UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
@@ -268,7 +193,8 @@ Purpose: generate master sheet of regulatory overlay area information and how it
 #### Sample Output (WARNING: not all fields shown):
 DataPublicationDate | OrganizationUUID | RegulatoryOverlayUUID | ReportingUnitUUID 
 ---------- | ---------- | ------------ | ------------ 
-8/12/2021 | NMOSE | NMre_RO1 | NMre_RU1
+5/17/2023 | IDre_O1 | IDre_ROwade1 | IDre_RUwade1
+
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *regulatoryreportingunits_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the regulatory reportingunits include the following...
 - DataPublicationDate
@@ -277,14 +203,13 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - ReportingUnitUUID
 
 
-
 ***
 ## Staff Contributions
-Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [New Mexico Office of the State Engineer (NMOSE)](http://geospatialdata-ose.opendata.arcgis.com/datasets/ose-points-of-diversion).
+Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Idaho Department of Water Resources (IDWR)](https://idwr.idaho.gov/).
 
 WSWC Staff
-- Adel Abdallah <adelabdallah@wswc.utah.gov>
-- Ryan James <rjames@wswc.utah.gov>
+- Adel Abdallah (Project Manager) <adelabdallah@wswc.utah.gov>
+- Ryan James (Data Analysis) <rjames@wswc.utah.gov>
 
-NMOSE Staff
-- David Hatchner (GIS Manager) <ose.webmaster@state.nm.us>
+IDWR Staff
+- Linda Davis <linda.davis@idwr.idaho.gov>
