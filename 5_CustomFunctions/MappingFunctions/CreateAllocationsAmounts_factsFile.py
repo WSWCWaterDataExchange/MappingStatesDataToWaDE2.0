@@ -1,5 +1,5 @@
-# Date Update: 04/12/2023
-# Purpose: To extract water right record information and populate dataframe for WaDE_QA 2.0.
+# Date Update: 08/09/2023
+# Purpose: To extract water right record information and populate dataframe for WaDE 2.0.
 
 
 # Needed Libraries
@@ -25,7 +25,7 @@ import OwnerClassificationField
 
 # Assign Primary Use Category fix
 sys.path.append("../../5_CustomFunctions/AssignPrimaryUseCategory")
-import AssignPrimaryUseCategory
+import AssignPrimaryUseCategoryFile
 
 # Test WaDE Data for any Errors
 sys.path.append("../../5_CustomFunctions/ErrorCheckCode")
@@ -228,7 +228,7 @@ def CreateAllocationsAmounts_factsInputFunction(workingDirString, varST, varUUID
 
     # Temp solution to populate PrimaryBeneficialUseCategory field.
     # Use Custom import file
-    outdf['PrimaryBeneficialUseCategory'] = outdf.apply(lambda row: AssignPrimaryUseCategory.retrievePrimaryUseCategory(row['BeneficialUseCategory']), axis=1)
+    outdf['PrimaryBeneficialUseCategory'] = outdf.apply(lambda row: AssignPrimaryUseCategoryFile.retrievePrimaryUseCategory(row['BeneficialUseCategory']), axis=1)
 
 
     # Error Checking Each Field

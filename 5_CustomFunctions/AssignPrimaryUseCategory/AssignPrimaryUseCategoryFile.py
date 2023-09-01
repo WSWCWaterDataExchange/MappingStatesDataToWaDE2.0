@@ -18,7 +18,7 @@ import pandas as pd
 fileInput = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/AssignPrimaryUseCategory/PrimaryBenUseInput.xlsx"
 df = pd.read_excel(fileInput).replace(np.nan, "")
 df['Name'] = df['Name'].str.lower().str.strip()
-BUtoWBUDict = pd.Series(df.WaDEname, index=df.Name.astype(str)).to_dict()
+BUtoWBUDict = pd.Series(df.WaDEname.values, index=df.Name.astype(str)).to_dict()
 
 
 # WaDE Convert Multi-Beneficial Use to Single Primary Use Dictionary
@@ -69,6 +69,7 @@ def retrievePrimaryUseCategory(val):
             outString = WaDEBenUseDict[",".join(str(x) for x in wbuList)]
         except:
             outString = wbuList[0]
+            outString = str(outString).strip()
     else:
         outString = wbuList[0]
         outString = str(outString).strip()

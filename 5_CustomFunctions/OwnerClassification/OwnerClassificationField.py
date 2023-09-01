@@ -32,7 +32,7 @@ millist = ["us army", "u s army", "usarmy", "usa army", "national guard", "corps
 # Natural Resources
 # ---------------------------------------------------------------------
 usblmlist = ["usblm", "blm", "bureau of land mgmt", "bureau of land management", "bureau of land mgmnt", "bureau of land mgt", "bureau of land managment", "bureau of land managenemt"]
-usbrlist = ["usbr", "bureau of reclam", "bureau of reclamation", "bureau reclamation"]
+usbrlist = ["usbr", "bureau of reclam", "bureau of reclamation", "bureau reclamation", "usdoi bureau of reclamation", "bor", "usbor"]
 usdalist = ["u s  dept of agriculture", "u s agriculture", "us agriculture dept", "us department agriculture", "us dept of agriculture", "usa  department of agriculture", "usa  dept of agriculture", "usda"]
 usdoelist = ["department of energy", "u s department of energy", "u s dept  of energy lanl", "u s  department of energy", "u s  department of energy", "u s department of energy", "united states department of energy", "us department energy", "us department of energy", "us doe", "usa department of energy"]
 epalist = ["environmental protection agency", "epa", "e p a"]
