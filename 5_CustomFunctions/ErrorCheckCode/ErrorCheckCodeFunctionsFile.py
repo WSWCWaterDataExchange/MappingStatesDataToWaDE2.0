@@ -40,7 +40,7 @@ def WaterSourceTestErrorFunctions(outdf, dfpurge):
 
 def SiteTestErrorFunctions(outdf, dfpurge):
     outdf, dfpurge = RegulatoryOverlayUUIDs_S_Check(outdf, dfpurge)
-    # outdf100, dfpurge = WaterSourceUUIDs_S_Check(outdf, dfpurge)  # temp solution, lets hide this for now
+    outdf, dfpurge = WaterSourceUUIDs_S_Check(outdf, dfpurge)
     outdf, dfpurge = CoordinateAccuracy_S_Check(outdf, dfpurge)
     outdf, dfpurge = CoordinateMethodCV_S_Check(outdf, dfpurge)
     outdf, dfpurge = County_S_Check(outdf, dfpurge)
@@ -275,6 +275,15 @@ def SiteUUID_S_Check(dfx, dfy):
     return (dfx, dfy)
 
 
+# WaterSourceUUIDs_nvarchar(200)_-
+def WaterSourceUUIDs_S_Check(dfx, dfy):
+    selectionVar = (dfx["WaterSourceUUIDs"].isnull()) | (dfx["WaterSourceUUIDs"] == '') | (dfx['WaterSourceUUIDs'].str.len() > 200)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for WaterSourceUUIDs').reset_index()
+    mask['IncompleteField'] = mask['WaterSourceUUIDs']
+    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
+    return (dfx, dfy)
+
+
 # CoordinateAccuracy_nvarchar(255)_Yes
 def CoordinateAccuracy_S_Check(dfx, dfy):
     selectionVar = (dfx["CoordinateAccuracy"].astype(str).str.len() > 255)
@@ -466,16 +475,6 @@ def USGSSiteID_S_Check(dfx, dfy):
     mask['IncompleteField'] = mask['USGSSiteID']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
-
-
-# # WaterSourceUUIDs_nvarchar(200)_-
-# def WaterSourceUUIDs_S_Check(dfx, dfy):
-#     selectionVar = (dfx['WaterSourceUUIDs'].str.len() > 200)
-#     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for WaterSourceUUIDs').reset_index()
-#     mask['IncompleteField'] = mask['WaterSourceUUIDs']
-#     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
-#     return (dfx, dfy)
-
 
 # Latitude_float_-
 def Latitude_S_FloatValueCheck(dfx, dfy):

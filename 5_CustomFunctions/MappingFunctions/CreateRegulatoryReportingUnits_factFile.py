@@ -9,6 +9,7 @@ import numpy as np
 import pandas as pd
 import re
 from datetime import date
+from datetime import timedelta
 
 
 # Custom Libraries
@@ -80,7 +81,7 @@ def CreateRegulatoryReportingUnitsInputFunction(workingDirString, mainInputFile)
     outdf = pd.DataFrame(columns=RegulatoryReportingUnitsColumnsList, index=df.index)  # The output dataframe
 
     print("DataPublicationDate")
-    outdf['DataPublicationDate'] = date.today().strftime('%m/%d/%Y')
+    outdf['DataPublicationDate'] = (date.today() - timedelta(days = 1)).strftime('%m/%d/%Y')
 
     print("OrganizationUUID")
     outdf['OrganizationUUID'] = df['in_OrganizationUUID']
