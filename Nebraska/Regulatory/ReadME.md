@@ -7,7 +7,7 @@ The following data was used for water allocations...
 
 Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
-**Natural Resource District (NRD) Boundaries** | description of data | [link]("https://www.nebraskamap.gov/datasets/natural-resource-district-nrd-boundaries/explore") | [link](https://www.arcgis.com/sharing/rest/content/items/87194256e6da455993e785854af58470/info/metadata/metadata.xml?format=default&output=html)
+**Natural Resource District (NRD) Boundaries** | description of data | [link](https://www.nebraskamap.gov/datasets/natural-resource-district-nrd-boundaries/explore) | [link](https://www.arcgis.com/sharing/rest/content/items/87194256e6da455993e785854af58470/info/metadata/metadata.xml?format=default&output=html)
 
 Unique files were created to be used as input.  Input files used are as follows...
 - Natural Resource District (NRD) Boundaries.shp
@@ -94,7 +94,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationContactEmail | OrganizationContactName | OrganizationName | OrganizationPhoneNumber | OrganizationPurview | OrganizationWebsite | State
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------
-NEre_O1 | nard@nrdnet.org | Office Nebraska Association of Resources Districts | 402-471-7670 | The Nebraska Association of Resources Districts (NARD) is the trade association for Nebraska's 23 Natural Resources Districts. NARD has five full-time employees, and is governed by a 23-member board made up of directors from individual districts. | https://www.nrdnet.org/ | NE
+NEre_O1 | nard@nrdnet.org | not provided |  Nebraska Association of Resources Districts | 402-471-7670 | The Nebraska Association of Resources Districts (NARD) is the trade association for Nebraska's 23 Natural Resources Districts. NARD has five full-time employees, and is governed by a 23-member board made up of directors from individual districts. | https://www.nrdnet.org/ | NE
 
 
 
@@ -122,7 +122,7 @@ Purpose: generate a list of polygon areas associated with the state agency regul
 #### Sample Output (WARNING: not all fields shown):
 ReportingUnitUUID | EPSGCodeCV | ReportingUnitName | ReportingUnitNativeID | ReportingUnitProductVersion | ReportingUnitTypeCV | ReportingUnitUpdateDate | StateCV 
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------  
-NEre_RUne1 | 4326 | UPPER BIG BLUE | ne1 | Natural Resources Districts | NE
+NEre_RUne1 | 4326 | UPPER BIG BLUE | ne1 | - | Natural Resources Districts | - | NE
 
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *reportingunits_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the reportingunits include the following...
@@ -157,7 +157,7 @@ Purpose: generate master sheet of regulatory overlay area information to import 
 #### Sample Output (WARNING: not all fields shown):
 RegulatoryOverlayUUID| OversightAgency | RegulatoryDescription | RegulatoryName | RegulatoryOverlayNativeID | RegulatoryStatusCV | RegulatoryStatute | RegulatoryStatuteLink | StatutoryEffectiveDate | StatutoryEndDate | RegulatoryOverlayTypeCV | WaterSourceTypeCV
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------
-NEre_RO18 | CENTRAL PLATTENRD | Natural Resources Districts were created to solve flood control, soil erosion, irrigation run-off, and groundwater quantity and quality issues. Nebraska's NRDs are involved in a wide variety of projects and programs to conserve and protect the state's natural resources. NRDs are charged under state law with 12 areas of responsibility including flood control, soil erosion, groundwater management and many others. | CENTRAL PLATTE | 18 | Active | www.cpnrd.org | 1/1/1972 | Natural Resources Districts | Groundwater
+NEre_RO18 | CENTRAL PLATTENRD | Natural Resources Districts were created to solve flood control, soil erosion, irrigation run-off, and groundwater quantity and quality issues. Nebraska's NRDs are involved in a wide variety of projects and programs to conserve and protect the state's natural resources. NRDs are charged under state law with 12 areas of responsibility including flood control, soil erosion, groundwater management and many others. | CENTRAL PLATTE | 18 | Active | - | www.cpnrd.org | 1/1/1972 | - | Natural Resources Districts | Groundwater
 
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *regulatoryoverlays_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water regulatory overlays include the following...

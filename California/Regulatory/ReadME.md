@@ -95,7 +95,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationContactEmail | OrganizationContactName | OrganizationName | OrganizationPhoneNumber | OrganizationPurview | OrganizationWebsite | State
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------
-CAre_O1	Jennifer.Stricklin@water.ca.gov | Jennifer Stricklin | California Department of Water Resources | 303-866-3581 | Department of Water Resources California Water Plan program computes applied, net, and depletion water balances for California. | https://water.ca.gov/ | CA
+CAre_O1 | Jennifer.Stricklin@water.ca.gov | Jennifer Stricklin | California Department of Water Resources | 303-866-3581 | Department of Water Resources California Water Plan program computes applied, net, and depletion water balances for California. | https://water.ca.gov/ | CA
 
 
 
@@ -123,7 +123,7 @@ Purpose: generate a list of polygon areas associated with the state agency regul
 #### Sample Output (WARNING: not all fields shown):
 ReportingUnitUUID | EPSGCodeCV | ReportingUnitName | ReportingUnitNativeID | ReportingUnitProductVersion | ReportingUnitTypeCV | ReportingUnitUpdateDate | StateCV 
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------  
-CAre_RUca1001 | 4326 | Smith River Plain | ca1-001	 | Sustainable Groundwater Management Act Basin	| CA
+CAre_RUca1001 | 4326 | Smith River Plain | ca1-001 | - | Sustainable Groundwater Management Act Basin | - | CA
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *reportingunits_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the reportingunits include the following...
 - ReportingUnitUUID
@@ -157,7 +157,7 @@ Purpose: generate master sheet of regulatory overlay area information to import 
 #### Sample Output (WARNING: not all fields shown):
 RegulatoryOverlayUUID| OversightAgency | RegulatoryDescription | RegulatoryName | RegulatoryOverlayNativeID | RegulatoryStatusCV | RegulatoryStatute | RegulatoryStatuteLink | StatutoryEffectiveDate | StatutoryEndDate | RegulatoryOverlayTypeCV | WaterSourceTypeCV
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------
-CAre_RO4005 | Southern Region Office | Each basins priority (e.g., high, medium, low, or very low) determines which provisions of California Statewide Groundwater Elevation Monitoring (CASGEM) and the Sustainable Groundwater Management Act (SGMA) apply.  SGMA requires medium- and high-priority basins to develop groundwater sustainability agencies (GSAs), develop groundwater sustainability plans (GSPs) and manage groundwater for long-term sustainability. | Acton Valley | 4-005 | Final | Very Low | https://water.ca.gov/Programs/Groundwater-Management/Basin-Prioritization | 1/1/2019	 | Sustainable Groundwater Management Act Basin | Groundwater
+CAre_RO4005 | Southern Region Office | Each basins priority (e.g., high, medium, low, or very low) determines which provisions of California Statewide Groundwater Elevation Monitoring (CASGEM) and the Sustainable Groundwater Management Act (SGMA) apply.  SGMA requires medium- and high-priority basins to develop groundwater sustainability agencies (GSAs), develop groundwater sustainability plans (GSPs) and manage groundwater for long-term sustainability. | Acton Valley | 4-005 | Final | Very Low | https://water.ca.gov/Programs/Groundwater-Management/Basin-Prioritization | 1/1/2019 | - | Sustainable Groundwater Management Act Basin | Groundwater
 
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *regulatoryoverlays_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water regulatory overlays include the following...
