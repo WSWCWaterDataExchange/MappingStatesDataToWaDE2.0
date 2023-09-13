@@ -251,7 +251,7 @@ Note: podsitetopousiterelationships.csv output only needed if both POD and POU d
 
 ***
 ## Data Assessment Figures
-![ALT TEXT](figures/PODorPOUSite.png)
+![PODorPOUSite](figures/PODorPOUSite.png)
 
 
 ***
