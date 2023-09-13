@@ -9,8 +9,20 @@ Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
 **OSE PODs** | Point of diversion water right sites. | [link](https://geospatialdata-ose.opendata.arcgis.com/datasets/OSE::ose-pods/about) | [link](https://geospatialdata-ose.opendata.arcgis.com/documents/5cc5f222d5454797822964c14526a70d/explore)
 
-The following unique files were created as input.  Input files used are as follows...
+
+The following unique source files were used as inputs...
  - OSE_PODst.zip
+
+The following info is from a data assessment evaluation of the completed data...
+
+Dataset | Num of Source Entries (rows) | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
+---------- | ---------- | ------------ | ------------ | ------------
+OSE PODs | 265,651 | N/A | N/A | N/A
+WestDAAT | N/A | 265,649 | 0 | 217,110
+
+Assessment of Removed Records | Count | Action
+---------- | ---------- | ----------
+Incomplete or bad entry for Latitude | 1 | Removed from WestDAAT
 
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
@@ -235,6 +247,11 @@ Note: podsitetopousiterelationships.csv output only needed if both POD and POU d
 - Explode the consolidated waterallocations dataframe again using the _PODSiteUUID_ field, and again for the _POUSiteUUID_ field to create unique rows.
 - Perform error check on waterallocations dataframe (check for NaN values)
 - If waterallocations is not empty, export output dataframe _podsitetopousiterelationships.csv_.
+
+
+***
+## Data Assessment Figures
+![ALT TEXT](figures/PODorPOUSite.png)
 
 
 ***
