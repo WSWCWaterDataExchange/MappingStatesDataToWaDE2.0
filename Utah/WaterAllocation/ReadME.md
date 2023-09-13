@@ -11,7 +11,7 @@ Name | Description | Download Link | Metadata Glossary Link
 **Utah Place of Use Irrigation** | POU area data. | [link](https://opendata.gis.utah.gov/datasets/utahDNR::utah-place-of-use-irrigation/explore?location=39.471338%2C-111.581749%2C-1.00) | [link](https://www.arcgis.com/sharing/rest/content/items/03919b7306544f8aa69fe09c42fbf76f/info/metadata/metadata.xml?format=default&output=html)
 
 
-Six unique files were created to be used as input.  Input files used are as follows...
+Unique files were created to be used as input.  Input files used are as follows...
 - PointsOfDiversion_input.zip.  Contains POD data.
 - PlaceOfUseService_input.zip.  Contains POU data.
 
@@ -54,8 +54,6 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 - Concatenate POD and POU data into single output dataframe.
 - Remove special characters from owner field.
 - Change / double check data type for **CFS**, **ACFT**, **ACRES**, **PRIORITY** fields.
-- Create WaDE *WaterSourceTypeCV* field (see custom dictionary) using **TYPE** field.
-- Create WaDE *SiteTypeCV* field (see custom dictionary) using **SOURCE** field (mostly cleaning input text).
 - Create WaDE *LegalStatusCV* field (see custom dictionary) using **STATUS** field (mostly cleaning input text).  For UT, we don't want water rights that are considered: Rejected, Disallowed, Withdrawn, Temp Applications, Unapproved, Forfeited, Lapsed, Expired, Terminated
 - Generate WaDE specific field *WaterSourceNativeID* from WaDE *WaterSourceTypeCV* fields.  Used to identify unique sources of water.
 - Extract geometry values POU shapefile, merge to records using **RECORD_ID** field.
@@ -137,10 +135,10 @@ Purpose: generate a list of water sources specific to a water right.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign agency info to the *WaDE WaterSources* specific columns.  See *[UT_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Utah/WaterAllocation/UT_Allocation%20Schema%20Mapping_WaDEQA.xlsx)* for specific details.  Items of note are as follows...
-    - *WaterSourceName* = Unspecified.
-    - *WaterSourceNativeID* = *in_WaterSourceNativeID*, see *0_PreProcessUtahAllocationData.ipynb* for specifics.
-    - *WaterSourceTypeCV* = *in_WaterSourceTypeCV*, see *0_PreProcessUtahAllocationData.ipynb* for specifics.
+- Assign agency info to the *WaDE WaterSources* specific columns.  See *UTwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+    - *WaterSourceName* = "".
+    - *WaterSourceNativeID* = *in_WaterSourceNativeID*, see *1_UTwr_PreProcessAllocationData.ipynb* for specifics.
+    - *WaterSourceTypeCV* = **SOURCE** input.
 - Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceName* & *WaterSourceTypeCV* fields.
 - Assign water source UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
@@ -163,14 +161,12 @@ Purpose: generate a list of sites information.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
-- Assign agency info to the *WaDE Site* specific columns.  See *[UT_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Utah/WaterAllocation/UT_Allocation%20Schema%20Mapping_WaDEQA.xlsx)* for specific details.  Items of note are as follows...
+- Assign agency info to the *WaDE Site* specific columns.  See *UTwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *WaterSourceUUID* from waterSources.csv input csv file. See code for specific implementation of extraction.
-    - *Geometry* = extracted from POU shapefile, see *0_PreProcessUtahAllocationData.ipynb* for specifics.
+    - *Geometry* = extracted from POU shapefile, see *1_UTwr_PreProcessAllocationData.ipynb* for specifics.
     - *Latitude* = **Latitude**.
     - *Longitude* = **Longitude**.
-    - *SiteName* = **SOURCE**, Unspecified if not given.
     - *SiteNativeID* = **OBJECTID** for POD data, and **RECORD_ID** for POU data.
-    - *SiteTypeCV* = *in_SiteTypeCV*, see *0_PreProcessUtahAllocationData.ipynb* for specifics.
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *SiteNativeID*, *SiteName*, *SiteTypeCV*, *Longitude* & *Latitude* fields.
 - Assign site UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
@@ -194,11 +190,11 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
-- Assign agency info to the *WaDE Water Allocations* specific columns.  See *[UT_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Utah/WaterAllocation/UT_Allocation%20Schema%20Mapping_WaDEQA.xlsx)* for specific details.  Items of note are as follows...
+- Assign agency info to the *WaDE Water Allocations* specific columns.  See *UTwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *AllocationFlow_CFS* = **CFS**.
     - *AllocationVolume_AF* = **ACFT**.
-    - *AllocationLegalStatusCV* = *in_LegalStatus*, see *0_PreProcessUtahAllocationData.ipynb* for specifics. 
+    - *AllocationLegalStatusCV* = *in_LegalStatus*, see *1_UTwr_PreProcessAllocationData.ipynb* for specifics. 
     - *AllocationNativeID* = **WRNUM**.
     - *AllocationOwner* =  **OWNER**.
     - *AllocationPriorityDate* = **PRIORITY**.
@@ -244,6 +240,45 @@ Note: podsitetopousiterelationships.csv output only needed if both POD and POU d
 - Explode the consolidated waterallocations dataframe again using the _PODSiteUUID_ field, and again for the _POUSiteUUID_ field to create unique rows.
 - Perform error check on waterallocations dataframe (check for NaN values)
 - If waterallocations is not empty, export output dataframe _podsitetopousiterelationships.csv_.
+
+
+***
+## Source Data & WaDE Complied Data Assessment
+The following info is from a data assessment evaluation of the completed data...
+
+Dataset | Num of Source Entries (rows) | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
+---------- | ---------- | ------------ | ------------ | ------------
+**Utah_Points_of_Diversion** | 382,049 | N/A | N/A | N/A
+**Utah_Place_of_Use_Irrigation** | 76,449 | N/A | N/A | N/A
+**Compiled WaDE Data** | N/A | 220,029 | 56,888 | 150,745
+
+Assessment of Removed Source Records | Count | Action
+---------- | ---------- | ----------
+Incomplete or bad entry for Latitude | 1 | Removed from WaDE
+
+**Figure 1:** Distribution of POD vs POU Sites within the sites.csv
+![](figures/PODorPOUSite.png)
+
+**Figure 2:** Distribution Sites by WaterSourceTypeCV within the sites.csv
+![](figures/WaterSourceTypeCV.png)
+
+**Figure 3:** Distribution of Identified Water Right Records by WaDE Categorized Primary Beneficial Uses within the waterallocations.csv
+![](figures/PrimaryBeneficialUseCategory.png)
+
+**Figure 4:** Range of Priority Date of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationPriorityDate.png)
+
+**Figure 5:** Distribution & Range of Flow (CFS) of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationFlow_CFS.png)
+
+**Figure 6:** Distribution & Range of Volume (AF) of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationVolume_AF.png)
+
+**Figure 7:** Map of Identified Points within the sites.csv
+![](figures/PointMap.png)
+
+**Figure 8:** Map of Identified Polygons within the sites.csv
+![](figures/PolyMap.png)
 
 
 ***
