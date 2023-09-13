@@ -261,10 +261,12 @@ Incomplete or bad entry for Latitude | 1 | Removed from WaDE
 ![](figures/PrimaryBeneficialUseCategory.png)
 
 **Figure 4:** Range of Priority Date of Identified Water Right Records within the waterallocations.csv
-![](figures/AllocationPriorityDate.png)
+- data is considered exempt and does not have a Priority Date value
+<!-- ![](figures/AllocationPriorityDate.png) -->
 
 **Figure 5:** Distribution & Range of Flow (CFS) of Identified Water Right Records within the waterallocations.csv
-![](figures/AllocationFlow_CFS.png)
+- only volume values were provided
+<!-- ![](figures/AllocationFlow_CFS.png) -->
 
 **Figure 6:** Distribution & Range of Volume (AF) of Identified Water Right Records within the waterallocations.csv
 ![](figures/AllocationVolume_AF.png)
