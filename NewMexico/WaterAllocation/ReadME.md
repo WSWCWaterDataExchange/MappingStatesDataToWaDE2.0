@@ -13,17 +13,6 @@ Name | Description | Download Link | Metadata Glossary Link
 The following unique source files were used as inputs...
  - OSE_PODst.zip
 
-The following info is from a data assessment evaluation of the completed data...
-
-Dataset | Num of Source Entries (rows) | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
----------- | ---------- | ------------ | ------------ | ------------
-OSE PODs | 265,651 | N/A | N/A | N/A
-WestDAAT | N/A | 265,649 | 0 | 217,110
-
-Assessment of Removed Records | Count | Action
----------- | ---------- | ----------
-Incomplete or bad entry for Latitude | 1 | Removed from WestDAAT
-
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
 The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), 2) WaDE input csv processed data files ready to load into the WaDE database, & 3) data assessment figures and reports overviewing the native state data and which records could not be used, can all be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
@@ -250,8 +239,42 @@ Note: podsitetopousiterelationships.csv output only needed if both POD and POU d
 
 
 ***
-## Data Assessment Figures
-![PODorPOUSite](figures/PODorPOUSite.png)
+## Source Data & WaDE Complied Data Assessment
+The following info is from a data assessment evaluation of the completed data...
+
+Dataset | Num of Source Entries (rows) | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
+---------- | ---------- | ------------ | ------------ | ------------
+OSE PODs | 265,651 | N/A | N/A | N/A
+WestDAAT | N/A | 265,649 | 0 | 217,110
+
+Assessment of Removed Source Records | Count | Action
+---------- | ---------- | ----------
+Incomplete or bad entry for Latitude | 1 | Removed from WaDE
+
+
+![](figures/PODorPOUSite.png)
+**Figure 1:** Distribution of POD vs POU Sites within the sites.csv
+
+![](figures/WaterSourceTypeCV.png)
+**Figure 2:** Distribution Sites by WaterSourceTypeCV within the sites.csv
+
+![](figures/PrimaryBeneficialUseCategory.png)
+**Figure 3:** Distribution of Identified Water Right Records by WaDE Categorized Primary Beneficial Uses within the waterallocations.csv
+
+![](figures/AllocationPriorityDate.png)
+**Figure 4:** Range of Priority Date of Identified Water Right Records within the waterallocations.csv
+
+![](figures/AllocationFlow_CFS.png)
+**Figure 5:** Distribution & Range of Flow (CFS) of Identified Water Right Records within the waterallocations.csv
+
+![](figures/AllocationVolume_AF.png)
+**Figure 6:** Distribution & Range of Volume (AF) of Identified Water Right Records within the waterallocations.csv
+
+![](figures/PointMap.png)
+**Figure 7:** Map of Identified Points within the sites.csv
+
+![](figures/PolyMap.png)
+**Figure 8:** Map of Identified Polygons within the sites.csv
 
 
 ***
