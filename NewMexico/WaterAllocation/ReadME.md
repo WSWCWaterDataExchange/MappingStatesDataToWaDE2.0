@@ -251,15 +251,11 @@ Assessment of Removed Source Records | Count | Action
 ---------- | ---------- | ----------
 Incomplete or bad entry for Latitude | 1 | Removed from WaDE
 
-
+**Figure 1:** Distribution of POD vs POU Sites within the sites.csv
 ![](figures/PODorPOUSite.png)
 
-**Figure 1:** Distribution of POD vs POU Sites within the sites.csv
-
-
-![](figures/WaterSourceTypeCV.png)
-
 **Figure 2:** Distribution Sites by WaterSourceTypeCV within the sites.csv
+![](figures/WaterSourceTypeCV.png)
 
 
 ![](figures/PrimaryBeneficialUseCategory.png)
