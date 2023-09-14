@@ -13,7 +13,7 @@ Name | Description | Download Link | Metadata Glossary Link
 
 
 ## Storage for input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
-- Arizona Allocation Data: https://drive.google.com/drive/folders/1qxIpa1mGkvChepI4PA7xzIEbs7xuPSJZ?usp=sharing
+- Arizona Allocation Data: https://drive.google.com/drive/folders/1PTvL2OH-po4MXKupardY0vJWhnLnG089
 
 
 ## Summary of Data Prep
@@ -48,16 +48,17 @@ Purpose: Pre-process the state agency's input data files and merge them into one
     - Units with AF include 'Acre-Feet', 'Acre-Feet Total', 'CFT - Cubic Feet Total' (converted to AF by / 43559.9), 'Gallons' (converted to AF by / 325850.943).
     - Convert **X_UTMNAD83** and **Y_UTMNAD83** input fields to match WGS84 projection and create *latitude* and *longitude* values.
 - Concatenate groundwater and surface water data into single output dataframe.
+- For this ADWR, drop non-active AllocationLegalStatusCV values specific to: "INACTIVE - WITHDRAWN", "INACTIVE - CONSOLIDATED", "INACTIVE - AMENDED", "INACTIVE - CANCELLED", "INACTIVE - REJECTED", "INACTIVE - PARTIAL T&S", "INACTIVE - RELINQUISHED", "INACTIVE - FULL T&S", "INACTIVE - INACTIVE", "INACTIVE - FULL ASSIGNMENT", "INACTIVE - PARTIAL ASSIGNMENT"
 - Inspect output dataframe for additional errors / datatypes.
 - Export output dataframe as new csv file, *Pwr_azMain.csv*.
 
 
 ***
-## Code File: 2_NMwr_CreateWaDEInputFiles.ipynb
+## Code File: 2_AZwr_CreateWaDEInputFiles.ipynb
 Purpose: generate WaDE csv input files (methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, podsitetopousiterelationships.csv).
 
 #### Inputs:
-- Pwr_NMMain.zip
+- Pwr_azMain.zip
 
 #### Outputs:
 - methods.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
@@ -128,7 +129,7 @@ Purpose: generate a list of water sources specific to a water right.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign agency data info to the *WaDE WaterSources* specific columns.  See **AZ_SW_Allocation Schema Mapping to WaDE_QA.xlsx** and **AZ_GW_Allocation Schema Mapping to WaDE_QA.xlsx** for specific details.  Items of note are as follows...
+- Assign agency data info to the *WaDE WaterSources* specific columns.  See *AZSWwr_Allocation Schema Mapping to WaDE.xlsx* & *AZGWwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - *WaterSourceName* = Unspecified for gw, & **WATERSOURC** for sw.
     - *WaterSourceTypeCV* = *groundwater/well* for gw, & *Surface Water* for sw.
 - Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceTypeCV* fields.
@@ -153,11 +154,11 @@ Purpose: generate a list of sites where water is diverted (also known as Points 
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
-- Assign state agency info to the *WaDE Site* specific columns.  See **AZ_SW_Allocation Schema Mapping to WaDE_QA.xlsx** and **AZ_GW_Allocation Schema Mapping to WaDE_QA.xlsx** for specific details.  Items of note are as follows...
+- Assign state agency info to the *WaDE Site* specific columns.  See *AZSWwr_Allocation Schema Mapping to WaDE.xlsx* & *AZGWwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *WaterSourceUUID* from watersource.csv input file. See code for specific implementation of extraction.
     - *County* = **COUNTY** for both gw and sw data.
-    - *Latitude* = converted **UTM_Y_METE** projection from ADWR EPSG:2927 -to- WaDE EPSG:4326, see *0_AZwr_PreProcessAllocationData.ipynb* for details.
-    - *Longitude* = converted **UTM_Y_METE**  to utm & dWGS84 projection, see *0_AZwr_PreProcessAllocationData.ipynb* for details.
+    - *Latitude* = converted **UTM_Y_METE** projection from ADWR EPSG:2927 -to- WaDE EPSG:4326, see *1_AZwr_PreProcessAllocationData.ipynb* for details.
+    - *Longitude* = converted **UTM_Y_METE**  to utm & dWGS84 projection, see *1_AZwr_PreProcessAllocationData.ipynb* for details.
     - *SiteNativeID* = **REGISTRY_I** for gw & **CADASTRAL** for sw, Unspecified if blank.
     - *SiteTypeCV* = **WELL_TYPE_** for gw & Unspecified for sw, Unspecified if blank.
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *SiteNativeID*, *SiteTypeCV*, *Longitude*, and *Latitude* fields.
@@ -183,15 +184,15 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
-- Assign state agency info to the *WaDE Water Allocations* specific columns.  See **AZ_SW_Allocation Schema Mapping to WaDE_QA.xlsx** and **AZ_GW_Allocation Schema Mapping to WaDE_QA.xlsx** for specific details.  Items of note are as follows...
+- Assign state agency info to the *WaDE Water Allocations* specific columns.  See *AZSWwr_Allocation Schema Mapping to WaDE.xlsx* & *AZGWwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
-    - *AllocationFlow_CFS* =**QUANTITY**, see *0_AZwr_PreProcessAllocationData.ipynb* for specifics.
+    - *AllocationFlow_CFS* = **PUMPRATE** for gw, **QUANTITY** for sw, see *1_AZwr_PreProcessAllocationData.ipynb* for specifics.
     - *AllocationLegalStatusCV* = **STATUS_x** for sw.
     - *AllocationNativeID* = **REGISTRY_I** for gw & **FILE_NO** for sw.
     - *AllocationOwner* = **OWNER_NAME** for gw & **HLDRNAME** for sw.
     - *AllocationPriorityDate* = **PRIOR_DATE** for sw.
     - *AllocationLegalStatus* = **WELL_TYPE_** for gw.
-    - *BeneficialUseCategory* = **WATER_USE** for gw & **REG. NO** for sw, see *0_AZwr_PreProcessAllocationData.ipynb* for specifics.
+    - *BeneficialUseCategory* = **WATER_USE** for gw & **REG. NO** for sw, see *1_AZwr_PreProcessAllocationData.ipynb* for specifics.
     - *IrrigatedAcreage* - **IrrigatedAreaQuantity**.
 - Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.
 - Perform error check on output dataframe.
@@ -233,6 +234,55 @@ Note: podsitetopousiterelationships.csv output only needed if both POD and POU d
 - Explode the consolidated waterallocations dataframe again using the _PODSiteUUID_ field, and again for the _POUSiteUUID_ field to create unique rows.
 - Perform error check on waterallocations dataframe (check for NaN values)
 - If waterallocations is not empty, export output dataframe _podsitetopousiterelationships.csv_.
+
+
+***
+## Source Data & WaDE Complied Data Assessment
+The following info is from a data assessment evaluation of the completed data...
+
+Dataset | Num of Source Entries (rows) | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
+---------- | ---------- | ------------ | ------------ | ------------
+**Well Registry** | 229,051 | N/A | N/A  | N/A 
+**SW QUERY BY SURFACE WATERSHEDS** | 256,140 | N/A  | N/A  | N/A 
+**WaDE** | N/A | 156,411 | 35,791 | 267,304
+
+Assessment of Removed Source Records | Count | Action
+---------- | ---------- | ----------
+Unused WaterSource Record | 1,337 | Removed from watersource.csv
+Dual County value provided | 1213 | Removed from sites.csv
+Incomplete or bad entry for Latitude | 778 | Removed from sites.csv
+Wrong value entry for Latitude | 409 | Removed from sites.csv
+Too many ws records to a single site | 9 | Removed from waterallocation.csv
+Too many sites applied to a single record | 16240 | Removed from waterallocation.csv
+Dual AllocationPriorityDate value provided | 2632 | Removed from waterallocation.csv
+Dual Flow provided / missing value | 1375 | Removed from waterallocation.csv
+Incomplete or bad entry for VariableSpecificUUID | 1133 | Removed from waterallocation.csv
+Dual Volume provided / missing value | 16 | Removed from waterallocation.csv
+
+**Figure 1:** Distribution of POD vs POU Sites within the sites.csv
+![](figures/PODorPOUSite.png)
+
+**Figure 2:** Distribution Sites by WaterSourceTypeCV within the sites.csv
+![](figures/WaterSourceTypeCV.png)
+
+**Figure 3:** Distribution of Identified Water Right Records by WaDE Categorized Primary Beneficial Uses within the waterallocations.csv
+![](figures/PrimaryBeneficialUseCategory.png)
+
+**Figure 4:** Range of Priority Date of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationPriorityDate.png)
+
+**Figure 5:** Distribution & Range of Flow (CFS) of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationFlow_CFS.png)
+
+**Figure 6:** Distribution & Range of Volume (AF) of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationVolume_AF.png)
+
+**Figure 7:** Map of Identified Points within the sites.csv
+![](figures/PointMap.png)
+
+**Figure 8:** Map of Identified Polygons within the sites.csv
+- No geometry (polygon) data provided.
+<!-- ![](figures/PolyMap.png) -->
 
 
 ***
