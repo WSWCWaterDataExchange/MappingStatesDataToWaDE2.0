@@ -232,8 +232,8 @@ Dataset | Num of Source Entries (rows) | Num of Identified PODs | Num of Identif
 **WaDE** | N/A  | 124,792 | N/A  | 229,051
 
 **Figure 1:** Distribution of POD vs POU Sites within the sites.csv
-- Just POD sites
-![](figures/PODorPOUSite.png)
+- Just POD sites provided, see count above
+<!-- ![](figures/PODorPOUSite.png) -->
 
 **Figure 2:** Distribution Sites by WaterSourceTypeCV within the sites.csv
 - just single groundwater type
