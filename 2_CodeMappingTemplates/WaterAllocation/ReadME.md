@@ -272,7 +272,7 @@ The following info is from a data assessment evaluation of the completed data...
 Dataset | Num of Source Entries (rows) | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
 ---------- | ---------- | ------------ | ------------ | ------------
 "fill value here" | "fill value here" | "fill value here" | "fill value here" | "fill value here"
-"fill value here" | "fill value here" | "fill value here" | "fill value here" | "fill value here"
+**Compiled WaDE Data** | "fill value here" | "fill value here" | "fill value here" | "fill value here"
 
 Assessment of Removed Source Records | Count | Action
 ---------- | ---------- | ----------
@@ -287,8 +287,11 @@ Incomplete or bad entry for Latitude | 1 | Removed from WaDE
 **Figure 3:** Distribution of Identified Water Right Records by WaDE Categorized Primary Beneficial Uses within the waterallocations.csv
 ![](figures/PrimaryBeneficialUseCategory.png)
 
-**Figure 4:** Range of Priority Date of Identified Water Right Records within the waterallocations.csv
-![](figures/AllocationPriorityDate.png)
+**Figure 4a:** Range of Priority Date of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationPriorityDate1.png)
+
+**Figure 4b:** Cumulative distribution of Priority Date of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationPriorityDate2.png)
 
 **Figure 5:** Distribution & Range of Flow (CFS) of Identified Water Right Records within the waterallocations.csv
 ![](figures/AllocationFlow_CFS.png)
