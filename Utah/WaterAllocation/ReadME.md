@@ -254,7 +254,8 @@ Dataset | Num of Source Entries (rows) | Num of Identified PODs | Num of Identif
 
 Assessment of Removed Source Records | Count | Action
 ---------- | ---------- | ----------
-Incomplete or bad entry for Latitude | 1 | Removed from WaDE
+Unused WaterSource Record  | 634 | Removed from watersources.csv
+Incomplete or bad entry for Latitude | 1 | Removed from site.csv
 
 **Figure 1:** Distribution of POD vs POU Sites within the sites.csv
 ![](figures/PODorPOUSite.png)
@@ -265,8 +266,11 @@ Incomplete or bad entry for Latitude | 1 | Removed from WaDE
 **Figure 3:** Distribution of Identified Water Right Records by WaDE Categorized Primary Beneficial Uses within the waterallocations.csv
 ![](figures/PrimaryBeneficialUseCategory.png)
 
-**Figure 4:** Range of Priority Date of Identified Water Right Records within the waterallocations.csv
-![](figures/AllocationPriorityDate.png)
+**Figure 4a:** Range of Priority Date of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationPriorityDate1.png)
+
+**Figure 4b:** Cumulative distribution of Priority Date of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationPriorityDate2.png)
 
 **Figure 5:** Distribution & Range of Flow (CFS) of Identified Water Right Records within the waterallocations.csv
 ![](figures/AllocationFlow_CFS.png)
