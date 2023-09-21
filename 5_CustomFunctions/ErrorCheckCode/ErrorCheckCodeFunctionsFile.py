@@ -193,7 +193,7 @@ def AggregatedAmountsErrorFunctions(outdf, dfpurge):
     outdf, dfpurge = PopulationServed_AG_Check(outdf, dfpurge)
     outdf, dfpurge = PowerGeneratedGWh_AG_Check(outdf, dfpurge)
     outdf, dfpurge = PowerType_AG_Check(outdf, dfpurge)
-    outdf, dfpurge = PrimaryUseCategory_AG_Check(outdf, dfpurge)
+    outdf, dfpurge = PrimaryUseCategoryCV_AG_Check(outdf, dfpurge)
     outdf, dfpurge = ReportYearCV_AG_Check(outdf, dfpurge)
     outdf, dfpurge = SDWISIdentifierCV_AG_Check(outdf, dfpurge)
     outdf, dfpurge = TimeframeEnd_AG_Check(outdf, dfpurge)
@@ -377,7 +377,7 @@ def HUC8_S_Check(dfx, dfy):
 
 # Latitude_float_-
 def Latitude_S_Check(dfx, dfy):
-    selectionVar = (dfx["Latitude"].isnull()) | (dfx["Latitude"].astype(str) == "") | (dfx["Latitude"].astype(str).str.contains(",")) | (dfx["Latitude"] == 0)
+    selectionVar = (dfx["Latitude"].isnull()) | (dfx["Latitude"].astype(str) == "") | (dfx["Latitude"].astype(str).str.contains(",")) | (dfx["Latitude"].astype(float) == 0.0) | (dfx["Latitude"].astype(float) < -91) | (dfx["Latitude"].astype(float) > 91)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Latitude').reset_index()
     mask['IncompleteField'] = mask['Latitude']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -386,7 +386,7 @@ def Latitude_S_Check(dfx, dfy):
 
 # Longitude_float_-
 def Longitude_S_Check(dfx, dfy):
-    selectionVar = (dfx["Longitude"].isnull()) | (dfx["Longitude"].astype(str) == "") | (dfx["Longitude"].astype(str).str.contains(",")) | (dfx["Longitude"] == 0)
+    selectionVar = (dfx["Longitude"].isnull()) | (dfx["Longitude"].astype(str) == "") | (dfx["Longitude"].astype(str).str.contains(",")) | (dfx["Longitude"].astype(float) == 0.0 ) | (dfx["Longitude"].astype(float) < -181) | (dfx["Longitude"].astype(float) > 181)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Longitude').reset_index()
     mask['IncompleteField'] = mask['Longitude']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -772,7 +772,7 @@ def AllocationExpirationDate_AA_Check(dfx, dfy):
 
 # AllocationFlow_CFS_float_Yes
 def AllocationFlow_CFS_AA_Check(dfx, dfy):
-    selectionVar = ((dfx['ExemptOfVolumeFlowPriority'] == "0") & (dfx['AllocationFlow_CFS'].astype(str).str.contains(',')))
+    selectionVar = (dfx['ExemptOfVolumeFlowPriority'] == "0") & ((dfx['AllocationFlow_CFS'].astype(str).str.contains(',')) | (dfx['AllocationFlow_CFS'].astype(float) < 0.0))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Flow').reset_index()
     mask['IncompleteField'] = mask['AllocationFlow_CFS']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -781,7 +781,7 @@ def AllocationFlow_CFS_AA_Check(dfx, dfy):
 
 # AllocationVolume_AF_float_Yes
 def AllocationVolume_AF_AA_Check(dfx, dfy):
-    selectionVar = ((dfx['ExemptOfVolumeFlowPriority'] == "0") & (dfx['AllocationVolume_AF'].astype(str).str.contains(',')))
+    selectionVar = (dfx['ExemptOfVolumeFlowPriority'] == "0") & ((dfx['AllocationVolume_AF'].astype(str).str.contains(',')) | (dfx['AllocationVolume_AF'].astype(float) < 0.0))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Volume').reset_index()
     mask['IncompleteField'] = mask['AllocationVolume_AF']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -1151,7 +1151,7 @@ def InterbasinTransferToID_AG_Check(dfx, dfy):
 
 # IrrigatedAcreage_float_Yes
 def IrrigatedAcreage_AG_Check(dfx, dfy):
-    selectionVar = (dfx['IrrigatedAcreage'].str.contains(','))
+    selectionVar = (dfx['IrrigatedAcreage'].astype(str).str.contains(','))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for IrrigatedAcreage').reset_index()
     mask['IncompleteField'] = mask['IrrigatedAcreage']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -1194,11 +1194,11 @@ def PowerType_AG_Check(dfx, dfy):
     return (dfx, dfy)
 
 
-# PrimaryUseCategory_nvarchar(100)_Yes
-def PrimaryUseCategory_AG_Check(dfx, dfy):
-    selectionVar = (dfx["PrimaryUseCategory"].str.len() > 100)
-    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for PrimaryUseCategory').reset_index()
-    mask['IncompleteField'] = mask['PrimaryUseCategory']
+# PrimaryUseCategoryCV_nvarchar(100)_Yes
+def PrimaryUseCategoryCV_AG_Check(dfx, dfy):
+    selectionVar = (dfx["PrimaryUseCategoryCV"].str.len() > 100)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for PrimaryUseCategoryCV').reset_index()
+    mask['IncompleteField'] = mask['PrimaryUseCategoryCV']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
 

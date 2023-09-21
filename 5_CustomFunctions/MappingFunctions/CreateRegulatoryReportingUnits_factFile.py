@@ -82,6 +82,8 @@ def CreateRegulatoryReportingUnitsInputFunction(workingDirString, mainInputFile)
 
     print("DataPublicationDate")
     outdf['DataPublicationDate'] = (date.today() - timedelta(days = 1)).strftime('%m/%d/%Y')
+    outdf['DataPublicationDate'] = pd.to_datetime(outdf['DataPublicationDate'], errors='coerce')
+    outdf['DataPublicationDate'] = pd.to_datetime(outdf['DataPublicationDate'].dt.strftime('%m/%d/%Y'))
 
     print("OrganizationUUID")
     outdf['OrganizationUUID'] = df['in_OrganizationUUID']
