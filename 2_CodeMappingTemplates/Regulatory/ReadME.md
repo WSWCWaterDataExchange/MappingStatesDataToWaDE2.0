@@ -1,5 +1,5 @@
 # "{state / organization name}" Regulatory Overview Data Preparation for WaDE
-This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting New Mexico regulatory overlay area data, made available by the ["{state / organization name}"]("{http web link address to state / organization name}"), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and cost-effective way.
+This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting regulatory overlay area data, made available by the ["{state / organization name}"]("{http web link address to state / organization name}"), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and cost-effective way.
 
 
 ## Overview of Source Data Utilized
@@ -9,7 +9,7 @@ Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
 **"{name of data}"** | description of data | [link]("{https web link address to where data can be downloaded from}") | [link]("{https web link address to meta-data}")
 
-"{number of input files found and used}" unique files were created to be used as input.  Input files used are as follows...
+Unique files were created to be used as input.  Input files used are as follows...
 - "{name of data file}.data file type"
 
 
@@ -19,12 +19,12 @@ The 1) raw input data shared by the state / state agency / data provider (excel,
 
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share NMOSE's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *XXre_RegulatoryInfo Schema Mapping to WaDE.xlsx*. Several WaDE csv input files will be created in order to extract the water rights data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
+The following text summarizes the process used by the WSWC staff to prepare and share the state's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *XXre_RegulatoryInfo Schema Mapping to WaDE.xlsx*. Several WaDE csv input files will be created in order to extract the water rights data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
 
 - **1_XXre_PreProcessRegulatoryData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
 - **2_XXre_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: date.csv, organization.csv, reportingunits.csv, regulatoryoverlays.csv, regulatoryreportingunits.csv, sites.csv, etc.
 - **3_XXre_WRSiteRegulatoryID.ipynb**: used to pair regulatory overlay information to water allocation information using an overlay on water allocation site information within the boundaries of the regulation.
-- **4_XXwr_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
+- **4_XXre_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
 
 
 ***
@@ -35,12 +35,12 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 - "{name of data file}.data file type"
 
 #### Outputs:
- - Pwr_xxMain.zip
+ - Pre_xxMain.zip
  - P_Geometry.zip
 
 #### Operation and Steps:
 - "{describe how the data was pre-processed}"
-- Export output dataframe as new csv file, *P_nmRegMaster.csv* for tabular data and *P_nmRegGeometry.csv* for geometry data.
+- Export output dataframe as new csv file, *Pre_xxMain.csv* for tabular data and *P_Geometry.csv* for geometry data.
 
 
 ***
@@ -48,7 +48,7 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 Purpose: generate WaDE csv input files (date.csv, organizations.csv, reportingunits.csv, regulatoryoverlays.csv, regulatoryreportingunits.csv, sites.csv).
 
 #### Inputs:
-- Pwr_xxMain.zip
+- Pre_xxMain.zip
 - P_Geometry.zip
 
 #### Outputs:
@@ -169,10 +169,10 @@ Purpose: generate master sheet of regulatory overlay area information and how it
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Regulatory Reportingunits* specific columns.
 - Assign state agency data info to the *WaDE Regulatory Reportingunits* specific columns.  See *XXre_RegulatoryInfo Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
-    -*DataPublicationDate* = ""
-    - *OrganizationUUID* = ""
-    - *RegulatoryOverlayUUID* = ""
-    - *ReportingUnitUUID* = ""
+    - *DataPublicationDate* = use date of file creation
+    - *OrganizationUUID* = pull from organization.csv
+    - *RegulatoryOverlayUUID* = pull form regulatoryoverlay.csv
+    - *ReportingUnitUUID* = pull from reportingunit.csv
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *ReportingUnitName*, *ReportingUnitNativeID* & *ReportingUnitTypeCV* fields.
 - Assign reportingunits UUID identifier to each (unique) row.
 - Perform error check on output dataframe.

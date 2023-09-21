@@ -5,40 +5,43 @@
 # Needed Libraries
 ############################################################################
 import os
+import sys
 import numpy as np
 import pandas as pd
 import re
 from datetime import date
+from datetime import timedelta
+
 
 
 # Custom Libraries
 ############################################################################
-import sys
+
 # columns
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/MappingFunctions")
+sys.path.append("../../5_CustomFunctions/MappingFunctions")
 import GetColumnsFile
 
 # Assign Primary Use Category fix
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/AssignPrimaryUseCategory")
-import AssignPrimaryUseCategory
+sys.path.append("../../5_CustomFunctions/AssignPrimaryUseCategory")
+import AssignPrimaryUseCategoryFile
 
 # Test WaDE Data for any Errors
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/ErrorCheckCode")
+sys.path.append("../../5_CustomFunctions/ErrorCheckCode")
 import ErrorCheckCodeFunctionsFile
 
 # Clean data and data types
-sys.path.append("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/CleanDataCode")
+sys.path.append("../../5_CustomFunctions/CleanDataCode")
 import CleanDataCodeFunctionsFile
 
 
 # Create File Function
 ############################################################################
-def CreateAggregatedAmountsInputFunction(varST, varSTName, varUUIDType, varWaDEDataType, mainInputFile):
+def CreateAggregatedAmountsInputFunction(workingDirString, mainInputFile):
 
     # Inputs
     ############################################################################
     print("Reading input csv...")
-    workingDir = "G:/Shared drives/WaDE Data/" + varSTName + "/" + varWaDEDataType
+    workingDir = workingDirString
     os.chdir(workingDir)
     fileInput = "RawinputData/" + mainInputFile
     df = pd.read_csv(fileInput, compression='zip')
@@ -116,7 +119,7 @@ def CreateAggregatedAmountsInputFunction(varST, varSTName, varUUIDType, varWaDED
     outdf['CustomerTypeCV'] = df['in_CustomerTypeCV']
 
     print("DataPublicationDate")
-    outdf['DataPublicationDate'] = date.today().strftime('%m/%d/%Y')
+    outdf['DataPublicationDate'] = (date.today() - timedelta(days = 1)).strftime('%m/%d/%Y')
 
     print("DataPublicationDOI")
     outdf['DataPublicationDOI'] = df['in_DataPublicationDOI']
@@ -142,8 +145,8 @@ def CreateAggregatedAmountsInputFunction(varST, varSTName, varUUIDType, varWaDED
     print("PowerType")
     outdf['PowerType'] = df['in_PowerType']
 
-    print("PrimaryUseCategory")
-    outdf['PrimaryUseCategory'] = df['in_PrimaryUseCategory']
+    print("PrimaryUseCategoryCV")
+    outdf['PrimaryUseCategoryCV'] = df['in_PrimaryUseCategoryCV']
 
     print("ReportYearCV")
     outdf['ReportYearCV'] = df['in_ReportYearCV']
@@ -169,7 +172,7 @@ def CreateAggregatedAmountsInputFunction(varST, varSTName, varUUIDType, varWaDED
 
     # Temp solution to populate PrimaryBeneficialUseCategory field.
     # Use Custom import file
-    outdf['PrimaryUseCategoryCV'] = outdf.apply(lambda row: AssignPrimaryUseCategory.retrievePrimaryUseCategory(row['BeneficialUseCategory']), axis=1)
+    outdf['PrimaryUseCategoryCV'] = outdf.apply(lambda row: AssignPrimaryUseCategoryFile.retrievePrimaryUseCategory(row['BeneficialUseCategory']), axis=1)
 
 
     # Error Checking Each Field

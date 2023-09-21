@@ -10,6 +10,8 @@ import numpy as np
 import pandas as pd
 import re
 from datetime import date
+from datetime import timedelta
+
 
 
 # Custom Libraries
@@ -163,7 +165,7 @@ def CreateAllocationsAmounts_factsInputFunction(workingDirString, varST, varUUID
     outdf['CustomerTypeCV'] = df['in_CustomerTypeCV']
 
     print("DataPublicationDate")
-    outdf['DataPublicationDate'] = date.today().strftime('%m/%d/%Y')
+    outdf['DataPublicationDate'] = (date.today() - timedelta(days = 1)).strftime('%m/%d/%Y')
 
     print("DataPublicationDOI")
     outdf['DataPublicationDOI'] = df['in_DataPublicationDOI']

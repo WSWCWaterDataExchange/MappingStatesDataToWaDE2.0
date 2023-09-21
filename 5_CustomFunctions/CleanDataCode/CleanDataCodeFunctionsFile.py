@@ -13,10 +13,9 @@ import pandas as pd
 # Function
 ############################################################################
 
-
 def fixEmptyStringFunc(val):
     val = str(val).strip()
-    if val == "" or val == " " or val == "nan" or val == "nan,nan" or pd.isnull(val):
+    if val == "" or val == " " or val == "  " or val == "nan" or val == "nan,nan" or pd.isnull(val):
         outString = "WaDE Blank"
     else:
         outString = val
