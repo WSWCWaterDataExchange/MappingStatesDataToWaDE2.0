@@ -261,6 +261,60 @@ Note: podsitetopousiterelationships.csv output only needed if both POD and POU d
 - If waterallocations is not empty, export output dataframe _podsitetopousiterelationships.csv_.
 
 
+***
+## Source Data & WaDE Complied Data Assessment
+The following info is from a data assessment evaluation of the completed data...
+
+Dataset | Num of Source Entries (rows) | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
+---------- | ---------- | ------------ | ------------ | ------------
+**Point of diversion (POD)_GW** | 2,323 | -| -| -
+**Point of diversion (POD)_SW** | 9,659 | -| -| -
+**Place of Use (POU)** | 491,676 | -| -| -
+**WaDE Imports** | - | 9742 | 61803 | 70430
+
+
+Assessment of Removed Source Records | Count | Action
+---------- | ---------- | ----------
+Unused WaterSource Record | 53 | Removed from watersource.csv
+Unused Site Record | 2396 | Removed from sites.csv
+Incomplete or bad entry for Latitude | 1108 | Removed from sites.csv
+Too many entries / too long of entry for SiteName | 951 | Removed from sites.csv
+MUltiple entries for SiteTypeCV | 5 | Removed from sites.csv
+Incomplete or bad entry for SiteUUID | 1599 | Removed from waterallocations.csv
+Incomplete or bad entry for IrrigationMethodCV | 311 | Removed from waterallocations.csv
+Incomplete or bad entry for AllocationPriorityDate | 125 | Removed from waterallocations.csv
+Incomplete or bad entry for Flow | 123 | Removed from waterallocations.csv
+Incomplete or bad entry for AllocationLegalStatusCV |  6 | Removed from waterallocations.csv
+
+**Figure 1:** Distribution of POD vs POU Sites within the sites.csv
+![](figures/PODorPOUSite.png)
+
+**Figure 2:** Distribution Sites by WaterSourceTypeCV within the sites.csv
+![](figures/WaterSourceTypeCV.png)
+
+**Figure 3:** Distribution of Identified Water Right Records by WaDE Categorized Primary Beneficial Uses within the waterallocations.csv
+![](figures/PrimaryBeneficialUseCategory.png)
+
+**Figure 4a:** Range of Priority Date of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationPriorityDate1.png)
+
+**Figure 4b:** Cumulative distribution of Priority Date of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationPriorityDate2.png)
+
+**Figure 5:** Distribution & Range of Flow (CFS) of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationFlow_CFS.png)
+
+**Figure 6:** Distribution & Range of Volume (AF) of Identified Water Right Records within the waterallocations.csv
+- No Volume data provided
+<!-- ![](figures/AllocationVolume_AF.png) -->
+
+**Figure 7:** Map of Identified Points within the sites.csv
+![](figures/PointMap.png)
+
+**Figure 8:** Map of Identified Polygons within the sites.csv
+- No polygon geometry data provided.  POUs grouped with point site information.
+<!-- ![](figures/PolyMap.png) -->
+
 
 ***
 ## Staff Contributions
