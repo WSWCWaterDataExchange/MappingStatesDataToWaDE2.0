@@ -60,8 +60,6 @@ def SiteTestErrorFunctions(outdf, dfpurge):
     outdf, dfpurge = SiteTypeCV_S_Check(outdf, dfpurge)
     outdf, dfpurge = StateCV_S_Check(outdf, dfpurge)
     outdf, dfpurge = USGSSiteID_S_Check(outdf, dfpurge)
-    outdf, dfpurge = Latitude_S_FloatValueCheck(outdf, dfpurge)
-    outdf, dfpurge = Longitude_S_FloatValueCheck(outdf, dfpurge)
     return(outdf, dfpurge)
 
 
@@ -377,19 +375,37 @@ def HUC8_S_Check(dfx, dfy):
 
 # Latitude_float_-
 def Latitude_S_Check(dfx, dfy):
-    selectionVar = (dfx["Latitude"].isnull()) | (dfx["Latitude"].astype(str) == "") | (dfx["Latitude"].astype(str).str.contains(",")) | (dfx["Latitude"].astype(float) == 0.0) | (dfx["Latitude"].astype(float) < -91) | (dfx["Latitude"].astype(float) > 91)
+    # check for string values with a ','
+    selectionVar = (dfx["Latitude"].isnull()) | (dfx["Latitude"].astype(str) == "") | (dfx["Latitude"].astype(str).str.contains(","))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Latitude').reset_index()
     mask['IncompleteField'] = mask['Latitude']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
+
+    # check for bad float values
+    selectionVar = (dfx["Latitude"].replace("",0).fillna(0).astype(float) == 0.0) | (dfx["Latitude"].replace("",0).fillna(0).astype(float) < -91) | (dfx["Latitude"].replace("",0).fillna(0).astype(float) > 91)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Latitude').reset_index()
+    mask['IncompleteField'] = mask['Latitude']
+    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
+
+    # return results
     return (dfx, dfy)
 
 
 # Longitude_float_-
 def Longitude_S_Check(dfx, dfy):
-    selectionVar = (dfx["Longitude"].isnull()) | (dfx["Longitude"].astype(str) == "") | (dfx["Longitude"].astype(str).str.contains(",")) | (dfx["Longitude"].astype(float) == 0.0 ) | (dfx["Longitude"].astype(float) < -181) | (dfx["Longitude"].astype(float) > 181)
+    # check for string values with a ','
+    selectionVar = (dfx["Longitude"].isnull()) | (dfx["Longitude"].astype(str) == "") | (dfx["Longitude"].astype(str).str.contains(","))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Longitude').reset_index()
     mask['IncompleteField'] = mask['Longitude']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
+
+    # check for bad float values
+    selectionVar = (dfx["Longitude"].replace("",0).fillna(0).astype(float) == 0.0 ) | (dfx["Longitude"].replace("",0).fillna(0).astype(float) < -181) | (dfx["Longitude"].replace("",0).fillna(0).astype(float) > 181)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Longitude').reset_index()
+    mask['IncompleteField'] = mask['Longitude']
+    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
+
+    # return results
     return (dfx, dfy)
 
 
@@ -475,24 +491,6 @@ def USGSSiteID_S_Check(dfx, dfy):
     mask['IncompleteField'] = mask['USGSSiteID']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
-
-# Latitude_float_-
-def Latitude_S_FloatValueCheck(dfx, dfy):
-    selectionVar = (dfx["Latitude"].astype(float) < 1.1)
-    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Wrong value entry for Latitude').reset_index()
-    mask['IncompleteField'] = mask['Latitude']
-    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
-    return (dfx, dfy)
-
-
-# Longitude_float_-
-def Longitude_S_FloatValueCheck(dfx, dfy):
-    selectionVar = (dfx["Longitude"].astype(float) > -1.1)
-    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Wrong value entry for Longitude').reset_index()
-    mask['IncompleteField'] = mask['Longitude']
-    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
-    return (dfx, dfy)
-
 
 
 # ReportingUnits
@@ -770,21 +768,57 @@ def AllocationExpirationDate_AA_Check(dfx, dfy):
 #     return (dfx, dfy)
 
 
+# # AllocationFlow_CFS_float_Yes
+# def AllocationFlow_CFS_AA_Check(dfx, dfy):
+#     selectionVar = (dfx['ExemptOfVolumeFlowPriority'] == "0") & (dfx['AllocationFlow_CFS'].astype(str).str.contains(','))
+#     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Flow').reset_index()
+#     mask['IncompleteField'] = mask['AllocationFlow_CFS']
+#     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
+#     return (dfx, dfy)
+#
+#
+# # AllocationVolume_AF_float_Yes
+# def AllocationVolume_AF_AA_Check(dfx, dfy):
+#     selectionVar = (dfx['ExemptOfVolumeFlowPriority'] == "0") & ((dfx['AllocationVolume_AF'].astype(str).str.contains(',')) | (dfx['AllocationVolume_AF'].replace("",0).fillna(0).astype(float) < 0.0))
+#     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Volume').reset_index()
+#     mask['IncompleteField'] = mask['AllocationVolume_AF']
+#     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
+#     return (dfx, dfy)
+
+
 # AllocationFlow_CFS_float_Yes
 def AllocationFlow_CFS_AA_Check(dfx, dfy):
-    selectionVar = (dfx['ExemptOfVolumeFlowPriority'] == "0") & ((dfx['AllocationFlow_CFS'].astype(str).str.contains(',')) | (dfx['AllocationFlow_CFS'].astype(float) < 0.0))
+    # check for string values with a ','
+    selectionVar = (dfx['ExemptOfVolumeFlowPriority'] == "0") & (dfx['AllocationFlow_CFS'].astype(str).str.contains(','))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Flow').reset_index()
     mask['IncompleteField'] = mask['AllocationFlow_CFS']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
+
+    # check for bad float values
+    selectionVar = (dfx['ExemptOfVolumeFlowPriority'] == "0") & (dfx['AllocationFlow_CFS'].replace("", 0).fillna(0).astype(float) < 0.0)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Flow').reset_index()
+    mask['IncompleteField'] = mask['AllocationFlow_CFS']
+    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
+
+    # return results
     return (dfx, dfy)
 
 
 # AllocationVolume_AF_float_Yes
 def AllocationVolume_AF_AA_Check(dfx, dfy):
-    selectionVar = (dfx['ExemptOfVolumeFlowPriority'] == "0") & ((dfx['AllocationVolume_AF'].astype(str).str.contains(',')) | (dfx['AllocationVolume_AF'].astype(float) < 0.0))
+    # check for string values with a ','
+    selectionVar = (dfx['ExemptOfVolumeFlowPriority'] == "0") & (dfx['AllocationVolume_AF'].astype(str).str.contains(','))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Volume').reset_index()
     mask['IncompleteField'] = mask['AllocationVolume_AF']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
+
+    # check for bad float values
+    selectionVar = (dfx['ExemptOfVolumeFlowPriority'] == "0") & (dfx['AllocationVolume_AF'].replace("", 0).fillna(0).astype(float) < 0.0)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Volume').reset_index()
+    mask['IncompleteField'] = mask['AllocationVolume_AF']
+    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
+
+    # return results
     return (dfx, dfy)
 
 
