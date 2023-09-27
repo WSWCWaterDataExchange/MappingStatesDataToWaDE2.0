@@ -1,4 +1,4 @@
-# Last Update: 08/05/2022
+# Last Update: 09/27/2023
 # Purpose: To have a single function file to error check datatypes.
 # Index:
 #       WaterSources
@@ -1503,165 +1503,107 @@ def TimeframeStart_SS_Check(dfx, dfy):
 
 # RegulatoryOverlayUUID_nvarchar(250)_-
 def RegulatoryOverlayUUID_RE_Check(dfx, dfy):
-    mask = dfx.loc[(dfx["RegulatoryOverlayUUID"].isnull()) |
-                   (dfx["RegulatoryOverlayUUID"] == "") |
-                   (dfx['RegulatoryOverlayUUID'].str.len() > 250)].assign(
-        ReasonRemoved='Incomplete or bad entry for RegulatoryOverlayUUID').reset_index()
-    if len(mask.index) > 0:
-        dfy = dfy.append(mask)
-        dropIndex = dfx.loc[(dfx["RegulatoryOverlayUUID"].isnull()) |
-                            (dfx["RegulatoryOverlayUUID"] == "") |
-                            (dfx['RegulatoryOverlayUUID'].str.len() > 250)].index
-        dfx = dfx.drop(dropIndex)
-        dfx = dfx.reset_index(drop=True)
+    selectionVar = (dfx["RegulatoryOverlayUUID"].isnull()) |(dfx["RegulatoryOverlayUUID"] == "") |(dfx['RegulatoryOverlayUUID'].astype(str).str.len() > 250)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for RegulatoryOverlayUUID').reset_index()
+    mask['IncompleteField'] = mask['RegulatoryOverlayUUID']
+    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
 
 
 # OversightAgency_nvarchar(250)_-
 def OversightAgency_RE_Check(dfx, dfy):
-    mask = dfx.loc[(dfx["OversightAgency"].isnull()) |
-                   (dfx["OversightAgency"] == "") |
-                   (dfx['OversightAgency'].str.len() > 250)].assign(
-        ReasonRemoved='Incomplete or bad entry for OversightAgency').reset_index()
-    if len(mask.index) > 0:
-        dfy = dfy.append(mask)
-        dropIndex = dfx.loc[(dfx["OversightAgency"].isnull()) |
-                            (dfx["OversightAgency"] == "") |
-                            (dfx['OversightAgency'].str.len() > 250)].index
-        dfx = dfx.drop(dropIndex)
-        dfx = dfx.reset_index(drop=True)
+    selectionVar = (dfx["OversightAgency"].isnull()) | (dfx["OversightAgency"] == "") |(dfx['OversightAgency'].astype(str).str.len() > 250)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for OversightAgency').reset_index()
+    mask['IncompleteField'] = mask['OversightAgency']
+    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
 
 
 # RegulatoryDescription_nvarchar(MAX)_-
 def RegulatoryDescription_RE_Check(dfx, dfy):
-    mask = dfx.loc[(dfx["RegulatoryDescription"].isnull()) |
-                   (dfx["RegulatoryDescription"] == "")].assign(
-        ReasonRemoved='Incomplete or bad entry for RegulatoryDescription').reset_index()
-    if len(mask.index) > 0:
-        dfy = dfy.append(mask)
-        dropIndex = dfx.loc[(dfx["RegulatoryDescription"].isnull()) |
-                            (dfx["RegulatoryDescription"] == "")].index
-        dfx = dfx.drop(dropIndex)
-        dfx = dfx.reset_index(drop=True)
+    selectionVar = (dfx["RegulatoryDescription"].isnull()) | (dfx["RegulatoryDescription"] == "")
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for RegulatoryDescription').reset_index()
+    mask['IncompleteField'] = mask['RegulatoryDescription']
+    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
 
 
 # RegulatoryName_nvarchar(50)_-
 def RegulatoryName_RE_Check(dfx, dfy):
-    mask = dfx.loc[(dfx["RegulatoryName"].isnull()) |
-                   (dfx["RegulatoryName"] == "") |
-                   (dfx['RegulatoryName'].str.len() > 50)].assign(
-        ReasonRemoved='Incomplete or bad entry for RegulatoryName').reset_index()
-    if len(mask.index) > 0:
-        dfy = dfy.append(mask)
-        dropIndex = dfx.loc[(dfx["RegulatoryName"].isnull()) |
-                            (dfx["RegulatoryName"] == "") |
-                            (dfx['RegulatoryName'].str.len() > 50)].index
-        dfx = dfx.drop(dropIndex)
-        dfx = dfx.reset_index(drop=True)
+    selectionVar = (dfx["RegulatoryName"].isnull()) | (dfx["RegulatoryName"] == "") | (dfx['RegulatoryName'].astype(str).str.len() > 50)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for RegulatoryName').reset_index()
+    mask['IncompleteField'] = mask['RegulatoryName']
+    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
 
 
 # RegulatoryOverlayNativeID_nvarchar(250)_Yes
 def RegulatoryOverlayNativeID_RE_Check(dfx, dfy):
-    mask = dfx.loc[dfx["RegulatoryOverlayNativeID"].astype(str).str.len() > 250].assign(
-        ReasonRemoved='Incomplete or bad entry for RegulatoryOverlayNativeID').reset_index()
-    if len(mask.index) > 0:
-        dfy = dfy.append(mask)
-        dropIndex = dfx.loc[dfx["RegulatoryOverlayNativeID"].astype(str).str.len() > 250].index
-        dfx = dfx.drop(dropIndex)
-        dfx = dfx.reset_index(drop=True)
+    selectionVar = (dfx["RegulatoryOverlayNativeID"].astype(str).str.len() > 250)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for RegulatoryOverlayNativeID').reset_index()
+    mask['IncompleteField'] = mask['RegulatoryOverlayNativeID']
+    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
 
 
 # RegulatoryStatusCV_nvarchar(50)_-
 def RegulatoryStatusCV_RE_Check(dfx, dfy):
-    mask = dfx.loc[(dfx["RegulatoryStatusCV"].isnull()) |
-                   (dfx["RegulatoryStatusCV"] == "") |
-                   (dfx['RegulatoryStatusCV'].str.len() > 50)].assign(
-        ReasonRemoved='Incomplete or bad entry for RegulatoryStatusCV').reset_index()
-    if len(mask.index) > 0:
-        dfy = dfy.append(mask)
-        dropIndex = dfx.loc[(dfx["RegulatoryStatusCV"].isnull()) |
-                            (dfx["RegulatoryStatusCV"] == "") |
-                            (dfx['RegulatoryName'].str.len() > 50)].index
-        dfx = dfx.drop(dropIndex)
-        dfx = dfx.reset_index(drop=True)
+    selectionVar = (dfx["RegulatoryStatusCV"].isnull()) | (dfx["RegulatoryStatusCV"] == "") | (dfx['RegulatoryStatusCV'].astype(str).str.len() > 50)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for RegulatoryStatusCV').reset_index()
+    mask['IncompleteField'] = mask['RegulatoryStatusCV']
+    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
 
 
 # RegulatoryStatute_nvarchar(500)_Yes
 def RegulatoryStatute_RE_Check(dfx, dfy):
-    mask = dfx.loc[dfx["RegulatoryStatute"].str.len() > 500].assign(
-        ReasonRemoved='Incomplete or bad entry for RegulatoryStatute').reset_index()
-    if len(mask.index) > 0:
-        dfy = dfy.append(mask)
-        dropIndex = dfx.loc[dfx["RegulatoryStatute"].str.len() > 500].index
-        dfx = dfx.drop(dropIndex)
-        dfx = dfx.reset_index(drop=True)
+    selectionVar = (dfx["RegulatoryStatute"].astype(str).str.len() > 500)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for RegulatoryStatute').reset_index()
+    mask['IncompleteField'] = mask['RegulatoryStatute']
+    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
 
 
 # RegulatoryStatuteLink_nvarchar(500)_Yes
 def RegulatoryStatuteLink_RE_Check(dfx, dfy):
-    mask = dfx.loc[dfx["RegulatoryStatuteLink"].str.len() > 500].assign(
-        ReasonRemoved='Incomplete or bad entry for RegulatoryStatuteLink').reset_index()
-    if len(mask.index) > 0:
-        dfy = dfy.append(mask)
-        dropIndex = dfx.loc[dfx["RegulatoryStatuteLink"].str.len() > 500].index
-        dfx = dfx.drop(dropIndex)
-        dfx = dfx.reset_index(drop=True)
+    selectionVar = (dfx["RegulatoryStatuteLink"].astype(str).str.len() > 500)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for RegulatoryStatuteLink').reset_index()
+    mask['IncompleteField'] = mask['RegulatoryStatuteLink']
+    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
 
 
 # StatutoryEffectiveDate_BigInt_-
 def StatutoryEffectiveDate_RE_Check(dfx, dfy):
-    mask = dfx.loc[(dfx["StatutoryEffectiveDate"].isnull()) |
-                   (dfx["StatutoryEffectiveDate"] == "") |
-                   (dfx["StatutoryEffectiveDate"].str.contains(','))].assign(
-        ReasonRemoved='Incomplete or bad entry for StatutoryEffectiveDate').reset_index()
-    if len(mask.index) > 0:
-        dfy = dfy.append(mask)
-        dropIndex = dfx.loc[(dfx["StatutoryEffectiveDate"].isnull()) |
-                            (dfx["StatutoryEffectiveDate"] == "") |
-                            (dfx["StatutoryEffectiveDate"].str.contains(','))].index
-        dfx = dfx.drop(dropIndex)
-        dfx = dfx.reset_index(drop=True)
+    selectionVar = (dfx["StatutoryEffectiveDate"].isnull()) | (dfx["StatutoryEffectiveDate"] == "") | (dfx["StatutoryEffectiveDate"].str.contains(','))
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for StatutoryEffectiveDate').reset_index()
+    mask['IncompleteField'] = mask['StatutoryEffectiveDate']
+    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
 
 
 # StatutoryEndDate_BigInt_Yes
 def StatutoryEndDate_RE_Check(dfx, dfy):
-    mask = dfx.loc[(dfx["StatutoryEndDate"].str.contains(','))].assign(
-        ReasonRemoved='Incomplete or bad entry for StatutoryEndDate').reset_index()
-    if len(mask.index) > 0:
-        dfy = dfy.append(mask)
-        dropIndex = dfx.loc[(dfx["StatutoryEndDate"].str.contains(','))].index
-        dfx = dfx.drop(dropIndex)
-        dfx = dfx.reset_index(drop=True)
+    selectionVar = (dfx["StatutoryEndDate"].str.contains(','))
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for StatutoryEndDate').reset_index()
+    mask['IncompleteField'] = mask['StatutoryEndDate']
+    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
 
 
 # RegulatoryOverlayTypeCV_nvarchar(100)_Yes
 def RegulatoryOverlayTypeCV_RE_Check(dfx, dfy):
-    mask = dfx.loc[dfx["RegulatoryOverlayTypeCV"].str.len() > 100].assign(
-        ReasonRemoved='Incomplete or bad entry for RegulatoryOverlayTypeCV').reset_index()
-    if len(mask.index) > 0:
-        dfy = dfy.append(mask)
-        dropIndex = dfx.loc[dfx["RegulatoryOverlayTypeCV"].str.len() > 100].index
-        dfx = dfx.drop(dropIndex)
-        dfx = dfx.reset_index(drop=True)
+    selectionVar = (dfx["RegulatoryOverlayTypeCV"].astype(str).str.len() > 100)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for RegulatoryOverlayTypeCV').reset_index()
+    mask['IncompleteField'] = mask['RegulatoryOverlayTypeCV']
+    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
 
 
 # WaterSourceTypeCV_nvarchar(100)_Yes
 def WaterSourceTypeCV_RE_Check(dfx, dfy):
-    mask = dfx.loc[dfx["WaterSourceTypeCV"].str.len() > 100].assign(
-        ReasonRemoved='Incomplete or bad entry for WaterSourceTypeCV').reset_index()
-    if len(mask.index) > 0:
-        dfy = dfy.append(mask)
-        dropIndex = dfx.loc[dfx["WaterSourceTypeCV"].str.len() > 100].index
-        dfx = dfx.drop(dropIndex)
-        dfx = dfx.reset_index(drop=True)
+    selectionVar = (dfx["WaterSourceTypeCV"].astype(str).str.len() > 100)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for WaterSourceTypeCV').reset_index()
+    mask['IncompleteField'] = mask['WaterSourceTypeCV']
+    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
