@@ -9,7 +9,7 @@ Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
 **"{name of data}"** | description of data | [link]("{https web link address to where data can be downloaded from}") | [link]("{https web link address to meta-data}")
 
-"{number of input files found and used}"  unique files were created to be used as input.  Input files used are as follows...
+Unique files were created to be used as input.  Input files used are as follows...
 - "{name of data file}.data file type"
 
 
@@ -269,14 +269,20 @@ Note: podsitetopousiterelationships.csv output only needed if both POD and POU d
 ## Source Data & WaDE Complied Data Assessment
 The following info is from a data assessment evaluation of the completed data...
 
-Dataset | Num of Source Entries (rows) | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
----------- | ---------- | ------------ | ------------ | ------------
-"fill value here" | "fill value here" | "fill value here" | "fill value here" | "fill value here"
-**Compiled WaDE Data** | "fill value here" | "fill value here" | "fill value here" | "fill value here"
+Dataset | Num of Source Entries (rows)
+---------- | ---------- 
+**"{name of data}"** | "fill value here"
+
+
+Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
+---------- | ------------ | ------------ | ------------
+**Compiled WaDE Data** | "fill value here" | "fill value here" | "fill value here"
+
 
 Assessment of Removed Source Records | Count | Action
 ---------- | ---------- | ----------
-Incomplete or bad entry for Latitude | 1 | Removed from WaDE
+"what was removed" | "count of entries removed" | "action taken (il.e., removed from sites.csv)"
+
 
 **Figure 1:** Distribution of POD vs POU Sites within the sites.csv
 ![](figures/PODorPOUSite.png)

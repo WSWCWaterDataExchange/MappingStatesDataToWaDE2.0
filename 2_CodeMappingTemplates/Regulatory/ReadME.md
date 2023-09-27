@@ -191,6 +191,45 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 
 ***
+## Source Data & WaDE Complied Data Assessment
+The following info is from a data assessment evaluation of the completed data...
+
+Dataset | Num of Source Entries (rows) 
+---------- | ----------
+**"{name of data}"** | "fill value here"
+
+
+Dataset | Num of Identified Reporting Units | Num of Identified Regulatory Overlays
+---------- | ---------- | ------------
+**Compiled WaDE Data** | "fill value here" | "fill value here"
+
+
+Assessment of Removed Source Records | Count | Action
+---------- | ---------- | ----------
+Incomplete or bad entry for Latitude | 1 | Removed from WaDE
+
+
+**Figure 1:** Distribution of Reporting Unit Name within reportingunits.csv
+![](figures/ReportingUnitName.png)
+
+**Figure 2:** Distribution of Reporting Unit Type within reportingunits.csv
+![](figures/ReportingUnitTypeCV.png)
+
+**Figure 3:** Distribution of Oversight Agency within the regulatoryoverlays.csv
+![](figures/OversightAgency.png)
+
+**Figure 4:** Distribution of Regulatory Overlay Type within the regulatoryoverlays.csv
+![](figures/RegulatoryOverlayTypeCV.png)
+
+**Figure 5:** Map of Regulatory Areas (i.e., Reporting Unit)
+![](figures/ReportingUnitMap.png)
+
+**Figure 6:** Map of identified water rights within the Regulatory Areas Polygons within the sites.csv
+![](figures/PointInRegMap.png)
+
+
+
+***
 ## Staff Contributions
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the ["{state / organization name}"]("{http web link address to state / organization name}").
 
