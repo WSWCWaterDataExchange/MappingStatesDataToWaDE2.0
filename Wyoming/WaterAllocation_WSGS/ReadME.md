@@ -315,7 +315,8 @@ Assessment of Removed Source Records | Count | Action
 ![](figures/PointMap.png)
 
 **Figure 8:** Map of Identified Polygons within the sites.csv
-![](figures/PolyMap.png)
+    - no geometry data provided.
+<!-- ![](figures/PolyMap.png) -->
 
 
 
