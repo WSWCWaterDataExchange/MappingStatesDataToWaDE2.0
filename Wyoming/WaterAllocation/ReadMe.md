@@ -270,7 +270,7 @@ Dataset | Num of Source Entries (rows) | Num of Identified PODs | Num of Identif
 **Point of diversion (POD)_GW** | 2,323 | -| -| -
 **Point of diversion (POD)_SW** | 9,659 | -| -| -
 **Place of Use (POU)** | 491,676 | -| -| -
-**WaDE Imports** | - | 9742 | 61803 | 70430
+**WaDE Imports** | - | 9,742 | 61,803 | 70,430
 
 
 Assessment of Removed Source Records | Count | Action
