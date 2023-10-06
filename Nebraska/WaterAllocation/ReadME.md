@@ -9,6 +9,7 @@ Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
 **AllSurfaceWaterPoints** | All surface water rights points of diversion, retrieved via API. | [link](https://NEDNR.nebraska.gov/IwipApi/swagger/ui/index#/) | [link](https://NEDNR.nebraska.gov/media/WaterRights/SurfaceWaterWebSimpleSearch.pdf)
 **Surface Water Right Boundaries** | Surface Water Right Boundaries Internal layer created by the Nebraska Department of Natural Resources (NeDNR) for external use.  Used as place of use for water right data. | [link](https://www.nebraskamap.gov/datasets/surface-water-right-boundaries/explore?location=41.453617%2C-99.687989%2C8.00&showTable=true) | [link](https://www.arcgis.com/sharing/rest/content/items/db709278ffc34b3a8423924d352b5ec8/info/metadata/metadata.xml?format=default&output=html)
+**AllWells** | Groundwater well points of diversion, retrieved via API. | [link](https://NEDNR.nebraska.gov/IwipApi/swagger/ui/index#/) | [link](https://nednr.nebraska.gov/dynamic/Wells/Wells/WellsLegend)
 
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
@@ -37,19 +38,22 @@ Purpose: Pre-process the input data files and merge them into one master file fo
  - Pwr_neMain.zip.csv
 
 #### Operation and Steps:
-- Read in the input files.  Goal will be to create separate POD and POU centric dataframes, then join together for single long output dataframe.
-- For POD data...
+- Read in the input files.  Goal will be to create separate sw POD and POU centric dataframes, and gw POD dataframe, then join together for single long output dataframe.
+- For sw POD data...
     - We are only interested in data that has a **RightStatus** = "Active" and a **PODStatus** = "Active", drop all other records at this time.
     - Create WaDE *VariableSpecificUUID* based whether input values is CFS or AF from **Units** input.
     - Create WaDE *AllocationFlow_CFS* using CFS values from **Units** and **ProGrant** value.
     - Create WaDE *AllocationVolume_AF* using AF values from **Units** and **ProGrant** value.
     - Create WaDE *WaterAllocationNativeURL* using string *https://nednr.nebraska.gov/dynamic/WaterRights/WaterRights/SWRDetailPage?RightId=* + **RightID** input.
-- For POU data...
+- For sw POU data...
     - Create WaDE *VariableSpecificUUID* based whether input values is CFS or AF from **Units** input.
     - Create WaDE *AllocationFlow_CFS* using CFS values from **Units** and **ProGrant** value.
     - Create WaDE *AllocationVolume_AF* using AF values from **Units** and **ProGrant** value.
     - Create WaDE *WaterAllocationNativeURL* using string *https://nednr.nebraska.gov/dynamic/WaterRights/WaterRights/SWRDetailPage?RightId=* + **RightID** input.
-- Concatenate temporary POD & POU dataframes together into single long output dataframe.
+- For gw POD data...
+    - Retrieve via AllWells API.  Save to local csv file for future use.
+    -  Create WaDE *WaterAllocationNativeURL* using string *https://nednr.nebraska.gov/Dynamic/Wells/Wells/WellDetails?WellId=* + **WellID** input.
+- Concatenate temporary sw POD, sw POU, & gw POD dataframes together into single long output dataframe.
 - WaDE issue of only allowing nvchar(100) for native beneficial use inputs, however there are two values from the NE water data that are not valid and we will apply a temporarily fix to shorten these values to fit within the WaDE system
     - shorten "Supplemental Cooling (an app. for water for cooling through a system that has a prior app. for cooling)" to "Supplemental Cooling (app for water for cooling through a system that has a prior app for cooling)".
     - shorten "Supplemental Irrigation (irrig. from reservoir on lands also covered by a natural flow appropriation)" to "Supplemental Irrigation (irrig. from reservoir on lands covered by a natural flow appropriation)".
@@ -67,7 +71,7 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 Purpose: generate WaDE csv input files (methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, podsitetopousiterelationships.csv).
 
 #### Inputs:
-- Pwr_NMMain.zip
+- Pwr_neMain.zip
 
 #### Outputs:
 - methods.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
@@ -91,9 +95,10 @@ Purpose: generate legend of granular methods used on data collection.
 - Export output dataframe *methods.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
----------- | ---------- | ------------
-NEwr_M1 | Surface Ground | Legal Processes
+MethodUUID  | DataConfidenceValue | DataCoverageValue | DataQualityValueCV | MethodDescription | MethodName | MethodNEMILink | MethodTypeCV | WaDEDataMappingUrl
+---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------
+NEwr_M1 | Surface Water | Nebraska Water Rights Method | https://dnr.nebraska.gov/surface-water/ownership-preview-groundwater-wells-and-surface-water-rights | Legal Processes | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Nebraska
+
 
 
 ## 2) Variables Information
@@ -108,9 +113,10 @@ Purpose: generate legend of granular variables specific to each state.
 - Export output dataframe *variables.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
----------- | ---------- | ------------ | ------------
-NEwr_V1 | 1 | Year | CFS
+VariableSpecificUUID | AggregationInterval | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV | VariableCV | VariableSpecificCV 
+---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------
+NEwr_V1	1 | Year | Average | CFS | CFS | 1 | WaterYear | Allocation | Allocation
+
 
 
 ## 3) Organization Information
@@ -125,9 +131,10 @@ Purpose: generate organization directory, including names, email addresses, and 
 - Export output dataframe *organizations.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
----------- | ---------- | ------------ | ------------
-NEwr_O1 | Nebraska Department of Natural Resources | Jennifer Schellpepe | https://dnr.nebraska.gov/contact
+OrganizationUUID | OrganizationContactEmail | OrganizationContactName | OrganizationName | OrganizationPhoneNumber | OrganizationPurview | OrganizationWebsite | State
+---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------
+NEwr_O1 | jennifer.schellpeper@nebraska.gov | Jennifer Schellpepe | Nebraska Department of Natural Resources | 402-471-2899 | Provide Nebraskas citizens and leaders with the data and analyses they need to make wise resource decisions for the benefit of all Nebraskans both now and in the future. | https://dnr.nebraska.gov/contact | NE
+
 
 
 ## 4) Water Source Information
@@ -174,9 +181,10 @@ Purpose: generate a list of sites where water is diverted (also known as Points 
 - Export output dataframe *sites.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-SiteUUID | WaterSourceUUID | CoordinateMethodCV | Latitude | Longitude | SiteName | SiteNativeID
----------- | ---------- | ---------- | ------------ | ------------ | ------------ | ------------
-NEwr_SPOD10 | NEwr_WSwadeID175 | WaDE Unspecified | 40.00909598 | -99.40437451 | WaDE Unspecified | POD10
+SiteUUID | WaterSourceUUID | CoordinateMethodCV | County | Latitude | Longitude | PODorPOUSite| SiteName | SiteNativeID | SiteTypeCV
+---------- | ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------
+NEwr_SPOD10 | NEwr_WSwadeID175 | WaDE Blank | WaDE Blank | WaDE Blank | 4326 | 1.025E+11 | 40.00909598 | -99.40437451 | POD | WaDE Blank | POD10 | WaDE Blank | NE	
+
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
 - SiteUUID 
@@ -205,9 +213,10 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 - Export output dataframe *waterallocations.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-AllocationNativeID | AllocationFlow_CFS | AllocationLegalStatusCV | BeneficialUseCategory
----------- | ---------- | ------------ | ------------
-10 | 0.23 | Active | Irrigation from Natural Stream
+AllocationUUID | MethodUUID | OrganizationUUID | SiteUUID | VariableSpecificUUID | AllocationBasisCV | AllocationFlow_CFS | AllocationLegalStatusCV | AllocationNativeID | AllocationOwner | AllocationPriorityDate | AllocationTypeCV | BeneficialUseCategory | OwnerClassificationCV | WaterAllocationNativeURL
+---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ----------
+NEwr_WR10 | NEwr_M1 | NEwr_O1 | NEwr_SPOD11055,NEwr_SPOUwade8942 | NEwr_V1 | WaDE Blank | 0.23 | Active | 10 | Byron D Donna L Juma,Rusure | 9/28/1960 | WaDE Blank | Irrigation from Natural Stream | WaDE Blank | https://nednr.nebraska.gov/dynamic/WaterRights/WaterRights/SWRDetailPage?RightId=10
+
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID
@@ -239,6 +248,62 @@ Note: podsitetopousiterelationships.csv output only needed if both POD and POU d
 - Explode the consolidated waterallocations dataframe again using the _PODSiteUUID_ field, and again for the _POUSiteUUID_ field to create unique rows.
 - Perform error check on waterallocations dataframe (check for NaN values)
 - If waterallocations is not empty, export output dataframe _podsitetopousiterelationships.csv_.
+
+
+***
+## Source Data & WaDE Complied Data Assessment
+The following info is from a data assessment evaluation of the completed data...
+
+Dataset | Num of Source Entries (rows)
+---------- | ---------- 
+**AllSurfaceWaterPoints** | 27,622
+**Surface Water Right Boundaries** | 7,344
+**AllWells** | 188,445
+
+
+Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
+---------- | ------------ | ------------ | ------------
+**Compiled WaDE Data** | 200,293 | 6,827 | 197,762
+
+
+Assessment of Removed Source Records | Count | Action
+---------- | ---------- | ----------
+Unused WaterSource Record | 21 | removed from watersource.csv
+Unused Site Record | 1124 | removed form sites.csv
+Incomplete or bad entry for HUC12 | 6 | removed form sites.csv
+Incomplete or bad entry for Latitude | 2 | removed form sites.csv
+Incomplete or bad entry for AllocationPriorityDate | 308 | removed from waterallocations.csv
+Incomplete or bad entry for VariableSpecificUUID | 214 | removed from waterallocations.csv
+Incomplete or bad entry for AllocationApplicationDate | 3 | removed from waterallocations.csv
+Incomplete or bad entry for SiteUUID | 2 | removed from waterallocations.csv
+
+
+**Figure 1:** Distribution of POD vs POU Sites within the sites.csv
+![](figures/PODorPOUSite.png)
+
+**Figure 2:** Distribution Sites by WaterSourceTypeCV within the sites.csv
+![](figures/WaterSourceTypeCV.png)
+
+**Figure 3:** Distribution of Identified Water Right Records by WaDE Categorized Primary Beneficial Uses within the waterallocations.csv
+![](figures/PrimaryBeneficialUseCategory.png)
+
+**Figure 4a:** Range of Priority Date of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationPriorityDate1.png)
+
+**Figure 4b:** Cumulative distribution of Priority Date of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationPriorityDate2.png)
+
+**Figure 5:** Distribution & Range of Flow (CFS) of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationFlow_CFS.png)
+
+**Figure 6:** Distribution & Range of Volume (AF) of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationVolume_AF.png)
+
+**Figure 7:** Map of Identified Points within the sites.csv
+![](figures/PointMap.png)
+
+**Figure 8:** Map of Identified Polygons within the sites.csv
+![](figures/PolyMap.png)
 
 
 ***
