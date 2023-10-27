@@ -10,11 +10,17 @@ Name | Description | Download Link | Metadata Glossary Link
 **Rathdrum Comprehensive Aquifer Management Plan** | Rathdrum Comprehensive Aquifer Management Area based on the boundary of the Spokane Valley-Rathdrum Prairie Aquifer within Idaho. | [link](https://data-idwr.hub.arcgis.com/datasets/rathdrum-comprehensive-aquifer-management-plan/explore?location=47.653070%2C-116.087083%2C7.73) | [link](https://idwr.idaho.gov/iwrb/water-planning/camps/)
 **Treasure Valley Comprehensive Aquifer Management Plan** | To delineate the TVHP study area boundary. | [link](https://data-idwr.hub.arcgis.com/datasets/IDWR::treasure-valley-comprehensive-aquifer-management-plan/explore?location=43.138851%2C-115.877224%2C7.65) | [link](https://idwr.idaho.gov/iwrb/water-planning/camps/)
 **Eastern Snake Comprehensive Aquifer Management Plan** | The Eastern Snake Comprehensive Aquifer Management Plan boundary is equivalent to Area of Common Ground Water Supply (ACGWS). The ACGWS is defined in Section 37.03.11 administrative rules. | [link](https://data-idwr.hub.arcgis.com/datasets/eastern-snake-comprehensive-aquifer-management-plan/explore?location=43.322127%2C-114.298158%2C6.00) | [link](https://idwr.idaho.gov/iwrb/water-planning/camps/)
+**Groundwater_Districts** | Groundwater Districts | [link]("https://data-idwr.hub.arcgis.com/datasets/groundwater-districts/explore?location=44.257184%2C-114.070068%2C6.00") | [link]("https://idwr.idaho.gov/water-rights/groundwater-districts/")
+**Groundwater_Management_Areas** | Groundwater Management Areas | [link]("https://data-idwr.hub.arcgis.com/datasets/groundwater-management-areas/explore?location=44.907017%2C-113.939603%2C6.00") | [link]("https://idwr.idaho.gov/water-rights/groundwater-management-areas/")
+**Lower_Snake_River_Aquifer_Recharge_Districts** | Aquifer Rechard Districts | [link]("https://data-idwr.hub.arcgis.com/datasets/IDWR::lower-snake-river-aquifer-recharge-district/explore?location=42.761496%2C-114.701649%2C10.69") | [link]("https://idwr.idaho.gov/water-rights/aquifer-recharge-districts/")
 
 Unique files were created to be used as input.  Input files used are as follows...
 - Rathdrum_Comprehensive_Aquifer_Management_Plan.shp
 - Treasure_Valley_Comprehensive_Aquifer_Management_Plan.shp
 - Eastern_Snake_Comprehensive_Aquifer_Management_Plan.shp
+- Groundwater_Districts.shp
+- Groundwater_Management_Areas.shp
+- Lower_Snake_River_Aquifer_Recharge_Districts.shp
 
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
@@ -54,7 +60,7 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 
 
 ***
-## Code File: 2_UTwr_CreateWaDEInputFiles.ipynb
+## Code File: 2_IDwr_CreateWaDEInputFiles.ipynb
 Purpose: generate WaDE csv input files (date.csv, organizations.csv, reportingunits.csv, regulatoryoverlays.csv, regulatoryreportingunits.csv, sites.csv).
 
 #### Inputs:
@@ -83,7 +89,7 @@ Purpose: generate legend of granular date used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 Date | Year 
 ---------- | ---------- 
-05/10/2023 | 2023
+10/02/2023 | 2023
 
 
 ## 2) Organization Information
@@ -127,7 +133,7 @@ Purpose: generate a list of polygon areas associated with the state agency regul
 #### Sample Output (WARNING: not all fields shown):
 ReportingUnitUUID | EPSGCodeCV | ReportingUnitName | ReportingUnitNativeID | ReportingUnitProductVersion | ReportingUnitTypeCV | ReportingUnitUpdateDate | StateCV | Geometry 
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------  
-IDre_RUwade1 | 4326 | Eastern Snake | wade1	 | - | Comprehensive Aquifer Management Plan | - | ID | - | 
+IDre_RUwadeEasternSnake | 4326 | Eastern Snake | wadeEasternSnake | - | Comprehensive Aquifer Management Plan | - | ID | - | 
 
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *reportingunits_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the reportingunits include the following...
@@ -152,7 +158,12 @@ Purpose: generate master sheet of regulatory overlay area information to import 
     - *RegulatoryOverlayNativeID* = ""
     - *RegulatoryStatusCV* = "Active"
     - *RegulatoryStatue* = ""
-    - *RegulatoryStatuteLink* = "https://idwr.idaho.gov/iwrb/water-planning/camps/espa/", "https://idwr.idaho.gov/IWRB/water-planning/CAMPs/rathdrum-prairie/", "https://idwr.idaho.gov/iwrb/water-planning/camps/treasure-valley/"
+    - *RegulatoryStatuteLink* = "'Rathdrum Prairie CAMP: https://idwr.idaho.gov/IWRB/water-planning/CAMPs/rathdrum-prairie/
+Treasure Valley CAMP: https://idwr.idaho.gov/iwrb/water-planning/camps/treasure-valley/
+Eastern Snake River Plain Aquifer CAMP:  https://idwr.idaho.gov/iwrb/water-planning/camps/espa/
+Groundwater Districts: https://idwr.idaho.gov/water-rights/groundwater-districts/
+Groundwater Management Areas: https://idwr.idaho.gov/water-rights/groundwater-management-areas/
+Aquifer Recharge Area: https://idwr.idaho.gov/water-rights/aquifer-recharge-districts/"
     - *StatutoryEffectiveDate* = "01/01/2009"
     - *RegulatoryOverlayTypeCV* = "Comprehensive Aquifer Management Plan"
     - *WaterSourceTypeCV* = ""
@@ -193,7 +204,7 @@ Purpose: generate master sheet of regulatory overlay area information and how it
 #### Sample Output (WARNING: not all fields shown):
 DataPublicationDate | OrganizationUUID | RegulatoryOverlayUUID | ReportingUnitUUID 
 ---------- | ---------- | ------------ | ------------ 
-5/17/2023 | IDre_O1 | IDre_ROwade1 | IDre_RUwade1
+10/02/2023 | IDre_O1 | IDre_ROwadeEasternSnake| IDre_RUwadeEasternSnake
 
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *regulatoryreportingunits_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the regulatory reportingunits include the following...
@@ -201,6 +212,49 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - OrganizationUUID
 - RegulatoryOverlayUUID
 - ReportingUnitUUID
+
+***
+## Source Data & WaDE Complied Data Assessment
+The following info is from a data assessment evaluation of the completed data...
+
+Dataset | Num of Source Entries (rows) 
+---------- | ----------
+Eastern Snake CAMP Entries (rows) | 1
+Rathdrum CAMP  CAMP Entries (rows) | 1
+Treasure Valley Entries (rows) | 1
+Groundwater Districts Entries (rows) | 13
+Groundwater Management Areas Entries (rows) | 14
+Aquifer Recharge District Entries (rows) | 1
+
+
+Dataset | Num of Identified Reporting Units | Num of Identified Regulatory Overlays
+---------- | ---------- | ------------
+**Compiled WaDE Data** | 31 | 31
+
+
+Assessment of Removed Source Records | Count | Action
+- nothing removed
+<!-- ---------- | ---------- | ----------
+Incomplete or bad entry for Latitude | 0 | Removed from WaDE -->
+
+
+**Figure 1:** Distribution of Reporting Unit Name within reportingunits.csv
+![](figures/ReportingUnitName.png)
+
+**Figure 2:** Distribution of Reporting Unit Type within reportingunits.csv
+![](figures/ReportingUnitTypeCV.png)
+
+**Figure 3:** Distribution of Oversight Agency within the regulatoryoverlays.csv
+![](figures/OversightAgency.png)
+
+**Figure 4:** Distribution of Regulatory Overlay Type within the regulatoryoverlays.csv
+![](figures/RegulatoryOverlayTypeCV.png)
+
+**Figure 5:** Map of Regulatory Areas (i.e., Reporting Unit)
+![](figures/ReportingUnitMap.png)
+
+**Figure 6:** Map of identified water rights within the Regulatory Areas Polygons within the sites.csv
+![](figures/PointInRegMap.png)
 
 
 ***
