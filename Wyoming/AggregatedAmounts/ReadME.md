@@ -1,6 +1,8 @@
 # WWDO Aggregated Data Preparation for WaDE
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting aggregated water budget data made available by the [Wyoming Water Development Office (WWDO)](https://wwdc.state.wy.us/), for inclusion into the Water Data Exchange (WaDE) project.   WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
+**Report**: http://library.wrds.uwyo.edu/wwdcrept/Wyoming/Wyoming-River_Basin_Planning_Water_Supply_Index_Level_I_Ag_Mun_Dom_Ind_Water_Use_Index-Tech_Memo-2019.pdf
+
 ## Overview of Data Utilized
 The following data was used for...
 
@@ -14,7 +16,6 @@ Input files used are as follows...
 The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE2 database, can both be found within the WaDE2 sponsored Google Drive.  Please contact WaDE2 staff if unavailable or if you have any questions about the data.
 - Wyoming Aggregated Area Timeseries Data: https://drive.google.com/drive/folders/1qWkwWXuIIY0f1_uG2FGNwQVB-6BZMRGh?usp=sharing
 
-**Report**: http://library.wrds.uwyo.edu/wwdcrept/Wyoming/Wyoming-River_Basin_Planning_Water_Supply_Index_Level_I_Ag_Mun_Dom_Ind_Water_Use_Index-Tech_Memo-2019.pdf
 
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share WWDO's aggregated water budget data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *WY_Aggregated Schema Mapping to WaDE_QA.xlsx*.  Six executable code files were used to extract the WWDO's aggregated water budget data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining five code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(AggregatedAmounts_facts)* is dependent on the previous files.  Those six code files are as follows...
