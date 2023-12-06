@@ -102,7 +102,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationContactEmail | OrganizationContactName | OrganizationName | OrganizationPhoneNumber | OrganizationPurview | OrganizationWebsite | State
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------
-NMre_RO1 | ose.webmaster@state.nm.us | David Hatchner | New Mexico Office of the State Engineer | 505-827-3846 | The New Mexico Office of the State Engineer (OSE) provides this geographic data and any associated metadata as is without warranty of any kind. | https://www.ose.state.nm.us/ | NM
+NMre_O1 | ose.webmaster@state.nm.us | David Hatchner | New Mexico Office of the State Engineer | 505-827-3846 | The New Mexico Office of the State Engineer (OSE) provides this geographic data and any associated metadata as is without warranty of any kind. | https://www.ose.state.nm.us/ | NM
 
 
 
