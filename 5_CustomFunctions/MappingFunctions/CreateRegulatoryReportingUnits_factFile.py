@@ -81,7 +81,7 @@ def CreateRegulatoryReportingUnitsInputFunction(workingDirString, mainInputFile)
     outdf = pd.DataFrame(columns=RegulatoryReportingUnitsColumnsList, index=df.index)  # The output dataframe
 
     print("DataPublicationDate")
-    outdf['DataPublicationDate'] = (date.today() - timedelta(days = 1)).strftime('%m/%d/%Y')
+    outdf['DataPublicationDate'] = (date.today() - timedelta(days = 3)).strftime('%m/%d/%Y')
     outdf['DataPublicationDate'] = pd.to_datetime(outdf['DataPublicationDate'], errors='coerce')
     outdf['DataPublicationDate'] = pd.to_datetime(outdf['DataPublicationDate'].dt.strftime('%m/%d/%Y'))
 

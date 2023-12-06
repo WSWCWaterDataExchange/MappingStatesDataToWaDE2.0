@@ -21,7 +21,7 @@ import pandas as pd
 ############################################################################
 def removeMaskItemsFunc(dfx, dfy, mask, selectionVar):
     if len(mask.index) > 0:
-        dfy = dfy.append(mask)
+        dfy = pd.concat([dfy, mask]).reset_index(drop=True)
         dropIndex = dfx.loc[selectionVar].index
         dfx = dfx.drop(dropIndex)
         dfx = dfx.reset_index(drop=True)
