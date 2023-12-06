@@ -1,175 +1,127 @@
-# NDDWR Site Specific Diversions Withdrawal Data Preparation for WaDE2
-This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting Site Specific Diversions Withdrawal time series water data made available by the [North Dakota Department of Water Resources (NDDWR)](https://www.swc.nd.gov/), for inclusion into the Water Data Exchange (WaDE2) project.  WaDE2 enables states to share data with each other and the public in a more streamlined and consistent way. WaDE2 is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
-
+# "{state / organization name}" Site-Specific Division & Withdrawal Site Data Preparation for WaDE
+This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting site-specific division & withdrawal site data made available by the ["{state / organization name}"]("{http web link address to state / organization name}"), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 
 ## Overview of Source Data Utilized
-The following data was used for timeseries Site Specific Diversions Withdrawal water data...
-- Time series water use permit data was made available temporary to the WaDE2 staff through personal correspondence.  Contact NDDWR or WaDE2 staff for more information.
+The following data was used for site-specific amount...
 
-Unique files were created to be used as input to the Python codes that prepare WaDE2 input files.  Input files used are as follows...
-- **Permit Header.csv**: contains a primary index (Permit_Index).
-- **POD.csv**: contains a primary index (POD_Index)  This is tied back to the Permit Header table with the Permit_Index field
-- **Water Use.csv**: contains both the POD_Index and the Permit_Index for purposes of aggregating it back to either the POD or the Permit.
+Name | Description | Download Link | Metadata Glossary Link
+---------- | ---------- | ------------ | ------------
+**"{name of data}"** | description of data | [link]("{https web link address to where data can be downloaded from}") | [link]("{https web link address to meta-data}")
 
-## Storage for WaDE2 2.0 Source and Processed Water Data
-The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE2 database, can both be found within the WaDE2 sponsored Google Drive.  Please contact WaDE2 staff if unavailable or if you have any questions about the data.
-- North Dakota Site Specific Diversions Withdrawal Data: https://drive.google.com/drive/folders/1DG8PYG9ZU296XYCJaEJTl77fMh0NfYqD?usp=sharing
+"{number of input files found and used}"  unique files were created to be used as input.  Input files used are as follows...
+- "{name of data file}.data file type"
 
+
+## Storage for WaDE 2.0 Source and Processed Water Data
+The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+- "{state / organization name}" Allocation Data: "{https web link address to the WaDE google doc where we are storing the data}"
 
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share NDDWR's Site Specific Diversions Withdrawal time series water data for inclusion into the Water Data Exchange (WaDE2 2.0) project.  For a complete mapping outline, see *ND_SS_DiversionsWithdrawalsWaterUse Schema Mapping to WaDE.xlsx*.  Eight executable code files were used to extract the state agency's Site Specific Diversions Withdrawal time series data from the above mentioned input files.  Each code file is numbered for order of operation.  The first code file (pre-process) was built and ran within [Jupyter Notebooks](https://jupyter.org/), the remaining code files were built and operated within [Pycharm Community](https://www.jetbrains.com/pycharm/). The last code file *(SiteSpecificAmounts)* is dependent on the previous files.  Those code files are as follows...
+The following text summarizes the process used by the WSWC staff to prepare and share site-specific division & withdrawal site data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *XXwr_Allocation Schema Mapping to WaDE.xlsx*.  Several WaDE csv input files will be created in order to extract the site-specific division & withdrawal site data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
 
-- 0_PreProcessNDDiversionsWithdrawalsWaterUseData.ipynb
-- 1_NDssdw_Methods.py
-- 2_NDssdw_Variables.py
-- 3_NDssdw_Organizations.py
-- 4_NDssdw_WaterSources.py
-- 5_NDssdw_Sites.py
-- 6_NDssdw_SiteSpecificAmounts_fact.py
-- 7_NDssdw_PODSiteToPOUSiteRelationships.py
-
+- **1_XXssdw_PreProcessDivisionAndWithdrawalSites.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
+- **2_XXssdw_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, sitespecificamounts.csv
+- **3_XXssdw_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
 
 
 ***
-### 0) Code File: 0_PreProcessNDDiversionsWithdrawalsWaterUseData.ipynb
-Purpose: Pre-process the state agency input data files into one master file for simple dataframe creation and extraction.
+## Code File: 1_XXssdw_PreProcessDivisionAndWithdrawalSites.ipynb
+Purpose: Pre-process the input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
- - Permit Header.csv
- - POD.csv
- - Water Use.csv
+- "{name of data file}.data file type"
 
 #### Outputs:
- - P_ndSSMaster.csv
+ - Pwr_xxMain.zip
+ - P_Geometry.zip
 
 #### Operation and Steps:
-- Read in all input files.  Processes will involve matching timeseries water use amount data -> POD site data via POD_Index -> Permit data via Permit_Index.  For Permit data, convert **Permit_Index** to string to match id of other data sets.
-- For data...
-    - WaDE2 *VariableCV* field = "Withdrawal".
-    - WaDE2 *WaterSourceTypeCV* field = **Source** input.
-    - WaDE2 *County* field = **County** input.
-    - WaDE2 *Latitude* field = **Latitude** input.
-    - WaDE2 *Longitude* field = **Longitude** input.
-    - WaDE2 *SiteNativeID* field = **POD** input.  Format to string value.
-    - WaDE2 *SiteTypeCV* field = **MUN_TYPE** input.
-    - WaDE2 *Amount* field = **Reported_AcFt** input.  Will convert from AcFT to MG to match WaDE2 system.
-    - WaDE2 *AssociatedNativeAllocationIDs* field = **Permit_Number** input.  Format to string.
-    - WaDE2 *Beneficial Use* = **Use_Type** input.
-    - WaDE2 *CommunityWaterSupplySystem* field = **Civil_Township** input.
-    - WaDE2 *ReportYearCV* field = **Use_Year** input.
-    - WaDE2 *TimeframeStart* field = **Use_Year** + "01/01".
-    - WaDE2 *TimeframeEnd* field = **Use_Year** + "12/31".
-- Restructure *WaterSourceTypeCV* to use WaDE2 appropriate terms.
-- Create WaDE2 field *WaterSourceNativeID* field using created *WaterSourceTypeCV* field, which helps to create a unique ID.
-- Replace "" or NaN values in *Beneficial Use* with "Unspecified".
-- Create WaDE2 field *VariableSpecificCV* by concatenating the words "Withdrawal", the word "Annual", **Use_Type**, and WaDE2 formated **Source**.  Creates unique field to help filter specific timeseries amount type(s).
-- Issue of multiple permits per site.  Will aggregate all time series amounts in a  site into a single value.  Groupby *SiteNativeID*, *VariableSpecificCV*, *TimeframeStart*, & *TimeframeEnd*, and sum the **Reported_AcFt** input  per dataset per unique combo.
-- Format WaDE2 *TimeframeStart* & *TimeframeEnd* fields to YYYY-MM_DD format.
-- Ensure that *Longitude*, *Longitude*, *Amount*,  & *ReportYearCV* are using numeric format.
-- Review for errors in timeseries ouput dataframe.
-- Export output dataframe as new csv file, *P_ndSSMaster.csv*.
-
+- "{describe how the data was pre-processed}"
 
 
 ***
-### 1) Code File: 1_NDssdw_Methods.py
-Purpose: generate legend of granular methods used on data collection.
+## Code File: 2_UTwr_CreateWaDEInputFiles.ipynb
+Purpose: generate WaDE csv input files (methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, podsitetopousiterelationships.csv).
 
 #### Inputs:
-- None
+- Pwr_xxMain.zip
+- P_Geometry.zip
 
 #### Outputs:
-- methods.csv
-- methods_missing.csv (error check only)
+- methods.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
+- variables.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
+- organizations.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
+- watersources.csv
+- sites.csv
+- sitespecificamounts.csv
+
+
+## 1) Method Information
+Purpose: generate legend of granular methods used on data collection.
 
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE2 Method* specific columns.
-- Assign state agency data info to the *WaDE2 Method* specific columns (this was hardcoded by hand for simplicity).
+- Populate output dataframe with *WaDE Method* specific columns.
+- Assign agency info to the *WaDE Method* specific columns (this was hardcoded by hand for simplicity).
 - Assign method UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *methods.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
----------- | ---------- | ------------
-NDssdw_M1 | Surface Ground Storage | Unspecified
+MethodUUID | ApplicableResourceTypeCV | MethodName | MethodNEMILink | MethodTypeCV
+---------- | ---------- | ------------ | ------------ | ------------
+xx | xx | xx | xx | xx
 
 
-
-***
-### 2) Code File: 2_NDssdw_Variables.py
+## 2) Variables Information
 Purpose: generate legend of granular variables specific to each state.
-
-#### Inputs:
-- None
-
-#### Outputs:
-- variables.csv
-- variables_missing.csv (error check only)
 
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE2 Variable* specific columns.
-- Assign state agency data info to the *WaDE2 Variable* specific columns (this was hardcoded by hand for simplicity).
+- Populate output dataframe with *WaDE Variable* specific columns.
+- Assign agency info to the *WaDE Variable* specific columns (this was hardcoded by hand for simplicity).
 - Assign variable UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *variables.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV | VariableCV | VariableSpecificCV
----------- | ---------- | ------------ | ------------ | ------------ | ------------
-NDssdw_V5 | 1 | Annual | MG | Withdrawal | Withdrawal_Annual_Commercial_Groundwater
+VariableSpecificUUID | AggregationInterval | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV | VariableCV | VariableSpecificCV 
+---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------
+xx | xx | xx | xx | xx | xx | xx
 
 
-
-***
-### 3) Code File: 3_NDssdw_Organizations.py
+## 3) Organization Information
 Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
-
-#### Inputs:
-- None
-
-#### Outputs:
-- organizations.csv
-- organizations_missing.csv (error check only)
 
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE2 Organizations* specific columns.
-- Assign state agency data info to the *WaDE2 Organizations* specific columns (this was hardcoded by hand for simplicity).
+- Populate output dataframe with *WaDE Organizations* specific columns.
+- Assign agency info to the *WaDE Organizations* specific columns (this was hardcoded by hand for simplicity).
 - Assign organization UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *organizations.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
----------- | ---------- | ------------ | ------------
-NDssdw_O1 | North Dakota Department of Water Resource | Chris Bader | https://www.swc.nd.gov/
+OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite | State
+---------- | ---------- | ------------ | ------------ | ------------
+xx | xx | xx | xx | xx 
 
 
-
-***
-### 4) Code File: 4_NDssdw_WaterSources.py
-Purpose: generate a list of water sources specific to the Site Specific Diversions Withdrawal time series water data.
-
-#### Inputs:
-- P_ndSSMaster.csv
-
-#### Outputs:
-- waterSources.csv
-- watersources_missing.csv (error check only)
+## 4) Water Source Information
+Purpose: generate a list of water sources specific to a water right.
 
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE2 WaterSources* specific columns.
-- Assign state agency info to columns.  See *ND_SS_DiversionsWithdrawalsWaterUse Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
-    - *WaterSourceName* = "Unspecified".
-    - *WaterSourceNativeID* = see *0_PreProcessNDDiversionsWithdrawalsWaterUseData.ipynb* for specifics on generation.
-    - *WaterSourceTypeCV* = **Source**, see *0_PreProcessNDDiversionsWithdrawalsWaterUseData.ipynb* for specifics on generation.
-- Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE2 specific *WaterSourceName*, *WaterSourceNativeID* & *WaterSourceTypeCV* fields.
+- Populate output dataframe with *WaDE WaterSources* specific columns.
+- Assign agency info to the *WaDE WaterSources* specific columns.  See *XXssdw_DivisionAndWithdrawlSitesSchema Mapping to WaDE.xslx* for specific details.  Items of note are as follows...
+    - *WaterSourceUUID* = ""
+    - *WaterQualityIndicatorCV* = ""
+    - *WaterSourceName* = ""
+    - *WaterSourceNativeID* = ""
+    - *WaterSourceTypeCV* = ""
+- Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceName* & *WaterSourceTypeCV* fields.
 - Assign water source UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *WaterSources.csv*.
@@ -177,118 +129,119 @@ Purpose: generate a list of water sources specific to the Site Specific Diversio
 #### Sample Output (WARNING: not all fields shown):
 WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceNativeID | WaterSourceTypeCV
 ---------- | ---------- | ------------ | ------------ | ------------
-NDssdw_WS3 | Fresh | Unspecified | WaDEND_WS3 | Groundwater
+xx | xx | xx| xx | xx
 
-Any data fields that are missing required values and dropped from the WaDE2-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
 - WaterSourceUUID
 - WaterQualityIndicatorCV
 - WaterSourceTypeCV
 
 
-
-***
-### 5) Code File: 5_NDssdw_Sites.py
-Purpose: generate a list of sites specific to the Site Specific Diversions Withdrawal time series water data.
-
-#### Inputs:
-- P_ndSSMaster.csv
-- P_njSSGeometry.csv
-
-#### Outputs:
-- sites.csv
-- sites_missing.csv (error check only)
+## 5) Site Information
+Purpose: generate a list of sites information.
 
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE2 Site* specific columns.
-- Assign state agency info to columns.  See *ND_SS_DiversionsWithdrawalsWaterUse Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
-    - Extract *WaterSourceUUID* from watersource.csv input file. See code for specific implementation of extraction.
-    - *CoordinateMethodCV* = "Unspecified".
-    - *County* = **County**.
-    - *Latitude* = **Lattitude**.
-    - *Longitude* = **Longitude**.
-    - *PODorPOUSite* = "POD" for Point of Diversion.
-    - *SiteName* = "Unspecified".
-    - *SiteNativeID* = **POD**, see *0_PreProcessNDDiversionsWithdrawalsWaterUseData.ipynb* for specifics on generation.
-    - *SiteTypeCV* = Unspecified".
-- Consolidate output dataframe into Site Specific Diversions Withdrawal information only by dropping duplicate entries, group by WaDE2 specific *WaterSourceUUID*, *PODorPOUSite*, *SiteName*, *SiteNativeID*, *SiteTypeCV*, *Latitude*, and *Longitude* fields.
+- Populate output dataframe with *WaDE Site* specific columns.
+- Assign agency info to the *WaDE Site* specific columns.  See *XXssdw_DivisionAndWithdrawlSitesSchema Mapping to WaDE.xslx* for specific details.  Items of note are as follows...
+    - *SiteUUID* = ""
+    - *WaterSourceUUIDs* = Extract *WaterSourceUUID* from waterSources.csv input csv file. See code for specific implementation of extraction.
+    - *CoordinateAccuracy* = ""
+    - *CoordinateMethodCV* = ""
+    - *Country* = ""
+    - *EPSGCodeCV* = ""
+    - *Geometry* = ""
+    - *GNISCodeCV* = ""
+    - *HUC12* = ""
+    - *HUC8* = ""
+    - *Latitude* = ""
+    - *Longitude* = ""
+    - *NHDNetworkStatusCV* = ""
+    - *NHDProductCV* = ""
+    - *PODorPOUSite* = ""
+    - *SiteName* = ""
+    - *SiteNativeID* = ""
+    - *SiteTypeCV* = ""
+    - *StateCV* = ""																			
+    - *USGSSiteID* = ""
+- Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *SiteNativeID*, *SiteName*, *SiteTypeCV*, *Longitude* & *Latitude* fields.
 - Assign site UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *sites.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-SiteUUID | CoordinateMethodCV | Latitude | Longitude | SiteName | SiteNativeID | SiteTypeCV
----------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------
-NDssdw_S1 | Unspecified | 47.7717479999999 | -104.040925 | Unspecified | 02305925DB | Unspecified
+SiteUUID | WaterSourceUUID | CoordinateMethodCV | County | Latitude | Longitude | PODorPOUSite| SiteName | SiteNativeID | SiteTypeCV
+---------- | ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------
+xx | xx | xx | xx | xx | xx | xx | xx | xx | xx
 
-Any data fields that are missing required values and dropped from the WaDE2-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
 - SiteUUID 
 - CoordinateMethodCV
 - EPSGCodeCV
 - SiteName
 
 
-
-***
-### 6) Code File: 6_NDssdw_SiteSpecificAmounts_fact.py
-Purpose: generate master sheet of state agency Site Specific Diversions Withdrawal timeseries water data to import into WaDE2 2.0.
-
-#### Inputs:
-- P_ndSSMaster.csv
-- variables.csv
-- watersources.csv
-- sites.csv
-
-#### Outputs:
-- sitespecificamounts.csv
-- sitespecificamounts_missing.csv (error check only)
+## 6) SiteSpecificAmounts Information
+Purpose: generate master sheet of site-specific amount information to import into WaDE 2.0.
 
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE2 Water Site Specific Diversions Withdrawal Amounts* data columns.
-- Assign state agency data info to columns.  See *ND_SS_DiversionsWithdrawalsWaterUse Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
-    - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
-    - *Amount* = **Reported_AcFt**, converted from AcFT to MG.  See *0_PreProcessNDDiversionsWithdrawalsWaterUseData.ipynb* for specifics on generation. 
-    - *BeneficialUseCategory* =  **Use_Type**.
-    - *CommunityWaterSupplySystem* = **Civil_Township**.
-    - *ReportYearCV* = **Use_Year**.
-    - *TimeframeStart* = see *0_PreProcessNDDiversionsWithdrawalsWaterUseData.ipynb* for specifics on generation.
-    - *TimeframeEnd* = see *0_PreProcessNDDiversionsWithdrawalsWaterUseData.ipynb* for specifics on generation.
+- Populate output dataframe with *WaDE site-specific amount* specific columns.
+- Assign agency info to the *WaDE site-specific amount* specific columns.  See *XXssdw_DivisionAndWithdrawlSitesSchema Mapping to WaDE.xslx* for specific details.  Items of note are as follows...
+    - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
+    - *MethodUUID* = ""
+    - *OrganizationUUID* = ""
+    - *SiteUUID* = ""
+    - *VariableSpecificUUID* = ""
+    - *WaterSourceUUID* = ""
+    - *Amount* = ""
+    - *AllocationCropDutyAmount* = ""
+    - *AssociatedNativeAllocationIDs* = ""
+    - *BeneficialUseCategory* = ""
+    - *CommunityWaterSupplySystem* = ""
+    - *CropTypeCV* = ""
+    - *CustomerTypeCV* = ""
+    - *DataPublicationDate* = ""
+    - *DataPublicationDOI* = ""
+    - *Geometry* = ""
+    - *IrrigatedAcreage* = ""
+    - *IrrigationMethodCV* = ""
+    - *PopulationServed* = ""
+    - *PowerGeneratedGWh* = ""
+    - *PowerType* = ""
+    - *PrimaryUseCategory* = ""
+    - *ReportYearCV* = ""
+    - *SDWISIdentifier* = ""
+    - *TimeframeEnd* = ""
+    - *TimeframeStart* = ""
+																						
+- Consolidate output dataframe into site-specific amount specific information only by grouping entries by *AllocationNativeID* filed.
 - Perform error check on output dataframe.
 - Export output dataframe *waterallocations.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-MethodUUID | OrganizationUUID | SiteUUID | VariableSpecificUUID | WaterSourceUUID | Amount | BeneficialUseCategory | TimeframeStart | TimeframeEnd 
----------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------
-NDssdw_M1 | NDssdw_O1 | NDssdw_S1 | NJss_V13 | NJss_WS2 | 0 | Irrigation | 1976 | 01/01/1976 | 12/31/1976
+MethodUUID | OrganizationUUID | SiteUUID | VariableSpecificUUID | WaterSourceUUID | Amount | AllocationCropDutyAmount | AssociatedNativeAllocationIDs | BeneficialUseCategory | CommunityWaterSupplySystem | CropTypeCV | CustomerTypeCV | DataPublicationDate | DataPublicationDOI | Geometry | IrrigatedAcreage | IrrigationMethodCV | PopulationServed | PowerGeneratedGWh | PowerType | PrimaryUseCategory | ReportYearCV | SDWISIdentifier | TimeframeEnd | TimeframeStart
+---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ----------  | ---------- 
+xx | xx | xx | xx | xx | xx | xx | xx | xx | xx | xx | xx | xx | xx | xx | xx | xx | xx | xx | xx | xx | xx | xx | xx | xx
 
-Any data fields that are missing required values and dropped from the WaDE2-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sitespecificamounts_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the site-specific amount include the following...
 - MethodUUID
 - VariableSpecificUUID
 - OrganizationUUID
-- WaterSourceUUID
 - SiteUUID
-- Amount
+- AllocationPriorityDate
 - BeneficialUseCategory
+- AllocationAmount or AllocationMaximum
 - DataPublicationDate
-- TimeframeEnd
-- TimeframeStart
-
-
-
-***
-### 7) Code File: 7_NDssdw_PODSiteToPOUSiteRelationships.py
-Not applicable for the current data.  Missing place of use (POU) data and connections with point of diversions.
-
 
 
 ***
 ## Staff Contributions
-Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [North Dakota Department of Water Resources (NDDWR)](https://www.swc.nd.gov/).
+Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the ["{state / organization name}"]("{http web link address to state / organization name}").
 
 WSWC Staff
-- Ryan James <rjames@wswc.utah.gov>
-- Adel Abdallah <adelabdallah@wswc.utah.gov>
+- Adel Abdallah (Project Manager) <adelabdallah@wswc.utah.gov>
+- Ryan James (Data Analysis) <rjames@wswc.utah.gov>
 
-NDDWR Staff
-- Chris Bader <cbader@nd.gov>
+"{state / organization name}" Staff
+- "{name of staff member that is our point of contact for this data}" <"{point of contacts email"}>
