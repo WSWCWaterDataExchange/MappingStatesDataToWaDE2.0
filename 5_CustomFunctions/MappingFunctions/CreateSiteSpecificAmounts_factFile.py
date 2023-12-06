@@ -1,4 +1,4 @@
-# Date Update: 06/27/2023
+# Date Update: 11/16/2023
 # Purpose: To create site-specific amounts record information and populate dataframe for WaDE 2.0.
 
 
@@ -21,7 +21,7 @@ import GetColumnsFile
 
 # Assign Primary Use Category fix
 sys.path.append("../../5_CustomFunctions/AssignPrimaryUseCategory")
-import AssignPrimaryUseCategory
+import AssignPrimaryUseCategoryFile
 
 # Test WaDE Data for any Errors
 sys.path.append("../../5_CustomFunctions/ErrorCheckCode")
@@ -176,7 +176,7 @@ def CreateSiteSpecificAmounts_factsInputFunction(workingDirString, mainInputFile
 
     # Temp solution to populate PrimaryBeneficialUseCategory field.
     # Use Custom import file
-    outdf['PrimaryUseCategory'] = outdf.apply(lambda row: AssignPrimaryUseCategory.retrievePrimaryUseCategory(row['BeneficialUseCategory']), axis=1)
+    outdf['PrimaryUseCategory'] = outdf.apply(lambda row: AssignPrimaryUseCategoryFile.retrievePrimaryUseCategory(row['BeneficialUseCategory']), axis=1)
 
 
     # Error Checking Each Field
