@@ -28,7 +28,7 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 
 
 ***
-### 0) Code File: 1_COwr_PreProcessAllocationData.ipynb
+## Code File: 1_COwr_PreProcessAllocationData.ipynb
 Purpose: Pre-process the input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
@@ -41,8 +41,7 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 - Read the input file and generate temporary input dataframe.
 - Format date datatype values to WaDE 2.0 appropriate formats.
 - Using provided index, translate provided beneficial uses abbreviations into full terms.
-- Format water source type to match WaDE 2.0 appropriate formats, "Unspecified" if not provided.
-- Format water source name to match WaDE 2.0 appropriate formats, "Unspecified" if not provided.
+- Format water source type to match WaDE 2.0 appropriate formats, extract from **Structure Type** input field using provided dictionary.
 - Format GNIS ID to match WaDE 2.0 appropriate formats, "Unspecified" if not provided.
 - Two separate fields were provided for allocation flow.  Use the following rules to determine appropriate value...
     - If **Decreed Units** is equal to "C" and **Net Absolute** does not equal to 0, then return **Net Absolute** as allocation flow.
@@ -56,7 +55,6 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 - Combine **Admin No**, **Order No**, **Decreed Units**, & **WDID** into single string entry for a unique water right identifier.
 - Inspect output dataframe for additional errors / datatypes.
 - Export output dataframe as new csv file, *Pwr_coMain.zip*.
-
 
 
 ***
@@ -133,9 +131,9 @@ Purpose: generate a list of water sources specific to a water right.
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
 - Assign agency info to the *WaDE WaterSources* specific columns.  See *[CO_Allocation Schema Mapping_WaDEQA.xlsx](https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/blob/master/Colorado/WaterAllocation/CO_Allocation%20Schema%20Mapping_WaDEQA.xlsx)* for specific details.  Items of note are as follows...
-    - WaDE *WaterSourceName* = *input_WaterSourceName*, see *0_PreProcessColoradoAllocationData.ipynb* for specifics.
-    - WaDE *WaterSourceNativeID* = **GNIS ID** input field.
-    - WaDE *WaterSourceTypeCV* = *input_WaterSourceTypeCV*, see *0_PreProcessColoradoAllocationData.ipynb* for specifics.
+    - WaDE *WaterSourceName* = **Water Source** input.
+    - WaDE *WaterSourceNativeID* = Use temp id.
+    - WaDE *WaterSourceTypeCV* = **Structure Type** input, see *0_PreProcessColoradoAllocationData.ipynb* for specifics.
 - Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceName* & *WaterSourceTypeCV* fields.
 - Assign water source UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
@@ -144,7 +142,7 @@ Purpose: generate a list of water sources specific to a water right.
 #### Sample Output (WARNING: not all fields shown):
 WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceNativeID | WaterSourceTypeCV
 ---------- | ---------- | ------------ | ------------ | ------------
-COwr_WS1 | Unspecified | COAL CREEK | 188598 | Surface Water
+COwr_WS1 | Unspecified | COAL CREEK | wadeID1 | Surface Water
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate file (e.g. *watersources_missing.xlsx*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
 - WaterSourceUUID
@@ -219,9 +217,60 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - DataPublicationDate
 
 
-***
 ### 7) Code File: 7_COwr_PODSiteToPOUSiteRelationships.py
 - Not used at this time.  Need Colorado Point-of-Diversion and Place-of-Use data to work with.
+
+
+***
+## Source Data & WaDE Complied Data Assessment
+The following info is from a data assessment evaluation of the completed data...
+
+Dataset | Num of Source Entries (rows)
+---------- | ---------- 
+**DWR Water Right - Net Amounts** | 171214
+
+
+Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
+---------- | ------------ | ------------ | ------------
+**Compiled WaDE Data** | 124605 | 0 | 161016
+
+
+Assessment of Removed Source Records | Count | Action
+---------- | ---------- | ----------
+Unused WaterSource Record | 1 | removed from watersource.csv
+Incomplete or bad entry for Latitude | 243 | removed from sites.csv
+Unused Site Record  | 2 | removed from sites.csv
+Incomplete or bad entry for SiteUUID (missing site record, due to missing latitude)| 269 | removed from waterallocations.csv
+Incomplete or bad entry for Flow | 2 | removed from waterallocations.csv
+
+
+
+**Figure 1:** Distribution of POD vs POU Sites within the sites.csv
+![](figures/PODorPOUSite.png)
+
+**Figure 2:** Distribution Sites by WaterSourceTypeCV within the sites.csv
+![](figures/WaterSourceTypeCV.png)
+
+**Figure 3:** Distribution of Identified Water Right Records by WaDE Categorized Primary Beneficial Uses within the waterallocations.csv
+![](figures/PrimaryBeneficialUseCategory.png)
+
+**Figure 4a:** Range of Priority Date of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationPriorityDate1.png)
+
+**Figure 4b:** Cumulative distribution of Priority Date of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationPriorityDate2.png)
+
+**Figure 5:** Distribution & Range of Flow (CFS) of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationFlow_CFS.png)
+
+**Figure 6:** Distribution & Range of Volume (AF) of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationVolume_AF.png)
+
+**Figure 7:** Map of Identified Points within the sites.csv
+![](figures/PointMap.png)
+
+**Figure 8:** Map of Identified Polygons within the sites.csv
+![](figures/PolyMap.png)
 
 
 ***
@@ -234,4 +283,3 @@ WSWC Staff
 
 CDWR Staff
 - Brian Macpherson <brian.macpherson@state.co.us>
-
