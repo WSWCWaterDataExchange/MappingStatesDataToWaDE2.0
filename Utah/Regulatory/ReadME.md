@@ -8,8 +8,8 @@ The following data was used for water allocations...
 Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
 **Utah Water Right Areas** | Water Right Areas Service, where administrative boundaries based primarily on surface drainage areas.  | [link](https://opendata.gis.utah.gov/datasets/utahDNR::utah-water-right-areas/about) | Not Provided
-**AreasOpenToLimitedAppropriation** | - | [link]() | Not Provided
-**BasinsClosedToNewAppropriations** | - | [link]() | Not Provided
+**AreasOpenToLimitedAppropriation** | Water Right Areas with limited new appropriations. | Emailed through personal correspondence with state | Not Provided
+**BasinsClosedToNewAppropriations** | Water Right Areas /basin closed to new appropriations. | Emailed through personal correspondence with state | Not Provided
 
 Unique files were created to be used as input.  Input files used are as follows...
 - WaterRightAreasServiceView (zipped shp & dbf files)
