@@ -237,7 +237,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
     - *PopulationServed* = ""
     - *PowerType* = ""
     - *PrimaryBeneficialUseCategory* = ""
-    - *WaterAllocationNativeURL* = "https://www.twdb.texas.gov/waterplanning/resources/index.asp"																							
+    - *WaterAllocationNativeURL* = "https://www3.twdb.texas.gov/apps/waterdatainteractive//GetReports.aspx?Num=" + **StateWellN** input + "&"Type=GWDB																							
 - Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.
 - Perform error check on output dataframe.
 - Export output dataframe *waterallocations.csv*.
@@ -275,6 +275,56 @@ Notes: podsitetopousiterelationships.csv output only needed if both POD and POU 
 - Explode the consolidated waterallocations dataframe again using the _PODSiteUUID_ field to create unique rows.
 - Perform error check on waterallocations dataframe (check for NaN values)
 - If waterallocations is not empty, export output dataframe *podsitetopousiterelationships.csv*.
+
+
+***
+## Source Data & WaDE Complied Data Assessment
+The following info is from a data assessment evaluation of the completed data...
+
+Dataset | Num of Source Entries (rows)
+---------- | ---------- 
+**GroundWater Rights**| 141,605
+
+
+Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
+---------- | ------------ | ------------ | ------------
+**Compiled WaDE Data** | 141,605 | 0 | 141,605
+
+
+Assessment of Removed Source Records | Count | Action
+---------- | ---------- | ----------
+Nothing removed | - | -
+
+
+**Figure 1:** Distribution of POD vs POU Sites within the sites.csv
+![](figures/PODorPOUSite.png)
+
+**Figure 2:** Distribution Sites by WaterSourceTypeCV within the sites.csv
+![](figures/WaterSourceTypeCV.png)
+
+**Figure 3:** Distribution of Identified Water Right Records by WaDE Categorized Primary Beneficial Uses within the waterallocations.csv
+![](figures/PrimaryBeneficialUseCategory.png)
+
+**Figure 4a:** Range of Priority Date of Identified Water Right Records within the waterallocations.csv
+<!-- ![](figures/AllocationPriorityDate1.png) -->
+- no priority date data
+
+**Figure 4b:** Cumulative distribution of Priority Date of Identified Water Right Records within the waterallocations.csv
+<!-- ![](figures/AllocationPriorityDate2.png) -->
+- no priority date data
+
+**Figure 5:** Distribution & Range of Flow (CFS) of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationFlow_CFS.png)
+
+**Figure 6:** Distribution & Range of Volume (AF) of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationVolume_AF.png)
+
+**Figure 7:** Map of Identified Points within the sites.csv
+![](figures/PointMap.png)
+
+**Figure 8:** Map of Identified Polygons within the sites.csv
+<!-- ![](figures/PolyMap.png) -->
+- no POU data
 
 
 ***

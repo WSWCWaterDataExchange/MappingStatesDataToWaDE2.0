@@ -228,6 +228,63 @@ Note: podsitetopousiterelationships.csv output only needed if both POD and POU d
 
 
 ***
+## Source Data & WaDE Complied Data Assessment
+The following info is from a data assessment evaluation of the completed data...
+
+Dataset | Num of Source Entries (rows)
+---------- | ---------- 
+**Permits_input** | 12,181
+
+
+Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
+---------- | ------------ | ------------ | ------------
+**Compiled WaDE Data** | 3,766 | 0 | 3,228
+
+
+Assessment of Removed Source Records | Count | Action
+---------- | ---------- | ----------
+"what was removed" | "count of entries removed" | "action taken (il.e., removed from sites.csv)"
+Unused WaterSource Record | 41 | removed from watersources.csv input
+Unused Site Record | 987 | removed from sites.csv input
+Incomplete or bad entry for Latitude | 147 | removed from sites.csv input
+Incomplete or bad entry for Longitude | 10 | removed from sites.csv input
+Incomplete or bad entry for WaterSourceUUIDs | 2 | removed from sites.csv input
+Incomplete or bad entry for County | 2 | removed from sites.csv input
+Incomplete or bad entry for SiteUUID | 223 | removed from sites.csv input
+Incomplete or bad entry for Volume | 215 | removed from waterallocations.csv input
+Incomplete or bad entry for Flow | 142 | removed from waterallocations.csv input
+Incomplete or bad entry for IrrigatedAcreage | 33 | removed from waterallocations.csv input
+Incomplete or bad entry for AllocationPriorityDate | 1 | removed from waterallocations.csv input
+
+**Figure 1:** Distribution of POD vs POU Sites within the sites.csv
+![](figures/PODorPOUSite.png)
+
+**Figure 2:** Distribution Sites by WaterSourceTypeCV within the sites.csv
+![](figures/WaterSourceTypeCV.png)
+
+**Figure 3:** Distribution of Identified Water Right Records by WaDE Categorized Primary Beneficial Uses within the waterallocations.csv
+![](figures/PrimaryBeneficialUseCategory.png)
+
+**Figure 4a:** Range of Priority Date of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationPriorityDate1.png)
+
+**Figure 4b:** Cumulative distribution of Priority Date of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationPriorityDate2.png)
+
+**Figure 5:** Distribution & Range of Flow (CFS) of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationFlow_CFS.png)
+
+**Figure 6:** Distribution & Range of Volume (AF) of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationVolume_AF.png)
+
+**Figure 7:** Map of Identified Points within the sites.csv
+![](figures/PointMap.png)
+
+**Figure 8:** Map of Identified Polygons within the sites.csv
+![](figures/PolyMap.png)
+
+
+***
 ## Staff Contributions
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [North Dakota State Water Commission (NDSWC)](https://www.swc.nd.gov/theswc/water_appropriations.html).
 
