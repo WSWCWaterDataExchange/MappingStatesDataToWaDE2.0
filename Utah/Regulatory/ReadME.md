@@ -8,13 +8,15 @@ The following data was used for water allocations...
 Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
 **Utah Water Right Areas** | Water Right Areas Service, where administrative boundaries based primarily on surface drainage areas.  | [link](https://opendata.gis.utah.gov/datasets/utahDNR::utah-water-right-areas/about) | Not Provided
+**Groundwater Policy Management** | Areas throughout Utah to promote wise use of the ground-water, protect existing water rights, and address water quality issues and over-appropriation of ground water. | Emailed through personal correspondence with state | [link](https://www.waterrights.utah.gov/groundwater/)
+**BasinsClosedToNewAppropriations** | Water Right areas / basins closed to new appropriations. | Emailed through personal correspondence with state | Not Provided
 **AreasOpenToLimitedAppropriation** | Water Right Areas with limited new appropriations. | Emailed through personal correspondence with state | Not Provided
-**BasinsClosedToNewAppropriations** | Water Right Areas /basin closed to new appropriations. | Emailed through personal correspondence with state | Not Provided
 
 Unique files were created to be used as input.  Input files used are as follows...
-- WaterRightAreasServiceView (zipped shp & dbf files)
-- AreasOpenToLimitedAppropriation.zip (zipped shp & dbf files)
+- WaterRightAreasServiceView.zip (zipped shp & dbf files)
+- ground_water_policy.zip (zipped shp & dbf files)
 - BasinsClosedToNewAppropriations (zipped shp & dbf files)
+- AreasOpenToLimitedAppropriation.zip (zipped shp & dbf files)
 
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
@@ -36,9 +38,10 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 Purpose: Pre-process the input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
-- WaterRightAreasServiceView (zipped shp & dbf files)
-- AreasOpenToLimitedAppropriation.zip (zipped shp & dbf files)
+- WaterRightAreasServiceView.zip (zipped shp & dbf files)
+- ground_water_policy.zip (zipped shp & dbf files)
 - BasinsClosedToNewAppropriations (zipped shp & dbf files)
+- AreasOpenToLimitedAppropriation.zip (zipped shp & dbf files)
 
 #### Outputs:
  - Pre_utMain.zip
@@ -207,12 +210,13 @@ The following info is from a data assessment evaluation of the completed data...
 Dataset | Num of Source Entries (rows) 
 ---------- | ----------
 **Utah Water Right Areas** | 51
-**AreasOpenToLimitedAppropriation** | 7
+**Groundwater Policy Management** | 60
 **BasinsClosedToNewAppropriations** | 5
+**AreasOpenToLimitedAppropriation** | 7
 
 Dataset | Num of Identified Reporting Units | Num of Identified Regulatory Overlays
 ---------- | ---------- | ------------
-**Compiled WaDE Data** | "60" | "60"
+**Compiled WaDE Data** | 77 | 120
 
 
 Assessment of Removed Source Records | Count | Action
