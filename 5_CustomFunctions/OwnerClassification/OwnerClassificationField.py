@@ -34,7 +34,7 @@ def CreateOwnerClassification(val):
     if val == '' or pd.isnull(val):
         outString = "Unspecified" # if value is blank or unknown
     else:
-        outString = "Private "  # Default Value
+        outString = "Private"  # Default Value
 
         # Cleaning text / simple search format
         val = re.sub("[$@&.`;',/\)(-]", "", val).strip()
