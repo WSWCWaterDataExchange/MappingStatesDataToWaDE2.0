@@ -861,7 +861,7 @@ def AllocationPriorityDate_AA_Check(dfx, dfy):
     return (dfx, dfy)
 
 
-# AllocationTimeframeEnd_Yes
+# AllocationTimeframeEnd_nvarchar(6)_Yes
 def AllocationTimeframeEnd_AA_Check(dfx, dfy):
     selectionVar = ((dfx["AllocationTimeframeEnd"].astype(str).str.len() > 6))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for AllocationTimeframeEnd').reset_index()
@@ -870,7 +870,7 @@ def AllocationTimeframeEnd_AA_Check(dfx, dfy):
     return (dfx, dfy)
 
 
-# AllocationTimeframeStart_Yes
+# AllocationTimeframeStart_nvarchar(6)_Yes
 def AllocationTimeframeStart_AA_Check(dfx, dfy):
     selectionVar = (dfx["AllocationTimeframeStart"].astype(str).str.len() > 6)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for AllocationTimeframeStart').reset_index()

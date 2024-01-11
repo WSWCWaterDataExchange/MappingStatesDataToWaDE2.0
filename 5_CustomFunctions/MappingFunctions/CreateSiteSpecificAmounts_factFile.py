@@ -19,10 +19,6 @@ from datetime import date
 sys.path.append("../../5_CustomFunctions/MappingFunctions")
 import GetColumnsFile
 
-# Assign Primary Use Category fix
-sys.path.append("../../5_CustomFunctions/AssignPrimaryUseCategory")
-import AssignPrimaryUseCategoryFile
-
 # Test WaDE Data for any Errors
 sys.path.append("../../5_CustomFunctions/ErrorCheckCode")
 import ErrorCheckCodeFunctionsFile
@@ -46,6 +42,7 @@ def CreateSiteSpecificAmounts_factsInputFunction(workingDirString, mainInputFile
     df = pd.read_csv(fileInput, compression='zip')
 
     # Input Data - 'WaDE Input' files.
+    dfv = pd.read_csv("ProcessedInputData/variables.csv").replace(np.nan, "")  # Variables dataframe
     dfws = pd.read_csv("ProcessedInputData/watersources.csv").replace(np.nan, "")  # WaterSources dataframe
     dfs = pd.read_csv("ProcessedInputData/sites.csv").replace(np.nan, "")
 
@@ -55,6 +52,19 @@ def CreateSiteSpecificAmounts_factsInputFunction(workingDirString, mainInputFile
 
     # Custom Functions
     ############################################################################
+
+    # For creating VariableSpecificUUID
+    VariableSpecificUUIDdict = pd.Series(dfv.VariableSpecificUUID.values, index=dfv.VariableSpecificCV.astype(str)).to_dict()
+    def retrieveVariableSpecificUUID(colrowValue):
+        if colrowValue == '' or pd.isnull(colrowValue):
+            outString = ''
+        else:
+            colrowValue = str(colrowValue).strip()
+            try:
+                outString = VariableSpecificUUIDdict[colrowValue]
+            except:
+                outString = ''
+        return outString
 
     # For creating WaterSourceUUID
     WaterSourceUUIDdict = pd.Series(dfws.WaterSourceUUID.values, index=dfws.WaterSourceNativeID.astype(str)).to_dict()
@@ -92,7 +102,7 @@ def CreateSiteSpecificAmounts_factsInputFunction(workingDirString, mainInputFile
     outdf['MethodUUID'] = df['in_MethodUUID']
 
     print("VariableSpecificUUID")
-    outdf['VariableSpecificUUID'] = df['in_MethodUUID']
+    outdf['VariableSpecificUUID'] = df.apply(lambda row: retrieveVariableSpecificUUID(row['in_VariableSpecificCV']), axis=1)
 
     print("OrganizationUUID")
     outdf['OrganizationUUID'] = df['in_OrganizationUUID']
@@ -173,10 +183,7 @@ def CreateSiteSpecificAmounts_factsInputFunction(workingDirString, mainInputFile
     # Solving WaDE 2.0 Upload Issues
     ############################################################################
     print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to upload data to WaDE here.
-
-    # Temp solution to populate PrimaryBeneficialUseCategory field.
-    # Use Custom import file
-    outdf['PrimaryUseCategory'] = outdf.apply(lambda row: AssignPrimaryUseCategoryFile.retrievePrimaryUseCategory(row['BeneficialUseCategory']), axis=1)
+    print("...N/A")
 
 
     # Error Checking Each Field
