@@ -335,4 +335,8 @@ WSWC Staff
 - Ryan James (Data Analysis) <rjames@wswc.utah.gov>
 
 Minnesota Department of Natural Resources Staff
-- "{name of staff member that is our point of contact for this data}" <"{point of contacts email"}>
+- Sean Hunt
+Management Analyst | Water Regulations Unit | Strategic Information Services Unit
+Minnesota Department of Natural Resources
+Ecological and Water Resources Division
+Email: sean.hunt@state.mn.us
