@@ -1,4 +1,4 @@
-# TCEQ Water Rights (Allocation) Data Preparation for WaDE
+# TCEQ Water Rights (Allocation) & Water Use Data Preparation for WaDE
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [Texas Commission on Environmental Quality (TCEQ)](https://www.tceq.texas.gov/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 
@@ -19,7 +19,7 @@ Input files used are as follows...
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
 The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
-- Texas Allocation Data: https://drive.google.com/drive/folders/1AyU66r1y4FNkwMBcN0J4knPNhGqZGuRh?usp=sharing
+- Texas Allocation & Water Use Data: https://drive.google.com/drive/folders/1AyU66r1y4FNkwMBcN0J4knPNhGqZGuRh?usp=sharing
 
 
 ## Summary of Data Prep
@@ -40,13 +40,13 @@ Purpose: Pre-process the state agency's input data files and merge them into one
 - WaterUse.zip
 
 #### Outputs:
- - Pwr_txMain.zip
+ - Pssdw_txMain.zip
 
 #### Operation and Steps:
 - Read in owner and water use file information.  Clean up any errors & remove any special characters.  Group by information by **Water Right ID**.
 - Read in water right as single points information.  Left-join owner and water use information via **Water Right ID** input.
 - Inspect output dataframe for additional errors / datatypes.
-- Export output dataframe as new csv file, *Pwr_txMain.zip*.
+- Export output dataframe as new csv file, *Pssdw_txMain.zip*.
 
 
 ***
@@ -54,7 +54,7 @@ Purpose: Pre-process the state agency's input data files and merge them into one
 Purpose: generate WaDE csv input files (methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, podsitetopousiterelationships.csv).
 
 #### Inputs:
-- Pwr_txMain.zip
+- Pssdw_txMain.zip
 
 #### Outputs:
 - methods.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
