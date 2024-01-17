@@ -19,6 +19,10 @@ from datetime import date
 sys.path.append("../../5_CustomFunctions/MappingFunctions")
 import GetColumnsFile
 
+# Assign Primary Use Category fix
+sys.path.append("../../5_CustomFunctions/AssignPrimaryUseCategory")
+import AssignPrimaryUseCategoryFile
+
 # Test WaDE Data for any Errors
 sys.path.append("../../5_CustomFunctions/ErrorCheckCode")
 import ErrorCheckCodeFunctionsFile
@@ -182,8 +186,11 @@ def CreateSiteSpecificAmounts_factsInputFunction(workingDirString, mainInputFile
 
     # Solving WaDE 2.0 Upload Issues
     ############################################################################
-    print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to upload data to WaDE here.
-    print("...N/A")
+    # print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to upload data to WaDE here.
+    #
+    # # Temp solution to populate PrimaryBeneficialUseCategory field.
+    # # Use Custom import file
+    # outdf['PrimaryUseCategory'] = outdf.apply(lambda row: AssignPrimaryUseCategoryFile.retrievePrimaryUseCategory(row['BeneficialUseCategory']), axis=1)
 
 
     # Error Checking Each Field
