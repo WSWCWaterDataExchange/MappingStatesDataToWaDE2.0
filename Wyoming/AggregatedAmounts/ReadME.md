@@ -1,6 +1,8 @@
 # WWDO Aggregated Data Preparation for WaDE
 This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting aggregated water budget data made available by the [Wyoming Water Development Office (WWDO)](https://wwdc.state.wy.us/), for inclusion into the Water Data Exchange (WaDE) project.   WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
+**Report**: http://library.wrds.uwyo.edu/wwdcrept/Wyoming/Wyoming-River_Basin_Planning_Water_Supply_Index_Level_I_Ag_Mun_Dom_Ind_Water_Use_Index-Tech_Memo-2019.pdf
+
 ## Overview of Data Utilized
 The following data was used for...
 
