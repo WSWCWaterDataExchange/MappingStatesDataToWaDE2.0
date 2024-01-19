@@ -144,6 +144,7 @@ def SiteSpecificAmountsTestErrorFunctions(outdf, dfpurge):
     outdf, dfpurge = SDWISIdentifier_SS_Check(outdf, dfpurge)
     # outdf, dfpurge = TimeframeEnd_SS_Check(outdf, dfpurge)
     # outdf, dfpurge = TimeframeStart_SS_Check(outdf, dfpurge)
+    outdf, dfpurge = DuplicateUniqueCombo_SS_Check(outdf, dfpurge)
     return(outdf, dfpurge)
 
 
@@ -1324,10 +1325,19 @@ def SiteUUID_SS_Check(dfx, dfy):
 
 # Amount_float_-
 def Amount_SS_Check(dfx, dfy):
+    # check for string values with a ','
     selectionVar = (dfx["Amount"].astype(str).str.contains(','))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Amount').reset_index()
     mask['IncompleteField'] = mask['Amount']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
+
+    # check for negative, blank, or 0
+    selectionVar = (dfx['Amount'].replace("", 0).fillna(0).astype(float) <= 0.0)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Negative, blank, or 0 Amount values').reset_index()
+    mask['IncompleteField'] = mask['Amount']
+    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
+
+    # return results
     return (dfx, dfy)
 
 
@@ -1463,7 +1473,7 @@ def PrimaryUseCategory_SS_Check(dfx, dfy):
 
 # ReportYearCV_nchar(4)_Yes
 def ReportYearCV_SS_Check(dfx, dfy):
-    selectionVar = (dfx["ReportYearCV"].astype(str).str.len() > 4) | (dfx["ReportYearCV"].isnull()) | (dfx["ReportYearCV"] == '') | (dfx["ReportYearCV"] == 0)
+    selectionVar = (dfx["ReportYearCV"].astype(str).str.len() > 4) | (dfx["ReportYearCV"].isnull()) | (dfx["ReportYearCV"] == '') | (dfx["ReportYearCV"] <= 0) | (dfx["ReportYearCV"] == "0")
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for ReportYearCV').reset_index()
     mask['IncompleteField'] = mask['ReportYearCV']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -1495,6 +1505,23 @@ def TimeframeStart_SS_Check(dfx, dfy):
     mask['IncompleteField'] = mask['TimeframeStart']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
+
+# check for duplicates on OrganizationUUID, SiteUUID, VariableSpecificUUID, BeneficialUseCategory, TimeframeStart, TimeframeEnd & ReportYearCV
+def DuplicateUniqueCombo_SS_Check(dfx, dfy):
+    selectionVar = (dfx.duplicated(subset=['OrganizationUUID','SiteUUID','VariableSpecificUUID','BeneficialUseCategory','TimeframeStart','TimeframeEnd','ReportYearCV'], keep=False) == True)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Not Unique combination of SiteSpecificAmounts record').reset_index()
+    mask['IncompleteField'] = mask['OrganizationUUID'].astype(str) + \
+                              mask['SiteUUID'].astype(str) + \
+                              mask['VariableSpecificUUID'].astype(str) + \
+                              mask['BeneficialUseCategory'].astype(str) + \
+                              mask['TimeframeStart'].astype(str) + \
+                              mask['TimeframeEnd'].astype(str) + \
+                              mask['ReportYearCV'].astype(str)
+    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
+
+    # return results
+    return (dfx, dfy)
+
 
 
 # RegulatoryOverlay
