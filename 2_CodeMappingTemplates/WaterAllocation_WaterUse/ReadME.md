@@ -319,7 +319,8 @@ Dataset | Num of Source Entries (rows)
 **"{name of data}"** | "fill value here"
 
 
-Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records | Num ---------- | ------------ | ------------ | ------------ | ------------
+Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records | Num of Identified Water Use Records
+---------- | ------------ | ------------ | ------------ | ------------
 **Compiled WaDE Data** | "fill value here" | "fill value here" | "fill value here" | "fill value here"
 
 
