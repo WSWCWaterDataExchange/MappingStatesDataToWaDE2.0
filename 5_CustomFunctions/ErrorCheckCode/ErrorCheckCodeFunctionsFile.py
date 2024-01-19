@@ -1473,7 +1473,7 @@ def PrimaryUseCategory_SS_Check(dfx, dfy):
 
 # ReportYearCV_nchar(4)_Yes
 def ReportYearCV_SS_Check(dfx, dfy):
-    selectionVar = (dfx["ReportYearCV"].astype(str).str.len() > 4) | (dfx["ReportYearCV"].isnull()) | (dfx["ReportYearCV"] == '') | (dfx["ReportYearCV"] == 0)
+    selectionVar = (dfx["ReportYearCV"].astype(str).str.len() > 4) | (dfx["ReportYearCV"].isnull()) | (dfx["ReportYearCV"] == '') | (dfx["ReportYearCV"] <= 0) | (dfx["ReportYearCV"] == "0")
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for ReportYearCV').reset_index()
     mask['IncompleteField'] = mask['ReportYearCV']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
