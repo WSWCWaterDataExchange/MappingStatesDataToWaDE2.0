@@ -16,7 +16,7 @@ Input files used are as follows...
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
 The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
-- XX Site Specific Reservoir and Gage Data: "put WaDE Google Doc link here"
+- "XX" Site Specific Reservoir and Gage Data: "put WaDE Google Doc link here"
 
 
 ## Summary of Data Prep
@@ -232,9 +232,8 @@ Dataset | Num of Source Entries (rows)
 **"{name of data}"** | "fill value here"
 
 
-Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records | Num of Identified Water Use Records
----------- | ------------ | ------------ | ------------ | ------------
-**Compiled WaDE Data** | "fill value here" | "fill value here" | "fill value here" | "fill value here"
+Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Time Series Records
+**Compiled WaDE Data** | "fill value here" | "fill value here" | "fill value here"
 
 
 Assessment of Removed Source Records | Count | Action
@@ -261,7 +260,7 @@ Assessment of Removed Source Records | Count | Action
 
 ***
 ## Staff Contributions
-Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [("XX")]("").
+Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the ["XX"]('add website link here').
 
 WSWC Staff
 - Adel Abdallah <adelabdallah@wswc.utah.gov>
