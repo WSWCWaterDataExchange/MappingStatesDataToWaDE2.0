@@ -344,7 +344,7 @@ Dataset | Num of Source Entries (rows)
 
 Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records | Num of Identified Water Use Records
 ---------- | ------------ | ------------ | ------------ | ------------
-**Compiled WaDE Data** | 3,201 | 0 | 3,569 | 76,571
+**Compiled WaDE Data** | 3,201 | 0 | 3,569 | 61,670
 
 Assessment of Removed Source Records | Count | Action
 ---------- | ---------- | ----------
@@ -353,10 +353,10 @@ Unused Site Record    | 1592 | removed from sites.csv input
 Incomplete or bad entry for AllocationTimeframeEnd      | 1,901 | removed from waterallocations.csv input
 Incomplete or bad entry for AllocationTimeframeStart     | 25 | removed from waterallocations.csv input
 Incomplete or bad entry for AllocationPriorityDate        | 1 | removed from waterallocations.csv input
-Negative, blank, or 0 Amount values                    | 50,813 | removed from sitespecificamounts.csv input
-Not Unique combination of SiteSpecificAmounts record   | 7,856 | removed from sitespecificamounts.csv input
-Incomplete or bad entry for ReportYearCV                 |  1 | removed from sitespecificamounts.csv input
-
+Negative, blank, or 0 Amount values                     |50,813 | removed from sitespecificamounts.csv input
+Unused WR & Site Record                                 |14,901 | removed from sitespecificamounts.csv input
+Not Unique combination of SiteSpecificAmounts record    |7,856 | removed from sitespecificamounts.csv input
+Incomplete or bad entry for ReportYearCV                   1 | removed from sitespecificamounts.csv input
 **Figure 1:** Distribution of POD vs POU Sites within the sites.csv
 ![](figures/PODorPOUSite.png)
 
