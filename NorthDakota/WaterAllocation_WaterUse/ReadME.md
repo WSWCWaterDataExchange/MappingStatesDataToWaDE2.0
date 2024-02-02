@@ -356,7 +356,8 @@ Incomplete or bad entry for AllocationPriorityDate        | 1 | removed from wat
 Negative, blank, or 0 Amount values                     |50,813 | removed from sitespecificamounts.csv input
 Unused WR & Site Record                                 |14,901 | removed from sitespecificamounts.csv input
 Not Unique combination of SiteSpecificAmounts record    |7,856 | removed from sitespecificamounts.csv input
-Incomplete or bad entry for ReportYearCV                   1 | removed from sitespecificamounts.csv input
+Incomplete or bad entry for ReportYearCV                 |  1 | removed from sitespecificamounts.csv input
+
 **Figure 1:** Distribution of POD vs POU Sites within the sites.csv
 ![](figures/PODorPOUSite.png)
 
