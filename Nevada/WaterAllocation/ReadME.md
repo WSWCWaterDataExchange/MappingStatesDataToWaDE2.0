@@ -7,13 +7,13 @@ The following data was used for water allocations...
 
 Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
-**Point of diversion (POD)** | Point of diversion water right site data from NVDWR arcgis server. | [link](https://arcgis.shpo.nv.gov/arcgis/rest/services/Water_Resources_Public_Data/WaterRights_POD_POU/FeatureServer) | not given
-**Place of Use (POU)** | Place of use water right polygon data from NVDWR arcgis server. | [link](https://arcgis.shpo.nv.gov/arcgis/rest/services/Water_Resources_Public_Data/WaterRights_POD_POU/FeatureServer)
-**Permit Owner** | Permit owner data for water right data | [link](https://arcgis.shpo.nv.gov/arcgis/rest/services/Water_Resources_Public_Data/WaterRights_POD_POU/FeatureServer)
+**Point of diversion (POD)** | Point of diversion water right site data from NVDWR arcgis server. | [link](https://data-ndwr.hub.arcgis.com/maps/water-rights-points-of-diversion/about) | not given
+**Place of Use (POU)** | Place of use water right polygon data from NVDWR arcgis server. | [link](https://data-ndwr.hub.arcgis.com/datasets/NDWR::water-rights-places-of-use/explore?location=38.481732%2C-116.964650%2C7.08)
+**Permit Owner** | Permit owner data for water right data | [link](https://data-ndwr.hub.arcgis.com/datasets/NDWR::permit-owners/explore)
 
 Three unique files were created as input.  Input files used are as follows...
- - POD AllApps_2_input.csv
- - PoU AllApps_3_input.csv
+ - PointsofDiversion.csv
+ - POU_Permits_All.csv
  - Permit_Owners_5temp.csv
 
 
@@ -35,8 +35,8 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 Purpose: preprocess the Montana input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
- - POD AllApps_2_input.csv
- - PoU AllApps_3_input.csv
+ - PointsofDiversion.csv
+ - POU_Permits_All.csv
  - Permit_Owners_5temp.csv
 
 #### Outputs:
@@ -45,8 +45,8 @@ Purpose: preprocess the Montana input data files and merge them into one master 
 #### Operation and Steps:
 - Read in the input files.  Create temporary POD and POU dataframes.  POD and POU data share similar fields.
 - For NV, we don't want water rights that are considered: Abandoned, Abrogated, Application, Canceled, Denied, Expired, Forfeited, Ready For Action, Ready for Action (Protested), Rejected, Revoked, Supersceded, Withdrawn
-- For POD AllApps_2_input.csv, set WaDE field *PODorPOUSite* = POD.
-- For PoU AllApps_3_input.csv, set WaDE field *PODorPOUSite* = POU.
+- For PointsofDiversion.csv, set WaDE field *PODorPOUSite* = POD.
+- For POU_Permits_All.csv, set WaDE field *PODorPOUSite* = POU.
 - Concatenate temporary POD & POU dataframes together into single long output dataframe.
 - Left-merge Permit_Owners_5temp.csv via **app** field to long concatenated dataframe..  Drop duplicates.
 - Generate WaDE specific field *WaterSourceTypeC* from NVDWR **source** field (see preprocess code for specific dictionary used).
@@ -133,7 +133,7 @@ Purpose: generate a list of water sources specific to a water right.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign **NVDWR** info to the *WaDE WaterSources* specific columns.  See *NV_POD_Allocation Schema Mapping to WaDE_QA.xlsx* & *NV_POU_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+- Assign **NVDWR** info to the *WaDE WaterSources* specific columns.  See *NVwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - *WaterSourceTypeCV* = generated list of sources from **SOURCE_TYPE**, see *0_PreProcessNevadaAllocationData.ipynb* for specifics.
     - *WaterSourceNativeID* = see *0_PreProcessNevadaAllocationData.ipynb* for specifics.
 - Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceName* & *WaterSourceTypeCV* fields.
@@ -158,7 +158,7 @@ Purpose: generate a list of sites information.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
-- Assign **NVDWR** info to the *WaDE Site* specific columns.  See *NV_POD_Allocation Schema Mapping to WaDE_QA.xlsx* & *NV_POU_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+- Assign **NVDWR** info to the *WaDE Site* specific columns.  See *NVwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *WaterSourceUUID* from waterSources.csv input csv file. See code for specific implementation of extraction.
     - *County* = **county_x**.
     - *Latitude* = **x**.
@@ -189,15 +189,17 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
-- Assign **NVDWR** info to the *WaDE Water Allocations* specific columns.  See *NV_POD_Allocation Schema Mapping to WaDE_QA.xlsx* & *NV_POU_Allocation Schema Mapping to WaDE_QA.xlsx* for specific details.  Items of note are as follows...
+- Assign **NVDWR** info to the *WaDE Water Allocations* specific columns.  See *NVwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *AllocationFlow_CFS* = **duty_balance**.
     - *AllocationLegalStatusCV* = **app_status**.
     - *AllocationNativeID* = **app**.
     - *AllocationOwner* = **owner_name**.
     - *AllocationPriorityDate* = **prior_dt**.
+    - *AllocationVolume_AF* = **duty_balance**.
     - *BeneficialUseCategory* = **mou**.
-    - *WaterAllocationNativeURL* = **permit_info**
+    - *IrrigatedAcreage* = **pou_acre_total**
+    - *WaterAllocationNativeURL* = **permit_record**
 - Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.
 - Perform error check on output dataframe.
 - Export output dataframe *waterallocations.csv*.
@@ -237,6 +239,60 @@ Note: podsitetopousiterelationships.csv output only needed if both POD and POU d
 - Explode the consolidated waterallocations dataframe again using the _PODSiteUUID_ field, and again for the _POUSiteUUID_ field to create unique rows.
 - Perform error check on waterallocations dataframe (check for NaN values)
 - If waterallocations is not empty, export output dataframe _podsitetopousiterelationships.csv_.
+
+
+***
+## Source Data & WaDE Complied Data Assessment
+The following info is from a data assessment evaluation of the completed data...
+
+Dataset | Num of Source Entries (rows)
+---------- | ---------- 
+**Point of diversion (POD)** | 106,834
+**Place of Use (POU)** | 32,339
+
+
+Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
+---------- | ------------ | ------------ | ------------
+**Compiled WaDE Data** | 39,351 | 21,827 | 39,365
+
+
+Assessment of Removed Source Records | Count | Action
+---------- | ---------- | ----------
+Unused Site Record | 1929 | removed from sites.csv
+Unused Site Record | 1929 | removed from sites.csv
+Incomplete or bad entry for AllocationPriorityDate    | 887 | removed from waterallocations.csv input
+Incomplete or bad entry for Volume                    | 254 | removed from waterallocations.csv input
+Incomplete or bad entry for AllocationOwner            | 91 | removed from waterallocations.csv input
+Incomplete or bad entry for IrrigatedAcreage           | 67 | removed from waterallocations.csv input
+
+
+**Figure 1:** Distribution of POD vs POU Sites within the sites.csv
+![](figures/PODorPOUSite.png)
+
+**Figure 2:** Distribution Sites by WaterSourceTypeCV within the sites.csv
+![](figures/WaterSourceTypeCV.png)
+
+**Figure 3:** Distribution of Identified Water Right Records by WaDE Categorized Primary Beneficial Uses within the waterallocations.csv
+![](figures/PrimaryBeneficialUseCategory.png)
+
+**Figure 4a:** Range of Priority Date of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationPriorityDate1.png)
+
+**Figure 4b:** Cumulative distribution of Priority Date of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationPriorityDate2.png)
+
+**Figure 5:** Distribution & Range of Flow (CFS) of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationFlow_CFS.png)
+
+**Figure 6:** Distribution & Range of Volume (AF) of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationVolume_AF.png)
+
+**Figure 7:** Map of Identified Points within the sites.csv
+![](figures/PointMap.png)
+
+**Figure 8:** Map of Identified Polygons within the sites.csv
+![](figures/PolyMap.png)
+
 
 
 ***

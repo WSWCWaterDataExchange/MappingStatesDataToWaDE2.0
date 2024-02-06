@@ -105,6 +105,7 @@ venv.bak/
 .idea/dictionaries/rjame.xml
 .idea/misc.xml
 .idea/misc.xml
+6_OldProjects/
 Arizona/AggregatedAmounts/RawInputData/P_AZagg.csv
 Arizona/WaterAllocation/RawInputData/Surface_Water/ADWR_Surface_Watersheds_POD_input.csv
 Texas/SiteSpecificAmounts/old_GW Withdrawal/0_PreProcessTexasSiteSpecificData.ipynb
