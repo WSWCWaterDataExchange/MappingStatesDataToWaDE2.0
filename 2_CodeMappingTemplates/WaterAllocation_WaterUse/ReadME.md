@@ -15,8 +15,7 @@ Input files used are as follows...
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
 The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
-- XX Allocation & Water Use Data: "put WaDE Google Doc link here"
-
+- XX Allocation & Water Use Data: [link]("put WaDE Google Doc link here")
 
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share "XX"'s water rights & water use data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *XX_Allocation and Water Use Schema Mapping to WaDE.xlsx*.  Several WaDE csv input files will be created in order to extract the "XX"'s water rights & water use data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
@@ -31,9 +30,8 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 Purpose: Pre-process the state agency's input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
-- Water_Rights_As_Single_Points.zip
-- WaterRightOwner.zip
-- WaterUse.zip
+- "put input files name here"
+
 
 #### Outputs:
  - Pwr_wu_xxMain.zip

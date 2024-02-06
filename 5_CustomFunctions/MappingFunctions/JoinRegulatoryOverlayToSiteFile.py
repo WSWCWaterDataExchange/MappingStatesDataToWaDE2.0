@@ -95,6 +95,7 @@ def JoinRegulatoryOverlayToSiteFunction(workingDirString):
                     print(f'-- Concatenate updated sites.csv to existing file')
                     dfs = pd.concat([dfs, gdfs1_ru1])
                     dfs = dfs.drop_duplicates().reset_index(drop=True).replace(np.nan, "")
+                    dfs = dfs.drop(['WaterSourceUUID', 'WaterSourceTypeCV'], axis=1)
                     dfs = dfs.groupby('SiteUUID').agg(lambda x: ','.join([str(elem) for elem in (list(set(x))) if elem != ""])).replace(np.nan, "").reset_index()
 
                 except:

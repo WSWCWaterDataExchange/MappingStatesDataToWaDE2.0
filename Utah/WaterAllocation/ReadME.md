@@ -95,6 +95,8 @@ MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 UTwr_M1 | Surface Ground | Adjudicated
 
 
+
+
 ## 2) Variables Information
 Purpose: generate legend of granular variables specific to each state.
 
@@ -127,7 +129,6 @@ Purpose: generate organization directory, including names, email addresses, and 
 OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
 ---------- | ---------- | ------------ | ------------
 UTwr_O1 | Utah Division of Water Rights | Craig Miller |"https://water.utah.gov/"
-
 
 ## 4) Water Source Information
 Purpose: generate a list of water sources specific to a water right.

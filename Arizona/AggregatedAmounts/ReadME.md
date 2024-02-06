@@ -4,7 +4,7 @@ This readme details the process that was applied by the staff of the [Western St
 ## Overview of Source Data Utilized
 The following data was used for aggregated water budget...
 
-- **AMA Demand Supply from DW**, and was obtained from the ADWR website at:  http://www.azwater.gov/querycenter/query.aspx?qrysessionid=8CF17C8B1CB88E14E0534C64850A39FA
+- **AMA Demand Supply from DW**, and was obtained from the ADWR website at:  https://app.azwater.gov/querycenter/query.aspx?qrysessionid=8CF17C8B1CB88E14E0534C64850A39FA
 - **AMA shape files**, and was obtained from the ADWR website at: https://new.azwater.gov/gis.
 - **AMA WaterSourceType Dictionary.xlsx**, which contains a water source type dictionary, and was obtained from meeting / email correspondence with ADWR.
 

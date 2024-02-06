@@ -93,9 +93,46 @@ def RemoveUnusedAllocationsAmountRecordsFileFunction(workingDirString):
         print('no aa WaDEUUID')
 
 
+    # Remove unused sitespecificamounts based on removed sites.csv information
+    # only if sitespecificamounts is available to the wr project
+    #---------------------------------------------------------------------------------
+    try:
+        dfsapurge = pd.read_csv("ProcessedInputData/sitespecificamounts_missing.csv").replace(np.nan, "")
+        dfsa = pd.read_csv("ProcessedInputData/sitespecificamounts.csv").replace(np.nan, "")
+        print(f'Length of dfsa before removing missing sites: ', len(dfsa))
+
+        # copy of sites.csv on SiteUUID
+        dfsTemp = dfs.copy()
+
+        # create list of & SiteUUIDs from copy of sites.csv
+        dfsSiteUUID_List = dfsTemp['SiteUUID'].drop_duplicates().to_list()
+        dfsSiteUUID_List.sort()
+
+        # use list to add unused records to purge dataframe
+        dftemp = dfsa[~dfsa['SiteUUID'].isin(dfsSiteUUID_List)].reset_index(drop=True).assign(ReasonRemoved='Unused WR & Site Record').reset_index()
+        frames = [dfsapurge, dftemp]  # add dataframes here
+        dfsapurge = pd.concat(frames).reset_index(drop=True)
+
+        # use list to only save used SiteUUID records in site.csv
+        dfsa = dfsa[dfsa['SiteUUID'].isin(dfsSiteUUID_List)].reset_index(drop=True)
+        print(f'Length of dfsa after removing missing sites: ', len(dfsa))
+
+        try:
+            dfsa = dfsa.drop(['WaDEUUID'], axis=1)
+        except:
+            print('no sa WaDEUUID')
+
+        # sitespecificamounts info
+        dfsa.to_csv('ProcessedInputData/sitespecificamounts.csv', index=False)
+        dfsapurge.to_csv('ProcessedInputData/sitespecificamounts_missing.csv', index=False)
+
+    except:
+        print('no sa data to work for these wrs')
+
+
     # Export to new csv
     #---------------------------------------------------------------------------------
-    print("Export Files - watersource.csv, watersource_missing.csv, sites.csv, sites_missing.csv, waterallocations.csv")
+    print("Export Files - watersource.csv, watersource_missing.csv, sites.csv, sites_missing.csv, waterallocations.csv, sitespecificamounts.csv")
 
     # watersources info
     dfws.to_csv('ProcessedInputData/watersources.csv', index=False)

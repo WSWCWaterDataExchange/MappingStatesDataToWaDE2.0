@@ -66,7 +66,7 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 
 
 ***
-## Code File: 2_NMwr_CreateWaDEInputFiles.ipynb
+## Code File: 2_WAwr_CreateWaDEInputFiles.ipynb
 Purpose: generate WaDE csv input files (methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, podsitetopousiterelationships.csv).
 
 #### Inputs:
@@ -88,7 +88,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Method* specific columns.
-- Assign **WSDE** info to the *WaDE Method* specific columns (this was hardcoded by hand for simplicity).
+- Assign state info to the *WaDE Method* specific columns (this was hardcoded by hand for simplicity).
 - Assign method UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *methods.csv*.
@@ -96,7 +96,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
 ---------- | ---------- | ------------
-WAwr_M1 | Surface Ground | Adjudicated
+WAwr_M1 | Surface Ground | Legal Processes
 
 
 ## 2) Variables Information
@@ -105,7 +105,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Operation and Steps:
 - Generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Variable* specific columns.
-- Assign **WSDE** info to the *WaDE Variable* specific columns (this was hardcoded by hand for simplicity).
+- Assign state info to the *WaDE Variable* specific columns (this was hardcoded by hand for simplicity).
 - Assign variable UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *variables.csv*.
@@ -130,7 +130,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
 ---------- | ---------- | ------------ | ------------
-WAwr_O1 | Washington State Department of Ecology | Riddle, H. Nicholas | HRID461@ECY.WA.GOV
+WAwr_O1 | Washington State Department of Ecology | Riddle, H. Nicholas | https://ecology.wa.gov/Water-Shorelines/Water-supply/Water-rights
 
 
 ## 4) Water Source Information
@@ -139,7 +139,7 @@ Purpose: generate a list of water sources specific to a water right.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign agency data info to the *WaDE WaterSources* specific columns.  See *WA_Allocation Schema Mapping_WaDEQA.xlsx* for specific details.  Items of note are as follows...
+- Assign agency data info to the *WaDE WaterSources* specific columns.  See *WAwr_Allocation Schema Mapping_WaDE.xlsx* for specific details.  Items of note are as follows...
     - *WaterSourceTypeCV* = **WaRecRCWClassTypeCode**, Unspecified if not given.
 - Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceTypeCV* fields.
 - Assign water source UUID identifier to each (unique) row.
@@ -149,7 +149,7 @@ Purpose: generate a list of water sources specific to a water right.
 #### Sample Output (WARNING: not all fields shown):
 WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceTypeCV
 ---------- | ---------- | ------------ | ------------
-WAwr_WS1 | Fresh | Unspecified | Unspecified | groundwater
+WAwr_WS1 | Fresh | Unspecified | groundwater
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
 - WaterSourceUUID
@@ -163,7 +163,7 @@ Purpose: generate a list of sites where water is diverted (also known as Points 
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
-- Assign state agency info to the *WaDE Site* specific columns.  See *WA_Allocation Schema Mapping_WaDEQA.xlsx* for specific details.  Items of note are as follows...
+- Assign state agency info to the *WaDE Site* specific columns.  See *WAwr_Allocation Schema Mapping_WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *WaterSourceUUID* from waterSources.csv input csv file. See code for specific implementation of extraction.
     - *CoordinateMethodCV* = **Location_C**, translate abbreviations code with dictionary.  Leave blank if not given.
     - *Latitude* = converted **POINT_X** projection from WSDE EPSG:2927 -to- WaDE EPSG:4326.
@@ -193,7 +193,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
-- Assign state agency info to the *WaDE Water Allocations* specific columns.  See *WA_Allocation Schema Mapping_WaDEQA.xlsx* for specific details.  Items of note are as follows...
+- Assign state agency info to the *WaDE Water Allocations* specific columns.  See *WAwr_Allocation Schema Mapping_WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *AllocationFlow_CFS* = **InstantaneousQuantity** & **InstantaneousUnitCode**, covert to GPM or GPD, depending on code value.
     - *AllocationLegalStatusCV* = **WaRecProcessStatusTypeCode**.
@@ -242,6 +242,60 @@ Note: podsitetopousiterelationships.csv output only needed if both POD and POU d
 - Explode the consolidated waterallocations dataframe again using the _PODSiteUUID_ field, and again for the _POUSiteUUID_ field to create unique rows.
 - Perform error check on waterallocations dataframe (check for NaN values)
 - If waterallocations is not empty, export output dataframe _podsitetopousiterelationships.csv_.
+
+
+***
+## Source Data & WaDE Complied Data Assessment
+The following info is from a data assessment evaluation of the completed data...
+
+Dataset | Num of Source Entries (rows)
+---------- | ---------- 
+Num of Source #1 Entries (rows)  | 157,661
+Num of Source #2 Entries (rows) | 186,604
+
+
+Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
+---------- | ------------ | ------------ | ------------
+**Compiled WaDE Data** | 63,446 | 109,294 | 85,930
+
+
+Assessment of Removed Source Records | Count | Action
+---------- | ---------- | ----------
+Unused Site Record                     | 134345 | removed from sites.csv input
+Incomplete or bad entry for Latitude       | 10 | removed from sites.csv input
+Incomplete or bad entry for AllocationPriorityDate   | 66898 | removed from waterallocations.csv input
+Incomplete or bad entry for Volume                     | 331 | removed from waterallocations.csv input
+Incomplete or bad entry for Flow                       | 307 | removed from waterallocations.csv input
+Incomplete or bad entry for IrrigatedAcreage            | 71 | removed from waterallocations.csv input
+Incomplete or bad entry for AllocationOwner              | 1 | removed from waterallocations.csv input
+
+
+**Figure 1:** Distribution of POD vs POU Sites within the sites.csv
+![](figures/PODorPOUSite.png)
+
+**Figure 2:** Distribution Sites by WaterSourceTypeCV within the sites.csv
+![](figures/WaterSourceTypeCV.png)
+
+**Figure 3:** Distribution of Identified Water Right Records by WaDE Categorized Primary Beneficial Uses within the waterallocations.csv
+![](figures/PrimaryBeneficialUseCategory.png)
+
+**Figure 4a:** Range of Priority Date of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationPriorityDate1.png)
+
+**Figure 4b:** Cumulative distribution of Priority Date of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationPriorityDate2.png)
+
+**Figure 5:** Distribution & Range of Flow (CFS) of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationFlow_CFS.png)
+
+**Figure 6:** Distribution & Range of Volume (AF) of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationVolume_AF.png)
+
+**Figure 7:** Map of Identified Points within the sites.csv
+![](figures/PointMap.png)
+
+**Figure 8:** Map of Identified Polygons within the sites.csv
+![](figures/PolyMap.png)
 
 
 ***

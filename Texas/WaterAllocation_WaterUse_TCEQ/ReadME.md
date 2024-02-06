@@ -1,5 +1,5 @@
 # TCEQ Water Rights (Allocation) & Water Use Data Preparation for WaDE
-This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights data made available by the [Texas Commission on Environmental Quality (TCEQ)](https://www.tceq.texas.gov/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
+This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting water rights & water use data made available by the [Texas Commission on Environmental Quality (TCEQ)](https://www.tceq.texas.gov/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way. WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 
 ## Overview of Source Data Utilized
@@ -19,14 +19,14 @@ Input files used are as follows...
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
 The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
-- Texas Allocation & Water Use Data: https://drive.google.com/drive/folders/1AyU66r1y4FNkwMBcN0J4knPNhGqZGuRh?usp=sharing
+- Texas Allocation & Water Use Data: https://drive.google.com/drive/folders/1LCE-tjTzGGwWbchy2MINAmbodEUCwcef?usp=drive_link
 
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share NMOSE's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *TCEQwr_Allocation and Water Use Schema Mapping to WaDE.xlsx*.  Several WaDE csv input files will be created in order to extract the NMOSE's water rights data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
+The following text summarizes the process used by the WSWC staff to prepare and share TCEQ's water rights & water use data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *TCEQ_Allocation and Water Use Schema Mapping to WaDE.xlsx*.  Several WaDE csv input files will be created in order to extract the TCEQ's water rights & water use data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
 
 - **1_TCEQwr_wu_PreProcessAllocationData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
-- **2_TCEQwr_wu_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, podsitetopousiterelationships.csv.
+- **2_TCEQwr_wu_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, sitespecificamounts.csv, podsitetopousiterelationships.csv.
 - **3_TCEQwr_wu_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
 
 
@@ -51,7 +51,7 @@ Purpose: Pre-process the state agency's input data files and merge them into one
 
 ***
 ## Code File: 2_NMwr_CreateWaDEInputFiles.ipynb
-Purpose: generate WaDE csv input files (methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, podsitetopousiterelationships.csv).
+Purpose: generate WaDE csv input files (methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, sitespecificamounts.csv, podsitetopousiterelationships.csv).
 
 #### Inputs:
 - Pssdw_txMain.zip
@@ -63,6 +63,7 @@ Purpose: generate WaDE csv input files (methods.csv, variables.csv, organization
 - watersources.csv
 - sites.csv
 - waterallocations.csv
+- sitespecificamounts.csv
 - podsitetopousiterelationships.csv
 
 
@@ -123,7 +124,7 @@ Purpose: generate a list of water sources specific to a water right.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign state info to the *WaDE WaterSources* specific columns.  See *TCEQwr_Allocation and Water Use Schema Mapping to WaDE.xlsx* for specific details.
+- Assign state info to the *WaDE WaterSources* specific columns.  See *TCEQ_Allocation and Water Use Schema Mapping to WaDE.xlsx* for specific details.
 - Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceName* & *WaterSourceTypeCV* fields.
   - no useable water source information was provided at this time.
 - Assign water source UUID identifier to each (unique) row.
@@ -147,7 +148,7 @@ Purpose: generate a list of sites information.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
-- Assign state info to the *WaDE Site* specific columns.  See *TCEQwr_Allocation and Water Use Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign state info to the *WaDE Site* specific columns.  See *TCEQ_Allocation and Water Use Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - *Latitude* = **Latitude**, will need to convert from EPSG:4269 -to- EPSG:4326. Do this in ArcGis.
     - *Longitude* = **Longitude**, will need to convert from EPSG:4269 -to- EPSG:4326. Do this in ArcGis.
     - *SiteNativeID* = not provided, create custom wade ID as temp fix.
@@ -176,7 +177,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
-- Assign state info to the *WaDE Water Allocations* specific columns.  See *TCEQwr_Allocation and Water Use Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign state info to the *WaDE Water Allocations* specific columns.  See *TCEQ_Allocation and Water Use Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *AllocationNativeID* = **Water Right ID**.
     - *AllocationOwner* = **Owners** from owner input data.
@@ -210,7 +211,7 @@ Purpose: generate master sheet of site-specific amount information to import int
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE site-specific amount* specific columns.
-- Assign agency info to the *WaDE site-specific amount* specific columns.  See *XXssdw_DivisionAndWithdrawlSitesSchema Mapping to WaDE.xslx* for specific details.  Items of note are as follows...
+- Assign agency info to the *WaDE site-specific amount* specific columns.  See *TCEQ_Allocation and Water Use Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *Amount* = extract from **DIV** values.
     - *AssociatedNativeAllocationIDs* = **Water Right ID** input.
