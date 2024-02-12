@@ -182,7 +182,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
     - *AllocationNativeID* = **Water Right ID**.
     - *AllocationOwner* = **Owners** from owner input data.
     - *BeneficialUseCategory* = **Use** from water use input data.
-    - *WaterAllocationNativeURL* = "https://gisweb.tceq.texas.gov/WRRetrieveRights/?ID=" + **WR_TYPE_NO**.
+    - *WaterAllocationNativeURL* = "https://gisweb.tceq.texas.gov/WRRetrieveRights/?ID=" + **Water Right Type and Number**.
     - *AllocationFlow_CF*, *AllocationVolume_AF*, & *AllocationPriorityDate* not provided.  Will make this data ExemptOfVolumeFlowPriority = **True** as temp fix.
 - Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.
 - Perform error check on output dataframe.
