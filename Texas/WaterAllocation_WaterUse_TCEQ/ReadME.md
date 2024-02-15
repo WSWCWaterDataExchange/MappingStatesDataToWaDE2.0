@@ -96,9 +96,9 @@ Purpose: generate legend of granular variables specific to each state.
 - Export output dataframe *variables.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
----------- | ---------- | ------------ | ------------
-TXwr_V1 | 1 | Year | WaDE Blank
+|    | VariableSpecificUUID   |   AggregationInterval | AggregationIntervalUnitCV   | AggregationStatisticCV   | AmountUnitCV   | MaximumAmountUnitCV   |   ReportYearStartMonth | ReportYearTypeCV   | VariableCV   | VariableSpecificCV                                    |
+|---:|:-----------------------|----------------------:|:----------------------------|:-------------------------|:---------------|:----------------------|-----------------------:|:-------------------|:-------------|:------------------------------------------------------|
+|  1 | TCEQwr_V2              |                     1 | Monthly                     | Average                  | AF             | AF                    |                      1 | CalendarYear       | Water Use    | Water Use_Monthly_Commercial/Industrial_Surface Water |
 
 
 ## 3) Organization  Information
@@ -113,9 +113,9 @@ Purpose: generate organization directory, including names, email addresses, and 
 - Export output dataframe *organizations.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
----------- | ---------- | ------------ | ------------
-TXwr_O1 | Texas Commission on Environmental Quality | John-Cody Stalsby | https://www.tceq.texas.gov/
+|    | OrganizationUUID   | OrganizationContactEmail       | OrganizationContactName   | Unnamed: 3   | OrganizationName                          | OrganizationPhoneNumber   | OrganizationPurview                                                                      | OrganizationWebsite         | State   |
+|---:|:-------------------|:-------------------------------|:--------------------------|:-------------|:------------------------------------------|:--------------------------|:-----------------------------------------------------------------------------------------|:----------------------------|:--------|
+|  0 | TCEQwr_O1          | kathy.alexander@tceq.texas.gov | Kathy Alexander           |              | Texas Commission on Environmental Quality | 512-239-1000              | The Texas Commission on Environmental Quality is the environmental agency for the state. | https://www.tceq.texas.gov/ | TX      |
 
 
 ## 4) Water Source Information
@@ -132,9 +132,9 @@ Purpose: generate a list of water sources specific to a water right.
 - Export output dataframe *WaterSources.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceNativeID | WaterSourceTypeCV
----------- | ---------- | ------------ | ------------ | ------------
-TXwr_WS1 | Fresh | WaDE Blank | WaDE Blank | Surface Water
+|    | WaterSourceUUID   | Geometry   | GNISFeatureNameCV   | WaterQualityIndicatorCV   | WaterSourceName   | WaterSourceNativeID   | WaterSourceTypeCV   |
+|---:|:------------------|:-----------|:--------------------|:--------------------------|:------------------|:----------------------|:--------------------|
+|  0 | TCEQwr_WSwadeId1  |            |                     | Fresh                     | Wade Blank        | wadeId1               | Surface Water       |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
 - WaterSourceUUID
@@ -159,9 +159,9 @@ Purpose: generate a list of sites information.
 - Export output dataframe *sites.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-SiteUUID | WaterSourceUUID | Latitude | Longitude | PODorPOUSite | SiteName | SiteTypeCV
----------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------
-TXwr_SPODwade1 | TXwr_WSwadeID1  | 32.795443708 | -95.2061029179999 | POD | WaDE Blank | Diversion Point
+|    | SiteUUID             | RegulatoryOverlayUUIDs   | WaterSourceUUIDs   | CoordinateAccuracy   | CoordinateMethodCV   | County     |   EPSGCodeCV | Geometry   | GNISCodeCV   | HUC12   | HUC8   |   Latitude |   Longitude | NHDNetworkStatusCV   | NHDProductCV   | PODorPOUSite   | SiteName   | SiteNativeID   | SitePoint   | SiteTypeCV      | StateCV   | USGSSiteID   |
+|---:|:---------------------|:-------------------------|:-------------------|:---------------------|:---------------------|:-----------|-------------:|:-----------|:-------------|:--------|:-------|-----------:|------------:|:---------------------|:---------------|:---------------|:-----------|:---------------|:------------|:----------------|:----------|:-------------|
+|  1 | TCEQwr_Swade14591276 |                          | TCEQwr_WSwadeId1   | WaDE Blank           | WaDE Blank           | WaDE Blank |         4326 |            |              |         |        |    32.6087 |    -95.0904 |                      |                | POD            | WaDE Blank | wade14591276   |             | Diversion Point | TX        |              |
 
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
