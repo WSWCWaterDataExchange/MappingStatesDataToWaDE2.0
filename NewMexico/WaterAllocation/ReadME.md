@@ -287,4 +287,5 @@ WSWC Staff
 - Ryan James <rjames@wswc.utah.gov>
 
 NMOSE Staff
-- David Hatchner (GIS Manager)<ose.webmaster@state.nm.us>
+- Julie Valdez <julie.valdez@state.nm.us >
+

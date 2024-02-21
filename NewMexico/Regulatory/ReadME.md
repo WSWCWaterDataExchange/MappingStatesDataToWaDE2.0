@@ -254,4 +254,4 @@ WSWC Staff
 - Ryan James (Data Analysis) <rjames@wswc.utah.gov>
 
 New Mexico Office of the State Engineer Staff
-- David Hatchner <ose.webmaster@state.nm.us>
+- Julie Valdez <julie.valdez@state.nm.us >

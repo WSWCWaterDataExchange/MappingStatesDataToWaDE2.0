@@ -285,4 +285,4 @@ WSWC Staff
 - Ryan James <rjames@wswc.utah.gov>
 
 New Mexico Office of the State Engineer (OSE) Staff
-- David Hatchner (GIS Manager)ose.webmaster@state.nm.us
+- Julie Valdez <julie.valdez@state.nm.us >
