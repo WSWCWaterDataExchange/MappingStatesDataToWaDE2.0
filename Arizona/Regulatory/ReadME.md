@@ -244,4 +244,4 @@ WSWC Staff
 - Ryan James (Data Analysis) <rjames@wswc.utah.gov>
 
 Arizona Department of Water Resources Staff
-- "Natalie Mast" <"nlmast@azwater.gov">
+- Natalie Mast (AMA Director) <nlmast@azwater.gov>

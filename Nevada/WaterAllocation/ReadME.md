@@ -308,3 +308,4 @@ Nevada DNR Staff
 - Levi Kryder (Chief Hydrology Section) <lkryder@water.nv.gov>
 - Caitlan Jellema (Water Use Specialist) <cjellema@water.nv.gov>
 - Stephanie Snider (GIS Analyst) <ssnider@water.nv.gov>
+- Levi Kryder (Chief, Hydrology Section) <lkryder@water.nv.gov>

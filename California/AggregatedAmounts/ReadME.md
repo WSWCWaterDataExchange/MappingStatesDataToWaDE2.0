@@ -267,7 +267,6 @@ WSWC Staff
 
 CDWR Staff
 - Jennifer Stricklin <Jennifer.Stricklin@water.ca.gov>
-- Gary Darling <Gary.Darling@water.ca.gov>
 
 San Diego Supercomputer Center
 - John Helly <hellyj@ucsd.edu>
