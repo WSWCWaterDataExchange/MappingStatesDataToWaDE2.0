@@ -45,7 +45,7 @@ def CreateSitesInputFunction(workingDirString, varST, varUUIDType, mainInputFile
         dfshape = pd.read_csv(fileInput_shape, compression='zip')
         Geometrydict = pd.Series(dfshape.geometry.values, index=dfshape.in_SiteNativeID.astype(str)).to_dict()
     except:
-        print("no geometry data to worry about.")
+        print("...no geometry data to worry about.")
 
     # WaDE columns
     SitesColumnsList = GetColumnsFile.GetSitesColumnsFunction()
@@ -69,14 +69,14 @@ def CreateSitesInputFunction(workingDirString, varST, varUUIDType, mainInputFile
 
     # For Creating Geometry
     def retrieveGeometry(colrowValue):
-        if colrowValue == '' or pd.isnull(colrowValue):
-            outList = ''
+        if colrowValue == "" or pd.isnull(colrowValue):
+            outList = ""
         else:
             String1 = colrowValue
             try:
                 outList = Geometrydict[String1]
             except:
-                outList = ''
+                outList = ""
         return outList
 
     # For creating UUID
