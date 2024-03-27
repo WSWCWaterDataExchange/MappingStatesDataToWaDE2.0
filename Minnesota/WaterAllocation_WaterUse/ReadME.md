@@ -389,3 +389,5 @@ WSWC Staff
 
 Minnesota Department of Natural Resources Staff
 - Carmelita Nelson <Carmelita.Nelson@state.mn.us>
+- Sean Hunt <sean.hunt@state.mn.us>
+- Dan Miller <dan.w.miller@state.mn.us>
