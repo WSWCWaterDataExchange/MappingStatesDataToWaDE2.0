@@ -220,7 +220,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
     - *AllocationSDWISIdentifierCV* = ""
     - *AllocationTimeframeEnd* = ""
     - *AllocationTimeframeStart* = ""
-    - *AllocationTypeCV* = ""
+    - *AllocationTypeCV* = "Rules of Capture"
     - *AllocationVolume_AF* = ""
     - *BeneficialUseCategory* = "PrimaryWat"
     - *CommunityWaterSupplySystem* = ""
@@ -243,9 +243,9 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 - Export output dataframe *waterallocations.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-AllocationUUID | MethodUUID | OrganizationUUID | SiteUUID | VariableSpecificUUID | AllocationFlow_CFS | AllocationLegalStatusCV | AllocationNativeID | AllocationPriorityDate | BeneficialUseCategory
----------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ----------
-TXwr_WR1001201 | TWDBwr_M1 | TWDBwr_O1 | TXwr_SPOD1001201 | TWDBwr_V1 | 1 | WaDE Blank | 1001201 | - | Stock
+|    | AllocationUUID   | MethodUUID   | OrganizationUUID   | SiteUUID           | VariableSpecificUUID   | AllocationApplicationDate   | AllocationAssociatedConsumptiveUseSiteIDs   | AllocationAssociatedWithdrawalSiteIDs   | AllocationBasisCV   | AllocationChangeApplicationIndicator   | AllocationCommunityWaterSupplySystem   | AllocationCropDutyAmount   | AllocationExpirationDate   |   AllocationFlow_CFS | AllocationLegalStatusCV   |   AllocationNativeID | AllocationOwner         | AllocationPriorityDate   | AllocationSDWISIdentifierCV   | AllocationTimeframeEnd   | AllocationTimeframeStart   | AllocationTypeCV   |   AllocationVolume_AF | BeneficialUseCategory   | CommunityWaterSupplySystem   | CropTypeCV   | CustomerTypeCV   | DataPublicationDate   | DataPublicationDOI   |   ExemptOfVolumeFlowPriority | GeneratedPowerCapacityMW   |   IrrigatedAcreage | IrrigationMethodCV   | LegacyAllocationIDs   | OwnerClassificationCV   | PopulationServed   | PowerType   | PrimaryBeneficialUseCategory   | WaterAllocationNativeURL                                                                     |
+|---:|:-----------------|:-------------|:-------------------|:-------------------|:-----------------------|:----------------------------|:--------------------------------------------|:----------------------------------------|:--------------------|:---------------------------------------|:---------------------------------------|:---------------------------|:---------------------------|---------------------:|:--------------------------|---------------------:|:------------------------|:-------------------------|:------------------------------|:-------------------------|:---------------------------|:-------------------|----------------------:|:------------------------|:-----------------------------|:-------------|:-----------------|:----------------------|:---------------------|-----------------------------:|:---------------------------|-------------------:|:---------------------|:----------------------|:------------------------|:-------------------|:------------|:-------------------------------|:---------------------------------------------------------------------------------------------|
+|  0 | TWDBwr_WR1001201 | TWDBwr_M1    | TWDBwr_O1          | TWDBwr_SPOD1001201 | TWDBwr_V1              |                             |                                             |                                         | WaDE Blank          |                                        |                                        |                            |                            |                    0 | WaDE Blank                |              1001201 | Charlie Hale Bob Ridley |                          |                               |                          |                            | Rules of Capture   |                     0 | Stock                   |                              |              |                  | 04/10/2024            |                      |                            1 |                            |                  0 |                      |                       | Private                 |                    |             | Livestock                      | https://www3.twdb.texas.gov/apps/waterdatainteractive//GetReports.aspx?Num=1001201&Type=GWDB |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID
@@ -314,10 +314,12 @@ Nothing removed | - | -
 - no priority date data
 
 **Figure 5:** Distribution & Range of Flow (CFS) of Identified Water Right Records within the waterallocations.csv
-![](figures/AllocationFlow_CFS.png)
+<!-- ![](figures/AllocationFlow_CFS.png) -->
+- No Flow (CFS) value provided.
 
 **Figure 6:** Distribution & Range of Volume (AF) of Identified Water Right Records within the waterallocations.csv
-![](figures/AllocationVolume_AF.png)
+<!-- ![](figures/AllocationVolume_AF.png) -->
+- No Volume (AF) value provided.
 
 **Figure 7:** Map of Identified Points within the sites.csv
 ![](figures/PointMap.png)

@@ -38,7 +38,11 @@ Purpose: Pre-process the state agency's input data files and merge them into one
  - Pwr_azMain.csv
 
 #### Operation and Steps:
-- Read the input files and generate temporary input dataframes for groundwater and surface water.  Processes outline consist of combining the two datasets into one workable dataframe. 
+- Read the input files and generate temporary input dataframes for groundwater and surface water.  Processes outline consist of combining the two datasets into one workable dataframe.
+- Groundwater outside AMAs has no laws governing them. Inside AMAs is both reasonable use and safe yield for the aquifer/prior appropriation.
+  - AZ groundwater rights outside of the AMA AllocationType = "Reasonable Use"
+  - AZ groundwater rights inside of the AMA AllocationType = "Reasonable Use and Prior Appropriation"
+  - AZ surface water rights AllocationType = "Prior Appropriation"
 - Specific for surface water data...
     - Read in SW QUERY BY SURFACE WATERSHEDS csv files, concatenate into one long dataframe.
     - Clean **REG. NO'** field by removing excess 0 markers.  Used to match with **FILENO** in Fillings.shp input.
@@ -219,6 +223,9 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
     - *AllocationTimeframeEnd* = "12/31"
     - *AllocationTimeframeStart* = "01/01"
     - *AllocationTypeCV* = ""
+      - AZ groundwater rights outside of the AMA = "Reasonable Use"
+      - AZ groundwater rights inside of the AMA = "Reasonable Use and Prior Appropriation"
+      - AZ surface water rights = "Prior Appropriation"
     - *AllocationVolume_AF* = **QUANTITY** for sw, see *1_AZwr_PreProcessAllocationData.ipynb* for specifics.
     - *BeneficialUseCategory* = **WATER_USE**
     - *CommunityWaterSupplySystem* = ""
