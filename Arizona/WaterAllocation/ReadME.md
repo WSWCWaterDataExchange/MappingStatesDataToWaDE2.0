@@ -47,6 +47,7 @@ Purpose: Pre-process the state agency's input data files and merge them into one
     - Read in SW QUERY BY SURFACE WATERSHEDS csv files, concatenate into one long dataframe.
     - Clean **REG. NO'** field by removing excess 0 markers.  Used to match with **FILENO** in Fillings.shp input.
     - For amount data, separate value and unit info out from the **QUANTITY** field.
+    - TEMP FIX: We will try and use **SOURCE** as a ws name, but about 5% of the given names relate to a gw.  We will temp fix to not include those 5% names.
     - TEMP FIX: Drop the following unknown measurement of units for the following terms: 'ACRES', 'Amount Required for Maintenance', 'Feet', 'MIT - Miners Inches Total', 'Miners Inches Per Annum',  'XX - Unknown Code at Load time', 'None',  '',  " ".
     - Units with CFS include 'Cubic Feet Per Second', Acre-Feet Per Annum (converted to CFS by / 723.968), 'Gallons Per Annum' (converted to CFS by / 235905662.34).
     - Units with AF include 'Acre-Feet', 'Acre-Feet Total', 'CFT - Cubic Feet Total' (converted to AF by / 43559.9), 'Gallons' (converted to AF by / 325850.943).
@@ -132,10 +133,10 @@ Purpose: generate a list of water sources specific to a water right.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign agency info to the *WaDE WaterSources* specific columns.  See *XXwr_Allocation Schema Mapping_WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign agency info to the *WaDE WaterSources* specific columns.  See *AZwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - *WaterSourceUUID* = "AZwr_WS" + counter
     - *WaterQualityIndicatorCV* = "Fresh"
-    - *WaterSourceName* = ""
+    - *WaterSourceName* = **SOURCE** input, see *1_AZwr_PreProcessAllocationData.ipynb* for specifics
     - *WaterSourceNativeID* = ""
     - *WaterSourceTypeCV* = *Groundwater* for gw, & *Surface Water* for sw.
 - Consolidate output dataframe into water source specific information only by dropping duplicate entries, drop by WaDE specific *WaterSourceName* & *WaterSourceTypeCV* fields.
@@ -160,7 +161,7 @@ Purpose: generate a list of sites information.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
-- Assign agency info to the *WaDE Site* specific columns.  See *XXwr_Allocation Schema Mapping_WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign agency info to the *WaDE Site* specific columns.  See *AZwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - *SiteUUID* = "AZwr_S" + counter
     - *WaterSourceUUIDs* = Extract *WaterSourceUUID* from waterSources.csv input csv file. See code for specific implementation of extraction.
     - *CoordinateAccuracy* = ""
@@ -204,7 +205,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
-- Assign agency info to the *WaDE Water Allocations* specific columns.  See *XXwr_Allocation Schema Mapping_WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign agency info to the *WaDE Water Allocations* specific columns.  See *AZwr_Allocation Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *AllocationApplicationDate* = ""
     - *AllocationAssociatedConsumptiveUseSiteIDs* = ""
@@ -296,11 +297,12 @@ Dataset | Num of Source Entries (rows)
 
 Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
 ---------- | ------------ | ------------ | ------------
-**Compiled WaDE Data** | 167,750 | 50,277 | 286,956
+**Compiled WaDE Data** | 167,749 | 50,277 | 286,939 
 
 
 Assessment of Removed Source Records | Count | Action
 ---------- | ---------- | ----------
+Unused WaterSource Record    | 775 | removed from watersources.csv input
 Unused Site Record                       |4368 | removed from sites.csv input
 Incomplete or bad entry for County       |1599 | removed from sites.csv input
 Incomplete or bad entry for Latitude      |515 | removed from sites.csv input
