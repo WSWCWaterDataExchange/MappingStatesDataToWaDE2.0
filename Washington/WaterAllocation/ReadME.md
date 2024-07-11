@@ -250,23 +250,23 @@ The following info is from a data assessment evaluation of the completed data...
 
 Dataset | Num of Source Entries (rows)
 ---------- | ---------- 
-Num of Source #1 Entries (rows)  | 157,661
-Num of Source #2 Entries (rows) | 186,604
+Num of Source #1 Entries (rows)  | 160,721
+Num of Source #2 Entries (rows) | 160,153
 
 
 Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
 ---------- | ------------ | ------------ | ------------
-**Compiled WaDE Data** | 63,446 | 109,294 | 85,930
+**Compiled WaDE Data** | 63,282 | 87,978 | 86,137
 
 
 Assessment of Removed Source Records | Count | Action
 ---------- | ---------- | ----------
-Unused Site Record                     | 134345 | removed from sites.csv input
-Incomplete or bad entry for Latitude       | 10 | removed from sites.csv input
-Incomplete or bad entry for AllocationPriorityDate   | 66898 | removed from waterallocations.csv input
-Incomplete or bad entry for Volume                     | 331 | removed from waterallocations.csv input
-Incomplete or bad entry for Flow                       | 307 | removed from waterallocations.csv input
-Incomplete or bad entry for IrrigatedAcreage            | 71 | removed from waterallocations.csv input
+Unused Site Record                     | 130,273 | removed from sites.csv input
+Incomplete or bad entry for Latitude       | 11 | removed from sites.csv input
+Incomplete or bad entry for AllocationPriorityDate   | 69,412 | removed from waterallocations.csv input
+Incomplete or bad entry for Volume                     | 354 | removed from waterallocations.csv input
+Incomplete or bad entry for Flow                       | 333 | removed from waterallocations.csv input
+Incomplete or bad entry for IrrigatedAcreage            | 76 | removed from waterallocations.csv input
 Incomplete or bad entry for AllocationOwner              | 1 | removed from waterallocations.csv input
 
 
