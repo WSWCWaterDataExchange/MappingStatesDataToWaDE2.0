@@ -21,6 +21,14 @@ def fixEmptyStringFunc(val):
         outString = val
     return outString
 
+def fixEmptyAllocationTypeCVFunc(val):
+    val = str(val).strip()
+    if val == "" or val == " " or val == "  " or val == "nan" or val == "nan,nan" or pd.isnull(val):
+        outString = "Prior Appropriation" #default value for AllocationTypeCV
+    else:
+        outString = val
+    return outString
+
 
 def FixWaterSourceInfoFunctions(outdf):
     # ---- Fix Empty Strings ----
@@ -33,7 +41,6 @@ def FixSiteInfoFunctions(outdf):
     # ---- Fix Empty Strings ----
     outdf['CoordinateAccuracy'] = outdf.apply(lambda row: fixEmptyStringFunc(row['CoordinateAccuracy']), axis=1)
     outdf['CoordinateMethodCV'] = outdf.apply(lambda row: fixEmptyStringFunc(row['CoordinateMethodCV']), axis=1)
-    outdf['County'] = outdf.apply(lambda row: fixEmptyStringFunc(row['County']), axis=1)
     outdf['SiteName'] = outdf.apply(lambda row: fixEmptyStringFunc(row['SiteName']), axis=1)
     outdf['SiteTypeCV'] = outdf.apply(lambda row: fixEmptyStringFunc(row['SiteTypeCV']), axis=1)
     # ---- Fix Lat and Long Values ----
@@ -47,7 +54,7 @@ def FixAllocationAmountInfoFunctions(outdf):
     outdf['AllocationBasisCV'] = outdf.apply(lambda row: fixEmptyStringFunc(row['AllocationBasisCV']), axis=1)
     outdf['AllocationLegalStatusCV'] = outdf.apply(lambda row: fixEmptyStringFunc(row['AllocationLegalStatusCV']), axis=1)
     outdf['AllocationOwner'] = outdf.apply(lambda row: fixEmptyStringFunc(row['AllocationOwner']), axis=1)
-    outdf['AllocationTypeCV'] = outdf.apply(lambda row: fixEmptyStringFunc(row['AllocationTypeCV']), axis=1)
+    outdf['AllocationTypeCV'] = outdf.apply(lambda row: fixEmptyAllocationTypeCVFunc(row['AllocationTypeCV']), axis=1)
     outdf['BeneficialUseCategory'] = outdf.apply(lambda row: fixEmptyStringFunc(row['BeneficialUseCategory']), axis=1)
     # ---- Fix Priority Date Value ----
     outdf['AllocationPriorityDate'] = pd.to_datetime(outdf['AllocationPriorityDate'], errors='coerce')

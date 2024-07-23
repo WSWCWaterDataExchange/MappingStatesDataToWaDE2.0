@@ -85,9 +85,10 @@ Purpose: generate legend of granular methods used on data collection.
 - Export output dataframe *methods.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
----------- | ---------- | ------------
-ORwr_M1 | Surface Ground Storage | Legal Processes
+|    | MethodUUID   | ApplicableResourceTypeCV   | DataConfidenceValue   | DataCoverageValue   | DataQualityValueCV   | MethodName                 | MethodNEMILink                                                 | MethodTypeCV    | WaDEDataMappingUrl                                                                                     |
+|---:|:-------------|:---------------------------|:----------------------|:--------------------|:---------------------|:---------------------------|:---------------------------------------------------------------|:----------------|:-------------------------------------------------------------------------------------------------------|
+|  0 | ORwr_M1      | Surface Ground Storage     |                       |                     |                      | Oregon Water Rights Method | https://arcgis.wrd.state.or.us/data/OWRD_WR_GIS_procedures.pdf | Legal Processes | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Oregon/WaterAllocation |
+
 
 
 ## 2) Variables Information
@@ -102,9 +103,9 @@ Purpose: generate legend of granular variables specific to each state.
 - Export output dataframe *variables.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
----------- | ---------- | ------------ | ------------
-ORwr_V1 | 1 | Year | CFS
+|    | VariableSpecificUUID   |   AggregationInterval | AggregationIntervalUnitCV   | AggregationStatisticCV   | AmountUnitCV   | MaximumAmountUnitCV   |   ReportYearStartMonth | ReportYearTypeCV   | VariableCV   | VariableSpecificCV   |
+|---:|:-----------------------|----------------------:|:----------------------------|:-------------------------|:---------------|:----------------------|-----------------------:|:-------------------|:-------------|:---------------------|
+|  0 | ORwr_V1                |                     1 | Year                        | Average                  | CFS            | AFY                   |                     10 | WaterYear          | Allocation   | Allocation           |
 
 
 ## 3) Organization  Information
@@ -119,9 +120,9 @@ Purpose: generate organization directory, including names, email addresses, and 
 - Export output dataframe *organizations.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
----------- | ---------- | ------------ | ------------
-ORwr_O1 | Oregon Water Resources Department | Tom Byler | https://www.oregon.gov/OWRD/
+|    | OrganizationUUID   | OrganizationContactEmail   | OrganizationContactName   | OrganizationName                  | OrganizationPhoneNumber   | OrganizationPurview                                                                                                                                                | OrganizationWebsite                                     | State   |
+|---:|:-------------------|:---------------------------|:--------------------------|:----------------------------------|:--------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------|:--------|
+|  0 | ORwr_O1            | wrd_dl_Director@oregon.gov | Tom Byler                 | Oregon Water Resources Department | 503-986-0900              | Water right surface Points of Diversion (POD) and groundwater Points of Appropriation (POA) locations in the state of Oregon are collectively referred to as PODs. | https://www.oregon.gov/OWRD/access_Data/Pages/Data.aspx | OR      |
 
 
 ## 4) Water Source Information
@@ -140,9 +141,10 @@ Purpose: generate a list of water sources specific to a water right.
 - Export output dataframe *WaterSources.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceNativeID | WaterSourceTypeCV
----------- | ---------- | ------------ | ------------ | ------------
-ORwr_WSwadeID1 | Fresh | Reynolds Creek| wadeID1 | Surface Water
+|    | WaterSourceUUID   | Geometry   | GNISFeatureNameCV   | WaterQualityIndicatorCV   | WaterSourceName   | WaterSourceNativeID   | WaterSourceTypeCV   |
+|---:|:------------------|:-----------|:--------------------|:--------------------------|:------------------|:----------------------|:--------------------|
+|  0 | ORwr_WSwadeID10   |            |                     | Fresh                     | Unnamed Stream 1  | wadeID10              | Surface Water       |
+
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
 - WaterSourceUUID
@@ -168,9 +170,10 @@ Purpose: generate a list of sites information.
 - Export output dataframe *sites.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-SiteUUID | WaterSourceUUID | Latitude | Longitude | PODorPOUSite | SiteName | SiteTypeCV
----------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------
-ORwr_SPOD10000 | ORwr_WSwadeID107  | 45.207152106| -123.058410992999 | POD | WaDE Blank | well
+|    | SiteUUID       | RegulatoryOverlayUUIDs   | WaterSourceUUIDs   | CoordinateAccuracy   | CoordinateMethodCV   | County   |   EPSGCodeCV | GNISCodeCV   |        HUC12 |     HUC8 |   Latitude |   Longitude | NHDNetworkStatusCV   | NHDProductCV   | PODorPOUSite   | SiteName   | SiteNativeID   | SitePoint   | SiteTypeCV   | StateCV   | USGSSiteID   |
+|---:|:---------------|:-------------------------|:-------------------|:---------------------|:---------------------|:---------|-------------:|:-------------|-------------:|---------:|-----------:|------------:|:---------------------|:---------------|:---------------|:-----------|:---------------|:------------|:-------------|:----------|:-------------|
+|  0 | ORwr_SPOD10000 | ORre_ROor2               | ORwr_WSwadeID3     | WaDE Blank           | WaDE Blank           | Yamhill  |         4326 |              | 170900070304 | 17090007 |    45.2072 |    -123.058 |                      |                | POD            | WaDE Blank | POD10000       |             | well         | OR        |              |
+
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
 - SiteUUID 
@@ -202,10 +205,9 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 - Export output dataframe *waterallocations.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-AllocationUUID | MethodUUID |OrganizationUUID | SiteUUID | VariableSpecificUUID | AllocationFlow_CFS | AllocationLegalStatusCV | AllocationNativeID | AllocationPriorityDate | BeneficialUseCategory
----------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ----------
-ORwr_WR100001 | ORwr_M1 | ORwr_O1 | ORwr_SPOU86682,ORwr_SPOD106791 | ORwr_V1 | 0.01 | WaDE Blank | 100001| 6/3/1976 | DOMESTIC INCLUDING LAWN AND GARDEN
-
+|    | AllocationUUID   | MethodUUID   | OrganizationUUID   | SiteUUID                       | VariableSpecificUUID   | AllocationApplicationDate   | AllocationAssociatedConsumptiveUseSiteIDs   | AllocationAssociatedWithdrawalSiteIDs   | AllocationBasisCV   | AllocationChangeApplicationIndicator   | AllocationCommunityWaterSupplySystem   | AllocationCropDutyAmount   | AllocationExpirationDate   |   AllocationFlow_CFS | AllocationLegalStatusCV   |   AllocationNativeID | AllocationOwner   | AllocationPriorityDate   | AllocationSDWISIdentifierCV   | AllocationTimeframeEnd   | AllocationTimeframeStart   | AllocationTypeCV    |   AllocationVolume_AF | BeneficialUseCategory              | CommunityWaterSupplySystem   | CropTypeCV   | CustomerTypeCV   | DataPublicationDate   | DataPublicationDOI   |   ExemptOfVolumeFlowPriority | GeneratedPowerCapacityMW   |   IrrigatedAcreage | IrrigationMethodCV   | LegacyAllocationIDs   | OwnerClassificationCV   | PopulationServed   | PowerType   | PrimaryBeneficialUseCategory   | WaterAllocationNativeURL                                                  |
+|---:|:-----------------|:-------------|:-------------------|:-------------------------------|:-----------------------|:----------------------------|:--------------------------------------------|:----------------------------------------|:--------------------|:---------------------------------------|:---------------------------------------|:---------------------------|:---------------------------|---------------------:|:--------------------------|---------------------:|:------------------|:-------------------------|:------------------------------|:-------------------------|:---------------------------|:--------------------|----------------------:|:-----------------------------------|:-----------------------------|:-------------|:-----------------|:----------------------|:---------------------|-----------------------------:|:---------------------------|-------------------:|:---------------------|:----------------------|:------------------------|:-------------------|:------------|:-------------------------------|:--------------------------------------------------------------------------|
+|  0 | ORwr_WR100001    | ORwr_M1      | ORwr_O1            | ORwr_SPOU86682,ORwr_SPOD106791 | ORwr_V1                |                             |                                             |                                         | WaDE Blank          |                                        |                                        |                            |                            |                 0.01 | WaDE Blank                |               100001 | Ted Nixon         | 1976-06-03               |                               | 12/31                    | 1/1                        | Prior Appropriation |                     0 | DOMESTIC INCLUDING LAWN AND GARDEN |                              |              |                  | 07/11/2024            |                      |                            0 |                            |                  0 |                      |                       | Private                 |                    |             | Domestic                       | https://apps.wrd.state.or.us/apps/wr/wrinfo/wr_details.aspx?snp_id=100001 |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID
@@ -245,26 +247,28 @@ The following info is from a data assessment evaluation of the completed data...
 
 Dataset | Num of Source Entries (rows)
 ---------- | ---------- 
-**Oregon Water Right Points of Diversion** | 193,966
-**Oregon Water Right Places of Use** | 110,219
+**Oregon Water Right Points of Diversion** | 195,986
+**Oregon Water Right Places of Use** | 110,623
 
 
 Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
 ---------- | ------------ | ------------ | ------------
-**Compiled WaDE Data** | 81,957 | 111,724 | 68,035
+**Compiled WaDE Data** | 81,783  | 73,402 | 67,692
 
 Assessment of Removed Source Records | Count | Action
 ---------- | ---------- | ----------
-Unused WaterSource Record  | 4,781 | removed from watersources.csv input
-Unused Site Record  | 249,160 | removed from sites.csv input
-Incomplete or bad entry for Flow                       | 11,598 | removed from waterallocations.csv input
-Incomplete or bad entry for Volume                     |  2,550 | removed from waterallocations.csv input
-Incomplete or bad entry for AllocationTimeframeEnd     |  1,498 | removed from waterallocations.csv input
-Incomplete or bad entry for AllocationPriorityDate     |  1,497 | removed from waterallocations.csv input
-Incomplete or bad entry for IrrigatedAcreage           |  1,193 | removed from waterallocations.csv input
-Incomplete or bad entry for AllocationCropDutyAmount   |  1,064 | removed from waterallocations.csv input
-Incomplete or bad entry for AllocationTimeframeStart   |   896 | removed from waterallocations.csv input
-
+Unused WaterSource Record  | 4,748 | removed from watersources.csv input
+Unused Site Record  | 79,597 | removed from sites.csv input
+Incomplete or bad entry for Latitude | 512 | removed from sites.csv input
+Incomplete or bad entry for WaterSourceUUIDs | 69 | removed from sites.csv input
+Incomplete or bad entry for Flow                       | 11865  | removed from waterallocations.csv input
+Incomplete or bad entry for Volume                     |  2715  | removed from waterallocations.csv input
+Incomplete or bad entry for AllocationTimeframeEnd     |  2557  | removed from waterallocations.csv input
+Incomplete or bad entry for AllocationPriorityDate     |  1465  | removed from waterallocations.csv input
+Incomplete or bad entry for IrrigatedAcreage           |  1148  | removed from waterallocations.csv input
+Incomplete or bad entry for AllocationCropDutyAmount   |  1065  | removed from waterallocations.csv input
+Incomplete or bad entry for SiteUUID                   |    6 | removed from waterallocations.csv input
+Incomplete or bad entry for AllocationTimeframeStart   |    6 | removed from waterallocations.csv input
 
 **Figure 1:** Distribution of POD vs POU Sites within the sites.csv
 ![](figures/PODorPOUSite.png)
