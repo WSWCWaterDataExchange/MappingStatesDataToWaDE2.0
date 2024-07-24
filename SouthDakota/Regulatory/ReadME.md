@@ -197,7 +197,6 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the ["South Dakota Association of Rural Water Systems"]("https://opendata2017-09-18t192802468z-sdbit.opendata.arcgis.com/datasets/4a057946640c487d824eaee7ec5e6107_0/explore?location=44.285558%2C-100.253400%2C8.61").
 
 WSWC Staff
-- Adel Abdallah (Project Manager) <adelabdallah@wswc.utah.gov>
 - Ryan James (Data Analysis) <rjames@wswc.utah.gov>
 
 SDARWS Staff

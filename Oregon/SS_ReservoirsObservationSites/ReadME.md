@@ -1,5 +1,5 @@
 # Oregon OWRD Site Specific Reservoir and Observation Site Data Preparation for WaDE2
-This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting site specific time series water data made available by the [Oregon Department of Natural Resources (OWRD)](https://dnr.nebraska.gov/contact), for inclusion into the Water Data Exchange (WaDE2) project.  WaDE2 enables states to share data with each other and the public in a more streamlined and consistent way. WaDE2 is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
+This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting site specific time series water data made available by the [Oregon Department of Natural Resources (OWRD)](https://www.oregon.gov/owrd/Pages/index.aspx), for inclusion into the Water Data Exchange (WaDE2) project.  WaDE2 enables states to share data with each other and the public in a more streamlined and consistent way. WaDE2 is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 OR_SS_ReservoirsObservationSitesSchema Mapping to WaDE.xlsx
 
 
@@ -259,10 +259,9 @@ Any data fields that are missing required values and dropped from the WaDE2-read
 
 ***
 ## Staff Contributions
-Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Nevada Division of Water Resources [Oregon Office of the State Engineer (OWRD)](https://www.ose.state.nm.us/).
+Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Oregon Department of Natural Resources (OWRD)](https://www.oregon.gov/owrd/Pages/index.aspx).
 
 WSWC Staff
-- Adel Abdallah <adelabdallah@wswc.utah.gov>
 - Ryan James <rjames@wswc.utah.gov>
 
 OWRD Staff

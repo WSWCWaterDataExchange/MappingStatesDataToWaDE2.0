@@ -347,8 +347,4 @@ Incomplete or bad entry for SiteUUID | 77 | removed from waterallocations.csv in
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Montana Department of Natural Resources and Conservation (DNRC)](http://dnrc.mt.gov/).
 
 WSWC Staff
-- Adel Abdallah (Project Manager) <adelabdallah@wswc.utah.gov>
 - Ryan James (Data Analysis) <rjames@wswc.utah.gov>
-
- Montana Department of Natural Resources and Conservation (DNRC) Staff
-- "{name of staff member that is our point of contact for this data}" <"{point of contacts email"}>

@@ -202,7 +202,6 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [California Department of Water Resources (CDWR)](https://water.ca.gov/).
 
 WSWC Staff
-- Adel Abdallah (Project Manager) <adelabdallah@wswc.utah.gov>
 - Ryan James (Data Analysis) <rjames@wswc.utah.gov>
 
 California Department of Water Resources (CDWR) Staff

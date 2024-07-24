@@ -347,7 +347,6 @@ Incomplete or bad entry for Volume                      |16 | removed from water
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Arizona Department of Water Resources (ADWR)](https://www.azwater.gov/).
 
 WSWC Staff
-- Adel Abdallah <adelabdallah@wswc.utah.gov>
 - Ryan James <rjames@wswc.utah.gov>
 
 ADWR Staff

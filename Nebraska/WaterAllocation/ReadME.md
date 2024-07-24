@@ -312,7 +312,6 @@ Data created here was a contribution between the [Western States Water Council (
 
 WSWC Staff
 - Ryan James <rjames@wswc.utah.gov>
-- Adel Abdallah <adelabdallah@wswc.utah.gov>
 
 NEDNR Staff
 - Jennifer Schellpepe <jennifer.schellpeper@nebraska.gov>

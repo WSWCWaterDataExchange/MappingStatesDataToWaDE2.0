@@ -384,7 +384,6 @@ Incomplete or bad entry for SiteUUID                     |635 | removed from sit
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [(Minnesota Department of Natural Resources)]("https://www.dnr.state.mn.us/").
 
 WSWC Staff
-- Adel Abdallah <adelabdallah@wswc.utah.gov>
 - Ryan James <rjames@wswc.utah.gov>
 
 Minnesota Department of Natural Resources Staff

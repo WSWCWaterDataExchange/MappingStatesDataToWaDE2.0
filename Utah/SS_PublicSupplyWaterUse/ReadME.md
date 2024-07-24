@@ -321,7 +321,6 @@ Incomplete or bad entry for SiteUUID    | 17,875 | removed from sitespecificamou
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Utah Division of Water Rights (UDWRi)](https://water.utah.gov/).
 
 WSWC Staff
-- Adel Abdallah <adelabdallah@wswc.utah.gov>
 - Ryan James <rjames@wswc.utah.gov>
 
 UDWRi Staff

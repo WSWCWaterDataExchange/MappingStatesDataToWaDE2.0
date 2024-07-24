@@ -350,7 +350,6 @@ Incomplete or bad entry for AllocationLegalStatusCV |      6 | removed from wate
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Alaska Department of Natural Resources](https://gis.data.alaska.gov/).
 
 WSWC Staff
-- Adel Abdallah (Project Manager) <adelabdallah@wswc.utah.gov>
 - Ryan James (Data Analysis) <rjames@wswc.utah.gov>
 
 Alaska Department of Natural Resources Staff

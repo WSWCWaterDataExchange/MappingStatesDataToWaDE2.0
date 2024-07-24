@@ -285,7 +285,6 @@ Incomplete or bad entry for Volume | 2270  removed from waterallocations.csv inp
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Kansas Department of Natural Resources and Conservation (KDADWR)](https://opendata-mtdnrc.hub.arcgis.com/).
 
 WSWC Staff
-- Adel Abdallah <adelabdallah@wswc.utah.gov>
 - Ryan James <rjames@wswc.utah.gov>
 
 Kansas DNRC Staff

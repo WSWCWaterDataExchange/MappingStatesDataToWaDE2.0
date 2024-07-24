@@ -246,10 +246,9 @@ Assessment of Removed Source Records | Count | Action
 
 ***
 ## Staff Contributions
-Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Utah Department of Natural Resources]("{http web link address to state / organization name}").
+Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Utah Department of Natural Resources](https://naturalresources.utah.gov/).
 
 WSWC Staff
-- Adel Abdallah (Project Manager) <adelabdallah@wswc.utah.gov>
 - Ryan James (Data Analysis) <rjames@wswc.utah.gov>
 
 Utah Department of Natural Resources Staff

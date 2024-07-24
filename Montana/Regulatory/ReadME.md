@@ -194,11 +194,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 ***
 ## Staff Contributions
-Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the ["{state / organization name}"]("{http web link address to state / organization name}").
+Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the ["Montana Department of Natural Resources"]("https://opendata-mtdnrc.hub.arcgis.com/datasets/MTDNRC::conservation-districts/explore?location=47.204471%2C-109.325843%2C6.61").
 
 WSWC Staff
-- Adel Abdallah (Project Manager) <adelabdallah@wswc.utah.gov>
 - Ryan James (Data Analysis) <rjames@wswc.utah.gov>
-
-"{state / organization name}" Staff
-- "{name of staff member that is our point of contact for this data}" <"{point of contacts email"}>

@@ -305,7 +305,6 @@ Not applicable for the current data.  Missing point of distribution data and con
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [New Jersey Division of Water Supply and Geoscience (DWSG)](https://www.nj.gov/dep/watersupply/).
 
 WSWC Staff
-- Ryan James <rjames@wswc.utah.gov>
 - Adel Abdallah <adelabdallah@wswc.utah.gov>
 
 DWSG Staff

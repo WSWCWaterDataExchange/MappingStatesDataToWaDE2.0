@@ -318,9 +318,7 @@ Incomplete or bad entry for AllocationPriorityDate | 554 |  removed from wateral
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Idaho Department of Water Resources (IDWR)](https://idwr.idaho.gov/).
 
 WSWC Staff
-
 - Ryan James <rjames@wswc.utah.gov>
-- Adel Abdallah <adelabdallah@wswc.utah.gov>
 
 IDWR Staff
 
