@@ -236,7 +236,6 @@ nothing removed | - | -
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Wyoming Association of Conservation Districts](https://data.geospatialhub.org/datasets/dc5914113aa3482680d203a183bd08c6_0/explore?location=42.876772%2C-108.487960%2C8.00).
 
 WSWC Staff
-- Adel Abdallah (Project Manager) <adelabdallah@wswc.utah.gov>
 - Ryan James (Data Analysis) <rjames@wswc.utah.gov>
 
 Wyoming Association of Conservation Districts Staff

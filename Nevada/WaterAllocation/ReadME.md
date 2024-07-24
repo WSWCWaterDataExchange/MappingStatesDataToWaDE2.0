@@ -300,7 +300,6 @@ Incomplete or bad entry for IrrigatedAcreage           | 67 | removed from water
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Nevada Division of Water Resources (NVDWR)]( http://water.nv.gov/index.aspx).
 
 WSWC Staff
-- Adel Abdallah <adelabdallah@wswc.utah.gov>
 - Ryan James <rjames@wswc.utah.gov>
 
 Nevada DNR Staff

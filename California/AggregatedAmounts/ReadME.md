@@ -263,7 +263,6 @@ Data created here was a contribution between the [Western States Water Council (
 
 WSWC Staff
 - Ryan James <rjames@wswc.utah.gov>
-- Adel Abdallah <adelabdallah@wswc.utah.gov>
 
 CDWR Staff
 - Jennifer Stricklin <Jennifer.Stricklin@water.ca.gov>

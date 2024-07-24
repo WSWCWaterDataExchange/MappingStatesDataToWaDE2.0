@@ -393,7 +393,6 @@ Incomplete or bad entry for SiteUUID                     | 455 | removed from si
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Colorado Division of Water Resources (CDWR)](https://dwr.colorado.gov/about-us/contact-us/denver-office).
 
 WSWC Staff
-- Adel Abdallah <adelabdallah@wswc.utah.gov>
 - Ryan James <rjames@wswc.utah.gov>
 
 CDWR Staff

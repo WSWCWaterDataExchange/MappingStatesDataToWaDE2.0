@@ -336,7 +336,6 @@ Incomplete or bad entry for SiteUUID                   | 9,333 | removed from si
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Texas Commission on Environmental Quality (TCEQ)](https://www.tceq.texas.gov/).
 
 WSWC Staff
-- Adel Abdallah <adelabdallah@wswc.utah.gov>
 - Ryan James <rjames@wswc.utah.gov>
 
 TCEQ Staff

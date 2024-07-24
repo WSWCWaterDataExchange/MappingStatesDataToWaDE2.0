@@ -258,7 +258,6 @@ OKre_RO2 | OKwr_S45 | OKwr_WS90 | 36.57746246 | -102.19821153 | Unspecified
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Oklahoma Water Resources Board (OWRB)](https://www.owrb.ok.gov/).
 
 WSWC Staff
-- Adel Abdallah <adelabdallah@wswc.utah.gov>
 - Ryan James <rjames@wswc.utah.gov>
 
 OWRB Staff

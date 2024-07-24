@@ -283,7 +283,6 @@ Incomplete or bad entry for Latitude | 1 | Removed from WaDE
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Nevada Division of Water Resources [New Mexico Office of the State Engineer (NMOSE)](https://www.ose.state.nm.us/).
 
 WSWC Staff
-- Adel Abdallah <adelabdallah@wswc.utah.gov>
 - Ryan James <rjames@wswc.utah.gov>
 
 NMOSE Staff

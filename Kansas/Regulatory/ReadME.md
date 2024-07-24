@@ -268,8 +268,7 @@ CAwr_S11717 | CAre_RO1  | CAwr_WS247 | 41.82726506 | -124.10358562 | Unspecified
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [The Kansas Department of Agriculture, Division of Water Resources. (KDADWR)](https://agriculture.ks.gov/home).
 
 WSWC Staff
-- Adel Abdallah <adelabdallah@wswc.utah.gov>
 - Ryan James <rjames@wswc.utah.gov>
 
 KDADWR Staff
-- asfd
+- N/A

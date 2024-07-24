@@ -198,7 +198,6 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [North Dakota Department of Water Resources](https://www.swc.nd.gov/).
 
 WSWC Staff
-- Adel Abdallah (Project Manager) <adelabdallah@wswc.utah.gov>
 - Ryan James (Data Analysis) <rjames@wswc.utah.gov>
 
 North Dakota Department of Water Resources Staff

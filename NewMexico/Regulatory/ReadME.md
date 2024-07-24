@@ -250,7 +250,6 @@ Incomplete or bad entry for StatutoryEffectiveDate | 1 | Removed from WaDE
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [New Mexico Office of the State Engineer](https://www.ose.state.nm.us/).
 
 WSWC Staff
-- Adel Abdallah (Project Manager) <adelabdallah@wswc.utah.gov>
 - Ryan James (Data Analysis) <rjames@wswc.utah.gov>
 
 New Mexico Office of the State Engineer Staff

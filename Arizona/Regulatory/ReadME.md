@@ -240,7 +240,6 @@ Assessment of Removed Source Records | Count | Action
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Arizona Department of Water Resources](https://new.azwater.gov/).
 
 WSWC Staff
-- Adel Abdallah (Project Manager) <adelabdallah@wswc.utah.gov>
 - Ryan James (Data Analysis) <rjames@wswc.utah.gov>
 
 Arizona Department of Water Resources Staff

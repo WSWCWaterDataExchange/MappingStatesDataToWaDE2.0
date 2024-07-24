@@ -281,7 +281,6 @@ Negative, blank, or 0 Amount values    | 211,405 | removed from sitespecificamou
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [New Mexico Office of the State Engineer (OSE)](https://www.ose.state.nm.us/).
 
 WSWC Staff
-- Adel Abdallah <adelabdallah@wswc.utah.gov>
 - Ryan James <rjames@wswc.utah.gov>
 
 New Mexico Office of the State Engineer (OSE) Staff

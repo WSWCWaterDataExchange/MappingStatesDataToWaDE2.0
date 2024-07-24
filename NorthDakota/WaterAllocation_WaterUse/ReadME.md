@@ -394,7 +394,6 @@ Incomplete or bad entry for ReportYearCV                 |  1 | removed from sit
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [North Dakota Department of Water Resources](https://www.dwr.nd.gov/reg_approp/waterpermits/).
 
 WSWC Staff
-- Adel Abdallah <adelabdallah@wswc.utah.gov>
 - Ryan James <rjames@wswc.utah.gov>
 
 NDSWC Staff

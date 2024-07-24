@@ -321,7 +321,6 @@ Incomplete or bad entry for AllocationLegalStatusCV |  6 | Removed from waterall
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Wyoming Water Development Office (WWDO)](https://wwdc.state.wy.us/).
 
 WSWC Staff
-- Adel Abdallah <adelabdallah@wswc.utah.gov>
 - Ryan James <rjames@wswc.utah.gov>
 
 Wyoming DNRC Staff

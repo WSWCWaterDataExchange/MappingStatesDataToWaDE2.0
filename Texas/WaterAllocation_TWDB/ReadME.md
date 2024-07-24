@@ -334,7 +334,6 @@ Nothing removed | - | -
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Texas Water Development Board (TWDB)](https://www.twdb.texas.gov/index.asp).
 
 WSWC Staff
-- Adel Abdallah (Project Manager) <adelabdallah@wswc.utah.gov>
 - Ryan James (Data Analysis) <rjames@wswc.utah.gov>
 
 Texas Water Development Board Staff
