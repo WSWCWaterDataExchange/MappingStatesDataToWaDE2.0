@@ -139,9 +139,9 @@ Purpose: generate a list of water sources specific to a water right.
 - Export output dataframe *WaterSources.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-|    | WaterSourceUUID     | Geometry   | GNISFeatureNameCV   | WaterQualityIndicatorCV   | WaterSourceName   | WaterSourceNativeID   | WaterSourceTypeCV   |
-|---:|:--------------------|:-----------|:--------------------|:--------------------------|:------------------|:----------------------|:--------------------|
-|  1 | CSWRCBwr_WSwadeId10 |            |                     | Fresh                     | Witcher Creek     | wadeId10              | Unspecified         |
+|    | WaterSourceUUID    | Geometry   | GNISFeatureNameCV   | WaterQualityIndicatorCV   | WaterSourceName   | WaterSourceNativeID   | WaterSourceTypeCV   |
+|---:|:-------------------|:-----------|:--------------------|:--------------------------|:------------------|:----------------------|:--------------------|
+|  1 | CSWRCBwr_WwadeId10 |            |                     | Fresh                     | Witcher Creek     | wadeId10              | WaDE Blank          |
 
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
@@ -183,9 +183,9 @@ Purpose: generate a list of sites information.
 - Export output dataframe *sites.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-|    | SiteUUID    | RegulatoryOverlayUUIDs   | WaterSourceUUIDs     | CoordinateAccuracy   | CoordinateMethodCV   | County   |   EPSGCodeCV | GNISCodeCV   |       HUC12 |     HUC8 |   Latitude |   Longitude | NHDNetworkStatusCV   | NHDProductCV   | PODorPOUSite   | SiteName   |   SiteNativeID | SitePoint   | SiteTypeCV                | StateCV   | USGSSiteID   |
-|---:|:------------|:-------------------------|:---------------------|:---------------------|:---------------------|:---------|-------------:|:-------------|------------:|---------:|-----------:|------------:|:---------------------|:---------------|:---------------|:-----------|---------------:|:------------|:--------------------------|:----------|:-------------|
-|  1 | CSWRCBwr_S3 |                          | CSWRCBwr_WSwadeId755 | WaDE Blank           | GIS_LL               | Kern     |         4326 |              | -2147483648 | 18030012 |    35.3467 |    -119.239 |                      |                | POD            | WaDE Blank |              3 |             | Point Of Direct Diversion | CA        |              |
+|    | SiteUUID     | RegulatoryOverlayUUIDs   | WaterSourceUUIDs   | CoordinateAccuracy   | CoordinateMethodCV   | County   |   EPSGCodeCV | GNISCodeCV   |        HUC12 |     HUC8 |   Latitude |   Longitude | NHDNetworkStatusCV   | NHDProductCV   | PODorPOUSite   | SiteName   |   SiteNativeID | SitePoint   | SiteTypeCV   | StateCV   | USGSSiteID   |
+|---:|:-------------|:-------------------------|:-------------------|:---------------------|:---------------------|:---------|-------------:|:-------------|-------------:|---------:|-----------:|------------:|:---------------------|:---------------|:---------------|:-----------|---------------:|:------------|:-------------|:----------|:-------------|
+|  1 | CSWRCBwr_S10 |                          | CSWRCBwr_WwadeId21 | WaDE Blank           | DD_NE                | Plumas   |         4326 |              | 180201210602 | 18020121 |    39.8754 |    -121.174 |                      |                | POD            | WaDE Blank |             10 |             | WaDE Blank   | CA        |              |
 
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
@@ -245,7 +245,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 #### Sample Output (WARNING: not all fields shown):
 |    | AllocationUUID     | MethodUUID   | OrganizationUUID   | SiteUUID                                        | VariableSpecificUUID   | AllocationApplicationDate   | AllocationAssociatedConsumptiveUseSiteIDs   | AllocationAssociatedWithdrawalSiteIDs   | AllocationBasisCV   | AllocationChangeApplicationIndicator   | AllocationCommunityWaterSupplySystem   | AllocationCropDutyAmount   | AllocationExpirationDate   |   AllocationFlow_CFS | AllocationLegalStatusCV   | AllocationNativeID   | AllocationOwner                 | AllocationPriorityDate   | AllocationSDWISIdentifierCV   | AllocationTimeframeEnd   | AllocationTimeframeStart   | AllocationTypeCV   |   AllocationVolume_AF | BeneficialUseCategory   | CommunityWaterSupplySystem   | CropTypeCV   | CustomerTypeCV   | DataPublicationDate   | DataPublicationDOI   |   ExemptOfVolumeFlowPriority | GeneratedPowerCapacityMW   |   IrrigatedAcreage | IrrigationMethodCV   | LegacyAllocationIDs   | OwnerClassificationCV   | PopulationServed   | PowerType   | PrimaryBeneficialUseCategory   | WaterAllocationNativeURL                                                                                                                     |
 |---:|:-------------------|:-------------|:-------------------|:------------------------------------------------|:-----------------------|:----------------------------|:--------------------------------------------|:----------------------------------------|:--------------------|:---------------------------------------|:---------------------------------------|:---------------------------|:---------------------------|---------------------:|:--------------------------|:---------------------|:--------------------------------|:-------------------------|:------------------------------|:-------------------------|:---------------------------|:-------------------|----------------------:|:------------------------|:-----------------------------|:-------------|:-----------------|:----------------------|:---------------------|-----------------------------:|:---------------------------|-------------------:|:---------------------|:----------------------|:------------------------|:-------------------|:------------|:-------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------|
-|  1 | CSWRCBwr_WRA000018 | CSWRCBwr_M1  | CSWRCBwr_O1        | CSWRCBwr_S28034,CSWRCBwr_S28036,CSWRCBwr_S28035 | CSWRCBwr_V1            |                             |                                             |                                         | WaDE Blank          |                                        |                                        |                            |                            |                    0 | Licensed                  | A000018              | Glenncolusa Irrigation District |                          |                               | 1-Nov                    | 1-Mar                      | Appropriative      |                     0 | Irrigation              |                              |              |                  | 01/17/2024            |                      |                            1 |                            |                  0 |                      |                       | Private                 |                    |             | Agriculture Irrigation         | https://ciwqs.waterboards.ca.gov/ciwqs/ewrims/EWServlet?Redirect_Page=EWPublicAppSummary.jsp&Purpose=getEwrimsPublicSummary&wrWaterRightID=3 |
+|  1 | CSWRCBwr_WRA000018 | CSWRCBwr_M1  | CSWRCBwr_OR1       | CSWRCBwr_S28036,CSWRCBwr_S28035,CSWRCBwr_S28034 | CSWRCBwr_V1            |                             |                                             |                                         | WaDE Blank          |                                        |                                        |                            |                            |                    0 | Licensed                  | A000018              | Glenncolusa Irrigation District |                          |                               | 11/1                     | 3/1                        | Appropriative      |                     0 | Irrigation              |                              |              |                  | 07/30/2024            |                      |                            1 |                            |                  0 |                      |                       | Private                 |                    |             | Agriculture Irrigation         | https://ciwqs.waterboards.ca.gov/ciwqs/ewrims/EWServlet?Redirect_Page=EWPublicAppSummary.jsp&Purpose=getEwrimsPublicSummary&wrWaterRightID=3 |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID
@@ -291,9 +291,9 @@ Purpose: generate master sheet of site-specific amount information to import int
 - Export output dataframe *sitespecificamounts.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-|    | MethodUUID   | OrganizationUUID   | SiteUUID        | VariableSpecificUUID   | WaterSourceUUID    |   Amount | AllocationCropDutyAmount   | AssociatedNativeAllocationIDs   | BeneficialUseCategory   | CommunityWaterSupplySystem   | CropTypeCV   | CustomerTypeCV   | DataPublicationDate   | DataPublicationDOI   | Geometry   | IrrigatedAcreage   | IrrigationMethodCV   | PopulationServed   | PowerGeneratedGWh   | PowerType   | PrimaryUseCategory     |   ReportYearCV | SDWISIdentifier   | TimeframeEnd   | TimeframeStart   |
-|---:|:-------------|:-------------------|:----------------|:-----------------------|:-------------------|---------:|:---------------------------|:--------------------------------|:------------------------|:-----------------------------|:-------------|:-----------------|:----------------------|:---------------------|:-----------|:-------------------|:---------------------|:-------------------|:--------------------|:------------|:-----------------------|---------------:|:------------------|:---------------|:-----------------|
-|  1 | CSWRCBwr_M1  | CSWRCBwr_O1        | CSWRCBwr_S28034 | CSWRCBwr_V4            | CSWRCBwr_WSwadeId7 |     6758 |                            | A000018                         | Irrigation              |                              |              |                  | 01/18/2024            |                      |            |                    |                      |                    |                     |             | Agriculture Irrigation |           2008 |                   | 2008-05-01     | 2008-05-01       |
+|    | MethodUUID   | OrganizationUUID   | SiteUUID        | VariableSpecificUUID   | WaterSourceUUID   |   Amount | AllocationCropDutyAmount   | AssociatedNativeAllocationIDs   | BeneficialUseCategory   | CommunityWaterSupplySystem   | CropTypeCV   | CustomerTypeCV   | DataPublicationDate   | DataPublicationDOI   | Geometry   | IrrigatedAcreage   | IrrigationMethodCV   | PopulationServed   | PowerGeneratedGWh   | PowerType   | PrimaryUseCategory     |   ReportYearCV | SDWISIdentifier   | TimeframeEnd   | TimeframeStart   |
+|---:|:-------------|:-------------------|:----------------|:-----------------------|:------------------|---------:|:---------------------------|:--------------------------------|:------------------------|:-----------------------------|:-------------|:-----------------|:----------------------|:---------------------|:-----------|:-------------------|:---------------------|:-------------------|:--------------------|:------------|:-----------------------|---------------:|:------------------|:---------------|:-----------------|
+|  1 | CSWRCBwr_M1  | CSWRCBwr_OR1       | CSWRCBwr_S28034 | CSWRCBwr_V5            | CSWRCBwr_WwadeId7 |     3270 |                            | A000018                         | Irrigation              |                              |              |                  | 07/31/2024            |                      |            |                    |                      |                    |                     |             | Agriculture Irrigation |           2009 |                   | 2009-04-01     | 2009-04-01       |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sitespecificamounts_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the site-specific amount include the following...
 - MethodUUID
@@ -332,24 +332,23 @@ The following info is from a data assessment evaluation of the completed data...
 
 Dataset | Num of Source Entries (rows)
 ---------- | ---------- 
-**ewrims_flat_file_pod** | 64,873
-**water-rights-water-use-reported-short** (rows):  | 11,731,056
+**ewrims_flat_file_pod** | 65,902
+**water-rights-water-use-reported-short** (rows):  | 12,467,037
 
 
 Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records | Num of Identified Water Use Records
 ---------- | ------------ | ------------ | ------------ | ------------
-**Compiled WaDE Data** | 34,551 | 0 | 41,342 | 1,973,879
+**Compiled WaDE Data** | 47,788 | 0  |41,353  | 2,098,383
 
 
 Assessment of Removed Source Records | Count | Action
 ---------- | ---------- | ----------
-Unused WaterSource Record    | 1,462 | removed from watersources.csv input
-Unused Site Record                      | 13,235 | removed from sites.csv input
-Incomplete or bad entry for Latitude     | 1,960 | removed from sites.csv input
-Incomplete or bad entry for SiteUUID    | 1,822 | removed from waterallocations.csv input
-Negative, blank, or 0 Amount values                     | 4,605,163 | removed from sitespecificamounts.csv input
-Not Unique combination of SiteSpecificAmounts record    | 767,372 | removed from sitespecificamounts.csv input
-Incomplete or bad entry for SiteUUID                    | 72,429 | removed from sitespecificamounts.csv input
+Incomplete or bad entry for Latitude     | 1,932 | removed from sites.csv input
+Incomplete or bad entry for SiteName     | 1 | removed from sites.csv input
+Incomplete or bad entry for SiteUUID    | 1,820 | removed from waterallocations.csv input
+Negative, blank, or 0 Amount values                     | 4,900,795 | removed from sitespecificamounts.csv input
+Not Unique combination of SiteSpecificAmounts record    | 789,870 | removed from sitespecificamounts.csv input
+Incomplete or bad entry for SiteUUID                    | 82,834 | removed from sitespecificamounts.csv input
 
 
 **Figure 1:** Distribution of POD vs POU Sites within the sites.csv
@@ -369,19 +368,22 @@ Incomplete or bad entry for SiteUUID                    | 72,429 | removed from 
 <!-- ![](figures/AllocationPriorityDate2.png) -->
 - Priority Date not required
 
-**Figure 5:** Distribution & Range of Flow (CFS) of Identified Water Right Records within the waterallocations.csv
+**Figure 5:** Distribution & Legal Status (AllocationLegalStatusCV) of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationLegalStatusCV.png)
+
+**Figure 6:** Distribution & Range of Flow (CFS) of Identified Water Right Records within the waterallocations.csv
 ![](figures/AllocationFlow_CFS.png)
 
-**Figure 6:** Distribution & Range of Volume (AF) of Identified Water Right Records within the waterallocations.csv
+**Figure 7:** Distribution & Range of Volume (AF) of Identified Water Right Records within the waterallocations.csv
 ![](figures/AllocationVolume_AF.png)
 
-**Figure 7:** Distribution & Range of Amount (CFS) within the sitespecificamounts.csv
+**Figure 8:** Distribution & Range of Amount (CFS) within the sitespecificamounts.csv
 ![](figures/Amount.png)
 
-**Figure 8:** Map of Identified Points within the sites.csv
+**Figure 9:** Map of Identified Points within the sites.csv
 ![](figures/PointMap.png)
 
-**Figure 9:** Map of Identified Polygons within the sites.csv
+**Figure 10:** Map of Identified Polygons within the sites.csv
 ![](figures/PolyMap.png)
 
 
