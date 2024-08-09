@@ -1,5 +1,5 @@
 # South Dakota Association of Rural Water Systems Regulatory Overview Data Preparation for WaDE
-This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting Texas regulatory overlay area data, made available by the ["South Dakota Association of Rural Water Systems"](https://www.sdarws.com/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and cost-effective way.
+This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting Texas regulatory overlay area data, made available by the [South Dakota Association of Rural Water Systems](https://www.sdarws.com/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and cost-effective way.
 
 
 ## Overview of Source Data Utilized
@@ -10,7 +10,7 @@ Name | Description | Download Link | Metadata Glossary Link
 **Groundwater Conservation Districts** | description of data | [link](https://opendata2017-09-18t192802468z-sdbit.opendata.arcgis.com/datasets/4a057946640c487d824eaee7ec5e6107_0/explore?location=44.285558%2C-100.253400%2C8.61) | Not Provided
 
 Input files used are as follows...
-- "South_Dakota_Water_Development_Districts", "Shapefile"
+- South_Dakota_Water_Development_Districts.shp, "Shapefile"
 
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
@@ -32,7 +32,7 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 Purpose: Pre-process the input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
-- "South_Dakota_Water_Development_Districts"
+- South_Dakota_Water_Development_Districts.shp
 
 #### Outputs:
  - Pwr_sdMain.zip
@@ -194,7 +194,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 ***
 ## Staff Contributions
-Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the ["South Dakota Association of Rural Water Systems"](https://www.sdarws.com/).
+Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [South Dakota Association of Rural Water Systems](https://www.sdarws.com/).
 
 WSWC Staff
 - Ryan James (Data Analysis) <rjames@wswc.utah.gov>
