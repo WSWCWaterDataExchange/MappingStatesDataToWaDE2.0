@@ -76,6 +76,7 @@ Purpose: Pre-process the Wyoming input data files and merge them into one master
     - *BeneficialUseCategory* = **Uses**, ensure string datatype.  Use provided WWDO terminology code and **Uses** field, see see pre-process code for specifics.  In addition, include all records that have a "Z" in the **Survey** for "Wild and Scenic River" benefical uses.
     - Create WaDE POU centric temporary dataframe.  Extract POU relevant data (see preprocessing code).
 - Concatenate temporary POD & POU dataframes together into single long output dataframe.
+- Remove the following records with the **SummaryWRStatus** value = "Incomplete", "Unadjudicated", "Suspended", "Rejected".  WaDE primarily focuses on what can be considered an Active legal right.
 - Generate WaDE specific field *SiteNativeID* from *Latitude*, *Longitude*, *SiteType* and *SiteName* fields.  Used to identify unique sites.
 - Generate WaDE specific field *WaterSourceNativeID* from *WaterSourceName* & *WaterSourceTypeCV* fields.  Used to identify unique sources of water.
 - Inspect output dataframe for additional errors / datatypes.
@@ -111,9 +112,9 @@ Purpose: generate legend of granular methods used on data collection.
 - Export output dataframe *methods.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
----------- | ---------- | ------------
-WYwr_M1 | Surface Water and Groundwater | Adjudicated
+|    | MethodUUID   | ApplicableResourceTypeCV   | DataConfidenceValue   | DataCoverageValue   | DataQualityValueCV   | MethodName                  | MethodNEMILink                                                      | MethodTypeCV    | WaDEDataMappingUrl                                                                      |
+|---:|:-------------|:---------------------------|:----------------------|:--------------------|:---------------------|:----------------------------|:--------------------------------------------------------------------|:----------------|:----------------------------------------------------------------------------------------|
+|  0 | WYwr_M1      | Surface Ground Water       |                       |                     |                      | Wyoming Water Rights Method | https://waterplan.state.wy.us/plan/bear/2001/techmemos/waterlaw.pdf | Legal Processes | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Wyoming |
 
 
 ## 2) Variables Information
@@ -128,9 +129,9 @@ Purpose: generate legend of granular variables specific to each state.
 - Export output dataframe *variables.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
----------- | ---------- | ------------ | ------------
-WYwr_V1 | 1 | Year | CFS
+|    | VariableSpecificUUID   |   AggregationInterval | AggregationIntervalUnitCV   | AggregationStatisticCV   | AmountUnitCV   | MaximumAmountUnitCV   |   ReportYearStartMonth | ReportYearTypeCV   | VariableCV      | VariableSpecificCV   |
+|---:|:-----------------------|----------------------:|:----------------------------|:-------------------------|:---------------|:----------------------|-----------------------:|:-------------------|:----------------|:---------------------|
+|  0 | WYwr_V1                |                     1 | Year                        | Average                  | CFS            | AFY                   |                     11 | WaterYear          | Consumptive Use | Consumptive Use      |
 
 
 ## 3) Organization Information
@@ -145,9 +146,9 @@ Purpose: generate organization directory, including names, email addresses, and 
 - Export output dataframe *organizations.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
----------- | ---------- | ------------ | ------------
-WYwr_O1 | Wyoming Water Development Office | Mabel Jones | https://wwdc.state.wy.us/
+|    | OrganizationUUID   | OrganizationContactEmail   | OrganizationContactName   | OrganizationName                 | OrganizationPhoneNumber   | OrganizationPurview                                                                                                                                                                                                    | OrganizationWebsite       | State   |
+|---:|:-------------------|:---------------------------|:--------------------------|:---------------------------------|:--------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------|:--------|
+|  0 | WYwr_OR1           | mabel.jones1@wyo.gov       | Mabel Jones               | Wyoming Water Development Office | 307-777-7626              | This agency contributes to the quality of life by addressing the water resources needs of our citizens through the construction of new water supply projects and the rehabilitation of existing water supply projects. | https://wwdc.state.wy.us/ | WY      |
 
 
 ## 4) Water Source Information
@@ -166,9 +167,9 @@ Purpose: generate a list of water sources specific to a water right.
 - Export output dataframe *WaterSources.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceNativeID | WaterSourceTypeCV
----------- | ---------- | ------------ | ------------ | ------------
-WYwr_WS2 | Fresh | Buffalo Creek | WaDEWY_WS2 | Surface Water
+|    | WaterSourceUUID   | Geometry   | GNISFeatureNameCV   | WaterQualityIndicatorCV   | WaterSourceName   | WaterSourceNativeID   | WaterSourceTypeCV   |
+|---:|:------------------|:-----------|:--------------------|:--------------------------|:------------------|:----------------------|:--------------------|
+|  0 | WYwr_WwadeID1     |            |                     | Fresh                     | WaDE Blank        | wadeID1               | Groundwater         |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
 - WaterSourceUUID
@@ -194,9 +195,9 @@ Purpose: generate a list of sites information.
 - Export output dataframe *sites.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-SiteUUID | WaterSourceUUID | CoordinateMethodCV | Latitude | Longitude | SiteName
----------- | ---------- | ---------- | ------------ | ------------ | ------------
-WYwr_S1 | WYwr_WS1 | WaDE Unspecified | 42.9129 | -104.46127 | O W WELL #1
+|    | SiteUUID      | RegulatoryOverlayUUIDs   | WaterSourceUUIDs   | CoordinateAccuracy   | CoordinateMethodCV   | County   |   EPSGCodeCV | GNISCodeCV   |        HUC12 |     HUC8 |   Latitude |   Longitude | NHDNetworkStatusCV   | NHDProductCV   | PODorPOUSite   | SiteName    | SiteNativeID   | SitePoint   | SiteTypeCV   | StateCV   | USGSSiteID   |
+|---:|:--------------|:-------------------------|:-------------------|:---------------------|:---------------------|:---------|-------------:|:-------------|-------------:|---------:|-----------:|------------:|:---------------------|:---------------|:---------------|:------------|:---------------|:------------|:-------------|:----------|:-------------|
+|  0 | WYwr_SwadeID1 | WYre_RO18                | WYwr_WwadeID1      | WaDE Blank           | WaDE Blank           | Niobrara |         4326 |              | 101201040202 | 10120104 |    42.9129 |    -104.461 |                      |                | POD            | O W Well #1 | wadeID1        |             | Well         | WY        |              |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
 - SiteUUID 
@@ -225,9 +226,9 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 - Export output dataframe *waterallocations.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-AllocationNativeID | AllocationFlow_CFS | AllocationLegalStatusCV | BeneficialUseCategory
----------- | ---------- | ------------ | ------------
-A1612.0Q | 130.18 | ACTIVE | Stock and/or Domestic
+|    | AllocationUUID   | MethodUUID   | OrganizationUUID   | SiteUUID          | VariableSpecificUUID   | AllocationApplicationDate   | AllocationAssociatedConsumptiveUseSiteIDs   | AllocationAssociatedWithdrawalSiteIDs   | AllocationBasisCV   | AllocationChangeApplicationIndicator   | AllocationCommunityWaterSupplySystem   | AllocationCropDutyAmount   | AllocationExpirationDate   |   AllocationFlow_CFS | AllocationLegalStatusCV   |   AllocationNativeID | AllocationOwner              | AllocationPriorityDate   | AllocationSDWISIdentifierCV   | AllocationTimeframeEnd   | AllocationTimeframeStart   | AllocationTypeCV    |   AllocationVolume_AF | BeneficialUseCategory    | CommunityWaterSupplySystem   | CropTypeCV   | CustomerTypeCV   | DataPublicationDate   | DataPublicationDOI   |   ExemptOfVolumeFlowPriority | GeneratedPowerCapacityMW   |   IrrigatedAcreage | IrrigationMethodCV   | LegacyAllocationIDs   | OwnerClassificationCV   | PopulationServed   | PowerType   | PrimaryBeneficialUseCategory   | WaterAllocationNativeURL                         |
+|---:|:-----------------|:-------------|:-------------------|:------------------|:-----------------------|:----------------------------|:--------------------------------------------|:----------------------------------------|:--------------------|:---------------------------------------|:---------------------------------------|:---------------------------|:---------------------------|---------------------:|:--------------------------|---------------------:|:-----------------------------|:-------------------------|:------------------------------|:-------------------------|:---------------------------|:--------------------|----------------------:|:-------------------------|:-----------------------------|:-------------|:-----------------|:----------------------|:---------------------|-----------------------------:|:---------------------------|-------------------:|:---------------------|:----------------------|:------------------------|:-------------------|:------------|:-------------------------------|:-------------------------------------------------|
+|  0 | WYwr_WR41419     | WYwr_M1      | WYwr_OR1           | WYwr_SwadeID58957 | WYwr_V1                |                             |                                             |                                         | WaDE Blank          |                                        |                                        |                            |                            |                    0 | Fully Adjudicated         |                41419 | Boardman, Russell And Leslie | 1887-04-30               |                               |                          |                            | Prior Appropriation |                     0 | Irrigation Surface Water |                              |              |                  | 08/11/2024            |                      |                            0 |                            |                  0 | 24.65,16.0,30.75     |                       | Private                 |                    |             | Agriculture Irrigation         | http://seoweb.wyo.gov/e-Permit/Common/Login.aspx |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID
@@ -270,21 +271,21 @@ Dataset | Num of Source Entries (rows) | Num of Identified PODs | Num of Identif
 **Point of diversion (POD)_GW** | 2,323 | -| -| -
 **Point of diversion (POD)_SW** | 9,659 | -| -| -
 **Place of Use (POU)** | 491,676 | -| -| -
-**WaDE Imports** | - | 9,742 | 61,803 | 70,430
+**WaDE Imports** | - | 9,173  | 56,160  | 64,648
 
 
 Assessment of Removed Source Records | Count | Action
 ---------- | ---------- | ----------
-Unused WaterSource Record | 53 | Removed from watersource.csv
-Unused Site Record | 2396 | Removed from sites.csv
-Incomplete or bad entry for Latitude | 1108 | Removed from sites.csv
-Too many entries / too long of entry for SiteName | 951 | Removed from sites.csv
+Unused WaterSource Record | 46 | Removed from watersource.csv
+Unused Site Record | 2,376 | Removed from sites.csv
+Incomplete or bad entry for Latitude | 934 | Removed from sites.csv
+Too many entries / too long of entry for SiteName | 727 | Removed from sites.csv
 MUltiple entries for SiteTypeCV | 5 | Removed from sites.csv
-Incomplete or bad entry for SiteUUID | 1599 | Removed from waterallocations.csv
-Incomplete or bad entry for IrrigationMethodCV | 311 | Removed from waterallocations.csv
+Incomplete or bad entry for SiteUUID | 1227 | Removed from waterallocations.csv
+Incomplete or bad entry for IrrigationMethodCV | 306 | Removed from waterallocations.csv
 Incomplete or bad entry for AllocationPriorityDate | 125 | Removed from waterallocations.csv
 Incomplete or bad entry for Flow | 123 | Removed from waterallocations.csv
-Incomplete or bad entry for AllocationLegalStatusCV |  6 | Removed from waterallocations.csv
+Incomplete or bad entry for AllocationLegalStatusCV | 2 | Removed from waterallocations.csv
 
 **Figure 1:** Distribution of POD vs POU Sites within the sites.csv
 ![](figures/PODorPOUSite.png)
@@ -301,19 +302,23 @@ Incomplete or bad entry for AllocationLegalStatusCV |  6 | Removed from waterall
 **Figure 4b:** Cumulative distribution of Priority Date of Identified Water Right Records within the waterallocations.csv
 ![](figures/AllocationPriorityDate2.png)
 
-**Figure 5:** Distribution & Range of Flow (CFS) of Identified Water Right Records within the waterallocations.csv
+**Figure 5:** Distribution of Legal Status of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationLegalStatusCV.png)
+
+**Figure 6:** Distribution & Range of Flow (CFS) of Identified Water Right Records within the waterallocations.csv
 ![](figures/AllocationFlow_CFS.png)
 
-**Figure 6:** Distribution & Range of Volume (AF) of Identified Water Right Records within the waterallocations.csv
-- No Volume data provided
+**Figure 7:** Distribution & Range of Volume (AF) of Identified Water Right Records within the waterallocations.csv
 <!-- ![](figures/AllocationVolume_AF.png) -->
+ - No volume data provided
 
-**Figure 7:** Map of Identified Points within the sites.csv
+**Figure 8:** Map of Identified Points within the sites.csv
 ![](figures/PointMap.png)
 
-**Figure 8:** Map of Identified Polygons within the sites.csv
-- No polygon geometry data provided.  POUs grouped with point site information.
+**Figure 9:** Map of Identified Polygons within the sites.csv
 <!-- ![](figures/PolyMap.png) -->
+- no polygon geometry data provided.
+
 
 
 ***
