@@ -1,5 +1,5 @@
-# "Texas Commission on Environmental Quality" Regulatory Overview Data Preparation for WaDE
-This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting Texas regulatory overlay area data, made available by the ["Texas Commission on Environmental Quality"]("https://gis-tceq.opendata.arcgis.com/datasets/TCEQ::groundwater-conservation-districts/explore"), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and cost-effective way.
+# Texas Commission on Environmental Quality Regulatory Overview Data Preparation for WaDE
+This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting Texas regulatory overlay area data, made available by the [Texas Commission on Environmental Quality](https://gis-tceq.opendata.arcgis.com/datasets/TCEQ::groundwater-conservation-districts/explore), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and cost-effective way.
 
 
 ## Overview of Source Data Utilized
@@ -7,19 +7,19 @@ The following data was used for regulatory overlays...
 
 Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
-**"Groundwater Conservation Districts"** | description of data | [link]("https://gis-tceq.opendata.arcgis.com/datasets/TCEQ::groundwater-conservation-districts/explore"") | [link]("{https web link address to meta-data}")
+**Groundwater Conservation Districts** | description of data | [link](https://gis-tceq.opendata.arcgis.com/datasets/TCEQ::groundwater-conservation-districts/explore) | Not Provided
 
-"two" unique files were created to be used as input.  Input files used are as follows...
-- "Groundwater_Conservation_Districts.csv", "Shapefile"
+One unique files were created to be used as input.  Input files used are as follows...
+- Groundwater_Conservation_Districts.csv.shp, "Shapefile"
 
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
 The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
-- "Texas Commission on Environmental Quality" Regulatory Data: "https://drive.google.com/drive/u/0/folders/1x-6rxbY5jpPzKZBYtlMx7zdVt1DmEMx7"
+- Texas Commission on Environmental Quality Regulatory Data: "https://drive.google.com/drive/u/0/folders/1x-6rxbY5jpPzKZBYtlMx7zdVt1DmEMx7"
 
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share NMOSE's water rights data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *XXre_RegulatoryInfo Schema Mapping to WaDE.xlsx*. Several WaDE csv input files will be created in order to extract the water rights data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
+The following text summarizes the process used by the WSWC staff to prepare and share overlay information for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *TXre_Regulatory Info Schema Mapping to WaDE.xlsx*. Several WaDE csv input files will be created in order to extract the water rights data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
 
 - **1_TXre_PreProcessRegulatoryData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
 - **2_TXre_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: date.csv, organization.csv, reportingunits.csv, regulatoryoverlays.csv, regulatoryreportingunits.csv, etc.
@@ -32,14 +32,13 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 Purpose: Pre-process the input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
-- "Groundwater_Conservation_Districts.csv"
+- Groundwater_Conservation_Districts.csv.shp
 
 #### Outputs:
  - Pwr_xxMain.zip
  - P_Geometry.zip
 
 #### Operation and Steps:
-- "{describe how the data was pre-processed}"
 - Export output dataframe as new csv file, *P_nmRegMaster.csv* for tabular data and *P_nmRegGeometry.csv* for geometry data.
 
 
@@ -99,7 +98,7 @@ Purpose: generate a list of polygon areas associated with the state agency regul
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE ReportingUnits* specific columns.
-- Assign state agency data info to the *WaDE ReportingUnits* specific columns.  See *XXre_RegulatoryInfo Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign state agency data info to the *WaDE ReportingUnits* specific columns.  See *TXre_Regulatory Info Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - *ReportingUnitUUID* = "TXre_RU + OBJECTID"
     - *EPSGCodeCV* = 4326.
     - *ReportingUnitName* = "SHORTNAM"
@@ -133,7 +132,7 @@ Purpose: generate master sheet of regulatory overlay area information to import 
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Regulatory Overlays* specific columns.
-- Assign state agency data info to the *WaDE Water Regulatory Overlays* specific columns.  See *XXre_RegulatoryInfo Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign state agency data info to the *WaDE Water Regulatory Overlays* specific columns.  See *TXre_Regulatory Info Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - *RegulatoryOverlayUUID* = ""
     - *OversightAgency* = ""
     - *RegulatoryDescription* = ""
@@ -168,7 +167,7 @@ Purpose: generate master sheet of regulatory overlay area information and how it
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Regulatory Reportingunits* specific columns.
-- Assign state agency data info to the *WaDE Regulatory Reportingunits* specific columns.  See *XXre_RegulatoryInfo Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign state agency data info to the *WaDE Regulatory Reportingunits* specific columns.  See *TXre_Regulatory Info Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     -*DataPublicationDate* = ""
     - *OrganizationUUID* = ""
     - *RegulatoryOverlayUUID* = ""
@@ -192,7 +191,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 ***
 ## Staff Contributions
-Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the ["Texas Commission on Environmental Quality"]("https://gis-tceq.opendata.arcgis.com/datasets/TCEQ::groundwater-conservation-districts/explore").
+Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Texas Commission on Environmental Quality](https://gis-tceq.opendata.arcgis.com/datasets/TCEQ::groundwater-conservation-districts/explore).
 
 WSWC Staff
 - Ryan James (Data Analysis) <rjames@wswc.utah.gov>

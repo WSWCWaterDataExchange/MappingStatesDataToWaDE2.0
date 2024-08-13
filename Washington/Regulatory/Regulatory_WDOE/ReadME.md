@@ -1,5 +1,5 @@
-# "Washington Department of Ecology" Regulatory Overview Data Preparation for WaDE
-This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting Texas regulatory overlay area data, made available by the ["Washington Department of Ecology"]("https://geo.wa.gov/datasets/waecy::water-resource-inventory-areas-wria/explore?location=47.234189%2C-120.817600%2C8.00"), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and cost-effective way.
+# Washington Department of Ecology Regulatory Overview Data Preparation for WaDE
+This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting Texas regulatory overlay area data, made available by the [Washington Department of Ecology](https://ecology.wa.gov/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and cost-effective way.
 
 
 ## Overview of Source Data Utilized
@@ -7,10 +7,10 @@ The following data was used for regulatory overlays...
 
 Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
-**"Water Resource Inventory Areas"** | description of data | [link]("https://geo.wa.gov/datasets/waecy::water-resource-inventory-areas-wria/explore?location=47.234189%2C-120.817600%2C8.00"") | Not Provided)
+**Water Resource Inventory Areas** | description of data | [link](https://geo.wa.gov/datasets/waecy::water-resource-inventory-areas-wria/explore?location=47.234189%2C-120.817600%2C8.00) | Not Provided
 
-"two" unique files were created to be used as input.  Input files used are as follows...
-- "Water_Resource_Inventory_Areas_(WRIA)", "Shapefile"
+One unique files were created to be used as input.  Input files used are as follows...
+- Water_Resource_Inventory_Areas_WRIA.shp, "Shapefile"
 
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
@@ -32,7 +32,7 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 Purpose: Pre-process the input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
-- "WRIA.shp"
+- Water_Resource_Inventory_Areas_WRIA.shp
 
 #### Outputs:
  - Pre_wadoeMain.zip
@@ -194,7 +194,7 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 
 ***
 ## Staff Contributions
-Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the ["Washington Department of Ecology"]("https://ecology.wa.gov/").
+Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Washington Department of Ecology](https://ecology.wa.gov/).
 
 WSWC Staff
 - Ryan James (Data Analysis) <rjames@wswc.utah.gov>
