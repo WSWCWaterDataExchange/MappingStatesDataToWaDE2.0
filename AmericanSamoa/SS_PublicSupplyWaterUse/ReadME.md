@@ -1,5 +1,5 @@
 # American Samoa Power Authority Site-Specific Public Supply Time Series Data Preparation for WaDE
-This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting site-specific public supply time series data made available by the [American Samoa Power Authority]("https://www.aspower.com/"), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way.  WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
+This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting site-specific public supply time series data made available by the [American Samoa Power Authority](https://www.aspower.com/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and consistent way.  WaDE is not intended to replace the states data or become the source for that data but rather to enable regional analysis to inform policy decisions and for planning purposes. 
 
 
 ## Overview of Source Data Utilized
@@ -17,7 +17,7 @@ Input files used are as follows...
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
 The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
-- American Samoa Power Authority Site-Specific Public Supply Time Series Data: [link]("https://drive.google.com/drive/folders/1zGwaj3aWVEo3V_UxHFN-DR2tt9wdX2pu")
+- American Samoa Power Authority Site-Specific Public Supply Time Series Data: [link](https://drive.google.com/drive/folders/1zJCGeX8vOs3J_B0ZJ6u5jKWDu8xAg9wT)
 
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share American Samoa Power Authority's site-specific public supply time series data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *ASIssps_Public Supply Water Use Schema Mapping to WaDE.xlsx*.  Several WaDE csv input files will be created in order to extract the American Samoa Power Authority's site-specific public supply time series data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
@@ -41,7 +41,9 @@ Purpose: Pre-process the state agency's input data files and merge them into one
 
 #### Operation and Steps:
 - Load input files into temporary DataFrames.
-- Left-join DataFrames by site info (**SiteUUID** for timeseries and **SiteNativeID** for site info.)
+- Left-join DataFrames by site info (**SiteNativeID** for timeseries and **SiteNativeID** for site info.)
+- Determine WaDE POD or POU, use **SiteType** input with "Withdrawal" = POD & "Village" enteries = POU.
+- Determine WadE CommunityWaterSupplySystem, use **SiteNativeID** input, remove special characters and join PODs & POUs of similar result.
 - Extract and load inputs into WaDE specific output files.
 - Check datatypes for errors
 - Export WaDE inputs as Pssps_Main.zip
@@ -80,6 +82,7 @@ Purpose: generate legend of granular methods used on data collection.
 |---:|:-------------|:---------------------------|:----------------------|:--------------------|:---------------------|:-------------|:-----------------|:---------------|:-----------------------------------------------------------------------------------------------------------------------------|
 |  0 | ASIssps_M1   | Groundwater                |                       |                     |                      | Unspecified  | Unspecified      | Unspecified    | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/AmericanSamoaIslands/SS_PublicSupplyWaterUse |
 
+
 ## 2) Variables Information
 Purpose: generate legend of granular variables specific to each state.
 
@@ -92,10 +95,9 @@ Purpose: generate legend of granular variables specific to each state.
 - Export output dataframe *variables.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-|    | VariableSpecificUUID   |   AggregationInterval | AggregationIntervalUnitCV   | AggregationStatisticCV   | AmountUnitCV   | MaximumAmountUnitCV   |   ReportYearStartMonth | ReportYearTypeCV   | VariableCV      | VariableSpecificCV                                        |
-|---:|:-----------------------|----------------------:|:----------------------------|:-------------------------|:---------------|:----------------------|-----------------------:|:-------------------|:----------------|:----------------------------------------------------------|
-|  0 | ASIssps_V1             |                     1 | Monthly                     | Unspecified              | G              | G                     |                     10 | WaterYear          | Consumptive Use | Consumptive Use_Monthly_Commercial/Industrial_Groundwater |
-
+|    | VariableSpecificUUID   |   AggregationInterval | AggregationIntervalUnitCV   | AggregationStatisticCV   | AmountUnitCV   | MaximumAmountUnitCV   |   ReportYearStartMonth | ReportYearTypeCV   | VariableCV      | VariableSpecificCV                             |
+|---:|:-----------------------|----------------------:|:----------------------------|:-------------------------|:---------------|:----------------------|-----------------------:|:-------------------|:----------------|:-----------------------------------------------|
+|  0 | ASIssps_V1             |                     1 | Monthly                     | Unspecified              | G              | G                     |                     10 | WaterYear          | Consumptive Use | Consumptive Use_Monthly_Commercial_Groundwater |
 
 
 ## 3) Organization  Information
@@ -112,8 +114,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 |    | OrganizationUUID   | OrganizationContactEmail   | OrganizationContactName   | OrganizationName               | OrganizationPhoneNumber   | OrganizationPurview                                  | OrganizationWebsite      | State   |
 |---:|:-------------------|:---------------------------|:--------------------------|:-------------------------------|:--------------------------|:-----------------------------------------------------|:-------------------------|:--------|
-|  0 | ASIssps_O1         | wei@aspower.com            | Wei Hua-Hsien             | American Samoa Power Authority | 1 (684) 699-1234          | water utility, production, delivery, consumptive use | https://www.aspower.com/ | AS      |
-
+|  0 | ASIssps_OR1        | wei@aspower.com            | Wei Hua-Hsien             | American Samoa Power Authority | 1 (684) 699-1234          | water utility, production, delivery, consumptive use | https://www.aspower.com/ | AS      |
 
 
 ## 4) Water Source Information
@@ -165,9 +166,9 @@ Purpose: generate a list of sites information.
     - *Longitude* = **Long** input
     - *NHDNetworkStatusCV* = ""
     - *NHDProductCV* = ""
-    - *PODorPOUSite* = "POD"
+    - *PODorPOUSite* = extract from **SitetypeCV** input, see *1_ASIssps_PreProcessAllocationData.ipynb* file for specifics.
     - *SiteName* = **SiteNativeID** input
-    - *SiteNativeID* = not provided, will auto create id
+    - *SiteNativeID* = **SiteNativeID** input
     - *SiteTypeCV* = "WaDE Blank" (Unspecified)
     - *StateCV* = "AS"																			
     - *USGSSiteID* = ""
@@ -177,9 +178,9 @@ Purpose: generate a list of sites information.
 - Export output dataframe *sites.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-|    | SiteUUID         | RegulatoryOverlayUUIDs   | WaterSourceUUIDs   | CoordinateAccuracy   | CoordinateMethodCV   | County   |   EPSGCodeCV | GNISCodeCV   | HUC12   | HUC8   |   Latitude |   Longitude | NHDNetworkStatusCV   | NHDProductCV   | PODorPOUSite   | SiteName   | SiteNativeID   | SitePoint   | SiteTypeCV   | StateCV   | USGSSiteID   |
-|---:|:-----------------|:-------------------------|:-------------------|:---------------------|:---------------------|:---------|-------------:|:-------------|:--------|:-------|-----------:|------------:|:---------------------|:---------------|:---------------|:-----------|:---------------|:------------|:-------------|:----------|:-------------|
-|  0 | ASIssps_SwadeId1 |                          | ASIssps_WSwadeId1  | WaDE Blank           | Unspecified          |          |         4326 |              |         |        |   -14.3023 |    -170.758 |                      |                | POD            | Aasu       | wadeId1        |             | WaDE Blank   | AS        |              |
+|    | SiteUUID      | RegulatoryOverlayUUIDs   | WaterSourceUUIDs   | CoordinateAccuracy   | CoordinateMethodCV   | County   |   EPSGCodeCV | GNISCodeCV   | HUC12   | HUC8   |   Latitude |   Longitude | NHDNetworkStatusCV   | NHDProductCV   | PODorPOUSite   | SiteName   | SiteNativeID   | SitePoint   | SiteTypeCV                                                                       | StateCV   | USGSSiteID   |
+|---:|:--------------|:-------------------------|:-------------------|:---------------------|:---------------------|:---------|-------------:|:-------------|:--------|:-------|-----------:|------------:|:---------------------|:---------------|:---------------|:-----------|:---------------|:------------|:---------------------------------------------------------------------------------|:----------|:-------------|
+|  0 | ASIssps_SAasu |                          | ASIssps_WwadeId1   | WaDE Blank           | Unspecified          |          |         4326 |              |         |        |   -14.3023 |    -170.758 |                      |                | POU            | Aasu       | Aasu           |             | Village (aggregation of individual water meter use within each village boundary) | AS        |              |
 
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
@@ -200,7 +201,7 @@ Purpose: generate master sheet of site-specific amount information to import int
     - *Amount* = **Amount** input.
     - *AssociatedNativeAllocationIDs* = ""
     - *BeneficialUseCategory* = **BeneficialUseCategory** input
-    - *CommunityWaterSupplySystem* = ""
+    - *CommunityWaterSupplySystem* = extract from **SiteNativeID** input, see *1_ASIssps_PreProcessAllocationData.ipynb* file for specifics.
     - *CropTypeCV* = ""
     - *CustomerTypeCV* = ""
     - *DataPublicationDate* = ""
@@ -211,7 +212,7 @@ Purpose: generate master sheet of site-specific amount information to import int
     - *PopulationServed* = ""
     - *PowerGeneratedGWh* = ""
     - *PowerType* = ""
-    - *PrimaryUseCategory* = ""
+    - *PrimaryUseCategory* = same as BeneficialUseCategory input
     - *ReportYearCV* = **ReportYear** input
     - *SDWISIdentifier* = ""
     - *TimeframeEnd* = **TimeframeEnd** input
@@ -221,9 +222,9 @@ Purpose: generate master sheet of site-specific amount information to import int
 - Export output dataframe *sitespecificamounts.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-|    | MethodUUID   | OrganizationUUID   | SiteUUID         | VariableSpecificUUID   | WaterSourceUUID   |   Amount | AllocationCropDutyAmount   | AssociatedNativeAllocationIDs   | BeneficialUseCategory   | CommunityWaterSupplySystem   | CropTypeCV   | CustomerTypeCV   | DataPublicationDate   | DataPublicationDOI   | Geometry   | IrrigatedAcreage   | IrrigationMethodCV   |   PopulationServed | PowerGeneratedGWh   | PowerType   | PrimaryUseCategory    |   ReportYearCV | SDWISIdentifier   | TimeframeEnd   | TimeframeStart   |
-|---:|:-------------|:-------------------|:-----------------|:-----------------------|:------------------|---------:|:---------------------------|:--------------------------------|:------------------------|:-----------------------------|:-------------|:-----------------|:----------------------|:---------------------|:-----------|:-------------------|:---------------------|-------------------:|:--------------------|:------------|:----------------------|---------------:|:------------------|:---------------|:-----------------|
-|  0 | ASIssps_M1   | ASIssps_O1         | ASIssps_SwadeId1 | ASIssps_V1             | ASIssps_WSwadeId1 |     5008 |                            |                                 | Commercial              |                              |              |                  | 07/23/2024            |                      |            |                    |                      |                  0 |                     |             | Commercial/Industrial |           2021 |                   | 2021-12-31     | 2021-12-01       |
+|    | MethodUUID   | OrganizationUUID   | SiteUUID      | VariableSpecificUUID   | WaterSourceUUID   |   Amount | AllocationCropDutyAmount   | AssociatedNativeAllocationIDs   | BeneficialUseCategory   | CommunityWaterSupplySystem   | CropTypeCV   | CustomerTypeCV   | DataPublicationDate   | DataPublicationDOI   | Geometry   | IrrigatedAcreage   | IrrigationMethodCV   |   PopulationServed | PowerGeneratedGWh   | PowerType   | PrimaryUseCategory   |   ReportYearCV | SDWISIdentifier   | TimeframeEnd   | TimeframeStart   |
+|---:|:-------------|:-------------------|:--------------|:-----------------------|:------------------|---------:|:---------------------------|:--------------------------------|:------------------------|:-----------------------------|:-------------|:-----------------|:----------------------|:---------------------|:-----------|:-------------------|:---------------------|-------------------:|:--------------------|:------------|:---------------------|---------------:|:------------------|:---------------|:-----------------|
+|  0 | ASIssps_M1   | ASIssps_OR1        | ASIssps_SAasu | ASIssps_V1             | ASIssps_WwadeId1  |     5008 |                            |                                 | Commercial              | Aasu                         |              |                  | 08/13/2024            |                      |            |                    |                      |                  0 |                     |             | Commercial           |           2021 |                   | 2021-12-31     | 2021-12-01       |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sitespecificamounts_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the site-specific amount include the following...
 - MethodUUID
@@ -235,25 +236,25 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - DataPublicationDate
 
 
-### 7) POD Site -To- POU Polygon Relationships
-Purpose: generate linking element between POD and POU sites that share the same water right.
+### 7) POD -To- POU Site Relationships
+Purpose: generate linking element between POD and POU sites that share the same WaDE CommunityWaterSupplySystem entry in sitespecificamounts.csv
 Note: podsitetopousiterelationships.csv output only needed if both POD and POU data is present, ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `otherwise produces empty file.`
 
 #### Operation and Steps:
-- Read the sites.csv & waterallocations.csv input files.
-- Create three temporary dataframes: one for waterallocations, & two for site info that will store POD and POU data separately.
+- Read the sites.csv & sitespecificamounts.csv input files.
+- Create three temporary dataframes: one for sitespecificamounts, & two for site info that will store POD and POU data separately.
 - For the temporary POD dataframe...
   - Read in site.csv data from sites.csv with a _PODSiteUUID_ field = POD only.
   - Create _PODSiteUUID_ field = _SiteUUID_.
 - For the temporary POU dataframe
   - Read in site.csv data from sites.csv with a _PODSiteUUID_ field = POU only.
   - Create _POUSiteUUID_ field = _SiteUUID_.
-- For the temporary waterallocations dataframe, explode _SiteUUID_ field to create unique rows.
-- Left-merge POD & POU dataframes to the waterallocations dataframe via _SiteUUID_ field.
-- Consolidate waterallocations dataframe by grouping entries by _AllocationNativeID_ filed.
-- Explode the consolidated waterallocations dataframe again using the _PODSiteUUID_ field, and again for the _POUSiteUUID_ field to create unique rows.
-- Perform error check on waterallocations dataframe (check for NaN values)
-- If waterallocations is not empty, export output dataframe _podsitetopousiterelationships.csv_.
+- For the temporary sitespecificamounts dataframe, explode _SiteUUID_ field to create unique rows.
+- Left-merge POD & POU dataframes to the sitespecificamounts dataframe via _SiteUUID_ field.
+- Consolidate sitespecificamounts dataframe by grouping entries by _CommunityWaterSupplySystem_ filed.
+- Explode the consolidated sitespecificamounts dataframe again using the _PODSiteUUID_ field, and again for the _POUSiteUUID_ field to create unique rows.
+- Perform error check on sitespecificamounts dataframe (check for NaN values)
+- If sitespecificamounts is not empty, export output dataframe _podsitetopousiterelationships.csv_.
 
 
 ***
@@ -262,20 +263,20 @@ The following info is from a data assessment evaluation of the completed data...
 
 Dataset | Num of Source Entries (rows)
 ---------- | ---------- 
-**Final_Aggregated_Data** | 5,532
+**Final_Aggregated_Data** | 4,487
 **Sites** | 134
 
 
 Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Use Records
 ---------- | ------------ | ------------ | ------------
-**Compiled WaDE Data** | 60 | 0 | 3,792
+**Compiled WaDE Data** | 40 | 60 | 3,815
 
 
 Assessment of Removed Source Records | Count | Action
 ---------- | ---------- | ----------
-Incomplete or bad entry for Latitude   | 1 | removed from sites.csv input
-Incomplete or bad entry for SiteUUID   | 1,639 | removed from sitespecificamounts.csv input
-Negative, blank, or 0 Amount values    |   32 | removed from sitespecificamounts.csv input
+Incomplete or bad entry for Latitude   | 20 | removed from sites.csv input
+Incomplete or bad entry for SiteUUID / unable to pair to site  | 600 | removed from sitespecificamounts.csv input
+Negative, blank, or 0 Amount values    | 72 | removed from sitespecificamounts.csv input
 
 **Figure 1:** Distribution of POD vs POU Sites within the sites.csv
 ![](figures/PODorPOUSite.png)
@@ -302,7 +303,7 @@ Negative, blank, or 0 Amount values    |   32 | removed from sitespecificamounts
 
 ***
 ## Staff Contributions
-Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [American Samoa Power Authority]("https://www.aspower.com/").
+Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [American Samoa Power Authority](https://www.aspower.com/).
 
 WSWC Staff
 - Ryan James <rjames@wswc.utah.gov>
