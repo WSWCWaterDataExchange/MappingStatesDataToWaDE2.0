@@ -21,7 +21,7 @@ Unique files were created to be used as input.  Input files used are as follows.
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
 The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
-- Utah Department of Natural Resources Regulatory Data: [link](https://drive.google.com/drive/folders/10QOZs6jSoX1cLHFCvYvUmf9-7c_it1B-)
+- Utah Department of Natural Resources Regulatory Data: [link](https://drive.google.com/drive/folders/1zXz1qOKe2I20L_Oov5gIBxGeDyuz4Ynk)
 
 
 ## Summary of Data Prep
