@@ -92,7 +92,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 |    | OrganizationUUID   | OrganizationContactEmail   | OrganizationContactName   | OrganizationName                           | OrganizationPhoneNumber   | OrganizationPurview      | OrganizationWebsite     | State   |
 |---:|:-------------------|:---------------------------|:--------------------------|:-------------------------------------------|:--------------------------|:-------------------------|:------------------------|:--------|
-|  0 | NDre_O1            | jennifermartin@nd.gov      | Jennifer Martin           | North Dakota Department of Water Resources | 701.328.2750              | Water Resource Districts | https://www.swc.nd.gov/ | ND      |
+|  0 | NDov_O1            | jennifermartin@nd.gov      | Jennifer Martin           | North Dakota Department of Water Resources | 701.328.2750              | Water Resource Districts | https://www.swc.nd.gov/ | ND      |
 
 
 ### 3) Reporting Unit Information
@@ -119,7 +119,7 @@ Purpose: generate a list of polygon areas associated with the state agency overl
 #### Sample Output (WARNING: not all fields shown):
 |    | ReportingUnitUUID   |   EPSGCodeCV | ReportingUnitName    | ReportingUnitNativeID   | ReportingUnitProductVersion   | ReportingUnitTypeCV     | ReportingUnitUpdateDate   | StateCV   |
 |---:|:--------------------|-------------:|:---------------------|:------------------------|:------------------------------|:------------------------|:--------------------------|:----------|
-|  1 | NDre_RUnd02         |         4326 | Bottineau County WRD | nd0-2                   |                               | Water Resource District |                           | ND        |
+|  1 | NDov_RUnd02         |         4326 | Bottineau County WRD | nd0-2                   |                               | Water Resource District |                           | ND        |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *reportingunits_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the reportingunits include the following...
 - ReportingUnitUUID
@@ -153,7 +153,7 @@ Purpose: generate master sheet of overlay area information to import into WaDE 2
 #### Sample Output (WARNING: not all fields shown):
 |    | RegulatoryOverlayUUID   | OversightAgency                            | RegulatoryDescription                                                                                                                                                                                                                                                                                                                                                                                                                 | RegulatoryName   |   RegulatoryOverlayNativeID | RegulatoryStatusCV   | RegulatoryStatute   | RegulatoryStatuteLink                        | StatutoryEffectiveDate   | StatutoryEndDate   | RegulatoryOverlayTypeCV   | WaterSourceTypeCV       |
 |---:|:------------------------|:-------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|----------------------------:|:---------------------|:--------------------|:---------------------------------------------|:-------------------------|:-------------------|:--------------------------|:------------------------|
-|  1 | NDre_RO36               | North Dakota Department of Water Resources | responsible for water management in North Dakota at the local county, or sub-county level. WRDs are typically comprised of three or more board members - addressing water management issues such as drainage, water control, watershed planning, and assessment projects. Water Resource Districts (WRDs) are also allowed to form joint districts by joining together to manage water and water projects across district boundaries. | Barnes           |                          36 | Active               |                     | https://www.ndlegis.gov/cencode/t61c16-1.pdf | 1935-01-01               |                    | Water Resource District   | Surface and Groundwater |
+|  1 | NDov_RO36               | North Dakota Department of Water Resources | responsible for water management in North Dakota at the local county, or sub-county level. WRDs are typically comprised of three or more board members - addressing water management issues such as drainage, water control, watershed planning, and assessment projects. Water Resource Districts (WRDs) are also allowed to form joint districts by joining together to manage water and water projects across district boundaries. | Barnes           |                          36 | Active               |                     | https://www.ndlegis.gov/cencode/t61c16-1.pdf | 1935-01-01               |                    | Water Resource District   | Surface and Groundwater |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *regulatoryoverlays_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water overlays include the following...
 - RegulatoryOverlayUUID
@@ -208,4 +208,4 @@ WSWC Staff
 - Ryan James (Data Analysis) <rjames@wswc.utah.gov>
 
 North Dakota Department of Water Resources Staff
-- "{name of staff member that is our point of contact for this data}" <"{point of contacts email"}>
+- asdf
