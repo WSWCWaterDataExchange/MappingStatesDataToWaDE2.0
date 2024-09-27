@@ -9,8 +9,7 @@ Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
 **Water Rights - POD and POU Surface Water** | Maps and data published by the OWRB. Permitted Surface Water Diversions and Areas of Use. | [link](https://www.owrb.ok.gov/maps/pmg/owrbdata_WR.html) | [link](https://www.owrb.ok.gov/maps/data/layers/Water_Rights/Permitted_SW_Diversions.htm)
 **Water Rights - POD and POU Groundwater** | Maps and data published by the OWRB. Contains Permitted Groundwater Wells and Dedicated Lands. | [link](https://www.owrb.ok.gov/maps/pmg/owrbdata_WR.html) | [link](https://www.owrb.ok.gov/maps/data/layers/Water_Rights/Permitted_GW_Wells.htm)
-**Water Use Data&& | - | - |
-**OWRBStateWaterUse_20220505JSC_wswc** | Microsoft Access Database file of Groundwater and Surface Water annual water use related to water rights for 2000-2020. |  Received via Email | Not Provided
+**OWRBStateWaterUse_20220505JSC_wswc** | Microsoft Access Database file of Groundwater and Surface Water annual water use related to water rights for 2000-2020. |  Received via Email | Not provided
 
 Input files used are as follows...
 - Permitted_GW_Wells.zip, zipped csv file of groundwater point-of-diversions of to water rights.
