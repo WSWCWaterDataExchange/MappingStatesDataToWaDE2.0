@@ -6,8 +6,8 @@ The following data was used for water allocations...
 
 Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
-**Water Plan Water Balance Data** | aggregated time series water budget files csv for HR, PA, and DAU regions.  Data used was for the years 2002-2016.  In total there are 45 separate csv files (15 HR, 15 PA, & 15 DAU). | [link]((https://data.cnra.ca.gov/dataset/water-plan-water-balance-data) ) | not provided
- **Water_Plan_Planning_Areas-shp** | files were used to extract geometry, create shape files, and were obtained from the DWR Atlas. | [link]((https://atlas-dwr.opendata.arcgis.com/datasets/a911dd793cae48f1a3662e08f4811382_0?geometry=-152.647%2C31.071%2C-85.894%2C43.276)) | not provided
+**Water Plan Water Balance Data** | aggregated time series water budget files csv for HR, PA, and DAU regions.  Data used was for the years 2002-2016.  In total there are 45 separate csv files (15 HR, 15 PA, & 15 DAU). | [link](https://data.cnra.ca.gov/dataset/water-plan-water-balance-data) | not provided
+ **Water_Plan_Planning_Areas-shp** | files were used to extract geometry, create shape files, and were obtained from the DWR Atlas. | [link](https://atlas-dwr.opendata.arcgis.com/datasets/a911dd793cae48f1a3662e08f4811382_0?geometry=-152.647%2C31.071%2C-85.894%2C43.276) | not provided
 **Hydrologic_Regions-shp** | files were used to extract geometry, create shape files, and were obtained from the DWR Atlas. | [link](https://atlas-dwr.opendata.arcgis.com/datasets/2a572a181e094020bdaeb5203162de15_0) | not provided
 **DAUCO-shp** | files were used to extract geometry, create shape files, and were provided with previous WaDE 1.0 correspondence in the past between the CDWR and the WSWC.  DAUCO is more granular than the actual county shape (see below Figure 1) | not provided | not provided
 
