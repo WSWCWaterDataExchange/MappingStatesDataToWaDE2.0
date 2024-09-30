@@ -1,4 +1,4 @@
-# Date Created: 04/17/2023
+# Date Created: 09/24/2024
 # Purpose: To create reporting unit information and populate a dataframe for WaDE
 
 
@@ -47,8 +47,12 @@ def CreateReportingUnitInputFunction(workingDirString, varST, varUUIDType, mainI
     # For Creating Geometry
     def retrieveGeometry(colrowValue):
         String1 = colrowValue
-        outList = Geometrydict[String1]
-        return outList
+        try:
+            outString = Geometrydict[String1]
+        except:
+            outString = ""
+            print(f'...could not pair/find "{colrowValue}" id geometry.')
+        return outString
 
 
     # For creating UUID

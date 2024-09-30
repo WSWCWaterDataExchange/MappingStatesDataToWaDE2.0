@@ -299,16 +299,19 @@ Assessment of Removed Source Records | Count | Action
 **Figure 4b:** Cumulative distribution of Priority Date of Identified Water Right Records within the waterallocations.csv
 ![](figures/AllocationPriorityDate2.png)
 
-**Figure 5:** Distribution & Range of Flow (CFS) of Identified Water Right Records within the waterallocations.csv
+**Figure 5:** Distribution of Legal Status of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationLegalStatusCV.png)
+
+**Figure 6:** Distribution & Range of Flow (CFS) of Identified Water Right Records within the waterallocations.csv
 ![](figures/AllocationFlow_CFS.png)
 
-**Figure 6:** Distribution & Range of Volume (AF) of Identified Water Right Records within the waterallocations.csv
+**Figure 7:** Distribution & Range of Volume (AF) of Identified Water Right Records within the waterallocations.csv
 ![](figures/AllocationVolume_AF.png)
 
-**Figure 7:** Map of Identified Points within the sites.csv
+**Figure 8:** Map of Identified Points within the sites.csv
 ![](figures/PointMap.png)
 
-**Figure 8:** Map of Identified Polygons within the sites.csv
+**Figure 9:** Map of Identified Polygons within the sites.csv
 ![](figures/PolyMap.png)
 
 
@@ -317,7 +320,6 @@ Assessment of Removed Source Records | Count | Action
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the ["{state / organization name}"]("{http web link address to state / organization name}").
 
 WSWC Staff
-- Adel Abdallah (Project Manager) <adelabdallah@wswc.utah.gov>
 - Ryan James (Data Analysis) <rjames@wswc.utah.gov>
 
 "{state / organization name}" Staff

@@ -224,25 +224,25 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - DataPublicationDate
 
 
-### 7) POD Site -To- POU Polygon Relationships
-Purpose: generate linking element between POD and POU sites that share the same water right.
+### 7) POD -To- POU Site Relationships
+Purpose: generate linking element between POD and POU sites that share the same WaDE CommunityWaterSupplySystem entry in sitespecificamounts.csv
 Note: podsitetopousiterelationships.csv output only needed if both POD and POU data is present, ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `otherwise produces empty file.`
 
 #### Operation and Steps:
-- Read the sites.csv & waterallocations.csv input files.
-- Create three temporary dataframes: one for waterallocations, & two for site info that will store POD and POU data separately.
+- Read the sites.csv & sitespecificamounts.csv input files.
+- Create three temporary dataframes: one for sitespecificamounts, & two for site info that will store POD and POU data separately.
 - For the temporary POD dataframe...
   - Read in site.csv data from sites.csv with a _PODSiteUUID_ field = POD only.
   - Create _PODSiteUUID_ field = _SiteUUID_.
 - For the temporary POU dataframe
   - Read in site.csv data from sites.csv with a _PODSiteUUID_ field = POU only.
   - Create _POUSiteUUID_ field = _SiteUUID_.
-- For the temporary waterallocations dataframe, explode _SiteUUID_ field to create unique rows.
-- Left-merge POD & POU dataframes to the waterallocations dataframe via _SiteUUID_ field.
-- Consolidate waterallocations dataframe by grouping entries by _AllocationNativeID_ filed.
-- Explode the consolidated waterallocations dataframe again using the _PODSiteUUID_ field, and again for the _POUSiteUUID_ field to create unique rows.
-- Perform error check on waterallocations dataframe (check for NaN values)
-- If waterallocations is not empty, export output dataframe _podsitetopousiterelationships.csv_.
+- For the temporary sitespecificamounts dataframe, explode _SiteUUID_ field to create unique rows.
+- Left-merge POD & POU dataframes to the sitespecificamounts dataframe via _SiteUUID_ field.
+- Consolidate sitespecificamounts dataframe by grouping entries by _CommunityWaterSupplySystem_ filed.
+- Explode the consolidated sitespecificamounts dataframe again using the _PODSiteUUID_ field, and again for the _POUSiteUUID_ field to create unique rows.
+- Perform error check on sitespecificamounts dataframe (check for NaN values)
+- If sitespecificamounts is not empty, export output dataframe _podsitetopousiterelationships.csv_.
 
 
 ***
@@ -290,7 +290,6 @@ Assessment of Removed Source Records | Count | Action
 Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [("XX")]("").
 
 WSWC Staff
-- Adel Abdallah <adelabdallah@wswc.utah.gov>
 - Ryan James <rjames@wswc.utah.gov>
 
 "XX" Staff

@@ -1,5 +1,5 @@
-# Date Update: 06/13/2023
-# Purpose: To extract aggregated amount timeseries record information and populate dataframe for WaDE_QA 2.0.
+# Date Update: 09/24/2024
+# Purpose: To extract aggregated water use amount timeseries record information and populate dataframe for WaDE.
 
 
 # Needed Libraries
@@ -47,6 +47,7 @@ def CreateAggregatedAmountsInputFunction(workingDirString, mainInputFile):
     df = pd.read_csv(fileInput, compression='zip')
 
     # Input Data - 'WaDE Input' files.
+    dfv = pd.read_csv("ProcessedInputData/variables.csv").replace(np.nan, "")  # Variables dataframe
     dfru = pd.read_csv("ProcessedInputData/reportingunits.csv").replace(np.nan, "")  # ReportingUnit dataframe
     dfws = pd.read_csv("ProcessedInputData/watersources.csv").replace(np.nan, "")  # WaterSources dataframe
 
@@ -56,6 +57,20 @@ def CreateAggregatedAmountsInputFunction(workingDirString, mainInputFile):
 
     # Custom Functions
     ############################################################################
+
+    # For creating VariableSpecificUUID
+    VariableSpecificUUIDdict = pd.Series(dfv.VariableSpecificUUID.values, index=dfv.VariableSpecificCV.astype(str)).to_dict()
+    def retrieveVariableSpecificUUID(colrowValue):
+        if colrowValue == '' or pd.isnull(colrowValue):
+            outString = ''
+        else:
+            colrowValue = str(colrowValue).strip()
+            try:
+                outString = VariableSpecificUUIDdict[colrowValue]
+            except:
+                outString = ''
+        return outString
+
     # For creating ReportingUnitsUUID
     ReportingUnitUUIDdict = pd.Series(dfru.ReportingUnitUUID.values, index = dfru.ReportingUnitNativeID.astype(str)).to_dict()
     def retrieveReportingUnitsUUID(colrowValue):
@@ -98,7 +113,7 @@ def CreateAggregatedAmountsInputFunction(workingDirString, mainInputFile):
     outdf['ReportingUnitUUID'] = df.apply(lambda row: retrieveReportingUnitsUUID(row['in_ReportingUnitNativeID']), axis=1)
 
     print("VariableSpecificUUID")
-    outdf['VariableSpecificUUID'] = df['in_VariableSpecificUUID']
+    outdf['VariableSpecificUUID'] = df.apply(lambda row: retrieveVariableSpecificUUID(row['in_VariableSpecificCV']), axis=1)
 
     print("WaterSourceUUID")
     outdf['WaterSourceUUID'] = df.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
@@ -145,8 +160,8 @@ def CreateAggregatedAmountsInputFunction(workingDirString, mainInputFile):
     print("PowerType")
     outdf['PowerType'] = df['in_PowerType']
 
-    print("PrimaryUseCategoryCV")
-    outdf['PrimaryUseCategoryCV'] = df['in_PrimaryUseCategoryCV']
+    print("PrimaryUseCategory")
+    outdf['PrimaryUseCategory'] = df['in_PrimaryUseCategoryCV']
 
     print("ReportYearCV")
     outdf['ReportYearCV'] = df['in_ReportYearCV']
