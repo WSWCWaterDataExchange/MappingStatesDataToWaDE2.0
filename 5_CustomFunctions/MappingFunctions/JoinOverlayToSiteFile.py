@@ -19,16 +19,16 @@ import geopandas as gpd
 
 # File Function
 ############################################################################
-def JoinRegulatoryOverlayToSiteFunction(workingDirString):
+def JoinOverlayToSiteFunction(workingDirString):
     workingDir = workingDirString
     os.chdir(workingDir)
 
     # Check for Regulatory data
     ############################################################################
-    print("Checking for available Regulatory data / project...")
-    checkDir = os.path.isdir('../Regulatory/ProcessedInputData')
+    print("Checking for available Overlays data / project...")
+    checkDir = os.path.isdir('../Overlays/ProcessedInputData')
     if checkDir == True:
-        print("- Regulatory directory exists")
+        print("- Overlays directory exists")
 
         # Inputs
         ############################################################################
@@ -37,9 +37,9 @@ def JoinRegulatoryOverlayToSiteFunction(workingDirString):
         dfws = pd.read_csv('ProcessedInputData/watersources.csv')
         dfs = pd.read_csv('ProcessedInputData/sites.csv')
         # Regulatory Input Data
-        dfro = pd.read_csv("../Regulatory/ProcessedInputData/regulatoryoverlays.csv")
-        dfru = pd.read_csv("../Regulatory/ProcessedInputData/reportingunits.csv")
-        dfrru = pd.read_csv("../Regulatory/ProcessedInputData/regulatoryreportingunits.csv")
+        dfro = pd.read_csv("../Overlays/ProcessedInputData/regulatoryoverlays.csv")
+        dfru = pd.read_csv("../Overlays/ProcessedInputData/reportingunits.csv")
+        dfrru = pd.read_csv("../Overlays/ProcessedInputData/regulatoryreportingunits.csv")
 
         #### water right watersource info with site info
         # explode site.csv on WaterSourceUUIDs
@@ -48,7 +48,7 @@ def JoinRegulatoryOverlayToSiteFunction(workingDirString):
         dfs = pd.merge(dfs, dfws[['WaterSourceUUID', 'WaterSourceTypeCV']],
                        left_on='WaterSourceUUIDs', right_on='WaterSourceUUID', how='left')
 
-        #### regulatory watersource info with reporting unit info
+        #### Overlay watersource info with reporting unit info
         # merge regulatoryoverlays -to- regulatoryreportingunits -to- reportingunits
         dfro = pd.merge(dfro[['RegulatoryOverlayUUID', 'WaterSourceTypeCV']],
                         dfrru[['RegulatoryOverlayUUID', 'ReportingUnitUUID']],
@@ -105,6 +105,6 @@ def JoinRegulatoryOverlayToSiteFunction(workingDirString):
         dfs.to_csv('ProcessedInputData/sites.csv', index=False)  # this is in the Regulatory data folder
 
     else:
-        print("- WARNING: No Regulatory data / project to work from")
+        print("- WARNING: No Overlays data / project to work from")
 
     print("Done")

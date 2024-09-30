@@ -30,11 +30,11 @@ def removeMaskItemsFunc(dfx, dfy, mask, selectionVar):
 
 def WaterSourceTestErrorFunctions(outdf, dfpurge):
     # Geometry??? How to check for geometry datatype
-    outdf, dfpurge = GNISFeatureNameCV_WS_Check(outdf, dfpurge)
-    outdf, dfpurge = WaterQualityIndicatorCV_WS_Check(outdf, dfpurge)
-    outdf, dfpurge = WaterSourceName_WS_Check(outdf, dfpurge)
-    outdf, dfpurge = WaterSourceNativeID_WS_Check(outdf, dfpurge)
-    outdf, dfpurge = WaterSourceTypeCV_WS_Check(outdf, dfpurge)
+    outdf, dfpurge = GNISFeatureNameCV_W_Check(outdf, dfpurge)
+    outdf, dfpurge = WaterQualityIndicatorCV_W_Check(outdf, dfpurge)
+    outdf, dfpurge = WaterSourceName_W_Check(outdf, dfpurge)
+    outdf, dfpurge = WaterSourceNativeID_W_Check(outdf, dfpurge)
+    outdf, dfpurge = WaterSourceTypeCV_W_Check(outdf, dfpurge)
     return(outdf, dfpurge)
 
 
@@ -65,7 +65,7 @@ def SiteTestErrorFunctions(outdf, dfpurge):
 
 def ReportingUnitTestErrorFunctions(outdf, dfpurge):
     outdf, dfpurge = EPSGCodeCV_RU_Check(outdf, dfpurge)
-    # Geometry ???? How to check for geometry datatype
+    outdf, dfpurge = Geometry_RU_Check(outdf, dfpurge) # can't have null or blank geometry with Reporting Unit data
     outdf, dfpurge = ReportingUnitName_RU_Check(outdf, dfpurge)
     outdf, dfpurge = ReportingUnitNativeID_RU_Check(outdf, dfpurge)
     outdf, dfpurge = ReportingUnitProductVersion_RU_Check(outdf, dfpurge)
@@ -205,7 +205,7 @@ def AggregatedAmountsErrorFunctions(outdf, dfpurge):
 ########################################################################################################################
 
 # WaterSourceUUID_nvarchar(250)_-
-def WaterSourceUUID_WS_Check(dfx, dfy):
+def WaterSourceUUID_W_Check(dfx, dfy):
     selectionVar = (dfx["WaterSourceUUID"].isnull()) | (dfx["WaterSourceUUID"] == '') | (dfx['WaterSourceUUID'].str.len() > 250)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for WaterSourceUUID').reset_index()
     mask['IncompleteField'] = mask['WaterSourceUUID']
@@ -217,7 +217,7 @@ def WaterSourceUUID_WS_Check(dfx, dfy):
 # ???? How to check for geometry datatype
 
 # GNISFeatureNameCV_nvarchar(250)_Yes
-def GNISFeatureNameCV_WS_Check(dfx, dfy):
+def GNISFeatureNameCV_W_Check(dfx, dfy):
     selectionVar = (dfx["GNISFeatureNameCV"].str.len() > 250)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for GNISFeatureNameCV').reset_index()
     mask['IncompleteField'] = mask['GNISFeatureNameCV']
@@ -226,7 +226,7 @@ def GNISFeatureNameCV_WS_Check(dfx, dfy):
 
 
 # WaterQualityIndicatorCV_nvarchar(100)_-
-def WaterQualityIndicatorCV_WS_Check(dfx, dfy):
+def WaterQualityIndicatorCV_W_Check(dfx, dfy):
     selectionVar = (dfx["WaterQualityIndicatorCV"].isnull()) | (dfx["WaterQualityIndicatorCV"] == '') | (dfx['WaterQualityIndicatorCV'].str.len() > 250)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for WaterQualityIndicatorCV').reset_index()
     mask['IncompleteField'] = mask['WaterQualityIndicatorCV']
@@ -235,7 +235,7 @@ def WaterQualityIndicatorCV_WS_Check(dfx, dfy):
 
 
 # WaterSourceName_nvarchar(250)_Yes
-def WaterSourceName_WS_Check(dfx, dfy):
+def WaterSourceName_W_Check(dfx, dfy):
     selectionVar = (dfx["WaterSourceName"].astype(str).str.len() > 250)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for WaterSourceName').reset_index()
     mask['IncompleteField'] = mask['WaterSourceName']
@@ -244,7 +244,7 @@ def WaterSourceName_WS_Check(dfx, dfy):
 
 
 # WaterSourceNativeID_nvarchar(250)_Yes
-def WaterSourceNativeID_WS_Check(dfx, dfy):
+def WaterSourceNativeID_W_Check(dfx, dfy):
     selectionVar = (dfx["WaterSourceNativeID"].astype(str).str.len() > 250)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for WaterSourceNativeID').reset_index()
     mask['IncompleteField'] = mask['WaterSourceNativeID']
@@ -253,7 +253,7 @@ def WaterSourceNativeID_WS_Check(dfx, dfy):
 
 
 # WaterSourceTypeCV_nvarchar(100)_-
-def WaterSourceTypeCV_WS_Check(dfx, dfy):
+def WaterSourceTypeCV_W_Check(dfx, dfy):
     selectionVar = (dfx['WaterSourceTypeCV'].str.len() > 100) | (dfx["WaterSourceTypeCV"].str.contains(','))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for WaterSourceTypeCV').reset_index()
     mask['IncompleteField'] = mask['WaterSourceTypeCV']
@@ -517,7 +517,12 @@ def EPSGCodeCV_RU_Check(dfx, dfy):
 
 
 # Geometry_Geometry_Yes
-# Not sure how to check for this...
+def Geometry_RU_Check(dfx, dfy):
+    selectionVar = (dfx["Geometry"].isnull()) | (dfx["Geometry"] == '')
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Geometry').reset_index()
+    mask['IncompleteField'] = mask['Geometry']
+    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
+    return (dfx, dfy)
 
 # ReportingUnitName_nvarchar(250)_
 def ReportingUnitName_RU_Check(dfx, dfy):

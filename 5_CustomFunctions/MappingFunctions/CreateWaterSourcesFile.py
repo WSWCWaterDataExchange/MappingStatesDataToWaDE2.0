@@ -50,7 +50,7 @@ def CreateWaterSourcesInputFunction(workingDirString, varST, varUUIDType, mainIn
     def assignUUID(Val):
         Val = str(Val)
         Val = re.sub("[$@&.;,/\)(-]", "", Val).strip().replace(" ", "")
-        Val = varST + varUUIDType + "_WS" + Val
+        Val = varST + varUUIDType + "_W" + Val
         return Val
 
 
@@ -109,7 +109,7 @@ def CreateWaterSourcesInputFunction(workingDirString, varST, varUUIDType, mainIn
                                         outdf['WaterSourceUUID'])
 
     # Error check WaterSourceUUID
-    outdf, dfpurge = ErrorCheckCodeFunctionsFile.WaterSourceUUID_WS_Check(outdf, dfpurge)
+    outdf, dfpurge = ErrorCheckCodeFunctionsFile.WaterSourceUUID_W_Check(outdf, dfpurge)
 
 
     # Clean data & check data types before export
