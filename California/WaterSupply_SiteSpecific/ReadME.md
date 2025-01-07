@@ -9,14 +9,17 @@ The following data was used for water allocations...
 Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
 **Reservoirs** | Site information for active monthly reservoirs.  Data copy/pasted from website. | [link](https://cdec.water.ca.gov/misc/monthly_res.html) | not provided
-**StreamGages** | Snapshot of stream gage site information from the fall of 2020. WaDE is only interested in Active stream gages sites.  Duplicate reservoir sites already noted in **Reservoirs** input were removed.  Shapefile | [link](https://gispublic.waterboards.ca.gov/portal/home/item.html?id=32dfb85bd2744487affe6e3475190093) | not provided
-**Timeseries Data** | Site timeseries data for both **Reservoirs** and **StreamGages** inputs.  Retrieved via API and saved to zip file.  WaDE is only interested in daily and monthly timeseries records. | [link](https://cdec.water.ca.gov/queryTools.html) | not provided
+**StreamGages** | Snapshot of stream gage site information from the fall of 2020. WaDE is only interested in Active stream gages sites.  Duplicate reservoir sites already noted in **Reservoirs** input were removed.  Shapefile | [link](https://gispublic.waterboards.ca.gov/portal/home/item.html?id=32dfb85bd2744487affe6e3475190093) | not provided | not provided
+**Snow Depth** | Site information for active snow depth sensors in California. | [link](https://cdec.water.ca.gov/reportapp/javareports?name=SnowDepth) | 
+**Timeseries Data** | Site timeseries data for both **Reservoirs**, **StreamGages** and **Snow Depth** inputs.  Retrieved via API and saved to zip file.  WaDE is only interested in daily and monthly timeseries records. | [link](https://cdec.water.ca.gov/queryTools.html) | not provided
 
 Input files used are as follows...
 - Reservoirs.zip, zipped csv of reservoir site info
 - StreamGages.zip, zipped shp of stream gage site info
+- ActiveSnowDepthSesnsors.zip, sizpped csv of snow depth sensor site info
 - Reservoirs_timeseries.zip, zipped csv of daily and monthly timeseries values for reservoir sites
 - StreamGages_timeseries.zip, zipped csv of daily and monthly timeseries value for stream gage sites
+- ActiveSnowDepthSesnsors_timeseries.zip, zipped csv of daily and monthly timeseries value for snow depth gage sites
  
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
@@ -39,15 +42,17 @@ Purpose: Pre-process the state agency's input data files and merge them into one
 #### Inputs: 
 - Reservoirs.zip
 - StreamGages.zip
+- ActiveSnowDepthSesnsors.zip
 - Reservoirs_timeseries.zip
 - StreamGages_timeseries.zip
+- ActiveSnowDepthSesnsors_timeseries
 
 #### Outputs:
  - Pwsss_caMain.zip
 
 #### Operation and Steps:
 - Read in input data.  Store data in temp DataFrames.  Store by reservoir site info, stream gage site info, reservoir timeseries info, & stream gage timeseries info.
-- Inner join timeseries info to respective site info.  Join reservoir via **STATION_ID** & **ID** inputs, join stream gage via  **STATION_ID** & **siteid** inputs.
+- Inner join timeseries info to respective site info.  Join reservoir via **ID** & **STATION_ID** inputs, join stream gage via **STATION_ID** & **siteid** inputs, join snow depth via **ID** & **StationID** inputs.
 - Set inputs to WaDE inputs respectively (see below for further detail).
 - Review data for errors, check value types.
 - Export as Pwsss_caMain.zip.
@@ -100,9 +105,9 @@ Purpose: generate legend of granular variables specific to each state.
 - Export output dataframe *variables.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-|    | VariableSpecificUUID   |   AggregationInterval | AggregationIntervalUnitCV   | AggregationStatisticCV   | AmountUnitCV   | MaximumAmountUnitCV   |   ReportYearStartMonth | ReportYearTypeCV   | VariableCV   | VariableSpecificCV                                         |
-|---:|:-----------------------|----------------------:|:----------------------------|:-------------------------|:---------------|:----------------------|-----------------------:|:-------------------|:-------------|:-----------------------------------------------------------|
-|  0 | CAwsss_V1              |                     1 | Daily                       | Average                  | AF             | AF                    |                      1 | CalendarYear       | Water Supply | Water Supply_Daily_Above Top Of Conservation_Surface Water |
+|    | VariableSpecificUUID   |   AggregationInterval | AggregationIntervalUnitCV   | AggregationStatisticCV   | AmountUnitCV   | MaximumAmountUnitCV   |   ReportYearStartMonth | ReportYearTypeCV   | VariableCV   | VariableSpecificCV                         |
+|---:|:-----------------------|----------------------:|:----------------------------|:-------------------------|:---------------|:----------------------|-----------------------:|:-------------------|:-------------|:-------------------------------------------|
+|  0 | CAwsss_V1              |                     1 | Daily                       | Average                  | CFS            | CFS                   |                      1 | CalendarYear       | Water Supply | Water Supply_Daily_Mean Flow_Surface Water |
 
 
 
@@ -254,12 +259,14 @@ Dataset | Num of Source Entries (rows)
 ---------- | ---------- 
 **Reservoirs.zip** | 180
 **StreamGages.zip** | 2,597
+**ActiveSnowDepthSesnsors_timeseries** | 165
 **Reservoirs_timeseries.zip** | 5,082,260
 **StreamGages_timeseries.zip** | 3,250,992
+**ActiveSnowDepthSesnsors_timeseries** | 713,359
 
 
 Dataset  | Num of Identified Sites | Num of Identified Time Series Records
-**Compiled WaDE Data** | 274 | 4,610,562
+**Compiled WaDE Data** | 355 | 2,873,570
 
 
 Assessment of Removed Source Records | Count | Action
