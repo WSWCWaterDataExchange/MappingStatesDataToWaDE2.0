@@ -7,10 +7,12 @@ The following data was used for water allocations...
 
 Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
-**OWRD Administrative Basins** | Administrative basins for water rights. | [link](https://www.oregon.gov/OWRD/access_Data/Pages/Data.aspx) | [link](https://www.oregon.gov/owrd/programs/administrativebasins/Pages/default.aspx#b1)
+**Administrative Basins (AB)** | Administrative basins for water rights. | [link](https://www.oregon.gov/OWRD/access_Data/Pages/Data.aspx) | [link](https://www.oregon.gov/owrd/programs/administrativebasins/Pages/default.aspx#b1)
+**Groundwater Restricted Areas (GRA)** | Areas specific for existing water rights by preventing excessive groundwater declines, restoring aquifer stability, and preserving aquifers with limited storage capacity for designated high public value uses.  | [link]( https://geohub.oregon.gov/datasets/oregon-geo::groundwater-restricted-areas/about) | [link](https://www.arcgis.com/sharing/rest/content/items/94c6ec9b19de4ce6b7e05596d368971b/info/metadata/metadata.xml?format=default&output=html)
 
 Unique files were created to be used as input.  Input files used are as follows...
 - oregon-water-resources-department-owrd-administrative-basins.zip, a zipped shp file of basin geometry
+- GW_Restricted_Areas.zip, zipped shp file of groundwater restricted area geometry.
 
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
@@ -19,15 +21,15 @@ The 1) raw input data shared by the state / state agency / data provider (excel,
 
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share the state's overlay data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *XXov_Overlay Info Schema Mapping to WaDE.xlsx*. Several WaDE csv input files will be created in order to extract the overlay data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
+The following text summarizes the process used by the WSWC staff to prepare and share the state's overlay data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *ORov_Overlay Info Schema Mapping to WaDE.xlsx*. Several WaDE csv input files will be created in order to extract the overlay data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
 
-- **1_XXov_PreProcessRegulatoryData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
-- **2_XXov_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: date.csv, organization.csv, reportingunits.csv, regulatoryoverlays.csv, regulatoryreportingunits.csv, etc.
-- **3_XXov_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
+- **1_ORov_PreProcessRegulatoryData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
+- **2_ORov_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: date.csv, organization.csv, reportingunits.csv, regulatoryoverlays.csv, regulatoryreportingunits.csv, etc.
+- **3_ORov_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
 
 
 ***
-## Code File: 1_XXov_PreProcessRegulatoryData.ipynb
+## Code File: 1_ORov_PreProcessRegulatoryData.ipynb
 Purpose: Pre-process the input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
@@ -45,7 +47,7 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 
 
 ***
-## Code File: 2_XXov_CreateWaDEInputFiles.ipynb
+## Code File: 2_ORov_CreateWaDEInputFiles.ipynb
 Purpose: generate WaDE csv input files (date.csv, organizations.csv, reportingunits.csv, regulatoryoverlays.csv, regulatoryreportingunits.csv.
 
 #### Inputs:
@@ -100,14 +102,14 @@ Purpose: generate a list of polygon areas associated with the state agency overl
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE ReportingUnits* specific columns.
-- Assign state agency data info to the *WaDE ReportingUnits* specific columns.  See *XXov_Overlay Info Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign state agency data info to the *WaDE ReportingUnits* specific columns.  See *ORov_Overlay Info Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - *ReportingUnitUUID* = "ORov_RU" + ReportingUnitNativeID
     - *EPSGCodeCV* = "4326".
-    - *ReportingUnitName* = **BASIN_NAME** input.
+    - *ReportingUnitName* = **BASIN_NAME** for AB, **gwra_area_** for GRA inputs.
     - *ReportingUnitNativeID* = **BASIN_NUM** input.
-    - *ReportingUnitProductVersion* = "9.6"
-    - *ReportingUnitTypeCV* = "Administrative Basins"
-    - *ReportingUnitUpdateDate* = "9/22/2021"
+    - *ReportingUnitProductVersion* = "9.6" for AB.
+    - *ReportingUnitTypeCV* = "Administrative Basins" for AB, "Groundwater Restricted Areas" for GRA.
+    - *ReportingUnitUpdateDate* = "9/22/2021" or AB, "07/23/2023" for GRA.
     - *StateCV* = "OR"
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *ReportingUnitName*, *ReportingUnitNativeID* & *ReportingUnitTypeCV* fields.
 - Assign reportingunits UUID identifier to each (unique) row.
@@ -133,18 +135,18 @@ Purpose: generate master sheet of overlay area information to import into WaDE 2
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Overlays* specific columns.
-- Assign state agency data info to the *WaDE Water Overlays* specific columns.  See *XXov_Overlay Info Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign state agency data info to the *WaDE Water Overlays* specific columns.  See *ORov_Overlay Info Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - *RegulatoryOverlayUUID* = "ORov_RO" + RegulatoryOverlayNativeID
     - *OversightAgency* = "Oregon Water Resources Department"
-    - *RegulatoryDescription* = "Administrative rules which establish water management policies and objectives and which govern the appropriation and use of the surface and ground water"
-    - *RegulatoryName* = **BASIN_NAME** input.
-    - *RegulatoryOverlayNativeID* = **BASIN_NAME** input.
-    - *RegulatoryStatusCV* = "Active"
+    - *RegulatoryDescription* = See 1_ORov_PreProcessRegulatoryData for specifics.
+    - *RegulatoryName* = **BASIN_NAME** input for AB, **gwra_area_** for GRA.
+    - *RegulatoryOverlayNativeID* = **BASIN_NUM** input.
+    - *RegulatoryStatusCV* = "Active" for AB, **gwra_statu** input for GRA.
     - *RegulatoryStatue* = ""
-    - *RegulatoryStatuteLink* = "https://secure.sos.state.or.us/oard/displayDivisionRules.action?selectedDivision=3207"
-    - *StatutoryEffectiveDate* = "10/7/1993"
-    - *RegulatoryOverlayTypeCV* = "Administrative Basins"
-    - *WaterSourceTypeCV* = "Surface and Groundwater"
+    - *RegulatoryStatuteLink* = "https://secure.sos.state.or.us/oard/displayDivisionRules.action?selectedDivision=3207" or AB, **source_lin** input for GRA.
+    - *StatutoryEffectiveDate* = "10/7/1993" for AB, **effective_** input for GRA.
+    - *RegulatoryOverlayTypeCV* = "Administrative Basins" for AB, "Groundwater Restricted Areas" for GRA.
+    - *WaterSourceTypeCV* = "Surface and Groundwater" for AB, "Groundwater" for GRA.
 - Perform error check on output dataframe.
 - Export output dataframe *regulatoryoverlays.csv*.
 
@@ -168,7 +170,7 @@ Purpose: generate master sheet of overlay area information and how it algins wit
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE OverlayReportingunits* specific columns.
-- Assign state agency data info to the *WaDE OverlayReportingunits* specific columns.  See *XXov_Overlay Info Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign state agency data info to the *WaDE OverlayReportingunits* specific columns.  See *ORov_Overlay Info Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - *DataPublicationDate* = use date of file creation
     - *OrganizationUUID* = pull from organization.csv
     - *RegulatoryOverlayUUID* = pull form regulatoryoverlay.csv
@@ -194,12 +196,14 @@ The following info is from a data assessment evaluation of the completed data...
 
 Dataset | Num of Source Entries (rows) 
 ---------- | ----------
-**OWRD Administrative Basins** | 19
+**Administrative Basins (AB)** | 19
+**Groundwater Restricted Areas (GRA)** | 29
+
 
 
 Dataset | Num of Identified Reporting Unit Areas | Num of Identified Overlays
 ---------- | ---------- | ------------
-**Compiled WaDE Data** | 18 | 18
+**Compiled WaDE Data** | 47 | 47
 
 
 Assessment of Removed Source Records | Count | Action
