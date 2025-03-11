@@ -15,16 +15,15 @@ Unique files were created to be used as input.  Input files used are as follows.
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
 The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
-- "{state / organization name}" Overlay Data: "{https web link address to the WaDE google doc where we are storing the data}"
+- "{state / organization name}" Overlay Data:[link]()
 
 
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share the state's overlay data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *XXov_Overlay Info Schema Mapping to WaDE.xlsx*. Several WaDE csv input files will be created in order to extract the overlay data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
 
 - **1_XXov_PreProcessRegulatoryData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
-- **2_XXov_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: date.csv, organization.csv, reportingunits.csv, regulatoryoverlays.csv, regulatoryreportingunits.csv, sites.csv, etc.
-- **3_XXov_WRSiteRegulatoryID.ipynb**: used to pair regulatory overlay information to water allocation information using an overlay on water allocation site information within the boundaries of the regulation.
-- **4_XXov_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
+- **2_XXov_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: date.csv, organization.csv, reportingunits.csv, regulatoryoverlays.csv, regulatoryreportingunits.csv, etc.
+- **3_XXov_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
 
 
 ***
@@ -35,20 +34,20 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 - "{name of data file}.data file type"
 
 #### Outputs:
- - Pre_xxMain.zip
+ - Pov_Main.zip
  - P_Geometry.zip
 
 #### Operation and Steps:
 - "{describe how the data was pre-processed}"
-- Export output dataframe as new csv file, *Pre_xxMain.csv* for tabular data and *P_Geometry.csv* for geometry data.
+- Export output dataframe as new csv file, *Pov_Main.csv* for tabular data and *P_Geometry.csv* for geometry data.
 
 
 ***
 ## Code File: 2_XXov_CreateWaDEInputFiles.ipynb
-Purpose: generate WaDE csv input files (date.csv, organizations.csv, reportingunits.csv, regulatoryoverlays.csv, regulatoryreportingunits.csv, sites.csv).
+Purpose: generate WaDE csv input files (date.csv, organizations.csv, reportingunits.csv, regulatoryoverlays.csv, regulatoryreportingunits.csv.
 
 #### Inputs:
-- Pre_xxMain.zip
+- Pov_Main.zip
 - P_Geometry.zip
 
 #### Outputs:
@@ -112,7 +111,7 @@ Purpose: generate a list of polygon areas associated with the state agency overl
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *ReportingUnitName*, *ReportingUnitNativeID* & *ReportingUnitTypeCV* fields.
 - Assign reportingunits UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
-- Export output dataframe *sites.csv*.
+- Export output dataframe *reportingunits.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
 ReportingUnitUUID | EPSGCodeCV | ReportingUnitName | ReportingUnitNativeID | ReportingUnitProductVersion | ReportingUnitTypeCV | ReportingUnitUpdateDate | StateCV | Geometry 
@@ -162,19 +161,17 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - StatutoryEffectiveDate
 
 
-### 5) Reporting Units Information 
+### 5) Overlay Reporting Units Information
 Purpose: generate master sheet of overlay area information and how it algins with reporting unit area information.
 
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE Reportingunits* specific columns.
-- Assign state agency data info to the *WaDE Reportingunits* specific columns.  See *XXov_Overlay Info Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+- Populate output dataframe with *WaDE OverlayReportingunits* specific columns.
+- Assign state agency data info to the *WaDE OverlayReportingunits* specific columns.  See *XXov_Overlay Info Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - *DataPublicationDate* = use date of file creation
     - *OrganizationUUID* = pull from organization.csv
     - *RegulatoryOverlayUUID* = pull form regulatoryoverlay.csv
     - *ReportingUnitUUID* = pull from reportingunit.csv
-- Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *ReportingUnitName*, *ReportingUnitNativeID* & *ReportingUnitTypeCV* fields.
-- Assign reportingunits UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *regulatoryreportingunits.csv*.
 
@@ -223,9 +220,6 @@ Incomplete or bad entry for Latitude | 1 | Removed from WaDE
 
 **Figure 5:** Map of Overlay Areas (i.e., Reporting Unit)
 ![](figures/ReportingUnitMap.png)
-
-**Figure 6:** Map of identified water rights within the Overlay Areas Polygons within the sites.csv
-![](figures/PointInRegMap.png)
 
 
 

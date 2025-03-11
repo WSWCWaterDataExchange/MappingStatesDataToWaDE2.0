@@ -1,2 +1,0 @@
-Note:
-Regulatory data will require the completed watersources.csv file from the same state water right records.
