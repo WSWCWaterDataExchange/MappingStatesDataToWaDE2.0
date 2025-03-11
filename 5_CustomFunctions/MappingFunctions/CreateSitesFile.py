@@ -8,6 +8,8 @@ import os
 import sys
 import numpy as np
 import pandas as pd
+from shapely import wkt
+from shapely.validation import make_valid
 import re
 
 
@@ -70,14 +72,16 @@ def CreateSitesInputFunction(workingDirString, varST, varUUIDType, mainInputFile
     # For Creating Geometry
     def retrieveGeometry(colrowValue):
         if colrowValue == "" or pd.isnull(colrowValue):
-            outList = ""
+            outString = ""
         else:
             String1 = colrowValue
             try:
-                outList = Geometrydict[String1]
+                outString = Geometrydict[String1]
+                outString = wkt.loads(outString)
+                outString = make_valid(outString)
             except:
-                outList = ""
-        return outList
+                outString = ""
+        return outString
 
     # For creating UUID
     def assignUUID(Val):
@@ -96,7 +100,7 @@ def CreateSitesInputFunction(workingDirString, varST, varUUIDType, mainInputFile
     outdf['WaterSourceUUIDs'] = df.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
 
     print("RegulatoryOverlayUUIDs")
-    outdf['RegulatoryOverlayUUIDs'] = ""
+    outdf['RegulatoryOverlayUUIDs'] = "" # Use custom JoinOverlayToSiteFile instead
 
     print("CoordinateAccuracy")
     outdf['CoordinateAccuracy'] = df['in_CoordinateAccuracy']
@@ -108,17 +112,13 @@ def CreateSitesInputFunction(workingDirString, varST, varUUIDType, mainInputFile
     outdf['County'] = df['in_County']
 
     print("EPSGCodeCV")
-    outdf['EPSGCodeCV'] = "4326"
+    outdf['EPSGCodeCV'] = df['in_EPSGCodeCV']
 
     print("Geometry")
-    try:
-        outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['in_SiteNativeID']), axis=1)
-    except:
-        print("...no geometry data.")
-        outdf['Geometry'] = ""
+    outdf['Geometry'] = df.apply(lambda row: retrieveGeometry(row['in_SiteNativeID']), axis=1)
 
     print("GNISCodeCV")
-    outdf['GNISCodeCV'] = ""
+    outdf['GNISCodeCV'] = df['in_GNISCodeCV']
 
     print("HUC12")
     outdf['HUC12'] = df['in_HUC12']
@@ -133,10 +133,10 @@ def CreateSitesInputFunction(workingDirString, varST, varUUIDType, mainInputFile
     outdf['Longitude'] = df['in_Longitude']
 
     print("NHDNetworkStatusCV")
-    outdf['NHDNetworkStatusCV'] = ""
+    outdf['NHDNetworkStatusCV'] = df['in_NHDNetworkStatusCV']
 
     print("NHDProductCV")
-    outdf['NHDProductCV'] = ""
+    outdf['NHDProductCV'] = df['in_NHDProductCV']
 
     print("PODorPOUSite")
     outdf['PODorPOUSite'] = df['in_PODorPOUSite']
@@ -148,7 +148,7 @@ def CreateSitesInputFunction(workingDirString, varST, varUUIDType, mainInputFile
     outdf['SiteNativeID'] = df['in_SiteNativeID']
 
     print("SitePoint")
-    outdf['SitePoint'] = ""
+    outdf['SitePoint'] = df['in_SitePoint']
 
     print("SiteTypeCV")
     outdf['SiteTypeCV'] = df['in_SiteTypeCV']
@@ -157,7 +157,7 @@ def CreateSitesInputFunction(workingDirString, varST, varUUIDType, mainInputFile
     outdf['StateCV'] = df['in_StateCV']
 
     print("USGSSiteID")
-    outdf['USGSSiteID'] = ""
+    outdf['USGSSiteID'] = df['in_USGSSiteID']
 
     print("Adding Data Assessment UUID")
     outdf['WaDEUUID'] = df['WaDEUUID']
