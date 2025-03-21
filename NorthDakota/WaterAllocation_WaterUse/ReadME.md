@@ -21,15 +21,15 @@ The 1) raw input data shared by the state / state agency / data provider (excel,
 
 
 ## Summary of Data Prep
-The following text summarizes the process used by the WSWC staff to prepare and share NDSWC's water rights & water use data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *ND_Allocation and Water Use Schema Mapping to WaDE.xlsx*.  Several WaDE csv input files will be created in order to extract the NDSWC's water rights & water use data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
+The following text summarizes the process used by the WSWC staff to prepare and share NDSWC's water rights & water use data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *NDwrwu_Allocation and Water Use Schema Mapping to WaDE.xlsx*.  Several WaDE csv input files will be created in order to extract the NDSWC's water rights & water use data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
 
-- **1_NDwr_wu_PreProcessAllocationData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
-- **2_NDwr_wu_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, sitespecificamounts.csv, podsitetopousiterelationships.csv.
-- **3_NDwr_wu_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
+- **1_NDwrwu_PreProcessAllocationData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
+- **2_NDwrwu_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, sitespecificamounts.csv, podsitetopousiterelationships.csv.
+- **3_NDwrwu_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
 
 
 ***
-### 0) Code File: 1_NDwr_wu_PreProcessAllocationData.ipynb
+### 0) Code File: 1_NDwrwu_PreProcessAllocationData.ipynb
 Purpose: Pre-process the state agency's input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
@@ -37,7 +37,7 @@ Purpose: Pre-process the state agency's input data files and merge them into one
 - Water_Use.zip
 
 #### Outputs:
- - Pwr_wu_xxMain.zip
+ - Pwrwu_Main.zip
 
 #### Operation and Steps:
 - Read in Permit.shp and Water_Use.zip files and store in temporary dataframes.
@@ -61,11 +61,11 @@ Purpose: Pre-process the state agency's input data files and merge them into one
 
 
 ***
-## Code File: 2_NDwr_wu_CreateWaDEInputFiles.ipynb
+## Code File: 2_NDwrwu_CreateWaDEInputFiles.ipynb
 Purpose: generate WaDE csv input files (methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, sitespecificamounts.csv, podsitetopousiterelationships.csv).
 
 #### Inputs:
-- Pwr_wu_xxMain.zip
+- Pwrwu_Main.zip
 
 #### Outputs:
 - methods.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
@@ -92,7 +92,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 |    | MethodUUID   | ApplicableResourceTypeCV      | DataConfidenceValue   | DataCoverageValue   | DataQualityValueCV   | MethodName                       | MethodNEMILink                                  | MethodTypeCV    | WaDEDataMappingUrl                                                                                                   |
 |---:|:-------------|:------------------------------|:----------------------|:--------------------|:---------------------|:---------------------------------|:------------------------------------------------|:----------------|:---------------------------------------------------------------------------------------------------------------------|
-|  0 | NDwr_M1      | Surface Water and Groundwater |                       |                     |                      | North Dakota Water Rights Method | https://www.swc.nd.gov/reg_approp/waterpermits/ | Legal Processes | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/NorthDakota/WaterAllocation_WaterUse |
+|  0 | NDwrwu_M1      | Surface Water and Groundwater |                       |                     |                      | North Dakota Water Rights Method | https://www.swc.nd.gov/reg_approp/waterpermits/ | Legal Processes | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/NorthDakota/WaterAllocation_WaterUse |
 
 ## 2) Variables Information
 Purpose: generate legend of granular variables specific to each state.
@@ -108,7 +108,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 |    | VariableSpecificUUID   |   AggregationInterval | AggregationIntervalUnitCV   | AggregationStatisticCV   | AmountUnitCV   | MaximumAmountUnitCV   |   ReportYearStartMonth | ReportYearTypeCV   | VariableCV   | VariableSpecificCV   |
 |---:|:-----------------------|----------------------:|:----------------------------|:-------------------------|:---------------|:----------------------|-----------------------:|:-------------------|:-------------|:---------------------|
-|  0 | NDwr_V1                |                     1 | Year                        | Average                  | CFS            | AF                    |                     10 | WaterYear          | Allocation   | Allocation           |
+|  0 | NDwrwu_V1                |                     1 | Year                        | Average                  | CFS            | AF                    |                     10 | WaterYear          | Allocation   | Allocation           |
 
 
 ## 3) Organization  Information
@@ -125,7 +125,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 |    | OrganizationUUID   | OrganizationContactEmail   | OrganizationContactName   | OrganizationName                          | OrganizationPhoneNumber   | OrganizationPurview                                                                                                                                                                                                                                                    | OrganizationWebsite     | State   |
 |---:|:-------------------|:---------------------------|:--------------------------|:------------------------------------------|:--------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------|:--------|
-|  0 | NDwr_O1            | cbader@nd.gov              | Chris Bader               | North Dakota Department of Water Resource | (701) 328-2750            | The Department of Water Resources (DWR) was created in 2021 by Legislative action.  DWR has the authority to investigate, plan, construct, and develop water-related projects, and serves as a mechanism to financially support those efforts throughout North Dakota. | https://www.swc.nd.gov/ | ND      |
+|  0 | NDwrwu_O1            | cbader@nd.gov              | Chris Bader               | North Dakota Department of Water Resource | (701) 328-2750            | The Department of Water Resources (DWR) was created in 2021 by Legislative action.  DWR has the authority to investigate, plan, construct, and develop water-related projects, and serves as a mechanism to financially support those efforts throughout North Dakota. | https://www.swc.nd.gov/ | ND      |
 
 
 ## 4) Water Source Information
@@ -134,7 +134,7 @@ Purpose: generate a list of water sources specific to a water right.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign agency info to the *WaDE WaterSources* specific columns.  See *ND_Allocation and Water Use Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign agency info to the *WaDE WaterSources* specific columns.  See *NDwrwu_Allocation and Water Use Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - *WaterSourceUUID* = ""
     - *WaterQualityIndicatorCV* = ""
     - *WaterSourceName* = **source_nam** input.
@@ -148,7 +148,7 @@ Purpose: generate a list of water sources specific to a water right.
 #### Sample Output (WARNING: not all fields shown):
 |    | WaterSourceUUID   | Geometry   | GNISFeatureNameCV   | WaterQualityIndicatorCV   | WaterSourceName   | WaterSourceNativeID   | WaterSourceTypeCV   |
 |---:|:------------------|:-----------|:--------------------|:--------------------------|:------------------|:----------------------|:--------------------|
-|  0 | NDwr_WSwadeId1    |            |                     | Fresh                     | WaDE Blank        | wadeId1               | Groundwater         |
+|  0 | NDwrwu_WSwadeId1    |            |                     | Fresh                     | WaDE Blank        | wadeId1               | Groundwater         |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
 - WaterSourceUUID
@@ -162,7 +162,7 @@ Purpose: generate a list of sites information.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
-- Assign agency info to the *WaDE Site* specific columns.  See *ND_Allocation and Water Use Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign agency info to the *WaDE Site* specific columns.  See *NDwrwu_Allocation and Water Use Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - *SiteUUID* = ""
     - *WaterSourceUUIDs* = Extract *WaterSourceUUID* from waterSources.csv input csv file. See code for specific implementation of extraction.
     - *CoordinateAccuracy* = ""
@@ -173,8 +173,8 @@ Purpose: generate a list of sites information.
     - *GNISCodeCV* = ""
     - *HUC12* = ""
     - *HUC8* = ""
-    - *Latitude* = "wade_lat", see "1_NDwr_wu_PreProcessAllocationData.ipynb" for specifics.
-    - *Longitude* = "wade_long", see "1_NDwr_wu_PreProcessAllocationData.ipynb" for specifics.
+    - *Latitude* = "wade_lat", see "1_NDwrwu_PreProcessAllocationData.ipynb" for specifics.
+    - *Longitude* = "wade_long", see "1_NDwrwu_PreProcessAllocationData.ipynb" for specifics.
     - *NHDNetworkStatusCV* = ""
     - *NHDProductCV* = ""
     - *PODorPOUSite* = "POD".
@@ -191,7 +191,7 @@ Purpose: generate a list of sites information.
 #### Sample Output (WARNING: not all fields shown):
 |    | SiteUUID          | RegulatoryOverlayUUIDs   | WaterSourceUUIDs   | CoordinateAccuracy   | CoordinateMethodCV   | County     |   EPSGCodeCV | GNISCodeCV   | HUC12   | HUC8   |   Latitude |   Longitude | NHDNetworkStatusCV   | NHDProductCV   | PODorPOUSite   | SiteName   | SiteNativeID   | SitePoint   | SiteTypeCV   | StateCV   | USGSSiteID   | WaterSourceUUID   | WaterSourceTypeCV   |
 |---:|:------------------|:-------------------------|:-------------------|:---------------------|:---------------------|:-----------|-------------:|:-------------|:--------|:-------|-----------:|------------:|:---------------------|:---------------|:---------------|:-----------|:---------------|:------------|:-------------|:----------|:-------------|:------------------|:--------------------|
-|  0 | NDwr_Snd12904705A | NDre_RO43                | NDwr_WSwadeId1     | WaDE Blank           | Centroid of Area     | WaDE Blank |         4326 |              |         |        |    46.0184 |    -96.6019 |                      |                | POD            | WaDE Blank | nd12904705A    |             | WaDE Blank   | ND        |              | NDwr_WSwadeId1    | Groundwater         |
+|  0 | NDwrwu_Snd12904705A | NDre_RO43                | NDwrwu_WSwadeId1     | WaDE Blank           | Centroid of Area     | WaDE Blank |         4326 |              |         |        |    46.0184 |    -96.6019 |                      |                | POD            | WaDE Blank | nd12904705A    |             | WaDE Blank   | ND        |              | NDwrwu_WSwadeId1    | Groundwater         |
 
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
@@ -207,7 +207,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
-- Assign agency info to the *WaDE Water Allocations* specific columns.  See *ND_Allocation and Water Use Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign agency info to the *WaDE Water Allocations* specific columns.  See *NDwrwu_Allocation and Water Use Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *AllocationApplicationDate* = **date_issue** input.
     - *AllocationAssociatedConsumptiveUseSiteIDs* = ""
@@ -251,7 +251,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 #### Sample Output (WARNING: not all fields shown):
 |    | AllocationUUID   | MethodUUID   | OrganizationUUID   | SiteUUID           | VariableSpecificUUID   | AllocationApplicationDate   | AllocationAssociatedConsumptiveUseSiteIDs   | AllocationAssociatedWithdrawalSiteIDs   | AllocationBasisCV   | AllocationChangeApplicationIndicator   | AllocationCommunityWaterSupplySystem   | AllocationCropDutyAmount   | AllocationExpirationDate   |   AllocationFlow_CFS | AllocationLegalStatusCV   |   AllocationNativeID | AllocationOwner       | AllocationPriorityDate   | AllocationSDWISIdentifierCV   | AllocationTimeframeEnd   | AllocationTimeframeStart   | AllocationTypeCV   |   AllocationVolume_AF | BeneficialUseCategory   | CommunityWaterSupplySystem   | CropTypeCV   | CustomerTypeCV   | DataPublicationDate   | DataPublicationDOI   |   ExemptOfVolumeFlowPriority | GeneratedPowerCapacityMW   |   IrrigatedAcreage | IrrigationMethodCV   | LegacyAllocationIDs   | OwnerClassificationCV   | PopulationServed   | PowerType   | PrimaryBeneficialUseCategory   | WaterAllocationNativeURL                                                          |
 |---:|:-----------------|:-------------|:-------------------|:-------------------|:-----------------------|:----------------------------|:--------------------------------------------|:----------------------------------------|:--------------------|:---------------------------------------|:---------------------------------------|:---------------------------|:---------------------------|---------------------:|:--------------------------|---------------------:|:----------------------|:-------------------------|:------------------------------|:-------------------------|:---------------------------|:-------------------|----------------------:|:------------------------|:-----------------------------|:-------------|:-----------------|:----------------------|:---------------------|-----------------------------:|:---------------------------|-------------------:|:---------------------|:----------------------|:------------------------|:-------------------|:------------|:-------------------------------|:----------------------------------------------------------------------------------|
-|  0 | NDwr_WR1002_1199 | NDwr_M1      | NDwr_O1            | NDwr_Snd13908411CC | NDwr_V1                | 1962-08-02                  |                                             |                                         | WaDE Blank          |                                        |                                        |                            |                            |                    0 | Active                    |            1002_1199 | Nd Game And Fish Dept | 1961-12-28               |                               |                          |                            | WaDE Blank         |                   950 | Recreation              |                              |              |                  | 01/31/2024            |                      |                            0 |                            |                  0 |                      |                       | Private                 |                    |             | Recreation                     | https://www.swc.nd.gov/info_edu/map_data_resources/waterpermits/single.php?id=771 |
+|  0 | NDwrwu_WR1002_1199 | NDwrwu_M1      | NDwrwu_O1            | NDwrwu_Snd13908411CC | NDwrwu_V1                | 1962-08-02                  |                                             |                                         | WaDE Blank          |                                        |                                        |                            |                            |                    0 | Active                    |            1002_1199 | Nd Game And Fish Dept | 1961-12-28               |                               |                          |                            | WaDE Blank         |                   950 | Recreation              |                              |              |                  | 01/31/2024            |                      |                            0 |                            |                  0 |                      |                       | Private                 |                    |             | Recreation                     | https://www.swc.nd.gov/info_edu/map_data_resources/waterpermits/single.php?id=771 |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID
@@ -271,7 +271,7 @@ Purpose: generate master sheet of site-specific amount information to import int
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE site-specific amount* specific columns.
-- Assign agency info to the *WaDE site-specific amount* specific columns.  See *ND_Allocation and Water Use Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign agency info to the *WaDE site-specific amount* specific columns.  See *NDwrwu_Allocation and Water Use Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, *WaterSourceUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *Amount* = **Reported_AcFt** input.
     - *AssociatedNativeAllocationIDs* = **permit_num** = **pod_index** inputs.
@@ -299,7 +299,7 @@ Purpose: generate master sheet of site-specific amount information to import int
 #### Sample Output (WARNING: not all fields shown):
 |    | MethodUUID   | OrganizationUUID   | SiteUUID           | VariableSpecificUUID   | WaterSourceUUID   |   Amount | AllocationCropDutyAmount   | AssociatedNativeAllocationIDs   | BeneficialUseCategory   | CommunityWaterSupplySystem   | CropTypeCV   | CustomerTypeCV   | DataPublicationDate   | DataPublicationDOI   | Geometry   |   IrrigatedAcreage | IrrigationMethodCV   | PopulationServed   | PowerGeneratedGWh   | PowerType   | PrimaryUseCategory     |   ReportYearCV | SDWISIdentifier   | TimeframeEnd   | TimeframeStart   | WaDEUUID   |
 |---:|:-------------|:-------------------|:-------------------|:-----------------------|:------------------|---------:|:---------------------------|:--------------------------------|:------------------------|:-----------------------------|:-------------|:-----------------|:----------------------|:---------------------|:-----------|-------------------:|:---------------------|:-------------------|:--------------------|:------------|:-----------------------|---------------:|:------------------|:---------------|:-----------------|:-----------|
-|  0 | NDwr_M1      | NDwr_O1            | NDwr_Snd14910026AB | NDwr_V3                | NDwr_WSwadeId2    |      291 |                            | 2D_4                            | Irrigation              |                              |              |                  | 02/01/2024            |                      |            |                291 |                      |                    |                     |             | Agriculture Irrigation |           1977 |                   | 1977-12-31     | 1977-01-01       |            |
+|  0 | NDwrwu_M1      | NDwrwu_O1            | NDwrwu_Snd14910026AB | NDwrwu_V3                | NDwrwu_WSwadeId2    |      291 |                            | 2D_4                            | Irrigation              |                              |              |                  | 02/01/2024            |                      |            |                291 |                      |                    |                     |             | Agriculture Irrigation |           1977 |                   | 1977-12-31     | 1977-01-01       |            |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sitespecificamounts_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the site-specific amount include the following...
 - MethodUUID
@@ -386,7 +386,8 @@ Incomplete or bad entry for ReportYearCV                 |  1 | removed from sit
 ![](figures/PointMap.png)
 
 **Figure 9:** Map of Identified Polygons within the sites.csv
-![](figures/PolyMap.png)
+<!-- ![](figures/PolyMap.png) -->
+- No polygons were provided.
 
 
 ***

@@ -8,6 +8,8 @@ import os
 import sys
 import numpy as np
 import pandas as pd
+from shapely import wkt
+from shapely.validation import make_valid
 import re
 
 
@@ -49,6 +51,8 @@ def CreateReportingUnitInputFunction(workingDirString, varST, varUUIDType, mainI
         String1 = colrowValue
         try:
             outString = Geometrydict[String1]
+            outString = wkt.loads(outString)
+            outString = make_valid(outString)
         except:
             outString = ""
             print(f'...could not pair/find "{colrowValue}" id geometry.')

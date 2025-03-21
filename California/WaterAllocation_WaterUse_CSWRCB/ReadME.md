@@ -24,13 +24,13 @@ The 1) raw input data shared by the state / state agency / data provider (excel,
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share California State Water Resources Control Board's water rights & water use data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *XX_Allocation and Water Use Schema Mapping to WaDE.xlsx*.  Several WaDE csv input files will be created in order to extract the California State Water Resources Control Board's water rights & water use data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
 
-- **1_CSWRCBwr_wu_PreProcessAllocationData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
-- **2_CSWRCBwr_wu_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, sitespecificamounts.csv, podsitetopousiterelationships.csv.
-- **3_CSWRCBwr_wu_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
+- **1_CSWRCBwrwu_PreProcessAllocationData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
+- **2_CSWRCBwrwu_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, sitespecificamounts.csv, podsitetopousiterelationships.csv.
+- **3_CSWRCBwrwu_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
 
 
 ***
-### 0) Code File: 1_CSWRCBwr_wu_PreProcessAllocationData.ipynb
+### 0) Code File: 1_CSWRCBwrwu_PreProcessAllocationData.ipynb
 Purpose: Pre-process the state agency's input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
@@ -38,7 +38,7 @@ Purpose: Pre-process the state agency's input data files and merge them into one
 - water-rights-water-use-reported-short.zip (water use by water right information)
 
 #### Outputs:
- - Pwr_wu_Main.zip
+ - Pwrwu_Main.zip
 
 #### Operation and Steps:
 - Read the input files and generate temporary input dataframes.
@@ -50,15 +50,15 @@ Purpose: Pre-process the state agency's input data files and merge them into one
 - At this time, CA does not track priority date.  All data will be considered exempt from WaDE CFS, AF and priority date checks at this time as a temp fix. 
 - Any Record with a blank or nan value, replace with a 0 if numeric, or "WaDE_Unspecified" if string or object.
 - Inspect output dataframe for additional errors / datatypes.
-- Export output dataframe as new csv file, *Pwr_wu_Main.zip*.
+- Export output dataframe as new csv file, *Pwrwu_Main.zip*.
 
 
 ***
-## Code File: 2_CSWRCBwr_wu_CreateWaDEInputFiles.ipynb
+## Code File: 2_CSWRCBwrwu_CreateWaDEInputFiles.ipynb
 Purpose: generate WaDE csv input files (methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, sitespecificamounts.csv, podsitetopousiterelationships.csv).
 
 #### Inputs:
-- Pwr_wu_Main.zip
+- Pwrwu_Main.zip
 
 #### Outputs:
 - methods.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
@@ -85,7 +85,7 @@ Purpose: generate legend of granular methods used on data collection.
 #### Sample Output (WARNING: not all fields shown):
 |    | MethodUUID   | ApplicableResourceTypeCV      | DataConfidenceValue   | DataCoverageValue   | DataQualityValueCV   | MethodName                     | MethodNEMILink                                                               | MethodTypeCV    | WaDEDataMappingUrl                                                                                                         |
 |---:|:-------------|:------------------------------|:----------------------|:--------------------|:---------------------|:-------------------------------|:-----------------------------------------------------------------------------|:----------------|:---------------------------------------------------------------------------------------------------------------------------|
-|  0 | CSWRCBwr_M1  | Surface Water and Groundwater |                       |                     |                      | California Water Rights Method | https://www.waterboards.ca.gov/waterrights/board_info/faqs.html#toc178761079 | Legal Processes | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/California/WaterAllocation_WaterUse_CSWRCB |
+|  0 | CSWRCBwrwu_M1  | Surface Water and Groundwater |                       |                     |                      | California Water Rights Method | https://www.waterboards.ca.gov/waterrights/board_info/faqs.html#toc178761079 | Legal Processes | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/California/WaterAllocation_WaterUse_CSWRCB |
 
 ## 2) Variables Information
 Purpose: generate legend of granular variables specific to each state.
@@ -101,7 +101,7 @@ Purpose: generate legend of granular variables specific to each state.
 #### Sample Output (WARNING: not all fields shown):
 |    | VariableSpecificUUID   |   AggregationInterval | AggregationIntervalUnitCV   | AggregationStatisticCV   | AmountUnitCV   | MaximumAmountUnitCV   |   ReportYearStartMonth | ReportYearTypeCV   | VariableCV   | VariableSpecificCV   |
 |---:|:-----------------------|----------------------:|:----------------------------|:-------------------------|:---------------|:----------------------|-----------------------:|:-------------------|:-------------|:---------------------|
-|  1 | CSWRCBwr_V2            |                     1 | Year                        | Average                  | AF             | AF                    |                      1 | CalendarYear       | Allocation   | Allocation           |
+|  1 | CSWRCBwrwu_V2            |                     1 | Year                        | Average                  | AF             | AF                    |                      1 | CalendarYear       | Allocation   | Allocation           |
 
 
 ## 3) Organization  Information
@@ -118,7 +118,7 @@ Purpose: generate organization directory, including names, email addresses, and 
 #### Sample Output (WARNING: not all fields shown):
 |    | OrganizationUUID   | OrganizationContactEmail          | OrganizationContactName   | OrganizationName                               | OrganizationPhoneNumber   | OrganizationPurview                                                                                                                                                                                | OrganizationWebsite             | State   |
 |---:|:-------------------|:----------------------------------|:--------------------------|:-----------------------------------------------|:--------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------|:--------|
-|  0 | CSWRCBwr_O1        | Greg.Gearheart@waterboards.ca.gov | Greg Gearheart            | California State Water Resources Control Board | 916-341-5892              | The Electronic Water Rights Information Management System (eWRIMS) is a computer database developed by the State Water Resources Control Board to track information on water rights in California. | https://www.waterboards.ca.gov/ | CA      |
+|  0 | CSWRCBwrwu_O1        | Greg.Gearheart@waterboards.ca.gov | Greg Gearheart            | California State Water Resources Control Board | 916-341-5892              | The Electronic Water Rights Information Management System (eWRIMS) is a computer database developed by the State Water Resources Control Board to track information on water rights in California. | https://www.waterboards.ca.gov/ | CA      |
 
 
 ## 4) Water Source Information
@@ -141,7 +141,7 @@ Purpose: generate a list of water sources specific to a water right.
 #### Sample Output (WARNING: not all fields shown):
 |    | WaterSourceUUID    | Geometry   | GNISFeatureNameCV   | WaterQualityIndicatorCV   | WaterSourceName   | WaterSourceNativeID   | WaterSourceTypeCV   |
 |---:|:-------------------|:-----------|:--------------------|:--------------------------|:------------------|:----------------------|:--------------------|
-|  1 | CSWRCBwr_WwadeId10 |            |                     | Fresh                     | Witcher Creek     | wadeId10              | WaDE Blank          |
+|  1 | CSWRCBwrwu_WwadeId10 |            |                     | Fresh                     | Witcher Creek     | wadeId10              | WaDE Blank          |
 
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
@@ -185,7 +185,7 @@ Purpose: generate a list of sites information.
 #### Sample Output (WARNING: not all fields shown):
 |    | SiteUUID     | RegulatoryOverlayUUIDs   | WaterSourceUUIDs   | CoordinateAccuracy   | CoordinateMethodCV   | County   |   EPSGCodeCV | GNISCodeCV   |        HUC12 |     HUC8 |   Latitude |   Longitude | NHDNetworkStatusCV   | NHDProductCV   | PODorPOUSite   | SiteName   |   SiteNativeID | SitePoint   | SiteTypeCV   | StateCV   | USGSSiteID   |
 |---:|:-------------|:-------------------------|:-------------------|:---------------------|:---------------------|:---------|-------------:|:-------------|-------------:|---------:|-----------:|------------:|:---------------------|:---------------|:---------------|:-----------|---------------:|:------------|:-------------|:----------|:-------------|
-|  1 | CSWRCBwr_S10 |                          | CSWRCBwr_WwadeId21 | WaDE Blank           | DD_NE                | Plumas   |         4326 |              | 180201210602 | 18020121 |    39.8754 |    -121.174 |                      |                | POD            | WaDE Blank |             10 |             | WaDE Blank   | CA        |              |
+|  1 | CSWRCBwrwu_S10 |                          | CSWRCBwrwu_WwadeId21 | WaDE Blank           | DD_NE                | Plumas   |         4326 |              | 180201210602 | 18020121 |    39.8754 |    -121.174 |                      |                | POD            | WaDE Blank |             10 |             | WaDE Blank   | CA        |              |
 
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
@@ -211,7 +211,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
     - *AllocationCommunityWaterSupplySystem* = ""
     - *AllocationCropDutyAmount* = ""
     - *AllocationExpirationDate* = ""
-    - *AllocationFlow_CFS* = **USE_DIRECT_DIVERSION_RATE** & **USE_DIRECT_DIV_RATE_UNITS** inputs, see "1_CSWRCBwr_wu_PreProcessAllocationData.ipynb" for specifics.
+    - *AllocationFlow_CFS* = **USE_DIRECT_DIVERSION_RATE** & **USE_DIRECT_DIV_RATE_UNITS** inputs, see "1_CSWRCBwrwu_PreProcessAllocationData.ipynb" for specifics.
     - *AllocationLegalStatusCV* = **WATER_RIGHT_STATUS** input.
     - *AllocationNativeID* = **APPLICATION_NUMBER** input.
     - *AllocationOwner* =  **PRIMARY_OWNER_NAME** input.
@@ -220,7 +220,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
     - *AllocationTimeframeEnd* = **DIRECT_DIV_SEASON_END** input.
     - *AllocationTimeframeStart* = **DIRECT_DIV_SEASON_START** input.
     - *AllocationTypeCV* = **WATER_RIGHT_TYPE** & **SUB_TYPE** inputs
-    - *AllocationVolume_AF* = **USE_DIRECT_DIVERSION_RATE** & **USE_DIRECT_DIV_RATE_UNITS** inputs, see "1_CSWRCBwr_wu_PreProcessAllocationData.ipynb" for specifics.
+    - *AllocationVolume_AF* = **USE_DIRECT_DIVERSION_RATE** & **USE_DIRECT_DIV_RATE_UNITS** inputs, see "1_CSWRCBwrwu_PreProcessAllocationData.ipynb" for specifics.
     - *BeneficialUseCategory* = **USE_CODE** input.
     - *CommunityWaterSupplySystem* = ""
     - *CropTypeCV* = ""
@@ -236,7 +236,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
     - *PopulationServed* = ""
     - *PowerType* = ""
     - *PrimaryBeneficialUseCategory* = ""
-    - *WaterAllocationNativeURL* = "https://ciwqs.waterboards.ca.gov/ciwqs/ewrims/EWServlet?Redirect_Page=EWPublicAppSummary.jsp&Purpose=getEwrimsPublicSummary&wrWaterRightID=" + **WR_WATER_RIGHT_ID** input.
+    - *WaterAllocationNativeURL* = "https://ciwqs.waterboards.ca.gov/ciwqs/ewrims/EWServlet?Redirect_Page=EWPublicAppSummary.jsp&Purpose=getEwrimsPublicSummary&wrWaterRightID=" + **wrwu_WATER_RIGHT_ID** input.
 - Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.
 - Perform error check on output dataframe.
 - Export output dataframe *waterallocations.csv*.
@@ -245,7 +245,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 #### Sample Output (WARNING: not all fields shown):
 |    | AllocationUUID     | MethodUUID   | OrganizationUUID   | SiteUUID                                        | VariableSpecificUUID   | AllocationApplicationDate   | AllocationAssociatedConsumptiveUseSiteIDs   | AllocationAssociatedWithdrawalSiteIDs   | AllocationBasisCV   | AllocationChangeApplicationIndicator   | AllocationCommunityWaterSupplySystem   | AllocationCropDutyAmount   | AllocationExpirationDate   |   AllocationFlow_CFS | AllocationLegalStatusCV   | AllocationNativeID   | AllocationOwner                 | AllocationPriorityDate   | AllocationSDWISIdentifierCV   | AllocationTimeframeEnd   | AllocationTimeframeStart   | AllocationTypeCV   |   AllocationVolume_AF | BeneficialUseCategory   | CommunityWaterSupplySystem   | CropTypeCV   | CustomerTypeCV   | DataPublicationDate   | DataPublicationDOI   |   ExemptOfVolumeFlowPriority | GeneratedPowerCapacityMW   |   IrrigatedAcreage | IrrigationMethodCV   | LegacyAllocationIDs   | OwnerClassificationCV   | PopulationServed   | PowerType   | PrimaryBeneficialUseCategory   | WaterAllocationNativeURL                                                                                                                     |
 |---:|:-------------------|:-------------|:-------------------|:------------------------------------------------|:-----------------------|:----------------------------|:--------------------------------------------|:----------------------------------------|:--------------------|:---------------------------------------|:---------------------------------------|:---------------------------|:---------------------------|---------------------:|:--------------------------|:---------------------|:--------------------------------|:-------------------------|:------------------------------|:-------------------------|:---------------------------|:-------------------|----------------------:|:------------------------|:-----------------------------|:-------------|:-----------------|:----------------------|:---------------------|-----------------------------:|:---------------------------|-------------------:|:---------------------|:----------------------|:------------------------|:-------------------|:------------|:-------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------|
-|  1 | CSWRCBwr_WRA000018 | CSWRCBwr_M1  | CSWRCBwr_OR1       | CSWRCBwr_S28036,CSWRCBwr_S28035,CSWRCBwr_S28034 | CSWRCBwr_V1            |                             |                                             |                                         | WaDE Blank          |                                        |                                        |                            |                            |                    0 | Licensed                  | A000018              | Glenncolusa Irrigation District |                          |                               | 11/1                     | 3/1                        | Appropriative      |                     0 | Irrigation              |                              |              |                  | 07/30/2024            |                      |                            1 |                            |                  0 |                      |                       | Private                 |                    |             | Agriculture Irrigation         | https://ciwqs.waterboards.ca.gov/ciwqs/ewrims/EWServlet?Redirect_Page=EWPublicAppSummary.jsp&Purpose=getEwrimsPublicSummary&wrWaterRightID=3 |
+|  1 | CSWRCBwrwu_WRA000018 | CSWRCBwrwu_M1  | CSWRCBwrwu_OR1       | CSWRCBwrwu_S28036,CSWRCBwrwu_S28035,CSWRCBwrwu_S28034 | CSWRCBwrwu_V1            |                             |                                             |                                         | WaDE Blank          |                                        |                                        |                            |                            |                    0 | Licensed                  | A000018              | Glenncolusa Irrigation District |                          |                               | 11/1                     | 3/1                        | Appropriative      |                     0 | Irrigation              |                              |              |                  | 07/30/2024            |                      |                            1 |                            |                  0 |                      |                       | Private                 |                    |             | Agriculture Irrigation         | https://ciwqs.waterboards.ca.gov/ciwqs/ewrims/EWServlet?Redirect_Page=EWPublicAppSummary.jsp&Purpose=getEwrimsPublicSummary&wrWaterRightID=3 |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID
@@ -293,7 +293,7 @@ Purpose: generate master sheet of site-specific amount information to import int
 #### Sample Output (WARNING: not all fields shown):
 |    | MethodUUID   | OrganizationUUID   | SiteUUID        | VariableSpecificUUID   | WaterSourceUUID   |   Amount | AllocationCropDutyAmount   | AssociatedNativeAllocationIDs   | BeneficialUseCategory   | CommunityWaterSupplySystem   | CropTypeCV   | CustomerTypeCV   | DataPublicationDate   | DataPublicationDOI   | Geometry   | IrrigatedAcreage   | IrrigationMethodCV   | PopulationServed   | PowerGeneratedGWh   | PowerType   | PrimaryUseCategory     |   ReportYearCV | SDWISIdentifier   | TimeframeEnd   | TimeframeStart   |
 |---:|:-------------|:-------------------|:----------------|:-----------------------|:------------------|---------:|:---------------------------|:--------------------------------|:------------------------|:-----------------------------|:-------------|:-----------------|:----------------------|:---------------------|:-----------|:-------------------|:---------------------|:-------------------|:--------------------|:------------|:-----------------------|---------------:|:------------------|:---------------|:-----------------|
-|  1 | CSWRCBwr_M1  | CSWRCBwr_OR1       | CSWRCBwr_S28034 | CSWRCBwr_V5            | CSWRCBwr_WwadeId7 |     3270 |                            | A000018                         | Irrigation              |                              |              |                  | 07/31/2024            |                      |            |                    |                      |                    |                     |             | Agriculture Irrigation |           2009 |                   | 2009-04-01     | 2009-04-01       |
+|  1 | CSWRCBwrwu_M1  | CSWRCBwrwu_OR1       | CSWRCBwrwu_S28034 | CSWRCBwrwu_V5            | CSWRCBwrwu_WwadeId7 |     3270 |                            | A000018                         | Irrigation              |                              |              |                  | 07/31/2024            |                      |            |                    |                      |                    |                     |             | Agriculture Irrigation |           2009 |                   | 2009-04-01     | 2009-04-01       |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sitespecificamounts_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the site-specific amount include the following...
 - MethodUUID

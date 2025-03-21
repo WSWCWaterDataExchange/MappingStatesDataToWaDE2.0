@@ -1,13 +1,13 @@
 # Wyoming Association of Conservation Districts Overlay Data Preparation for WaDE
-This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting overlay area data, made available by the [Wyoming Association of Conservation Districts](https://data.geospatialhub.org/datasets/dc5914113aa3482680d203a183bd08c6_0/explore?location=42.876772%2C-108.487960%2C8.00), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and cost-effective way.
+This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting overlay area data, made available by the [Wyoming Association of Conservation Districts](https://conservewy.com/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and cost-effective way.
 
 
 ## Overview of Source Data Utilized
-The following data was used for overlays...
+The following data was used for water allocations...
 
 Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
-**"Conservation Districts"** | description of data | [link](https://data.geospatialhub.org/datasets/dc5914113aa3482680d203a183bd08c6_0/explore?location=42.876772%2C-108.487960%2C8.00) | [link](https://conservewy.com/)
+**Conservation Districts** | description of data | [link](https://data.geospatialhub.org/datasets/dc5914113aa3482680d203a183bd08c6_0/explore?location=42.876772%2C-108.487960%2C8.00) | [link](https://conservewy.com/)
 
 Unique files were created to be used as input.  Input files used are as follows...
 - "NRCS_-_Conservation_Districts.shp", "Shapefile"
@@ -23,8 +23,7 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 
 - **1_WYov_PreProcessRegulatoryData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
 - **2_WYov_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: date.csv, organization.csv, reportingunits.csv, regulatoryoverlays.csv, regulatoryreportingunits.csv, etc.
-- **3_WYov_WRSiteRegulatoryID.ipynb**: used to pair overlay information to water allocation information using an overlay on water allocation site information within the boundaries of the regulation.
-- **4_WYov_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
+- **3_WYov_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
 
 
 ***
@@ -32,25 +31,24 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 Purpose: Pre-process the input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
-- "NRCS_-_Conservation_Districts.shp"
+- NRCS_-_Conservation_Districts.shp
 
 #### Outputs:
- - Pwr_wyMain.zip
+ - Pov_Main.zip
  - P_Geometry.zip
 
 #### Operation and Steps:
 - Import raw data
-- Rename elemets to fit the WaDE database.
+- Rename elements to fit the WaDE database.
 - Map and align shapefile to fit WaDE system. 
 - Export output dataframe as new csv file, *P_nmRegMaster.csv* for tabular data and *P_nmRegGeometry.csv* for geometry data.
 
-
 ***
 ## Code File: 2_WYov_CreateWaDEInputFiles.ipynb
-Purpose: generate WaDE csv input files (methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, podsitetopousiterelationships.csv).
+Purpose: generate WaDE csv input files (date.csv, organizations.csv, reportingunits.csv, regulatoryoverlays.csv, regulatoryreportingunits.csv.
 
 #### Inputs:
-- Pwr_xxMain.zip
+- Pov_Main.zip
 - P_Geometry.zip
 
 #### Outputs:
@@ -73,9 +71,9 @@ Purpose: generate legend of granular date used on data collection.
 - Export output dataframe *methods.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-Date | Year 
----------- | ---------- 
-9/26/2023 | 2023
+|    | Date      |   Year |
+|---:|:----------|-------:|
+|  0 | 9/25/2023 |   2023 |
 
 
 ## 2) Organization Information
@@ -90,9 +88,9 @@ Purpose: generate organization directory, including names, email addresses, and 
 - Export output dataframe *organizations.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite | State
----------- | ---------- | ------------ | ------------ | ------------
-WYov_O1 | Wyoming Association of Conservation Districts | Holly Kennedy | https://conservewy.com/ | WY 
+|    | OrganizationUUID   | OrganizationContactEmail   | OrganizationContactName      | OrganizationName                              | OrganizationPhoneNumber   | OrganizationPurview    | OrganizationWebsite     | State   |
+|---:|:----------------------|:---------------------------|:-----------------------------|:----------------------------------------------|:--------------------------|:-----------------------|:------------------------|:--------|
+|  0 | WYre_O1               | Holly Kennedy              | holly.kennedy@conservewy.com | Wyoming Association of Conservation Districts | (307) 632-5716            | Conservation Districts | https://conservewy.com/ | WY      |
 
 
 ### 3) Reporting Unit Information
@@ -114,19 +112,12 @@ Purpose: generate a list of polygon areas associated with the state agency overl
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *ReportingUnitName*, *ReportingUnitNativeID* & *ReportingUnitTypeCV* fields.
 - Assign reportingunits UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
-- Export output dataframe *sites.csv*.
+- Export output dataframe *reportingunits.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-ReportingUnitUUID | EPSGCodeCV | ReportingUnitName | ReportingUnitNativeID | ReportingUnitProductVersion | ReportingUnitTypeCV | ReportingUnitUpdateDate | StateCV | Geometry | WaDEUUID
----------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ 
-WYov_RU + OBJECTID | 4326 | entityname | OBJECTID | - | Conservation District | 7/30/2023 | WY | - | - 
-
-Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *reportingunits_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the reportingunits include the following...
-- ReportingUnitUUID
-- ReportingUnitName
-- ReportingUnitNativeID
-- ReportingUnitTypeCV
-- StateCV
+|    | ReportingUnitUUID   |   EPSGCodeCV | ReportingUnitName    | ReportingUnitNativeID   | ReportingUnitProductVersion   | ReportingUnitTypeCV    | ReportingUnitUpdateDate   | StateCV   |
+|---:|:--------------------|-------------:|:---------------------|:------------------------|:------------------------------|:-----------------------|:--------------------------|:----------|
+|  1 | WYov_RUwy10         |         4326 | Lincoln Conservation | wy10                    |                               | Conservation Districts | 7/30/2023                 | WY        |
 
 
 ### 4) Overlays Information
@@ -151,9 +142,9 @@ Purpose: generate master sheet of overlay area information to import into WaDE 2
 - Export output dataframe *regulatoryoverlays.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-RegulatoryOverlayUUID| OversightAgency | RegulatoryDescription | RegulatoryName | RegulatoryOverlayNativeID | RegulatoryStatusCV | RegulatoryStatute | RegulatoryStatuteLink | StatutoryEffectiveDate | StatutoryEndDate | RegulatoryOverlayTypeCV | WaterSourceTypeCV | WaDEUUID
----------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------
-WYov_RO + OBJECTID | Wyoming Association of Conservation Districts | selects conservation policy priorities which are used to develop and review environmental and natural resources legislation and to secure adequate federal funding for natural resources conservation programs | entityname | OBJECTID | Active | - | - | 3/1/1941 | - | Conservation District | Surface Water and Groundwater | - 
+|    | RegulatoryOverlayUUID   | OversightAgency                               | RegulatoryDescription                                                                                                                                                                                           | RegulatoryName           |   RegulatoryOverlayNativeID | RegulatoryStatusCV   | RegulatoryStatute   | RegulatoryStatuteLink   | StatutoryEffectiveDate   | StatutoryEndDate   | RegulatoryOverlayTypeCV   | WaterSourceTypeCV       |
+|---:|:------------------------|:----------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------|----------------------------:|:---------------------|:--------------------|:------------------------|:-------------------------|:-------------------|:--------------------------|:------------------------|
+|  1 | WYov_RO2                | Wyoming Association of Conservation Districts | Selects conservation policy priorities which are used to develop and review environmental and natural resources legislation and to secure adequate federal funding for natural resources conservation programs. | Clear Creek Conservation |                           2 | Active               |                     |                         | 1941-03-01               |                    | Conservation District     | Surface and Groundwater |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *regulatoryoverlays_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water overlays include the following...
 - RegulatoryOverlayUUID
@@ -164,27 +155,24 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - StatutoryEffectiveDate
 
 
-### 5) Reporting Units Information 
+### 5) Overlay Reporting Units Information
 Purpose: generate master sheet of overlay area information and how it algins with reporting unit area information.
 
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE Reportingunits* specific columns.
-- Assign state agency data info to the *WaDE Reportingunits* specific columns.  See *WYov_Overlay Info Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
-    -*DataPublicationDate* = ""
-    - *OrganizationUUID* = ""
-    - *RegulatoryOverlayUUID* = ""
-    - *ReportingUnitUUID* = ""
-- Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *ReportingUnitName*, *ReportingUnitNativeID* & *ReportingUnitTypeCV* fields.
-- Assign reportingunits UUID identifier to each (unique) row.
+- Populate output dataframe with *WaDE OverlayReportingunits* specific columns.
+- Assign state agency data info to the *WaDE OverlayReportingunits* specific columns.  See *WYov_Overlay Info Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+    - *DataPublicationDate* = use date of file creation
+    - *OrganizationUUID* = pull from organization.csv
+    - *RegulatoryOverlayUUID* = pull form regulatoryoverlay.csv
+    - *ReportingUnitUUID* = pull from reportingunit.csv
 - Perform error check on output dataframe.
 - Export output dataframe *regulatoryreportingunits.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-DataPublicationDate | OrganizationUUID | RegulatoryOverlayUUID | ReportingUnitUUID 
----------- | ---------- | ------------ | ------------ 
-9/26/2023 | WYov_O1 | WYov_RO1 | WYov_RUwy1
-
+|    | DataPublicationDate   | OrganizationUUID   | RegulatoryOverlayUUID   | ReportingUnitUUID   |
+|---:|:----------------------|:-------------------|:------------------------|:--------------------|
+|  1 | 2025-03-18            | WYov_O1            | WYov_RO2                | WYov_RUwy2          |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *regulatoryreportingunits_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the reportingunits include the following...
 - DataPublicationDate
@@ -199,8 +187,7 @@ The following info is from a data assessment evaluation of the completed data...
 
 Dataset | Num of Source Entries (rows) 
 ---------- | ----------
-**"Conservation Districts"** | 35
-
+**Conservation Districts** | 35
 
 Dataset | Num of Identified Reporting Units | Num of Identified Overlays
 ---------- | ---------- | ------------
@@ -209,7 +196,7 @@ Dataset | Num of Identified Reporting Units | Num of Identified Overlays
 
 Assessment of Removed Source Records | Count | Action
 ---------- | ---------- | ----------
-nothing removed | - | -
+Nothing removed... | - | -
 
 
 **Figure 1:** Distribution of Reporting Unit Name within reportingunits.csv
@@ -224,20 +211,17 @@ nothing removed | - | -
 **Figure 4:** Distribution of Overlay Type within the regulatoryoverlays.csv
 ![](figures/RegulatoryOverlayTypeCV.png)
 
-**Figure 5:** Map of Areas (i.e., Reporting Unit)
+**Figure 5:** Map of Overlay Areas (i.e., Reporting Unit)
 ![](figures/ReportingUnitMap.png)
 
-**Figure 6:** Map of identified water rights within the Areas Polygons within the sites.csv
-![](figures/PointInRegMap.png)
 
 
 ***
 ## Staff Contributions
-Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Wyoming Association of Conservation Districts](https://data.geospatialhub.org/datasets/dc5914113aa3482680d203a183bd08c6_0/explore?location=42.876772%2C-108.487960%2C8.00).
+Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Wyoming Association of Conservation Districts](https://conservewy.com/).
 
 WSWC Staff
 - Ryan James (Data Analysis) <rjames@wswc.utah.gov>
 
 Wyoming Association of Conservation Districts Staff
 - Holly Kennedy <holly.kennedy@conservewy.com>
-
