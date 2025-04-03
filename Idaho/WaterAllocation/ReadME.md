@@ -8,7 +8,7 @@ The following data was used for water allocations...
 
 Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
-**Point of diversion (POD)** | Point of diversion water right sites. | [link](https://data-idwr.hub.arcgis.com/datasets/water-right-pods/explore?location=45.432773%2C-114.096317%2C6.10) | not given
+**Point of diversion (POD)** | Point of diversion water right sites. | [link](https://data-idwr.hub.arcgis.com/datasets/f0b37d653f8249a4945d61bdb98dc4a7_0/explore) | not given
 **Place of use (PoU)** | Place of use water right polygons. | [link](https://data-idwr.hub.arcgis.com/documents/IDWR::place-of-use-water-right/about) | not given
 
 Unique files were created from the above links to be used as input to the Python codes that prepare WaDE2 input files. Input files used are as follows...
@@ -268,21 +268,23 @@ The following info is from a data assessment evaluation of the completed data...
 
 Dataset | Num of Source Entries (rows)
 ---------- | ---------- 
-**Point of diversion (POD)** | 260,096
-**Place of use (PoU)**  | 212,735
+**Point of diversion (POD)** | 265,829
+**Place of use (PoU)**  | 217,143
 
 
 Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
 ---------- | ------------ | ------------ | ------------
-**Compiled WaDE Data** | 256,226 | 207,391 | 174,677
+**Compiled WaDE Data** | 261,441 | 211,662 | 177,972
 
 
 Assessment of Removed Source Records | Count | Action
 ---------- | ---------- | ----------
-Unused WaterSource Record | 68 | removed from watersources.csv input
-Unused Site Record | 7192 | removed from sites.csv input
-Incomplete or bad entry for IrrigatedAcreage | 1374 | removed from waterallocations.csv input
-Incomplete or bad entry for AllocationPriorityDate | 554 |  removed from waterallocations.csv input
+Unused WaterSource Record    67 | removed from watersources.csv input
+Unused Site Record                     | 7408 | removed from sites.csv input
+Incomplete or bad entry for SiteName   |  395 | removed from sites.csv input
+Incomplete or bad entry for IrrigatedAcreage         | 1417 | removed from waterallocations.csv input
+Incomplete or bad entry for AllocationPriorityDate   |  554 | removed from waterallocations.csv input
+Incomplete or bad entry for SiteUUID                 |    2 | removed from waterallocations.csv input
 
 
 **Figure 1:** Distribution of POD vs POU Sites within the sites.csv
