@@ -34,7 +34,7 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 
 
 ***
-## Code File: 1_XXwr_PreProcessAllocationData.ipynb
+## Code File: 1_MTwr_PreProcessAllocationData.ipynb
 Purpose: Pre-process the input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
@@ -42,7 +42,7 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 - PlaceofUse.zip (zipped shp & dbf files)
 
 #### Outputs:
- - Pwr_mtMain.zip
+ - Pwr_Main.zip
  - P_Geometry.zip
 
 #### Operation and Steps:
@@ -54,7 +54,7 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 - Remove all 'WITHDRAWN', 'TERMINATED', 'PENDING', 'CANCELLED', 'DISMISSED', 'SUSPENDED', 'DENIED', 'SEVERED', 'EXPIRED', & 'REVOKED' legal status record (we only want to work with "Active" legal status records).
 - Extract geometry input from PlaceofUse.zip input, export as P_Geometry.zip.
 - Review for errors.
-- Export as Pwr_mtMain.zip.
+- Export as Pwr_Main.zip.
 
 
 ***
@@ -62,7 +62,7 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 Purpose: generate WaDE csv input files (methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, podsitetopousiterelationships.csv).
 
 #### Inputs:
-- Pwr_mtMain.zip
+- Pwr_xxMain.zip
 - P_Geometry.zip
 
 #### Outputs:
@@ -87,10 +87,9 @@ Purpose: generate legend of granular methods used on data collection.
 - Export output dataframe *methods.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-MethodUUID | ApplicableResourceTypeCV | DataConfidenceValue | DataCoverageValue | DataQualityValueCV | MethodDescription | MethodName | MethodNEMILink | MethodTypeCV | WaDEDataMappingUrl
----------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------
-MTwr_M1	Surface Ground Water | -	|	- |	- | - | The Montana Department of Natural Resources and Conservation (DNRC) provides this product for informational purposes only... | Montana Water Rights Method | https://dnrc.mt.gov/Water-Resources/Water-Rights/Understanding-Water-Rights/ | Legal Processes | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Montana
-
+|    | MethodUUID   | ApplicableResourceTypeCV   | DataConfidenceValue   | DataCoverageValue   | DataQualityValueCV   | MethodName                  | MethodNEMILink                                                               | MethodTypeCV    | WaDEDataMappingUrl                                                                      |
+|---:|:-------------|:---------------------------|:----------------------|:--------------------|:---------------------|:----------------------------|:-----------------------------------------------------------------------------|:----------------|:----------------------------------------------------------------------------------------|
+|  0 | MTwr_M1      | Surface Ground Water       |                       |                     |                      | Montana Water Rights Method | https://dnrc.mt.gov/Water-Resources/Water-Rights/Understanding-Water-Rights/ | Legal Processes | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/Montana |
 
 
 ## 2) Variables Information
@@ -105,9 +104,9 @@ Purpose: generate legend of granular variables specific to each state.
 - Export output dataframe *variables.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-VariableSpecificUUID | AggregationInterval | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV | VariableCV | VariableSpecificCV 
----------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------
-MTwr_V1	1 | Year | Average | CFS | AFY | 10 | WaterYear | Allocation | Allocation
+|    | VariableSpecificUUID   |   AggregationInterval | AggregationIntervalUnitCV   | AggregationStatisticCV   | AmountUnitCV   | MaximumAmountUnitCV   |   ReportYearStartMonth | ReportYearTypeCV   | VariableCV   | VariableSpecificCV   |
+|---:|:-----------------------|----------------------:|:----------------------------|:-------------------------|:---------------|:----------------------|-----------------------:|:-------------------|:-------------|:---------------------|
+|  0 | MTwr_V1                |                     1 | Year                        | Average                  | CFS            | AFY                   |                     10 | WaterYear          | Allocation   | Allocation           |
 
 
 ## 3) Organization Information
@@ -122,10 +121,9 @@ Purpose: generate organization directory, including names, email addresses, and 
 - Export output dataframe *organizations.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-OrganizationUUID | OrganizationContactEmail | OrganizationContactName | OrganizationName | OrganizationPhoneNumber | OrganizationPurview | OrganizationWebsite | State
----------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------
-MTwr_O1 | CKuntz@mt.gov | Chris Kuntz | The Montana Department of Natural Resources and Conservation | 406-444-2074 | The Montana Department of Natural Resources and Conservation is a government agency... | http://dnrc.mt.gov/ | MT
-
+|    | OrganizationUUID   | OrganizationContactEmail   | OrganizationContactName   | OrganizationName                                             | OrganizationPhoneNumber   | OrganizationPurview                                                                                                                                                                                                                                | OrganizationWebsite   | State   |
+|---:|:-------------------|:---------------------------|:--------------------------|:-------------------------------------------------------------|:--------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------|:--------|
+|  0 | MTwr_O1            | CKuntz@mt.gov              | Chris Kuntz               | The Montana Department of Natural Resources and Conservation | 406-444-2074              | The Montana DNRC is a government agency in the executive branch state of Montana in the United States with responsibility for ensuring sustainable development of the state's land, mineral, natural gas, oil, timber, water, and other resources. | http://dnrc.mt.gov/   | MT      |
 
 
 ## 4) Water Source Information
@@ -134,7 +132,7 @@ Purpose: generate a list of water sources specific to a water right.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE WaterSources* specific columns.
-- Assign agency info to the *WaDE WaterSources* specific columns.  See *XXwr_Allocation Schema Mapping_WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign agency info to the *WaDE WaterSources* specific columns.  See *MTwr_Allocation Schema Mapping_WaDE.xlsx* for specific details.  Items of note are as follows...
     - *WaterSourceUUID* = create unique it based on *WaterSourceNativeID*.
     - *WaterQualityIndicatorCV* = "Fresh"
     - *WaterSourceName* = **SOURCE_NAME** input.
@@ -146,9 +144,10 @@ Purpose: generate a list of water sources specific to a water right.
 - Export output dataframe *WaterSources.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceNativeID | WaterSourceTypeCV
----------- | ---------- | ------------ | ------------ | ------------
-MTwr_WSwId1 | Fresh | lathead River Flathead Lake | wId1 | SURFACE
+|    | WaterSourceUUID   | Geometry   | GNISFeatureNameCV   | WaterQualityIndicatorCV   | WaterSourceName   | WaterSourceNativeID   | WaterSourceTypeCV   |
+|---:|:------------------|:-----------|:--------------------|:--------------------------|:------------------|:----------------------|:--------------------|
+|  0 | MTwr_WwadeId1     |            |                     | Fresh                     | Fishtrap Creek    | wadeId1               | SURFACE             |
+
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
 - WaterSourceUUID
@@ -162,7 +161,7 @@ Purpose: generate a list of sites information.
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Site* specific columns.
-- Assign agency info to the *WaDE Site* specific columns.  See *XXwr_Allocation Schema Mapping_WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign agency info to the *WaDE Site* specific columns.  See *MTwr_Allocation Schema Mapping_WaDE.xlsx* for specific details.  Items of note are as follows...
     - *SiteUUID* = create unique it based on **PODV_ID_SEQ** input.
     - *WaterSourceUUIDs* = Extract *WaterSourceUUID* from waterSources.csv input csv file. See code for specific implementation of extraction.
     - *CoordinateAccuracy* = "WaDE Blank"
@@ -189,9 +188,9 @@ Purpose: generate a list of sites information.
 - Export output dataframe *sites.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-SiteUUID | WaterSourceUUID | CoordinateMethodCV | County | Latitude | Longitude | PODorPOUSite| SiteName | SiteNativeID | SiteTypeCV
----------- | ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------
-MTwr_S124706 | MTwr_WSwId2 | WaDE Blank | Powder River | 45.02667 | -105.87871 | POD | WaDE Blank | 124706 | WELL
+|    | SiteUUID               | RegulatoryOverlayUUIDs   | WaterSourceUUIDs   | CoordinateAccuracy   | CoordinateMethodCV   | County    |   EPSGCodeCV | GNISCodeCV   |        HUC12 |     HUC8 |   Latitude |   Longitude | NHDNetworkStatusCV   | NHDProductCV   | PODorPOUSite   | SiteName   | SiteNativeID       | SitePoint   | SiteTypeCV                   | StateCV   | USGSSiteID   |
+|---:|:-----------------------|:-------------------------|:-------------------|:---------------------|:---------------------|:----------|-------------:|:-------------|-------------:|---------:|-----------:|------------:|:---------------------|:---------------|:---------------|:-----------|:-------------------|:------------|:-----------------------------|:----------|:-------------|
+|  0 | MTwr_Sd100_40B11957200 | MTov_RO8                 | MTwr_WwadeId255    | WaDE Blank           | WaDE Blank           | Petroleum |         4326 |              | 100402030502 | 10040203 |    46.9373 |    -108.201 |                      |                | POD            | WaDE Blank | d100_40B 119572 00 |             | LIVESTOCK DIRECT FROM SOURCE | MT        |              |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
 - SiteUUID 
@@ -206,7 +205,7 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 #### Operation and Steps:
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Allocations* specific columns.
-- Assign agency info to the *WaDE Water Allocations* specific columns.  See *XXwr_Allocation Schema Mapping_WaDE.xlsx* for specific details.  Items of note are as follows...
+- Assign agency info to the *WaDE Water Allocations* specific columns.  See *MTwr_Allocation Schema Mapping_WaDE.xlsx* for specific details.  Items of note are as follows...
     - Extract *MethodUUID*, *VariableSpecificUUID*, *OrganizationUUID*, & *SiteUUID* from respective input csv files. See code for specific implementation of extraction.
     - *AllocationApplicationDate* = ""
     - *AllocationAssociatedConsumptiveUseSiteIDs* = ""
@@ -241,15 +240,15 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
     - *PopulationServed* = ""
     - *PowerType* = ""
     - *PrimaryBeneficialUseCategory* = ""
-    - *WaterAllocationNativeURL* = **URL_ABSTRACT** input.																							
+    - *WaterAllocationNativeURL* = **URL_ABSTRACT** input.																						
 - Consolidate output dataframe into water allocations specific information only by grouping entries by *AllocationNativeID* filed.
 - Perform error check on output dataframe.
 - Export output dataframe *waterallocations.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-AllocationUUID | MethodUUID | OrganizationUUID | SiteUUID | VariableSpecificUUID | AllocationBasisCV | AllocationFlow_CFS | AllocationLegalStatusCV | AllocationNativeID | AllocationOwner | AllocationPriorityDate | AllocationTypeCV | BeneficialUseCategory | OwnerClassificationCV | WaterAllocationNativeURL
----------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ----------
-MTwr_WR38H10224400 | MTwr_M1 | MTwr_O1 | MTwr_Su254979,MTwr_S249593	 | MTwr_V1 | WaDE Blank | 0.00000 | ACTIVE | 38H 102244 00 | Usa Dept Of Interior Bureau Of Land Mgm | 1997-11-25	 | STOCKWATER PERMIT | STOCK | Bureau of Land Management (USBLM) | https://wrqsproxy.dnrc.mt.gov/Report?/WRQS/WRD...
+|    | AllocationUUID     | MethodUUID   | OrganizationUUID   | SiteUUID             | VariableSpecificUUID   | AllocationApplicationDate   | AllocationAssociatedConsumptiveUseSiteIDs   | AllocationAssociatedWithdrawalSiteIDs   | AllocationBasisCV   | AllocationChangeApplicationIndicator   | AllocationCommunityWaterSupplySystem   | AllocationCropDutyAmount   | AllocationExpirationDate   |   AllocationFlow_CFS | AllocationLegalStatusCV   | AllocationNativeID   | AllocationOwner                          | AllocationPriorityDate   | AllocationSDWISIdentifierCV   | AllocationTimeframeEnd   | AllocationTimeframeStart   | AllocationTypeCV   |   AllocationVolume_AF | BeneficialUseCategory   | CommunityWaterSupplySystem   | CropTypeCV   | CustomerTypeCV   | DataPublicationDate   | DataPublicationDOI   |   ExemptOfVolumeFlowPriority | GeneratedPowerCapacityMW   |   IrrigatedAcreage | IrrigationMethodCV   | LegacyAllocationIDs   | OwnerClassificationCV             | PopulationServed   | PowerType   | PrimaryBeneficialUseCategory   | WaterAllocationNativeURL                                                                                                  |
+|---:|:-------------------|:-------------|:-------------------|:---------------------|:-----------------------|:----------------------------|:--------------------------------------------|:----------------------------------------|:--------------------|:---------------------------------------|:---------------------------------------|:---------------------------|:---------------------------|---------------------:|:--------------------------|:---------------------|:-----------------------------------------|:-------------------------|:------------------------------|:-------------------------|:---------------------------|:-------------------|----------------------:|:------------------------|:-----------------------------|:-------------|:-----------------|:----------------------|:---------------------|-----------------------------:|:---------------------------|-------------------:|:---------------------|:----------------------|:----------------------------------|:-------------------|:------------|:-------------------------------|:--------------------------------------------------------------------------------------------------------------------------|
+|  0 | MTwr_WR38H10224400 | MTwr_M1      | MTwr_O1            | MTwr_Sd1_38H10224400 | MTwr_V1                |                             |                                             |                                         | WaDE Blank          |                                        |                                        |                            |                            |                    0 | ACTIVE                    | 38H 102244 00        | Usa Dept Of Interior Bureau Of Land Mgmt | 1997-11-25               |                               | 12/31                    | 01/01                      | STOCKWATER PERMIT  |                   5.4 | STOCK                   |                              |              |                  | 04/09/2025            |                      |                            0 |                            |                  0 |                      |                       | Bureau of Land Management (USBLM) |                    |             | Livestock                      | https://wrqsproxy.dnrc.mt.gov/Report?/WRQS/WRD2090AR&P_WRGT_ID_SEQ=180441&P_VERS_ID_SEQ=1&rs:Command=Render&rs:Format=PDF |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID
@@ -289,29 +288,30 @@ The following info is from a data assessment evaluation of the completed data...
 
 Dataset | Num of Source Entries (rows)
 ---------- | ---------- 
-**Points of Diversion** | 593,225
-**Places of Use** | 468,780
+**Points of Diversion** | 546,247
+**Places of Use**  | 955,710
 
 
 Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
 ---------- | ------------ | ------------ | ------------
-**Compiled WaDE Data** | 484,001 | 331,871 | 342,498
+**Compiled WaDE Data** | 494,080 | 736,435 | 355,061
 
 
 Assessment of Removed Source Records | Count | Action
 ---------- | ---------- | ----------
-Unused WaterSource Record | 322 | removed from watersources.csv input
-Unused Site Record | 198,315 | removed from sites.csv input
-Incomplete or bad entry for County | 103 | removed from sites.csv input
-Incomplete or bad entry for WaterSourceUUIDs | 36 | removed from sites.csv input
-Incomplete or bad entry for AllocationTimeframeEnd | 46,836 | removed from waterallocations.csv input
-Incomplete or bad entry for AllocationPriorityDate  | 2,628 | removed from waterallocations.csv input
-Incomplete or bad entry for Flow | 1151 | removed from waterallocations.csv input
-Incomplete or bad entry for AllocationTimeframeStart | 611 | removed from waterallocations.csv input
-Incomplete or bad entry for Volume | 248 | removed from waterallocations.csv input
-Incomplete or bad entry for IrrigatedAcreage | 224 | removed from waterallocations.csv input
-Incomplete or bad entry for AllocationOwner | 157 | removed from waterallocations.csv input
-Incomplete or bad entry for SiteUUID | 77 | removed from waterallocations.csv input
+Unused WaterSource Record   | 407 | removed from watersources.csv input
+Unused Site Record                       | 211,874 | removed from sites.csv input
+Incomplete or bad entry for Latitude       | 3,835 | removed from sites.csv input
+Incomplete or bad entry for County         | 1,506 | removed from sites.csv input
+Incomplete or bad entry for SiteTypeCV        | 1 | removed from sites.csv input
+Incomplete or bad entry for AllocationTimeframeEnd     | 36,694 | removed from waterallocations.csv input
+Incomplete or bad entry for AllocationPriorityDate      | 1,611 | removed from waterallocations.csv input
+Incomplete or bad entry for SiteUUID                    | 1,102 | removed from waterallocations.csv input
+Incomplete or bad entry for AllocationTimeframeStart     | 910 | removed from waterallocations.csv input
+Incomplete or bad entry for Flow                         | 748 | removed from waterallocations.csv input
+Incomplete or bad entry for IrrigatedAcreage             | 456 | removed from waterallocations.csv input
+Incomplete or bad entry for AllocationOwner              | 339 | removed from waterallocations.csv input
+Incomplete or bad entry for Volume                       | 154 | removed from waterallocations.csv input
 
 
 **Figure 1:** Distribution of POD vs POU Sites within the sites.csv
@@ -329,16 +329,19 @@ Incomplete or bad entry for SiteUUID | 77 | removed from waterallocations.csv in
 **Figure 4b:** Cumulative distribution of Priority Date of Identified Water Right Records within the waterallocations.csv
 ![](figures/AllocationPriorityDate2.png)
 
-**Figure 5:** Distribution & Range of Flow (CFS) of Identified Water Right Records within the waterallocations.csv
+**Figure 5:** Distribution of Legal Status of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationLegalStatusCV.png)
+
+**Figure 6:** Distribution & Range of Flow (CFS) of Identified Water Right Records within the waterallocations.csv
 ![](figures/AllocationFlow_CFS.png)
 
-**Figure 6:** Distribution & Range of Volume (AF) of Identified Water Right Records within the waterallocations.csv
+**Figure 7:** Distribution & Range of Volume (AF) of Identified Water Right Records within the waterallocations.csv
 ![](figures/AllocationVolume_AF.png)
 
-**Figure 7:** Map of Identified Points within the sites.csv
+**Figure 8:** Map of Identified Points within the sites.csv
 ![](figures/PointMap.png)
 
-**Figure 8:** Map of Identified Polygons within the sites.csv
+**Figure 9:** Map of Identified Polygons within the sites.csv
 ![](figures/PolyMap.png)
 
 
