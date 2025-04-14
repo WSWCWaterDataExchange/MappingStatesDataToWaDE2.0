@@ -247,23 +247,22 @@ The following info is from a data assessment evaluation of the completed data...
 
 Dataset | Num of Source Entries (rows)
 ---------- | ---------- 
-**Point of diversion (POD)** | 106,834
-**Place of Use (POU)** | 32,339
+**Point of diversion (POD)** | 108,475
+**Place of Use (POU)** | 35,076
 
 
 Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
 ---------- | ------------ | ------------ | ------------
-**Compiled WaDE Data** | 39,351 | 21,827 | 39,365
+**Compiled WaDE Data** | 28,270 | 23,385 | 39,553
 
 
 Assessment of Removed Source Records | Count | Action
 ---------- | ---------- | ----------
-Unused Site Record | 1929 | removed from sites.csv
-Unused Site Record | 1929 | removed from sites.csv
-Incomplete or bad entry for AllocationPriorityDate    | 887 | removed from waterallocations.csv input
-Incomplete or bad entry for Volume                    | 254 | removed from waterallocations.csv input
-Incomplete or bad entry for AllocationOwner            | 91 | removed from waterallocations.csv input
-Incomplete or bad entry for IrrigatedAcreage           | 67 | removed from waterallocations.csv input
+Unused Site Record                   | 981 | removed from sites.csv input
+Incomplete or bad entry for County    | 30 | removed from sites.csv input
+Incomplete or bad entry for AllocationPriorityDate   | 890 | removed from waterallocations.csv input
+Incomplete or bad entry for SiteUUID                 | 265 | removed from waterallocations.csv input
+Incomplete or bad entry for Volume                    | 18 | removed from waterallocations.csv input
 
 
 **Figure 1:** Distribution of POD vs POU Sites within the sites.csv
