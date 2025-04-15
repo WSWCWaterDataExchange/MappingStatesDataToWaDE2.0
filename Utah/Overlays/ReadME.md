@@ -28,9 +28,8 @@ The 1) raw input data shared by the state / state agency / data provider (excel,
 The following text summarizes the process used by the WSWC staff to prepare and share the state's overlay data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *UTov_Overlay Info Schema Mapping to WaDE.xlsx*. Several WaDE csv input files will be created in order to extract the overlay data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
 
 - **1_UTov_PreProcessRegulatoryData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
-- **2_UTov_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: date.csv, organization.csv, reportingunits.csv, regulatoryoverlays.csv, regulatoryreportingunits.csv, sites.csv, etc.
-- **3_UTov_WRSiteRegulatoryID.ipynb**: used to pair overlay information to water allocation information using an overlay on water allocation site information within the boundaries of the regulation.
-- **4_UTov_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
+- **2_UTov_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: date.csv, organization.csv, reportingunits.csv, regulatoryoverlays.csv, regulatoryreportingunits.csv, etc.
+- **3_UTov_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
 
 
 ***
@@ -44,7 +43,7 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 - AreasOpenToLimitedAppropriation.zip (zipped shp & dbf files)
 
 #### Outputs:
- - Pre_utMain.zip
+ - Pov_Main.zip
  - P_Geometry.zip
 
 #### Operation and Steps:
@@ -52,15 +51,15 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 - Extract key WadE information needed from each source, combine into single output dataframe outdf.
 - Clean & inspect the data (remove special characters, round float values, remove white space between strings).
 - Extract geometry values from temporary dataframes, save as P_Geometry df.
-- Export output dataframe as new csv file, *Pre_utMain.csv* for tabular data and *P_Geometry.csv* for geometry data.
+- Export output dataframe as new csv file, *Pov_Main.csv* for tabular data and *P_Geometry.csv* for geometry data
 
 
 ***
 ## Code File: 2_UTov_CreateWaDEInputFiles.ipynb
-Purpose: generate WaDE csv input files (date.csv, organizations.csv, reportingunits.csv, regulatoryoverlays.csv, regulatoryreportingunits.csv, sites.csv).
+Purpose: generate WaDE csv input files (date.csv, organizations.csv, reportingunits.csv, regulatoryoverlays.csv, regulatoryreportingunits.csv.
 
 #### Inputs:
-- Pre_utMain.zip
+- Pov_Main.zip
 - P_Geometry.zip
 
 #### Outputs:
@@ -83,9 +82,9 @@ Purpose: generate legend of granular date used on data collection.
 - Export output dataframe *methods.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-Date | Year 
----------- | ---------- 
-12/10/2023 | 2023
+|    | Date       |   Year |
+|---:|:-----------|-------:|
+|  0 | 12/10/2023 |   2023 |
 
 
 ## 2) Organization Information
@@ -100,10 +99,9 @@ Purpose: generate organization directory, including names, email addresses, and 
 - Export output dataframe *organizations.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-OrganizationUUID | OrganizationContactEmail | OrganizationContactName | OrganizationName | OrganizationPhoneNumber | OrganizationPurview | OrganizationWebsite | State
----------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------
-UTov_O1 | jreese@utah.gov | Jim Reese (Assistant State Engineer - Technical Services) | Utah Department of Natural Resources | 801-538-7200 | Managing and protecting natural resources | https://naturalresources.utah.gov/ | UT
-
+|    | OrganizationUUID   | OrganizationContactEmail   | OrganizationContactName                                   | OrganizationName              | OrganizationPhoneNumber   | OrganizationPurview                                                                                                                                                                                                    | OrganizationWebsite     | State   |
+|---:|:-------------------|:---------------------------|:----------------------------------------------------------|:------------------------------|:--------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------|:--------|
+|  0 | UTre_O1            | jreese@utah.gov            | Jim Reese (Assistant State Engineer - Technical Services) | Utah Division of Water Rights | 801-538-7280              | The Utah Division of Water Rights (DWRi) is an agency of Utah State Government within the Department of Natural Resources that administers the appropriation and distribution of the State's valuable water resources. | https://water.utah.gov/ | UT      |
 
 
 ### 3) Reporting Unit Information
@@ -125,12 +123,12 @@ Purpose: generate a list of polygon areas associated with the state agency overl
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *ReportingUnitName*, *ReportingUnitNativeID* & *ReportingUnitTypeCV* fields.
 - Assign reportingunits UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
-- Export output dataframe *sites.csv*.
+- Export output dataframe *reportingunits.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-ReportingUnitUUID | EPSGCodeCV | ReportingUnitName | ReportingUnitNativeID | ReportingUnitProductVersion | ReportingUnitTypeCV | ReportingUnitUpdateDate | StateCV | Geometry 
----------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------  
-UTov_RUutr101| 4326 | WaDE Blank | utr101 | - | Water Right Areas | 5/31/2022 | UT
+|    | ReportingUnitUUID   |   EPSGCodeCV | ReportingUnitName   | ReportingUnitNativeID   | ReportingUnitProductVersion   | ReportingUnitTypeCV   | ReportingUnitUpdateDate   | StateCV   |
+|---:|:--------------------|-------------:|:--------------------|:------------------------|:------------------------------|:----------------------|:--------------------------|:----------|
+|  1 | UTov_RUut_05        |         4326 | WaDE Blank          | ut_05                   |                               | WaDE Blank            | 5/31/2022                 | UT        |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *reportingunits_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the reportingunits include the following...
 - ReportingUnitUUID
@@ -162,9 +160,9 @@ Purpose: generate master sheet of overlay area information to import into WaDE 2
 - Export output dataframe *regulatoryoverlays.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-RegulatoryOverlayUUID| OversightAgency | RegulatoryDescription | RegulatoryName | RegulatoryOverlayNativeID | RegulatoryStatusCV | RegulatoryStatute | RegulatoryStatuteLink | StatutoryEffectiveDate | StatutoryEndDate | RegulatoryOverlayTypeCV | WaterSourceTypeCV
----------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------
-UTov_ROutr101 | Southeastern Regional Office (PRICE) | Water Right Areas are administrative boundaries... | WaDE Blank | utr101 | Active	| - | http://www.waterrights.utah.gov/wrinfo/policy/... | 	 2023-12-10	| - | Water Right Areas | Surface Water and Groundwater
+|    | RegulatoryOverlayUUID   | OversightAgency                      | RegulatoryDescription                                                                                                                                                                                                   | RegulatoryName   | RegulatoryOverlayNativeID   | RegulatoryStatusCV   | RegulatoryStatute   | RegulatoryStatuteLink                                            | StatutoryEffectiveDate   | StatutoryEndDate   | RegulatoryOverlayTypeCV   | WaterSourceTypeCV             |
+|---:|:------------------------|:-------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:----------------------------|:---------------------|:--------------------|:-----------------------------------------------------------------|:-------------------------|:-------------------|:--------------------------|:------------------------------|
+|  1 | UTov_ROutr1_05          | Southeastern Regional Office (PRICE) | Water Right Areas are administrative boundaries based primarily on surface drainage areas. Different water right areas can have different appropriation policies and can be administered by different regional offices. | WaDE Blank       | utr1_05                     | Active               |                     | http://www.waterrights.utah.gov/wrinfo/policy/wrareas/area05.asp | 2023-12-10               |                    | Water Right Areas         | Surface Water and Groundwater |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *regulatoryoverlays_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water overlays include the following...
 - RegulatoryOverlayUUID
@@ -175,26 +173,24 @@ Any data fields that are missing required values and dropped from the WaDE-ready
 - StatutoryEffectiveDate
 
 
-### 5) Reporting Units Information 
+### 5) Overlay Reporting Units Information
 Purpose: generate master sheet of overlay area information and how it algins with reporting unit area information.
 
 #### Operation and Steps:
 - Read the input file and generate single output dataframe *outdf*.
-- Populate output dataframe with *WaDE Reportingunits* specific columns.
-- Assign state agency data info to the *WaDE Reportingunits* specific columns.  See *UTov_Overlay Info Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+- Populate output dataframe with *WaDE OverlayReportingunits* specific columns.
+- Assign state agency data info to the *WaDE OverlayReportingunits* specific columns.  See *UTov_Overlay Info Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - *DataPublicationDate* = use date of file creation
     - *OrganizationUUID* = pull from organization.csv
     - *RegulatoryOverlayUUID* = pull form regulatoryoverlay.csv
     - *ReportingUnitUUID* = pull from reportingunit.csv
-- Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *ReportingUnitName*, *ReportingUnitNativeID* & *ReportingUnitTypeCV* fields.
-- Assign reportingunits UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
 - Export output dataframe *regulatoryreportingunits.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-DataPublicationDate | OrganizationUUID | RegulatoryOverlayUUID | ReportingUnitUUID 
----------- | ---------- | ------------ | ------------ 
-12/11/2023 | UTov_O1 | UTov_ROutr185 | UTov_RUutr185
+|    | DataPublicationDate   | OrganizationUUID   | RegulatoryOverlayUUID   | ReportingUnitUUID   |
+|---:|:----------------------|:-------------------|:------------------------|:--------------------|
+|  1 | 2025-04-15            | UTov_O1            | UTov_ROutr1_81          | UTov_RUut_81        |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *regulatoryreportingunits_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the reportingunits include the following...
 - DataPublicationDate
@@ -214,6 +210,7 @@ Dataset | Num of Source Entries (rows)
 **BasinsClosedToNewAppropriations** | 5
 **AreasOpenToLimitedAppropriation** | 7
 
+
 Dataset | Num of Identified Reporting Units | Num of Identified Overlays
 ---------- | ---------- | ------------
 **Compiled WaDE Data** | 77 | 120
@@ -221,7 +218,7 @@ Dataset | Num of Identified Reporting Units | Num of Identified Overlays
 
 Assessment of Removed Source Records | Count | Action
 ---------- | ---------- | ----------
-...nothing removed | - | -
+...nothing removed. | - | -
 
 
 **Figure 1:** Distribution of Reporting Unit Name within reportingunits.csv
@@ -236,11 +233,8 @@ Assessment of Removed Source Records | Count | Action
 **Figure 4:** Distribution of Overlay Type within the regulatoryoverlays.csv
 ![](figures/RegulatoryOverlayTypeCV.png)
 
-**Figure 5:** Map of Areas (i.e., Reporting Unit)
+**Figure 5:** Map of Overlay Areas (i.e., Reporting Unit)
 ![](figures/ReportingUnitMap.png)
-
-**Figure 6:** Map of identified water rights within the Areas Polygons within the sites.csv
-![](figures/PointInRegMap.png)
 
 
 
