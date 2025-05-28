@@ -99,8 +99,8 @@ def CreateSitesInputFunction(workingDirString, varST, varUUIDType, mainInputFile
     print("WaterSourceUUIDs")
     outdf['WaterSourceUUIDs'] = df.apply(lambda row: retrieveWaterSourceUUID(row['in_WaterSourceNativeID']), axis=1)
 
-    print("RegulatoryOverlayUUIDs")
-    outdf['RegulatoryOverlayUUIDs'] = "" # Use custom JoinOverlayToSiteFile instead
+    print("OverlayUUIDs")
+    outdf['OverlayUUIDs'] = "" # Use custom JoinOverlayToSiteFile instead
 
     print("CoordinateAccuracy")
     outdf['CoordinateAccuracy'] = df['in_CoordinateAccuracy']

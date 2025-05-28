@@ -1,5 +1,5 @@
 # Date Update: 02/01/2024
-# Purpose: To assign RegulatoryOverlayUUIDs values to state water right sites.csv file.
+# Purpose: To assign OverlayUUIDs values to state water right sites.csv file.
 # Notes:
 #   N/A
 
@@ -37,23 +37,23 @@ def JoinOverlayToSiteFunction(workingDirString):
         dfws = pd.read_csv('ProcessedInputData/watersources.csv')
         dfs = pd.read_csv('ProcessedInputData/sites.csv')
         # Regulatory Input Data
-        dfro = pd.read_csv("../Overlays/ProcessedInputData/regulatoryoverlays.csv")
+        dfov = pd.read_csv("../Overlays/ProcessedInputData/overlays.csv")
         dfru = pd.read_csv("../Overlays/ProcessedInputData/reportingunits.csv")
-        dfrru = pd.read_csv("../Overlays/ProcessedInputData/regulatoryreportingunits.csv")
+        dfrru = pd.read_csv("../Overlays/ProcessedInputData/overlayreportingunits.csv")
 
         #### water right watersource info with site info
         # explode site.csv on WaterSourceUUIDs
-        dfs = dfs.assign(WaterSourceUUIDs=dfs['WaterSourceUUIDs'].str.split(',')).explode('WaterSourceUUIDs').reset_index(drop=True)
+        dfs_2 = dfs.assign(WaterSourceUUIDs=dfs['WaterSourceUUIDs'].str.split(',')).explode('WaterSourceUUIDs').reset_index(drop=True)
         # merge watersources to dfs via WaterSourceUUIDs -to -WaterSourceUUID
         dfs = pd.merge(dfs, dfws[['WaterSourceUUID', 'WaterSourceTypeCV']],
                        left_on='WaterSourceUUIDs', right_on='WaterSourceUUID', how='left')
 
         #### Overlay watersource info with reporting unit info
-        # merge regulatoryoverlays -to- regulatoryreportingunits -to- reportingunits
-        dfro = pd.merge(dfro[['RegulatoryOverlayUUID', 'WaterSourceTypeCV']],
-                        dfrru[['RegulatoryOverlayUUID', 'ReportingUnitUUID']],
-                        left_on='RegulatoryOverlayUUID', right_on='RegulatoryOverlayUUID', how='left')
-        dfru = pd.merge(dfru, dfro, left_on='ReportingUnitUUID', right_on='ReportingUnitUUID', how='left')
+        # merge Overlays -to- regulatoryreportingunits -to- reportingunits
+        dfov = pd.merge(dfov[['OverlayUUID', 'WaterSourceTypeCV']],
+                        dfrru[['OverlayUUID', 'ReportingUnitUUID']],
+                        left_on='OverlayUUID', right_on='OverlayUUID', how='left')
+        dfru = pd.merge(dfru, dfov, left_on='ReportingUnitUUID', right_on='ReportingUnitUUID', how='left')
         ruRUTList = dfru['ReportingUnitTypeCV'].unique().tolist()
         print(f'- Reporting Unit Type(s) in ru: {ruRUTList}')
 
@@ -83,13 +83,13 @@ def JoinOverlayToSiteFunction(workingDirString):
 
                     # Select copy geodataframe sites within geodataframe reporting unit polygons.
                     print(f'-- Selecting sites within reporting unit polygon')
-                    gdfs1_ru1 = gpd.sjoin(left_df=gdfs1, right_df=gdfru1[['ReportingUnitUUID', 'RegulatoryOverlayUUID', 'geometry']], op='within').replace(np.nan, "")
+                    gdfs1_ru1 = gpd.sjoin(left_df=gdfs1, right_df=gdfru1[['ReportingUnitUUID', 'OverlayUUID', 'geometry']], predicate='within').replace(np.nan, "")
 
-                    # set RegulatoryOverlayUUIDs in copy geodataframe sites
+                    # set OverlayUUIDs in copy geodataframe sites
                     # drop geodataframe and WST elements from copy geodataframe sites
-                    print(f'-- Setting RegulatoryOverlayUUIDs in sites.csv.')
-                    gdfs1_ru1['RegulatoryOverlayUUIDs'] = gdfs1_ru1['RegulatoryOverlayUUID']
-                    gdfs1_ru1 = gdfs1_ru1.drop(['RegulatoryOverlayUUID', 'geometry', 'index_right', 'ReportingUnitUUID', 'WaterSourceUUID', 'WaterSourceTypeCV'], axis=1)
+                    print(f'-- Setting OverlayUUIDs in sites.csv.')
+                    gdfs1_ru1['OverlayUUIDs'] = gdfs1_ru1['OverlayUUID']
+                    gdfs1_ru1 = gdfs1_ru1.drop(['OverlayUUID', 'geometry', 'index_right', 'ReportingUnitUUID', 'WaterSourceUUID', 'WaterSourceTypeCV'], axis=1)
 
                     # Concatenate existing sites and copy geodataframe sites into single output
                     print(f'-- Concatenate updated sites.csv to existing file')
@@ -98,11 +98,11 @@ def JoinOverlayToSiteFunction(workingDirString):
                     dfs = dfs.drop(['WaterSourceUUID', 'WaterSourceTypeCV'], axis=1)
                     dfs = dfs.groupby('SiteUUID').agg(lambda x: ','.join([str(elem) for elem in (list(set(x))) if elem != ""])).replace(np.nan, "").reset_index()
 
+                    # Export out to CSV.
+                    dfs.to_csv('ProcessedInputData/sites.csv', index=False)  # this is in the Regulatory data folder
+
                 except:
                     print(f'-- WARNING: No matching Water Source Type(s) in sites.csv')
-
-        # Export out to CSV.
-        dfs.to_csv('ProcessedInputData/sites.csv', index=False)  # this is in the Regulatory data folder
 
     else:
         print("- WARNING: No Overlays data / project to work from")

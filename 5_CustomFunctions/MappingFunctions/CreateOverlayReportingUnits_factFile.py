@@ -26,7 +26,7 @@ import ErrorCheckCodeFunctionsFile
 
 # Create File Function
 ############################################################################
-def CreateRegulatoryReportingUnitsInputFunction(workingDirString, mainInputFile):
+def CreateOverlayReportingUnitsInputFunction(workingDirString, mainInputFile):
     # Inputs
     ############################################################################
     print("Reading input csv...")
@@ -36,7 +36,7 @@ def CreateRegulatoryReportingUnitsInputFunction(workingDirString, mainInputFile)
     df = pd.read_csv(fileInput, compression='zip')
 
     # Input Data - 'WaDE Input' files.
-    dfro = pd.read_csv("ProcessedInputData/regulatoryoverlays.csv").replace(np.nan, "")  # RegulatoryOverlays dataframe
+    dfov = pd.read_csv("ProcessedInputData/overlays.csv").replace(np.nan, "")  # Overlays dataframe
     dfru = pd.read_csv("ProcessedInputData/reportingunits.csv").replace(np.nan, "")  # ReportingUnit dataframe
 
     # WaDE columns
@@ -46,15 +46,15 @@ def CreateRegulatoryReportingUnitsInputFunction(workingDirString, mainInputFile)
 
     # Custom Functions
     ############################################################################
-    # For creating RegulatoryOverlayUUID
-    RegulatoryOverlayUUIDdict = pd.Series(dfro.RegulatoryOverlayUUID.values, index = dfro.RegulatoryOverlayNativeID.astype(str)).to_dict()
-    def retrieveRegulatoryOverlayUUID(colrowValue):
+    # For creating OverlayUUID
+    OverlayUUIDdict = pd.Series(dfov.OverlayUUID.values, index = dfov.OverlayNativeID.astype(str)).to_dict()
+    def retrieveOverlayUUID(colrowValue):
         if colrowValue == '' or pd.isnull(colrowValue):
             outList = ''
         else:
             String1 = str(colrowValue).strip()
             try:
-                outList = RegulatoryOverlayUUIDdict[String1]
+                outList = OverlayUUIDdict[String1]
             except:
                 outList = ''
         return outList
@@ -88,8 +88,8 @@ def CreateRegulatoryReportingUnitsInputFunction(workingDirString, mainInputFile)
     print("OrganizationUUID")
     outdf['OrganizationUUID'] = df['in_OrganizationUUID']
 
-    print("RegulatoryOverlayUUID")
-    outdf['RegulatoryOverlayUUID'] = df.apply(lambda row: retrieveRegulatoryOverlayUUID(row['in_RegulatoryOverlayNativeID']), axis=1)
+    print("OverlayUUID")
+    outdf['OverlayUUID'] = df.apply(lambda row: retrieveOverlayUUID(row['in_OverlayNativeID']), axis=1)
 
     print("ReportingUnitUUID")
     outdf['ReportingUnitUUID'] = df.apply(lambda row: retrieveReportingUnitsUUID(row['in_ReportingUnitNativeID']), axis=1)
@@ -127,11 +127,11 @@ def CreateRegulatoryReportingUnitsInputFunction(workingDirString, mainInputFile)
     print("Exporting dataframe...")
 
     # The working output DataFrame for WaDE 2.0 input.
-    outdf.to_csv('ProcessedInputData/regulatoryreportingunits.csv', index=False)
+    outdf.to_csv('ProcessedInputData/overlayreportingunits.csv', index=False)
 
     # Report purged values.
     if(len(dfpurge.index) > 0): print(f'...', len(dfpurge),  ' records removed.')
     dfpurge.insert(0, 'ReasonRemoved', dfpurge.pop('ReasonRemoved'))
-    dfpurge.to_csv('ProcessedInputData/regulatoryreportingunits_missing.csv', index=False)
+    dfpurge.to_csv('ProcessedInputData/overlayreportingunits_missing.csv', index=False)
 
     print("Done")

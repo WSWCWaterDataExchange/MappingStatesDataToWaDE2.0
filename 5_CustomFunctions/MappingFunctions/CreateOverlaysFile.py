@@ -25,7 +25,7 @@ import ErrorCheckCodeFunctionsFile
 
 # Create File Function
 ############################################################################
-def CreateRegulatoryOverlaysInputFunction(workingDirString, varST, varUUIDType, mainInputFile):
+def CreateOverlaysInputFunction(workingDirString, varST, varUUIDType, mainInputFile):
     # Inputs
     ############################################################################
     print("Reading input csv...")
@@ -35,7 +35,7 @@ def CreateRegulatoryOverlaysInputFunction(workingDirString, varST, varUUIDType, 
     df = pd.read_csv(fileInput, compression='zip')
 
     # WaDE columns
-    RegulatoryOverlaysColumnsList = GetColumnsFile.GetRegulatoryOverlaysColumnsFunction()
+    OverlaysColumnsList = GetColumnsFile.GetOverlaysColumnsFunction()
 
 
     # Custom Functions
@@ -51,28 +51,28 @@ def CreateRegulatoryOverlaysInputFunction(workingDirString, varST, varUUIDType, 
     # Creating output dataframe (outdf)
     ############################################################################
     print("Populating dataframe outdf...")
-    outdf = pd.DataFrame(columns=RegulatoryOverlaysColumnsList, index=df.index)  # The output dataframe
+    outdf = pd.DataFrame(columns=OverlaysColumnsList, index=df.index)  # The output dataframe
 
     print("OversightAgency")
     outdf['OversightAgency'] = df['in_OversightAgency']
 
-    print("RegulatoryDescription")
-    outdf['RegulatoryDescription'] = df['in_RegulatoryDescription']
+    print("OverlayDescription")
+    outdf['OverlayDescription'] = df['in_OverlayDescription']
 
-    print("RegulatoryName")
-    outdf['RegulatoryName'] = df['in_RegulatoryName']
+    print("OverlayName")
+    outdf['OverlayName'] = df['in_OverlayName']
 
-    print("RegulatoryOverlayNativeID")
-    outdf['RegulatoryOverlayNativeID'] = df['in_RegulatoryOverlayNativeID'].astype(str)
+    print("OverlayNativeID")
+    outdf['OverlayNativeID'] = df['in_OverlayNativeID'].astype(str)
 
-    print("RegulatoryStatusCV")
-    outdf['RegulatoryStatusCV'] = df['in_RegulatoryStatusCV']
+    print("OverlayStatusCV")
+    outdf['OverlayStatusCV'] = df['in_OverlayStatusCV']
 
-    print("RegulatoryStatute")
-    outdf['RegulatoryStatute'] = df['in_RegulatoryStatute']
+    print("Statute")
+    outdf['Statute'] = df['in_Statute']
 
-    print("RegulatoryStatuteLink")
-    outdf['RegulatoryStatuteLink'] = df['in_RegulatoryStatuteLink']
+    print("StatuteLink")
+    outdf['StatuteLink'] = df['in_StatuteLink']
 
     print("StatutoryEffectiveDate")
     outdf['StatutoryEffectiveDate'] = df['in_StatutoryEffectiveDate']
@@ -80,8 +80,8 @@ def CreateRegulatoryOverlaysInputFunction(workingDirString, varST, varUUIDType, 
     print("StatutoryEndDate")
     outdf['StatutoryEndDate'] = df['in_StatutoryEndDate']
 
-    print("RegulatoryOverlayTypeCV")
-    outdf['RegulatoryOverlayTypeCV'] = df['in_RegulatoryOverlayTypeCV']
+    print("OverlayTypeCV")
+    outdf['OverlayTypeCV'] = df['in_OverlayTypeCV']
 
     print("WaterSourceTypeCV")
     outdf['WaterSourceTypeCV'] = df['in_WaterSourceTypeCV']
@@ -94,9 +94,9 @@ def CreateRegulatoryOverlaysInputFunction(workingDirString, varST, varUUIDType, 
 
     print("Joining outdf duplicates based on key fields...")
     outdf = outdf.replace(np.nan, "")  # Replaces NaN values with blank.
-    groupbyList = ['RegulatoryName', 'RegulatoryOverlayNativeID', 'RegulatoryStatusCV', 'RegulatoryOverlayTypeCV', 'WaterSourceTypeCV']
+    groupbyList = ['OverlayName', 'OverlayNativeID', 'OverlayStatusCV', 'OverlayTypeCV', 'WaterSourceTypeCV']
     outdf = outdf.groupby(groupbyList).agg(lambda x: ','.join([str(elem) for elem in (list(set(x))) if elem!=''])).replace(np.nan, "").reset_index()
-    outdf = outdf[RegulatoryOverlaysColumnsList]  # reorder the dataframe's columns based on ColumnsList
+    outdf = outdf[OverlaysColumnsList]  # reorder the dataframe's columns based on ColumnsList
 
 
     # Solving WaDE 2.0 Upload Issues
@@ -109,25 +109,25 @@ def CreateRegulatoryOverlaysInputFunction(workingDirString, varST, varUUIDType, 
     # Error Checking Each Field
     ############################################################################
     print("Error checking each field. Purging bad inputs.")
-    dfpurge = pd.DataFrame(columns=RegulatoryOverlaysColumnsList)  # Purge DataFrame to hold removed elements
+    dfpurge = pd.DataFrame(columns=OverlaysColumnsList)  # Purge DataFrame to hold removed elements
     dfpurge['ReasonRemoved'] = ""
     dfpurge['IncompleteField'] = ""
-    outdf, dfpurge = ErrorCheckCodeFunctionsFile.RegulatoryOverlaysTestErrorFunctions(outdf, dfpurge)
+    outdf, dfpurge = ErrorCheckCodeFunctionsFile.OverlaysTestErrorFunctions(outdf, dfpurge)
     print(f'Length of outdf DataFrame: ', len(outdf))
     print(f'Length of dfpurge DataFrame: ', len(dfpurge))
 
 
     # Assign UUID value
     ############################################################################
-    print("Assign RegulatoryOverlayUUID")  # has to be one of the last.
+    print("Assign OverlayUUID")  # has to be one of the last.
     outdf = outdf.reset_index(drop=True)
-    outdf['RegulatoryOverlayUUID'] = outdf.apply(lambda row: assignUUID(row['RegulatoryOverlayNativeID']), axis=1)  # assign based on native ID
-    outdf['RegulatoryOverlayUUID'] = np.where(outdf['RegulatoryOverlayUUID'].duplicated(keep=False),
-                                              outdf['RegulatoryOverlayUUID'].astype(str).str.cat(outdf.groupby('RegulatoryOverlayUUID').cumcount().add(1).astype(str), sep='_'),
-                                              outdf['RegulatoryOverlayUUID'])
+    outdf['OverlayUUID'] = outdf.apply(lambda row: assignUUID(row['OverlayNativeID']), axis=1)  # assign based on native ID
+    outdf['OverlayUUID'] = np.where(outdf['OverlayUUID'].duplicated(keep=False),
+                                              outdf['OverlayUUID'].astype(str).str.cat(outdf.groupby('OverlayUUID').cumcount().add(1).astype(str), sep='_'),
+                                              outdf['OverlayUUID'])
 
-    # Error check RegulatoryOverlayUUID
-    outdf, dfpurge = ErrorCheckCodeFunctionsFile.RegulatoryOverlayUUID_RE_Check(outdf, dfpurge)
+    # Error check OverlayUUID
+    outdf, dfpurge = ErrorCheckCodeFunctionsFile.OverlayUUID_RE_Check(outdf, dfpurge)
 
 
     # Export to new csv
@@ -135,11 +135,11 @@ def CreateRegulatoryOverlaysInputFunction(workingDirString, varST, varUUIDType, 
     print("Exporting dataframe...")
 
     # The working output DataFrame for WaDE 2.0 input.
-    outdf.to_csv('ProcessedInputData/regulatoryoverlays.csv', index=False)
+    outdf.to_csv('ProcessedInputData/overlays.csv', index=False)
 
     # Report purged values.
     if(len(dfpurge.index) > 0): print(f'...', len(dfpurge),  ' records removed.')
     dfpurge.insert(0, 'ReasonRemoved', dfpurge.pop('ReasonRemoved'))
-    dfpurge.to_csv('ProcessedInputData/regulatoryoverlays_missing.csv', index=False)
+    dfpurge.to_csv('ProcessedInputData/overlays_missing.csv', index=False)
 
     print("Done")
