@@ -7,10 +7,10 @@ The following data was used for water allocations...
 
 Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
-**SW QUERY BY SURFACE WATERSHEDS** | surface water right data (SW QUERY BY SURFACE WATERSHEDS).  Downloaded used all washed under the 'ACTIVE' status. | [link](https://infoshare.azwater.gov/docushare/dsweb/View/Collection-86) | not provided
-**Fillings POD** | location information related to the SW QUERY BY SURFACE WATERSHEDS data. | [link](https://gisdata2016-11-18t150447874z-azwater.opendata.arcgis.com/datasets/3d5679bf2e614028bee5de1ffab6659f_0/explore?location=34.241472%2C-112.338377%2C16.70) | not provided
-**Fillings POU** | location information related to the SW QUERY BY SURFACE WATERSHEDS data. | [link](https://gisdata2016-11-18t150447874z-azwater.opendata.arcgis.com/datasets/d8e37678a27548a29a2d12dad971ca98_0/explore?location=33.909970%2C-112.265366%2C15.88) | not provided
-**Well Registry** | groundwater water right data.  Contains use and location info. | [link](https://gisdata2016-11-18t150447874z-azwater.opendata.arcgis.com/datasets/34c92af536ec4047aeaf9d93053dc317_0/explore?location=34.532192%2C-111.899570%2C13.60&showTable=true) | not provided
+**SW QUERY BY SURFACE WATERSHEDS** | Contains water right information. Downloaded used all washed under the 'ACTIVE' status. NOTE: Arizona water law and water rights administration intentionally tracks certain groundwater uses as “surface water rights” or integrates them for management, so this data does contain both SW and GW records.| [link](https://infoshare.azwater.gov/docushare/dsweb/View/Collection-86) | check download source
+**Fillings POD** | location information related to the SW QUERY BY SURFACE WATERSHEDS data, specific to POD. | [link](https://gisdata2016-11-18t150447874z-azwater.opendata.arcgis.com/datasets/azwater::filing-pod/about) | not provided
+**Fillings POU** | location information related to the SW QUERY BY SURFACE WATERSHEDS data, specific to POU | [link](https://gisdata2016-11-18t150447874z-azwater.opendata.arcgis.com/datasets/azwater::filingpou/about) | not provided
+**Well Registry** | Registered wells for groundwater water right data.  Contains use and location info. | [link](https://gisdata2016-11-18t150447874z-azwater.opendata.arcgis.com/datasets/azwater::well-registry-2024/about) | not provided
 
 
 ## Storage for input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
@@ -188,7 +188,7 @@ Purpose: generate a list of sites information.
 - Export output dataframe *sites.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-|    | SiteUUID              | RegulatoryOverlayUUIDs   | WaterSourceUUIDs   | CoordinateAccuracy   | CoordinateMethodCV   | County   |   EPSGCodeCV | GNISCodeCV   | HUC12   | HUC8   |   Latitude |   Longitude | NHDNetworkStatusCV   | NHDProductCV   | PODorPOUSite   | SiteName   | SiteNativeID    | SitePoint   | SiteTypeCV   | StateCV   | USGSSiteID   |
+|    | SiteUUID              | OverlayUUIDs   | WaterSourceUUIDs   | CoordinateAccuracy   | CoordinateMethodCV   | County   |   EPSGCodeCV | GNISCodeCV   | HUC12   | HUC8   |   Latitude |   Longitude | NHDNetworkStatusCV   | NHDProductCV   | PODorPOUSite   | SiteName   | SiteNativeID    | SitePoint   | SiteTypeCV   | StateCV   | USGSSiteID   |
 |---:|:----------------------|:-------------------------|:-------------------|:---------------------|:---------------------|:---------|-------------:|:-------------|:--------|:-------|-----------:|------------:|:---------------------|:---------------|:---------------|:-----------|:----------------|:------------|:-------------|:----------|:-------------|
 |  0 | AZwr_SPODA01001001BAB |                          | AZwr_WSwId2        | WaDE Blank           | WaDE Blank           | Maricopa |         4326 |              |         |        |    33.4648 |    -112.215 |                      |                | POD            | WaDE Blank | PODA01001001BAB |             | Well         | AZ        |              |
 
@@ -291,26 +291,26 @@ The following info is from a data assessment evaluation of the completed data...
 
 Dataset | Num of Source Entries (rows)
 ---------- | ---------- 
-**SW QUERY BY SURFACE WATERSHEDS**  | 360,539
-**Well Registry**  | 232,746
+**SW QUERY BY SURFACE WATERSHEDS**  | 366,628
+**Well Registry**  | 237,026
 
 
 Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
 ---------- | ------------ | ------------ | ------------
-**Compiled WaDE Data** | 167,749 | 50,277 | 286,939 
+**Compiled WaDE Data** | 167,958 | 50,676 | 287,378
 
 
 Assessment of Removed Source Records | Count | Action
 ---------- | ---------- | ----------
-Unused WaterSource Record    | 775 | removed from watersources.csv input
-Unused Site Record                       |4368 | removed from sites.csv input
-Incomplete or bad entry for County       |1599 | removed from sites.csv input
-Incomplete or bad entry for Latitude      |515 | removed from sites.csv input
-Incomplete or bad entry for Longitude     |82 | removed from sites.csv input
-Incomplete or bad entry for AllocationPriorityDate    |2786 | removed from waterallocations.csv input
-Incomplete or bad entry for SiteUUID                  |2482 | removed from waterallocations.csv input
-Incomplete or bad entry for Flow                        |18 | removed from waterallocations.csv input
-Incomplete or bad entry for Volume                      |16 | removed from waterallocations.csv input
+Unused WaterSource Record   | 2019  | removed from watersources.csv input
+Incomplete or bad entry for County       | 6460 | removed from sites.csv input
+Incomplete or bad entry for Longitude    |  665 | removed from sites.csv input
+Incomplete or bad entry for Latitude      | 274 | removed from sites.csv input
+Unused Site Record                         | 96 | removed from sites.csv input
+Incomplete or bad entry for SiteTypeCV     | 42 | removed from sites.csv input
+Incomplete or bad entry for SiteUUID   | 9235 | removed from waterallocations.csv input
+Incomplete or bad entry for Flow        |  20 | removed from waterallocations.csv input
+Incomplete or bad entry for Volume      |  16 | removed from waterallocations.csv input
 
 
 **Figure 1:** Distribution of POD vs POU Sites within the sites.csv
