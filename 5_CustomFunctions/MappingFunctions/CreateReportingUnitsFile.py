@@ -27,14 +27,12 @@ import ErrorCheckCodeFunctionsFile
 
 # Create File Function
 ############################################################################
-def CreateReportingUnitInputFunction(workingDirString, varST, varUUIDType, mainInputFile):
+def CreateReportingUnitInputFunction(workingDirString, varST, varUUIDType, df):
     # Inputs
     ############################################################################
-    print("Reading input csv...")
+    print("Setting inputs...")
     workingDir = workingDirString
     os.chdir(workingDir)
-    fileInput = "RawInputData/" + mainInputFile
-    df = pd.read_csv(fileInput, compression='zip')
 
     # geometry data mandatory for reporting unit information
     fileInput_shape = "RawinputData/P_Geometry.zip"

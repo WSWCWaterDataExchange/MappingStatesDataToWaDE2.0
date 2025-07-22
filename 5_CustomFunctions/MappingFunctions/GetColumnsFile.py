@@ -188,7 +188,7 @@ def GetRegulatoryReportingUnitsColumnsFunction():
     columnslist = [
         "DataPublicationDate",
         "OrganizationUUID",
-        "OverlayUUID ",
+        "OverlayUUID",
         "ReportingUnitUUID"]
     return (columnslist)
 

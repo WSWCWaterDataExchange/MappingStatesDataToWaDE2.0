@@ -1,4 +1,4 @@
-# Date Update: 04/12/2023
+# Date Update: 07/25/2025
 # Purpose: To extract site information and populate dataframe for WaDE
 
 
@@ -31,14 +31,13 @@ import CleanDataCodeFunctionsFile
 
 # Create File Function
 ############################################################################
-def CreateSitesInputFunction(workingDirString, varST, varUUIDType, mainInputFile):
+def CreateSitesInputFunction(workingDirString, varST, varUUIDType, df):
+
     # Inputs
     ############################################################################
-    print("Reading input csv...")
+    print("Setting inputs...")
     workingDir = workingDirString
     os.chdir(workingDir)
-    fileInput = "RawinputData/" + mainInputFile
-    df = pd.read_csv(fileInput, compression='zip')
 
     # Input Data - 'WaDE Input' files.
     dfws = pd.read_csv("ProcessedInputData/watersources.csv").replace(np.nan, "")  # WaterSources dataframe

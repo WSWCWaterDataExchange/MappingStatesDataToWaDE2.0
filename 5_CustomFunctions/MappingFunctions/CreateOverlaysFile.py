@@ -25,14 +25,12 @@ import ErrorCheckCodeFunctionsFile
 
 # Create File Function
 ############################################################################
-def CreateOverlaysInputFunction(workingDirString, varST, varUUIDType, mainInputFile):
+def CreateOverlaysInputFunction(workingDirString, varST, varUUIDType, df):
     # Inputs
     ############################################################################
-    print("Reading input csv...")
+    print("Setting inputs...")
     workingDir = workingDirString
     os.chdir(workingDir)
-    fileInput = "RawinputData/" + mainInputFile
-    df = pd.read_csv(fileInput, compression='zip')
 
     # WaDE columns
     OverlaysColumnsList = GetColumnsFile.GetOverlaysColumnsFunction()
