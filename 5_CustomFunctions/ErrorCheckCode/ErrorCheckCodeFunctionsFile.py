@@ -39,7 +39,7 @@ def WaterSourceTestErrorFunctions(outdf, dfpurge):
 
 
 def SiteTestErrorFunctions(outdf, dfpurge):
-    outdf, dfpurge = RegulatoryOverlayUUIDs_S_Check(outdf, dfpurge)
+    outdf, dfpurge = OverlayUUIDs_S_Check(outdf, dfpurge)
     outdf, dfpurge = WaterSourceUUIDs_S_Check(outdf, dfpurge)
     outdf, dfpurge = CoordinateAccuracy_S_Check(outdf, dfpurge)
     outdf, dfpurge = CoordinateMethodCV_S_Check(outdf, dfpurge)
@@ -76,6 +76,7 @@ def ReportingUnitTestErrorFunctions(outdf, dfpurge):
 
 
 def AllocationAmountTestErrorFunctions(outdf, dfpurge):
+    outdf, dfpurge = ExemptOfVolumeFlowPriority_AA_Check(outdf, dfpurge)
     outdf, dfpurge = MethodUUID_AA_Check(outdf, dfpurge)
     outdf, dfpurge = OrganizationUUID_AA_Check(outdf, dfpurge)
     outdf, dfpurge = SiteUUID_AA_Check(outdf, dfpurge)
@@ -105,7 +106,6 @@ def AllocationAmountTestErrorFunctions(outdf, dfpurge):
     outdf, dfpurge = CustomerTypeCV_AA_Check(outdf, dfpurge)
     outdf, dfpurge = DataPublicationDate_AA_Check(outdf, dfpurge)
     outdf, dfpurge = DataPublicationDOI_AA_Check(outdf, dfpurge)
-    # ExemptOfVolumeFlowPriority ??? outdf, dfpurge = ExemptOfVolumeFlowPriority_AA_Check(outdf, dfpurge)
     outdf, dfpurge = GeneratedPowerCapacityMW_AA_Check(outdf, dfpurge)
     outdf, dfpurge = IrrigatedAcreage_AA_Check(outdf, dfpurge)
     outdf, dfpurge = IrrigationMethodCV_AA_Check(outdf, dfpurge)
@@ -148,17 +148,17 @@ def SiteSpecificAmountsTestErrorFunctions(outdf, dfpurge):
     return(outdf, dfpurge)
 
 
-def RegulatoryOverlaysTestErrorFunctions(outdf, dfpurge):
+def OverlaysTestErrorFunctions(outdf, dfpurge):
     outdf, dfpurge = OversightAgency_RE_Check(outdf, dfpurge)
-    outdf, dfpurge = RegulatoryDescription_RE_Check(outdf, dfpurge)
-    outdf, dfpurge = RegulatoryName_RE_Check(outdf, dfpurge)
-    outdf, dfpurge = RegulatoryOverlayNativeID_RE_Check(outdf, dfpurge)
-    outdf, dfpurge = RegulatoryStatusCV_RE_Check(outdf, dfpurge)
-    outdf, dfpurge = RegulatoryStatute_RE_Check(outdf, dfpurge)
-    outdf, dfpurge = RegulatoryStatuteLink_RE_Check(outdf, dfpurge)
+    outdf, dfpurge = OverlayDescription_RE_Check(outdf, dfpurge)
+    outdf, dfpurge = OverlayName_RE_Check(outdf, dfpurge)
+    outdf, dfpurge = OverlayNativeID_RE_Check(outdf, dfpurge)
+    outdf, dfpurge = OverlayStatusCV_RE_Check(outdf, dfpurge)
+    outdf, dfpurge = Statute_RE_Check(outdf, dfpurge)
+    outdf, dfpurge = StatuteLink_RE_Check(outdf, dfpurge)
     outdf, dfpurge = StatutoryEffectiveDate_RE_Check(outdf, dfpurge)
     outdf, dfpurge = StatutoryEndDate_RE_Check(outdf, dfpurge)
-    outdf, dfpurge = RegulatoryOverlayTypeCV_RE_Check(outdf, dfpurge)
+    outdf, dfpurge = OverlayTypeCV_RE_Check(outdf, dfpurge)
     outdf, dfpurge = WaterSourceTypeCV_RE_Check(outdf, dfpurge)
     return(outdf, dfpurge)
 
@@ -167,7 +167,7 @@ def RegulatoryReportingUnitsErrorFunctions(outdf, dfpurge):
     # DataPublicationDate
     outdf, dfpurge = OrganizationUUID_SS_Check(outdf, dfpurge)
     outdf, dfpurge = ReportingUnitUUID_RU_Check(outdf, dfpurge)
-    outdf, dfpurge = RegulatoryOverlayUUID_RE_Check(outdf, dfpurge)
+    outdf, dfpurge = OverlayUUID_RE_Check(outdf, dfpurge)
     return(outdf, dfpurge)
 
 
@@ -206,7 +206,7 @@ def AggregatedAmountsErrorFunctions(outdf, dfpurge):
 
 # WaterSourceUUID_nvarchar(250)_-
 def WaterSourceUUID_W_Check(dfx, dfy):
-    selectionVar = (dfx["WaterSourceUUID"].isnull()) | (dfx["WaterSourceUUID"] == '') | (dfx['WaterSourceUUID'].str.len() > 250)
+    selectionVar = (dfx["WaterSourceUUID"].isnull()) | (dfx["WaterSourceUUID"].isna()) | (dfx["WaterSourceUUID"] == '') | (dfx['WaterSourceUUID'].str.len() > 250)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for WaterSourceUUID').reset_index()
     mask['IncompleteField'] = mask['WaterSourceUUID']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -227,7 +227,7 @@ def GNISFeatureNameCV_W_Check(dfx, dfy):
 
 # WaterQualityIndicatorCV_nvarchar(100)_-
 def WaterQualityIndicatorCV_W_Check(dfx, dfy):
-    selectionVar = (dfx["WaterQualityIndicatorCV"].isnull()) | (dfx["WaterQualityIndicatorCV"] == '') | (dfx['WaterQualityIndicatorCV'].str.len() > 250)
+    selectionVar = (dfx["WaterQualityIndicatorCV"].isnull()) | (dfx["WaterQualityIndicatorCV"].isna()) | (dfx["WaterQualityIndicatorCV"] == '') | (dfx['WaterQualityIndicatorCV'].str.len() > 250)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for WaterQualityIndicatorCV').reset_index()
     mask['IncompleteField'] = mask['WaterQualityIndicatorCV']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -267,16 +267,16 @@ def WaterSourceTypeCV_W_Check(dfx, dfy):
 
 # SiteUUID_nvarchar(200)_
 def SiteUUID_S_Check(dfx, dfy):
-    selectionVar = (dfx["SiteUUID"].isnull()) | (dfx["SiteUUID"] == '') | (dfx['SiteUUID'].str.len() > 200)
+    selectionVar = (dfx["SiteUUID"].isnull()) | (dfx["SiteUUID"].isna()) | (dfx["SiteUUID"] == '') | (dfx['SiteUUID'].str.len() > 200)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for SiteUUID').reset_index()
     mask['IncompleteField'] = mask['SiteUUID']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
 
 
-# WaterSourceUUIDs_nvarchar(200)_-
+# WaterSourceUUIDs_-
 def WaterSourceUUIDs_S_Check(dfx, dfy):
-    selectionVar = (dfx["WaterSourceUUIDs"].isnull()) | (dfx["WaterSourceUUIDs"] == '') | (dfx['WaterSourceUUIDs'].str.len() > 200)
+    selectionVar = (dfx["WaterSourceUUIDs"].isnull()) | (dfx["WaterSourceUUIDs"].isna()) | (dfx["WaterSourceUUIDs"] == '')
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for WaterSourceUUIDs').reset_index()
     mask['IncompleteField'] = mask['WaterSourceUUIDs']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -312,7 +312,7 @@ def County_S_Check(dfx, dfy):
 
 # EPSGCodeCV_nvarchar(50)_-
 def EPSGCodeCV_S_Check(dfx, dfy):
-    selectionVar= (dfx["EPSGCodeCV"].isnull()) | (dfx["EPSGCodeCV"] == '') | (dfx['EPSGCodeCV'].str.len() > 50)
+    selectionVar= (dfx["EPSGCodeCV"].isnull()) | (dfx["EPSGCodeCV"].isna()) | (dfx["EPSGCodeCV"] == '') | (dfx['EPSGCodeCV'].str.len() > 50)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for EPSGCodeCV').reset_index()
     mask['IncompleteField'] = mask['EPSGCodeCV']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -377,7 +377,7 @@ def HUC8_S_Check(dfx, dfy):
 # Latitude_float_-
 def Latitude_S_Check(dfx, dfy):
     # check for string values with a ','
-    selectionVar = (dfx["Latitude"].isnull()) | (dfx["Latitude"].astype(str) == "") | (dfx["Latitude"].astype(str).str.contains(","))
+    selectionVar = (dfx["Latitude"].isnull()) | (dfx["Latitude"].isna()) | (dfx["Latitude"].astype(str) == "") | (dfx["Latitude"].astype(str).str.contains(","))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Latitude').reset_index()
     mask['IncompleteField'] = mask['Latitude']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -395,7 +395,7 @@ def Latitude_S_Check(dfx, dfy):
 # Longitude_float_-
 def Longitude_S_Check(dfx, dfy):
     # check for string values with a ','
-    selectionVar = (dfx["Longitude"].isnull()) | (dfx["Longitude"].astype(str) == "") | (dfx["Longitude"].astype(str).str.contains(","))
+    selectionVar = (dfx["Longitude"].isnull()) | (dfx["Longitude"].isna()) | (dfx["Longitude"].astype(str) == "") | (dfx["Longitude"].astype(str).str.contains(","))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Longitude').reset_index()
     mask['IncompleteField'] = mask['Longitude']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -437,11 +437,11 @@ def PODorPOUSite_S_Check(dfx, dfy):
     return (dfx, dfy)
 
 
-# RegulatoryOverlayUUIDs_nvarchar(200)_
-def RegulatoryOverlayUUIDs_S_Check(dfx, dfy):
-    selectionVar = (dfx['RegulatoryOverlayUUIDs'].str.len() > 200)
-    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for ReportingUnitUUID').reset_index()
-    mask['IncompleteField'] = mask['RegulatoryOverlayUUIDs']
+# OverlayUUIDs_nvarchar(200)_
+def OverlayUUIDs_S_Check(dfx, dfy):
+    selectionVar = (dfx['OverlayUUIDs'].str.len() > 200)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for OverlayUUIDs').reset_index()
+    mask['IncompleteField'] = mask['OverlayUUIDs']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
 
@@ -500,7 +500,7 @@ def USGSSiteID_S_Check(dfx, dfy):
 
 # ReportingUnitUUID_nvarchar(200)_
 def ReportingUnitUUID_RU_Check(dfx, dfy):
-    selectionVar = (dfx["ReportingUnitUUID"].isnull()) | (dfx["ReportingUnitUUID"] == '') | (dfx['ReportingUnitUUID'].str.len() > 200)
+    selectionVar = (dfx["ReportingUnitUUID"].isnull()) | (dfx["ReportingUnitUUID"].isna()) |  (dfx["ReportingUnitUUID"] == '') | (dfx['ReportingUnitUUID'].str.len() > 200)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for ReportingUnitUUID').reset_index()
     mask['IncompleteField'] = mask['ReportingUnitUUID']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -509,7 +509,7 @@ def ReportingUnitUUID_RU_Check(dfx, dfy):
 
 # EPSGCodeCV_nvarchar(50)_Yes
 def EPSGCodeCV_RU_Check(dfx, dfy):
-    selectionVar = (dfx["EPSGCodeCV"].isnull()) | (dfx["EPSGCodeCV"] == '') |  (dfx['EPSGCodeCV'].str.len() > 50)
+    selectionVar = (dfx["EPSGCodeCV"].isnull()) | (dfx["EPSGCodeCV"].isna()) | (dfx["EPSGCodeCV"] == '') |  (dfx['EPSGCodeCV'].str.len() > 50)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for EPSGCodeCV').reset_index()
     mask['IncompleteField'] = mask['EPSGCodeCV']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -518,7 +518,7 @@ def EPSGCodeCV_RU_Check(dfx, dfy):
 
 # Geometry_Geometry_Yes
 def Geometry_RU_Check(dfx, dfy):
-    selectionVar = (dfx["Geometry"].isnull()) | (dfx["Geometry"] == '')
+    selectionVar = (dfx["Geometry"].isnull()) | (dfx["Geometry"].isna()) | (dfx["Geometry"] == '')
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Geometry').reset_index()
     mask['IncompleteField'] = mask['Geometry']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -526,7 +526,7 @@ def Geometry_RU_Check(dfx, dfy):
 
 # ReportingUnitName_nvarchar(250)_
 def ReportingUnitName_RU_Check(dfx, dfy):
-    selectionVar = (dfx["ReportingUnitName"].isnull()) | (dfx["ReportingUnitName"] == '') | (dfx['ReportingUnitName'].astype(str).str.len() > 250)
+    selectionVar = (dfx["ReportingUnitName"].isnull()) | (dfx["ReportingUnitName"].isna()) | (dfx["ReportingUnitName"] == '') | (dfx['ReportingUnitName'].astype(str).str.len() > 250)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for ReportingUnitName').reset_index()
     mask['IncompleteField'] = mask['ReportingUnitName']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -535,7 +535,7 @@ def ReportingUnitName_RU_Check(dfx, dfy):
 
 # ReportingUnitNativeID_nvarchar(250)_
 def ReportingUnitNativeID_RU_Check(dfx, dfy):
-    selectionVar = (dfx["ReportingUnitNativeID"].isnull()) | (dfx["ReportingUnitNativeID"] == '') | (dfx['ReportingUnitNativeID'].astype(str).str.len() > 250)
+    selectionVar = (dfx["ReportingUnitNativeID"].isnull()) | (dfx["ReportingUnitNativeID"].isna()) | (dfx["ReportingUnitNativeID"] == '') | (dfx['ReportingUnitNativeID'].astype(str).str.len() > 250)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for ReportingUnitNativeID').reset_index()
     mask['IncompleteField'] = mask['ReportingUnitNativeID']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -571,7 +571,7 @@ def ReportingUnitUpdateDate_RU_Check(dfx, dfy):
 
 # StateCV_nvarchar(2)_
 def StateCV_RU_Check(dfx, dfy):
-    selectionVar = (dfx["StateCV"].isnull()) | (dfx["StateCV"] == '') | (dfx['StateCV'].str.len() > 2)
+    selectionVar = (dfx["StateCV"].isnull()) | (dfx["StateCV"].isna()) | (dfx["StateCV"] == '') | (dfx['StateCV'].str.len() > 2)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for StateCV').reset_index()
     mask['IncompleteField'] = mask['StateCV']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -582,9 +582,18 @@ def StateCV_RU_Check(dfx, dfy):
 ########################################################################################################################
 ########################################################################################################################
 
+# ExemptOfVolumeFlowPriority_bit_Yes
+def ExemptOfVolumeFlowPriority_AA_Check(dfx, dfy):
+    selectionVar = ~dfx["ExemptOfVolumeFlowPriority"].astype(str).isin(["0", "1", "nan"])
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for ExemptOfVolumeFlowPriority').reset_index()
+    mask['IncompleteField'] = mask['ExemptOfVolumeFlowPriority']
+    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
+    return (dfx, dfy)
+
+
 # AllocationUUID_nvarchar(250)_-
 def AllocationUUID_AA_Check(dfx, dfy):
-    selectionVar = ((dfx["AllocationUUID"].isnull()) | (dfx["AllocationUUID"] == '') | (dfx['AllocationUUID'].str.len() > 250))
+    selectionVar = ((dfx["AllocationUUID"].isnull()) | (dfx["AllocationUUID"].isna()) | (dfx["AllocationUUID"] == '') | (dfx['AllocationUUID'].str.len() > 250))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for AllocationUUID').reset_index()
     mask['IncompleteField'] = mask['AllocationUUID']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -593,7 +602,7 @@ def AllocationUUID_AA_Check(dfx, dfy):
 
 # MethodUUID_nvarchar(200)_-
 def MethodUUID_AA_Check(dfx, dfy):
-    selectionVar = ((dfx["MethodUUID"].isnull()) | (dfx["MethodUUID"] == '') | (dfx['MethodUUID'].str.len() > 200) | (dfx["MethodUUID"].str.contains(',') == True))
+    selectionVar = ((dfx["MethodUUID"].isnull()) | (dfx["MethodUUID"].isna()) | (dfx["MethodUUID"] == '') | (dfx['MethodUUID'].str.len() > 200) | (dfx["MethodUUID"].str.contains(',') == True))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for MethodUUID').reset_index()
     mask['IncompleteField'] = mask['MethodUUID']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -602,7 +611,7 @@ def MethodUUID_AA_Check(dfx, dfy):
 
 # VariableSpecificUUID_nvarchar(200)_-
 def VariableSpecificUUID_AA_Check(dfx, dfy):
-    selectionVar = ((dfx["VariableSpecificUUID"].isnull()) | (dfx["VariableSpecificUUID"] == '') | (dfx['VariableSpecificUUID'].str.len() > 200) | (dfx["VariableSpecificUUID"].str.contains(',') == True))
+    selectionVar = ((dfx["VariableSpecificUUID"].isnull()) | (dfx["VariableSpecificUUID"].isna()) | (dfx["VariableSpecificUUID"] == '') | (dfx['VariableSpecificUUID'].str.len() > 200) | (dfx["VariableSpecificUUID"].str.contains(',') == True))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for VariableSpecificUUID').reset_index()
     mask['IncompleteField'] = mask['VariableSpecificUUID']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -611,7 +620,7 @@ def VariableSpecificUUID_AA_Check(dfx, dfy):
 
 # OrganizationUUID_nvarchar(200)_-
 def OrganizationUUID_AA_Check(dfx, dfy):
-    selectionVar = ((dfx["OrganizationUUID"].isnull()) | (dfx["OrganizationUUID"] == '') | (dfx['OrganizationUUID'].str.len() > 200) | (dfx["OrganizationUUID"].str.contains(',') == True))
+    selectionVar = ((dfx["OrganizationUUID"].isnull()) | (dfx["OrganizationUUID"].isna()) | (dfx["OrganizationUUID"] == '') | (dfx['OrganizationUUID'].str.len() > 200) | (dfx["OrganizationUUID"].str.contains(',') == True))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for OrganizationUUID').reset_index()
     mask['IncompleteField'] = mask['OrganizationUUID']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -620,7 +629,7 @@ def OrganizationUUID_AA_Check(dfx, dfy):
 
 # SiteUUID_nvarchar(max)_-
 def SiteUUID_AA_Check(dfx, dfy):
-    selectionVar = (dfx["SiteUUID"].isnull()) | (dfx["SiteUUID"] == '')
+    selectionVar = (dfx["SiteUUID"].isnull()) | (dfx["SiteUUID"].isna()) | (dfx["SiteUUID"] == '')
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for SiteUUID').reset_index()
     mask['IncompleteField'] = mask['SiteUUID']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -795,13 +804,13 @@ def AllocationExpirationDate_AA_Check(dfx, dfy):
 # AllocationFlow_CFS_float_Yes
 def AllocationFlow_CFS_AA_Check(dfx, dfy):
     # check for string values with a ','
-    selectionVar = (dfx['ExemptOfVolumeFlowPriority'] == "0") & (dfx['AllocationFlow_CFS'].astype(str).str.contains(','))
+    selectionVar = (dfx['AllocationFlow_CFS'].astype(str).str.contains(','))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Flow').reset_index()
     mask['IncompleteField'] = mask['AllocationFlow_CFS']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
 
     # check for bad float values
-    selectionVar = (dfx['ExemptOfVolumeFlowPriority'] == "0") & (dfx['AllocationFlow_CFS'].replace("", 0).fillna(0).astype(float) < 0.0)
+    selectionVar = (dfx["ExemptOfVolumeFlowPriority"].astype(str) == "0") & (dfx['AllocationFlow_CFS'].replace("", 0).fillna(0).astype(float) < 0.0)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Flow').reset_index()
     mask['IncompleteField'] = mask['AllocationFlow_CFS']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -813,13 +822,13 @@ def AllocationFlow_CFS_AA_Check(dfx, dfy):
 # AllocationVolume_AF_float_Yes
 def AllocationVolume_AF_AA_Check(dfx, dfy):
     # check for string values with a ','
-    selectionVar = (dfx['ExemptOfVolumeFlowPriority'] == "0") & (dfx['AllocationVolume_AF'].astype(str).str.contains(','))
+    selectionVar = (dfx['AllocationVolume_AF'].astype(str).str.contains(','))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Volume').reset_index()
     mask['IncompleteField'] = mask['AllocationVolume_AF']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
 
     # check for bad float values
-    selectionVar = (dfx['ExemptOfVolumeFlowPriority'] == "0") & (dfx['AllocationVolume_AF'].replace("", 0).fillna(0).astype(float) < 0.0)
+    selectionVar = (dfx["ExemptOfVolumeFlowPriority"].astype(str) == "0") & (dfx['AllocationVolume_AF'].replace("", 0).fillna(0).astype(float) < 0.0)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Volume').reset_index()
     mask['IncompleteField'] = mask['AllocationVolume_AF']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -857,10 +866,12 @@ def AllocationOwner_AA_Check(dfx, dfy):
 
 # AllocationPriorityDate_string_-
 def AllocationPriorityDate_AA_Check(dfx, dfy):
-    selectionVar = ((dfx['ExemptOfVolumeFlowPriority'] == "0") & ((dfx["AllocationPriorityDate"].isnull()) |
-                                                                  (dfx["AllocationPriorityDate"] == "") |
-                                                                  (dfx["AllocationPriorityDate"] == " ") |
-                                                                  (dfx["AllocationPriorityDate"].astype(str).str.contains(','))))
+    selectionVar = ((dfx["ExemptOfVolumeFlowPriority"].astype(str) == "0") &
+                    (dfx["AllocationPriorityDate"].isna() |
+                    (dfx["AllocationPriorityDate"].astype(str).str.strip() == "") |
+                    (dfx["AllocationPriorityDate"].astype(str).str.contains(",", na=False)) |
+                    (dfx["AllocationPriorityDate"].astype(str).str.contains("nan", na=False)))
+                    )
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for AllocationPriorityDate').reset_index()
     mask['IncompleteField'] = mask['AllocationPriorityDate']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -934,7 +945,7 @@ def CustomerTypeCV_AA_Check(dfx, dfy):
 
 # DataPublicationDate_string_-
 def DataPublicationDate_AA_Check(dfx, dfy):
-    selectionVar = ((dfx["DataPublicationDate"].isnull()) | (dfx["DataPublicationDate"] == '') | (dfx["DataPublicationDate"].str.contains(',') == True))
+    selectionVar = ((dfx["DataPublicationDate"].isnull()) | (dfx["DataPublicationDate"].isna()) | (dfx["DataPublicationDate"] == '') | (dfx["DataPublicationDate"].str.contains(',') == True))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for DataPublicationDate').reset_index()
     mask['IncompleteField'] = mask['DataPublicationDate']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -946,15 +957,6 @@ def DataPublicationDOI_AA_Check(dfx, dfy):
     selectionVar = (dfx["DataPublicationDOI"].str.len() > 100)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for DataPublicationDOI').reset_index()
     mask['IncompleteField'] = mask['DataPublicationDOI']
-    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
-    return (dfx, dfy)
-
-
-# ExemptOfVolumeFlowPriority_bit_Yes
-def ExemptOfVolumeFlowPriority_AA_Check(dfx, dfy):
-    selectionVar = (dfx["ExemptOfVolumeFlowPriority"] > 1)
-    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for ExemptOfVolumeFlowPriority').reset_index()
-    mask['IncompleteField'] = mask['ExemptOfVolumeFlowPriority']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
 
@@ -1056,7 +1058,7 @@ def WaterAllocationNativeURL_AA_Check(dfx, dfy):
 
 # MethodUUID_nvarchar(250)_-
 def MethodUUID_AG_Check(dfx, dfy):
-    selectionVar = (dfx["MethodUUID"].isnull()) | (dfx["MethodUUID"] == '') | (dfx['MethodUUID'].str.len() > 250)
+    selectionVar = (dfx["MethodUUID"].isnull()) | (dfx["MethodUUID"].isna()) | (dfx["MethodUUID"] == '') | (dfx['MethodUUID'].str.len() > 250)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for MethodUUID').reset_index()
     mask['IncompleteField'] = mask['MethodUUID']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -1065,7 +1067,7 @@ def MethodUUID_AG_Check(dfx, dfy):
 
 # VariableSpecificUUID_nvarchar(250)_-
 def VariableSpecificUUID_AG_Check(dfx, dfy):
-    selectionVar = (dfx["VariableSpecificUUID"].isnull()) | (dfx["VariableSpecificUUID"] == '') | (dfx['VariableSpecificUUID'].str.len() > 250)
+    selectionVar = (dfx["VariableSpecificUUID"].isnull()) | (dfx["VariableSpecificUUID"].isna()) | (dfx["VariableSpecificUUID"] == '') | (dfx['VariableSpecificUUID'].str.len() > 250)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for VariableSpecificUUID').reset_index()
     mask['IncompleteField'] = mask['VariableSpecificUUID']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -1074,7 +1076,7 @@ def VariableSpecificUUID_AG_Check(dfx, dfy):
 
 # WaterSourceUUID_nvarchar(250)_-
 def WaterSourceUUID_AG_Check(dfx, dfy):
-    selectionVar = (dfx["WaterSourceUUID"].isnull()) | (dfx["WaterSourceUUID"] == '') | (dfx['WaterSourceUUID'].str.len() > 250)
+    selectionVar = (dfx["WaterSourceUUID"].isnull()) | (dfx["WaterSourceUUID"].isna()) | (dfx["WaterSourceUUID"] == '') | (dfx['WaterSourceUUID'].str.len() > 250)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for WaterSourceUUID').reset_index()
     mask['IncompleteField'] = mask['WaterSourceUUID']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -1083,7 +1085,7 @@ def WaterSourceUUID_AG_Check(dfx, dfy):
 
 # OrganizationUUID_nvarchar(250)_-
 def OrganizationUUID_AG_Check(dfx, dfy):
-    selectionVar = (dfx["OrganizationUUID"].isnull()) | (dfx["OrganizationUUID"] == '') | (dfx['OrganizationUUID'].str.len() > 250)
+    selectionVar = (dfx["OrganizationUUID"].isnull()) | (dfx["OrganizationUUID"].isna()) | (dfx["OrganizationUUID"] == '') | (dfx['OrganizationUUID'].str.len() > 250)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for OrganizationUUID').reset_index()
     mask['IncompleteField'] = mask['OrganizationUUID']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -1092,7 +1094,7 @@ def OrganizationUUID_AG_Check(dfx, dfy):
 
 # ReportingUnitUUID_nvarchar(200)_-
 def ReportingUnitUUID_AG_Check(dfx, dfy):
-    selectionVar = (dfx["ReportingUnitUUID"].isnull()) | (dfx["ReportingUnitUUID"] == '') | (dfx['ReportingUnitUUID'].str.len() > 200)
+    selectionVar = (dfx["ReportingUnitUUID"].isnull()) | (dfx["ReportingUnitUUID"].isna()) | (dfx["ReportingUnitUUID"] == '') | (dfx['ReportingUnitUUID'].str.len() > 200)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for ReportingUnitUUID').reset_index()
     mask['IncompleteField'] = mask['ReportingUnitUUID']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -1285,7 +1287,7 @@ def TimeframeStart_AG_Check(dfx, dfy):
 
 # MethodUUID_nvarchar(200)_-
 def MethodUUID_SS_Check(dfx, dfy):
-    selectionVar = (dfx["MethodUUID"].isnull()) | (dfx["MethodUUID"] == '') | (dfx['MethodUUID'].str.len() > 200)
+    selectionVar = (dfx["MethodUUID"].isnull()) | (dfx["MethodUUID"].isna()) | (dfx["MethodUUID"] == '') | (dfx['MethodUUID'].str.len() > 200)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for MethodUUID').reset_index()
     mask['IncompleteField'] = mask['MethodUUID']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -1294,7 +1296,7 @@ def MethodUUID_SS_Check(dfx, dfy):
 
 # VariableSpecificUUID_nvarchar(200)_-
 def VariableSpecificUUID_SS_Check(dfx, dfy):
-    selectionVar = (dfx["VariableSpecificUUID"].isnull()) | (dfx["VariableSpecificUUID"] == '') | (dfx['VariableSpecificUUID'].str.len() > 200)
+    selectionVar = (dfx["VariableSpecificUUID"].isnull()) | (dfx["VariableSpecificUUID"].isna()) | (dfx["VariableSpecificUUID"] == '') | (dfx['VariableSpecificUUID'].str.len() > 200)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for VariableSpecificUUID').reset_index()
     mask['IncompleteField'] = mask['VariableSpecificUUID']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -1303,7 +1305,7 @@ def VariableSpecificUUID_SS_Check(dfx, dfy):
 
 # WaterSourceUUID_nvarchar(200)_-
 def WaterSourceUUID_SS_Check(dfx, dfy):
-    selectionVar = (dfx["WaterSourceUUID"].isnull()) | (dfx["WaterSourceUUID"] == '') | (dfx['WaterSourceUUID'].str.len() > 200) | (dfx["WaterSourceUUID"].str.contains(','))
+    selectionVar = (dfx["WaterSourceUUID"].isnull()) | (dfx["WaterSourceUUID"].isna()) | (dfx["WaterSourceUUID"] == '') | (dfx['WaterSourceUUID'].str.len() > 200) | (dfx["WaterSourceUUID"].str.contains(','))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for WaterSourceUUID').reset_index()
     mask['IncompleteField'] = mask['WaterSourceUUID']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -1312,7 +1314,7 @@ def WaterSourceUUID_SS_Check(dfx, dfy):
 
 # OrganizationUUID_nvarchar(200)_-
 def OrganizationUUID_SS_Check(dfx, dfy):
-    selectionVar = (dfx["OrganizationUUID"].isnull()) | (dfx["OrganizationUUID"] == '') | (dfx['OrganizationUUID'].str.len() > 200)
+    selectionVar = (dfx["OrganizationUUID"].isnull()) | (dfx["OrganizationUUID"].isna()) | (dfx["OrganizationUUID"] == '') | (dfx['OrganizationUUID'].str.len() > 200)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for OrganizationUUID').reset_index()
     mask['IncompleteField'] = mask['OrganizationUUID']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -1321,7 +1323,7 @@ def OrganizationUUID_SS_Check(dfx, dfy):
 
 # SiteUUID_nvarchar(200)_-
 def SiteUUID_SS_Check(dfx, dfy):
-    selectionVar = (dfx["SiteUUID"].isnull()) | (dfx["SiteUUID"] == '') | (dfx['SiteUUID'].str.len() > 200)
+    selectionVar = (dfx["SiteUUID"].isnull()) | (dfx["SiteUUID"].isna()) | (dfx["SiteUUID"] == '') | (dfx['SiteUUID'].str.len() > 200)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for SiteUUID').reset_index()
     mask['IncompleteField'] = mask['SiteUUID']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -1469,7 +1471,7 @@ def PowerType_SS_Check(dfx, dfy):
 # PrimaryUseCategory_nvarchar(250)_Yes
 # This might be bugged.  Issue of must have PrimaryUseCategory for Beneficial Use to be uploaded.
 def PrimaryUseCategory_SS_Check(dfx, dfy):
-    selectionVar = (dfx["PrimaryUseCategory"].str.len() > 250) | (dfx["PrimaryUseCategory"].isnull()) | (dfx["PrimaryUseCategory"] == '')
+    selectionVar = (dfx["PrimaryUseCategory"].str.len() > 250) | (dfx["PrimaryUseCategory"].isnull()) | (dfx["PrimaryUseCategory"].isna()) | (dfx["PrimaryUseCategory"] == '')
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for PrimaryUseCategory').reset_index()
     mask['IncompleteField'] = mask['PrimaryUseCategory']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -1480,6 +1482,7 @@ def PrimaryUseCategory_SS_Check(dfx, dfy):
 def ReportYearCV_SS_Check(dfx, dfy):
     selectionVar = (dfx["ReportYearCV"].astype(str).str.len() > 4) | \
                    (dfx["ReportYearCV"].isnull()) | \
+                   (dfx["ReportYearCV"].isna()) | \
                    (dfx["ReportYearCV"] == "") | \
                    (dfx["ReportYearCV"].astype(int) <= 0) | \
                    (dfx["ReportYearCV"].astype(str) == "0")
@@ -1500,7 +1503,7 @@ def SDWISIdentifier_SS_Check(dfx, dfy):
 
 # TimeframeEnd_BigInt_-
 def TimeframeEnd_SS_Check(dfx, dfy):
-    selectionVar = (dfx["TimeframeEnd"].isnull()) | (dfx["TimeframeEnd"] == "") | (dfx["TimeframeEnd"].str.contains(','))
+    selectionVar = (dfx["TimeframeEnd"].isnull()) | (dfx["TimeframeEnd"].isna()) | (dfx["TimeframeEnd"] == "") | (dfx["TimeframeEnd"].str.contains(','))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for TimeframeEnd').reset_index()
     mask['IncompleteField'] = mask['TimeframeEnd']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -1509,7 +1512,7 @@ def TimeframeEnd_SS_Check(dfx, dfy):
 
 # TimeframeStart_BigInt_-
 def TimeframeStart_SS_Check(dfx, dfy):
-    selectionVar = (dfx["TimeframeStart"].isnull()) |  (dfx["TimeframeStart"] == "") |  (dfx["TimeframeStart"].str.contains(','))
+    selectionVar = (dfx["TimeframeStart"].isnull()) | (dfx["TimeframeStart"].isna()) | (dfx["TimeframeStart"] == "") | (dfx["TimeframeStart"].str.contains(','))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for TimeframeStart').reset_index()
     mask['IncompleteField'] = mask['TimeframeStart']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -1537,81 +1540,81 @@ def DuplicateUniqueCombo_SS_Check(dfx, dfy):
 ########################################################################################################################
 ########################################################################################################################
 
-# RegulatoryOverlayUUID_nvarchar(250)_-
-def RegulatoryOverlayUUID_RE_Check(dfx, dfy):
-    selectionVar = (dfx["RegulatoryOverlayUUID"].isnull()) |(dfx["RegulatoryOverlayUUID"] == "") |(dfx['RegulatoryOverlayUUID'].astype(str).str.len() > 250)
-    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for RegulatoryOverlayUUID').reset_index()
-    mask['IncompleteField'] = mask['RegulatoryOverlayUUID']
+# OverlayUUID_nvarchar(250)_-
+def OverlayUUID_RE_Check(dfx, dfy):
+    selectionVar = (dfx["OverlayUUID"].isnull()) | (dfx["OverlayUUID"].isna()) |  (dfx["OverlayUUID"] == "") | (dfx['OverlayUUID'].astype(str).str.len() > 250)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for OverlayUUID').reset_index()
+    mask['IncompleteField'] = mask['OverlayUUID']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
 
 
 # OversightAgency_nvarchar(250)_-
 def OversightAgency_RE_Check(dfx, dfy):
-    selectionVar = (dfx["OversightAgency"].isnull()) | (dfx["OversightAgency"] == "") |(dfx['OversightAgency'].astype(str).str.len() > 250)
+    selectionVar = (dfx["OversightAgency"].isnull()) | (dfx["OversightAgency"].isna()) | (dfx["OversightAgency"] == "") |(dfx['OversightAgency'].astype(str).str.len() > 250)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for OversightAgency').reset_index()
     mask['IncompleteField'] = mask['OversightAgency']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
 
 
-# RegulatoryDescription_nvarchar(MAX)_-
-def RegulatoryDescription_RE_Check(dfx, dfy):
-    selectionVar = (dfx["RegulatoryDescription"].isnull()) | (dfx["RegulatoryDescription"] == "")
-    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for RegulatoryDescription').reset_index()
-    mask['IncompleteField'] = mask['RegulatoryDescription']
+# OverlayDescription_nvarchar(MAX)_-
+def OverlayDescription_RE_Check(dfx, dfy):
+    selectionVar = (dfx["OverlayDescription"].isnull()) | (dfx["OverlayDescription"].isna()) | (dfx["OverlayDescription"] == "")
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for OverlayDescription').reset_index()
+    mask['IncompleteField'] = mask['OverlayDescription']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
 
 
-# RegulatoryName_nvarchar(50)_-
-def RegulatoryName_RE_Check(dfx, dfy):
-    selectionVar = (dfx["RegulatoryName"].isnull()) | (dfx["RegulatoryName"] == "") | (dfx['RegulatoryName'].astype(str).str.len() > 50)
-    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for RegulatoryName').reset_index()
-    mask['IncompleteField'] = mask['RegulatoryName']
+# OverlayName_nvarchar(50)_-
+def OverlayName_RE_Check(dfx, dfy):
+    selectionVar = (dfx["OverlayName"].isnull()) | (dfx["OverlayName"].isna()) | (dfx["OverlayName"] == "") | (dfx['OverlayName'].astype(str).str.len() > 50)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for OverlayName').reset_index()
+    mask['IncompleteField'] = mask['OverlayName']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
 
 
-# RegulatoryOverlayNativeID_nvarchar(250)_Yes
-def RegulatoryOverlayNativeID_RE_Check(dfx, dfy):
-    selectionVar = (dfx["RegulatoryOverlayNativeID"].astype(str).str.len() > 250)
-    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for RegulatoryOverlayNativeID').reset_index()
-    mask['IncompleteField'] = mask['RegulatoryOverlayNativeID']
+# OverlayNativeID_nvarchar(250)_Yes
+def OverlayNativeID_RE_Check(dfx, dfy):
+    selectionVar = (dfx["OverlayNativeID"].astype(str).str.len() > 250)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for OverlayNativeID').reset_index()
+    mask['IncompleteField'] = mask['OverlayNativeID']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
 
 
-# RegulatoryStatusCV_nvarchar(50)_-
-def RegulatoryStatusCV_RE_Check(dfx, dfy):
-    selectionVar = (dfx["RegulatoryStatusCV"].isnull()) | (dfx["RegulatoryStatusCV"] == "") | (dfx['RegulatoryStatusCV'].astype(str).str.len() > 50)
-    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for RegulatoryStatusCV').reset_index()
-    mask['IncompleteField'] = mask['RegulatoryStatusCV']
+# OverlayStatusCV_nvarchar(50)_-
+def OverlayStatusCV_RE_Check(dfx, dfy):
+    selectionVar = (dfx["OverlayStatusCV"].isnull()) | (dfx["OverlayStatusCV"].isna()) | (dfx["OverlayStatusCV"] == "") | (dfx['OverlayStatusCV'].astype(str).str.len() > 50)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for OverlayStatusCV').reset_index()
+    mask['IncompleteField'] = mask['OverlayStatusCV']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
 
 
-# RegulatoryStatute_nvarchar(500)_Yes
-def RegulatoryStatute_RE_Check(dfx, dfy):
-    selectionVar = (dfx["RegulatoryStatute"].astype(str).str.len() > 500)
-    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for RegulatoryStatute').reset_index()
-    mask['IncompleteField'] = mask['RegulatoryStatute']
+# Statute_nvarchar(500)_Yes
+def Statute_RE_Check(dfx, dfy):
+    selectionVar = (dfx["Statute"].astype(str).str.len() > 500)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Statute').reset_index()
+    mask['IncompleteField'] = mask['Statute']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
 
 
-# RegulatoryStatuteLink_nvarchar(500)_Yes
-def RegulatoryStatuteLink_RE_Check(dfx, dfy):
-    selectionVar = (dfx["RegulatoryStatuteLink"].astype(str).str.len() > 500)
-    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for RegulatoryStatuteLink').reset_index()
-    mask['IncompleteField'] = mask['RegulatoryStatuteLink']
+# StatuteLink_nvarchar(500)_Yes
+def StatuteLink_RE_Check(dfx, dfy):
+    selectionVar = (dfx["StatuteLink"].astype(str).str.len() > 500)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for StatuteLink').reset_index()
+    mask['IncompleteField'] = mask['StatuteLink']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
 
 
 # StatutoryEffectiveDate_BigInt_-
 def StatutoryEffectiveDate_RE_Check(dfx, dfy):
-    selectionVar = (dfx["StatutoryEffectiveDate"].isnull()) | (dfx["StatutoryEffectiveDate"] == "") | (dfx["StatutoryEffectiveDate"].str.contains(','))
+    selectionVar = (dfx["StatutoryEffectiveDate"].isnull()) | (dfx["StatutoryEffectiveDate"].isna()) | (dfx["StatutoryEffectiveDate"] == "") | (dfx["StatutoryEffectiveDate"].str.contains(','))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for StatutoryEffectiveDate').reset_index()
     mask['IncompleteField'] = mask['StatutoryEffectiveDate']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -1627,11 +1630,11 @@ def StatutoryEndDate_RE_Check(dfx, dfy):
     return (dfx, dfy)
 
 
-# RegulatoryOverlayTypeCV_nvarchar(100)_Yes
-def RegulatoryOverlayTypeCV_RE_Check(dfx, dfy):
-    selectionVar = (dfx["RegulatoryOverlayTypeCV"].astype(str).str.len() > 100)
-    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for RegulatoryOverlayTypeCV').reset_index()
-    mask['IncompleteField'] = mask['RegulatoryOverlayTypeCV']
+# OverlayTypeCV_nvarchar(100)_Yes
+def OverlayTypeCV_RE_Check(dfx, dfy):
+    selectionVar = (dfx["OverlayTypeCV"].astype(str).str.len() > 100)
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for OverlayTypeCV').reset_index()
+    mask['IncompleteField'] = mask['OverlayTypeCV']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
 

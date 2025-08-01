@@ -1,4 +1,4 @@
-# Date Update: 03/30/2023
+# Date Update: 07/25/2025
 # Purpose: To create water source information and populate dataframe for WaDE_QA 2.0.
 
 
@@ -29,15 +29,13 @@ import CleanDataCodeFunctionsFile
 
 # Create File Function
 ############################################################################
-def CreateWaterSourcesInputFunction(workingDirString, varST, varUUIDType, mainInputFile):
+def CreateWaterSourcesInputFunction(workingDirString, varST, varUUIDType, df):
 
     # Inputs
     ############################################################################
-    print("Reading input csv...")
+    print("Setting inputs...")
     workingDir = workingDirString
     os.chdir(workingDir)
-    fileInput = "RawinputData/" + mainInputFile
-    df = pd.read_csv(fileInput, compression='zip')
 
     # WaDE columns
     WaterSourcseColumnsList = GetColumnsFile.GetWaterSourcesColumnsFunction()

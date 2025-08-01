@@ -1,4 +1,4 @@
-# Date Update: 08/09/2023
+# Date Update: 07/25/2025
 # Purpose: To extract water right record information and populate dataframe for WaDE 2.0.
 
 
@@ -40,15 +40,13 @@ import CleanDataCodeFunctionsFile
 
 # Create File Function
 ############################################################################
-def CreateAllocationsAmounts_factsInputFunction(workingDirString, varST, varUUIDType, mainInputFile):
+def CreateAllocationsAmounts_factsInputFunction(workingDirString, varST, varUUIDType, df):
 
     # Inputs
     ############################################################################
-    print("Reading input csv...")
+    print("Setting inputs...")
     workingDir = workingDirString
     os.chdir(workingDir)
-    fileInput = "RawinputData/" + mainInputFile
-    df = pd.read_csv(fileInput, compression='zip')
 
     # Input Data - 'WaDE Input' files.
     dfv = pd.read_csv("ProcessedInputData/variables.csv").replace(np.nan, "")
@@ -128,7 +126,7 @@ def CreateAllocationsAmounts_factsInputFunction(workingDirString, varST, varUUID
     print("AllocationLegalStatusCV")
     outdf['AllocationLegalStatusCV'] = df['in_AllocationLegalStatusCV']
 
-    print("AllocationNativeID")  # Will use this with a .groupby() statement towards the ends.
+    print("AllocationNativeID")  # Will use this with a groupby() statement towards the ends.
     outdf['AllocationNativeID'] = df['in_AllocationNativeID'].astype(str)
 
     print("AllocationOwner")
@@ -185,11 +183,8 @@ def CreateAllocationsAmounts_factsInputFunction(workingDirString, varST, varUUID
     print("LegacyAllocationIDs")
     outdf['LegacyAllocationIDs'] = df['in_LegacyAllocationIDs']
 
-    #####################################
-    print("OwnerClassificationCV")
-    # Temp solution to populate OwnerClassificationCV field.
+    print("OwnerClassificationCV")  # requires AllocationOwner
     outdf['OwnerClassificationCV'] = outdf.apply(lambda row: OwnerClassificationField.CreateOwnerClassification(row['AllocationOwner']), axis=1)
-    #####################################
 
     print("PopulationServed")
     outdf['PopulationServed'] = df['in_PopulationServed']

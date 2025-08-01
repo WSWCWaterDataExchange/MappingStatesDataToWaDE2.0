@@ -7,7 +7,7 @@ The following data was used for water allocations...
 
 Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
-**Active Management Areas** | Active Management Areas | [link]("https://gisdata2016-11-18t150447874z-azwater.opendata.arcgis.com/datasets/ama-and-ina-1/explore?location=34.124542%2C-111.970823%2C7.57") | [link]("https://new.azwater.gov/ama")
+**Active Management Areas** | Active Management Areas | [link](https://gisdata2016-11-18t150447874z-azwater.opendata.arcgis.com/datasets/ama-and-ina-1/explore?location=34.124542%2C-111.970823%2C7.57) | [link](https://new.azwater.gov/ama)
 **Irrigation Non-Expansion Areas** | Irrigation Non-Expansion Areas | Same as above | Same as above
 
 Unique files were created to be used as input.  Input files used are as follows...
@@ -22,14 +22,14 @@ The 1) raw input data shared by the state / state agency / data provider (excel,
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share the state's overlay data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *AZov_Overlay Info Schema Mapping to WaDE.xlsx*. Several WaDE csv input files will be created in order to extract the overlay data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
 
-- **1_AZov_PreProcessRegulatoryData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
-- **2_AZov_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: date.csv, organization.csv, reportingunits.csv, regulatoryoverlays.csv, regulatoryreportingunits.csv, sites.csv, etc.
+- **1_AZov_PreProcessOverlayData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
+- **2_AZov_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: date.csv, organization.csv, reportingunits.csv, overlays.csv, overlayreportingunits.csv, sites.csv, etc.
 - **3_AZov_WRSiteRegulatoryID.ipynb**: used to pair overlay information to water allocation information using an overlay on water allocation site information within the boundaries of the regulation.
 - **4_AZov_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
 
 
 ***
-## Code File: 1_AZov_PreProcessRegulatoryData.ipynb
+## Code File: 1_AZov_PreProcessOverlayData.ipynb
 Purpose: Pre-process the input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
@@ -51,7 +51,7 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 
 ***
 ## Code File: 2_AZov_CreateWaDEInputFiles.ipynb
-Purpose: generate WaDE csv input files (date.csv, organizations.csv, reportingunits.csv, regulatoryoverlays.csv, regulatoryreportingunits.csv, sites.csv).
+Purpose: generate WaDE csv input files (date.csv, organizations.csv, reportingunits.csv, overlays.csv, overlayreportingunits.csv, sites.csv).
 
 #### Inputs:
 - Pre_azMain.zip
@@ -61,8 +61,8 @@ Purpose: generate WaDE csv input files (date.csv, organizations.csv, reportingun
 - date.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
 - organizations.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
 - reportingunits.csv
-- regulatoryoverlays.csv 
-- regulatoryreportingunits.csv
+- overlays.csv 
+- overlayreportingunits.csv
 
 
 
@@ -140,31 +140,31 @@ Purpose: generate master sheet of overlay area information to import into WaDE 2
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Overlays* specific columns.
 - Assign state agency data info to the *WaDE Water Overlays* specific columns.  See *AZov_RegulatoryInfo Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
-    - *RegulatoryOverlayUUID* = AZov_RO + OBJECTID
+    - *OverlayUUID* = AZov_RO + OBJECTID
     - *OversightAgency* = Arizona Department of Water Resources
-    - *RegulatoryDescription* = "To safeguard the health, safety and economic welfare of the public by protecting, conserving and enhancing Arizona's water supplies in a bold, thoughtful and innovative manner."
-    - *RegulatoryName* = BASIN_NAME
-    - *RegulatoryOverlayNativeID* = OBJECTID
-    - *RegulatoryStatusCV* = Active
-    - *RegulatoryStatue* = ""
-    - *RegulatoryStatuteLink* = ""
+    - *OverlayDescription* = "To safeguard the health, safety and economic welfare of the public by protecting, conserving and enhancing Arizona's water supplies in a bold, thoughtful and innovative manner."
+    - *OverlayName* = BASIN_NAME
+    - *OverlayNativeID* = OBJECTID
+    - *OverlayStatusCV* = Active
+    - *Statue* = ""
+    - *StatuteLink* = ""
     - *StatutoryEffectiveDate* = Effective_Date
-    - *RegulatoryOverlayTypeCV* = Active Management Area
+    - *OverlayTypeCV* = Active Management Area
     - *WaterSourceTypeCV* = ""
 - Perform error check on output dataframe.
-- Export output dataframe *regulatoryoverlays.csv*.
+- Export output dataframe *overlays.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-RegulatoryOverlayUUID| OversightAgency | RegulatoryDescription | RegulatoryName | RegulatoryOverlayNativeID | RegulatoryStatusCV | RegulatoryStatute | RegulatoryStatuteLink | StatutoryEffectiveDate | StatutoryEndDate | RegulatoryOverlayTypeCV | WaterSourceTypeCV
+OverlayUUID | OversightAgency | OverlayDescription | OverlayName | OverlayNativeID | OverlayStatusCV | Statute | StatuteLink | StatutoryEffectiveDate | StatutoryEndDate | OverlayTypeCV | WaterSourceTypeCV
 ---------- | ---------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------
 AZov_RO + OBJECTID | Arizona Department of Water Resources | To safeguard the health, safety and economic welfare of the public by protecting, conserving and enhancing Arizona's water supplies in a bold, thoughtful and innovative manner. | BASIN_NAME | OBJECTID | Active | - | - | Effective_Date | xx | Active Management Area | Groundwater
 
-Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *regulatoryoverlays_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water overlays include the following...
-- RegulatoryOverlayUUID
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *overlays_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water overlays include the following...
+- OverlayUUID 
 - OversightAgency
-- RegulatoryDescription
-- RegulatoryName
-- RegulatoryStatusCV
+- OverlayDescription
+- OverlayName
+- OverlayStatusCV
 - StatutoryEffectiveDate
 
 
@@ -177,22 +177,22 @@ Purpose: generate master sheet of overlay area information and how it algins wit
 - Assign state agency data info to the *WaDE Reportingunits* specific columns.  See *AZov_RegulatoryInfo Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - *DataPublicationDate* = use date of file creation
     - *OrganizationUUID* = pull from organization.csv
-    - *RegulatoryOverlayUUID* = pull form regulatoryoverlay.csv
+    - *OverlayUUID* = pull form overlay.csv
     - *ReportingUnitUUID* = pull from reportingunit.csv
 - Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *ReportingUnitName*, *ReportingUnitNativeID* & *ReportingUnitTypeCV* fields.
 - Assign reportingunits UUID identifier to each (unique) row.
 - Perform error check on output dataframe.
-- Export output dataframe *regulatoryreportingunits.csv*.
+- Export output dataframe *overlayreportingunits.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-DataPublicationDate | OrganizationUUID | RegulatoryOverlayUUID | ReportingUnitUUID 
+DataPublicationDate | OrganizationUUID | OverlayUUID | ReportingUnitUUID 
 ---------- | ---------- | ------------ | ------------ 
 xx | xx | xx | xx
 
-Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *regulatoryreportingunits_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the reportingunits include the following...
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *overlayreportingunits_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the reportingunits include the following...
 - DataPublicationDate
 - OrganizationUUID
-- RegulatoryOverlayUUID
+- OverlayUUID 
 - ReportingUnitUUID
 
 
@@ -221,11 +221,11 @@ Assessment of Removed Source Records | Count | Action
 **Figure 2:** Distribution of Reporting Unit Type within reportingunits.csv
 ![](figures/ReportingUnitTypeCV.png)
 
-**Figure 3:** Distribution of Oversight Agency within the regulatoryoverlays.csv
+**Figure 3:** Distribution of Oversight Agency within the overlays.csv
 ![](figures/OversightAgency.png)
 
-**Figure 4:** Distribution of Overlay Type within the regulatoryoverlays.csv
-![](figures/RegulatoryOverlayTypeCV.png)
+**Figure 4:** Distribution of Overlay Type within the overlays.csv
+![](figures/OverlayTypeCV.png)
 
 **Figure 5:** Map of Areas (i.e., Reporting Unit)
 ![](figures/ReportingUnitMap.png)

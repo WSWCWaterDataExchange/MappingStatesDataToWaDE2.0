@@ -1,49 +1,61 @@
-# Last Update: 10/20/2023
+# Last Update: 07/16/2025
 # Purpose: To have a single function file to create OwnerClassificationCV field.
 
-
-# Needed Libraries
-############################################################################
 import re
 import pandas as pd
 
-
-# Create Dictionary
-############################################################################
-# read in Notes_OwnerClassification.xlsx, skip first row, save as dataframe
-# create dictionary. key = column name, value = data, remove 'nan' values
-
-datadf = pd.read_excel("C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/OwnerClassification/Notes_OwnerClassification.xlsx",
-                  sheet_name ="TrackWordsByGroup", skiprows=1)
-
-listDictionary = {} # create list dictioarny.
-
-for (columnName, columnData) in datadf.items():
-    columnList = columnData.tolist()
-    columnList = [x for x in columnList if str(x) != 'nan']
-    listDictionary[columnName] = columnList
+# -----------------------------
+# 1. Load your classification data
+# -----------------------------
+datadf = pd.read_excel(
+    "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/OwnerClassification/Notes_OwnerClassification.xlsx",
+    sheet_name="TrackWordsByGroup",
+    skiprows=1
+)
 
 
-# Assign OwnerClassification value.
-############################################################################
-# Uses the re library, but requires for loop.
-# Order that the lists are inputed into dictoinary is important, want to overide generic search with a more specific search.
+# -----------------------------
+# 2. Clean and build regex patterns
+# -----------------------------
+def CleanWordFunc(w):
+    w = str(w).lower()
+    w = re.sub(r"[$@&.`;',/\)(-]", "", w)
+    return w.strip()
 
+# Pre-compile category DataFrame into regex patterns, store in dictionary. Use re.compile() to build one regex pattern per class.
+pattern_dict = {}
+for columnName, columnData in datadf.items():
+    terms = columnData.dropna().tolist()
+    # Clean terms
+    terms = [CleanWordFunc(term) for term in terms]
+    if terms:
+        # Join into regex
+        pattern_str = r'\b(' + '|'.join(map(re.escape, terms)) + r')\b'
+        # Precompile
+        pattern_dict[columnName] = re.compile(pattern_str, re.IGNORECASE)
+
+
+# -----------------------------
+# 3. Create the classification function
+# -----------------------------
 def CreateOwnerClassification(val):
-    val = str(val).strip()
-    if val == '' or pd.isnull(val):
-        outString = "Unspecified" # if value is blank or unknown
-    else:
-        outString = "Private"  # Default Value
+    if pd.isnull(val) or not str(val).strip():
+        return "Unspecified"
 
-        # Cleaning text / simple search format
-        val = re.sub("[$@&.`;',/\)(-]", "", val).strip()
-        val = val.lower().strip()
-        val = " " + val + " "
+    # Default
+    outString = "Private"
 
-        for x in listDictionary:
-            valueList = listDictionary[x]
-            for words in valueList:
-                if re.search(" " + words + " ", val): outString = x
+    # Clean input value
+    val = str(val)
+    val = re.sub(r"[$@&.`;',/\)(-]", "", val).strip()
+    val = val.lower()
+
+    # Add spaces to enforce word boundaries
+    val_padded = f" {val} "
+
+    # Search through pattern_dict
+    for className, pattern in pattern_dict.items():
+        if pattern.search(val_padded):
+            outString = className
 
     return outString

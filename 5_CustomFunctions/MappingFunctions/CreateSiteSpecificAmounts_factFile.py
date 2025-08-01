@@ -8,7 +8,6 @@ import os
 import sys
 import numpy as np
 import pandas as pd
-import re
 from datetime import date
 
 
@@ -19,10 +18,6 @@ from datetime import date
 sys.path.append("../../5_CustomFunctions/MappingFunctions")
 import GetColumnsFile
 
-# Assign Primary Use Category fix
-sys.path.append("../../5_CustomFunctions/AssignPrimaryUseCategory")
-import AssignPrimaryUseCategoryFile
-
 # Test WaDE Data for any Errors
 sys.path.append("../../5_CustomFunctions/ErrorCheckCode")
 import ErrorCheckCodeFunctionsFile
@@ -30,7 +25,6 @@ import ErrorCheckCodeFunctionsFile
 # Clean data and data types
 sys.path.append("../../5_CustomFunctions/CleanDataCode")
 import CleanDataCodeFunctionsFile
-
 
 
 # Create File Function
@@ -56,7 +50,6 @@ def CreateSiteSpecificAmounts_factsInputFunction(workingDirString, mainInputFile
 
     # Custom Functions
     ############################################################################
-
     # For creating VariableSpecificUUID
     VariableSpecificUUIDdict = pd.Series(dfv.VariableSpecificUUID.values, index=dfv.VariableSpecificCV.astype(str)).to_dict()
     def retrieveVariableSpecificUUID(colrowValue):
@@ -186,11 +179,7 @@ def CreateSiteSpecificAmounts_factsInputFunction(workingDirString, mainInputFile
 
     # Solving WaDE 2.0 Upload Issues
     ############################################################################
-    # print("Solving WaDE 2.0 upload issues")  # List all temp fixes required to upload data to WaDE here.
-    #
-    # # Temp solution to populate PrimaryBeneficialUseCategory field.
-    # # Use Custom import file
-    # outdf['PrimaryUseCategory'] = outdf.apply(lambda row: AssignPrimaryUseCategoryFile.retrievePrimaryUseCategory(row['BeneficialUseCategory']), axis=1)
+    # N/A
 
 
     # Error Checking Each Field
@@ -202,7 +191,6 @@ def CreateSiteSpecificAmounts_factsInputFunction(workingDirString, mainInputFile
     outdf, dfpurge = ErrorCheckCodeFunctionsFile.SiteSpecificAmountsTestErrorFunctions(outdf, dfpurge)
     print(f'Length of outdf DataFrame: ', len(outdf))
     print(f'Length of dfpurge DataFrame: ', len(dfpurge))
-
 
 
     # Clean data & check data types before export
@@ -224,4 +212,3 @@ def CreateSiteSpecificAmounts_factsInputFunction(workingDirString, mainInputFile
     dfpurge.to_csv('ProcessedInputData/sitespecificamounts_missing.csv', index=False)
 
     print("Done")
-

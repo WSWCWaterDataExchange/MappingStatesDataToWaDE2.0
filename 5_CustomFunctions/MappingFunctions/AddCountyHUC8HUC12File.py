@@ -26,75 +26,76 @@ def AddCountyHUC8HUC12Function(workingDirString):
     # Check for Regulatory data
     ############################################################################
     print("Checking for available shapefiles data / project...")
-    try:
-        # Inputs
-        ############################################################################
-        print("Reading input files(s)...")
-        # site csv file.
-        dfs = pd.read_csv('ProcessedInputData/sites.csv')
-        # County, HUC8, and HUC12 shapefiles.
-        gdfCounty = gpd.read_file("C:/Users/rjame/Documents/WSWC Documents/Generic Shapefiles/cb_2018_us_county.zip")
-        gdfHuc8 = gpd.read_file("C:/Users/rjame/Documents/WSWC Documents/Generic Shapefiles/HUC8_US.zip")
-        gdfHuc12West = gpd.read_file("C:/Users/rjame/Documents/WSWC Documents/Generic Shapefiles/HUC12_US_WEST.zip")
 
-        # Missing County Data
-        ############################################################################
-        print("Checking for missing County information....")
-        def AddMissingCountyFunc(originalVal, newVal):
-            originalVal = str(originalVal).strip()
-            if originalVal == "" or originalVal == "WaDE Blank" or originalVal == "nan" or pd.isnull(originalVal):
-                outString = newVal
-            else:
-                outString = originalVal
-            return outString
+    # Inputs
+    ############################################################################
+    print("Reading input files(s)...")
+    # site csv file.
+    dfs = pd.read_csv('ProcessedInputData/sites.csv')
+    # County, HUC8, and HUC12 shapefiles.
+    gdfCounty = gpd.read_file("C:/Users/rjame/Documents/WSWC Documents/Generic Shapefiles/cb_2018_us_county.zip")
+    gdfHuc8 = gpd.read_file("C:/Users/rjame/Documents/WSWC Documents/Generic Shapefiles/HUC8_US.zip")
+    gdfHuc12West = gpd.read_file("C:/Users/rjame/Documents/WSWC Documents/Generic Shapefiles/HUC12_US_WEST.zip")
 
-        gdfs = gpd.GeoDataFrame(dfs, geometry=gpd.points_from_xy(dfs.Longitude.astype(float), dfs.Latitude.astype(float)), crs="EPSG:4326")
-        gdfs_gdfCounty = gpd.sjoin(left_df=gdfs, right_df=gdfCounty[['COUNTYNAME', 'geometry']], how='left', op='within').replace(np.nan, "")
-        gdfs_gdfCounty['County'] = gdfs_gdfCounty.apply(lambda row: AddMissingCountyFunc(row['County'], row['COUNTYNAME']), axis=1)
-        dfs = pd.DataFrame(gdfs_gdfCounty)
-        dfs = dfs.drop(['COUNTYNAME', 'geometry', 'index_right'], axis=1)
 
-        # Missing HUC8 Data
-        ############################################################################
-        print("Checking for missing HUC8 information....")
-        def AddMissingHUC8Func(originalVal, newVal):
-            originalVal = str(originalVal).strip()
-            if originalVal == "" or originalVal == "WaDE Blank" or originalVal == "nan" or pd.isnull(originalVal):
-                outString = newVal
-            else:
-                outString = originalVal
-            return outString
+    # Missing County Data
+    ############################################################################
+    print("Checking for missing County information....")
+    def AddMissingCountyFunc(originalVal, newVal):
+        originalVal = str(originalVal).strip()
+        if originalVal == "" or originalVal == "WaDE Blank" or originalVal == "nan" or pd.isnull(originalVal):
+            outString = newVal
+        else:
+            outString = originalVal
+        return outString
 
-        gdfs = gpd.GeoDataFrame(dfs, geometry=gpd.points_from_xy(dfs.Longitude.astype(float), dfs.Latitude.astype(float)), crs="EPSG:4326")
-        gdfs_gdfHuc8 = gpd.sjoin(left_df=gdfs, right_df=gdfHuc8[['HUC8NAME', 'geometry']], how='left', op='within').replace(np.nan, "")
-        gdfs_gdfHuc8['HUC8'] = gdfs_gdfHuc8.apply(lambda row: AddMissingHUC8Func(row['HUC8'], row['HUC8NAME']), axis=1)
-        dfs = pd.DataFrame(gdfs_gdfHuc8)
-        dfs = dfs.drop(['HUC8NAME', 'geometry', 'index_right'], axis=1)
+    gdfs = gpd.GeoDataFrame(dfs, geometry=gpd.points_from_xy(dfs.Longitude.astype(float), dfs.Latitude.astype(float)), crs="EPSG:4326")
+    gdfs_gdfCounty = gpd.sjoin(left_df=gdfs, right_df=gdfCounty[['COUNTYNAME', 'geometry']], how='left', predicate='within').replace(np.nan, "")
+    gdfs_gdfCounty['County'] = gdfs_gdfCounty.apply(lambda row: AddMissingCountyFunc(row['County'], row['COUNTYNAME']), axis=1)
+    dfs = pd.DataFrame(gdfs_gdfCounty)
+    dfs = dfs.drop(['COUNTYNAME', 'geometry', 'index_right'], axis=1)
 
-        # Missing HUC12 Data
-        ############################################################################
-        print("Checking for missing HUC12 information....")
-        def AddMissingHUC12Func(originalVal, newVal):
-            originalVal = str(originalVal).strip()
-            if originalVal == "" or originalVal == "WaDE Blank" or originalVal == "nan" or pd.isnull(originalVal):
-                outString = newVal
-            else:
-                outString = originalVal
-            return outString
 
-        gdfs = gpd.GeoDataFrame(dfs, geometry=gpd.points_from_xy(dfs.Longitude.astype(float), dfs.Latitude.astype(float)), crs="EPSG:4326")
-        gdfs_gdfHuc12west = gpd.sjoin(left_df=gdfs, right_df=gdfHuc12West[['HUC12NAME', 'geometry']], how='left', op='within').replace(np.nan, "")
-        gdfs_gdfHuc12west['HUC12'] = gdfs_gdfHuc12west.apply(lambda row: AddMissingHUC12Func(row['HUC12'], row['HUC12NAME']), axis=1)
-        dfs = pd.DataFrame(gdfs_gdfHuc12west)
-        dfs = dfs.drop(['HUC12NAME', 'geometry', 'index_right'], axis=1)
+    # Missing HUC8 Data
+    ############################################################################
+    print("Checking for missing HUC8 information....")
+    def AddMissingHUC8Func(originalVal, newVal):
+        originalVal = str(originalVal).strip()
+        if originalVal == "" or originalVal == "WaDE Blank" or originalVal == "nan" or pd.isnull(originalVal):
+            outString = newVal
+        else:
+            outString = originalVal
+        return outString
 
-        # Export out to CSV.
-        ###########################################################################
-        dfs = dfs.drop_duplicates().reset_index(drop=True)
-        dfs.to_csv('ProcessedInputData/sites.csv', index=False)
+    gdfs = gpd.GeoDataFrame(dfs, geometry=gpd.points_from_xy(dfs.Longitude.astype(float), dfs.Latitude.astype(float)), crs="EPSG:4326")
+    gdfs_gdfHuc8 = gpd.sjoin(left_df=gdfs, right_df=gdfHuc8[['HUC8NAME', 'geometry']], how='left', predicate='within').replace(np.nan, "")
+    gdfs_gdfHuc8['HUC8'] = gdfs_gdfHuc8.apply(lambda row: AddMissingHUC8Func(row['HUC8'], row['HUC8NAME']), axis=1)
+    dfs = pd.DataFrame(gdfs_gdfHuc8)
+    dfs = dfs.drop(['HUC8NAME', 'geometry', 'index_right'], axis=1)
 
-    except:
-        print("- WARNING: shp not found. Consult WaDE Team for more details on used shp flies.")
-        print("- Exiting function with no change made.")
+
+    # Missing HUC12 Data
+    ############################################################################
+    print("Checking for missing HUC12 information....")
+    def AddMissingHUC12Func(originalVal, newVal):
+        originalVal = str(originalVal).strip()
+        if originalVal == "" or originalVal == "WaDE Blank" or originalVal == "nan" or pd.isnull(originalVal):
+            outString = newVal
+        else:
+            outString = originalVal
+        return outString
+
+    gdfs = gpd.GeoDataFrame(dfs, geometry=gpd.points_from_xy(dfs.Longitude.astype(float), dfs.Latitude.astype(float)), crs="EPSG:4326")
+    gdfs_gdfHuc12west = gpd.sjoin(left_df=gdfs, right_df=gdfHuc12West[['HUC12NAME', 'geometry']], how='left', predicate='within').replace(np.nan, "")
+    gdfs_gdfHuc12west['HUC12'] = gdfs_gdfHuc12west.apply(lambda row: AddMissingHUC12Func(row['HUC12'], row['HUC12NAME']), axis=1)
+    dfs = pd.DataFrame(gdfs_gdfHuc12west)
+    dfs = dfs.drop(['HUC12NAME', 'geometry', 'index_right'], axis=1)
+
+
+    # Export out to CSV.
+    ###########################################################################
+    dfs = dfs.drop_duplicates().reset_index(drop=True)
+    dfs.to_csv('ProcessedInputData/sites.csv', index=False)
+
 
     print("Done")

@@ -16,13 +16,13 @@ import pandas as pd
 # Native Beneficial Use -to- WaDE Beneficial Use Dictionary
 # read in input file, create temp dataframe, make adjustments, convert to dictionary.
 fileInput = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/AssignPrimaryUseCategory/PrimaryBenUseInput.xlsx"
-df = pd.read_excel(fileInput).replace(np.nan, "")
+df = pd.read_excel(fileInput)
 df['Name'] = df['Name'].str.lower().str.strip()
 BUtoWBUDict = pd.Series(df.WaDEname.values, index=df.Name.astype(str)).to_dict()
 
 
 # WaDE Convert Multi-Beneficial Use to Single Primary Use Dictionary
-# This has been pre-built looking for unique items of only length = 2 (last updated: 05/10/2022).
+# This has been pre-built looking for unique items of only length == 2 (last updated: 05/10/2022).
 WaDEBenUseDict = {
 "Agriculture Irrigation,Aquaculture" : "Agriculture Irrigation",
 "Agriculture Irrigation,Commercial/Industrial" : "Agriculture Irrigation",
@@ -62,7 +62,7 @@ def retrievePrimaryUseCategory(val):
     wbuList = sorted(list(map(lambda x: BUtoWBUDict[x], valList)))
 
     # Assign PrimaryUse
-    # if len = 2, use dictionary
+    # if len == 2, use dictionary
     # if not, return first item in list as string
     if len(wbuList) == 2:
         try:
