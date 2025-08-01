@@ -76,6 +76,7 @@ def ReportingUnitTestErrorFunctions(outdf, dfpurge):
 
 
 def AllocationAmountTestErrorFunctions(outdf, dfpurge):
+    outdf, dfpurge = ExemptOfVolumeFlowPriority_AA_Check(outdf, dfpurge)
     outdf, dfpurge = MethodUUID_AA_Check(outdf, dfpurge)
     outdf, dfpurge = OrganizationUUID_AA_Check(outdf, dfpurge)
     outdf, dfpurge = SiteUUID_AA_Check(outdf, dfpurge)
@@ -105,7 +106,6 @@ def AllocationAmountTestErrorFunctions(outdf, dfpurge):
     outdf, dfpurge = CustomerTypeCV_AA_Check(outdf, dfpurge)
     outdf, dfpurge = DataPublicationDate_AA_Check(outdf, dfpurge)
     outdf, dfpurge = DataPublicationDOI_AA_Check(outdf, dfpurge)
-    # ExemptOfVolumeFlowPriority ??? outdf, dfpurge = ExemptOfVolumeFlowPriority_AA_Check(outdf, dfpurge)
     outdf, dfpurge = GeneratedPowerCapacityMW_AA_Check(outdf, dfpurge)
     outdf, dfpurge = IrrigatedAcreage_AA_Check(outdf, dfpurge)
     outdf, dfpurge = IrrigationMethodCV_AA_Check(outdf, dfpurge)
@@ -582,6 +582,15 @@ def StateCV_RU_Check(dfx, dfy):
 ########################################################################################################################
 ########################################################################################################################
 
+# ExemptOfVolumeFlowPriority_bit_Yes
+def ExemptOfVolumeFlowPriority_AA_Check(dfx, dfy):
+    selectionVar = ~dfx["ExemptOfVolumeFlowPriority"].astype(str).isin(["0", "1", "nan"])
+    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for ExemptOfVolumeFlowPriority').reset_index()
+    mask['IncompleteField'] = mask['ExemptOfVolumeFlowPriority']
+    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
+    return (dfx, dfy)
+
+
 # AllocationUUID_nvarchar(250)_-
 def AllocationUUID_AA_Check(dfx, dfy):
     selectionVar = ((dfx["AllocationUUID"].isnull()) | (dfx["AllocationUUID"].isna()) | (dfx["AllocationUUID"] == '') | (dfx['AllocationUUID'].str.len() > 250))
@@ -795,14 +804,13 @@ def AllocationExpirationDate_AA_Check(dfx, dfy):
 # AllocationFlow_CFS_float_Yes
 def AllocationFlow_CFS_AA_Check(dfx, dfy):
     # check for string values with a ','
-    # selectionVar = (dfx['ExemptOfVolumeFlowPriority'] == "0") & (dfx['AllocationFlow_CFS'].astype(str).str.contains(','))
     selectionVar = (dfx['AllocationFlow_CFS'].astype(str).str.contains(','))
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Flow').reset_index()
     mask['IncompleteField'] = mask['AllocationFlow_CFS']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
 
     # check for bad float values
-    selectionVar = (dfx['ExemptOfVolumeFlowPriority'] == "0") & (dfx['AllocationFlow_CFS'].replace("", 0).fillna(0).astype(float) < 0.0)
+    selectionVar = (dfx["ExemptOfVolumeFlowPriority"].astype(str) == "0") & (dfx['AllocationFlow_CFS'].replace("", 0).fillna(0).astype(float) < 0.0)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Flow').reset_index()
     mask['IncompleteField'] = mask['AllocationFlow_CFS']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -820,7 +828,7 @@ def AllocationVolume_AF_AA_Check(dfx, dfy):
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
 
     # check for bad float values
-    selectionVar = (dfx['ExemptOfVolumeFlowPriority'] == "0") & (dfx['AllocationVolume_AF'].replace("", 0).fillna(0).astype(float) < 0.0)
+    selectionVar = (dfx["ExemptOfVolumeFlowPriority"].astype(str) == "0") & (dfx['AllocationVolume_AF'].replace("", 0).fillna(0).astype(float) < 0.0)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for Volume').reset_index()
     mask['IncompleteField'] = mask['AllocationVolume_AF']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -858,11 +866,12 @@ def AllocationOwner_AA_Check(dfx, dfy):
 
 # AllocationPriorityDate_string_-
 def AllocationPriorityDate_AA_Check(dfx, dfy):
-    selectionVar = ((dfx['ExemptOfVolumeFlowPriority'] == "0") & ((dfx["AllocationPriorityDate"].isnull()) |
-                                                                  (dfx["AllocationPriorityDate"].isna()) |
-                                                                  (dfx["AllocationPriorityDate"] == "") |
-                                                                  (dfx["AllocationPriorityDate"] == " ") |
-                                                                  (dfx["AllocationPriorityDate"].astype(str).str.contains(','))))
+    selectionVar = ((dfx["ExemptOfVolumeFlowPriority"].astype(str) == "0") &
+                    (dfx["AllocationPriorityDate"].isna() |
+                    (dfx["AllocationPriorityDate"].astype(str).str.strip() == "") |
+                    (dfx["AllocationPriorityDate"].astype(str).str.contains(",", na=False)) |
+                    (dfx["AllocationPriorityDate"].astype(str).str.contains("nan", na=False)))
+                    )
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for AllocationPriorityDate').reset_index()
     mask['IncompleteField'] = mask['AllocationPriorityDate']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
@@ -948,15 +957,6 @@ def DataPublicationDOI_AA_Check(dfx, dfy):
     selectionVar = (dfx["DataPublicationDOI"].str.len() > 100)
     mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for DataPublicationDOI').reset_index()
     mask['IncompleteField'] = mask['DataPublicationDOI']
-    dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
-    return (dfx, dfy)
-
-
-# ExemptOfVolumeFlowPriority_bit_Yes
-def ExemptOfVolumeFlowPriority_AA_Check(dfx, dfy):
-    selectionVar = (dfx["ExemptOfVolumeFlowPriority"] > 1)
-    mask = dfx.loc[selectionVar].assign(ReasonRemoved='Incomplete or bad entry for ExemptOfVolumeFlowPriority').reset_index()
-    mask['IncompleteField'] = mask['ExemptOfVolumeFlowPriority']
     dfx, dfy = removeMaskItemsFunc(dfx, dfy, mask, selectionVar)
     return (dfx, dfy)
 

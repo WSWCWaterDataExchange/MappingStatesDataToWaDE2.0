@@ -126,7 +126,7 @@ def CreateAllocationsAmounts_factsInputFunction(workingDirString, varST, varUUID
     print("AllocationLegalStatusCV")
     outdf['AllocationLegalStatusCV'] = df['in_AllocationLegalStatusCV']
 
-    print("AllocationNativeID")  # Will use this with a .groupby() statement towards the ends.
+    print("AllocationNativeID")  # Will use this with a groupby() statement towards the ends.
     outdf['AllocationNativeID'] = df['in_AllocationNativeID'].astype(str)
 
     print("AllocationOwner")
