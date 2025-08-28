@@ -8,8 +8,8 @@ The following data was used for water allocations...
 Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
 **AllSurfaceWaterPoints** | All surface water rights points of diversion, retrieved via API. | [link](https://NEDNR.nebraska.gov/IwipApi/swagger/ui/index#/) | [link](https://NEDNR.nebraska.gov/media/WaterRights/SurfaceWaterWebSimpleSearch.pdf)
-**Surface Water Right Boundaries** | Surface Water Right Boundaries Internal layer created by the Nebraska Department of Natural Resources (NeDNR) for external use.  Used as place of use for water right data. | [link](https://www.nebraskamap.gov/datasets/surface-water-right-boundaries/explore?location=41.453617%2C-99.687989%2C8.00&showTable=true) | [link](https://www.arcgis.com/sharing/rest/content/items/db709278ffc34b3a8423924d352b5ec8/info/metadata/metadata.xml?format=default&output=html)
-**AllWells** | Groundwater well points of diversion, retrieved via API. | [link](https://NEDNR.nebraska.gov/IwipApi/swagger/ui/index#/) | [link](https://nednr.nebraska.gov/dynamic/Wells/Wells/WellsLegend)
+**Surface Water Rights Boundaries 40 Acres External DNR** | Surface Water Right Boundaries Internal layer created by the Nebraska Department of Natural Resources (NeDNR) for external use.  Used as place of use for water right data. | [link](https://www.nebraskamap.gov/datasets/nebraska::surfacewaterrightsboundaries40acresexternal-dnr/about) | [link](https://www.nebraskamap.gov/datasets/nebraska::surfacewaterrightsboundaries40acresexternal-dnr/about)
+**Groundwater Wells DNR** | Groundwater well points of diversion, retrieved via API. | [link](https://www.nebraskamap.gov/datasets/nebraska::groundwater-wells-dnr/about) | [link](https://www.nebraskamap.gov/datasets/nebraska::groundwater-wells-dnr/about)
 
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
@@ -256,26 +256,26 @@ The following info is from a data assessment evaluation of the completed data...
 
 Dataset | Num of Source Entries (rows)
 ---------- | ---------- 
-**AllSurfaceWaterPoints** | 27,622
-**Surface Water Right Boundaries** | 7,344
-**AllWells** | 188,445
+**AllSurfaceWaterPoints** | 1,401,420
+**SurfaceWaterRightsBoundaries40AcresExternal_DNR** | 88,552
+**Groundwater Wells DNR** | 261,710
 
 
 Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
 ---------- | ------------ | ------------ | ------------
-**Compiled WaDE Data** | 200,293 | 6,827 | 197,762
+*Compiled WaDE Data** | 228,908 | 63,154 | 230,050
 
 
 Assessment of Removed Source Records | Count | Action
 ---------- | ---------- | ----------
-Unused WaterSource Record | 21 | removed from watersource.csv
-Unused Site Record | 1124 | removed form sites.csv
-Incomplete or bad entry for HUC12 | 6 | removed form sites.csv
-Incomplete or bad entry for Latitude | 2 | removed form sites.csv
-Incomplete or bad entry for AllocationPriorityDate | 308 | removed from waterallocations.csv
-Incomplete or bad entry for VariableSpecificUUID | 214 | removed from waterallocations.csv
-Incomplete or bad entry for AllocationApplicationDate | 3 | removed from waterallocations.csv
-Incomplete or bad entry for SiteUUID | 2 | removed from waterallocations.csv
+Unused WaterSource Record    |18 | removed from watersources.csv input
+Unused Site Record                    |46653 | removed from sites.csv input
+Incomplete or bad entry for County       |47 | removed from sites.csv input
+Incomplete or bad entry for AllocationApplicationDate    |13265 | removed from waterallocations.csv input
+Incomplete or bad entry for AllocationPriorityDate         |413 | removed from waterallocations.csv input
+Incomplete or bad entry for SiteUUID                       | 64 | removed from waterallocations.csv input
+Incomplete or bad entry for AllocationLegalStatusCV         |27 | removed from waterallocations.csv input
+Incomplete or bad entry for Volume                          | 4 | removed from waterallocations.csv input
 
 
 **Figure 1:** Distribution of POD vs POU Sites within the sites.csv
