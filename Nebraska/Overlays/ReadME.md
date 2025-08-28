@@ -20,13 +20,13 @@ The 1) raw input data shared by the state / state agency / data provider (excel,
 ## Summary of Data Prep
 The following text summarizes the process used by the WSWC staff to prepare and share the state's overlay data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *NEov_Overlay Info Schema Mapping to WaDE.xlsx*. Several WaDE csv input files will be created in order to extract the overlay data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
 
-- **1_NEov_PreProcessRegulatoryData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
-- **2_NEov_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: date.csv, organization.csv, reportingunits.csv, regulatoryoverlays.csv, regulatoryreportingunits.csv, etc.
-- **3_XXov_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
+- **1_NEov_PreProcessOverlayData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
+- **2_NEov_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: date.csv, organization.csv, reportingunits.csv, overlays.csv, overlayreportingunits.csv, etc.
+- **3_NEov_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
 
 
 ***
-## Code File: 1_XXov_PreProcessRegulatoryData.ipynb
+## Code File: 1_XXov_PreProcessOverlayData.ipynb
 Purpose: Pre-process the input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
@@ -47,7 +47,7 @@ Purpose: Pre-process the input data files and merge them into one master file fo
 
 ***
 ## Code File: 2_NEov_CreateWaDEInputFiles.ipynb
-Purpose: generate WaDE csv input files (date.csv, organizations.csv, reportingunits.csv, regulatoryoverlays.csv, regulatoryreportingunits.csv.
+Purpose: generate WaDE csv input files (date.csv, organizations.csv, reportingunits.csv, overlays.csv, overlayreportingunits.csv.
 
 #### Inputs:
 - Pov_Main.zip
@@ -57,8 +57,8 @@ Purpose: generate WaDE csv input files (date.csv, organizations.csv, reportingun
 - date.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
 - organizations.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
 - reportingunits.csv
-- regulatoryoverlays.csv 
-- regulatoryreportingunits.csv
+- overlays.csv 
+- overlayreportingunits.csv
 
 
 
@@ -136,32 +136,32 @@ Purpose: generate master sheet of overlay area information to import into WaDE 2
 - Read the input files and generate single output dataframe *outdf*.
 - Populate output dataframe with *WaDE Water Overlays* specific columns.
 - Assign state agency data info to the *WaDE Water Overlays* specific columns.  See *NEov_Overlay Info Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
-    - *RegulatoryOverlayUUID* = "NEov_RO" + **NRD_Num** input.
+    - *OverlayUUID* = "NEov_RO" + **NRD_Num** input.
     - *OversightAgency* = **NRD_Name_A** input.
-    - *RegulatoryDescription* = "Natural Resources Districts were created to solve flood control, soil erosion, irrigation run-off, and groundwater quantity and quality issues. Nebraska's NRDs are involved in a wide variety of projects and programs to conserve and protect the state's natural resources. NRDs are charged under state law with 12 areas of responsibility including flood control, soil erosion, groundwater management and many others."
-    - *RegulatoryName* = **NRD_Name_A** input.
-    - *RegulatoryOverlayNativeID* = **NRD_Num**.
-    - *RegulatoryStatusCV* = "Active"
-    - *RegulatoryStatue* = ""
-    - *RegulatoryStatuteLink* = see 1_NEov_PreProcessRegulatoryData.ipynb for specifics on creation.
+    - *OverlayDescription* = "Natural Resources Districts were created to solve flood control, soil erosion, irrigation run-off, and groundwater quantity and quality issues. Nebraska's NRDs are involved in a wide variety of projects and programs to conserve and protect the state's natural resources. NRDs are charged under state law with 12 areas of responsibility including flood control, soil erosion, groundwater management and many others."
+    - *OverlayName* = **NRD_Name_A** input.
+    - *OverlayNativeID* = **NRD_Num**.
+    - *OverlayStatusCV* = "Active"
+    - *Statue* = ""
+    - *StatuteLink* = see 1_NEov_PreProcessOverlayData.ipynb for specifics on creation.
     - *StatutoryEffectiveDate* = "01/01/1972"
-    - *RegulatoryOverlayTypeCV* = "Natural Resources Districts"
+    - *OverlayTypeCV* = "Natural Resources Districts"
     - *WaterSourceTypeCV* = "Groundwater"
 - Perform error check on output dataframe.
-- Export output dataframe *regulatoryoverlays.csv*.
+- Export output dataframe *overlays.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-|    | RegulatoryOverlayUUID   | OversightAgency   | RegulatoryDescription                                                                                                                                                                                                                                                                                                                                                                                                          | RegulatoryName   |   RegulatoryOverlayNativeID | RegulatoryStatusCV   | RegulatoryStatute   | RegulatoryStatuteLink       | StatutoryEffectiveDate   | StatutoryEndDate   | RegulatoryOverlayTypeCV     | WaterSourceTypeCV   |
+|    | OverlayUUID   | OversightAgency   | OverlayDescription                                                                                                                                                                                                                                                                                                                                                                                                          | OverlayName   |   OverlayNativeID | OverlayStatusCV   | Statute   | StatuteLink       | StatutoryEffectiveDate   | StatutoryEndDate   | OverlayTypeCV     | WaterSourceTypeCV   |
 |---:|:------------------------|:------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|----------------------------:|:---------------------|:--------------------|:----------------------------|:-------------------------|:-------------------|:----------------------------|:--------------------|
 |  1 | NEov_RO8                | LEWIS & CLARKNRD  | Natural Resources Districts were created to solve flood control, soil erosion, irrigation run-off, and groundwater quantity and quality issues. Nebraska's NRDs are involved in a wide variety of projects and programs to conserve and protect the state's natural resources. NRDs are charged under state law with 12 areas of responsibility including flood control, soil erosion, groundwater management and many others. | LEWIS & CLARK    |                           8 | Active               |                     | https://lcnrd.nebraska.gov/ | 1972-01-01               |                    | Natural Resources Districts | Groundwater         |
 
 
-Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *regulatoryoverlays_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water overlays include the following...
-- RegulatoryOverlayUUID
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *overlays_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water overlays include the following...
+- OverlayUUID 
 - OversightAgency
-- RegulatoryDescription
-- RegulatoryName
-- RegulatoryStatusCV
+- OverlayDescription
+- OverlayName
+- OverlayStatusCV
 - StatutoryEffectiveDate
 
 
@@ -174,20 +174,20 @@ Purpose: generate master sheet of overlay area information and how it algins wit
 - Assign state agency data info to the *WaDE OverlayReportingunits* specific columns.  See *NEov_Overlay Info Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
     - *DataPublicationDate* = use date of file creation
     - *OrganizationUUID* = pull from organization.csv
-    - *RegulatoryOverlayUUID* = pull form regulatoryoverlay.csv
+    - *OverlayUUID* = pull form overlay.csv
     - *ReportingUnitUUID* = pull from reportingunit.csv
 - Perform error check on output dataframe.
-- Export output dataframe *regulatoryreportingunits.csv*.
+- Export output dataframe *overlayreportingunits.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-|    | DataPublicationDate   | OrganizationUUID   | RegulatoryOverlayUUID   | ReportingUnitUUID   |
+|    | DataPublicationDate   | OrganizationUUID   | OverlayUUID   | ReportingUnitUUID   |
 |---:|:----------------------|:-------------------|:------------------------|:--------------------|
 |  1 | 2025-01-29            | NEov_O1            | NEov_RO24               | NEov_RUne24         |
 
-Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *regulatoryreportingunits_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the reportingunits include the following...
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *overlayreportingunits_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the reportingunits include the following...
 - DataPublicationDate
 - OrganizationUUID
-- RegulatoryOverlayUUID
+- OverlayUUID 
 - ReportingUnitUUID
 
 
@@ -216,11 +216,11 @@ Assessment of Removed Source Records | Count | Action
 **Figure 2:** Distribution of Reporting Unit Type within reportingunits.csv
 ![](figures/ReportingUnitTypeCV.png)
 
-**Figure 3:** Distribution of Oversight Agency within the regulatoryoverlays.csv
+**Figure 3:** Distribution of Oversight Agency within the overlays.csv
 ![](figures/OversightAgency.png)
 
-**Figure 4:** Distribution of Overlay Type within the regulatoryoverlays.csv
-![](figures/RegulatoryOverlayTypeCV.png)
+**Figure 4:** Distribution of Overlay Type within the overlays.csv
+![](figures/OverlayTypeCV.png)
 
 **Figure 5:** Map of Overlay Areas (i.e., Reporting Unit)
 ![](figures/ReportingUnitMap.png)

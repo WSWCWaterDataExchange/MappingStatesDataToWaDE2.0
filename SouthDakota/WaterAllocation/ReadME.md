@@ -50,11 +50,11 @@ Purpose: Pre-process the South Dakota input data files and merge them into one m
 
 
 ***
-## Code File: 2_NMwr_CreateWaDEInputFiles.ipynb
+## Code File: 2_SDwr_CreateWaDEInputFiles.ipynb
 Purpose: generate WaDE csv input files (methods.csv, variables.csv, organizations.csv, watersources.csv, sites.csv, waterallocations.csv, podsitetopousiterelationships.csv).
 
 #### Inputs:
-- Pwr_NMMain.zip
+- Pwr_Main.zip
 
 #### Outputs:
 - methods.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
@@ -78,9 +78,9 @@ Purpose: generate legend of granular methods used on data collection.
 - Export output dataframe *methods.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-MethodUUID | ApplicableResourceTypeCV | MethodTypeCV
----------- | ---------- | ------------
-SDwr_M1| Surface Water and Groundwater | Water Use
+|    | MethodUUID   | ApplicableResourceTypeCV      | DataConfidenceValue   | DataCoverageValue   | DataQualityValueCV   | MethodName                         | MethodNEMILink                                                      | MethodTypeCV    | WaDEDataMappingUrl                                                                                             |
+|---:|:-------------|:------------------------------|:----------------------|:--------------------|:---------------------|:-----------------------------------|:--------------------------------------------------------------------|:----------------|:---------------------------------------------------------------------------------------------------------------|
+|  0 | SDwr_M1      | Surface Water and Groundwater |                       |                     |                      | South Dakakota Water Rights Method | https://danr.sd.gov/OfficeOfWater/WaterRights/docs/WRAPPLPrimer.pdf | Legal Processes | https://github.com/WSWCWaterDataExchange/MappingStatesDataToWaDE2.0/tree/master/SouthDakota/WaDEDataMappingUrl |
 
 
 ## 2) Variables Information
@@ -95,9 +95,10 @@ Purpose: generate legend of granular variables specific to each state.
 - Export output dataframe *variables.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-VariableSpecificUUID | AggregationIntervalUnitCV | AggregationStatisticCV | AmountUnitCV
----------- | ---------- | ------------ | ------------
-SDwr_V1 | 1 | Year | CFS
+|    | VariableSpecificUUID   |   AggregationInterval | AggregationIntervalUnitCV   | AggregationStatisticCV   | AmountUnitCV   | MaximumAmountUnitCV   |   ReportYearStartMonth | ReportYearTypeCV   | VariableCV   | VariableSpecificCV   |
+|---:|:-----------------------|----------------------:|:----------------------------|:-------------------------|:---------------|:----------------------|-----------------------:|:-------------------|:-------------|:---------------------|
+|  0 | SDwr_V1                |                     1 | Year                        | Average                  | CFS            | AF                    |                     11 | WaterYear          | Allocation   | Allocation           |
+
 
 
 ## 3) Organization  Information
@@ -112,9 +113,10 @@ Purpose: generate organization directory, including names, email addresses, and 
 - Export output dataframe *organizations.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-OrganizationUUID | OrganizationName | OrganizationContactName | OrganizationWebsite
----------- | ---------- | ------------ | ------------
-SDwr_O1 | South Dakota Water Development Office | Ron Duvall | https://denr.sd.gov/
+|    | OrganizationUUID   | OrganizationContactEmail   | OrganizationContactName   | OrganizationName                                             | OrganizationPhoneNumber   | OrganizationPurview                                                                                                                                                                                                                              | OrganizationWebsite   | State   |
+|---:|:-------------------|:---------------------------|:--------------------------|:-------------------------------------------------------------|:--------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------|:--------|
+|  0 | SDwr_O1            | Ron.Duvall@state.sd.us     | Ron Duvall                | South Dakota Department of Environment and Natural Resources | 605-773-3352              | The mission of DENR is to protect public health and the environment by providing environmental monitoring and natural resource assessment, technical and financial assistance for environmental projects, and environmental regulatory services. | https://denr.sd.gov/  | SD      |
+
 
 
 ## 4) Water Source Information
@@ -133,9 +135,9 @@ Purpose: generate a list of water sources specific to a water right.
 - Export output dataframe *WaterSources.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-WaterSourceUUID | WaterQualityIndicatorCV | WaterSourceName | WaterSourceNativeID | WaterSourceTypeCV
----------- | ---------- | ------------ | ------------ | ------------
-SDwr_WS1 | Fresh | WOLF CREEK | wadeID1 | Surface Water
+|    | WaterSourceUUID   | Geometry   | GNISFeatureNameCV   | WaterQualityIndicatorCV   | WaterSourceName   | WaterSourceNativeID   | WaterSourceTypeCV   |
+|---:|:------------------|:-----------|:--------------------|:--------------------------|:------------------|:----------------------|:--------------------|
+|  0 | SDwr_WwadeId1     |            |                     | Fresh                     | Wolf Creek        | wadeId1               | Surface Water       |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *watersources_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water sources include the following...
 - WaterSourceUUID
@@ -161,9 +163,10 @@ Purpose: generate a list of sites information.
 - Export output dataframe *sites.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-SiteUUID | CoordinateMethodCV | Latitude | Longitude | SiteName
----------- | ---------- | ------------ | ------------ | ------------
-SDwr_S1 | WaDE Unspecified | 43.71384 | -97.6078 | WaDE Unspecified
+|    | SiteUUID   | OverlayUUIDs   | WaterSourceUUIDs   | CoordinateAccuracy   | CoordinateMethodCV   | County   |   EPSGCodeCV | GNISCodeCV   |     HUC12 |     HUC8 |   Latitude |   Longitude | NHDNetworkStatusCV   | NHDProductCV   | PODorPOUSite   | SiteName   | SiteNativeID   | SitePoint   | SiteTypeCV   | StateCV   | USGSSiteID   |
+|---:|:-----------|:---------------|:-------------------|:---------------------|:---------------------|:---------|-------------:|:-------------|----------:|---------:|-----------:|------------:|:---------------------|:---------------|:---------------|:-----------|:---------------|:------------|:-------------|:----------|:-------------|
+|  0 | SDwr_SPOD1 |                | SDwr_WwadeId1      | WaDE Blank           | WaDE Blank           | Hanson   |         4326 |              | 1.016e+11 | 10160010 |    43.7138 |    -97.6078 |                      |                | POD            | WaDE Blank | POD1           |             | WaDE Blank   | SD        |              |
+
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *sites_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the sites include the following...
 - SiteUUID 
@@ -194,9 +197,9 @@ Purpose: generate master sheet of water allocations to import into WaDE 2.0.
 - Export output dataframe *waterallocations.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-AllocationNativeID | AllocationFlow_CFS | AllocationLegalStatusCV | BeneficialUseCategory
----------- | ---------- | ------------ | ------------
-SDwr_WR010-1 | 0 | Cancelled | Irrigation
+|    | AllocationUUID   | MethodUUID   | OrganizationUUID   | SiteUUID       | VariableSpecificUUID   | AllocationApplicationDate   | AllocationAssociatedConsumptiveUseSiteIDs   | AllocationAssociatedWithdrawalSiteIDs   | AllocationBasisCV   | AllocationChangeApplicationIndicator   | AllocationCommunityWaterSupplySystem   | AllocationCropDutyAmount   | AllocationExpirationDate   |   AllocationFlow_CFS | AllocationLegalStatusCV   | AllocationNativeID   | AllocationOwner   | AllocationPriorityDate   | AllocationSDWISIdentifierCV   | AllocationTimeframeEnd   | AllocationTimeframeStart   | AllocationTypeCV    |   AllocationVolume_AF | BeneficialUseCategory   | CommunityWaterSupplySystem   | CropTypeCV   | CustomerTypeCV   | DataPublicationDate   | DataPublicationDOI   |   ExemptOfVolumeFlowPriority | GeneratedPowerCapacityMW   |   IrrigatedAcreage | IrrigationMethodCV   | LegacyAllocationIDs   | OwnerClassificationCV   | PopulationServed   | PowerType   | PrimaryBeneficialUseCategory   | WaterAllocationNativeURL                              |
+|---:|:-----------------|:-------------|:-------------------|:---------------|:-----------------------|:----------------------------|:--------------------------------------------|:----------------------------------------|:--------------------|:---------------------------------------|:---------------------------------------|:---------------------------|:---------------------------|---------------------:|:--------------------------|:---------------------|:------------------|:-------------------------|:------------------------------|:-------------------------|:---------------------------|:--------------------|----------------------:|:------------------------|:-----------------------------|:-------------|:-----------------|:----------------------|:---------------------|-----------------------------:|:---------------------------|-------------------:|:---------------------|:----------------------|:------------------------|:-------------------|:------------|:-------------------------------|:------------------------------------------------------|
+|  0 | SDwr_WR01011     | SDwr_M1      | SDwr_O1            | SDwr_SPOD12028 | SDwr_V1                |                             |                                             |                                         | WaDE Blank          |                                        |                                        |                            |                            |                    0 | WaDE Blank                | 0101-1               | Betsy Davis       | 1901-09-10               |                               |                          |                            | Prior Appropriation |                     0 | Irrigation              |                              |              |                  | 06/05/2025            |                      |                            0 |                            |                  0 |                      |                       | Private                 |                    |             | Agriculture Irrigation         | https://danr.sd.gov/wrimage/wrinfo/wr_div1/0101-1.pdf |
 
 Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *waterallocations_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water allocations include the following...
 - MethodUUID
@@ -230,6 +233,58 @@ Note: podsitetopousiterelationships.csv output only needed if both POD and POU d
 - Perform error check on waterallocations dataframe (check for NaN values)
 - If waterallocations is not empty, export output dataframe _podsitetopousiterelationships.csv_.
 
+
+***
+## Source Data & WaDE Complied Data Assessment
+The following info is from a data assessment evaluation of the completed data...
+
+Dataset | Num of Source Entries (rows)
+---------- | ---------- 
+**Water Right Data** | 19,238
+
+
+Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
+---------- | ------------ | ------------ | ------------
+**Compiled WaDE Data** | 12,570 | 0 | 9,584
+
+
+Assessment of Removed Source Records | Count | Action
+---------- | ---------- | ----------
+Unused WaterSource Record   | 166 | removed from watersources.csv input
+Unused Site Record   | 743 | removed from sites.csv input
+Incomplete or bad entry for AllocationPriorityDate   | 483 | removed from waterallocations.csv input
+
+
+**Figure 1:** Distribution of POD vs POU Sites within the sites.csv
+![](figures/PODorPOUSite.png)
+
+**Figure 2:** Distribution Sites by WaterSourceTypeCV within the sites.csv
+![](figures/WaterSourceTypeCV.png)
+
+**Figure 3:** Distribution of Identified Water Right Records by WaDE Categorized Primary Beneficial Uses within the waterallocations.csv
+![](figures/PrimaryBeneficialUseCategory.png)
+
+**Figure 4a:** Range of Priority Date of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationPriorityDate1.png)
+
+**Figure 4b:** Cumulative distribution of Priority Date of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationPriorityDate2.png)
+
+**Figure 5:** Distribution of Legal Status of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationLegalStatusCV.png)
+
+**Figure 6:** Distribution & Range of Flow (CFS) of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationFlow_CFS.png)
+
+**Figure 7:** Distribution & Range of Volume (AF) of Identified Water Right Records within the waterallocations.csv
+![](figures/AllocationVolume_AF.png)
+
+**Figure 8:** Map of Identified Points within the sites.csv
+![](figures/PointMap.png)
+
+**Figure 9:** Map of Identified Polygons within the sites.csv
+<!-- ![](figures/PolyMap.png) -->
+- No Place of use or Polygon information provided at this time.
 
 ***
 ## Staff Contributions
