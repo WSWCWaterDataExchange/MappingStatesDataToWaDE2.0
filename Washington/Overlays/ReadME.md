@@ -1,12 +1,246 @@
-# Overview
-This repository stores code and data for the state of Washington regulatory data. For more information on WaDE, please visit http://wade.westernstateswater.org/
+# Washington Overlay Data Preparation for WaDE
+This readme details the process that was applied by the staff of the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) to extracting overlay area data, made available by the [Washington Department of Natural Resources (WDNR)](https://dnr.wa.gov/) & [Washington Department of Ecology (WDOE)](https://ecology.wa.gov/), for inclusion into the Water Data Exchange (WaDE) project.  WaDE enables states to share data with each other and the public in a more streamlined and cost-effective way.
 
-**1. Regulatory_WDNR**
-- Contains the processed used to map regulatory info for the Washington Department of Natural Resources.
 
-**2. Regulatory_WDOE**
-- Contains the processed used to map regulatory info for the Washington Department of Ecology.
+## Overview of Source Data Utilized
+The following data was used for water allocations...
 
-**3. 1_CombineStateFilesTogetherScript.ipynb**
-- Python script to merge completed ProcessedInputData csv files from both WDNR & WDOE into a single WaDE 2.0 input project.
+Name | Description | Download Link | Metadata Glossary Link
+---------- | ---------- | ------------ | ------------
+**Watershed Administrative Units** | WDNR overlay area. | [link](https://geo.wa.gov/datasets/wadnr::watershed-administrative-units-forest-practices-regulation/explore) | Not Provided
+**Water Resource Inventory Areas** | WDOE overlay area. | [link](https://geo.wa.gov/datasets/waecy::water-resource-inventory-areas-wria/explore?location=47.234189%2C-120.817600%2C8.00) | Not Provided
+
+Unique files were created to be used as input.  Input files used are as follows...
+- WatershedAdministrativeUnits_ForestPracticesRegulation.shp, "Shapefile"
+- Water_Resource_Inventory_Areas_WRIA.shp, "Shapefile"
+
+
+## Storage for WaDE 2.0 Source and Processed Water Data
+The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
+- Washington Overlay Data:[link](https://drive.google.com/drive/folders/1ln1amfi-6GrEcZFxq64ZK0P4IgsiGUJQ?usp=sharing)
+
+
+## Summary of Data Prep
+The following text summarizes the process used by the WSWC staff to prepare and share the state's overlay data for inclusion into the Water Data Exchange (WaDE 2.0) project.  For a complete mapping outline, see *WAov_Overlay Info Schema Mapping to WaDE.xlsx*. Several WaDE csv input files will be created in order to extract the overlay data from the above mentioned input.  Each of these WaDE csv input files was created using the [Python](https://www.python.org/) native language, built and ran within [Jupyter Notebooks](https://jupyter.org/) environment.  Those python files include the following...
+
+- **1_WAov_PreProcessOverlayData.ipynb**: used to pre-processes the native date into a WaDE format friendly format.  All datatype conversions occur here.
+- **2_WAov_CreateWaDEInputFiles.ipynb**: used to create the WaDE input csv files: date.csv, organization.csv, reportingunits.csv, overlays.csv, overlayreportingunits.csv, etc.
+- **3_WAov_WaDEDataAssessmentScript.ipynb**: used to evaluate the WaDE input csv files.
+
+
+***
+## Code File: 1_WAov_PreProcessOverlayData.ipynb
+Purpose: Pre-process the input data files and merge them into one master file for simple dataframe creation and extraction.
+
+#### Inputs: 
+- WatershedAdministrativeUnits_ForestPracticesRegulation.shp, "Shapefile"
+- Water_Resource_Inventory_Areas_WRIA.shp, "Shapefile"
+
+#### Outputs:
+ - Pov_Main.zip
+ - P_Geometry.zip
+
+#### Operation and Steps:
+- Import raw data for both WDNR and WDOE, save both in separate temporary DataFrames.
+- Extract key elements from both DataFrames, combine into single output DataFrame.
+- Map and align shapefile to fit WaDE system 
+- Export output dataframe as new csv file, *Pov_Main.csv* for tabular data and *P_Geometry.csv* for geometry data.
+
+
+***
+## Code File: 2_WAov_CreateWaDEInputFiles.ipynb
+Purpose: generate WaDE csv input files (date.csv, organizations.csv, reportingunits.csv, overlays.csv, overlayreportingunits.csv.
+
+#### Inputs:
+- Pov_Main.zip
+- P_Geometry.zip
+
+#### Outputs:
+- date.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
+- organizations.csv ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Create by hand.`
+- reportingunits.csv
+- overlays.csv 
+- overlayreportingunits.csv
+
+
+
+## 1) Date Information
+Purpose: generate legend of granular date used on data collection.
+
+#### Operation and Steps:
+- Generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE Date* specific columns.
+- Assign agency info to the *WaDE Date* specific columns (this was hardcoded by hand for simplicity).
+- Perform error check on output dataframe.
+- Export output dataframe *methods.csv*.
+
+#### Sample Output (WARNING: not all fields shown):
+|    | Date      |   Year |
+|---:|:----------|-------:|
+|  0 | 7/28/2023 |   2023 |
+|  1 | 8/1/2023  |   2023 |
+
+
+## 2) Organization Information
+Purpose: generate organization directory, including names, email addresses, and website hyperlinks for organization supplying data source.
+
+#### Operation and Steps:
+- Generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE Organizations* specific columns.
+- Assign agency info to the *WaDE Organizations* specific columns (this was hardcoded by hand for simplicity).
+- Assign organization UUID identifier to each (unique) row.
+- Perform error check on output dataframe.
+- Export output dataframe *organizations.csv*.
+
+#### Sample Output (WARNING: not all fields shown):
+|    | OrganizationUUID   | OrganizationContactEmail   | OrganizationContactName   | OrganizationName                           | OrganizationPhoneNumber   | OrganizationPurview            | OrganizationWebsite    | State   |
+|---:|:-------------------|:---------------------------|:--------------------------|:-------------------------------------------|:--------------------------|:-------------------------------|:-----------------------|:--------|
+|  0 | WAov_O1            | Olivia Hughs               | olivia.hughes@dnr.wa.gov  | Washington Department of Natural Resources | 360-902-1000              | Watershed Analysis             | https://www.dnr.wa.gov | WA      |
+|  1 | WAov_O2            | Jimmy Norris               | jimmy.norris@ecy.wa.gov   | Washington Department of Ecology           | 360-407-6872              | Water Resource Inventory Areas | https://ecology.wa.gov | WA      |
+
+
+### 3) Reporting Unit Information
+Purpose: generate a list of polygon areas associated with the state agency overlay area data.
+
+#### Operation and Steps:
+- Read the input file and generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE ReportingUnits* specific columns.
+- Assign state agency data info to the *WaDE ReportingUnits* specific columns.  See *WAov_Overlay Info Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+    - *ReportingUnitUUID* = "WAov_RU" + **WAU_ID** input for WDNR,  **OBJECTID** input for WDOE.
+    - *EPSGCodeCV* = "4326".
+    - *ReportingUnitName* = **WAU_LABEL_** input for WDNR, **WRIA_NM** for WDOE.
+    - *ReportingUnitNativeID* = **WAU_ID** input for WDNR,  **OBJECTID** input for WDOE.
+    - *ReportingUnitProductVersion* = ""
+    - *ReportingUnitTypeCV* = "Watershed Administrative Unit" for WDNR, "Water Resource Inventory Area" for WDOE.
+    - *ReportingUnitUpdateDate* = "1/7/2021" for WDNR, **last_edi_1** input for WDOE.
+    - *StateCV* = "WA"
+    - *Geometry* = "geometry"
+- Consolidate output dataframe into site specific information only by dropping duplicate entries, drop by WaDE specific *ReportingUnitName*, *ReportingUnitNativeID* & *ReportingUnitTypeCV* fields.
+- Assign reportingunits UUID identifier to each (unique) row.
+- Perform error check on output dataframe.
+- Export output dataframe *reportingunits.csv*.
+
+#### Sample Output (WARNING: not all fields shown):
+|    | ReportingUnitUUID   |   EPSGCodeCV | ReportingUnitName   | ReportingUnitNativeID   | ReportingUnitProductVersion   | ReportingUnitTypeCV            | ReportingUnitUpdateDate   | StateCV   |
+|---:|:--------------------|-------------:|:--------------------|:------------------------|:------------------------------|:-------------------------------|:--------------------------|:----------|
+|  1 | WAov_RUwdnr10       |         4326 | Warnick             | wdnr10                  |                               | Watershed Administrative Units | 1/7/2021                  | WA        |
+
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *reportingunits_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the reportingunits include the following...
+- ReportingUnitUUID
+- ReportingUnitName
+- ReportingUnitNativeID
+- ReportingUnitTypeCV
+- StateCV
+
+
+### 4) Overlays Information
+Purpose: generate master sheet of overlay area information to import into WaDE 2.0.
+
+#### Operation and Steps:
+- Read the input files and generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE Water Overlays* specific columns.
+- Assign state agency data info to the *WaDE Water Overlays* specific columns.  See *WAov_Overlay Info Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+    - *OverlayUUID* = WAov_RO + **WAU_ID** input for WDNR,  **OBJECTID** input for WDOE.
+    - *OversightAgency* = "Washington Department of Natural Resources (WDNR)" for WDNR, "Washington Department of Ecology" for WDOE.
+    - *OverlayDescription* = "A structured approach to developing a forest practices plan for a WAU based on a biological and physical inventory." for WDNR, "Our innovative partnerships sustain healthy land, air, and water in harmony with a strong economy." for WDOE.
+    - *OverlayName* = **WAU_LABEL_** input for WDNR, **WRIA_NM** for WDOE.
+    - *OverlayNativeID* = **WAU_ID** input for WDNR,  **OBJECTID** input for WDOE.
+    - *OverlayStatusCV* = Active
+    - *Statue* = ""
+    - *StatuteLink* = ""
+    - *StatutoryEffectiveDate* = "8/2/1992" for WDNR, "1/1/1971 for WDOE.
+    - *OverlayTypeCV* = "Watershed Administrative Unit" for WDNR, "Water Resource Inventory Area" for WDOE.
+    - *WaterSourceTypeCV* = "Surface Water"
+- Perform error check on output dataframe.
+- Export output dataframe *overlays.csv*.
+
+#### Sample Output (WARNING: not all fields shown):
+|    | OverlayUUID   | OversightAgency                            | OverlayDescription                                                                                                 | OverlayName   | OverlayNativeID   | OverlayStatusCV   | Statute   | StatuteLink   | StatutoryEffectiveDate   | StatutoryEndDate   | OverlayTypeCV                  | WaterSourceTypeCV   |
+|---:|:--------------|:-------------------------------------------|:-------------------------------------------------------------------------------------------------------------------|:--------------|:------------------|:------------------|:----------|:--------------|:-------------------------|:-------------------|:-------------------------------|:--------------------|
+|  1 | WAov_ROwdnr18 | Washington Department of Natural Resources | a structured approach to developing a forest practices plan for a WAU based on a biological and physical inventory | Acme          | wdnr18            | Active            |           |               | 1992-08-02               |                    | Watershed Administrative Units | Surface Water       |
+
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *overlays_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the water overlays include the following...
+- OverlayUUID 
+- OversightAgency
+- OverlayDescription
+- OverlayName
+- OverlayStatusCV
+- StatutoryEffectiveDate
+
+
+### 5) Overlay Reporting Units Information
+Purpose: generate master sheet of overlay area information and how it algins with reporting unit area information.
+
+#### Operation and Steps:
+- Read the input file and generate single output dataframe *outdf*.
+- Populate output dataframe with *WaDE OverlayReportingunits* specific columns.
+- Assign state agency data info to the *WaDE OverlayReportingunits* specific columns.  See *WAov_Overlay Info Schema Mapping to WaDE.xlsx* for specific details.  Items of note are as follows...
+    - *DataPublicationDate* = use date of file creation
+    - *OrganizationUUID* = pull from organization.csv
+    - *OverlayUUID* = pull form overlay.csv
+    - *ReportingUnitUUID* = pull from reportingunit.csv
+- Perform error check on output dataframe.
+- Export output dataframe *overlayreportingunits.csv*.
+
+#### Sample Output (WARNING: not all fields shown):
+|    | DataPublicationDate   | OrganizationUUID   | OverlayUUID    | ReportingUnitUUID   |
+|---:|:----------------------|:-------------------|:---------------|:--------------------|
+|  1 | 2025-12-08            | WAov_O1            | WAov_ROwdnr842 | WAov_RUwdnr842      |
+
+Any data fields that are missing required values and dropped from the WaDE-ready dataset are instead saved in a separate csv file (e.g. *overlayreportingunits_missing.csv*) for review.  This allows for future inspection and ease of inspection on missing items.  Mandatory fields for the reportingunits include the following...
+- DataPublicationDate
+- OrganizationUUID
+- OverlayUUID 
+- ReportingUnitUUID
+
+
+***
+## Source Data & WaDE Complied Data Assessment
+The following info is from a data assessment evaluation of the completed data...
+
+Dataset | Num of Source Entries (rows) 
+---------- | ----------
+**Watershed Administrative Units** (WDRN):  846
+**Water Resource Inventory Areas**  (WDOE):  62
+
+
+Dataset | Num of Identified Reporting Units | Num of Identified Overlays
+---------- | ---------- | ------------
+**Compiled WaDE Data** | 908 | 908
+
+
+Assessment of Removed Source Records | Count | Action
+---------- | ---------- | ----------
+...nothing removed | - | -
+
+
+**Figure 1:** Distribution of Reporting Unit Name within reportingunits.csv
+![](figures/ReportingUnitName.png)
+
+**Figure 2:** Distribution of Reporting Unit Type within reportingunits.csv
+![](figures/ReportingUnitTypeCV.png)
+
+**Figure 3:** Distribution of Oversight Agency within the overlays.csv
+![](figures/OversightAgency.png)
+
+**Figure 4:** Distribution of Overlay Type within the overlays.csv
+![](figures/OverlayTypeCV.png)
+
+**Figure 5:** Map of Overlay Areas (i.e., Reporting Unit)
+![](figures/ReportingUnitMap.png)
+
+
+
+***
+## Staff Contributions
+Data created here was a contribution between the [Western States Water Council (WSWC)](http://wade.westernstateswater.org/) and the [Washington Department of Natural Resources (WDNR)](https://dnr.wa.gov/) & [Washington Department of Ecology (WDOE)](https://ecology.wa.gov/).
+
+WSWC Staff
+- Ryan James (Data Analysis) <rjames@wswc.utah.gov>
+
+Washington Department of Natural Resources (WDNR) Staff
+- Olivia Hughs <olivia.hughes@dnr.wa.gov>
+
+Washington Department of Ecology Staff
+- Jimmy Norris <jimmy.norris@ecy.wa.gov}>
 

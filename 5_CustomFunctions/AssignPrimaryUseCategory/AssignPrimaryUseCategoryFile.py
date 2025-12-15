@@ -16,9 +16,9 @@ import pandas as pd
 # Native Beneficial Use -to- WaDE Beneficial Use Dictionary
 # read in input file, create temp dataframe, make adjustments, convert to dictionary.
 fileInput = "C:/Users/rjame/Documents/WSWC Documents/MappingStatesDataToWaDE2.0/5_CustomFunctions/AssignPrimaryUseCategory/PrimaryBenUseInput.xlsx"
-df = pd.read_excel(fileInput)
-df['Name'] = df['Name'].str.lower().str.strip()
-BUtoWBUDict = pd.Series(df.WaDEname.values, index=df.Name.astype(str)).to_dict()
+df_pbu = pd.read_excel(fileInput).replace(np.nan, "")
+df_pbu['Name'] = df_pbu['Name'].str.lower().str.strip()
+BUtoWBUDict = pd.Series(df_pbu.WaDEname.values, index=df_pbu.Name.astype(str)).to_dict()
 
 
 # WaDE Convert Multi-Beneficial Use to Single Primary Use Dictionary
