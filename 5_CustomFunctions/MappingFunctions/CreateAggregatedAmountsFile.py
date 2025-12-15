@@ -36,15 +36,13 @@ import CleanDataCodeFunctionsFile
 
 # Create File Function
 ############################################################################
-def CreateAggregatedAmountsInputFunction(workingDirString, mainInputFile):
+def CreateAggregatedAmountsInputFunction(workingDirString, df):
 
     # Inputs
     ############################################################################
-    print("Reading input csv...")
+    print("Setting inputs...")
     workingDir = workingDirString
     os.chdir(workingDir)
-    fileInput = "RawinputData/" + mainInputFile
-    df = pd.read_csv(fileInput, compression='zip')
 
     # Input Data - 'WaDE Input' files.
     dfv = pd.read_csv("ProcessedInputData/variables.csv").replace(np.nan, "")  # Variables dataframe
