@@ -250,23 +250,25 @@ The following info is from a data assessment evaluation of the completed data...
 
 Dataset | Num of Source Entries (rows)
 ---------- | ---------- 
-Num of Source #1 Entries (rows)  | 160,721
-Num of Source #2 Entries (rows) | 160,153
+Num of Source #1 Entries (rows)  | 164,832
+Num of Source #2 Entries (rows) | 163,575
 
 
 Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
 ---------- | ------------ | ------------ | ------------
-**Compiled WaDE Data** | 63,282 | 87,978 | 86,137
+**Compiled WaDE Data** | 63,205 | 88,576 | 86,867
 
 
 Assessment of Removed Source Records | Count | Action
 ---------- | ---------- | ----------
-Unused Site Record                     | 130,273 | removed from sites.csv input
-Incomplete or bad entry for Latitude       | 11 | removed from sites.csv input
-Incomplete or bad entry for AllocationPriorityDate   | 69,412 | removed from waterallocations.csv input
-Incomplete or bad entry for Volume                     | 354 | removed from waterallocations.csv input
-Incomplete or bad entry for Flow                       | 333 | removed from waterallocations.csv input
-Incomplete or bad entry for IrrigatedAcreage            | 76 | removed from waterallocations.csv input
+Unused Site Record                      | 133,424 | removed from sites.csv input
+Incomplete or bad entry for Latitude        | 28 | removed from sites.csv input
+Incomplete or bad entry for Longitude        | 1 | removed from sites.csv input
+Incomplete or bad entry for AllocationPriorityDate   | 72,444 | removed from waterallocations.csv input
+Incomplete or bad entry for Volume                     | 367 | removed from waterallocations.csv input
+Incomplete or bad entry for Flow                       | 285 | removed from waterallocations.csv input
+Incomplete or bad entry for SiteUUID                   | 103 | removed from waterallocations.csv input
+Incomplete or bad entry for IrrigatedAcreage            | 61 | removed from waterallocations.csv input
 Incomplete or bad entry for AllocationOwner              | 1 | removed from waterallocations.csv input
 
 
