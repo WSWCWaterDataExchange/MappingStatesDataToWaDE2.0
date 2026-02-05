@@ -7,17 +7,17 @@ The following data was used for water allocations...
 
 Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
-**qty** & **wimas** | Point of diversion water quantity (qty) and location (wimas) data obtained from the Water Information Management and Analysis System (WIMAS). | [link](https://geoportal.kgs.ku.edu/geohydro/wimas/index.cfm?CFID=70602&CFTOKEN=1c898e89c26f094b-815CA8A9-FFF0-E432-AE5700215117F981) | not given
+**qty** & **wimas** | Point of diversion water quantity (qty) and location (wimas) data obtained from the Water Information Management and Analysis System (WIMAS). | [link](https://geohydro.kgs.ku.edu/geohydro/wimas/query_setup.cfm?CFID=6964114&CFTOKEN=7c9c7b0cc38a2593-D0FF0719-BADF-C173-51EC4E3617FFF07A) | not given
 
 
 Two unique files were created, one used by the WSWC staff to understand the available data (*"_with Notes"*), the second resulting files to be used as input to the Python codes that prepare WaDE2 input files.  Input files used are as follows...
- - qty_input.zip
- - wimas_input.zip
+ - qty_20260205502.zip
+ - wimas_20260205600.zip
 
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
 The 1) raw input data shared by the state / state agency / data provider (excel, csv, shapefiles, PDF, etc), & the 2) csv processed input data ready to load into the WaDE database, can both be found within the WaDE sponsored Google Drive.  Please contact WaDE staff if unavailable or if you have any questions about the data.
-- Kansas Allocation Data: https://drive.google.com/drive/folders/1NvoOu-rbhKr5iGf63A3VOOiNO3Vpf4gc?usp=sharing
+- Kansas Allocation Data: [link](https://drive.google.com/drive/folders/1NvoOu-rbhKr5iGf63A3VOOiNO3Vpf4gc?usp=sharing)
 
 
 ## Summary of Data Prep
@@ -238,12 +238,13 @@ The following info is from a data assessment evaluation of the completed data...
 
 Dataset | Num of Source Entries (rows)
 ---------- | ---------- 
-**qty** & **wimas** | 47,313
+qty_20260205502  | 47153
+wimas_20260205600  | 89150
 
 
 Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
 ---------- | ------------ | ------------ | ------------
-**Compiled WaDE Data** | 34,364 | 0 | 31,112
+**Compiled WaDE Data** | 34,768 | 0 | 31149
 
 
 Assessment of Removed Source Records | Count | Action
@@ -277,7 +278,8 @@ Incomplete or bad entry for Volume | 2270  removed from waterallocations.csv inp
 ![](figures/PointMap.png)
 
 **Figure 8:** Map of Identified Polygons within the sites.csv
-![](figures/PolyMap.png)
+<!-- ![](figures/PolyMap.png) -->
+- No POU data provided.
 
 
 ***
