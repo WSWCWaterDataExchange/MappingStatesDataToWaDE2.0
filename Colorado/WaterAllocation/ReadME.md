@@ -186,7 +186,7 @@ Purpose: generate a list of sites information.
 - Export output dataframe *sites.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-|    | SiteUUID     | RegulatoryOverlayUUIDs   | WaterSourceUUIDs   | CoordinateAccuracy   | CoordinateMethodCV   | County   |   EPSGCodeCV | GNISCodeCV   |        HUC12 |     HUC8 |   Latitude |   Longitude | NHDNetworkStatusCV   | NHDProductCV   | PODorPOUSite   | SiteName     |   SiteNativeID | SitePoint   | SiteTypeCV   | StateCV   | USGSSiteID   |
+|    | SiteUUID     | OverlayUUIDs   | WaterSourceUUIDs   | CoordinateAccuracy   | CoordinateMethodCV   | County   |   EPSGCodeCV | GNISCodeCV   |        HUC12 |     HUC8 |   Latitude |   Longitude | NHDNetworkStatusCV   | NHDProductCV   | PODorPOUSite   | SiteName     |   SiteNativeID | SitePoint   | SiteTypeCV   | StateCV   | USGSSiteID   |
 |---:|:-------------|:-------------------------|:-------------------|:---------------------|:---------------------|:---------|-------------:|:-------------|-------------:|---------:|-----------:|------------:|:---------------------|:---------------|:---------------|:-------------|---------------:|:------------|:-------------|:----------|:-------------|
 |  1 | COwr_S100501 |                          | COwr_WwadeId1      | WaDE Blank           | Digitized            | Weld     |         4326 |              | 101900030806 | 10190003 |    40.3785 |    -104.484 |                      |                | POD            | Empire Ditch |         100501 |             | Ditch        | CO        |              |
 
@@ -300,19 +300,19 @@ The following info is from a data assessment evaluation of the completed data...
 
 Dataset | Num of Source Entries (rows)
 ---------- | ---------- 
-**DWR Water Right - Net Amounts** | 171,214
+**DWR Water Right - Net Amounts** | 173,128
 
 Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records
-**Compiled WaDE Data** | 124605 | 0 | 161016
+**Compiled WaDE Data** | 125,578 | 0 | 162,646
 
 
 Assessment of Removed Source Records | Count | Action
 ---------- | ---------- | ----------
-Unused WaterSource Record   | 1 | removed from watersources.csv input
-Incomplete or bad entry for Latitude    |243 | removed from sites.csv input
-Unused Site Record                       | 2 | removed from sites.csv input
-Incomplete or bad entry for SiteUUID    |269 | removed from waterallocations.csv input
-Incomplete or bad entry for Flow         | 2 | removed from waterallocations.csv input
+Unused WaterSource Record   | 2 | removed from watersources.csv input
+Incomplete or bad entry for Latitude    | 241  | removed from sites.csv input
+Incomplete or bad entry for SiteName    | 141 | removed from sites.csv input
+Incomplete or bad entry for SiteUUID    | 451 | removed from waterallocations.csv input
+Incomplete or bad entry for Volume      | 2 | removed from waterallocations.csv input
 
 **Figure 1:** Distribution of POD vs POU Sites within the sites.csv
 ![](figures/PODorPOUSite.png)
