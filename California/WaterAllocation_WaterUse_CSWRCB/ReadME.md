@@ -8,12 +8,12 @@ The following data was used for water allocations...
 Name | Description | Download Link | Metadata Glossary Link
 ---------- | ---------- | ------------ | ------------
 **California Water Rights Points of Diversion LIST (Detail Summary List)** | This list includes detail information about every Point of Diversion water rights record in the State Water Resources Control Board's "Electronic Water Rights Information Management System" (EWRIMS) database. | [link](https://data.ca.gov/dataset/california-water-rights-points-of-diversion) | [link](https://data.ca.gov/dataset/1c2117f4-e4be-47f7-9eb5-81b086aefe34/resource/2902511b-6b50-4084-82f0-d1a508a80067/download/ewrims-points-of-diversion-data-dictionary-final.xlsx)
-**water-rights-water-use-reported-short** | THIS LIST IS A SIMPLIFIED VERSION OF THE WATER USE EXTENDED DATASET. This list includes detail information for WATER USE as reported annually under each water right as stored in the State Water Resources Control Board's "Electronic Water Rights Information Management System" (EWRIMS) database.a | [link](https://data.ca.gov/dataset/california-water-rights-water-use-reported/resource/621c31ae-7ea0-4915-b7dc-dfcb7efc77b9) | [link](https://data.ca.gov/dataset/california-water-rights-water-use-reported/resource/3d225ee1-f41d-4ddc-9773-d4d8af8aad44)
+**621c31ae-7ea0-4915-b7dc-dfcb7efc77b9** | THIS LIST IS A SIMPLIFIED VERSION OF THE WATER USE EXTENDED DATASET. This list includes detail information for WATER USE as reported annually under each water right as stored in the State Water Resources Control Board's "Electronic Water Rights Information Management System" (EWRIMS) database.a | [link](https://data.ca.gov/dataset/california-water-rights-water-use-reported/resource/621c31ae-7ea0-4915-b7dc-dfcb7efc77b9) | [link](https://data.ca.gov/dataset/california-water-rights-water-use-reported/resource/3d225ee1-f41d-4ddc-9773-d4d8af8aad44)
 
 
 Input files used are as follows...
-- ewrims_flat_file_pod.zip (water right and site information)
-- water-rights-water-use-reported-short.zip (water use by water right information)
+- ewrims_flat_file_pod-flat-file.zip (water right and site information)
+- 621c31ae-7ea0-4915-b7dc-dfcb7efc77b9.zip (water use by water right information)
  
 
 ## Storage for WaDE 2.0 Source and Processed Water Data
@@ -34,8 +34,8 @@ The following text summarizes the process used by the WSWC staff to prepare and 
 Purpose: Pre-process the state agency's input data files and merge them into one master file for simple dataframe creation and extraction.
 
 #### Inputs: 
-- ewrims_flat_file_pod.zip (water right and site information)
-- water-rights-water-use-reported-short.zip (water use by water right information)
+- ewrims_flat_file_pod-flat-file.zip (water right and site information)
+- 621c31ae-7ea0-4915-b7dc-dfcb7efc77b9.zip (water use by water right information)
 
 #### Outputs:
  - Pwrwu_Main.zip
@@ -183,7 +183,7 @@ Purpose: generate a list of sites information.
 - Export output dataframe *sites.csv*.
 
 #### Sample Output (WARNING: not all fields shown):
-|    | SiteUUID     | RegulatoryOverlayUUIDs   | WaterSourceUUIDs   | CoordinateAccuracy   | CoordinateMethodCV   | County   |   EPSGCodeCV | GNISCodeCV   |        HUC12 |     HUC8 |   Latitude |   Longitude | NHDNetworkStatusCV   | NHDProductCV   | PODorPOUSite   | SiteName   |   SiteNativeID | SitePoint   | SiteTypeCV   | StateCV   | USGSSiteID   |
+|    | SiteUUID     | OverlayUUIDs   | WaterSourceUUIDs   | CoordinateAccuracy   | CoordinateMethodCV   | County   |   EPSGCodeCV | GNISCodeCV   |        HUC12 |     HUC8 |   Latitude |   Longitude | NHDNetworkStatusCV   | NHDProductCV   | PODorPOUSite   | SiteName   |   SiteNativeID | SitePoint   | SiteTypeCV   | StateCV   | USGSSiteID   |
 |---:|:-------------|:-------------------------|:-------------------|:---------------------|:---------------------|:---------|-------------:|:-------------|-------------:|---------:|-----------:|------------:|:---------------------|:---------------|:---------------|:-----------|---------------:|:------------|:-------------|:----------|:-------------|
 |  1 | CSWRCBwrwu_S10 |                          | CSWRCBwrwu_WwadeId21 | WaDE Blank           | DD_NE                | Plumas   |         4326 |              | 180201210602 | 18020121 |    39.8754 |    -121.174 |                      |                | POD            | WaDE Blank |             10 |             | WaDE Blank   | CA        |              |
 
@@ -332,23 +332,21 @@ The following info is from a data assessment evaluation of the completed data...
 
 Dataset | Num of Source Entries (rows)
 ---------- | ---------- 
-**ewrims_flat_file_pod** | 65,902
-**water-rights-water-use-reported-short** (rows):  | 12,467,037
-
+**ewrims_flat_file_pod-flat-file** | 67,209
+**621c31ae-7ea0-4915-b7dc-dfcb7efc77b9** (rows):  | 3,296,000
 
 Dataset  | Num of Identified PODs | Num of Identified POUs | Num of Identified Water Right Records | Num of Identified Water Use Records
 ---------- | ------------ | ------------ | ------------ | ------------
-**Compiled WaDE Data** | 47,788 | 0  |41,353  | 2,098,383
+**Compiled WaDE Data** | 48,435 | 0  | 41,276 | 805,630
 
 
 Assessment of Removed Source Records | Count | Action
 ---------- | ---------- | ----------
-Incomplete or bad entry for Latitude     | 1,932 | removed from sites.csv input
-Incomplete or bad entry for SiteName     | 1 | removed from sites.csv input
-Incomplete or bad entry for SiteUUID    | 1,820 | removed from waterallocations.csv input
-Negative, blank, or 0 Amount values                     | 4,900,795 | removed from sitespecificamounts.csv input
-Not Unique combination of SiteSpecificAmounts record    | 789,870 | removed from sitespecificamounts.csv input
-Incomplete or bad entry for SiteUUID                    | 82,834 | removed from sitespecificamounts.csv input
+Incomplete or bad entry for Latitude   | 2106 | removed from sites.csv input
+Incomplete or bad entry for SiteUUID   | 1985 | removed from waterallocations.csv input
+Negative, blank, or 0 Amount values                    | 1,841,219 | removed from sitespecificamounts.csv...
+Not Unique combination of SiteSpecificAmounts record   | 255,867 | removed from sitespecificamounts.csv ...
+Incomplete or bad entry for SiteUUID                   | 7,989 | removed from sitespecificamounts.csv input
 
 
 **Figure 1:** Distribution of POD vs POU Sites within the sites.csv
